@@ -1,0 +1,45 @@
+{
+  "name": "fastapi",
+  "description": "Complete FastAPI knowledge combining official documentation and FastAPI codebase. Use when building FastAPI applications, understanding async patterns, or working with Pydantic models.",
+  "merge_mode": "rule-based",
+  "sources": [
+    {
+      "type": "documentation",
+      "base_url": "https://fastapi.tiangolo.com/",
+      "extract_api": true,
+      "selectors": {
+        "main_content": "article",
+        "title": "h1",
+        "code_blocks": "pre code"
+      },
+      "url_patterns": {
+        "include": [],
+        "exclude": ["/img/", "/js/"]
+      },
+      "categories": {
+        "getting_started": ["tutorial", "first-steps"],
+        "path_operations": ["path-params", "query-params", "body"],
+        "dependencies": ["dependencies"],
+        "security": ["security", "oauth2"],
+        "database": ["sql-databases"],
+        "advanced": ["advanced", "async", "middleware"],
+        "deployment": ["deployment"]
+      },
+      "rate_limit": 0.5,
+      "max_pages": 150
+    },
+    {
+      "type": "github",
+      "repo": "tiangolo/fastapi",
+      "include_issues": true,
+      "max_issues": 100,
+      "include_changelog": true,
+      "include_releases": true,
+      "include_code": true,
+      "code_analysis_depth": "surface",
+      "file_patterns": [
+        "fastapi/**/*.py"
+      ]
+    }
+  ]
+}

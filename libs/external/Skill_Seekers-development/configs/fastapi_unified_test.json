@@ -1,0 +1,41 @@
+{
+  "name": "fastapi_test",
+  "description": "FastAPI test - unified scraping with limited pages",
+  "merge_mode": "rule-based",
+  "sources": [
+    {
+      "type": "documentation",
+      "base_url": "https://fastapi.tiangolo.com/",
+      "extract_api": true,
+      "selectors": {
+        "main_content": "article",
+        "title": "h1",
+        "code_blocks": "pre code"
+      },
+      "url_patterns": {
+        "include": [],
+        "exclude": ["/img/", "/js/"]
+      },
+      "categories": {
+        "getting_started": ["tutorial", "first-steps"],
+        "path_operations": ["path-params", "query-params"],
+        "api": ["reference"]
+      },
+      "rate_limit": 0.5,
+      "max_pages": 20
+    },
+    {
+      "type": "github",
+      "repo": "tiangolo/fastapi",
+      "include_issues": false,
+      "include_changelog": false,
+      "include_releases": true,
+      "include_code": true,
+      "code_analysis_depth": "surface",
+      "file_patterns": [
+        "fastapi/routing.py",
+        "fastapi/applications.py"
+      ]
+    }
+  ]
+}

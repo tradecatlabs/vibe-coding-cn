@@ -1,0 +1,30 @@
+{
+  "name": "astro",
+  "description": "Astro web framework for content-focused websites. Use for Astro components, islands architecture, content collections, SSR/SSG, and modern web development.",
+  "base_url": "https://docs.astro.build/en/getting-started/",
+  "start_urls": [
+    "https://docs.astro.build/en/getting-started/",
+    "https://docs.astro.build/en/install/auto/",
+    "https://docs.astro.build/en/core-concepts/project-structure/",
+    "https://docs.astro.build/en/core-concepts/astro-components/",
+    "https://docs.astro.build/en/core-concepts/astro-pages/"
+  ],
+  "selectors": {
+    "main_content": "article",
+    "title": "h1",
+    "code_blocks": "pre code"
+  },
+  "url_patterns": {
+    "include": ["/en/"],
+    "exclude": ["/blog", "/integrations"]
+  },
+  "categories": {
+    "getting_started": ["getting-started", "install", "tutorial"],
+    "core_concepts": ["core-concepts", "project-structure", "components", "pages"],
+    "guides": ["guides", "deploy", "migrate"],
+    "configuration": ["configuration", "config", "typescript"],
+    "integrations": ["integrations", "framework", "adapter"]
+  },
+  "rate_limit": 0.5,
+  "max_pages": 100
+}

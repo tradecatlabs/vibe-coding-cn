@@ -1,0 +1,48 @@
+{
+  "name": "kubernetes",
+  "description": "Kubernetes container orchestration platform. Use for K8s clusters, deployments, pods, services, networking, storage, configuration, and DevOps tasks.",
+  "base_url": "https://kubernetes.io/docs/",
+  "start_urls": [
+    "https://kubernetes.io/docs/home/",
+    "https://kubernetes.io/docs/concepts/",
+    "https://kubernetes.io/docs/tasks/",
+    "https://kubernetes.io/docs/tutorials/",
+    "https://kubernetes.io/docs/reference/"
+  ],
+  "selectors": {
+    "main_content": "main",
+    "title": "h1",
+    "code_blocks": "pre code"
+  },
+  "url_patterns": {
+    "include": [
+      "/docs/concepts/",
+      "/docs/tasks/",
+      "/docs/tutorials/",
+      "/docs/reference/",
+      "/docs/setup/"
+    ],
+    "exclude": [
+      "/search/",
+      "/blog/",
+      "/training/",
+      "/partners/",
+      "/community/",
+      "/_print/",
+      "/case-studies/"
+    ]
+  },
+  "categories": {
+    "getting_started": ["getting-started", "setup", "learning-environment"],
+    "concepts": ["concepts", "overview", "architecture"],
+    "workloads": ["workloads", "pods", "deployments", "replicaset", "statefulset", "daemonset"],
+    "services": ["services", "networking", "ingress", "service"],
+    "storage": ["storage", "volumes", "persistent"],
+    "configuration": ["configuration", "configmap", "secret"],
+    "security": ["security", "rbac", "policies", "authentication"],
+    "tasks": ["tasks", "administer", "configure"],
+    "tutorials": ["tutorials", "stateless", "stateful"]
+  },
+  "rate_limit": 0.5,
+  "max_pages": 1000
+}

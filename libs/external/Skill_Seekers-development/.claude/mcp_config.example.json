@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "skill-seeker": {
+      "command": "python3",
+      "args": [
+        "/REPLACE/WITH/YOUR/PATH/Skill_Seekers/mcp/server.py"
+      ],
+      "cwd": "/REPLACE/WITH/YOUR/PATH/Skill_Seekers",
+      "env": {}
+    }
+  }
+}

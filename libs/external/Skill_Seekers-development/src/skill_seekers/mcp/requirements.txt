@@ -1,0 +1,9 @@
+# MCP Server dependencies
+mcp>=1.0.0
+
+# CLI tool dependencies (shared)
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+
+# Optional: for API-based enhancement
+# anthropic>=0.18.0

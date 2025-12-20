@@ -1,0 +1,142 @@
+{
+  "conflicts": [
+    {
+      "type": "missing_in_docs",
+      "severity": "medium",
+      "api_name": "Node2D",
+      "docs_info": null,
+      "code_info": {
+        "name": "Node2D",
+        "type": "class",
+        "source": "scene/node2d.py",
+        "line": 10,
+        "base_classes": [
+          "Node"
+        ],
+        "docstring": "Base class for 2D nodes"
+      },
+      "difference": "API exists in code (scene/node2d.py) but not found in documentation",
+      "suggestion": "Add documentation for this API"
+    },
+    {
+      "type": "missing_in_docs",
+      "severity": "medium",
+      "api_name": "Node2D.move_local_x",
+      "docs_info": null,
+      "code_info": {
+        "name": "Node2D.move_local_x",
+        "type": "method",
+        "parameters": [
+          {
+            "name": "self",
+            "type_hint": null,
+            "default": null
+          },
+          {
+            "name": "delta",
+            "type_hint": "float",
+            "default": null
+          },
+          {
+            "name": "snap",
+            "type_hint": "bool",
+            "default": "False"
+          }
+        ],
+        "return_type": "None",
+        "source": "scene/node2d.py",
+        "line": 45,
+        "docstring": "Move node along local X axis",
+        "is_async": false
+      },
+      "difference": "API exists in code (scene/node2d.py) but not found in documentation",
+      "suggestion": "Add documentation for this API"
+    },
+    {
+      "type": "missing_in_docs",
+      "severity": "medium",
+      "api_name": "Node2D.tween_position",
+      "docs_info": null,
+      "code_info": {
+        "name": "Node2D.tween_position",
+        "type": "method",
+        "parameters": [
+          {
+            "name": "self",
+            "type_hint": null,
+            "default": null
+          },
+          {
+            "name": "target",
+            "type_hint": "tuple",
+            "default": null
+          }
+        ],
+        "return_type": "None",
+        "source": "scene/node2d.py",
+        "line": 52,
+        "docstring": "Animate to target position",
+        "is_async": true
+      },
+      "difference": "API exists in code (scene/node2d.py) but not found in documentation",
+      "suggestion": "Add documentation for this API"
+    },
+    {
+      "type": "missing_in_code",
+      "severity": "high",
+      "api_name": "move_local_x",
+      "docs_info": {
+        "name": "move_local_x",
+        "parameters": [
+          {
+            "name": "delta",
+            "type": "float",
+            "default": null
+          }
+        ],
+        "return_type": "def",
+        "source": "https://example.com/api/node2d",
+        "raw_signature": "def move_local_x(delta: float)"
+      },
+      "code_info": null,
+      "difference": "API documented (https://example.com/api/node2d) but not found in code",
+      "suggestion": "Update documentation to remove this API, or add it to codebase"
+    },
+    {
+      "type": "missing_in_code",
+      "severity": "high",
+      "api_name": "rotate",
+      "docs_info": {
+        "name": "rotate",
+        "parameters": [
+          {
+            "name": "angle",
+            "type": "float",
+            "default": null
+          }
+        ],
+        "return_type": "def",
+        "source": "https://example.com/api/node2d",
+        "raw_signature": "def rotate(angle: float)"
+      },
+      "code_info": null,
+      "difference": "API documented (https://example.com/api/node2d) but not found in code",
+      "suggestion": "Update documentation to remove this API, or add it to codebase"
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "by_type": {
+      "missing_in_docs": 3,
+      "missing_in_code": 2,
+      "signature_mismatch": 0,
+      "description_mismatch": 0
+    },
+    "by_severity": {
+      "low": 0,
+      "medium": 3,
+      "high": 2
+    },
+    "apis_affected": 5
+  }
+}
