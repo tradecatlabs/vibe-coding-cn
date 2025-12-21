@@ -66,7 +66,7 @@ except Exception:  # pragma: no cover
 @dataclass
 class Candidate:
     index: int
-    kind: str  # "excel" | "docs"
+    kind: str  # "excel" | "docs" | "docs2jsonl" | "jsonl"
     path: Path
     label: str
 
@@ -123,17 +123,143 @@ def run_start_convert(start_convert: Path, mode: str, project_root: Path, select
     return proc.returncode
 
 
+def run_docs_to_jsonl(docs_path: Path, project_root: Path) -> int:
+    """Convert docs folder to JSONL format."""
+    import json
+    import re
+    
+    prompts_dir = docs_path / "prompts"
+    if not prompts_dir.exists():
+        print(f"❌ 找不到 prompts 目录: {prompts_dir}")
+        return 1
+    
+    output_dir = project_root / "prompt_jsonl"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_file = output_dir / f"{docs_path.name}.jsonl"
+    
+    records = []
+    for category_dir in sorted(prompts_dir.iterdir()):
+        if not category_dir.is_dir():
+            continue
+        
+        m = re.match(r'\((\d+)\)_(.+)', category_dir.name)
+        cat_id, cat_name = (m.groups() if m else (0, category_dir.name))
+        
+        for md_file in sorted(category_dir.glob("*.md")):
+            if md_file.name == "index.md":
+                continue
+            
+            fm = re.match(r'\((\d+),(\d+)\)_(.+)\.md', md_file.name)
+            if not fm:
+                continue
+            
+            row, col, title = fm.groups()
+            content = md_file.read_text(encoding='utf-8')
+            
+            records.append({
+                "category_id": int(cat_id),
+                "category": cat_name,
+                "row": int(row),
+                "col": int(col),
+                "title": title[:80],
+                "content": content
+            })
+    
+    with open(output_file, 'w', encoding='utf-8') as f:
+        for r in records:
+            f.write(json.dumps(r, ensure_ascii=False) + '\n')
+    
+    print(f"✅ Docs→JSONL OK: {docs_path.name} → {output_file.relative_to(project_root)}")
+    return 0
+
+
+def list_jsonl_files(jsonl_dir: Path) -> List[Path]:
+    if not jsonl_dir.exists():
+        return []
+    return sorted([p for p in jsonl_dir.iterdir() if p.is_file() and p.suffix.lower() == ".jsonl"], key=lambda p: p.stat().st_mtime)
+
+
+def run_jsonl_to_excel(jsonl_path: Path, project_root: Path) -> int:
+    """Convert JSONL to Excel, each cell contains the full JSON object as string."""
+    import json
+    from collections import defaultdict
+    try:
+        import pandas as pd
+    except ImportError:
+        print("❌ 需要 pandas: pip install pandas openpyxl")
+        return 1
+    
+    records = []
+    with open(jsonl_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            if line.strip():
+                records.append(json.loads(line))
+    
+    if not records:
+        print(f"❌ JSONL 文件为空: {jsonl_path}")
+        return 1
+    
+    # category -> {row -> {col -> json_string}}
+    sheets_data: dict = defaultdict(lambda: defaultdict(dict))
+    cat_id_map = {}
+    
+    for r in records:
+        cat_name = r["category"]
+        cat_id_map[r["category_id"]] = cat_name
+        # 单元格内容只保留 title 和 content
+        cell_data = {"title": r["title"], "content": r["content"]}
+        sheets_data[cat_name][r["row"]][r["col"]] = json.dumps(cell_data, ensure_ascii=False)
+    
+    output_dir = project_root / "prompt_excel"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_file = output_dir / f"{jsonl_path.stem}.xlsx"
+    
+    sorted_cats = sorted(cat_id_map.items(), key=lambda x: x[0])
+    
+    with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
+        for cat_id, cat_name in sorted_cats:
+            row_data = sheets_data[cat_name]
+            if not row_data:
+                continue
+            
+            max_row = max(row_data.keys())
+            max_col = max(c for cols in row_data.values() for c in cols.keys())
+            
+            data = []
+            for row_idx in range(1, max_row + 1):
+                row_list = []
+                for col_idx in range(1, max_col + 1):
+                    row_list.append(row_data.get(row_idx, {}).get(col_idx, ""))
+                data.append(row_list)
+            
+            df = pd.DataFrame(data)
+            sheet_name = cat_name[:31]
+            df.to_excel(writer, sheet_name=sheet_name, index=False, header=False)
+    
+    print(f"✅ JSONL→Excel OK: {jsonl_path.name} → {output_file.relative_to(project_root)} ({len(sorted_cats)} 个工作表)")
+    return 0
+
+
 def build_candidates(project_root: Path, excel_dir: Path, docs_dir: Path) -> List[Candidate]:
     candidates: List[Candidate] = []
     idx = 1
+    jsonl_dir = project_root / "prompt_jsonl"
+    
     for path in list_excel_files(excel_dir):
-        label = f"[Excel] {path.name}"
+        label = f"{path.name}"
         candidates.append(Candidate(index=idx, kind="excel", path=path, label=label))
         idx += 1
     for path in list_doc_sets(docs_dir):
         display = path.relative_to(project_root) if path.is_absolute() else path
-        label = f"[Docs] {display}"
-        candidates.append(Candidate(index=idx, kind="docs", path=path, label=label))
+        # Docs → Excel
+        candidates.append(Candidate(index=idx, kind="docs", path=path, label=f"{display}"))
+        idx += 1
+        # Docs → JSONL
+        candidates.append(Candidate(index=idx, kind="docs2jsonl", path=path, label=f"{display}"))
+        idx += 1
+    for path in list_jsonl_files(jsonl_dir):
+        label = f"{path.name}"
+        candidates.append(Candidate(index=idx, kind="jsonl", path=path, label=label))
         idx += 1
     return candidates
 
@@ -147,7 +273,7 @@ def select_interactively(candidates: Sequence[Candidate]) -> Optional[Candidate]
     if _INQUIRER_AVAILABLE:
         try:
             choices = [
-                {"name": f"{'[Excel]' if c.kind=='excel' else '[Docs]'} {c.label}", "value": c.index}
+                {"name": f"[{c.kind.upper()}] {c.label}", "value": c.index}
                 for c in candidates
             ]
             selection = _inq.select(
@@ -172,10 +298,11 @@ def select_interactively(candidates: Sequence[Candidate]) -> Optional[Candidate]
 
         table = Table(box=box.SIMPLE_HEAVY)
         table.add_column("编号", style="bold yellow", justify="right", width=4)
-        table.add_column("类型", style="magenta", width=8)
+        table.add_column("类型", style="magenta", width=12)
         table.add_column("路径/名称", style="white")
+        kind_labels = {"excel": "Excel→Docs", "docs": "Docs→Excel", "docs2jsonl": "Docs→JSONL", "jsonl": "JSONL→Excel"}
         for c in candidates:
-            table.add_row(str(c.index), "Excel" if c.kind == "excel" else "Docs", c.label)
+            table.add_row(str(c.index), kind_labels.get(c.kind, c.kind), c.label)
 
         layout["header"].update(header)
         layout["list"].update(Panel(table, title="可选源", border_style="cyan"))
@@ -195,9 +322,10 @@ def select_interactively(candidates: Sequence[Candidate]) -> Optional[Candidate]
             console.print("[red]编号不存在，请重试[/red]")
 
     # Plain fallback
+    kind_labels = {"excel": "Excel→Docs", "docs": "Docs→Excel", "docs2jsonl": "Docs→JSONL", "jsonl": "JSONL→Excel"}
     print("请选择一个源进行转换：")
     for c in candidates:
-        print(f"  {c.index:2d}. {c.label}")
+        print(f"  {c.index:2d}. [{kind_labels.get(c.kind, c.kind)}] {c.label}")
     print("  0. 退出")
     while True:
         try:
@@ -224,6 +352,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--excel-dir", type=str, default="prompt_excel", help="Excel sources directory (default: prompt_excel)")
     p.add_argument("--docs-dir", type=str, default="prompt_docs", help="Docs sources directory (default: prompt_docs)")
     p.add_argument("--select", type=str, default=None, help="Path to a specific .xlsx file or a docs folder")
+    p.add_argument("--mode", type=str, choices=["excel2docs", "docs2excel", "docs2jsonl", "jsonl2excel"], default=None, help="Conversion mode (auto-detect if not specified)")
     p.add_argument("--non-interactive", action="store_true", help="Do not prompt; require --select or exit")
     return p.parse_args()
 
@@ -253,10 +382,14 @@ def main() -> int:
             return 2
         if selected.is_file() and selected.suffix.lower() == ".xlsx":
             return run_start_convert(start_convert, mode="excel2docs", project_root=repo_root, select_path=selected, excel_dir=excel_dir)
+        if selected.is_file() and selected.suffix.lower() == ".jsonl":
+            return run_jsonl_to_excel(selected, repo_root)
         if selected.is_dir():
-            # Treat as docs set
+            # Check mode or default to docs2excel
+            if args.mode == "docs2jsonl":
+                return run_docs_to_jsonl(selected, repo_root)
             return run_start_convert(start_convert, mode="docs2excel", project_root=repo_root, select_path=selected, docs_dir=docs_dir)
-        print("无法识别的选择类型（既不是 .xlsx 文件也不是目录）。")
+        print("无法识别的选择类型。")
         return 2
 
     # Interactive selection
@@ -266,6 +399,10 @@ def main() -> int:
         return 0
     if chosen.kind == "excel":
         return run_start_convert(start_convert, mode="excel2docs", project_root=repo_root, select_path=chosen.path, excel_dir=excel_dir)
+    elif chosen.kind == "docs2jsonl":
+        return run_docs_to_jsonl(chosen.path, repo_root)
+    elif chosen.kind == "jsonl":
+        return run_jsonl_to_excel(chosen.path, repo_root)
     else:
         return run_start_convert(start_convert, mode="docs2excel", project_root=repo_root, select_path=chosen.path, docs_dir=docs_dir)
 
