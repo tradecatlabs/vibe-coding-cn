@@ -5,32 +5,64 @@ main.py
 
 Unified controller for prompt-library conversions.
 
-Capabilities
-- Scan default folders and let user select a source to convert
-  - If you select an Excel file (.xlsx), it will convert Excel → Docs
-  - If you select a prompt docs folder, it will convert Docs → Excel
-- Fully non-interactive CLI flags are also supported (automation-friendly)
+支持的转换模式
+==============
+1. Excel → Docs    : 将 Excel 工作簿转换为 Markdown 文档目录
+2. Docs → Excel    : 将 Markdown 文档目录还原为 Excel 工作簿
+3. Docs → JSONL    : 将 Markdown 文档转换为 JSONL 格式（保留完整元信息）
+4. JSONL → Excel   : 将 JSONL 转换为 Excel（单元格存储 JSON 对象）
 
-Conventions (relative to repository root = this file's parent)
-- Excel sources under: ./prompt_excel/
-- Docs sources under:  ./prompt_docs/
-- Outputs:
-  - Excel→Docs: ./prompt_docs/prompt_docs_YYYY_MMDD_HHMMSS/{prompts,docs}
+数据格式规范
+============
+Excel 结构:
+  - 每个工作表(sheet) = 一个分类(category)
+  - 行(row) = 不同提示词
+  - 列(col) = 版本迭代
+
+Docs 结构:
+  - prompts/(N)_分类名/           # N = category_id
+  - prompts/(N)_分类名/(r,c)_标题.md  # r=row, c=col
+
+JSONL 格式 (每行一个 JSON 对象):
+  {
+    "category_id": 2,        # 分类编号
+    "category": "元提示词",   # 分类名称  
+    "row": 1,                # 原 Excel 行号
+    "col": 1,                # 原 Excel 列号（版本号）
+    "title": "...",          # 标题（截断80字符）
+    "content": "..."         # 完整内容
+  }
+
+JSONL → Excel 单元格格式:
+  {"title": "...", "content": "..."}  # 只保留 title 和 content
+
+目录约定
+========
+- Excel 源文件: ./prompt_excel/
+- Docs 源目录:  ./prompt_docs/
+- JSONL 文件:   ./prompt_jsonl/
+- 输出:
+  - Excel→Docs: ./prompt_docs/prompt_docs_YYYY_MMDD_HHMMSS/
   - Docs→Excel: ./prompt_excel/prompt_excel_YYYY_MMDD_HHMMSS/rebuilt.xlsx
+  - Docs→JSONL: ./prompt_jsonl/{docs_name}.jsonl
+  - JSONL→Excel: ./prompt_excel/{jsonl_name}.xlsx
 
-Examples
-  # Interactive selection
+使用示例
+========
+  # 交互式选择
   python3 main.py
 
-  # Non-interactive: choose one Excel file
-  python3 main.py --select "prompt_excel/prompt (3).xlsx"
+  # Excel → Docs
+  python3 main.py --select "prompt_excel/prompt.xlsx"
 
-  # Non-interactive: choose one docs set directory
-  python3 main.py --select "prompt_docs/prompt_docs_2025_0903_055708"
+  # Docs → Excel
+  python3 main.py --select "prompt_docs/prompt_docs_2025_1222"
 
-Notes
-- This script is a thin orchestrator that delegates actual work to
-  scripts/start_convert.py to ensure a single source of truth.
+  # Docs → JSONL
+  python3 main.py --select "prompt_docs/prompt_docs_2025_1222" --mode docs2jsonl
+
+  # JSONL → Excel
+  python3 main.py --select "prompt_jsonl/prompt_docs.jsonl"
 """
 from __future__ import annotations
 
