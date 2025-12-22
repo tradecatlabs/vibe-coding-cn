@@ -7,10 +7,11 @@ Unified controller for prompt-library conversions.
 
 支持的转换模式
 ==============
-1. Excel → Docs    : 将 Excel 工作簿转换为 Markdown 文档目录
-2. Docs → Excel    : 将 Markdown 文档目录还原为 Excel 工作簿
-3. Docs → JSONL    : 将 Markdown 文档转换为 JSONL 格式（保留完整元信息）
-4. JSONL → Excel   : 将 JSONL 转换为 Excel（单元格存储 JSON 对象）
+1. Excel → Docs         : 将 Excel 工作簿转换为 Markdown 文档目录
+2. Docs → Excel         : 将 Markdown 文档目录还原为 Excel 工作簿
+3. Docs → JSONL         : 将 Markdown 文档转换为 JSONL 格式（保留完整元信息）
+4. JSONL → Excel        : 将 JSONL 转换为 Excel（单元格存储 JSON 对象）
+5. Excel(JSONL) → JSONL : 将内部 JSONL 格式的 Excel 转换为 JSONL 文件（自动忽略"说明"工作表）
 
 数据格式规范
 ============
@@ -18,6 +19,10 @@ Excel 结构:
   - 每个工作表(sheet) = 一个分类(category)
   - 行(row) = 不同提示词
   - 列(col) = 版本迭代
+
+Excel(JSONL) 结构（内部 JSONL 格式）:
+  - 每个工作表(sheet) = 一个分类(category)，"说明"工作表会被忽略
+  - 每个单元格存储 JSON 对象: {"title": "...", "content": "..."}
 
 Docs 结构:
   - prompts/(N)_分类名/           # N = category_id
@@ -46,6 +51,7 @@ JSONL → Excel 单元格格式:
   - Docs→Excel: ./prompt_excel/prompt_excel_YYYY_MMDD_HHMMSS/rebuilt.xlsx
   - Docs→JSONL: ./prompt_jsonl/{docs_name}.jsonl
   - JSONL→Excel: ./prompt_excel/{jsonl_name}.xlsx
+  - Excel(JSONL)→JSONL: ./prompt_jsonl/{excel_name}.jsonl
 
 使用示例
 ========
@@ -63,6 +69,10 @@ JSONL → Excel 单元格格式:
 
   # JSONL → Excel
   python3 main.py --select "prompt_jsonl/prompt_docs.jsonl"
+
+  # Excel(JSONL) → JSONL（自动检测或显式指定）
+  python3 main.py --select "prompt_excel/prompt_jsonl.xlsx"
+  python3 main.py --select "prompt_excel/prompt_jsonl.xlsx" --mode jsonl_excel2jsonl
 """
 from __future__ import annotations
 
@@ -211,6 +221,116 @@ def list_jsonl_files(jsonl_dir: Path) -> List[Path]:
     return sorted([p for p in jsonl_dir.iterdir() if p.is_file() and p.suffix.lower() == ".jsonl"], key=lambda p: p.stat().st_mtime)
 
 
+def is_jsonl_excel(excel_path: Path) -> bool:
+    """检测 Excel 是否为内部 JSONL 格式（单元格存储 JSON 对象）"""
+    import json
+    try:
+        import pandas as pd
+    except ImportError:
+        return False
+    
+    try:
+        xlsx = pd.ExcelFile(excel_path)
+        for sheet in xlsx.sheet_names[:2]:  # 检查前两个工作表
+            if sheet == '说明':
+                continue
+            df = pd.read_excel(xlsx, sheet_name=sheet, header=None, nrows=1)
+            if df.empty:
+                continue
+            first_val = str(df.iloc[0, 0]).strip() if not pd.isna(df.iloc[0, 0]) else ""
+            # 检查列名或第一个单元格是否为 JSON
+            first_col = str(df.columns[0]).strip() if len(df.columns) > 0 else ""
+            for val in [first_col, first_val]:
+                if val.startswith('{') and val.endswith('}'):
+                    try:
+                        obj = json.loads(val)
+                        if 'title' in obj and 'content' in obj:
+                            return True
+                    except:
+                        pass
+        return False
+    except:
+        return False
+
+
+def run_jsonl_excel_to_jsonl(excel_path: Path, project_root: Path) -> int:
+    """将内部 JSONL 格式的 Excel 转换为 JSONL 文件（忽略"说明"工作表）"""
+    import json
+    try:
+        import pandas as pd
+    except ImportError:
+        print("❌ 需要 pandas: pip install pandas openpyxl")
+        return 1
+    
+    xlsx = pd.ExcelFile(excel_path)
+    output_lines = []
+    cat_id = 0
+    
+    for sheet in xlsx.sheet_names:
+        if sheet == '说明':
+            continue
+        
+        cat_id += 1
+        cat_name = sheet
+        df = pd.read_excel(xlsx, sheet_name=sheet, header=None)
+        
+        # 检查列名是否是 JSON 数据
+        for col_idx, col_name in enumerate(df.columns):
+            col_str = str(col_name).strip()
+            if col_str.startswith('{') and col_str.endswith('}'):
+                try:
+                    obj = json.loads(col_str)
+                    if 'title' in obj and 'content' in obj:
+                        output_lines.append(json.dumps({
+                            "category_id": cat_id,
+                            "category": cat_name,
+                            "row": 1,
+                            "col": col_idx + 1,
+                            "title": obj["title"][:80],
+                            "content": obj["content"]
+                        }, ensure_ascii=False))
+                except:
+                    pass
+        
+        # 处理数据行
+        for row_idx, row in df.iterrows():
+            for col_idx, val in enumerate(row):
+                if pd.isna(val):
+                    continue
+                val_str = str(val).strip()
+                if val_str.startswith('{') and val_str.endswith('}'):
+                    try:
+                        obj = json.loads(val_str)
+                        if 'title' in obj and 'content' in obj:
+                            output_lines.append(json.dumps({
+                                "category_id": cat_id,
+                                "category": cat_name,
+                                "row": row_idx + 2,
+                                "col": col_idx + 1,
+                                "title": obj["title"][:80],
+                                "content": obj["content"]
+                            }, ensure_ascii=False))
+                    except:
+                        pass
+    
+    if not output_lines:
+        print(f"❌ 未找到有效的 JSONL 数据: {excel_path}")
+        return 1
+    
+    from datetime import datetime
+    timestamp = datetime.now().strftime("%Y_%m%d_%H%M%S")
+    
+    output_dir = project_root / "prompt_jsonl"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_file = output_dir / f"{excel_path.stem}_{timestamp}.jsonl"
+    
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(output_lines))
+    
+    print(f"✅ Excel(JSONL)→JSONL OK: {excel_path.name} → {output_file.relative_to(project_root)} ({len(output_lines)} 条记录)")
+    return 0
+
+
 def run_jsonl_to_excel(jsonl_path: Path, project_root: Path) -> int:
     """Convert JSONL to Excel, each cell contains the full JSON object as string."""
     import json
@@ -279,7 +399,11 @@ def build_candidates(project_root: Path, excel_dir: Path, docs_dir: Path) -> Lis
     
     for path in list_excel_files(excel_dir):
         label = f"{path.name}"
-        candidates.append(Candidate(index=idx, kind="excel", path=path, label=label))
+        # 检测是否为内部 JSONL 格式的 Excel
+        if is_jsonl_excel(path):
+            candidates.append(Candidate(index=idx, kind="jsonl_excel", path=path, label=label))
+        else:
+            candidates.append(Candidate(index=idx, kind="excel", path=path, label=label))
         idx += 1
     for path in list_doc_sets(docs_dir):
         display = path.relative_to(project_root) if path.is_absolute() else path
@@ -330,9 +454,9 @@ def select_interactively(candidates: Sequence[Candidate]) -> Optional[Candidate]
 
         table = Table(box=box.SIMPLE_HEAVY)
         table.add_column("编号", style="bold yellow", justify="right", width=4)
-        table.add_column("类型", style="magenta", width=12)
+        table.add_column("类型", style="magenta", width=16)
         table.add_column("路径/名称", style="white")
-        kind_labels = {"excel": "Excel→Docs", "docs": "Docs→Excel", "docs2jsonl": "Docs→JSONL", "jsonl": "JSONL→Excel"}
+        kind_labels = {"excel": "Excel→Docs", "docs": "Docs→Excel", "docs2jsonl": "Docs→JSONL", "jsonl": "JSONL→Excel", "jsonl_excel": "Excel(JSONL)→JSONL"}
         for c in candidates:
             table.add_row(str(c.index), kind_labels.get(c.kind, c.kind), c.label)
 
@@ -354,7 +478,7 @@ def select_interactively(candidates: Sequence[Candidate]) -> Optional[Candidate]
             console.print("[red]编号不存在，请重试[/red]")
 
     # Plain fallback
-    kind_labels = {"excel": "Excel→Docs", "docs": "Docs→Excel", "docs2jsonl": "Docs→JSONL", "jsonl": "JSONL→Excel"}
+    kind_labels = {"excel": "Excel→Docs", "docs": "Docs→Excel", "docs2jsonl": "Docs→JSONL", "jsonl": "JSONL→Excel", "jsonl_excel": "Excel(JSONL)→JSONL"}
     print("请选择一个源进行转换：")
     for c in candidates:
         print(f"  {c.index:2d}. [{kind_labels.get(c.kind, c.kind)}] {c.label}")
@@ -384,7 +508,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--excel-dir", type=str, default="prompt_excel", help="Excel sources directory (default: prompt_excel)")
     p.add_argument("--docs-dir", type=str, default="prompt_docs", help="Docs sources directory (default: prompt_docs)")
     p.add_argument("--select", type=str, default=None, help="Path to a specific .xlsx file or a docs folder")
-    p.add_argument("--mode", type=str, choices=["excel2docs", "docs2excel", "docs2jsonl", "jsonl2excel"], default=None, help="Conversion mode (auto-detect if not specified)")
+    p.add_argument("--mode", type=str, choices=["excel2docs", "docs2excel", "docs2jsonl", "jsonl2excel", "jsonl_excel2jsonl"], default=None, help="Conversion mode (auto-detect if not specified)")
     p.add_argument("--non-interactive", action="store_true", help="Do not prompt; require --select or exit")
     return p.parse_args()
 
@@ -413,6 +537,9 @@ def main() -> int:
             print(f"选择的路径不存在: {selected}")
             return 2
         if selected.is_file() and selected.suffix.lower() == ".xlsx":
+            # 检测是否为内部 JSONL 格式或显式指定模式
+            if args.mode == "jsonl_excel2jsonl" or is_jsonl_excel(selected):
+                return run_jsonl_excel_to_jsonl(selected, repo_root)
             return run_start_convert(start_convert, mode="excel2docs", project_root=repo_root, select_path=selected, excel_dir=excel_dir)
         if selected.is_file() and selected.suffix.lower() == ".jsonl":
             return run_jsonl_to_excel(selected, repo_root)
@@ -431,6 +558,8 @@ def main() -> int:
         return 0
     if chosen.kind == "excel":
         return run_start_convert(start_convert, mode="excel2docs", project_root=repo_root, select_path=chosen.path, excel_dir=excel_dir)
+    elif chosen.kind == "jsonl_excel":
+        return run_jsonl_excel_to_jsonl(chosen.path, repo_root)
     elif chosen.kind == "docs2jsonl":
         return run_docs_to_jsonl(chosen.path, repo_root)
     elif chosen.kind == "jsonl":
