@@ -17,6 +17,7 @@
 - `make lint`：使用 `markdownlint-cli` 校验全仓库 Markdown。
 - `make build` / `make test` / `make clean`：目前为占位。
 - 提示词转换：`cd libs/external/prompts-library && python main.py`。
+- JSONL 批处理（Gemini）：`python libs/external/prompts-library/scripts/gemini_jsonl_batch.py --input 2 --output 2/prompts.jsonl`。
 - 备份：`bash backups/一键备份.sh` 或 `python backups/快速备份.py`。
 
 ## Coding Style & Naming Conventions
