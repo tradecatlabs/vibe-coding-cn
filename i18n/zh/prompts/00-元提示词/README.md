@@ -1,5 +1,9 @@
 # 元提示词 (Meta Prompts)
 
+> ⚠️ **最新提示词请访问网页版表格**：[📋 提示词在线表格](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203)
+
+---
+
 > 生成提示词的提示词
 
 ## 目录

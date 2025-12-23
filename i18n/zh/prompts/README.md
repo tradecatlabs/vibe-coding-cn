@@ -1,5 +1,11 @@
 # 💡 AI 提示词库 (Prompts)
 
+> ⚠️ **最新提示词请访问网页版表格**：[📋 提示词在线表格](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203)
+>
+> 本目录为离线备份，网页版表格持续更新，内容更全面。
+
+---
+
 `i18n/zh/prompts/` 存放本仓库的提示词资产：用 **01-系统提示词** 约束 AI 的边界与品味，用 **任务提示词** 驱动「需求澄清 → 计划 → 执行 → 复盘」的开发流水线。
 
 ## 推荐使用路径（从 0 到可控）

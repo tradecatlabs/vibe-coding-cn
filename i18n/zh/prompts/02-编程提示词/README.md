@@ -1,5 +1,9 @@
 # Coding Prompts 编程提示词
 
+> ⚠️ **最新提示词请访问网页版表格**：[📋 提示词在线表格](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203)
+
+---
+
 > 用于 Vibe Coding 流程的专用提示词集合
 
 ## 📋 提示词索引
