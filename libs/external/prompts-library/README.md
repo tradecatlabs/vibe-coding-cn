@@ -158,6 +158,19 @@ python3 main.py --select "prompt_docs/your_docs_folder"
 
 </details>
 
+<details>
+<summary><b>Gemini 无头：Markdown → JSONL 批处理</b></summary>
+
+```bash
+# 将目录中的 .md 提示词批量转为 JSONL（默认输入 2/，输出 2/prompts.jsonl）
+python3 scripts/gemini_jsonl_batch.py --input 2 --output 2/prompts.jsonl --model gemini-2.5-flash
+```
+
+- 脚本内置固定系统提示词，调用 `gemini --allowed-tools '' --output-format text` 确保纯文本 JSONL。
+- 需要本地已登录的 Gemini CLI；如需代理，请自行设置 `http_proxy/https_proxy` 环境变量。
+- 可用 `-v` 查看逐文件处理日志，`--gemini-cmd` 自定义 CLI 可执行路径。
+</details>
+
 ---
 
 <details>
