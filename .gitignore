@@ -46,16 +46,15 @@ ENV/
 *.log
 logs/
 
-# Data files
-*.csv
-*.zip
-*.jsonl
-*.db
-*.pyc
-*.png
-*.jpg
-*.pdf
-*.gz
+# Data files (保留 prompts-library 数据)
+# *.csv
+# *.zip
+# *.jsonl
+# *.db
+# *.png
+# *.jpg
+# *.pdf
+# *.gz
 
 # Environments
 .env
