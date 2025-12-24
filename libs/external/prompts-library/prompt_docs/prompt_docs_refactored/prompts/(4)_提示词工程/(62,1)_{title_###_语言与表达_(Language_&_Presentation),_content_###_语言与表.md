@@ -1,1 +1,0 @@
-{"title": "###_语言与表达_(Language_&_Presentation)", "content": "### 语言与表达 (Language & Presentation)\n\n* 语言要求:\n* 用英文进行研究（Research in English）。\n* 如需外部信息支撑，请优先检索英文资料。\n* 使用简体中文来呈现内容与结论（respond in Simplified Chinese）。\n* 最终产出:\n* 给出最佳答案或推理路径。\n* 务必做到当前能力下的最强表达，不留余地，不绕边界。\n"}

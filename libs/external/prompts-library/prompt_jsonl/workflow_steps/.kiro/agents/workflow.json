@@ -1,0 +1,39 @@
+{
+  "description": "全自动开发闭环工作流 Agent - 基于状态机+Hook驱动五步Agent（规格/计划/实施/验证/总控）",
+  "tools": ["fs_read", "fs_write", "execute_bash"],
+  "allowedTools": ["fs_read"],
+  "toolsSettings": {
+    "fs_write": {
+      "allowedPaths": [
+        "./workflow_engine/**",
+        "./artifacts/**"
+      ]
+    },
+    "execute_bash": {
+      "allowedCommands": [
+        "python3 .*/runner\\.py.*"
+      ],
+      "autoAllowReadonly": true
+    }
+  },
+  "hooks": [
+    {
+      "event": "agentSpawn",
+      "command": "cat workflow_engine/state/current_step.json 2>/dev/null || echo '{\"status\":\"idle\"}'",
+      "timeout_ms": 3000
+    },
+    {
+      "event": "stop",
+      "command": "python3 workflow_engine/runner.py status 2>/dev/null || true",
+      "timeout_ms": 5000
+    }
+  ],
+  "resources": [
+    "file://workflow_engine/README.md",
+    "file://step1_需求输入.jsonl",
+    "file://step2_执行计划.jsonl",
+    "file://step3_实施变更.jsonl",
+    "file://step4_验证发布.jsonl",
+    "file://step5_总控与循环.jsonl"
+  ]
+}

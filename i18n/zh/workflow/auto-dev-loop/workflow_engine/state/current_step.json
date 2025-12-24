@@ -1,0 +1,9 @@
+{
+  "run_id": "20251225T054501",
+  "step": "step5",
+  "status": "completed",
+  "verify": {
+    "status": "success"
+  },
+  "target_step": "done"
+}
