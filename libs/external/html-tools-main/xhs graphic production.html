@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小红书内容卡片</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .export-container {
+            background: #333333;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .card {
+            width: 320px;
+            background: #000000;
+            border: 2px solid #666666; /* 改为灰色边框 */
+            box-shadow: 4px 4px 0 #666666; /* 改为灰色阴影 */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            border-bottom: 2px solid #666666; /* 改为灰色边框 */
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            word-wrap: break-word;
+            background-color: #000000;
+        }
+        .content {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.5;
+            word-wrap: break-word;
+            background-color: #000000;
+        }
+        .editable {
+            position: relative;
+            min-height: 1em;
+        }
+        .editable:empty:before {
+            content: attr(data-placeholder);
+            color: #666666;
+            position: absolute;
+            pointer-events: none;
+        }
+        .editable:focus {
+            outline: none;
+            background-color: #000000;
+        }
+        [contenteditable] {
+            -webkit-user-select: text;
+            user-select: text;
+            background-color: #000000 !important;
+        }
+        [contenteditable]:focus {
+            background-color: #000000 !important;
+        }
+        ::selection {
+            background-color: #333333;
+            color: #ffffff;
+        }
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .export-btn {
+            padding: 10px 20px;
+            background: #000000;
+            color: #ffffff;
+            border: 2px solid #666666; /* 添加灰色边框保持一致性 */
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .export-btn:hover {
+            background: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="export-container" id="export-container">
+        <div id="card" class="card">
+            <div class="title editable" contenteditable="true" data-placeholder="点击输入标题"></div>
+            <div class="content editable" contenteditable="true" data-placeholder="点击输入内容"></div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="export-btn" onclick="exportToPng()">导出为PNG</button>
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        function exportToPng() {
+            // 清除选中状态
+            window.getSelection().removeAllRanges();
+            
+            const container = document.getElementById('export-container');
+            html2canvas(container, {
+                backgroundColor: '#333333',
+                scale: 2,
+                useCORS: true,
+                logging: false,
+                removeContainer: true,
+                foreignObjectRendering: false,
+                onclone: (document) => {
+                    const editables = document.querySelectorAll('.editable');
+                    editables.forEach(el => {
+                        // 确保克隆的元素保持相同的样式
+                        el.style.backgroundColor = '#000000';
+                        if (el.classList.contains('title')) {
+                            el.style.borderBottom = '2px solid #666666';
+                        }
+                    });
+                    // 确保卡片样式在克隆中保持一致
+                    const card = document.querySelector('.card');
+                    card.style.border = '2px solid #666666';
+                    card.style.boxShadow = '4px 4px 0 #666666';
+                }
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'xiaohongshu_card.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+        }
+
+        // 监听编辑事件，保持样式一致性
+        document.querySelectorAll('.editable').forEach(element => {
+            element.addEventListener('input', function() {
+                this.style.backgroundColor = '#000000';
+            });
+        });
+    </script>
+</body>
+</html>

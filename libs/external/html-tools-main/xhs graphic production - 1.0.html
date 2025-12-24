@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown 编辑与预览 (带同步滚动和滑块)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            padding-top: 20px;
+            overflow: hidden; /* Prevent body scrollbars if editor is full height */
+        }
+        .editor-container {
+            display: flex;
+            width: 90%; /* Use percentage for better responsiveness */
+            max-width: 1200px; /* Max width for large screens */
+            height: calc(100vh - 100px); /* Adjust height to fill more of the viewport */
+            background: #333333;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative; /* For resizer positioning if needed */
+        }
+        .markdown-editor, .preview-pane {
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            height: 100%; /* Fill the container height */
+        }
+        .markdown-editor {
+            /* flex: 1; Will be set by JS */
+            background: #222222;
+            color: #e0e0e0;
+            border: none;
+            resize: none;
+            font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            outline: none;
+        }
+        .resizer {
+            flex: 0 0 10px; /* Don't grow, don't shrink, base width 10px */
+            background: #555555;
+            cursor: col-resize;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none; /* Prevent text selection during drag */
+        }
+        .resizer::before { /* Optional: visual indicator for dragging */
+            content: '⋮';
+            color: #aaa;
+            font-size: 18px;
+            line-height: 0;
+        }
+        .preview-pane {
+            /* flex: 1; Will be set by JS */
+            background: #000000;
+            color: #ffffff;
+            /* border-left: 2px solid #666666; /* Replaced by resizer */
+            word-wrap: break-word;
+        }
+
+        /* Styling for rendered Markdown elements in preview-pane */
+        .preview-pane h1, .preview-pane h2, .preview-pane h3, .preview-pane h4, .preview-pane h5, .preview-pane h6 {
+            color: #ffffff;
+            border-bottom: 1px solid #444444;
+            padding-bottom: 5px;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+        .preview-pane h1 { font-size: 24px; font-weight: bold; border-bottom: 2px solid #666666; padding-bottom: 10px; margin-bottom: 15px;}
+        .preview-pane p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 1em;
+        }
+        .preview-pane ul, .preview-pane ol {
+            margin-left: 20px;
+            margin-bottom: 1em;
+        }
+        .preview-pane li {
+            margin-bottom: 0.5em;
+        }
+        .preview-pane blockquote {
+            border-left: 4px solid #555555;
+            padding-left: 10px;
+            color: #aaaaaa;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 1em;
+        }
+        .preview-pane pre {
+            background-color: #1e1e1e;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+        }
+        .preview-pane code {
+            font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+            background-color: #282c34;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .preview-pane pre code {
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+        }
+        .preview-pane table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 1em;
+        }
+        .preview-pane th, .preview-pane td {
+            border: 1px solid #666666;
+            padding: 8px;
+            text-align: left;
+        }
+        .preview-pane th {
+            background-color: #1a1a1a;
+        }
+        .preview-pane img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .export-btn {
+            padding: 10px 20px;
+            background: #000000;
+            color: #ffffff;
+            border: 2px solid #666666;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .export-btn:hover {
+            background: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="editor-container">
+        <textarea id="markdown-input" class="markdown-editor" placeholder="在此输入 Markdown... 例如：\n# 标题\n\n- 列表项1\n- 列表项2\n\n**加粗文本**"></textarea>
+        <div id="resizer" class="resizer"></div>
+        <div id="preview-output" class="preview-pane"></div>
+    </div>
+    <div class="button-container">
+        <button class="export-btn" onclick="exportToPng()">导出为PNG</button>
+    </div>
+
+    <script>
+        const markdownInput = document.getElementById('markdown-input');
+        const previewOutput = document.getElementById('preview-output');
+        const resizer = document.getElementById('resizer');
+        const editorContainer = document.querySelector('.editor-container');
+
+        // Initial flex distribution
+        markdownInput.style.flex = '1';
+        previewOutput.style.flex = '1';
+        
+        const converter = new showdown.Converter({
+            tables: true,
+            strikethrough: true,
+            tasklists: true,
+            ghCompatibleHeaderId: true,
+            simpleLineBreaks: true
+        });
+        converter.setFlavor('github');
+
+        function renderMarkdown() {
+            const markdownText = markdownInput.value;
+            const html = converter.makeHtml(markdownText);
+            previewOutput.innerHTML = html;
+        }
+
+        markdownInput.addEventListener('input', renderMarkdown);
+        renderMarkdown(); // Initial render
+
+        // --- Resizer Logic ---
+        let isResizing = false;
+        let startX, startEditorWidth, startPreviewWidth;
+
+        resizer.addEventListener('mousedown', (e) => {
+            e.preventDefault(); // Prevent text selection, etc.
+            isResizing = true;
+            startX = e.clientX;
+            startEditorWidth = markdownInput.offsetWidth;
+            startPreviewWidth = previewOutput.offsetWidth;
+
+            document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mouseup', stopResize);
+        });
+
+        function handleMouseMove(e) {
+            if (!isResizing) return;
+
+            const dx = e.clientX - startX;
+            let newEditorWidth = startEditorWidth + dx;
+            let newPreviewWidth = startPreviewWidth - dx;
+
+            const minWidth = 50; // Minimum width for panes
+
+            if (newEditorWidth < minWidth) {
+                newEditorWidth = minWidth;
+                newPreviewWidth = startEditorWidth + startPreviewWidth - minWidth;
+            } else if (newPreviewWidth < minWidth) {
+                newPreviewWidth = minWidth;
+                newEditorWidth = startEditorWidth + startPreviewWidth - minWidth;
+            }
+            
+            const totalWidth = editorContainer.offsetWidth - resizer.offsetWidth;
+            markdownInput.style.flex = `0 0 ${newEditorWidth}px`;
+            previewOutput.style.flex = `0 0 ${newPreviewWidth}px`;
+        }
+
+        function stopResize() {
+            isResizing = false;
+            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mouseup', stopResize);
+        }
+
+        // --- Synchronized Scrolling ---
+        let scrollTimeout;
+        let isSyncingEditor = false;
+        let isSyncingPreview = false;
+
+        markdownInput.addEventListener('scroll', () => {
+            if (isSyncingEditor) {
+                isSyncingEditor = false; // Reset for next manual scroll
+                return;
+            }
+            if (isResizing) return; // Don't sync scroll while resizing
+
+            isSyncingPreview = true; // Prevent preview scroll from triggering editor scroll
+            
+            const scrollPercentage = markdownInput.scrollTop / (markdownInput.scrollHeight - markdownInput.clientHeight);
+            if (isNaN(scrollPercentage)) return; // Avoid NaN if scrollHeight equals clientHeight
+
+            previewOutput.scrollTop = scrollPercentage * (previewOutput.scrollHeight - previewOutput.clientHeight);
+            
+            // Clear any existing timeout to avoid race conditions
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                isSyncingPreview = false;
+            }, 100); // Adjust delay as needed
+        });
+
+        previewOutput.addEventListener('scroll', () => {
+            if (isSyncingPreview) {
+                isSyncingPreview = false; // Reset for next manual scroll
+                return;
+            }
+            if (isResizing) return; // Don't sync scroll while resizing
+
+            isSyncingEditor = true; // Prevent editor scroll from triggering preview scroll
+
+            const scrollPercentage = previewOutput.scrollTop / (previewOutput.scrollHeight - previewOutput.clientHeight);
+            if (isNaN(scrollPercentage)) return;
+
+            markdownInput.scrollTop = scrollPercentage * (markdownInput.scrollHeight - markdownInput.clientHeight);
+            
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                isSyncingEditor = false;
+            }, 100); // Adjust delay as needed
+        });
+
+
+        function exportToPng() {
+            const previewPane = document.getElementById('preview-output');
+            const originalHeight = previewPane.style.height;
+            const originalOverflowY = previewPane.style.overflowY;
+
+            previewPane.style.height = previewPane.scrollHeight + 'px';
+            previewPane.style.overflowY = 'visible';
+            previewPane.style.backgroundColor = '#000000';
+
+            html2canvas(previewPane, {
+                backgroundColor: '#000000',
+                scale: 2,
+                useCORS: true,
+                logging: false,
+                onclone: (documentClone) => {
+                    const clonedPreviewPane = documentClone.getElementById('preview-output');
+                    if (clonedPreviewPane) {
+                        clonedPreviewPane.style.backgroundColor = '#000000';
+                        clonedPreviewPane.style.color = '#ffffff';
+                        clonedPreviewPane.style.height = clonedPreviewPane.scrollHeight + 'px';
+                        clonedPreviewPane.style.overflowY = 'visible';
+                    }
+                }
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'markdown_card.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            }).finally(() => {
+                previewPane.style.height = originalHeight;
+                previewPane.style.overflowY = originalOverflowY;
+            });
+        }
+    </script>
+</body>
+</html>

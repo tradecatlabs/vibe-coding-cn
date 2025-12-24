@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任务卡片生成器</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* 从顶部开始排列 */
+            align-items: center;
+            min-height: 100vh;
+            background: #121212; /* 深色背景，让卡片在预览时效果更一致 */
+            margin: 0;
+            font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif; /* 更现代的字体栈 */
+            padding: 30px 20px; /* 给body一些padding */
+            box-sizing: border-box;
+        }
+        .export-container {
+            background: #282828; /* 图片中外部容器的深灰色 */
+            padding: 20px;      /* 容器内边距 */
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* 给容器一些阴影 */
+        }
+        .card {
+            width: 370px; /* 调整宽度以适应两列布局和间距 */
+            background: #000000; /* 卡片纯黑背景 */
+            padding: 25px;
+            box-sizing: border-box;
+            color: #ffffff;
+            border-radius: 6px; /* 给卡片本身也加一点圆角 */
+        }
+        .card-header {
+            border-bottom: 1px solid #444444; /* 更细、颜色更深的分割线 */
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .task-id {
+            font-size: 14px;
+            color: #888888; /* 灰色ID文字 */
+            margin-bottom: 8px; /* ID和标题间距 */
+            min-height: 1.2em; /* 确保空的时候也有高度，placeholder可以显示 */
+        }
+        .task-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            word-wrap: break-word;
+            min-height: 1.2em;
+        }
+        .task-description {
+            font-size: 15px;
+            color: #e0e0e0;
+            line-height: 1.6;
+            word-wrap: break-word;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            min-height: 45px; /* 描述区域最小高度 */
+            padding: 5px 2px; /* 轻微内边距 */
+        }
+        .task-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 固定两列 */
+            gap: 15px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        .detail-item {
+            background-color: #1c1c1c; /* 详情项的背景色，比卡片黑底亮一点 */
+            padding: 12px;
+            border-radius: 6px;
+        }
+        /* 如果最后一个元素是奇数个中的最后一个（例如第3个），则让它占据整行 */
+        .detail-item:last-child:nth-child(odd) { 
+             grid-column: 1 / -1; /* 跨越所有列 */
+        }
+        .detail-item label {
+            font-weight: normal;
+            color: #aaaaaa; /* 标签文字颜色 */
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        .detail-item .value.editable,
+        .detail-item input[type="date"].value {
+            color: #ffffff;
+            background-color: #000000; /* 值区域纯黑背景 */
+            border: 1px solid #333333; /* 值区域的细边框 */
+            width: 100%;
+            padding: 8px 10px; /* 值区域内边距 */
+            min-height: 1.5em; /* 确保有高度 */
+            border-radius: 4px;
+            font-size: 15px;
+            line-height: 1.4;
+            box-sizing: border-box; /* padding和border不增加额外宽度 */
+        }
+
+        .detail-item input[type="date"].value {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            position: relative; 
+        }
+        .detail-item input[type="date"].value::-webkit-calendar-picker-indicator {
+            filter: invert(0.8) brightness(0.8); 
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        .detail-item .value.editable {
+            position: relative; 
+        }
+        .detail-item .value.editable:empty::before {
+            content: attr(data-placeholder);
+            color: #555555; 
+            position: absolute;
+            left: 10px; 
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none; 
+            width: calc(100% - 20px); 
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .editable {
+            position: relative; 
+            min-height: 1.2em; 
+        }
+        .editable:empty:not(:focus)::before { 
+            content: attr(data-placeholder);
+            color: #666666; 
+            position: absolute;
+            left: 0; 
+            top: 0;  
+            pointer-events: none; 
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .task-id.editable:empty:not(:focus)::before,
+        .task-title.editable:empty:not(:focus)::before,
+        .task-description.editable:empty:not(:focus)::before {
+            left: 2px; 
+            top: 2px;
+        }
+        .editable:focus {
+            outline: 1px dashed #777777;
+            background-color: #0a0a0a; 
+        }
+        [contenteditable] {
+            -webkit-user-select: text;
+            user-select: text;
+        }
+        [contenteditable]:focus {
+            background-color: #0a0a0a !important;
+        }
+        ::selection {
+            background-color: #444444;
+            color: #ffffff;
+        }
+        .button-container {
+            margin-top: 25px;
+            text-align: center;
+        }
+        .export-btn {
+            padding: 12px 25px;
+            background: #1c1c1c;
+            color: #ffffff;
+            border: 1px solid #444444;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 6px;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+        .export-btn:hover {
+            background: #282828;
+            border-color: #555555;
+        }
+    </style>
+</head>
+<body>
+    <div class="export-container" id="export-container">
+        <div id="taskCard" class="card">
+            <div class="card-header">
+                <div class="task-id editable" contenteditable="true" data-placeholder="任务ID (可选)"></div>
+                <div class="task-title editable" contenteditable="true" data-placeholder="点击输入任务标题"></div>
+            </div>
+
+            <div class="task-description editable" contenteditable="true" data-placeholder="点击输入任务详细描述..."></div>
+
+            <div class="task-details">
+                <div class="detail-item">
+                    <label for="assignee-value">负责人:</label>
+                    <div id="assignee-value" class="value editable" contenteditable="true" data-placeholder="未分配"></div>
+                </div>
+                <!-- 标签现在是第二个 -->
+                <div class="detail-item">
+                    <label for="tags-value">标签:</label>
+                    <div id="tags-value" class="value editable" contenteditable="true" data-placeholder="例如: 项目A, Bug"></div>
+                </div>
+                <!-- 截止日期现在是第三个，会自动占据整行 -->
+                <div class="detail-item"> 
+                    <label for="dueDate-value">截止日期:</label>
+                    <input type="date" id="dueDate-value" class="value">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="export-btn" onclick="exportToPng()">导出为PNG</button>
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        function sanitizeFilename(name) {
+            return name.replace(/[^a-z0-9_\-.\u4e00-\u9fa5\s]/gi, '').replace(/\s+/g, '_');
+        }
+
+        function exportToPng() {
+            if (window.getSelection) {
+                if (window.getSelection().empty) { window.getSelection().empty(); }
+                else if (window.getSelection().removeAllRanges) { window.getSelection().removeAllRanges(); }
+            } else if (document.selection) { document.selection.empty(); }
+            
+            const container = document.getElementById('export-container');
+            // const card = document.getElementById('taskCard'); // card variable not strictly needed here
+            const originalDueDate = document.getElementById('dueDate-value').value;
+
+            html2canvas(container, {
+                backgroundColor: null, 
+                scale: 2,
+                useCORS: true,
+                logging: false, // Changed to false to reduce console noise unless debugging
+                onclone: (documentClone) => {
+                    // const clonedCard = documentClone.getElementById('taskCard'); // clonedCard not strictly needed
+                    
+                    const dueDateInputClone = documentClone.getElementById('dueDate-value');
+                    if (dueDateInputClone) {
+                        dueDateInputClone.value = originalDueDate;
+                        if (!originalDueDate) {
+                            dueDateInputClone.style.color = '#555555'; 
+                        } else {
+                             dueDateInputClone.style.color = '#ffffff';
+                        }
+                    }
+
+                    const editables = documentClone.querySelectorAll('.editable');
+                    editables.forEach(el => {
+                        // Placeholder handling is mostly done by CSS (:empty::before)
+                        // If specific adjustments needed for clone, add here.
+                        // For example, ensuring text color if content exists:
+                        // if (el.textContent.trim() !== '' && el.classList.contains('value')) {
+                        //     el.style.color = '#ffffff';
+                        // }
+                    });
+                }
+            }).then(canvas => {
+                const link = document.createElement('a');
+                const taskTitleElement = document.getElementById('task-title');
+                let filename = '任务卡片.png';
+                if (taskTitleElement && taskTitleElement.textContent.trim() !== '') {
+                    const sanitizedTitle = sanitizeFilename(taskTitleElement.textContent.trim());
+                    if (sanitizedTitle) { // Ensure title isn't just invalid chars
+                        filename = sanitizedTitle + '.png';
+                    }
+                }
+                link.download = filename;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            }).catch(err => {
+                console.error("导出PNG失败:", err);
+                alert("导出PNG失败，请查看控制台获取更多信息。");
+            });
+        }
+
+        document.querySelectorAll('.editable').forEach(element => {
+            element.addEventListener('focus', function() {
+                // CSS handles placeholder via :not(:focus)::before
+            });
+            element.addEventListener('blur', function() {
+                // CSS handles placeholder
+            });
+        });
+    </script>
+</body>
+</html>

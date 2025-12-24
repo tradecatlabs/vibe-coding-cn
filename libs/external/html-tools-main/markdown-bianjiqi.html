@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Editor</title>
+    <style>
+        :root {
+            --border-color: #eee;
+            --bg-color: #fafafa;
+            --text-color: #333;
+            --btn-border: #ddd;
+            --code-bg: #f5f5f5;
+            --scrollbar-color: #ccc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            overflow: hidden;
+        }
+
+        .header {
+            padding: 8px 20px;
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 14px;
+            color: var(--text-color);
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            border: 1px solid var(--btn-border);
+            background: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text-color);
+            min-width: 80px;
+            text-align: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background: var(--code-bg);
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        #preview, #editor {
+            width: 50%;
+            height: 100%;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        #preview {
+            color: var(--text-color);
+            border-right: 1px solid var(--border-color);
+            overflow-y: auto;
+        }
+        
+        #editor {
+            font-family: monospace;
+            font-size: 14px;
+            border: none;
+            outline: none;
+            resize: none;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--scrollbar-color) transparent;
+        }
+
+        #editor::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #editor::-webkit-scrollbar-thumb {
+            background-color: var(--scrollbar-color);
+            border-radius: 4px;
+        }
+
+        #editor::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        .preview-content {
+            height: auto;
+            min-height: 100%;
+            padding-right: 8px;
+        }
+
+        #preview h1, #preview h2, #preview h3 {
+            margin: 16px 0;
+            font-weight: 500;
+        }
+
+        #preview h1:first-child {
+            margin-top: 0;
+        }
+
+        #preview p {
+            margin: 12px 0;
+        }
+
+        #preview ul, #preview ol {
+            padding-left: 24px;
+            margin: 12px 0;
+        }
+
+        #preview code {
+            background-color: var(--code-bg);
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        #preview pre code {
+            display: block;
+            padding: 12px;
+            overflow-x: auto;
+            line-height: 1.45;
+        }
+
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            display: none;
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="toolbar">
+            <button class="btn" id="copyBtn">一键复制</button>
+            <button class="btn" id="exportBtn">导出文本</button>
+        </div>
+    </div>
+    <div class="content">
+        <div id="preview">
+            <div class="preview-content"></div>
+        </div>
+        <textarea id="editor" placeholder="在这里输入 Markdown 文本..."></textarea>
+    </div>
+    <div id="toast" class="toast"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const editor = document.getElementById('editor');
+            const preview = document.getElementById('preview');
+            const previewContent = preview.querySelector('.preview-content');
+            const toast = document.getElementById('toast');
+            const copyBtn = document.getElementById('copyBtn');
+            const exportBtn = document.getElementById('exportBtn');
+
+            // Initialize marked with safe options
+            marked.setOptions({
+                breaks: true,
+                gfm: true,
+                headerIds: true,
+                sanitize: false,
+                highlight: function(code, lang) {
+                    return code;
+                }
+            });
+
+            function showToast(message, duration = 2000) {
+                toast.textContent = message;
+                toast.style.display = 'block';
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, duration);
+            }
+
+            function updatePreview() {
+                try {
+                    const markdownText = editor.value;
+                    const htmlContent = marked.parse(markdownText);
+                    previewContent.innerHTML = htmlContent;
+                } catch (error) {
+                    console.error('Markdown parsing error:', error);
+                    previewContent.innerHTML = '<p style="color: red;">Error parsing markdown</p>';
+                }
+            }
+
+            function debounce(func, wait) {
+                let timeout;
+                return function(...args) {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => func.apply(this, args), wait);
+                };
+            }
+
+            const debouncedUpdate = debounce(updatePreview, 150);
+
+            async function copyText() {
+                try {
+                    await navigator.clipboard.writeText(editor.value);
+                    showToast('已复制到剪贴板');
+                } catch (err) {
+                    console.error('Copy failed:', err);
+                    showToast('复制失败');
+                }
+            }
+
+            function exportTxt() {
+                try {
+                    const text = editor.value;
+                    const blob = new Blob([text], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    const timestamp = new Date().toISOString().slice(0,19).replace(/[-:]/g, '');
+                    a.href = url;
+                    a.download = `markdown_${timestamp}.txt`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    showToast('已导出为文本文件');
+                } catch (err) {
+                    console.error('Export failed:', err);
+                    showToast('导出失败');
+                }
+            }
+
+            // Event Listeners
+            editor.addEventListener('input', debouncedUpdate);
+            copyBtn.addEventListener('click', copyText);
+            exportBtn.addEventListener('click', exportTxt);
+
+            // Sync scroll
+            editor.addEventListener('scroll', () => {
+                const percentage = editor.scrollTop / (editor.scrollHeight - editor.clientHeight);
+                preview.scrollTop = percentage * (preview.scrollHeight - preview.clientHeight);
+            });
+
+            // Initial content
+            const initialText = `# Markdown 编辑器
+
+## 欢迎使用！
+
+这是一个简单的 Markdown 编辑器。
+
+### 主要功能：
+
+1. 实时预览
+2. 一键复制内容
+3. 导出文本文件
+4. 支持常用 Markdown 语法
+
+### 快速开始：
+
+- 在右侧输入 Markdown 文本
+- 在左侧查看实时预览
+- 使用顶部按钮进行操作
+
+\`\`\`markdown
+# 示例代码
+**粗体** 和 *斜体*
+- 列表项
+- 另一个列表项
+\`\`\``;
+
+            editor.value = initialText;
+            updatePreview();
+        });
+    </script>
+</body>
+</html>

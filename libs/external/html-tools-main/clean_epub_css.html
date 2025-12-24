@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPUB CSS 清理工具 (Web版)</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #drop-area {
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            padding: 30px;
+            text-align: center;
+            background-color: #fff;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        #drop-area.highlight {
+            border-color: dodgerblue;
+        }
+        #drop-area p {
+            margin: 0;
+            color: #555;
+        }
+        #fileInput {
+            display: none; /* Hide default input, use drop area or label */
+        }
+        label.file-label {
+             display: inline-block;
+             padding: 10px 15px;
+             background-color: dodgerblue;
+             color: white;
+             border: none;
+             border-radius: 4px;
+             cursor: pointer;
+             margin-top: 10px;
+             transition: background-color 0.2s;
+        }
+         label.file-label:hover {
+             background-color: #007ae5;
+         }
+
+        #status {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #eee;
+            border-radius: 4px;
+            min-height: 40px; /* Ensure space for messages */
+            text-align: center;
+            font-weight: bold;
+        }
+        .status-details {
+             font-size: 0.9em;
+             color: #555;
+             margin-top: 5px;
+        }
+        .warning {
+            color: #a00;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fdd;
+            border: 1px solid #fbb;
+            border-radius: 4px;
+        }
+        progress {
+            width: 100%;
+            margin-top: 10px;
+            display: none; /* Hidden by default */
+        }
+    </style>
+    <!-- Include JSZip library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- Include FileSaver.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+
+    <h1>EPUB CSS 清理工具 (Web版)</h1>
+
+    <p>将单个 EPUB 文件或包含多个 EPUB 的 ZIP 文件拖拽到下方区域，或点击按钮选择文件，即可移除指定的 CSS 样式。</p>
+
+    <div id="drop-area">
+        <!-- Accept both .epub and .zip -->
+        <input type="file" id="fileInput" accept=".epub,.zip">
+        <p>将 EPUB 或 ZIP 文件拖拽到这里</p>
+        <label for="fileInput" class="file-label">或者选择文件</label>
+    </div>
+
+    <progress id="progressBar" value="0" max="100"></progress>
+    <div id="status">请选择或拖拽一个 EPUB 或 ZIP 文件。</div>
+    <div id="statusDetails" class="status-details"></div>
+
+    <div class="warning">
+        <strong>重要提示:</strong> 此工具在你的浏览器中处理文件，不会上传到服务器。处理后的文件需要你手动下载。建议在处理前备份原始文件！处理 ZIP 文件时，会生成一个包含所有处理后（或原始）EPUB 的新 ZIP 文件。
+    </div>
+
+    <script>
+        // --- Check if libraries loaded ---
+        if (typeof JSZip === 'undefined' || typeof saveAs === 'undefined') {
+            const errorMsg = '错误：无法加载必需的库 (JSZip 或 FileSaver)。请检查您的网络连接，并确保没有浏览器插件（如广告拦截器）阻止从 cdnjs.cloudflare.com 加载脚本。然后请刷新页面重试。';
+            document.getElementById('status').textContent = errorMsg;
+            document.getElementById('status').style.color = '#a00';
+            document.getElementById('drop-area').style.display = 'none';
+            document.querySelector('.warning').textContent = errorMsg;
+        } else {
+            // --- Global Variables & Constants ---
+            const dropArea = document.getElementById('drop-area');
+            const fileInput = document.getElementById('fileInput');
+            const statusDiv = document.getElementById('status');
+            const statusDetailsDiv = document.getElementById('statusDetails');
+            const progressBar = document.getElementById('progressBar');
+            const CSS_REMOVE_PATTERN = /((text-indent|line-height|font-size|height|font-family|color)\s*:\s*[^;]*;|display\s*:\s*block\s*;)/ig;
+
+            // --- Event Handlers ---
+            setupDragDropHandlers();
+            fileInput.addEventListener('change', handleFileSelect, false);
+
+            function setupDragDropHandlers() {
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, preventDefaults, false);
+                    document.body.addEventListener(eventName, preventDefaults, false);
+                });
+                ['dragenter', 'dragover'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, () => dropArea.classList.add('highlight'), false);
+                });
+                ['dragleave', 'drop'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, () => dropArea.classList.remove('highlight'), false);
+                });
+                dropArea.addEventListener('drop', handleDrop, false);
+            }
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            function handleDrop(e) {
+                handleFiles(e.dataTransfer.files);
+            }
+
+            function handleFileSelect(e) {
+                 handleFiles(e.target.files);
+            }
+
+            // --- Main File Handling Logic ---
+            function handleFiles(files) {
+                if (files.length === 0) return;
+                const file = files[0]; // Process only the first file
+
+                // Check file type
+                const isEpub = file.name.toLowerCase().endsWith('.epub');
+                const isZip = file.name.toLowerCase().endsWith('.zip');
+
+                if (!isEpub && !isZip) {
+                    updateStatus('错误：请选择一个 .epub 或 .zip 文件。', true);
+                    resetInput();
+                    return;
+                }
+
+                updateStatus(`正在读取文件: ${file.name}...`);
+                clearStatusDetails();
+                progressBar.style.display = 'block';
+                progressBar.value = 0;
+
+                const reader = new FileReader();
+                reader.onload = async (e) => {
+                    const fileContent = e.target.result; // ArrayBuffer
+                    try {
+                        if (isEpub) {
+                            updateStatus(`正在处理 EPUB 文件: ${file.name}...`);
+                            const result = await processEpub(fileContent, file.name);
+                            if (result.blob) {
+                                saveAs(result.blob, result.filename);
+                                updateStatus(`处理完成！已生成 ${result.filename}。`);
+                            } else if (result.modified === false) {
+                                updateStatus('信息：文件无需修改。');
+                            }
+                            resetInput();
+                        } else if (isZip) {
+                            updateStatus(`正在处理 ZIP 压缩包: ${file.name}...`);
+                            await processZipArchive(fileContent, file.name);
+                        }
+                    } catch (error) {
+                        console.error("处理失败:", error);
+                        updateStatus(`处理失败：${error.message}`, true);
+                        resetInput();
+                    }
+                };
+                reader.onprogress = updateReadProgress;
+                reader.onerror = handleReadError;
+                reader.readAsArrayBuffer(file);
+            }
+
+             function updateReadProgress(e) {
+                 if (e.lengthComputable) {
+                     progressBar.value = Math.round((e.loaded / e.total) * 10); // Reading is ~10%
+                 }
+             }
+
+             function handleReadError() {
+                 updateStatus('错误：读取文件时出错。', true);
+                 resetInput();
+             }
+
+            // --- ZIP Archive Processing ---
+            async function processZipArchive(zipFileContent, zipFilename) {
+                let outputZip = new JSZip();
+                let processedCount = 0;
+                let failedCount = 0;
+                let foundCount = 0;
+                let modifiedCount = 0;
+                let filePromises = [];
+
+                updateStatus(`正在打开 ZIP 压缩包...`);
+                progressBar.value = 15;
+                const inputZip = await JSZip.loadAsync(zipFileContent);
+                const totalFilesInZip = Object.keys(inputZip.files).length;
+
+                updateStatus(`在 ZIP 中查找 EPUB 文件...`);
+
+                inputZip.forEach((relativePath, zipEntry) => {
+                    if (!zipEntry.dir && relativePath.toLowerCase().endsWith('.epub')) {
+                        foundCount++;
+                        updateStatusDetails(`找到 EPUB: ${relativePath}`);
+
+                        // Add a promise to process this EPUB entry
+                        const promise = zipEntry.async('arraybuffer')
+                            .then(async (innerEpubContent) => {
+                                try {
+                                    // Process the inner EPUB
+                                    const result = await processEpub(innerEpubContent, relativePath);
+                                    if (result.blob) {
+                                        // Add modified EPUB to output ZIP
+                                        outputZip.file(result.filename, result.blob);
+                                        modifiedCount++;
+                                        console.log(`Added cleaned ${result.filename} to output zip.`);
+                                    } else {
+                                        // Add original EPUB back if not modified
+                                        outputZip.file(relativePath, innerEpubContent);
+                                        console.log(`Added original ${relativePath} (no changes needed) to output zip.`);
+                                    }
+                                    processedCount++;
+                                } catch (epubError) {
+                                    // Add original EPUB back if processing failed
+                                    console.error(`Error processing inner EPUB ${relativePath}:`, epubError);
+                                    updateStatusDetails(`处理 ${relativePath} 时出错，将保留原文件。`);
+                                    outputZip.file(relativePath, innerEpubContent); // Add original back
+                                    failedCount++;
+                                }
+                            })
+                            .catch(extractError => {
+                                // Handle error extracting the inner EPUB content
+                                console.error(`Error extracting inner EPUB ${relativePath} from zip:`, extractError);
+                                updateStatusDetails(`无法从 ZIP 中提取 ${relativePath}，已跳过。`);
+                                failedCount++;
+                            })
+                            .finally(() => {
+                                // Update progress based on entries processed (success or fail)
+                                const progress = 15 + Math.round(((processedCount + failedCount) / foundCount) * 60); // Processing EPUBs is ~60%
+                                progressBar.value = Math.min(progress, 75); // Cap at 75 before final packing
+                            });
+                        filePromises.push(promise);
+                    }
+                    // We are currently NOT adding non-EPUB files from the source ZIP to the output ZIP.
+                    // To do so, handle the 'else' case here and add zipEntry data to outputZip.
+                });
+
+                // Wait for all inner EPUB processing promises to complete
+                await Promise.all(filePromises);
+
+                 progressBar.value = 80; // Done processing files inside zip
+
+                if (foundCount === 0) {
+                    updateStatus('错误：在 ZIP 文件中未找到任何 EPUB 文件。', true);
+                    resetInput();
+                    return;
+                }
+
+                updateStatus(`处理了 ${foundCount} 个 EPUB 文件。正在生成输出 ZIP...`);
+                statusDetailsDiv.innerHTML += `<br>成功: ${processedCount}, 修改: ${modifiedCount}, 失败/跳过: ${failedCount}`;
+                progressBar.value = 90;
+
+                const outputZipBlob = await outputZip.generateAsync({
+                    type: "blob",
+                    compression: "DEFLATE",
+                    platform: "browser"
+                 }, (metadata) => {
+                    progressBar.value = 90 + Math.round(metadata.percent * 0.1);
+                 });
+
+                progressBar.value = 100;
+                const baseName = zipFilename.substring(0, zipFilename.lastIndexOf('.')) || zipFilename;
+                const outputZipFilename = `${baseName}_cleaned.zip`;
+                saveAs(outputZipBlob, outputZipFilename);
+
+                updateStatus(`处理完成！已生成包含处理后 EPUB 的 ${outputZipFilename}。`);
+                resetInput();
+            }
+
+
+            // --- Single EPUB Processing (Modified to return result) ---
+            async function processEpub(fileContent, originalFilename) {
+                 // This function now returns an object:
+                 // { blob: Blob, filename: string } if modified
+                 // { modified: false } if no modification needed
+                 // Throws error if processing fails critically
+
+                console.log(`Processing EPUB: ${originalFilename}`);
+                // Note: Progress bar updates inside this function are less meaningful now,
+                // as the overall progress is handled by the caller (handleFiles or processZipArchive).
+                // We could pass a progress callback if detailed inner progress is needed.
+
+                const zip = await JSZip.loadAsync(fileContent);
+                const newZip = new JSZip();
+                let cssFilesFound = false;
+                let modified = false;
+                let filePromises = [];
+
+                zip.forEach((relativePath, zipEntry) => {
+                    if (zipEntry.dir) { newZip.folder(relativePath); return; }
+
+                    const options = {
+                        date: zipEntry.date,
+                        unixPermissions: zipEntry.unixPermissions,
+                        dosPermissions: zipEntry.dosPermissions,
+                        comment: zipEntry.comment,
+                        dir: zipEntry.dir,
+                        compression: zipEntry.options?.compression === "STORE" ? "STORE" : "DEFLATE"
+                    };
+
+                    if (relativePath.toLowerCase() === 'mimetype') {
+                        const promise = zipEntry.async('uint8array').then(data => {
+                            newZip.file(relativePath, data, { ...options, compression: "STORE" });
+                        });
+                         filePromises.push(promise);
+                    } else if (relativePath.toLowerCase().endsWith('.css')) {
+                        cssFilesFound = true;
+                        const promise = zipEntry.async('string').then(originalCss => {
+                            const cleanedCss = originalCss.replace(CSS_REMOVE_PATTERN, '');
+                            let contentToAdd = originalCss;
+                            if (cleanedCss !== originalCss) {
+                                modified = true;
+                                contentToAdd = cleanedCss;
+                                console.log(`  Cleaned CSS: ${relativePath}`);
+                            }
+                            newZip.file(relativePath, contentToAdd, options);
+                        }).catch(err => {
+                             console.warn(`  Could not process CSS ${relativePath} as text, keeping original. Error: ${err}`);
+                             return zipEntry.async('uint8array').then(originalData => {
+                                 newZip.file(relativePath, originalData, options);
+                             });
+                         });
+                         filePromises.push(promise);
+                    } else {
+                        const promise = zipEntry.async('uint8array').then(data => {
+                            newZip.file(relativePath, data, options);
+                        });
+                        filePromises.push(promise);
+                    }
+                });
+
+                await Promise.all(filePromises);
+
+                if (!modified) {
+                    console.log(`  EPUB ${originalFilename} - No modifications needed.`);
+                    return { modified: false }; // Indicate no changes were made
+                }
+
+                console.log(`  Repacking modified EPUB: ${originalFilename}`);
+                const newEpubBlob = await newZip.generateAsync({
+                    type: "blob",
+                    mimeType: "application/epub+zip",
+                    compression: "DEFLATE",
+                    platform: "browser"
+                });
+
+                const baseName = originalFilename.substring(0, originalFilename.lastIndexOf('.')) || originalFilename;
+                const newFilename = `${baseName}_cleaned.epub`;
+
+                return { blob: newEpubBlob, filename: newFilename }; // Return data for the caller
+            } // end of processEpub function
+
+            // --- UI Update Functions ---
+            function updateStatus(message, isError = false) {
+                statusDiv.textContent = message;
+                statusDiv.style.color = isError ? '#a00' : '#000';
+                if (isError) {
+                   progressBar.style.display = 'none';
+                   clearStatusDetails();
+                }
+            }
+             function updateStatusDetails(message) {
+                 statusDetailsDiv.innerHTML += message + "<br>";
+             }
+             function clearStatusDetails() {
+                  statusDetailsDiv.innerHTML = "";
+             }
+
+            function resetInput() {
+                 fileInput.value = '';
+                 // Hide progress bar after a delay
+                 setTimeout(() => { progressBar.style.display = 'none'; progressBar.value = 0; }, 5000);
+            }
+        } // End of the 'else' block for library check
+
+    </script>
+
+</body>
+</html>
