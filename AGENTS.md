@@ -1,95 +1,301 @@
 # Repository Guidelines
 
-## Project Structure & Module Organization
-- 根目录：`README.md` 给出全貌，`Makefile` 封装日常命令，`CONTRIBUTING.md` 说明贡献流程，`LICENSE` 载明协议。保持根目录扁平，避免巨石文件。
-- 多语言 i18n：`i18n/<lang>/` 统一三层结构（documents / prompts / skills）。现有语言：中文 `zh`、英文 `en`、希伯来语 `he`，以及 `es`、`hi`、`ar`、`pt`、`ru`、`fr`、`de`、`ja`、`ko`、`it`、`tr`、`nl`、`pl`、`id`、`vi`、`th`、`fa`、`uk`、`bn`、`ta`、`ur`、`ms`、`sw`、`ha`；新增语言遵循同样层级。
-- 文档库：`i18n/zh/documents/` 是默认中文方法论入口，含子目录：`方法论与原则/`、`模板与资源/`、`教程与指南/`、`外部资源聚合/`、`胶水编程/`、`从零开始vibecoding/` 等。
-- 提示词资产：`i18n/zh/prompts/` 按角色拆分（`system_prompts/`、`assistant_prompts/`、`coding_prompts/`、`user_prompts/`、`meta_prompts/`），`libs/external/prompts-library/` 提供 Excel ↔ Markdown 互转工具。
-- 技能库：`i18n/zh/skills/` 包含模块化技能集，如 `ccxt/`、`postgresql/`、`telegram-dev/`、`claude-code-guide/`、`ddd-doc-steward/`、`claude-skills/` 等 17+ 个技能目录。
-- 代码与集成：`libs/` 预留核心实现骨架，`common/`（含 `models/`、`utils/`）、`database/`、`external/` 分别对应通用模型、存储适配与外部依赖。
-- 外部工具：`libs/external/` 含 `prompts-library/`、`l10n-tool/`、`my-nvim/`、`MCPlayerTransfer/`、`XHS-image-to-PDF-conversion/` 等。
-- 备份：`backups/` 内含 `一键备份.sh`、`快速备份.py` 和 `gz/` 存档目录。
-- 脚本：`scripts/` 目录预留项目脚本。
-- GitHub 配置：`.github/` 含 `ISSUE_TEMPLATE/`、`PULL_REQUEST_TEMPLATE.md`、`SECURITY.md`、`FUNDING.yml`。
+本文件为 AI Agent 提供项目操作手册与约束清单，确保 Agent 行为可控、可复现。
 
-## Build, Test, and Development Commands
-- `make help`：列出所有 Make 目标。
-- `make lint`：使用 `markdownlint-cli` 校验全仓库 Markdown。
-- `make build` / `make test` / `make clean`：目前为占位。
-- 提示词转换：`cd libs/external/prompts-library && python main.py`。
-- JSONL 批处理（Gemini）：`python libs/external/prompts-library/scripts/gemini_jsonl_batch.py --input 2 --output 2/prompts.jsonl`。
-- 备份：`bash backups/一键备份.sh` 或 `python backups/快速备份.py`。
+---
 
-## Coding Style & Naming Conventions
-- 文字层：文档、注释、日志使用中文；代码符号统一英文且语义直白。
-- 缩进与排版：全仓保持空格缩进（2 或 4 空格不混用）；行宽控制在 120 列内。
-- 设计品味：优先消除分支与重复；函数单一职责且短小；命名小写加中划线或下划线。
-- 依赖管理：新增工具或库时记录安装方式、最小版本与来源。
+## 1. Mission & Scope（目标与边界）
 
-## Testing Guidelines
-- 当前无实测用例；引入代码时请至少提供最小可复现测试。
-- 文档与提示词改动：提交前运行 `make lint`。
-- 覆盖率基线由模块维护者设定。
+### 允许的操作
+- 读取、修改 `i18n/`、`libs/` 下的文档与代码
+- 执行 `make lint`、备份脚本、prompts-library 转换工具
+- 新增/修改提示词、技能、文档
+- 提交符合规范的 commit
 
-## Commit & Pull Request Guidelines
-- Commit 遵循简化 Conventional Commits：`feat|fix|docs|chore|refactor|test: scope – summary`。
-- PR 必填：变更摘要、动机或关联 Issue、测试与验证步骤。
-- 提交前清单：跑通 `make lint`；更新对应文档与 `Makefile` 目标；确认不携带临时文件或机密数据。
+### 禁止的操作
+- 修改 `.github/workflows/` 中的 CI 配置（除非任务明确要求）
+- 删除或覆盖 `backups/gz/` 中的存档文件
+- 修改 `LICENSE`、`CODE_OF_CONDUCT.md`
+- 在代码中硬编码密钥、Token 或敏感凭证
+- 未经确认的大范围重构
 
-## Security & Configuration Tips
-- 运行备份或转换脚本前，确认输出目录不会覆盖私有数据。
-- 外部依赖来源记录在 `libs/external/` 目录下，引入第三方脚本需标明许可证与来源。
+### 敏感区域（禁止自动修改）
+- `.github/workflows/*.yml` - CI/CD 配置
+- `backups/gz/` - 历史备份存档
+- `.env*` 文件（如存在）
 
-## Architecture Overview & Workflow
-- 工作流倡导「规划 → 上下文固定 → 分步实现 → 自测 → 复盘」。
-- 设计决策与目录结构更新后，请同步修订本文件与相关文档。
+---
+
+## 2. Golden Path（推荐执行路径）
+
+```bash
+# 1. 拉取最新代码
+git pull origin main
+
+# 2. 运行 lint 检查
+make lint
+
+# 3. 执行修改任务
+# ...
+
+# 4. 再次 lint 验证
+make lint
+
+# 5. 提交变更
+git add -A
+git commit -m "feat|fix|docs|chore: scope - summary"
+git push
+```
+
+---
+
+## 3. Must-Run Commands（必须执行的命令清单）
+
+### 环境要求
+- Node.js 16+（用于 markdownlint-cli）
+- Python 3.8+（用于 prompts-library 工具）
+- Git
+
+### 核心命令
+
+| 命令 | 用途 | 前置条件 |
+|:---|:---|:---|
+| `make help` | 列出所有 Make 目标 | 无 |
+| `make lint` | 校验全仓库 Markdown | 需安装 markdownlint-cli |
+| `bash backups/一键备份.sh` | 创建完整项目备份 | 无 |
+| `python backups/快速备份.py` | Python 版备份脚本 | Python 3.8+ |
+| `cd libs/external/prompts-library && python main.py` | 提示词格式转换 | pandas, openpyxl, PyYAML |
+
+### prompts-library 支持的转换模式
+1. Excel → Docs：将 Excel 工作簿转换为 Markdown 文档目录
+2. Docs → Excel：将 Markdown 文档目录还原为 Excel 工作簿
+3. Docs → JSONL：将 Markdown 文档转换为 JSONL 格式
+4. JSONL → Excel：将 JSONL 转换为 Excel
+5. Excel(JSONL) → JSONL：将内部 JSONL 格式的 Excel 转换为 JSONL 文件
+
+---
+
+## 4. Code Change Rules（修改约束）
+
+### 架构原则
+- 保持根目录扁平，避免巨石文件
+- 多语言资产统一放在 `i18n/<lang>/` 下，遵循三层结构（documents / prompts / skills）
+- 新增语言遵循现有目录层级
+
+### 模块边界
+- `i18n/zh/` - 中文主语料（默认）
+- `i18n/en/` - 英文版本
+- `libs/common/` - 通用模块
+- `libs/external/` - 外部工具与依赖
+
+### 依赖添加规则
+- 新增工具或库时记录安装方式、最小版本与来源
+- 外部依赖来源记录在 `libs/external/` 目录下
+- 引入第三方脚本需标明许可证与来源
+
+### 禁止行为
+- 禁止"顺手重构/大范围改动"除非任务明确要求
+- 禁止删除现有测试用例（除非任务要求）
+- 禁止在代码中硬编码敏感信息
+
+---
+
+## 5. Style & Quality（风格与质量标准）
+
+### 格式化工具
+- Markdown：`markdownlint-cli`（通过 `make lint` 执行）
+- CI 自动检查：`.github/workflows/ci.yml`
+
+### 命名约定
+- 文档、注释、日志使用中文
+- 代码符号统一英文且语义直白
+- 文件名小写加中划线或下划线
+
+### 缩进与排版
+- 全仓保持空格缩进（2 或 4 空格不混用）
+- 行宽控制在 120 列内
+
+### 设计品味
+- 优先消除分支与重复
+- 函数单一职责且短小
+
+---
+
+## 6. Project Map（项目结构速览）
+
+```
+.
+├── README.md                    # 项目主文档
+├── AGENTS.md                    # AI Agent 行为准则（本文件）
+├── CLAUDE.md                    # Claude 模型上下文（合并在本文件末尾）
+├── GEMINI.md                    # Gemini 模型上下文
+├── Makefile                     # 自动化脚本
+├── LICENSE                      # MIT 许可证
+├── CODE_OF_CONDUCT.md           # 行为准则
+├── CONTRIBUTING.md              # 贡献指南
+├── .gitignore                   # Git 忽略规则
+│
+├── .github/                     # GitHub 配置
+│   ├── workflows/               # CI/CD 工作流
+│   │   ├── ci.yml               # Markdown lint + link checker
+│   │   ├── labeler.yml          # 自动标签
+│   │   └── welcome.yml          # 欢迎新贡献者
+│   ├── ISSUE_TEMPLATE/          # Issue 模板
+│   ├── PULL_REQUEST_TEMPLATE.md # PR 模板
+│   ├── SECURITY.md              # 安全政策
+│   ├── FUNDING.yml              # 赞助配置
+│   └── wiki/                    # GitHub Wiki 内容
+│
+├── i18n/                        # 多语言资产 (27 种语言)
+│   ├── README.md                # 多语言索引
+│   ├── zh/                      # 中文主语料
+│   │   ├── documents/           # 文档库
+│   │   │   ├── 00-基础指南/     # 方法论与原则
+│   │   │   ├── 01-入门指南/     # 从零开始教程
+│   │   │   ├── 02-方法论/       # 工具与技巧
+│   │   │   ├── 03-实战/         # 项目实战案例
+│   │   │   └── 04-资源/         # 外部资源聚合
+│   │   ├── prompts/             # 提示词库
+│   │   │   ├── 00-元提示词/     # 生成提示词的提示词
+│   │   │   ├── 01-系统提示词/   # AI 系统级提示词
+│   │   │   ├── 02-编程提示词/   # 编程相关提示词
+│   │   │   └── 03-用户提示词/   # 用户自定义提示词
+│   │   └── skills/              # 技能库
+│   │       ├── 00-元技能/       # 生成技能的元技能
+│   │       ├── 01-AI工具/       # AI CLI 和工具
+│   │       ├── 02-数据库/       # 数据库技能
+│   │       ├── 03-加密货币/     # 加密货币/量化交易
+│   │       └── 04-开发工具/     # 通用开发工具
+│   ├── en/                      # 英文版本（结构同 zh/）
+│   └── ...                      # 其他语言骨架
+│
+├── libs/                        # 核心库代码
+│   ├── common/                  # 通用模块
+│   │   ├── models/              # 模型定义
+│   │   └── utils/               # 工具函数
+│   ├── database/                # 数据库模块（预留）
+│   └── external/                # 外部工具
+│       ├── prompts-library/     # Excel ↔ Markdown 互转工具
+│       ├── chat-vault/          # AI 聊天记录保存工具
+│       ├── Skill_Seekers-development/ # Skills 制作器
+│       ├── l10n-tool/           # 多语言翻译脚本
+│       ├── my-nvim/             # Neovim 配置
+│       ├── MCPlayerTransfer/    # MC 玩家迁移工具
+│       └── XHS-image-to-PDF-conversion/ # 小红书图片转 PDF
+│
+└── backups/                     # 备份脚本与存档
+    ├── 一键备份.sh              # Shell 备份脚本
+    ├── 快速备份.py              # Python 备份脚本
+    ├── README.md                # 备份说明
+    └── gz/                      # 压缩存档目录
+```
+
+### 关键入口文件
+- `README.md` - 项目主文档，面向人类开发者
+- `AGENTS.md` - AI Agent 操作手册（本文件）
+- `libs/external/prompts-library/main.py` - 提示词转换工具入口
+- `backups/一键备份.sh` - 备份脚本入口
+
+---
+
+## 7. Common Pitfalls（常见坑与修复）
+
+| 问题 | 原因 | 修复 |
+|:---|:---|:---|
+| `make lint` 失败 | 未安装 markdownlint-cli | `npm install -g markdownlint-cli` |
+| prompts-library 报错 | 缺少 Python 依赖 | `pip install pandas openpyxl PyYAML rich InquirerPy` |
+| CI link-checker 失败 | 文档中存在失效链接 | 检查并修复 Markdown 中的链接 |
+| 备份脚本权限不足 | Shell 脚本无执行权限 | `chmod +x backups/一键备份.sh` |
+
+---
+
+## 8. PR / Commit Rules（提交与 CI 规则）
+
+### Commit 规范
+遵循简化 Conventional Commits：
+```
+feat|fix|docs|chore|refactor|test: scope - summary
+```
+
+示例：
+- `docs: prompts - add new coding prompt`
+- `feat: skills - add postgresql skill`
+- `fix: readme - correct broken link`
+
+### PR 必填内容
+- 变更摘要
+- 动机或关联 Issue
+- 测试与验证步骤
+
+### CI 触发条件
+- `push` 到 `main` 分支
+- `pull_request` 到 `main` 分支
+
+### CI 检查项
+1. `markdown-lint` - Markdown 格式检查
+2. `link-checker` - 链接有效性检查
+
+### 提交前清单
+- [ ] 运行 `make lint` 通过
+- [ ] 更新对应文档
+- [ ] 确认不携带临时文件或机密数据
+
+---
+
+## 9. Documentation Sync Rule（强制同步规则）
+
+**任何功能/命令/配置/目录/工作流变化必须同步更新：**
+- `README.md` - 面向人类开发者
+- `AGENTS.md` - 面向 AI Agent（本文件）
+- `GEMINI.md` - Gemini 模型上下文
+
+**不确定的内容用 TODO 标注，不允许猜测。**
 
 ---
 
 # CLAUDE.md
 
-This file provides guidance to Claude series models when working with code in this repository.
+本节为 Claude 系列模型提供项目上下文。
 
 ## Repository Overview
 
-This is the **Vibe Coding CN** repository, a workflow, toolset, and knowledge base for advanced AI-assisted programming. The project's core assets are its extensive `prompts` and `skills` libraries.
+**Vibe Coding CN** 是一个通过与 AI 结对编程实现"将想法变为现实"的终极工作流程。项目核心资产是其丰富的 `prompts` 和 `skills` 库。
 
 ## Key Commands
 
 ```bash
-# Prompt library conversion
+# 提示词库转换
 cd libs/external/prompts-library && python3 main.py
 
-# Lint all markdown files
+# Lint 所有 Markdown 文件
 make lint
 
-# Create a full project backup
+# 创建完整项目备份
 bash backups/一键备份.sh
 ```
 
 ## Architecture & Structure
 
 ### Core Directories
-- **`i18n/zh/prompts/`**: Core prompt library (`coding_prompts/`, `system_prompts/`, `user_prompts/`, `assistant_prompts/`, `meta_prompts/`)
-- **`i18n/zh/skills/`**: Modular skills library (16+ skills including `ccxt`, `postgresql`, `telegram-dev`, `claude-skills`)
-- **`i18n/zh/documents/`**: Knowledge base (`方法论与原则/`, `模板与资源/`, `教程与指南/`, `胶水编程/`, `从零开始vibecoding/`)
-- **`libs/external/prompts-library/`**: Excel ↔ Markdown conversion tool
-- **`libs/external/`**: External tools (`l10n-tool/`, `my-nvim/`, `MCPlayerTransfer/`)
-- **`backups/`**: Backup scripts and archives
-- **`scripts/`**: Project scripts placeholder
+- **`i18n/zh/prompts/`**: 核心提示词库（00-元提示词、01-系统提示词、02-编程提示词、03-用户提示词）
+- **`i18n/zh/skills/`**: 模块化技能库（00-元技能、01-AI工具、02-数据库、03-加密货币、04-开发工具）
+- **`i18n/zh/documents/`**: 知识库（00-基础指南、01-入门指南、02-方法论、03-实战、04-资源）
+- **`libs/external/prompts-library/`**: Excel ↔ Markdown 转换工具
+- **`libs/external/chat-vault/`**: AI 聊天记录保存工具
+- **`backups/`**: 备份脚本与存档
 
 ### Key Technical Details
-1. **Prompt Organization**: Prompts use `(row,col)_` prefix for categorization.
-2. **Conversion Tool**: Uses Python with `pandas` and `openpyxl`.
-3. **Documentation Standard**: User-facing docs in Chinese; code/filenames in English.
-4. **Skills**: Each skill has its own `SKILL.md`.
+1. **Prompt Organization**: 提示词使用 `(row,col)_` 前缀进行分类
+2. **Conversion Tool**: 使用 Python + pandas + openpyxl
+3. **Documentation Standard**: 用户文档使用中文；代码/文件名使用英文
+4. **Skills**: 每个技能有独立的 `SKILL.md`
 
 ## Development Workflow
 
-1. Follow existing prompt and skill categorization systems.
-2. Use `prompts-library` tool for prompt updates.
-3. Run `make lint` after Markdown changes.
-4. Run backup before major refactoring.
+1. 遵循现有的提示词和技能分类系统
+2. 使用 `prompts-library` 工具进行提示词更新
+3. Markdown 修改后运行 `make lint`
+4. 重大重构前运行备份脚本
 
 ---
 
@@ -111,40 +317,4 @@ bash backups/一键备份.sh
 
 ## 文件结构
 
-```
-.
-├── .github/                     # GitHub 配置 (Issue/PR 模板, SECURITY, FUNDING)
-├── AGENTS.md                    # AI Agent 行为准则
-├── CLAUDE.md                    # Claude 模型上下文
-├── GEMINI.md                    # Gemini 模型上下文
-├── CODE_OF_CONDUCT.md           # 行为准则
-├── CONTRIBUTING.md              # 贡献指南
-├── LICENSE                      # MIT 许可证
-├── Makefile                     # 自动化脚本
-├── README.md                    # 项目主文档
-│
-├── i18n/                        # 多语言资产 (29 种语言)
-│   ├── zh/                      # 中文主语料
-│   │   ├── documents/           # 文档库 (方法论/模板/教程/胶水编程等)
-│   │   ├── prompts/             # 提示词库 (system/coding/user/assistant/meta)
-│   │   └── skills/              # 技能库 (16+ 技能)
-│   ├── en/                      # 英文版本
-│   └── ...                      # 其他语言骨架
-│
-├── libs/                        # 核心库代码
-│   ├── common/                  # 通用模块 (models/, utils/)
-│   ├── database/                # 数据库模块
-│   └── external/                # 外部工具
-│       ├── prompts-library/     # Excel-Markdown 互转工具
-│       ├── l10n-tool/           # 多语言翻译脚本
-│       ├── my-nvim/             # Neovim 配置
-│       ├── MCPlayerTransfer/    # MC 玩家迁移工具
-│       └── XHS-image-to-PDF-conversion/
-│
-├── backups/                     # 备份脚本与存档
-│   ├── 一键备份.sh
-│   ├── 快速备份.py
-│   └── gz/                      # 压缩存档
-│
-└── scripts/                     # 项目脚本
-```
+详见上方 Project Map 章节。

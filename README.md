@@ -326,60 +326,68 @@
 
 ```
 .
-├── CODE_OF_CONDUCT.md           # 社区行为准则，规范贡献者行为。
-├── CONTRIBUTING.md              # 贡献指南，说明如何为本项目做出贡献。
-├── GEMINI.md                    # AI 助手的上下文文档，包含项目概述、技术栈和文件结构。
-├── LICENSE                      # 开源许可证文件。
-├── Makefile                     # 项目自动化脚本，用于代码检查、构建等。
-├── README.md                    # 项目主文档，包含项目概览、使用指南、资源链接等。
-├── .gitignore                   # Git 忽略文件。
-├── AGENTS.md                    # AI 代理相关的文档或配置。
-├── CLAUDE.md                    # AI 助手的核心行为准则或配置。
+├── README.md                    # 项目主文档
+├── AGENTS.md                    # AI Agent 行为准则
+├── GEMINI.md                    # Gemini 模型上下文
+├── Makefile                     # 自动化脚本
+├── LICENSE                      # MIT 许可证
+├── CODE_OF_CONDUCT.md           # 行为准则
+├── CONTRIBUTING.md              # 贡献指南
+├── .gitignore                   # Git 忽略规则
 │
-├── i18n/zh/documents/           # 存放各类说明文档、经验总结和配置详细说明。
-│   ├── 00-基础指南/                # 方法论与原则
-│   ├── 04-资源/                  # 模板与资源
-│   └── 02-方法论/                  # 教程与指南
+├── .github/                     # GitHub 配置
+│   ├── workflows/               # CI/CD 工作流
+│   │   ├── ci.yml               # Markdown lint + link checker
+│   │   ├── labeler.yml          # 自动标签
+│   │   └── welcome.yml          # 欢迎新贡献者
+│   ├── ISSUE_TEMPLATE/          # Issue 模板
+│   ├── PULL_REQUEST_TEMPLATE.md # PR 模板
+│   ├── SECURITY.md              # 安全政策
+│   ├── FUNDING.yml              # 赞助配置
+│   └── wiki/                    # GitHub Wiki 内容
 │
-├── libs/                        # 通用库代码，用于项目内部模块化。
-│   ├── common/                  # 通用功能模块。
-│   │   ├── models/              # 模型定义。
-│   │   │   └── __init__.py
-│   │   └── utils/               # 工具函数。
-│   │       └── backups/         # 内部备份工具。
-│   ├── database/                # 数据库相关模块。
-│   │   └── .gitkeep             # 占位文件，确保目录被 Git 跟踪。
-│   └── external/                # 外部集成模块。
-│       ├── my-nvim/             # 用户的 Neovim 配置。
-│       ├── prompts-library/     # 提示词库管理工具（Excel-Markdown 转换）。
-│       │   ├── main.py          # 提示词库管理工具主入口。
-│       │   ├── scripts/         # 包含 Excel 与 Markdown 互转脚本和配置。
-│       │   ├── prompt_excel/    # 存放 Excel 格式的原始提示词数据。
-│       │   ├── prompt_docs/     # 存放从 Excel 转换而来的 Markdown 提示词文档。
-│       │   └── ... (其他 prompts-library 内部文件)
-│       └── XHS-image-to-PDF-conversion/ # 小红书图片转PDF工具。
+├── i18n/                        # 多语言资产 (27 种语言)
+│   ├── README.md                # 多语言索引
+│   ├── zh/                      # 中文主语料
+│   │   ├── documents/           # 文档库
+│   │   │   ├── 00-基础指南/     # 方法论与原则
+│   │   │   ├── 01-入门指南/     # 从零开始教程
+│   │   │   ├── 02-方法论/       # 工具与技巧
+│   │   │   ├── 03-实战/         # 项目实战案例
+│   │   │   └── 04-资源/         # 外部资源聚合
+│   │   ├── prompts/             # 提示词库
+│   │   │   ├── 00-元提示词/     # 生成提示词的提示词
+│   │   │   ├── 01-系统提示词/   # AI 系统级提示词
+│   │   │   ├── 02-编程提示词/   # 编程相关提示词
+│   │   │   └── 03-用户提示词/   # 用户自定义提示词
+│   │   └── skills/              # 技能库
+│   │       ├── 00-元技能/       # 生成技能的元技能
+│   │       ├── 01-AI工具/       # AI CLI 和工具
+│   │       ├── 02-数据库/       # 数据库技能
+│   │       ├── 03-加密货币/     # 加密货币/量化交易
+│   │       └── 04-开发工具/     # 通用开发工具
+│   ├── en/                      # 英文版本（结构同 zh/）
+│   └── ...                      # 其他语言骨架
 │
-├── i18n/zh/prompts/             # 集中存放所有类型的 AI 提示词。
-│   ├── 00-元提示词/             # 用于生成提示词的高级提示词。
-│   ├── 01-系统提示词/           # AI 系统级提示词，用于设定 AI 行为和框架。
-│   │   └── ... (其他系统提示词)
-│   │
-│   ├── 02-编程提示词/           # 专门用于编程和代码生成相关的提示词集合。
-│   │   └── ... (具体编程提示词文件)
-│   │
-│   └── 03-用户提示词/           # 用户自定义或常用提示词。
-│       ├── ASCII图生成.md         # ASCII 艺术图生成提示词。
-│       ├── 数据管道.md            # 数据管道处理提示词。
-│       └── ... (其他用户提示词)
+├── libs/                        # 核心库代码
+│   ├── common/                  # 通用模块
+│   │   ├── models/              # 模型定义
+│   │   └── utils/               # 工具函数
+│   ├── database/                # 数据库模块（预留）
+│   └── external/                # 外部工具
+│       ├── prompts-library/     # Excel ↔ Markdown 互转工具
+│       ├── chat-vault/          # AI 聊天记录保存工具
+│       ├── Skill_Seekers-development/ # Skills 制作器
+│       ├── l10n-tool/           # 多语言翻译脚本
+│       ├── my-nvim/             # Neovim 配置
+│       ├── MCPlayerTransfer/    # MC 玩家迁移工具
+│       └── XHS-image-to-PDF-conversion/ # 小红书图片转 PDF
 │
-├── i18n/zh/skills/              # 集中存放所有类型的 skills 技能。
-    ├── 00-元技能/               # 元技能目录
-    │   └── claude-skills/       # 生成 SKILL 的元 SKILL
-    ├── 01-AI工具/               # AI CLI 和工具
-    │   └── headless-cli/        # 无头模式 AI CLI 调用
-    ├── 02-数据库/               # 数据库技能
-    ├── 03-加密货币/             # 加密货币/量化交易
-    └── 04-开发工具/             # 通用开发工具
+└── backups/                     # 备份脚本与存档
+    ├── 一键备份.sh              # Shell 备份脚本
+    ├── 快速备份.py              # Python 备份脚本
+    ├── README.md                # 备份说明
+    └── gz/                      # 压缩存档目录
 ```
 
 ---
