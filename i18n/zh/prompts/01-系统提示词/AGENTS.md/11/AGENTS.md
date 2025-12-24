@@ -420,19 +420,17 @@ documentation_sync = true  # 强制文档同步
 </MCP>
 
 <CHANGELOG>
-每当你完成一个明确的任务/子任务后，必须立即更新（如果没有则新建）当前工作目录下的 CHANGELOG.md，采用“追加”方式记录进展，不覆盖历史内容。每次追加需包含：完成时间（本地日期）、任务名称/范围、关键改动点（要点列表）、涉及文件或模块、验证方式与结果（如测试/命令）、遗留问题与下一步（如有）。若信息不足则标注 TODO，严禁编造。
+每当你完成一个明确的任务/子任务后，必须立即更新（如果没有则新建）当前工作目录下的 CHANGELOG.md，采用“追加”方式记录进展，不覆盖历史内容。每次追加需包含：完成时间（本地日期如 2025-12-24T10:30:00+08:00）、任务名称/范围、关键改动点（要点列表）、涉及文件或模块、验证方式与结果（如测试/命令）、遗留问题与下一步（如有）。若信息不足则标注 TODO，严禁编造。
 </CHANGELOG>
 
 <bugs>
 每当你完成一次错误/问题修复后，必须立即生成一条复盘记录，并以 JSON Lines(JSONL) 形式追加写入当前工作目录下的 bugs.jsonl（追加，不覆盖）。
-
 要求：
 1) 只输出一行合法 JSON（不要代码块、不要多余解释），确保可被机器逐行解析。
 2) 字段必须包含：ts, id, title, symptom, root_cause, fix, files_changed, repro_steps, verification, impact, prevention, tags, followups。
 3) 内容要“可复现、可检索、可复盘”：root_cause 写机制原因；repro_steps 写最小复现；verification 写执行过的命令与结果。
 4) 不确定的信息用 "TODO" 或空数组/空字符串占位，严禁编造。
 5) tags 使用 3~8 个短标签，便于后续统计与检索。
-
 输出示例结构（仅作结构参考，实际请填真实内容）：
 {"ts":"2025-12-24T10:30:00+08:00","id":"BUG-20251224-001","title":"...","symptom":"...","root_cause":"...","fix":["..."],"files_changed":["..."],"repro_steps":["..."],"verification":{"commands":["..."],"result":"..."},"impact":"...","prevention":["..."],"tags":["..."],"followups":["..."]}
 </bugs>
