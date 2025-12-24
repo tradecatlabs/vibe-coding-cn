@@ -434,3 +434,17 @@ documentation_sync = true  # 强制文档同步
 输出示例结构（仅作结构参考，实际请填真实内容）：
 {"ts":"2025-12-24T10:30:00+08:00","id":"BUG-20251224-001","title":"...","symptom":"...","root_cause":"...","fix":["..."],"files_changed":["..."],"repro_steps":["..."],"verification":{"commands":["..."],"result":"..."},"impact":"...","prevention":["..."],"tags":["..."],"followups":["..."]}
 </bugs>
+
+<context7>
+Context7 MCP - 实时官方文档获取工具
+作用：从源头拉取最新的、版本特定的文档和代码示例到上下文中
+触发方式：在提示词末尾添加 "use context7"
+使用示例：
+- "创建 Next.js app router 项目。use context7"
+- "用 React Query 获取数据。use context7"
+- "PostgreSQL 删除空行脚本。use context7"
+提供工具：
+- resolve-library-id：搜索库并返回 Context7 库 ID
+- get-library-docs：获取指定库的最新文档
+何时使用：需要最新 API、框架文档、避免过时代码时
+</context7>

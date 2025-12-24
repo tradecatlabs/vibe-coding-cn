@@ -6,38 +6,11 @@
       "allowedPaths": ["./**"]
     },
     "fs_write": {
-      "allowedPaths": [
-        "./workflow_engine/**",
-        "./artifacts/**"
-      ]
+      "allowedPaths": ["./workflow_engine/**"]
     },
     "execute_bash": {
-      "allowedCommands": [
-        "python3 workflow_engine/runner.py.*",
-        "cat workflow_engine/state/.*"
-      ],
+      "allowedCommands": ["python3 workflow_engine/runner.py.*"],
       "autoAllowReadonly": true
     }
-  },
-  "hooks": [
-    {
-      "event": "agentSpawn",
-      "command": "cat workflow_engine/state/current_step.json 2>/dev/null || echo '{\"status\":\"idle\"}'",
-      "timeout_ms": 3000
-    },
-    {
-      "event": "stop",
-      "command": "python3 workflow_engine/runner.py status 2>/dev/null || true",
-      "timeout_ms": 5000
-    }
-  ],
-  "resources": [
-    "file://README.md",
-    "file://workflow_engine/README.md",
-    "file://step1_需求输入.jsonl",
-    "file://step2_执行计划.jsonl",
-    "file://step3_实施变更.jsonl",
-    "file://step4_验证发布.jsonl",
-    "file://step5_总控与循环.jsonl"
-  ]
+  }
 }
