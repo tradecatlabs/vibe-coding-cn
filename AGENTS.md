@@ -178,6 +178,7 @@ git push
 │       ├── prompts-library/     # Excel ↔ Markdown 互转工具
 │       ├── chat-vault/          # AI 聊天记录保存工具
 │       ├── Skill_Seekers-development/ # Skills 制作器
+│       ├── html-tools-main/     # HTML 工具集（Markdown 编辑器、任务卡片生成等）
 │       ├── l10n-tool/           # 多语言翻译脚本
 │       ├── my-nvim/             # Neovim 配置
 │       ├── MCPlayerTransfer/    # MC 玩家迁移工具
