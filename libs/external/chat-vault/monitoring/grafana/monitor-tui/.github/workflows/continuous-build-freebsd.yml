@@ -1,0 +1,67 @@
+name: Continuous Build FreeBSD
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    tags-ignore:
+      - '*.*'
+    paths:
+      - 'src/**'
+      - '!src/linux/**'
+      - '!src/osx/**'
+      - '!src/netbsd/**'
+      - '!src/openbsd/**'
+      - 'include/**'
+      - 'Makefile'
+      - '.github/workflows/continuous-build-freebsd.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - '!src/linux/**'
+      - '!src/osx/**'
+      - '!src/netbsd/**'
+      - '!src/openbsd/**'
+      - 'include/**'
+      - 'Makefile'
+      - '.github/workflows/continuous-build-freebsd.yml'
+
+jobs:
+  build-freebsd:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      matrix:
+        compiler: ["clang++", "g++"]
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Compile
+        uses: vmactions/freebsd-vm@v1
+        with:
+          release: '14.3'
+          usesh: true
+          prepare: |
+            pkg install -y gmake gcc15 coreutils git lowdown
+            git config --global --add safe.directory /home/runner/work/btop/btop
+          run: |
+            if [ "${{ matrix.compiler }}" == "g++" ]; then
+              CXX=g++15
+              COMPILER=gcc
+            else
+              CXX=clang++
+              COMPILER=llvm
+            fi
+            gmake STATIC=true STRIP=true
+            GIT_HASH=$(git rev-parse --short "$GITHUB_SHA")
+            mv bin/btop bin/btop-"$COMPILER"-"$GIT_HASH"
+            ls -alh bin
+
+      - uses: actions/upload-artifact@v5
+        with:
+          name: btop-x86_64-freebsd-14-${{ matrix.compiler }}
+          path: 'bin/*'
+          if-no-files-found: error

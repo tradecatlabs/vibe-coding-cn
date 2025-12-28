@@ -1,0 +1,5 @@
+# Git Submodules
+# 示例:
+# [submodule "libs/external/some-lib"]
+#     path = libs/external/some-lib
+#     url = https://github.com/xxx/some-lib.git

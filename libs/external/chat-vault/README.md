@@ -1,318 +1,143 @@
-<div align="center">
+# Chat Vault Monorepo
 
-# 🔐 Chat Vault
+AI 聊天记录集中存储与管理平台。
 
-**One tool to save ALL your AI chat history**
+## 项目概述
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-lightgrey.svg)]()
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)]()
+本项目是一个 monorepo，包含 AI 聊天记录同步工具及相关基础设施。核心功能是将多个 AI CLI 工具（Codex、Kiro、Gemini、Claude）的聊天记录统一存储到 SQLite 数据库。
 
-[English](README.md) | [中文](README_CN.md)
+## 功能特性
 
-[✨ Features](#-features) •
-[🚀 Quick Start](#-quick-start) •
-[📋 Commands](#-commands) •
-[📁 Project Structure](#-project-structure) •
-[❓ FAQ](#-faq)
+- 多 CLI 支持：Codex、Kiro、Gemini、Claude
+- 实时监控：基于 watchdog 的文件变更检测
+- Token 统计：使用 tiktoken (cl100k_base) 精确计数
+- 搜索导出：支持关键词搜索、JSON/CSV 导出
+- 零配置：自动检测默认路径，开箱即用
 
-[📞 Contact](#-contact) •
-[✨ Support](#-support) •
-[🤝 Contributing](#-contributing)
+## 快速开始
 
-AI-powered docs: [zread.ai/tukuaiai/chat-vault](https://zread.ai/tukuaiai/chat-vault)
+### 环境要求
 
-> 📦 This tool is part of [vibe-coding-cn](https://github.com/tukuaiai/vibe-coding-cn) - A comprehensive Vibe Coding guide
+- Python 3.8+
+- Linux / macOS / Windows (WSL)
 
-</div>
-
----
-
-## ✨ Features
-
-<table>
-<tr>
-<td>🔄 <b>Multi-CLI</b></td>
-<td>Codex, Kiro, Gemini, Claude - all supported</td>
-</tr>
-<tr>
-<td>⚡ <b>Real-time</b></td>
-<td>Watch mode with system-level file monitoring</td>
-</tr>
-<tr>
-<td>🔢 <b>Token Stats</b></td>
-<td>Accurate counting using tiktoken (cl100k_base)</td>
-</tr>
-<tr>
-<td>🔍 <b>Search</b></td>
-<td>Find any conversation instantly</td>
-</tr>
-<tr>
-<td>📤 <b>Export</b></td>
-<td>JSON or CSV, your choice</td>
-</tr>
-<tr>
-<td>🚀 <b>Zero Config</b></td>
-<td>Auto-detects paths, just run it</td>
-</tr>
-</table>
-
----
-
-## 🏗️ Architecture
-
-```mermaid
-graph LR
-    subgraph Sources
-        A[~/.codex] 
-        B[~/.kiro]
-        C[~/.gemini]
-        D[~/.claude]
-    end
-    
-    subgraph Chat Vault
-        E[Watcher]
-        F[Parsers]
-        G[Storage]
-    end
-    
-    subgraph Output
-        H[(SQLite DB)]
-    end
-    
-    A --> E
-    B --> E
-    C --> E
-    D --> E
-    E --> F
-    F --> G
-    G --> H
-```
-
----
-
-## 🔄 How It Works
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant CLI as AI CLI (Codex/Kiro/...)
-    participant Watcher
-    participant Parser
-    participant DB as SQLite
-
-    User->>CLI: Chat with AI
-    CLI->>CLI: Save to local file
-    Watcher->>Watcher: Detect file change
-    Watcher->>Parser: Parse new content
-    Parser->>DB: Upsert session
-    DB-->>User: Query anytime
-```
-
----
-
-## 🚀 Quick Start
-
-### 30 Seconds Setup
+### 启动服务
 
 ```bash
-# Clone
-git clone https://github.com/tukuaiai/vibe-coding-cn.git
-cd vibe-coding-cn/libs/external/chat-vault
+cd services/chat-vault
 
-# Run (auto-installs dependencies)
-./start.sh        # Linux/macOS
-start.bat         # Windows
+# Linux/macOS
+./start.sh
+
+# Windows
+start.bat
 ```
 
-**That's it!** 🎉
+首次运行会自动创建虚拟环境并安装依赖。
 
----
-
-## 📊 Example Output
-
-```
-==================================================
-AI 聊天记录 → 集中存储
-==================================================
-数据库: ./output/chat_history.db
-
-[Codex] 新增:1241 更新:0 跳过:0 错误:0
-[Kiro] 新增:21 更新:0 跳过:0 错误:0
-[Gemini] 新增:332 更新:0 跳过:0 错误:0
-[Claude] 新增:168 更新:0 跳过:0 错误:0
-
-==================================================
-总计: 1762 会话, 40000+ 消息
-✓ 同步完成!
-
-=== Token 统计 (tiktoken) ===
-  codex: 11,659,952 tokens
-  kiro: 26,337 tokens
-  gemini: 3,195,821 tokens
-  claude: 29,725 tokens
-  总计: 14,911,835 tokens
-```
-
----
-
-## 📋 Commands
-
-| Command | Description |
-|---------|-------------|
-| `python src/main.py` | Sync once |
-| `python src/main.py -w` | Watch mode (real-time) |
-| `python src/main.py --stats` | Show statistics |
-| `python src/main.py --search "keyword"` | Search messages |
-| `python src/main.py --export json` | Export to JSON |
-| `python src/main.py --export csv --source codex` | Export specific source |
-| `python src/main.py --prune` | Clean orphaned records |
-
----
-
-## 📁 Project Structure
+## 目录结构
 
 ```
 chat-vault/
-├── 🚀 start.sh / start.bat    # One-click start
-├── 📦 build.py                # Build standalone exe
-├── 📂 src/
-│   ├── main.py                # CLI entry
-│   ├── config.py              # Auto-detection
-│   ├── storage.py             # SQLite + tiktoken
-│   ├── watcher.py             # File monitoring
-│   └── parsers/               # CLI parsers
-├── 📂 docs/
-│   ├── AI_PROMPT.md           # AI assistant guide
-│   └── schema.md              # Database schema
-└── 📂 output/
-    ├── chat_history.db        # Your database
-    └── logs/                   # Sync logs
+├── services/
+│   └── chat-vault/          # 核心同步服务
+│       ├── src/
+│       │   ├── main.py      # CLI 入口
+│       │   ├── config.py    # 配置与路径检测
+│       │   ├── storage.py   # SQLite 存储
+│       │   ├── watcher.py   # 文件监控
+│       │   └── parsers/     # 各 CLI 解析器
+│       ├── docs/            # 服务文档
+│       ├── scripts/         # 辅助脚本
+│       ├── requirements.txt
+│       ├── start.sh
+│       └── .env.example
+├── libs/
+│   ├── common/              # 共享库（预留）
+│   ├── database/            # 数据库工具（预留）
+│   └── external/            # 外部依赖镜像
+├── monitoring/
+│   ├── grafana/             # Grafana 配置
+│   ├── prometheus/          # Prometheus 配置（预留）
+│   └── alertmanager/        # 告警配置（预留）
+├── scripts/                 # 全局脚本
+│   ├── build_all.sh
+│   ├── test_all.sh
+│   └── deploy.sh
+├── docs/                    # 全局文档
+├── AGENTS.md
+├── README.md
+└── LICENSE
 ```
 
----
+## 常用命令
 
-## 🗄️ Database Schema
+在 `services/chat-vault/` 目录下执行：
 
-```mermaid
-erDiagram
-    sessions {
-        TEXT file_path PK
-        TEXT session_id
-        TEXT source
-        TEXT cwd
-        TEXT messages
-        INTEGER file_mtime
-        TEXT start_time
-        INTEGER token_count
-    }
-    
-    meta {
-        TEXT key PK
-        TEXT value
-    }
-    
-    meta_codex {
-        TEXT key PK
-        TEXT value
-    }
+| 命令 | 说明 |
+|------|------|
+| `python src/main.py` | 同步一次 |
+| `python src/main.py -w` | 持续监控模式 |
+| `python src/main.py --stats` | 显示统计信息 |
+| `python src/main.py --search "关键词"` | 搜索消息 |
+| `python src/main.py --export json` | 导出 JSON |
+| `python src/main.py --export csv --source codex` | 导出指定来源 |
+| `python src/main.py --prune` | 清理孤立记录 |
+
+## 配置说明
+
+### 环境变量（可选）
+
+参考 `services/chat-vault/.env.example`：
+
+```bash
+# 自定义路径（逗号分隔多个）
+CODEX_PATHS=~/.codex/sessions
+KIRO_PATHS=~/.local/share/kiro-cli
+GEMINI_PATHS=~/.gemini/tmp
+CLAUDE_PATHS=~/.claude
+
+# WSL 路径支持
+CODEX_PATHS=\\wsl.localhost\Ubuntu\home\user\.codex\sessions
 ```
 
----
+默认自动检测以下路径：
+- Codex: `~/.codex/sessions`, `~/.codex`
+- Kiro: `~/.local/share/kiro-cli`
+- Gemini: `~/.gemini/tmp`, `~/.gemini`
+- Claude: `~/.claude`
 
-## 🤖 For AI Assistants
+### 输出位置
 
-Send [docs/AI_PROMPT.md](docs/AI_PROMPT.md) to your AI assistant for:
-- SQL query examples
-- Python code snippets
-- Task guidance
+- 数据库：`services/chat-vault/output/chat_history.db`
+- 日志：`services/chat-vault/output/logs/`
 
----
+## 数据库结构
 
-## ❓ FAQ
+详见 `services/chat-vault/docs/schema.md`
 
-<details>
-<summary><b>Do I need to configure anything?</b></summary>
+主表 `sessions`：
+- `file_path` (PK): 源文件路径
+- `session_id`: 会话 ID
+- `source`: 来源 (codex/kiro/gemini/claude)
+- `messages`: JSON 消息数组
+- `token_count`: Token 数量
 
-No. Auto-detects `~/.codex`, `~/.kiro`, `~/.gemini`, `~/.claude`
-</details>
+## FAQ
 
-<details>
-<summary><b>Does it work with WSL?</b></summary>
+**Q: 需要配置吗？**
+A: 不需要，自动检测默认路径。
 
-Yes! Paths like `\\wsl.localhost\Ubuntu\...` are supported
-</details>
+**Q: 支持 WSL 吗？**
+A: 支持，`\\wsl.localhost\Ubuntu\...` 格式路径会自动转换。
 
-<details>
-<summary><b>How do I view the database?</b></summary>
+**Q: 数据安全吗？**
+A: 只读取 AI 工具的文件，不修改原始数据。
 
-Use [DB Browser for SQLite](https://sqlitebrowser.org/) or any SQLite tool
-</details>
+## 贡献
 
-<details>
-<summary><b>Is my data safe?</b></summary>
+欢迎提交 Issue 和 Pull Request。
 
-Yes. We only READ from AI tools, never modify original files
-</details>
+## 许可证
 
----
-
-## 📞 Contact
-
-- **GitHub**: [tukuaiai](https://github.com/tukuaiai)
-- **Twitter / X**: [123olp](https://x.com/123olp)
-- **Telegram**: [@desci0](https://t.me/desci0)
-- **Telegram Group**: [glue_coding](https://t.me/glue_coding)
-- **Telegram Channel**: [tradecat_ai_channel](https://t.me/tradecat_ai_channel)
-- **Email**: tukuai.ai@gmail.com
-
----
-
-## ✨ Support
-
-If this project helped you, consider supporting:
-
-- **Binance UID**: `572155580`
-- **Tron (TRC20)**: `TQtBXCSTwLFHjBqTS4rNUp7ufiGx51BRey`
-- **Solana**: `HjYhozVf9AQmfv7yv79xSNs6uaEU5oUk2USasYQfUYau`
-- **Ethereum (ERC20)**: `0xa396923a71ee7D9480b346a17dDeEb2c0C287BBC`
-- **BNB Smart Chain (BEP20)**: `0xa396923a71ee7D9480b346a17dDeEb2c0C287BBC`
-- **Bitcoin**: `bc1plslluj3zq3snpnnczplu7ywf37h89dyudqua04pz4txwh8z5z5vsre7nlm`
-- **Sui**: `0xb720c98a48c77f2d49d375932b2867e793029e6337f1562522640e4f84203d2e`
-
----
-
-## 🤝 Contributing
-
-We welcome all contributions! Feel free to open an [Issue](https://github.com/tukuaiai/vibe-coding-cn/issues) or submit a [Pull Request](https://github.com/tukuaiai/vibe-coding-cn/pulls).
-
----
-
-## 📄 License
-
-[MIT](LICENSE) - Do whatever you want with it.
-
----
-
-<div align="center">
-
-**If this helped you, give it a ⭐!**
-
-## Star History
-
-<a href="https://www.star-history.com/#tukuaiai/vibe-coding-cn&type=Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=tukuaiai/vibe-coding-cn&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=tukuaiai/vibe-coding-cn&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=tukuaiai/vibe-coding-cn&type=Date" />
- </picture>
-</a>
-
----
-
-**Made with ❤️ by [tukuaiai](https://github.com/tukuaiai)**
-
-[⬆ Back to Top](#-chat-vault)
-
-</div>
+MIT License

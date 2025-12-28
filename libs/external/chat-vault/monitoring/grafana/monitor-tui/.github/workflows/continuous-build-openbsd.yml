@@ -1,0 +1,56 @@
+name: Continuous Build OpenBSD
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    tags-ignore:
+      - '*.*'
+    paths:
+      - 'src/**'
+      - '!src/linux/**'
+      - '!src/osx/**'
+      - '!src/freebsd/**'
+      - '!src/netbsd/**'
+      - 'include/**'
+      - 'Makefile'
+      - '.github/workflows/continuous-build-openbsd.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - '!src/linux/**'
+      - '!src/osx/**'
+      - '!src/freebsd/**'
+      - '!src/netbsd/**'
+      - 'include/**'
+      - 'Makefile'
+      - '.github/workflows/continuous-build-openbsd.yml'
+
+jobs:
+  build-openbsd:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Compile
+        uses: vmactions/openbsd-vm@v1
+        with:
+          release: '7.8'
+          usesh: true
+          prepare: |
+            pkg_add gmake coreutils git lowdown
+            git config --global --add safe.directory /home/runner/work/btop/btop
+          run: |
+            gmake STATIC=true STRIP=true
+            GIT_HASH=$(git rev-parse --short "$GITHUB_SHA")
+            mv bin/btop bin/btop-"$GIT_HASH"
+
+      - uses: actions/upload-artifact@v5
+        with:
+          name: btop-x86_64-openbsd-7.8
+          path: 'bin/*'
+          if-no-files-found: error

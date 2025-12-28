@@ -1,28 +1,159 @@
 # Python
 __pycache__/
 *.py[cod]
+*$py.class
 *.so
-*.egg-info/
-dist/
+*.jsonl
+.Python
 build/
-*.spec
-
-# Output
-output/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.csv
+*.zip
+*.jsonl
 *.db
-*.sqlite3
-*.log
+*.pyc
+*.png
+libs/database/csv/futures/
+*.jpg
 
-# Environment
-.env
-.venv/
+# Virtual Environment
+.venv
+env/
 venv/
+ENV/
+env.bak/
+venv.bak/
+.venv_telegram/
+*.gz
 
 # IDE
 .vscode/
 .idea/
+.github/
 *.swp
-
-# OS
+*.swo
+*~
 .DS_Store
-Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Logs
+*.log
+*.log.[0-9]*
+*.out
+logs/*.log
+logs/*.out
+
+# 项目特定
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Celery
+*.pyc
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.env.local
+.env.*.local
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# backtest folder
+src/backtest/
+
+# Additional exclusions
+.history/
+.venv_patterns/
+logs/
+
+# src/telegram venv
+src/telegram/venv
+services/data-service/src/backtest/
+
+# Backup files
+*.bak
+*.tmp
+backups/gz/
+
+# Data service exclusions
+services/data-service/data/csv/缺口补齐/
+services/data-service/data/csv/backups/
+services/data-service/data/csv/exports/
+services/data-service/data/csv/futures/
+
+# OS-specific
+
+# OS-specific
+
+data/csv/缺口补齐
+data/csv/backups
+data/csv/exports
+data/csv/futures
+# Custom rule for metrics data
+services/data-service/data/csv/metrics/
+
+# Rust build artifacts (order-service)
+services/order-service/target/
+services/order-service/services/backend-service/target/
+
+# Frontend service node_modules
+services/order-service/services/frontend-service/node_modules/
+
+# order-service external vendor mirrors
+services/order-service/libs/external/
+
+# External vendor mirrors (mirror-only, never commit)
+# 默认忽略 external 下所有内容，但保留少量文档
+libs/external/*
+!libs/external/AGENTS.md
+!libs/external/README.md
+!libs/external/CLAUDE.md
+# 常见镜像目录（冗余标记，便于阅读）
+libs/external/backtrader-master/
+libs/external/CodeWeaver-main/
+libs/external/crypto-trading-open-main/
+libs/external/cryptofeed-master/
+libs/external/flowsurface-main/
+libs/external/freqtrade-develop/
+libs/external/hftbacktest-master/
+libs/external/hummingbot-master/
+libs/external/lean-master/
+libs/external/lightweight-charts-master/
+libs/external/qlib-main/
+libs/external/qstrader-master/
+libs/external/vnpy-master/
+libs/external/zipline-main/
+backups/archive

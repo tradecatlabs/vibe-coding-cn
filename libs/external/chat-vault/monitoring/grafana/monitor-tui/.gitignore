@@ -1,0 +1,90 @@
+# gitginore template for creating Snap packages
+# website: https://snapcraft.io/
+
+parts/
+prime/
+stage/
+*.snap
+
+# Snapcraft global state tracking data(automatically generated)
+# https://forum.snapcraft.io/t/location-to-save-global-state/768
+/snap/.snapcraft/
+
+# Source archive packed by `snapcraft cleanbuild` before pushing to the LXD container
+/*_source.tar.bz2
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Compiled man page
+btop.1
+
+build
+bin
+btop
+/obj/
+config.h
+.*/
+
+# Optional libraries
+lib/rocm_smi_lib
+
+# Don't ignore .github directory
+!.github/
+
+# Ignore files created by Qt Creator
+*.config
+*.creator
+*.creator.user
+*.creator.user.*
+*.cflags
+*.cxxflags
+*.files
+*.includes
+
+# CMake
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+CMakeUserPresets.json
+
+# CLion
+cmake-build-*
