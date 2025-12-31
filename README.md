@@ -40,6 +40,7 @@
 <p>
   <a href="./i18n/zh/documents/01-入门指南/00-Vibe%20Coding%20哲学原理.md"><img src="https://img.shields.io/badge/🧠_核心哲学-必读-crimson?style=for-the-badge" alt="核心哲学"></a>
   <a href="./i18n/zh/documents/00-基础指南/胶水编程.md"><img src="https://img.shields.io/badge/🧬_胶水编程-银弹-red?style=for-the-badge" alt="胶水编程"></a>
+  <a href="./i18n/zh/documents/02-方法论/图形化AI协作-Canvas白板驱动开发.md"><img src="https://img.shields.io/badge/🎨_Canvas白板-图形驱动-orange?style=for-the-badge" alt="Canvas白板驱动开发"></a>
   <a href="./i18n/zh/documents/01-入门指南/README.md"><img src="https://img.shields.io/badge/🚀_从零开始-新手入门-red?style=for-the-badge" alt="从零开始"></a>
   <a href="./i18n/zh/documents/00-基础指南/血的教训.md"><img src="https://img.shields.io/badge/🩸_血的教训-必看-red?style=for-the-badge" alt="血的教训"></a>
   <a href="./i18n/zh/documents/00-基础指南/语言层要素.md"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>
@@ -135,6 +136,27 @@
 **核心理念**：能抄不写，能连不造，能复用不原创。
 
 👉 [深入了解胶水编程](./i18n/zh/documents/00-基础指南/胶水编程.md)
+
+</details>
+
+<details open>
+<summary><strong>🎨 Canvas白板驱动开发</strong></summary>
+
+> **图形化AI协作的新范式**
+
+传统开发：代码 → 口头沟通 → 脑补架构 → 代码失控
+
+Canvas方式：**代码 ⇄ 白板 ⇄ AI ⇄ 人类**，白板成为单一真相源
+
+| 痛点 | 解法 |
+|:---|:---|
+| 🤖 AI看不懂项目结构 | ✅ AI直接读白板JSON，秒懂架构 |
+| 🧠 人类记不住复杂依赖 | ✅ 连线清晰，牵一发动全身一目了然 |
+| 💬 团队协作靠嘴说 | ✅ 指着白板讲，新人5分钟看懂 |
+
+**核心理念**：图形是第一公民，代码是白板的序列化形式。
+
+👉 [深入了解Canvas白板驱动开发](./i18n/zh/documents/02-方法论/图形化AI协作-Canvas白板驱动开发.md)
 
 </details>
 
