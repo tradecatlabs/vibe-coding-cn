@@ -1,0 +1,159 @@
+{
+  "nodes": [
+    {
+      "id": "group-api",
+      "type": "group",
+      "x": -400,
+      "y": -200,
+      "width": 300,
+      "height": 400,
+      "label": "🌐 API 层"
+    },
+    {
+      "id": "group-service",
+      "type": "group",
+      "x": 0,
+      "y": -200,
+      "width": 300,
+      "height": 400,
+      "label": "⚙️ 服务层"
+    },
+    {
+      "id": "group-data",
+      "type": "group",
+      "x": 400,
+      "y": -200,
+      "width": 300,
+      "height": 400,
+      "label": "💾 数据层"
+    },
+    {
+      "id": "node-api-user",
+      "type": "text",
+      "x": -380,
+      "y": -150,
+      "width": 260,
+      "height": 120,
+      "text": "# UserAPI\n\n- POST /users\n- GET /users/{id}\n- PUT /users/{id}\n- DELETE /users/{id}"
+    },
+    {
+      "id": "node-api-order",
+      "type": "text",
+      "x": -380,
+      "y": 0,
+      "width": 260,
+      "height": 120,
+      "text": "# OrderAPI\n\n- POST /orders\n- GET /orders/{id}\n- GET /orders/user/{user_id}"
+    },
+    {
+      "id": "node-service-user",
+      "type": "text",
+      "x": 20,
+      "y": -150,
+      "width": 260,
+      "height": 120,
+      "text": "# UserService\n\n- create_user()\n- get_user()\n- update_user()\n- delete_user()"
+    },
+    {
+      "id": "node-service-order",
+      "type": "text",
+      "x": 20,
+      "y": 0,
+      "width": 260,
+      "height": 120,
+      "text": "# OrderService\n\n- create_order()\n- get_order()\n- get_user_orders()"
+    },
+    {
+      "id": "node-model-user",
+      "type": "text",
+      "x": 420,
+      "y": -150,
+      "width": 260,
+      "height": 120,
+      "text": "# User Model\n\n- id: int\n- name: str\n- email: str\n- created_at: datetime"
+    },
+    {
+      "id": "node-model-order",
+      "type": "text",
+      "x": 420,
+      "y": 0,
+      "width": 260,
+      "height": 120,
+      "text": "# Order Model\n\n- id: int\n- user_id: int (FK)\n- total: decimal\n- status: str"
+    },
+    {
+      "id": "node-db",
+      "type": "text",
+      "x": 420,
+      "y": 150,
+      "width": 260,
+      "height": 80,
+      "text": "# Database\n\nPostgreSQL",
+      "color": "4"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-api-user-service",
+      "fromNode": "node-api-user",
+      "toNode": "node-service-user",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "调用"
+    },
+    {
+      "id": "edge-api-order-service",
+      "fromNode": "node-api-order",
+      "toNode": "node-service-order",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "调用"
+    },
+    {
+      "id": "edge-service-user-model",
+      "fromNode": "node-service-user",
+      "toNode": "node-model-user",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "操作"
+    },
+    {
+      "id": "edge-service-order-model",
+      "fromNode": "node-service-order",
+      "toNode": "node-model-order",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "操作"
+    },
+    {
+      "id": "edge-order-user-dep",
+      "fromNode": "node-service-order",
+      "toNode": "node-service-user",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "label": "依赖"
+    },
+    {
+      "id": "edge-model-user-db",
+      "fromNode": "node-model-user",
+      "toNode": "node-db",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-model-order-db",
+      "fromNode": "node-model-order",
+      "toNode": "node-db",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-order-user-fk",
+      "fromNode": "node-model-order",
+      "toNode": "node-model-user",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "label": "FK: user_id"
+    }
+  ]
+}

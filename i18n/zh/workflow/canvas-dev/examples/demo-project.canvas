@@ -1,0 +1,281 @@
+{
+  "nodes": [
+    {
+      "id": "title",
+      "type": "text",
+      "x": -100,
+      "y": -350,
+      "width": 400,
+      "height": 60,
+      "text": "# 📦 电商系统架构白板\n\n演示项目 - 用户、商品、订单管理"
+    },
+    {
+      "id": "group-frontend",
+      "type": "group",
+      "x": -600,
+      "y": -250,
+      "width": 250,
+      "height": 500,
+      "label": "🖥️ 前端"
+    },
+    {
+      "id": "group-api",
+      "type": "group",
+      "x": -300,
+      "y": -250,
+      "width": 250,
+      "height": 500,
+      "label": "🌐 API网关"
+    },
+    {
+      "id": "group-service",
+      "type": "group",
+      "x": 0,
+      "y": -250,
+      "width": 300,
+      "height": 500,
+      "label": "⚙️ 业务服务"
+    },
+    {
+      "id": "group-infra",
+      "type": "group",
+      "x": 350,
+      "y": -250,
+      "width": 300,
+      "height": 500,
+      "label": "🔧 基础设施"
+    },
+    {
+      "id": "fe-web",
+      "type": "text",
+      "x": -580,
+      "y": -200,
+      "width": 210,
+      "height": 80,
+      "text": "# Web App\n\nReact + TypeScript"
+    },
+    {
+      "id": "fe-mobile",
+      "type": "text",
+      "x": -580,
+      "y": -100,
+      "width": 210,
+      "height": 80,
+      "text": "# Mobile App\n\nReact Native"
+    },
+    {
+      "id": "api-gateway",
+      "type": "text",
+      "x": -280,
+      "y": -200,
+      "width": 210,
+      "height": 100,
+      "text": "# API Gateway\n\n- 路由分发\n- 认证鉴权\n- 限流熔断"
+    },
+    {
+      "id": "svc-user",
+      "type": "text",
+      "x": 20,
+      "y": -200,
+      "width": 260,
+      "height": 100,
+      "text": "# UserService\n\n- 用户注册/登录\n- 个人信息管理\n- 权限校验"
+    },
+    {
+      "id": "svc-product",
+      "type": "text",
+      "x": 20,
+      "y": -80,
+      "width": 260,
+      "height": 100,
+      "text": "# ProductService\n\n- 商品CRUD\n- 库存管理\n- 分类搜索"
+    },
+    {
+      "id": "svc-order",
+      "type": "text",
+      "x": 20,
+      "y": 40,
+      "width": 260,
+      "height": 100,
+      "text": "# OrderService\n\n- 下单流程\n- 订单状态机\n- 退款处理"
+    },
+    {
+      "id": "svc-payment",
+      "type": "text",
+      "x": 20,
+      "y": 160,
+      "width": 260,
+      "height": 80,
+      "text": "# PaymentService\n\n- 支付网关对接\n- 账单管理"
+    },
+    {
+      "id": "infra-db",
+      "type": "text",
+      "x": 370,
+      "y": -200,
+      "width": 260,
+      "height": 80,
+      "text": "# PostgreSQL\n\n主数据库",
+      "color": "4"
+    },
+    {
+      "id": "infra-cache",
+      "type": "text",
+      "x": 370,
+      "y": -100,
+      "width": 260,
+      "height": 80,
+      "text": "# Redis\n\n缓存 + 会话",
+      "color": "1"
+    },
+    {
+      "id": "infra-mq",
+      "type": "text",
+      "x": 370,
+      "y": 0,
+      "width": 260,
+      "height": 80,
+      "text": "# RabbitMQ\n\n异步消息队列",
+      "color": "2"
+    },
+    {
+      "id": "infra-es",
+      "type": "text",
+      "x": 370,
+      "y": 100,
+      "width": 260,
+      "height": 80,
+      "text": "# Elasticsearch\n\n商品搜索引擎",
+      "color": "5"
+    },
+    {
+      "id": "external-stripe",
+      "type": "text",
+      "x": 370,
+      "y": 200,
+      "width": 260,
+      "height": 60,
+      "text": "# Stripe API\n\n外部支付服务",
+      "color": "6"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-web-gw",
+      "fromNode": "fe-web",
+      "toNode": "api-gateway",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "HTTP"
+    },
+    {
+      "id": "e-mobile-gw",
+      "fromNode": "fe-mobile",
+      "toNode": "api-gateway",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "HTTP"
+    },
+    {
+      "id": "e-gw-user",
+      "fromNode": "api-gateway",
+      "toNode": "svc-user",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "/users/*"
+    },
+    {
+      "id": "e-gw-product",
+      "fromNode": "api-gateway",
+      "toNode": "svc-product",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "/products/*"
+    },
+    {
+      "id": "e-gw-order",
+      "fromNode": "api-gateway",
+      "toNode": "svc-order",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "/orders/*"
+    },
+    {
+      "id": "e-order-user",
+      "fromNode": "svc-order",
+      "toNode": "svc-user",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "label": "校验用户"
+    },
+    {
+      "id": "e-order-product",
+      "fromNode": "svc-order",
+      "toNode": "svc-product",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "label": "扣减库存"
+    },
+    {
+      "id": "e-order-payment",
+      "fromNode": "svc-order",
+      "toNode": "svc-payment",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "label": "发起支付"
+    },
+    {
+      "id": "e-user-db",
+      "fromNode": "svc-user",
+      "toNode": "infra-db",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "e-product-db",
+      "fromNode": "svc-product",
+      "toNode": "infra-db",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "e-order-db",
+      "fromNode": "svc-order",
+      "toNode": "infra-db",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "e-user-cache",
+      "fromNode": "svc-user",
+      "toNode": "infra-cache",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "会话"
+    },
+    {
+      "id": "e-product-es",
+      "fromNode": "svc-product",
+      "toNode": "infra-es",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "搜索"
+    },
+    {
+      "id": "e-order-mq",
+      "fromNode": "svc-order",
+      "toNode": "infra-mq",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "订单事件"
+    },
+    {
+      "id": "e-payment-stripe",
+      "fromNode": "svc-payment",
+      "toNode": "external-stripe",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "支付请求"
+    }
+  ]
+}
