@@ -16,6 +16,7 @@ workflow/
 | 工作流 | 说明 |
 |--------|------|
 | [auto-dev-loop](./auto-dev-loop/) | 基于状态机+Hook的五步AI Agent闭环开发流程 |
+| [canvas-dev](./canvas-dev/) | Canvas白板驱动开发工作流（AI架构总师） |
 
 ## 添加新工作流
 

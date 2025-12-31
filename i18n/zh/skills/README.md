@@ -1,6 +1,6 @@
 # 🎯 AI Skills 技能库
 
-`i18n/zh/skills/` 目录存放 AI 技能（Skills），这些是比提示词更高级的能力封装，可以让 AI 在特定领域表现出专家级水平。当前包含 **17 个**专业技能。
+`i18n/zh/skills/` 目录存放 AI 技能（Skills），这些是比提示词更高级的能力封装，可以让 AI 在特定领域表现出专家级水平。当前包含 **18 个**专业技能。
 
 ## 目录结构
 
@@ -12,6 +12,7 @@ i18n/zh/skills/
 │   └── claude-skills/       # ⭐ 元技能核心
 │
 ├── 01-AI工具/               # AI CLI 和工具
+│   ├── canvas-dev/          # ⭐ Canvas白板驱动开发（AI架构总师）
 │   ├── headless-cli/        # 无头模式 AI CLI 调用
 │   ├── claude-code-guide/   # Claude Code 使用指南
 │   └── claude-cookbooks/    # Claude API 最佳实践
@@ -47,6 +48,7 @@ i18n/zh/skills/
 
 | 技能 | 说明 |
 |:---|:---|
+| [canvas-dev](./01-AI工具/canvas-dev/SKILL.md) | ⭐ Canvas白板驱动开发（AI架构总师） |
 | [headless-cli](./01-AI工具/headless-cli/SKILL.md) | 无头模式 AI CLI 调用（Gemini/Claude/Codex） |
 | [claude-code-guide](./01-AI工具/claude-code-guide/SKILL.md) | Claude Code CLI 使用指南 |
 | [claude-cookbooks](./01-AI工具/claude-cookbooks/SKILL.md) | Claude API 最佳实践 |
