@@ -12,4 +12,4 @@ Encounter any problems? Send them to AI, describe them clearly, you can send scr
 
 Having understood the philosophical principles, let's move on to practical application:
 
-→ [01-Network Environment Configuration](./01-网络环境配置.md)
+→ [01-Network Environment Configuration](./01-Network%20Environment%20Configuration.md)
