@@ -110,4 +110,4 @@ export http_proxy=http://127.0.0.1:7890
 
 ## Next Steps
 
-After network configuration is complete, continue reading [02-开发环境搭建](./02-开发环境搭建.md).
+After network configuration is complete, continue reading [02-Development Environment Setup](./02-Development%20Environment%20Setup.md).
