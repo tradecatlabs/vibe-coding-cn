@@ -155,4 +155,4 @@ After configuration, execute `source ~/.bashrc` to apply the changes.
 
 Once the environment setup is complete, proceed to the next step:
 
-→ [03-IDE Configuration](./03-IDE配置.md) - Configure VS Code Development Environment
+→ [03-IDE Configuration](./03-IDE%20Configuration.md) - Configure VS Code Development Environment
