@@ -5,7 +5,7 @@
 -->
 <p align="center">
   <!-- Recommended size: 1280x640px. Can be created using tools like Canva, Figma or https://banners.beyondco.de/ -->
-  <img src="https://github.com/tukuaiai.png" alt="Vibe Coding Guide" width="80px">
+  <img src="https://github.com/tukuaiai.png" alt="Vibe Coding Guide" width="50px">
 </p>
 
 <div align="center">
@@ -21,55 +21,49 @@
 -->
 <!-- Project Status Badges -->
 <p>
-  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/tukuaiai/vibe-coding-cn?label=License&style=for-the-badge" alt="License"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/tukuaiai/vibe-coding-cn?label=License&style=for-the-badge" alt="License"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn"><img src="https://img.shields.io/github/languages/top/tukuaiai/vibe-coding-cn?label=Language&style=for-the-badge" alt="Main Language"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn"><img src="https://img.shields.io/github/languages/code-size/tukuaiai/vibe-coding-cn?label=Code%20Size&style=for-the-badge" alt="Code Size"></a>
-  <a href="https://github.com/tukuaiai/vibe-coding-cn/graphs/contributors"><img src="https://img.shields.io/github/contributors/tukuaiai/vibe-coding-cn?label=Contributors&style=for-the-badge" alt="Contributors"></a>
   <a href="https://x.com/123olp"><img src="https://img.shields.io/badge/X-@123olp-black?style=for-the-badge&logo=x" alt="X"></a>
   <a href="https://t.me/glue_coding"><img src="https://img.shields.io/badge/Chat-Telegram-blue?style=for-the-badge&logo=telegram" alt="Telegram Group"></a>
 </p>
 
 <!-- Multilingual Entry -->
 <p>
-  <a href="../zh/README.md"><img src="https://img.shields.io/badge/Lang-中文-red?style=for-the-badge" alt="Simplified Chinese"></a>
-  <a href="../en/README.md"><img src="https://img.shields.io/badge/Lang-English-lightgrey?style=for-the-badge" alt="English"></a>
-  <a href="../README.md"><img src="https://img.shields.io/badge/🌐_More_Languages-25+-blue?style=for-the-badge" alt="More Languages"></a>
+  <a href="../../README.md"><img src="https://img.shields.io/badge/Lang-中文-red?style=for-the-badge" alt="简体中文"></a>
+  <a href="./README.md"><img src="https://img.shields.io/badge/Lang-English-lightgrey?style=for-the-badge" alt="English"></a>
 </p>
 
 <!-- Resource Quick Links - Grouped by Importance -->
 <!-- 🔴 Core Concepts (Red) -->
 <p>
-  <a href="./documents/01-getting-started/00-Vibe%20Coding%20Philosophy.md"><img src="https://img.shields.io/badge/🧠_Core_Philosophy-Must_Read-crimson?style=for-the-badge" alt="Core Philosophy"></a>
-  <a href="./documents/00-fundamentals/Glue%20Coding.md"><img src="https://img.shields.io/badge/🧬_Glue_Coding-Silver_Bullet-red?style=for-the-badge" alt="Glue Coding"></a>
-  <a href="./documents/01-getting-started/README.md"><img src="https://img.shields.io/badge/🚀_Getting_Started-Beginners-red?style=for-the-badge" alt="Getting Started"></a>
-  <a href="./documents/00-fundamentals/Language%20Layer%20Elements.md"><img src="https://img.shields.io/badge/📊_Language_Layers-12_Levels-gold?style=for-the-badge" alt="Language Layers"></a>
-  <a href="./documents/00-fundamentals/Common%20Pitfalls.md"><img src="https://img.shields.io/badge/🕳️_Common_Pitfalls-Guide-yellow?style=for-the-badge" alt="Common Pitfalls"></a>
-  <a href="./documents/04-resources/External%20Resource%20Aggregation.md"><img src="https://img.shields.io/badge/📡_Resources-Aggregation-teal?style=for-the-badge" alt="Resource Aggregation"></a>
-</p>
-<!-- 🟠 Methodology (Orange) -->
-<p>
-  <a href="./documents/00-fundamentals/A%20Formalization%20of%20Recursive%20Self-Optimizing%20Generative%20Systems.md"><img src="https://img.shields.io/badge/📐_Meta_Methodology-Recursive-darkorange?style=for-the-badge" alt="Meta Methodology"></a>
-  <a href="./documents/00-fundamentals/The%20Way%20of%20Programming.md"><img src="https://img.shields.io/badge/🧭_Way_of_Programming-Dao_Fa_Shu-orange?style=for-the-badge" alt="Way of Programming"></a>
-  <a href="./documents/03-practice/README.md"><img src="https://img.shields.io/badge/🎬_Practice-Projects-orange?style=for-the-badge" alt="Practice Projects"></a>
-</p>
-<!-- 🟡 Practical Tools (Yellow/Green) -->
-<p>
-  <a href="./documents/04-resources/Tool%20Collection.md"><img src="https://img.shields.io/badge/🛠️_Tools-Quick_Ref-teal?style=for-the-badge" alt="Tools"></a>
-</p>
-<!-- 🔵 Resource Library (Blue/Purple) -->
-<p>
-  <a href="./prompts/"><img src="https://img.shields.io/badge/💬_Prompts-Curated-purple?style=for-the-badge" alt="Curated Prompts"></a>
-  <a href="./skills/"><img src="https://img.shields.io/badge/⚡_Skills-Collection-forestgreen?style=for-the-badge" alt="Skills Collection"></a>
-  <a href="https://docs.google.com/spreadsheets/d/1ngoQOhJqdguwNAilCl1joNwTje7FWWN9WiI2bo5VhpU/edit?gid=2093180351#gid=2093180351&range=A1"><img src="https://img.shields.io/badge/📋_Prompts-Online_Sheet-blue?style=for-the-badge" alt="Online Prompt Sheet"></a>
+  <a href="../zh/documents/-01-哲学与方法论/README.md"><img src="https://img.shields.io/badge/🔮_Philosophy_&_Methodology-Protocol-purple?style=for-the-badge" alt="Philosophy & Methodology"></a>
+  <a href="../zh/documents/01-入门指南/00-Vibe%20Coding%20哲学原理.md"><img src="https://img.shields.io/badge/🧠_Core_Philosophy-Must_Read-crimson?style=for-the-badge" alt="Core Philosophy"></a>
+  <a href="../zh/documents/00-基础指南/胶水编程.md"><img src="https://img.shields.io/badge/🧬_Glue_Coding-Silver_Bullet-red?style=for-the-badge" alt="Glue Coding"></a>
+  <a href="../zh/documents/02-方法论/图形化AI协作-Canvas白板驱动开发.md"><img src="https://img.shields.io/badge/🎨_Canvas_Whiteboard-Visual_Driven-orange?style=for-the-badge" alt="Canvas Whiteboard Driven Development"></a>
+  <a href="../zh/documents/01-入门指南/README.md"><img src="https://img.shields.io/badge/🚀_Getting_Started-Beginners-red?style=for-the-badge" alt="Getting Started"></a>
+  <a href="../zh/documents/00-基础指南/血的教训.md"><img src="https://img.shields.io/badge/🩸_Blood_Lessons-Must_See-red?style=for-the-badge" alt="Blood Lessons"></a>
+  <a href="../zh/documents/00-基础指南/语言层要素.md"><img src="https://img.shields.io/badge/📊_Language_Layers-12_Levels-gold?style=for-the-badge" alt="Language Layer Elements"></a>
+  <a href="../zh/documents/00-基础指南/常见坑汇总.md"><img src="https://img.shields.io/badge/🕳️_Common_Pitfalls-Guide-yellow?style=for-the-badge" alt="Common Pitfalls"></a>
+  <a href="../zh/documents/00-基础指南/强前置条件约束.md"><img src="https://img.shields.io/badge/🚫_Hard_Constraints-Iron_Laws-darkred?style=for-the-badge" alt="Hard Constraints"></a>
+  <a href="../zh/documents/04-资源/外部资源聚合.md"><img src="https://img.shields.io/badge/📡_Resources-Aggregation-teal?style=for-the-badge" alt="Resource Aggregation"></a>
+  <a href="../zh/documents/00-基础指南/A%20Formalization%20of%20Recursive%20Self-Optimizing%20Generative%20Systems.md"><img src="https://img.shields.io/badge/📐_Meta_Methodology-Recursive-darkorange?style=for-the-badge" alt="Meta Methodology"></a>
+  <a href="../zh/documents/00-基础指南/编程之道.md"><img src="https://img.shields.io/badge/🧭_Way_of_Programming-Dao_Fa_Shu-orange?style=for-the-badge" alt="Way of Programming"></a>
+  <a href="../zh/documents/03-实战/README.md"><img src="https://img.shields.io/badge/🎬_Practice-Projects-orange?style=for-the-badge" alt="Practice Projects"></a>
+  <a href="../zh/documents/04-资源/工具集.md"><img src="https://img.shields.io/badge/🛠️_Tools-Quick_Ref-teal?style=for-the-badge" alt="Tools"></a>
+  <a href="../zh/prompts/"><img src="https://img.shields.io/badge/💬_Prompts-Curated-purple?style=for-the-badge" alt="Curated Prompts"></a>
+  <a href="../zh/skills/"><img src="https://img.shields.io/badge/⚡_Skills-Collection-forestgreen?style=for-the-badge" alt="Skills Collection"></a>
+  <a href="https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203"><img src="https://img.shields.io/badge/📋_Prompts-Online_Sheet-blue?style=for-the-badge" alt="Online Prompt Sheet"></a>
   <a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"><img src="https://img.shields.io/badge/🔧_System_Prompts-Repo-slateblue?style=for-the-badge" alt="System Prompts Repo"></a>
-  <a href="../../libs/external/chat-vault/README.md"><img src="https://img.shields.io/badge/🔐_Chat_Vault-AI_Sessions-gold?style=for-the-badge" alt="Chat Vault"></a>
+  <a href="../../libs/external/chat-vault/README_CN.md"><img src="https://img.shields.io/badge/🔐_Chat_Vault-AI_Sessions-gold?style=for-the-badge" alt="Chat Vault"></a>
 </p>
 
 [📋 Tools & Resources](#-the-tools-qi)
-[🚀 Getting Started](#-getting-started-beginners)
-[⚙️ Full Setup](#️-full-setup-process)
-[📞 Contact](#-contact-information)
-[✨ Support](#-support-project)
+[🚀 Getting Started](#-getting-started)
+[🎯 Original Repository Translation](#-original-repository-translation)
+[⚙️ Full Setup Process](#️-full-setup-process)
+[📞 Contact](#-contact)
+[✨ Support Project](#-support-project)
 [🤝 Contributing](#-contributing)
 
 AI interpretation link for this repository: [zread.ai/tukuaiai/vibe-coding-cn](https://zread.ai/tukuaiai/vibe-coding-cn/1-overview)
@@ -115,14 +109,14 @@ Requirement: After completing each step, ask me if it was successful before cont
 
 ---
 
-## 🚀 Getting Started (Beginners)
+## 🚀 Getting Started
 
 Complete beginner? Follow these steps in order:
 
-0. [00-Vibe Coding Philosophy](./documents/01-getting-started/00-Vibe%20Coding%20Philosophy.md) - Understand core concepts
-1. [01-Network Environment Configuration](./documents/01-getting-started/01-Network%20Environment%20Configuration.md) - Configure network access
-2. [02-Development Environment Setup](./documents/01-getting-started/02-Development%20Environment%20Setup.md) - Copy prompts to AI, let AI guide you
-3. [03-IDE Configuration](./documents/01-getting-started/03-IDE%20Configuration.md) - Configure VS Code editor
+0. [00-Vibe Coding Philosophy](../zh/documents/01-入门指南/00-Vibe%20Coding%20哲学原理.md) - Understand core concepts
+1. [01-Network Environment Configuration](../zh/documents/01-入门指南/01-网络环境配置.md) - Configure network access
+2. [02-Development Environment Setup](../zh/documents/01-入门指南/02-开发环境搭建.md) - Copy prompts to AI, let AI guide you through environment setup
+3. [03-IDE Configuration](../zh/documents/01-入门指南/03-IDE配置.md) - Configure VS Code editor
 
 ---
 
@@ -141,7 +135,49 @@ Glue Coding is the ultimate evolution of Vibe Coding, potentially solving three 
 
 **Core Philosophy**: Copy instead of write, connect instead of create, reuse instead of reinvent.
 
-👉 [Learn more about Glue Coding](./documents/00-fundamentals/Glue%20Coding.md)
+👉 [Learn more about Glue Coding](../zh/documents/00-基础指南/胶水编程.md)
+
+</details>
+
+<details open>
+<summary><strong>🎨 Canvas Whiteboard-Driven Development</strong></summary>
+
+> **A New Paradigm for Visual AI Collaboration**
+
+Traditional development: Code → Verbal communication → Mental architecture → Code out of control
+
+Canvas approach: **Code ⇄ Whiteboard ⇄ AI ⇄ Human**, whiteboard becomes the single source of truth
+
+| Pain Point | Solution |
+|:---|:---|
+| 🤖 AI can't understand project structure | ✅ AI directly reads whiteboard JSON, instantly understands architecture |
+| 🧠 Humans can't remember complex dependencies | ✅ Clear connections, one glance shows all impacts |
+| 💬 Team collaboration relies on verbal communication | ✅ Point at the whiteboard to explain, newcomers understand in 5 minutes |
+
+**Core Philosophy**: Graphics are first-class citizens, code is the serialized form of the whiteboard.
+
+👉 [Learn more about Canvas Whiteboard-Driven Development](../zh/documents/02-方法论/图形化AI协作-Canvas白板驱动开发.md)
+
+</details>
+
+<details open>
+<summary><strong>🐝 AI Swarm Collaboration</strong></summary>
+
+> **Multi-AI Agent Collaboration System Based on tmux**
+
+Traditional mode: Human ←→ AI₁, Human ←→ AI₂, Human ←→ AI₃ (Human is the bottleneck)
+
+Swarm mode: **Human → AI₁ ←→ AI₂ ←→ AI₃** (AI autonomous collaboration)
+
+| Capability | Implementation | Effect |
+|:---|:---|:---|
+| 🔍 Perception | `capture-pane` | Read any terminal content |
+| 🎮 Control | `send-keys` | Send keystrokes to any terminal |
+| 🤝 Coordination | Shared state files | Task synchronization and division |
+
+**Core Breakthrough**: AI is no longer isolated, but a cluster that can perceive, communicate, and control each other.
+
+👉 [Learn more about AI Swarm Collaboration](../zh/documents/02-方法论/AI蜂群协作-tmux多Agent协作系统.md)
 
 </details>
 
@@ -155,11 +191,12 @@ Glue Coding is the ultimate evolution of Vibe Coding, potentially solving three 
 
 **Note**: The following experience sharing is not universally applicable. Please adopt it dialectically in specific practices combined with your scenario.
 
-## 🔑 Meta-Methodology
+<details open>
+<summary><strong>🔑 Meta-Methodology</strong></summary>
 
 The core of this philosophy is to build an AI system capable of **self-optimization**. Its recursive nature can be broken down into the following steps:
 
-> Further reading: [A Formalization of Recursive Self-Optimizing Generative Systems](./documents/00-fundamentals/A%20Formalization%20of%20Recursive%20Self-Optimizing%20Generative%20Systems.md)
+> Further reading: [A Formalization of Recursive Self-Optimizing Generative Systems](../zh/documents/00-基础指南/A%20Formalization%20of%20Recursive%20Self-Optimizing%20Generative%20Systems.md)
 
 #### 1. Define Core Roles:
 
@@ -184,41 +221,52 @@ The core of this philosophy is to build an AI system capable of **self-optimizat
 
 Through this continuous **recursive optimization loop**, the system achieves **self-transcendence** in each iteration, infinitely approaching the preset **expected state**.
 
+</details>
+
+<details open>
+<summary><strong>🧭 Methodology Essence (Dao · Fa · Shu)</strong></summary>
+
 ## 🧭 The Way (Dao)
 
-* **If AI can do it, don't do it manually.**
-* **Ask AI everything.**
-* **Purpose-driven: All actions in the development process revolve around "purpose".**
-* **Context is the primary element of Vibe Coding; garbage in, garbage out.**
-* **Systemic thinking: entities, links, functions/purposes, three dimensions.**
-* **Data and functions are everything in programming.**
-* **Input, process, output describe the entire process.**
-* **Frequently ask AI: What is it? Why? How to do it?**
-* **Structure first, then code; always plan the framework well, otherwise, technical debt will be endless.**
-* **Occam's Razor: Do not add code if unnecessary.**
-* **Pareto Principle: Focus on the important 20%.**
-* **Reverse thinking: First clarify your requirements, then build code reversely from requirements.**
-* **Repeat, try multiple times, if it really doesn't work, open a new window.**
-* **Focus, extreme focus can penetrate code; do one thing at a time (except for divine beings).**
+* **If AI can do it, don't do it manually**
+* **Ask AI everything**
+* **Purpose-driven: All actions in the development process revolve around "purpose"**
+* **Context is the primary element of Vibe Coding; garbage in, garbage out**
+* **Systemic thinking: entities, links, functions/purposes, three dimensions**
+* **Data and functions are everything in programming**
+* **Input, process, output describe the entire process**
+* **Frequently ask AI: What is it? Why? How to do it? (Golden Circle Rule)**
+* **Structure first, then code; always plan the framework well, otherwise technical debt will be endless**
+* **Occam's Razor: Do not add code if unnecessary**
+* **Pareto Principle: Focus on the important 20%**
+* **Reverse thinking: First clarify your requirements, then build code reversely from requirements**
+* **Repeat, try multiple times, if it really doesn't work, open a new window**
+* **Focus, extreme focus can penetrate code; do one thing at a time (except for divine beings)**
 
 
 ## 🧩 The Method (Fa)
 
-* **One-sentence goal + non-goals.**
-* **Orthogonality: functionality should not be too repetitive (this depends on the scenario).**
-* **Copy, don't write: don't reinvent the wheel, first ask AI if there's a suitable repository, download and modify it.**
-* **Always read the official documentation; first, feed the official documentation to AI.**
-* **Split modules by responsibility.**
-* **Interfaces first, implementation later.**
-* **Change only one module at a time.**
-* **Documentation is context, not an afterthought.**
+* **One-sentence goal + non-goals**
+* **Orthogonality (scenario-dependent)**
+* **Copy, don't write: don't reinvent the wheel, first ask AI if there's a suitable repository, download and modify it (glue coding new paradigm)**
+* **Always read the official documentation; first crawl the official documentation and feed it to AI (let AI find tools to download locally)**
+* **Split modules by responsibility**
+* **Interfaces first, implementation later**
+* **Change only one module at a time**
+* **Documentation is context, not an afterthought**
 
 ## 🛠️ The Techniques (Shu)
 
-* Clearly state: **What can be changed, what cannot be changed.**
-* Debug only provide: **Expected vs. Actual + Minimum Reproduction.**
-* Testing can be handed over to AI, **assertions human-reviewed.**
-* Too much code, **switch sessions.**
+* Clearly state: **What can be changed, what cannot be changed**
+* Debug only provide: **Expected vs. Actual + Minimum Reproduction**
+* Testing can be handed over to AI, **assertions human-reviewed**
+* Too much code, **switch sessions**
+* **AI mistakes should be organized into experience using prompts for persistent storage; when encountering unsolvable problems, let AI search this collected issues and find solutions**
+
+</details>
+
+<details open>
+<summary><strong>📋 The Tools (Qi)</strong></summary>
 
 ## 📋 The Tools (Qi)
 
@@ -259,54 +307,58 @@ Through this continuous **recursive optimization loop**, the system achieves **s
 
 ### Resources and Templates
 
-*   [**Prompt Library (Online Table)**](https://docs.google.com/spreadsheets/d/1ngoQOhJqdguwNAilCl1joNwTje7FWWN9WiI2bo5VhpU/edit?gid=2093180351#gid=2093180351&range=A1): An online table containing a large number of ready-to-use prompts for various categories.
+*   [**Prompt Library (Online Table)**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): An online table containing a large number of ready-to-use prompts for various categories.
 *   [**Third-party System Prompt Learning Library**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools): For learning and referencing system prompts of other AI tools.
 *   [**Skills Maker**](https://github.com/yusufkaraaslan/Skill_Seekers): A tool for generating customized skills based on requirements.
-*   [**Meta-Prompts**](https://docs.google.com/spreadsheets/d/1ngoQOhJqdguwNAilCl1joNwTje7FWWN9WiI2bo5VhpU/edit?gid=1770874220#gid=1770874220): Advanced prompts for generating prompts.
-*   [**General Project Architecture Template**](./documents/00-fundamentals/General%20Project%20Architecture%20Template.md): Can be used to quickly set up standardized project directory structures.
-*   [**Meta-Skill: Skills of Skills**](./skills/claude-skills/SKILL.md): A meta-skill for generating skills.
-*   [**tmux Shortcut Cheatsheet**](./documents/02-methodology/tmux%20Shortcut%20Cheatsheet.md): Reference documentation for tmux shortcuts.
-*   [**LazyVim Shortcut Cheatsheet**](./documents/02-methodology/LazyVim%20Shortcut%20Cheatsheet.md): Reference documentation for LazyVim shortcuts.
+*   [**Meta-Prompts**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): Advanced prompts for generating prompts.
+*   [**General Project Architecture Template**](../zh/documents/00-基础指南/通用项目架构模板.md): Can be used to quickly set up standardized project directory structures.
+*   [**Meta-Skill: Skills of Skills**](../zh/skills/00-元技能/claude-skills/SKILL.md): A meta-skill for generating skills.
+*   [**tmux Shortcut Cheatsheet**](../zh/documents/02-方法论/tmux快捷键大全.md): Reference documentation for tmux shortcuts.
+*   [**LazyVim Shortcut Cheatsheet**](../zh/documents/02-方法论/LazyVim快捷键大全.md): Reference documentation for LazyVim shortcuts.
+*   [**Mobile Remote Vibe Coding**](../zh/documents/02-方法论/关于手机ssh任意位置链接本地计算机，基于frp实现的方法.md): SSH remote control of local computer via mobile phone for Vibe Coding based on frp.
+
+### External Tutorials and Resources
+
 *   [**Erge's Java Advanced Path**](https://javabetter.cn/): Contains detailed configuration tutorials for various development tools.
 *   [**Virtual Card**](https://www.bybit.com/cards/?ref=YDGAVPN&source=applet_invite): Can be used for registering cloud services and other scenarios requiring international payments.
 
+### Community
+
+*   [**Telegram Group**](https://t.me/glue_coding): Vibe Coding Chinese exchange group
+*   [**Telegram Channel**](https://t.me/tradecat_ai_channel): Project updates and news
+
+### Internal Project Documentation
+
+*   [**Glue Coding**](../zh/documents/00-基础指南/): The Holy Grail and Silver Bullet of software engineering, the ultimate evolution of Vibe Coding.
+*   [**Chat Vault**](../../libs/external/chat-vault/): AI chat record saving tool, supporting Codex/Kiro/Gemini/Claude CLI.
+*   [**prompts-library Tool Description**](../../libs/external/prompts-library/): Supports mutual conversion between Excel and Markdown formats, contains hundreds of curated prompts.
+*   [**Coding Prompts Collection**](../zh/prompts/02-编程提示词/): Dedicated prompts for the Vibe Coding process.
+*   [**System Prompt Construction Principles**](../zh/documents/00-基础指南/系统提示词构建原则.md): A comprehensive guide on building efficient AI system prompts.
+*   [**Development Experience Summary**](../zh/documents/00-基础指南/开发经验.md): Variable naming, file structure, coding standards, architectural principles, etc.
+*   [**General Project Architecture Template**](../zh/documents/00-基础指南/通用项目架构模板.md): Standard directory structures for various project types.
+*   [**Augment MCP Configuration Document**](../zh/documents/02-方法论/auggie-mcp配置文档.md): Augment context engine configuration instructions.
+*   [**System Prompts Collection**](../zh/prompts/01-系统提示词/): System prompts for AI development, including multiple versions of development specifications.
+*   [**External Resource Aggregation**](../zh/documents/04-资源/外部资源聚合.md): GitHub curated repositories, AI tool platforms, prompt resources, quality bloggers compilation.
+
 ---
+
+</details>
+
+<details open>
+<summary><strong>Coding Model Performance Tier Reference</strong></summary>
 
 ## Coding Model Performance Tier Reference
 
 It is recommended to only choose models from the first tier for complex tasks to ensure optimal results and efficiency.
 
 *   **Tier 1**: `codex-5.1-max-xhigh`, `claude-opus-4.5-xhigh`, `gpt-5.2-xhigh`
-*   **Tier 2**: `claude-sonnet-4.5`, `kimi-k2-thinking`, `minimax-m2`, `glm-4.6`, `gemini-3.0-pro`, `gemini-2.5-pro`
-*   **Tier 3**: `qwen3`, `SWE`, `grok4`
 
 ---
 
-## 📚 Related Documents and Resources
+</details>
 
-*   **Community**:
-    *   [Telegram Group](https://t.me/glue_coding)
-    *   [Telegram Channel](https://t.me/tradecat_ai_channel)
-*   **Personal Sharing**:
-    *   [My Learning Experience](./documents/02-methodology/Learning%20Experience.md)
-    *   [Recommended Programming Books](./documents/04-resources/Recommended%20Programming%20Books.md)
-*   **Core Resources**:
-    *   [**Meta-Prompt Library**](https://docs.google.com/spreadsheets/d/1ngoQOhJqdguwNAilCl1joNwTje7FWWN9WiI2bo5VhpU/edit?gid=1770874220#gid=1770874220): A collection of advanced prompts for generating prompts.
-    *   [**Meta-Skill**](./skills/claude-skills/SKILL.md): A skill for generating skills.
-    *   [**Skills Library**](./skills): A modular skill repository that can be directly integrated.
-    *   [**Skill Generator**](https://github.com/yusufkaraaslan/Skill_Seekers): A tool to convert any material into agent-usable skills.
-    *   [**Online Prompt Database**](https://docs.google.com/spreadsheets/d/1ngoQOhJqdguwNAilCl1joNwTje7FWWN9WiI2bo5VhpU/edit?gid=2093180351#gid=2093180351&range=A1): An online table containing hundreds of user and system prompts for various scenarios.
-    *   [**Third-party System Prompt Repository**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools): Gathers system prompts from various AI tools.
-*   **Internal Project Documentation**:
-    *   [**prompts-library Tool Description**](../../libs/external/prompts-library/): This tool supports converting prompts between Excel and Markdown formats, and includes hundreds of selected prompts.
-    *   [**coding_prompts Collection**](./prompts/02-coding-prompts/): Dedicated prompts for the Vibe Coding process.
-    *   [**System Prompt Construction Principles**](./documents/00-fundamentals/System%20Prompt%20Construction%20Principles.md): A comprehensive guide on how to build efficient and reliable AI system prompts.
-    *   [**Development Experience Summary**](./documents/00-fundamentals/Development%20Experience.md): Includes practical experience on variable naming, file structure, coding standards, and architectural principles.
-    *   [**General Project Architecture Template**](./documents/00-fundamentals/General%20Project%20Architecture%20Template.md): Provides standard directory structures and best practices for various project types.
-    *   [**Augment MCP Configuration Document**](./documents/02-methodology/auggie-mcp%20Configuration%20Document.md): Detailed configuration instructions for the Augment context engine.
-    *   [**system_prompts Collection**](./prompts/01-system-prompts/): System prompts used to guide AI development, including multiple versions of development specifications and thinking frameworks.
-
----
+<details>
+<summary><strong>Project Directory Structure Overview</strong></summary>
 
 ### Project Directory Structure Overview
 
@@ -314,97 +366,99 @@ The core structure of this `vibe-coding-cn` project primarily revolves around kn
 
 ```
 .
-├── CODE_OF_CONDUCT.md           # Community code of conduct, regulating contributor behavior.
-├── CONTRIBUTING.md              # Contribution guide, explaining how to contribute to this project.
-├── GEMINI.md                    # AI assistant context document, including project overview, tech stack, and file structure.
-├── LICENSE                      # Open-source license file.
-├── Makefile                     # Project automation scripts for code checking, building, etc.
-├── README.md                    # Main project documentation, including project overview, usage guide, resource links, etc.
-├── .gitignore                   # Git ignore file.
-├── AGENTS.md                    # AI agent related documentation or configuration.
-├── CLAUDE.md                    # Core behavioral guidelines or configuration for the AI assistant.
+├── README.md                    # Main project documentation
+├── AGENTS.md                    # AI Agent behavioral guidelines
+├── GEMINI.md                    # Gemini model context
+├── Makefile                     # Automation scripts
+├── LICENSE                      # MIT License
+├── CODE_OF_CONDUCT.md           # Code of Conduct
+├── CONTRIBUTING.md              # Contribution Guide
+├── .gitignore                   # Git ignore rules
 │
-├── i18n/en/documents/           # Stores various explanatory documents, experience summaries, and detailed configuration instructions.
-│   ├── 00-fundamentals/             # Core concepts and methodology
-│   ├── 01-getting-started/          # Getting started guides
-│   ├── 02-methodology/              # Tools and tutorials
-│   ├── 03-practice/                 # Practice projects
-│   └── 04-resources/                # Templates and resources
+├── .github/                     # GitHub configuration
+│   ├── workflows/               # CI/CD workflows
+│   │   ├── ci.yml               # Markdown lint + link checker
+│   │   ├── labeler.yml          # Auto labeler
+│   │   └── welcome.yml          # Welcome new contributors
+│   ├── ISSUE_TEMPLATE/          # Issue templates
+│   ├── PULL_REQUEST_TEMPLATE.md # PR template
+│   ├── SECURITY.md              # Security policy
+│   ├── FUNDING.yml              # Sponsorship configuration
+│   └── wiki/                    # GitHub Wiki content
 │
-├── libs/                        # General library code for internal project modularization.
-│   ├── common/                  # Common functional modules.
-│   │   ├── models/              # Model definitions.
-│   │   │   └── __init__.py
-│   │   └── utils/               # Utility functions.
-│   │       └── backups/         # Internal backup tools.
-│   ├── database/                # Database related modules.
-│   │   └── .gitkeep             # Placeholder file, ensuring the directory is tracked by Git.
-│   └── external/                # External integration modules.
-│       ├── my-nvim/             # User's Neovim configuration.
-│       ├── prompts-library/     # Prompt library management tool (Excel-Markdown conversion).
-│       │   ├── main.py          # Main entry for the prompt library management tool.
-│       │   ├── scripts/         # Contains Excel and Markdown conversion scripts and configurations.
-│       │   ├── prompt_excel/    # Stores raw prompt data in Excel format.
-│       │   ├── prompt_docs/     # Stores Markdown prompt documents converted from Excel.
-│       │   └── ... (other prompts-library internal files)
-│       └── XHS-image-to-PDF-conversion/ # Xiaohongshu image to PDF conversion tool.
+├── i18n/                        # Multilingual assets (27 languages)
+│   ├── README.md                # Multilingual index
+│   ├── zh/                      # Chinese main corpus
+│   │   ├── documents/           # Document library
+│   │   │   ├── -01-哲学与方法论/ # Supreme ideology and methodology
+│   │   │   ├── 00-基础指南/     # Core principles and underlying logic
+│   │   │   ├── 01-入门指南/     # Getting started tutorials
+│   │   │   ├── 02-方法论/       # Specific tools and techniques
+│   │   │   ├── 03-实战/         # Project practice cases
+│   │   │   └── 04-资源/         # External resource aggregation
+│   │   ├── prompts/             # Prompt library
+│   │   │   ├── 00-元提示词/     # Meta prompts (prompts that generate prompts)
+│   │   │   ├── 01-系统提示词/   # AI system-level prompts
+│   │   │   ├── 02-编程提示词/   # Programming-related prompts
+│   │   │   └── 03-用户提示词/   # User-defined prompts
+│   │   └── skills/              # Skills library
+│   │       ├── 00-元技能/       # Meta skills (skills that generate skills)
+│   │       ├── 01-AI工具/       # AI CLI and tools
+│   │       ├── 02-数据库/       # Database skills
+│   │       ├── 03-加密货币/     # Cryptocurrency/quantitative trading
+│   │       └── 04-开发工具/     # General development tools
+│   ├── en/                      # English version (same structure as zh/)
+│   └── ...                      # Other language skeletons
 │
-├── i18n/en/prompts/             # Centralized storage for all types of AI prompts.
-│   ├── 00-meta-prompts/             # Meta prompts (prompts that generate prompts)
-│   ├── 01-system-prompts/           # AI system-level prompts for behavior and framework
-│   │   └── ... (system prompts)
-│   │
-│   ├── 02-coding-prompts/           # Prompts for programming and code generation
-│   │   └── ... (coding prompt files)
-│   │
-│   └── 03-user-prompts/             # User-defined or commonly used prompts
-│       └── ... (user prompts)
+├── libs/                        # Core library code
+│   ├── common/                  # Common modules
+│   │   ├── models/              # Model definitions
+│   │   └── utils/               # Utility functions
+│   ├── database/                # Database module (reserved)
+│   └── external/                # External tools
+│       ├── prompts-library/     # Excel ↔ Markdown conversion tool
+│       ├── chat-vault/          # AI chat record saving tool
+│       ├── Skill_Seekers-development/ # Skills maker
+│       ├── l10n-tool/           # Multilingual translation script
+│       ├── my-nvim/             # Neovim configuration
+│       ├── MCPlayerTransfer/    # MC player migration tool
+│       └── XHS-image-to-PDF-conversion/ # Xiaohongshu image to PDF
 │
-├── i18n/en/skills/              # Centralized storage for all types of skills.
-    ├── 00-meta-skills/              # Meta skills
-    │   └── claude-skills/           # Skills generator
-    ├── 01-ai-tools/                 # AI CLI tools
-    │   ├── claude-code-guide/
-    │   └── claude-cookbooks/
-    ├── 02-databases/                # Database skills
-    │   ├── postgresql/
-    │   └── timescaledb/
-    ├── 03-crypto/                   # Cryptocurrency/quantitative
-    │   ├── ccxt/
-    │   ├── coingecko/
-    │   ├── cryptofeed/
-    │   ├── hummingbot/
-    │   └── polymarket/
-    └── 04-dev-tools/                # Development tools
-        ├── telegram-dev/
-        ├── twscrape/
-        ├── snapdom/
-        └── proxychains/
+└── backups/                     # Backup scripts and archives
+    ├── 一键备份.sh              # Shell backup script
+    ├── 快速备份.py              # Python backup script
+    ├── README.md                # Backup instructions
+    └── gz/                      # Compressed archive directory
 ```
 
 ---
 
-## 🖼️ Overview and Demo
+</details>
+
+## 📺 Demo and Output
 
 In one sentence: Vibe Coding = **Planning-driven + Context-fixed + AI Pair Execution**, transforming "idea to maintainable code" into an auditable pipeline, rather than an uniteratable monolith.
 
-**What you will get:**
-- A systematic prompt toolchain: `i18n/en/prompts/01-system-prompts/` defines AI behavioral boundaries, `i18n/en/prompts/02-coding-prompts/` provides full-link scripts for demand clarification, planning, and execution.
+**What you will get**
+- A systematic prompt toolchain: `i18n/zh/prompts/01-系统提示词/` defines AI behavioral boundaries, `i18n/zh/prompts/02-编程提示词/` provides full-link scripts for demand clarification, planning, and execution.
 - Closed-loop delivery path: Requirement → Context document → Implementation plan → Step-by-step implementation → Self-testing → Progress recording, fully reviewable and transferable.
+
+<details>
+<summary><strong>⚙️ Architecture and Workflow</strong></summary>
 
 ## ⚙️ Architecture and Workflow
 
 Core Asset Mapping:
 ```
-i18n/en/prompts/
-  00-meta-prompts/          # Meta prompts for generating prompts
-  01-system-prompts/        # System-level prompts constraining AI behavior
-  02-coding-prompts/        # Core prompts for demand clarification, planning, and execution
-  03-user-prompts/          # Reusable user-side prompts
-i18n/en/documents/
-  Templates and Resources/Code Organization.md, Templates and Resources/General Project Architecture Template.md, Methodology and Principles/Development Experience.md, Methodology and Principles/System Prompt Construction Principles.md, and other knowledge bases.
+i18n/zh/prompts/
+  00-元提示词/           # Advanced prompts for generating prompts
+  01-系统提示词/         # System-level prompts constraining AI behavior
+  02-编程提示词/         # Core prompts for demand clarification, planning, and execution
+  03-用户提示词/         # Reusable user-side prompts
+i18n/zh/documents/
+  04-资源/代码组织.md, 04-资源/通用项目架构模板.md, 00-基础指南/开发经验.md, 00-基础指南/系统提示词构建原则.md and other knowledge bases
 backups/
-  one-click-backup.sh, fast-backup.py  # Local/remote snapshot scripts.
+  一键备份.sh, 快速备份.py  # Local/remote snapshot scripts
 ```
 
 ```mermaid
@@ -445,11 +499,11 @@ graph TB
   end
 
   subgraph consume_layer[Execution and Consumption Layer]
-    artifacts_md --> catalog_coding[i18n/en/prompts/02-coding-prompts]
-    artifacts_md --> catalog_system[i18n/en/prompts/01-system-prompts]
-    artifacts_md --> catalog_meta[i18n/en/prompts/00-meta-prompts]
-    artifacts_md --> catalog_user[i18n/en/prompts/03-user-prompts]
-    artifacts_md --> docs_repo[i18n/en/documents/*]
+    artifacts_md --> catalog_coding[i18n/zh/prompts/02-编程提示词]
+    artifacts_md --> catalog_system[i18n/zh/prompts/01-系统提示词]
+    artifacts_md --> catalog_meta[i18n/zh/prompts/00-元提示词]
+    artifacts_md --> catalog_user[i18n/zh/prompts/03-用户提示词]
+    artifacts_md --> docs_repo[i18n/zh/documents/*]
     artifacts_md --> new_consumer[Reserved: Other Downstream Channels]
     catalog_coding --> ai_flow[AI Pair Programming Workflow]
     ai_flow --> deliverables[Project Context / Plan / Code Output]
@@ -463,7 +517,7 @@ graph TB
 
   subgraph infra_layer[Infrastructure and Cross-cutting Capabilities Layer]
     git[Git Version Control] --> orchestrator
-    backups[backups/one-click-backup.sh · backups/fast-backup.py] --> artifacts_md
+    backups[backups/一键备份.sh · backups/快速备份.py] --> artifacts_md
     deps[requirements.txt · scripts/requirements.txt] --> orchestrator
     config[prompts-library/scripts/config.yaml] --> orchestrator
     monitor[Reserved: Logging and Monitoring] --> orchestrator
@@ -471,6 +525,8 @@ graph TB
 ```
 
 ---
+
+</details>
 
 <details>
 <summary>📈 Performance Benchmarks (Optional)</summary>
@@ -494,28 +550,23 @@ This repository is positioned as a "workflow and prompts" library rather than a 
 gantt
     title Project Development Roadmap
     dateFormat YYYY-MM
-    section Near Term (2025)
-    Complete demo GIFs and example projects: active, 2025-12, 15d
-    Prompt index auto-generation script: 2025-12, 10d
-    section Mid Term (2026 Q1)
+    section In Progress (2025 Q4)
+    Complete demo GIFs and example projects: active, 2025-12, 30d
+    External resource aggregation completion: active, 2025-12, 20d
+    section Near Term (2026 Q1)
+    Prompt index auto-generation script: 2026-01, 15d
     One-click demo/verification CLI workflow: 2026-01, 15d
-    Backup script adds snapshot and validation: 2026-01, 10d
-    section Long Term (2026 Q1-Q2)
-    Templated example project set: 2026-02, 20d
-    Multi-model comparison and evaluation baseline: 2026-02, 20d
+    Backup script adds snapshot and validation: 2026-02, 10d
+    section Mid Term (2026 Q2)
+    Templated example project set: 2026-03, 30d
+    Multi-model comparison and evaluation baseline: 2026-04, 30d
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🎯 Original Repository Translation
 
-### 🆕 Absolute Beginner? Start Here!
-
-1. [01-Network Environment Configuration](./documents/01-getting-started/01-Network%20Environment%20Configuration.md) - Configure network access
-2. [02-Development Environment Setup](./documents/01-getting-started/02-Development%20Environment%20Setup.md) - Copy prompts to AI, let AI guide you through environment setup
-3. [03-IDE Configuration](./documents/01-getting-started/03-IDE%20Configuration.md) - Configure VS Code editor
-
-### Already have a development environment?
+> The following content is translated from the original repository [EnzeD/vibe-coding](https://github.com/EnzeD/vibe-coding)
 
 To start Vibe Coding, you only need one of the following two tools:
 - **Claude Opus 4.5**, used in Claude Code
@@ -701,7 +752,7 @@ Congratulations! You've built a basic game! It might still be rough and lack fea
 
 ---
 
-## 📞 Contact Information
+## 📞 Contact
 
 -   **GitHub**: [tukuaiai](https://github.com/tukuaiai)
 -   **Twitter / X**: [123olp](https://x.com/123olp)
@@ -714,15 +765,15 @@ Congratulations! You've built a basic game! It might still be rough and lack fea
 
 ## ✨ Support Project
 
-Please help us, thank you, good people will live long and peaceful lives 🙏🙏🙏
+Please help us, thank you, good people will have a peaceful life 🙏🙏🙏
 
+-   **Binance UID**: `572155580`
 -   **Tron (TRC20)**: `TQtBXCSTwLFHjBqTS4rNUp7ufiGx51BRey`
 -   **Solana**: `HjYhozVf9AQmfv7yv79xSNs6uaEU5oUk2USasYQfUYau`
 -   **Ethereum (ERC20)**: `0xa396923a71ee7D9480b346a17dDeEb2c0C287BBC`
 -   **BNB Smart Chain (BEP20)**: `0xa396923a71ee7D9480b346a17dDeEb2c0C287BBC`
 -   **Bitcoin**: `bc1plslluj3zq3snpnnczplu7ywf37h89dyudqua04pz4txwh8z5z5vsre7nlm`
 -   **Sui**: `0xb720c98a48c77f2d49d375932b2867e793029e6337f1562522640e4f84203d2e`
--   **Binance UID**: `572155580`
 
 ---
 
@@ -740,8 +791,10 @@ Thanks to all developers who contributed to this project!
 <a href="https://x.com/0XBard_thomas">@0XBard_thomas</a> |
 <a href="https://x.com/Pluvio9yte">@Pluvio9yte</a> |
 <a href="https://x.com/xDinoDeer">@xDinoDeer</a> |
-<a href="https://x.com/geekbb">@geekbb</a>
-<a href="https://x.com/GitHub_Daily">@GitHub_Daily</a>
+<a href="https://x.com/geekbb">@geekbb</a> |
+<a href="https://x.com/GitHub_Daily">@GitHub_Daily</a> |
+<a href="https://x.com/BiteyeCN">@BiteyeCN</a> |
+<a href="https://x.com/CryptoJHK">@CryptoJHK</a>
 </p>
 
 ---

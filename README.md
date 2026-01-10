@@ -30,9 +30,8 @@
 
 <!-- 多语言入口 -->
 <p>
-  <a href="./i18n/zh/README.md"><img src="https://img.shields.io/badge/语言-中文-red?style=for-the-badge" alt="简体中文"></a>
+  <a href="./README.md"><img src="https://img.shields.io/badge/语言-中文-red?style=for-the-badge" alt="简体中文"></a>
   <a href="./i18n/en/README.md"><img src="https://img.shields.io/badge/语言-English-lightgrey?style=for-the-badge" alt="English"></a>
-  <a href="./i18n/README.md"><img src="https://img.shields.io/badge/🌐_更多语言-25+-blue?style=for-the-badge" alt="更多语言"></a>
 </p>
 
 <!-- 资源直达 - 按重要性分组 -->
