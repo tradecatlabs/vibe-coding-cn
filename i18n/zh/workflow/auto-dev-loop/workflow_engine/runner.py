@@ -154,9 +154,41 @@ def start_workflow(input_file: str = None):
                 save_state(state)
                 return
             state["retry_count"] = retry_count
-            # 从 step2 重新开始
+            print(f"[RETRY {retry_count}/3] 从 step2 重新执行")
+            
+            # 递归调用自身，复用完整的验证逻辑
+            state["target_step"] = None  # 清除回跳标记
+            save_state(state)
+            
             for retry_step in STEP_FLOW[1:]:  # step2 onwards
-                run_step(retry_step, state)
+                result = run_step(retry_step, state, input_data)
+                if not result:
+                    state["status"] = "error"
+                    save_state(state)
+                    return
+                
+                # step4 后检查验证结果
+                if retry_step == "step4":
+                    verify_status = result.get("verify", {}).get("status", "success")
+                    state["verify"] = {"status": verify_status}
+                
+                # step5 决定下一步
+                if retry_step == "step5":
+                    if state.get("verify", {}).get("status") == "failed":
+                        state["target_step"] = "step2"
+                        state["status"] = "retry"
+                        print(f"[RETRY] 验证仍失败，继续重试")
+                        break  # 跳出内层循环，触发外层重试检查
+                    else:
+                        state["target_step"] = "done"
+                        state["status"] = "completed"
+                        print(f"[COMPLETE] 重试成功，工作流完成")
+                
+                save_state(state)
+            
+            # 如果 step5 设置了新的回跳目标，继续递归
+            if state.get("target_step") == "step2":
+                continue  # 继续外层循环的下一次迭代（实际会被 break 跳出）
             break
 
 
