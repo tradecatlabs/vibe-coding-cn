@@ -113,6 +113,7 @@
 1. [01-网络环境配置](./i18n/zh/documents/01-入门指南/01-网络环境配置.md) - 配置网络访问
 2. [02-开发环境搭建](./i18n/zh/documents/01-入门指南/02-开发环境搭建.md) - 复制提示词给 AI，让 AI 指导你搭建环境
 3. [03-IDE配置](./i18n/zh/documents/01-入门指南/03-IDE配置.md) - 配置 VS Code 编辑器
+4. [04-OpenCode-CLI配置](./i18n/zh/documents/01-入门指南/04-OpenCode-CLI配置.md) - 免费 AI CLI 工具，支持 GLM-4.7/MiniMax M2.1 等模型
 
 ---
 

@@ -96,4 +96,11 @@ In the paradigm of Vibe Coding, we are no longer just "typists" but "architects 
 *   **Conceptual Engineering**: Actively engineering and optimizing conceptual tools to serve Vibe Coding practices.
 
 ---
+
+## Detailed Method Guides
+
+- [Phenomenological Reduction](./Phenomenological%20Reduction.md) - Suspension of assumptions for clear requirements
+- [Dialectics](./Dialectics.md) - Thesis-Antithesis-Synthesis iterative development
+
+---
 *Note: This content evolves continuously as the supreme ideological directive of the Vibe Coding CN project.*

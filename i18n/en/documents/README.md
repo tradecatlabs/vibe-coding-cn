@@ -1,15 +1,13 @@
-# 📖 Documents
+# 📚 Documents
 
-> Documentation library for Vibe Coding methodology, guides, and resources
+> Vibe Coding knowledge system, organized by learning path
 
----
-
-## 📁 Directory Structure
+## 🗺️ Directory Structure
 
 ```
 documents/
-├── -01-philosophy-and-methodology/ # Supreme ideological directive
-├── 00-fundamentals/         # Core concepts & principles
+├── -01-philosophy-and-methodology/ # Supreme ideological directive, underlying logic
+├── 00-fundamentals/         # Core concepts, glue coding, methodology
 │   ├── Glue Coding.md
 │   ├── Language Layer Elements.md
 │   ├── Common Pitfalls.md
@@ -44,6 +42,26 @@ documents/
     └── Recommended Programming Books.md
 ```
 
+## 🚀 Quick Navigation
+
+| Directory | Description | Target Audience |
+|:----------|:------------|:----------------|
+| [-01-philosophy-and-methodology](./-01-philosophy-and-methodology/) | Ideological principles, epistemological tools | Architects & advanced developers |
+| [00-fundamentals](./00-fundamentals/) | Glue coding, core concepts | Understanding fundamentals |
+| [01-getting-started](./01-getting-started/) | Environment setup, from zero | Beginners |
+| [02-methodology](./02-methodology/) | Tool tutorials, development experience | Improving efficiency |
+| [03-practice](./03-practice/) | Project experience, case reviews | Hands-on practice |
+| [04-resources](./04-resources/) | Templates, tools, external links | Reference lookup |
+
+## 📖 Recommended Learning Path
+
+1. **Philosophy** → [-01-philosophy-and-methodology](./-01-philosophy-and-methodology/README.md)
+2. **Concepts** → [Glue Coding](./00-fundamentals/Glue%20Coding.md)
+3. **Getting Started** → [Vibe Coding Philosophy](./01-getting-started/00-Vibe%20Coding%20Philosophy.md)
+4. **Setup** → [Development Environment Setup](./01-getting-started/02-Development%20Environment%20Setup.md)
+5. **Tools** → [tmux Shortcut Cheatsheet](./02-methodology/tmux%20Shortcut%20Cheatsheet.md)
+6. **Practice** → [Practical Examples](./03-practice/)
+
 ---
 
 ## 🗂️ Categories
@@ -51,6 +69,8 @@ documents/
 ### -01-philosophy-and-methodology
 Supreme ideological directive and epistemological tools:
 - **Philosophy & Methodology** - The underlying protocol of Vibe Coding
+- **Phenomenological Reduction** - Suspension of assumptions for clear requirements
+- **Dialectics** - Thesis-Antithesis-Synthesis iterative development
 
 ### 00-fundamentals
 Core concepts and methodology:
