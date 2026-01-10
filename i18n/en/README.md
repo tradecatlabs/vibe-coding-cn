@@ -113,6 +113,7 @@ Complete beginner? Follow these steps in order:
 1. [01-Network Environment Configuration](../zh/documents/01-入门指南/01-网络环境配置.md) - Configure network access
 2. [02-Development Environment Setup](../zh/documents/01-入门指南/02-开发环境搭建.md) - Copy prompts to AI, let AI guide you through environment setup
 3. [03-IDE Configuration](../zh/documents/01-入门指南/03-IDE配置.md) - Configure VS Code editor
+4. [04-OpenCode-CLI Configuration](../zh/documents/01-入门指南/04-OpenCode-CLI配置.md) - Free AI CLI tool, supports GLM-4.7/MiniMax M2.1 and other models
 
 ---
 
@@ -174,6 +175,27 @@ Swarm mode: **Human → AI₁ ←→ AI₂ ←→ AI₃** (AI autonomous collabo
 **Core Breakthrough**: AI is no longer isolated, but a cluster that can perceive, communicate, and control each other.
 
 👉 [Learn more about AI Swarm Collaboration](../zh/documents/02-方法论/AI蜂群协作-tmux多Agent协作系统.md)
+
+</details>
+
+<details open>
+<summary><strong>🔮 Philosophy & Methodology Toolbox</strong></summary>
+
+> **Systematize Vibe into verifiable, iterable, and convergent engineering output**
+
+23 philosophical methodologies + Python tools + copy-paste prompts, covering:
+
+| Method | Use Case |
+|:---|:---|
+| Phenomenological Reduction | When requirements are vague, clear assumptions and return to observable facts |
+| Thesis-Antithesis-Synthesis | Rapid prototype → Counter-examples → Converge to engineering version |
+| Falsificationism | Use tests to reveal failure modes |
+| Occam's Razor | Remove unnecessary complexity |
+| Bayesian Update | Dynamically adjust beliefs based on new evidence |
+
+**Core Philosophy**: Philosophy is not empty talk, it's actionable engineering methodology.
+
+👉 [Learn more about Philosophy & Methodology Toolbox](../zh/documents/-01-哲学与方法论/README.md)
 
 </details>
 
