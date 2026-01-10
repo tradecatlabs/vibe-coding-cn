@@ -10,6 +10,8 @@
 
 <div align="center">
 
+[中文](../../README.md) | [English](./README.md)
+
 # Vibe Coding Guide
 
 **The ultimate workstation for bringing ideas to life through AI pair programming**
@@ -26,12 +28,6 @@
   <a href="https://github.com/tukuaiai/vibe-coding-cn"><img src="https://img.shields.io/github/languages/code-size/tukuaiai/vibe-coding-cn?label=Code%20Size&style=for-the-badge" alt="Code Size"></a>
   <a href="https://x.com/123olp"><img src="https://img.shields.io/badge/X-@123olp-black?style=for-the-badge&logo=x" alt="X"></a>
   <a href="https://t.me/glue_coding"><img src="https://img.shields.io/badge/Chat-Telegram-blue?style=for-the-badge&logo=telegram" alt="Telegram Group"></a>
-</p>
-
-<!-- Multilingual Entry -->
-<p>
-  <a href="../../README.md"><img src="https://img.shields.io/badge/Lang-中文-red?style=for-the-badge" alt="简体中文"></a>
-  <a href="./README.md"><img src="https://img.shields.io/badge/Lang-English-lightgrey?style=for-the-badge" alt="English"></a>
 </p>
 
 <!-- Resource Quick Links - Grouped by Importance -->

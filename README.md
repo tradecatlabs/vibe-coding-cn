@@ -10,6 +10,8 @@
 
 <div align="center">
 
+[中文](./README.md) | [English](./i18n/en/README.md)
+
 # Vibe Coding 指南
 
 **一个通过与 AI 结对编程，将想法变为现实的终极工作站**
@@ -26,12 +28,6 @@
   <a href="https://github.com/tukuaiai/vibe-coding-cn"><img src="https://img.shields.io/github/languages/code-size/tukuaiai/vibe-coding-cn?label=%E4%BB%A3%E7%A0%81%E9%87%8F&style=for-the-badge" alt="代码量"></a>
   <a href="https://x.com/123olp"><img src="https://img.shields.io/badge/X-@123olp-black?style=for-the-badge&logo=x" alt="X"></a>
   <a href="https://t.me/glue_coding"><img src="https://img.shields.io/badge/聊天-Telegram-blue?style=for-the-badge&logo=telegram" alt="交流群"></a>
-</p>
-
-<!-- 多语言入口 -->
-<p>
-  <a href="./README.md"><img src="https://img.shields.io/badge/语言-中文-red?style=for-the-badge" alt="简体中文"></a>
-  <a href="./i18n/en/README.md"><img src="https://img.shields.io/badge/语言-English-lightgrey?style=for-the-badge" alt="English"></a>
 </p>
 
 <!-- 资源直达 - 按重要性分组 -->
