@@ -8,6 +8,7 @@
 
 ```
 documents/
+├── -01-philosophy-and-methodology/ # Supreme ideological directive
 ├── 00-fundamentals/         # Core concepts & principles
 │   ├── Glue Coding.md
 │   ├── Language Layer Elements.md
@@ -46,6 +47,10 @@ documents/
 ---
 
 ## 🗂️ Categories
+
+### -01-philosophy-and-methodology
+Supreme ideological directive and epistemological tools:
+- **Philosophy & Methodology** - The underlying protocol of Vibe Coding
 
 ### 00-fundamentals
 Core concepts and methodology:

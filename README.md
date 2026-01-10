@@ -38,6 +38,7 @@
 <!-- 资源直达 - 按重要性分组 -->
 <!-- 🔴 核心理念 (红色系) -->
 <p>
+  <a href="./i18n/zh/documents/-01-哲学与方法论/README.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
   <a href="./i18n/zh/documents/01-入门指南/00-Vibe%20Coding%20哲学原理.md"><img src="https://img.shields.io/badge/🧠_核心哲学-必读-crimson?style=for-the-badge" alt="核心哲学"></a>
   <a href="./i18n/zh/documents/00-基础指南/胶水编程.md"><img src="https://img.shields.io/badge/🧬_胶水编程-银弹-red?style=for-the-badge" alt="胶水编程"></a>
   <a href="./i18n/zh/documents/02-方法论/图形化AI协作-Canvas白板驱动开发.md"><img src="https://img.shields.io/badge/🎨_Canvas白板-图形驱动-orange?style=for-the-badge" alt="Canvas白板驱动开发"></a>
@@ -391,9 +392,10 @@ Canvas方式：**代码 ⇄ 白板 ⇄ AI ⇄ 人类**，白板成为单一真�
 │   ├── README.md                # 多语言索引
 │   ├── zh/                      # 中文主语料
 │   │   ├── documents/           # 文档库
-│   │   │   ├── 00-基础指南/     # 方法论与原则
+│   │   │   ├── -01-哲学与方法论/ # 最高思想纲领与方法论
+│   │   │   ├── 00-基础指南/     # 核心原则与底层逻辑
 │   │   │   ├── 01-入门指南/     # 从零开始教程
-│   │   │   ├── 02-方法论/       # 工具与技巧
+│   │   │   ├── 02-方法论/       # 具体工具与技巧
 │   │   │   ├── 03-实战/         # 项目实战案例
 │   │   │   └── 04-资源/         # 外部资源聚合
 │   │   ├── prompts/             # 提示词库
