@@ -197,6 +197,7 @@ git push
 - `AGENTS.md` - AI Agent 操作手册（本文件）
 - `libs/external/prompts-library/main.py` - 提示词转换工具入口
 - `backups/一键备份.sh` - 备份脚本入口
+- `i18n/zh/skills/04-开发工具/tmux-autopilot/` - tmux 自动化操控技能（基于 oh-my-tmux，含 capture-pane/send-keys/蜂群巡检脚本）
 
 ---
 
