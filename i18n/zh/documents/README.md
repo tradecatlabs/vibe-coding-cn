@@ -32,6 +32,7 @@ documents/
 3. **入门** → [Vibe Coding 哲学原理](./01-入门指南/00-Vibe%20Coding%20哲学原理.md)
 3. **配置** → [开发环境搭建](./01-入门指南/02-开发环境搭建.md)
 4. **工具** → [tmux 快捷键](./02-方法论/tmux快捷键大全.md)
+5. **远程** → [VS Code Remote Tunnel（WSL）](./02-方法论/REMOTE_TUNNEL_GUIDE.md)
 5. **实践** → [项目实战经验](./03-实战/)
 
 ## 🔗 相关资源
