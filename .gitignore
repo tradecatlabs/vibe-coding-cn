@@ -46,6 +46,9 @@ ENV/
 *.log
 logs/
 
+libs/external/tmux
+libs/external/.tmux
+
 # Data files (保留 prompts-library 数据)
 # *.csv
 # *.zip

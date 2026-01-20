@@ -163,6 +163,8 @@ git push
 │   │   │   └── 03-用户提示词/   # 用户自定义提示词
 │   │   └── skills/              # 技能库
 │   │       ├── 00-元技能/       # 生成技能的元技能
+│   │       │   ├── claude-skills/ # 元技能核心
+│   │       │   └── sop-generator/ # SOP 生成与规范化技能
 │   │       ├── 01-AI工具/       # AI CLI 和工具
 │   │       ├── 02-数据库/       # 数据库技能
 │   │       ├── 03-加密货币/     # 加密货币/量化交易
@@ -198,6 +200,7 @@ git push
 - `libs/external/prompts-library/main.py` - 提示词转换工具入口
 - `backups/一键备份.sh` - 备份脚本入口
 - `i18n/zh/skills/04-开发工具/tmux-autopilot/` - tmux 自动化操控技能（基于 oh-my-tmux，含 capture-pane/send-keys/蜂群巡检脚本）
+- `i18n/zh/skills/00-元技能/sop-generator/` - SOP 生成与规范化技能（输入资料/需求 -> 标准 SOP）
 
 ---
 

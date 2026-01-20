@@ -332,6 +332,7 @@ Canvas方式：**代码 ⇄ 白板 ⇄ AI ⇄ 人类**，白板成为单一真�
 *   [**元提示词**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 用于生成提示词的高级提示词。
 *   [**通用项目架构模板**](./i18n/zh/documents/00-基础指南/通用项目架构模板.md): 可用于快速搭建标准化的项目目录结构。
 *   [**元技能：Skills 的 Skills**](./i18n/zh/skills/00-元技能/claude-skills/SKILL.md): 用于生成 Skills 的元技能。
+*   [**SOP 生成 Skill**](./i18n/zh/skills/00-元技能/sop-generator/SKILL.md): 将资料/需求整理为可执行 SOP 的技能。
 *   [**tmux快捷键大全**](./i18n/zh/documents/02-方法论/tmux快捷键大全.md): tmux 的快捷键参考文档。
 *   [**LazyVim快捷键大全**](./i18n/zh/documents/02-方法论/LazyVim快捷键大全.md): LazyVim 的快捷键参考文档。
 *   [**手机远程 Vibe Coding**](./i18n/zh/documents/02-方法论/关于手机ssh任意位置链接本地计算机，基于frp实现的方法.md): 基于 frp 实现手机 SSH 远程控制本地电脑进行 Vibe Coding。
