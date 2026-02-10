@@ -9,7 +9,7 @@
 
 ## 目录结构
 
-```
+```text
 libs/
 ├── README.md
 ├── common/
@@ -60,8 +60,10 @@ libs/
 
 ## 常用入口
 
-- AI 聊天记录保存：[`external/chat-vault/`](./external/chat-vault/)（支持 Codex/Kiro/Gemini/Claude CLI）
-- 提示词批量管理：[`external/prompts-library/`](./external/prompts-library/)（配合 `../prompts/` 使用）
+- AI 聊天记录保存：
+  [`external/chat-vault/`](./external/chat-vault/)（支持 Codex/Kiro/Gemini/Claude CLI）
+- 提示词批量管理：
+  [`external/prompts-library/`](./external/prompts-library/)（配合 `../prompts/` 使用）
 - 备份工具：优先使用仓库根目录的 `backups/`（当前与 `libs/common/utils/backups/` 内容一致）
 
 ## 贡献约定（最小要求）
