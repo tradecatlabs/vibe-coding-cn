@@ -100,6 +100,8 @@ tmux pipe-pane -t <session>:<window>.<pane> -o 'cat >> /tmp/tmux-<session>-<wind
 - MUST：遵循 oh-my-tmux 约定，不修改主配置文件；自定义写入 `~/.tmux.conf.local`。
 - MUST：批量操作前先 `list-windows`/`list-panes` 建立白名单，避免误控用户窗口。
 - SHOULD：救援/确认前先 grep 关键词（如 `(y/n)`、`password`），只对匹配目标发送。
+- SHOULD：发送完整命令行时避免先发 `Escape`；先 `C-c` 中断、`C-u` 清行，再用 `send-keys -l` 逐字发送完整命令。
+- SHOULD：pane 处在 Codex UI 时，先发送 `/exit` 回到 shell 再执行命令。
 - SHOULD：长任务开启 `pipe-pane` 记录审计；广播完成后立即 `synchronize-panes off`。
 - NEVER：在未知 pane 发送破坏性命令；NEVER 在 root 会话不经确认发送 `Ctrl+C`/`Ctrl+D`。
 
@@ -142,7 +144,7 @@ tmux pipe-pane -t <session>:<window>.<pane> -o 'cat >> /tmp/tmux-<session>-<wind
 - `no such session/window/pane` → 检查目标名称，先 `list-sessions`/`list-windows` 校验再重试。
 - 前缀键冲突 → 查看 `~/.tmux.conf.local` 是否改写前缀；可在其中设置 `set -g prefix C-b #!important`。
 - 状态栏样式错乱/重复 → 按 README 建议用 `tmux -f /dev/null -L test` 排查；多半是终端宽字符/字体导致。
-- 发送命令没效果 → 目标 pane 可能在 copy-mode，先 `tmux send-keys -t <target> Escape` 退出再重发。
+- 发送命令没效果 → 目标 pane 可能在 copy-mode；优先用 `tmux display-message -pt <target> '#{pane_in_mode}'` 判断，再用 `tmux send-keys -t <target> -X cancel` 退出；避免用 `Escape`（会触发 Meta 前缀，可能吞掉首字符）。
 
 ## References
 
