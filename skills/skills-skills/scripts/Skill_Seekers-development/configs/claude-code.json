@@ -1,0 +1,37 @@
+{
+  "name": "claude-code",
+  "description": "Claude Code CLI and development environment. Use for Claude Code features, tools, workflows, MCP integration, configuration, and AI-assisted development.",
+  "base_url": "https://docs.claude.com/en/docs/claude-code/",
+  "start_urls": [
+    "https://docs.claude.com/en/docs/claude-code/overview",
+    "https://docs.claude.com/en/docs/claude-code/quickstart",
+    "https://docs.claude.com/en/docs/claude-code/common-workflows",
+    "https://docs.claude.com/en/docs/claude-code/mcp",
+    "https://docs.claude.com/en/docs/claude-code/settings",
+    "https://docs.claude.com/en/docs/claude-code/troubleshooting",
+    "https://docs.claude.com/en/docs/claude-code/iam"
+  ],
+  "selectors": {
+    "main_content": "#content-container",
+    "title": "h1",
+    "code_blocks": "pre code"
+  },
+  "url_patterns": {
+    "include": ["/claude-code/"],
+    "exclude": ["/api-reference/", "/claude-ai/", "/claude.ai/", "/prompt-engineering/", "/changelog/"]
+  },
+  "categories": {
+    "getting_started": ["overview", "quickstart", "installation", "setup", "terminal-config"],
+    "workflows": ["workflow", "common-workflows", "git", "testing", "debugging", "interactive"],
+    "mcp": ["mcp", "model-context-protocol"],
+    "configuration": ["config", "settings", "preferences", "customize", "hooks", "statusline", "model-config", "memory", "output-styles"],
+    "agents": ["agent", "task", "subagent", "sub-agent", "specialized"],
+    "skills": ["skill", "agent-skill"],
+    "integrations": ["ide-integrations", "vs-code", "jetbrains", "plugin", "marketplace"],
+    "deployment": ["bedrock", "vertex", "deployment", "network", "gateway", "devcontainer", "sandboxing", "third-party"],
+    "reference": ["reference", "api", "command", "cli-reference", "slash", "checkpointing", "headless", "sdk"],
+    "enterprise": ["iam", "security", "monitoring", "analytics", "costs", "legal", "data-usage"]
+  },
+  "rate_limit": 0.5,
+  "max_pages": 200
+}

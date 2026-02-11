@@ -1,0 +1,17 @@
+{
+  "name": "test-manual",
+  "description": "Manual test config",
+  "base_url": "https://test.example.com/",
+  "selectors": {
+    "main_content": "article",
+    "title": "h1",
+    "code_blocks": "pre code"
+  },
+  "url_patterns": {
+    "include": [],
+    "exclude": []
+  },
+  "categories": {},
+  "rate_limit": 0.5,
+  "max_pages": 50
+}

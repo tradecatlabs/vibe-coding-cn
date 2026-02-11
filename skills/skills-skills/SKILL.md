@@ -37,6 +37,41 @@ Your output MUST include:
 3. Long-form docs moved to `references/` with a `references/index.md`
 4. A pre-delivery checklist (Quality Gate)
 
+### Built-in Tool (Mandatory): Skill Seekers (Vendored)
+
+This repo vendors the Skill Seekers source code inside this meta-skill so you can generate a first-draft Skill from:
+- Documentation websites
+- GitHub repositories
+- PDFs
+
+Bootstrap dependencies (once):
+
+```bash
+./skills/skills-skills/scripts/skill-seekers-bootstrap.sh
+```
+
+Run Skill Seekers (from vendored source):
+
+```bash
+./skills/skills-skills/scripts/skill-seekers.sh -- --version
+./skills/skills-skills/scripts/skill-seekers.sh -- scrape --config ./skills/skills-skills/scripts/Skill_Seekers-development/configs/react.json
+./skills/skills-skills/scripts/skill-seekers.sh -- github --repo facebook/react --name react
+```
+
+Import the generated skill into this repo's canonical `skills/` tree:
+
+```bash
+./skills/skills-skills/scripts/skill-seekers-import.sh react
+./skills/skills-skills/scripts/skill-seekers-import.sh react --force
+```
+
+Update the vendored source snapshot (optional, network required):
+
+```bash
+./skills/skills-skills/scripts/skill-seekers-update.sh
+./skills/skills-skills/scripts/skill-seekers-update.sh --ref main
+```
+
 ### Recommended Layout (Minimal -> Full)
 
 ```
@@ -134,6 +169,7 @@ Trigger when any of these applies:
 ### Workflow (Material -> Skill)
 
 Do not skip steps:
+0. If your source material is a docs site / GitHub repo / PDF: generate a first draft with the vendored Skill Seekers tool, then import into `skills/<skill-name>/`
 1. Scope: write MUST/SHOULD/NEVER (three sentences total is fine)
 2. Extract patterns: pick 10-20 high-frequency patterns (commands/snippets/flows)
 3. Add examples: >= 3 end-to-end examples (input -> steps -> acceptance)
@@ -229,6 +265,7 @@ Local docs:
 - `references/quality-checklist.md`
 - `references/anti-patterns.md`
 - `references/README.md` (upstream official reference)
+- `references/skill-seekers.md` (vendored tool integration + workflow)
 
 External (official):
 - https://support.claude.com/en/articles/12512176-what-are-skills

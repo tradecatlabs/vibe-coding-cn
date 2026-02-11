@@ -1,0 +1,49 @@
+{
+  "name": "django",
+  "description": "Complete Django framework knowledge combining official documentation and Django codebase. Use when building Django applications, understanding ORM internals, or debugging Django issues.",
+  "merge_mode": "rule-based",
+  "sources": [
+    {
+      "type": "documentation",
+      "base_url": "https://docs.djangoproject.com/en/stable/",
+      "extract_api": true,
+      "selectors": {
+        "main_content": "article",
+        "title": "h1",
+        "code_blocks": "pre"
+      },
+      "url_patterns": {
+        "include": [],
+        "exclude": ["/search/", "/genindex/"]
+      },
+      "categories": {
+        "getting_started": ["intro", "tutorial", "install"],
+        "models": ["models", "orm", "queries", "database"],
+        "views": ["views", "urls", "templates"],
+        "forms": ["forms", "modelforms"],
+        "admin": ["admin"],
+        "api": ["ref/"],
+        "topics": ["topics/"],
+        "security": ["security", "csrf", "authentication"]
+      },
+      "rate_limit": 0.5,
+      "max_pages": 300
+    },
+    {
+      "type": "github",
+      "repo": "django/django",
+      "include_issues": true,
+      "max_issues": 100,
+      "include_changelog": true,
+      "include_releases": true,
+      "include_code": true,
+      "code_analysis_depth": "surface",
+      "file_patterns": [
+        "django/db/**/*.py",
+        "django/views/**/*.py",
+        "django/forms/**/*.py",
+        "django/contrib/admin/**/*.py"
+      ]
+    }
+  ]
+}

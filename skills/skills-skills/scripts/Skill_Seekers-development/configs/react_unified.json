@@ -1,0 +1,44 @@
+{
+  "name": "react",
+  "description": "Complete React knowledge base combining official documentation and React codebase insights. Use when working with React, understanding API changes, or debugging React internals.",
+  "merge_mode": "rule-based",
+  "sources": [
+    {
+      "type": "documentation",
+      "base_url": "https://react.dev/",
+      "extract_api": true,
+      "selectors": {
+        "main_content": "article",
+        "title": "h1",
+        "code_blocks": "pre code"
+      },
+      "url_patterns": {
+        "include": [],
+        "exclude": ["/blog/", "/community/"]
+      },
+      "categories": {
+        "getting_started": ["learn", "installation", "quick-start"],
+        "components": ["components", "props", "state"],
+        "hooks": ["hooks", "usestate", "useeffect", "usecontext"],
+        "api": ["api", "reference"],
+        "advanced": ["context", "refs", "portals", "suspense"]
+      },
+      "rate_limit": 0.5,
+      "max_pages": 200
+    },
+    {
+      "type": "github",
+      "repo": "facebook/react",
+      "include_issues": true,
+      "max_issues": 100,
+      "include_changelog": true,
+      "include_releases": true,
+      "include_code": true,
+      "code_analysis_depth": "surface",
+      "file_patterns": [
+        "packages/react/src/**/*.js",
+        "packages/react-dom/src/**/*.js"
+      ]
+    }
+  ]
+}

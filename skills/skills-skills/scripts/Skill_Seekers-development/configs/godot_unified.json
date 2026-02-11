@@ -1,0 +1,50 @@
+{
+  "name": "godot",
+  "description": "Complete Godot Engine knowledge base combining official documentation and source code analysis",
+  "merge_mode": "claude-enhanced",
+  "sources": [
+    {
+      "type": "documentation",
+      "base_url": "https://docs.godotengine.org/en/stable/",
+      "extract_api": true,
+      "selectors": {
+        "main_content": "div[role='main']",
+        "title": "title",
+        "code_blocks": "pre"
+      },
+      "url_patterns": {
+        "include": [],
+        "exclude": ["/search.html", "/_static/", "/_images/"]
+      },
+      "categories": {
+        "getting_started": ["introduction", "getting_started", "step_by_step"],
+        "scripting": ["scripting", "gdscript", "c_sharp"],
+        "2d": ["2d", "canvas", "sprite", "animation"],
+        "3d": ["3d", "spatial", "mesh", "shader"],
+        "physics": ["physics", "collision", "rigidbody"],
+        "api": ["api", "class", "reference", "method"]
+      },
+      "rate_limit": 0.5,
+      "max_pages": 500
+    },
+    {
+      "type": "github",
+      "repo": "godotengine/godot",
+      "github_token": null,
+      "code_analysis_depth": "deep",
+      "include_code": true,
+      "include_issues": true,
+      "max_issues": 100,
+      "include_changelog": true,
+      "include_releases": true,
+      "file_patterns": [
+        "core/**/*.h",
+        "core/**/*.cpp",
+        "scene/**/*.h",
+        "scene/**/*.cpp",
+        "servers/**/*.h",
+        "servers/**/*.cpp"
+      ]
+    }
+  ]
+}

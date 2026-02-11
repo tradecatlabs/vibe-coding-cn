@@ -1,0 +1,149 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skill-seekers"
+version = "2.1.1"
+description = "Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Yusuf Karaaslan"}
+]
+keywords = [
+    "claude",
+    "ai",
+    "documentation",
+    "scraping",
+    "skills",
+    "llm",
+    "mcp",
+    "automation"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+
+# Core dependencies
+dependencies = [
+    "requests>=2.32.5",
+    "beautifulsoup4>=4.14.2",
+    "PyGithub>=2.5.0",
+    "mcp>=1.18.0",
+    "httpx>=0.28.1",
+    "httpx-sse>=0.4.3",
+    "PyMuPDF>=1.24.14",
+    "Pillow>=11.0.0",
+    "pytesseract>=0.3.13",
+    "pydantic>=2.12.3",
+    "pydantic-settings>=2.11.0",
+    "python-dotenv>=1.1.1",
+    "jsonschema>=4.25.1",
+    "click>=8.3.0",
+    "Pygments>=2.19.2",
+]
+
+[project.optional-dependencies]
+# Development dependencies
+dev = [
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
+    "coverage>=7.11.0",
+]
+
+# MCP server dependencies (included by default, but optional)
+mcp = [
+    "mcp>=1.18.0",
+    "httpx>=0.28.1",
+    "httpx-sse>=0.4.3",
+    "uvicorn>=0.38.0",
+    "starlette>=0.48.0",
+    "sse-starlette>=3.0.2",
+]
+
+# All optional dependencies combined
+all = [
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
+    "coverage>=7.11.0",
+    "mcp>=1.18.0",
+    "httpx>=0.28.1",
+    "httpx-sse>=0.4.3",
+    "uvicorn>=0.38.0",
+    "starlette>=0.48.0",
+    "sse-starlette>=3.0.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/yusufkaraaslan/Skill_Seekers"
+Repository = "https://github.com/yusufkaraaslan/Skill_Seekers"
+"Bug Tracker" = "https://github.com/yusufkaraaslan/Skill_Seekers/issues"
+Documentation = "https://github.com/yusufkaraaslan/Skill_Seekers#readme"
+
+[project.scripts]
+# Main unified CLI
+skill-seekers = "skill_seekers.cli.main:main"
+
+# Individual tool entry points
+skill-seekers-scrape = "skill_seekers.cli.doc_scraper:main"
+skill-seekers-github = "skill_seekers.cli.github_scraper:main"
+skill-seekers-pdf = "skill_seekers.cli.pdf_scraper:main"
+skill-seekers-unified = "skill_seekers.cli.unified_scraper:main"
+skill-seekers-enhance = "skill_seekers.cli.enhance_skill_local:main"
+skill-seekers-package = "skill_seekers.cli.package_skill:main"
+skill-seekers-upload = "skill_seekers.cli.upload_skill:main"
+skill-seekers-estimate = "skill_seekers.cli.estimate_pages:main"
+
+[tool.setuptools]
+packages = ["skill_seekers", "skill_seekers.cli", "skill_seekers.mcp", "skill_seekers.mcp.tools"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.package-data]
+skill_seekers = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short --strict-markers"
+
+[tool.coverage.run]
+source = ["src/skill_seekers"]
+omit = ["*/tests/*", "*/__pycache__/*", "*/venv/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "@abstractmethod",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
+    "coverage>=7.11.0",
+]
+
+[tool.uv.sources]
+# Use PyPI for all dependencies

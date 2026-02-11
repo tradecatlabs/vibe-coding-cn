@@ -1,0 +1,17 @@
+{
+  "name": "example_manual",
+  "description": "Example PDF documentation skill",
+  "pdf_path": "docs/manual.pdf",
+  "extract_options": {
+    "chunk_size": 10,
+    "min_quality": 5.0,
+    "extract_images": true,
+    "min_image_size": 100
+  },
+  "categories": {
+    "getting_started": ["introduction", "getting started", "quick start", "setup"],
+    "tutorial": ["tutorial", "guide", "walkthrough", "example"],
+    "api": ["api", "reference", "function", "class", "method"],
+    "advanced": ["advanced", "optimization", "performance", "best practices"]
+  }
+}

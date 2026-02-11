@@ -1,0 +1,18 @@
+{
+  "name": "hono",
+  "description": "Hono web application framework for building fast, lightweight APIs. Use for Hono routing, middleware, context handling, and modern JavaScript/TypeScript web development.",
+  "llms_txt_url": "https://hono.dev/llms-full.txt",
+  "base_url": "https://hono.dev/docs",
+  "selectors": {
+    "main_content": "article",
+    "title": "h1",
+    "code_blocks": "pre code"
+  },
+  "url_patterns": {
+    "include": [],
+    "exclude": []
+  },
+  "categories": {},
+  "rate_limit": 0.5,
+  "max_pages": 50
+}

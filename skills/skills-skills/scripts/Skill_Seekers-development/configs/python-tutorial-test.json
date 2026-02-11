@@ -1,0 +1,17 @@
+{
+  "name": "python-tutorial-test",
+  "description": "Python tutorial for testing MCP tools",
+  "base_url": "https://docs.python.org/3/tutorial/",
+  "selectors": {
+    "main_content": "article",
+    "title": "h1",
+    "code_blocks": "pre code"
+  },
+  "url_patterns": {
+    "include": [],
+    "exclude": []
+  },
+  "categories": {},
+  "rate_limit": 0.3,
+  "max_pages": 10
+}

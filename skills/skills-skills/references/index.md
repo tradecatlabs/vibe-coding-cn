@@ -11,6 +11,7 @@ This directory contains long-form documentation that supports the `skills-skills
 - [`skill-spec.md`](skill-spec.md): normative spec (MUST/SHOULD/NEVER) for a production-grade Skill in this repo
 - [`quality-checklist.md`](quality-checklist.md): quality gate checklist + scoring rubric
 - [`anti-patterns.md`](anti-patterns.md): common failure modes and how to fix them
+- [`skill-seekers.md`](skill-seekers.md): vendored Skill Seekers tool integration (workflow + commands)
 
 ## Upstream / Official Reference
 
