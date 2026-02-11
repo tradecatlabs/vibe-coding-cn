@@ -75,3 +75,4 @@ backups/
 # Wiki (separate repo)
 .github/wiki/
 1
+.history/
