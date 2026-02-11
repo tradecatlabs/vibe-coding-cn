@@ -146,7 +146,7 @@ git push
 │   └── wiki/                    # GitHub Wiki 内容
 │
 ├── documents/                   # 文档库
-│   ├── -01-哲学与方法论/        # 最高思想纲领与方法论
+│   ├── 05-哲学与方法论/        # 最高思想纲领与方法论
 │   ├── 00-基础指南/             # 核心原则与底层逻辑
 │   ├── 01-入门指南/             # 从零开始教程
 │   ├── 02-方法论/               # 具体工具与技巧
@@ -285,7 +285,7 @@ bash backups/一键备份.sh
 ### Core Directories
 - **`prompts/`**: 提示词库（指向云端表格）
 - **`skills/`**: 扁平化技能库（详见 skills/README.md）
-- **`documents/`**: 知识库（-01-哲学与方法论、00-基础指南、01-入门指南、02-方法论、03-实战、04-资源）
+- **`documents/`**: 知识库（05-哲学与方法论、00-基础指南、01-入门指南、02-方法论、03-实战、04-资源）
 - **`libs/external/prompts-library/`**: Excel ↔ Markdown 转换工具
 - **`libs/external/chat-vault/`**: AI 聊天记录保存工具
 - **`backups/`**: 备份脚本与存档
