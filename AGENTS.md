@@ -153,11 +153,8 @@ git push
 │   ├── 03-实战/                 # 项目实战案例
 │   └── 04-资源/                 # 外部资源聚合
 │
-├── prompts/                     # 提示词库
-│   ├── 00-元提示词/             # 生成提示词的提示词
-│   ├── 01-系统提示词/           # AI 系统级提示词
-│   ├── 02-编程提示词/           # 编程相关提示词
-│   └── 03-用户提示词/           # 用户自定义提示词
+├── prompts/                     # 提示词库（指向云端表格）
+│   └── README.md                # 在线表格链接
 │
 ├── skills/                      # 技能库（扁平化，详见 skills/README.md）
 │   ├── claude-skills/           # 元技能核心
@@ -180,7 +177,8 @@ git push
 │       ├── chat-vault/          # AI 聊天记录保存工具
 │       ├── Skill_Seekers-development/ # Skills 制作器
 │       ├── html-tools-main/     # HTML 工具集（Markdown 编辑器、任务卡片生成等）
-│       ├── l10n-tool/           # 多语言翻译脚本
+│       ├── .tmux/               # oh-my-tmux (submodule)
+│       ├── tmux/                # tmux 源码 (submodule)
 │       ├── my-nvim/             # Neovim 配置
 │       ├── MCPlayerTransfer/    # MC 玩家迁移工具
 │       └── XHS-image-to-PDF-conversion/ # 小红书图片转 PDF
@@ -281,7 +279,7 @@ bash backups/一键备份.sh
 ## Architecture & Structure
 
 ### Core Directories
-- **`prompts/`**: 核心提示词库（00-元提示词、01-系统提示词、02-编程提示词、03-用户提示词）
+- **`prompts/`**: 提示词库（指向云端表格）
 - **`skills/`**: 扁平化技能库（详见 skills/README.md）
 - **`documents/`**: 知识库（-01-哲学与方法论、00-基础指南、01-入门指南、02-方法论、03-实战、04-资源）
 - **`libs/external/prompts-library/`**: Excel ↔ Markdown 转换工具
