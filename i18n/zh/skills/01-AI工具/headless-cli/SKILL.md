@@ -34,7 +34,7 @@ description: "无头模式 AI CLI 调用技能：支持 Gemini/Claude/Codex CLI 
 **Codex CLI**
 ```bash
 # --yolo 是 --dangerously-bypass-approvals-and-sandbox 的别名
-alias c='codex --enable web_search_request -m gpt-5.1-codex-max -c model_reasoning_effort="high" --yolo'
+alias c='codex --enable web_search_request -m gpt-5.3-codex-max -c model_reasoning_effort="high" --yolo'
 ```
 
 **Claude Code**

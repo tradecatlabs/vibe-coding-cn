@@ -299,16 +299,16 @@ Through this continuous **recursive optimization loop**, the system achieves **s
 
 ### AI Models & Services
 
-*   [**Claude Opus 4.5**](https://claude.ai/new): A powerful AI model, offered through platforms like Claude Code, and supporting CLI and IDE plugins.
-*   [**gpt-5.1-codex.1-codex (xhigh)**](https://chatgpt.com/codex/): An AI model suitable for handling large projects and complex logic, usable through platforms like Codex CLI.
-*   [**Droid**](https://factory.ai/news/terminal-bench): Provides CLI access to various models including Claude Opus 4.5.
-*   [**Kiro**](https://kiro.dev/): Currently offers free access to the Claude Opus 4.5 model, and provides client and CLI tools.
+*   [**Claude Opus 4.6**](https://claude.ai/new): A powerful AI model, offered through platforms like Claude Code, and supporting CLI and IDE plugins.
+*   [**gpt-5.3-codex (xhigh)**](https://chatgpt.com/codex/): An AI model suitable for handling large projects and complex logic, usable through platforms like Codex CLI.
+*   [**Droid**](https://factory.ai/news/terminal-bench): Provides CLI access to various models including Claude Opus 4.6.
+*   [**Kiro**](https://kiro.dev/): Currently offers free access to the Claude Opus 4.6 model, and provides client and CLI tools.
 *   [**Gemini CLI**](https://geminicli.com/): Provides free access to the Gemini model, suitable for executing scripts, organizing documents, and exploring ideas.
-*   [**antigravity**](https://antigravity.google/): Currently a free AI service provided by Google, supporting Claude Opus 4.5 and Gemini 3.0 Pro.
+*   [**antigravity**](https://antigravity.google/): Currently a free AI service provided by Google, supporting Claude Opus 4.6 and Gemini 3.0 Pro.
 *   [**AI Studio**](https://aistudio.google.com/prompts/new_chat): A free service provided by Google, supporting Gemini 3.0 Pro and Nano Banana.
 *   [**Gemini Enterprise**](https://cloud.google.com/gemini-enterprise): Google's AI service for enterprise users, currently available for free.
 *   [**GitHub Copilot**](https://github.com/copilot): An AI code completion tool jointly developed by GitHub and OpenAI.
-*   [**Kimi K2**](https://www.kimi.com/): A domestic AI model suitable for various general tasks.
+*   [**Kimi K2.5**](https://www.kimi.com/): A domestic AI model suitable for various general tasks.
 *   [**GLM**](https://bigmodel.cn/): A domestic large language model developed by Zhipu AI.
 *   [**Qwen**](https://qwenlm.github.io/qwen-code-docs/zh/cli/): An AI model developed by Alibaba, its CLI tool offers free usage quota.
 
@@ -587,12 +587,12 @@ gantt
 > The following content is translated from the original repository [EnzeD/vibe-coding](https://github.com/EnzeD/vibe-coding)
 
 To start Vibe Coding, you only need one of the following two tools:
-- **Claude Opus 4.5**, used in Claude Code
-- **gpt-5.1-codex.1-codex (xhigh)**, used in Codex CLI
+- **Claude Opus 4.6**, used in Claude Code
+- **gpt-5.3-codex (xhigh)**, used in Codex CLI
 
 This guide applies to both the CLI terminal version and the VSCode extension version (both Codex and Claude Code have extensions, and their interfaces are updated).
 
-*(Note: Earlier versions of this guide used **Grok 3**, later switched to **Gemini 2.5 Pro**, and now we are using **Claude 4.5** (or **gpt-5.1-codex.1-codex (xhigh)**))*
+*(Note: Earlier versions of this guide used **Grok 3**, later switched to **Gemini 2.5 Pro**, and now we are using **Claude 4.5** (or **gpt-5.3-codex (xhigh)**))*
 
 *(Note 2: If you want to use Cursor, please check version [1.1](https://github.com/EnzeD/vibe-coding/tree/1.1.1) of this guide, but we believe it is currently less powerful than Codex CLI or Claude Code)*
 
@@ -604,14 +604,14 @@ This guide applies to both the CLI terminal version and the VSCode extension ver
 <details>
 <summary><strong>1. Game Design Document</strong></summary>
 
-- Hand your game idea to **gpt-5.1-codex** or **Claude Opus 4.5** to generate a concise **Game Design Document** in Markdown format, named `game-design-document.md`.
+- Hand your game idea to **gpt-5.3-codex** or **Claude Opus 4.6** to generate a concise **Game Design Document** in Markdown format, named `game-design-document.md`.
 - Review and refine it yourself to ensure it aligns with your vision. It can be very basic initially; the goal is to provide AI with the game structure and intent context. Do not over-design; it will be iterated later.
 </details>
 
 <details>
 <summary><strong>2. Tech Stack and <code>CLAUDE.md</code> / <code>Agents.md</code></strong></summary>
 
-- Ask **gpt-5.1-codex** or **Claude Opus 4.5** to recommend the most suitable tech stack for your game (e.g., ThreeJS + WebSocket for a multiplayer 3D game), save it as `tech-stack.md`.
+- Ask **gpt-5.3-codex** or **Claude Opus 4.6** to recommend the most suitable tech stack for your game (e.g., ThreeJS + WebSocket for a multiplayer 3D game), save it as `tech-stack.md`.
   - Ask it to propose the **simplest yet most robust** tech stack.
 - Open **Claude Code** or **Codex CLI** in your terminal and use the `/init` command. It will read the two `.md` files you've created and generate a set of rules to guide the large model correctly.
 - **Key: Always review the generated rules.** Ensure the rules emphasize **modularization** (multiple files) and prohibit **monolithic files**. You may need to manually modify or supplement the rules.
@@ -629,7 +629,7 @@ This guide applies to both the CLI terminal version and the VSCode extension ver
 <details>
 <summary><strong>3. Implementation Plan</strong></summary>
 
-- Provide the following to **gpt-5.1-codex** or **Claude Opus 4.5**:
+- Provide the following to **gpt-5.3-codex** or **Claude Opus 4.6**:
   - Game Design Document (`game-design-document.md`)
   - Tech Stack Recommendation (`tech-stack.md`)
 - Ask it to generate a detailed **Implementation Plan** (Markdown format), containing a series of step-by-step instructions for AI developers.
@@ -673,7 +673,7 @@ Now for the most exciting part!
 - Open **Codex** or **Claude Code** (extension or terminal).
 - Prompt: Read all documents in `/memory-bank`, then execute step 1 of the implementation plan. I will be responsible for running tests. Do not start step 2 until I verify the tests pass. After verification, open `progress.md` to record what you've done for future developers' reference, and add new architectural insights to `architecture.md` explaining the purpose of each file.
 - **Always** use "Ask" mode or "Plan Mode" (press `shift+tab` in Claude Code) first, and only let AI execute the step after you are satisfied.
-- **Ultimate Vibe:** Install [Superwhisper](https://superwhisper.com) and chat casually with Claude or gpt-5.1-codex using voice, without typing.
+- **Ultimate Vibe:** Install [Superwhisper](https://superwhisper.com) and chat casually with Claude or gpt-5.3-codex using voice, without typing.
 </details>
 
 <details>
@@ -705,7 +705,7 @@ Congratulations! You've built a basic game! It might still be rough and lack fea
 <summary><strong>General Fixes</strong></summary>
 
 - If a prompt fails or breaks the project:
-  - Use `/rewind` in Claude Code to revert; for gpt-5.1-codex, commit frequently with Git and reset when needed.
+  - Use `/rewind` in Claude Code to revert; for gpt-5.3-codex, commit frequently with Git and reset when needed.
 - Error handling:
   - **JavaScript errors:** Open browser console (F12), copy error, paste to AI; for visual issues, send a screenshot.
   - **Lazy solution:** Install [BrowserTools](https://browsertools.agentdesk.ai/installation) to automatically copy errors and screenshots.
@@ -717,7 +717,7 @@ Congratulations! You've built a basic game! It might still be rough and lack fea
 - Really stuck:
   - Revert to the previous git commit (`git reset`), try again with a new prompt.
 - Extremely stuck:
-  - Use [RepoPrompt](https://repoprompt.com/) or [uithub](https://uithub.com/) to synthesize the entire codebase into one file, then send it to **gpt-5.1-codex or Claude** for help.
+  - Use [RepoPrompt](https://repoprompt.com/) or [uithub](https://uithub.com/) to synthesize the entire codebase into one file, then send it to **gpt-5.3-codex or Claude** for help.
 </details>
 
 </details>
@@ -738,7 +738,7 @@ Congratulations! You've built a basic game! It might still be rough and lack fea
 <details>
 <summary><strong>Other Useful Tips</strong></summary>
 
-- **Small modifications:** Use gpt-5.1-codex (medium)
+- **Small modifications:** Use gpt-5.3-codex (medium)
 - **Write top-tier marketing copy:** Use Opus 4.1
 - **Generate excellent 2D sprites:** Use ChatGPT + Nano Banana
 - **Generate music:** Use Suno
@@ -761,7 +761,7 @@ Congratulations! You've built a basic game! It might still be rough and lack fea
   - **A:** That wasn't one prompt, it was ~30 prompts + a dedicated `plane-implementation.md` file guided it. Use precise instructions like "cut space for ailerons on the wing," instead of vague instructions like "make a plane."
 
 - **Q: Why are Claude Code or Codex CLI stronger than Cursor now?**
-  - **A:** It's entirely a matter of personal preference. We emphasize that Claude Code can better leverage the power of Claude Opus 4.5, and Codex CLI can better leverage the power of gpt-5.1-codex. Cursor does not utilize either of these as well as their native terminal versions. Terminal versions can also work in any IDE, with SSH remote servers, etc., and features like custom commands, sub-agents, and hooks can significantly improve development quality and speed in the long run. Finally, even if you only have a low-tier Claude or ChatGPT subscription, it's completely sufficient.
+  - **A:** It's entirely a matter of personal preference. We emphasize that Claude Code can better leverage the power of Claude Opus 4.6, and Codex CLI can better leverage the power of gpt-5.3-codex. Cursor does not utilize either of these as well as their native terminal versions. Terminal versions can also work in any IDE, with SSH remote servers, etc., and features like custom commands, sub-agents, and hooks can significantly improve development quality and speed in the long run. Finally, even if you only have a low-tier Claude or ChatGPT subscription, it's completely sufficient.
 
 - **Q: What if I don't know how to set up a multiplayer game server?**
   - **A:** Ask your AI.

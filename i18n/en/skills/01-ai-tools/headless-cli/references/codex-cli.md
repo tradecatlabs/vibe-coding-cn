@@ -66,8 +66,8 @@ codex login status
 ## Available Models
 
 - `gpt-5-codex` - Standard model
-- `gpt-5.1-codex` - Enhanced version
-- `gpt-5.1-codex-max` - Strongest model
+- `gpt-5.3-codex` - Enhanced version
+- `gpt-5.3-codex-max` - Strongest model
 
 ## Reasoning Strength Configuration
 
@@ -96,7 +96,7 @@ codex --dangerously-bypass-approvals-and-sandbox "Your prompt"
 codex --full-auto "Your prompt"
 
 # Full YOLO config alias
-alias c='codex --enable web_search_request -m gpt-5.1-codex-max -c model_reasoning_effort="high" --yolo'
+alias c='codex --enable web_search_request -m gpt-5.3-codex-max -c model_reasoning_effort="high" --yolo'
 
 # Resume last session
 codex resume --last

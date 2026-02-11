@@ -18,7 +18,7 @@
 
 | Model | Description |
 |:---|:---|
-| Claude Opus 4.5 | Strong code capabilities |
+| Claude Opus 4.6 | Strong code capabilities |
 | GPT-5.1 Codex | Complex logic processing |
 | Gemini 2.5 Pro | Free long context |
 

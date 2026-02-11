@@ -28,7 +28,7 @@ cd /mnt/d/.projects/kiro-account-manager-main.zip/proxycast-main && ./src-tauri/
 
 ## 二、Claude Code 启动命令
 
-### Claude Opus 4.5 (Kiro 凭证，最强)
+### Claude Opus 4.6 (Kiro 凭证，最强)
 ```bash
 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model claude-opus-4-5
 ```
@@ -146,7 +146,7 @@ curl http://127.0.0.1:8999/v1/models -H "Authorization: Bearer proxy_cast"
 | `nousresearch/hermes-3-llama-3.1-405b:free` | 指令遵循好 |
 | `openai/gpt-oss-120b:free` | GPT 开源 120B |
 | `openai/gpt-oss-20b:free` | GPT 开源 20B |
-| `moonshotai/kimi-k2:free` | Kimi K2 月之暗面 |
+| `moonshotai/kimi-k2:free` | Kimi K2.5 月之暗面 |
 | `z-ai/glm-4.5-air:free` | 中文原生 |
 | `alibaba/tongyi-deepresearch-30b-a3b:free` | 中文研究 |
 | `kwaipilot/kat-coder-pro:free` | 代码 Agent |
@@ -320,7 +320,7 @@ curl http://127.0.0.1:8999/v1/models -H "Authorization: Bearer proxy_cast"
 ### Kiro 凭证 (Claude 系列)
 
 ```bash
-# Claude Opus 4.5 - 最强模型
+# Claude Opus 4.6 - 最强模型
 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model claude-opus-4-5
 
 # Claude Sonnet 4.5 - 平衡性能
@@ -1071,7 +1071,7 @@ CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8
 |------|------|------|
 | `openai/gpt-oss-120b:free` | GPT 开源 120B | ✅ 已测试 |
 | `openai/gpt-oss-20b:free` | GPT 开源 20B | ✅ 已测试 |
-| `moonshotai/kimi-k2:free` | Kimi K2 | ✅ 已测试 |
+| `moonshotai/kimi-k2:free` | Kimi K2.5 | ✅ 已测试 |
 
 ### Claude Code 启动命令
 
@@ -1082,7 +1082,7 @@ CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8
 # GPT-OSS 20B - 轻量开源模型
 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model openai/gpt-oss-20b:free
 
-# Kimi K2 - 月之暗面最新模型
+# Kimi K2.5 - 月之暗面最新模型
 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model moonshotai/kimi-k2:free
 ```
 
@@ -1095,7 +1095,7 @@ curl -s http://127.0.0.1:8999/v1/chat/completions \
   -H "Authorization: Bearer proxy_cast" \
   -d '{"model":"openai/gpt-oss-120b:free","messages":[{"role":"user","content":"Hi"}],"max_tokens":10}'
 
-# 测试 Kimi K2
+# 测试 Kimi K2.5
 curl -s http://127.0.0.1:8999/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer proxy_cast" \
@@ -1111,7 +1111,7 @@ curl -s http://127.0.0.1:8999/v1/chat/completions \
 | `mistralai/devstral-2512:free` | 代码专精 123B | 编程 |
 | `openai/gpt-oss-120b:free` | GPT 开源 120B | 通用 |
 | `openai/gpt-oss-20b:free` | GPT 开源 20B | 快速响应 |
-| `moonshotai/kimi-k2:free` | Kimi K2 | 中文任务 |
+| `moonshotai/kimi-k2:free` | Kimi K2.5 | 中文任务 |
 | `google/gemini-2.0-flash-exp:free` | Gemini 2.0 | 翻译 |
 | `meta-llama/llama-3.3-70b-instruct:free` | Llama 3.3 | 速度快 |
 | `nousresearch/hermes-3-llama-3.1-405b:free` | Hermes 3 | 指令遵循 |

@@ -45,7 +45,7 @@
 
 | Platform | Model | Features |
 |:---|:---|:---|
-| [Claude](https://claude.ai/) | Claude Opus 4.5 | Strong coding ability, supports Artifacts |
+| [Claude](https://claude.ai/) | Claude Opus 4.6 | Strong coding ability, supports Artifacts |
 | [ChatGPT](https://chatgpt.com/) | GPT-5.1 | Strong comprehensive ability, supports Codex |
 | [Gemini](https://gemini.google.com/) | Gemini 3.0 Pro | Large free quota, supports long context |
 
@@ -53,7 +53,7 @@
 
 | Platform | Model | Features |
 |:---|:---|:---|
-| [Kimi](https://kimi.moonshot.cn/) | Kimi K2 | Strong long text processing |
+| [Kimi](https://kimi.moonshot.cn/) | Kimi K2.5 | Strong long text processing |
 | [Tongyi Qianwen](https://tongyi.aliyun.com/) | Qwen | By Alibaba, free |
 | [Zhipu Qingyan](https://chatglm.cn/) | GLM-4 | By Zhipu AI |
 | [Doubao](https://www.doubao.com/) | Doubao | By ByteDance |
@@ -103,7 +103,7 @@
 
 | Resource | Link | Description |
 |:---|:---|:---|
-| Kiro | [kiro.dev](https://kiro.dev/) | Free Claude Opus 4.5 |
+| Kiro | [kiro.dev](https://kiro.dev/) | Free Claude Opus 4.6 |
 | Windsurf | [windsurf.com](https://windsurf.com/) | Free quota for new users |
 | GitHub Copilot | [github.com/copilot](https://github.com/copilot) | Free for students/open-source |
 | Codeium | [codeium.com](https://codeium.com/) | Free AI code completion |

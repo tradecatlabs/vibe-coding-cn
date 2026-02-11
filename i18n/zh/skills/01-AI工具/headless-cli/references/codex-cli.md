@@ -65,8 +65,8 @@ codex login status
 ## 可用模型
 
 - `gpt-5-codex` - 标准模型
-- `gpt-5.1-codex` - 增强版
-- `gpt-5.1-codex-max` - 最强模型
+- `gpt-5.3-codex` - 增强版
+- `gpt-5.3-codex-max` - 最强模型
 
 ## 推理强度配置
 
@@ -95,7 +95,7 @@ codex --dangerously-bypass-approvals-and-sandbox "Your prompt"
 codex --full-auto "Your prompt"
 
 # 完整 YOLO 配置别名
-alias c='codex --enable web_search_request -m gpt-5.1-codex-max -c model_reasoning_effort="high" --yolo'
+alias c='codex --enable web_search_request -m gpt-5.3-codex-max -c model_reasoning_effort="high" --yolo'
 
 # 恢复最近会话
 codex resume --last

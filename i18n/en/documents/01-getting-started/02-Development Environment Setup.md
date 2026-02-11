@@ -125,7 +125,7 @@ AI CLI tools typically ask for confirmation by default; enabling full permission
 
 ```bash
 # Codex - Most powerful configuration
-codex --enable web_search_request -m gpt-5.1-codex-max -c model_reasoning_effort="high" --dangerously-bypass-approvals-and-sandbox
+codex --enable web_search_request -m gpt-5.3-codex-max -c model_reasoning_effort="high" --dangerously-bypass-approvals-and-sandbox
 
 # Claude Code - Skip all confirmations
 claude --dangerously-skip-permissions
@@ -140,7 +140,7 @@ Add the following configuration to `~/.bashrc` to launch AI with a single letter
 
 ```bash
 # c - Codex (GPT-5.1 most powerful mode)
-alias c='codex --enable web_search_request -m gpt-5.1-codex-max -c model_reasoning_effort="high" --dangerously-bypass-approvals-and-sandbox'
+alias c='codex --enable web_search_request -m gpt-5.3-codex-max -c model_reasoning_effort="high" --dangerously-bypass-approvals-and-sandbox'
 
 # cc - Claude Code (full permissions)
 alias cc='claude --dangerously-skip-permissions'

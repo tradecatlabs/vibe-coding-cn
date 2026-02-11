@@ -34,7 +34,7 @@ Required inputs:
 **Codex CLI**
 ```bash
 # --yolo is an alias for --dangerously-bypass-approvals-and-sandbox
-alias c='codex --enable web_search_request -m gpt-5.1-codex-max -c model_reasoning_effort="high" --yolo'
+alias c='codex --enable web_search_request -m gpt-5.3-codex-max -c model_reasoning_effort="high" --yolo'
 ```
 
 **Claude Code**
