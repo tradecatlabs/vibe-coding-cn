@@ -1,10 +1,10 @@
 # 💬 提示词库
 
-提示词资源已迁移至在线表格，便于实时更新和协作编辑。
+提示词资源已迁移至云端表格，便于实时更新和协作编辑。
 
 ## 📋 在线提示词库
 
-**[👉 点击访问提示词在线表格](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203)**
+**[👉 点击访问提示词云端表格](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203)**
 
 表格包含：
 - 🔮 元提示词 - 生成提示词的提示词
