@@ -46,6 +46,10 @@ ENV/
 *.log
 logs/
 
+# Skill Seekers (vendored tool output)
+output/
+skills/skills-skills/scripts/.venv-skill-seekers/
+
 libs/external/tmux
 libs/external/.tmux
 
