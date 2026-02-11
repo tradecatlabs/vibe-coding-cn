@@ -29,7 +29,7 @@ libs/external/
 - `MCPlayerTransfer/`：MC 玩家迁移工具
 - `XHS-image-to-PDF-conversion/`：图片合并 PDF（详见 [`XHS-image-to-PDF-conversion/README.md`](./XHS-image-to-PDF-conversion/README.md)）
 
-> 📝 `system-prompts-and-models-of-ai-tools-main-cn/` 已移至 [`i18n/zh/prompts/system_prompts/`](../../i18n/zh/prompts/system_prompts/)
+> 📝 `system-prompts-and-models-of-ai-tools-main-cn/` 已移至 [`prompts/system_prompts/`](../../prompts/system_prompts/)
 
 ## 新增外部工具（最小清单）
 

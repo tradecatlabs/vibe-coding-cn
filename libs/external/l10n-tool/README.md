@@ -15,7 +15,7 @@ pip install -r requirements.txt
 ## 使用示例
 ```bash
 # 将中文 README 翻译到英文
-python translate.py --input ../../i18n/zh/README.md --output ../../i18n/en/README.md --src-lang zh --tgt-lang en --overwrite
+python translate.py --input ../../README.md --output ../../README.md --src-lang zh --tgt-lang en --overwrite
 
 # 批量翻译 prompts，可在外部脚本中循环调用
 ```
