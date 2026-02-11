@@ -10,8 +10,6 @@
 
 <div align="center">
 
-[中文](./README.md)
-
 # Vibe Coding 指南
 
 **一个通过与 AI 结对编程，将想法变为现实的终极工作站**
