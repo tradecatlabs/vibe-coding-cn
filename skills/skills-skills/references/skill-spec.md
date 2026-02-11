@@ -107,5 +107,5 @@ Each Skill SHOULD include a `## Maintenance` section with:
 Before shipping, run the checklist in `quality-checklist.md` and (if available) the validator:
 
 ```bash
-./skills/claude-skills/scripts/validate-skill.sh skills/<skill-name> --strict
+./skills/skills-skills/scripts/validate-skill.sh skills/<skill-name> --strict
 ```

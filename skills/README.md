@@ -8,7 +8,7 @@
 
 | 技能 | 说明 |
 |:---|:---|
-| [claude-skills](./claude-skills/SKILL.md) | ⭐ 生成 Skills 的 Skills |
+| [skills-skills](./skills-skills/SKILL.md) | ⭐ 生成 Skills 的 Skills |
 | [sop-generator](./sop-generator/SKILL.md) | SOP 生成与规范化 |
 
 ### 🤖 AI 工具
@@ -58,7 +58,7 @@
 
 ```bash
 # 查看元技能
-cat skills/claude-skills/SKILL.md
+cat skills/skills-skills/SKILL.md
 
 # 查看无头 CLI 技能
 cat skills/headless-cli/SKILL.md
@@ -71,11 +71,11 @@ cat skills/postgresql/SKILL.md
 
 使用元技能生成：
 1. 准备领域资料（文档、代码、规范）
-2. 将资料和 `claude-skills/SKILL.md` 一起提供给 AI
+2. 将资料和 `skills-skills/SKILL.md` 一起提供给 AI
 3. AI 会生成针对该领域的专用 Skill
 
 ## 相关资源
 
-- [元技能文件](./claude-skills/SKILL.md) - 生成 Skills 的 Skills
+- [元技能文件](./skills-skills/SKILL.md) - 生成 Skills 的 Skills
 - [提示词库](../prompts/) - 更细粒度的提示词集合
 - [文档库](../documents/) - 方法论与开发经验

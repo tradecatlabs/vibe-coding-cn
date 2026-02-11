@@ -1,5 +1,5 @@
 ---
-name: claude-skills
+name: skills-skills
 description: "Claude Skills meta-skill: extract domain material (docs/APIs/code/specs) into a reusable Skill (SKILL.md + references/scripts/assets), and refactor existing Skills for clarity, activation reliability, and quality gates."
 ---
 
@@ -158,15 +158,15 @@ Validate locally:
 
 ```bash
 # From repo root (basic validation)
-./skills/claude-skills/scripts/validate-skill.sh skills/<skill-name>
+./skills/skills-skills/scripts/validate-skill.sh skills/<skill-name>
 
 # From repo root (strict validation)
-./skills/claude-skills/scripts/validate-skill.sh skills/<skill-name> --strict
+./skills/skills-skills/scripts/validate-skill.sh skills/<skill-name> --strict
 
-# From skills/claude-skills/ (basic validation)
+# From skills/skills-skills/ (basic validation)
 ./scripts/validate-skill.sh ../<skill-name>
 
-# From skills/claude-skills/ (strict validation)
+# From skills/skills-skills/ (strict validation)
 ./scripts/validate-skill.sh ../<skill-name> --strict
 ```
 
@@ -176,13 +176,13 @@ Generate a new Skill skeleton:
 
 ```bash
 # From repo root (generate into ./skills/)
-./skills/claude-skills/scripts/create-skill.sh my-skill --full --output skills
+./skills/skills-skills/scripts/create-skill.sh my-skill --full --output skills
 
-# From skills/claude-skills/ (generate into ../ i.e. ./skills/)
+# From skills/skills-skills/ (generate into ../ i.e. ./skills/)
 ./scripts/create-skill.sh my-skill --full --output ..
 
 # Minimal skeleton
-./skills/claude-skills/scripts/create-skill.sh my-skill --minimal --output skills
+./skills/skills-skills/scripts/create-skill.sh my-skill --minimal --output skills
 ```
 
 Templates:
@@ -238,6 +238,6 @@ External (official):
 
 ## Maintenance
 
-- Sources: local spec files in `skills/claude-skills/references/` + upstream official docs in `references/README.md`
+- Sources: local spec files in `skills/skills-skills/references/` + upstream official docs in `references/README.md`
 - Last updated: 2025-12-14
 - Known limits: `validate-skill.sh` is heuristic; strict mode assumes the recommended section headings

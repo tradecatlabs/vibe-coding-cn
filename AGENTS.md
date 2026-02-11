@@ -157,7 +157,7 @@ git push
 │   └── README.md                # 在线表格链接
 │
 ├── skills/                      # 技能库（扁平化，详见 skills/README.md）
-│   ├── claude-skills/           # 元技能核心
+│   ├── skills-skills/           # 元技能核心
 │   ├── sop-generator/           # SOP 生成
 │   ├── canvas-dev/              # Canvas白板驱动开发
 │   ├── headless-cli/            # 无头模式 AI CLI
