@@ -159,13 +159,16 @@ git push
 │   ├── 02-编程提示词/           # 编程相关提示词
 │   └── 03-用户提示词/           # 用户自定义提示词
 │
-├── skills/                      # 技能库
-│   ├── 00-元技能/               # 生成技能的元技能
-│   ├── 01-AI工具/               # AI CLI 和工具
-│   ├── 02-数据库/               # 数据库技能
-│   ├── 03-加密货币/             # 加密货币/量化交易
-│   ├── 04-开发工具/             # 通用开发工具
-│   └── 05-生产力/               # 生产力工具
+├── skills/                      # 技能库（扁平化，详见 skills/README.md）
+│   ├── claude-skills/           # 元技能核心
+│   ├── sop-generator/           # SOP 生成
+│   ├── canvas-dev/              # Canvas白板驱动开发
+│   ├── headless-cli/            # 无头模式 AI CLI
+│   ├── postgresql/              # PostgreSQL 专家
+│   ├── timescaledb/             # 时序数据库
+│   ├── ccxt/                    # 交易所 API
+│   ├── tmux-autopilot/          # tmux 自动化
+│   └── ...                      # 更多技能
 │
 ├── libs/                        # 核心库代码
 │   ├── common/                  # 通用模块
@@ -194,8 +197,8 @@ git push
 - `AGENTS.md` - AI Agent 操作手册（本文件）
 - `libs/external/prompts-library/main.py` - 提示词转换工具入口
 - `backups/一键备份.sh` - 备份脚本入口
-- `skills/04-开发工具/tmux-autopilot/` - tmux 自动化操控技能（基于 oh-my-tmux，含 capture-pane/send-keys/蜂群巡检脚本）
-- `skills/00-元技能/sop-generator/` - SOP 生成与规范化技能（输入资料/需求 -> 标准 SOP）
+- `skills/tmux-autopilot/` - tmux 自动化操控技能（基于 oh-my-tmux，含 capture-pane/send-keys/蜂群巡检脚本）
+- `skills/sop-generator/` - SOP 生成与规范化技能（输入资料/需求 -> 标准 SOP）
 
 ---
 
@@ -279,7 +282,7 @@ bash backups/一键备份.sh
 
 ### Core Directories
 - **`prompts/`**: 核心提示词库（00-元提示词、01-系统提示词、02-编程提示词、03-用户提示词）
-- **`skills/`**: 模块化技能库（00-元技能、01-AI工具、02-数据库、03-加密货币、04-开发工具）
+- **`skills/`**: 扁平化技能库（详见 skills/README.md）
 - **`documents/`**: 知识库（-01-哲学与方法论、00-基础指南、01-入门指南、02-方法论、03-实战、04-资源）
 - **`libs/external/prompts-library/`**: Excel ↔ Markdown 转换工具
 - **`libs/external/chat-vault/`**: AI 聊天记录保存工具
