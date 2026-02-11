@@ -1,0 +1,6 @@
+[submodule "libs/external/.tmux"]
+	path = libs/external/.tmux
+	url = https://github.com/gpakosz/.tmux.git
+[submodule "libs/external/tmux"]
+	path = libs/external/tmux
+	url = https://github.com/tmux/tmux.git
