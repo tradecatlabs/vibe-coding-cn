@@ -51,7 +51,7 @@
   <a href="./skills/"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
   <a href="https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
   <a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"><img src="https://img.shields.io/badge/🔧_系统提示词-仓库-slateblue?style=for-the-badge" alt="系统提示词仓库"></a>
-  <a href="./libs/external/chat-vault/README_CN.md"><img src="https://img.shields.io/badge/🔐_Chat_Vault-AI会话库-gold?style=for-the-badge" alt="Chat Vault"></a>
+  <a href="./libs/external/chat-vault/README.md"><img src="https://img.shields.io/badge/🔐_Chat_Vault-AI会话库-gold?style=for-the-badge" alt="Chat Vault"></a>
 </p>
 
 [📋 工具资源](#-器-工具与资源)
@@ -427,6 +427,10 @@ Canvas方式：**代码 ⇄ 白板 ⇄ AI ⇄ 人类**，白板成为单一真�
 │   ├── ccxt/                    # 交易所 API
 │   ├── tmux-autopilot/          # tmux 自动化
 │   └── ...                      # 更多技能
+│
+├── workflow/                    # 工作流模板
+│   ├── auto-dev-loop/           # 自动开发循环
+│   └── canvas-dev/              # Canvas白板驱动开发
 │
 ├── libs/                        # 核心库代码
 │   ├── common/                  # 通用模块

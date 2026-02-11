@@ -167,6 +167,10 @@ git push
 │   ├── tmux-autopilot/          # tmux 自动化
 │   └── ...                      # 更多技能
 │
+├── workflow/                    # 工作流模板
+│   ├── auto-dev-loop/           # 自动开发循环
+│   └── canvas-dev/              # Canvas白板驱动开发
+│
 ├── libs/                        # 核心库代码
 │   ├── common/                  # 通用模块
 │   │   ├── models/              # 模型定义
