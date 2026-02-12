@@ -15,13 +15,6 @@ model_reasoning_effort = "xhigh"
 sandbox_mode = "danger-full-access"
 approval_policy = "never"
 web_search = "live"
-# notify = [
-#   "powershell.exe",
-#   "-NoLogo",
-#   "-NoProfile",
-#   "-File",
-#   'C:\\Users\\lenovo\\.codex\\hooks\\codex-notify.ps1'
-# ]
 
 # 方案 2：自定义系统指令（可选，与 AGENTS.md 二选一）
 # experimental_instructions_file = "/home/lenovo/.codex/custom-instructions.md"
