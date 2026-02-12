@@ -1,9 +1,6 @@
-# ===== 模型配置 =====
-# 可选的模型：
-# - gpt-5-codex (最新 GPT-5 Codex) - 最适合编程任务
-# - gpt-5 (GPT-5) - 通用最强模型
-# - gpt-4o (GPT-4 Turbo) - 更快的 GPT-4
-# - gpt-4 (GPT-4) - 标准 GPT-4
+# ==================== 基础配置 ====================
+
+# 模型
 model = "gpt-5.2"
 
 # 推理强度（思考深度）：
@@ -12,16 +9,36 @@ model = "gpt-5.2"
 # - high   → 深度思考，适合复杂任务（当前设置）
 # 注意：gpt-5.1-codex 不支持 "minimal" 选项
 model_reasoning_effort = "xhigh"
+
+# 运行策略
 sandbox_mode = "danger-full-access"
 approval_policy = "never"
 web_search = "live"
 
-# 方案 2：自定义系统指令（可选，与 AGENTS.md 二选一）
+# 交互风格
+personality = "pragmatic"
+
+# 指令来源（可选，与 AGENTS.md 二选一）
 # experimental_instructions_file = "/home/lenovo/.codex/custom-instructions.md"
 
-# ===== MCP Servers Configuration =====
+# ==================== MCP 默认配置 ====================
 startup_timeout_ms = 20000
-personality = "pragmatic"
+
+# ==================== UI 与提示 ====================
+
+[tui]
+notifications = true
+
+[notice]
+hide_gpt5_1_migration_prompt = true
+"hide_gpt-5.1-codex-max_migration_prompt" = true
+hide_rate_limit_model_nudge = true
+
+[notice.model_migrations]
+"gpt-5.1-codex-max" = "gpt-5.2-codex"
+"gpt-5.2" = "gpt-5.3-codex"
+
+# ==================== MCP Servers（示例，默认关闭） ====================
 
 # Context7 - 最新官方文档 MCP
 # [mcp_servers."context7"]
@@ -72,15 +89,3 @@ personality = "pragmatic"
 # command = "auggie"
 # args = ["-w", "/mnt/c/Users/lenovo", "--mcp"]
 # startup_timeout_ms = 200000
-
-[tui]
-notifications = true
-
-[notice]
-hide_gpt5_1_migration_prompt = true
-"hide_gpt-5.1-codex-max_migration_prompt" = true
-hide_rate_limit_model_nudge = true
-
-[notice.model_migrations]
-"gpt-5.1-codex-max" = "gpt-5.2-codex"
-"gpt-5.2" = "gpt-5.3-codex"
