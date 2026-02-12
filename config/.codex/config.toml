@@ -1,0 +1,93 @@
+# ===== 模型配置 =====
+# 可选的模型：
+# - gpt-5-codex (最新 GPT-5 Codex) - 最适合编程任务
+# - gpt-5 (GPT-5) - 通用最强模型
+# - gpt-4o (GPT-4 Turbo) - 更快的 GPT-4
+# - gpt-4 (GPT-4) - 标准 GPT-4
+model = "gpt-5.2"
+
+# 推理强度（思考深度）：
+# - low    → 快速响应，适合简单任务
+# - medium → 平衡速度和质量，适合一般任务
+# - high   → 深度思考，适合复杂任务（当前设置）
+# 注意：gpt-5.1-codex 不支持 "minimal" 选项
+model_reasoning_effort = "xhigh"
+sandbox_mode = "danger-full-access"
+approval_policy = "never"
+web_search = "live"
+# notify = [
+#   "powershell.exe",
+#   "-NoLogo",
+#   "-NoProfile",
+#   "-File",
+#   'C:\\Users\\lenovo\\.codex\\hooks\\codex-notify.ps1'
+# ]
+
+# 方案 2：自定义系统指令（可选，与 AGENTS.md 二选一）
+# experimental_instructions_file = "/home/lenovo/.codex/custom-instructions.md"
+
+# ===== MCP Servers Configuration =====
+startup_timeout_ms = 20000
+personality = "pragmatic"
+
+# Context7 - 最新官方文档 MCP
+# [mcp_servers."context7"]
+# command = "npx"
+# args = ["-y", "@upstash/context7-mcp@latest"]
+# startup_timeout_ms = 20000
+
+# Completion Notifier - 完成声音提示
+# [mcp_servers."completion-notifier"]
+# command = "node"
+# args = ["/home/lenovo/.codex/mcp-servers/completion-notifier/#index.js"]
+# startup_timeout_ms = 20000
+
+# chrome-devtools
+# [mcp_servers."chrome-devtools"]
+# command = "npx"
+# args = ["-y", "chrome-devtools-mcp@latest"]
+# startup_timeout_ms = 20000
+
+# [mcp_servers."playwright"]
+# command = "npx"
+# args = ["-y", "@playwright/mcp@latest"]
+# startup_timeout_ms = 20000
+
+# [mcp_servers."puppeteer"]
+# command = "npx"
+# args = ["-y", "puppeteer-mcp-server"]
+# startup_timeout_ms = 20000
+
+# [mcp_servers."n8n"]
+# command = "npx"
+# args = ["-y", "n8n-mcp@latest"]
+# startup_timeout_ms = 20000
+
+# [mcp_servers."maverick"]
+# command = "npx"
+# args = ["-y", "mcp-remote", "http://localhost:8003/sse/"]
+# cwd = "/home/lenovo/maverick-mcp"
+# startup_timeout_ms = 20000
+
+# [mcp_servers."happy"]
+# command = "happy"
+# args = ["codex"]
+# startup_timeout_ms = 20000
+
+# Augment - 代码库检索 MCP
+# [mcp_servers."auggie-mcp"]
+# command = "auggie"
+# args = ["-w", "/mnt/c/Users/lenovo", "--mcp"]
+# startup_timeout_ms = 200000
+
+[tui]
+notifications = true
+
+[notice]
+hide_gpt5_1_migration_prompt = true
+"hide_gpt-5.1-codex-max_migration_prompt" = true
+hide_rate_limit_model_nudge = true
+
+[notice.model_migrations]
+"gpt-5.1-codex-max" = "gpt-5.2-codex"
+"gpt-5.2" = "gpt-5.3-codex"
