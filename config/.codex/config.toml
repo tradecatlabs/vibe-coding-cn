@@ -1,44 +1,79 @@
 # ==================== 基础配置 ====================
 
-# 模型
+# 模型：
+# - 这里填写 Codex CLI 支持的模型名（字符串）。
+# - 建议写成你常用的默认模型，临时切换用命令行 `-m` 覆盖更合适。
+# - 经验上：`*-codex` 更偏“写代码/改代码”，非 `*-codex` 更偏通用对话（以你实际使用体验为准）。
 model = "gpt-5.2"
 
 # 推理强度（思考深度）：
-# - low    → 快速响应，适合简单任务
-# - medium → 平衡速度和质量，适合一般任务
-# - high   → 深度思考，适合复杂任务（当前设置）
-# 注意：gpt-5.1-codex 不支持 "minimal" 选项
+# - low    → 更快，适合“明确指令 + 小改动”
+# - medium → 均衡，适合多数日常任务
+# - high   → 更深，适合复杂重构/疑难排障
+# - xhigh  → 最深，适合架构级设计/大范围推理（可能更慢）
+# 注意：
+# - 不同模型对选项支持范围可能不同；遇到报错优先降一档再试。
 model_reasoning_effort = "xhigh"
 
 # 运行策略
+# sandbox_mode：
+# - 用来约束/放开文件系统、命令执行等能力（不同版本 Codex/运行器实现可能略有差异）。
+# - `danger-full-access` 表示最大权限：可读写任意路径、可执行任意命令。
+# - 仅在你明确知道自己在做什么、并且仓库/机器可信时使用。
 sandbox_mode = "danger-full-access"
+
+# approval_policy：
+# - 控制是否需要用户确认（例如写文件、跑命令等高影响操作）。
+# - `never` 表示不再弹确认，自动执行。
+# - 风险提示：如果你经常在不熟的目录/不可信脚本环境里使用，建议改成更保守的策略。
 approval_policy = "never"
+
+# web_search：
+# - 控制联网搜索能力策略（以你安装的 Codex CLI 版本为准）。
+# - `live` 通常表示允许实时联网搜索（适用于需要最新信息的任务）。
 web_search = "live"
 
 # 交互风格
+# personality：
+# - 影响输出风格（例如更务实/更解释型等）。
 personality = "pragmatic"
 
 # 指令来源（可选，与 AGENTS.md 二选一）
+# experimental_instructions_file：
+# - 指定一份“系统指令/长期提示词”文件路径。
+# - 如果项目内已经用 `AGENTS.md` 管理行为准则，通常不需要再额外打开。
 # experimental_instructions_file = "/home/lenovo/.codex/custom-instructions.md"
 
 # ==================== MCP 默认配置 ====================
+# startup_timeout_ms：
+# - MCP（Model Context Protocol）服务器启动/握手的超时时间（毫秒）。
+# - 如果你启用了某些 MCP（npx/node 启动慢），可以把这个值适当调大。
 startup_timeout_ms = 20000
 
 # ==================== UI 与提示 ====================
 
 [tui]
+# 是否在 TUI（终端 UI）里启用通知提示。
 notifications = true
 
 [notice]
+# 这些开关用于隐藏某些“迁移/提示”类消息，减少噪音（仅影响 UI，不影响核心功能）。
 hide_gpt5_1_migration_prompt = true
 "hide_gpt-5.1-codex-max_migration_prompt" = true
 hide_rate_limit_model_nudge = true
 
 [notice.model_migrations]
+# 模型迁移映射：
+# - 当某些老模型名不可用/被迁移时，用这里的映射做自动替换。
+# - 建议只保留你确实用得到的映射，避免未来产生“我没注意但被自动换了”的困惑。
 "gpt-5.1-codex-max" = "gpt-5.2-codex"
 "gpt-5.2" = "gpt-5.3-codex"
 
 # ==================== MCP Servers（示例，默认关闭） ====================
+# 说明：
+# - 下面这些块默认都注释掉，作为“可复制的模板”。
+# - 启用方式：取消注释对应的 `[mcp_servers."name"]` 段，并按需修改 `command/args/cwd`。
+# - 维护原则：宁可少开，按需启用；避免“全开导致启动慢/不稳定/难排障”。
 
 # Context7 - 最新官方文档 MCP
 # [mcp_servers."context7"]
