@@ -118,7 +118,7 @@
 </details>
 
 <details>
-<summary><strong>🧪 实验性方法模块</strong></summary>
+<summary><strong>🧪 实验性方法</strong></summary>
 
 > 下面是一些“可能随时推翻重写”的实验性方法与范式；先看一眼，觉得对你有用再深入。
 
