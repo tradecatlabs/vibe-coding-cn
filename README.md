@@ -615,14 +615,7 @@ gantt
 
 ---
 
-</details>
-
----
-
 <a id="setup"></a>
-
-<details>
-<summary><strong>⚙️ 完整设置流程</strong></summary>
 
 ## ⚙️ 完整设置流程
 
@@ -677,10 +670,7 @@ gantt
   - `architecture.md`（新建一个空文件，用于记录每个文件的作用）
 </details>
 
-</details>
-
-<details>
-<summary><strong>🎮 Vibe Coding 开发基础游戏</strong></summary>
+## 🎮 Vibe Coding 开发基础游戏
 
 现在进入最爽的阶段！
 
@@ -711,20 +701,14 @@ gantt
 - 重复此流程，直到整个 `implementation-plan.md` 全部完成。
 </details>
 
-</details>
-
-<details>
-<summary><strong>✨ 添加细节功能</strong></summary>
+## ✨ 添加细节功能
 
 恭喜！你已经做出了基础游戏！可能还很粗糙、缺少功能，但现在可以尽情实验和打磨了。
 - 想要雾效、后期处理、特效、音效？更好的飞机/汽车/城堡？绝美天空？
 - 每增加一个主要功能，就新建一个 `feature-implementation.md`，写短步骤+测试。
 - 继续增量式实现和测试。
 
-</details>
-
-<details>
-<summary><strong>🐞 修复 Bug 与卡壳情况</strong></summary>
+## 🐞 修复 Bug 与卡壳情况
 
 <details>
 <summary><strong>常规修复</strong></summary>
@@ -745,10 +729,7 @@ gantt
   - 用 [RepoPrompt](https://repoprompt.com/) 或 [uithub](https://uithub.com/) 把整个代码库合成一个文件，然后丢给 **gpt-5.3-codex 或 Claude** 求救。
 </details>
 
-</details>
-
-<details>
-<summary><strong>💡 技巧与窍门</strong></summary>
+## 💡 技巧与窍门
 
 <details>
 <summary><strong>Claude Code & Codex 使用技巧</strong></summary>
@@ -774,10 +755,7 @@ gantt
   - 在 Claude Code 中触发深度思考的关键词强度：`think` < `think hard` < `think harder` < `ultrathink`。
 </details>
 
-</details>
-
-<details>
-<summary><strong>❓ 常见问题解答 (FAQ)</strong></summary>
+## ❓ 常见问题解答 (FAQ)
 
 - **Q: 我在做应用不是游戏，这个流程一样吗？**
   - **A:** 基本完全一样！把 GDD 换成 PRD（产品需求文档）即可。你也可以先用 v0、Lovable、Bolt.new 快速原型，再把代码搬到 GitHub，然后克隆到本地用本指南继续开发。
