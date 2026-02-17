@@ -782,7 +782,7 @@ gantt
 -   **Telegram**: [@desci0](https://t.me/desci0)
 -   **Telegram 交流群**: [glue_coding](https://t.me/glue_coding)
 -   **Telegram 频道**: [tradecat_ai_channel](https://t.me/tradecat_ai_channel)
--   **邮箱**: tukuai.ai@gmail.com (回复可能不及时)
+-   **邮箱**: tukuai.ai@gmail.com
 
 ---
 
