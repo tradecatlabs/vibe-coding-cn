@@ -77,9 +77,9 @@
 <a id="getting-started"></a>
 
 <details>
-<summary><strong>⚡ 5 分钟快速开始</strong></summary>
+<summary><strong>⚡ 1 分钟快速开始</strong></summary>
 
-## ⚡ 5 分钟快速开始
+## ⚡ 1 分钟快速开始
 
 > 已有网络和开发环境？直接开始 Vibe Coding！
 
