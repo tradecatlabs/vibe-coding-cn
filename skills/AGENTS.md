@@ -1,30 +1,47 @@
-# AGENTS.md（skills/05-生产力）
+# Skills 目录 Agent 指南
 
-本目录用于收纳「生产力类」技能：偏向内容生产、格式转换与交付物构建。
+本目录用于收纳可复用的 **Skills（技能模块）**：每个子目录代表一个“可触发、可复用、可交付”的能力包，通常包含入口文档 `SKILL.md`，以及可选的脚本/参考资料/资产文件。
 
-## 目录结构
+## 目录结构（约定）
 
 ```text
-skills/05-生产力/
-├── AGENTS.md
-└── markdown-to-epub/
-    ├── SKILL.md
-    ├── agents/
-    │   └── openai.yaml
-    └── scripts/
-        └── build_epub.py
+skills/
+├── AGENTS.md                     # 本文件（目录级行为准则）
+├── README.md                     # skills 总览与索引
+├── <skill-name>/                 # 一个技能 = 一个目录
+│   ├── SKILL.md                  # 入口：触发条件/边界/交付物/流程
+│   ├── references/               # (可选) 参考资料与索引
+│   ├── scripts/                  # (可选) 可执行脚本/自动化
+│   ├── assets/                   # (可选) 模板/样例/静态资源
+│   └── agents/                   # (可选) Agent 元数据（如 openai.yaml）
+└── skills-skills/                # 元技能：生成/校验/脚手架化其它技能
 ```
 
 ## 模块职责与边界
 
-- `markdown-to-epub/`：将 Markdown 手稿 + 本地图片资产稳定转换为 EPUB，并做最小可用的完整性校验。
-  - `markdown-to-epub/SKILL.md`：面向使用者的入口文档（触发条件、边界、快速上手、排错）。
-  - `markdown-to-epub/agents/openai.yaml`：Codex Skill 的交互入口元数据（展示名、默认提示语）。
-  - `markdown-to-epub/scripts/build_epub.py`：核心实现脚本（重写图片引用、拷贝资产、调用 `ebook-convert`、输出报告）。
+- 每个 `<skill-name>/` 必须以 `SKILL.md` 作为入口，明确：
+  - 触发条件（何时用）
+  - 不适用/边界（何时不用）
+  - 交付物（要产出什么文件/结论）
+  - 最小可复现流程（命令/步骤/输入输出）
+- 技能目录之间尽量 **无隐式耦合**：不要依赖别的技能目录中的“隐式文件路径/脚本副作用”。
+- 通用逻辑优先下沉到 `libs/common/`，技能目录只保留“该领域必要的最薄封装”。
 
-## 依赖与上下游
+## 操作规范
 
-- 上游输入：Markdown 手稿文件、同目录或指定根目录下的本地图片。
-- 外部依赖：Calibre `ebook-convert`（用于实际转换）。
-- 下游输出：EPUB 文件 + `build_dir/` 工作目录（规范化 Markdown、assets、转换日志、报告 JSON）。
+### 允许
+- 新增技能目录（优先复用现有模板与规范）
+- 迭代现有 `SKILL.md` 的触发条件、边界与交付物定义
+- 为技能补齐 `references/` 索引或 `scripts/` 自动化
 
+### 禁止 / 不推荐
+- 在 `skills/` 下按“编号分类目录”拆层级（保持扁平，靠 `README.md` 建索引）
+- 让脚本默认写入不可审计的全局路径（优先输出到技能目录内或明确的 `artifacts/`）
+
+## 快速定位（常用技能）
+
+- `skills/tmux-autopilot/`：tmux 自动化操控与多 Agent 协作
+- `skills/canvas-dev/`：Canvas 白板驱动开发
+- `skills/sop-generator/`：SOP 生成与规范化
+- `skills/markdown-to-epub/`：Markdown → EPUB 稳定构建
+- `skills/skills-skills/`：元技能（技能生成/校验/脚手架）

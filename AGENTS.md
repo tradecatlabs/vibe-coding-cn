@@ -7,7 +7,8 @@
 ## 1. Mission & Scope（目标与边界）
 
 ### 允许的操作
-- 读取、修改 `documents/`、`prompts/`、`skills/`、`libs/` 下的文档与代码
+- 读取、修改顶层文档：`README.md`、`AGENTS.md`、`CLAUDE.md`、`GEMINI.md` 等
+- 读取、修改 `documents/`、`prompts/`、`skills/`、`workflow/`、`config/`、`tools/`、`libs/` 下的文档与代码
 - 执行 `make lint`、备份脚本、prompts-library 转换工具
 - 新增/修改提示词、技能、文档
 - 提交符合规范的 commit
@@ -30,7 +31,7 @@
 
 ```bash
 # 1. 拉取最新代码
-git pull origin main
+git pull --rebase origin develop
 
 # 2. 运行 lint 检查
 make lint
@@ -44,7 +45,7 @@ make lint
 # 5. 提交变更
 git add -A
 git commit -m "feat|fix|docs|chore: scope - summary"
-git push
+git push origin develop
 ```
 
 ---
@@ -63,8 +64,8 @@ git push
 | `make help` | 列出所有 Make 目标 | 无 |
 | `make lint` | 校验全仓库 Markdown | 需安装 markdownlint-cli |
 | `bash backups/一键备份.sh` | 创建完整项目备份 | 无 |
-| `python backups/快速备份.py` | Python 版备份脚本 | Python 3.8+ |
-| `cd libs/external/prompts-library && python main.py` | 提示词格式转换 | pandas, openpyxl, PyYAML |
+| `python3 backups/快速备份.py` | Python 版备份脚本 | Python 3.8+ |
+| `cd libs/external/prompts-library && python3 main.py` | 提示词格式转换 | pandas, openpyxl, PyYAML |
 
 ### prompts-library 支持的转换模式
 1. Excel → Docs：将 Excel 工作簿转换为 Markdown 文档目录
@@ -82,8 +83,12 @@ git push
 - 三层内容架构：`documents/` (知识) → `prompts/` (指令) → `skills/` (能力)
 
 ### 模块边界
-- `` - 中文主语料（默认）
-- `` - 英文版本
+- `documents/` - 中文知识库（方法论/入门/实战/资源）
+- `prompts/` - 提示词入口与云端索引
+- `skills/` - 可复用技能库（每个子目录一个 Skill）
+- `workflow/` - 可复用工作流模板（自动开发闭环等）
+- `config/` - 工具与开发配置（例如 Codex CLI）
+- `tools/` - 预留：自定义脚本/小工具（保持可替换、可审计）
 - `libs/common/` - 通用模块
 - `libs/external/` - 外部工具与依赖
 
@@ -133,6 +138,11 @@ git push
 ├── CODE_OF_CONDUCT.md           # 行为准则
 ├── CONTRIBUTING.md              # 贡献指南
 ├── .gitignore                   # Git 忽略规则
+│
+├── config/                      # 工具与开发配置
+│   └── .codex/                  # Codex CLI 配置（项目级）
+│       ├── config.toml          # Codex CLI 配置文件
+│       └── AGENTS.md            # Codex/Agent 指南（本目录）
 │
 ├── .github/                     # GitHub 配置
 │   ├── workflows/               # CI/CD 工作流
@@ -186,6 +196,9 @@ git push
 │       ├── my-nvim/             # Neovim 配置
 │       ├── MCPlayerTransfer/    # MC 玩家迁移工具
 │       └── XHS-image-to-PDF-conversion/ # 小红书图片转 PDF
+│
+├── tools/                       # 工具目录（预留）
+│   └── .gitkeep                 # 保持空目录被 Git 追踪
 │
 └── backups/                     # 备份脚本与存档
     ├── 一键备份.sh              # Shell 备份脚本
