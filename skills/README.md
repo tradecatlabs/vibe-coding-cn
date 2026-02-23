@@ -84,3 +84,4 @@ cat skills/postgresql/SKILL.md
 - [元技能文件](./skills-skills/SKILL.md) - 生成 Skills 的 Skills
 - [提示词库](../prompts/) - 更细粒度的提示词集合
 - [文档库](../documents/) - 方法论与开发经验
+- [skills.sh](https://skills.sh/) - Skill 大全网站
