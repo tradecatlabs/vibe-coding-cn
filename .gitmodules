@@ -4,3 +4,6 @@
 [submodule "libs/external/tmux"]
 	path = libs/external/tmux
 	url = https://github.com/tmux/tmux.git
+[submodule "libs/external/claude-official-skills"]
+	path = libs/external/claude-official-skills
+	url = https://github.com/anthropics/skills.git

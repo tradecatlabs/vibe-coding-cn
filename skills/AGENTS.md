@@ -17,6 +17,11 @@ skills/
 └── skills-skills/                # 元技能：生成/校验/脚手架化其它技能
 ```
 
+## 外部仓库引用（约定）
+
+- 允许在 `skills/` 下放置“只读引用”的软链接，用于引入外部权威仓库的内容（便于统一索引与检索）。
+- 为保证可复现性：软链接目标必须落在仓库内，并优先使用 Git submodule 管理（避免链接到个人机器的绝对路径）。
+
 ## 模块职责与边界
 
 - 每个 `<skill-name>/` 必须以 `SKILL.md` 作为入口，明确：
@@ -45,3 +50,4 @@ skills/
 - `skills/sop-generator/`：SOP 生成与规范化
 - `skills/markdown-to-epub/`：Markdown → EPUB 稳定构建
 - `skills/skills-skills/`：元技能（技能生成/校验/脚手架）
+- `skills/claude-official-skills/`：Claude 官方 skills 仓库（Anthropic）的软链接入口
