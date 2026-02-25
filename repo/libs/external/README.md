@@ -1,6 +1,6 @@
-# 🔌 libs/external：外部集成与第三方工具
+# 🔌 repo/libs/external：外部集成与第三方工具
 
-`libs/external/` 用来收纳第三方工具、外部依赖与集成模块。核心原则是：
+`repo/libs/external/` 用来收纳第三方工具、外部依赖与集成模块。核心原则是：
 
 - **尽量原样保留**：避免“魔改后不可升级”
 - **隔离依赖与风险**：外部工具的依赖不要污染主仓库
@@ -9,7 +9,7 @@
 ## 目录结构
 
 ```
-libs/external/
+repo/libs/external/
 ├── README.md
 ├── chat-vault/                                  # AI 聊天记录保存工具
 ├── prompts-library/                             # 提示词库管理工具（Excel ↔ Markdown）
@@ -33,7 +33,7 @@ libs/external/
 
 ## 新增外部工具（最小清单）
 
-1. 创建目录：`libs/external/<tool-name>/`
+1. 创建目录：`repo/libs/external/<tool-name>/`
 2. 必备文件：`README.md`（用途/入口/依赖/输入输出）、许可证与来源说明（如 `LICENSE` / `SOURCE.md`）
 3. 依赖约束：尽量使用工具自带的虚拟环境/容器化方式，不影响仓库其他部分
 4. 文档同步：在本 README 增加一行工具说明，保证可发现性

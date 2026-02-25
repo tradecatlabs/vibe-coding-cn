@@ -1,6 +1,6 @@
 # 人生K线 LLM 用户提示词模板（完整原文）
 
-本文件摘自 `libs/external/web/lifekline-main/services/geminiService.ts` 中 `userPrompt` 拼装逻辑，已替换为模板变量，便于直接复用。
+本文件摘自 `repo/libs/external/web/lifekline-main/services/geminiService.ts` 中 `userPrompt` 拼装逻辑，已替换为模板变量，便于直接复用。
 
 ```
 请根据以下**已经排好的**八字四柱和**指定的大运信息**进行分析。
@@ -51,4 +51,3 @@
 - 作为 `user` 消息传入 `/chat/completions`，与系统提示词配套使用。
 - 变量含义：`genderStr` 由性别+乾坤文字组成；`startAgeInt` 为起运年龄整数；`directionExample` 随顺/逆行变化；其余变量直接取用户输入或排盘结果。
 - 输出需为纯 JSON，`geminiService` 会自动剥离代码块并校验 `chartPoints`。
-

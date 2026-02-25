@@ -65,7 +65,7 @@ git push origin develop
 | `make lint` | 校验全仓库 Markdown | 需安装 markdownlint-cli |
 | `bash backups/一键备份.sh` | 创建完整项目备份 | 无 |
 | `python3 backups/快速备份.py` | Python 版备份脚本 | Python 3.8+ |
-| `cd libs/external/prompts-library && python3 main.py` | 提示词格式转换 | pandas, openpyxl, PyYAML |
+| `cd repo/libs/external/prompts-library && python3 main.py` | 提示词格式转换 | pandas, openpyxl, PyYAML |
 
 ### prompts-library 支持的转换模式
 1. Excel → Docs：将 Excel 工作簿转换为 Markdown 文档目录
@@ -90,11 +90,11 @@ git push origin develop
 - `config/` - 工具与开发配置（例如 Codex CLI）
 - `tools/` - 预留：自定义脚本/小工具（保持可替换、可审计）
 - `libs/common/` - 通用模块
-- `libs/external/` - 外部工具与依赖
+- `repo/libs/external/` - 外部工具与依赖
 
 ### 依赖添加规则
 - 新增工具或库时记录安装方式、最小版本与来源
-- 外部依赖来源记录在 `libs/external/` 目录下
+- 外部依赖来源记录在 `repo/libs/external/` 目录下
 - 引入第三方脚本需标明许可证与来源
 
 ### 禁止行为
@@ -184,18 +184,15 @@ git push origin develop
 ├── libs/                        # 核心库代码
 │   ├── common/                  # 通用模块
 │   │   ├── models/              # 模型定义
-│   │   └── utils/               # 工具函数
-│   ├── database/                # 数据库模块（预留）
-│   └── external/                # 外部工具
-│       ├── prompts-library/     # Excel ↔ Markdown 互转工具
-│       ├── chat-vault/          # AI 聊天记录保存工具
-│       ├── Skill_Seekers-development/ # Skills 制作器
-│       ├── html-tools-main/     # HTML 工具集（Markdown 编辑器、任务卡片生成等）
-│       ├── .tmux/               # oh-my-tmux (submodule)
-│       ├── tmux/                # tmux 源码 (submodule)
-│       ├── my-nvim/             # Neovim 配置
-│       ├── MCPlayerTransfer/    # MC 玩家迁移工具
-│       └── XHS-image-to-PDF-conversion/ # 小红书图片转 PDF
+│   │   └── utils/               # 工具函数（预留）
+│   └── database/                # 数据库模块（预留）
+│
+├── repo/                        # 可执行代码与外部依赖镜像
+│   └── libs/
+│       ├── external/            # 外部工具（含 Git submodule）
+│       └── common/
+│           └── utils/
+│               └── backups/     # 历史备份脚本快照
 │
 ├── tools/                       # 工具目录（预留）
 │   └── .gitkeep                 # 保持空目录被 Git 追踪
@@ -210,7 +207,7 @@ git push origin develop
 ### 关键入口文件
 - `README.md` - 项目主文档，面向人类开发者
 - `AGENTS.md` - AI Agent 操作手册（本文件）
-- `libs/external/prompts-library/main.py` - 提示词转换工具入口
+- `repo/libs/external/prompts-library/main.py` - 提示词转换工具入口
 - `backups/一键备份.sh` - 备份脚本入口
 - `skills/tmux-autopilot/` - tmux 自动化操控技能（基于 oh-my-tmux，含 capture-pane/send-keys/蜂群巡检脚本）
 - `skills/sop-generator/` - SOP 生成与规范化技能（输入资料/需求 -> 标准 SOP）
@@ -284,7 +281,7 @@ feat|fix|docs|chore|refactor|test: scope - summary
 
 ```bash
 # 提示词库转换
-cd libs/external/prompts-library && python3 main.py
+cd repo/libs/external/prompts-library && python3 main.py
 
 # Lint 所有 Markdown 文件
 make lint
@@ -299,8 +296,8 @@ bash backups/一键备份.sh
 - **`prompts/`**: 提示词库（指向云端表格）
 - **`skills/`**: 扁平化技能库（详见 skills/README.md）
 - **`documents/`**: 知识库（05-哲学与方法论、00-基础指南、01-入门指南、02-方法论、03-实战、04-资源）
-- **`libs/external/prompts-library/`**: Excel ↔ Markdown 转换工具
-- **`libs/external/chat-vault/`**: AI 聊天记录保存工具
+- **`repo/libs/external/prompts-library/`**: Excel ↔ Markdown 转换工具
+- **`repo/libs/external/chat-vault/`**: AI 聊天记录保存工具
 - **`backups/`**: 备份脚本与存档
 
 ### Key Technical Details

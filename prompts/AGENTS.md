@@ -29,4 +29,4 @@
 
 ## 相关工具
 
-- `libs/external/prompts-library/` - Excel ↔ Markdown 互转工具
+- `repo/libs/external/prompts-library/` - Excel ↔ Markdown 互转工具

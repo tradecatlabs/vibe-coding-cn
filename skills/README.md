@@ -56,7 +56,9 @@
 
 ## 外部技能仓库（软链接）
 
-- `skills/claude-official-skills/`：来自 Claude 官方 skills 仓库（Anthropic）。本仓库以 Git submodule 的形式落在 `libs/external/claude-official-skills/`，并通过软链接暴露到 `skills/` 下便于浏览与复用。
+- `skills/claude-official-skills/`：来自 Claude 官方 skills 仓库（Anthropic）。
+  本仓库以 Git submodule 的形式落在 `repo/libs/external/claude-official-skills/`，
+  并通过软链接暴露到 `skills/` 下便于浏览与复用。
 - 初始化/更新方式：`git submodule update --init --recursive`
 
 ## 快速使用

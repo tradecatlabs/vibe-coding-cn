@@ -5,7 +5,7 @@ description: "tmux 自动化操控：读取/广播/救援 session|window|pane，
 
 # tmux-autopilot Skill
 
-让 AI 像熟练运维一样操作 tmux：读取终端输出、发送按键、批量巡检、协作/救援其他终端，默认兼容 `libs/external/.tmux`（gpakosz/oh-my-tmux）。
+让 AI 像熟练运维一样操作 tmux：读取终端输出、发送按键、批量巡检、协作/救援其他终端，默认兼容 `repo/libs/external/.tmux`（gpakosz/oh-my-tmux）。
 
 ## When to Use This Skill
 
@@ -14,7 +14,7 @@ description: "tmux 自动化操控：读取/广播/救援 session|window|pane，
 - 需要向指定 pane 发送按键/命令（确认 `y`、`Enter`、`Ctrl+C`、广播同一窗口）。
 - 需要批量巡检/接管多 AI 终端（蜂群协作、自动救援卡死任务）。
 - 需要快速回忆 oh-my-tmux 快捷键、前缀或同步面板操作。
-- 需要在当前仓库复用 `libs/external/.tmux` 配置并避免修改主配置。
+- 需要在当前仓库复用 `repo/libs/external/.tmux` 配置并避免修改主配置。
 
 ## Not For / Boundaries
 
@@ -85,8 +85,8 @@ tmux attach -t ai-hub
 
 **启用 oh-my-tmux 配置（仓库内版本）**
 ```bash
-ln -sfn /home/lenovo/zip/vibe-coding-cn/libs/external/.tmux/.tmux.conf ~/.tmux.conf
-cp -n /home/lenovo/zip/vibe-coding-cn/libs/external/.tmux/.tmux.conf.local ~/.tmux.conf.local
+ln -sfn /home/lenovo/zip/vibe-coding-cn/repo/libs/external/.tmux/.tmux.conf ~/.tmux.conf
+cp -n /home/lenovo/zip/vibe-coding-cn/repo/libs/external/.tmux/.tmux.conf.local ~/.tmux.conf.local
 ```
 
 **记录 pane 输出到文件**
@@ -156,7 +156,7 @@ tmux pipe-pane -t <session>:<window>.<pane> -o 'cat >> /tmp/tmux-<session>-<wind
 
 ## Maintenance
 
-- Sources: `libs/external/.tmux/README.md`、蜂群实战提示词、Skill Seeker 生成的抓取材料（如需扩展自动化）。
+- Sources: `repo/libs/external/.tmux/README.md`、蜂群实战提示词、Skill Seeker 生成的抓取材料（如需扩展自动化）。
 - Last updated: 2026-01-17
 - Known limits: 未涵盖 tmux 插件管理（tpm）及多用户共享权限配置；需时再补充。
 

@@ -1,6 +1,6 @@
 # 人生K线 LLM 系统提示词（完整原文）
 
-以下内容对应 `libs/external/web/lifekline-main/constants.ts` 中的 `BAZI_SYSTEM_INSTRUCTION` 字符串，已原样展开，便于单独查看与复用。
+以下内容对应 `repo/libs/external/web/lifekline-main/constants.ts` 中的 `BAZI_SYSTEM_INSTRUCTION` 字符串，已原样展开，便于单独查看与复用。
 
 ```
 你是一位八字命理大师，精通加密货币市场周期。根据用户提供的四柱干支和大运信息，生成"人生K线图"数据和命理报告。
@@ -44,4 +44,3 @@
 # 使用说明
 - 作为 `system` 消息传入 `/chat/completions`，禁止模型输出 Markdown 代码块（由 `geminiService` 再次强调）。
 - 保证 共x条（x = 全部流月数量） 条 `chartPoints`，并严格执行 `reason` 字数与评分波动要求。
-

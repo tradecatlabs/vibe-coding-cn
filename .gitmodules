@@ -1,9 +1,9 @@
-[submodule "libs/external/.tmux"]
-	path = libs/external/.tmux
+[submodule "repo/libs/external/.tmux"]
+	path = repo/libs/external/.tmux
 	url = https://github.com/gpakosz/.tmux.git
-[submodule "libs/external/tmux"]
-	path = libs/external/tmux
+[submodule "repo/libs/external/tmux"]
+	path = repo/libs/external/tmux
 	url = https://github.com/tmux/tmux.git
-[submodule "libs/external/claude-official-skills"]
-	path = libs/external/claude-official-skills
+[submodule "repo/libs/external/claude-official-skills"]
+	path = repo/libs/external/claude-official-skills
 	url = https://github.com/anthropics/skills.git

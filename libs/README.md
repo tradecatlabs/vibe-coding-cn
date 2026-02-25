@@ -1,9 +1,8 @@
-# 📦 通用库与外部集成 (libs)
+# 📦 通用库 (libs)
 
-`libs/` 用来放两类东西：
+`libs/` 只用于收纳**内部可复用的胶水代码**：小而稳、低耦合、可替换。
 
-1. **内部可复用的胶水代码**：小而稳、低耦合、可替换（`common/`）
-2. **第三方工具与外部集成**：尽量保持原样、只做最薄适配（`external/`）
+第三方工具与外部集成已迁移至：`repo/libs/external/`。
 
 `database/` 预留未来的数据持久化层（当前仅占位）。
 
@@ -17,23 +16,10 @@ libs/
 │   ├── __init__.py
 │   ├── models/
 │   │   └── __init__.py
-│   └── utils/
-│       └── backups/
-│           ├── README.md
-│           ├── 快速备份.py
-│           └── 一键备份.sh
 ├── database/
 │   ├── README.md
 │   └── .gitkeep
-└── external/
-    ├── README.md
-    ├── chat-vault/
-    ├── prompts-library/
-    ├── l10n-tool/
-    ├── my-nvim/
-    ├── MCPlayerTransfer/
-    ├── XHS-image-to-PDF-conversion/
-    └── .gitkeep
+└── (外部工具迁移至 repo/libs/external/)
 ```
 
 ## 子目录职责与边界
@@ -51,20 +37,16 @@ libs/
 - 目标是把“存储细节”关进盒子里：连接、迁移、查询适配、事务边界
 - 约定：实现前先写清楚目录结构与边界（见 `libs/database/README.md`）
 
-### `external/`：第三方工具与外部集成
+### 外部工具与集成（已迁移）
 
-- 入口：[`external/README.md`](./external/README.md)
-- 尽量保持第三方代码原样，避免“魔改后不可升级”
-- 每个工具目录至少包含：`README.md`（用途/入口/依赖）与许可证/来源说明
-- 约定：新增外部工具时，同步更新 `libs/external/README.md`
+- 外部工具/第三方项目统一收敛到：`repo/libs/external/`
+- 原则：尽量保持第三方代码原样，避免“魔改后不可升级”
 
 ## 常用入口
 
-- AI 聊天记录保存：
-  [`external/chat-vault/`](./external/chat-vault/)（支持 Codex/Kiro/Gemini/Claude CLI）
-- 提示词批量管理：
-  [`external/prompts-library/`](./external/prompts-library/)（配合 `../prompts/` 使用）
-- 备份工具：优先使用仓库根目录的 `backups/`（当前与 `libs/common/utils/backups/` 内容一致）
+- AI 聊天记录保存：`repo/libs/external/chat-vault/`（支持 Codex/Kiro/Gemini/Claude CLI）
+- 提示词批量管理：`repo/libs/external/prompts-library/`（配合 `prompts/` 使用）
+- 备份工具：优先使用仓库根目录的 `backups/`；历史脚本在 `repo/libs/common/utils/backups/`
 
 ## 贡献约定（最小要求）
 
