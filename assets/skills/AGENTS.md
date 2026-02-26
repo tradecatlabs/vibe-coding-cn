@@ -5,7 +5,7 @@
 ## 目录结构（约定）
 
 ```text
-skills/
+assets/skills/
 ├── AGENTS.md                     # 本文件（目录级行为准则）
 ├── README.md                     # skills 总览与索引
 ├── <skill-name>/                 # 一个技能 = 一个目录
@@ -19,7 +19,7 @@ skills/
 
 ## 外部仓库引用（约定）
 
-- 允许在 `skills/` 下放置“只读引用”的软链接，用于引入外部权威仓库的内容（便于统一索引与检索）。
+- 允许在 `assets/skills/` 下放置“只读引用”的软链接，用于引入外部权威仓库的内容（便于统一索引与检索）。
 - 为保证可复现性：软链接目标必须落在仓库内，并优先使用 Git submodule 管理（避免链接到个人机器的绝对路径）。
 
 ## 模块职责与边界
@@ -40,14 +40,14 @@ skills/
 - 为技能补齐 `references/` 索引或 `scripts/` 自动化
 
 ### 禁止 / 不推荐
-- 在 `skills/` 下按“编号分类目录”拆层级（保持扁平，靠 `README.md` 建索引）
+- 在 `assets/skills/` 下按“编号分类目录”拆层级（保持扁平，靠 `README.md` 建索引）
 - 让脚本默认写入不可审计的全局路径（优先输出到技能目录内或明确的 `artifacts/`）
 
 ## 快速定位（常用技能）
 
-- `skills/tmux-autopilot/`：tmux 自动化操控与多 Agent 协作
-- `skills/canvas-dev/`：Canvas 白板驱动开发
-- `skills/sop-generator/`：SOP 生成与规范化
-- `skills/markdown-to-epub/`：Markdown → EPUB 稳定构建
-- `skills/skills-skills/`：元技能（技能生成/校验/脚手架）
-- `skills/claude-official-skills/`：Claude 官方 skills 仓库（Anthropic）的软链接入口
+- `assets/skills/tmux-autopilot/`：tmux 自动化操控与多 Agent 协作
+- `assets/skills/canvas-dev/`：Canvas 白板驱动开发
+- `assets/skills/sop-generator/`：SOP 生成与规范化
+- `assets/skills/markdown-to-epub/`：Markdown → EPUB 稳定构建
+- `assets/skills/skills-skills/`：元技能（技能生成/校验/脚手架）
+- `assets/skills/claude-official-skills/`：Claude 官方 skills 仓库（Anthropic）的软链接入口

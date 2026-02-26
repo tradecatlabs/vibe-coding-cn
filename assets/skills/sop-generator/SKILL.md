@@ -81,12 +81,12 @@ SOP 标题 / 文档编号
 
 ### Pattern 5: 一键生成 SOP 模板（脚本）
 ```text
-python skills/00-元技能/sop-generator/scripts/generate_sop.py --title "项目上线 SOP" --doc-id "SOP-001" --version "v1.0" --output sop.md
+python3 assets/skills/sop-generator/scripts/generate_sop.py --title "项目上线 SOP" --doc-id "SOP-001" --version "v1.0" --output sop.md
 ```
 
 ### Pattern 6: 生成最小可行 SOP（MVP）
 ```text
-python skills/00-元技能/sop-generator/scripts/generate_sop.py --title "巡检 SOP" --mvp --output sop-mvp.md
+python3 assets/skills/sop-generator/scripts/generate_sop.py --title "巡检 SOP" --mvp --output sop-mvp.md
 ```
 
 ## 规则与约束

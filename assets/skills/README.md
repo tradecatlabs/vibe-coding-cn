@@ -1,6 +1,6 @@
 # 🎯 AI Skills 技能库
 
-`skills/` 目录存放 AI 技能（Skills），这些是比提示词更高级的能力封装，可以让 AI 在特定领域表现出专家级水平。当前包含 **20 个**专业技能。
+`assets/skills/` 目录存放 AI 技能（Skills），这些是比提示词更高级的能力封装，可以让 AI 在特定领域表现出专家级水平。当前包含 **20 个**专业技能。
 
 ## Skills 一览表
 
@@ -56,9 +56,9 @@
 
 ## 外部技能仓库（软链接）
 
-- `skills/claude-official-skills/`：来自 Claude 官方 skills 仓库（Anthropic）。
+- `assets/skills/claude-official-skills/`：来自 Claude 官方 skills 仓库（Anthropic）。
   本仓库以 Git submodule 的形式落在 `assets/repo/claude-official-skills/`，
-  并通过软链接暴露到 `skills/` 下便于浏览与复用。
+  并通过软链接暴露到 `assets/skills/` 下便于浏览与复用。
 - 初始化/更新方式：`git submodule update --init --recursive`
 - Skills 大全网站：`https://skills.sh/`
 
@@ -66,13 +66,13 @@
 
 ```bash
 # 查看元技能
-cat skills/skills-skills/SKILL.md
+cat assets/skills/skills-skills/SKILL.md
 
 # 查看无头 CLI 技能
-cat skills/headless-cli/SKILL.md
+cat assets/skills/headless-cli/SKILL.md
 
 # 查看 PostgreSQL 技能
-cat skills/postgresql/SKILL.md
+cat assets/skills/postgresql/SKILL.md
 ```
 
 ## 创建自定义 Skill
@@ -86,5 +86,5 @@ cat skills/postgresql/SKILL.md
 
 - [元技能文件](./skills-skills/SKILL.md) - 生成 Skills 的 Skills
 - [提示词库](../prompts/) - 更细粒度的提示词集合
-- [文档库](../assets/documents/) - 方法论与开发经验
+- [文档库](../documents/) - 方法论与开发经验
 - [skills.sh](https://skills.sh/) - Skill 大全网站

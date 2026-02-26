@@ -8,7 +8,7 @@
 
 ### 允许的操作
 - 读取、修改顶层文档：`README.md`、`AGENTS.md`、`CONTRIBUTING.md` 等
-- 读取、修改 `assets/documents/`、`prompts/`、`skills/`、`assets/workflow/`、`assets/config/`、`tools/`、`assets/repo/` 下的文档与代码
+- 读取、修改 `assets/documents/`、`assets/prompts/`、`assets/skills/`、`assets/workflow/`、`assets/config/`、`assets/tools/`、`assets/repo/` 下的文档与代码
 - 执行 `make lint`、备份脚本、prompts-library 转换工具
 - 新增/修改提示词、技能、文档
 - 提交符合规范的 commit
@@ -80,15 +80,15 @@ git push origin develop
 
 ### 架构原则
 - 保持根目录扁平，避免巨石文件
-- 三层内容架构：`assets/documents/` (知识) → `prompts/` (指令) → `skills/` (能力)
+- 三层内容架构：`assets/documents/` (知识) → `assets/prompts/` (指令) → `assets/skills/` (能力)
 
 ### 模块边界
 - `assets/documents/` - 中文知识库（方法论/入门/实战/资源）
-- `prompts/` - 提示词入口与云端索引
-- `skills/` - 可复用技能库（每个子目录一个 Skill）
+- `assets/prompts/` - 提示词入口与云端索引
+- `assets/skills/` - 可复用技能库（每个子目录一个 Skill）
 - `assets/workflow/` - 可复用工作流模板（自动开发闭环等）
 - `assets/config/` - 工具与开发配置（例如 Codex CLI）
-- `tools/` - 预留：自定义脚本/小工具（保持可替换、可审计）
+- `assets/tools/` - 预留：自定义脚本/小工具（保持可替换、可审计）
 - `assets/repo/` - 外部工具与依赖（含 Git submodule）
 
 ### 依赖添加规则
@@ -149,6 +149,18 @@ git push origin develop
 │   │   ├── 01-入门指南/         # 从零开始教程
 │   │   ├── 02-方法论/           # 具体工具与技巧
 │   │   └── 03-实战/             # 项目实战案例
+│   ├── prompts/                 # 提示词库（指向云端表格）
+│   │   ├── README.md            # 在线表格链接
+│   │   └── AGENTS.md            # prompts/ 目录规则
+│   ├── skills/                  # 技能库（扁平化，详见 assets/skills/README.md）
+│   │   ├── README.md            # skills 总览与索引
+│   │   ├── AGENTS.md            # skills/ 目录规则
+│   │   ├── skills-skills/       # 元技能核心
+│   │   ├── sop-generator/       # SOP 生成
+│   │   ├── canvas-dev/          # Canvas白板驱动开发
+│   │   └── ...                  # 更多技能
+│   ├── tools/                   # 工具目录（预留）
+│   │   └── .gitkeep             # 保持空目录被 Git 追踪
 │   ├── workflow/                # 工作流模板
 │   │   ├── auto-dev-loop/       # 自动开发循环
 │   │   └── canvas-dev/          # Canvas白板驱动开发
@@ -177,23 +189,6 @@ git push origin develop
 │   ├── SECURITY.md              # 安全政策
 │   ├── FUNDING.yml              # 赞助配置
 │   └── wiki/                    # GitHub Wiki 内容
-│
-├── prompts/                     # 提示词库（指向云端表格）
-│   └── README.md                # 在线表格链接
-│
-├── skills/                      # 技能库（扁平化，详见 skills/README.md）
-│   ├── skills-skills/           # 元技能核心
-│   ├── sop-generator/           # SOP 生成
-│   ├── canvas-dev/              # Canvas白板驱动开发
-│   ├── headless-cli/            # 无头模式 AI CLI
-│   ├── postgresql/              # PostgreSQL 专家
-│   ├── timescaledb/             # 时序数据库
-│   ├── ccxt/                    # 交易所 API
-│   ├── tmux-autopilot/          # tmux 自动化
-│   └── ...                      # 更多技能
-│
-├── tools/                       # 工具目录（预留）
-│   └── .gitkeep                 # 保持空目录被 Git 追踪
 ```
 
 ### 关键入口文件
@@ -201,8 +196,8 @@ git push origin develop
 - `AGENTS.md` - AI Agent 操作手册（本文件）
 - `assets/repo/prompts-library/main.py` - 提示词转换工具入口
 - `assets/repo/backups/一键备份.sh` - 备份脚本入口
-- `skills/tmux-autopilot/` - tmux 自动化操控技能（基于 oh-my-tmux，含 capture-pane/send-keys/蜂群巡检脚本）
-- `skills/sop-generator/` - SOP 生成与规范化技能（输入资料/需求 -> 标准 SOP）
+- `assets/skills/tmux-autopilot/` - tmux 自动化操控技能（基于 oh-my-tmux，含 capture-pane/send-keys/蜂群巡检脚本）
+- `assets/skills/sop-generator/` - SOP 生成与规范化技能（输入资料/需求 -> 标准 SOP）
 
 ---
 
@@ -285,8 +280,8 @@ bash assets/repo/backups/一键备份.sh
 ## Architecture & Structure
 
 ### Core Directories
-- **`prompts/`**: 提示词库（指向云端表格）
-- **`skills/`**: 扁平化技能库（详见 skills/README.md）
+- **`assets/prompts/`**: 提示词库入口（指向云端表格）
+- **`assets/skills/`**: 扁平化技能库（详见 assets/skills/README.md）
 - **`assets/documents/`**: 知识库（05-哲学与方法论、00-基础指南、01-入门指南、02-方法论、03-实战）
 - **`assets/`**: 外部资源（在线表格）入口与使用说明
 - **`assets/repo/prompts-library/`**: Excel ↔ Markdown 转换工具

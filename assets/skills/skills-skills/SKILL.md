@@ -32,7 +32,7 @@ This meta-skill is NOT:
 ### Deliverables (What You Must Produce)
 
 Your output MUST include:
-1. A concrete directory layout (typically `skills/<skill-name>/`)
+1. A concrete directory layout (typically `assets/skills/<skill-name>/`)
 2. An actionable `SKILL.md` with decidable triggers, boundaries, and reproducible examples
 3. Long-form docs moved to `references/` with a `references/index.md`
 4. A pre-delivery checklist (Quality Gate)
@@ -47,29 +47,29 @@ This repo vendors the Skill Seekers source code inside this meta-skill so you ca
 Bootstrap dependencies (once):
 
 ```bash
-./skills/skills-skills/scripts/skill-seekers-bootstrap.sh
+./assets/skills/skills-skills/scripts/skill-seekers-bootstrap.sh
 ```
 
 Run Skill Seekers (from vendored source):
 
 ```bash
-./skills/skills-skills/scripts/skill-seekers.sh -- --version
-./skills/skills-skills/scripts/skill-seekers.sh -- scrape --config ./skills/skills-skills/scripts/Skill_Seekers-development/configs/react.json
-./skills/skills-skills/scripts/skill-seekers.sh -- github --repo facebook/react --name react
+./assets/skills/skills-skills/scripts/skill-seekers.sh -- --version
+./assets/skills/skills-skills/scripts/skill-seekers.sh -- scrape --config ./assets/skills/skills-skills/scripts/Skill_Seekers-development/configs/react.json
+./assets/skills/skills-skills/scripts/skill-seekers.sh -- github --repo facebook/react --name react
 ```
 
-Import the generated skill into this repo's canonical `skills/` tree:
+Import the generated skill into this repo's canonical `assets/skills/` tree:
 
 ```bash
-./skills/skills-skills/scripts/skill-seekers-import.sh react
-./skills/skills-skills/scripts/skill-seekers-import.sh react --force
+./assets/skills/skills-skills/scripts/skill-seekers-import.sh react
+./assets/skills/skills-skills/scripts/skill-seekers-import.sh react --force
 ```
 
 Update the vendored source snapshot (optional, network required):
 
 ```bash
-./skills/skills-skills/scripts/skill-seekers-update.sh
-./skills/skills-skills/scripts/skill-seekers-update.sh --ref main
+./assets/skills/skills-skills/scripts/skill-seekers-update.sh
+./assets/skills/skills-skills/scripts/skill-seekers-update.sh --ref main
 ```
 
 ### Recommended Layout (Minimal -> Full)
@@ -169,7 +169,7 @@ Trigger when any of these applies:
 ### Workflow (Material -> Skill)
 
 Do not skip steps:
-0. If your source material is a docs site / GitHub repo / PDF: generate a first draft with the vendored Skill Seekers tool, then import into `skills/<skill-name>/`
+0. If your source material is a docs site / GitHub repo / PDF: generate a first draft with the vendored Skill Seekers tool, then import into `assets/skills/<skill-name>/`
 1. Scope: write MUST/SHOULD/NEVER (three sentences total is fine)
 2. Extract patterns: pick 10-20 high-frequency patterns (commands/snippets/flows)
 3. Add examples: >= 3 end-to-end examples (input -> steps -> acceptance)
@@ -194,15 +194,15 @@ Validate locally:
 
 ```bash
 # From repo root (basic validation)
-./skills/skills-skills/scripts/validate-skill.sh skills/<skill-name>
+./assets/skills/skills-skills/scripts/validate-skill.sh assets/skills/<skill-name>
 
 # From repo root (strict validation)
-./skills/skills-skills/scripts/validate-skill.sh skills/<skill-name> --strict
+./assets/skills/skills-skills/scripts/validate-skill.sh assets/skills/<skill-name> --strict
 
-# From skills/skills-skills/ (basic validation)
+# From assets/skills/skills-skills/ (basic validation)
 ./scripts/validate-skill.sh ../<skill-name>
 
-# From skills/skills-skills/ (strict validation)
+# From assets/skills/skills-skills/ (strict validation)
 ./scripts/validate-skill.sh ../<skill-name> --strict
 ```
 
@@ -211,14 +211,14 @@ Validate locally:
 Generate a new Skill skeleton:
 
 ```bash
-# From repo root (generate into ./skills/)
-./skills/skills-skills/scripts/create-skill.sh my-skill --full --output skills
+# From repo root (generate into ./assets/skills/)
+./assets/skills/skills-skills/scripts/create-skill.sh my-skill --full --output assets/skills
 
-# From skills/skills-skills/ (generate into ../ i.e. ./skills/)
+# From skills-skills/ (generate into ../ i.e. ./assets/skills/)
 ./scripts/create-skill.sh my-skill --full --output ..
 
 # Minimal skeleton
-./skills/skills-skills/scripts/create-skill.sh my-skill --minimal --output skills
+./assets/skills/skills-skills/scripts/create-skill.sh my-skill --minimal --output assets/skills
 ```
 
 Templates:
@@ -231,7 +231,7 @@ Templates:
 
 - Input: an official doc/spec + 2-3 real code samples + common failure modes
 - Steps:
-  1. Run `create-skill.sh` to scaffold `skills/<skill-name>/`
+  1. Run `create-skill.sh` to scaffold `assets/skills/<skill-name>/`
   2. Write frontmatter `description` as "what + when"
   3. Extract 10-20 high-frequency patterns into Quick Reference
   4. Add >= 3 end-to-end examples with acceptance criteria
@@ -250,7 +250,7 @@ Templates:
 
 ### Example 3: Validate and Gate a Skill
 
-- Input: `skills/<skill-name>/`
+- Input: `assets/skills/<skill-name>/`
 - Steps:
   1. Run `validate-skill.sh` (non-strict) to get warnings
   2. Fix frontmatter/name mismatches and missing sections
@@ -275,6 +275,6 @@ External (official):
 
 ## Maintenance
 
-- Sources: local spec files in `skills/skills-skills/references/` + upstream official docs in `references/README.md`
+- Sources: local spec files in `assets/skills/skills-skills/references/` + upstream official docs in `references/README.md`
 - Last updated: 2025-12-14
 - Known limits: `validate-skill.sh` is heuristic; strict mode assumes the recommended section headings

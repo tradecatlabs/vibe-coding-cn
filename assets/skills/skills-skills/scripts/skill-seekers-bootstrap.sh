@@ -6,7 +6,7 @@ set -euo pipefail
 # Bootstraps a local venv for the vendored Skill Seekers source code.
 #
 # Output:
-# - Creates: skills/skills-skills/scripts/.venv-skill-seekers/
+# - Creates: assets/skills/skills-skills/scripts/.venv-skill-seekers/
 
 usage() {
   cat <<'EOF'
@@ -14,8 +14,8 @@ Usage:
   skill-seekers-bootstrap.sh [--venv <dir>]
 
 Examples:
-  ./skills/skills-skills/scripts/skill-seekers-bootstrap.sh
-  ./skills/skills-skills/scripts/skill-seekers-bootstrap.sh --venv ./skills/skills-skills/scripts/.venv-skill-seekers
+  ./assets/skills/skills-skills/scripts/skill-seekers-bootstrap.sh
+  ./assets/skills/skills-skills/scripts/skill-seekers-bootstrap.sh --venv ./assets/skills/skills-skills/scripts/.venv-skill-seekers
 EOF
 }
 
@@ -66,4 +66,3 @@ fi
 "$venv_dir/bin/pip" install -r "$tool_dir/requirements.txt"
 
 echo "OK: venv ready: $venv_dir"
-

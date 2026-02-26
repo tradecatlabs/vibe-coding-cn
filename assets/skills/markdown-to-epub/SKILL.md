@@ -25,7 +25,7 @@ description: "将 Markdown 手稿与本地图片资产转换为可校验的 EPUB
 从仓库根目录执行（推荐 `python3`）：
 
 ```bash
-python3 skills/05-生产力/markdown-to-epub/scripts/build_epub.py \
+python3 assets/skills/markdown-to-epub/scripts/build_epub.py \
   --input-md "./book.md" \
   --output-epub "./book.epub" \
   --title "Book Title" \
@@ -56,7 +56,7 @@ python3 skills/05-生产力/markdown-to-epub/scripts/build_epub.py \
 然后重跑（示例）：
 
 ```bash
-python3 skills/05-生产力/markdown-to-epub/scripts/build_epub.py \
+python3 assets/skills/markdown-to-epub/scripts/build_epub.py \
   --input-md "./book.md" \
   --output-epub "./book.epub" \
   --fallback-map "./fallback-map.json"

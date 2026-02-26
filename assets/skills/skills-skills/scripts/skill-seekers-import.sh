@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # ==================== Purpose ====================
-# Import Skill Seekers output/NAME/ into this repo's skills/NAME/.
+# Import Skill Seekers output/NAME/ into this repo's assets/skills/NAME/.
 
 usage() {
   cat <<'EOF'
@@ -12,12 +12,12 @@ Usage:
 
 Behavior:
   - Source: ./output/<skill-name>/
-  - Dest:   ./skills/<skill-name>/
-  - By default, refuses to overwrite an existing skills/<skill-name>/SKILL.md
+  - Dest:   ./assets/skills/<skill-name>/
+  - By default, refuses to overwrite an existing assets/skills/<skill-name>/SKILL.md
 
 Examples:
-  ./skills/skills-skills/scripts/skill-seekers-import.sh react
-  ./skills/skills-skills/scripts/skill-seekers-import.sh react --force
+  ./assets/skills/skills-skills/scripts/skill-seekers-import.sh react
+  ./assets/skills/skills-skills/scripts/skill-seekers-import.sh react --force
 EOF
 }
 
@@ -62,9 +62,9 @@ if [[ ! "$skill_name" =~ ^[a-z][a-z0-9-]*$ ]]; then
   die "skill-name must match ^[a-z][a-z0-9-]*$ (e.g. my-skill)"
 fi
 
-repo_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../../.." && pwd)"
+repo_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../../../.." && pwd)"
 src_dir="${repo_root}/output/${skill_name}"
-dest_dir="${repo_root}/skills/${skill_name}"
+dest_dir="${repo_root}/assets/skills/${skill_name}"
 
 [[ -d "$src_dir" ]] || die "Missing Skill Seekers output dir: $src_dir"
 [[ -f "$src_dir/SKILL.md" ]] || die "Missing output SKILL.md: $src_dir/SKILL.md"
@@ -78,4 +78,3 @@ fi
 rsync -a --delete "$src_dir"/ "$dest_dir"/
 
 echo "OK: imported to: $dest_dir"
-

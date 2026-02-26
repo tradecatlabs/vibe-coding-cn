@@ -17,7 +17,7 @@
 - 遗留问题与下一步：落地 orchestrator MVP；校准 JSONL 与 PARE v3.0 结构；为总控循环增加持久化状态与任务队列。
 
 ## 2025-12-25T05:04:00+08:00 - 移动 workflow-orchestrator 技能目录
-- 关键改动点：将 `skills/01-AI工具/workflow-orchestrator` 迁移至 `prompt_jsonl/workflow_steps/` 目录。
+- 关键改动点：将 `workflow-orchestrator/` 从技能目录中迁移并归档到本工作流目录内，作为 `auto-dev-loop/` 的编排与规范入口。
 - 涉及文件或模块：`workflow-orchestrator/SKILL.md`，`workflow-orchestrator/AGENTS.md`，`workflow-orchestrator/references/index.md`，`workflow-orchestrator/CHANGELOG.md`。
 - 验证方式与结果：命令行 `mv` 后检查目录结构，文件完好。
 - 遗留问题与下一步：后续在新位置补充 `workflow_engine` 脚本并与技能文档对齐。

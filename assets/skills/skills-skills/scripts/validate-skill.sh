@@ -13,8 +13,8 @@ What it does:
   - In --strict mode, enforces the recommended section layout
 
 Examples:
-  ./skills/claude-skills/scripts/validate-skill.sh skills/postgresql
-  ./skills/claude-skills/scripts/validate-skill.sh skills/my-skill --strict
+  ./assets/skills/skills-skills/scripts/validate-skill.sh assets/skills/postgresql
+  ./assets/skills/skills-skills/scripts/validate-skill.sh assets/skills/my-skill --strict
 EOF
 }
 

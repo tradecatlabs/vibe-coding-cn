@@ -14,9 +14,9 @@ Usage:
   skill-seekers.sh [--venv <dir>] -- <skill-seekers args...>
 
 Examples:
-  ./skills/skills-skills/scripts/skill-seekers.sh -- --version
-  ./skills/skills-skills/scripts/skill-seekers.sh -- scrape --config ./skills/skills-skills/scripts/Skill_Seekers-development/configs/react.json
-  ./skills/skills-skills/scripts/skill-seekers.sh -- github --repo facebook/react --name react
+  ./assets/skills/skills-skills/scripts/skill-seekers.sh -- --version
+  ./assets/skills/skills-skills/scripts/skill-seekers.sh -- scrape --config ./assets/skills/skills-skills/scripts/Skill_Seekers-development/configs/react.json
+  ./assets/skills/skills-skills/scripts/skill-seekers.sh -- github --repo facebook/react --name react
 EOF
 }
 
@@ -63,4 +63,3 @@ fi
 export PYTHONPATH="$tool_src${PYTHONPATH:+:$PYTHONPATH}"
 
 exec "$python_bin" -m skill_seekers.cli.main "$@"
-

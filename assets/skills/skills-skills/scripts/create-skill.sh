@@ -15,8 +15,8 @@ Notes:
   - Default output: current directory (creates ./<skill-name>/)
 
 Examples:
-  ./skills/claude-skills/scripts/create-skill.sh postgresql --full --output skills
-  ./skills/claude-skills/scripts/create-skill.sh my-api --minimal
+  ./assets/skills/skills-skills/scripts/create-skill.sh postgresql --full --output assets/skills
+  ./assets/skills/skills-skills/scripts/create-skill.sh my-api --minimal --output assets/skills
 EOF
 }
 

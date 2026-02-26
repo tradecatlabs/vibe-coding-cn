@@ -4,9 +4,12 @@
 
 - `assets/README.md`：外部资源在线表格入口（唯一真相源）
 - `assets/documents/`：知识库（方法论/入门/实战）
+- `assets/prompts/`：提示词库入口（指向云端表格）
+- `assets/skills/`：技能库（可复用 Skills）
 - `assets/workflow/`：工作流模板
 - `assets/repo/`：外部工具与依赖镜像（含 Git submodule）
 - `assets/config/`：工具与开发配置（含 Codex CLI 配置）
+- `assets/tools/`：工具目录（预留）
 
 其中“外部资源”类入口文档的典型形态包括：
 

@@ -19,9 +19,9 @@ Defaults:
   --ref  main
 
 Examples:
-  ./skills/skills-skills/scripts/skill-seekers-update.sh
-  ./skills/skills-skills/scripts/skill-seekers-update.sh --ref v2.1.1
-  ./skills/skills-skills/scripts/skill-seekers-update.sh --dry-run
+  ./assets/skills/skills-skills/scripts/skill-seekers-update.sh
+  ./assets/skills/skills-skills/scripts/skill-seekers-update.sh --ref v2.1.1
+  ./assets/skills/skills-skills/scripts/skill-seekers-update.sh --dry-run
 EOF
 }
 
@@ -115,4 +115,3 @@ rsync -a --delete \
   "$target_dir"/
 
 echo "OK: updated vendored source in: $target_dir"
-

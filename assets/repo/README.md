@@ -36,7 +36,7 @@ assets/repo/
 - `XHS-image-to-PDF-conversion/`：图片合并 PDF（详见 `XHS-image-to-PDF-conversion/README.md`）
 - `.tmux/`、`tmux/`、`claude-official-skills/`：以 submodule 形式引入的上游仓库
 
-> 📝 系统提示词已迁移到云端表格，入口见 [`prompts/README.md`](../../prompts/README.md)。
+> 📝 系统提示词已迁移到云端表格，入口见 [`assets/prompts/README.md`](../prompts/README.md)。
 
 ## 新增外部工具（最小清单）
 

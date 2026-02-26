@@ -169,4 +169,4 @@ tmux pipe-pane -t <session>:<window>.<pane> -o 'cat >> /tmp/tmux-<session>-<wind
 4. ≥3 个端到端示例，含输入/步骤/验收。
 5. 长文档放在 `references/` 并可导航；无文档堆砌。
 6. 不确定项给出验证路径；禁止虚构 tmux 行为。
-7. 运行 `skills/00-元技能/skills-skills/scripts/validate-skill.sh skills/04-开发工具/tmux-autopilot` 通过。
+7. 运行 `assets/skills/skills-skills/scripts/validate-skill.sh assets/skills/tmux-autopilot` 通过。
