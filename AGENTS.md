@@ -162,7 +162,6 @@ git push origin develop
 │   ├── 01-入门指南/             # 从零开始教程
 │   ├── 02-方法论/               # 具体工具与技巧
 │   ├── 03-实战/                 # 项目实战案例
-│   └── 04-资源/                 # 外部资源聚合
 │
 ├── prompts/                     # 提示词库（指向云端表格）
 │   └── README.md                # 在线表格链接
@@ -292,7 +291,8 @@ bash repo/backups/一键备份.sh
 ### Core Directories
 - **`prompts/`**: 提示词库（指向云端表格）
 - **`skills/`**: 扁平化技能库（详见 skills/README.md）
-- **`documents/`**: 知识库（05-哲学与方法论、00-基础指南、01-入门指南、02-方法论、03-实战、04-资源）
+- **`documents/`**: 知识库（05-哲学与方法论、00-基础指南、01-入门指南、02-方法论、03-实战）
+- **`assets/`**: 外部资源（在线表格）入口与使用说明
 - **`repo/prompts-library/`**: Excel ↔ Markdown 转换工具
 - **`repo/chat-vault/`**: AI 聊天记录保存工具
 - **`repo/backups/`**: 备份脚本与存档
