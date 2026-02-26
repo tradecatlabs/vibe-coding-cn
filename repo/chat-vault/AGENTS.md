@@ -15,7 +15,7 @@ AI Agent 操作手册 - Chat Vault Monorepo
 ### 禁止操作
 - **禁止修改** `output/` 目录下的任何文件（数据库、日志）
 - **禁止修改** `.env` 文件（包含用户敏感配置）
-- **禁止修改** `libs/external/` 下的外部依赖镜像
+- **禁止修改** `repo/` 下的外部依赖镜像
 - **禁止删除** 现有解析器，除非明确要求
 
 ### 敏感区域
@@ -23,7 +23,7 @@ AI Agent 操作手册 - Chat Vault Monorepo
 |------|------|
 | `services/chat-vault/.env` | 用户配置，不得读取或修改 |
 | `services/chat-vault/output/` | 运行时数据，不得修改 |
-| `libs/external/` | 外部镜像，只读 |
+| `repo/` | 外部镜像，只读 |
 
 ---
 

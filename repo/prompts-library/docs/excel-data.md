@@ -5719,7 +5719,7 @@ L3执行行动工具: 实施模板+监控表+评估指标
 
 | 1 |  |  |  |
 
-| 2 | 1.任意选一个 立党的实事或者社会观点类推文，然后丢给Gemini 2.5 pro
+| 2 | 1.任意选一个 立党的实事或者社会观点类推文，然后丢给Gemini 3.1 Pro
 
 2.尾巴加上
 “分析这篇推文中的观点
@@ -12683,7 +12683,7 @@ You must strictly follow the process below to construct your answer and reflect 
 
 | 2 | 1 | 与 Claude 或 ChatGPT 对话 | 获取初版提示词 |
 
-| 3 | 2 | 打开 Gemini 2.5 Pro | https://aistudio.google.com/ |
+| 3 | 2 | 打开 Gemini 3.1 Pro | https://aistudio.google.com/ |
 
 | 4 | 3 | 复制初版提示词，前往工作表优化 | 在 A 列查找「最新的」提示词，点击链接直达工作表：工作表链接 |
 

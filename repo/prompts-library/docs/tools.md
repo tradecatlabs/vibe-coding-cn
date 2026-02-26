@@ -12,7 +12,7 @@
 
 ### 工具
 - **URL**: https://aistudio.google.com/
-- **描述**: 打开 Gemini 2.5 Pro
+- **描述**: 打开 Gemini 3.1 Pro
 - **数据来源**: Excel表格第4行
 
 

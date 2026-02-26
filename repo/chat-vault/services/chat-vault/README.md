@@ -119,7 +119,7 @@ sequenceDiagram
 ```bash
 # Clone
 git clone https://github.com/tukuaiai/vibe-coding-cn.git
-cd vibe-coding-cn/libs/external/chat-vault
+cd vibe-coding-cn/repo/chat-vault
 
 # Run (auto-installs dependencies)
 ./start.sh        # Linux/macOS

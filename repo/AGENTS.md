@@ -1,21 +1,26 @@
 # repo/ 目录 Agent 指南
 
-本目录用于收纳**可执行代码与外部依赖镜像**，将“知识库/提示词/技能”与“代码/第三方工具”做物理隔离，便于迁移与审计。
+本目录用于收纳 **外部工具/第三方项目**（含 Git submodule），保持“主仓库资产”和“外部依赖”边界清晰、可审计、可更新。
 
-## 目录结构（当前）
+## 目录结构（约定）
 
 ```text
 repo/
-├── AGENTS.md
-└── libs/
-    ├── external/                  # 第三方工具与外部集成（含 Git submodule）
-    └── common/
-        └── utils/
-            └── backups/           # 历史备份脚本快照（README + 脚本）
+├── AGENTS.md                         # 本文件（目录级行为准则）
+├── README.md                         # 外部工具索引
+├── .tmux/                            # submodule：oh-my-tmux 配置
+├── tmux/                             # submodule：tmux 源码
+└── claude-official-skills/           # submodule：Claude 官方 skills 仓库（Anthropic）
 ```
 
 ## 操作规范
 
-- `repo/libs/external/`：尽量原样保留外部项目，优先使用 Git submodule 管理上游。
-- `repo/libs/common/utils/backups/`：只做“脚本快照/参考”；常用备份优先使用仓库根目录 `backups/`。
-- 若需要更新路径/结构，必须同步更新：根目录 `AGENTS.md`、`README.md` 及本文件，保证“文档即真相源”。
+### 允许
+
+- 新增外部依赖（优先 Git submodule，确保可复现）
+- 更新 submodule 指针（明确记录上游来源与用途）
+
+### 禁止 / 不推荐
+
+- 直接复制粘贴大型第三方仓库内容到主仓库（优先 submodule）
+- 将 submodule 替换为本地绝对路径软链接（会导致他人环境不可用）
