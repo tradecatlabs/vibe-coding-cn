@@ -8,21 +8,21 @@
 
 ### 允许的操作
 - 读取、修改顶层文档：`README.md`、`AGENTS.md`、`CONTRIBUTING.md` 等
-- 读取、修改 `documents/`、`prompts/`、`skills/`、`workflow/`、`config/`、`tools/`、`repo/` 下的文档与代码
+- 读取、修改 `assets/documents/`、`prompts/`、`skills/`、`assets/workflow/`、`assets/config/`、`tools/`、`assets/repo/` 下的文档与代码
 - 执行 `make lint`、备份脚本、prompts-library 转换工具
 - 新增/修改提示词、技能、文档
 - 提交符合规范的 commit
 
 ### 禁止的操作
 - 修改 `.github/workflows/` 中的 CI 配置（除非任务明确要求）
-- 删除或覆盖 `repo/backups/gz/` 中的存档文件
+- 删除或覆盖 `assets/repo/backups/gz/` 中的存档文件
 - 修改 `LICENSE`、`CODE_OF_CONDUCT.md`
 - 在代码中硬编码密钥、Token 或敏感凭证
 - 未经确认的大范围重构
 
 ### 敏感区域（禁止自动修改）
 - `.github/workflows/*.yml` - CI/CD 配置
-- `repo/backups/gz/` - 历史备份存档
+- `assets/repo/backups/gz/` - 历史备份存档
 - `.env*` 文件（如存在）
 
 ---
@@ -63,9 +63,9 @@ git push origin develop
 |:---|:---|:---|
 | `make help` | 列出所有 Make 目标 | 无 |
 | `make lint` | 校验全仓库 Markdown | 需安装 markdownlint-cli |
-| `bash repo/backups/一键备份.sh` | 创建完整项目备份 | 无 |
-| `python3 repo/backups/快速备份.py` | Python 版备份脚本 | Python 3.8+ |
-| `cd repo/prompts-library && python3 main.py` | 提示词格式转换 | pandas, openpyxl, PyYAML |
+| `bash assets/repo/backups/一键备份.sh` | 创建完整项目备份 | 无 |
+| `python3 assets/repo/backups/快速备份.py` | Python 版备份脚本 | Python 3.8+ |
+| `cd assets/repo/prompts-library && python3 main.py` | 提示词格式转换 | pandas, openpyxl, PyYAML |
 
 ### prompts-library 支持的转换模式
 1. Excel → Docs：将 Excel 工作簿转换为 Markdown 文档目录
@@ -80,20 +80,20 @@ git push origin develop
 
 ### 架构原则
 - 保持根目录扁平，避免巨石文件
-- 三层内容架构：`documents/` (知识) → `prompts/` (指令) → `skills/` (能力)
+- 三层内容架构：`assets/documents/` (知识) → `prompts/` (指令) → `skills/` (能力)
 
 ### 模块边界
-- `documents/` - 中文知识库（方法论/入门/实战/资源）
+- `assets/documents/` - 中文知识库（方法论/入门/实战/资源）
 - `prompts/` - 提示词入口与云端索引
 - `skills/` - 可复用技能库（每个子目录一个 Skill）
-- `workflow/` - 可复用工作流模板（自动开发闭环等）
-- `config/` - 工具与开发配置（例如 Codex CLI）
+- `assets/workflow/` - 可复用工作流模板（自动开发闭环等）
+- `assets/config/` - 工具与开发配置（例如 Codex CLI）
 - `tools/` - 预留：自定义脚本/小工具（保持可替换、可审计）
-- `repo/` - 外部工具与依赖（含 Git submodule）
+- `assets/repo/` - 外部工具与依赖（含 Git submodule）
 
 ### 依赖添加规则
 - 新增工具或库时记录安装方式、最小版本与来源
-- 外部依赖来源记录在 `repo/` 目录下
+- 外部依赖来源记录在 `assets/repo/` 目录下
 - 引入第三方脚本需标明许可证与来源
 
 ### 禁止行为
@@ -138,12 +138,34 @@ git push origin develop
 │
 ├── assets/                      # 外部资源（指向在线表格）
 │   ├── README.md                # 远程表格索引（唯一真相源）
-│   └── AGENTS.md                # assets/ 目录规则
-│
-├── config/                      # 工具与开发配置
-│   └── .codex/                  # Codex CLI 配置（项目级）
-│       ├── config.toml          # Codex CLI 配置文件
-│       └── AGENTS.md            # Codex/Agent 指南（本目录）
+│   ├── AGENTS.md                # assets/ 目录规则
+│   ├── config/                  # 工具与开发配置
+│   │   └── .codex/              # Codex CLI 配置（项目级）
+│   │       ├── config.toml      # Codex CLI 配置文件
+│   │       └── AGENTS.md        # Codex/Agent 指南（本目录）
+│   ├── documents/               # 文档库
+│   │   ├── 05-哲学与方法论/     # 最高思想纲领与方法论
+│   │   ├── 00-基础指南/         # 核心原则与底层逻辑
+│   │   ├── 01-入门指南/         # 从零开始教程
+│   │   ├── 02-方法论/           # 具体工具与技巧
+│   │   └── 03-实战/             # 项目实战案例
+│   ├── workflow/                # 工作流模板
+│   │   ├── auto-dev-loop/       # 自动开发循环
+│   │   └── canvas-dev/          # Canvas白板驱动开发
+│   └── repo/                    # 外部工具与依赖镜像（含 Git submodule）
+│       ├── README.md            # 外部工具索引
+│       ├── AGENTS.md            # assets/repo/ 目录规则
+│       ├── prompts-library/     # Excel ↔ Markdown 互转工具
+│       ├── chat-vault/          # AI 聊天记录保存工具
+│       ├── Skill_Seekers-development/ # Skills 制作器
+│       ├── html-tools-main/     # HTML 工具集
+│       ├── my-nvim/             # Neovim 配置
+│       ├── MCPlayerTransfer/    # MC 玩家迁移工具
+│       ├── XHS-image-to-PDF-conversion/ # 小红书图片转 PDF
+│       ├── backups/             # 历史备份脚本快照
+│       ├── .tmux/               # oh-my-tmux (submodule)
+│       ├── tmux/                # tmux 源码 (submodule)
+│       └── claude-official-skills/ # Claude 官方 skills (submodule)
 │
 ├── .github/                     # GitHub 配置
 │   ├── workflows/               # CI/CD 工作流
@@ -155,13 +177,6 @@ git push origin develop
 │   ├── SECURITY.md              # 安全政策
 │   ├── FUNDING.yml              # 赞助配置
 │   └── wiki/                    # GitHub Wiki 内容
-│
-├── documents/                   # 文档库
-│   ├── 05-哲学与方法论/        # 最高思想纲领与方法论
-│   ├── 00-基础指南/             # 核心原则与底层逻辑
-│   ├── 01-入门指南/             # 从零开始教程
-│   ├── 02-方法论/               # 具体工具与技巧
-│   ├── 03-实战/                 # 项目实战案例
 │
 ├── prompts/                     # 提示词库（指向云端表格）
 │   └── README.md                # 在线表格链接
@@ -177,25 +192,6 @@ git push origin develop
 │   ├── tmux-autopilot/          # tmux 自动化
 │   └── ...                      # 更多技能
 │
-├── workflow/                    # 工作流模板
-│   ├── auto-dev-loop/           # 自动开发循环
-│   └── canvas-dev/              # Canvas白板驱动开发
-│
-├── repo/                        # 可执行代码与外部依赖镜像
-│   ├── README.md                # 外部工具索引
-│   ├── AGENTS.md                # repo/ 目录规则
-│   ├── prompts-library/         # Excel ↔ Markdown 互转工具
-│   ├── chat-vault/              # AI 聊天记录保存工具
-│   ├── Skill_Seekers-development/ # Skills 制作器
-│   ├── html-tools-main/         # HTML 工具集
-│   ├── my-nvim/                 # Neovim 配置
-│   ├── MCPlayerTransfer/        # MC 玩家迁移工具
-│   ├── XHS-image-to-PDF-conversion/ # 小红书图片转 PDF
-│   ├── backups/                 # 历史备份脚本快照
-│   ├── .tmux/                   # oh-my-tmux (submodule)
-│   ├── tmux/                    # tmux 源码 (submodule)
-│   └── claude-official-skills/  # Claude 官方 skills (submodule)
-│
 ├── tools/                       # 工具目录（预留）
 │   └── .gitkeep                 # 保持空目录被 Git 追踪
 ```
@@ -203,8 +199,8 @@ git push origin develop
 ### 关键入口文件
 - `README.md` - 项目主文档，面向人类开发者
 - `AGENTS.md` - AI Agent 操作手册（本文件）
-- `repo/prompts-library/main.py` - 提示词转换工具入口
-- `repo/backups/一键备份.sh` - 备份脚本入口
+- `assets/repo/prompts-library/main.py` - 提示词转换工具入口
+- `assets/repo/backups/一键备份.sh` - 备份脚本入口
 - `skills/tmux-autopilot/` - tmux 自动化操控技能（基于 oh-my-tmux，含 capture-pane/send-keys/蜂群巡检脚本）
 - `skills/sop-generator/` - SOP 生成与规范化技能（输入资料/需求 -> 标准 SOP）
 
@@ -218,7 +214,7 @@ git push origin develop
 | prompts-library 报错 | 缺少 Python 依赖 | `pip install pandas openpyxl PyYAML rich InquirerPy` |
 | CI markdown-lint 失败 | `.github/lint_config.json` 缺失 | TODO：新增 `.github/lint_config.json` 或调整 `.github/workflows/ci.yml` 的 lint 命令（需任务明确授权） |
 | CI link-checker 失败 | 文档中存在失效链接 | 检查并修复 Markdown 中的链接 |
-| 备份脚本权限不足 | Shell 脚本无执行权限 | `chmod +x repo/backups/一键备份.sh` |
+| 备份脚本权限不足 | Shell 脚本无执行权限 | `chmod +x assets/repo/backups/一键备份.sh` |
 
 ---
 
@@ -277,13 +273,13 @@ feat|fix|docs|chore|refactor|test: scope - summary
 
 ```bash
 # 提示词库转换
-cd repo/prompts-library && python3 main.py
+cd assets/repo/prompts-library && python3 main.py
 
 # Lint 所有 Markdown 文件
 make lint
 
 # 创建完整项目备份
-bash repo/backups/一键备份.sh
+bash assets/repo/backups/一键备份.sh
 ```
 
 ## Architecture & Structure
@@ -291,11 +287,11 @@ bash repo/backups/一键备份.sh
 ### Core Directories
 - **`prompts/`**: 提示词库（指向云端表格）
 - **`skills/`**: 扁平化技能库（详见 skills/README.md）
-- **`documents/`**: 知识库（05-哲学与方法论、00-基础指南、01-入门指南、02-方法论、03-实战）
+- **`assets/documents/`**: 知识库（05-哲学与方法论、00-基础指南、01-入门指南、02-方法论、03-实战）
 - **`assets/`**: 外部资源（在线表格）入口与使用说明
-- **`repo/prompts-library/`**: Excel ↔ Markdown 转换工具
-- **`repo/chat-vault/`**: AI 聊天记录保存工具
-- **`repo/backups/`**: 备份脚本与存档
+- **`assets/repo/prompts-library/`**: Excel ↔ Markdown 转换工具
+- **`assets/repo/chat-vault/`**: AI 聊天记录保存工具
+- **`assets/repo/backups/`**: 备份脚本与存档
 
 ### Key Technical Details
 1. **Prompt Organization**: 提示词使用 `(row,col)_` 前缀进行分类

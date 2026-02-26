@@ -57,7 +57,7 @@
 ## 外部技能仓库（软链接）
 
 - `skills/claude-official-skills/`：来自 Claude 官方 skills 仓库（Anthropic）。
-  本仓库以 Git submodule 的形式落在 `repo/claude-official-skills/`，
+  本仓库以 Git submodule 的形式落在 `assets/repo/claude-official-skills/`，
   并通过软链接暴露到 `skills/` 下便于浏览与复用。
 - 初始化/更新方式：`git submodule update --init --recursive`
 - Skills 大全网站：`https://skills.sh/`
@@ -86,5 +86,5 @@ cat skills/postgresql/SKILL.md
 
 - [元技能文件](./skills-skills/SKILL.md) - 生成 Skills 的 Skills
 - [提示词库](../prompts/) - 更细粒度的提示词集合
-- [文档库](../documents/) - 方法论与开发经验
+- [文档库](../assets/documents/) - 方法论与开发经验
 - [skills.sh](https://skills.sh/) - Skill 大全网站

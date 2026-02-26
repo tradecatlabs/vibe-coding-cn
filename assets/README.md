@@ -1,6 +1,12 @@
-# 📎 Assets（外部资产索引）
+# 📎 Assets
 
-本目录用于为仓库中的“外部资产”提供**稳定入口**与**使用说明**，避免资源散落在多个 Markdown 文件里难以维护。
+本目录用于统一收纳仓库的关键资产与索引入口：
+
+- `assets/documents/`：知识库（方法论/入门/实战）
+- `assets/workflow/`：工作流模板
+- `assets/repo/`：外部工具与依赖镜像（含 Git submodule）
+- `assets/config/`：工具与开发配置（含 Codex CLI 配置）
+- `assets/README.md`：外部资源在线表格入口（唯一真相源）
 
 ## 外部资源在线表格（唯一真相源）
 

@@ -5,7 +5,7 @@
 ## 目录结构
 
 ```
-workflow/
+assets/workflow/
 ├── auto-dev-loop/      # 全自动开发闭环工作流（五步Agent）
 ├── <其他工作流>/
 └── README.md

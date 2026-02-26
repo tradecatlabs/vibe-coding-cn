@@ -206,10 +206,10 @@ Canvas：代码 ⇄ 白板 ⇄ AI ⇄ 人类（白板为单一真相源）
 
 ## References
 
-- [AI架构总师完整提示词](../../workflow/canvas-dev/Obsidian%20Canvas%20AI驱动的项目架构洞察与生成引擎.md) - 最新最完整的提示词
-- [Canvas驱动开发完整工作流](../../workflow/canvas-dev/workflow.md) - 15步完整流程
-- [Canvas白板驱动开发详解](../../documents/02-方法论/图形化AI协作-Canvas白板驱动开发.md) - 方法论详解
-- [白板驱动开发系统提示词](../../prompts/01-系统提示词/AGENTS.md/12/AGENTS.md) - 适配Canvas的AGENTS.md
+- [AI架构总师完整提示词](../../assets/workflow/canvas-dev/Obsidian%20Canvas%20AI驱动的项目架构洞察与生成引擎.md) - 最新最完整的提示词
+- [Canvas驱动开发完整工作流](../../assets/workflow/canvas-dev/workflow.md) - 15步完整流程
+- [Canvas白板驱动开发详解](../../assets/documents/02-方法论/图形化AI协作-Canvas白板驱动开发.md) - 方法论详解
+- [白板驱动开发系统提示词（在线提示词库入口）](../../prompts/README.md) - 系统提示词已迁移到云端表格
 - [Obsidian Canvas 官方文档](https://obsidian.md/canvas)
 - `references/index.md` - 本地参考文档导航
 

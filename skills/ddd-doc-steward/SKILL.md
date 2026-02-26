@@ -94,7 +94,7 @@ description: "文档驱动开发（DDD）文档管家：以仓库真实证据为
 
 ## 维护
 
-- 来源：`prompts/02-编程提示词/文档驱动开发/DDD 文档管家 Agent 工业级提示词.md`；元技能 `00-元技能/skills-skills/`；自动化辅助工具 `repo/Skill_Seekers-development`.
+- 来源：提示词库（在线表格入口见 `prompts/README.md`）；元技能 `00-元技能/skills-skills/`；自动化辅助工具 `assets/repo/Skill_Seekers-development`.
 - 最后更新：2025-12-20
 - 已知限制：依赖用户提供真实证据；大体量仓库需分批；不输出敏感值。
 

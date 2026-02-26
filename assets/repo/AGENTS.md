@@ -1,11 +1,11 @@
-# repo/ 目录 Agent 指南
+# assets/repo/ 目录 Agent 指南
 
 本目录用于收纳 **外部工具/第三方项目**（含 Git submodule），保持“主仓库资产”和“外部依赖”边界清晰、可审计、可更新。
 
 ## 目录结构（约定）
 
 ```text
-repo/
+assets/repo/
 ├── AGENTS.md                         # 本文件（目录级行为准则）
 ├── README.md                         # 外部工具索引
 ├── .tmux/                            # submodule：oh-my-tmux 配置

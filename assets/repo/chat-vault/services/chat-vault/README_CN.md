@@ -117,7 +117,7 @@ sequenceDiagram
 ```bash
 # 下载
 git clone https://github.com/tukuaiai/vibe-coding-cn.git
-cd vibe-coding-cn/repo/chat-vault
+cd vibe-coding-cn/assets/repo/chat-vault
 
 # 运行（自动安装依赖）
 ./start.sh        # Linux/macOS

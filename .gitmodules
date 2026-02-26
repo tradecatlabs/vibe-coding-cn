@@ -1,9 +1,9 @@
 [submodule "repo/.tmux"]
-	path = repo/.tmux
+	path = assets/repo/.tmux
 	url = https://github.com/gpakosz/.tmux.git
 [submodule "repo/tmux"]
-	path = repo/tmux
+	path = assets/repo/tmux
 	url = https://github.com/tmux/tmux.git
 [submodule "repo/claude-official-skills"]
-	path = repo/claude-official-skills
+	path = assets/repo/claude-official-skills
 	url = https://github.com/anthropics/skills.git

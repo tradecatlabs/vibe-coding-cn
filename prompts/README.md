@@ -24,8 +24,8 @@
 ## 相关资源
 
 - [技能库](../skills/) - 比提示词更高级的能力封装
-- [文档库](../documents/) - 方法论与开发经验
-- [prompts-library 工具](../repo/prompts-library/)
+- [文档库](../assets/documents/) - 方法论与开发经验
+- [prompts-library 工具](../assets/repo/prompts-library/)
   Excel ↔ Markdown 互转工具
 
 ## 原版表格

@@ -34,6 +34,6 @@ canvas-dev/
 
 ## 相关资源
 
-- [Canvas白板驱动开发详解](../../documents/02-方法论/图形化AI协作-Canvas白板驱动开发.md)
-- [Canvas开发工作流](../../workflow/canvas-dev/)
+- [Canvas白板驱动开发详解](../../assets/documents/02-方法论/图形化AI协作-Canvas白板驱动开发.md)
+- [Canvas开发工作流](../../assets/workflow/canvas-dev/)
 - [元技能: skills-skills](../00-元技能/skills-skills/SKILL.md)

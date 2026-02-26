@@ -52,5 +52,5 @@ canvas-dev/
 ## 相关文档
 
 - [Canvas白板驱动开发详解](../../documents/02-方法论/图形化AI协作-Canvas白板驱动开发.md)
-- [白板驱动开发系统提示词](../../prompts/01-系统提示词/AGENTS.md/12/AGENTS.md)
+- [白板驱动开发系统提示词（在线提示词库入口）](../../../prompts/README.md)
 - [胶水编程](../../documents/00-基础指南/胶水编程.md)

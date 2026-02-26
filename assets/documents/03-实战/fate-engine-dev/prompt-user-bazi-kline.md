@@ -1,6 +1,6 @@
 # 人生K线 LLM 用户提示词模板（完整原文）
 
-本文件摘自 `repo/libs/external/web/lifekline-main/services/geminiService.ts` 中 `userPrompt` 拼装逻辑，已替换为模板变量，便于直接复用。
+本文件整理自外部项目 `lifekline-main` 的 `userPrompt` 拼装逻辑（该外部项目源码当前不随本仓库分发），已替换为模板变量，便于直接复用。
 
 ```
 请根据以下**已经排好的**八字四柱和**指定的大运信息**进行分析。

@@ -1,11 +1,11 @@
 # Workflow 目录 Agent 指南
 
-`workflow/` 存放可复用的工作流模板：把“需求 → 计划 → 实施 → 验证 → 总控复盘”等流程固化为可重复、可审计的自动化路径。
+`assets/workflow/` 存放可复用的工作流模板：把“需求 → 计划 → 实施 → 验证 → 总控复盘”等流程固化为可重复、可审计的自动化路径。
 
 ## 目录结构（当前）
 
 ```text
-workflow/
+assets/workflow/
 ├── AGENTS.md                         # 本文件（目录级行为准则）
 ├── README.md                         # workflow 总览
 ├── auto-dev-loop/                    # 全自动开发闭环（五步状态机）
