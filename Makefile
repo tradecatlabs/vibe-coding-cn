@@ -16,7 +16,7 @@ help:
 lint:
 	@echo "Linting markdown files..."
 	@npm install -g markdownlint-cli
-	@markdownlint **/*.md
+	@markdownlint --config .github/lint_config.json '**/*.md'
 
 build:
 	@echo "Building the project..."

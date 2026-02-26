@@ -1,11 +1,11 @@
-# `config/.codex/` 用法说明
+# `assets/config/.codex/` 用法说明
 
 本目录用于在仓库内版本化管理 Codex CLI 的“全局配置基线”，便于多人同步、审阅与回滚。
 
 你只需要把本目录里的两个文件复制到 **Codex Home**（默认 `~/.codex/`）即可生效：
 
-- `config/.codex/config.toml` → `~/.codex/config.toml`
-- `config/.codex/AGENTS.md` → `~/.codex/AGENTS.md`
+- `assets/config/.codex/config.toml` → `~/.codex/config.toml`
+- `assets/config/.codex/AGENTS.md` → `~/.codex/AGENTS.md`
 
 ## 1. 一键安装（推荐）
 
@@ -13,8 +13,8 @@
 
 ```bash
 mkdir -p ~/.codex
-cp -f config/.codex/config.toml ~/.codex/config.toml
-cp -f config/.codex/AGENTS.md ~/.codex/AGENTS.md
+cp -f assets/config/.codex/config.toml ~/.codex/config.toml
+cp -f assets/config/.codex/AGENTS.md ~/.codex/AGENTS.md
 ```
 
 ## 2. 路径示例

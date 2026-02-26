@@ -4,16 +4,16 @@
 
 ## 目录约定
 
-- 工具源码：`skills/skills-skills/scripts/Skill_Seekers-development/`
-- 运行入口：`skills/skills-skills/scripts/skill-seekers.sh`
-- 依赖初始化：`skills/skills-skills/scripts/skill-seekers-bootstrap.sh`
-- 导入到本仓库：`skills/skills-skills/scripts/skill-seekers-import.sh`
-- 更新源码快照：`skills/skills-skills/scripts/skill-seekers-update.sh`（需要网络）
+- 工具源码：`assets/skills/skills-skills/scripts/Skill_Seekers-development/`
+- 运行入口：`assets/skills/skills-skills/scripts/skill-seekers.sh`
+- 依赖初始化：`assets/skills/skills-skills/scripts/skill-seekers-bootstrap.sh`
+- 导入到本仓库：`assets/skills/skills-skills/scripts/skill-seekers-import.sh`
+- 更新源码快照：`assets/skills/skills-skills/scripts/skill-seekers-update.sh`（需要网络）
 
 ## 推荐工作流（强约束）
 
 1. 用 Skill Seekers 生成初稿到 `output/<name>/`
-2. 导入到 `skills/<name>/`
+2. 导入到 `assets/skills/<name>/`
 3. 用 `validate-skill.sh --strict` 做质量闸门
 4. 回到 `skills-skills` 的规范对 `SKILL.md` 做“可激活性”与“边界”修订
 
@@ -21,16 +21,16 @@
 
 ```bash
 # 1) 初始化（只需一次）
-./skills/skills-skills/scripts/skill-seekers-bootstrap.sh
+./assets/skills/skills-skills/scripts/skill-seekers-bootstrap.sh
 
 # 2) 生成（示例：抓 docs 配置）
-./skills/skills-skills/scripts/skill-seekers.sh -- scrape --config ./skills/skills-skills/scripts/Skill_Seekers-development/configs/react.json
+./assets/skills/skills-skills/scripts/skill-seekers.sh -- scrape --config ./assets/skills/skills-skills/scripts/Skill_Seekers-development/configs/react.json
 
 # 3) 导入到 skills/
-./skills/skills-skills/scripts/skill-seekers-import.sh react
+./assets/skills/skills-skills/scripts/skill-seekers-import.sh react
 
 # 4) 严格校验
-./skills/skills-skills/scripts/validate-skill.sh skills/react --strict
+./assets/skills/skills-skills/scripts/validate-skill.sh assets/skills/react --strict
 ```
 
 ## 设计原则
