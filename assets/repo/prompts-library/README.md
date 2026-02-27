@@ -25,7 +25,7 @@
 <p>
   <a href="https://github.com/tukuaiai/prompt-library/actions/workflows/sync.yml"><img src="https://img.shields.io/github/actions/workflow/status/tukuaiai/prompt-library/sync.yml?style=for-the-badge" alt="构建状态"></a>
   <a href="https://github.com/tukuaiai/prompt-library/releases"><img src="https://img.shields.io/github/v/release/tukuaiai/prompt-library?style=for-the-badge" alt="最新版本"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/tukuaiai/prompt-library?style=for-the-badge" alt="许可证"></a>
+  <a href="https://github.com/tukuaiai/prompt-library/blob/main/LICENSE"><img src="https://img.shields.io/github/license/tukuaiai/prompt-library?style=for-the-badge" alt="许可证"></a>
   <a href="https://github.com/tukuaiai/prompt-library"><img src="https://img.shields.io/github/languages/top/tukuaiai/prompt-library?style=for-the-badge" alt="主要语言"></a>
   <a href="https://github.com/tukuaiai/prompt-library"><img src="https://img.shields.io/github/languages/code-size/tukuaiai/prompt-library?style=for-the-badge" alt="代码大小"></a>
 </p>
@@ -214,7 +214,7 @@ gantt
 
 我们热烈欢迎各种形式的贡献！如果您对本项目有任何想法或建议，请随时开启一个 [Issue](https://github.com/tukuaiai/prompt-library/issues) 或提交一个 [Pull Request](https://github.com/tukuaiai/prompt-library/pulls)。
 
-在您开始之前，请花点时间阅读我们的 [**贡献指南 (CONTRIBUTING.md)**](CONTRIBUTING.md) 和 [**行为准则 (CODE_OF_CONDUCT.md)**](CODE_OF_CONDUCT.md)。
+在您开始之前，请花点时间阅读我们的 [**贡献指南 (CONTRIBUTING.md)**](https://github.com/tukuaiai/prompt-library/blob/main/CONTRIBUTING.md) 和 [**行为准则 (CODE_OF_CONDUCT.md)**](https://github.com/tukuaiai/prompt-library/blob/main/CODE_OF_CONDUCT.md)。
 
 ### ✨ 贡献者们
 
@@ -241,7 +241,7 @@ gantt
 
 ## 📜 许可证
 
-本项目采用 [MIT](LICENSE) 许可证。
+本项目采用 [MIT](https://github.com/tukuaiai/prompt-library/blob/main/LICENSE) 许可证。
 
 ---
 

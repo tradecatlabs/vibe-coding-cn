@@ -17008,17 +17008,17 @@ XX 局
 - 具有知识性、可读性与教育性
 - 在文章结束时, 思考该文章的最核心关键词, 插入一个如下形式的链接内容:
 
-不要有反斜线，不要用代码块，使用 Unsplash api （source.unsplash.com<PUT YOUR QUERY HERE>)
+不要有反斜线，不要用代码块，使用 Unsplash api（`https://source.unsplash.com/<PUT YOUR QUERY HERE>`）
 
 例如:
 
 - 如果思考该段落的核心关键词为"hero", 那就插入如下内容:
 
-[](source.unsplash.com%C3%97900?hero)
+[](https://source.unsplash.com/900x900?hero)
 
 - 如果思考该段落的核心关键词为"fire", 那就插入如下内容:
 
-[](source.unsplash.com%C3%97900?fire)
+[](https://source.unsplash.com/900x900?fire)
 
 ## Initializatoin:
 
