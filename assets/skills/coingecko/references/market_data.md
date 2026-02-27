@@ -32,7 +32,7 @@ Source: https://docs.coingecko.com/reference/nfts-contract-address-market-chart
 reference/api-reference/coingecko-pro.json get /nfts/{asset_platform_id}/contract/{contract_address}/market_chart
 This endpoint allows you **query historical market data of a NFT collection, including floor price, market cap, and 24hr volume, by number of days away from now based on the provided contract address**
 
-* This endpoint doesn't support Solana NFT and Art Blocks, please use [/nfts/\{id}/market\_chart](/reference/nfts-id-market-chart) endpoint instead.
+* This endpoint doesn't support Solana NFT and Art Blocks, please use [/nfts/\{id}/market\_chart](https://docs.coingecko.com/reference/nfts-id-market-chart) endpoint instead.
   * Data Granularity (auto):
     * 1-14 days from now = **5-minutely** data
     * 15 days & above from now = **daily** data (00:00 UTC)

@@ -42,10 +42,10 @@ export const GreenSeparator = () => (
 
   We've added support for bonding curve (e.g. launchpad graduation from PumpFun) data across multiple token endpoints:
 
-  * [Token Data by Token Address](/reference/token-data-contract-address) — `/onchain/networks/{network}/tokens/{address}`
-  * [Tokens Data by Token Addresses](/reference/tokens-data-contract-addresses) — `/onchain/networks/{network}/tokens/multi/{addresses}`
-  * [Token Info by Token Address](/reference/token-info-contract-address) — `/onchain/networks/{network}/tokens/{address}/info`
-  * [Pool Tokens Info by Pool Address](/reference/pool-token-info-contract-address) — `/onchain/networks/{network}/pools/{pool_address}/info`
+  * [Token Data by Token Address](https://docs.coingecko.com/reference/token-data-contract-address) — `/onchain/networks/{network}/tokens/{address}`
+  * [Tokens Data by Token Addresses](https://docs.coingecko.com/reference/tokens-data-contract-addresses) — `/onchain/networks/{network}/tokens/multi/{addresses}`
+  * [Token Info by Token Address](https://docs.coingecko.com/reference/token-info-contract-address) — `/onchain/networks/{network}/tokens/{address}/info`
+  * [Pool Tokens Info by Pool Address](https://docs.coingecko.com/reference/pool-token-info-contract-address) — `/onchain/networks/{network}/pools/{pool_address}/info`
 
   ```json JSON theme={null}
   "launchpad_details": {
@@ -58,7 +58,7 @@ export const GreenSeparator = () => (
 
   ### Megafilter: Ascending Sort Order for Price Change %
 
-  The [Megafilter for Pools](/reference/pools-megafilter) endpoint now supports ascending sorting for price change percentage:
+  The [Megafilter for Pools](https://docs.coingecko.com/reference/pools-megafilter) endpoint now supports ascending sorting for price change percentage:
 
   * `m5_price_change_percentage_asc`
   * `h1_price_change_percentage_asc`
@@ -67,7 +67,7 @@ export const GreenSeparator = () => (
 
   ### Token OHLCV Endpoint Fix to respect Specified Token Address
 
-  We've fixed an issue where the [Token OHLCV chart by Token Address](/reference/token-ohlcv-token-address) endpoint returned data for the base token of the top pool instead of the requested token. It will now always return data for the specified token address.
+  We've fixed an issue where the [Token OHLCV chart by Token Address](https://docs.coingecko.com/reference/token-ohlcv-token-address) endpoint returned data for the base token of the top pool instead of the requested token. It will now always return data for the specified token address.
 </Update>
 
 <Update label="September 2025">
@@ -91,17 +91,17 @@ export const GreenSeparator = () => (
   We're also surfacing new tools through the MCP to give developers a richer, faster way to query exchanges, NFTs, and onchain activity.
 
   * New tools:
-    * Exchange coverage with [/exchanges/list](reference/exchanges-list), [/exchanges/](reference/exchanges-id), [/exchanges//tickers](reference/exchanges-id-tickers), and [/exchanges//volume\_chart/range](reference/exchanges-id-volume-chart-range)
-    * NFT markets with [/nfts/markets](reference/nfts-markets)
-    * Multi-address queries with [/onchain/networks//pools/multi/](reference/pools-addresses) and [/onchain/networks//tokens/multi/](reference/tokens-data-contract-addresses)
+    * Exchange coverage with [/exchanges/list](https://docs.coingecko.com/reference/exchanges-list), [/exchanges/](https://docs.coingecko.com/reference/exchanges-id), [/exchanges//tickers](https://docs.coingecko.com/reference/exchanges-id-tickers), and [/exchanges//volume\_chart/range](https://docs.coingecko.com/reference/exchanges-id-volume-chart-range)
+    * NFT markets with [/nfts/markets](https://docs.coingecko.com/reference/nfts-markets)
+    * Multi-address queries with [/onchain/networks//pools/multi/](https://docs.coingecko.com/reference/pools-addresses) and [/onchain/networks//tokens/multi/](https://docs.coingecko.com/reference/tokens-data-contract-addresses)
   * Retired tools:
-    * We've removed endpoints such as [/coins/list](reference/coins-list), [/onchain/networks/trending\_pools](reference/trending-pools-network), and single-address pool/token queries in favor of more scalable multi-address endpoints
+    * We've removed endpoints such as [/coins/list](https://docs.coingecko.com/reference/coins-list), [/onchain/networks/trending\_pools](https://docs.coingecko.com/reference/trending-pools-network), and single-address pool/token queries in favor of more scalable multi-address endpoints
 
   ### Friendlier Time-related MCP Queries with ISO Support
 
   Time-based queries just got easier. MCP tools now accept **ISO date strings** (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) alongside UNIX timestamps.
 
-  For example, when using the [Coin Historical Chart Data within Time Range](reference/coins-id-market-chart-range) tool, you can now pass ISO date strings directly instead of converting them into UNIX timestamps for your LLM tools.
+  For example, when using the [Coin Historical Chart Data within Time Range](https://docs.coingecko.com/reference/coins-id-market-chart-range) tool, you can now pass ISO date strings directly instead of converting them into UNIX timestamps for your LLM tools.
 
   **CoinGecko API Team**
 
@@ -1767,13 +1767,13 @@ export const GreenSeparator = () => (
 
   For a finalised list of token contracts and API IDs that have been separated from its native asset page and listed individually, please refer to this [Google Sheets](https://docs.google.com/spreadsheets/d/15FyY1gvUi20LdnlJRly-pXvm5ATNbFbSy06VoI1vVs4/edit?usp=sharing)
 
-  You may also identify the list of bridged coins via API: you may also use [/categories/list endpoint](/reference/coins-categories-list) to look for bridged categories such as:
+  You may also identify the list of bridged coins via API: you may also use [/categories/list endpoint](https://docs.coingecko.com/reference/coins-categories-list) to look for bridged categories such as:
 
   1. bridged-usdc
   2. bridged-wbtc
   3. bridged-weth
 
-  Then you may use [/coins/market endpoint](/reference/coins-markets) to retrieve the list of coins
+  Then you may use [/coins/market endpoint](https://docs.coingecko.com/reference/coins-markets) to retrieve the list of coins
 
   <GreenSeparator />
 
@@ -1872,21 +1872,21 @@ export const GreenSeparator = () => (
 
   ### Onchain: Simple Price - Increased Token Address Limit from 30 to 100
 
-  [Token Price by Token Addresses](/reference/onchain-simple-price) now allows to input up to 100 contract addresses, instead of 30.
+  [Token Price by Token Addresses](https://docs.coingecko.com/reference/onchain-simple-price) now allows to input up to 100 contract addresses, instead of 30.
 
   * You may now retrieve data of up to 100 token prices of a specific network, in one single request.
   * Available exclusively to Pro API paid plan subscribers.
 
   ### Onchain: Recently Updated Info - Added Filter by Network
 
-  [Most Recently Updated Token List](/reference/tokens-info-recent-updated) now allows to filter by blockchain network, by flagging the `network` parameter. e.g. `network=eth`.
+  [Most Recently Updated Token List](https://docs.coingecko.com/reference/tokens-info-recent-updated) now allows to filter by blockchain network, by flagging the `network` parameter. e.g. `network=eth`.
 
   * You can use the `network` parameter to retrieve the 100 most recently updated token info of a specific network.
   * View list of supported network via [Supported Networks List](https://docs.coingecko.com/reference/networks-list) endpoint.
 
   ### NFT Collection Data  - Included Banner Image
 
-  [NFTs Collection Data by ID](/reference/nfts-id) now provides banner image of a NFT collection.
+  [NFTs Collection Data by ID](https://docs.coingecko.com/reference/nfts-id) now provides banner image of a NFT collection.
 
   View banner image [example](https://coin-images.coingecko.com/nft_contracts/images/38/pudgy-penguins-banner.png?1708416126) on: [https://www.coingecko.com/en/nft/pudgy-penguins](https://www.coingecko.com/en/nft/pudgy-penguins)
 
@@ -1914,7 +1914,7 @@ export const GreenSeparator = () => (
 
   ### Asset Platforms - Included Images of Blockchain Network Logos
 
-  [Asset Platforms List (ID Map)](/reference/asset-platforms-list) now provides the logos of blockchain networks.
+  [Asset Platforms List (ID Map)](https://docs.coingecko.com/reference/asset-platforms-list) now provides the logos of blockchain networks.
 
   For example:
 
@@ -1928,7 +1928,7 @@ export const GreenSeparator = () => (
 
   ### Coins Categories - Included Ids of Top 3 Coins
 
-  [Coins Categories List with Market Data](/reference/coins-categories) now provides coins id of the top 3 coins of a category.
+  [Coins Categories List with Market Data](https://docs.coingecko.com/reference/coins-categories) now provides coins id of the top 3 coins of a category.
 
   For example:
 
@@ -1957,8 +1957,8 @@ export const GreenSeparator = () => (
 
   The cache & update frequency of the following endpoints have been improved from every 30 minutes to every 15 minutes:
 
-  * [/coins//ohlc](/reference/coins-id-ohlc)
-  * [/coins//ohlc/range](/reference/coins-id-ohlc-range)
+  * [/coins//ohlc](https://docs.coingecko.com/reference/coins-id-ohlc)
+  * [/coins//ohlc/range](https://docs.coingecko.com/reference/coins-id-ohlc-range)
 </Update>
 
 <Update label="August 2024">
@@ -1968,8 +1968,8 @@ export const GreenSeparator = () => (
 
   We've added  'user\_favorites\_count', and 'ath' (all-time-high) related data to the following NFT endpoints:
 
-  * [/nfts/](/reference/nfts-id)
-  * [/nfts//contract/](/reference/nfts-contract-address)
+  * [/nfts/](https://docs.coingecko.com/reference/nfts-id)
+  * [/nfts//contract/](https://docs.coingecko.com/reference/nfts-contract-address)
 
   **Example of responses:**
 
@@ -1996,7 +1996,7 @@ export const GreenSeparator = () => (
 
   🗓️ **May 10, 2024**
 
-  We've introduced a new endpoint [/coins//ohlc/range](/reference/coins-id-ohlc-range).
+  We've introduced a new endpoint [/coins//ohlc/range](https://docs.coingecko.com/reference/coins-id-ohlc-range).
 
   This endpoint allows you to get the OHLC chart (Open, High, Low, Close) of a coin within a range of timestamp based on particular coin id.
 
@@ -2008,7 +2008,7 @@ export const GreenSeparator = () => (
 
   🗓️ **May 04, 2024**
 
-  We've expanded functionality to include support for the `interval=hourly` parameter within the [/coins//ohlc](/reference/coins-id-ohlc) endpoint.
+  We've expanded functionality to include support for the `interval=hourly` parameter within the [/coins//ohlc](https://docs.coingecko.com/reference/coins-id-ohlc) endpoint.
 
   Users can use this parameter to retrieve OHLC (Open/High/Low/Close) data on a hourly interval for up to 90 days of the date range.
 
@@ -2022,7 +2022,7 @@ export const GreenSeparator = () => (
 
   🗓️ **April 30, 2024**
 
-  We've now enhanced the [/coins/list](/reference/coins-list) endpoint to include inactive coins
+  We've now enhanced the [/coins/list](https://docs.coingecko.com/reference/coins-list) endpoint to include inactive coins
 
   * You may access the inactive coins by specifying `status=inactive` in your query
   * Example of endpoint request:\
@@ -2030,11 +2030,11 @@ export const GreenSeparator = () => (
 
   Additionally, historical data for inactive coins can be queried using their IDs in the following endpoints:
 
-  * [/coins//history](/reference/coins-id-history)
-  * [/coins//market\_chart](/reference/coins-id-market-chart)
-  * [/coins//market\_chart/range](/reference/coins-id-market-chart-range)
-  * [/coins//contract//market\_chart](/reference/contract-address-market-chart)
-  * [/coins//contract//market\_chart/range](/reference/contract-address-market-chart-range)
+  * [/coins//history](https://docs.coingecko.com/reference/coins-id-history)
+  * [/coins//market\_chart](https://docs.coingecko.com/reference/coins-id-market-chart)
+  * [/coins//market\_chart/range](https://docs.coingecko.com/reference/coins-id-market-chart-range)
+  * [/coins//contract//market\_chart](https://docs.coingecko.com/reference/contract-address-market-chart)
+  * [/coins//contract//market\_chart/range](https://docs.coingecko.com/reference/contract-address-market-chart-range)
 
   Please note that these features are available exclusively for **paid plan subscribers only**
 </Update>
@@ -2044,7 +2044,7 @@ export const GreenSeparator = () => (
 
   🗓️ **March 27, 2024**
 
-  We've introduced a new endpoint [/key](/reference/api-usage) for conveniently monitoring your account's API usage, including rate limits and remaining credits.
+  We've introduced a new endpoint [/key](https://docs.coingecko.com/reference/api-usage) for conveniently monitoring your account's API usage, including rate limits and remaining credits.
 
   **Example of responses**:
 
@@ -2084,10 +2084,10 @@ export const GreenSeparator = () => (
     }
     ```
   * We've added sorting parameters such as order= `h24_volume_usd_desc` and order=` h24_tx_count_desc` for /pools endpoints
-  * The 'token' parameter within the [/ohlcv ](/reference/pool-ohlcv-contract-address) endpoint can now accept a token address, provided it exists in the queried pool, to return OHLCV data\
+  * The 'token' parameter within the [/ohlcv ](https://docs.coingecko.com/reference/pool-ohlcv-contract-address) endpoint can now accept a token address, provided it exists in the queried pool, to return OHLCV data\
     Example of endpoint request (**token=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2**):\
     `https://pro-api.coingecko.com/api/v3/onchain/networks/eth/pools/0x06da0fd433c1a5d7a4faa01111c044910a184553/ohlcv/day?token=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2&x_cg_pro_api_key=YOUR_API_KEY`
-  * [/ohlcv ](/reference/pool-ohlcv-contract-address) endpoint now includes the base and target token metadata in the response\
+  * [/ohlcv ](https://docs.coingecko.com/reference/pool-ohlcv-contract-address) endpoint now includes the base and target token metadata in the response\
     Example of responses:
 
     ```json JSON theme={null}
@@ -2122,7 +2122,7 @@ export const GreenSeparator = () => (
 
   🗓️ **February 19, 2024**
 
-  Trending Pools endpoint, [/networks//trending\_pools](/reference/trending-pools-network) is now available to fetch a list of pools that are trending as seen on GeckoTerminal based on web visits and on-chain activities.
+  Trending Pools endpoint, [/networks//trending\_pools](https://docs.coingecko.com/reference/trending-pools-network) is now available to fetch a list of pools that are trending as seen on GeckoTerminal based on web visits and on-chain activities.
 
   <GreenSeparator />
 
@@ -2138,7 +2138,7 @@ export const GreenSeparator = () => (
 
   🗓️ **January 18, 2024**
 
-  We've included a new field "whitepaper" under "links" section for [/coins/](/reference/coins-id) endpoint
+  We've included a new field "whitepaper" under "links" section for [/coins/](https://docs.coingecko.com/reference/coins-id) endpoint
 
   **Example of responses:**
 
@@ -2170,7 +2170,7 @@ export const GreenSeparator = () => (
 
   🗓️ **December 13, 2023**
 
-  The following data is now deprecated for [/coins/](/reference/coins-id) endpoint:
+  The following data is now deprecated for [/coins/](https://docs.coingecko.com/reference/coins-id) endpoint:
 
   * coingecko\_rank
   * coingecko\_score
@@ -2190,8 +2190,8 @@ export const GreenSeparator = () => (
 
   We've introduced Historical Total Supply data to Enterprise plan subscribers via these 2 exclusive endpoints:
 
-  * [/coins//total\_supply\_chart](/reference/coins-id-total-supply-chart) : get historical total supply of a coin, by number of days away from now.
-  * [/coins//total\_supply\_chart/range](/reference/coins-id-total-supply-chart-range) : get historical total supply of a coin, within a range of timestamp.
+  * [/coins//total\_supply\_chart](https://docs.coingecko.com/reference/coins-id-total-supply-chart) : get historical total supply of a coin, by number of days away from now.
+  * [/coins//total\_supply\_chart/range](https://docs.coingecko.com/reference/coins-id-total-supply-chart-range) : get historical total supply of a coin, within a range of timestamp.
 
   <GreenSeparator />
 
@@ -2199,7 +2199,7 @@ export const GreenSeparator = () => (
 
   🗓️ **December 07, 2023**
 
-  We've expanded the capabilities of the [/search/trending](/reference/trending-search) endpoint.
+  We've expanded the capabilities of the [/search/trending](https://docs.coingecko.com/reference/trending-search) endpoint.
 
   It now supports up to 15 trending coins, a significant increase from the previous limit of 7.
 
@@ -2219,8 +2219,8 @@ export const GreenSeparator = () => (
 
   The web\_slug data is now available in the following endpoints.
 
-  * [/coins/](/reference/coins-id)
-  * [/coins//contract/](/reference/coins-contract-address)
+  * [/coins/](https://docs.coingecko.com/reference/coins-id)
+  * [/coins//contract/](https://docs.coingecko.com/reference/coins-contract-address)
 
   This addition allows users to accurately link to a CoinGecko coin page using [www.coingecko.com/en/](http://www.coingecko.com/en/\{web_slug}).
 
@@ -2237,7 +2237,7 @@ export const GreenSeparator = () => (
   }
   ```
 
-  For the [/asset\_platforms](/reference/asset-platforms-list) endpoint, we've introduced the native\_coin\_id data. This enables users to obtain the coin ID of different blockchain networks or asset platforms that may not have a contract address to look up
+  For the [/asset\_platforms](https://docs.coingecko.com/reference/asset-platforms-list) endpoint, we've introduced the native\_coin\_id data. This enables users to obtain the coin ID of different blockchain networks or asset platforms that may not have a contract address to look up
 
   **Example of responses:**
 
@@ -2257,7 +2257,7 @@ export const GreenSeparator = () => (
 
   🗓️ **November 10, 2023**
 
-  Inspired by CoinGecko API most popular endpoint, we have launched the [/simple/networks//token\_price/](/reference/onchain-simple-price), simple endpoint. Simply pass in addresses of any tokens on supported blockchain and get price data for it
+  Inspired by CoinGecko API most popular endpoint, we have launched the [/simple/networks//token\_price/](https://docs.coingecko.com/reference/onchain-simple-price), simple endpoint. Simply pass in addresses of any tokens on supported blockchain and get price data for it
 
   <GreenSeparator />
 
@@ -2265,7 +2265,7 @@ export const GreenSeparator = () => (
 
   🗓️ **November 08, 2023**
 
-  You can now get the latest 300 trades in the past 24 hours of a given pool from this endpoint [/networks//pools//trades](/reference/pool-trades-contract-address). You may optionally filter by trade size as well. You can now build your own telegram bot alert!
+  You can now get the latest 300 trades in the past 24 hours of a given pool from this endpoint [/networks//pools//trades](https://docs.coingecko.com/reference/pool-trades-contract-address). You may optionally filter by trade size as well. You can now build your own telegram bot alert!
 </Update>
 
 <Update label="October 2023">
@@ -2275,9 +2275,9 @@ export const GreenSeparator = () => (
 
   You can now fetch token information such as name, image, social links, and description via these endpoints:
 
-  * To fetch information of tokens inside a pool, use [/networks//pools//info](/reference/pool-token-info-contract-address)
-  * To fetch information of a specific token use [/networks//tokens//info](/reference/token-info-contract-address)
-  * If you like to get token information of the most recently updated tokens, use [/tokens/info\_recently\_updated](/reference/tokens-info-recent-updated)
+  * To fetch information of tokens inside a pool, use [/networks//pools//info](https://docs.coingecko.com/reference/pool-token-info-contract-address)
+  * To fetch information of a specific token use [/networks//tokens//info](https://docs.coingecko.com/reference/token-info-contract-address)
+  * If you like to get token information of the most recently updated tokens, use [/tokens/info\_recently\_updated](https://docs.coingecko.com/reference/tokens-info-recent-updated)
 </Update>
 
 <Update label="September 2023">
@@ -2310,16 +2310,16 @@ export const GreenSeparator = () => (
 
   🗓️ **June 15, 2023**
 
-  The uses of 'precision' parameter allows to specify price data in full or 0-18 decimals, and previously was only made available for [/simple/price](/reference/simple-price) and [/simple/token\_price/](/reference/simple-token-price) endpoints.
+  The uses of 'precision' parameter allows to specify price data in full or 0-18 decimals, and previously was only made available for [/simple/price](https://docs.coingecko.com/reference/simple-price) and [/simple/token\_price/](https://docs.coingecko.com/reference/simple-token-price) endpoints.
 
   This parameter is now supported for more endpoints as listed below:
 
-  * [/coins/markets](/reference/coins-markets)
-  * [/coins/market\_chart](/reference/coins-id-market-chart)
-  * [/coins/market\_chart/range](/reference/coins-id-market-chart)
-  * [/coins//contract//market\_chart](/reference/contract-address-market-chart)
-  * [/coins//contract//market\_chart/range](/reference/contract-address-market-chart-range)
-  * [/coins//ohlc](/reference/coins-id-ohlc)
+  * [/coins/markets](https://docs.coingecko.com/reference/coins-markets)
+  * [/coins/market\_chart](https://docs.coingecko.com/reference/coins-id-market-chart)
+  * [/coins/market\_chart/range](https://docs.coingecko.com/reference/coins-id-market-chart)
+  * [/coins//contract//market\_chart](https://docs.coingecko.com/reference/contract-address-market-chart)
+  * [/coins//contract//market\_chart/range](https://docs.coingecko.com/reference/contract-address-market-chart-range)
+  * [/coins//ohlc](https://docs.coingecko.com/reference/coins-id-ohlc)
 
   <GreenSeparator />
 
@@ -2329,8 +2329,8 @@ export const GreenSeparator = () => (
 
   We've made enhancements to the /search/trending and /coins/asset\_platform\_id/contract/contract\_address endpoints:
 
-  * Top 5 trending NFT data (based on high trading volume in the last 24 hours) is now included in the [/search/trending](/reference/trending-search) endpoint
-  * Near Protocol contract address (e.g. wrap.near) is now supported for [/coins//contract/ ](/reference/coins-contract-address) endpoint
+  * Top 5 trending NFT data (based on high trading volume in the last 24 hours) is now included in the [/search/trending](https://docs.coingecko.com/reference/trending-search) endpoint
+  * Near Protocol contract address (e.g. wrap.near) is now supported for [/coins//contract/ ](https://docs.coingecko.com/reference/coins-contract-address) endpoint
 </Update>
 
 <Update label="May 2023">
@@ -2339,7 +2339,7 @@ export const GreenSeparator = () => (
   🗓️ **May 28, 2023**
 
   * Token metadata such as name, symbol, and CoinGecko ID are now returned in the responses for pools endpoints. Users will need to pass in this attribute include=base\_token, quote\_token
-  * CoinGecko asset platform ID added to the response for [/networks](/reference/networks-list) endpoint
+  * CoinGecko asset platform ID added to the response for [/networks](https://docs.coingecko.com/reference/networks-list) endpoint
 
   <GreenSeparator />
 
@@ -2347,7 +2347,7 @@ export const GreenSeparator = () => (
 
   🗓️ **May 22, 2023**
 
-  The [/coins//ohlc](/reference/coins-id-ohlc) endpoint now supports the "interval=daily" parameter for Paid Plan Subscribers
+  The [/coins//ohlc](https://docs.coingecko.com/reference/coins-id-ohlc) endpoint now supports the "interval=daily" parameter for Paid Plan Subscribers
 
   Users can use this parameter to retrieve OHLC (Open/High/Low/Close) data on a daily interval for up to 180 days of date range.
 </Update>
@@ -2357,7 +2357,7 @@ export const GreenSeparator = () => (
 
   🗓️ **April 26, 2023**
 
-  We've added  'watchlist\_portfolio\_users' field to [/coins/](/reference/coins-id) endpoint responses.
+  We've added  'watchlist\_portfolio\_users' field to [/coins/](https://docs.coingecko.com/reference/coins-id) endpoint responses.
 
   This refers to number of users who added the coin into a watchlist or portfolio.
 
@@ -2392,7 +2392,7 @@ export const GreenSeparator = () => (
   * reserve\_in\_usd added to the pools endpoint response. This returns the total liquidity/reserve of the pool in USD
   * pool\_created\_at added to the pools endpoint response
 
-  Example of responses for [/networks//pools/](/reference/pool-address) :
+  Example of responses for [/networks//pools/](https://docs.coingecko.com/reference/pool-address) :
 
   ```json  theme={null}
   {
@@ -2424,8 +2424,8 @@ export const GreenSeparator = () => (
   }
   ```
 
-  * [/networks//new\_pools](/reference/latest-pools-network) endpoint added to query new pools discovered for a network
-  * [/networks/new\_pools](/reference/latest-pools-list) endpoint added to query new pools discovered across all networks
+  * [/networks//new\_pools](https://docs.coingecko.com/reference/latest-pools-network) endpoint added to query new pools discovered for a network
+  * [/networks/new\_pools](https://docs.coingecko.com/reference/latest-pools-list) endpoint added to query new pools discovered across all networks
 
   <GreenSeparator />
 
@@ -2435,9 +2435,9 @@ export const GreenSeparator = () => (
 
   We've added "symbol" field to these NFT endpoints responses:
 
-  * [/nfts/markets](/reference/nfts-markets)
-  * [/nfts/ ](/reference/nfts-id)
-  * [/nfts//contract/](/reference/nfts-contract-address)
+  * [/nfts/markets](https://docs.coingecko.com/reference/nfts-markets)
+  * [/nfts/ ](https://docs.coingecko.com/reference/nfts-id)
+  * [/nfts//contract/](https://docs.coingecko.com/reference/nfts-contract-address)
 
   **Example of responses:**
 
@@ -2460,8 +2460,8 @@ export const GreenSeparator = () => (
 
   We've added "links" field (e.g. homepage, twitter, discord) to these NFT endpoints responses:
 
-  * [/nfts/](/reference/nfts-id)
-  * [/nfts//contract/](/reference/nfts-contract-address)
+  * [/nfts/](https://docs.coingecko.com/reference/nfts-id)
+  * [/nfts//contract/](https://docs.coingecko.com/reference/nfts-contract-address)
 
   **Example of responses:**
 
@@ -2485,7 +2485,7 @@ export const GreenSeparator = () => (
 
   🗓️ **March 23, 2023**
 
-  We've added [/coins/top\_gainers\_losers](/reference/coins-top-gainers-losers) endpoint exclusively for Paid Plan Subscribers.
+  We've added [/coins/top\_gainers\_losers](https://docs.coingecko.com/reference/coins-top-gainers-losers) endpoint exclusively for Paid Plan Subscribers.
 
   Users can now get the top 30 coins with largest price gain and loss by a specific time duration with this endpoint.
 
@@ -2495,7 +2495,7 @@ export const GreenSeparator = () => (
 
   🗓️ **March 23, 2023**
 
-  [/networks//pools//ohlcv/](/reference/pool-ohlcv-contract-address) now returns more granularity `day,` `hour`, `minute` and multiple aggregates
+  [/networks//pools//ohlcv/](https://docs.coingecko.com/reference/pool-ohlcv-contract-address) now returns more granularity `day,` `hour`, `minute` and multiple aggregates
 </Update>
 
 <Update label="February 2023">
@@ -2505,8 +2505,8 @@ export const GreenSeparator = () => (
 
   We've made some updates to the /coins/categories and /simple/token\_price/id endpoints:
 
-  * Market cap and volume data for 'ecosystem' categories in the [/coins/categories](/reference/coins-categories) endpoint will now return 'null' until further notice. The CoinGecko team is actively working on improvements to provide more accurate data. If you have any feedback or suggestions, please reach out via [api@coingecko.com](mailto:api@coingecko.com).
-  * Previously, the [/simple/token\_price/](/reference/simple-token-price) endpoint was unable to return data for some Solana coins. This issue has been resolved, and users can now expect accurate data for Solana coins from this endpoint.
+  * Market cap and volume data for 'ecosystem' categories in the [/coins/categories](https://docs.coingecko.com/reference/coins-categories) endpoint will now return 'null' until further notice. The CoinGecko team is actively working on improvements to provide more accurate data. If you have any feedback or suggestions, please reach out via [api@coingecko.com](mailto:api@coingecko.com).
+  * Previously, the [/simple/token\_price/](https://docs.coingecko.com/reference/simple-token-price) endpoint was unable to return data for some Solana coins. This issue has been resolved, and users can now expect accurate data for Solana coins from this endpoint.
 
   <GreenSeparator />
 
@@ -2514,7 +2514,7 @@ export const GreenSeparator = () => (
 
   🗓️ **February 15, 2023**
 
-  We've introduced the [/exchange//volume\_chart/range](/reference/exchanges-id-volume-chart-range) endpoint for Paid Plan Subscribers.
+  We've introduced the [/exchange//volume\_chart/range](https://docs.coingecko.com/reference/exchanges-id-volume-chart-range) endpoint for Paid Plan Subscribers.
 
   This exclusive feature allows users to query full historical volume data of an exchange.
 </Update>
@@ -2524,7 +2524,7 @@ export const GreenSeparator = () => (
 
   🗓️ **January 09, 2023**
 
-  We've introduced the [/coins/list/new](/reference/coins-list-new) endpoint for Paid Plan Subscribers.
+  We've introduced the [/coins/list/new](https://docs.coingecko.com/reference/coins-list-new) endpoint for Paid Plan Subscribers.
 
   This exclusive feature allows users to query the latest 200 coins on CoinGecko.
 </Update>
@@ -2539,7 +2539,7 @@ Source: https://docs.coingecko.com/docs/1-get-data-by-id-or-address
 
 ### a. Coin ID
 
-Using [/simple/price](/reference/simple-price) endpoint as example:
+Using [/simple/price](https://docs.coingecko.com/reference/simple-price) endpoint as example:
 
 * `https://pro-api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_pro_api_key=YOUR_API_KEY`
 
@@ -2547,7 +2547,7 @@ Using [/simple/price](/reference/simple-price) endpoint as example:
 
 **How to obtain Coin ID aka API ID?** There are 3 options:
 
-* Use [/coins/list](/reference/coins-list) endpoint, example of responses:
+* Use [/coins/list](https://docs.coingecko.com/reference/coins-list) endpoint, example of responses:
 
   <CodeGroup>
     ```json JSON theme={null}
@@ -2573,7 +2573,7 @@ Using [/simple/price](/reference/simple-price) endpoint as example:
 
 ### b. Contract Address
 
-Other than using Coin ID, you may also query price & market data of a coin using contract address, using [/simple/token\_price/\{id](/reference/simple-token-price)} endpoint as example:
+Other than using Coin ID, you may also query price & market data of a coin using contract address, using [/simple/token\_price/\{id](https://docs.coingecko.com/reference/simple-token-price)} endpoint as example:
 
 * `https://pro-api.coingecko.com/api/v3/simple/token_price/ethereum?contract_addresses=0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48&vs_currencies=usd&x_cg_pro_api_key=YOUR_API_KEY`
 
@@ -2585,7 +2585,7 @@ There are 3 parameters values required to apply for this endpoint:
 
 **How to obtain Coins/Tokens Contract Address**
 
-* Use [/coins/list](/reference/coins-list) endpoint (`include_platform=true`), example of responses:
+* Use [/coins/list](https://docs.coingecko.com/reference/coins-list) endpoint (`include_platform=true`), example of responses:
   <CodeGroup>
     ```json JSON theme={null}
     [
@@ -2642,11 +2642,11 @@ CoinGecko API data supports all major fiat currencies and some famous crypto cur
 | Cryptocurrency | Ether        | `eth`                        |
 | Cryptocurrency | Binance Coin | `bnb`                        |
 
-For full list of supported currencies, please go to [/simple/supported\_vs\_currencies](/reference/simple-supported-currencies) endpoint
+For full list of supported currencies, please go to [/simple/supported\_vs\_currencies](https://docs.coingecko.com/reference/simple-supported-currencies) endpoint
 
 ## Other way to obtain coin prices & market data
 
-Using [/coins/market ](/reference/coins-markets) endpoint as example to query prices and market data of coins in bulk
+Using [/coins/market ](https://docs.coingecko.com/reference/coins-markets) endpoint as example to query prices and market data of coins in bulk
 
 * `https://pro-api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&x_cg_pro_api_key=YOUR_API_KEY`
 
@@ -2663,14 +2663,14 @@ Source: https://docs.coingecko.com/docs/10-mins-tutorial-guide
 
 New to CoinGecko API? Fret not. Whether you're a programmer or someone with zero coding experience, we've got you covered!
 
-If you are not a developer and prefer to learn only specific tutorials on Google Sheet/Excel, feel free to check [👶 Tutorials (Beginner-friendly)](/docs/tutorials-beginner-friendly)
+If you are not a developer and prefer to learn only specific tutorials on Google Sheet/Excel, feel free to check [👶 Tutorials (Beginner-friendly)](https://docs.coingecko.com/docs/tutorials-beginner-friendly)
 
 | Tutorial Steps                                                    | Description                                                                                      |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| [1. Get data by ID or Address](/docs/1-get-data-by-id-or-address) | Learn how to use different endpoints by obtaining Coin ID and token's contract address at first. |
-| [2. Get Historical Data](/docs/2-get-historical-data)             | Learn how to get historical data of a coin by using different historical endpoints.              |
-| [3. Get Exchanges & NFT Data](/docs/3-get-exchanges-nft-data)     | Learn how to query exchanges and NFT data by accessing different endpoints.                      |
-| [4. Get On-chain Data](/docs/4-get-on-chain-data)                 | Learn how to use `/onchain` GT endpoints to query onchain data.                                  |
+| [1. Get data by ID or Address](https://docs.coingecko.com/docs/1-get-data-by-id-or-address) | Learn how to use different endpoints by obtaining Coin ID and token's contract address at first. |
+| [2. Get Historical Data](https://docs.coingecko.com/docs/2-get-historical-data)             | Learn how to get historical data of a coin by using different historical endpoints.              |
+| [3. Get Exchanges & NFT Data](https://docs.coingecko.com/docs/3-get-exchanges-nft-data)     | Learn how to query exchanges and NFT data by accessing different endpoints.                      |
+| [4. Get On-chain Data](https://docs.coingecko.com/docs/4-get-on-chain-data)                 | Learn how to use `/onchain` GT endpoints to query onchain data.                                  |
 
 
 # 2. Get Historical Data
@@ -2690,16 +2690,16 @@ There are five different endpoints to get historical data of a coin:
 
 | Endpoint                                                                                                         | Description                                                                                                                                              |
 | ---------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [/coins/\{id}/history](/reference/coins-id-history)                                                              | Get the historical data (price, market cap, 24hrs volume, etc.) at a given date for a coin based on a particular coin ID.                                |
-| [/coins/\{id}/market\_chart](/reference/coins-id-market-chart)                                                   | Get the historical chart data of a coin including time in UNIX, price, market cap and 24hrs volume based on particular coin ID.                          |
-| [/coins/\{id}/market\_chart/range](/reference/coins-id-market-chart-range)                                       | Get the historical chart data of a coin within certain time range in UNIX along with price, market cap and 24hrs volume based on particular coin ID.     |
-| [/coins/\{id}/contract/\{contract\_address}/market\_chart](/reference/contract-address-market-chart)             | Get the historical chart data of a coin including time in UNIX, price, market cap and 24hrs volume based on token contract address.                      |
-| [/coins/\{id}/contract/\{contract\_address}/market\_chart/range](/reference/contract-address-market-chart-range) | Get the historical chart data of a coin within certain time range in UNIX along with price, market cap and 24hrs volume based on token contract address. |
+| [/coins/\{id}/history](https://docs.coingecko.com/reference/coins-id-history)                                                              | Get the historical data (price, market cap, 24hrs volume, etc.) at a given date for a coin based on a particular coin ID.                                |
+| [/coins/\{id}/market\_chart](https://docs.coingecko.com/reference/coins-id-market-chart)                                                   | Get the historical chart data of a coin including time in UNIX, price, market cap and 24hrs volume based on particular coin ID.                          |
+| [/coins/\{id}/market\_chart/range](https://docs.coingecko.com/reference/coins-id-market-chart-range)                                       | Get the historical chart data of a coin within certain time range in UNIX along with price, market cap and 24hrs volume based on particular coin ID.     |
+| [/coins/\{id}/contract/\{contract\_address}/market\_chart](https://docs.coingecko.com/reference/contract-address-market-chart)             | Get the historical chart data of a coin including time in UNIX, price, market cap and 24hrs volume based on token contract address.                      |
+| [/coins/\{id}/contract/\{contract\_address}/market\_chart/range](https://docs.coingecko.com/reference/contract-address-market-chart-range) | Get the historical chart data of a coin within certain time range in UNIX along with price, market cap and 24hrs volume based on token contract address. |
 
 <Note>
   ### **Notes**
 
-  The data granularity (interval) for [/market\_chart](/reference/coins-id-market-chart) and [/market\_chart/range](/reference/coins-id-market-chart-range) endpoints is automatic and based on the date range:
+  The data granularity (interval) for [/market\_chart](https://docs.coingecko.com/reference/coins-id-market-chart) and [/market\_chart/range](https://docs.coingecko.com/reference/coins-id-market-chart-range) endpoints is automatic and based on the date range:
 
   * 1 day from current time = 5-minutely data
   * 1 day from anytime (except from current time) = hourly data
@@ -2720,9 +2720,9 @@ You can get Exchange and NFT data just like how you get the coins data:
 
 | Type                   | Coins                                                          | NFTs                                                         | Exchanges                                                              | Derivatives                                                            |
 | ---------------------- | -------------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| Get Full List with IDs | [/coins/list](/reference/coins-list)                           | [/nfts/list](/reference/nfts-list)                           | [/exchanges/list](/reference/exchanges-list)                           | [/derivatives/exchanges/list](/reference/derivatives-exchanges-list)   |
-| Get latest market data | [/coins/\{id}](/reference/coins-id)                            | [/nfts/\{id}](/reference/nfts-id)                            | [/exchanges/\{id}](/reference/exchanges-id)                            | [/derivatives/exchanges/\{id}](/reference/derivatives-exchanges-id)    |
-| Get Historical Data    | [/coins/\{id}/market\_chart](/reference/coins-id-market-chart) | [/nfts/\{id}/market\_chart](/reference/nfts-id-market-chart) | [/exchanges/\{id}/volume\_chart](/reference/exchanges-id-volume-chart) | [/exchanges/\{id}/volume\_chart](/reference/exchanges-id-volume-chart) |
+| Get Full List with IDs | [/coins/list](https://docs.coingecko.com/reference/coins-list)                           | [/nfts/list](https://docs.coingecko.com/reference/nfts-list)                           | [/exchanges/list](https://docs.coingecko.com/reference/exchanges-list)                           | [/derivatives/exchanges/list](https://docs.coingecko.com/reference/derivatives-exchanges-list)   |
+| Get latest market data | [/coins/\{id}](https://docs.coingecko.com/reference/coins-id)                            | [/nfts/\{id}](https://docs.coingecko.com/reference/nfts-id)                            | [/exchanges/\{id}](https://docs.coingecko.com/reference/exchanges-id)                            | [/derivatives/exchanges/\{id}](https://docs.coingecko.com/reference/derivatives-exchanges-id)    |
+| Get Historical Data    | [/coins/\{id}/market\_chart](https://docs.coingecko.com/reference/coins-id-market-chart) | [/nfts/\{id}/market\_chart](https://docs.coingecko.com/reference/nfts-id-market-chart) | [/exchanges/\{id}/volume\_chart](https://docs.coingecko.com/reference/exchanges-id-volume-chart) | [/exchanges/\{id}/volume\_chart](https://docs.coingecko.com/reference/exchanges-id-volume-chart) |
 
 
 # 4. Get On-chain Data
@@ -2752,7 +2752,7 @@ Here are some of the important parameters to take note while using Onchain DEX A
 
 **How to obtain Network ID?**
 
-* Use [/onchain/networks](/reference/networks-list) endpoint, example of response:
+* Use [/onchain/networks](https://docs.coingecko.com/reference/networks-list) endpoint, example of response:
 
   <CodeGroup>
     ```json JSON theme={null}
@@ -2784,7 +2784,7 @@ Here are some of the important parameters to take note while using Onchain DEX A
 
 Some of the pools endpoints require you to provide DEX ID along with Network ID to query the pools on a particular DEX (Decentralized Exchange).
 
-Using [/onchain/networks/\{network}/dexes/\{dex}/pools](/reference/top-pools-dex) as example:
+Using [/onchain/networks/\{network}/dexes/\{dex}/pools](https://docs.coingecko.com/reference/top-pools-dex) as example:
 
 * `https://pro-api.coingecko.com/api/v3/onchain/networks/eth/dexes/uniswap_v3/pools?x_cg_pro_api_key=YOUR_API_KEY`
 
@@ -2795,7 +2795,7 @@ There are 2 parameter values required to apply for this endpoint:
 
 **How to obtain DEX ID?**
 
-* Use [/onchain/networks/\{network}/dexes](/reference/dexes-list) endpoint, example of response:
+* Use [/onchain/networks/\{network}/dexes](https://docs.coingecko.com/reference/dexes-list) endpoint, example of response:
 
   <CodeGroup>
     ```json JSON theme={null}
@@ -2830,7 +2830,7 @@ There are 2 parameter values required to apply for this endpoint:
 
 Most of the time, you will need a pool contract address along with Network ID to query the onchain data, especially when using the Pools Endpoints.
 
-Using [/onchain/networks/\{network}/pools/\{address}](/reference/pool-address) as example:
+Using [/onchain/networks/\{network}/pools/\{address}](https://docs.coingecko.com/reference/pool-address) as example:
 
 * `https://pro-api.coingecko.com/api/v3/onchain/networks/eth/pools/0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc?x_cg_pro_api_key=YOUR_API_KEY`
 
@@ -2852,7 +2852,7 @@ There are 2 parameter values required to apply for this endpoint:
 
 ### b. Token Contract Address
 
-Apart from the pool contract address, you also have the option to query onchain data by using the token contract address, using [/onchain/networks/\{network}/tokens/\{token\_address}/pools](/reference/top-pools-contract-address) as example:
+Apart from the pool contract address, you also have the option to query onchain data by using the token contract address, using [/onchain/networks/\{network}/tokens/\{token\_address}/pools](https://docs.coingecko.com/reference/top-pools-contract-address) as example:
 
 * `https://pro-api.coingecko.com/api/v3/onchain/networks/eth/tokens/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/pools?x_cg_pro_api_key=YOUR_API_KEY`
 
@@ -2893,8 +2893,8 @@ Integrating these prompts into your workflow is simple. Copy the entire markdown
 
 Select the prompt that matches your project's tech stack.
 
-* 🐍 **[Python](/docs/python-ai-prompts)**: A complete guide for implementing the CoinGecko API using our official [coingecko-sdk](https://pypi.org/project/coingecko-sdk/).
-* 🟦 **[TypeScript](/docs/typescript-ai-prompts#/)**: The definitive prompt for integrating the CoinGecko API with our official [@coingecko/coingecko-typescript](https://www.npmjs.com/package/@coingecko/coingecko-typescript) package.
+* 🐍 **[Python](https://docs.coingecko.com/docs/python-ai-prompts)**: A complete guide for implementing the CoinGecko API using our official [coingecko-sdk](https://pypi.org/project/coingecko-sdk/).
+* 🟦 **[TypeScript](https://docs.coingecko.com/docs/typescript-ai-prompts#/)**: The definitive prompt for integrating the CoinGecko API with our official [@coingecko/coingecko-typescript](https://www.npmjs.com/package/@coingecko/coingecko-typescript) package.
 
 ## Best Practices
 
@@ -2938,22 +2938,22 @@ Wonder how to use different endpoints together? This is the perfect place for yo
 
 **Examples:**
 
-* [/coins/list](/reference/coins-list) — can be used to query all the supported coins on CoinGecko with names, symbols and coin IDs that can be used in other endpoints.
-* [/search/trending](/reference/trending-search) — can be used to query trending search coins, categories and NFTs on CoinGecko.
+* [/coins/list](https://docs.coingecko.com/reference/coins-list) — can be used to query all the supported coins on CoinGecko with names, symbols and coin IDs that can be used in other endpoints.
+* [/search/trending](https://docs.coingecko.com/reference/trending-search) — can be used to query trending search coins, categories and NFTs on CoinGecko.
 
 ### "Supporting Endpoints"
 
 **Examples:**
 
-* [/simple/supported\_vs\_currencies](/reference/simple-supported-currencies) — can be used to query the list of currencies for other endpoints that include parameters like `vs_currencies`, allowing to obtain the corresponding data for those currencies.
-* [/asset\_platforms](/reference/asset-platforms-list) — can be used to query the list of asset platforms for other endpoints that contain parameters like `id` or `ids` (asset platforms), allowing the retrieval of corresponding data for these asset platforms.
+* [/simple/supported\_vs\_currencies](https://docs.coingecko.com/reference/simple-supported-currencies) — can be used to query the list of currencies for other endpoints that include parameters like `vs_currencies`, allowing to obtain the corresponding data for those currencies.
+* [/asset\_platforms](https://docs.coingecko.com/reference/asset-platforms-list) — can be used to query the list of asset platforms for other endpoints that contain parameters like `id` or `ids` (asset platforms), allowing the retrieval of corresponding data for these asset platforms.
 
 ### "Data Endpoints"
 
 **Examples:**
 
-* [/simple/price](/reference/simple-price) — can be used to query the prices of coins using the unique coin IDs that can be obtained from the "Discovery/Navigational Endpoints" mentioned above.
-* [/coins/\{id}](/reference/coins-id) — can be used to query the coin data using the unique coin IDs that can be obtained from the "Discovery/Navigational Endpoints" mentioned above.
+* [/simple/price](https://docs.coingecko.com/reference/simple-price) — can be used to query the prices of coins using the unique coin IDs that can be obtained from the "Discovery/Navigational Endpoints" mentioned above.
+* [/coins/\{id}](https://docs.coingecko.com/reference/coins-id) — can be used to query the coin data using the unique coin IDs that can be obtained from the "Discovery/Navigational Endpoints" mentioned above.
 
 ## User Journey for Onchain DEX API Endpoints (GeckoTerminal data)
 
@@ -2963,22 +2963,22 @@ Wonder how to use different endpoints together? This is the perfect place for yo
 
 **Examples:**
 
-* [/onchain/trending\_pools](/reference/trending-pools-list) - can be used to query trending pools across all networks on GeckoTerminal.
-* [/onchain/search/pools](/reference/search-pools) - can be used to search for any pools on GeckoTerminal.
+* [/onchain/trending\_pools](https://docs.coingecko.com/reference/trending-pools-list) - can be used to query trending pools across all networks on GeckoTerminal.
+* [/onchain/search/pools](https://docs.coingecko.com/reference/search-pools) - can be used to search for any pools on GeckoTerminal.
 
 ### "Supporting Endpoints"
 
 **Examples:**
 
-* [/onchain/networks-list](/reference/networks-list) - can be used to query all the supported networks on GeckoTerminal.
-* [/onchain/networks/\{network}/dexes](/reference/dexes-list) - can be used to query all the supported decentralized exchanges (DEXs/`dexes`) on GeckoTerminal based on network id that can be obtained from the endpoint mentioned above.
+* [/onchain/networks-list](https://docs.coingecko.com/reference/networks-list) - can be used to query all the supported networks on GeckoTerminal.
+* [/onchain/networks/\{network}/dexes](https://docs.coingecko.com/reference/dexes-list) - can be used to query all the supported decentralized exchanges (DEXs/`dexes`) on GeckoTerminal based on network id that can be obtained from the endpoint mentioned above.
 
 ### "Data Endpoints"
 
 **Examples:**
 
-* [/onchain/simple/networks/\{network}/token\_price/\{addresses}](/reference/onchain-simple-price) - can be used to query any token price using the token address and network id that can be obtained from the "Discovery/Navigational Endpoints" and "Supporting Endpoints" mentioned above.
-* [/onchain/networks/\{network}/pools/\{address}](/reference/pool-address) - can be used to query the data of a specific pool based on the pool address and network id that can be obtained from the "Discovery/Navigational Endpoints" and "Supporting Endpoints" mentioned above.
+* [/onchain/simple/networks/\{network}/token\_price/\{addresses}](https://docs.coingecko.com/reference/onchain-simple-price) - can be used to query any token price using the token address and network id that can be obtained from the "Discovery/Navigational Endpoints" and "Supporting Endpoints" mentioned above.
+* [/onchain/networks/\{network}/pools/\{address}](https://docs.coingecko.com/reference/pool-address) - can be used to query the data of a specific pool based on the pool address and network id that can be obtained from the "Discovery/Navigational Endpoints" and "Supporting Endpoints" mentioned above.
 
 
 # Building with AI
@@ -2990,11 +2990,11 @@ CoinGecko provides a powerful suite of AI-native tools to help you integrate rea
 
 ## Using `llms.txt`
 
-To help AI models interact with CoinGecko data effectively, we provide an `llms.txt` file at [/llms-full.txt](/llms-full.txt). This file gives models context on how to best query our API, ensuring more accurate and efficient data retrieval. We recommend utilizing this in your integrations of MCP and AI applications.
+To help AI models interact with CoinGecko data effectively, we provide an `llms.txt` file at [/llms-full.txt](https://docs.coingecko.com/llms-full.txt). This file gives models context on how to best query our API, ensuring more accurate and efficient data retrieval. We recommend utilizing this in your integrations of MCP and AI applications.
 
 ## CoinGecko MCP Server
 
-The **MCP (Model-Context-Protocol)** Server is your gateway for connecting AI agents and large language models, like Claude and Gemini, directly to CoinGecko's live data streams. It's ideal for building conversational applications that can perform complex, real-time crypto analysis and answer user queries with up-to-the-minute information. Learn how to connect your AI agent by checking out [CoinGecko MCP Server](/docs/mcp-server)
+The **MCP (Model-Context-Protocol)** Server is your gateway for connecting AI agents and large language models, like Claude and Gemini, directly to CoinGecko's live data streams. It's ideal for building conversational applications that can perform complex, real-time crypto analysis and answer user queries with up-to-the-minute information. Learn how to connect your AI agent by checking out [CoinGecko MCP Server](https://docs.coingecko.com/docs/mcp-server)
 
 ## Tools for Your Workflow
 
@@ -3040,7 +3040,7 @@ Here are the official API SDKs maintained by us.
 
 Want us to support your favorite programming language? Let us know [here](https://forms.gle/JJLH3SXiL2eJaGzBA)!
 
-**Not a developer?** Fred not, check our no-code tutorial for beginners here: [Tutorials (Beginner-friendly)](/docs/tutorials-beginner-friendly)
+**Not a developer?** Fred not, check our no-code tutorial for beginners here: [Tutorials (Beginner-friendly)](https://docs.coingecko.com/docs/tutorials-beginner-friendly)
 
 
 # Common Errors & Rate Limit
@@ -3090,40 +3090,40 @@ Discover the common use cases of CoinGecko API by our users
 
 ## 1. Get Coins Logo Images
 
-* Use [/coins/id](/reference/coins-id) endpoint.
+* Use [/coins/id](https://docs.coingecko.com/reference/coins-id) endpoint.
 
   * This endpoint can be used to query other coin's metadata like: links, categories, contract address, community, description in different languages and many more.
   * Coin descriptions may include newline characters represented as `\r\n` (escape sequences), which may require processing for proper formatting.
 
-* Use [Token Info by Token Address](/reference/token-info-contract-address) endpoint to get metadata of tokens listed on GeckoTerminal.com.
+* Use [Token Info by Token Address](https://docs.coingecko.com/reference/token-info-contract-address) endpoint to get metadata of tokens listed on GeckoTerminal.com.
 
 ## 2. Best Endpoint for Latest Crypto Price
 
-* Use [/simple/price](/reference/simple-price) endpoint.
+* Use [/simple/price](https://docs.coingecko.com/reference/simple-price) endpoint.
 * This endpoint can be used to query other market data like market cap, 24-hour trading volume and 24-hour price change percentage.
 
 ## 3. Get All Trading Pairs (Tickers) of a Coin
 
-* Use [/coins/id/tickers](/reference/coins-id-tickers) endpoint.
+* Use [/coins/id/tickers](https://docs.coingecko.com/reference/coins-id-tickers) endpoint.
 
 ## 4. Get Trading Pairs of Specific Coins from a Specific Exchange
 
-* Use[ /coins/id/tickers](/reference/coins-id-tickers) endpoint by supplying specific exchange ID.
+* Use[ /coins/id/tickers](https://docs.coingecko.com/reference/coins-id-tickers) endpoint by supplying specific exchange ID.
 
 ## 5. Building Telegram Bot for Latest Coin Listings
 
-* Use [/coins/list/new](/reference/coins-list-new) endpoint.
+* Use [/coins/list/new](https://docs.coingecko.com/reference/coins-list-new) endpoint.
 
 ## 6. Get List of Coins Under Specific Category
 
-* For CoinGecko [categories](https://www.coingecko.com/en/categories), use [/coins/markets](/reference/coins-markets) endpoint by supplying specific category.
-* For GeckoTerminal [categories](https://www.geckoterminal.com/category), use [Pools by Category ID](/reference/pools-category) endpoint by supplying specific category.
+* For CoinGecko [categories](https://www.coingecko.com/en/categories), use [/coins/markets](https://docs.coingecko.com/reference/coins-markets) endpoint by supplying specific category.
+* For GeckoTerminal [categories](https://www.geckoterminal.com/category), use [Pools by Category ID](https://docs.coingecko.com/reference/pools-category) endpoint by supplying specific category.
 
 ## 7. Identify DEX Decentralized Exchanges
 
-* Use [/exchanges/list](/reference/exchanges-list) endpoint to get full list of exchanges with ID on CoinGecko.
+* Use [/exchanges/list](https://docs.coingecko.com/reference/exchanges-list) endpoint to get full list of exchanges with ID on CoinGecko.
 
-* Use [/exchanges/id](/reference/exchanges-id) to find out whether the exchange is centralized or decentralized.
+* Use [/exchanges/id](https://docs.coingecko.com/reference/exchanges-id) to find out whether the exchange is centralized or decentralized.
 
 * Example of responses (using Uniswap V3 as example) :
 
@@ -3144,7 +3144,7 @@ Discover the common use cases of CoinGecko API by our users
 
 ## 8. Get Bitcoin Dominance Data (BTC.D)
 
-* Use [/global ](/reference/crypto-global)endpoint.
+* Use [/global ](https://docs.coingecko.com/reference/crypto-global)endpoint.
 
 * Example of responses:
 
@@ -3168,37 +3168,37 @@ Discover the common use cases of CoinGecko API by our users
 
 ## 9. Get Market Cap or Dominance of a Specific Ecosystem
 
-* Use [/coins/categories](/reference/coins-categories).
+* Use [/coins/categories](https://docs.coingecko.com/reference/coins-categories).
 * The endpoint also returns the 24-hour percentage change, offering insights into the traction of different categories or ecosystems.
 
 ## 10. Get Token Lists of a Specific Blockchain Network
 
-* Use [/token\_lists/asset\_platforms\_id/all.json](/reference/token-lists) endpoint.
+* Use [/token\_lists/asset\_platforms\_id/all.json](https://docs.coingecko.com/reference/token-lists) endpoint.
 * Supply asset platform id to the endpoint.
 
 ## 11. Get 7-Day Sparkline Price Data of a Coin
 
-* Use [/coins/id](/reference/coins-id) or [/coins/markets](/reference/coins-markets) endpoints by flagging `sparkline = true`.
+* Use [/coins/id](https://docs.coingecko.com/reference/coins-id) or [/coins/markets](https://docs.coingecko.com/reference/coins-markets) endpoints by flagging `sparkline = true`.
 
 ## 12. Get Link to Individual CoinGecko Coin Page
 
-* Use [/coins/list](/reference/coins-list) endpoint to get the coin **`{ID}`**.
+* Use [/coins/list](https://docs.coingecko.com/reference/coins-list) endpoint to get the coin **`{ID}`**.
   * Supply API ID in this URL path format: `www.coingecko.com/en/coins/{ID}`
-* If you wish to the obtain the URL slug of a specific CoinGecko Coin Page, e.g. `www.coingecko.com/en/coins/{web_slug}` you may use [/coin/id](/reference/coins-id) endpoint and obtain the **`{web_slug}`** value.
+* If you wish to the obtain the URL slug of a specific CoinGecko Coin Page, e.g. `www.coingecko.com/en/coins/{web_slug}` you may use [/coin/id](https://docs.coingecko.com/reference/coins-id) endpoint and obtain the **`{web_slug}`** value.
 
 ## 13. Check Coin Status and Stale Price Updates
 
-* Active: use [/coins/list](/reference/coins-list) endpoint, only active coins will be shown by default. You may also flag **`status=inactive`** to get a list of inactive coins.
-* Price Stale: use [/simple/price](/reference/simple-price) endpoint, flag `include_last_updated_at=true` to check latest update time.
+* Active: use [/coins/list](https://docs.coingecko.com/reference/coins-list) endpoint, only active coins will be shown by default. You may also flag **`status=inactive`** to get a list of inactive coins.
+* Price Stale: use [/simple/price](https://docs.coingecko.com/reference/simple-price) endpoint, flag `include_last_updated_at=true` to check latest update time.
 
 ## 14. Get Real-Time and Historical Exchange of BTC in USD
 
-* Current exchange rate: use [/exchange\_rates](/reference/exchange-rates) endpoint.
-* Historical exchange rate: use [/coins/id/history](/reference/coins-id-history) or [/coins/id/market\_chart](/reference/coins-id-market-chart) endpoints.
+* Current exchange rate: use [/exchange\_rates](https://docs.coingecko.com/reference/exchange-rates) endpoint.
+* Historical exchange rate: use [/coins/id/history](https://docs.coingecko.com/reference/coins-id-history) or [/coins/id/market\_chart](https://docs.coingecko.com/reference/coins-id-market-chart) endpoints.
 
 ## 15. Get Watchlist Portfolio Data of a Coin
 
-* Use [/coins/id](/reference/coins-id) endpoint by supplying coin ID.
+* Use [/coins/id](https://docs.coingecko.com/reference/coins-id) endpoint by supplying coin ID.
 
 * Example of responses:
 
@@ -3218,21 +3218,21 @@ Discover the common use cases of CoinGecko API by our users
 
 **Note**: This is available for paid plan subscribers only.
 
-* Use [/coins/list](/reference/coins-list) endpoint, specifying the status param as `inactive`.
+* Use [/coins/list](https://docs.coingecko.com/reference/coins-list) endpoint, specifying the status param as `inactive`.
 
 * Example of endpoint request: `https://pro-api.coingecko.com/api/v3/coins/list?include_platform=false&status=inactive&x_cg_pro_api_key=YOUR_API_KEY`
 
 * Retrieve the coin's ID from the endpoint mentioned above and use it to access historical data via the following endpoints:
 
-  * [/coins/id/history](/reference/coins-id-history)
-  * [/coins/id/market\_chart](/reference/coins-id-market-chart)
-  * [/coins/id/market\_chart/range](/reference/coins-id-market-chart-range)
-  * [/coins/id/contract/contract\_address/market\_chart](/reference/contract-address-market-chart)
-  * [/coins/id/contract/contract\_address/market\_chart/range](/reference/contract-address-market-chart-range)
+  * [/coins/id/history](https://docs.coingecko.com/reference/coins-id-history)
+  * [/coins/id/market\_chart](https://docs.coingecko.com/reference/coins-id-market-chart)
+  * [/coins/id/market\_chart/range](https://docs.coingecko.com/reference/coins-id-market-chart-range)
+  * [/coins/id/contract/contract\_address/market\_chart](https://docs.coingecko.com/reference/contract-address-market-chart)
+  * [/coins/id/contract/contract\_address/market\_chart/range](https://docs.coingecko.com/reference/contract-address-market-chart-range)
 
 ## 17. Get TVL (Total Value Locked) data of a Coin
 
-* Use [/coins/id](/reference/coins-id) endpoint by supplying coin ID.
+* Use [/coins/id](https://docs.coingecko.com/reference/coins-id) endpoint by supplying coin ID.
 
 * Example of responses:
 
@@ -3250,29 +3250,29 @@ Discover the common use cases of CoinGecko API by our users
 
 We have 2 Search endpoints:
 
-* [/search](/reference/search-data) endpoint allows you to search for coins, categories, exchanges (markets), and NFTs listed on CoinGecko.com. You may query by name or symbol.
-* [/search-pools](/reference/search-pools) endpoint allows you to search for pools listed on GeckoTerminal.com. You may query by pool contract address, token contract address, or token symbol.
+* [/search](https://docs.coingecko.com/reference/search-data) endpoint allows you to search for coins, categories, exchanges (markets), and NFTs listed on CoinGecko.com. You may query by name or symbol.
+* [/search-pools](https://docs.coingecko.com/reference/search-pools) endpoint allows you to search for pools listed on GeckoTerminal.com. You may query by pool contract address, token contract address, or token symbol.
 
 ## 19. Get List of Blockchain Networks supported on CoinGecko and GeckoTerminal.
 
 CoinGecko and GeckoTerminal support different sets of blockchain networks. You can use the following endpoints to find the list of supported networks and their respective IDs:
 
-* CoinGecko: [/asset-platforms-list](/reference/asset-platforms-list)
-* GeckoTerminal ([onchain endpoints](/reference/endpoint-overview#-onchain-dex-endpoints-geckoterminal)): [/networks-list](/reference/networks-list)
+* CoinGecko: [/asset-platforms-list](https://docs.coingecko.com/reference/asset-platforms-list)
+* GeckoTerminal ([onchain endpoints](https://docs.coingecko.com/reference/endpoint-overview#-onchain-dex-endpoints-geckoterminal)): [/networks-list](https://docs.coingecko.com/reference/networks-list)
 
 ## 20. Get Native Coin of a Blockchain Network (Asset Platform)
 
-You may use the [/asset-platforms-list](/reference/asset-platforms-list) endpoint to obtain the native coin ID of all networks (asset platforms) listed on [www.coingecko.com](http://www.coingecko.com.).
+You may use the [/asset-platforms-list](https://docs.coingecko.com/reference/asset-platforms-list) endpoint to obtain the native coin ID of all networks (asset platforms) listed on [www.coingecko.com](http://www.coingecko.com.).
 
 ## 21. Get Liquidity data of a Liquidity Pool or Token
 
-There are multiple onchain endpoints that provide the liquidity data (`reserve_in_usd`) of a pool, for example: [Specific Pool Data by Pool Address](/reference/pool-address). You may also get liquidity data (`total_reserve_in_usd`) of a token, using endpoints like: [Token Data by Token Address](/reference/token-data-contract-address).
+There are multiple onchain endpoints that provide the liquidity data (`reserve_in_usd`) of a pool, for example: [Specific Pool Data by Pool Address](https://docs.coingecko.com/reference/pool-address). You may also get liquidity data (`total_reserve_in_usd`) of a token, using endpoints like: [Token Data by Token Address](https://docs.coingecko.com/reference/token-data-contract-address).
 
 Note: `reserve_in_usd` (pool) represents the total liquidity of all tokens within a specific pool, whereas `total_reserve_in_usd` (token) refers to the total liquidity portion attributable to a specific token across all available pools.
 
 ## 22. Get list of onchain DEX pools based on specific criteria
 
-* Use [/pools/megafilter](/reference/pools-megafilter) to retrieve data for onchain DEX pools that match a given set of filters.
+* Use [/pools/megafilter](https://docs.coingecko.com/reference/pools-megafilter) to retrieve data for onchain DEX pools that match a given set of filters.
 
 * Example of use cases:
 
@@ -3281,24 +3281,24 @@ Note: `reserve_in_usd` (pool) represents the total liquidity of all tokens withi
 
 * For more details on examples and available filters, refer to:
 
-  * [Changelog — New Megafilter Endpoint](/changelog#february-2025)
+  * [Changelog — New Megafilter Endpoint](https://docs.coingecko.com/changelog#february-2025)
   * [Live Filtering on GeckoTerminal](https://www.geckoterminal.com/)
 
 ## 23. Get List of Trending Coins
 
 * Use the following endpoints to get trending coins and pools:
 
-  * [Trending Search List](/reference/trending-search/) — Trending Coins, NFTs, Categories on CoinGecko.com, based on user searches.
-  * [Trending Search Pools](/reference/trending-search-pools/) — Trending Pools and Tokens on GeckoTerminal.com, based on user searches.
+  * [Trending Search List](https://docs.coingecko.com/reference/trending-search/) — Trending Coins, NFTs, Categories on CoinGecko.com, based on user searches.
+  * [Trending Search Pools](https://docs.coingecko.com/reference/trending-search-pools/) — Trending Pools and Tokens on GeckoTerminal.com, based on user searches.
 
 * Other useful endpoints:
 
-  * [Top Gainers & Losers](/reference/coins-top-gainers-losers) on CoinGecko.com, by specific time duration.
-  * [Trending Pools List](/reference/trending-pools-list) and [Trending Pools by Network](/reference/trending-pools-network) on GeckoTerminal.com, by specific time duration.
+  * [Top Gainers & Losers](https://docs.coingecko.com/reference/coins-top-gainers-losers) on CoinGecko.com, by specific time duration.
+  * [Trending Pools List](https://docs.coingecko.com/reference/trending-pools-list) and [Trending Pools by Network](https://docs.coingecko.com/reference/trending-pools-network) on GeckoTerminal.com, by specific time duration.
 
 ## 24. Get Security Info of Tokens
 
-* By using [Token Info by Token Address](/reference/token-info-contract-address) endpoint, you can obtain the following security related data:
+* By using [Token Info by Token Address](https://docs.coingecko.com/reference/token-info-contract-address) endpoint, you can obtain the following security related data:
 
   * GeckoTerminal Score (Pool, Transaction, Creation, Info, Holders)
   * Holders count and distribution percentage
@@ -3306,7 +3306,7 @@ Note: `reserve_in_usd` (pool) represents the total liquidity of all tokens withi
 
 ## 25. Get Latest Token/Pool Data from Launchpad
 
-* Use [megafilter](/reference/pools-megafilter) endpoint to retrieve latest launchpad data, by flagging `sort=pool_created_at_desc`. Learn more on [changelog](/changelog#now-supported%3A-launchpad-data-pump-fun-%26-more-%2C-granular-ohlcv%2C-and-honeypot-info).
+* Use [megafilter](https://docs.coingecko.com/reference/pools-megafilter) endpoint to retrieve latest launchpad data, by flagging `sort=pool_created_at_desc`. Learn more on [changelog](https://docs.coingecko.com/changelog#now-supported%3A-launchpad-data-pump-fun-%26-more-%2C-granular-ohlcv%2C-and-honeypot-info).
 * **Request example (Get latest pools on Pump.fun)**:
 
 <CodeGroup>
@@ -3340,38 +3340,38 @@ Discover how CoinGecko API is used at CoinGecko.com and GeckoTerminal.com
 
 <img src="https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/5efbe42-image.png?fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=d63633d56cc7a4d3c7d71a931a7112d8" alt="" data-og-width="2200" width="2200" data-og-height="1528" height="1528" data-path="images/docs/5efbe42-image.png" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/5efbe42-image.png?w=280&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=094bb211db972bea7d8b66716f5eed3a 280w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/5efbe42-image.png?w=560&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=da211f3d8c1aec265d53891dc8f43ed6 560w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/5efbe42-image.png?w=840&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=fc59610f652ef640696568679b90b723 840w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/5efbe42-image.png?w=1100&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=4d8905af936b5a34968b6dad1c59f7c5 1100w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/5efbe42-image.png?w=1650&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=1679ab4c405a2ad10f8037bf0e830a0d 1650w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/5efbe42-image.png?w=2500&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=299d7edb9949e51d03a2c357eb0ce127 2500w" />
 
-1. [/global](/reference/crypto-global) — Display global crypto data such as number of active cryptocurrencies, exchanges and etc.
-2. [/search/trending](/reference/trending-search) — Display trending search coins, NFTs and categories.
-3. [/coins/top\_gainers\_losers](/reference/coins-top-gainers-losers) — Display the largest gainers in 24hr.
-4. [/coins/categories](/reference/coins-categories) — Display all the categories list.
-5. [/coins/markets](/reference/coins-markets) — Display all the supported coins with market related data.
+1. [/global](https://docs.coingecko.com/reference/crypto-global) — Display global crypto data such as number of active cryptocurrencies, exchanges and etc.
+2. [/search/trending](https://docs.coingecko.com/reference/trending-search) — Display trending search coins, NFTs and categories.
+3. [/coins/top\_gainers\_losers](https://docs.coingecko.com/reference/coins-top-gainers-losers) — Display the largest gainers in 24hr.
+4. [/coins/categories](https://docs.coingecko.com/reference/coins-categories) — Display all the categories list.
+5. [/coins/markets](https://docs.coingecko.com/reference/coins-markets) — Display all the supported coins with market related data.
 
 ### [Coin Page](https://www.coingecko.com/en/coins/bitcoin)
 
 <img src="https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/2f71923-image.png?fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=4f3f1e9c241ac3c7fb3c6fdfec6f516d" alt="" data-og-width="2104" width="2104" data-og-height="1492" height="1492" data-path="images/docs/2f71923-image.png" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/2f71923-image.png?w=280&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=9a71372f238cd241108306680d5a2a46 280w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/2f71923-image.png?w=560&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=cad968f1b3cf92f47091e006897bd9c8 560w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/2f71923-image.png?w=840&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=0977ba4c9e4fd44e025685bd4527bfbe 840w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/2f71923-image.png?w=1100&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=a7bdbd1e213ad62e8763ad00177567e7 1100w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/2f71923-image.png?w=1650&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=602e29d2123e3681f7f7eca248348f6c 1650w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/2f71923-image.png?w=2500&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=1931234bdbbc82514affdaf503710e38 2500w" />
 
-1. [/coins/\{id} ](/reference/coins-id)— Display all the coin data including name, price, market related data, website, explorers and etc.
-2. [/simple/price](/reference/simple-price) — Display data such as latest coin price, market cap and 24hr trading volume.
-3. * [/coins/\{id}/history](/reference/coins-id-history) — Display the historical price data.
-   * [/coins/\{id}/market\_chart](/reference/coins-id-market-chart) — Display the historical data in line chart.
-   * [/coins/\{id}/ohlc](/reference/coins-id-ohlc) — Display the historical data in candlestick chart.
+1. [/coins/\{id} ](https://docs.coingecko.com/reference/coins-id)— Display all the coin data including name, price, market related data, website, explorers and etc.
+2. [/simple/price](https://docs.coingecko.com/reference/simple-price) — Display data such as latest coin price, market cap and 24hr trading volume.
+3. * [/coins/\{id}/history](https://docs.coingecko.com/reference/coins-id-history) — Display the historical price data.
+   * [/coins/\{id}/market\_chart](https://docs.coingecko.com/reference/coins-id-market-chart) — Display the historical data in line chart.
+   * [/coins/\{id}/ohlc](https://docs.coingecko.com/reference/coins-id-ohlc) — Display the historical data in candlestick chart.
 
 ### [Exchanges Page](https://www.coingecko.com/en/exchanges/hyperliquid-spot)
 
 <img src="https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/9e12298-image.png?fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=8306154da0e21d2b902eadda23cb7dfc" alt="" data-og-width="2128" width="2128" data-og-height="1394" height="1394" data-path="images/docs/9e12298-image.png" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/9e12298-image.png?w=280&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=cad9ee450cbc127562e5bc65d922339a 280w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/9e12298-image.png?w=560&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=03edf7a33acb4c998656ce6b1007e6ad 560w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/9e12298-image.png?w=840&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=ba853e66f1bed4efcf8a6a1bf0ad5c6f 840w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/9e12298-image.png?w=1100&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=ab46e891e1c84ca00961a549e27e9434 1100w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/9e12298-image.png?w=1650&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=b741c73166b49da858f7a9de5e9dda45 1650w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/9e12298-image.png?w=2500&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=063b3126d0c4236464345bb4cf9c38d0 2500w" />
 
-1. [/exchanges/\{id}](/reference/exchanges-id) — Display the exchange information such as name, type, market related data such as trading volume and etc.
-2. [/exchanges/\{id}/volume\_chart](/reference/exchanges-id-volume-chart) — Display the historical volume chart data.
-3. [/exchanges/\{id}/tickers](/reference/exchanges-id-tickers) — Display the exchange's tickers.
+1. [/exchanges/\{id}](https://docs.coingecko.com/reference/exchanges-id) — Display the exchange information such as name, type, market related data such as trading volume and etc.
+2. [/exchanges/\{id}/volume\_chart](https://docs.coingecko.com/reference/exchanges-id-volume-chart) — Display the historical volume chart data.
+3. [/exchanges/\{id}/tickers](https://docs.coingecko.com/reference/exchanges-id-tickers) — Display the exchange's tickers.
 
 ### [NFTs Page](https://www.coingecko.com/en/nft/pudgy-penguins)
 
 <img src="https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/cda9241-image.png?fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=666f359cbc3e65fef656e351617f2b9f" alt="" data-og-width="1845" width="1845" data-og-height="1867" height="1867" data-path="images/docs/cda9241-image.png" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/cda9241-image.png?w=280&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=885542d09a7346a1a7000df7cd2a4452 280w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/cda9241-image.png?w=560&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=16419d75014aab231cda6c6d7596a1da 560w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/cda9241-image.png?w=840&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=1df3f1689b943b7a3f53d7e6099b0897 840w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/cda9241-image.png?w=1100&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=5aa83a631e8e6960cbe416b7d4375fbd 1100w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/cda9241-image.png?w=1650&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=e037c284ec52bb4f9c9c666c8501d99d 1650w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/cda9241-image.png?w=2500&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=c27add5b7c705a2034414567ab1693de 2500w" />
 
-1. [/nfts/\{id}](/reference/nfts-id) — Display NFT data such as name, contract address, website, market related data such as floor price, market cap, volume and etc.
-2. [/nfts/\{id}/market\_chart](/reference/nfts-id-market-chart) — Display the historical market data in chart.
-3. [/nfts/\{id}](/reference/nfts-id) — Display the description of the NFT collection.
-4. [/nfts/\{id}/tickers](/reference/nfts-id-tickers) — Display the tickers of the NFT collection on different NFT marketplace.
+1. [/nfts/\{id}](https://docs.coingecko.com/reference/nfts-id) — Display NFT data such as name, contract address, website, market related data such as floor price, market cap, volume and etc.
+2. [/nfts/\{id}/market\_chart](https://docs.coingecko.com/reference/nfts-id-market-chart) — Display the historical market data in chart.
+3. [/nfts/\{id}](https://docs.coingecko.com/reference/nfts-id) — Display the description of the NFT collection.
+4. [/nfts/\{id}/tickers](https://docs.coingecko.com/reference/nfts-id-tickers) — Display the tickers of the NFT collection on different NFT marketplace.
 
 ## GeckoTerminal
 
@@ -3379,37 +3379,37 @@ Discover how CoinGecko API is used at CoinGecko.com and GeckoTerminal.com
 
 <img src="https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/8d5ac53-image.png?fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=006779468e238af7cb515c3b90d478b7" alt="" data-og-width="3023" width="3023" data-og-height="1881" height="1881" data-path="images/docs/8d5ac53-image.png" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/8d5ac53-image.png?w=280&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=1e64c2a847217aeb6a1524ba665d0bb7 280w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/8d5ac53-image.png?w=560&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=98994fc84ed994e69ef12ea133093092 560w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/8d5ac53-image.png?w=840&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=e1f9614a1227137104e693480cb739cb 840w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/8d5ac53-image.png?w=1100&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=de8a324c611cc5b2557a1d130224346a 1100w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/8d5ac53-image.png?w=1650&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=d94dee12678b5c879f5e6ebafe107d4a 1650w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/8d5ac53-image.png?w=2500&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=96c61ccae7576b9f486e28459ca4e963 2500w" />
 
-1. [/onchain/search/pools ](/reference/search-pools)— Allow users to search for pools on GeckoTerminal.
-2. [/onchain/networks](/reference/networks-list) — Display a list of supported networks on GeckoTerminal.
-3. [/onchain/networks/trending\_pools](/reference/trending-pools-list) — Display a list of trending pools across all networks on GeckoTerminal.
-4. [/onchain/networks/new\_pools](/reference/latest-pools-list) — Display all the latest pools across all networks on GeckoTerminal.
-5. [/onchain/categories](/reference/categories-list) — Display all the onchain categories on GeckoTerminal.
+1. [/onchain/search/pools ](https://docs.coingecko.com/reference/search-pools)— Allow users to search for pools on GeckoTerminal.
+2. [/onchain/networks](https://docs.coingecko.com/reference/networks-list) — Display a list of supported networks on GeckoTerminal.
+3. [/onchain/networks/trending\_pools](https://docs.coingecko.com/reference/trending-pools-list) — Display a list of trending pools across all networks on GeckoTerminal.
+4. [/onchain/networks/new\_pools](https://docs.coingecko.com/reference/latest-pools-list) — Display all the latest pools across all networks on GeckoTerminal.
+5. [/onchain/categories](https://docs.coingecko.com/reference/categories-list) — Display all the onchain categories on GeckoTerminal.
 
 ### [Chain Page](https://www.geckoterminal.com/eth/pools)
 
 <img src="https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/7b49f3e-image.png?fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=26f7cdd8a92a237ac6358be830d42c55" alt="" data-og-width="3023" width="3023" data-og-height="1883" height="1883" data-path="images/docs/7b49f3e-image.png" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/7b49f3e-image.png?w=280&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=46918d142183d419c4d2ddb6852c2b9e 280w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/7b49f3e-image.png?w=560&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=2b60fc1e44832b2df0b0fa39e01cc6dc 560w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/7b49f3e-image.png?w=840&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=9ce014411117fb3907620cca658c4b81 840w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/7b49f3e-image.png?w=1100&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=4e1b0fb9ea89441c506fe7cd66007e91 1100w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/7b49f3e-image.png?w=1650&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=bc062efdc17e4506c6d1fa9c203e524f 1650w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/7b49f3e-image.png?w=2500&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=ee169d02c1f17780b97daf3ee9e34189 2500w" />
 
-1. [/onchain/networks/\{network}/dexes](/reference/dexes-list) — Display all the supported dex on a network on GeckoTerminal.
-2. [/onchain/networks/\{network}/trending\_pools](/reference/trending-pools-network) — Display a list of trending pools on a network on GeckoTerminal.
-3. [/onchain/networks/\{network}/new\_pools](/reference/latest-pools-network) — Display a list of new pools on a network on GeckoTerminal.
-4. [/onchain/networks/\{network}/pools](/reference/top-pools-network) — Display all the top pools on a network on GeckoTerminal.
-5. [/onchain/categories/\{category\_id}/pools](/reference/pools-category) — Display all the pools under a specific onchain category on GeckoTerminal.
+1. [/onchain/networks/\{network}/dexes](https://docs.coingecko.com/reference/dexes-list) — Display all the supported dex on a network on GeckoTerminal.
+2. [/onchain/networks/\{network}/trending\_pools](https://docs.coingecko.com/reference/trending-pools-network) — Display a list of trending pools on a network on GeckoTerminal.
+3. [/onchain/networks/\{network}/new\_pools](https://docs.coingecko.com/reference/latest-pools-network) — Display a list of new pools on a network on GeckoTerminal.
+4. [/onchain/networks/\{network}/pools](https://docs.coingecko.com/reference/top-pools-network) — Display all the top pools on a network on GeckoTerminal.
+5. [/onchain/categories/\{category\_id}/pools](https://docs.coingecko.com/reference/pools-category) — Display all the pools under a specific onchain category on GeckoTerminal.
 
 ### [Pool Page](https://www.geckoterminal.com/eth/pools/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640)
 
 <img src="https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/43e04c2-image.png?fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=dedf21f04c9bbf11fbf376f83b101969" alt="" data-og-width="3023" width="3023" data-og-height="1887" height="1887" data-path="images/docs/43e04c2-image.png" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/43e04c2-image.png?w=280&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=6e355b30d2a491ccf540d269d631721c 280w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/43e04c2-image.png?w=560&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=2088b61a6ae8a189a4249db17fd75928 560w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/43e04c2-image.png?w=840&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=ced214f96c8c869eca7627410782dc7a 840w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/43e04c2-image.png?w=1100&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=722d09f605c5a0eabeda3e194f6bd51c 1100w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/43e04c2-image.png?w=1650&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=4d921a31f241b78515f25be7a698a6ff 1650w, https://mintcdn.com/coingecko/M02rMX2XJMwBGpCe/images/docs/43e04c2-image.png?w=2500&fit=max&auto=format&n=M02rMX2XJMwBGpCe&q=85&s=1f522f2b1fbc4e1cf96c5e4bf7cb3f44 2500w" />
 
-1. * [/onchain/networks/\{network}/pools/\{address}](/reference/pool-address) — Display pool data such as price, transactions, volume and etc.
-   * [/onchain/networks/\{network}/pools/\{pool\_address}/info](/reference/pool-token-info-contract-address) — Display pool information such as name, symbol, image URL, description and etc.
-2. [/onchain/networks/\{network}/pools/\{pool\_address}/ohlcv/\{timeframe}](/reference/pool-ohlcv-contract-address) — Display the OHLCV chart of the pool.
-3. [/onchain/networks/\{network}/pools/\{pool\_address}/trades](/reference/pool-trades-contract-address) — Display the trades of the pool in the past 24 hours.
+1. * [/onchain/networks/\{network}/pools/\{address}](https://docs.coingecko.com/reference/pool-address) — Display pool data such as price, transactions, volume and etc.
+   * [/onchain/networks/\{network}/pools/\{pool\_address}/info](https://docs.coingecko.com/reference/pool-token-info-contract-address) — Display pool information such as name, symbol, image URL, description and etc.
+2. [/onchain/networks/\{network}/pools/\{pool\_address}/ohlcv/\{timeframe}](https://docs.coingecko.com/reference/pool-ohlcv-contract-address) — Display the OHLCV chart of the pool.
+3. [/onchain/networks/\{network}/pools/\{pool\_address}/trades](https://docs.coingecko.com/reference/pool-trades-contract-address) — Display the trades of the pool in the past 24 hours.
 
 ### [Categories Page](https://www.geckoterminal.com/category)
 
 <img src="https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/cd8f5e-image.png?fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=912a6001736c59cf4fcdbf7bdce05814" alt="" data-og-width="3023" width="3023" data-og-height="1887" height="1887" data-path="images/docs/cd8f5e-image.png" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/cd8f5e-image.png?w=280&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=c97b53b79138f3e1e2f909e8e563c7fe 280w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/cd8f5e-image.png?w=560&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=84aedbbff60dc6f80fa478d0f389c31c 560w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/cd8f5e-image.png?w=840&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=80ff73fe40ba9b98c15894752d42a981 840w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/cd8f5e-image.png?w=1100&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=331705cce03b7b5aea56d00bc22a294d 1100w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/cd8f5e-image.png?w=1650&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=28fe2d9a7552ce2477be4c616b7f4fad 1650w, https://mintcdn.com/coingecko/Jrf60GKLjFfVX1SS/images/docs/cd8f5e-image.png?w=2500&fit=max&auto=format&n=Jrf60GKLjFfVX1SS&q=85&s=b7750c4ae2c4de27b6b6bedb41c8af96 2500w" />
 
-1. [/onchain/categories](/reference/categories-list) — Display list of onchain categories with market data.
-2. [/onchain/categories/\{id}/pools](/reference/pools-category) — Display list of pools with market data of a specific onchain category.
+1. [/onchain/categories](https://docs.coingecko.com/reference/categories-list) — Display list of onchain categories with market data.
+2. [/onchain/categories/\{id}/pools](https://docs.coingecko.com/reference/pools-category) — Display list of pools with market data of a specific onchain category.
 
 
 # CoinGecko MCP Server (Beta)
@@ -3731,7 +3731,7 @@ Choosing between a Demo and Pro key for your MCP server impacts your access to d
 | **Rate Limit**      | 30 calls/min                                                                                                                                                 | Starts at 500 calls/min                                                                                                                                                                                                                                                                                      |
 | **Monthly Credits** | 10,000                                                                                                                                                       | Starts at 500,000                                                                                                                                                                                                                                                                                            |
 | **Historical Data** | Past 1 year                                                                                                                                                  | From 2013 until now                                                                                                                                                                                                                                                                                          |
-| **MCP Tools**       | Limited access                                                                                                                                               | Full access, including exclusive tools:<br />- [Top Gainers & Losers](/reference/coins-top-gainers-losers)<br />- [NFTs Collection Historical Chart](/reference/nfts-id-market-chart)<br />- [🔥 Megafilter for Pools](/reference/pools-megafilter)<br />- [Pools by Category ID](/reference/pools-category) |
+| **MCP Tools**       | Limited access                                                                                                                                               | Full access, including exclusive tools:<br />- [Top Gainers & Losers](https://docs.coingecko.com/reference/coins-top-gainers-losers)<br />- [NFTs Collection Historical Chart](https://docs.coingecko.com/reference/nfts-id-market-chart)<br />- [🔥 Megafilter for Pools](https://docs.coingecko.com/reference/pools-megafilter)<br />- [Pools by Category ID](https://docs.coingecko.com/reference/pools-category) |
 
 🔥 Ready to upgrade? Explore [our API plans](https://www.coingecko.com/en/api/pricing).
 
@@ -3746,7 +3746,7 @@ For a deeper dive, read the [official documentation](https://www.stainless.com/c
 
 ## Using `llms.txt`
 
-To help AI models interact with CoinGecko data effectively, we provide an `llms.txt` file at [/llms-full.txt](/llms-full.txt). This file gives models context on how to best query our API, ensuring more accurate and efficient data retrieval. We recommend utilizing this in your integrations.
+To help AI models interact with CoinGecko data effectively, we provide an `llms.txt` file at [/llms-full.txt](https://docs.coingecko.com/llms-full.txt). This file gives models context on how to best query our API, ensuring more accurate and efficient data retrieval. We recommend utilizing this in your integrations.
 
 ***
 
@@ -3989,8 +3989,8 @@ Source: https://docs.coingecko.com/docs/setting-up-your-api-key
 ## 2. Making API Request
 
 * **Root URLs:**
-  * Pro API: `https://pro-api.coingecko.com/api/v3/`, refer to [Pro API Authentication](/reference/authentication).
-  * Demo API: `https://api.coingecko.com/api/v3/`, refer to [Demo API Authentication](/v3.0.1/reference/authentication).
+  * Pro API: `https://pro-api.coingecko.com/api/v3/`, refer to [Pro API Authentication](https://docs.coingecko.com/reference/authentication).
+  * Demo API: `https://api.coingecko.com/api/v3/`, refer to [Demo API Authentication](https://docs.coingecko.com/v3.0.1/reference/authentication).
 * **Example using the `/ping` endpoint:**
 
   * Pro API: `https://pro-api.coingecko.com/api/v3/ping?x_cg_pro_api_key=YOUR_API_KEY`
@@ -4282,7 +4282,7 @@ Some of the useful links to help you navigate while using the CoinGecko API
 
 #### Using `llms.txt` for AI use cases
 
-* [/llms-full.txt](/llms-full.txt)
+* [/llms-full.txt](https://docs.coingecko.com/llms-full.txt)
 
 #### Attributing CoinGecko Brand
 
@@ -4401,7 +4401,7 @@ If this is your first time using the Pro API key, you can supply API Key to the 
 1. Header (Recommended): `x-cg-pro-api-key`
 2. Query String Parameter: `x_cg_pro_api_key`
 
-| Authentication Method  | Example using [Ping](/reference/ping-server) Endpoint                                         |
+| Authentication Method  | Example using [Ping](https://docs.coingecko.com/reference/ping-server) Endpoint                                         |
 | ---------------------- | --------------------------------------------------------------------------------------------- |
 | Header (cURL)          | `curl -X GET "https://pro-api.coingecko.com/api/v3/ping" -H "x-cg-pro-api-key: YOUR_API_KEY"` |
 | Query String Parameter | `https://pro-api.coingecko.com/api/v3/ping?x_cg_pro_api_key=YOUR_API_KEY`                     |
@@ -4417,7 +4417,7 @@ You can now use the Pro-API key (exclusive to any paid plan subscriber) to call 
   * When using the CG Pro API to access onchain DEX data, include the `/onchain` endpoint path in the request.
 </Note>
 
-| Authentication Method  | Example using [Simple Token Price](/reference/onchain-simple-price) Endpoint                                                                                                  |
+| Authentication Method  | Example using [Simple Token Price](https://docs.coingecko.com/reference/onchain-simple-price) Endpoint                                                                                                  |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Header (cURL)          | `curl -X GET "<https://pro-api.coingecko.com/api/v3/onchain/simple/networks/eth/token_price/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2>" -H "x-cg-pro-api-key: YOUR_API_KEY"` |
 | Query String Parameter | `https://pro-api.coingecko.com/api/v3/onchain/simple/networks/eth/token_price/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?x_cg_pro_api_key=YOUR_API_KEY`                       |
@@ -4429,7 +4429,7 @@ You can now use the Pro-API key (exclusive to any paid plan subscriber) to call 
 * Unsuccessful Requests (Status 4xx, 5xx, etc) will not count towards credit deduction.
 * Regardless of the HTTP status code returned (including 4xx and 5xx errors), all API requests will count towards your **minute rate limit**.
 * Your monthly credit & rate limit are determined by the paid plan to which you subscribe. For more details, please refer to this [page](https://www.coingecko.com/en/api/pricing).
-* To check the API usage, please go to the [developer dashboard](https://www.coingecko.com/en/developers/dashboard) or follow the guide [here](/reference/setting-up-your-api-key#4-api-usage-report)
+* To check the API usage, please go to the [developer dashboard](https://www.coingecko.com/en/developers/dashboard) or follow the guide [here](https://docs.coingecko.com/reference/setting-up-your-api-key#4-api-usage-report)
 
 
 # 💼 Categories List
@@ -4441,8 +4441,8 @@ This endpoint allows you to **query all the supported categories on GeckoTermina
 <Tip>
   ### Tips
 
-  * You can retrieve pools or tokens of a specific category with this endpoint: [Pools by Category ID](/reference/pools-category).
-  * GeckoTerminal categories are different from [CoinGecko categories](/reference/coins-categories-list).
+  * You can retrieve pools or tokens of a specific category with this endpoint: [Pools by Category ID](https://docs.coingecko.com/reference/pools-category).
+  * GeckoTerminal categories are different from [CoinGecko categories](https://docs.coingecko.com/reference/coins-categories-list).
 </Tip>
 
 <Note>
@@ -4466,7 +4466,7 @@ This endpoint allows you to **query all the coins categories with market data (m
 
   * CoinGecko Equivalent Page: [https://www.coingecko.com/en/categories](https://www.coingecko.com/en/categories).
   * Cache / Update Frequency: every 5 minutes for all the API plans.
-  * CoinGecko categories are different from [GeckoTerminal categories](/reference/categories-list).
+  * CoinGecko categories are different from [GeckoTerminal categories](https://docs.coingecko.com/reference/categories-list).
 </Note>
 
 
@@ -4487,7 +4487,7 @@ This endpoint allows you to **query all the coins categories on CoinGecko**
 
   * CoinGecko Equivalent Page: [https://www.coingecko.com/en/categories](https://www.coingecko.com/en/categories).
   * Cache / Update Frequency:  every 5 minutes for all the API plans.
-  * CoinGecko categories are different from [GeckoTerminal categories](/reference/categories-list).
+  * CoinGecko categories are different from [GeckoTerminal categories](https://docs.coingecko.com/reference/categories-list).
 </Note>
 
 
@@ -4500,7 +4500,7 @@ This endpoint allows you to **query all the metadata (image, websites, socials, 
 <Warning>
   ### Notice
 
-  * Please note that the `twitter_followers` data field will no longer be supported by our API starting on May 15, 2025. Please refer to [changelog](/changelog#upcoming-change-notice%3A-removal-of-twitter-followers-data) for more details.
+  * Please note that the `twitter_followers` data field will no longer be supported by our API starting on May 15, 2025. Please refer to [changelog](https://docs.coingecko.com/changelog#upcoming-change-notice%3A-removal-of-twitter-followers-data) for more details.
 </Warning>
 
 <Tip>
@@ -4508,7 +4508,7 @@ This endpoint allows you to **query all the metadata (image, websites, socials, 
 
   * You may obtain the asset platform and contract address via several ways:
     * refers to respective coin page and find 'contract address'.
-    * refers to [`/coins/list`](/reference/coins-list) endpoint (`include platform = true`).
+    * refers to [`/coins/list`](https://docs.coingecko.com/reference/coins-list) endpoint (`include platform = true`).
 </Tip>
 
 <Note>
@@ -4530,7 +4530,7 @@ This endpoint allows you to **query all the metadata (image, websites, socials, 
 
   * You may obtain the coin `id` (API ID) via several ways:
     * refers to respective coin page and find "API ID".
-    * refers to [`/coins/list`](/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/reference/coins-list) endpoint.
     * refers to Google Sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
   * You may also flag to include more data such as tickers, market data, community data, developer data and sparkline.
   * You may refer to `last_updated` in the endpoint response to check whether the price is stale.
@@ -4539,7 +4539,7 @@ This endpoint allows you to **query all the metadata (image, websites, socials, 
 <Note>
   ### Note
 
-  * Tickers are limited to 100 items, to get more tickers, please go to [/coins/{id}/tickers](/reference/coins-id-tickers).
+  * Tickers are limited to 100 items, to get more tickers, please go to [/coins/{id}/tickers](https://docs.coingecko.com/reference/coins-id-tickers).
   * Coin descriptions may include newline characters represented as `\r\n` (escape sequences), which may require processing for proper formatting.
   * When `dex_pair_format=symbol`, the DEX pair `base` and `target` are displayed in symbol format (e.g. `WETH`, `USDC`) instead of as contract addresses.
   * Cache/Update Frequency:
@@ -4606,7 +4606,7 @@ This endpoint allows you to **query the historical data (price, market cap, 24hr
 
   * You may obtain the coin ID (API ID) via several ways:
     * refers to respective coin page and find 'API ID'.
-    * refers to [`/coins/list`](/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/reference/coins-list) endpoint.
     * refers to google sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
 </Tip>
 
@@ -4629,7 +4629,7 @@ This endpoint allows you to **get the historical chart data of a coin including 
 
   * You may obtain the coin ID (API ID) via several ways:
     * refers to respective coin page and find 'API ID'.
-    * refers to [`/coins/list`](/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/reference/coins-list) endpoint.
     * refers to google sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
   * You may use tools like [epoch converter ](https://www.epochconverter.com) to convert human readable date to UNIX timestamp.
 </Tip>
@@ -4662,7 +4662,7 @@ This endpoint allows you to **get the historical chart data of a coin within cer
 
   * You may obtain the coin ID (API ID) via several ways:
     * refers to respective coin page and find 'API ID'.
-    * refers to [`/coins/list`](/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/reference/coins-list) endpoint.
     * refers to google sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
   * Supports ISO date strings (`YYYY-MM-DD` or\
     `YYYY-MM-DDTHH:MM`, recommended for best compatibility) or UNIX timestamps.
@@ -4703,9 +4703,9 @@ This endpoint allows you to **get the OHLC chart (Open, High, Low, Close) of a c
 
   * You may obtain the coin ID (API ID) via several ways:
     * refers to respective coin page and find 'API ID'.
-    * refers to [`/coins/list`](/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/reference/coins-list) endpoint.
     * refers to Google Sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
-  * For historical chart data with better granularity, you may consider using [/coins/\{id}/market\_chart](/reference/coins-id-market-chart) endpoint.
+  * For historical chart data with better granularity, you may consider using [/coins/\{id}/market\_chart](https://docs.coingecko.com/reference/coins-id-market-chart) endpoint.
 </Tip>
 
 <Note>
@@ -4736,9 +4736,9 @@ This endpoint allows you to **get the OHLC chart (Open, High, Low, Close) of a c
 
   * You may obtain the coin ID (API ID) via several ways:
     * refers to respective coin page and find 'API ID'.
-    * refers to [`/coins/list`](/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/reference/coins-list) endpoint.
     * refers to google sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
-  * For historical chart data with better granularity, you may consider using [/coins/{`id`}/market\_chart](/reference/coins-id-market-chart) endpoint.
+  * For historical chart data with better granularity, you may consider using [/coins/{`id`}/market\_chart](https://docs.coingecko.com/reference/coins-id-market-chart) endpoint.
   * Supports ISO date strings (`YYYY-MM-DD` or\
     `YYYY-MM-DDTHH:MM`, recommended for best compatibility) or UNIX timestamps.
 </Tip>
@@ -4771,7 +4771,7 @@ This endpoint allows you to **query the coin tickers on both centralized exchang
 
   * You may obtain the coin ID (API ID) via several ways:
     * refers to respective coin page and find 'API ID'.
-    * refers to [`/coins/list`](/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/reference/coins-list) endpoint.
     * refers to google sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
   * You may specify the `exchange_ids` if you want to retrieve tickers for specific exchange only.
   * You may include values such as  `page` to specify which page of responses you would like to show.
@@ -4842,7 +4842,7 @@ This endpoint allows you to **query all the supported coins on CoinGecko with co
   ### Tips
 
   * You may use this endpoint to query the list of coins with coin id for other endpoints that contain params like `id` or `ids` (coin ID).
-  * By default, this endpoint returns full list of active coins that are currently listed on CoinGecko.com , you can also flag `status=inactive` to retrieve coins that are no longer available on CoinGecko.com . The inactive coin IDs can also be used with [selected historical data](/changelog#april-2024) endpoints.
+  * By default, this endpoint returns full list of active coins that are currently listed on CoinGecko.com , you can also flag `status=inactive` to retrieve coins that are no longer available on CoinGecko.com . The inactive coin IDs can also be used with [selected historical data](https://docs.coingecko.com/changelog#april-2024) endpoints.
 </Tip>
 
 <Note>
@@ -4878,7 +4878,7 @@ This endpoint allows you to **query all the supported coins with price, market c
   ### Tips
 
   * You can retrieve specific coins using their unique `ids`, `names`, or `symbols` instead of returning the whole list.
-  * To filter results based on the coin's category, use the `category` param (refer to [`/coins/categories/list`](/reference/coins-categories-list) for available categories).
+  * To filter results based on the coin's category, use the `category` param (refer to [`/coins/categories/list`](https://docs.coingecko.com/reference/coins-categories-list) for available categories).
   * Use the `per_page` and `page` params to manage the number of results you receive and navigate through the data.
 </Tip>
 
@@ -4935,7 +4935,7 @@ This endpoint allows you to **get the historical chart data including time in UN
 
   * You may obtain the asset platform and contract address via several ways:
     * refers to respective coin page and find 'contract address'.
-    * refers to [`/coins/list`](/reference/coins-list) endpoint (`include platform = true`).
+    * refers to [`/coins/list`](https://docs.coingecko.com/reference/coins-list) endpoint (`include platform = true`).
 </Tip>
 
 <Note>
@@ -4966,7 +4966,7 @@ This endpoint allows you to **get the historical chart data within certain time 
 
   * You may obtain the asset platform and contract address via several ways:
     * refers to respective coin page and find 'contract address'.
-    * refers to [`/coins/list`](/reference/coins-list) endpoint (`include platform = true`).
+    * refers to [`/coins/list`](https://docs.coingecko.com/reference/coins-list) endpoint (`include platform = true`).
   * Supports ISO date strings (`YYYY-MM-DD` or\
     `YYYY-MM-DDTHH:MM`, recommended for best compatibility) or UNIX timestamps.
 </Tip>
@@ -5115,112 +5115,112 @@ Source: https://docs.coingecko.com/reference/endpoint-overview
 
 | Endpoint                                                                                               | Description                                                                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [/ping](/reference/ping-server)                                                                        | Check the API server status                                                                                                                                                            |
-| 💼 [/key](/reference/api-usage)                                                                        | Check account's API usage                                                                                                                                                              |
-| [/simple/price](/reference/simple-price)                                                               | Query the prices of one or more coins by using their unique Coin API IDs                                                                                                               |
-| [/simple/token\_price/\{id}](/reference/simple-token-price)                                            | Query the prices of one or more coins by using their unique Coin API IDs                                                                                                               |
-| [/simple/supported\_vs\_currencies](/reference/simple-supported-currencies)                            | Query all the supported currencies on CoinGecko                                                                                                                                        |
-| [/coins/list](/reference/coins-list)                                                                   | Query all the supported coins on CoinGecko with coins ID, name and symbol                                                                                                              |
-| [/coins/markets](/reference/coins-markets)                                                             | Query all the supported coins with price, market cap, volume and market related data                                                                                                   |
-| [/coins/\{id}](/reference/coins-id)                                                                    | Query all the metadata (image, websites, socials, description, contract address, etc.) from the CoinGecko coin page based on a particular coin ID                                      |
-| [/coins/\{id}/tickers](/reference/coins-id-tickers)                                                    | Query the coin tickers on both centralized exchange (CEX) and decentralized exchange (DEX) based on a particular coin ID                                                               |
-| [/coins/\{id}/history](/reference/coins-id-history)                                                    | Query the historical data (price, market cap, 24hr volume, ...) at a given date for a coin based on a particular coin ID                                                               |
-| [/coins/\{id}/market\_chart](/reference/coins-id-market-chart)                                         | Get the historical chart data of a coin including time in UNIX, price, market cap and 24hr volume based on particular coin ID                                                          |
-| [/coins/\{id}/market\_chart/range](/reference/coins-id-market-chart-range)                             | Get the historical chart data of a coin within certain time range in UNIX along with price, market cap and 24hr volume based on particular coin ID                                     |
-| [/coins-id-ohlc](/reference/coins-id-ohlc)                                                             | Get the OHLC chart (Open, High, Low, Close) of a coin based on particular coin ID                                                                                                      |
-| 💼 [/coins/\{id}/ohlc/range](/reference/coins-id-ohlc-range)                                           | Get the OHLC chart (Open, High, Low, Close) of a coin within a range of timestamp based on particular coin ID                                                                          |
-| 💼 [/coins/top\_gainers\_losers](/reference/coins-top-gainers-losers)                                  | Query the top 30 coins with largest price gain and loss by a specific time duration                                                                                                    |
-| 💼 [/coins/list/new](/reference/coins-list-new)                                                        | Query the latest 200 coins that recently listed on CoinGecko                                                                                                                           |
-| 👑 [/coins/\{id}/circulating\_supply\_chart](/reference/coins-id-circulating-supply-chart)             | Query historical circulating supply of a coin by number of days away from now based on provided coin ID                                                                                |
-| 👑 [/coins/\{id}/circulating\_supply\_chart/range](/reference/coins-id-circulating-supply-chart-range) | Query historical circulating supply of a coin, within a range of timestamp based on the provided coin ID                                                                               |
-| 👑 [/coins/\{id}/total\_supply\_chart](/reference/coins-id-total-supply-chart)                         | Query historical total supply of a coin by number of days away from now based on provided coin ID                                                                                      |
-| 👑 [/coins/\{id}/total\_supply\_chart/range](/reference/coins-id-total-supply-chart-range)             | Query historical total supply of a coin, within a range of timestamp based on the provided coin ID                                                                                     |
-| [/coins/../contract/..](/reference/coins-contract-address)                                             | Query all the metadata (image, websites, socials, description, contract address, etc.) from the CoinGecko coin page based on an asset platform and a particular token contract address |
-| [/coins/../contract/../market\_chart](/reference/contract-address-market-chart)                        | Get the historical chart data including time in UNIX, price, market cap and 24hr volume based on asset platform and particular token contract address                                  |
-| [/coins/../contract/../market\_chart/range](/reference/contract-address-market-chart-range)            | Get the historical chart data within certain time range in UNIX along with price, market cap and 24hr volume based on asset platform and particular token contract address             |
-| [/coins/categories/list](/reference/coins-categories-list)                                             | Query all the coins categories on CoinGecko                                                                                                                                            |
-| [/coins/categories](/reference/coins-categories)                                                       | Query all the coins categories with market data (market cap, volume, ...) on CoinGecko                                                                                                 |
+| [/ping](https://docs.coingecko.com/reference/ping-server)                                                                        | Check the API server status                                                                                                                                                            |
+| 💼 [/key](https://docs.coingecko.com/reference/api-usage)                                                                        | Check account's API usage                                                                                                                                                              |
+| [/simple/price](https://docs.coingecko.com/reference/simple-price)                                                               | Query the prices of one or more coins by using their unique Coin API IDs                                                                                                               |
+| [/simple/token\_price/\{id}](https://docs.coingecko.com/reference/simple-token-price)                                            | Query the prices of one or more coins by using their unique Coin API IDs                                                                                                               |
+| [/simple/supported\_vs\_currencies](https://docs.coingecko.com/reference/simple-supported-currencies)                            | Query all the supported currencies on CoinGecko                                                                                                                                        |
+| [/coins/list](https://docs.coingecko.com/reference/coins-list)                                                                   | Query all the supported coins on CoinGecko with coins ID, name and symbol                                                                                                              |
+| [/coins/markets](https://docs.coingecko.com/reference/coins-markets)                                                             | Query all the supported coins with price, market cap, volume and market related data                                                                                                   |
+| [/coins/\{id}](https://docs.coingecko.com/reference/coins-id)                                                                    | Query all the metadata (image, websites, socials, description, contract address, etc.) from the CoinGecko coin page based on a particular coin ID                                      |
+| [/coins/\{id}/tickers](https://docs.coingecko.com/reference/coins-id-tickers)                                                    | Query the coin tickers on both centralized exchange (CEX) and decentralized exchange (DEX) based on a particular coin ID                                                               |
+| [/coins/\{id}/history](https://docs.coingecko.com/reference/coins-id-history)                                                    | Query the historical data (price, market cap, 24hr volume, ...) at a given date for a coin based on a particular coin ID                                                               |
+| [/coins/\{id}/market\_chart](https://docs.coingecko.com/reference/coins-id-market-chart)                                         | Get the historical chart data of a coin including time in UNIX, price, market cap and 24hr volume based on particular coin ID                                                          |
+| [/coins/\{id}/market\_chart/range](https://docs.coingecko.com/reference/coins-id-market-chart-range)                             | Get the historical chart data of a coin within certain time range in UNIX along with price, market cap and 24hr volume based on particular coin ID                                     |
+| [/coins-id-ohlc](https://docs.coingecko.com/reference/coins-id-ohlc)                                                             | Get the OHLC chart (Open, High, Low, Close) of a coin based on particular coin ID                                                                                                      |
+| 💼 [/coins/\{id}/ohlc/range](https://docs.coingecko.com/reference/coins-id-ohlc-range)                                           | Get the OHLC chart (Open, High, Low, Close) of a coin within a range of timestamp based on particular coin ID                                                                          |
+| 💼 [/coins/top\_gainers\_losers](https://docs.coingecko.com/reference/coins-top-gainers-losers)                                  | Query the top 30 coins with largest price gain and loss by a specific time duration                                                                                                    |
+| 💼 [/coins/list/new](https://docs.coingecko.com/reference/coins-list-new)                                                        | Query the latest 200 coins that recently listed on CoinGecko                                                                                                                           |
+| 👑 [/coins/\{id}/circulating\_supply\_chart](https://docs.coingecko.com/reference/coins-id-circulating-supply-chart)             | Query historical circulating supply of a coin by number of days away from now based on provided coin ID                                                                                |
+| 👑 [/coins/\{id}/circulating\_supply\_chart/range](https://docs.coingecko.com/reference/coins-id-circulating-supply-chart-range) | Query historical circulating supply of a coin, within a range of timestamp based on the provided coin ID                                                                               |
+| 👑 [/coins/\{id}/total\_supply\_chart](https://docs.coingecko.com/reference/coins-id-total-supply-chart)                         | Query historical total supply of a coin by number of days away from now based on provided coin ID                                                                                      |
+| 👑 [/coins/\{id}/total\_supply\_chart/range](https://docs.coingecko.com/reference/coins-id-total-supply-chart-range)             | Query historical total supply of a coin, within a range of timestamp based on the provided coin ID                                                                                     |
+| [/coins/../contract/..](https://docs.coingecko.com/reference/coins-contract-address)                                             | Query all the metadata (image, websites, socials, description, contract address, etc.) from the CoinGecko coin page based on an asset platform and a particular token contract address |
+| [/coins/../contract/../market\_chart](https://docs.coingecko.com/reference/contract-address-market-chart)                        | Get the historical chart data including time in UNIX, price, market cap and 24hr volume based on asset platform and particular token contract address                                  |
+| [/coins/../contract/../market\_chart/range](https://docs.coingecko.com/reference/contract-address-market-chart-range)            | Get the historical chart data within certain time range in UNIX along with price, market cap and 24hr volume based on asset platform and particular token contract address             |
+| [/coins/categories/list](https://docs.coingecko.com/reference/coins-categories-list)                                             | Query all the coins categories on CoinGecko                                                                                                                                            |
+| [/coins/categories](https://docs.coingecko.com/reference/coins-categories)                                                       | Query all the coins categories with market data (market cap, volume, ...) on CoinGecko                                                                                                 |
 
 ## CoinGecko Endpoints: NFT
 
 | Endpoint                                                                               | Description                                                                                                                                                                  |
 | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [/nfts/list](/reference/nfts-list)                                                     | Query all supported NFTs with ID, contract address, name, asset platform ID and symbol on CoinGecko                                                                          |
-| [/nfts/..](/reference/nfts-id)                                                         | Query all the NFT data (name, floor price, 24hr volume, ...) based on the NFT collection ID                                                                                  |
-| [/nfts/../contract/..](/reference/nfts-contract-address)                               | Query all the NFT data (name, floor price, 24hr volume, ...) based on the NFT collection contract address and respective asset platform                                      |
-| 💼 [/nfts/markets](/reference/nfts-markets)                                            | Query all the supported NFT collections with floor price, market cap, volume and market related data on CoinGecko                                                            |
-| 💼 [/nfts/../market\_chart](/reference/nfts-id-market-chart)                           | Query historical market data of a NFT collection, including floor price, market cap, and 24hr volume, by number of days away from now                                        |
-| 💼 [/nfts/../contract/../market\_chart](/reference/nfts-contract-address-market-chart) | Query historical market data of a NFT collection, including floor price, market cap, and 24hr volume, by number of days away from now based on the provided contract address |
-| 💼 [/nfts/../tickers](/reference/nfts-id-tickers)                                      | Query the latest floor price and 24hr volume of a NFT collection, on each NFT marketplace, e.g. OpenSea and LooksRare                                                        |
+| [/nfts/list](https://docs.coingecko.com/reference/nfts-list)                                                     | Query all supported NFTs with ID, contract address, name, asset platform ID and symbol on CoinGecko                                                                          |
+| [/nfts/..](https://docs.coingecko.com/reference/nfts-id)                                                         | Query all the NFT data (name, floor price, 24hr volume, ...) based on the NFT collection ID                                                                                  |
+| [/nfts/../contract/..](https://docs.coingecko.com/reference/nfts-contract-address)                               | Query all the NFT data (name, floor price, 24hr volume, ...) based on the NFT collection contract address and respective asset platform                                      |
+| 💼 [/nfts/markets](https://docs.coingecko.com/reference/nfts-markets)                                            | Query all the supported NFT collections with floor price, market cap, volume and market related data on CoinGecko                                                            |
+| 💼 [/nfts/../market\_chart](https://docs.coingecko.com/reference/nfts-id-market-chart)                           | Query historical market data of a NFT collection, including floor price, market cap, and 24hr volume, by number of days away from now                                        |
+| 💼 [/nfts/../contract/../market\_chart](https://docs.coingecko.com/reference/nfts-contract-address-market-chart) | Query historical market data of a NFT collection, including floor price, market cap, and 24hr volume, by number of days away from now based on the provided contract address |
+| 💼 [/nfts/../tickers](https://docs.coingecko.com/reference/nfts-id-tickers)                                      | Query the latest floor price and 24hr volume of a NFT collection, on each NFT marketplace, e.g. OpenSea and LooksRare                                                        |
 
 ## CoinGecko Endpoints: Exchanges & Derivatives
 
 | Endpoint                                                                              | Description                                                                                                                   |
 | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| [/exchanges](/reference/exchanges)                                                    | Query all the supported exchanges with exchanges' data (ID, name, country, ...) that have active trading volumes on CoinGecko |
-| [/exchanges/list](/reference/exchanges-list)                                          | Query all the exchanges with ID and name                                                                                      |
-| [/exchanges/\{id}](/reference/exchanges-id)                                           | Query exchange's data (name, year established, country, ...), exchange volume in BTC and tickers based on exchange's ID       |
-| [/exchanges/\{id}/tickers](/reference/exchanges-id-tickers)                           | Query exchange's tickers based on exchange's ID                                                                               |
-| [/exchanges/\{id}/volume\_chart](/reference/exchanges-id-volume-chart)                | Query the historical volume chart data with time in UNIX and trading volume data in BTC based on exchange's ID                |
-| 💼 [/exchanges/\{id}/volume\_chart/range](/reference/exchanges-id-volume-chart-range) | Query the historical volume chart data in BTC by specifying date range in UNIX based on exchange's ID                         |
-| [/derivatives](/reference/derivatives-tickers)                                        | Query all the tickers from derivatives exchanges on CoinGecko                                                                 |
-| [/derivatives/exchanges](/reference/derivatives-exchanges)                            | Query all the derivatives exchanges with related data (ID, name, open interest, ...) on CoinGecko                             |
-| [/derivatives/exchanges/\{id}](/reference/derivatives-exchanges-id)                   | Query the derivatives exchange's related data (ID, name, open interest, ...) based on the exchanges' ID                       |
-| [/derivatives/exchanges/list](/reference/derivatives-exchanges-list)                  | Query all the derivatives exchanges with ID and name on CoinGecko                                                             |
+| [/exchanges](https://docs.coingecko.com/reference/exchanges)                                                    | Query all the supported exchanges with exchanges' data (ID, name, country, ...) that have active trading volumes on CoinGecko |
+| [/exchanges/list](https://docs.coingecko.com/reference/exchanges-list)                                          | Query all the exchanges with ID and name                                                                                      |
+| [/exchanges/\{id}](https://docs.coingecko.com/reference/exchanges-id)                                           | Query exchange's data (name, year established, country, ...), exchange volume in BTC and tickers based on exchange's ID       |
+| [/exchanges/\{id}/tickers](https://docs.coingecko.com/reference/exchanges-id-tickers)                           | Query exchange's tickers based on exchange's ID                                                                               |
+| [/exchanges/\{id}/volume\_chart](https://docs.coingecko.com/reference/exchanges-id-volume-chart)                | Query the historical volume chart data with time in UNIX and trading volume data in BTC based on exchange's ID                |
+| 💼 [/exchanges/\{id}/volume\_chart/range](https://docs.coingecko.com/reference/exchanges-id-volume-chart-range) | Query the historical volume chart data in BTC by specifying date range in UNIX based on exchange's ID                         |
+| [/derivatives](https://docs.coingecko.com/reference/derivatives-tickers)                                        | Query all the tickers from derivatives exchanges on CoinGecko                                                                 |
+| [/derivatives/exchanges](https://docs.coingecko.com/reference/derivatives-exchanges)                            | Query all the derivatives exchanges with related data (ID, name, open interest, ...) on CoinGecko                             |
+| [/derivatives/exchanges/\{id}](https://docs.coingecko.com/reference/derivatives-exchanges-id)                   | Query the derivatives exchange's related data (ID, name, open interest, ...) based on the exchanges' ID                       |
+| [/derivatives/exchanges/list](https://docs.coingecko.com/reference/derivatives-exchanges-list)                  | Query all the derivatives exchanges with ID and name on CoinGecko                                                             |
 
 ## CoinGecko Endpoints: Public Treasuries
 
 | Endpoint                                                                        | Description                                                                               |
 | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [/\{entity}/public\_treasury/\{coin\_id}](/reference/companies-public-treasury) | Query public companies & governments' cryptocurrency holdings by coin ID                  |
-| [/public\_treasury/\{entity\_id}](/reference/public-treasury-entity)            | Query public companies & governments' cryptocurrency holdings by entity ID                |
-| [/entities/list](/reference/entities-list)                                      | Query all the supported entities on CoinGecko with entities ID, name, symbol, and country |
+| [/\{entity}/public\_treasury/\{coin\_id}](https://docs.coingecko.com/reference/companies-public-treasury) | Query public companies & governments' cryptocurrency holdings by coin ID                  |
+| [/public\_treasury/\{entity\_id}](https://docs.coingecko.com/reference/public-treasury-entity)            | Query public companies & governments' cryptocurrency holdings by entity ID                |
+| [/entities/list](https://docs.coingecko.com/reference/entities-list)                                      | Query all the supported entities on CoinGecko with entities ID, name, symbol, and country |
 
 ## CoinGecko Endpoints: General
 
 | Endpoint                                                                | Description                                                                                                        |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| [/exchange\_rates](/reference/exchange-rates)                           | Query BTC exchange rates with other currencies                                                                     |
-| [/asset\_platforms](/reference/asset-platforms-list)                    | Query all the asset platforms (blockchain networks) on CoinGecko                                                   |
-| [/token\_lists/\{asset\_platform\_id}/all.json](/reference/token-lists) | Get full list of tokens of a blockchain network (asset platform) that is supported by Ethereum token list standard |
-| [/search](/reference/search-data)                                       | Search for coins, categories and markets listed on CoinGecko                                                       |
-| [/search/trending](/reference/trending-search)                          | Query trending search coins, NFTs and categories on CoinGecko in the last 24 hours                                 |
-| [/global](/reference/crypto-global)                                     | Query cryptocurrency global data including active cryptocurrencies, markets, total crypto market cap and etc.      |
-| [/global/decentralized\_finance\_defi](/reference/global-defi)          | Query cryptocurrency global decentralized finance (DeFi) data including DeFi market cap, trading volume            |
-| 💼 [/global/market\_cap\_chart](/reference/global-market-cap-chart)     | Query historical global market cap and volume data by number of days away from now                                 |
+| [/exchange\_rates](https://docs.coingecko.com/reference/exchange-rates)                           | Query BTC exchange rates with other currencies                                                                     |
+| [/asset\_platforms](https://docs.coingecko.com/reference/asset-platforms-list)                    | Query all the asset platforms (blockchain networks) on CoinGecko                                                   |
+| [/token\_lists/\{asset\_platform\_id}/all.json](https://docs.coingecko.com/reference/token-lists) | Get full list of tokens of a blockchain network (asset platform) that is supported by Ethereum token list standard |
+| [/search](https://docs.coingecko.com/reference/search-data)                                       | Search for coins, categories and markets listed on CoinGecko                                                       |
+| [/search/trending](https://docs.coingecko.com/reference/trending-search)                          | Query trending search coins, NFTs and categories on CoinGecko in the last 24 hours                                 |
+| [/global](https://docs.coingecko.com/reference/crypto-global)                                     | Query cryptocurrency global data including active cryptocurrencies, markets, total crypto market cap and etc.      |
+| [/global/decentralized\_finance\_defi](https://docs.coingecko.com/reference/global-defi)          | Query cryptocurrency global decentralized finance (DeFi) data including DeFi market cap, trading volume            |
+| 💼 [/global/market\_cap\_chart](https://docs.coingecko.com/reference/global-market-cap-chart)     | Query historical global market cap and volume data by number of days away from now                                 |
 
 ## Onchain DEX Endpoints (GeckoTerminal)
 
 | Endpoint                                                                                         | Description                                                                                                                                                              |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [/onchain/simple/networks/../token\_price/..](/reference/onchain-simple-price)                   | Get token price based on the provided token contract address on a network                                                                                                |
-| [/onchain/networks](/reference/networks-list)                                                    | Query all the supported networks on GeckoTerminal                                                                                                                        |
-| [/onchain/networks/../dexes](/reference/dexes-list)                                              | Query all the supported decentralized exchanges (DEXs) based on the provided network on GeckoTerminal                                                                    |
-| [/onchain/networks/trending\_pools](/reference/trending-pools-list)                              | Query all the trending pools across all networks on GeckoTerminal                                                                                                        |
-| [/onchain/networks/../trending\_pools](/reference/trending-pools-network)                        | Query the trending pools based on the provided network                                                                                                                   |
-| [/onchain/networks/../pools/..](/reference/pool-address)                                         | Query the specific pool based on the provided network and pool address                                                                                                   |
-| [/onchain/networks/../pools/multi/..](/reference/pools-addresses)                                | Query multiple pools based on the provided network and pool address                                                                                                      |
-| [/onchain/networks/../pools](/reference/top-pools-network)                                       | Query all the top pools based on the provided network                                                                                                                    |
-| [/onchain/networks/../dexes/../pools](/reference/top-pools-dex)                                  | Query all the top pools based on the provided network and decentralized exchange (DEX)                                                                                   |
-| [/onchain/networks/../new\_pools](/reference/latest-pools-network)                               | Query all the latest pools based on provided network                                                                                                                     |
-| [/onchain/networks/new\_pools](/reference/latest-pools-list)                                     | Query all the latest pools across all networks on GeckoTerminal                                                                                                          |
-| 🔥 💼 [/onchain/pools/megafilter](/reference/pools-megafilter)                                   | Query pools based on various filters across all networks on GeckoTerminal                                                                                                |
-| [/onchain/search/pools](/reference/search-pools)                                                 | Search for pools on a network                                                                                                                                            |
-| 💼 [/onchain/pools/trending\_search](/reference/trending-search-pools)                           | Query all the trending search pools across all networks on GeckoTerminal                                                                                                 |
-| [/onchain/networks/../tokens/../pools](/reference/top-pools-contract-address)                    | Query top pools based on the provided token contract address on a network                                                                                                |
-| [/onchain/networks/../tokens/..](/reference/token-data-contract-address)                         | Query specific token data based on the provided token contract address on a network                                                                                      |
-| [/onchain/networks/../tokens/multi/..](/reference/tokens-data-contract-addresses)                | Query multiple tokens data based on the provided token contract addresses on a network                                                                                   |
-| [/onchain/networks/../tokens/../info](/reference/token-info-contract-address)                    | Query token metadata (name, symbol, CoinGecko ID, image, socials, websites, description, etc.) based on a provided token contract address on a network                   |
-| [/onchain/networks/../pools/../info](/reference/pool-token-info-contract-address)                | Query pool metadata (base and quote token details, image, socials, websites, description, contract address, etc.) based on a provided pool contract address on a network |
-| [/onchain/tokens/info\_recently\_updated](/reference/tokens-info-recent-updated)                 | Query 100 most recently updated tokens info across all networks on GeckoTerminal                                                                                         |
-| 💼 [/onchain/networks/../tokens/../top\_holders](/reference/top-token-holders-token-address)     | Query top token holders based on the provided token contract address on a network                                                                                        |
-| 💼 [/onchain/networks/../tokens/../holders\_chart](/reference/token-holders-chart-token-address) | Get the historical token holders chart based on the provided token contract address on a network                                                                         |
-| [/onchain/networks/../pools/../ohlcv/..](/reference/pool-ohlcv-contract-address)                 | Get the OHLCV chart (Open, High, Low, Close, Volume) of a pool based on the provided pool address on a network                                                           |
-| 💼 [/onchain/networks/../tokens/../ohlcv/..](/reference/token-ohlcv-token-address)               | Get the OHLCV chart (Open, High, Low, Close, Volume) of a token based on the provided token address on a network                                                         |
-| [/onchain/networks/../pools/../trades](/reference/pool-trades-contract-address)                  | Query the last 300 trades in the past 24 hours based on the provided pool address                                                                                        |
-| 💼 [/onchain/networks/../tokens/../trades](/reference/token-trades-contract-address)             | Query the last 300 trades in the past 24 hours across all pools, based on the provided token contract address on a network                                               |
-| 💼 [/onchain/categories](/reference/categories-list)                                             | Query all the supported categories on GeckoTerminal                                                                                                                      |
-| 💼 [/onchain/categories/../pools](/reference/pools-category)                                     | Query all the pools based on the provided category ID                                                                                                                    |
+| [/onchain/simple/networks/../token\_price/..](https://docs.coingecko.com/reference/onchain-simple-price)                   | Get token price based on the provided token contract address on a network                                                                                                |
+| [/onchain/networks](https://docs.coingecko.com/reference/networks-list)                                                    | Query all the supported networks on GeckoTerminal                                                                                                                        |
+| [/onchain/networks/../dexes](https://docs.coingecko.com/reference/dexes-list)                                              | Query all the supported decentralized exchanges (DEXs) based on the provided network on GeckoTerminal                                                                    |
+| [/onchain/networks/trending\_pools](https://docs.coingecko.com/reference/trending-pools-list)                              | Query all the trending pools across all networks on GeckoTerminal                                                                                                        |
+| [/onchain/networks/../trending\_pools](https://docs.coingecko.com/reference/trending-pools-network)                        | Query the trending pools based on the provided network                                                                                                                   |
+| [/onchain/networks/../pools/..](https://docs.coingecko.com/reference/pool-address)                                         | Query the specific pool based on the provided network and pool address                                                                                                   |
+| [/onchain/networks/../pools/multi/..](https://docs.coingecko.com/reference/pools-addresses)                                | Query multiple pools based on the provided network and pool address                                                                                                      |
+| [/onchain/networks/../pools](https://docs.coingecko.com/reference/top-pools-network)                                       | Query all the top pools based on the provided network                                                                                                                    |
+| [/onchain/networks/../dexes/../pools](https://docs.coingecko.com/reference/top-pools-dex)                                  | Query all the top pools based on the provided network and decentralized exchange (DEX)                                                                                   |
+| [/onchain/networks/../new\_pools](https://docs.coingecko.com/reference/latest-pools-network)                               | Query all the latest pools based on provided network                                                                                                                     |
+| [/onchain/networks/new\_pools](https://docs.coingecko.com/reference/latest-pools-list)                                     | Query all the latest pools across all networks on GeckoTerminal                                                                                                          |
+| 🔥 💼 [/onchain/pools/megafilter](https://docs.coingecko.com/reference/pools-megafilter)                                   | Query pools based on various filters across all networks on GeckoTerminal                                                                                                |
+| [/onchain/search/pools](https://docs.coingecko.com/reference/search-pools)                                                 | Search for pools on a network                                                                                                                                            |
+| 💼 [/onchain/pools/trending\_search](https://docs.coingecko.com/reference/trending-search-pools)                           | Query all the trending search pools across all networks on GeckoTerminal                                                                                                 |
+| [/onchain/networks/../tokens/../pools](https://docs.coingecko.com/reference/top-pools-contract-address)                    | Query top pools based on the provided token contract address on a network                                                                                                |
+| [/onchain/networks/../tokens/..](https://docs.coingecko.com/reference/token-data-contract-address)                         | Query specific token data based on the provided token contract address on a network                                                                                      |
+| [/onchain/networks/../tokens/multi/..](https://docs.coingecko.com/reference/tokens-data-contract-addresses)                | Query multiple tokens data based on the provided token contract addresses on a network                                                                                   |
+| [/onchain/networks/../tokens/../info](https://docs.coingecko.com/reference/token-info-contract-address)                    | Query token metadata (name, symbol, CoinGecko ID, image, socials, websites, description, etc.) based on a provided token contract address on a network                   |
+| [/onchain/networks/../pools/../info](https://docs.coingecko.com/reference/pool-token-info-contract-address)                | Query pool metadata (base and quote token details, image, socials, websites, description, contract address, etc.) based on a provided pool contract address on a network |
+| [/onchain/tokens/info\_recently\_updated](https://docs.coingecko.com/reference/tokens-info-recent-updated)                 | Query 100 most recently updated tokens info across all networks on GeckoTerminal                                                                                         |
+| 💼 [/onchain/networks/../tokens/../top\_holders](https://docs.coingecko.com/reference/top-token-holders-token-address)     | Query top token holders based on the provided token contract address on a network                                                                                        |
+| 💼 [/onchain/networks/../tokens/../holders\_chart](https://docs.coingecko.com/reference/token-holders-chart-token-address) | Get the historical token holders chart based on the provided token contract address on a network                                                                         |
+| [/onchain/networks/../pools/../ohlcv/..](https://docs.coingecko.com/reference/pool-ohlcv-contract-address)                 | Get the OHLCV chart (Open, High, Low, Close, Volume) of a pool based on the provided pool address on a network                                                           |
+| 💼 [/onchain/networks/../tokens/../ohlcv/..](https://docs.coingecko.com/reference/token-ohlcv-token-address)               | Get the OHLCV chart (Open, High, Low, Close, Volume) of a token based on the provided token address on a network                                                         |
+| [/onchain/networks/../pools/../trades](https://docs.coingecko.com/reference/pool-trades-contract-address)                  | Query the last 300 trades in the past 24 hours based on the provided pool address                                                                                        |
+| 💼 [/onchain/networks/../tokens/../trades](https://docs.coingecko.com/reference/token-trades-contract-address)             | Query the last 300 trades in the past 24 hours across all pools, based on the provided token contract address on a network                                               |
+| 💼 [/onchain/categories](https://docs.coingecko.com/reference/categories-list)                                             | Query all the supported categories on GeckoTerminal                                                                                                                      |
+| 💼 [/onchain/categories/../pools](https://docs.coingecko.com/reference/pools-category)                                     | Query all the pools based on the provided category ID                                                                                                                    |
 
 ⚡️ Need Real-time Data Streams? Try [WebSocket API](https://docs.coingecko.com/websocket)
 
@@ -5295,15 +5295,15 @@ This endpoint allows you to **query exchange's data (name, year established, cou
 <Warning>
   ### Notice
 
-  * Please note that the `trade_volume_24h_btc_normalized` data field will no longer be supported by our API starting on June 16, 2025. Please refer to [changelog](/changelog#may-2025) for more details.
+  * Please note that the `trade_volume_24h_btc_normalized` data field will no longer be supported by our API starting on June 16, 2025. Please refer to [changelog](https://docs.coingecko.com/changelog#may-2025) for more details.
 </Warning>
 
 <Note>
   ### Note
 
-  * The exchange volume in the response is provided in BTC. To convert it to other currencies, please use [/exchange\_rates](/reference/exchange-rates) endpoint.
-  * For derivatives (e.g. `bitmex`, `binance_futures`), to get derivatives exchanges data, please go to [/derivatives/exchange/\{id}](/reference/derivatives-exchanges-id) endpoint.
-  * Tickers are limited to 100 items, to get more tickers, please go to [/exchanges/\{id}/tickers](/reference/exchanges-id-tickers) endpoint.
+  * The exchange volume in the response is provided in BTC. To convert it to other currencies, please use [/exchange\_rates](https://docs.coingecko.com/reference/exchange-rates) endpoint.
+  * For derivatives (e.g. `bitmex`, `binance_futures`), to get derivatives exchanges data, please go to [/derivatives/exchange/\{id}](https://docs.coingecko.com/reference/derivatives-exchanges-id) endpoint.
+  * Tickers are limited to 100 items, to get more tickers, please go to [/exchanges/\{id}/tickers](https://docs.coingecko.com/reference/exchanges-id-tickers) endpoint.
   * When `dex_pair_format=symbol`, the DEX pair `base` and `target` are displayed in symbol format (e.g. `WETH`, `USDC`) instead of as contract addresses.
   * Cache / Update Frequency: every 60 seconds for all the API plans.
 </Note>
@@ -5336,7 +5336,7 @@ This endpoint allows you to **query the historical volume chart data with time i
   ### Note
 
   * You can use this endpoint to query the historical volume chart data of **derivatives exchanges** as well.
-  * The exchange volume in the response is provided in BTC. To convert it to other currencies, please use [/exchange\_rates](/reference/exchange-rates) endpoint.
+  * The exchange volume in the response is provided in BTC. To convert it to other currencies, please use [/exchange\_rates](https://docs.coingecko.com/reference/exchange-rates) endpoint.
   * Data granularity is automatic (cannot be adjusted):
     * 1 day = 10-minutely
     * 7, 14 days = hourly
@@ -5481,13 +5481,13 @@ This endpoint allows you to **query all the NFT data (name, floor price, 24hr vo
 <Tip>
   ### Tips
 
-  * You may also obtain the asset platform ID and contract address through [/nfts/list](/reference/nfts-list) endpoint.
+  * You may also obtain the asset platform ID and contract address through [/nfts/list](https://docs.coingecko.com/reference/nfts-list) endpoint.
 </Tip>
 
 <Note>
   ### Note
 
-  * Solana NFT & Art Blocks are not supported for this endpoint, please use [/nfts/\{id}](/reference/nfts-id) endpoint instead.
+  * Solana NFT & Art Blocks are not supported for this endpoint, please use [/nfts/\{id}](https://docs.coingecko.com/reference/nfts-id) endpoint instead.
   * Cache / Update Frequency: every 60 seconds for all the API plans.
 </Note>
 
@@ -5501,7 +5501,7 @@ This endpoint allows you **query historical market data of a NFT collection, inc
 <Note>
   ### Note
 
-  * This endpoint doesn't support Solana NFT and Art Blocks, please use [/nfts/\{id}/market\_chart](/reference/nfts-id-market-chart) endpoint instead.
+  * This endpoint doesn't support Solana NFT and Art Blocks, please use [/nfts/\{id}/market\_chart](https://docs.coingecko.com/reference/nfts-id-market-chart) endpoint instead.
   * Data Granularity (auto):
     * 1-14 days from now = **5-minutely** data
     * 15 days & above from now = **daily** data (00:00 UTC)
@@ -5613,7 +5613,7 @@ This endpoint allows you to **get token price based on the provided token contra
   * The returned price currency is in USD.
   * Addresses not found in GeckoTerminal will be ignored.
   * This endpoint allows querying **up to 100 contract addresses** per request. This limit is exclusive for [paid plan](https://www.coingecko.com/en/api/pricing) subscribers (Analyst plan & above).
-  * When using this endpoint, GeckoTerminal's routing decides the best pool for token price. The price source may change based on liquidity and pool activity. For full control over the price, you may use [`/networks/{network}/pools/{address}`](/reference/pool-address) endpoint by providing a specific pool address.
+  * When using this endpoint, GeckoTerminal's routing decides the best pool for token price. The price source may change based on liquidity and pool activity. For full control over the price, you may use [`/networks/{network}/pools/{address}`](https://docs.coingecko.com/reference/pool-address) endpoint by providing a specific pool address.
   * Cache/Update Frequency: every 10 seconds for Pro API (Analyst, Lite, Pro, Enterprise).
 </Note>
 
@@ -5700,12 +5700,12 @@ This endpoint allows you to **query pool metadata (base and quote token details,
 <Tip>
   ### Tips
 
-  * If you would like to query pool data such as price, transactions, volume and etc. You can go to this endpoint [`/networks/{network}/pools/{address}`](/reference/pool-address) instead.
+  * If you would like to query pool data such as price, transactions, volume and etc. You can go to this endpoint [`/networks/{network}/pools/{address}`](https://docs.coingecko.com/reference/pool-address) instead.
   * Cache/Update frequency: every 60 seconds.
   * Learn more about GT score [here](https://support.coingecko.com/hc/en-us/articles/38381394237593-What-is-GT-Score-How-is-GT-Score-calculated).
   * Metadata (image, websites, description, socials) may be sourced on-chain and is not vetted by the CoinGecko team. If you wish to get metadata reviewed by CoinGecko team, you may use the following endpoints:
-    * [Coin Data by ID](/reference/coins-id)
-    * [Coin Data by Token Address](/reference/coins-contract-address)
+    * [Coin Data by ID](https://docs.coingecko.com/reference/coins-id)
+    * [Coin Data by Token Address](https://docs.coingecko.com/reference/coins-contract-address)
 </Tip>
 
 <Note>
@@ -5763,9 +5763,9 @@ This endpoint allows you to **query all the pools based on the provided category
 <Tip>
   ### Tips
 
-  * You can retrieve full list of categories id via this endpoint: [Categories List](/reference/categories-list).
+  * You can retrieve full list of categories id via this endpoint: [Categories List](https://docs.coingecko.com/reference/categories-list).
   * You can retrieve tokens of a specific category, by flagging `include=base_token`.
-  * GeckoTerminal categories are different from [CoinGecko categories](/reference/coins-categories-list).
+  * GeckoTerminal categories are different from [CoinGecko categories](https://docs.coingecko.com/reference/coins-categories-list).
 </Tip>
 
 <Note>
@@ -5881,7 +5881,7 @@ This endpoint allows you to **query the prices of one or more coins by using the
 
   * You may obtain the coin ID (API ID) via several ways:
     * refers to respective coin page and find 'API ID'.
-    * refers to [`/coins/list`](/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/reference/coins-list) endpoint.
     * refers to Google Sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
   * You can retrieve specific coins using their unique `ids`, `names`, or `symbols`.
   * You may flag to include more data such as market cap, 24hr volume, 24hr change, last updated time etc.
@@ -5930,7 +5930,7 @@ This endpoint allows you to **query one or more token prices using their token c
 
   * You may obtain the asset platform and contract address via several ways:
     * refers to respective coin page and find 'contract address'.
-    * refers to [`/coins/list`](/reference/coins-list) endpoint (`include platform = true`).
+    * refers to [`/coins/list`](https://docs.coingecko.com/reference/coins-list) endpoint (`include platform = true`).
   * You may flag to include more data such as market cap, 24hr volume, 24hr change, last updated time etc.
 </Tip>
 
@@ -5953,7 +5953,7 @@ This endpoint allows you to **query specific token data based on the provided to
   ### Tips
 
   * You may add values such as `top_pools` in the include param to include top pools along with the pools information.
-  * If you would like to query token information such as socials, websites, description and etc. You can go to this endpoint [`/networks/{network}/tokens/{address}/info`](/reference/token-info-contract-address) instead.
+  * If you would like to query token information such as socials, websites, description and etc. You can go to this endpoint [`/networks/{network}/tokens/{address}/info`](https://docs.coingecko.com/reference/token-info-contract-address) instead.
 </Tip>
 
 <Note>
@@ -5999,12 +5999,12 @@ This endpoint allows you to **query token metadata (name, symbol,  CoinGecko ID,
 <Tip>
   ### Tips
 
-  * If you would like to query token data such as decimals, total supply, price and etc. You can go to this endpoint [`/networks/{network}/tokens/{address}`](/reference/token-data-contract-address) instead.
+  * If you would like to query token data such as decimals, total supply, price and etc. You can go to this endpoint [`/networks/{network}/tokens/{address}`](https://docs.coingecko.com/reference/token-data-contract-address) instead.
   * Cache/Update frequency: every 60 seconds.
   * Learn more about GT score [here](https://support.coingecko.com/hc/en-us/articles/38381394237593-What-is-GT-Score-How-is-GT-Score-calculated).
   * Metadata (image, websites, description, socials) may be sourced on-chain and is not vetted by the CoinGecko team. If you wish to get metadata reviewed by CoinGecko team, you may use the following endpoints:
-    * [Coin Data by ID](/reference/coins-id)
-    * [Coin Data by Token Address](/reference/coins-contract-address)
+    * [Coin Data by ID](https://docs.coingecko.com/reference/coins-id)
+    * [Coin Data by Token Address](https://docs.coingecko.com/reference/coins-contract-address)
 </Tip>
 
 <Note>
@@ -6091,7 +6091,7 @@ This endpoint allows you to **query multiple tokens data based on the provided t
   ### Tips
 
   * You may add values such as `top_pools` in the include param to include top pools along with the pools information.
-  * If you would like to query token information such as socials, websites, description and etc. You can go to this endpoint [`/networks/{network}/tokens/{address}/info`](/reference/token-info-contract-address) instead.
+  * If you would like to query token information such as socials, websites, description and etc. You can go to this endpoint [`/networks/{network}/tokens/{address}/info`](https://docs.coingecko.com/reference/token-info-contract-address) instead.
 </Tip>
 
 <Note>
@@ -6163,7 +6163,7 @@ This endpoint allows you to **query all the top pools based on the provided netw
   ### Tips
 
   * You may include values such as `page` to specify which page of responses you would like to show.
-  * For more flexibility in retrieving an exact list of pools that match your specific needs, consider using the [/pools/megafilter](/reference/pools-megafilter) endpoint.
+  * For more flexibility in retrieving an exact list of pools that match your specific needs, consider using the [/pools/megafilter](https://docs.coingecko.com/reference/pools-megafilter) endpoint.
 </Tip>
 
 <Note>
@@ -6188,7 +6188,7 @@ This endpoint allows you to **query all the top pools based on the provided netw
   ### Tips
 
   * You may include values such as `page` to specify which page of responses you would like to show.
-  * For more flexibility in retrieving an exact list of pools that match your specific needs, consider using the [/pools/megafilter](/reference/pools-megafilter) endpoint.
+  * For more flexibility in retrieving an exact list of pools that match your specific needs, consider using the [/pools/megafilter](https://docs.coingecko.com/reference/pools-megafilter) endpoint.
 </Tip>
 
 <Note>
@@ -6231,7 +6231,7 @@ This endpoint allows you to **query all the trending pools across all networks o
   ### Tips
 
   * You may include values such as `page` to specify which page of responses you would like to show.
-  * For more flexibility in retrieving an exact list of pools that match your specific needs, consider using the [/pools/megafilter](/reference/pools-megafilter) endpoint.
+  * For more flexibility in retrieving an exact list of pools that match your specific needs, consider using the [/pools/megafilter](https://docs.coingecko.com/reference/pools-megafilter) endpoint.
 </Tip>
 
 <Note>
@@ -6260,7 +6260,7 @@ This endpoint allows you to **query the trending pools based on the provided net
   ### Tips
 
   * You may include values such as `page` to specify which page of responses you would like to show.
-  * For more flexibility in retrieving an exact list of pools that match your specific needs, consider using the [/pools/megafilter](/reference/pools-megafilter) endpoint.
+  * For more flexibility in retrieving an exact list of pools that match your specific needs, consider using the [/pools/megafilter](https://docs.coingecko.com/reference/pools-megafilter) endpoint.
 </Tip>
 
 <Note>
@@ -6337,7 +6337,7 @@ Authentication method for CoinGecko Public API (Demo plan users)
 
   * Demo API Key is only available for CoinGecko Public Demo API Plan, the root URL for CoinGecko Public Demo API must be `https://api.coingecko.com/api/v3/`.
   * ⚠️ You are recommended to store the API key securely in your own backend and use a proxy to insert the key into the request URL.
-  * The authentication method below is for CoinGecko Public Demo API only. For **paid plan users with Pro-API key**, please refer to [this page](/reference/authentication) instead.
+  * The authentication method below is for CoinGecko Public Demo API only. For **paid plan users with Pro-API key**, please refer to [this page](https://docs.coingecko.com/reference/authentication) instead.
   * User Guide: [How to sign up for CoinGecko Demo API and generate an API key?](https://support.coingecko.com/hc/en-us/articles/21880397454233)
   * It's highly recommended to use the **Headers method** when making API requests for better security. Using query string parameters can risk exposing your API key.
 </Note>
@@ -6349,7 +6349,7 @@ If this is your first time using the Demo API key, you can supply API Key to the
 1. Header (Recommended): `x-cg-demo-api-key`
 2. Query String Parameter: `x_cg_demo_api_key`
 
-| Authentication Method  | Example using [Ping](/v3.0.1/reference/ping-server) Endpoint                               |
+| Authentication Method  | Example using [Ping](https://docs.coingecko.com/v3.0.1/reference/ping-server) Endpoint                               |
 | ---------------------- | ------------------------------------------------------------------------------------------ |
 | Header (cURL)          | `curl -X GET "https://api.coingecko.com/api/v3/ping" -H "x-cg-demo-api-key: YOUR_API_KEY"` |
 | Query String Parameter | `https://api.coingecko.com/api/v3/ping?x_cg_demo_api_key=YOUR_API_KEY`                     |
@@ -6358,7 +6358,7 @@ If this is your first time using the Demo API key, you can supply API Key to the
 
 * Each request made to any endpoint counts as a single call (1 call = 1 credit).
 * Your monthly credit & rate limit are determined by the paid plan to which you subscribe. For more details, please refer to this [page](https://www.coingecko.com/en/api/pricing).
-* To check the API usage, please go to the [developer dashboard](https://www.coingecko.com/en/developers/dashboard) or follow the guide [here](/v3.0.1/reference/setting-up-your-api-key#4-api-usage-report).
+* To check the API usage, please go to the [developer dashboard](https://www.coingecko.com/en/developers/dashboard) or follow the guide [here](https://docs.coingecko.com/v3.0.1/reference/setting-up-your-api-key#4-api-usage-report).
 
 
 # Coins Categories List with Market Data
@@ -6404,7 +6404,7 @@ This endpoint allows you to **query all the metadata (image, websites, socials, 
 <Warning>
   ### Notice
 
-  * Please note that the `twitter_followers` data field will no longer be supported by our API starting on May 15, 2025. Please refer to [changelog](/changelog#upcoming-change-notice%3A-removal-of-twitter-followers-data) for more details.
+  * Please note that the `twitter_followers` data field will no longer be supported by our API starting on May 15, 2025. Please refer to [changelog](https://docs.coingecko.com/changelog#upcoming-change-notice%3A-removal-of-twitter-followers-data) for more details.
 </Warning>
 
 <Tip>
@@ -6412,7 +6412,7 @@ This endpoint allows you to **query all the metadata (image, websites, socials, 
 
   * You may obtain the asset platform and contract address via several ways:
     * refers to respective coin page and find 'contract address'.
-    * refers to [`/coins/list`](/v3.0.1/reference/coins-list) endpoint (`include platform = true`).
+    * refers to [`/coins/list`](https://docs.coingecko.com/v3.0.1/reference/coins-list) endpoint (`include platform = true`).
 </Tip>
 
 <Note>
@@ -6434,7 +6434,7 @@ This endpoint allows you to **query all the metadata (image, websites, socials, 
 
   * You may obtain the coin `id` (API ID) via several ways:
     * refers to respective coin page and find "API ID".
-    * refers to [`/coins/list`](/v3.0.1/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/v3.0.1/reference/coins-list) endpoint.
     * refers to Google Sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
   * You may also flag to include more data such as tickers, market data, community data, developer data and sparkline.
   * You may refer to `last_updated` in the endpoint response to check whether the price is stale.
@@ -6443,7 +6443,7 @@ This endpoint allows you to **query all the metadata (image, websites, socials, 
 <Note>
   ### Note
 
-  * Tickers are limited to 100 items, to get more tickers, please go to [/coins/{id}/tickers](/v3.0.1/reference/coins-id-tickers).
+  * Tickers are limited to 100 items, to get more tickers, please go to [/coins/{id}/tickers](https://docs.coingecko.com/v3.0.1/reference/coins-id-tickers).
   * Coin descriptions may include newline characters represented as `\r\n` (escape sequences), which may require processing for proper formatting.
   * When `dex_pair_format=symbol`, the DEX pair `base` and `target` are displayed in symbol format (e.g. `WETH`, `USDC`) instead of as contract addresses.
   * Cache/Update Frequency:
@@ -6463,7 +6463,7 @@ This endpoint allows you to **query the historical data (price, market cap, 24hr
 
   * You may obtain the coin ID (API ID) via several ways:
     * refers to respective coin page and find 'API ID'.
-    * refers to [`/coins/list`](/v3.0.1/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/v3.0.1/reference/coins-list) endpoint.
     * refers to Google Sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
 </Tip>
 
@@ -6487,7 +6487,7 @@ This endpoint allows you to **get the historical chart data of a coin including 
 
   * You may obtain the coin ID (API ID) via several ways:
     * refers to respective coin page and find 'API ID'.
-    * refers to [`/coins/list`](/v3.0.1/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/v3.0.1/reference/coins-list) endpoint.
     * refers to google sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
   * You may use tools like [epoch converter ](https://www.epochconverter.com) to convert human readable date to UNIX timestamp.
 </Tip>
@@ -6517,7 +6517,7 @@ This endpoint allows you to **get the historical chart data of a coin within cer
 
   * You may obtain the coin ID (API ID) via several ways:
     * refers to respective coin page and find 'API ID'.
-    * refers to [`/coins/list`](/v3.0.1/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/v3.0.1/reference/coins-list) endpoint.
     * refers to google sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
 </Tip>
 
@@ -6550,9 +6550,9 @@ This endpoint allows you to **get the OHLC chart (Open, High, Low, Close) of a c
 
   * You may obtain the coin ID (API ID) via several ways:
     * refers to respective coin page and find 'API ID'.
-    * refers to [`/coins/list`](/v3.0.1/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/v3.0.1/reference/coins-list) endpoint.
     * refers to google sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
-  * For historical chart data with better granularity, you may consider using [/coins/\{id}/market\_chart](/v3.0.1/reference/coins-id-market-chart) endpoint.
+  * For historical chart data with better granularity, you may consider using [/coins/\{id}/market\_chart](https://docs.coingecko.com/v3.0.1/reference/coins-id-market-chart) endpoint.
 </Tip>
 
 <Note>
@@ -6581,7 +6581,7 @@ This endpoint allows you to **query the coin tickers on both centralized exchang
 
   * You may obtain the coin ID (API ID) via several ways:
     * refers to respective coin page and find 'API ID'.
-    * refers to [`/coins/list`](/v3.0.1/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/v3.0.1/reference/coins-list) endpoint.
     * refers to google sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
   * You may specify the `exchange_ids` if you want to retrieve tickers for specific exchange only.
   * You may include values such as  `page` to specify which page of responses you would like to show.
@@ -6631,7 +6631,7 @@ This endpoint allows you to **query all the supported coins with price, market c
   ### Tips
 
   * You can retrieve specific coins using their unique `ids`, `names`, or `symbols` instead of returning the whole list.
-  * To filter results based on the coin's category, use the `category` param (refer to [`/coins/categories/list`](/v3.0.1/reference/coins-categories-list) for available categories).
+  * To filter results based on the coin's category, use the `category` param (refer to [`/coins/categories/list`](https://docs.coingecko.com/v3.0.1/reference/coins-categories-list) for available categories).
   * Use the `per_page` and `page` params to manage the number of results you receive and navigate through the data.
 </Tip>
 
@@ -6674,7 +6674,7 @@ This endpoint allows you to **get the historical chart data including time in UN
 
   * You may obtain the asset platform and contract address via several ways:
     * refers to respective coin page and find 'contract address'.
-    * refers to [`/coins/list`](/v3.0.1/reference/coins-list) endpoint (`include platform = true`).
+    * refers to [`/coins/list`](https://docs.coingecko.com/v3.0.1/reference/coins-list) endpoint (`include platform = true`).
 </Tip>
 
 <Note>
@@ -6702,7 +6702,7 @@ This endpoint allows you to **get the historical chart data within certain time 
 
   * You may obtain the asset platform and contract address via several ways:
     * refers to respective coin page and find 'contract address'.
-    * refers to [`/coins/list`](/v3.0.1/reference/coins-list) endpoint (`include platform = true`).
+    * refers to [`/coins/list`](https://docs.coingecko.com/v3.0.1/reference/coins-list) endpoint (`include platform = true`).
 </Tip>
 
 <Note>
@@ -6831,97 +6831,97 @@ Source: https://docs.coingecko.com/v3.0.1/reference/endpoint-overview
 
   Any exclusive endpoints for Pro-API users (any paid plan subscribers) will not be included here.
 
-  For a full list of endpoints, please visit [Pro API Documentation](/reference/endpoint-overview) instead.
+  For a full list of endpoints, please visit [Pro API Documentation](https://docs.coingecko.com/reference/endpoint-overview) instead.
 </Note>
 
 ## CoinGecko Endpoints: Coins
 
 | Endpoint                                                                                           | Description                                                                                                                                                                            |
 | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [/ping](/v3.0.1/reference/ping-server)                                                             | Check the API server status                                                                                                                                                            |
-| [/simple/price](/v3.0.1/reference/simple-price)                                                    | Query the prices of one or more coins by using their unique Coin API IDs                                                                                                               |
-| [/simple/token\_price/\{id}](/v3.0.1/reference/simple-token-price)                                 | Query the prices of one or more coins by using their unique Coin API IDs                                                                                                               |
-| [/simple/supported\_vs\_currencies](/v3.0.1/reference/simple-supported-currencies)                 | Query all the supported currencies on CoinGecko                                                                                                                                        |
-| [/coins/list](/v3.0.1/reference/coins-list)                                                        | Query all the supported coins on CoinGecko with coins ID, name and symbol                                                                                                              |
-| [/coins/markets](/v3.0.1/reference/coins-markets)                                                  | Query all the supported coins with price, market cap, volume and market related data                                                                                                   |
-| [/coins/\{id}](/v3.0.1/reference/coins-id)                                                         | Query all the metadata (image, websites, socials, description, contract address, etc.) from the CoinGecko coin page based on a particular coin ID                                      |
-| [/coins/\{id}/tickers](/v3.0.1/reference/coins-id-tickers)                                         | Query the coin tickers on both centralized exchange (CEX) and decentralized exchange (DEX) based on a particular coin ID                                                               |
-| [/coins/\{id}/history](/v3.0.1/reference/coins-id-history)                                         | Query the historical data (price, market cap, 24hr volume, ...) at a given date for a coin based on a particular coin ID                                                               |
-| [/coins/\{id}/market\_chart](/v3.0.1/reference/coins-id-market-chart)                              | Get the historical chart data of a coin including time in UNIX, price, market cap and 24hr volume based on particular coin ID                                                          |
-| [/coins/\{id}/market\_chart/range](/v3.0.1/reference/coins-id-market-chart-range)                  | Get the historical chart data of a coin within certain time range in UNIX along with price, market cap and 24hr volume based on particular coin ID                                     |
-| [/coins-id-ohlc](/v3.0.1/reference/coins-id-ohlc)                                                  | Get the OHLC chart (Open, High, Low, Close) of a coin based on particular coin ID                                                                                                      |
-| [/coins/../contract/..](/v3.0.1/reference/coins-contract-address)                                  | Query all the metadata (image, websites, socials, description, contract address, etc.) from the CoinGecko coin page based on an asset platform and a particular token contract address |
-| [/coins/../contract/../market\_chart](/v3.0.1/reference/contract-address-market-chart)             | Get the historical chart data including time in UNIX, price, market cap and 24hr volume based on asset platform and particular token contract address                                  |
-| [/coins/../contract/../market\_chart/range](/v3.0.1/reference/contract-address-market-chart-range) | Get the historical chart data within certain time range in UNIX along with price, market cap and 24hr volume based on asset platform and particular token contract address             |
-| [/coins/categories/list](/v3.0.1/reference/coins-categories-list)                                  | Query all the coins categories on CoinGecko                                                                                                                                            |
-| [/coins/categories](/v3.0.1/reference/coins-categories)                                            | Query all the coins categories with market data (market cap, volume, ...) on CoinGecko                                                                                                 |
+| [/ping](https://docs.coingecko.com/v3.0.1/reference/ping-server)                                                             | Check the API server status                                                                                                                                                            |
+| [/simple/price](https://docs.coingecko.com/v3.0.1/reference/simple-price)                                                    | Query the prices of one or more coins by using their unique Coin API IDs                                                                                                               |
+| [/simple/token\_price/\{id}](https://docs.coingecko.com/v3.0.1/reference/simple-token-price)                                 | Query the prices of one or more coins by using their unique Coin API IDs                                                                                                               |
+| [/simple/supported\_vs\_currencies](https://docs.coingecko.com/v3.0.1/reference/simple-supported-currencies)                 | Query all the supported currencies on CoinGecko                                                                                                                                        |
+| [/coins/list](https://docs.coingecko.com/v3.0.1/reference/coins-list)                                                        | Query all the supported coins on CoinGecko with coins ID, name and symbol                                                                                                              |
+| [/coins/markets](https://docs.coingecko.com/v3.0.1/reference/coins-markets)                                                  | Query all the supported coins with price, market cap, volume and market related data                                                                                                   |
+| [/coins/\{id}](https://docs.coingecko.com/v3.0.1/reference/coins-id)                                                         | Query all the metadata (image, websites, socials, description, contract address, etc.) from the CoinGecko coin page based on a particular coin ID                                      |
+| [/coins/\{id}/tickers](https://docs.coingecko.com/v3.0.1/reference/coins-id-tickers)                                         | Query the coin tickers on both centralized exchange (CEX) and decentralized exchange (DEX) based on a particular coin ID                                                               |
+| [/coins/\{id}/history](https://docs.coingecko.com/v3.0.1/reference/coins-id-history)                                         | Query the historical data (price, market cap, 24hr volume, ...) at a given date for a coin based on a particular coin ID                                                               |
+| [/coins/\{id}/market\_chart](https://docs.coingecko.com/v3.0.1/reference/coins-id-market-chart)                              | Get the historical chart data of a coin including time in UNIX, price, market cap and 24hr volume based on particular coin ID                                                          |
+| [/coins/\{id}/market\_chart/range](https://docs.coingecko.com/v3.0.1/reference/coins-id-market-chart-range)                  | Get the historical chart data of a coin within certain time range in UNIX along with price, market cap and 24hr volume based on particular coin ID                                     |
+| [/coins-id-ohlc](https://docs.coingecko.com/v3.0.1/reference/coins-id-ohlc)                                                  | Get the OHLC chart (Open, High, Low, Close) of a coin based on particular coin ID                                                                                                      |
+| [/coins/../contract/..](https://docs.coingecko.com/v3.0.1/reference/coins-contract-address)                                  | Query all the metadata (image, websites, socials, description, contract address, etc.) from the CoinGecko coin page based on an asset platform and a particular token contract address |
+| [/coins/../contract/../market\_chart](https://docs.coingecko.com/v3.0.1/reference/contract-address-market-chart)             | Get the historical chart data including time in UNIX, price, market cap and 24hr volume based on asset platform and particular token contract address                                  |
+| [/coins/../contract/../market\_chart/range](https://docs.coingecko.com/v3.0.1/reference/contract-address-market-chart-range) | Get the historical chart data within certain time range in UNIX along with price, market cap and 24hr volume based on asset platform and particular token contract address             |
+| [/coins/categories/list](https://docs.coingecko.com/v3.0.1/reference/coins-categories-list)                                  | Query all the coins categories on CoinGecko                                                                                                                                            |
+| [/coins/categories](https://docs.coingecko.com/v3.0.1/reference/coins-categories)                                            | Query all the coins categories with market data (market cap, volume, ...) on CoinGecko                                                                                                 |
 
 ## CoinGecko Endpoints: NFT
 
 | Endpoint                                                        | Description                                                                                                                             |
 | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| [/nfts/list](/v3.0.1/reference/nfts-list)                       | Query all supported NFTs with ID, contract address, name, asset platform ID and symbol on CoinGecko                                     |
-| [/nfts/..](/v3.0.1/reference/nfts-id)                           | Query all the NFT data (name, floor price, 24hr volume, ...) based on the NFT collection ID                                             |
-| [/nfts/../contract/..](/v3.0.1/reference/nfts-contract-address) | Query all the NFT data (name, floor price, 24hr volume, ...) based on the NFT collection contract address and respective asset platform |
+| [/nfts/list](https://docs.coingecko.com/v3.0.1/reference/nfts-list)                       | Query all supported NFTs with ID, contract address, name, asset platform ID and symbol on CoinGecko                                     |
+| [/nfts/..](https://docs.coingecko.com/v3.0.1/reference/nfts-id)                           | Query all the NFT data (name, floor price, 24hr volume, ...) based on the NFT collection ID                                             |
+| [/nfts/../contract/..](https://docs.coingecko.com/v3.0.1/reference/nfts-contract-address) | Query all the NFT data (name, floor price, 24hr volume, ...) based on the NFT collection contract address and respective asset platform |
 
 ## CoinGecko Endpoints: Exchanges & Derivatives
 
 | Endpoint                                                                      | Description                                                                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| [/exchanges](/v3.0.1/reference/exchanges)                                     | Query all the supported exchanges with exchanges' data (ID, name, country, ...) that have active trading volumes on CoinGecko |
-| [/exchanges/list](/v3.0.1/reference/exchanges-list)                           | Query all the exchanges with ID and name                                                                                      |
-| [/exchanges/\{id}](/v3.0.1/reference/exchanges-id)                            | Query exchange's data (name, year established, country, ...), exchange volume in BTC and tickers based on exchange's ID       |
-| [/exchanges/\{id}/tickers](/v3.0.1/reference/exchanges-id-tickers)            | Query exchange's tickers based on exchange's ID                                                                               |
-| [/exchanges/\{id}/volume\_chart](/v3.0.1/reference/exchanges-id-volume-chart) | Query the historical volume chart data with time in UNIX and trading volume data in BTC based on exchange's ID                |
-| [/derivatives](/v3.0.1/reference/derivatives-tickers)                         | Query all the tickers from derivatives exchanges on CoinGecko                                                                 |
-| [/derivatives/exchanges](/v3.0.1/reference/derivatives-exchanges)             | Query all the derivatives exchanges with related data (ID, name, open interest, ...) on CoinGecko                             |
-| [/derivatives/exchanges/\{id}](/v3.0.1/reference/derivatives-exchanges-id)    | Query the derivatives exchange's related data (ID, name, open interest, ...) based on the exchanges' ID                       |
-| [/derivatives/exchanges/list](/v3.0.1/reference/derivatives-exchanges-list)   | Query all the derivatives exchanges with ID and name on CoinGecko                                                             |
+| [/exchanges](https://docs.coingecko.com/v3.0.1/reference/exchanges)                                     | Query all the supported exchanges with exchanges' data (ID, name, country, ...) that have active trading volumes on CoinGecko |
+| [/exchanges/list](https://docs.coingecko.com/v3.0.1/reference/exchanges-list)                           | Query all the exchanges with ID and name                                                                                      |
+| [/exchanges/\{id}](https://docs.coingecko.com/v3.0.1/reference/exchanges-id)                            | Query exchange's data (name, year established, country, ...), exchange volume in BTC and tickers based on exchange's ID       |
+| [/exchanges/\{id}/tickers](https://docs.coingecko.com/v3.0.1/reference/exchanges-id-tickers)            | Query exchange's tickers based on exchange's ID                                                                               |
+| [/exchanges/\{id}/volume\_chart](https://docs.coingecko.com/v3.0.1/reference/exchanges-id-volume-chart) | Query the historical volume chart data with time in UNIX and trading volume data in BTC based on exchange's ID                |
+| [/derivatives](https://docs.coingecko.com/v3.0.1/reference/derivatives-tickers)                         | Query all the tickers from derivatives exchanges on CoinGecko                                                                 |
+| [/derivatives/exchanges](https://docs.coingecko.com/v3.0.1/reference/derivatives-exchanges)             | Query all the derivatives exchanges with related data (ID, name, open interest, ...) on CoinGecko                             |
+| [/derivatives/exchanges/\{id}](https://docs.coingecko.com/v3.0.1/reference/derivatives-exchanges-id)    | Query the derivatives exchange's related data (ID, name, open interest, ...) based on the exchanges' ID                       |
+| [/derivatives/exchanges/list](https://docs.coingecko.com/v3.0.1/reference/derivatives-exchanges-list)   | Query all the derivatives exchanges with ID and name on CoinGecko                                                             |
 
 ## CoinGecko Endpoints: Public Treasuries
 
 | Endpoint                                                                        | Description                                                                               |
 | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [/\{entity}/public\_treasury/\{coin\_id}](/reference/companies-public-treasury) | Query public companies & governments' cryptocurrency holdings by coin ID                  |
-| [/public\_treasury/\{entity\_id}](/reference/public-treasury-entity)            | Query public companies & governments' cryptocurrency holdings by entity ID                |
-| [/entities/list](/reference/entities-list)                                      | Query all the supported entities on CoinGecko with entities ID, name, symbol, and country |
+| [/\{entity}/public\_treasury/\{coin\_id}](https://docs.coingecko.com/reference/companies-public-treasury) | Query public companies & governments' cryptocurrency holdings by coin ID                  |
+| [/public\_treasury/\{entity\_id}](https://docs.coingecko.com/reference/public-treasury-entity)            | Query public companies & governments' cryptocurrency holdings by entity ID                |
+| [/entities/list](https://docs.coingecko.com/reference/entities-list)                                      | Query all the supported entities on CoinGecko with entities ID, name, symbol, and country |
 
 ## CoinGecko Endpoints: General
 
 | Endpoint                                                                       | Description                                                                                                        |
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| [/exchange\_rates](/v3.0.1/reference/exchange-rates)                           | Query BTC exchange rates with other currencies                                                                     |
-| [/asset\_platforms](/v3.0.1/reference/asset-platforms-list)                    | Query all the asset platforms (blockchain networks) on CoinGecko                                                   |
-| [/token\_lists/\{asset\_platform\_id}/all.json](/v3.0.1/reference/token-lists) | Get full list of tokens of a blockchain network (asset platform) that is supported by Ethereum token list standard |
-| [/search](/v3.0.1/reference/search-data)                                       | Search for coins, categories and markets listed on CoinGecko                                                       |
-| [/search/trending](/v3.0.1/reference/trending-search)                          | Query trending search coins, NFTs and categories on CoinGecko in the last 24 hours                                 |
-| [/global](/v3.0.1/reference/crypto-global)                                     | Query cryptocurrency global data including active cryptocurrencies, markets, total crypto market cap and etc.      |
-| [/global/decentralized\_finance\_defi](/v3.0.1/reference/global-defi)          | Query cryptocurrency global decentralized finance (DeFi) data including DeFi market cap, trading volume            |
+| [/exchange\_rates](https://docs.coingecko.com/v3.0.1/reference/exchange-rates)                           | Query BTC exchange rates with other currencies                                                                     |
+| [/asset\_platforms](https://docs.coingecko.com/v3.0.1/reference/asset-platforms-list)                    | Query all the asset platforms (blockchain networks) on CoinGecko                                                   |
+| [/token\_lists/\{asset\_platform\_id}/all.json](https://docs.coingecko.com/v3.0.1/reference/token-lists) | Get full list of tokens of a blockchain network (asset platform) that is supported by Ethereum token list standard |
+| [/search](https://docs.coingecko.com/v3.0.1/reference/search-data)                                       | Search for coins, categories and markets listed on CoinGecko                                                       |
+| [/search/trending](https://docs.coingecko.com/v3.0.1/reference/trending-search)                          | Query trending search coins, NFTs and categories on CoinGecko in the last 24 hours                                 |
+| [/global](https://docs.coingecko.com/v3.0.1/reference/crypto-global)                                     | Query cryptocurrency global data including active cryptocurrencies, markets, total crypto market cap and etc.      |
+| [/global/decentralized\_finance\_defi](https://docs.coingecko.com/v3.0.1/reference/global-defi)          | Query cryptocurrency global decentralized finance (DeFi) data including DeFi market cap, trading volume            |
 
 ## Onchain DEX Endpoints (GeckoTerminal)
 
 | Endpoint                                                                                 | Description                                                                                                                                                              |
 | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [/onchain/simple/networks/../token\_price/..](/v3.0.1/reference/onchain-simple-price)    | Get token price based on the provided token contract address on a network                                                                                                |
-| [/onchain/networks](/v3.0.1/reference/networks-list)                                     | Query all the supported networks on GeckoTerminal                                                                                                                        |
-| [/onchain/networks/../dexes](/v3.0.1/reference/dexes-list)                               | Query all the supported decentralized exchanges (DEXs) based on the provided network on GeckoTerminal                                                                    |
-| [/onchain/networks/trending\_pools](/v3.0.1/reference/trending-pools-list)               | Query all the trending pools across all networks on GeckoTerminal                                                                                                        |
-| [/onchain/networks/../trending\_pools](/v3.0.1/reference/trending-pools-network)         | Query the trending pools based on the provided network                                                                                                                   |
-| [/onchain/networks/../pools/..](/v3.0.1/reference/pool-address)                          | Query the specific pool based on the provided network and pool address                                                                                                   |
-| [/onchain/networks/../pools/multi/..](/v3.0.1/reference/pools-addresses)                 | Query multiple pools based on the provided network and pool address                                                                                                      |
-| [/onchain/networks/../pools](/v3.0.1/reference/top-pools-network)                        | Query all the top pools based on the provided network                                                                                                                    |
-| [/onchain/networks/../dexes/../pools](/v3.0.1/reference/top-pools-dex)                   | Query all the top pools based on the provided network and decentralized exchange (DEX)                                                                                   |
-| [/onchain/networks/../new\_pools](/v3.0.1/reference/latest-pools-network)                | Query all the latest pools based on provided network                                                                                                                     |
-| [/onchain/networks/new\_pools](/v3.0.1/reference/latest-pools-list)                      | Query all the latest pools across all networks on GeckoTerminal                                                                                                          |
-| [/onchain/search/pools](/v3.0.1/reference/search-pools)                                  | Search for pools on a network                                                                                                                                            |
-| [/onchain/networks/../tokens/../pools](/v3.0.1/reference/top-pools-contract-address)     | Query top pools based on the provided token contract address on a network                                                                                                |
-| [/onchain/networks/../tokens/..](/v3.0.1/reference/token-data-contract-address)          | Query specific token data based on the provided token contract address on a network                                                                                      |
-| [/onchain/networks/../tokens/multi/..](/v3.0.1/reference/tokens-data-contract-addresses) | Query multiple tokens data based on the provided token contract addresses on a network                                                                                   |
-| [/onchain/networks/../tokens/../info](/v3.0.1/reference/token-info-contract-address)     | Query token metadata (name, symbol, CoinGecko ID, image, socials, websites, description, etc.) based on a provided token contract address on a network                   |
-| [/onchain/networks/../pools/../info](/v3.0.1/reference/pool-token-info-contract-address) | Query pool metadata (base and quote token details, image, socials, websites, description, contract address, etc.) based on a provided pool contract address on a network |
-| [/onchain/tokens/info\_recently\_updated](/v3.0.1/reference/tokens-info-recent-updated)  | Query 100 most recently updated tokens info across all networks on GeckoTerminal                                                                                         |
-| [/onchain/networks/../pools/../ohlcv/..](/v3.0.1/reference/pool-ohlcv-contract-address)  | Get the OHLCV chart (Open, High, Low, Close, Volume) of a pool based on the provided pool address on a network                                                           |
-| [/onchain/networks/../pools/../trades](/v3.0.1/reference/pool-trades-contract-address)   | Query the last 300 trades in the past 24 hours based on the provided pool address                                                                                        |
+| [/onchain/simple/networks/../token\_price/..](https://docs.coingecko.com/v3.0.1/reference/onchain-simple-price)    | Get token price based on the provided token contract address on a network                                                                                                |
+| [/onchain/networks](https://docs.coingecko.com/v3.0.1/reference/networks-list)                                     | Query all the supported networks on GeckoTerminal                                                                                                                        |
+| [/onchain/networks/../dexes](https://docs.coingecko.com/v3.0.1/reference/dexes-list)                               | Query all the supported decentralized exchanges (DEXs) based on the provided network on GeckoTerminal                                                                    |
+| [/onchain/networks/trending\_pools](https://docs.coingecko.com/v3.0.1/reference/trending-pools-list)               | Query all the trending pools across all networks on GeckoTerminal                                                                                                        |
+| [/onchain/networks/../trending\_pools](https://docs.coingecko.com/v3.0.1/reference/trending-pools-network)         | Query the trending pools based on the provided network                                                                                                                   |
+| [/onchain/networks/../pools/..](https://docs.coingecko.com/v3.0.1/reference/pool-address)                          | Query the specific pool based on the provided network and pool address                                                                                                   |
+| [/onchain/networks/../pools/multi/..](https://docs.coingecko.com/v3.0.1/reference/pools-addresses)                 | Query multiple pools based on the provided network and pool address                                                                                                      |
+| [/onchain/networks/../pools](https://docs.coingecko.com/v3.0.1/reference/top-pools-network)                        | Query all the top pools based on the provided network                                                                                                                    |
+| [/onchain/networks/../dexes/../pools](https://docs.coingecko.com/v3.0.1/reference/top-pools-dex)                   | Query all the top pools based on the provided network and decentralized exchange (DEX)                                                                                   |
+| [/onchain/networks/../new\_pools](https://docs.coingecko.com/v3.0.1/reference/latest-pools-network)                | Query all the latest pools based on provided network                                                                                                                     |
+| [/onchain/networks/new\_pools](https://docs.coingecko.com/v3.0.1/reference/latest-pools-list)                      | Query all the latest pools across all networks on GeckoTerminal                                                                                                          |
+| [/onchain/search/pools](https://docs.coingecko.com/v3.0.1/reference/search-pools)                                  | Search for pools on a network                                                                                                                                            |
+| [/onchain/networks/../tokens/../pools](https://docs.coingecko.com/v3.0.1/reference/top-pools-contract-address)     | Query top pools based on the provided token contract address on a network                                                                                                |
+| [/onchain/networks/../tokens/..](https://docs.coingecko.com/v3.0.1/reference/token-data-contract-address)          | Query specific token data based on the provided token contract address on a network                                                                                      |
+| [/onchain/networks/../tokens/multi/..](https://docs.coingecko.com/v3.0.1/reference/tokens-data-contract-addresses) | Query multiple tokens data based on the provided token contract addresses on a network                                                                                   |
+| [/onchain/networks/../tokens/../info](https://docs.coingecko.com/v3.0.1/reference/token-info-contract-address)     | Query token metadata (name, symbol, CoinGecko ID, image, socials, websites, description, etc.) based on a provided token contract address on a network                   |
+| [/onchain/networks/../pools/../info](https://docs.coingecko.com/v3.0.1/reference/pool-token-info-contract-address) | Query pool metadata (base and quote token details, image, socials, websites, description, contract address, etc.) based on a provided pool contract address on a network |
+| [/onchain/tokens/info\_recently\_updated](https://docs.coingecko.com/v3.0.1/reference/tokens-info-recent-updated)  | Query 100 most recently updated tokens info across all networks on GeckoTerminal                                                                                         |
+| [/onchain/networks/../pools/../ohlcv/..](https://docs.coingecko.com/v3.0.1/reference/pool-ohlcv-contract-address)  | Get the OHLCV chart (Open, High, Low, Close, Volume) of a pool based on the provided pool address on a network                                                           |
+| [/onchain/networks/../pools/../trades](https://docs.coingecko.com/v3.0.1/reference/pool-trades-contract-address)   | Query the last 300 trades in the past 24 hours based on the provided pool address                                                                                        |
 
 ⚡️ Need Real-time Data Streams? Try [WebSocket API](https://docs.coingecko.com/websocket)
 
@@ -6996,15 +6996,15 @@ This endpoint allows you to **query exchange's data (name, year established, cou
 <Warning>
   ### Notice
 
-  * Please note that the `trade_volume_24h_btc_normalized` data field will no longer be supported by our API starting on June 15, 2025. Please refer to [changelog](/changelog#may-2025) for more details.
+  * Please note that the `trade_volume_24h_btc_normalized` data field will no longer be supported by our API starting on June 15, 2025. Please refer to [changelog](https://docs.coingecko.com/changelog#may-2025) for more details.
 </Warning>
 
 <Note>
   ### Note
 
-  * The exchange volume in the response is provided in BTC. To convert it to other currencies, please use [/exchange\_rates](/v3.0.1/reference/exchange-rates) endpoint.
-  * For derivatives (e.g. bitmex, binance\_futures), to get derivatives exchanges data, please go to [/derivatives/exchange/\{id}](/v3.0.1/reference/derivatives-exchanges-id) endpoint.
-  * Tickers are limited to 100 items, to get more tickers, please go to [/exchanges/\{id}/tickers](/v3.0.1/reference/exchanges-id-tickers) endpoint.
+  * The exchange volume in the response is provided in BTC. To convert it to other currencies, please use [/exchange\_rates](https://docs.coingecko.com/v3.0.1/reference/exchange-rates) endpoint.
+  * For derivatives (e.g. bitmex, binance\_futures), to get derivatives exchanges data, please go to [/derivatives/exchange/\{id}](https://docs.coingecko.com/v3.0.1/reference/derivatives-exchanges-id) endpoint.
+  * Tickers are limited to 100 items, to get more tickers, please go to [/exchanges/\{id}/tickers](https://docs.coingecko.com/v3.0.1/reference/exchanges-id-tickers) endpoint.
   * When `dex_pair_format=symbol`, the DEX pair `base` and `target` are displayed in symbol format (e.g. `WETH`, `USDC`) instead of as contract addresses.
   * Cache / Update Frequency: every 60 seconds for all the API plans.
 </Note>
@@ -7037,7 +7037,7 @@ This endpoint allows you to **query the historical volume chart data with time i
   ### Note
 
   * You can use this endpoint to query the historical volume chart data of **derivatives exchanges** as well.
-  * The exchange volume in the response is provided in BTC. To convert it to other currencies, please use [/exchange\_rates](/v3.0.1/reference/exchange-rates) endpoint.
+  * The exchange volume in the response is provided in BTC. To convert it to other currencies, please use [/exchange\_rates](https://docs.coingecko.com/v3.0.1/reference/exchange-rates) endpoint.
   * Data granularity is automatic (cannot be adjusted):
     * 1 day = 10-minutely
     * 7, 14 days = hourly
@@ -7146,13 +7146,13 @@ This endpoint allows you to **query all the NFT data (name, floor price, 24hr vo
 <Tip>
   ### Tips
 
-  * You may also obtain the asset platform id and contract address through [/nfts/list](/v3.0.1/reference/nfts-list) endpoint.
+  * You may also obtain the asset platform id and contract address through [/nfts/list](https://docs.coingecko.com/v3.0.1/reference/nfts-list) endpoint.
 </Tip>
 
 <Note>
   ### Note
 
-  * Solana NFT & Art Blocks are not supported for this endpoint, please use [/nfts/\{id}](/v3.0.1/reference/nfts-id) endpoint instead.
+  * Solana NFT & Art Blocks are not supported for this endpoint, please use [/nfts/\{id}](https://docs.coingecko.com/v3.0.1/reference/nfts-id) endpoint instead.
   * Cache / Update Frequency: every 60 seconds for all the API plans.
 </Note>
 
@@ -7205,7 +7205,7 @@ This endpoint allows you to **get token price based on the provided token contra
   * The returned price currency is in USD.
   * Addresses not found in GeckoTerminal will be ignored.
   * This endpoint allows querying **up to 30 contract addresses** per request.
-  * When using this endpoint, GeckoTerminal's routing decides the best pool for token price. The price source may change based on liquidity and pool activity. For full control over the price, you may use [`/networks/{network}/pools/{address}`](/v3.0.1/reference/pool-address) endpoint by providing a specific pool address.
+  * When using this endpoint, GeckoTerminal's routing decides the best pool for token price. The price source may change based on liquidity and pool activity. For full control over the price, you may use [`/networks/{network}/pools/{address}`](https://docs.coingecko.com/v3.0.1/reference/pool-address) endpoint by providing a specific pool address.
   * Cache/Update Frequency: every 60 seconds.
 </Note>
 
@@ -7292,12 +7292,12 @@ This endpoint allows you to **query pool metadata (base and quote token details,
 <Tip>
   ### Tips
 
-  * If you would like to query pool data such as price, transactions, volume and etc. You can go to this endpoint [`/networks/{network}/pools/{address}`](/v3.0.1/reference/pool-address) instead.
+  * If you would like to query pool data such as price, transactions, volume and etc. You can go to this endpoint [`/networks/{network}/pools/{address}`](https://docs.coingecko.com/v3.0.1/reference/pool-address) instead.
   * Cache/Update frequency: every 60 seconds.
   * Learn more about GT score [here](https://support.coingecko.com/hc/en-us/articles/38381394237593-What-is-GT-Score-How-is-GT-Score-calculated).
   * Metadata (image, websites, description, socials) may be sourced on-chain and is not vetted by the CoinGecko team. If you wish to get metadata reviewed by CoinGecko team, you may use the following endpoints:
-    * [Coin Data by ID](/v3.0.1/reference/coins-id)
-    * [Coin Data by Token Address](/v3.0.1/reference/coins-contract-address)
+    * [Coin Data by ID](https://docs.coingecko.com/v3.0.1/reference/coins-id)
+    * [Coin Data by Token Address](https://docs.coingecko.com/v3.0.1/reference/coins-contract-address)
 </Tip>
 
 <Note>
@@ -7409,7 +7409,7 @@ This endpoint allows you to **query the prices of one or more coins by using the
 
   * You may obtain the coin ID (API ID) via several ways:
     * refers to respective coin page and find 'API ID'.
-    * refers to [`/coins/list`](/v3.0.1/reference/coins-list) endpoint.
+    * refers to [`/coins/list`](https://docs.coingecko.com/v3.0.1/reference/coins-list) endpoint.
     * refers to Google Sheets [here](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit?usp=sharing).
   * You can retrieve specific coins using their unique `ids`, `names`, or `symbols`.
   * You may flag to include more data such as market cap, 24hr volume, 24hr change, last updated time etc.
@@ -7459,7 +7459,7 @@ This endpoint allows you to **query one or more token prices using their token c
 
   * You may obtain the asset platform and contract address via several ways:
     * refers to respective coin page and find 'contract address'.
-    * refers to [`/coins/list`](/v3.0.1/reference/coins-list) endpoint (`include platform = true`).
+    * refers to [`/coins/list`](https://docs.coingecko.com/v3.0.1/reference/coins-list) endpoint (`include platform = true`).
   * You may flag to include more data such as market cap, 24hr volume, 24hr change, last updated time etc.
 </Tip>
 
@@ -7483,7 +7483,7 @@ This endpoint allows you to **query specific token data based on the provided to
   ### Tips
 
   * You may add values such as `top_pools` in the include param to include top pools along with the pools information.
-  * If you would like to query token information such as socials, websites, description and etc. You can go to this endpoint [`/networks/{network}/tokens/{address}/info`](/v3.0.1/reference/token-info-contract-address) instead.
+  * If you would like to query token information such as socials, websites, description and etc. You can go to this endpoint [`/networks/{network}/tokens/{address}/info`](https://docs.coingecko.com/v3.0.1/reference/token-info-contract-address) instead.
 </Tip>
 
 <Note>
@@ -7507,12 +7507,12 @@ This endpoint allows you to **query token metadata (name, symbol,  CoinGecko ID,
 <Tip>
   ### Tips
 
-  * If you would like to query token data such as decimals, total supply, price and etc. You can go to this endpoint [`/networks/{network}/tokens/{address}`](/v3.0.1/reference/token-data-contract-address) instead.
+  * If you would like to query token data such as decimals, total supply, price and etc. You can go to this endpoint [`/networks/{network}/tokens/{address}`](https://docs.coingecko.com/v3.0.1/reference/token-data-contract-address) instead.
   * Cache/Update frequency: every 60 seconds.
   * Learn more about GT score [here](https://support.coingecko.com/hc/en-us/articles/38381394237593-What-is-GT-Score-How-is-GT-Score-calculated).
   * Metadata (image, websites, description, socials) may be sourced on-chain and is not vetted by the CoinGecko team. If you wish to get metadata reviewed by CoinGecko team, you may use the following endpoints:
-    * [Coin Data by ID](/v3.0.1/reference/coins-id)
-    * [Coin Data by Token Address](/v3.0.1/reference/coins-contract-address)
+    * [Coin Data by ID](https://docs.coingecko.com/v3.0.1/reference/coins-id)
+    * [Coin Data by Token Address](https://docs.coingecko.com/v3.0.1/reference/coins-contract-address)
 </Tip>
 
 <Note>
@@ -7551,7 +7551,7 @@ This endpoint allows you to **query multiple tokens data based on the provided t
   ### Tips
 
   * You may add values such as `top_pools` in the include param to include top pools along with the pools information.
-  * If you would like to query token information such as socials, websites, description and etc. You can go to this endpoint [`/networks/{network}/tokens/{address}/info`](/v3.0.1/reference/token-info-contract-address) instead.
+  * If you would like to query token information such as socials, websites, description and etc. You can go to this endpoint [`/networks/{network}/tokens/{address}/info`](https://docs.coingecko.com/v3.0.1/reference/token-info-contract-address) instead.
 </Tip>
 
 <Note>
@@ -7900,10 +7900,10 @@ Move beyond traditional polling and embrace the power of instant data delivery f
 
 | Websocket Channel                                             | Channel Code | Details                                                                                                       |
 | ------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------- |
-| [OnchainSimpleTokenPrice](/websocket/onchainsimpletokenprice) | G1           | Subscribe to receive real-time price updates for tokens, as seen on GeckoTerminal.com                         |
-| [CGSimplePrice](/websocket/cgsimpleprice)                     | C1           | Subscribe to receive real-time price updates for tokens, as seen on CoinGecko.com                             |
-| [OnchainTrade](/websocket/wss-onchain-trade)                  | G2           | Subscribe to receive real-time transaction updates for pools, as seen on GeckoTerminal.com                    |
-| [OnchainOHLCV](/websocket/wssonchainohlcv/)                   | G3           | Subscribe to receive real-time OHLCV (Open, High, Low, Close, Volume) for pools, as seen on GeckoTerminal.com |
+| [OnchainSimpleTokenPrice](https://docs.coingecko.com/websocket/onchainsimpletokenprice) | G1           | Subscribe to receive real-time price updates for tokens, as seen on GeckoTerminal.com                         |
+| [CGSimplePrice](https://docs.coingecko.com/websocket/cgsimpleprice)                     | C1           | Subscribe to receive real-time price updates for tokens, as seen on CoinGecko.com                             |
+| [OnchainTrade](https://docs.coingecko.com/websocket/wss-onchain-trade)                  | G2           | Subscribe to receive real-time transaction updates for pools, as seen on GeckoTerminal.com                    |
+| [OnchainOHLCV](https://docs.coingecko.com/websocket/wssonchainohlcv/)                   | G3           | Subscribe to receive real-time OHLCV (Open, High, Low, Close, Volume) for pools, as seen on GeckoTerminal.com |
 | (More coming soon!)                                           |              |                                                                                                               |
 
 <Note>
@@ -8083,7 +8083,7 @@ This Websocket channel allows you to subscribe to real-time updates of token tra
 
 **Update Frequency**: as fast as 0.1s, for actively traded pools.
 
-**Tips**: use this Rest API endpoint [Top Pools by Token Address](/reference/top-pools-contract-address) to obtain contract address of the most liquid pool.
+**Tips**: use this Rest API endpoint [Top Pools by Token Address](https://docs.coingecko.com/reference/top-pools-contract-address) to obtain contract address of the most liquid pool.
 
 ### Data Payload
 

@@ -21,7 +21,7 @@ Authentication method for CoinGecko Public API (Demo plan users)
 
 * Demo API Key is only available for CoinGecko Public Demo API Plan, the root URL for CoinGecko Public Demo API must be `https://api.coingecko.com/api/v3/`.
   * ⚠️ You are recommended to store the API key securely in your own backend and use a proxy to insert the key into the request URL.
-  * The authentication method below is for CoinGecko Public Demo API only. For **paid plan users with Pro-API key**, please refer to [this page](/reference/authentication) instead.
+  * The authentication method below is for CoinGecko Public Demo API only. For **paid plan users with Pro-API key**, please refer to [this page](https://docs.coingecko.com/reference/authentication) instead.
   * User Guide: [How to sign up for CoinGecko Demo API and generate an API key?](https://support.coingecko.com/hc/en-us/articles/21880397454233)
   * It's highly recommended to use the **Headers method** when making API requests for better security. Using query string parameters can risk exposing your API key.
 </Note>
@@ -33,7 +33,7 @@ If this is your first time using the Demo API key, you can supply API Key to the
 1. Header (Recommended): `x-cg-demo-api-key`
 2. Query String Parameter: `x_cg_demo_api_key`
 
-| Authentication Method  | Example using [Ping](/v3.0.1/reference/ping-server) Endpoint                               |
+| Authentication Method  | Example using [Ping](https://docs.coingecko.com/v3.0.1/reference/ping-server) Endpoint                               |
 | ---------------------- | ------------------------------------------------------------------------------------------ |
 | Header (cURL)          | `curl -X GET "https://api.coingecko.com/api/v3/ping" -H "x-cg-demo-api-key: YOUR_API_KEY"` |
 | Query String Parameter | `https://api.coingecko.com/api/v3/ping?x_cg_demo_api_key=YOUR_API_KEY`                     |
@@ -42,7 +42,7 @@ If this is your first time using the Demo API key, you can supply API Key to the
 
 * Each request made to any endpoint counts as a single call (1 call = 1 credit).
 * Your monthly credit & rate limit are determined by the paid plan to which you subscribe. For more details, please refer to this [page](https://www.coingecko.com/en/api/pricing).
-* To check the API usage, please go to the [developer dashboard](https://www.coingecko.com/en/developers/dashboard) or follow the guide [here](/v3.0.1/reference/setting-up-your-api-key#4-api-usage-report).
+* To check the API usage, please go to the [developer dashboard](https://www.coingecko.com/en/developers/dashboard) or follow the guide [here](https://docs.coingecko.com/v3.0.1/reference/setting-up-your-api-key#4-api-usage-report).
 
 ---
 
@@ -74,7 +74,7 @@ If this is your first time using the Pro API key, you can supply API Key to the 
 1. Header (Recommended): `x-cg-pro-api-key`
 2. Query String Parameter: `x_cg_pro_api_key`
 
-| Authentication Method  | Example using [Ping](/reference/ping-server) Endpoint                                         |
+| Authentication Method  | Example using [Ping](https://docs.coingecko.com/reference/ping-server) Endpoint                                         |
 | ---------------------- | --------------------------------------------------------------------------------------------- |
 | Header (cURL)          | `curl -X GET "https://pro-api.coingecko.com/api/v3/ping" -H "x-cg-pro-api-key: YOUR_API_KEY"` |
 | Query String Parameter | `https://pro-api.coingecko.com/api/v3/ping?x_cg_pro_api_key=YOUR_API_KEY`                     |
@@ -90,7 +90,7 @@ You can now use the Pro-API key (exclusive to any paid plan subscriber) to call 
   * When using the CG Pro API to access onchain DEX data, include the `/onchain` endpoint path in the request.
 </Note>
 
-| Authentication Method  | Example using [Simple Token Price](/reference/onchain-simple-price) Endpoint                                                                                                  |
+| Authentication Method  | Example using [Simple Token Price](https://docs.coingecko.com/reference/onchain-simple-price) Endpoint                                                                                                  |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Header (cURL)          | `curl -X GET "<https://pro-api.coingecko.com/api/v3/onchain/simple/networks/eth/token_price/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2>" -H "x-cg-pro-api-key: YOUR_API_KEY"` |
 | Query String Parameter | `https://pro-api.coingecko.com/api/v3/onchain/simple/networks/eth/token_price/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?x_cg_pro_api_key=YOUR_API_KEY`                       |
@@ -102,7 +102,7 @@ You can now use the Pro-API key (exclusive to any paid plan subscriber) to call 
 * Unsuccessful Requests (Status 4xx, 5xx, etc) will not count towards credit deduction.
 * Regardless of the HTTP status code returned (including 4xx and 5xx errors), all API requests will count towards your **minute rate limit**.
 * Your monthly credit & rate limit are determined by the paid plan to which you subscribe. For more details, please refer to this [page](https://www.coingecko.com/en/api/pricing).
-* To check the API usage, please go to the [developer dashboard](https://www.coingecko.com/en/developers/dashboard) or follow the guide [here](/reference/setting-up-your-api-key#4-api-usage-report)
+* To check the API usage, please go to the [developer dashboard](https://www.coingecko.com/en/developers/dashboard) or follow the guide [here](https://docs.coingecko.com/reference/setting-up-your-api-key#4-api-usage-report)
 
 ---
 
@@ -140,8 +140,8 @@ Source: https://docs.coingecko.com/docs/setting-up-your-api-key
 ## 2. Making API Request
 
 * **Root URLs:**
-  * Pro API: `https://pro-api.coingecko.com/api/v3/`, refer to [Pro API Authentication](/reference/authentication).
-  * Demo API: `https://api.coingecko.com/api/v3/`, refer to [Demo API Authentication](/v3.0.1/reference/authentication).
+  * Pro API: `https://pro-api.coingecko.com/api/v3/`, refer to [Pro API Authentication](https://docs.coingecko.com/reference/authentication).
+  * Demo API: `https://api.coingecko.com/api/v3/`, refer to [Demo API Authentication](https://docs.coingecko.com/v3.0.1/reference/authentication).
 * **Example using the `/ping` endpoint:**
 
 * Pro API: `https://pro-api.coingecko.com/api/v3/ping?x_cg_pro_api_key=YOUR_API_KEY`

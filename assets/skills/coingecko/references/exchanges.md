@@ -14,7 +14,7 @@ v3.0.1/reference/api-reference/coingecko-demo.json get /exchanges/{id}/volume_ch
 This endpoint allows you to **query the historical volume chart data with time in UNIX and trading volume data in BTC based on exchange's ID**
 
 * You can use this endpoint to query the historical volume chart data of **derivatives exchanges** as well.
-  * The exchange volume in the response is provided in BTC. To convert it to other currencies, please use [/exchange\_rates](/v3.0.1/reference/exchange-rates) endpoint.
+  * The exchange volume in the response is provided in BTC. To convert it to other currencies, please use [/exchange\_rates](https://docs.coingecko.com/v3.0.1/reference/exchange-rates) endpoint.
   * Data granularity is automatic (cannot be adjusted):
     * 1 day = 10-minutely
     * 7, 14 days = hourly
@@ -229,12 +229,12 @@ This endpoint allows you to **query exchange's data (name, year established, cou
 <Warning>
   ### Notice
 
-* Please note that the `trade_volume_24h_btc_normalized` data field will no longer be supported by our API starting on June 15, 2025. Please refer to [changelog](/changelog#may-2025) for more details.
+* Please note that the `trade_volume_24h_btc_normalized` data field will no longer be supported by our API starting on June 15, 2025. Please refer to [changelog](https://docs.coingecko.com/changelog#may-2025) for more details.
 </Warning>
 
-* The exchange volume in the response is provided in BTC. To convert it to other currencies, please use [/exchange\_rates](/v3.0.1/reference/exchange-rates) endpoint.
-  * For derivatives (e.g. bitmex, binance\_futures), to get derivatives exchanges data, please go to [/derivatives/exchange/\{id}](/v3.0.1/reference/derivatives-exchanges-id) endpoint.
-  * Tickers are limited to 100 items, to get more tickers, please go to [/exchanges/\{id}/tickers](/v3.0.1/reference/exchanges-id-tickers) endpoint.
+* The exchange volume in the response is provided in BTC. To convert it to other currencies, please use [/exchange\_rates](https://docs.coingecko.com/v3.0.1/reference/exchange-rates) endpoint.
+  * For derivatives (e.g. bitmex, binance\_futures), to get derivatives exchanges data, please go to [/derivatives/exchange/\{id}](https://docs.coingecko.com/v3.0.1/reference/derivatives-exchanges-id) endpoint.
+  * Tickers are limited to 100 items, to get more tickers, please go to [/exchanges/\{id}/tickers](https://docs.coingecko.com/v3.0.1/reference/exchanges-id-tickers) endpoint.
   * When `dex_pair_format=symbol`, the DEX pair `base` and `target` are displayed in symbol format (e.g. `WETH`, `USDC`) instead of as contract addresses.
   * Cache / Update Frequency: every 60 seconds for all the API plans.
 </Note>
