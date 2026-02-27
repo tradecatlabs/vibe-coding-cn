@@ -22,8 +22,8 @@ AI 不再是孤立的，而是可以互相感知、通讯、控制的集群。
 
 ## 详细文档
 
-👉 [深入了解AI蜂群协作](../02-方法论/AI蜂群协作-tmux多Agent协作系统.md)
+👉 [深入了解AI蜂群协作](../../guides/playbook/AI蜂群协作-tmux多Agent协作系统.md)
 
 ## 相关资源
 
-- [tmux快捷键大全](../02-方法论/tmux快捷键大全.md)
+- [tmux快捷键大全](../../guides/playbook/tmux快捷键大全.md)
