@@ -26,4 +26,4 @@
 
 ## 下一步
 
-→ [04-OpenCode-CLI配置](./04-OpenCode-CLI配置.md) - 获得你的"一"
+→ [OpenCode-CLI配置](./OpenCode-CLI配置.md) - 获得你的"一"
