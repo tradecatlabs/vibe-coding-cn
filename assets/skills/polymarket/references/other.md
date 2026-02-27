@@ -96,8 +96,8 @@ The WebSocket connection supports:
 
 The RTDS currently supports the following subscription types:
 
-1. **[Crypto Prices](/developers/RTDS/RTDS-crypto-prices)** - Real-time cryptocurrency price updates
-2. **[Comments](/developers/RTDS/RTDS-comments)** - Comment-related events including reactions
+1. **[Crypto Prices](https://docs.polymarket.com/developers/RTDS/RTDS-crypto-prices)** - Real-time cryptocurrency price updates
+2. **[Comments](https://docs.polymarket.com/developers/RTDS/RTDS-comments)** - Comment-related events including reactions
 
 All messages received from the WebSocket follow this structure:
 

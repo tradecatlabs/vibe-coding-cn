@@ -193,7 +193,7 @@ Source: https://docs.polymarket.com/quickstart/introduction/definitions
 | **Token**                    | A token represents a stake in a specific Yes/No outcome in a Market. The price of a token can fluctuate between $0 - $1 based on the market belief in the outcome. When a market resolves, the token associated with the correct prediction can be redeemed for \$1 USDC. This is also sometimes called an *Asset Id*                                             |
 | **Market**                   | A single event outcome. Corresponds to a pair of CLOB token IDs(Yes/No), a market address, a question ID and a condition ID.                                                                                                                                                                                                                                      |
 | **Event**                    | A collection of related markets grouped under a common topic or theme.                                                                                                                                                                                                                                                                                            |
-| **SLUG**                     | A human readable identification for a market or event. Can be found in the URL of any Polymarket Market or Event. You can use this slug to find more detailed information about a market or event by using it as a parameter in the [Get Events](/developers/gamma-markets-api/get-events) or [Get Markets](/developers/gamma-markets-api/get-markets) endpoints. |
+| **SLUG**                     | A human readable identification for a market or event. Can be found in the URL of any Polymarket Market or Event. You can use this slug to find more detailed information about a market or event by using it as a parameter in the [Get Events](https://docs.polymarket.com/developers/gamma-markets-api/get-events) or [Get Markets](https://docs.polymarket.com/developers/gamma-markets-api/get-markets) endpoints. |
 | **Negative Risk (negrisk)**  | A group of Markets(Event) in which only one Market can resolve as yes. For more detail see [Negrisk Details](https://docs.polymarket.com/developers/neg-risk/overview)                                                                                                                                                                                            |
 | **Central Limit Order Book** | The off-chain order matching system. This is where you place resting orders and market orders are matched with existing orders before being sent on-chain.                                                                                                                                                                                                        |
 | **Polygon Network**          | A scalable, multi-chain blockchain platform used by Polymarket to facilitate on-chain activities(contract creation, token transfers, etc)                                                                                                                                                                                                                         |
@@ -247,7 +247,7 @@ Source: https://docs.polymarket.com/polymarket-learn/FAQ/does-polymarket-have-an
 
 Getting data from Polymarket
 
-Yes! Developers can find all the information they need for interacting with Polymarket. This includes [documentation on market discovery, resolution, trading etc.](/quickstart/introduction/main)
+Yes! Developers can find all the information they need for interacting with Polymarket. This includes [documentation on market discovery, resolution, trading etc.](https://docs.polymarket.com/quickstart/introduction/main)
 
 Whether you are an academic researcher a market maker or an indepedent developer, this documentation should provide you what you need to get started. All the code you find linked here and on our [GitHub](https://github.com/polymarket) is open source and free to use.
 
@@ -267,7 +267,7 @@ This section of the documentation will provide all the essential resources to he
 
 Everything you need to start building with the Polymarket API is right here. Let’s get started.
 
-[Not sure what to build next? Get inspired by checking out real examples from other developers using the API.](/quickstart/introduction/showcase)
+[Not sure what to build next? Get inspired by checking out real examples from other developers using the API.](https://docs.polymarket.com/quickstart/introduction/showcase)
 
 ---
 
@@ -327,13 +327,13 @@ Polymarket is the world’s largest prediction market, allowing you to stay info
 
 Studies show prediction markets are often more accurate than pundits because they combine news, polls, and expert opinions into a single value that represents the market's view of an event's odds. Our markets reflect *accurate, unbiased, and real-time probabilities* for the events that matter most to you. Markets seek truth.
 
-* On Polymarket, you can [buy and sell shares](making-your-first-trade) representing future event outcomes (i.e. "Will TikTok be banned in the U.S. this year?")
+* On Polymarket, you can [buy and sell shares](https://docs.polymarket.com/polymarket-learn/get-started/making-your-first-trade) representing future event outcomes (i.e. "Will TikTok be banned in the U.S. this year?")
 
-* Shares in event outcomes are [always priced](what-is-polymarket/#understanding-prices) between 0.00 and 1.00 [USDC](../FAQ/why-do-i-need-crypto/#why-usdc), and every pair of event outcomes (i.e. each pair of "YES" + "NO" shares) is fully collateralized by \$1.00 USDC.
+* Shares in event outcomes are [always priced](https://docs.polymarket.com/polymarket-learn/get-started/what-is-polymarket/#understanding-prices) between 0.00 and 1.00 [USDC](https://docs.polymarket.com/polymarket-learn/FAQ/why-do-i-need-crypto/#why-usdc), and every pair of event outcomes (i.e. each pair of "YES" + "NO" shares) is fully collateralized by \$1.00 USDC.
 
-* Shares are created when [opposing sides come to an agreement on odds](../trading/limit-orders), such that the sum of what each side is willing to pay is equal to \$1.00.
+* Shares are created when [opposing sides come to an agreement on odds](https://docs.polymarket.com/polymarket-learn/trading/limit-orders), such that the sum of what each side is willing to pay is equal to \$1.00.
 
-* The shares representing the *correct, final outcome* are paid out \$1.00 USDC each upon [market resolution](../markets/how-are-markets-resolved).
+* The shares representing the *correct, final outcome* are paid out \$1.00 USDC each upon [market resolution](https://docs.polymarket.com/polymarket-learn/markets/how-are-markets-resolved).
 
 * Unlike sportsbooks, you are not betting against "the house" – the counterparty to each trade is another Polymarket user. As such:
 
@@ -351,7 +351,7 @@ Prices = Probabilities.
 
 These odds are determined by what price other Polymarket users are currently willing to buy & sell those shares at. Just how stock exchanges don't "set" the prices of stocks, Polymarket does not set prices / odds - they're a function of supply & demand.
 
-[Learn more >](/docs/guides/trading/how-are-prices-calculated)
+[Learn more >](https://docs.polymarket.com/docs/guides/trading/how-are-prices-calculated)
 
 ### Making money on markets
 

@@ -107,7 +107,7 @@ While users cannot directly create their own markets, they are encouraged to sug
 To give your proposal the best chance of being listed, include as much information as possible, such as:
 
 * What is the market title?
-* What is the [resolution source](../markets/how-are-markets-resolved)?
+* What is the [resolution source](https://docs.polymarket.com/polymarket-learn/markets/how-are-markets-resolved)?
 * Evidence of demand for trading that market
 
 The best ways to propose a new market are:
@@ -388,7 +388,7 @@ Polymarket recognizes the importance of a trustworthy environment for managing y
 
 ### Your keys = your funds
 
-A private key acts like a highly secure password, essential for managing and moving your assets without restrictions. You can export your private key at any time, ensuring sole access to your funds. Learn how to export your private key [here](../FAQ/how-to-export-private-key/).
+A private key acts like a highly secure password, essential for managing and moving your assets without restrictions. You can export your private key at any time, ensuring sole access to your funds. Learn how to export your private key [here](https://docs.polymarket.com/polymarket-learn/FAQ/how-to-export-private-key/).
 
 ### Keep your private keys private.
 
@@ -484,7 +484,7 @@ If your exchange supports sending or withdrawing to Polygon, we recommend this o
 
 For detailed instructions, check out our guides for purchasing and depositing USDC using popular exchanges:
 
-* [Deposit from Coinbase](../deposits/coinbase) (recommended)
+* [Deposit from Coinbase](https://docs.polymarket.com/polymarket-learn/deposits/coinbase) (recommended)
 
 <Note>
   If you decide to use an exchange to purchase and send (deposit) USDC to your Polygon deposit address, please ensure you're sending on Polygon Network. If you're unsure, please reach out to support on [Discord](https://discord.com/invite/polymarket).
@@ -492,11 +492,11 @@ For detailed instructions, check out our guides for purchasing and depositing US
 
 ### Deposit with Visa or Mastercard
 
-MoonPay enables you to buy USDC (on Polygon) using your Visa, Mastercard, and select bank cards. Please be aware that payment options and transaction limits may vary depending on your region. [How to use MoonPay](../deposits/moonpay/).
+MoonPay enables you to buy USDC (on Polygon) using your Visa, Mastercard, and select bank cards. Please be aware that payment options and transaction limits may vary depending on your region. [How to use MoonPay](https://docs.polymarket.com/polymarket-learn/deposits/moonpay/).
 
 ### Depositing on Etheruem and Polygon
 
-You can send USDC with your wallet on Ethereum or USDC.e on Polygon to your respective deposit addresses found on the Deposit page. [Learn more](../deposits/usdc-on-eth/).
+You can send USDC with your wallet on Ethereum or USDC.e on Polygon to your respective deposit addresses found on the Deposit page. [Learn more](https://docs.polymarket.com/polymarket-learn/deposits/usdc-on-eth/).
 
 ---
 
@@ -631,11 +631,11 @@ Source: https://docs.polymarket.com/polymarket-learn/trading/using-the-orderbook
 
 Understanding the Order Book will help you become an advanced trader.
 
-In the Getting Started tutorial on [Making your First Trade](../get-started/making-your-first-trade/), we learned about market orders.
+In the Getting Started tutorial on [Making your First Trade](https://docs.polymarket.com/polymarket-learn/get-started/making-your-first-trade/), we learned about market orders.
 
 In a market order, your trade executes instantly at the current market price.
 
-But what if you think the market price is too high and want to set a specific price that you would be willing to accept? These are called [Limit Orders](../trading/limit-orders/).
+But what if you think the market price is too high and want to set a specific price that you would be willing to accept? These are called [Limit Orders](https://docs.polymarket.com/polymarket-learn/trading/limit-orders/).
 
 ## Viewing the Order Book
 
@@ -735,7 +735,7 @@ When your orders are earning rewards you’ll see a blue highlight around the cl
 
 Rewards are paid out automatically every day at \~midnight UTC. Your history on your portfolio page will reflect rewards paid to your address.
 
-To read more about the specific calculations and formulas that determine rewards, visit our  [Rewards Documentation](/developers/rewards/overview).
+To read more about the specific calculations and formulas that determine rewards, visit our  [Rewards Documentation](https://docs.polymarket.com/developers/rewards/overview).
 
 ---
 
@@ -866,7 +866,7 @@ In rare cases, circumstances occur that were not foreseen at a market’s creati
 
 Source: https://docs.polymarket.com/polymarket-learn/get-started/making-your-first-trade
 
-Once you've [signed up](../get-started/how-to-signup) and [deposited funds](../get-started/how-to-deposit), you're ready to start trading on Polymarket. Here's a step-by-step guide to get you started.
+Once you've [signed up](https://docs.polymarket.com/polymarket-learn/get-started/how-to-signup) and [deposited funds](https://docs.polymarket.com/polymarket-learn/get-started/how-to-deposit), you're ready to start trading on Polymarket. Here's a step-by-step guide to get you started.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1lFgkHLqo28?si=i7e61-roRsOVeRMW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
 
@@ -895,7 +895,7 @@ You'll also see a bet slip to share on social media. We love sending \$\$\$ to t
   </Steps.Step>
 </Steps>
 
-Simple, right? If you think you've got the hang of it, it's time to learn about more advanced trading and order types. [Limit Orders](../trading/limit-orders/).
+Simple, right? If you think you've got the hang of it, it's time to learn about more advanced trading and order types. [Limit Orders](https://docs.polymarket.com/polymarket-learn/trading/limit-orders/).
 
 ---
 
@@ -955,7 +955,7 @@ The prices probabilities displayed on Polymarket are the midpoint of the bid-ask
 
 * When a market is created, there are initially zero shares and no pre-defined prices or odds.
 
-* Market makers (a fancy term for traders placing limit orders) interested in buying YES or NO shares can place [Limit Orders](../trading/limit-orders) at the price they're willing to pay
+* Market makers (a fancy term for traders placing limit orders) interested in buying YES or NO shares can place [Limit Orders](https://docs.polymarket.com/polymarket-learn/trading/limit-orders) at the price they're willing to pay
 
 * When offers for the YES and NO side equal \$1.00, the order is "matched" and that \$1.00 is converted into 1 YES and 1 NO share, each going to their respective buyers.
 
@@ -1373,6 +1373,6 @@ Once in the verification process, UMA will review the transaction to ensure it w
 
 Once a market is proposed for resolution it goes into a challenge period of 2 hours.
 
-If you do not agree with a proposed resolution, you can [dispute the outcome](../markets/dispute).
+If you do not agree with a proposed resolution, you can [dispute the outcome](https://docs.polymarket.com/polymarket-learn/markets/dispute).
 
 ---

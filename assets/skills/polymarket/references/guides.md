@@ -52,9 +52,9 @@ Individual markets and events are best fetched using their unique slug identifie
 
 From any Polymarket URL, the slug is the path segment after `/event/` or `/market/`:
 
-**For Events:** [GET /events/slug/{slug}](/api-reference/events/list-events)
+**For Events:** [GET /events/slug/{slug}](https://docs.polymarket.com/api-reference/events/list-events)
 
-**For Markets:** [GET /markets/slug/{slug}](/api-reference/markets/list-markets)
+**For Markets:** [GET /markets/slug/{slug}](https://docs.polymarket.com/api-reference/markets/list-markets)
 
 **Use Case:** When you want to filter markets by category, sport, or topic.
 
@@ -62,9 +62,9 @@ Tags provide a powerful way to categorize and filter markets. You can discover a
 
 ### Discover Available Tags
 
-**General Tags:** [GET /tags](/api-reference/tags/list-tags)
+**General Tags:** [GET /tags](https://docs.polymarket.com/api-reference/tags/list-tags)
 
-**Sports Tags & Metadata:** [GET /sports](/api-reference/sports/get-sports-metadata-information)
+**Sports Tags & Metadata:** [GET /sports](https://docs.polymarket.com/api-reference/sports/get-sports-metadata-information)
 
 The `/sports` endpoint returns comprehensive metadata for sports including tag IDs, images, resolution sources, and series information.
 
@@ -72,9 +72,9 @@ The `/sports` endpoint returns comprehensive metadata for sports including tag I
 
 Once you have tag IDs, you can use them with the `tag_id` parameter in both markets and events endpoints.
 
-**Markets with Tags:** [GET /markets](/api-reference/markets/list-markets)
+**Markets with Tags:** [GET /markets](https://docs.polymarket.com/api-reference/markets/list-markets)
 
-**Events with Tags:** [GET /events](/api-reference/events/list-events)
+**Events with Tags:** [GET /events](https://docs.polymarket.com/api-reference/events/list-events)
 
 ### Additional Tag Filtering
 
@@ -87,9 +87,9 @@ Once you have tag IDs, you can use them with the `tag_id` parameter in both mark
 
 The most efficient approach is to use the `/events` endpoint and work backwards, as events contain their associated markets.
 
-**Events Endpoint:** [GET /events](/api-reference/events/list-events)
+**Events Endpoint:** [GET /events](https://docs.polymarket.com/api-reference/events/list-events)
 
-**Markets Endpoint:** [GET /markets](/api-reference/markets/list-markets)
+**Markets Endpoint:** [GET /markets](https://docs.polymarket.com/api-reference/markets/list-markets)
 
 * `order=id` - Order by event ID
 * `ascending=false` - Get newest events first
@@ -129,9 +129,9 @@ Tags provide a powerful way to categorize and filter markets. You can discover a
 
 ### Discover Available Tags
 
-**General Tags:** [GET /tags](/api-reference/tags/list-tags)
+**General Tags:** [GET /tags](https://docs.polymarket.com/api-reference/tags/list-tags)
 
-**Sports Tags & Metadata:** [GET /sports](/api-reference/sports/get-sports-metadata-information)
+**Sports Tags & Metadata:** [GET /sports](https://docs.polymarket.com/api-reference/sports/get-sports-metadata-information)
 
 The `/sports` endpoint returns comprehensive metadata for sports including tag IDs, images, resolution sources, and series information.
 
@@ -139,9 +139,9 @@ The `/sports` endpoint returns comprehensive metadata for sports including tag I
 
 Once you have tag IDs, you can use them with the `tag_id` parameter in both markets and events endpoints.
 
-**Markets with Tags:** [GET /markets](/api-reference/markets/list-markets)
+**Markets with Tags:** [GET /markets](https://docs.polymarket.com/api-reference/markets/list-markets)
 
-**Events with Tags:** [GET /events](/api-reference/events/list-events)
+**Events with Tags:** [GET /events](https://docs.polymarket.com/api-reference/events/list-events)
 ```
 
 Example 3 (unknown):
@@ -161,9 +161,9 @@ You can also:
 
 The most efficient approach is to use the `/events` endpoint and work backwards, as events contain their associated markets.
 
-**Events Endpoint:** [GET /events](/api-reference/events/list-events)
+**Events Endpoint:** [GET /events](https://docs.polymarket.com/api-reference/events/list-events)
 
-**Markets Endpoint:** [GET /markets](/api-reference/markets/list-markets)
+**Markets Endpoint:** [GET /markets](https://docs.polymarket.com/api-reference/markets/list-markets)
 
 ### Key Parameters
 
@@ -200,7 +200,7 @@ For large datasets, use pagination with `limit` and `offset` parameters:
 - Video Walkthrough
 - Placing a Market Order
 
-Once you've [signed up](../get-started/how-to-signup) and [deposited funds](../get-started/how-to-deposit), you're ready to start trading on Polymarket. Here's a step-by-step guide to get you started.
+Once you've [signed up](https://docs.polymarket.com/polymarket-learn/get-started/how-to-signup) and [deposited funds](https://docs.polymarket.com/polymarket-learn/get-started/how-to-deposit), you're ready to start trading on Polymarket. Here's a step-by-step guide to get you started.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1lFgkHLqo28?si=i7e61-roRsOVeRMW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
 
@@ -230,6 +230,6 @@ You'll also see a bet slip to share on social media. We love sending \$\$\$ to t
   </Steps.Step>
 </Steps>
 
-Simple, right? If you think you've got the hang of it, it's time to learn about more advanced trading and order types. [Limit Orders](../trading/limit-orders/).
+Simple, right? If you think you've got the hang of it, it's time to learn about more advanced trading and order types. [Limit Orders](https://docs.polymarket.com/polymarket-learn/trading/limit-orders/).
 
 ---

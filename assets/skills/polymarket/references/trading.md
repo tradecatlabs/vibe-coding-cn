@@ -113,7 +113,7 @@ Instructions for placing multiple orders(Batch)
 
 <Tip> This endpoint requires a L2 Header </Tip>
 
-Polymarket’s CLOB supports batch orders, allowing you to place up to `15` orders in a single request. Before using this feature, make sure you're comfortable placing a single order first. You can find the documentation for that [here.](/developers/CLOB/orders/create-order)
+Polymarket’s CLOB supports batch orders, allowing you to place up to `15` orders in a single request. Before using this feature, make sure you're comfortable placing a single order first. You can find the documentation for that [here.](https://docs.polymarket.com/developers/CLOB/orders/create-order)
 
 `POST /<clob-endpoint>/orders`
 
@@ -348,12 +348,12 @@ Welcome to the Polymarket Changelog. Here you will find any important changes to
   * **Comment Streaming**: Real-time updates for comment events including new comments, replies, and reactions
   * **Dynamic Subscriptions**: Add, remove, and modify subscriptions without reconnecting
   * **TypeScript Client**: Official TypeScript client available at [real-time-data-client](https://github.com/Polymarket/real-time-data-client)
-    For complete documentation, see [RTDS Overview](/developers/RTDS/RTDS-overview).
+    For complete documentation, see [RTDS Overview](https://docs.polymarket.com/developers/RTDS/RTDS-overview).
 </Update>
 
 <Update label="September 15, 2025" description="WSS price_change event update">
   * There has been a significant change to the structure of the price change message. This update will be applied at 11PM UTC September 15, 2025. We apologize for the short notice
-    * Please see the [migration guide](/developers/CLOB/websocket/market-channel-migration-guide) for details.
+    * Please see the [migration guide](https://docs.polymarket.com/developers/CLOB/websocket/market-channel-migration-guide) for details.
 </Update>
 
 <Update label="August 26, 2025" description="Updated /trades and /activity endpoints">
@@ -363,7 +363,7 @@ Welcome to the Polymarket Changelog. Here you will find any important changes to
 </Update>
 
 <Update label="August 21, 2025" description="Batch Orders Increase">
-  * The batch orders limit has been increased from from 5 -> 15. Read more about the batch orders functionality [here](/developers/CLOB/orders/create-order-batch).
+  * The batch orders limit has been increased from from 5 -> 15. Read more about the batch orders functionality [here](https://docs.polymarket.com/developers/CLOB/orders/create-order-batch).
 </Update>
 
 <Update label="July 23, 2025" description="Get Book(s) update">
@@ -380,11 +380,11 @@ Welcome to the Polymarket Changelog. Here you will find any important changes to
 </Update>
 
 <Update label="June 3, 2025" description="New Batch Orders Endpoint">
-  * We’re excited to roll out a highly requested feature: **order batching**. With this new endpoint, users can now submit up to five trades in a single request. To help you get started, we’ve included sample code demonstrating how to use it. Please see [Place Multiple Orders (Batching)](/developers/CLOB/orders/create-order-batch) for more details.
+  * We’re excited to roll out a highly requested feature: **order batching**. With this new endpoint, users can now submit up to five trades in a single request. To help you get started, we’ve included sample code demonstrating how to use it. Please see [Place Multiple Orders (Batching)](https://docs.polymarket.com/developers/CLOB/orders/create-order-batch) for more details.
 </Update>
 
 <Update label="June 3, 2025" description="Change to /data/trades">
-  * We're adding a new `side` field to the `MakerOrder` portion of the trade object. This field will indicate whether the maker order is a `buy` or `sell`, helping to clarify trade events where the maker side was previously ambiguous. For more details, refer to the MakerOrder object on the [Get Trades](/developers/CLOB/trades/trades) page.
+  * We're adding a new `side` field to the `MakerOrder` portion of the trade object. This field will indicate whether the maker order is a `buy` or `sell`, helping to clarify trade events where the maker side was previously ambiguous. For more details, refer to the MakerOrder object on the [Get Trades](https://docs.polymarket.com/developers/CLOB/trades/trades) page.
 </Update>
 
 <Update label="May 28, 2025" description="Websocket Changes">
@@ -466,14 +466,14 @@ After installing one of those you will be able to run the below code. Take the t
 #### In addition to detailed comments in the code snippet, here are some more tips to help you get started.
 
 * See the Python example for details on the proper way to initialize a Py-Clob-Client depending on your wallet type. Three exhaustive examples are given. If using a MetaMask wallet or EOA please see the resources [here](https://github.com/Polymarket/py-clob-client?tab=readme-ov-file), for instructions on setting allowances.
-* When buying into a market you purchase a "Token" that token represents either a Yes or No outcome of the event. To easily get required token pairs for a given event we have provided an interactive endpoint [here](/developers/gamma-markets-api/get-markets).
+* When buying into a market you purchase a "Token" that token represents either a Yes or No outcome of the event. To easily get required token pairs for a given event we have provided an interactive endpoint [here](https://docs.polymarket.com/developers/gamma-markets-api/get-markets).
 * Common pitfalls:
   * Negrisk Markets require an additional flag in the OrderArgs `negrisk=False `
   * `invalid signature` error, likely due to one of the following.
     * Incorrect Funder and or Private Key
     * Incorrect NegRisk flag in your order arguments
   * `not enough balance / allowance`.
-    * Not enough USDC to perform the trade. See the formula at the bottom of [this](/developers/CLOB/orders/orders) page for details.
+    * Not enough USDC to perform the trade. See the formula at the bottom of [this](https://docs.polymarket.com/developers/CLOB/orders/orders) page for details.
     * If using Metamask / WEB3 wallet go [here](https://github.com/Polymarket/py-clob-client?tab=readme-ov-file), for instructions on setting allowances.
 
 **Examples:**
@@ -635,7 +635,7 @@ Where a `OrderSummary` object is of the form:
 ## price\_change Message
 
 <div style={{backgroundColor: '#fff3cd', border: '1px solid #ffeaa7', borderRadius: '4px', padding: '12px', marginBottom: '16px'}}>
-  <strong>⚠️ Breaking Change Notice:</strong> The price\_change message schema will be updated on September 15, 2025 at 11 PM UTC. Please see the [migration guide](/developers/CLOB/websocket/market-channel-migration-guide) for details.
+  <strong>⚠️ Breaking Change Notice:</strong> The price\_change message schema will be updated on September 15, 2025 at 11 PM UTC. Please see the [migration guide](https://docs.polymarket.com/developers/CLOB/websocket/market-channel-migration-guide) for details.
 </div>
 
 * A new order is placed
@@ -685,7 +685,7 @@ Example 1 (unknown):
 ## price\_change Message
 
 <div style={{backgroundColor: '#fff3cd', border: '1px solid #ffeaa7', borderRadius: '4px', padding: '12px', marginBottom: '16px'}}>
-  <strong>⚠️ Breaking Change Notice:</strong> The price\_change message schema will be updated on September 15, 2025 at 11 PM UTC. Please see the [migration guide](/developers/CLOB/websocket/market-channel-migration-guide) for details.
+  <strong>⚠️ Breaking Change Notice:</strong> The price\_change message schema will be updated on September 15, 2025 at 11 PM UTC. Please see the [migration guide](https://docs.polymarket.com/developers/CLOB/websocket/market-channel-migration-guide) for details.
 </div>
 
 Emitted When:

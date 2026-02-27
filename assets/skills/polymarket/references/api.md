@@ -190,9 +190,9 @@ curl "https://gamma-api.polymarket.com/markets?tag_id=100381&closed=false&limit=
 4. **Always Include `closed=false`:** Unless you specifically need historical data
 5. **Implement Rate Limiting:** Respect API limits for production applications
 
-* [Get Markets](/developers/gamma-markets-api/get-markets) - Full markets endpoint documentation
-* [Get Events](/developers/gamma-markets-api/get-events) - Full events endpoint documentation
-* [Search Markets](/developers/gamma-markets-api/get-public-search) - Search functionality
+* [Get Markets](https://docs.polymarket.com/developers/gamma-markets-api/get-markets) - Full markets endpoint documentation
+* [Get Events](https://docs.polymarket.com/developers/gamma-markets-api/get-events) - Full events endpoint documentation
+* [Search Markets](https://docs.polymarket.com/developers/gamma-markets-api/get-public-search) - Search functionality
 
 ---
 

@@ -307,12 +307,12 @@ Welcome to the Polymarket Changelog. Here you will find any important changes to
   * **Comment Streaming**: Real-time updates for comment events including new comments, replies, and reactions
   * **Dynamic Subscriptions**: Add, remove, and modify subscriptions without reconnecting
   * **TypeScript Client**: Official TypeScript client available at [real-time-data-client](https://github.com/Polymarket/real-time-data-client)
-    For complete documentation, see [RTDS Overview](/developers/RTDS/RTDS-overview).
+    For complete documentation, see [RTDS Overview](https://docs.polymarket.com/developers/RTDS/RTDS-overview).
 </Update>
 
 <Update label="September 15, 2025" description="WSS price_change event update">
   * There has been a significant change to the structure of the price change message. This update will be applied at 11PM UTC September 15, 2025. We apologize for the short notice
-    * Please see the [migration guide](/developers/CLOB/websocket/market-channel-migration-guide) for details.
+    * Please see the [migration guide](https://docs.polymarket.com/developers/CLOB/websocket/market-channel-migration-guide) for details.
 </Update>
 
 <Update label="August 26, 2025" description="Updated /trades and /activity endpoints">
@@ -322,7 +322,7 @@ Welcome to the Polymarket Changelog. Here you will find any important changes to
 </Update>
 
 <Update label="August 21, 2025" description="Batch Orders Increase">
-  * The batch orders limit has been increased from from 5 -> 15. Read more about the batch orders functionality [here](/developers/CLOB/orders/create-order-batch).
+  * The batch orders limit has been increased from from 5 -> 15. Read more about the batch orders functionality [here](https://docs.polymarket.com/developers/CLOB/orders/create-order-batch).
 </Update>
 
 <Update label="July 23, 2025" description="Get Book(s) update">
@@ -339,11 +339,11 @@ Welcome to the Polymarket Changelog. Here you will find any important changes to
 </Update>
 
 <Update label="June 3, 2025" description="New Batch Orders Endpoint">
-  * We’re excited to roll out a highly requested feature: **order batching**. With this new endpoint, users can now submit up to five trades in a single request. To help you get started, we’ve included sample code demonstrating how to use it. Please see [Place Multiple Orders (Batching)](/developers/CLOB/orders/create-order-batch) for more details.
+  * We’re excited to roll out a highly requested feature: **order batching**. With this new endpoint, users can now submit up to five trades in a single request. To help you get started, we’ve included sample code demonstrating how to use it. Please see [Place Multiple Orders (Batching)](https://docs.polymarket.com/developers/CLOB/orders/create-order-batch) for more details.
 </Update>
 
 <Update label="June 3, 2025" description="Change to /data/trades">
-  * We're adding a new `side` field to the `MakerOrder` portion of the trade object. This field will indicate whether the maker order is a `buy` or `sell`, helping to clarify trade events where the maker side was previously ambiguous. For more details, refer to the MakerOrder object on the [Get Trades](/developers/CLOB/trades/trades) page.
+  * We're adding a new `side` field to the `MakerOrder` portion of the trade object. This field will indicate whether the maker order is a `buy` or `sell`, helping to clarify trade events where the maker side was previously ambiguous. For more details, refer to the MakerOrder object on the [Get Trades](https://docs.polymarket.com/developers/CLOB/trades/trades) page.
 </Update>
 
 <Update label="May 28, 2025" description="Websocket Changes">
@@ -1267,7 +1267,7 @@ Instructions for placing multiple orders(Batch)
 
 <Tip> This endpoint requires a L2 Header </Tip>
 
-Polymarket’s CLOB supports batch orders, allowing you to place up to `15` orders in a single request. Before using this feature, make sure you're comfortable placing a single order first. You can find the documentation for that [here.](/developers/CLOB/orders/create-order)
+Polymarket’s CLOB supports batch orders, allowing you to place up to `15` orders in a single request. Before using this feature, make sure you're comfortable placing a single order first. You can find the documentation for that [here.](https://docs.polymarket.com/developers/CLOB/orders/create-order)
 
 **HTTP REQUEST**
 
@@ -1847,7 +1847,7 @@ Where a `OrderSummary` object is of the form:
 ## price\_change Message
 
 <div style={{backgroundColor: '#fff3cd', border: '1px solid #ffeaa7', borderRadius: '4px', padding: '12px', marginBottom: '16px'}}>
-  <strong>⚠️ Breaking Change Notice:</strong> The price\_change message schema will be updated on September 15, 2025 at 11 PM UTC. Please see the [migration guide](/developers/CLOB/websocket/market-channel-migration-guide) for details.
+  <strong>⚠️ Breaking Change Notice:</strong> The price\_change message schema will be updated on September 15, 2025 at 11 PM UTC. Please see the [migration guide](https://docs.polymarket.com/developers/CLOB/websocket/market-channel-migration-guide) for details.
 </div>
 
 Emitted When:
@@ -2707,8 +2707,8 @@ The WebSocket connection supports:
 
 The RTDS currently supports the following subscription types:
 
-1. **[Crypto Prices](/developers/RTDS/RTDS-crypto-prices)** - Real-time cryptocurrency price updates
-2. **[Comments](/developers/RTDS/RTDS-comments)** - Comment-related events including reactions
+1. **[Crypto Prices](https://docs.polymarket.com/developers/RTDS/RTDS-crypto-prices)** - Real-time cryptocurrency price updates
+2. **[Comments](https://docs.polymarket.com/developers/RTDS/RTDS-comments)** - Comment-related events including reactions
 
 ## Message Structure
 
@@ -2802,9 +2802,9 @@ https://polymarket.com/event/fed-decision-in-october?tid=1758818660485
 
 ### API Endpoints
 
-**For Events:** [GET /events/slug/{slug}](/api-reference/events/list-events)
+**For Events:** [GET /events/slug/{slug}](https://docs.polymarket.com/api-reference/events/list-events)
 
-**For Markets:** [GET /markets/slug/{slug}](/api-reference/markets/list-markets)
+**For Markets:** [GET /markets/slug/{slug}](https://docs.polymarket.com/api-reference/markets/list-markets)
 
 ### Examples
 
@@ -2822,9 +2822,9 @@ Tags provide a powerful way to categorize and filter markets. You can discover a
 
 ### Discover Available Tags
 
-**General Tags:** [GET /tags](/api-reference/tags/list-tags)
+**General Tags:** [GET /tags](https://docs.polymarket.com/api-reference/tags/list-tags)
 
-**Sports Tags & Metadata:** [GET /sports](/api-reference/sports/get-sports-metadata-information)
+**Sports Tags & Metadata:** [GET /sports](https://docs.polymarket.com/api-reference/sports/get-sports-metadata-information)
 
 The `/sports` endpoint returns comprehensive metadata for sports including tag IDs, images, resolution sources, and series information.
 
@@ -2832,9 +2832,9 @@ The `/sports` endpoint returns comprehensive metadata for sports including tag I
 
 Once you have tag IDs, you can use them with the `tag_id` parameter in both markets and events endpoints.
 
-**Markets with Tags:** [GET /markets](/api-reference/markets/list-markets)
+**Markets with Tags:** [GET /markets](https://docs.polymarket.com/api-reference/markets/list-markets)
 
-**Events with Tags:** [GET /events](/api-reference/events/list-events)
+**Events with Tags:** [GET /events](https://docs.polymarket.com/api-reference/events/list-events)
 
 ```bash  theme={null}
 curl "https://gamma-api.polymarket.com/events?tag_id=100381&limit=1&closed=false"
@@ -2856,9 +2856,9 @@ You can also:
 
 The most efficient approach is to use the `/events` endpoint and work backwards, as events contain their associated markets.
 
-**Events Endpoint:** [GET /events](/api-reference/events/list-events)
+**Events Endpoint:** [GET /events](https://docs.polymarket.com/api-reference/events/list-events)
 
-**Markets Endpoint:** [GET /markets](/api-reference/markets/list-markets)
+**Markets Endpoint:** [GET /markets](https://docs.polymarket.com/api-reference/markets/list-markets)
 
 ### Key Parameters
 
@@ -2922,9 +2922,9 @@ curl "https://gamma-api.polymarket.com/markets?tag_id=100381&closed=false&limit=
 
 ## Related Endpoints
 
-* [Get Markets](/developers/gamma-markets-api/get-markets) - Full markets endpoint documentation
-* [Get Events](/developers/gamma-markets-api/get-events) - Full events endpoint documentation
-* [Search Markets](/developers/gamma-markets-api/get-public-search) - Search functionality
+* [Get Markets](https://docs.polymarket.com/developers/gamma-markets-api/get-markets) - Full markets endpoint documentation
+* [Get Events](https://docs.polymarket.com/developers/gamma-markets-api/get-events) - Full events endpoint documentation
+* [Search Markets](https://docs.polymarket.com/developers/gamma-markets-api/get-public-search) - Search functionality
 
 
 # Gamma Structure
@@ -3266,7 +3266,7 @@ Source: https://docs.polymarket.com/polymarket-learn/FAQ/does-polymarket-have-an
 
 Getting data from Polymarket
 
-Yes! Developers can find all the information they need for interacting with Polymarket. This includes [documentation on market discovery, resolution, trading etc.](/quickstart/introduction/main)
+Yes! Developers can find all the information they need for interacting with Polymarket. This includes [documentation on market discovery, resolution, trading etc.](https://docs.polymarket.com/quickstart/introduction/main)
 
 Whether you are an academic researcher a market maker or an indepedent developer, this documentation should provide you what you need to get started. All the code you find linked here and on our [GitHub](https://github.com/polymarket) is open source and free to use.
 
@@ -3335,7 +3335,7 @@ Polymarket recognizes the importance of a trustworthy environment for managing y
 
 ### Your keys = your funds
 
-A private key acts like a highly secure password, essential for managing and moving your assets without restrictions. You can export your private key at any time, ensuring sole access to your funds. Learn how to export your private key [here](../FAQ/how-to-export-private-key/).
+A private key acts like a highly secure password, essential for managing and moving your assets without restrictions. You can export your private key at any time, ensuring sole access to your funds. Learn how to export your private key [here](https://docs.polymarket.com/polymarket-learn/FAQ/how-to-export-private-key/).
 
 ### Keep your private keys private.
 
@@ -3806,7 +3806,7 @@ If your exchange supports sending or withdrawing to Polygon, we recommend this o
 
 For detailed instructions, check out our guides for purchasing and depositing USDC using popular exchanges:
 
-* [Deposit from Coinbase](../deposits/coinbase) (recommended)
+* [Deposit from Coinbase](https://docs.polymarket.com/polymarket-learn/deposits/coinbase) (recommended)
 
 <Note>
   If you decide to use an exchange to purchase and send (deposit) USDC to your Polygon deposit address, please ensure you're sending on Polygon Network. If you're unsure, please reach out to support on [Discord](https://discord.com/invite/polymarket).
@@ -3814,11 +3814,11 @@ For detailed instructions, check out our guides for purchasing and depositing US
 
 ### Deposit with Visa or Mastercard
 
-MoonPay enables you to buy USDC (on Polygon) using your Visa, Mastercard, and select bank cards. Please be aware that payment options and transaction limits may vary depending on your region. [How to use MoonPay](../deposits/moonpay/).
+MoonPay enables you to buy USDC (on Polygon) using your Visa, Mastercard, and select bank cards. Please be aware that payment options and transaction limits may vary depending on your region. [How to use MoonPay](https://docs.polymarket.com/polymarket-learn/deposits/moonpay/).
 
 ### Depositing on Etheruem and Polygon
 
-You can send USDC with your wallet on Ethereum or USDC.e on Polygon to your respective deposit addresses found on the Deposit page. [Learn more](../deposits/usdc-on-eth/).
+You can send USDC with your wallet on Ethereum or USDC.e on Polygon to your respective deposit addresses found on the Deposit page. [Learn more](https://docs.polymarket.com/polymarket-learn/deposits/usdc-on-eth/).
 
 
 # How to Sign-Up
@@ -3897,7 +3897,7 @@ Source: https://docs.polymarket.com/polymarket-learn/get-started/making-your-fir
 
 How to buy shares.
 
-Once you've [signed up](../get-started/how-to-signup) and [deposited funds](../get-started/how-to-deposit), you're ready to start trading on Polymarket. Here's a step-by-step guide to get you started.
+Once you've [signed up](https://docs.polymarket.com/polymarket-learn/get-started/how-to-signup) and [deposited funds](https://docs.polymarket.com/polymarket-learn/get-started/how-to-deposit), you're ready to start trading on Polymarket. Here's a step-by-step guide to get you started.
 
 ## Video guide
 
@@ -3930,7 +3930,7 @@ screen shot.
   </Steps.Step>
 </Steps>
 
-Simple, right? If you think you've got the hang of it, it's time to learn about more advanced trading and order types. [Limit Orders](../trading/limit-orders/).
+Simple, right? If you think you've got the hang of it, it's time to learn about more advanced trading and order types. [Limit Orders](https://docs.polymarket.com/polymarket-learn/trading/limit-orders/).
 
 
 # What is Polymarket?
@@ -3944,13 +3944,13 @@ Studies show prediction markets are often more accurate than pundits because the
 
 ## Quick Overview
 
-* On Polymarket, you can [buy and sell shares](making-your-first-trade) representing future event outcomes (i.e. "Will TikTok be banned in the U.S. this year?")
+* On Polymarket, you can [buy and sell shares](https://docs.polymarket.com/polymarket-learn/get-started/making-your-first-trade) representing future event outcomes (i.e. "Will TikTok be banned in the U.S. this year?")
 
-* Shares in event outcomes are [always priced](what-is-polymarket/#understanding-prices) between 0.00 and 1.00 [USDC](../FAQ/why-do-i-need-crypto/#why-usdc), and every pair of event outcomes (i.e. each pair of "YES" + "NO" shares) is fully collateralized by \$1.00 USDC.
+* Shares in event outcomes are [always priced](https://docs.polymarket.com/polymarket-learn/get-started/what-is-polymarket/#understanding-prices) between 0.00 and 1.00 [USDC](https://docs.polymarket.com/polymarket-learn/FAQ/why-do-i-need-crypto/#why-usdc), and every pair of event outcomes (i.e. each pair of "YES" + "NO" shares) is fully collateralized by \$1.00 USDC.
 
-* Shares are created when [opposing sides come to an agreement on odds](../trading/limit-orders), such that the sum of what each side is willing to pay is equal to \$1.00.
+* Shares are created when [opposing sides come to an agreement on odds](https://docs.polymarket.com/polymarket-learn/trading/limit-orders), such that the sum of what each side is willing to pay is equal to \$1.00.
 
-* The shares representing the *correct, final outcome* are paid out \$1.00 USDC each upon [market resolution](../markets/how-are-markets-resolved).
+* The shares representing the *correct, final outcome* are paid out \$1.00 USDC each upon [market resolution](https://docs.polymarket.com/polymarket-learn/markets/how-are-markets-resolved).
 
 * Unlike sportsbooks, you are not betting against "the house" – the counterparty to each trade is another Polymarket user. As such:
 
@@ -3968,7 +3968,7 @@ Prices = Probabilities.
 
 These odds are determined by what price other Polymarket users are currently willing to buy & sell those shares at. Just how stock exchanges don't "set" the prices of stocks, Polymarket does not set prices / odds - they're a function of supply & demand.
 
-[Learn more >](/docs/guides/trading/how-are-prices-calculated)
+[Learn more >](https://docs.polymarket.com/docs/guides/trading/how-are-prices-calculated)
 
 ### Making money on markets
 
@@ -4091,7 +4091,7 @@ While users cannot directly create their own markets, they are encouraged to sug
 To give your proposal the best chance of being listed, include as much information as possible, such as:
 
 * What is the market title?
-* What is the [resolution source](../markets/how-are-markets-resolved)?
+* What is the [resolution source](https://docs.polymarket.com/polymarket-learn/markets/how-are-markets-resolved)?
 * Evidence of demand for trading that market
 
 The best ways to propose a new market are:
@@ -4149,7 +4149,7 @@ Once in the verification process, UMA will review the transaction to ensure it w
 
 Once a market is proposed for resolution it goes into a challenge period of 2 hours.
 
-If you do not agree with a proposed resolution, you can [dispute the outcome](../markets/dispute).
+If you do not agree with a proposed resolution, you can [dispute the outcome](https://docs.polymarket.com/polymarket-learn/markets/dispute).
 
 
 # Trading Fees
@@ -4230,7 +4230,7 @@ The prices probabilities displayed on Polymarket are the midpoint of the bid-ask
 
 * When a market is created, there are initially zero shares and no pre-defined prices or odds.
 
-* Market makers (a fancy term for traders placing limit orders) interested in buying YES or NO shares can place [Limit Orders](../trading/limit-orders) at the price they're willing to pay
+* Market makers (a fancy term for traders placing limit orders) interested in buying YES or NO shares can place [Limit Orders](https://docs.polymarket.com/polymarket-learn/trading/limit-orders) at the price they're willing to pay
 
 * When offers for the YES and NO side equal \$1.00, the order is "matched" and that \$1.00 is converted into 1 YES and 1 NO share, each going to their respective buyers.
 
@@ -4388,7 +4388,7 @@ When your orders are earning rewards you’ll see a blue highlight around the cl
 
 Rewards are paid out automatically every day at \~midnight UTC. Your history on your portfolio page will reflect rewards paid to your address.
 
-To read more about the specific calculations and formulas that determine rewards, visit our  [Rewards Documentation](/developers/rewards/overview).
+To read more about the specific calculations and formulas that determine rewards, visit our  [Rewards Documentation](https://docs.polymarket.com/developers/rewards/overview).
 
 
 # Market Orders
@@ -4398,7 +4398,7 @@ How to buy shares.
 
 # Market Orders
 
-Once you've [signed up](../get-started/how-to-signup) and [deposited funds](../get-started/how-to-deposit), you're ready to start trading on Polymarket. Here's a step-by-step guide to get you started.
+Once you've [signed up](https://docs.polymarket.com/polymarket-learn/get-started/how-to-signup) and [deposited funds](https://docs.polymarket.com/polymarket-learn/get-started/how-to-deposit), you're ready to start trading on Polymarket. Here's a step-by-step guide to get you started.
 
 ## Video Walkthrough
 
@@ -4430,7 +4430,7 @@ Once you've [signed up](../get-started/how-to-signup) and [deposited funds](../g
   </Steps.Step>
 </Steps>
 
-Simple, right? If you think you've got the hang of it, it's time to learn about more advanced trading and order types. [Limit Orders](../trading/limit-orders/).
+Simple, right? If you think you've got the hang of it, it's time to learn about more advanced trading and order types. [Limit Orders](https://docs.polymarket.com/polymarket-learn/trading/limit-orders/).
 
 
 # Does Polymarket Have Trading Limits?
@@ -4448,11 +4448,11 @@ Source: https://docs.polymarket.com/polymarket-learn/trading/using-the-orderbook
 
 Understanding the Order Book will help you become an advanced trader.
 
-In the Getting Started tutorial on [Making your First Trade](../get-started/making-your-first-trade/), we learned about market orders.
+In the Getting Started tutorial on [Making your First Trade](https://docs.polymarket.com/polymarket-learn/get-started/making-your-first-trade/), we learned about market orders.
 
 In a market order, your trade executes instantly at the current market price.
 
-But what if you think the market price is too high and want to set a specific price that you would be willing to accept? These are called [Limit Orders](../trading/limit-orders/).
+But what if you think the market price is too high and want to set a specific price that you would be willing to accept? These are called [Limit Orders](https://docs.polymarket.com/polymarket-learn/trading/limit-orders/).
 
 ## Viewing the Order Book
 
@@ -4506,7 +4506,7 @@ Source: https://docs.polymarket.com/quickstart/introduction/definitions
 | **Token**                    | A token represents a stake in a specific Yes/No outcome in a Market. The price of a token can fluctuate between $0 - $1 based on the market belief in the outcome. When a market resolves, the token associated with the correct prediction can be redeemed for \$1 USDC. This is also sometimes called an *Asset Id*                                             |
 | **Market**                   | A single event outcome. Corresponds to a pair of CLOB token IDs(Yes/No), a market address, a question ID and a condition ID.                                                                                                                                                                                                                                      |
 | **Event**                    | A collection of related markets grouped under a common topic or theme.                                                                                                                                                                                                                                                                                            |
-| **SLUG**                     | A human readable identification for a market or event. Can be found in the URL of any Polymarket Market or Event. You can use this slug to find more detailed information about a market or event by using it as a parameter in the [Get Events](/developers/gamma-markets-api/get-events) or [Get Markets](/developers/gamma-markets-api/get-markets) endpoints. |
+| **SLUG**                     | A human readable identification for a market or event. Can be found in the URL of any Polymarket Market or Event. You can use this slug to find more detailed information about a market or event by using it as a parameter in the [Get Events](https://docs.polymarket.com/developers/gamma-markets-api/get-events) or [Get Markets](https://docs.polymarket.com/developers/gamma-markets-api/get-markets) endpoints. |
 | **Negative Risk (negrisk)**  | A group of Markets(Event) in which only one Market can resolve as yes. For more detail see [Negrisk Details](https://docs.polymarket.com/developers/neg-risk/overview)                                                                                                                                                                                            |
 | **Central Limit Order Book** | The off-chain order matching system. This is where you place resting orders and market orders are matched with existing orders before being sent on-chain.                                                                                                                                                                                                        |
 | **Polygon Network**          | A scalable, multi-chain blockchain platform used by Polymarket to facilitate on-chain activities(contract creation, token transfers, etc)                                                                                                                                                                                                                         |
@@ -4521,7 +4521,7 @@ This section of the documentation will provide all the essential resources to he
 
 Everything you need to start building with the Polymarket API is right here. Let’s get started.
 
-[Not sure what to build next? Get inspired by checking out real examples from other developers using the API.](/quickstart/introduction/showcase)
+[Not sure what to build next? Get inspired by checking out real examples from other developers using the API.](https://docs.polymarket.com/quickstart/introduction/showcase)
 
 
 # API Rate Limits
@@ -4738,14 +4738,14 @@ After installing one of those you will be able to run the below code. Take the t
 #### In addition to detailed comments in the code snippet, here are some more tips to help you get started.
 
 * See the Python example for details on the proper way to initialize a Py-Clob-Client depending on your wallet type. Three exhaustive examples are given. If using a MetaMask wallet or EOA please see the resources [here](https://github.com/Polymarket/py-clob-client?tab=readme-ov-file), for instructions on setting allowances.
-* When buying into a market you purchase a "Token" that token represents either a Yes or No outcome of the event. To easily get required token pairs for a given event we have provided an interactive endpoint [here](/developers/gamma-markets-api/get-markets).
+* When buying into a market you purchase a "Token" that token represents either a Yes or No outcome of the event. To easily get required token pairs for a given event we have provided an interactive endpoint [here](https://docs.polymarket.com/developers/gamma-markets-api/get-markets).
 * Common pitfalls:
   * Negrisk Markets require an additional flag in the OrderArgs `negrisk=False `
   * `invalid signature` error, likely due to one of the following.
     * Incorrect Funder and or Private Key
     * Incorrect NegRisk flag in your order arguments
   * `not enough balance / allowance`.
-    * Not enough USDC to perform the trade. See the formula at the bottom of [this](/developers/CLOB/orders/orders) page for details.
+    * Not enough USDC to perform the trade. See the formula at the bottom of [this](https://docs.polymarket.com/developers/CLOB/orders/orders) page for details.
     * If using Metamask / WEB3 wallet go [here](https://github.com/Polymarket/py-clob-client?tab=readme-ov-file), for instructions on setting allowances.
 
 
