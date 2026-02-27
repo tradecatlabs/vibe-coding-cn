@@ -6,32 +6,32 @@
 
 ```
 assets/documents/
-├── 05-哲学与方法论/ # 最高思想纲领，底层逻辑
-├── 00-基础指南/      # 核心理念，胶水编程，方法论
-├── 01-入门指南/      # 从零开始，环境配置
-├── 02-方法论/        # 工具教程，开发经验
-└── 03-实战/          # 项目实战经验
+├── principles/          # 原则与思想（fundamentals + philosophy）
+│   ├── fundamentals/    # 原 00-基础指南
+│   └── philosophy/      # 原 05-哲学与方法论
+├── guides/              # 入门与方法（getting-started + playbook）
+│   ├── getting-started/ # 原 01-入门指南
+│   └── playbook/        # 原 02-方法论
+└── case-studies/        # 原 03-实战
 ```
 
 ## 🚀 快速导航
 
 | 目录 | 说明 | 适合人群 |
 |:---|:---|:---|
-| [05-哲学与方法论](./05-哲学与方法论/) | 思想纲领、认识论工具 | 架构师与深度开发者 |
-| [00-基础指南](./00-基础指南/) | 胶水编程、核心理念 | 理解本质 |
-| [01-入门指南](./01-入门指南/) | 环境配置、从零开始 | 新手入门 |
-| [02-方法论](./02-方法论/) | 工具教程、开发经验 | 提升效率 |
-| [03-实战](./03-实战/) | 项目经验、案例复盘 | 动手实践 |
+| [principles](./principles/) | 原则与思想（基础 + 哲学） | 架构师与深度开发者 |
+| [guides](./guides/) | 入门与方法（上手 + 工具与经验） | 新手入门与效率提升 |
+| [case-studies](./case-studies/) | 项目经验、案例复盘 | 动手实践 |
 
 ## 📖 推荐学习路径
 
-1. **思维** → [05-哲学与方法论](./05-哲学与方法论/README.md)
-2. **理念** → [胶水编程](./00-基础指南/胶水编程.md)
-3. **入门** → [Vibe Coding 哲学原理](./01-入门指南/00-Vibe%20Coding%20哲学原理.md)
-3. **配置** → [开发环境搭建](./01-入门指南/02-开发环境搭建.md)
-4. **工具** → [tmux 快捷键](./02-方法论/tmux快捷键大全.md)
-5. **远程** → [VS Code Remote Tunnel（WSL）](./02-方法论/REMOTE_TUNNEL_GUIDE.md)
-5. **实践** → [项目实战经验](./03-实战/)
+1. **思维** → [philosophy](./principles/philosophy/README.md)
+2. **理念** → [胶水编程](./principles/fundamentals/胶水编程.md)
+3. **入门** → [Vibe Coding 哲学原理](./guides/getting-started/00-Vibe%20Coding%20哲学原理.md)
+4. **配置** → [开发环境搭建](./guides/getting-started/02-开发环境搭建.md)
+5. **工具** → [tmux 快捷键](./guides/playbook/tmux快捷键大全.md)
+6. **远程** → [VS Code Remote Tunnel（WSL）](./guides/playbook/REMOTE_TUNNEL_GUIDE.md)
+7. **实践** → [项目实战经验](./case-studies/)
 
 ## 🔗 相关资源
 

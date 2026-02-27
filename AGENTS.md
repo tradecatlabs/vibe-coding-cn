@@ -144,11 +144,13 @@ git push origin develop
 │   │       ├── config.toml      # Codex CLI 配置文件
 │   │       └── AGENTS.md        # Codex/Agent 指南（本目录）
 │   ├── documents/               # 文档库
-│   │   ├── 05-哲学与方法论/     # 最高思想纲领与方法论
-│   │   ├── 00-基础指南/         # 核心原则与底层逻辑
-│   │   ├── 01-入门指南/         # 从零开始教程
-│   │   ├── 02-方法论/           # 具体工具与技巧
-│   │   └── 03-实战/             # 项目实战案例
+│   │   ├── principles/          # 原则与思想（fundamentals + philosophy）
+│   │   │   ├── fundamentals/    # 原 00-基础指南
+│   │   │   └── philosophy/      # 原 05-哲学与方法论
+│   │   ├── guides/              # 入门与方法（getting-started + playbook）
+│   │   │   ├── getting-started/ # 原 01-入门指南
+│   │   │   └── playbook/        # 原 02-方法论
+│   │   └── case-studies/        # 原 03-实战
 │   ├── prompts/                 # 提示词库（指向云端表格）
 │   │   ├── README.md            # 在线表格链接
 │   │   └── AGENTS.md            # prompts/ 目录规则
@@ -282,7 +284,7 @@ bash assets/repo/backups/一键备份.sh
 ### Core Directories
 - **`assets/prompts/`**: 提示词库入口（指向云端表格）
 - **`assets/skills/`**: 扁平化技能库（详见 assets/skills/README.md）
-- **`assets/documents/`**: 知识库（05-哲学与方法论、00-基础指南、01-入门指南、02-方法论、03-实战）
+- **`assets/documents/`**: 知识库（principles、guides、case-studies）
 - **`assets/`**: 外部资源（在线表格）入口与使用说明
 - **`assets/repo/prompts-library/`**: Excel ↔ Markdown 转换工具
 - **`assets/repo/chat-vault/`**: AI 聊天记录保存工具
