@@ -13,7 +13,7 @@
 
 | 文档 | 路径 | 说明 |
 |:---|:---|:---|
-| Canvas白板驱动开发详解 | `../../../documents/02-方法论/图形化AI协作-Canvas白板驱动开发.md` | 方法论详解 |
+| Canvas白板驱动开发详解 | `../../../documents/guides/playbook/图形化AI协作-Canvas白板驱动开发.md` | 方法论详解 |
 | 白板驱动开发系统提示词（在线提示词库入口） | `../../../prompts/README.md` | 系统提示词已迁移到云端表格 |
 | Canvas JSON 规范 | [canvas-json-spec.md](./canvas-json-spec.md) | Obsidian Canvas JSON 格式 |
 
@@ -63,4 +63,4 @@
 
 - [Obsidian Canvas 官方文档](https://obsidian.md/canvas)
 - [Obsidian 下载](https://obsidian.md/download)
-- [胶水编程](../../../documents/00-基础指南/胶水编程.md) - 能抄不写，能连不造
+- [胶水编程](../../../documents/principles/fundamentals/胶水编程.md) - 能抄不写，能连不造
