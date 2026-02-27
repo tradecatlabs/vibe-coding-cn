@@ -247,4 +247,4 @@ ADDITIONAL REQUIREMENTS:
 
 - [README.md](../README.md) - Main documentation
 - [CLAUDE.md](CLAUDE.md) - Architecture guide
-- [doc_scraper.py](../doc_scraper.py) - Main scraping tool
+- [doc_scraper.py](../src/skill_seekers/cli/doc_scraper.py) - Main scraping tool

@@ -583,9 +583,9 @@ After successful setup:
 
 ## Getting Help
 
-- **Documentation**: See [mcp/README.md](../mcp/README.md)
+- **Documentation**: See [src/skill_seekers/mcp/README.md](../src/skill_seekers/mcp/README.md)
 - **Issues**: [GitHub Issues](https://github.com/yusufkaraaslan/Skill_Seekers/issues)
-- **Examples**: See [.github/ISSUES_TO_CREATE.md](../.github/ISSUES_TO_CREATE.md) for test cases
+- **Examples**: See [TEST_MCP_IN_CLAUDE_CODE.md](TEST_MCP_IN_CLAUDE_CODE.md) for test cases
 
 ---
 

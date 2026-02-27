@@ -826,8 +826,8 @@ The correct command uses the local `cli/package_skill.py` in the repository root
 - **[CHANGELOG.md](CHANGELOG.md)** - Release history and v2.0.0 details **UPDATED!**
 - **[FUTURE_RELEASES.md](FUTURE_RELEASES.md)** - Roadmap for v2.1.0+  **NEW!**
 - **[FLEXIBLE_ROADMAP.md](FLEXIBLE_ROADMAP.md)** - Complete task catalog (134 tasks)
-- **[NEXT_TASKS.md](NEXT_TASKS.md)** - What to work on next
-- **[TODO.md](TODO.md)** - Current focus
+- **[ROADMAP.md](ROADMAP.md)** - What to work on next
+- **[FLEXIBLE_ROADMAP.md](FLEXIBLE_ROADMAP.md)** - Current focus
 - **[STRUCTURE.md](STRUCTURE.md)** - Repository structure
 
 ## Notes for Claude Code

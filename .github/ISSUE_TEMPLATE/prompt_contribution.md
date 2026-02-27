@@ -45,5 +45,5 @@ body:
           required: true
         - label: "我已经在本地测试过这个提示词，并确认其有效性。"
           required: true
-        - label: "我同意将这个提示词以项目所使用的 [MIT License](LICENSE) 授权给社区。"
+        - label: "我同意将这个提示词以项目所使用的 [MIT License](../../LICENSE) 授权给社区。"
           required: true

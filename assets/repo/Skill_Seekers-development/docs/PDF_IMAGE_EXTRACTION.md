@@ -314,7 +314,7 @@ When building PDF-based skills, images will be:
 
 See diagram below for the complete API flow:
 
-![API Flow](assets/images/api_flow.png)
+> 图示提示：上游文档引用了 `assets/images/api_flow.png`，但该文件未包含在当前仓库镜像中。
 
 The diagram shows...
 ```
