@@ -1,5 +1,5 @@
 # Cryptocurrency Exchange Feed Handler
-[![License](https://img.shields.io/badge/license-XFree86-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-XFree86-blue.svg)](https://github.com/bmoscon/cryptofeed/blob/master/LICENSE)
 ![Python](https://img.shields.io/badge/Python-3.8+-green.svg)
 [![PyPi](https://img.shields.io/badge/PyPi-cryptofeed-brightgreen.svg)](https://pypi.python.org/pypi/cryptofeed)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/efa4e0d6e10b41d0b51454d08f7b33b1)](https://www.codacy.com/app/bmoscon/cryptofeed?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bmoscon/cryptofeed&amp;utm_campaign=Badge_Grade)
@@ -82,7 +82,7 @@ For an example of a containerized application using cryptofeed to store data to 
 
 ## National Best Bid/Offer (NBBO)
 
-Cryptofeed also provides a synthetic [NBBO](examples/demo_nbbo.py) (National Best Bid/Offer) feed that aggregates the best bids and asks from the user specified feeds.
+Cryptofeed also provides a synthetic [NBBO](https://github.com/bmoscon/cryptofeed/blob/master/examples/demo_nbbo.py) (National Best Bid/Offer) feed that aggregates the best bids and asks from the user specified feeds.
 
 ```python
 from cryptofeed import FeedHandler
@@ -171,7 +171,7 @@ See more discussion of package installation in [INSTALL.md](https://github.com/b
 
 ## Rest API
 
-Cryptofeed supports some REST interfaces for retrieving real-time and historical data, as well as order placement and account management. These are integrated into the exchange classes directly. You can view the supported methods by calling the `info()` method on any exchange. The methods for interacting with the exchange RET endpoints exist in two flavors, the synchronous methods (suffixed with `_sync`) as well as the asynchronous which can be utilized with asyncio. For more information see the [documentation](docs/rest.md).
+Cryptofeed supports some REST interfaces for retrieving real-time and historical data, as well as order placement and account management. These are integrated into the exchange classes directly. You can view the supported methods by calling the `info()` method on any exchange. The methods for interacting with the exchange RET endpoints exist in two flavors, the synchronous methods (suffixed with `_sync`) as well as the asynchronous which can be utilized with asyncio. For more information see the [documentation](https://github.com/bmoscon/cryptofeed/blob/master/docs/rest.md).
 
 
 ## Future Work
@@ -182,7 +182,7 @@ There are a lot of planned features, new exchanges, etc planned! If you'd like t
 
 Issues and PRs are welcomed!
 
-Cryptofeed wouldn't be possible without the help of many [contributors](AUTHORS.md)! I owe them and all other contributors my thanks!
+Cryptofeed wouldn't be possible without the help of many [contributors](https://github.com/bmoscon/cryptofeed/blob/master/AUTHORS.md)! I owe them and all other contributors my thanks!
 
 ## Donations / Support
 

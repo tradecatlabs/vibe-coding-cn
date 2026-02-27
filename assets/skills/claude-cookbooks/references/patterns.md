@@ -15,6 +15,6 @@ This repository contains example minimal implementations of common agent workflo
 ## Getting Started
 See the Jupyter notebooks for detailed examples:
 
-- [Basic Workflows](basic_workflows.ipynb)
-- [Evaluator-Optimizer Workflow](evaluator_optimizer.ipynb) 
-- [Orchestrator-Workers Workflow](orchestrator_workers.ipynb)
+- [Basic Workflows](https://github.com/anthropics/claude-cookbooks/blob/main/patterns/agents/basic_workflows.ipynb)
+- [Evaluator-Optimizer Workflow](https://github.com/anthropics/claude-cookbooks/blob/main/patterns/agents/evaluator_optimizer.ipynb)
+- [Orchestrator-Workers Workflow](https://github.com/anthropics/claude-cookbooks/blob/main/patterns/agents/orchestrator_workers.ipynb)
