@@ -32,7 +32,7 @@
 <!-- 🔴 核心理念 (红色系) -->
 <p>
   <a href="./assets/documents/principles/philosophy/README.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
-  <a href="./assets/documents/guides/getting-started/00-Vibe%20Coding%20哲学原理.md"><img src="https://img.shields.io/badge/🧠_核心哲学-必读-crimson?style=for-the-badge" alt="核心哲学"></a>
+  <a href="./assets/documents/guides/getting-started/Vibe%20Coding%20哲学原理.md"><img src="https://img.shields.io/badge/🧠_核心哲学-必读-crimson?style=for-the-badge" alt="核心哲学"></a>
   <a href="./assets/documents/principles/fundamentals/胶水编程.md"><img src="https://img.shields.io/badge/🧬_胶水编程-银弹-red?style=for-the-badge" alt="胶水编程"></a>
   <a href="./assets/documents/guides/playbook/图形化AI协作-Canvas白板驱动开发.md"><img src="https://img.shields.io/badge/🎨_Canvas白板-图形驱动-orange?style=for-the-badge" alt="Canvas白板驱动开发"></a>
   <a href="./assets/documents/guides/getting-started/README.md"><img src="https://img.shields.io/badge/🚀_从零开始-新手入门-red?style=for-the-badge" alt="从零开始"></a>
@@ -109,11 +109,11 @@
 
 完全新手？按顺序完成以下步骤：
 
-0. [00-Vibe Coding 哲学原理](./assets/documents/guides/getting-started/00-Vibe%20Coding%20哲学原理.md) - 理解核心理念
-1. [01-网络环境配置](./assets/documents/guides/getting-started/01-网络环境配置.md) - 配置网络访问
-2. [02-开发环境搭建](./assets/documents/guides/getting-started/02-开发环境搭建.md) - 复制提示词给 AI，让 AI 指导你搭建环境
-3. [03-IDE配置](./assets/documents/guides/getting-started/03-IDE配置.md) - 配置 VS Code 编辑器
-4. [04-OpenCode-CLI配置](./assets/documents/guides/getting-started/04-OpenCode-CLI配置.md) - 免费 AI CLI 工具，支持 GLM-4.7/MiniMax M2.1 等模型
+0. [Vibe Coding 哲学原理](./assets/documents/guides/getting-started/Vibe%20Coding%20哲学原理.md) - 理解核心理念
+1. [网络环境配置](./assets/documents/guides/getting-started/网络环境配置.md) - 配置网络访问
+2. [开发环境搭建](./assets/documents/guides/getting-started/开发环境搭建.md) - 复制提示词给 AI，让 AI 指导你搭建环境
+3. [IDE配置](./assets/documents/guides/getting-started/IDE配置.md) - 配置 VS Code 编辑器
+4. [OpenCode-CLI配置](./assets/documents/guides/getting-started/OpenCode-CLI配置.md) - 免费 AI CLI 工具，支持 GLM-4.7/MiniMax M2.1 等模型
 
 </details>
 

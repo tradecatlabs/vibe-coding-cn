@@ -27,8 +27,8 @@ assets/documents/
 
 1. **思维** → [philosophy](./principles/philosophy/README.md)
 2. **理念** → [胶水编程](./principles/fundamentals/胶水编程.md)
-3. **入门** → [Vibe Coding 哲学原理](./guides/getting-started/00-Vibe%20Coding%20哲学原理.md)
-4. **配置** → [开发环境搭建](./guides/getting-started/02-开发环境搭建.md)
+3. **入门** → [Vibe Coding 哲学原理](./guides/getting-started/Vibe%20Coding%20哲学原理.md)
+4. **配置** → [开发环境搭建](./guides/getting-started/开发环境搭建.md)
 5. **工具** → [tmux 快捷键](./guides/playbook/tmux快捷键大全.md)
 6. **远程** → [VS Code Remote Tunnel（WSL）](./guides/playbook/REMOTE_TUNNEL_GUIDE.md)
 7. **实践** → [项目实战经验](./case-studies/)
