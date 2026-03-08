@@ -56,6 +56,10 @@ startup_timeout_ms = 20000
 # 是否在 TUI（终端 UI）里启用通知提示。
 notifications = true
 
+[features]
+# Codex 里的 “subagent” 基本就是 Multi-agents（多代理/子线程）功能：主代理会按需 spawn 子代理并行干活，最后汇总结果。
+multi_agent = true
+
 [notice]
 # 这些开关用于隐藏某些“迁移/提示”类消息，减少噪音（仅影响 UI，不影响核心功能）。
 hide_gpt5_1_migration_prompt = true
