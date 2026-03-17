@@ -13,6 +13,7 @@
 - [LazyVim 快捷键大全](./LazyVim快捷键大全.md) - Neovim 配置框架
 - [Augment MCP 配置](./auggie-mcp配置文档.md) - 上下文引擎配置
 - [ProxyCast 配置](./ProxyCast配置文档.md) - AI 凭证代理服务配置
+- [TradeCat Sheets API 使用说明](./tradecat-sheets-api-usage.md) - 把公开 Google Sheet 当作 API 注册表与数据面（Data Plane）
 - [手机远程 Vibe Coding](./关于手机ssh任意位置链接本地计算机，基于frp实现的方法.md) - 基于 frp 的远程开发
 - [VS Code Remote Tunnel（WSL）](./REMOTE_TUNNEL_GUIDE.md) - 在 WSL 内开通 VS Code Tunnel 供远程访问
 - [GEMINI-HEADLESS](./GEMINI-HEADLESS.md) - Gemini 无头模式配置
