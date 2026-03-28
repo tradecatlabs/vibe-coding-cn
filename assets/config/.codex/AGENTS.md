@@ -61,7 +61,7 @@
                 <name>智能体自我进化 (Self-Improvement Loop)</name>
                 <trigger>接收到用户的任何纠正、批评或代码打回。</trigger>
                 <execution_rules>
-                    <rule name="知识沉淀">立即将教训提炼为通用规则，并追加写入本地 `tasks/lessons.md` 文件。</rule>
+                    <rule name="知识沉淀">立即将教训提炼为通用规则，并追加写入本地 `assets/tasks/lessons.md` 文件。</rule>
                     <rule name="防重发机制">将会话规则化，严防同类错误二次发生。</rule>
                     <rule name="前置加载">在开展相关项目的新会话时，必须首要读取并复习该教训文档。</rule>
                 </execution_rules>
@@ -106,7 +106,7 @@
                 <step order="3" action="追踪">实时更新：随着执行进度，实时在文件中打勾（标记完成）。</step>
                 <step order="4" action="汇报">节点摘要：在每个关键步骤转换时，提供清晰的高层级（High-level）变更总结。</step>
                 <step order="5" action="复盘">结果归档：任务结束后，在 `tasks/todo.md` 底部追加审查总结（Review Section）。</step>
-                <step order="6" action="迭代">错误收录：如遇挫折或用户纠偏，强制更新 `tasks/lessons.md`。</step>
+                <step order="6" action="迭代">错误收录：如遇挫折或用户纠偏，强制更新 `assets/tasks/lessons.md`。</step>
             </protocols>
         </state_and_task_management>
     </agent_profile>
