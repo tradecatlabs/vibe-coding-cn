@@ -39,8 +39,6 @@
   <a href="./assets/documents/principles/fundamentals/强前置条件约束.md"><img src="https://img.shields.io/badge/🚫_硬约束-铁律-darkred?style=for-the-badge" alt="强前置条件约束"></a>
   <a href="./assets/README.md"><img src="https://img.shields.io/badge/📡_信息源-聚合-teal?style=for-the-badge" alt="信息源聚合"></a>
   <a href="./assets/documents/principles/fundamentals/A%20Formalization%20of%20Recursive%20Self-Optimizing%20Generative%20Systems.md"><img src="https://img.shields.io/badge/📐_元方法论-递归优化-darkorange?style=for-the-badge" alt="元方法论"></a>
-  <a href="./assets/documents/principles/fundamentals/编程之道.md"><img src="https://img.shields.io/badge/🧭_编程之道-道法术-orange?style=for-the-badge" alt="编程之道"></a>
-  <a href="./assets/documents/case-studies/README.md"><img src="https://img.shields.io/badge/🎬_实战案例-项目实操-orange?style=for-the-badge" alt="实战案例"></a>
   <a href="./assets/README.md"><img src="https://img.shields.io/badge/🛠️_工具集-速查-teal?style=for-the-badge" alt="工具集"></a>
   <a href="./assets/prompts/"><img src="https://img.shields.io/badge/💬_提示词-精选-purple?style=for-the-badge" alt="提示词精选"></a>
   <a href="./assets/skills/"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
