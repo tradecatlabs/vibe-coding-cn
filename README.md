@@ -110,11 +110,12 @@
 
 完全新手？按顺序完成以下步骤：
 
-0. [Vibe Coding 哲学原理](./assets/documents/guides/getting-started/Vibe%20Coding%20哲学原理.md) - 理解核心理念
-1. [网络环境配置](./assets/documents/guides/getting-started/网络环境配置.md) - 配置网络访问
-2. [开发环境搭建](./assets/documents/guides/getting-started/开发环境搭建.md) - 复制提示词给 AI，让 AI 指导你搭建环境
-3. [IDE配置](./assets/documents/guides/getting-started/IDE配置.md) - 配置 VS Code 编辑器
-4. [OpenCode-CLI配置](./assets/documents/guides/getting-started/OpenCode-CLI配置.md) - 免费 AI CLI 工具，支持 GLM-4.7/MiniMax M2.1 等模型
+0. [问题求解能力](./assets/documents/principles/fundamentals/问题求解能力.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
+1. [Vibe Coding 哲学原理](./assets/documents/guides/getting-started/Vibe%20Coding%20哲学原理.md) - 理解核心理念
+2. [网络环境配置](./assets/documents/guides/getting-started/网络环境配置.md) - 配置网络访问
+3. [开发环境搭建](./assets/documents/guides/getting-started/开发环境搭建.md) - 复制提示词给 AI，让 AI 指导你搭建环境
+4. [IDE配置](./assets/documents/guides/getting-started/IDE配置.md) - 配置 VS Code 编辑器
+5. [OpenCode-CLI配置](./assets/documents/guides/getting-started/OpenCode-CLI配置.md) - 免费 AI CLI 工具，支持 GLM-4.7/MiniMax M2.1 等模型
 
 </details>
 
