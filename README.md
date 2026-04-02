@@ -45,8 +45,6 @@
   <a href="./assets/prompts/"><img src="https://img.shields.io/badge/💬_提示词-精选-purple?style=for-the-badge" alt="提示词精选"></a>
   <a href="./assets/skills/"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
   <a href="https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
-  <a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"><img src="https://img.shields.io/badge/🔧_系统提示词-仓库-slateblue?style=for-the-badge" alt="系统提示词仓库"></a>
-  <a href="./assets/repo/chat-vault/README.md"><img src="https://img.shields.io/badge/🔐_Chat_Vault-AI会话库-gold?style=for-the-badge" alt="Chat Vault"></a>
 </p>
 
 [📋 工具与资源](#tools)
