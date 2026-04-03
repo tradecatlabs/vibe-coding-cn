@@ -108,6 +108,7 @@
 3. [开发环境搭建](./assets/documents/guides/getting-started/开发环境搭建.md) - 复制提示词给 AI，让 AI 指导你搭建环境
 4. [IDE配置](./assets/documents/guides/getting-started/IDE配置.md) - 配置 VS Code 编辑器
 5. [OpenCode-CLI配置](./assets/documents/guides/getting-started/OpenCode-CLI配置.md) - 免费 AI CLI 工具，支持 GLM-4.7/MiniMax M2.1 等模型
+6. [数据集导向数据服务模板](./assets/documents/principles/fundamentals/数据集导向数据服务模板.md) - 以 dataset/contract/registry/runtime 为核心的数据采集服务通用架构模板
 
 </details>
 
