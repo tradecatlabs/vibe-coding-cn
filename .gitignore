@@ -35,6 +35,7 @@ ENV/
 *~
 .DS_Store
 .history/
+*:Zone.Identifier
 
 # Testing
 .pytest_cache/
