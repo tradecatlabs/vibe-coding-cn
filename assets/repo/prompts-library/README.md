@@ -171,6 +171,21 @@ python3 scripts/gemini_jsonl_batch.py --input 2 --output 2/prompts.jsonl --model
 - 可用 `-v` 查看逐文件处理日志，`--gemini-cmd` 自定义 CLI 可执行路径。
 </details>
 
+<details>
+<summary><b>内部 JSONL Excel → JSONL 目录</b></summary>
+
+```bash
+# 将内部 JSONL 格式的 xlsx 按工作表拆分为多个 jsonl 文件
+python3 main.py --select "prompt_excel/prompt_jsonl.xlsx" --mode jsonl_excel2jsonl
+```
+
+- 输出目录格式为 `prompt_jsonl/<excel_name>_<timestamp>/`
+- 每个工作表输出一个独立的 `.jsonl` 文件
+- 文件名格式为 `<序号>_<sheet_name>.jsonl`
+- 若工作表中没有标准 JSON 单元格，会对纯文本单元格做 JSONL 兜底转换
+- 自动忽略名为 `说明` 的工作表
+</details>
+
 ---
 
 <details>

@@ -11,7 +11,7 @@ Unified controller for prompt-library conversions.
 2. Docs → Excel         : 将 Markdown 文档目录还原为 Excel 工作簿
 3. Docs → JSONL         : 将 Markdown 文档转换为 JSONL 格式（保留完整元信息）
 4. JSONL → Excel        : 将 JSONL 转换为 Excel（单元格存储 JSON 对象）
-5. Excel(JSONL) → JSONL : 将内部 JSONL 格式的 Excel 转换为 JSONL 文件（自动忽略"说明"工作表）
+5. Excel(JSONL) → JSONL : 将内部 JSONL 格式的 Excel 转换为 JSONL 目录（自动忽略"说明"工作表）
 
 数据格式规范
 ============
@@ -51,7 +51,7 @@ JSONL → Excel 单元格格式:
   - Docs→Excel: ./prompt_excel/prompt_excel_YYYY_MMDD_HHMMSS/rebuilt.xlsx
   - Docs→JSONL: ./prompt_jsonl/{docs_name}.jsonl
   - JSONL→Excel: ./prompt_excel/{jsonl_name}.xlsx
-  - Excel(JSONL)→JSONL: ./prompt_jsonl/{excel_name}.jsonl
+  - Excel(JSONL)→JSONL: ./prompt_jsonl/{excel_name}_{timestamp}/<sheet>.jsonl
 
 使用示例
 ========
@@ -253,9 +253,31 @@ def is_jsonl_excel(excel_path: Path) -> bool:
         return False
 
 
+def sanitize_filename(name: str) -> str:
+    """将工作表名转换为稳定的文件名片段。"""
+    invalid_chars = '<>:"/\\|?*'
+    sanitized = "".join("_" if ch in invalid_chars else ch for ch in name).strip()
+    return sanitized.rstrip(". ") or "sheet"
+
+
+def build_text_record(cat_id: int, cat_name: str, row: int, col: int, text: str) -> dict:
+    """将纯文本单元格兜底转换为 JSONL 记录。"""
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    title = lines[0] if lines else text.strip()
+    return {
+        "category_id": cat_id,
+        "category": cat_name,
+        "row": row,
+        "col": col,
+        "title": title[:80],
+        "content": text,
+    }
+
+
 def run_jsonl_excel_to_jsonl(excel_path: Path, project_root: Path) -> int:
-    """将内部 JSONL 格式的 Excel 转换为 JSONL 文件（忽略"说明"工作表）"""
+    """将内部 JSONL 格式的 Excel 转换为 JSONL 目录（忽略"说明"工作表）"""
     import json
+    from datetime import datetime
     try:
         import pandas as pd
     except ImportError:
@@ -263,16 +285,23 @@ def run_jsonl_excel_to_jsonl(excel_path: Path, project_root: Path) -> int:
         return 1
     
     xlsx = pd.ExcelFile(excel_path)
-    output_lines = []
     cat_id = 0
+    total_records = 0
+    written_files = []
     
-    for sheet in xlsx.sheet_names:
+    timestamp = datetime.now().strftime("%Y_%m%d_%H%M%S")
+    output_dir = project_root / "prompt_jsonl" / f"{excel_path.stem}_{timestamp}"
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    for sheet_index, sheet in enumerate(xlsx.sheet_names, start=1):
         if sheet == '说明':
             continue
         
         cat_id += 1
         cat_name = sheet
         df = pd.read_excel(xlsx, sheet_name=sheet, header=None)
+        sheet_lines = []
+        fallback_records = []
         
         # 检查列名是否是 JSON 数据
         for col_idx, col_name in enumerate(df.columns):
@@ -281,7 +310,7 @@ def run_jsonl_excel_to_jsonl(excel_path: Path, project_root: Path) -> int:
                 try:
                     obj = json.loads(col_str)
                     if 'title' in obj and 'content' in obj:
-                        output_lines.append(json.dumps({
+                        sheet_lines.append(json.dumps({
                             "category_id": cat_id,
                             "category": cat_name,
                             "row": 1,
@@ -298,11 +327,13 @@ def run_jsonl_excel_to_jsonl(excel_path: Path, project_root: Path) -> int:
                 if pd.isna(val):
                     continue
                 val_str = str(val).strip()
+                if not val_str:
+                    continue
                 if val_str.startswith('{') and val_str.endswith('}'):
                     try:
                         obj = json.loads(val_str)
                         if 'title' in obj and 'content' in obj:
-                            output_lines.append(json.dumps({
+                            sheet_lines.append(json.dumps({
                                 "category_id": cat_id,
                                 "category": cat_name,
                                 "row": row_idx + 2,
@@ -312,22 +343,43 @@ def run_jsonl_excel_to_jsonl(excel_path: Path, project_root: Path) -> int:
                             }, ensure_ascii=False))
                     except:
                         pass
-    
-    if not output_lines:
+                else:
+                    # 跳过常见的顶栏广告/元数据噪声，但保留其他纯文本内容作为兜底记录。
+                    if row_idx == 0 and col_idx == 0 and val_str.startswith("广告位"):
+                        continue
+                    fallback_records.append(
+                        build_text_record(
+                            cat_id=cat_id,
+                            cat_name=cat_name,
+                            row=row_idx + 2,
+                            col=col_idx + 1,
+                            text=val_str,
+                        )
+                    )
+
+        if not sheet_lines and fallback_records:
+            sheet_lines = [
+                json.dumps(record, ensure_ascii=False)
+                for record in fallback_records
+            ]
+
+        total_records += len(sheet_lines)
+        file_stem = sanitize_filename(cat_name)
+        output_file = output_dir / f"{sheet_index:02d}_{file_stem}.jsonl"
+        with open(output_file, 'w', encoding='utf-8') as f:
+            if sheet_lines:
+                f.write('\n'.join(sheet_lines) + '\n')
+        written_files.append(output_file)
+
+    if not written_files:
         print(f"❌ 未找到有效的 JSONL 数据: {excel_path}")
         return 1
-    
-    from datetime import datetime
-    timestamp = datetime.now().strftime("%Y_%m%d_%H%M%S")
-    
-    output_dir = project_root / "prompt_jsonl"
-    output_dir.mkdir(parents=True, exist_ok=True)
-    output_file = output_dir / f"{excel_path.stem}_{timestamp}.jsonl"
-    
-    with open(output_file, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(output_lines))
-    
-    print(f"✅ Excel(JSONL)→JSONL OK: {excel_path.name} → {output_file.relative_to(project_root)} ({len(output_lines)} 条记录)")
+
+    print(
+        f"✅ Excel(JSONL)→JSONL OK: {excel_path.name} → "
+        f"{output_dir.relative_to(project_root)} "
+        f"({len(written_files)} 个文件 / {total_records} 条记录)"
+    )
     return 0
 
 

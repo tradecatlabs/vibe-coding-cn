@@ -72,7 +72,7 @@ git push origin develop
 2. Docs → Excel：将 Markdown 文档目录还原为 Excel 工作簿
 3. Docs → JSONL：将 Markdown 文档转换为 JSONL 格式
 4. JSONL → Excel：将 JSONL 转换为 Excel
-5. Excel(JSONL) → JSONL：将内部 JSONL 格式的 Excel 转换为 JSONL 文件
+5. Excel(JSONL) → JSONL：将内部 JSONL 格式的 Excel 转换为 JSONL 目录（每个工作表一个 JSONL 文件）
 
 ---
 
