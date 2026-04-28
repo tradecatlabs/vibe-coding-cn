@@ -5,7 +5,7 @@ description: "tmux 自动化操控：读取/广播/救援 session|window|pane，
 
 # tmux-autopilot Skill
 
-让 AI 像熟练运维一样操作 tmux：读取终端输出、发送按键、批量巡检、协作/救援其他终端，默认兼容 `assets/repos/.tmux`（gpakosz/oh-my-tmux）。
+让 AI 像熟练运维一样操作 tmux：读取终端输出、发送按键、批量巡检、协作/救援其他终端，默认兼容 `assets/repos/.tmux`（gpakosz/oh-my-tmux），并在本技能内通过 `assets/oh-my-tmux` 与 `assets/tmux-src` 暴露上游 submodule。
 
 ## When to Use This Skill
 
@@ -15,6 +15,7 @@ description: "tmux 自动化操控：读取/广播/救援 session|window|pane，
 - 需要批量巡检/接管多 AI 终端（蜂群协作、自动救援卡死任务）。
 - 需要快速回忆 oh-my-tmux 快捷键、前缀或同步面板操作。
 - 需要在当前仓库复用 `assets/repos/.tmux` 配置并避免修改主配置。
+- 需要从技能目录内快速查看 oh-my-tmux 配置或 tmux 上游源码入口。
 
 ## Not For / Boundaries
 
@@ -85,8 +86,9 @@ tmux attach -t ai-hub
 
 **启用 oh-my-tmux 配置（仓库内版本）**
 ```bash
-ln -sfn /home/lenovo/zip/vibe-coding-cn/assets/repos/.tmux/.tmux.conf ~/.tmux.conf
-cp -n /home/lenovo/zip/vibe-coding-cn/assets/repos/.tmux/.tmux.conf.local ~/.tmux.conf.local
+repo_root="$(git rev-parse --show-toplevel)"
+ln -sfn "$repo_root/assets/skills/tmux-autopilot/assets/oh-my-tmux/.tmux.conf" ~/.tmux.conf
+cp -n "$repo_root/assets/skills/tmux-autopilot/assets/oh-my-tmux/.tmux.conf.local" ~/.tmux.conf.local
 ```
 
 **记录 pane 输出到文件**
@@ -153,11 +155,13 @@ tmux pipe-pane -t <session>:<window>.<pane> -o 'cat >> /tmp/tmux-<session>-<wind
 - `references/api.md`: tmux/oh-my-tmux 常用命令、选项与 gpakosz 特色键位
 - `references/examples.md`: 蜂群协议脚本与长示例
 - `references/troubleshooting.md`: 典型故障到修复路径
+- `assets/oh-my-tmux`: gpakosz/oh-my-tmux submodule 的相对软链接入口
+- `assets/tmux-src`: tmux/tmux submodule 的相对软链接入口
 
 ## Maintenance
 
-- Sources: `assets/repos/.tmux/README.md`、蜂群实战提示词、Skill Seeker 生成的抓取材料（如需扩展自动化）。
-- Last updated: 2026-01-17
+- Sources: `assets/skills/tmux-autopilot/assets/oh-my-tmux`、`assets/skills/tmux-autopilot/assets/tmux-src`、蜂群实战提示词、Skill Seeker 生成的抓取材料（如需扩展自动化）。
+- Last updated: 2026-04-28
 - Known limits: 未涵盖 tmux 插件管理（tpm）及多用户共享权限配置；需时再补充。
 
 ## Quality Gate

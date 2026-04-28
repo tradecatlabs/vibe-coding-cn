@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # ==================== Purpose ====================
-# Run Skill Seekers from vendored source with a local venv.
+# Run Skill Seekers from linked source with a local venv.
 #
 # This script does NOT auto-install dependencies.
 # Run skill-seekers-bootstrap.sh once if you see ImportError.
@@ -53,7 +53,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-[[ -d "$tool_src" ]] || die "Missing vendored source dir: $tool_src"
+[[ -d "$tool_src" ]] || die "Missing linked source dir: $tool_src"
 
 python_bin="python3"
 if [[ -x "$venv_dir/bin/python" ]]; then

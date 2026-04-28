@@ -3,11 +3,12 @@
 set -euo pipefail
 
 # ==================== Purpose ====================
-# Update the vendored Skill Seekers source snapshot inside this repo.
+# Legacy updater for the old vendored Skill Seekers source snapshot.
 #
 # Notes:
-# - This keeps ONLY "source + configs + runtime manifests" to avoid importing upstream Markdown docs
-#   (which would affect this repo's markdownlint).
+# - Skill Seekers now lives under assets/repos/Skill_Seekers-development.
+# - The auto-skill scripts directory only exposes it through a relative symlink.
+# - This script refuses to overwrite the linked repository; update assets/repos directly instead.
 
 usage() {
   cat <<'EOF'
@@ -19,8 +20,6 @@ Defaults:
   --ref  main
 
 Examples:
-  ./skills/auto-skill/scripts/skill-seekers-update.sh
-  ./skills/auto-skill/scripts/skill-seekers-update.sh --ref v2.1.1
   ./skills/auto-skill/scripts/skill-seekers-update.sh --dry-run
 EOF
 }
@@ -71,6 +70,10 @@ command -v curl >/dev/null 2>&1 || die "curl not found"
 command -v tar >/dev/null 2>&1 || die "tar not found"
 command -v rsync >/dev/null 2>&1 || die "rsync not found"
 
+if [[ -L "$target_dir" && "$dry_run" -eq 0 ]]; then
+  die "Skill_Seekers-development is linked to assets/repos. Update assets/repos/Skill_Seekers-development directly instead of overwriting through this legacy updater."
+fi
+
 tmp_dir="$(mktemp -d)"
 cleanup() { rm -rf "$tmp_dir"; }
 trap cleanup EXIT
@@ -90,6 +93,9 @@ if [[ "$dry_run" -eq 1 ]]; then
   echo "  ref:  $ref"
   echo "  from: $extracted_root"
   echo "  to:   $target_dir"
+  if [[ -L "$target_dir" ]]; then
+    echo "  note: target is a symlink; non-dry-run update is intentionally blocked"
+  fi
   exit 0
 fi
 
@@ -114,4 +120,4 @@ rsync -a --delete \
   "$extracted_root"/ \
   "$target_dir"/
 
-echo "OK: updated vendored source in: $target_dir"
+echo "OK: updated source in: $target_dir"

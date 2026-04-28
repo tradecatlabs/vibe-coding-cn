@@ -20,8 +20,9 @@
 tmux -V
 
 # 2) 软链配置（不会覆盖已有 .tmux.conf.local，如需自定义请编辑该文件）
-ln -sfn /home/lenovo/zip/vibe-coding-cn/assets/repos/.tmux/.tmux.conf ~/.tmux.conf
-cp -n  /home/lenovo/zip/vibe-coding-cn/assets/repos/.tmux/.tmux.conf.local ~/.tmux.conf.local
+repo_root="$(git rev-parse --show-toplevel)"
+ln -sfn "$repo_root/assets/skills/tmux-autopilot/assets/oh-my-tmux/.tmux.conf" ~/.tmux.conf
+cp -n "$repo_root/assets/skills/tmux-autopilot/assets/oh-my-tmux/.tmux.conf.local" ~/.tmux.conf.local
 
 # 3) 启动会话并验证前缀
 tmux new -s demo -n shell

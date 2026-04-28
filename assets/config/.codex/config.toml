@@ -84,8 +84,10 @@ hide_rate_limit_model_nudge = true
 # 模型迁移映射：
 # - 当某些老模型名不可用/被迁移时，用这里的映射做自动替换。
 # - 建议只保留你确实用得到的映射，避免未来产生“我没注意但被自动换了”的困惑。
-"gpt-5.1-codex-max" = "gpt-5.2-codex"
-"gpt-5.2" = "gpt-5.4"
+"gpt-5.1-codex-max" = "gpt-5.5"
+"gpt-5.2" = "gpt-5.5"
+"gpt-5.3-codex-max" = "gpt-5.5"
+"gpt-5.4" = "gpt-5.5"
 
 [projects."/home/lenovo/.projects/cat/tradecat"]
 trust_level = "trusted"

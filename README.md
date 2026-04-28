@@ -267,8 +267,8 @@
 *   [**Droid**](https://factory.ai/news/terminal-bench): 提供对 Claude Opus 4.7 等多种模型的 CLI 访问。
 *   [**Kiro**](https://kiro.dev/): 目前提供免费的 Claude Opus 4.7 模型访问，并提供客户端及 CLI 工具。
 *   [**Gemini CLI**](https://geminicli.com/): 提供对 Gemini 模型的免费访问，适合执行脚本、整理文档和探索思路。
-*   [**antigravity**](https://antigravity.google/): 目前由 Google 提供的免费 AI 服务，支持使用 Claude Opus 4.7 和 Gemini 3.0 Pro。
-*   [**AI Studio**](https://aistudio.google.com/prompts/new_chat): Google 提供的免费服务，支持使用 Gemini 3.0 Pro 和 Nano Banana。
+*   [**antigravity**](https://antigravity.google/): 目前由 Google 提供的免费 AI 服务，支持使用 Claude Opus 4.7 和 Gemini 3.1 Pro。
+*   [**AI Studio**](https://aistudio.google.com/prompts/new_chat): Google 提供的免费服务，支持使用 Gemini 3.1 Pro 和 Nano Banana。
 *   [**Gemini Enterprise**](https://cloud.google.com/gemini-enterprise): 面向企业用户的 Google AI 服务，目前可以免费使用。
 *   [**GitHub Copilot**](https://github.com/copilot): 由 GitHub 和 OpenAI 联合开发的 AI 代码补全工具。
 *   [**Kimi K2.5**](https://www.kimi.com/): 一款国产 AI 模型，适用于多种常规任务。

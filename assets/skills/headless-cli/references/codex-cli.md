@@ -37,7 +37,7 @@ codex login status
 
 | 参数 | 说明 | 示例 |
 |:---|:---|:---|
-| `--model, -m` | 指定模型 | `-m gpt-5-codex` |
+| `--model, -m` | 指定模型 | `-m gpt-5.5` |
 | `--sandbox, -s` | 沙箱策略: `read-only`/`workspace-write`/`danger-full-access` | `-s workspace-write` |
 | `--ask-for-approval, -a` | 审批模式: `untrusted`/`on-failure`/`on-request`/`never` | `-a on-failure` |
 | `--full-auto` | 自动化预设 (workspace-write + on-failure) | `--full-auto` |
@@ -46,7 +46,7 @@ codex login status
 | `--add-dir` | 添加额外写入目录 | `--add-dir ./other` |
 | `--enable` | 启用功能标志 | `--enable web_search_request` |
 | `--disable` | 禁用功能标志 | `--disable feature_name` |
-| `--config, -c` | 配置覆盖 | `-c model_reasoning_effort="high"` |
+| `--config, -c` | 配置覆盖 | `-c model_reasoning_effort="xhigh"` |
 | `--image, -i` | 附加图片 | `-i image.png` |
 | `--cd, -C` | 设置工作目录 | `-C /path/to/project` |
 | `--profile, -p` | 配置文件 profile | `-p my-profile` |
@@ -64,9 +64,9 @@ codex login status
 
 ## 可用模型
 
-- `gpt-5-codex` - 标准模型
-- `gpt-5.3-codex` - 增强版
-- `gpt-5.3-codex-max` - 最强模型
+- `gpt-5.5` - 最新推荐模型
+- `gpt-5.4` - 上一代兼容模型
+- `gpt-5.2` - 旧版兼容模型
 
 ## 推理强度配置
 
@@ -74,6 +74,7 @@ codex login status
 -c model_reasoning_effort="low"    # 快速
 -c model_reasoning_effort="medium" # 平衡
 -c model_reasoning_effort="high"   # 深度
+-c model_reasoning_effort="xhigh"  # 最深
 ```
 
 ## 无头模式用法
@@ -95,7 +96,7 @@ codex --dangerously-bypass-approvals-and-sandbox "Your prompt"
 codex --full-auto "Your prompt"
 
 # 完整 YOLO 配置别名
-alias c='codex --enable web_search_request -m gpt-5.3-codex-max -c model_reasoning_effort="high" --yolo'
+alias c='codex --enable web_search_request -m gpt-5.5 -c model_reasoning_effort="xhigh" --yolo'
 
 # 恢复最近会话
 codex resume --last
@@ -107,7 +108,7 @@ codex exec resume --last "continue"
 配置存储在 `~/.codex/config.toml`：
 
 ```toml
-model = "gpt-5-codex"
+model = "gpt-5.5"
 sandbox = "workspace-write"
 ask_for_approval = "on-failure"
 

@@ -37,9 +37,9 @@ Your output MUST include:
 3. Long-form docs moved to `references/` with a `references/index.md`
 4. A pre-delivery checklist (Quality Gate)
 
-### Built-in Tool (Mandatory): Skill Seekers (Vendored)
+### Built-in Tool (Mandatory): Skill Seekers (Linked)
 
-This repo vendors the Skill Seekers source code inside this meta-skill so you can generate a first-draft Skill from:
+This meta-skill exposes `assets/repos/Skill_Seekers-development` through a relative symlink so you can generate a first-draft Skill from:
 - Documentation websites
 - GitHub repositories
 - PDFs
@@ -50,7 +50,7 @@ Bootstrap dependencies (once):
 ./assets/skills/auto-skill/scripts/skill-seekers-bootstrap.sh
 ```
 
-Run Skill Seekers (from vendored source):
+Run Skill Seekers (from linked source):
 
 ```bash
 ./assets/skills/auto-skill/scripts/skill-seekers.sh -- --version
@@ -65,11 +65,10 @@ Import the generated skill into this repo's canonical `assets/skills/` tree:
 ./assets/skills/auto-skill/scripts/skill-seekers-import.sh react --force
 ```
 
-Update the vendored source snapshot (optional, network required):
+Update the linked source in `assets/repos/Skill_Seekers-development` directly. The legacy updater is guarded to avoid overwriting the linked repository.
 
 ```bash
-./assets/skills/auto-skill/scripts/skill-seekers-update.sh
-./assets/skills/auto-skill/scripts/skill-seekers-update.sh --ref main
+./assets/skills/auto-skill/scripts/skill-seekers-update.sh --dry-run
 ```
 
 ### Recommended Layout (Minimal -> Full)
@@ -169,7 +168,7 @@ Trigger when any of these applies:
 ### Workflow (Material -> Skill)
 
 Do not skip steps:
-0. If your source material is a docs site / GitHub repo / PDF: generate a first draft with the vendored Skill Seekers tool, then import into `assets/skills/<skill-name>/`
+0. If your source material is a docs site / GitHub repo / PDF: generate a first draft with the linked Skill Seekers tool, then import into `assets/skills/<skill-name>/`
 1. Scope: write MUST/SHOULD/NEVER (three sentences total is fine)
 2. Extract patterns: pick 10-20 high-frequency patterns (commands/snippets/flows)
 3. Add examples: >= 3 end-to-end examples (input -> steps -> acceptance)
@@ -265,7 +264,7 @@ Local docs:
 - `references/quality-checklist.md`
 - `references/anti-patterns.md`
 - `references/README.md` (upstream official reference)
-- `references/skill-seekers.md` (vendored tool integration + workflow)
+- `references/skill-seekers.md` (linked tool integration + workflow)
 
 External (official):
 - https://support.claude.com/en/articles/12512176-what-are-skills

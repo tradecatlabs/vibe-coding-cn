@@ -95,7 +95,7 @@ claude --print "使用 codebase-retrieval 搜索所有 API 端点定义"
 {
   "apiToken": "your-token",
   "apiUrl": "https://i0.api.augmentcode.com/",
-  "defaultModel": "gpt-4",
+  "defaultModel": "gpt-5.5",
   "workspaceRoot": "/path/to/project"
 }
 ```

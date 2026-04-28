@@ -48,7 +48,7 @@ Git submodule 表示上游仓库；如需在其它目录暴露入口，则用相
 | `.tmux/` | submodule | 保持 | 上游清晰，主仓库只记录 commit 指针 |
 | `tmux/` | submodule | 保持 | 上游源码体量较大，已正确用 submodule 表示 |
 | `claude-official-skills/` | submodule | 保持；`assets/skills/claude-official-skills` 用相对软链暴露 | 官方 skills 应作为外部权威仓库，不复制源码 |
-| `Skill_Seekers-development/` | 主仓库直接追踪源码 | 高优先级改为 submodule 或移入 `auto-skill` 的单一 vendored 副本 | 已有上游仓库，且当前与 `assets/skills/auto-skill/scripts/Skill_Seekers-development/` 存在重复 |
+| `Skill_Seekers-development/` | 主仓库直接追踪源码；`auto-skill` 通过软链接引用 | 后续可再评估是否转 submodule | 已消除 `auto-skill` 内重复源码，当前单一来源为 `assets/repos/Skill_Seekers-development/` |
 | `my-nvim/` | 主仓库直接追踪源码与二进制 | 高优先级改为 submodule 或清退二进制后只保留索引 | 包含大型 `nvim` 可执行文件，污染主仓库体量 |
 | `chat-vault/` | 主仓库直接追踪源码 | 中高优先级拆为独立仓库/submodule，或至少清退内嵌第三方监控源码 | 目录体量大，且含 vendored `monitor-tui`/第三方代码 |
 | `prompts-library/` | 主仓库直接追踪工具源码 | 中优先级拆分：工具用 submodule，生成输出不跟踪 | 上游/工具属性明显，`prompt_jsonl/` 属生成输出且已加入忽略规则 |

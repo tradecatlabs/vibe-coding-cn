@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # ==================== Purpose ====================
-# Bootstraps a local venv for the vendored Skill Seekers source code.
+# Bootstraps a local venv for the linked Skill Seekers source code.
 #
 # Output:
 # - Creates: skills/auto-skill/scripts/.venv-skill-seekers/
@@ -54,7 +54,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-[[ -d "$tool_dir" ]] || die "Missing vendored tool dir: $tool_dir"
+[[ -d "$tool_dir" ]] || die "Missing linked tool dir: $tool_dir"
 [[ -f "$tool_dir/requirements.txt" ]] || die "Missing requirements.txt: $tool_dir/requirements.txt"
 command -v python3 >/dev/null 2>&1 || die "python3 not found"
 

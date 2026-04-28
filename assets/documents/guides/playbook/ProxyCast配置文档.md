@@ -28,9 +28,9 @@ cd /mnt/d/.projects/kiro-account-manager-main.zip/proxycast-main && ./src-tauri/
 
 ## 二、Claude Code 启动命令
 
-### Claude Opus 4.6 (Kiro 凭证，最强)
+### Claude Opus 4.7 (Kiro 凭证，最强)
 ```bash
-CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model claude-opus-4-5
+CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model claude-opus-4-7
 ```
 
 ### Claude Sonnet 4.5 (Kiro 凭证)
@@ -58,9 +58,10 @@ CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8
 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model mistralai/devstral-2512:free
 ```
 
-### Gemini 3 Pro Preview - 最新预览版
+### Gemini 3.1 Pro Preview - 最新预览版
 ```bash
-CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model gemini-3-pro-preview
+CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model gemini-3.1-pro-preview
+```
 
 ### Gemini 2.5 Pro - Pro 版本
 ```bash
@@ -320,8 +321,8 @@ curl http://127.0.0.1:8999/v1/models -H "Authorization: Bearer proxy_cast"
 ### Kiro 凭证 (Claude 系列)
 
 ```bash
-# Claude Opus 4.6 - 最强模型
-CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model claude-opus-4-5
+# Claude Opus 4.7 - 最强模型
+CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model claude-opus-4-7
 
 # Claude Sonnet 4.5 - 平衡性能
 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model claude-sonnet-4-5
@@ -339,8 +340,8 @@ CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8
 ### Gemini 系列 (8个 API Key 轮询)
 
 ```bash
-# Gemini 3 Pro Preview - 最新预览版
-CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model gemini-3-pro-preview
+# Gemini 3.1 Pro Preview - 最新预览版
+CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model gemini-3.1-pro-preview
 
 # Gemini 2.5 Pro - Pro 版本
 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_BASE_URL=http://127.0.0.1:8999 ANTHROPIC_API_KEY=proxy_cast claude --dangerously-skip-permissions --model gemini-2.5-pro
@@ -918,6 +919,7 @@ CredentialData::CodexOAuth { creds_file_path } => {
 ### 支持的模型
 
 Codex 凭证支持所有 OpenAI 模型：
+- gpt-5.5, gpt-5.4, gpt-5.2
 - gpt-4o, gpt-4o-mini, gpt-4-turbo
 - o1, o1-mini, o1-preview
 - o3-mini
