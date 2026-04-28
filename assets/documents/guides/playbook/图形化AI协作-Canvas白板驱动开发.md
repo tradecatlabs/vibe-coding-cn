@@ -188,7 +188,7 @@ Canvas方式：
 ### 🔗 相关资源
 
 - [Canvas白板生成提示词](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1777853069#gid=1777853069&range=A1) - 自动生成架构白板的完整提示词
-- [白板驱动开发系统提示词（在线提示词库入口）](../../../prompts/README.md) - 系统提示词已迁移到云端表格
+- [白板驱动开发系统提示词（在线提示词库入口）](../../../prompt/README.md) - 系统提示词已迁移到云端表格
 - [Obsidian Canvas 官方文档](https://obsidian.md/canvas)
 - [胶水编程](../../principles/fundamentals/胶水编程.md) - 能抄不写，能连不造
 - [通用项目架构模板](../../principles/fundamentals/通用项目架构模板.md) - 标准化目录结构

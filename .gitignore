@@ -47,6 +47,9 @@ ENV/
 *.log
 logs/
 
+# Local task workspaces
+assets/tasks/
+
 # Skill Seekers (vendored tool output)
 output/
 assets/skills/skills-skills/scripts/.venv-skill-seekers/
@@ -74,7 +77,7 @@ libs/external/.tmux
 
 # Backup
 backups/gz/
-assets/repo/backups/gz/
+assets/repos/backups/gz/
 *.bak
 *.tmp
 

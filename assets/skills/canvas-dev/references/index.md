@@ -6,15 +6,15 @@
 
 | 资源 | 路径/链接 | 说明 |
 |:---|:---|:---|
-| AI架构总师完整提示词 | [Obsidian Canvas AI驱动的项目架构洞察与生成引擎.md](../../../workflow/canvas-dev/Obsidian%20Canvas%20AI驱动的项目架构洞察与生成引擎.md) | 最新最完整的提示词（最高优先级） |
-| Canvas驱动开发完整工作流 | [workflow.md](../../../workflow/canvas-dev/workflow.md) | 15步完整流程 |
+| AI架构总师完整提示词 | [Obsidian Canvas AI驱动的项目架构洞察与生成引擎.md](../../../documents/workflow/canvas-dev/Obsidian%20Canvas%20AI驱动的项目架构洞察与生成引擎.md) | 最新最完整的提示词（最高优先级） |
+| Canvas驱动开发完整工作流 | [workflow.md](../../../documents/workflow/canvas-dev/workflow.md) | 15步完整流程 |
 
 ### 核心文档
 
 | 文档 | 路径 | 说明 |
 |:---|:---|:---|
 | Canvas白板驱动开发详解 | `../../../documents/guides/playbook/图形化AI协作-Canvas白板驱动开发.md` | 方法论详解 |
-| 白板驱动开发系统提示词（在线提示词库入口） | `../../../prompts/README.md` | 系统提示词已迁移到云端表格 |
+| 白板驱动开发系统提示词（在线提示词库入口） | `../../../prompt/README.md` | 系统提示词已迁移到云端表格 |
 | Canvas JSON 规范 | [canvas-json-spec.md](./canvas-json-spec.md) | Obsidian Canvas JSON 格式 |
 
 ### AI架构总师核心概念
@@ -47,17 +47,17 @@
 
 | 提示词 | 路径 |
 |:---|:---|
-| 架构分析提示词 | `../../../workflow/canvas-dev/prompts/01-架构分析.md` |
-| 白板驱动编码提示词 | `../../../workflow/canvas-dev/prompts/02-白板驱动编码.md` |
-| 白板同步检查提示词 | `../../../workflow/canvas-dev/prompts/03-白板同步检查.md` |
+| 架构分析提示词 | `../../../documents/workflow/canvas-dev/prompts/01-架构分析.md` |
+| 白板驱动编码提示词 | `../../../documents/workflow/canvas-dev/prompts/02-白板驱动编码.md` |
+| 白板同步检查提示词 | `../../../documents/workflow/canvas-dev/prompts/03-白板同步检查.md` |
 
 ### 模板
 
 | 模板 | 路径 |
 |:---|:---|
-| 项目白板模板 | `../../../workflow/canvas-dev/templates/project.canvas` |
-| 模块白板模板 | `../../../workflow/canvas-dev/templates/module.canvas` |
-| 示例项目白板 | `../../../workflow/canvas-dev/examples/demo-project.canvas` |
+| 项目白板模板 | `../../../documents/workflow/canvas-dev/templates/project.canvas` |
+| 模块白板模板 | `../../../documents/workflow/canvas-dev/templates/module.canvas` |
+| 示例项目白板 | `../../../documents/workflow/canvas-dev/examples/demo-project.canvas` |
 
 ### 外部链接
 

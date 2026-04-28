@@ -4,7 +4,8 @@
 # - 这里填写 Codex CLI 支持的模型名（字符串）。
 # - 建议写成你常用的默认模型，临时切换用命令行 `-m` 覆盖更合适。
 # - 经验上：`*-codex` 更偏“写代码/改代码”，非 `*-codex` 更偏通用对话（以你实际使用体验为准）。
-model = "gpt-5.4"
+model = "gpt-5.5"
+model_provider = "openai-http"
 
 # 推理强度（思考深度）：
 # - low    → 更快，适合“明确指令 + 小改动”
@@ -13,7 +14,7 @@ model = "gpt-5.4"
 # - xhigh  → 最深，适合架构级设计/大范围推理（可能更慢）
 # 注意：
 # - 不同模型对选项支持范围可能不同；遇到报错优先降一档再试。
-model_reasoning_effort = "xhigh"
+model_reasoning_effort = "medium"
 
 # 运行策略
 # sandbox_mode：
@@ -56,9 +57,22 @@ startup_timeout_ms = 20000
 # 是否在 TUI（终端 UI）里启用通知提示。
 notifications = true
 
+[tui.model_availability_nux]
+"gpt-5.5" = 3
+
 [features]
 # Codex 里的 “subagent” 基本就是 Multi-agents（多代理/子线程）功能：主代理会按需 spawn 子代理并行干活，最后汇总结果。
 multi_agent = true
+# 禁用 Responses WebSocket 传输，只走 HTTPS/HTTP Responses。
+responses_websockets = false
+responses_websockets_v2 = false
+
+[model_providers.openai-http]
+# 自定义 provider 不能覆盖内置 openai，所以用新 ID 复制 OpenAI/Responses 语义并关闭 WebSocket 能力。
+name = "OpenAI"
+wire_api = "responses"
+requires_openai_auth = true
+supports_websockets = false
 
 [notice]
 # 这些开关用于隐藏某些“迁移/提示”类消息，减少噪音（仅影响 UI，不影响核心功能）。
@@ -72,6 +86,66 @@ hide_rate_limit_model_nudge = true
 # - 建议只保留你确实用得到的映射，避免未来产生“我没注意但被自动换了”的困惑。
 "gpt-5.1-codex-max" = "gpt-5.2-codex"
 "gpt-5.2" = "gpt-5.4"
+
+[projects."/home/lenovo/.projects/cat/tradecat"]
+trust_level = "trusted"
+
+[projects."/home/lenovo/zip/vibe-coding-cn"]
+trust_level = "trusted"
+
+[projects."/mnt/c/Users/13208"]
+trust_level = "trusted"
+
+[projects."/home/lenovo"]
+trust_level = "trusted"
+
+[projects."/home/lenovo/.projects/cat/zip/tradecat-20260324"]
+trust_level = "trusted"
+
+[projects."/mnt/c/Users/13208/Downloads"]
+trust_level = "trusted"
+
+[projects."/home/lenovo/.projects/skill"]
+trust_level = "trusted"
+
+[projects."/mnt/d/.projects/研究/tasks+任务包"]
+trust_level = "trusted"
+
+[projects."/home/lenovo/.projects/cat/tradecat-public"]
+trust_level = "trusted"
+
+[projects."/mnt/d/.projects/研究/dataset-first"]
+trust_level = "trusted"
+
+[projects."/mnt/d/.projects/研究/女娲/raw/cz-skill"]
+trust_level = "trusted"
+
+[projects."/home/lenovo/.codex"]
+trust_level = "trusted"
+
+[projects."/mnt/d/.projects/研究/币安人生"]
+trust_level = "trusted"
+
+[projects."/mnt/d/.projects/XHS-Downloader"]
+trust_level = "trusted"
+
+[projects."/home/lenovo/.projects/cat/fatecat"]
+trust_level = "trusted"
+
+[projects."/home/lenovo/.projects/cat/predictcat"]
+trust_level = "trusted"
+
+[projects."/home/lenovo/.projects/cat"]
+trust_level = "trusted"
+
+[projects."/home/lenovo/.projects/cat/catkey"]
+trust_level = "trusted"
+
+[projects."/mnt/d/.projects/研究/raw/量化交易/交易猫开发实践"]
+trust_level = "trusted"
+
+[projects."/home/lenovo/.projects/vibe-coding-cn"]
+trust_level = "trusted"
 
 # ==================== MCP Servers（示例，默认关闭） ====================
 # 说明：

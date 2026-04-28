@@ -10,5 +10,5 @@
 ## Notes
 
 - 长文档、脚本细节放这里，`SKILL.md` 只保留可立即执行的片段。
-- 配置来源：仓库内 `assets/repo/.tmux`（gpakosz/oh-my-tmux）。
-- 大规模文档抓取/刷新可用 `assets/repo/Skill_Seekers-development`，示例见 `examples.md`。
+- 配置来源：仓库内 `assets/repos/.tmux`（gpakosz/oh-my-tmux）。
+- 大规模文档抓取/刷新可用 `assets/repos/Skill_Seekers-development`，示例见 `examples.md`。

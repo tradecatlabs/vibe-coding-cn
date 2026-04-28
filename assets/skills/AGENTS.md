@@ -14,7 +14,7 @@ assets/skills/
 │   ├── scripts/                  # (可选) 可执行脚本/自动化
 │   ├── assets/                   # (可选) 模板/样例/静态资源
 │   └── agents/                   # (可选) Agent 元数据（如 openai.yaml）
-└── skills-skills/                # 元技能：生成/校验/脚手架化其它技能
+└── auto-skill/                   # 元技能：生成/校验/脚手架化其它技能
 ```
 
 ## 外部仓库引用（约定）
@@ -49,5 +49,5 @@ assets/skills/
 - `assets/skills/canvas-dev/`：Canvas 白板驱动开发
 - `assets/skills/sop-generator/`：SOP 生成与规范化
 - `assets/skills/markdown-to-epub/`：Markdown → EPUB 稳定构建
-- `assets/skills/skills-skills/`：元技能（技能生成/校验/脚手架）
+- `assets/skills/auto-skill/`：元技能（技能生成/校验/脚手架）
 - `assets/skills/claude-official-skills/`：Claude 官方 skills 仓库（Anthropic）的软链接入口

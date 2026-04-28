@@ -158,6 +158,6 @@ jobs:
 ## 相关资源
 
 - [Canvas白板驱动开发详解](../../../documents/guides/playbook/图形化AI协作-Canvas白板驱动开发.md)
-- [架构分析提示词](../../../workflow/canvas-dev/prompts/01-架构分析.md)
-- [白板驱动编码提示词](../../../workflow/canvas-dev/prompts/02-白板驱动编码.md)
-- [白板同步检查提示词](../../../workflow/canvas-dev/prompts/03-白板同步检查.md)
+- [架构分析提示词](../../../documents/workflow/canvas-dev/prompts/01-架构分析.md)
+- [白板驱动编码提示词](../../../documents/workflow/canvas-dev/prompts/02-白板驱动编码.md)
+- [白板同步检查提示词](../../../documents/workflow/canvas-dev/prompts/03-白板同步检查.md)

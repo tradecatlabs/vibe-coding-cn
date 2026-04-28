@@ -5,7 +5,7 @@ description: "tmux 自动化操控：读取/广播/救援 session|window|pane，
 
 # tmux-autopilot Skill
 
-让 AI 像熟练运维一样操作 tmux：读取终端输出、发送按键、批量巡检、协作/救援其他终端，默认兼容 `assets/repo/.tmux`（gpakosz/oh-my-tmux）。
+让 AI 像熟练运维一样操作 tmux：读取终端输出、发送按键、批量巡检、协作/救援其他终端，默认兼容 `assets/repos/.tmux`（gpakosz/oh-my-tmux）。
 
 ## When to Use This Skill
 
@@ -14,7 +14,7 @@ description: "tmux 自动化操控：读取/广播/救援 session|window|pane，
 - 需要向指定 pane 发送按键/命令（确认 `y`、`Enter`、`Ctrl+C`、广播同一窗口）。
 - 需要批量巡检/接管多 AI 终端（蜂群协作、自动救援卡死任务）。
 - 需要快速回忆 oh-my-tmux 快捷键、前缀或同步面板操作。
-- 需要在当前仓库复用 `assets/repo/.tmux` 配置并避免修改主配置。
+- 需要在当前仓库复用 `assets/repos/.tmux` 配置并避免修改主配置。
 
 ## Not For / Boundaries
 
@@ -85,8 +85,8 @@ tmux attach -t ai-hub
 
 **启用 oh-my-tmux 配置（仓库内版本）**
 ```bash
-ln -sfn /home/lenovo/zip/vibe-coding-cn/assets/repo/.tmux/.tmux.conf ~/.tmux.conf
-cp -n /home/lenovo/zip/vibe-coding-cn/assets/repo/.tmux/.tmux.conf.local ~/.tmux.conf.local
+ln -sfn /home/lenovo/zip/vibe-coding-cn/assets/repos/.tmux/.tmux.conf ~/.tmux.conf
+cp -n /home/lenovo/zip/vibe-coding-cn/assets/repos/.tmux/.tmux.conf.local ~/.tmux.conf.local
 ```
 
 **记录 pane 输出到文件**
@@ -156,17 +156,17 @@ tmux pipe-pane -t <session>:<window>.<pane> -o 'cat >> /tmp/tmux-<session>-<wind
 
 ## Maintenance
 
-- Sources: `assets/repo/.tmux/README.md`、蜂群实战提示词、Skill Seeker 生成的抓取材料（如需扩展自动化）。
+- Sources: `assets/repos/.tmux/README.md`、蜂群实战提示词、Skill Seeker 生成的抓取材料（如需扩展自动化）。
 - Last updated: 2026-01-17
 - Known limits: 未涵盖 tmux 插件管理（tpm）及多用户共享权限配置；需时再补充。
 
 ## Quality Gate
 
-发布前自检（配合 `skills-skills` 校验脚本）：
+发布前自检（配合 `auto-skill` 校验脚本）：
 1. `description` 已含“capture-pane/send-keys/蜂群”等触发关键词。
 2. 「When to Use」「Not For」已覆盖边界；前缀/版本要求清晰。
 3. Quick Reference ≤ 20 条且均可直接执行；无长篇解释。
 4. ≥3 个端到端示例，含输入/步骤/验收。
 5. 长文档放在 `references/` 并可导航；无文档堆砌。
 6. 不确定项给出验证路径；禁止虚构 tmux 行为。
-7. 运行 `assets/skills/skills-skills/scripts/validate-skill.sh assets/skills/tmux-autopilot` 通过。
+7. 运行 `assets/skills/auto-skill/scripts/validate-skill.sh assets/skills/tmux-autopilot` 通过。

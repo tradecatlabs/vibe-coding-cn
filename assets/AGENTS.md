@@ -4,12 +4,11 @@
 
 - `assets/README.md`：外部资源在线表格入口（唯一真相源）
 - `assets/documents/`：知识库（方法论/入门/实战）
-- `assets/prompts/`：提示词库入口（指向云端表格）
+- `assets/prompt/`：提示词库入口（指向云端表格）
 - `assets/skills/`：技能库（可复用 Skills）
-- `assets/workflow/`：工作流模板
-- `assets/repo/`：外部工具与依赖镜像（含 Git submodule）
+- `assets/documents/workflow/`：工作流模板
+- `assets/repos/`：外部工具与依赖镜像（含 Git submodule）
 - `assets/config/`：工具与开发配置（含 Codex CLI 配置）
-- `assets/tools/`：工具目录（预留）
 
 其中“外部资源”类入口文档的典型形态包括：
 
@@ -20,6 +19,6 @@
 ## 约束
 
 - 不在此目录存放敏感信息（Token、私钥、个人隐私）。
-- `assets/repo/` 下的第三方镜像/子模块：除非任务明确要求，否则不要做“顺手改动/格式化/批量替换”。
+- `assets/repos/` 下的第三方镜像/子模块：除非任务明确要求，否则不要做“顺手改动/格式化/批量替换”。
 - 尽量只存“入口文档与说明”，不要复制粘贴大段第三方内容。
 - 外部资产必须写清：用途、维护者、更新方式、与仓库内文档的关系（谁是唯一真相源）。

@@ -24,7 +24,7 @@
 
 ## 自动化采集（可选）
 
-- 需要批量抓取外部文档/代码仓库时，可用 `assets/repo/Skill_Seekers-development` 的 CLI（如 `skill-seekers scrape --config <config.json>`）生成参考素材，再按本技能流程落盘。
+- 需要批量抓取外部文档/代码仓库时，可用 `assets/repos/Skill_Seekers-development` 的 CLI（如 `skill-seekers scrape --config <config.json>`）生成参考素材，再按本技能流程落盘。
 
 ## 交付物检查
 

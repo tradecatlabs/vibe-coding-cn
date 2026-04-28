@@ -4,11 +4,11 @@
 
 ## Skills 一览表
 
-### 🔮 元技能（生成 Skills 的 Skills）
+### 🔮 元技能（生成与维护 Skills）
 
 | 技能 | 说明 |
 |:---|:---|
-| [skills-skills](./skills-skills/SKILL.md) | ⭐ 生成 Skills 的 Skills |
+| [auto-skill](./auto-skill/SKILL.md) | ⭐ 生成、重构与校验 Skills |
 | [sop-generator](./sop-generator/SKILL.md) | SOP 生成与规范化 |
 
 ### 🤖 AI 工具
@@ -57,7 +57,7 @@
 ## 外部技能仓库（软链接）
 
 - `assets/skills/claude-official-skills/`：来自 Claude 官方 skills 仓库（Anthropic）。
-  本仓库以 Git submodule 的形式落在 `assets/repo/claude-official-skills/`，
+  本仓库以 Git submodule 的形式落在 `assets/repos/claude-official-skills/`，
   并通过软链接暴露到 `assets/skills/` 下便于浏览与复用。
 - 初始化/更新方式：`git submodule update --init --recursive`
 - Skills 大全网站：`https://skills.sh/`
@@ -66,7 +66,7 @@
 
 ```bash
 # 查看元技能
-cat assets/skills/skills-skills/SKILL.md
+cat assets/skills/auto-skill/SKILL.md
 
 # 查看无头 CLI 技能
 cat assets/skills/headless-cli/SKILL.md
@@ -79,12 +79,12 @@ cat assets/skills/postgresql/SKILL.md
 
 使用元技能生成：
 1. 准备领域资料（文档、代码、规范）
-2. 将资料和 `skills-skills/SKILL.md` 一起提供给 AI
+2. 将资料和 `auto-skill/SKILL.md` 一起提供给 AI
 3. AI 会生成针对该领域的专用 Skill
 
 ## 相关资源
 
-- [元技能文件](./skills-skills/SKILL.md) - 生成 Skills 的 Skills
-- [提示词库](../prompts/) - 更细粒度的提示词集合
+- [元技能文件](./auto-skill/SKILL.md) - 生成、重构与校验 Skills
+- [提示词库](../prompt/) - 更细粒度的提示词集合
 - [文档库](../documents/) - 方法论与开发经验
 - [skills.sh](https://skills.sh/) - Skill 大全网站
