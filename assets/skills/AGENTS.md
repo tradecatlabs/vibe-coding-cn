@@ -50,3 +50,6 @@ assets/skills/
 - `assets/skills/markdown-to-epub/`：Markdown → EPUB 稳定构建
 - `assets/skills/auto-skill/`：元技能（技能生成/校验/脚手架）
 - `assets/skills/claude-official-skills/`：Claude 官方 skills 仓库（Anthropic）的软链接入口
+- `assets/skills/auto-skill/scripts/Skill_Seekers-development`：Skill Seekers submodule 的软链接入口
+- `assets/skills/tmux-autopilot/assets/oh-my-tmux`：oh-my-tmux submodule 的软链接入口
+- `assets/skills/tmux-autopilot/assets/tmux-src`：tmux submodule 的软链接入口

@@ -41,7 +41,8 @@ echo "audit pipes enabled under /tmp/*-ai-hub-*.log"
 > 目的：在需要更全面文档时，用仓库自带的 `Skill_Seekers-development` 自动抓取 gpakosz/.tmux 与 README，生成扩展参考文件，再手动筛选进 `references/`。
 
 ```bash
-cd /home/lenovo/zip/vibe-coding-cn/assets/repos/Skill_Seekers-development
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root/assets/repos/Skill_Seekers-development"
 # 准备 Python 环境（如未安装）
 uv tool install skill-seekers  # 或 pip install skill-seekers
 

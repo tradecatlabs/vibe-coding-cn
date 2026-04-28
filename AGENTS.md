@@ -165,7 +165,7 @@ git push origin develop
 │       ├── AGENTS.md            # assets/repos/ 目录规则
 │       ├── prompts-library/     # Excel ↔ Markdown 互转工具
 │       ├── chat-vault/          # AI 聊天记录保存工具
-│       ├── Skill_Seekers-development/ # Skills 制作器
+│       ├── Skill_Seekers-development/ # Skills 制作器 (submodule)
 │       ├── html-tools-main/     # HTML 工具集
 │       ├── my-nvim/             # Neovim 配置
 │       ├── MCPlayerTransfer/    # MC 玩家迁移工具

@@ -61,6 +61,12 @@
 - 初始化/更新方式：`git submodule update --init --recursive`
 - Skills 大全网站：`https://skills.sh/`
 
+## Repo 软链接入口
+
+- `assets/skills/auto-skill/scripts/Skill_Seekers-development`：指向 `assets/repos/Skill_Seekers-development` submodule，作为 Skill Seekers 工具来源。
+- `assets/skills/tmux-autopilot/assets/oh-my-tmux`：指向 `assets/repos/.tmux`，作为 oh-my-tmux 配置来源。
+- `assets/skills/tmux-autopilot/assets/tmux-src`：指向 `assets/repos/tmux`，作为 tmux 上游源码入口。
+
 ## 快速使用
 
 ```bash

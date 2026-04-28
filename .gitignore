@@ -50,7 +50,7 @@ logs/
 # Local task workspaces
 assets/tasks/
 
-# Skill Seekers (vendored tool output)
+# Skill Seekers (linked tool output)
 output/
 assets/skills/auto-skill/scripts/.venv-skill-seekers/
 

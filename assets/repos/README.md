@@ -17,7 +17,7 @@ assets/repos/
 ├── claude-official-skills/      # submodule：Claude 官方 skills 仓库（Anthropic）
 ├── prompts-library/             # Excel ↔ Markdown 转换工具
 ├── chat-vault/                  # AI 聊天记录保存工具
-├── Skill_Seekers-development/   # Skills 制作器
+├── Skill_Seekers-development/   # submodule：Skills 制作器
 ├── html-tools-main/             # HTML 工具集
 ├── my-nvim/                     # Neovim 配置（含 nvim-config/）
 ├── MCPlayerTransfer/            # MC 玩家迁移工具
@@ -29,33 +29,32 @@ assets/repos/
 
 - `chat-vault/`：AI 聊天记录保存工具（详见 `chat-vault/README.md`）
 - `prompts-library/`：提示词 Excel ↔ Markdown 批量互转与索引生成（详见 `prompts-library/README.md`）
-- `Skill_Seekers-development/`：Skills 抓取/制作器（详见 `Skill_Seekers-development/README.md`）
+- `Skill_Seekers-development/`：以 submodule 引入的 Skills 抓取/制作器（详见 `Skill_Seekers-development/README.md`）
 - `html-tools-main/`：HTML 工具集（详见 `html-tools-main/README.md`）
 - `my-nvim/`：个人 Neovim 配置（详见 `my-nvim/README.md`）
 - `MCPlayerTransfer/`：MC 玩家迁移工具（详见 `MCPlayerTransfer/README.md`）
 - `XHS-image-to-PDF-conversion/`：图片合并 PDF（详见 `XHS-image-to-PDF-conversion/README.md`）
-- `.tmux/`、`tmux/`、`claude-official-skills/`：以 submodule 形式引入的上游仓库
+- `.tmux/`、`tmux/`、`claude-official-skills/`、`Skill_Seekers-development/`：以 submodule 形式引入的上游仓库
 
 > 📝 系统提示词已迁移到云端表格，入口见 [`assets/prompt/README.md`](../prompt/README.md)。
 
-## 外部仓库治理分析（2026-04-28）
+## 当前表达状态（2026-04-29）
 
-目标：`assets/repos/` 只保留外部仓库的可追溯入口，不把大型第三方源码、二进制产物或生成物长期塞进主仓库。GitHub 中优先用
-Git submodule 表示上游仓库；如需在其它目录暴露入口，则用相对软链接指向 `assets/repos/<repo>/`。
+目标：`assets/repos/` 是外部工具与依赖的事实来源；需要在其它资产目录展示时，才用相对软链接指向这里。当前只对确有跨目录入口需求的仓库做软链接显示。
 
-| 目录 | 当前状态 | 建议 | 原因 |
+| 目录 | 当前表示 | 软链接显示 | 备注 |
 |:---|:---|:---|:---|
-| `.tmux/` | submodule | 保持 | 上游清晰，主仓库只记录 commit 指针 |
-| `tmux/` | submodule | 保持 | 上游源码体量较大，已正确用 submodule 表示 |
-| `claude-official-skills/` | submodule | 保持；`assets/skills/claude-official-skills` 用相对软链暴露 | 官方 skills 应作为外部权威仓库，不复制源码 |
-| `Skill_Seekers-development/` | 主仓库直接追踪源码；`auto-skill` 通过软链接引用 | 后续可再评估是否转 submodule | 已消除 `auto-skill` 内重复源码，当前单一来源为 `assets/repos/Skill_Seekers-development/` |
-| `my-nvim/` | 主仓库直接追踪源码与二进制 | 高优先级改为 submodule 或清退二进制后只保留索引 | 包含大型 `nvim` 可执行文件，污染主仓库体量 |
-| `chat-vault/` | 主仓库直接追踪源码 | 中高优先级拆为独立仓库/submodule，或至少清退内嵌第三方监控源码 | 目录体量大，且含 vendored `monitor-tui`/第三方代码 |
-| `prompts-library/` | 主仓库直接追踪工具源码 | 中优先级拆分：工具用 submodule，生成输出不跟踪 | 上游/工具属性明显，`prompt_jsonl/` 属生成输出且已加入忽略规则 |
-| `html-tools-main/` | 主仓库直接追踪源码 | 中优先级改为 submodule | README 指向外部 GitHub 仓库，适合用指针表示 |
-| `XHS-image-to-PDF-conversion/` | 主仓库直接追踪源码 | 中优先级改为 submodule | README 指向外部 GitHub 仓库，适合用指针表示 |
-| `MCPlayerTransfer/` | 主仓库直接追踪源码 | 暂缓；先补来源/许可证，再决定是否独立仓库化 | 当前未发现明确上游 URL，体量小 |
-| `backups/` | 主仓库直接追踪备份脚本与存档目录 | 保持；继续禁止删除 `gz/` 存档 | 属本项目历史备份资产，不是外部仓库镜像 |
+| `.tmux/` | Git submodule | `assets/skills/tmux-autopilot/assets/oh-my-tmux` | oh-my-tmux 配置来源 |
+| `tmux/` | Git submodule | `assets/skills/tmux-autopilot/assets/tmux-src` | tmux 上游源码入口 |
+| `claude-official-skills/` | Git submodule | `assets/skills/claude-official-skills` | Claude 官方 skills 仓库 |
+| `Skill_Seekers-development/` | Git submodule | `assets/skills/auto-skill/scripts/Skill_Seekers-development` | `auto-skill` 的 Skill Seekers 工具来源；`configs` 与 `src` 另有软链接入口 |
+| `prompts-library/` | 普通目录 | 无 | 转换工具直接从 `assets/repos/` 使用，不做跨目录软链接显示 |
+| `html-tools-main/` | 普通目录 | 无 | 工具目录保持 README 索引 |
+| `XHS-image-to-PDF-conversion/` | 普通目录 | 无 | 工具目录保持 README 索引 |
+| `chat-vault/` | 普通目录 | 无 | 工具目录保持 README 索引 |
+| `MCPlayerTransfer/` | 普通目录 | 无 | 工具目录保持 README 索引 |
+| `my-nvim/` | 普通目录 | 无 | Neovim 配置镜像，保持 README 索引 |
+| `backups/` | 普通目录 | 无 | 本项目历史备份资产，继续保护 `gz/` 存档 |
 
 ## 表达规则
 

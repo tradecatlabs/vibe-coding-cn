@@ -36,7 +36,7 @@ auto-skill/
 - `assets/skills/auto-skill/assets/template-minimal.md`: minimal template (small domains / quick bootstrap).
 - `assets/skills/auto-skill/assets/template-complete.md`: full template (production-grade / complex domains).
 - `assets/skills/auto-skill/scripts/create-skill.sh`: scaffold generator (minimal/full, output dir, overwrite).
-- `assets/skills/auto-skill/scripts/Skill_Seekers-development`: relative symlink to `assets/repos/Skill_Seekers-development`.
+- `assets/skills/auto-skill/scripts/Skill_Seekers-development`: relative symlink to the `assets/repos/Skill_Seekers-development` submodule.
 - `assets/skills/auto-skill/scripts/skill-seekers-bootstrap.sh`: create a local venv and install deps for the linked Skill Seekers tool.
 - `assets/skills/auto-skill/scripts/skill-seekers.sh`: run Skill Seekers from the linked source (docs/github/pdf -> output/<name>/).
 - `assets/skills/auto-skill/scripts/skill-seekers-import.sh`: import output/<name>/ into the canonical assets/skills/<name>/ tree.

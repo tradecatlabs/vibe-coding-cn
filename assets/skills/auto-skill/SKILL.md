@@ -39,7 +39,7 @@ Your output MUST include:
 
 ### Built-in Tool (Mandatory): Skill Seekers (Linked)
 
-This meta-skill exposes `assets/repos/Skill_Seekers-development` through a relative symlink so you can generate a first-draft Skill from:
+This meta-skill exposes the `assets/repos/Skill_Seekers-development` submodule through a relative symlink so you can generate a first-draft Skill from:
 - Documentation websites
 - GitHub repositories
 - PDFs
@@ -65,7 +65,7 @@ Import the generated skill into this repo's canonical `assets/skills/` tree:
 ./assets/skills/auto-skill/scripts/skill-seekers-import.sh react --force
 ```
 
-Update the linked source in `assets/repos/Skill_Seekers-development` directly. The legacy updater is guarded to avoid overwriting the linked repository.
+Update the linked source by moving the `assets/repos/Skill_Seekers-development` submodule pointer directly. The legacy updater is guarded to avoid overwriting the linked repository.
 
 ```bash
 ./assets/skills/auto-skill/scripts/skill-seekers-update.sh --dry-run
