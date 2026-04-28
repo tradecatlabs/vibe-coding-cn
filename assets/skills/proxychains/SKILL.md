@@ -1,291 +1,118 @@
 ---
 name: proxychains
-description: Auto-detect network issues and force proxy usage with proxychains4. Use this skill when encountering connection timeouts, DNS failures, or blocked network access. Default proxy is http://127.0.0.1:9910
+description: "proxychains4 network fallback skill: detect timeouts, DNS failures, blocked GitHub/PyPI/npm/curl/git access, configure http://127.0.0.1:9910, and retry commands through proxychains."
 ---
 
-# Proxychains Network Proxy Skill
+# proxychains Skill
 
-**自动使用代理解决网络问题** - 当遇到网络连接失败、超时或访问受限时，自动使用 proxychains4 强制走代理。
+Use this skill when network commands fail or known slow/blocked sources need a transparent TCP proxy through `proxychains4`.
 
 ## When to Use This Skill
 
-**触发条件（自动应用）:**
-- ❌ Connection timeout errors
-- ❌ DNS resolution failures
-- ❌ "Connection refused" errors
-- ❌ HTTP 403/451 blocked access
-- ❌ GitHub/PyPI/npm 等国外资源访问失败
-- ❌ curl/wget/git/pip 等命令失败
+Trigger when any of these applies:
+- `curl`, `wget`, `git`, `pip`, `npm`, `yarn`, `docker pull`, or `ssh` fails with timeout, DNS, reset, refused, 403, or 451-like access errors.
+- Accessing GitHub, raw GitHub content, PyPI, npm registry, Docker registries, or other known slow foreign resources.
+- Configuring a local proxychains profile that points to `http://127.0.0.1:9910`.
+- Diagnosing whether failure is proxy service down, proxychains config wrong, unsupported UDP/static binary behavior, or upstream blocked.
 
-**Claude 应该：**
-1. 检测到网络错误后，自动在命令前添加 `proxychains4`
-2. 使用默认代理配置：`http://127.0.0.1:9910`
-3. 如果代理失败，提示用户检查代理服务状态
+## Not For / Boundaries
+
+- Not for bypassing legal, account, regional, or enterprise security restrictions.
+- Not useful for UDP-only traffic or statically linked binaries that proxychains cannot intercept.
+- Do not proxy commands that should remain on a trusted private network without checking routing and policy.
+- Required inputs: failed command, full error text, target domain, proxy endpoint, OS package name, and whether the proxy service is running.
+- If proxychains retry also fails, inspect proxy service health before repeating the same command.
 
 ## Quick Reference
 
-### 基本用法模式
+### Common Patterns
 
+**Install on Debian/Ubuntu**
 ```bash
-# ❌ 原命令失败
-curl https://github.com/user/repo
+sudo apt install proxychains4
+```
 
-# ✅ 使用代理重试
+**Create user config for the local proxy**
+```bash
+mkdir -p ~/.proxychains
+cp assets/skills/proxychains/references/proxychains.conf ~/.proxychains/proxychains.conf
+```
+
+**Test the proxy**
+```bash
+proxychains4 curl https://ipinfo.io/json
+```
+
+**Retry a failed curl**
+```bash
 proxychains4 curl https://github.com/user/repo
 ```
 
-### 常见场景自动应用
-
-**场景 1: Git 操作失败**
+**Retry a failed git clone**
 ```bash
-# 原命令
-git clone https://github.com/user/repo.git
-
-# 自动改为
 proxychains4 git clone https://github.com/user/repo.git
 ```
 
-**场景 2: Python pip 安装失败**
+**Retry a failed pip install**
 ```bash
-# 原命令
-pip install requests
-
-# 自动改为
 proxychains4 pip install requests
 ```
 
-**场景 3: npm/yarn 安装失败**
+**Retry a failed npm install**
 ```bash
-# 原命令
-npm install package-name
-
-# 自动改为
 proxychains4 npm install package-name
 ```
 
-**场景 4: wget/curl 下载失败**
+**Retry a failed Docker pull**
 ```bash
-# 原命令
-wget https://example.com/file.tar.gz
-
-# 自动改为
-proxychains4 wget https://example.com/file.tar.gz
-```
-
-**场景 5: Docker 拉取镜像失败**
-```bash
-# 原命令
-docker pull image:tag
-
-# 自动改为
 proxychains4 docker pull image:tag
 ```
 
-**场景 6: SSH 连接失败**
+**Inspect effective config**
 ```bash
-# 原命令
-ssh user@remote-host
-
-# 自动改为
-proxychains4 ssh user@remote-host
+proxychains4 -f ~/.proxychains/proxychains.conf curl https://example.com
 ```
 
-## 配置详情
+## Examples
 
-### 默认代理配置
+### Example 1: GitHub Clone Timeout
 
-**本地代理地址：** `http://127.0.0.1:9910`
+- Input: `git clone` fails with a connection timeout.
+- Steps:
+  1. Retry with `proxychains4 git clone ...`.
+  2. If it fails, run `proxychains4 curl https://github.com` to isolate Git vs network.
+  3. Check local proxy service on `127.0.0.1:9910`.
+- Expected output / acceptance: clone succeeds or failure is classified as proxy service/config/upstream issue.
 
-**配置文件位置：**
-- `~/.proxychains/proxychains.conf` (推荐)
-- `/etc/proxychains.conf` (系统级)
+### Example 2: PyPI Install Fails
 
-### 快速配置脚本
+- Input: `pip install` cannot reach PyPI.
+- Steps:
+  1. Retry with `proxychains4 pip install <package>`.
+  2. If DNS still fails, confirm `proxy_dns` is enabled in config.
+  3. Avoid writing credentials into `pip.conf` unless explicitly required.
+- Expected output / acceptance: package install succeeds through proxy or produces a new non-network error.
 
-创建用户级配置（自动使用 127.0.0.1:9910）：
+### Example 3: Unsupported Traffic Diagnosis
 
-```bash
-mkdir -p ~/.proxychains
-cat > ~/.proxychains/proxychains.conf << 'EOF'
-# Proxychains configuration
-strict_chain
-proxy_dns
-remote_dns_subnet 224
-tcp_read_time_out 15000
-tcp_connect_time_out 8000
+- Input: proxychains retry does not affect a command.
+- Steps:
+  1. Confirm the command uses TCP and dynamic linking.
+  2. Test the proxy with a known-good `curl`.
+  3. Use application-native proxy options if proxychains cannot intercept it.
+- Expected output / acceptance: unsupported mode is identified instead of repeatedly retrying.
 
-[ProxyList]
-http 127.0.0.1 9910
-EOF
-```
+## References
 
-### 环境变量方式（临时使用）
+- `references/index.md`: navigation for local proxychains references.
+- `references/proxychains.conf`: default config targeting `127.0.0.1:9910`.
+- `references/quick-reference.md`: command snippets and common scenarios.
+- `references/setup-guide.md`: installation and setup notes.
+- `references/troubleshooting.md`: failure classification.
+- `scripts/setup-proxy.sh`: helper script for local setup.
 
-```bash
-# 设置代理环境变量
-export PROXYCHAINS_SOCKS5_HOST=127.0.0.1
-export PROXYCHAINS_SOCKS5_PORT=9910
+## Maintenance
 
-# 使用
-proxychains4 curl https://github.com
-```
-
-## 工作原理
-
-Proxychains 通过 LD_PRELOAD 机制拦截程序的网络调用：
-
-1. **拦截系统调用**：Hook socket 相关的 libc 函数
-2. **重定向连接**：将所有 TCP 连接重定向到代理服务器
-3. **DNS 代理**：通过代理服务器解析域名
-4. **透明代理**：应用程序无需修改
-
-**重要限制：**
-- 只支持动态链接的程序（statically linked 程序不支持）
-- 只支持 TCP 连接（UDP 不支持）
-- 部分使用特殊网络库的程序可能不兼容
-
-## Claude 自动化规则
-
-### 规则 1: 网络错误自动重试
-
-```
-IF 命令返回网络相关错误（timeout, connection refused, DNS failure）
-THEN 自动使用 proxychains4 重试该命令
-```
-
-### 规则 2: 已知慢速源强制代理
-
-```
-IF 访问以下域名/服务：
-  - github.com
-  - raw.githubusercontent.com
-  - pypi.org
-  - npmjs.org
-  - registry.npmjs.org
-  - docker.io
-  - gcr.io
-THEN 直接使用 proxychains4（不等待失败）
-```
-
-### 规则 3: 失败提示
-
-```
-IF proxychains4 命令也失败
-THEN 提示用户：
-  1. 检查代理服务是否运行（127.0.0.1:9910）
-  2. 检查 proxychains 配置文件
-  3. 尝试其他代理地址
-```
-
-## 故障排除
-
-### 检查代理服务状态
-
-```bash
-# 测试代理是否可用
-curl -x http://127.0.0.1:9910 https://www.google.com
-
-# 检查端口是否监听
-netstat -tunlp | grep 9910
-# 或
-ss -tunlp | grep 9910
-```
-
-### 验证 proxychains 配置
-
-```bash
-# 测试配置是否正确
-proxychains4 curl https://ipinfo.io/json
-# 应该显示代理服务器的 IP，而不是本机 IP
-```
-
-### 常见错误处理
-
-**错误 1: "proxychains: command not found"**
-```bash
-# 安装 proxychains4
-sudo apt install proxychains4  # Debian/Ubuntu
-sudo yum install proxychains-ng  # CentOS/RHEL
-```
-
-**错误 2: "timeout"**
-```bash
-# 检查代理地址配置是否正确
-cat ~/.proxychains/proxychains.conf | grep -A 2 "\[ProxyList\]"
-
-# 修改超时时间（在配置文件中）
-tcp_connect_time_out 15000
-tcp_read_time_out 30000
-```
-
-**错误 3: "can't read configuration file"**
-```bash
-# 创建配置文件
-mkdir -p ~/.proxychains
-cp /etc/proxychains.conf ~/.proxychains/proxychains.conf
-# 然后编辑配置
-```
-
-## 高级用法
-
-### 多代理链
-
-```conf
-# ~/.proxychains/proxychains.conf
-strict_chain  # 按顺序使用所有代理
-
-[ProxyList]
-http 127.0.0.1 9910
-socks5 127.0.0.1 1080
-```
-
-### 动态代理链
-
-```conf
-dynamic_chain  # 自动跳过死代理
-
-[ProxyList]
-http 127.0.0.1 9910
-http 127.0.0.1 8080
-socks5 127.0.0.1 1080
-```
-
-### 随机代理链
-
-```conf
-random_chain
-chain_len = 2  # 随机选择 2 个代理
-
-[ProxyList]
-http 127.0.0.1 9910
-socks5 127.0.0.1 1080
-socks5 127.0.0.1 1081
-```
-
-### 自定义 DNS 服务器
-
-```bash
-# 使用自定义 DNS 通过代理解析
-export PROXY_DNS_SERVER=8.8.8.8
-proxychains4 curl https://example.com
-```
-
-## 参考资源
-
-- **官方仓库**: https://github.com/haad/proxychains
-- **配置文件**: `references/proxychains.conf` (完整示例)
-- **故障排除**: `references/troubleshooting.md`
-- **命令速查**: `references/quick-reference.md`
-
-## 总结
-
-**记住这些原则：**
-1. ❌ **遇到网络错误** → ✅ 自动加上 `proxychains4`
-2. 🌐 **访问国外资源** → ✅ 主动使用 `proxychains4`
-3. 🔧 **代理也失败** → ✅ 提示用户检查代理服务
-
-**默认代理:** `http://127.0.0.1:9910`
-
----
-
-**这个技能让 Claude 在遇到网络问题时自动使用代理，无需用户手动干预！**
+- Sources: local proxychains reference files and config template.
+- Last updated: 2026-04-28
+- Known limits: proxychains relies on `LD_PRELOAD` style interception and is not universal; prefer native proxy settings when available.

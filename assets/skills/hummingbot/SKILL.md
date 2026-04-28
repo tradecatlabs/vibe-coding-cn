@@ -1,133 +1,136 @@
 ---
 name: hummingbot
-description: Hummingbot trading bot framework - automated trading strategies, market making, arbitrage, connectors for crypto exchanges. Use when working with algorithmic trading, crypto trading bots, or exchange integrations.
+description: "Hummingbot trading bot framework skill: connector setup, scripts, market making, arbitrage, Gateway DEX operations, headless quickstart, candles, market data provider, and troubleshooting for crypto trading bots."
 ---
 
-# Hummingbot Skill
+# hummingbot Skill
 
-Comprehensive assistance with hummingbot development, generated from official documentation.
+Use this skill to operate, configure, or extend Hummingbot bots and Gateway connectors with explicit risk controls and version-aware references.
 
 ## When to Use This Skill
 
-This skill should be triggered when:
-- Working with hummingbot
-- Asking about hummingbot features or APIs
-- Implementing hummingbot solutions
-- Debugging hummingbot code
-- Learning hummingbot best practices
+Trigger when any of these applies:
+- Running Hummingbot strategies, scripts, or headless bot instances.
+- Configuring CEX/DEX connectors, API keys, Gateway routes, or blockchain RPC providers.
+- Building market-making, arbitrage, liquidity, or custom script strategies.
+- Using candles, order book snapshots, mid-price, volume-for-price, or market data provider APIs.
+- Debugging connector failures, Docker/runtime issues, Gateway command errors, or strategy config problems.
+
+## Not For / Boundaries
+
+- Not financial advice, profitability guarantees, or unattended live-trading approval.
+- Never paste real exchange API keys, private keys, mnemonics, or wallet secrets into prompts, examples, logs, or commits.
+- Use paper/sandbox/small-size validation before live capital; many connectors have exchange-specific limits and failure modes.
+- Required inputs: Hummingbot version, install mode, connector, trading pair, strategy/script, config file, live/paper mode, and exact logs.
+- Gateway and connector schemas evolve; verify against `references/` and the running version before production deployment.
 
 ## Quick Reference
 
 ### Common Patterns
 
-**Pattern 1:** For example: candles = [CandlesFactory.get_candle(connector=kucoin, trading_pair="ETH-USDT", interval="1m", max_records=100)]
-
-```
-candles = [CandlesFactory.get_candle(connector=kucoin,
-           trading_pair="ETH-USDT", interval="1m", max_records=100)]
+**Run a headless quickstart**
+```bash
+bin/hummingbot_quickstart.py --headless -p PASSWORD -f CONFIG_FILE_NAME
 ```
 
-**Pattern 2:** Example:
-
-```
-bin/hummingbot_quickstart.py -p a -f simple_pmm_example_config.py -c conf_simple_pmm_example_config_1.yml
-```
-
-**Pattern 3:** >>> gateway swap --help usage: gateway swap [-h] [connector] [args ...] positional arguments: connector Connector name/type (e.g., jupiter/router) args Arguments: [base-quote] [side] [amount] options: -h, --help show this help message and exit
-
-```
->>> gateway swap --help
-usage: gateway swap [-h] [connector] [args ...]
-
-positional arguments:
-  connector   Connector name/type (e.g., jupiter/router)
-  args        Arguments: [base-quote] [side] [amount]
-
-options:
-  -h, --help  show this help message and exit
+**Run a script config**
+```bash
+bin/hummingbot_quickstart.py -p PASSWORD -f simple_pmm_example_config.py -c conf_simple_pmm_example_config_1.yml
 ```
 
-**Pattern 4:** usage: gateway list [-h]
-
-```
-usage: gateway list [-h]
-```
-
-**Pattern 5:** Example:
-
-```
-price = self.market_data_provider.get_price_by_type('binance', 'BTC-USDT', PriceType.MidPrice)
+**List Gateway connectors**
+```text
+gateway list
 ```
 
-**Pattern 6:** Example:
-
-```
-price = self.market_data_provider.get_price_by_volume('binance', 'BTC-USDT', volume: 10000, True)
-```
-
-**Pattern 7:** Example:
-
-```
-price = self.market_data_provider.get_volume_for_price('binance', 'BTC-USDT', 70000, True)
+**Inspect Gateway swap syntax**
+```text
+gateway swap --help
 ```
 
-**Pattern 8:** Example:
-
+**Get a mid price from the market data provider**
+```python
+price = self.market_data_provider.get_price_by_type(
+    "binance",
+    "BTC-USDT",
+    PriceType.MidPrice,
+)
 ```
-price = self.market_data_provider.get_order_book_snapshot('binance', 'BTC-USDT')
+
+**Get price by quote volume**
+```python
+price = self.market_data_provider.get_price_by_volume(
+    "binance",
+    "BTC-USDT",
+    10000,
+    True,
+)
 ```
 
-## Reference Files
+**Get an order book snapshot**
+```python
+snapshot = self.market_data_provider.get_order_book_snapshot("binance", "BTC-USDT")
+```
 
-This skill includes comprehensive documentation in `references/`:
+**Create a candle feed**
+```python
+candles = CandlesFactory.get_candle(
+    connector="kucoin",
+    trading_pair="ETH-USDT",
+    interval="1m",
+    max_records=100,
+)
+```
 
-- **advanced.md** - Advanced documentation
-- **configuration.md** - Configuration documentation
-- **connectors.md** - Connectors documentation
-- **development.md** - Development documentation
-- **getting_started.md** - Getting Started documentation
-- **other.md** - Other documentation
-- **strategies.md** - Strategies documentation
-- **trading.md** - Trading documentation
-- **troubleshooting.md** - Troubleshooting documentation
+**Update Docker deployment images**
+```bash
+docker compose down
+docker pull hummingbot/hummingbot:latest
+docker compose up -d
+```
 
-Use `view` to read specific reference files when detailed information is needed.
+## Examples
 
-## Working with This Skill
+### Example 1: Headless Bot Smoke Test
 
-### For Beginners
-Start with the getting_started or tutorials reference files for foundational concepts.
+- Input: password, strategy config file, optional script config.
+- Steps:
+  1. Start with `bin/hummingbot_quickstart.py --headless`.
+  2. Confirm logs show connector initialization and strategy start.
+  3. Stop the bot and inspect final status before enabling live size.
+- Expected output / acceptance: the bot starts from config without interactive prompts and exits cleanly.
 
-### For Specific Features
-Use the appropriate category reference file (api, guides, etc.) for detailed information.
+### Example 2: Gateway Connector Triage
 
-### For Code Examples
-The quick reference section above contains common patterns extracted from the official docs.
+- Input: failing Gateway command and connector name.
+- Steps:
+  1. Run `gateway list` to verify connector availability.
+  2. Run `gateway swap --help` or the specific command help.
+  3. Compare arguments with the connector/network schema in `references/trading.md`.
+- Expected output / acceptance: failure is classified as missing connector, bad args, RPC/network issue, or credential/config issue.
 
-## Resources
+### Example 3: Strategy Market Data Hook
 
-### references/
-Organized documentation extracted from official sources. These files contain:
-- Detailed explanations
-- Code examples with language annotations
-- Links to original documentation
-- Table of contents for quick navigation
+- Input: connector `binance`, pair `BTC-USDT`, needed price type.
+- Steps:
+  1. Use `market_data_provider` for mid price or volume-aware price.
+  2. Keep API calls outside tight loops when cached data is sufficient.
+  3. Log connector/pair/price source for later debugging.
+- Expected output / acceptance: strategy reads a deterministic price source without blocking order logic.
 
-### scripts/
-Add helper scripts here for common automation tasks.
+## References
 
-### assets/
-Add templates, boilerplate, or example projects here.
+- `references/index.md`: navigation for local Hummingbot references.
+- `references/getting_started.md`: install and first-run material.
+- `references/configuration.md`: bot and connector configuration.
+- `references/connectors.md`: exchange connector catalog and notes.
+- `references/strategies.md`: strategy and script material.
+- `references/trading.md`: Gateway and trading operations.
+- `references/development.md`: development, headless, and release-related notes.
+- `references/troubleshooting.md`: common failure modes.
 
-## Notes
+## Maintenance
 
-- This skill was automatically generated from official documentation
-- Reference files preserve the structure and examples from source docs
-- Code examples include language detection for better syntax highlighting
-- Quick reference patterns are extracted from common usage examples in the docs
-
-## Updating
-
-To refresh this skill with updated documentation:
-1. Re-run the scraper with the same configuration
-2. The skill will be rebuilt with the latest information
+- Sources: local `references/` extracted from Hummingbot documentation.
+- Last updated: 2026-04-28
+- Known limits: connector support and Gateway schemas change frequently; validate against the installed Hummingbot version.

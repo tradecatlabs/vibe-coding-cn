@@ -1,233 +1,141 @@
 ---
 name: polymarket
-description: Comprehensive Polymarket skill covering prediction markets, API, trading, market data, and real-time WebSocket data streaming. Build applications with Polymarket services, monitor live trades, and integrate market predictions.
+description: "Polymarket prediction-market skill: REST/API research, CLOB market data, trading integration boundaries, WebSocket real-time data client, subscriptions, filters, authentication, and LLM-oriented market monitoring."
 ---
 
-# Polymarket Comprehensive Skill
+# polymarket Skill
 
-Complete assistance with Polymarket development - covering the full platform (API, trading, market data) and the real-time data streaming client (WebSocket subscriptions for live market activity).
+Use this skill to build Polymarket research, monitoring, market-data, and integration workflows while keeping trading/authentication risks explicit.
 
 ## When to Use This Skill
 
-This skill should be triggered when:
+Trigger when any of these applies:
+- Querying Polymarket markets, events, prices, trades, comments, RFQ, or CLOB data.
+- Building prediction-market monitors, dashboards, alerts, or LLM market-analysis tools.
+- Using the `@polymarket/real-time-data-client` WebSocket client.
+- Subscribing to activity, comments, RFQ, crypto price, `clob_market`, or authenticated `clob_user` topics.
+- Debugging subscription filters, authentication payloads, reconnect handling, or message processing.
 
-**Platform & API:**
-- Working with Polymarket prediction markets
-- Using Polymarket API for market data
-- Implementing trading strategies
-- Building applications with Polymarket services
-- Learning Polymarket best practices
+## Not For / Boundaries
 
-**Real-Time Data Streaming:**
-- Connecting to Polymarket's WebSocket service
-- Building prediction market monitoring tools
-- Processing live trades, orders, and market updates
-- Monitoring market comments and social reactions
-- Tracking RFQ (Request for Quote) activity
-- Integrating crypto price feeds
+- Not financial advice, market-making advice, or a guarantee of trading profitability.
+- Do not expose CLOB API keys, secrets, passphrases, wallet keys, or private signing material.
+- Private user streams and trading actions require explicit authentication and security review.
+- Required inputs: market/event slug or CLOB market id, topic/type, auth need, filter payload, runtime, and expected output.
+- For live trading, verify API terms, regional restrictions, auth scheme, and risk controls before implementation.
 
 ## Quick Reference
 
-### Real-Time Data Client Setup
+### Common Patterns
 
-**Installation:**
+**Install the real-time data client**
 ```bash
 npm install @polymarket/real-time-data-client
 ```
 
-**Basic Usage:**
+**Subscribe to live trades**
 ```typescript
 import { RealTimeDataClient } from "@polymarket/real-time-data-client";
 
-const onMessage = (message: Message): void => {
-    console.log(message.topic, message.type, message.payload);
-};
+const client = new RealTimeDataClient({
+  onMessage: (message) => console.log(message.topic, message.type, message.payload),
+  onConnect: (c) => c.subscribe({
+    subscriptions: [{ topic: "activity", type: "trades" }],
+  }),
+});
 
-const onConnect = (client: RealTimeDataClient): void => {
-    client.subscribe({
-        subscriptions: [{
-            topic: "activity",
-            type: "trades"
-        }]
-    });
-};
-
-new RealTimeDataClient({ onMessage, onConnect }).connect();
+client.connect();
 ```
 
-### Supported WebSocket Topics
-
-**1. Activity (`activity`)**
-- `trades` - Completed trades
-- `orders_matched` - Order matching events
-- Filters: `{"event_slug":"string"}` OR `{"market_slug":"string"}`
-
-**2. Comments (`comments`)**
-- `comment_created`, `comment_removed`
-- `reaction_created`, `reaction_removed`
-- Filters: `{"parentEntityID":number,"parentEntityType":"Event"}`
-
-**3. RFQ (`rfq`)**
-- Request/Quote lifecycle events
-- No filters, no auth required
-
-**4. Crypto Prices (`crypto_prices`, `crypto_prices_chainlink`)**
-- `update` - Real-time price feeds
-- Filters: `{"symbol":"BTC"}` (optional)
-
-**5. CLOB User (`clob_user`)** ⚠️ Requires Auth
-- `order` - User's order updates
-- `trade` - User's trade executions
-
-**6. CLOB Market (`clob_market`)**
-- `price_change` - Price movements
-- `agg_orderbook` - Aggregated order book
-- `last_trade_price` - Latest prices
-- `market_created`, `market_resolved`
-
-### Authentication for User Data
-
+**Filter activity to one market slug**
 ```typescript
 client.subscribe({
-    subscriptions: [{
-        topic: "clob_user",
-        type: "*",
-        clob_auth: {
-            key: "your-api-key",
-            secret: "your-api-secret",
-            passphrase: "your-passphrase"
-        }
-    }]
+  subscriptions: [{
+    topic: "activity",
+    type: "trades",
+    filters: "{\"market_slug\":\"btc-above-100k-2024\"}",
+  }],
 });
 ```
 
-### Common Use Cases
-
-**Monitor Specific Market:**
+**Subscribe to CLOB market price changes**
 ```typescript
 client.subscribe({
-    subscriptions: [{
-        topic: "activity",
-        type: "trades",
-        filters: `{"market_slug":"btc-above-100k-2024"}`
-    }]
+  subscriptions: [{
+    topic: "clob_market",
+    type: "price_change",
+    filters: "[\"100\",\"101\",\"102\"]",
+  }],
 });
 ```
 
-**Track Multiple Markets:**
+**Subscribe to comments for an event**
 ```typescript
 client.subscribe({
-    subscriptions: [{
-        topic: "clob_market",
-        type: "price_change",
-        filters: `["100","101","102"]`
-    }]
+  subscriptions: [{
+    topic: "comments",
+    type: "*",
+    filters: "{\"parentEntityID\":12345,\"parentEntityType\":\"Event\"}",
+  }],
 });
 ```
 
-**Monitor Event Comments:**
+**Authenticate a user stream**
 ```typescript
 client.subscribe({
-    subscriptions: [{
-        topic: "comments",
-        type: "*",
-        filters: `{"parentEntityID":12345,"parentEntityType":"Event"}`
-    }]
+  subscriptions: [{
+    topic: "clob_user",
+    type: "*",
+    clob_auth: {
+      key: "YOUR_API_KEY",
+      secret: "YOUR_API_SECRET",
+      passphrase: "YOUR_PASSPHRASE",
+    },
+  }],
 });
 ```
 
-## Reference Files
+## Examples
 
-This skill includes comprehensive documentation in `references/`:
+### Example 1: Public Trade Monitor
 
-**Platform Documentation:**
-- **api.md** - Polymarket API documentation
-- **getting_started.md** - Getting started guide
-- **guides.md** - Development guides
-- **learn.md** - Learning resources
-- **trading.md** - Trading documentation
-- **other.md** - Additional resources
+- Input: market slug and alert threshold.
+- Steps:
+  1. Subscribe to `activity/trades` with a `market_slug` filter.
+  2. Normalize messages into timestamp, market, side, price, size.
+  3. Alert only when trade size or price movement crosses the configured threshold.
+- Expected output / acceptance: real-time public trade stream with no private authentication material.
 
-**Real-Time Client:**
-- **README.md** - WebSocket client API and examples
-- **llms.md** - LLM integration guide
-- **llms-full.md** - Complete LLM documentation
+### Example 2: CLOB Price Dashboard
 
-Use `view` to read specific reference files for detailed information.
+- Input: CLOB market IDs.
+- Steps:
+  1. Subscribe to `clob_market/price_change` with a JSON array filter.
+  2. Update an in-memory view keyed by market id.
+  3. Persist snapshots at a controlled interval rather than every message if volume is high.
+- Expected output / acceptance: dashboard shows latest market prices and handles reconnects idempotently.
 
-## Key Features
+### Example 3: Authenticated User Order Feed
 
-**Platform Capabilities:**
-✅ Prediction market creation and resolution
-✅ Trading API (REST & WebSocket)
-✅ Market data queries
-✅ User portfolio management
-✅ Event and market discovery
+- Input: CLOB API credentials stored in a secret manager.
+- Steps:
+  1. Load credentials at runtime without logging them.
+  2. Subscribe to `clob_user` order/trade events.
+  3. Validate message schema and write audit logs without secrets.
+- Expected output / acceptance: private user updates are received and secrets never appear in source control or logs.
 
-**Real-Time Streaming:**
-✅ WebSocket-based persistent connections
-✅ Topic-based subscriptions
-✅ Dynamic subscription management
-✅ Filter support for targeted data
-✅ User authentication for private data
-✅ TypeScript with full type safety
-✅ Initial data dumps on connection
+## References
 
-## Best Practices
+- `references/index.md`: navigation for local Polymarket references.
+- `references/api.md`: platform API documentation.
+- `references/getting_started.md`: onboarding and setup notes.
+- `references/trading.md`: trading and market operations.
+- `references/realtime-client.md`: WebSocket real-time data client.
+- `references/README.md`: platform overview.
+- `references/llms.md` and `references/llms-full.md`: LLM integration material.
 
-### WebSocket Connection Management
-- Use `onConnect` callback for subscriptions
-- Implement reconnection logic for production
-- Clean up with `disconnect()` when done
-- Handle authentication errors gracefully
+## Maintenance
 
-### Subscription Strategy
-- Use wildcards (`"*"`) sparingly
-- Apply filters to reduce data volume
-- Unsubscribe from unused streams
-- Process messages asynchronously
-
-### Performance
-- Consider batching high-frequency data
-- Use filters to minimize client processing
-- Validate message payloads before use
-
-## Requirements
-
-- **Node.js**: 14+ recommended
-- **TypeScript**: Optional but recommended
-- **Package Manager**: npm or yarn
-
-## Resources
-
-### Official Links
-- **Polymarket Platform**: https://polymarket.com
-- **Real-Time Client Repo**: https://github.com/Polymarket/real-time-data-client
-- **API Documentation**: See references/api.md
-
-### Working with This Skill
-
-**For Beginners:**
-Start with `getting_started.md` for foundational concepts.
-
-**For API Integration:**
-Use `api.md` and `trading.md` for REST API details.
-
-**For Real-Time Data:**
-Use `README.md` for WebSocket client implementation.
-
-**For LLM Integration:**
-Use `llms.md` and `llms-full.md` for AI/ML use cases.
-
-## Notes
-
-- Real-Time Client is TypeScript/JavaScript (not Python)
-- Some WebSocket topics require authentication
-- Use filters to manage message volume effectively
-- All timestamps are Unix timestamps
-- Market IDs are strings (e.g., "100", "101")
-- Platform documentation covers both REST API and WebSocket usage
-
----
-
-**This comprehensive skill combines Polymarket platform expertise with real-time data streaming capabilities!**
+- Sources: local `references/` extracted from Polymarket platform and real-time client documentation.
+- Last updated: 2026-04-28
+- Known limits: API auth, market availability, and regional/legal constraints must be verified outside this skill before live trading.

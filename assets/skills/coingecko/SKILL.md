@@ -1,80 +1,116 @@
 ---
 name: coingecko
-description: CoinGecko API documentation - cryptocurrency market data API, price feeds, market cap, volume, historical data. Use when integrating CoinGecko API, building crypto price trackers, or accessing cryptocurrency market data.
+description: "CoinGecko API skill: cryptocurrency prices, market data, coin IDs, historical charts, trending search, onchain endpoints, API-key authentication, and rate-limit-aware request design."
 ---
 
-# Coingecko Skill
+# coingecko Skill
 
-Comprehensive assistance with coingecko development, generated from official documentation.
+Use this skill to integrate CoinGecko market data into applications, agents, dashboards, and analysis pipelines with clear API-key and rate-limit handling.
 
 ## When to Use This Skill
 
-This skill should be triggered when:
-- Working with coingecko
-- Asking about coingecko features or APIs
-- Implementing coingecko solutions
-- Debugging coingecko code
-- Learning coingecko best practices
+Trigger when any of these applies:
+- Querying token prices, market cap, volume, historical charts, trending coins, NFTs, categories, or exchange data from CoinGecko.
+- Choosing Demo API vs Pro API root URLs and authentication headers.
+- Designing rate-limit-aware polling, cache refresh, or price freshness checks.
+- Building crypto dashboards, price alerts, analytics jobs, or market-data enrichers.
+- Navigating CoinGecko MCP, REST, or onchain/GeckoTerminal reference material.
+
+## Not For / Boundaries
+
+- Not financial advice, token endorsement, trade execution, or market manipulation support.
+- Do not expose API keys in query strings unless unavoidable; prefer headers and backend proxy insertion.
+- Do not assume symbol uniqueness; resolve assets with CoinGecko coin IDs before price calls.
+- Required inputs: plan type, root URL, API key availability, coin IDs/symbols/contracts, quote currencies, date range, and freshness requirements.
+- CoinGecko endpoints and plan gates evolve; verify paid-only endpoints and rate limits in `references/` before production use.
 
 ## Quick Reference
 
 ### Common Patterns
 
-*Quick reference patterns will be added as you use the skill.*
+**Demo API ping with header auth**
+```bash
+curl -X GET "https://api.coingecko.com/api/v3/ping" \
+  -H "x-cg-demo-api-key: YOUR_API_KEY"
+```
 
-## Reference Files
+**Pro API ping with header auth**
+```bash
+curl -X GET "https://pro-api.coingecko.com/api/v3/ping" \
+  -H "x-cg-pro-api-key: YOUR_API_KEY"
+```
 
-This skill includes comprehensive documentation in `references/`:
+**Simple price for coin IDs**
+```bash
+curl "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd"
+```
 
-- **authentication.md** - Authentication documentation
-- **coins.md** - Coins documentation
-- **contract.md** - Contract documentation
-- **exchanges.md** - Exchanges documentation
-- **introduction.md** - Introduction documentation
-- **market_data.md** - Market Data documentation
-- **nfts.md** - Nfts documentation
-- **other.md** - Other documentation
-- **pricing.md** - Pricing documentation
-- **reference.md** - Reference documentation
-- **trending.md** - Trending documentation
+**Include freshness fields in price response**
+```bash
+curl "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_last_updated_at=true"
+```
 
-Use `view` to read specific reference files when detailed information is needed.
+**Market list by market cap**
+```bash
+curl "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1"
+```
 
-## Working with This Skill
+**Historical chart by coin ID**
+```bash
+curl "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30"
+```
 
-### For Beginners
-Start with the getting_started or tutorials reference files for foundational concepts.
+**Trending search**
+```bash
+curl "https://api.coingecko.com/api/v3/search/trending"
+```
 
-### For Specific Features
-Use the appropriate category reference file (api, guides, etc.) for detailed information.
+**Onchain trending pools**
+```bash
+curl "https://api.coingecko.com/api/v3/onchain/networks/trending_pools"
+```
 
-### For Code Examples
-The quick reference section above contains common patterns extracted from the official docs.
+## Examples
 
-## Resources
+### Example 1: Price Widget
 
-### references/
-Organized documentation extracted from official sources. These files contain:
-- Detailed explanations
-- Code examples with language annotations
-- Links to original documentation
-- Table of contents for quick navigation
+- Input: coin IDs `bitcoin,ethereum`, quote `usd`, refresh interval.
+- Steps:
+  1. Use `/simple/price` with `include_last_updated_at=true`.
+  2. Cache responses according to product freshness needs and plan limits.
+  3. Display stale-data warnings when `last_updated_at` is outside the allowed window.
+- Expected output / acceptance: a small response with current prices and explicit freshness handling.
 
-### scripts/
-Add helper scripts here for common automation tasks.
+### Example 2: Market-Cap Dashboard
 
-### assets/
-Add templates, boilerplate, or example projects here.
+- Input: quote currency `usd`, `per_page=100`, page number.
+- Steps:
+  1. Query `/coins/markets`.
+  2. Persist coin ID, symbol, name, price, market cap, and volume.
+  3. Avoid treating symbols as primary keys because duplicates exist.
+- Expected output / acceptance: stable dashboard rows keyed by CoinGecko ID.
 
-## Notes
+### Example 3: Trending Research Batch
 
-- This skill was automatically generated from official documentation
-- Reference files preserve the structure and examples from source docs
-- Code examples include language detection for better syntax highlighting
-- Quick reference patterns are extracted from common usage examples in the docs
+- Input: need trending coins, NFTs, and categories in the last 24 hours.
+- Steps:
+  1. Query `/search/trending`.
+  2. Normalize returned entities by type.
+  3. For coins that require prices, follow up with `/simple/price` using IDs.
+- Expected output / acceptance: a typed trending list with price enrichment only where IDs are available.
 
-## Updating
+## References
 
-To refresh this skill with updated documentation:
-1. Re-run the scraper with the same configuration
-2. The skill will be rebuilt with the latest information
+- `references/index.md`: navigation for local CoinGecko docs.
+- `references/authentication.md`: Demo/Pro API keys, root URLs, and header names.
+- `references/coins.md`: coin IDs, markets, charts, simple price, and trending search.
+- `references/market_data.md`: NFT market data notes.
+- `references/exchanges.md`: exchange endpoints.
+- `references/trending.md`: onchain trending pool endpoints.
+- `references/llms.md` and `references/llms-full.md`: LLM-oriented reference exports.
+
+## Maintenance
+
+- Sources: local `references/` extracted from CoinGecko documentation.
+- Last updated: 2026-04-28
+- Known limits: plan availability and rate limits are account-specific; verify against the active CoinGecko plan before shipping.

@@ -1,29 +1,34 @@
 ---
 name: markdown-to-epub
-description: "将 Markdown 手稿与本地图片资产转换为可校验的 EPUB：修复/归一化图片引用与扩展名，保持标题层级 TOC，并做基础包结构检查。"
+description: "Markdown to EPUB build skill: normalize local image references, copy assets, call Calibre ebook-convert, inspect EPUB package structure, and report missing images. Use when turning Markdown manuscripts into reproducible EPUB files."
 ---
 
 # markdown-to-epub Skill
 
-把 Markdown 手稿（含本地图片）稳定构建为 EPUB：规范化图片引用、拷贝资产到可重复的构建目录、调用 Calibre `ebook-convert` 转换，并输出可核查报告。
+Use this skill to build a reproducible EPUB from Markdown manuscripts with local image assets, without mutating the source manuscript.
 
 ## When to Use This Skill
 
-触发条件（满足其一即可）：
-- 需要把一份（或多份）Markdown 手稿打包交付为 EPUB。
-- 图片引用混乱（URL 编码、路径飘忽、扩展名不可信如 `.bin/.idunno`），需要自动归一化。
-- 需要在转换后做最基本的 EPUB 包结构检查（OPF/NCX/NAV、图片数量等）。
+Trigger when any of these applies:
+- Converting one or more Markdown files into an EPUB deliverable.
+- Normalizing broken or inconsistent image references before conversion.
+- Recovering local assets with unreliable extensions such as `.bin` or `.idunno`.
+- Running Calibre `ebook-convert` non-interactively from a repeatable build directory.
+- Checking the resulting EPUB archive for OPF, NCX/NAV, and image inclusion.
 
 ## Not For / Boundaries
 
-- 不负责生成/改写正文内容（不会修改源手稿，只在构建目录里产出规范化版本）。
-- 不下载远程图片（`http(s)`/`data:` 引用会保持原样）。
-- 不替代真正的排版/校对流程（这里只做可交付构建与结构验证）。
+- Not for authoring, rewriting, proofreading, or typesetting the manuscript body.
+- Not for downloading remote `http(s)` or `data:` images; remote references are preserved unless the user supplies local replacements.
+- Not a substitute for full EPUB QA in dedicated readers; it performs structural and asset checks only.
+- Required inputs: source Markdown path, desired EPUB path/title/authors/language, source root, and any fallback asset map.
+- If Calibre is unavailable, fail clearly and provide the install/`--ebook-convert-bin` verification path instead of producing a fake EPUB.
 
-## Quick Start
+## Quick Reference
 
-从仓库根目录执行（推荐 `python3`）：
+### Common Patterns
 
+**Build a basic EPUB**
 ```bash
 python3 assets/skills/markdown-to-epub/scripts/build_epub.py \
   --input-md "./book.md" \
@@ -33,28 +38,16 @@ python3 assets/skills/markdown-to-epub/scripts/build_epub.py \
   --language "zh-CN"
 ```
 
-脚本会创建构建工作区（默认 `build_epub/`），包含：
-- `book.normalized.md`
-- `assets/`：拷贝后的图片（会按真实文件签名推断扩展名）
-- `conversion.log`
-- `report.json`
-
-## 依赖
-
-- 需要安装 Calibre，并确保 `ebook-convert` 在 `PATH` 中（或用 `--ebook-convert-bin` 指定路径）。
-
-## Missing Asset Recovery
-
-如果 Markdown 里引用了图片但文件找不到，可以提供一个 JSON 映射表（按「basename」匹配）：
-
-```json
-{
-  "missing-file.idunno": "replacement-file.idunno"
-}
+**Use a custom source root and build directory**
+```bash
+python3 assets/skills/markdown-to-epub/scripts/build_epub.py \
+  --input-md "./manuscript/book.md" \
+  --source-root "./manuscript" \
+  --build-dir "./build/book-epub" \
+  --output-epub "./dist/book.epub"
 ```
 
-然后重跑（示例）：
-
+**Recover missing assets with a fallback map**
 ```bash
 python3 assets/skills/markdown-to-epub/scripts/build_epub.py \
   --input-md "./book.md" \
@@ -62,31 +55,63 @@ python3 assets/skills/markdown-to-epub/scripts/build_epub.py \
   --fallback-map "./fallback-map.json"
 ```
 
-## Operational Rules
+**Allow unresolved local images but report them**
+```bash
+python3 assets/skills/markdown-to-epub/scripts/build_epub.py \
+  --input-md "./book.md" \
+  --output-epub "./book.epub" \
+  --no-strict-missing
+```
 
-- 优先使用 `ebook-convert`；缺失时明确报错并快速失败。
-- 源手稿只读；所有输出写入 `build_dir/`。
-- TOC 以标题层级（`h1/h2/h3`）为准。
-- 缺失资产必须显式报告；严格模式下不允许静默跳过。
-- 命令保持非交互式。
+**Point to a non-standard Calibre binary**
+```bash
+python3 assets/skills/markdown-to-epub/scripts/build_epub.py \
+  --input-md "./book.md" \
+  --ebook-convert-bin "/opt/calibre/ebook-convert"
+```
 
-## Script Interface
+**Inspect the generated package**
+```bash
+unzip -l ./book.epub | rg 'content.opf|toc.ncx|nav.xhtml|\\.(png|jpg|jpeg|webp|gif)$'
+```
 
-`scripts/build_epub.py` 参数：
-- `--input-md`（必选）：源 Markdown 路径
-- `--output-epub`（可选）：输出 EPUB 路径，默认 `<input-stem>.epub`
-- `--source-root`（可选）：解析图片引用的根目录，默认使用 Markdown 所在目录
-- `--build-dir`（可选）：构建工作区目录，默认 `<cwd>/build_epub`
-- `--fallback-map`（可选）：JSON 映射（缺失图片 basename → 替换 basename）
-- `--title` / `--authors` / `--language`：传给 `ebook-convert` 的元数据
-- `--input-encoding`：输入 Markdown 编码，默认 `utf-8`
-- `--strict-missing`：严格模式（有任何本地图片无法解析则失败，默认开启）
-- `--no-strict-missing`：关闭严格模式（保留未解析链接，继续转换）
-- `--ebook-convert-bin`：`ebook-convert` 可执行文件名/路径，默认 `ebook-convert`
+## Examples
 
-## Validation Checklist
+### Example 1: Clean Manuscript Build
 
-- 确认 EPUB 文件生成且大小不是「几 KB 的空壳」。
-- 确认 EPUB（zip）内包含 OPF 与 NCX/NAV。
-- 确认 EPUB 内图片数量不低于对手稿的预期。
-- 严格模式下确认 `report.json` 的 `missing_images` 为空。
+- Input: `book.md` with valid local images and metadata title/author/language.
+- Steps:
+  1. Run the basic build command.
+  2. Inspect `build_epub/report.json`.
+  3. Check the EPUB zip listing for OPF and navigation files.
+- Expected output / acceptance: `book.epub` exists, `missing_images` is empty, and package structure contains OPF plus NCX or NAV.
+
+### Example 2: Extension Recovery
+
+- Input: Markdown references `images/cover.idunno`, but the file signature is a PNG.
+- Steps:
+  1. Run the build script in strict mode.
+  2. Confirm copied assets in `build_epub/assets/` use normalized extensions.
+  3. Rebuild after fixing any missing file mapping.
+- Expected output / acceptance: EPUB includes the normalized image and the report records no unresolved local image.
+
+### Example 3: Missing Asset Triage
+
+- Input: manuscript references old file names that no longer exist.
+- Steps:
+  1. Create a JSON fallback map from missing basenames to replacement basenames.
+  2. Re-run with `--fallback-map`.
+  3. Keep strict mode enabled so unmapped missing assets fail the build.
+- Expected output / acceptance: every missing local image is either resolved by the map or listed in `report.json` for explicit follow-up.
+
+## References
+
+- `references/index.md`: navigation, script contract, and validation notes.
+- `scripts/build_epub.py`: executable builder used by this skill.
+- `agents/openai.yaml`: agent metadata for this skill package.
+
+## Maintenance
+
+- Sources: local script implementation and EPUB/Calibre behavior observed by the build report.
+- Last updated: 2026-04-28
+- Known limits: structural checks do not guarantee visual fidelity in every EPUB reader; run reader-specific QA for final publication.

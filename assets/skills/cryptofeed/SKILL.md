@@ -1,221 +1,119 @@
 ---
 name: cryptofeed
-description: Cryptofeed - Real-time cryptocurrency market data feeds from 40+ exchanges. WebSocket streaming, normalized data, order books, trades, tickers. Python library for algorithmic trading and market data analysis.
+description: "Cryptofeed real-time crypto market data skill: WebSocket feeds, normalized tickers/trades/order books, NBBO, exchange subscriptions, authenticated channels, and backend streaming to Redis/Kafka/PostgreSQL."
 ---
 
-# Cryptofeed Skill
+# cryptofeed Skill
 
-Comprehensive assistance with Cryptofeed development - a Python library for handling cryptocurrency exchange data feeds with normalized and standardized results.
+Use this skill to build Python market-data pipelines with Cryptofeed across exchanges, channels, callbacks, NBBO aggregation, and storage backends.
 
 ## When to Use This Skill
 
-This skill should be triggered when:
-- Working with real-time cryptocurrency market data
-- Implementing WebSocket streaming from crypto exchanges
-- Building algorithmic trading systems
-- Processing order book updates, trades, or ticker data
-- Connecting to 40+ cryptocurrency exchanges
-- Using normalized exchange APIs
-- Implementing market data backends (Redis, MongoDB, Kafka, etc.)
+Trigger when any of these applies:
+- Streaming real-time crypto market data from multiple exchanges.
+- Subscribing to tickers, trades, L1/L2/L3 order books, candles, funding, liquidations, balances, fills, or order updates.
+- Building NBBO, arbitrage monitors, market-data recorders, or backend writers.
+- Debugging symbol/channel support, callback shape, reconnection behavior, or backend configuration.
+- Comparing Cryptofeed with exchange-specific WebSocket clients.
+
+## Not For / Boundaries
+
+- Not a trading strategy engine, order execution system, or persistence database by itself.
+- Authenticated channels require exchange credentials; never commit or print secrets.
+- Exchange support, symbols, and channel names vary; confirm against the exchange class and `references/README.md`.
+- Required inputs: exchange list, symbols, channels, callback/backend target, auth need, and failure mode.
+- For historical backfills, pair this with REST or a storage system; Cryptofeed is WebSocket-first.
 
 ## Quick Reference
 
-### Installation
+### Common Patterns
 
-```python
-# Basic installation
+**Install Cryptofeed**
+```bash
 pip install cryptofeed
-
-# With all optional backends
-pip install cryptofeed[all]
 ```
 
-### Basic Usage Pattern
-
+**Create a simple feed handler**
 ```python
 from cryptofeed import FeedHandler
-from cryptofeed.exchanges import Coinbase, Bitfinex
-from cryptofeed.defines import TICKER, TRADES, L2_BOOK
+from cryptofeed.defines import TICKER
+from cryptofeed.exchanges import Coinbase
 
-# Define callbacks
-def ticker_callback(data):
-    print(f"Ticker: {data}")
+def ticker(data, receipt_timestamp):
+    print(data)
 
-def trade_callback(data):
-    print(f"Trade: {data}")
-
-# Create feed handler
 fh = FeedHandler()
-
-# Add exchange feeds
-fh.add_feed(Coinbase(
-    symbols=['BTC-USD'],
-    channels=[TICKER],
-    callbacks={TICKER: ticker_callback}
-))
-
-fh.add_feed(Bitfinex(
-    symbols=['BTC-USD'],
-    channels=[TRADES],
-    callbacks={TRADES: trade_callback}
-))
-
-# Start receiving data
+fh.add_feed(Coinbase(symbols=["BTC-USD"], channels=[TICKER], callbacks={TICKER: ticker}))
 fh.run()
 ```
 
-### National Best Bid/Offer (NBBO)
-
+**Subscribe to trades and L2 book**
 ```python
-from cryptofeed import FeedHandler
+from cryptofeed.defines import TRADES, L2_BOOK
+from cryptofeed.exchanges import Gemini
+
+fh.add_feed(Gemini(
+    symbols=["BTC-USD", "ETH-USD"],
+    channels=[TRADES, L2_BOOK],
+    callbacks={TRADES: trade_callback, L2_BOOK: book_callback},
+))
+```
+
+**Build NBBO across exchanges**
+```python
 from cryptofeed.exchanges import Coinbase, Gemini, Kraken
 
-def nbbo_update(symbol, bid, bid_size, ask, ask_size, bid_feed, ask_feed):
-    print(f'Pair: {symbol} Bid: {bid:.2f} ({bid_size:.6f}) from {bid_feed}')
-    print(f'Ask: {ask:.2f} ({ask_size:.6f}) from {ask_feed}')
-
-f = FeedHandler()
-f.add_nbbo([Coinbase, Kraken, Gemini], ['BTC-USD'], nbbo_update)
-f.run()
+fh.add_nbbo([Coinbase, Kraken, Gemini], ["BTC-USD"], nbbo_callback)
 ```
 
-## Supported Exchanges (40+)
-
-### Major Exchanges
-- **Binance** (Spot, Futures, Delivery, US)
-- **Coinbase**, **Kraken** (Spot, Futures), **Bitfinex**
-- **Gemini**, **OKX**, **Bybit**
-- **Huobi** (Spot, DM, Swap), **Gate.io** (Spot, Futures)
-- **KuCoin**, **Deribit**, **BitMEX**, **dYdX**
-
-### Additional Exchanges
-AscendEX, Bequant, bitFlyer, Bithumb, Bitstamp, Blockchain.com, Bit.com, Bitget, Crypto.com, Delta, EXX, FMFW.io, HitBTC, Independent Reserve, OKCoin, Phemex, Poloniex, ProBit, Upbit
-
-## Supported Data Channels
-
-### Market Data (Public)
-- **L1_BOOK** - Top of order book
-- **L2_BOOK** - Price aggregated sizes
-- **L3_BOOK** - Price aggregated orders
-- **TRADES** - Executed trades (taker side)
-- **TICKER** - Price ticker updates
-- **FUNDING** - Funding rate data
-- **OPEN_INTEREST** - Open interest statistics
-- **LIQUIDATIONS** - Liquidation events
-- **INDEX** - Index price data
-- **CANDLES** - Candlestick/K-line data
-
-### Authenticated Channels (Private)
-- **ORDER_INFO** - Order status updates
-- **TRANSACTIONS** - Deposits and withdrawals
-- **BALANCES** - Wallet balance updates
-- **FILLS** - User's executed trades
-
-## Supported Backends
-
-Write data directly to storage:
-
-- **Redis** (Streams and Sorted Sets)
-- **Arctic** - Time-series database
-- **ZeroMQ**, **InfluxDB v2**, **MongoDB**
-- **Kafka**, **RabbitMQ**, **PostgreSQL**
-- **QuasarDB**, **GCP Pub/Sub**, **QuestDB**
-- **UDP/TCP/Unix Sockets**
-
-## Key Features
-
-### Real-time Data Normalization
-Cryptofeed normalizes data across all exchanges, providing consistent:
-- Symbol formatting
-- Timestamp handling
-- Data structures
-- Channel names
-
-### WebSocket + REST Fallback
-- Primarily uses WebSockets for real-time data
-- Falls back to REST polling when WebSocket unavailable
-- Automatic reconnection handling
-
-### NBBO Aggregation
-Create synthetic National Best Bid/Offer feeds by aggregating data across multiple exchanges to find arbitrage opportunities.
-
-### Backend Integration
-Direct data writing to various storage systems without custom integration code.
-
-## Requirements
-
-- **Python**: 3.8 or higher
-- **Installation**: Via pip or from source
-- **Optional Dependencies**: Install backends as needed
-
-## Common Use Cases
-
-### Multi-Exchange Price Monitoring
+**Separate callback work from IO-heavy persistence**
 ```python
-fh = FeedHandler()
-fh.add_feed(Binance(symbols=['BTC-USDT'], channels=[TICKER], callbacks=ticker_cb))
-fh.add_feed(Coinbase(symbols=['BTC-USD'], channels=[TICKER], callbacks=ticker_cb))
-fh.add_feed(Kraken(symbols=['BTC-USD'], channels=[TICKER], callbacks=ticker_cb))
-fh.run()
+def trade_callback(data, receipt_timestamp):
+    queue.put_nowait((data, receipt_timestamp))
 ```
 
-### Order Book Depth Analysis
+**Check supported channel names**
 ```python
-def book_callback(book, receipt_timestamp):
-    print(f"Bids: {len(book.book.bids)} | Asks: {len(book.book.asks)}")
-
-fh.add_feed(Coinbase(
-    symbols=['BTC-USD'],
-    channels=[L2_BOOK],
-    callbacks={L2_BOOK: book_callback}
-))
+from cryptofeed.defines import L1_BOOK, L2_BOOK, L3_BOOK, TRADES, TICKER
 ```
 
-### Trade Flow Analysis
-```python
-def trade_callback(trade, receipt_timestamp):
-    print(f"{trade.exchange} - {trade.symbol}: {trade.side} {trade.amount} @ {trade.price}")
+## Examples
 
-fh.add_feed(Binance(
-    symbols=['BTC-USDT', 'ETH-USDT'],
-    channels=[TRADES],
-    callbacks={TRADES: trade_callback}
-))
-```
+### Example 1: Single-Exchange Ticker Stream
 
-## Reference Files
+- Input: exchange `Coinbase`, symbol `BTC-USD`, channel `TICKER`.
+- Steps:
+  1. Create `FeedHandler`.
+  2. Add one exchange feed with a lightweight callback.
+  3. Run the handler and observe normalized ticker objects.
+- Expected output / acceptance: ticker updates print with timestamps and no callback-blocking persistence work.
 
-This skill includes documentation in `references/`:
+### Example 2: NBBO Monitor
 
-- **getting_started.md** - Installation and basic usage
-- **README.md** - Complete overview and examples
+- Input: exchanges `Coinbase`, `Kraken`, `Gemini`, symbol `BTC-USD`.
+- Steps:
+  1. Define `nbbo_callback(symbol, bid, bid_size, ask, ask_size, bid_feed, ask_feed)`.
+  2. Add NBBO with the exchange class list.
+  3. Alert only when spread or venue changes cross configured thresholds.
+- Expected output / acceptance: best bid/ask updates include source venues.
 
-Use `view` to read specific reference files when detailed information is needed.
+### Example 3: Backend Recorder
 
-## Working with This Skill
+- Input: symbols, channels, and a storage backend such as Redis/Kafka/PostgreSQL.
+- Steps:
+  1. Confirm optional backend dependencies are installed.
+  2. Configure the backend callback instead of writing inside a custom callback.
+  3. Run a small symbol set before scaling to many exchanges.
+- Expected output / acceptance: records arrive in the backend with normalized exchange and symbol fields.
 
-### For Beginners
-Start with basic FeedHandler setup and single exchange connections before adding multiple feeds.
+## References
 
-### For Advanced Users
-Explore NBBO feeds, authenticated channels, and backend integrations for production systems.
+- `references/index.md`: navigation for the local Cryptofeed references.
+- `references/README.md`: supported exchanges, basic usage, NBBO, channels, and backends.
+- `references/other.md`: additional generated reference material.
 
-### For Code Examples
-See the quick reference section above and the reference files for complete working examples.
+## Maintenance
 
-## Resources
-
-- **Repository**: https://github.com/bmoscon/cryptofeed
-- **PyPI**: https://pypi.python.org/pypi/cryptofeed
-- **Examples**: https://github.com/bmoscon/cryptofeed/tree/master/examples
-- **Documentation**: https://github.com/bmoscon/cryptofeed/blob/master/docs/README.md
-- **Discord**: https://discord.gg/zaBYaGAYfR
-- **Related**: Cryptostore (containerized data storage)
-
-## Notes
-
-- Requires Python 3.8+
-- WebSocket-first approach with REST fallback
-- Normalized data across all exchanges
-- Active development and community support
-- 40+ supported exchanges and growing
+- Sources: local `references/` extracted from Cryptofeed documentation.
+- Last updated: 2026-04-28
+- Known limits: channel support is exchange-specific; always validate symbol naming and callback signatures against the installed version.

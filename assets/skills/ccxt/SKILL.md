@@ -1,105 +1,139 @@
 ---
 name: ccxt
-description: CCXT cryptocurrency trading library. Use for cryptocurrency exchange APIs, trading, market data, order management, and crypto trading automation across 150+ exchanges. Supports JavaScript/Python/PHP.
+description: "CCXT crypto exchange API skill: unified market data, order books, balances, order creation, sandbox mode, rate limits, verbose debugging, and exchange capability checks for JavaScript/Python/PHP trading automation."
 ---
 
-# Ccxt Skill
+# ccxt Skill
 
-Comprehensive assistance with ccxt development, generated from official documentation.
+Use this skill to implement or debug CCXT integrations against cryptocurrency exchanges while keeping exchange-specific behavior explicit and testable.
 
 ## When to Use This Skill
 
-This skill should be triggered when:
-- Working with ccxt
-- Asking about ccxt features or APIs
-- Implementing ccxt solutions
-- Debugging ccxt code
-- Learning ccxt best practices
+Trigger when any of these applies:
+- Fetching tickers, order books, trades, OHLCV, balances, markets, or exchange metadata through CCXT.
+- Creating, cancelling, or inspecting orders with the unified CCXT API.
+- Checking exchange capabilities with `exchange.has`, `exchange.features`, `loadMarkets()`, or market metadata.
+- Handling sandbox/testnet mode, rate limits, authentication, precision, contract size, or market-buy cost semantics.
+- Producing minimal reproducible debug reports with verbose HTTP request/response output.
+
+## Not For / Boundaries
+
+- Not financial advice, strategy validation, custody guidance, or a guarantee that an exchange supports a specific feature.
+- Never run live orders before sandbox or dry-run validation; call `set_sandbox_mode(True)` immediately after exchange construction when supported.
+- Do not log, commit, or paste API keys, secrets, passphrases, cookies, or private wallet information.
+- Required inputs: language/runtime, exchange id, market symbol, operation type, sandbox/live mode, auth status, and exact error/verbose output.
+- Exchange APIs change independently; verify feature support against `exchange.has`, `exchange.features`, and the relevant reference file before production use.
 
 ## Quick Reference
 
 ### Common Patterns
 
-**Pattern 1:** Frequently Asked Questions I'm trying to run the code, but it's not working, how do I fix it? If your question is formulated in a short manner like the above, we won't help. We don't teach programming. If you're unable to read and understand the Manual or you can't follow precisely the guides from the CONTRIBUTING doc on how to report an issue, we won't help either. Read the CONTRIBUTING guides on how to report an issue and read the Manual. You should not risk anyone's money and time without reading the entire Manual very carefully. You should not risk anything if you're not used to a lot of reading with tons of details. Also, if you don't have the confidence with the programming language you're using, there are much better places for coding fundamentals and practice. Search for python tutorials, js videos, play with examples, this is how other people climb up the learning curve. No shortcuts, if you want to learn something. What is required to get help? When asking a question: Use the search button for duplicates first! Post your request and response in verbose mode! Add exchange.verbose = true right before the line you're having issues with, and copypaste what you see on your screen. It's written and mentioned everywhere, in the Troubleshooting section, in the README and in many answers to similar questions among previous issues and pull requests. No excuses. The verbose output should include both the request and response from the exchange. Include the full error callstack! Write your programming language and language version number Write the CCXT / CCXT Pro library version number Which exchange it is Which method you're trying to call Post your code to reproduce the problem. Make it a complete short runnable program, don't swallow the lines and make it as compact as you can (5-10 lines of code), including the exchange instantation code. Remove all irrelevant parts from it, leaving just the essence of the code to reproduce the issue. DON'T POST SCREENSHOTS OF CODE OR ERRORS, POST THE OUTPUT AND CODE IN PLAIN TEXT! Surround code and output with triple backticks: ```GOOD```. Don't confuse the backtick symbol (`) with the quote symbol ('): '''BAD''' Don't confuse a single backtick with triple backticks: `BAD` DO NOT POST YOUR apiKey AND secret! Keep them safe (remove them before posting)! I am calling a method and I get an error, what am I doing wrong? You're not reporting the issue properly ) Please, help the community to help you ) Read this and follow the steps: https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-submit-an-issue. Once again, your code to reproduce the issue and your verbose request and response ARE REQUIRED. Just the error traceback, or just the response, or just the request, or just the code – is not enough! I got an incorrect result from a method call, can you help? Basically the same answer as the previous question. Read and follow precisely: https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-submit-an-issue. Once again, your code to reproduce the issue and your verbose request and response ARE REQUIRED. Just the error traceback, or just the response, or just the request, or just the code – is not enough! Can you implement feature foo in exchange bar? Yes, we can. And we will, if nobody else does that before us. There's very little point in asking this type of questions, because the answer is always positive. When someone asks if we can do this or that, the question is not about our abilities, it all boils down to time and management needed for implementing all accumulated feature requests. Moreover, this is an open-source library which is a work in progress. This means, that this project is intended to be developed by the community of users, who are using it. What you're asking is not whether we can or cannot implement it, in fact you're actually telling us to go do that particular task and this is not how we see a voluntary collaboration. Your contributions, PRs and commits are welcome: https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code. We don't give promises or estimates on the free open-source work. If you wish to speed it up, feel free to reach out to us via info@ccxt.trade. When will you add feature foo for exchange bar ? What's the estimated time? When should we expect this? We don't give promises or estimates on the open-source work. The reasoning behind this is explained in the previous paragraph. When will you add the support for an exchange requested in the Issues? Again, we can't promise on the dates for adding this or that exchange, due to reasons outlined above. The answer will always remain the same: as soon as we can. How long should I wait for a feature to be added? I need to decide whether to implement it myself or to wait for the CCXT Dev Team to implement it for me. Please, go for implemeting it yourself, do not wait for us. We will add it as soon as we can. Also, your contributions are very welcome: https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code What's your progress on adding the feature foo that was requested earlier? How do you do implementing exchange bar? This type of questions is usually a waste of time, because answering it usually requires too much time for context-switching, and it often takes more time to answer this question, than to actually satisfy the request with code for a new feature or a new exchange. The progress of this open-source project is also open, so, whenever you're wondering how it is doing, take a look into commit history. What is the status of this PR? Any update? If it is not merged, it means that the PR contains errors, that should be fixed first. If it could be merged as is – we would merge it, and you wouldn't have asked this question in the first place. The most frequent reason for not merging a PR is a violation of any of the CONTRIBUTING guidelines. Those guidelines should be taken literally, cannot skip a single line or word from there if you want your PR to be merged quickly. Code contributions that do not break the guidelines get merged almost immediately (usually, within hours). Can you point out the errors or what should I edit in my PR to get it merged into master branch? Unfortunately, we don't always have the time to quickly list out each and every single error in the code that prevents it from merging. It is often easier and faster to just go and fix the error rather than explain what one should do to fix it. Most of them are already outlined in the CONTRIBUTING guidelines. The main rule of thumb is to follow all guidelines literally. Hey! The fix you've uploaded is in TypeScript, would you fix JavaScript / Python / PHP as well, please? Our build system generates exchange-specific JavaScript, Python and PHP code for us automatically, so it is transpiled from TypeScript, and there's no need to fix all languages separately one by one. Thus, if it is fixed in TypeScript, it is fixed in JavaScript NPM, Python pip and PHP Composer as well. The automatic build usually takes 15-20 minutes. Just upgrade your version with npm, pip or composer after the new version arrives and you'll be fine. More about it here: https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#multilanguage-support https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#transpiled-generated-files How to create an order with takeProfit+stopLoss? Some exchanges support createOrder with the additional "attached" stopLoss & takeProfit sub-orders - view StopLoss And TakeProfit Orders Attached To A Position. However, some exchanges might not support that feature and you will need to run separate createOrder methods to add conditional order (e.g. *trigger order | stoploss order | takeprofit order) to the already open position - view [Conditional orders](Manual.md#Conditional Orders). You can also check them by looking at exchange.has['createOrderWithTakeProfitAndStopLoss'], exchange.has['createStopLossOrder'] and exchange.has['createTakeProfitOrder'], however they are not as precise as .features property. How to create a spot market buy with cost? To create a market-buy order with cost, first, you need to check if the exchange supports that feature (exchange.has['createMarketBuyOrderWithCost']). If it does, then you can use the createMarketBuyOrderWithCost` method. Example: order = await exchange.createMarketBuyOrderWithCost(symbol, cost) What does the createMarketBuyRequiresPrice option mean? Many exchanges require the amount to be in the quote currency (they don't accept the base amount) when placing spot-market buy orders. In those cases, the exchange will have the option createMarketBuyRequiresPrice set to true. Example: If you wanted to buy BTC/USDT with a market buy-order, you would need to provide an amount = 5 USDT instead of 0.000X. We have a check to prevent errors that explicitly require the price because users will usually provide the amount in the base currency. So by default, if you do, create_order(symbol, 'market,' 'buy,' 10) will throw an error if the exchange has that option (createOrder() requires the price argument for market buy orders to calculate the total cost to spend (amount * price), alternatively set the createMarketBuyOrderRequiresPrice option or param to false...). If the exchange requires the cost and the user provided the base amount, we need to request an extra parameter price and multiply them to get the cost. If you're aware of this behavior, you can simply disable createMarketBuyOrderRequiresPrice and pass the cost in the amount parameter, but disabling it does not mean you can place the order using the base amount instead of the quote. If you do create_order(symbol, 'market', 'buy', 0.001, 20000) ccxt will use the required price to calculate the cost by doing 0.01*20000 and send that value to the exchange. If you want to provide the cost directly in the amount argument, you can do exchange.options['createMarketBuyOrderRequiresPrice'] = False (you acknowledge that the amount will be the cost for market-buy) and then you can do create_order(symbol, 'market', 'buy', 10) This is basically to avoid a user doing this: create_order('SHIB/USDT', market, buy, 1000000) and thinking he's trying to buy 1kk of shib but in reality he's buying 1kk USDT worth of SHIB. For that reason, by default ccxt always accepts the base currency in the amount parameter. Alternatively, you can use the functions createMarketBuyOrderWithCost/ createMarketSellOrderWithCost if they are available. See more: Market Buys What's the difference between trading spot and swap/perpetual futures? Spot trading involves buying or selling a financial instrument (like a cryptocurrency) for immediate delivery. It's straightforward, involving the direct exchange of assets. Swap trading, on the other hand, involves derivative contracts where two parties exchange financial instruments or cash flows at a set date in the future, based on the underlying asset. Swaps are often used for leverage, speculation, or hedging and do not necessarily involve the exchange of the underlying asset until the contract expires. Besides that, you will be handling contracts if you're trading swaps and not the base currency (e.g., BTC) directly, so if you create an order with amount = 1, the amount in BTC will vary depending on the contractSize. You can check the contract size by doing: await exchange.loadMarkets() symbol = 'XRP/USDT:USDT' market = exchange.market(symbol) print(market['contractSize']) How to place a reduceOnly order? A reduceOnly order is a type of order that can only reduce a position, not increase it. To place a reduceOnly order, you typically use the createOrder method with a reduceOnly parameter set to true. This ensures that the order will only execute if it decreases the size of an open position, and it will either partially fill or not fill at all if executing it would increase the position size. Javascript const params = { 'reduceOnly': true, // set to true if you want to close a position, set to false if you want to open a new position } const order = await exchange.createOrder (symbol, type, side, amount, price, params) Python params = { 'reduceOnly': True, # set to True if you want to close a position, set to False if you want to open a new position } order = exchange.create_order (symbol, type, side, amount, price, params) PHP $params = { 'reduceOnly': true, // set to true if you want to close a position, set to false if you want to open a new position } $order = $exchange->create_order ($symbol, $type, $side, $amount, $price, $params); See more: Trailing Orders How to check the endpoint used by the unified method? To check the endpoint used by a unified method in the CCXT library, you would typically need to refer to the source code of the library for the specific exchange implementation you're interested in. The unified methods in CCXT abstract away the details of the specific endpoints they interact with, so this information is not directly exposed via the library's API. For detailed inspection, you can look at the implementation of the method for the particular exchange in the CCXT library's source code on GitHub. See more: Unified API How to differentiate between previousFundingRate, fundingRate and nextFundingRate in the funding rate structure? The funding rate structure has three different funding rate values that can be returned: previousFundingRaterefers to the most recently completed rate. fundingRate is the upcoming rate. This value is always changing until the funding time passes and then it becomes the previousFundingRate. nextFundingRate is only supported on a few exchanges and is the predicted funding rate after the upcoming rate. This value is two funding rates from now. As an example, say it is 12:30. The previousFundingRate happened at 12:00 and we're looking to see what the upcoming funding rate will be by checking the fundingRate value. In this example, given 4-hour intervals, the fundingRate will happen in the future at 4:00 and the nextFundingRate is the predicted rate that will happen at 8:00.
-
-```
-python tutorials
-```
-
-**Pattern 2:** To create a market-buy order with cost, first, you need to check if the exchange supports that feature (exchange.has['createMarketBuyOrderWithCost']). If it does, then you can use the createMarketBuyOrderWithCost` method. Example:
-
-```
-exchange.has['createMarketBuyOrderWithCost']). If it does, then you can use the
+**Install CCXT for Python**
+```bash
+pip install ccxt
 ```
 
-**Pattern 3:** Example: If you wanted to buy BTC/USDT with a market buy-order, you would need to provide an amount = 5 USDT instead of 0.000X. We have a check to prevent errors that explicitly require the price because users will usually provide the amount in the base currency.
+**Create an exchange with built-in rate limiting**
+```python
+import ccxt
 
-```
-create_order(symbol, 'market,' 'buy,' 10)
-```
-
-**Pattern 4:** For a complete list of all exchanges and their supported methods, please, refer to this example: https://github.com/ccxt/ccxt/blob/master/examples/js/exchange-capabilities.js
-
-```
-exchange.rateLimit
+exchange = ccxt.binance({"enableRateLimit": True})
 ```
 
-**Pattern 5:** The ccxt library supports asynchronous concurrency mode in Python 3.5+ with async/await syntax. The asynchronous Python version uses pure asyncio with aiohttp. In async mode you have all the same properties and methods, but most methods are decorated with an async keyword. If you want to use async mode, you should link against the ccxt.async_support subpackage, like in the following example:
-
+**Enable sandbox mode before any other call**
+```python
+exchange = ccxt.binance({"apiKey": "KEY", "secret": "SECRET"})
+exchange.set_sandbox_mode(True)
 ```
-ccxt.async_support
+
+**Load and inspect markets**
+```python
+markets = exchange.load_markets()
+market = exchange.market("BTC/USDT")
 ```
 
-## Reference Files
+**Fetch one ticker instead of all tickers**
+```python
+ticker = exchange.fetch_ticker("BTC/USDT")
+```
 
-This skill includes comprehensive documentation in `references/`:
+**Fetch an order book for bid/ask work**
+```python
+book = exchange.fetch_order_book("BTC/USDT", limit=20)
+best_bid = book["bids"][0] if book["bids"] else None
+best_ask = book["asks"][0] if book["asks"] else None
+```
 
-- **cli.md** - Cli documentation
-- **exchanges.md** - Exchanges documentation
-- **faq.md** - Faq documentation
-- **getting_started.md** - Getting Started documentation
-- **manual.md** - Manual documentation
-- **other.md** - Other documentation
-- **pro.md** - Pro documentation
-- **specification.md** - Specification documentation
+**Check capability before using an endpoint**
+```python
+if exchange.has.get("fetchOHLCV"):
+    candles = exchange.fetch_ohlcv("BTC/USDT", timeframe="1m", limit=100)
+```
 
-Use `view` to read specific reference files when detailed information is needed.
+**Create a reduce-only order when supported by the exchange**
+```python
+params = {"reduceOnly": True}
+order = exchange.create_order("BTC/USDT:USDT", "limit", "sell", 1, 70000, params)
+```
 
-## Working with This Skill
+**Debug with verbose request/response output**
+```python
+exchange.verbose = True
+exchange.fetch_balance()
+```
 
-### For Beginners
-Start with the getting_started or tutorials reference files for foundational concepts.
+**Use async support in Python**
+```python
+import ccxt.async_support as ccxt
 
-### For Specific Features
-Use the appropriate category reference file (api, guides, etc.) for detailed information.
+exchange = ccxt.binance({"enableRateLimit": True})
+try:
+    await exchange.load_markets()
+finally:
+    await exchange.close()
+```
 
-### For Code Examples
-The quick reference section above contains common patterns extracted from the official docs.
+## Examples
 
-## Resources
+### Example 1: Market Data Collector
 
-### references/
-Organized documentation extracted from official sources. These files contain:
-- Detailed explanations
-- Code examples with language annotations
-- Links to original documentation
-- Table of contents for quick navigation
+- Input: exchange `binance`, symbol `BTC/USDT`, timeframe `1m`.
+- Steps:
+  1. Instantiate with `enableRateLimit=True`.
+  2. Call `load_markets()` once and verify `exchange.has["fetchOHLCV"]`.
+  3. Fetch candles and persist timestamp, open, high, low, close, volume.
+- Expected output / acceptance: one normalized candle batch and no repeated `load_markets()` calls inside the polling loop.
 
-### scripts/
-Add helper scripts here for common automation tasks.
+### Example 2: Sandbox Order Flow
 
-### assets/
-Add templates, boilerplate, or example projects here.
+- Input: exchange with sandbox support, symbol, side, amount, price.
+- Steps:
+  1. Create the exchange with credentials and immediately call sandbox mode.
+  2. Load markets and inspect precision/limits for the symbol.
+  3. Place a tiny limit order, fetch it by id, then cancel it.
+- Expected output / acceptance: order lifecycle succeeds in sandbox and no live order endpoint is touched.
 
-## Notes
+### Example 3: Debug a Failing Exchange Call
 
-- This skill was automatically generated from official documentation
-- Reference files preserve the structure and examples from source docs
-- Code examples include language detection for better syntax highlighting
-- Quick reference patterns are extracted from common usage examples in the docs
+- Input: an exception from `create_order()` or `fetch_balance()`.
+- Steps:
+  1. Reduce code to a 5-20 line reproduction including exchange construction.
+  2. Set `exchange.verbose = True` immediately before the failing call.
+  3. Capture language version, CCXT version, exchange id, symbol, method, request, response, and full stack trace.
+- Expected output / acceptance: a reproducible report without secrets and with enough evidence to distinguish CCXT misuse from exchange API failure.
 
-## Updating
+## References
 
-To refresh this skill with updated documentation:
-1. Re-run the scraper with the same configuration
-2. The skill will be rebuilt with the latest information
+- `references/index.md`: navigation for the CCXT reference set.
+- `references/manual.md`: unified API, markets, rate limits, orders, sandbox, and debugging.
+- `references/faq.md`: common trading/order pitfalls and issue-reporting requirements.
+- `references/exchanges.md`: exchange support and capability notes.
+- `references/pro.md`: CCXT Pro and WebSocket-oriented material.
+- `references/cli.md`: CCXT CLI usage.
+- `references/specification.md`: generated API/spec material.
+
+## Maintenance
+
+- Sources: local `references/` extracted from CCXT documentation.
+- Last updated: 2026-04-28
+- Known limits: exchange-specific parameters and capabilities must be verified per exchange; examples intentionally avoid live credentials.

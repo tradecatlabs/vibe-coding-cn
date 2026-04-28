@@ -1,3 +1,4 @@
+---
 name: ddd-doc-steward
 description: "文档驱动开发（DDD）文档管家：以仓库真实证据为准，盘点 ~/project 与 docs 目录，生成/更新 SSOT 文档（计划→补丁/全文→摘要→一致性检查）。触发：需要让文档与代码/配置/运行方式同步、补齐 guides/integrations/features/architecture/incidents/archive、无法推导时标注【待确认】并给验证路径。"
 ---
@@ -6,21 +7,21 @@ description: "文档驱动开发（DDD）文档管家：以仓库真实证据为
 
 让 `~/project/docs` 成为单一可信来源（SSOT）：先盘点、后计划、再增量写文档，所有事实有证据来源，没有证据就【待确认】。
 
-## 何时使用
+## When to Use This Skill
 
 - 需要为真实仓库建立/维护文档 SSOT，输出「盘点表 → 计划 → 文档补丁/全文 → 变更摘要 → 一致性检查」的固定交付物。
 - 新增/改动功能、集成或事故复盘，需要同步更新 docs 下对应目录。
 - 需要在 strict 模式下，避免任何臆测，所有关键事实必须给出代码/配置/命令的路径或说明验证方法。
 - 只能获取部分信息时，仍需生成最小可落地模板并标注【待确认】。
 
-## 不适用 / 边界
+## Not For / Boundaries
 
 - 与工程无关的纯创作文案。
 - 无法提供最小证据集（目录树、README/依赖/配置/路由位置）且不接受【待确认】输出时。
 - 涉及密钥明文输出；文档中仅可写占位符与获取方式。
 - 未提供 `project_root/docs_root/output_mode` 等输入时，先将自然语言归一到输入 JSON（参见快速参考）。
 
-## 快速参考
+## Quick Reference
 
 1) 归一化输入（缺省值）
 ```json
@@ -68,19 +69,19 @@ description: "文档驱动开发（DDD）文档管家：以仓库真实证据为
 - SHOULD：优先用 git diff/related_paths 聚焦；guides 与 integrations 先行；为每个【待确认】提供验证路径。
 - NEVER：编造端口/环境变量/接口字段；输出密钥明文；跳过盘点直接写文档。
 
-## 示例
+## Examples
 
-### 示例 1：空仓库初始化
+### Example 1: 空仓库初始化
 - 输入：`change_type=baseline`，docs 为空。
 - 步骤：A 扫描→B 盘点表标记全部缺失→计划新增 docs/README.md、guides/getting-started.md 等→C 生成骨架补丁→D 摘要与检查。
 - 验收：输出 patch diff，所有命令标【待确认】或给寻找路径。
 
-### 示例 2：新增登录功能
+### Example 2: 新增登录功能
 - 输入：`change_type=feature`，`scope_hint="auth 登录"`，`use_git_diff=true`。
 - 步骤：用 diff 找受影响路由；盘点 features/integrations；计划新增 PRD/Spec，更新 integrations/auth-api；标记 token 过期时间待确认。
 - 验收：变更摘要指出新增文档与更新字段；检查清单含鉴权/错误码/验证 curl。
 
-### 示例 3：无法读取仓库
+### Example 3: 无法读取仓库
 - 输入：仅自然语言“帮我做 SSOT 文档”。
 - 步骤：先归一化 JSON，声明“无法真实扫描”→生成六类文档模板，全量标【待确认】并列证据缺口与采集命令。
 - 验收：输出 full_files；每条待确认可直接行动补证。
@@ -92,10 +93,18 @@ description: "文档驱动开发（DDD）文档管家：以仓库真实证据为
 - Q: 目录过大处理不过来？  
   A: 按 prefer_priority 分批；声明本次范围与剩余批次计划。
 
-## 维护
+## References
+
+- `references/index.md`：导航与长文入口。
+- `references/getting_started.md`：DDD 文档管家流程与术语。
+- `references/api.md`：输入/输出规范、目录命名与质量门禁。
+- `references/examples.md`：可套用场景示例。
+- `references/troubleshooting.md`：降级与故障处理。
+
+## Maintenance
 
 - 来源：提示词库（在线表格入口见 `assets/prompt/README.md`）；元技能 `assets/skills/auto-skill/`；自动化辅助工具 `assets/repos/Skill_Seekers-development`.
-- 最后更新：2025-12-20
+- 最后更新：2026-04-28
 - 已知限制：依赖用户提供真实证据；大体量仓库需分批；不输出敏感值。
 
 ## 质量门禁（出厂前自检）
