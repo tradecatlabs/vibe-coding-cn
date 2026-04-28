@@ -46,7 +46,6 @@ assets/skills/
 ## 快速定位（常用技能）
 
 - `assets/skills/tmux-autopilot/`：tmux 自动化操控与多 Agent 协作
-- `assets/skills/canvas-dev/`：Canvas 白板驱动开发
 - `assets/skills/sop-generator/`：SOP 生成与规范化
 - `assets/skills/markdown-to-epub/`：Markdown → EPUB 稳定构建
 - `assets/skills/auto-skill/`：元技能（技能生成/校验/脚手架）

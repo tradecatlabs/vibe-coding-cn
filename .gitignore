@@ -52,7 +52,10 @@ assets/tasks/
 
 # Skill Seekers (vendored tool output)
 output/
-assets/skills/skills-skills/scripts/.venv-skill-seekers/
+assets/skills/auto-skill/scripts/.venv-skill-seekers/
+
+# prompts-library generated exports
+assets/repos/prompts-library/prompt_jsonl/
 
 libs/external/tmux
 libs/external/.tmux

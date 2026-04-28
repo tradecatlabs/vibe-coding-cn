@@ -19,11 +19,6 @@ assets/documents/workflow/
 │   ├── .kiro/                        # Kiro 集成配置
 │   ├── workflow_engine/              # 轻量状态机引擎（state + hook）
 │   └── workflow-orchestrator/        # 编排技能文档与规范
-└── canvas-dev/                       # Canvas 白板驱动开发工作流
-    ├── README.md
-    ├── prompts/
-    ├── templates/
-    └── examples/
 ```
 
 ## 操作规范

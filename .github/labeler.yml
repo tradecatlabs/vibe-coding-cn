@@ -4,7 +4,20 @@
 # 文档相关的标签
 documentation:
   - changed-files:
-    - any-glob-to-any-file: ['i18n/**/*.md', 'README.md', 'CONTRIBUTING.md', 'LICENSE']
+    - any-glob-to-any-file:
+      - 'README.md'
+      - 'AGENTS.md'
+      - 'CONTRIBUTING.md'
+      - 'CODE_OF_CONDUCT.md'
+      - 'LICENSE'
+      - '.github/**/*.md'
+      - 'assets/README.md'
+      - 'assets/AGENTS.md'
+      - 'assets/config/**/*.md'
+      - 'assets/documents/**/*.md'
+      - 'assets/prompt/**/*.md'
+      - 'assets/skills/**/*.md'
+      - 'assets/repos/**/*.md'
 
 # CI/CD 工作流相关的标签
 cicd:
@@ -14,9 +27,19 @@ cicd:
 # 提示词相关的标签
 prompt:
   - changed-files:
-    - any-glob-to-any-file: 'i18n/zh/prompts/**/*.md'
+    - any-glob-to-any-file: 'assets/prompt/**/*.md'
 
 # 实战案例相关的标签
 example:
   - changed-files:
-    - any-glob-to-any-file: 'i18n/zh/documents/实战案例/**/*.md'
+    - any-glob-to-any-file: 'assets/documents/case-studies/**/*.md'
+
+# 外部工具/依赖相关的标签
+repos:
+  - changed-files:
+    - any-glob-to-any-file: 'assets/repos/**'
+
+# 工作流模板相关的标签
+workflow:
+  - changed-files:
+    - any-glob-to-any-file: 'assets/documents/workflow/**'

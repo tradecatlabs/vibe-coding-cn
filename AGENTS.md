@@ -159,7 +159,6 @@ git push origin develop
 │   │   ├── AGENTS.md            # skills/ 目录规则
 │   │   ├── auto-skill/          # 元技能核心
 │   │   ├── sop-generator/       # SOP 生成
-│   │   ├── canvas-dev/          # Canvas白板驱动开发
 │   │   └── ...                  # 更多技能
 │   └── repos/                   # 外部工具与依赖镜像（含 Git submodule）
 │       ├── README.md            # 外部工具索引
