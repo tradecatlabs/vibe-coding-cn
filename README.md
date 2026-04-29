@@ -29,16 +29,16 @@
 <!-- 资源直达 - 按重要性分组 -->
 <!-- 🔴 核心理念 (红色系) -->
 <p>
-	  <a href="./assets/documents/principles/philosophy/README.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
-	  <a href="./assets/documents/guides/getting-started/Vibe%20Coding%20哲学原理.md"><img src="https://img.shields.io/badge/🧠_核心哲学-必读-crimson?style=for-the-badge" alt="核心哲学"></a>
 	  <a href="./assets/documents/guides/getting-started/README.md"><img src="https://img.shields.io/badge/🚀_从零开始-新手入门-red?style=for-the-badge" alt="从零开始"></a>
 	  <a href="./assets/documents/principles/fundamentals/问题求解能力.md"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解能力"></a>
-	  <a href="./assets/documents/principles/fundamentals/语言层要素.md"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>
-	  <a href="./assets/documents/principles/fundamentals/常见坑汇总.md"><img src="https://img.shields.io/badge/🕳️_常见坑-避坑指南-yellow?style=for-the-badge" alt="常见坑汇总"></a>
+	  <a href="./assets/documents/guides/getting-started/Vibe%20Coding%20哲学原理.md"><img src="https://img.shields.io/badge/🧠_核心哲学-必读-crimson?style=for-the-badge" alt="核心哲学"></a>
+	  <a href="./assets/documents/principles/philosophy/README.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
 	  <a href="./assets/documents/principles/fundamentals/强前置条件约束.md"><img src="https://img.shields.io/badge/🚫_硬约束-铁律-darkred?style=for-the-badge" alt="强前置条件约束"></a>
-	  <a href="./assets/README.md"><img src="https://img.shields.io/badge/📡_资源-聚合-teal?style=for-the-badge" alt="资源聚合"></a>
+	  <a href="./assets/documents/principles/fundamentals/常见坑汇总.md"><img src="https://img.shields.io/badge/🕳️_常见坑-避坑指南-yellow?style=for-the-badge" alt="常见坑汇总"></a>
+	  <a href="./assets/documents/principles/fundamentals/语言层要素.md"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>
   <a href="./assets/skills/"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
   <a href="https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
+	  <a href="./assets/README.md"><img src="https://img.shields.io/badge/📡_资源-聚合-teal?style=for-the-badge" alt="资源聚合"></a>
 </p>
 
 [📋 工具与资源](#tools)
