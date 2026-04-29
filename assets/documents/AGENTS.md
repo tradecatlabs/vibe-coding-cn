@@ -9,12 +9,13 @@
 ```
 assets/documents/
 ├── principles/          # 原则与思想（fundamentals + philosophy）
-│   ├── fundamentals/    # 原 00-基础指南
+│   ├── fundamentals/    # 基础原则、问题求解、工程范式与代码质量
 │   └── philosophy/      # 原 05-哲学与方法论
 ├── guides/              # 入门与方法（getting-started + playbook）
 │   ├── getting-started/ # 原 01-入门指南
 │   └── playbook/        # 原 02-方法论
-└── case-studies/        # 原 03-实战
+├── case-studies/        # 原 03-实战
+└── workflow/            # 可复用工作流模板
 ```
 
 ## 操作规范

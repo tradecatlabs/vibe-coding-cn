@@ -27,14 +27,17 @@ assets/documents/
 
 ## 📖 推荐学习路径
 
-1. **思维** → [philosophy](./principles/philosophy/README.md)
-2. **理念** → [胶水编程](./principles/fundamentals/胶水编程.md)
-3. **入门** → [Vibe Coding 哲学原理](./guides/getting-started/Vibe%20Coding%20哲学原理.md)
-4. **配置** → [开发环境搭建](./guides/getting-started/开发环境搭建.md)
-5. **工具** → [tmux 快捷键](./guides/playbook/tmux快捷键大全.md)
-6. **远程** → [VS Code Remote Tunnel（WSL）](./guides/playbook/REMOTE_TUNNEL_GUIDE.md)
-7. **实践** → [项目实战经验](./case-studies/)
-8. **流程** → [工作流模板](./workflow/)
+1. **问题** → [问题求解能力](./principles/fundamentals/问题求解能力.md)
+2. **工程** → [问题分析与系统构建方法](./principles/fundamentals/问题分析与系统构建方法.md)
+3. **范式** → [软件开发范式演进](./principles/fundamentals/软件开发范式演进.md)
+4. **思维** → [philosophy](./principles/philosophy/README.md)
+5. **理念** → [胶水编程](./principles/fundamentals/胶水编程.md)
+6. **入门** → [Vibe Coding 哲学原理](./guides/getting-started/Vibe%20Coding%20哲学原理.md)
+7. **配置** → [开发环境搭建](./guides/getting-started/开发环境搭建.md)
+8. **工具** → [tmux 快捷键](./guides/playbook/tmux快捷键大全.md)
+9. **远程** → [VS Code Remote Tunnel（WSL）](./guides/playbook/REMOTE_TUNNEL_GUIDE.md)
+10. **实践** → [项目实战经验](./case-studies/)
+11. **流程** → [工作流模板](./workflow/)
 
 ## 🔗 相关资源
 
