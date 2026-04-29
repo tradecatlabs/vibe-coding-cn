@@ -22,9 +22,7 @@
 <!-- 项目状态徽章 -->
 <p>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/tukuaiai/vibe-coding-cn?label=%E8%AE%B8%E5%8F%AF%E8%AF%81&style=for-the-badge" alt="许可证"></a>
-  <a href="https://github.com/tukuaiai/vibe-coding-cn"><img src="https://img.shields.io/github/languages/top/tukuaiai/vibe-coding-cn?label=%E4%B8%BB%E8%A6%81%E8%AF%AD%E8%A8%80&style=for-the-badge" alt="主要语言"></a>
-  <a href="https://github.com/tukuaiai/vibe-coding-cn"><img src="https://img.shields.io/github/languages/code-size/tukuaiai/vibe-coding-cn?label=%E4%BB%A3%E7%A0%81%E9%87%8F&style=for-the-badge" alt="代码量"></a>
-  <a href="https://x.com/123olp"><img src="https://img.shields.io/badge/X-@开发者的X-black?style=for-the-badge&logo=x" alt="X"></a>
+  <a href="https://x.com/123olp"><img src="https://img.shields.io/badge/X-123olp-black?style=for-the-badge&logo=x" alt="X"></a>
   <a href="https://t.me/glue_coding"><img src="https://img.shields.io/badge/聊天-Telegram-blue?style=for-the-badge&logo=telegram" alt="交流群"></a>
 </p>
 
