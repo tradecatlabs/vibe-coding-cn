@@ -13,7 +13,7 @@
 ## 文件结构
 
 ```
-backups/
+assets/repos/backups/
 ├── 快速备份.py    # 核心备份引擎
 ├── 一键备份.sh    # Shell 启动脚本
 └── README.md      # 本文档
@@ -23,28 +23,28 @@ backups/
 
 ```bash
 # 方式一：Shell 脚本（推荐）
-bash backups/一键备份.sh
+bash assets/repos/backups/一键备份.sh
 
 # 方式二：直接运行 Python
-python3 backups/快速备份.py
+python3 assets/repos/backups/快速备份.py
 
 # 指定输出文件
-python3 backups/快速备份.py -o my_backup.tar.gz
+python3 assets/repos/backups/快速备份.py -o my_backup.tar.gz
 
 # 指定项目目录
-python3 backups/快速备份.py -p /path/to/project
+python3 assets/repos/backups/快速备份.py -p /path/to/project
 ```
 
 ## 输出位置
 
-默认输出到 `backups/gz/备份_YYYYMMDD_HHMMSS.tar.gz`
+默认输出到 `assets/repos/backups/gz/备份_YYYYMMDD_HHMMSS.tar.gz`
 
 ## 参数说明
 
 | 参数 | 说明 | 默认值 |
 |------|------|--------|
 | `-p, --project` | 项目根目录 | 当前目录 |
-| `-o, --output` | 输出文件路径 | `backups/gz/备份_时间戳.tar.gz` |
+| `-o, --output` | 输出文件路径 | `assets/repos/backups/gz/备份_时间戳.tar.gz` |
 | `-g, --gitignore` | gitignore 文件路径 | `.gitignore` |
 
 ## 依赖

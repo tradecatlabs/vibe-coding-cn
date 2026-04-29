@@ -106,6 +106,56 @@
 </details>
 
 <details>
+<summary><strong>🛠️ 仓库维护与验证</strong></summary>
+
+## 🛠️ 仓库维护与验证
+
+本仓库是文档与资源型项目，不提供可验证的 dev server、Docker/K8s 部署入口或固定服务端口。当前可验证的自动化入口来自 `Makefile`、`.github/workflows/ci.yml`、`assets/repos/prompts-library/` 与 `assets/repos/backups/`。
+
+### 环境要求
+
+- Git：版本控制与 submodule 初始化
+- Node.js 16+：运行 `markdownlint-cli`，与 GitHub Actions 中的 `setup-node@v3` 配置一致
+- Python 3.8+：运行 prompts-library 与备份脚本
+
+### 初始化
+
+```bash
+git submodule update --init --recursive
+pip install -r assets/repos/prompts-library/requirements.txt
+```
+
+如需运行 prompts-library 的 Google API / JSONL 辅助脚本，再安装脚本依赖：
+
+```bash
+pip install -r assets/repos/prompts-library/scripts/requirements.txt
+```
+
+### 常用命令
+
+| 目的 | 命令 | 来源 |
+|:---|:---|:---|
+| 查看 Make 任务 | `make help` | `Makefile` |
+| 全仓 Markdown lint | `make lint` | `Makefile` + `.github/lint_config.json` |
+| 提示词格式转换 | `cd assets/repos/prompts-library && python3 main.py` | `assets/repos/prompts-library/main.py` |
+| 完整备份 | `bash assets/repos/backups/一键备份.sh` | `assets/repos/backups/README.md` |
+| Python 备份 | `python3 assets/repos/backups/快速备份.py` | `assets/repos/backups/README.md` |
+| Skill 严格校验示例 | `assets/skills/auto-skill/scripts/validate-skill.sh assets/skills/auto-skill --strict` | `assets/skills/auto-skill/scripts/validate-skill.sh` |
+
+### 配置与 CI
+
+- Markdown lint 配置：`.github/lint_config.json`
+- CI 配置：`.github/workflows/ci.yml`，在 `main` 分支的 push / pull_request 上运行 markdown-lint 与 link-checker
+- Codex 配置基线：`assets/config/.codex/config.toml`
+- Submodule 来源：`.gitmodules`
+
+### 部署
+
+TODO：仓库内没有发现 Dockerfile、docker-compose.yml、K8s/Helm 部署入口或可验证服务端口；如后续新增部署方式，需要同步本节。
+
+</details>
+
+<details>
 <summary><strong>🧪 实验性方法</strong></summary>
 
 ## 🧪 实验性方法
@@ -331,7 +381,7 @@
 │   │       └── AGENTS.md        # Codex/Agent 指南（本目录）
 │   ├── documents/               # 文档库
 │   │   ├── principles/          # 原则与思想（fundamentals + philosophy）
-│   │   │   ├── fundamentals/    # 原 00-基础指南
+│   │   │   ├── fundamentals/    # 基础原则、问题求解、工程范式与代码质量
 │   │   │   └── philosophy/      # 原 05-哲学与方法论
 │   │   ├── guides/              # 入门与方法（getting-started + playbook）
 │   │   │   ├── getting-started/ # 原 01-入门指南
@@ -462,7 +512,7 @@ graph TB
   subgraph infra_layer[基础设施与横切能力层]
     git[Git 版本控制] --> orchestrator
     backups[assets/repos/backups/一键备份.sh · assets/repos/backups/快速备份.py] --> artifacts_md
-    deps[requirements.txt · scripts/requirements.txt] --> orchestrator
+    deps[assets/repos/prompts-library/requirements.txt · assets/repos/prompts-library/scripts/requirements.txt] --> orchestrator
     config[assets/repos/prompts-library/scripts/config.yaml] --> orchestrator
     monitor[预留：日志与监控] --> orchestrator
   end

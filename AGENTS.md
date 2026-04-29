@@ -33,16 +33,19 @@
 # 1. 拉取最新代码
 git pull --rebase origin develop
 
-# 2. 运行 lint 检查
+# 2. 初始化外部仓库指针
+git submodule update --init --recursive
+
+# 3. 运行 lint 检查
 make lint
 
-# 3. 执行修改任务
+# 4. 执行修改任务
 # ...
 
-# 4. 再次 lint 验证
+# 5. 再次 lint 验证
 make lint
 
-# 5. 提交变更
+# 6. 提交变更
 git add -A
 git commit -m "feat|fix|docs|chore: scope - summary"
 git push origin develop
@@ -54,7 +57,7 @@ git push origin develop
 
 ### 环境要求
 - Node.js 16+（用于 markdownlint-cli）
-- Python 3.8+（用于 prompts-library 工具）
+- Python 3.8+（用于 prompts-library 工具与备份脚本）
 - Git
 
 ### 核心命令
@@ -63,9 +66,14 @@ git push origin develop
 |:---|:---|:---|
 | `make help` | 列出所有 Make 目标 | 无 |
 | `make lint` | 校验全仓库 Markdown | 需安装 markdownlint-cli |
+| `git submodule update --init --recursive` | 初始化外部 Git 仓库指针 | Git |
 | `bash assets/repos/backups/一键备份.sh` | 创建完整项目备份 | 无 |
 | `python3 assets/repos/backups/快速备份.py` | Python 版备份脚本 | Python 3.8+ |
-| `cd assets/repos/prompts-library && python3 main.py` | 提示词格式转换 | pandas, openpyxl, PyYAML |
+| `cd assets/repos/prompts-library && python3 main.py` | 提示词格式转换 | `pip install -r assets/repos/prompts-library/requirements.txt` |
+
+### Python 依赖来源
+- prompts-library 主入口依赖：`assets/repos/prompts-library/requirements.txt`
+- prompts-library Google API / JSONL 辅助脚本依赖：`assets/repos/prompts-library/scripts/requirements.txt`
 
 ### prompts-library 支持的转换模式
 1. Excel → Docs：将 Excel 工作簿转换为 Markdown 文档目录
@@ -144,7 +152,7 @@ git push origin develop
 │   │       └── AGENTS.md        # Codex/Agent 指南（本目录）
 │   ├── documents/               # 文档库
 │   │   ├── principles/          # 原则与思想（fundamentals + philosophy）
-│   │   │   ├── fundamentals/    # 原 00-基础指南
+│   │   │   ├── fundamentals/    # 基础原则、问题求解、工程范式与代码质量
 │   │   │   └── philosophy/      # 原 05-哲学与方法论
 │   │   ├── guides/              # 入门与方法（getting-started + playbook）
 │   │   │   ├── getting-started/ # 原 01-入门指南
@@ -190,8 +198,12 @@ git push origin develop
 ### 关键入口文件
 - `README.md` - 项目主文档，面向人类开发者
 - `AGENTS.md` - AI Agent 操作手册（本文件）
+- `.github/lint_config.json` - markdownlint 规则，供 `make lint` 与 CI 共用
+- `.github/workflows/ci.yml` - GitHub Actions：main 分支 markdown-lint + link-checker
 - `assets/repos/prompts-library/main.py` - 提示词转换工具入口
 - `assets/repos/backups/一键备份.sh` - 备份脚本入口
+- `assets/documents/principles/fundamentals/问题求解能力.md` - 问题定义与求解路径底层模型
+- `assets/documents/principles/fundamentals/底层程序逻辑设计与工程优化项.md` - 底层程序逻辑与工程优化检查项
 - `assets/skills/tmux-autopilot/` - tmux 自动化操控技能（基于 oh-my-tmux，含 capture-pane/send-keys/蜂群巡检脚本）
 - `assets/skills/sop-generator/` - SOP 生成与规范化技能（输入资料/需求 -> 标准 SOP）
 
@@ -202,8 +214,9 @@ git push origin develop
 | 问题 | 原因 | 修复 |
 |:---|:---|:---|
 | `make lint` 失败 | 未安装 markdownlint-cli | `npm install -g markdownlint-cli` |
-| prompts-library 报错 | 缺少 Python 依赖 | `pip install pandas openpyxl PyYAML rich InquirerPy` |
-| CI markdown-lint 失败 | `.github/lint_config.json` 缺失 | TODO：新增 `.github/lint_config.json` 或调整 `.github/workflows/ci.yml` 的 lint 命令（需任务明确授权） |
+| prompts-library 报错 | 缺少 Python 依赖 | `pip install -r assets/repos/prompts-library/requirements.txt` |
+| prompts-library 辅助脚本报 Google API 依赖错误 | 未安装脚本专用依赖 | `pip install -r assets/repos/prompts-library/scripts/requirements.txt` |
+| CI markdown-lint 失败 | Markdown 规则违规或本地未按 `.github/lint_config.json` 校验 | 运行 `make lint`，按输出修复对应 Markdown |
 | CI link-checker 失败 | 文档中存在失效链接 | 检查并修复 Markdown 中的链接 |
 | 备份脚本权限不足 | Shell 脚本无执行权限 | `chmod +x assets/repos/backups/一键备份.sh` |
 
