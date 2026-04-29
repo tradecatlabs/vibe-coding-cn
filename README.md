@@ -248,6 +248,8 @@
 *   [**Mermaid Chart**](https://www.mermaidchart.com/): 用于将文本描述转换为架构图、序列图等可视化图表。
 *   [**NotebookLM**](https://notebooklm.google.com/): 一款用于 AI 解读资料、音频和生成思维导图的工具。
 *   [**Zread**](https://zread.ai/): AI 驱动的 GitHub 仓库阅读工具，有助于快速理解项目代码。
+*   [**Git**](https://git-scm.com/): 分布式版本控制工具，用于记录代码变更、分支实验、回滚历史与协作交付。
+*   [**GitHub**](https://github.com/): 代码托管与协作平台，用于远端仓库、Issue、Pull Request、Actions 与项目发布。
 *   [**tmux**](https://github.com/tmux/tmux): 强大的终端复用工具，支持会话保持、分屏和后台任务，是服务器与多项目开发的理想选择。
 *   [**DBeaver**](https://dbeaver.io/): 一款通用数据库管理客户端，支持多种数据库，功能全面。
 
