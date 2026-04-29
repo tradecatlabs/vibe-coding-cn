@@ -72,7 +72,7 @@
 
 > 已有网络和开发环境？直接开始 Vibe Coding！
 
-**第 1 步**：复制下面的提示词，粘贴到 [Claude](https://claude.ai/) 或 [ChatGPT](https://chatgpt.com/)
+**第 1 步**：复制下面的提示词，粘贴到 [ChatGPT](https://chatgpt.com/)
 
 ```
 你是一个专业的 AI 编程助手。我想用 Vibe Coding 的方式开发一个项目。
