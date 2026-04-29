@@ -32,7 +32,6 @@
 <!-- 🔴 核心理念 (红色系) -->
 <p>
 	  <a href="./assets/documents/principles/philosophy/README.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
-	  <a href="./assets/documents/principles/philosophy/理解世界、描述变化、整理知识的一套较小框架.md"><img src="https://img.shields.io/badge/🧱_概念框架-必读-purple?style=for-the-badge" alt="概念框架"></a>
 	  <a href="./assets/documents/guides/getting-started/Vibe%20Coding%20哲学原理.md"><img src="https://img.shields.io/badge/🧠_核心哲学-必读-crimson?style=for-the-badge" alt="核心哲学"></a>
 	  <a href="./assets/documents/guides/getting-started/README.md"><img src="https://img.shields.io/badge/🚀_从零开始-新手入门-red?style=for-the-badge" alt="从零开始"></a>
 	  <a href="./assets/documents/principles/fundamentals/问题求解能力.md"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解能力"></a>
@@ -97,13 +96,6 @@
 
 ### 🚀 从零开始
 
-> **基础前提（建议先看）**：为了让后续所有“方法/步骤/工作流”可被稳定复用，本项目默认使用一套极简概念框架来理解世界、描述变化与整理知识：对象 → 状态 → 快照 → 序列 → 过程 → 变换 → 同一/差异 → 关系。  
-> 阅读：[`理解世界、描述变化、整理知识的一套较小框架`](./assets/documents/principles/philosophy/理解世界、描述变化、整理知识的一套较小框架.md)
-
-#### 理论底座（可选）
-
-- [控制论与科学方法论](./assets/documents/principles/philosophy/控制论与科学方法论.md) - 用“可能性空间/反馈/信息/黑箱/可证伪”解释从试错到收敛的机制，作为做实验与迭代的底层框架
-
 完全新手？按顺序完成以下步骤：
 
 0. [问题求解能力](./assets/documents/principles/fundamentals/问题求解能力.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
@@ -112,7 +104,6 @@
 3. [开发环境搭建](./assets/documents/guides/getting-started/开发环境搭建.md) - 复制提示词给 AI，让 AI 指导你搭建环境
 4. [IDE配置](./assets/documents/guides/getting-started/IDE配置.md) - 配置 VS Code 编辑器
 5. [OpenCode-CLI配置](./assets/documents/guides/getting-started/OpenCode-CLI配置.md) - 免费 AI CLI 工具，支持 GLM-4.7/MiniMax M2.1 等模型
-6. [数据集导向数据服务模板](./assets/documents/principles/fundamentals/数据集导向数据服务模板.md) - 以 dataset/contract/registry/runtime 为核心的数据采集服务通用架构模板
 
 </details>
 
@@ -120,10 +111,6 @@
 <summary><strong>🧪 实验性方法</strong></summary>
 
 ## 🧪 实验性方法
-
-> **基础前提**：本节中的“实验性范式/方法论工具箱”默认共享同一套概念框架（对象/状态/快照/序列/过程/变换/同一-差异/关系），并默认以 Harness Engineering 的闭环与评估机制作为可靠性来源，否则术语会漂移、实践会失焦。  
-> 阅读：[`Harness Engineering 的本质拆解`](./assets/documents/principles/fundamentals/Harness%20Engineering%20的本质拆解.md)  
-> 阅读：[`理解世界、描述变化、整理知识的一套较小框架`](./assets/documents/principles/philosophy/理解世界、描述变化、整理知识的一套较小框架.md)
 
 > 下面是一些“可能随时推翻重写”的实验性方法与范式：先看一眼，觉得对你有用再深入。
 
