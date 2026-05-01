@@ -57,6 +57,8 @@ skills/auto-skill/scripts/.venv-skill-seekers/
 # prompts-library generated exports
 tools/prompts-library/prompt_jsonl/
 tools/external/my-nvim/nvim-config/nvim
+tools/chat-vault/libs/external/btop-main/
+tools/chat-vault/monitoring/grafana/monitor-tui/
 
 libs/external/tmux
 libs/external/.tmux

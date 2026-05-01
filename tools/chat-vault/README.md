@@ -55,7 +55,7 @@ chat-vault/
 ├── libs/
 │   ├── common/              # 共享库（预留）
 │   ├── database/            # 数据库工具（预留）
-│   └── external/            # 外部依赖镜像
+│   └── external/            # 外部依赖入口（不提交整份第三方源码）
 ├── monitoring/
 │   ├── grafana/             # Grafana 配置
 │   ├── prometheus/          # Prometheus 配置（预留）
@@ -69,6 +69,8 @@ chat-vault/
 ├── README.md
 └── LICENSE
 ```
+
+外部监控工具（例如 btop）按需通过系统包管理器、官方仓库或 Git submodule 引入，不在本仓库内直接提交完整源码镜像。
 
 ## 常用命令
 

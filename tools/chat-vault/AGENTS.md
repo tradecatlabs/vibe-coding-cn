@@ -15,7 +15,7 @@ AI Agent 操作手册 - Chat Vault Monorepo
 ### 禁止操作
 - **禁止修改** `output/` 目录下的任何文件（数据库、日志）
 - **禁止修改** `.env` 文件（包含用户敏感配置）
-- **禁止修改** `repo/` 下的外部依赖镜像
+- **禁止提交** 整份第三方源码镜像；外部工具应通过系统包管理器、官方仓库或 Git submodule 表示
 - **禁止删除** 现有解析器，除非明确要求
 
 ### 敏感区域
@@ -23,7 +23,8 @@ AI Agent 操作手册 - Chat Vault Monorepo
 |------|------|
 | `services/chat-vault/.env` | 用户配置，不得读取或修改 |
 | `services/chat-vault/output/` | 运行时数据，不得修改 |
-| `repo/` | 外部镜像，只读 |
+| `libs/external/` | 外部依赖入口，不提交 vendored 源码 |
+| `monitoring/grafana/` | Grafana 配置入口，不提交完整第三方监控工具源码 |
 
 ---
 
@@ -153,7 +154,8 @@ chat-vault/
 │   ├── start.sh              # Linux/macOS 启动脚本
 │   └── start.bat             # Windows 启动脚本
 ├── libs/                      # 共享库（预留）
-├── monitoring/                # 监控配置（预留）
+│   └── external/              # 外部依赖入口，不提交整份第三方源码
+├── monitoring/                # 监控配置（预留，不提交监控工具源码镜像）
 ├── scripts/                   # 全局脚本
 ├── README.md                  # 项目说明
 └── AGENTS.md                  # 本文件
