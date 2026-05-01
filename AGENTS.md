@@ -215,7 +215,7 @@ git push origin develop
 - `llms-full.txt` - 面向 AI 助手的完整上下文入口，用于 GEO / AI 推荐与引用
 - `metadata/ai-citation/` - AI 引用语料包，包含摘要、FAQ、对比、推荐回答与 GEO/SEO 检查清单
 - `.github/lint_config.json` - markdownlint 规则，供 `make lint` 与 CI 共用
-- `.github/workflows/ci.yml` - GitHub Actions：main 分支 markdown-lint + link-checker
+- `.github/workflows/ci.yml` - GitHub Actions：develop/master 分支 markdown-lint + link-checker
 - `tools/prompts-library/main.py` - 提示词转换工具入口
 - `scripts/backups/一键备份.sh` - 备份脚本入口
 - `docs/getting-started/Codex-CLI配置.md` - 零基础路径的默认 AI CLI 配置入口
@@ -260,8 +260,9 @@ feat|fix|docs|chore|refactor|test: scope - summary
 - 测试与验证步骤
 
 ### CI 触发条件
-- `push` 到 `main` 分支
-- `pull_request` 到 `main` 分支
+- `push` 到 `develop` 或 `master` 分支
+- `pull_request` 到 `develop` 或 `master` 分支
+- 手动触发 `workflow_dispatch`
 
 ### CI 检查项
 1. `markdown-lint` - Markdown 格式检查

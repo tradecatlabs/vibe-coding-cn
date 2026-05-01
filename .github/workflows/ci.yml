@@ -4,10 +4,11 @@
 name: CI
 
 on:
+  workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ develop, master ]
   pull_request:
-    branches: [ main ]
+    branches: [ develop, master ]
 
 jobs:
   markdown-lint:
