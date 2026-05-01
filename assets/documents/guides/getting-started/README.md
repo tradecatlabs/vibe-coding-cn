@@ -10,7 +10,6 @@
 3. [开发环境搭建](./开发环境搭建.md) - 搭建 Git、Node.js、Python、编辑器等基础环境
 4. [IDE 配置](./IDE配置.md) - 配置编辑器
 5. [Codex CLI 配置](./Codex-CLI配置.md) - 默认 AI CLI 路线
-6. [OpenCode CLI 配置](./OpenCode-CLI配置.md) - 备选 AI CLI 路线
 
 ## 🔗 相关资源
 - [基础指南](../../principles/fundamentals/) - 核心理念与方法论
