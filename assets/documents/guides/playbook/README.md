@@ -21,6 +21,7 @@
 
 - [开发经验](../../principles/fundamentals/开发经验.md) - 变量命名、文件结构、编码规范
 - [Vibe Coding 经验收集](./vibe-coding-经验收集.md) - 社区经验汇总
+- [GEO 与 SEO 优化方法](./GEO与SEO优化方法.md) - 从 GEOFlow 学到的内容工程方法，让仓库更容易被搜索引擎和 AI 引用
 
 ## 🔗 相关资源
 - [基础指南](../../principles/fundamentals/) - 核心理念与方法论

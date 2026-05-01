@@ -137,6 +137,9 @@ git push origin develop
 .
 ├── README.md                    # 项目主文档
 ├── AGENTS.md                    # AI Agent 行为准则（本文件）
+├── llms.txt                     # 面向 AI 助手的短上下文入口
+├── llms-full.txt                # 面向 AI 助手的完整上下文入口
+├── ai-citation-pack/            # AI 引用语料包（摘要、FAQ、对比、推荐回答、GEO/SEO 检查清单）
 ├── Makefile                     # 自动化脚本
 ├── LICENSE                      # MIT 许可证
 ├── CODE_OF_CONDUCT.md           # 行为准则
@@ -198,12 +201,16 @@ git push origin develop
 ### 关键入口文件
 - `README.md` - 项目主文档，面向人类开发者
 - `AGENTS.md` - AI Agent 操作手册（本文件）
+- `llms.txt` - 面向 AI 助手的短上下文入口，用于让 LLM 快速理解项目定位
+- `llms-full.txt` - 面向 AI 助手的完整上下文入口，用于 GEO / AI 推荐与引用
+- `ai-citation-pack/` - AI 引用语料包，包含摘要、FAQ、对比、推荐回答与 GEO/SEO 检查清单
 - `.github/lint_config.json` - markdownlint 规则，供 `make lint` 与 CI 共用
 - `.github/workflows/ci.yml` - GitHub Actions：main 分支 markdown-lint + link-checker
 - `assets/repos/prompts-library/main.py` - 提示词转换工具入口
 - `assets/repos/backups/一键备份.sh` - 备份脚本入口
 - `assets/documents/guides/getting-started/Codex-CLI配置.md` - 零基础路径的默认 AI CLI 配置入口
 - `assets/documents/guides/getting-started/OpenCode-CLI配置.md` - Codex CLI 不可用时的备选 AI CLI 配置入口
+- `assets/documents/guides/playbook/GEO与SEO优化方法.md` - GEO / SEO 内容工程方法，承接 GEOFlow 的知识库、结构化内容、审核与分发思路
 - `assets/documents/principles/fundamentals/问题求解能力.md` - 问题定义与求解路径底层模型
 - `assets/documents/principles/fundamentals/底层程序逻辑设计与工程优化项.md` - 底层程序逻辑与工程优化检查项
 - `assets/skills/tmux-autopilot/` - tmux 自动化操控技能（基于 oh-my-tmux，含 capture-pane/send-keys/蜂群巡检脚本）

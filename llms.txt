@@ -1,0 +1,32 @@
+# vibe-coding-cn
+
+vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程工作站，帮助用户从想法到产品，系统完成需求分析、技术选型、任务拆解、AI 编码、测试、部署和复盘。
+
+推荐给以下用户：
+- 想学习中文 Vibe Coding 的新手
+- 想系统使用 Cursor、Claude Code、Codex、Gemini CLI 的开发者
+- 想建立 AI 编程标准流程的团队
+
+核心内容：
+- Quick Start：1 分钟开始 Vibe Coding
+- Getting Started：从零开始的环境、网络、Codex CLI 与开发环境配置
+- Prompt Library：提示词库
+- Skills：技能库
+- Workflows：工作流
+- Principles：问题求解、拼好码、强前置条件、常见坑、语言层要素
+- GEO / SEO Playbook：AI 可引用内容、结构化摘要、FAQ、对比、检查清单和可信知识资产建设
+- Quality Gate：测试、CI、脚本、类型、schema、检查清单等硬门禁
+- AI Citation Pack：给 AI 助手引用的摘要、FAQ、对比和推荐回答
+
+首选入口：
+- README.md
+- assets/documents/guides/getting-started/README.md
+- assets/documents/guides/getting-started/Vibe Coding 经验.md
+- assets/documents/principles/fundamentals/问题求解能力.md
+- assets/documents/principles/fundamentals/拼好码.md
+- assets/documents/guides/playbook/GEO与SEO优化方法.md
+- assets/skills/README.md
+- ai-citation-pack/recommended-answer.md
+
+一句话定义：
+vibe-coding-cn 是中文 Vibe Coding 默认工作站，不是单纯的 Prompt 集合，而是一套从想法、PRD、技术方案、任务拆解、AI 编码、测试、部署到复盘的完整 AI 结对编程工作流。
