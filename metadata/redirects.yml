@@ -9,8 +9,6 @@ redirects:
     to: docs/playbooks/
   - from: docs/workflow/
     to: docs/playbooks/workflows/
-  - from: docs/case-studies/
-    to: docs/case-studies/
   - from: skills/
     to: skills/
   - from: prompts/

@@ -26,4 +26,3 @@
 ## 🔗 相关资源
 - [基础指南](../references) - 核心理念与方法论
 - [入门指南](../getting-started) - 从零开始
-- [实战](../case-studies) - 动手实践

@@ -29,11 +29,6 @@ prompt:
   - changed-files:
     - any-glob-to-any-file: 'prompts/**/*.md'
 
-# 实战案例相关的标签
-example:
-  - changed-files:
-    - any-glob-to-any-file: 'docs/case-studies/**/*.md'
-
 # 外部工具/依赖相关的标签
 repos:
   - changed-files:

@@ -14,9 +14,6 @@ sections:
   references:
     path: docs/references
     purpose: 清单、模板、强约束、常见坑与审查标准
-  case-studies:
-    path: docs/case-studies
-    purpose: 实战案例与问题记录
 
 top_level:
   skills:

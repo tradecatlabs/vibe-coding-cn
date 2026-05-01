@@ -154,7 +154,6 @@ git push origin develop
 │   ├── guides/                  # 操作指南预留区
 │   ├── playbooks/               # 可复用流程、工具方法与工作流
 │   ├── references/              # 清单、约束、常见坑、审查标准
-│   ├── case-studies/            # 实战案例与问题记录
 │   └── faq.md                   # 高频问题
 │
 ├── prompts/                     # 提示词库入口（指向云端表格）
@@ -314,7 +313,7 @@ bash scripts/backups/一键备份.sh
 ### Core Directories
 - **`prompts/`**: 提示词库入口（指向云端表格）
 - **`skills/`**: 扁平化技能库（详见 skills/README.md）
-- **`docs/`**: 知识库（principles、guides、case-studies）
+- **`docs/`**: 知识库（getting-started、concepts、guides、playbooks、references）
 - **`assets/`**: 外部资源（在线表格）入口与使用说明
 - **`tools/prompts-library/`**: Excel ↔ Markdown 转换工具
 - **`tools/chat-vault/`**: AI 聊天记录保存工具

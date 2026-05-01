@@ -456,43 +456,20 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ├── CONTRIBUTING.md              # 贡献指南
 ├── .gitignore                   # Git 忽略规则
 │
-├── assets/                      # 外部资源（指向在线表格）
-│   ├── README.md                # 远程表格索引（唯一真相源）
-│   ├── AGENTS.md                # assets/ 目录规则
-│   ├── config/                  # 工具与开发配置
-│   │   └── .codex/              # Codex CLI 配置（项目级）
-│   │       ├── config.toml      # Codex CLI 配置文件
-│   │       └── AGENTS.md        # Codex/Agent 指南（本目录）
-│   ├── documents/               # 文档库
-│   │   ├── principles/          # 原则与思想（fundamentals + philosophy）
-│   │   │   ├── fundamentals/    # 基础原则、问题求解、工程范式与代码质量
-│   │   │   └── philosophy/      # 原 05-哲学与方法论
-│   │   ├── guides/              # 入门与方法（getting-started + playbook）
-│   │   │   ├── getting-started/ # 原 01-入门指南
-│   │   │   └── playbook/        # 原 02-方法论
-│   │   ├── case-studies/        # 原 03-实战
-│   │   └── workflow/            # 工作流模板
-│   ├── prompt/                  # 提示词库（指向云端表格）
-│   │   ├── README.md            # 在线表格链接
-│   │   └── AGENTS.md            # prompt/ 目录规则
-│   ├── skills/                  # 技能库（扁平化）
-│   │   ├── README.md            # skills 总览与索引
-│   │   ├── AGENTS.md            # skills/ 目录规则
-│   │   ├── auto-skill/          # 元技能核心
-│   │   └── claude-official-skills/ # Claude 官方 skills 软链接入口
-│   └── repos/                   # 外部工具与依赖镜像（含 Git submodule）
-│       ├── README.md            # 外部工具索引
-│       ├── prompts-library/     # Excel ↔ Markdown 互转工具，含内部 JSONL Excel 拆分导出
-│       ├── chat-vault/          # AI 聊天记录保存工具
-│       ├── Skill_Seekers-development/ # Skills 制作器 (submodule)
-│       ├── html-tools-main/     # HTML 工具集
-│       ├── my-nvim/             # Neovim 配置
-│       ├── MCPlayerTransfer/    # MC 玩家迁移工具
-│       ├── XHS-image-to-PDF-conversion/ # 小红书图片转 PDF
-│       ├── backups/             # 历史备份脚本快照
-│       ├── .tmux/               # oh-my-tmux (submodule)
-│       ├── tmux/                # tmux 源码 (submodule)
-│       └── claude-official-skills/ # Claude 官方 skills (submodule)
+├── docs/                        # 核心知识库
+│   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
+│   ├── concepts/                # 核心概念、方法论与底层模型
+│   ├── guides/                  # 操作指南
+│   ├── playbooks/               # 可复用流程、工具方法与工作流
+│   └── references/              # 清单、约束、常见坑、审查标准
+├── prompts/                     # 提示词库入口（指向云端表格）
+├── skills/                      # 技能库入口
+│   ├── auto-skill/              # 元技能核心
+│   └── claude-official-skills/  # Claude 官方 skills 软链接入口
+├── tools/                       # 辅助工具、外部仓库与工具配置
+├── scripts/                     # 自动化脚本
+├── metadata/                    # 机器可读索引与 AI 引用资产
+├── assets/                      # 静态资产与外部资源入口
 │
 ├── .github/                     # GitHub 配置
 │   ├── workflows/               # CI/CD 工作流
@@ -531,7 +508,7 @@ prompts/
 skills/
   README.md  # skills 总览与索引
 docs/
-  principles/fundamentals/*, principles/philosophy/*, guides/*, case-studies/* 等知识库
+  getting-started/*, concepts/*, guides/*, playbooks/*, references/* 等知识库
 assets/
   README.md  # 外部资源（在线表格）唯一真相源入口
 scripts/backups/

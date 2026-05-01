@@ -13,3 +13,4 @@
 - 清退 `tools/chat-vault/monitoring/grafana/monitor-tui/` 中误提交的第三方 btop 源码镜像，降低仓库噪音与语言统计污染。
 - 创建 `baseline-skill-cleanup-20260502-041941` 基线标签，开始清理领域型/工具型 Skills。
 - 清退 `ccxt`、`claude-code-guide`、`claude-cookbooks`、`coingecko`、`cryptofeed`、`ddd-doc-steward`、`headless-cli`、`hummingbot`、`markdown-to-epub`、`polymarket`、`postgresql`、`proxychains`、`snapdom`、`sop-generator`、`telegram-dev`、`timescaledb`、`tmux-autopilot`、`twscrape` 等 Skill 目录，仅保留 `auto-skill` 与 Claude 官方 skills 软链接入口。
+- 清退 `docs/case-studies/` 实战案例目录，并同步更新 docs 索引、目录级 AGENTS、metadata、labeler 和相关 README 链接口径。
