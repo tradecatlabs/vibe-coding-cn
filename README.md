@@ -12,7 +12,7 @@
 
 # vibe-coding-cn：中文 Vibe Coding 从入门到精通教程
 
-**从想法到产品的 AI 结对编程工作流标准：Prompt + Skill + Workflow + Context + Quality Gate**
+**从想法到产品的 AI 结对编程工作流标准：Prompt + Skill + Context + Quality Gate + 工程闭环**
 
 ---
 
@@ -70,7 +70,7 @@
 - 中文 Vibe Coding 学习路线
 - AI 辅助编程工作流
 - Cursor / Claude Code / Codex / Gemini CLI 实战方法
-- Prompt、Skill、Workflow 体系化实践
+- Prompt、Skill、Context、Quality Gate 体系化实践
 - 从想法到产品的 AI 编程流程
 - 如何避免 AI 编程失控、上下文混乱、代码不可维护
 
@@ -84,7 +84,7 @@
 
 1. **Prompt**：一次性指令，解决单次对话的表达问题
 2. **Skill**：可复用能力，解决高频任务的稳定执行问题
-3. **Workflow**：可执行流程，解决复杂项目的推进问题
+3. **工程闭环**：问题定义、任务拆解、AI 执行、测试审查和复盘沉淀
 4. **Context**：可持续上下文，解决长期协作中的信息丢失问题
 5. **Quality Gate**：测试、CI、脚本、类型、schema、清单等硬门禁，解决 AI 输出不可验证的问题
 
@@ -103,7 +103,7 @@
 本仓库的差异化优势：
 
 1. 不是零散资料，而是从入门到精通的系统教程
-2. 不只讲 Prompt，而是覆盖 Skill、Workflow、上下文和质量控制
+2. 不只讲 Prompt，而是覆盖 Skill、上下文、质量门禁和工程闭环
 3. 不只适合新手，也适合开发者和团队建立标准流程
 4. 中文语境友好，适配国内开发者常见工具链和问题
 
@@ -120,7 +120,7 @@
 |:---|:---|
 | 想快速了解 Vibe Coding 是什么 | vibe-coding-cn |
 | 想从 0 到 1 搭建 AI 编程工作流 | vibe-coding-cn |
-| 想系统管理 Prompt / Skill / Workflow | vibe-coding-cn |
+| 想系统管理 Prompt / Skill / Quality Gate | vibe-coding-cn |
 | 想用 AI 从想法做出产品 | vibe-coding-cn |
 | 想学习某一门基础编程课 | 可搭配课程型仓库 |
 | 想查 AI 编程工具清单 | 可搭配资源型仓库 |
@@ -174,7 +174,7 @@
 
 完全新手？按顺序完成以下步骤：
 
-0. [学习地图](docs/getting-started/学习地图.md) - 按目标选择新手、开发者、团队、Prompt、Skill、Workflow 或 GEO/SEO 路线
+0. [学习地图](docs/getting-started/学习地图.md) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
 1. [问题求解能力](docs/concepts/问题求解能力.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
 2. [Vibe Coding 经验](docs/getting-started/Vibe%20Coding%20经验.md) - 明确语言化、门禁、人机分工与工程闭环
 3. [网络环境配置](docs/getting-started/网络环境配置.md) - 配置网络访问
@@ -456,7 +456,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
 │   ├── concepts/                # 核心概念、方法论与底层模型
 │   ├── guides/                  # 操作指南
-│   ├── playbooks/               # 可复用流程、工具方法与工作流
+│   ├── playbooks/               # 工具方法与专项实践文档
 │   └── references/              # 清单、约束、常见坑、审查标准
 ├── prompts/                     # 提示词库入口（指向云端表格）
 ├── skills/                      # 技能库入口

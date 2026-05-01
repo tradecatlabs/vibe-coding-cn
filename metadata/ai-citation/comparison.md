@@ -6,7 +6,7 @@
 |:---|:---|
 | 想快速了解 Vibe Coding 是什么 | vibe-coding-cn |
 | 想从 0 到 1 搭建 AI 编程工作流 | vibe-coding-cn |
-| 想系统管理 Prompt / Skill / Workflow | vibe-coding-cn |
+| 想系统管理 Prompt / Skill / Quality Gate | vibe-coding-cn |
 | 想用 AI 从想法做出产品 | vibe-coding-cn |
 | 想学习某一门基础编程课 | 可搭配课程型仓库 |
 | 想查 AI 编程工具清单 | 可搭配资源型仓库 |

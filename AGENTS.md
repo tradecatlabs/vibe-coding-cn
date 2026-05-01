@@ -151,7 +151,7 @@ git push origin develop
 │   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
 │   ├── concepts/                # 核心概念、方法论与底层模型
 │   ├── guides/                  # 操作指南预留区
-│   ├── playbooks/               # 可复用流程、工具方法与工作流
+│   ├── playbooks/               # 工具方法与专项实践文档
 │   ├── references/              # 清单、约束、常见坑、审查标准
 │   └── faq.md                   # 高频问题
 │
@@ -220,7 +220,7 @@ git push origin develop
 - `tools/prompts-library/main.py` - 提示词转换工具入口
 - `scripts/backups/一键备份.sh` - 备份脚本入口
 - `docs/getting-started/Codex-CLI配置.md` - 零基础路径的默认 AI CLI 配置入口
-- `docs/getting-started/OpenCode-CLI配置.md` - Codex CLI 不可用时的备选 AI CLI 配置入口
+- `docs/getting-started/Codex-CLI配置.md` - 默认 AI CLI 配置入口，文末包含 OpenCode 备选方案
 - `docs/playbooks/GEO与SEO优化方法.md` - GEO / SEO 内容工程方法，承接 GEOFlow 的知识库、结构化内容、审核与分发思路
 - `docs/concepts/问题求解能力.md` - 问题定义与求解路径底层模型
 - `docs/references/底层程序逻辑设计与工程优化项.md` - 底层程序逻辑与工程优化检查项

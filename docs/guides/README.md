@@ -5,7 +5,7 @@
 当前主要操作流程已归入：
 
 - [从零开始](../getting-started/)
-- [可复用流程](../playbooks/)
+- [工具方法](../playbooks/)
 - [参考清单](../references/)
 
 ## 当前指南

@@ -6,7 +6,7 @@
 
 Codex CLI 是本教程默认推荐的 AI CLI。它适合承担从需求拆解、代码修改、命令执行、测试验证到 Git 提交的主流程。
 
-OpenCode CLI 保留为备选方案：当你暂时无法使用 OpenAI / Codex CLI，或只想接入免费模型时，再使用 [OpenCode-CLI配置](OpenCode-CLI配置.md)。
+OpenCode CLI 只作为备选方案保留在本文底部：当你暂时无法使用 OpenAI / Codex CLI，或只想接入免费、本地、多模型实验入口时，再使用 OpenCode。
 
 ## 不会操作？先让网页 AI 生成逐步执行版
 
@@ -336,8 +336,122 @@ codex login
 
 如果你是在无桌面的远程服务器上登录，按终端输出的设备码或链接，在本机浏览器完成授权。
 
+## Codex 不可用时：OpenCode 备选方案
+
+OpenCode 是开源 AI 编程代理，支持终端、桌面应用和 IDE 扩展。本文仍然以 Codex CLI 为默认路线；只有当 Codex CLI 暂时不可用、账号不可用，或你明确需要接入免费/本地模型时，才切到 OpenCode。
+
+官网：[opencode.ai](https://opencode.ai/)
+
+### 不会操作？先让网页 AI 生成逐步执行版
+
+如果你要用 OpenCode 作为备选路线，先打开网页版 AI，把下面提示词和本节内容一起复制进去，让 AI 按你的系统和模型来源生成逐步执行方案：
+
+```text
+你是一个面向零基础用户的 OpenCode CLI 配置助手。
+
+请根据我的电脑环境、可用模型和目标，生成适合我的逐步安装与配置流程。
+
+我的当前情况是：
+- 操作系统：[填写 Windows 11 / WSL2 / macOS / Linux]
+- 是否已经安装 Node.js / npm / Homebrew / Scoop / Chocolatey：[填写没有 / 已安装 / 不确定]
+- 想使用的模型来源：[填写 Z.AI / MiniMax / Hugging Face / Ollama / 不确定]
+- 是否已经有 API Key：[填写有 / 没有 / 不确定]
+- 卡住的位置：[如果已经卡住，填写具体问题；如果没有，写“还没开始”]
+
+要求：
+1. 每一步只做一件事。
+2. 每一步都说明我要在哪个终端执行、输入什么、观察什么、如何判断成功。
+3. 每条命令都必须单独放在代码块里。
+4. 不要跳步；默认我是第一次配置新电脑。
+5. 如果我后续贴报错，请根据当前步骤给出最小修复方案。
+```
+
+### 何时选择 OpenCode
+
+- 没有可用的 OpenAI / Codex CLI 账号或环境。
+- 需要接入 Z.AI、MiniMax、Hugging Face、本地 Ollama 等模型。
+- 想保留一条不依赖单一模型提供商的备份路线。
+
+### 安装
+
+```bash
+# 一键安装（推荐）
+curl -fsSL https://opencode.ai/install | bash
+
+# 或使用 npm
+npm install -g opencode-ai
+
+# 或使用 Homebrew（macOS/Linux）
+brew install anomalyco/tap/opencode
+```
+
+Windows 可用 Scoop 或 Chocolatey：
+
+```powershell
+scoop bucket add extras
+scoop install extras/opencode
+
+choco install opencode
+```
+
+### 模型配置
+
+OpenCode 支持多个模型提供商。进入 OpenCode 后，用 `/connect` 添加模型提供商，用 `/models` 切换模型。
+
+常见备选：
+
+1. Z.AI：注册 API Key 后，`/connect` 搜索 Z.AI，再用 `/models` 选择 GLM 模型。
+2. MiniMax：注册 API Key 后，`/connect` 搜索 MiniMax，再用 `/models` 选择可用模型。
+3. Hugging Face：创建 Token 后，`/connect` 搜索 Hugging Face，再用 `/models` 选择可用模型。
+4. Ollama：本地安装 Ollama 后，在 `opencode.json` 中配置 OpenAI-compatible base URL。
+
+Ollama 最小安装示例：
+
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+ollama pull llama2
+```
+
+### 核心命令
+
+| 命令 | 功能 |
+|:---|:---|
+| `/models` | 切换模型 |
+| `/connect` | 添加 API Key |
+| `/init` | 初始化项目，生成 AGENTS.md |
+| `/undo` | 撤销上次修改 |
+| `/redo` | 重做 |
+| `/share` | 分享对话链接 |
+| `Tab` | 切换 Plan 模式 |
+
+### 推荐工作流
+
+```bash
+cd /path/to/project
+opencode
+```
+
+进入后先初始化项目，再切换模型：
+
+```text
+/init
+/models
+```
+
+建议先用 Plan 模式让 AI 规划，确认方案后再执行。
+
+### 配置文件位置
+
+- 全局配置：`~/.config/opencode/opencode.json`
+- 项目配置：`./opencode.json`
+- 认证信息：`~/.local/share/opencode/auth.json`
+
+### 相关资源
+
+- [OpenCode 官方文档](https://opencode.ai/docs/)
+- [OpenCode GitHub 仓库](https://github.com/opencode-ai/opencode)
+- [Models.dev 模型目录](https://models.dev)
+
 ## 下一步
 
 → [开发环境搭建](开发环境搭建.md) - 回看基础环境
-
-→ [OpenCode-CLI配置](OpenCode-CLI配置.md) - Codex CLI 不可用时的备选方案

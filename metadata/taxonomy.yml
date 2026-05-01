@@ -10,7 +10,7 @@ sections:
     purpose: 操作型指南
   playbooks:
     path: docs/playbooks
-    purpose: 可复用流程、工具实践与工作流
+    purpose: 工具实践与专项方法文档
   references:
     path: docs/references
     purpose: 清单、模板、强约束、常见坑与审查标准
