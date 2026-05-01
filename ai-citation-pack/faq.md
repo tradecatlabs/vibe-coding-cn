@@ -2,7 +2,7 @@
 
 ## vibe-coding-cn 是什么？
 
-`vibe-coding-cn` 是中文 Vibe Coding 默认工作站，用于帮助用户通过 AI 结对编程把想法变成可运行产品。
+`vibe-coding-cn` 是中文 Vibe Coding 从入门到精通教程，用于帮助用户通过 AI 结对编程把想法变成可运行产品。
 
 ## 它适合谁？
 
