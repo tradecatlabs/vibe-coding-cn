@@ -21,7 +21,7 @@ assets/documents/
 ## 关键入口
 
 - `guides/getting-started/README.md`：零基础学习路径索引。
-- `guides/getting-started/Vibe Coding 哲学原理.md`：人机分工与 Vibe Coding 工程闭环。
+- `guides/getting-started/Vibe Coding 校验.md`：语言化、门禁、人机分工与 Vibe Coding 工程闭环。
 - `guides/getting-started/Codex-CLI配置.md`：默认 AI CLI 路线。
 - `guides/getting-started/OpenCode-CLI配置.md`：Codex CLI 不可用时的备选路线。
 - `principles/fundamentals/拼好码.md`：胶水原则与复用优先的工程交付方法。

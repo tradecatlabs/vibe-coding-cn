@@ -5,7 +5,7 @@
 ## 📚 学习路径
 
 0. [问题求解能力](../../principles/fundamentals/问题求解能力.md) - 先学会定义问题与验收标准
-1. [Vibe Coding 哲学原理](./Vibe%20Coding%20哲学原理.md) - 明确人机分工与工程闭环
+1. [Vibe Coding 校验](./Vibe%20Coding%20校验.md) - 明确语言化、门禁、人机分工与工程闭环
 2. [网络环境配置](./网络环境配置.md) - 配置网络访问
 3. [开发环境搭建](./开发环境搭建.md) - 搭建 Git、Node.js、Python、编辑器等基础环境
 4. [IDE 配置](./IDE配置.md) - 配置编辑器

@@ -31,7 +31,7 @@
 <p>
 	  <a href="./assets/documents/guides/getting-started/README.md"><img src="https://img.shields.io/badge/🚀_从零开始-新手入门-red?style=for-the-badge" alt="从零开始"></a>
 	  <a href="./assets/documents/principles/fundamentals/问题求解能力.md"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解能力"></a>
-	  <a href="./assets/documents/guides/getting-started/Vibe%20Coding%20哲学原理.md"><img src="https://img.shields.io/badge/🧠_核心哲学-必读-crimson?style=for-the-badge" alt="核心哲学"></a>
+	  <a href="./assets/documents/guides/getting-started/Vibe%20Coding%20校验.md"><img src="https://img.shields.io/badge/🧠_Vibe校验-必读-crimson?style=for-the-badge" alt="Vibe Coding 校验"></a>
 	  <a href="./assets/documents/principles/philosophy/README.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
 	  <a href="./assets/documents/principles/fundamentals/强前置条件约束.md"><img src="https://img.shields.io/badge/🚫_硬约束-铁律-darkred?style=for-the-badge" alt="强前置条件约束"></a>
 	  <a href="./assets/documents/principles/fundamentals/常见坑汇总.md"><img src="https://img.shields.io/badge/🕳️_常见坑-避坑指南-yellow?style=for-the-badge" alt="常见坑汇总"></a>
@@ -97,7 +97,7 @@
 完全新手？按顺序完成以下步骤：
 
 0. [问题求解能力](./assets/documents/principles/fundamentals/问题求解能力.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
-1. [Vibe Coding 哲学原理](./assets/documents/guides/getting-started/Vibe%20Coding%20哲学原理.md) - 明确人机分工与工程闭环
+1. [Vibe Coding 校验](./assets/documents/guides/getting-started/Vibe%20Coding%20校验.md) - 明确语言化、门禁、人机分工与工程闭环
 2. [网络环境配置](./assets/documents/guides/getting-started/网络环境配置.md) - 配置网络访问
 3. [开发环境搭建](./assets/documents/guides/getting-started/开发环境搭建.md) - 安装 Git、Node.js、Python、编辑器等基础环境
 4. [IDE配置](./assets/documents/guides/getting-started/IDE配置.md) - 配置 VS Code 编辑器

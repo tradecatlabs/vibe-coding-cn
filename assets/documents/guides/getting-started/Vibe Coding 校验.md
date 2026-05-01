@@ -1,4 +1,4 @@
-# Vibe Coding 哲学原理
+# Vibe Coding 校验
 
 > 用自然语言定义目标，用 AI CLI 执行工程动作，用文档、测试与 Git 固化结果。
 

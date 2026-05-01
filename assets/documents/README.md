@@ -33,7 +33,7 @@ assets/documents/
 4. **底层** → [底层程序逻辑设计与工程优化项](./principles/fundamentals/底层程序逻辑设计与工程优化项.md)
 5. **思维** → [philosophy](./principles/philosophy/README.md)
 6. **理念** → [拼好码（胶水原则）](./principles/fundamentals/拼好码.md)
-7. **入门** → [Vibe Coding 哲学原理](./guides/getting-started/Vibe%20Coding%20哲学原理.md)
+7. **校验** → [Vibe Coding 校验](./guides/getting-started/Vibe%20Coding%20校验.md)
 8. **环境** → [开发环境搭建](./guides/getting-started/开发环境搭建.md)
 9. **默认 CLI** → [Codex CLI 配置](./guides/getting-started/Codex-CLI配置.md)
 10. **工具** → [tmux 快捷键](./guides/playbook/tmux快捷键大全.md)
