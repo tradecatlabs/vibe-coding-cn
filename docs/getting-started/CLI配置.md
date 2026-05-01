@@ -1,4 +1,4 @@
-# Codex CLI 配置
+# CLI 配置
 
 > 默认 AI CLI 路线：假设你拿到的是一台全新电脑，从 0 安装系统依赖、Node.js、Codex CLI，然后用浏览器完成 Codex 登录。
 
@@ -235,7 +235,7 @@ $env:OPENAI_API_KEY | codex login --with-api-key
 
 ## 使用仓库配置基线
 
-本仓库已经提供 Codex CLI 配置基线：
+本仓库已经提供 CLI 配置基线：
 
 - `tools/config/.codex/config.toml`
 - `tools/config/.codex/AGENTS.md`

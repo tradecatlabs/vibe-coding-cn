@@ -219,8 +219,7 @@ git push origin develop
 - `docs/guides/仓库维护与质量门禁.md` - 仓库维护、迁移检查和质量门禁指南
 - `tools/prompts-library/main.py` - 提示词转换工具入口
 - `scripts/backups/一键备份.sh` - 备份脚本入口
-- `docs/getting-started/Codex-CLI配置.md` - 零基础路径的默认 AI CLI 配置入口
-- `docs/getting-started/Codex-CLI配置.md` - 默认 AI CLI 配置入口，文末包含 OpenCode 备选方案
+- `docs/getting-started/CLI配置.md` - 默认 AI CLI 配置入口，文末包含 OpenCode 备选方案
 - `docs/playbooks/GEO与SEO优化方法.md` - GEO / SEO 内容工程方法，承接 GEOFlow 的知识库、结构化内容、审核与分发思路
 - `docs/concepts/问题求解能力.md` - 问题定义与求解路径底层模型
 - `docs/references/底层程序逻辑设计与工程优化项.md` - 底层程序逻辑与工程优化检查项

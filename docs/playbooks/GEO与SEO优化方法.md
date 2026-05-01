@@ -73,7 +73,7 @@ GEOFlow 有关键词库，但目标不是机械堆关键词，而是围绕主题
 |:---|:---|
 | 中文 Vibe Coding | 中文学习路线、中文教程、中文工作流 |
 | AI 结对编程 | AI 辅助开发、AI 编程流程、AI coding workflow |
-| Codex CLI | Codex CLI 配置、默认 AI CLI、终端 AI 编程 |
+| Codex CLI | CLI 配置、默认 AI CLI、终端 AI 编程 |
 | Prompt / Skill / Quality Gate | 提示词、技能库、质量门禁、上下文管理 |
 | 拼好码 | 胶水原则、复用成熟方案、不重复造轮子 |
 | Quality Gate | AI 代码审查、测试、CI、schema、检查清单 |

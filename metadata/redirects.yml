@@ -7,6 +7,8 @@ redirects:
     to: docs/concepts/philosophy/
   - from: docs/guides/playbook/
     to: docs/playbooks/
+  - from: docs/getting-started/Codex-CLI配置.md
+    to: docs/getting-started/CLI配置.md
   - from: skills/
     to: skills/
   - from: prompts/

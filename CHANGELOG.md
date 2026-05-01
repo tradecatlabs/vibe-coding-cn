@@ -18,7 +18,8 @@
 - 清退 `docs/playbooks/REMOTE_TUNNEL_GUIDE.md`，继续收缩工具型旧文档。
 - 清退 `docs/playbooks/workflows/` 工作流模板目录，并同步移除学习地图、AI FAQ、redirects、labeler 与 AGENTS 中的旧入口。
 - 清退 `docs/concepts/philosophy/AI蜂群协作.md`，继续收缩旧协作方法论文档。
-- 合并 `docs/getting-started/OpenCode-CLI配置.md` 到 `docs/getting-started/Codex-CLI配置.md`，统一默认 AI CLI 与备选路线入口。
+- 合并 `docs/getting-started/OpenCode-CLI配置.md` 到 `docs/getting-started/CLI配置.md`，统一默认 AI CLI 与备选路线入口。
 - 合并 `docs/getting-started/IDE配置.md` 到 `docs/getting-started/开发环境搭建.md`，减少新手路径跳转。
 - 合并 `docs/references/血的教训.md` 到 `docs/references/常见坑汇总.md`，保留“先查成熟方案再开发”的工程教训。
 - 修复已删除 workflow 模板目录的残留入口，统一改为质量门禁与工程闭环口径。
+- 重命名 `docs/getting-started/Codex-CLI配置.md` 为 `docs/getting-started/CLI配置.md`，统一入门路径中的 CLI 配置入口。

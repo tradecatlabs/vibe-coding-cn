@@ -12,7 +12,7 @@
 
 ## 默认推荐哪个 AI CLI？
 
-默认优先使用 [Codex CLI 配置](./getting-started/Codex-CLI配置.md)。OpenCode CLI 作为备选路线保留。
+默认优先使用 [CLI 配置](./getting-started/CLI配置.md)。OpenCode CLI 作为备选路线保留。
 
 ## AI 输出如何验收？
 

@@ -31,7 +31,7 @@
 1. [问题求解能力](../concepts/问题求解能力.md) - 先学会定义问题与验收标准
 2. [Vibe Coding 经验](Vibe%20Coding%20经验.md) - 明确语言化、门禁、人机分工与工程闭环
 3. [网络环境配置](网络环境配置.md) - 配置网络访问
-4. [Codex CLI 配置](Codex-CLI配置.md) - 默认 AI CLI 路线
+4. [CLI 配置](CLI配置.md) - 默认 AI CLI 路线
 5. [开发环境搭建](开发环境搭建.md) - 搭建 Git、Node.js、Python、编辑器等基础环境
 
 ## 🔗 相关资源

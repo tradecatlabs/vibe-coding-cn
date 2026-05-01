@@ -22,7 +22,7 @@ docs/
 - `README.md`：知识库总索引。
 - `getting-started/学习地图.md`：按目标选择学习路径。
 - `getting-started/Vibe Coding 经验.md`：语言化、门禁、人机分工与 Vibe Coding 工程闭环。
-- `getting-started/Codex-CLI配置.md`：默认 AI CLI 路线。
+- `getting-started/CLI配置.md`：默认 AI CLI 路线。
 - `concepts/拼好码.md`：复用优先、能力编排、边界治理与工程门禁。
 - `guides/仓库维护与质量门禁.md`：仓库维护、迁移检查和质量门禁指南。
 

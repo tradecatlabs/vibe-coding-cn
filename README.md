@@ -178,7 +178,7 @@
 1. [问题求解能力](docs/concepts/问题求解能力.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
 2. [Vibe Coding 经验](docs/getting-started/Vibe%20Coding%20经验.md) - 明确语言化、门禁、人机分工与工程闭环
 3. [网络环境配置](docs/getting-started/网络环境配置.md) - 配置网络访问
-4. [Codex-CLI配置](docs/getting-started/Codex-CLI配置.md) - 默认 AI CLI 路线，使用 gpt-5.5 与仓库配置基线
+4. [CLI 配置](docs/getting-started/CLI配置.md) - 默认 AI CLI 路线，使用 gpt-5.5 与仓库配置基线
 5. [开发环境搭建](docs/getting-started/开发环境搭建.md) - 安装 Git、Node.js、Python、编辑器等基础环境
 
 </details>
@@ -349,7 +349,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ### 集成开发环境 (IDE) & 终端
 
 *   [**Visual Studio Code**](https://code.visualstudio.com/): 一款功能强大的集成开发环境，适合代码阅读与手动修改。其 `Local History` 插件对项目版本管理尤为便捷。
-*   [**Codex CLI**](docs/getting-started/Codex-CLI配置.md): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
+*   [**Codex CLI**](docs/getting-started/CLI配置.md): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
 *   **虚拟环境 (.venv)**: 强烈推荐使用，可实现项目环境的一键配置与隔离，特别适用于 Python 开发。
 *   [**Cursor**](https://cursor.com/): 已经占领用户心智高地，人尽皆知。
 *   [**Warp**](https://www.warp.dev/): 集成 AI 功能的现代化终端，能有效提升命令行操作和错误排查的效率。
