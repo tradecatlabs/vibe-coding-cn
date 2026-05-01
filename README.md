@@ -192,7 +192,7 @@
 ### 环境要求
 
 - Git：版本控制与 submodule 初始化
-- Node.js 16+：运行 `markdownlint-cli`，与 GitHub Actions 中的 `setup-node@v3` 配置一致
+- Node.js 22+：运行 `markdownlint-cli`，与 GitHub Actions 中的 `setup-node@v4` 配置一致
 - Python 3.8+：运行 prompts-library 与备份脚本
 
 ### 初始化

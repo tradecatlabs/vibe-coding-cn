@@ -56,7 +56,7 @@ git push origin develop
 ## 3. Must-Run Commands（必须执行的命令清单）
 
 ### 环境要求
-- Node.js 16+（用于 markdownlint-cli）
+- Node.js 22+（用于 markdownlint-cli）
 - Python 3.8+（用于 prompts-library 工具与备份脚本）
 - Git
 

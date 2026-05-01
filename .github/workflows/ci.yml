@@ -17,9 +17,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: '16'
+        node-version: '22'
     - name: Install markdownlint-cli
       run: npm install -g markdownlint-cli
     - name: Run markdownlint

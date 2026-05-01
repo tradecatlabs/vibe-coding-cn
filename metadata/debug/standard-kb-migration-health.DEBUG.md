@@ -35,6 +35,8 @@
 - O9：`.github/workflows/ci.yml` 只监听 `push.branches: [ main ]` 和 `pull_request.branches: [ main ]`。
 - O10：最近 `develop` 相关远端检查只有 `Labeler`，没有 `CI`。
 - O11：历史 CI 最近记录来自 2026-02 的 `main` push，且 `markdown-lint` 失败；这不是当前 `develop` 迁移提交的验证结果。
+- O12：修复 CI 触发分支后，`develop` 的 push / PR 均触发了 CI。
+- O13：CI 的 `link-checker` 成功，`markdown-lint` 失败，失败原因是 Node.js 16 解析最新版 `markdownlint-cli` 依赖 `string-width` 中的正则 `/v` flag 报 `SyntaxError: Invalid regular expression flags`。
 
 ## Hypotheses
 
@@ -57,6 +59,13 @@
 - Supports：GitHub 默认分支是 `develop`，远端没有 `main`，但 CI 只监听 `main`；最近 `develop` 只跑了 Labeler。
 - Conflicts：无。
 - Test：查询 `gh repo view --json defaultBranchRef`、`git ls-remote --heads origin master main develop`、`gh run list --workflow CI`、`.github/workflows/ci.yml`。
+- Verdict：confirmed。
+
+### H4: CI Node 版本过旧导致 markdownlint 运行时崩溃
+
+- Supports：CI 日志显示 Node 16 环境下 `string-width/index.js` 的 `/v` 正则 flag 语法错误；本地 Node 环境运行 `make lint` 通过。
+- Conflicts：无。
+- Test：修复 CI 触发后查看失败日志。
 - Verdict：confirmed。
 
 ## Experiments
@@ -88,9 +97,20 @@
 - Verdict：confirmed。
 - Revert：无需。
 
+### E4
+
+- Hypothesis：H4 CI Node 版本过旧导致 markdownlint 运行时崩溃。
+- Change：查看 GitHub Actions 失败日志。
+- Expected：如果成立，失败发生在工具启动阶段，而不是 Markdown 规则输出阶段。
+- Result：`markdown-lint` job 在解析依赖时抛出 `SyntaxError: Invalid regular expression flags`；`link-checker` job 成功。
+- Verdict：confirmed。
+- Revert：无需。
+
 ## Root Cause
 
-- 当前迁移后的本地结构健康，但远端质量门禁存在配置错位：仓库默认分支是 `develop`，仍保留 `master`，不存在 `main`，而 CI workflow 只监听 `main`，导致当前默认开发流不会触发 `markdown-lint` 和 `link-checker`。
+- 当前迁移后的本地结构健康，但远端质量门禁存在两层问题：
+  1. 仓库默认分支是 `develop`，仍保留 `master`，不存在 `main`，而 CI workflow 原先只监听 `main`，导致当前默认开发流不会触发 `markdown-lint` 和 `link-checker`。
+  2. CI 使用 Node.js 16 安装最新版 `markdownlint-cli`，其依赖已使用 Node 16 不支持的正则 `/v` flag，导致 `markdown-lint` 在工具启动阶段崩溃。
 
 ## Fix
 
@@ -99,6 +119,7 @@
   - `pull_request.branches: [ develop, master ]`
 - 已同步更新 `AGENTS.md` 中 CI 触发规则，避免 Agent 继续相信 `main` 是主线。
 - 已给 CI 增加 `workflow_dispatch`，方便手动验证迁移大改。
+- 已把 CI Node.js 从 16 升级到 22，并同步 README / AGENTS 的 Node.js 环境要求。
 
 ## Regression Evidence
 
@@ -108,3 +129,4 @@
 - 子模块检查：`git submodule status --recursive` 正常。
 - 远端检查：`develop` 最新提交只有 Labeler，没有 CI；CI 分支触发条件与默认分支不一致。
 - 修复后本地复测：`make lint`、本地 Markdown 相对链接检查、`git diff --check`、断软链接检查、submodule 状态检查均通过。
+- 修复后需要再次 push 触发远端 CI，确认 `markdown-lint` 不再因 Node 16 崩溃。
