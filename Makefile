@@ -1,6 +1,6 @@
 # Makefile for Vibe Coding Guide
 
-.PHONY: help lint build test clean
+.PHONY: help lint check-links build test clean
 
 help:
 	@echo "Makefile for Vibe Coding Guide"
@@ -8,9 +8,10 @@ help:
 	@echo "Available commands:"
 	@echo "  help     - Show this help message"
 	@echo "  lint     - Lint all markdown files"
-	@echo "  build    - Build the project (Placeholder)"
-	@echo "  test     - Run tests (Placeholder)"
-	@echo "  clean    - Clean build artifacts (Placeholder)"
+	@echo "  check-links - Check local markdown links"
+	@echo "  build    - Verify knowledge base has no build step"
+	@echo "  test     - Run repository quality gates"
+	@echo "  clean    - Remove ignored generated caches"
 	@echo ""
 
 lint:
@@ -18,17 +19,18 @@ lint:
 	@npm install -g markdownlint-cli
 	@markdownlint --config .github/lint_config.json --ignore .history --ignore tools/external --ignore scripts/backups/gz '**/*.md'
 
-build:
-	@echo "Building the project..."
-	# Add your project build commands here
-	@echo "Build complete."
+check-links:
+	@echo "Checking local markdown links..."
+	@python3 scripts/check-local-links.py
 
-test:
-	@echo "Running tests..."
-	# Add your test commands here
-	@echo "Tests complete."
+build:
+	@echo "No build step: this repository is a documentation and knowledge-base project."
+
+test: lint check-links
+	@echo "Quality gates complete."
 
 clean:
-	@echo "Cleaning up build artifacts..."
-	# Add your clean commands here (e.g., rm -rf dist/ build/)
+	@echo "Cleaning ignored generated caches..."
+	@find . -type d -name '__pycache__' -prune -exec rm -rf {} +
+	@rm -rf tools/prompts-library/prompt_jsonl
 	@echo "Cleanup complete."

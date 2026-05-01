@@ -214,6 +214,8 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 |:---|:---|:---|
 | 查看 Make 任务 | `make help` | `Makefile` |
 | 全仓 Markdown lint | `make lint` | `Makefile` + `.github/lint_config.json` |
+| 本地相对链接检查 | `make check-links` | `scripts/check-local-links.py` |
+| 全部本地质量门禁 | `make test` | `Makefile` |
 | 提示词格式转换 | `cd tools/prompts-library && python3 main.py` | `tools/prompts-library/main.py` |
 | 完整备份 | `bash scripts/backups/一键备份.sh` | `scripts/backups/README.md` |
 | Python 备份 | `python3 scripts/backups/快速备份.py` | `scripts/backups/README.md` |
@@ -222,13 +224,13 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ### 配置与 CI
 
 - Markdown lint 配置：`.github/lint_config.json`
-- CI 配置：`.github/workflows/ci.yml`，在 `main` 分支的 push / pull_request 上运行 markdown-lint 与 link-checker
+- CI 配置：`.github/workflows/ci.yml`，在 `develop` / `master` 分支的 push / pull_request 上运行 markdown-lint、本地链接检查与 link-checker
 - Codex 配置基线：`tools/config/.codex/config.toml`
 - Submodule 来源：`.gitmodules`
 
 ### 部署
 
-TODO：仓库内没有发现 Dockerfile、docker-compose.yml、K8s/Helm 部署入口或可验证服务端口；如后续新增部署方式，需要同步本节。
+本仓库是文档与知识库项目，当前没有 Dockerfile、docker-compose.yml、K8s/Helm 部署入口或固定服务端口；发布质量以 `make test` 与 GitHub Actions CI 为准。
 
 </details>
 

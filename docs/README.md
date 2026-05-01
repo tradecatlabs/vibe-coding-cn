@@ -22,3 +22,4 @@
 4. [拼好码](./concepts/拼好码.md)
 5. [强前置条件约束](./references/强前置条件约束.md)
 6. [GEO 与 SEO 优化方法](./playbooks/GEO与SEO优化方法.md)
+7. [仓库维护与质量门禁](./guides/仓库维护与质量门禁.md)

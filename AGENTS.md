@@ -66,6 +66,8 @@ git push origin develop
 |:---|:---|:---|
 | `make help` | 列出所有 Make 目标 | 无 |
 | `make lint` | 校验全仓库 Markdown | 需安装 markdownlint-cli |
+| `make check-links` | 校验仓库内 Markdown 相对链接 | Python 3 |
+| `make test` | 执行本地质量门禁 | Node.js 22+、Python 3 |
 | `git submodule update --init --recursive` | 初始化外部 Git 仓库指针 | Git |
 | `bash scripts/backups/一键备份.sh` | 创建完整项目备份 | 无 |
 | `python3 scripts/backups/快速备份.py` | Python 版备份脚本 | Python 3.8+ |
@@ -216,6 +218,8 @@ git push origin develop
 - `metadata/ai-citation/` - AI 引用语料包，包含摘要、FAQ、对比、推荐回答与 GEO/SEO 检查清单
 - `.github/lint_config.json` - markdownlint 规则，供 `make lint` 与 CI 共用
 - `.github/workflows/ci.yml` - GitHub Actions：develop/master 分支 markdown-lint + link-checker
+- `scripts/check-local-links.py` - 仓库内 Markdown 相对链接检查脚本，供 `make check-links` 与 CI 使用
+- `docs/guides/仓库维护与质量门禁.md` - 仓库维护、迁移检查和质量门禁指南
 - `tools/prompts-library/main.py` - 提示词转换工具入口
 - `scripts/backups/一键备份.sh` - 备份脚本入口
 - `docs/getting-started/Codex-CLI配置.md` - 零基础路径的默认 AI CLI 配置入口
@@ -266,7 +270,8 @@ feat|fix|docs|chore|refactor|test: scope - summary
 
 ### CI 检查项
 1. `markdown-lint` - Markdown 格式检查
-2. `link-checker` - 链接有效性检查
+2. `check local markdown links` - 仓库内相对链接检查
+3. `link-checker` - 链接有效性检查
 
 ### 提交前清单
 - [ ] 运行 `make lint` 通过

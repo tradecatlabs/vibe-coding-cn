@@ -9,7 +9,7 @@
 - **状态**: 经过全面测试，无任何问题或报错
 
 ### 📦 包含内容
-- ✅ 最新版 Neovim v0.11.5 AppImage 可执行文件
+- ✅ LazyVim 配置文件；Neovim 可执行文件需从官方渠道或系统包管理器安装
 - ✅ 标准 LazyVim 配置框架
 - ✅ 修复的 Neotree 配置（无重复问题）
 - ✅ 默认 tokyonight 主题
@@ -29,22 +29,18 @@ cd vim
 # 复制配置文件
 cp -r nvim-config/* ~/.config/
 
-# 复制可执行文件
-cp nvim-config/nvim ~/.local/bin/
-chmod +x ~/.local/bin/nvim
-
-# 确保路径在 PATH 中
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
+# 安装 Neovim
+# 推荐使用系统包管理器、官方 AppImage 或 GitHub Release。
+# 不再在本仓库跟踪 nvim 二进制运行时。
 ```
 
 ### 3. 启动使用
 ```bash
 # 直接启动
-~/.local/bin/nvim
+nvim
 
 # 或使用别名（推荐）
-alias n='~/.local/bin/nvim'
+alias n='nvim'
 n
 ```
 
@@ -118,10 +114,10 @@ vim.api.nvim_create_autocmd("VimEnter", {
 ### 启动测试
 ```bash
 # 基础启动测试
-~/.local/bin/nvim --headless -c "echo 'OK'" -c "qa"
+nvim --headless -c "echo 'OK'" -c "qa"
 
 # 配置加载测试
-~/.local/bin/nvim --headless -c "lua print('Config OK')" -c "qa"
+nvim --headless -c "lua print('Config OK')" -c "qa"
 ```
 
 ### 健康检查
@@ -135,7 +131,6 @@ nvim-config/
 ├── init.lua                    # 入口文件
 ├── lazy-lock.json             # 插件锁文件
 ├── lazyvim.json               # LazyVim 配置
-├── nvim                       # Neovim v0.11.5 AppImage
 ├── lua/
 │   ├── config/
 │   │   ├── autocmds.lua       # 自动命令

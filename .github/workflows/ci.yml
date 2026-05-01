@@ -24,6 +24,8 @@ jobs:
       run: npm install -g markdownlint-cli
     - name: Run markdownlint
       run: markdownlint --config .github/lint_config.json --ignore .history --ignore tools/external --ignore scripts/backups/gz '**/*.md'
+    - name: Check local markdown links
+      run: python3 scripts/check-local-links.py
 
   link-checker:
     runs-on: ubuntu-latest
