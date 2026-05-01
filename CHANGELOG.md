@@ -9,3 +9,4 @@
 - 更新 README、AGENTS、llms、metadata、CI 与目录级 AGENTS，统一新知识库路径口径。
 - 增加 `scripts/check-local-links.py`、`make check-links` 与 `make test`，把本地链接检查纳入质量门禁和 CI。
 - 清退 `tools/external/my-nvim/nvim-config/nvim` 二进制运行时，改为文档说明从官方渠道安装 Neovim。
+- 修复 `tools/prompts-library/main.py` 中 Excel(JSONL) -> JSONL 转换的行号偏移，保持导出记录与 Excel 原始行号一致。
