@@ -1,12 +1,20 @@
-# OpenCode CLI 配置
+# OpenCode CLI 配置（备选方案）
 
-> 免费 AI 编程助手，支持 75+ 模型，无需信用卡
+> 备选 AI CLI 路线：当你暂时无法使用 Codex CLI，或希望接入免费/本地模型时使用。
 
-OpenCode 是一个开源 AI 编程代理，支持终端、桌面应用和 IDE 扩展。无需账号即可使用免费模型。
+本教程默认推荐 [Codex CLI](./Codex-CLI配置.md)。OpenCode 是开源 AI 编程代理，支持终端、桌面应用和 IDE 扩展，适合用作免费模型、本地模型或多模型实验入口。
 
 官网：[opencode.ai](https://opencode.ai/)
 
 ---
+
+## 何时选择 OpenCode
+
+- 没有可用的 OpenAI / Codex CLI 账号或环境
+- 需要接入 Z.AI、MiniMax、Hugging Face、本地 Ollama 等模型
+- 想保留一条不依赖单一模型提供商的备份路线
+
+如果 Codex CLI 可用，优先完成：[Codex-CLI配置](./Codex-CLI配置.md)。
 
 ## 安装
 
@@ -31,7 +39,7 @@ choco install opencode
 
 ## 免费模型配置
 
-OpenCode 支持多个免费模型提供商，无需付费即可使用。
+OpenCode 支持多个模型提供商。以下配置适合作为 Codex CLI 不可用时的备选入口。
 
 ### 方式一：Z.AI（推荐，GLM-4.7）
 
@@ -113,7 +121,7 @@ ollama pull llama2
 
 ## 让 AI 执行一切配置任务
 
-OpenCode 的核心思维：**把所有配置任务交给 AI**。
+OpenCode 的核心思维：**把配置任务交给 AI 执行，把选择权和验收权留给你**。
 
 ### 示例：安装 MCP 服务器
 

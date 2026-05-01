@@ -202,6 +202,8 @@ git push origin develop
 - `.github/workflows/ci.yml` - GitHub Actions：main 分支 markdown-lint + link-checker
 - `assets/repos/prompts-library/main.py` - 提示词转换工具入口
 - `assets/repos/backups/一键备份.sh` - 备份脚本入口
+- `assets/documents/guides/getting-started/Codex-CLI配置.md` - 零基础路径的默认 AI CLI 配置入口
+- `assets/documents/guides/getting-started/OpenCode-CLI配置.md` - Codex CLI 不可用时的备选 AI CLI 配置入口
 - `assets/documents/principles/fundamentals/问题求解能力.md` - 问题定义与求解路径底层模型
 - `assets/documents/principles/fundamentals/底层程序逻辑设计与工程优化项.md` - 底层程序逻辑与工程优化检查项
 - `assets/skills/tmux-autopilot/` - tmux 自动化操控技能（基于 oh-my-tmux，含 capture-pane/send-keys/蜂群巡检脚本）

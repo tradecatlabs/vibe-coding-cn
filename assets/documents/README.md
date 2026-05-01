@@ -7,7 +7,7 @@
 ```
 assets/documents/
 ├── principles/          # 原则与思想（fundamentals + philosophy）
-│   ├── fundamentals/    # 原 00-基础指南
+│   ├── fundamentals/    # 基础原则、问题求解、工程范式与代码质量
 │   └── philosophy/      # 原 05-哲学与方法论
 ├── guides/              # 入门与方法（getting-started + playbook）
 │   ├── getting-started/ # 原 01-入门指南
@@ -34,11 +34,12 @@ assets/documents/
 5. **思维** → [philosophy](./principles/philosophy/README.md)
 6. **理念** → [胶水编程](./principles/fundamentals/胶水编程.md)
 7. **入门** → [Vibe Coding 哲学原理](./guides/getting-started/Vibe%20Coding%20哲学原理.md)
-8. **配置** → [开发环境搭建](./guides/getting-started/开发环境搭建.md)
-9. **工具** → [tmux 快捷键](./guides/playbook/tmux快捷键大全.md)
-10. **远程** → [VS Code Remote Tunnel（WSL）](./guides/playbook/REMOTE_TUNNEL_GUIDE.md)
-11. **实践** → [项目实战经验](./case-studies/)
-12. **流程** → [工作流模板](./workflow/)
+8. **环境** → [开发环境搭建](./guides/getting-started/开发环境搭建.md)
+9. **默认 CLI** → [Codex CLI 配置](./guides/getting-started/Codex-CLI配置.md)
+10. **工具** → [tmux 快捷键](./guides/playbook/tmux快捷键大全.md)
+11. **远程** → [VS Code Remote Tunnel（WSL）](./guides/playbook/REMOTE_TUNNEL_GUIDE.md)
+12. **实践** → [项目实战经验](./case-studies/)
+13. **流程** → [工作流模板](./workflow/)
 
 ## 🔗 相关资源
 

@@ -18,6 +18,13 @@ assets/documents/
 └── workflow/            # 可复用工作流模板
 ```
 
+## 关键入口
+
+- `guides/getting-started/README.md`：零基础学习路径索引。
+- `guides/getting-started/Vibe Coding 哲学原理.md`：人机分工与 Vibe Coding 工程闭环。
+- `guides/getting-started/Codex-CLI配置.md`：默认 AI CLI 路线。
+- `guides/getting-started/OpenCode-CLI配置.md`：Codex CLI 不可用时的备选路线。
+
 ## 操作规范
 
 ### 允许
