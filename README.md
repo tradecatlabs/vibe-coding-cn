@@ -394,7 +394,6 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**元提示词**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 用于生成提示词的高级提示词。
 *   [**通用项目架构模板**](docs/references/通用项目架构模板.md): 可用于快速搭建标准化的项目目录结构。
 *   [**元技能：Auto Skill**](./skills/auto-skill/SKILL.md): 用于生成、重构与校验 Skills 的元技能。
-*   [**SOP 生成 Skill**](./skills/sop-generator/SKILL.md): 将资料/需求整理为可执行 SOP 的技能。
 *   [**tmux快捷键大全**](docs/playbooks/tmux快捷键大全.md): tmux 的快捷键参考文档。
 *   [**LazyVim快捷键大全**](docs/playbooks/LazyVim快捷键大全.md): LazyVim 的快捷键参考文档。
 *   [**手机远程 Vibe Coding**](docs/playbooks/关于手机ssh任意位置链接本地计算机，基于frp实现的方法.md): 基于 frp 实现手机 SSH 远程控制本地电脑进行 Vibe Coding。
@@ -480,8 +479,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │   │   ├── README.md            # skills 总览与索引
 │   │   ├── AGENTS.md            # skills/ 目录规则
 │   │   ├── auto-skill/          # 元技能核心
-│   │   ├── sop-generator/       # SOP 生成
-│   │   └── ...                  # 更多技能
+│   │   └── claude-official-skills/ # Claude 官方 skills 软链接入口
 │   └── repos/                   # 外部工具与依赖镜像（含 Git submodule）
 │       ├── README.md            # 外部工具索引
 │       ├── prompts-library/     # Excel ↔ Markdown 互转工具，含内部 JSONL Excel 拆分导出

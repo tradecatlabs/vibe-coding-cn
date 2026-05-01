@@ -22,8 +22,6 @@ tools/external/
 
 ```text
 skills/claude-official-skills -> ../tools/external/claude-official-skills
-skills/tmux-autopilot/assets/oh-my-tmux -> ../../../tools/external/.tmux
-skills/tmux-autopilot/assets/tmux-src -> ../../../tools/external/tmux
 skills/auto-skill/scripts/Skill_Seekers-development -> ../../../tools/external/Skill_Seekers-development
 skills/auto-skill/scripts/skill-seekers-configs -> Skill_Seekers-development/configs
 skills/auto-skill/scripts/skill-seekers-src -> Skill_Seekers-development/src

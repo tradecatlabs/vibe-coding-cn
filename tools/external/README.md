@@ -44,8 +44,6 @@ tools/external/
 
 | 事实来源 | 展示入口 | 说明 |
 |:---|:---|:---|
-| `tools/external/.tmux/` | `skills/tmux-autopilot/assets/oh-my-tmux` | oh-my-tmux 配置来源 |
-| `tools/external/tmux/` | `skills/tmux-autopilot/assets/tmux-src` | tmux 上游源码入口 |
 | `tools/external/claude-official-skills/` | `skills/claude-official-skills` | Claude 官方 skills 仓库 |
 | `tools/external/Skill_Seekers-development/` | `skills/auto-skill/scripts/Skill_Seekers-development` | `auto-skill` 的 Skill Seekers 工具来源 |
 

@@ -165,8 +165,7 @@ git push origin develop
 │   ├── README.md                # skills 总览与索引
 │   ├── AGENTS.md                # skills/ 目录规则
 │   ├── auto-skill/              # 元技能核心
-│   ├── sop-generator/           # SOP 生成
-│   └── ...                      # 更多技能
+│   └── claude-official-skills/  # Claude 官方 skills 软链接入口
 │
 ├── assets/                      # 静态资产与外部资源入口
 │   ├── README.md                # 外部资源在线表格入口
@@ -227,8 +226,7 @@ git push origin develop
 - `docs/playbooks/GEO与SEO优化方法.md` - GEO / SEO 内容工程方法，承接 GEOFlow 的知识库、结构化内容、审核与分发思路
 - `docs/concepts/问题求解能力.md` - 问题定义与求解路径底层模型
 - `docs/references/底层程序逻辑设计与工程优化项.md` - 底层程序逻辑与工程优化检查项
-- `skills/tmux-autopilot/` - tmux 自动化操控技能（基于 oh-my-tmux，含 capture-pane/send-keys/蜂群巡检脚本）
-- `skills/sop-generator/` - SOP 生成与规范化技能（输入资料/需求 -> 标准 SOP）
+- `skills/auto-skill/` - Skills 生成、重构与校验的元技能
 
 ---
 
@@ -255,7 +253,7 @@ feat|fix|docs|chore|refactor|test: scope - summary
 
 示例：
 - `docs: prompts - add new coding prompt`
-- `feat: skills - add postgresql skill`
+- `feat: skills - add custom skill`
 - `fix: readme - correct broken link`
 
 ### PR 必填内容

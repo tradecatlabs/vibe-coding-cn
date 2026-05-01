@@ -63,7 +63,7 @@ tags:
 - `C:\Users\lenovo\Downloads\逻辑 - 孟自黄.md`
 - `C:\Users\lenovo\Downloads\逻辑 - 孟自黄.epub`
 - `C:\Users\lenovo\Downloads\build_epub\report.json`
-- `C:\Users\lenovo\.codex\skills\markdown-to-epub\scripts\build_epub.py`
+- 历史脚本：原 `markdown-to-epub` skill 已从本仓库清退；如需稳健构建脚本，需从历史提交恢复或以独立工具重新引入。
 
 #### 2.3.4 Git 状态/变更/提交历史（按需）
 
@@ -74,7 +74,7 @@ tags:
 - 工具：Calibre `ebook-convert`（证据：`ebook-convert --version` 输出 `calibre 8.16.2`）
 - 运行时：Python（证据：`python --version` 输出 `Python 3.14.2`）
 - 可选工具：Pandoc（证据：`pandoc --version` 在本会话环境中不可用/未安装）
-- 构建脚本（可选但推荐）：`C:\Users\lenovo\.codex\skills\markdown-to-epub\scripts\build_epub.py`（对本地图片与证据报告更友好；底层仍调用 `ebook-convert`）
+- 构建脚本：原 `markdown-to-epub` skill 已从本仓库清退；当前可复现路径以 Calibre `ebook-convert` 为准。
 
 #### 2.3.6 外部来源使用规则（按需）
 
@@ -183,8 +183,7 @@ tags:
 - 动作（命令/读文件/搜索）：
   - 路径 A（直接转换）示例：
     - `ebook-convert "<输入 Markdown 路径>" "<输出 EPUB 路径>" --title "<标题>" --authors "<作者>" --language "<语言>"`
-  - 路径 B（稳健转换，底层仍用 ebook-convert；推荐用于留证与处理本地资源）示例：
-    - `python "C:/Users/lenovo/.codex/skills/markdown-to-epub/scripts/build_epub.py" --input-md "<输入 Markdown 路径>" --output-epub "<输出 EPUB 路径>" --title "<标题>" --authors "<作者>" --language "<语言>" --clean-build-dir`
+  - 路径 B（稳健转换）：原 `markdown-to-epub` skill 已清退；如需该路径，先恢复或重新引入脚本，再记录脚本来源与验证命令。
   - 注意：`--clean-build-dir` 会删除构建目录，属于不可逆动作；执行前必须有用户批准
 - 证据：
   - 记录完整命令行（含所有参数）

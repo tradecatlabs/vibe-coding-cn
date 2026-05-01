@@ -45,11 +45,6 @@ skills/
 
 ## 快速定位（常用技能）
 
-- `skills/tmux-autopilot/`：tmux 自动化操控与多 Agent 协作
-- `skills/sop-generator/`：SOP 生成与规范化
-- `skills/markdown-to-epub/`：Markdown → EPUB 稳定构建
 - `skills/auto-skill/`：元技能（技能生成/校验/脚手架）
 - `skills/claude-official-skills/`：Claude 官方 skills 仓库（Anthropic）的软链接入口
 - `skills/auto-skill/scripts/Skill_Seekers-development`：Skill Seekers submodule 的软链接入口
-- `skills/tmux-autopilot/assets/oh-my-tmux`：oh-my-tmux submodule 的软链接入口
-- `skills/tmux-autopilot/assets/tmux-src`：tmux submodule 的软链接入口

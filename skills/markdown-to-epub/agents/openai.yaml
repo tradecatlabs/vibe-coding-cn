@@ -1,4 +1,0 @@
-interface:
-  display_name: "Markdown → EPUB 构建器"
-  short_description: "把 Markdown 手稿 + 本地图片资产转换为可校验的 EPUB。"
-  default_prompt: "使用 $markdown-to-epub 把我的 Markdown 手稿和本地图片资产转换成可校验的 EPUB 文件。"
