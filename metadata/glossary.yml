@@ -1,0 +1,22 @@
+terms:
+  vibe-coding:
+    zh: Vibe Coding
+    description: 以自然语言驱动 AI 结对编程，从想法、需求、方案、任务拆解到编码、测试、部署和复盘的工作方式。
+  prompt:
+    zh: 提示词
+    description: 面向 AI 的一次性或可复用指令，用于约束任务、输入、输出和验收标准。
+  skill:
+    zh: 技能
+    description: 可复用能力单元，通常包含 SKILL.md、参考资料、脚本和资产。
+  workflow:
+    zh: 工作流
+    description: 推进复杂任务的步骤化流程，强调状态、产物、验证和复盘。
+  context:
+    zh: 上下文
+    description: AI 执行任务所需的目标、约束、历史、文件、规则和当前状态。
+  quality-gate:
+    zh: 质量门禁
+    description: 测试、CI、脚本、类型、schema 或检查清单等可强制验证的约束。
+  pinhaoma:
+    zh: 拼好码
+    description: 胶水编程的超集，强调优先复用成熟方案，用自研代码连接、编排、适配和表达业务逻辑。

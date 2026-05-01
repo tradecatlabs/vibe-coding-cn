@@ -35,6 +35,7 @@ ENV/
 *~
 .DS_Store
 .history/
+*:Zone.Identifier
 
 # Testing
 .pytest_cache/
@@ -46,9 +47,16 @@ ENV/
 *.log
 logs/
 
-# Skill Seekers (vendored tool output)
+# Local task workspaces
+assets/tasks/
+
+# Skill Seekers (linked tool output)
 output/
-assets/skills/skills-skills/scripts/.venv-skill-seekers/
+skills/auto-skill/scripts/.venv-skill-seekers/
+
+# prompts-library generated exports
+tools/prompts-library/prompt_jsonl/
+tools/external/my-nvim/nvim-config/nvim
 
 libs/external/tmux
 libs/external/.tmux
@@ -73,7 +81,7 @@ libs/external/.tmux
 
 # Backup
 backups/gz/
-assets/repo/backups/gz/
+scripts/backups/gz/
 *.bak
 *.tmp
 
