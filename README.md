@@ -99,8 +99,8 @@
 0. [问题求解能力](./assets/documents/principles/fundamentals/问题求解能力.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
 1. [Vibe Coding 经验](./assets/documents/guides/getting-started/Vibe%20Coding%20经验.md) - 明确语言化、门禁、人机分工与工程闭环
 2. [网络环境配置](./assets/documents/guides/getting-started/网络环境配置.md) - 配置网络访问
-3. [开发环境搭建](./assets/documents/guides/getting-started/开发环境搭建.md) - 安装 Git、Node.js、Python、编辑器等基础环境
-4. [Codex-CLI配置](./assets/documents/guides/getting-started/Codex-CLI配置.md) - 默认 AI CLI 路线，使用 gpt-5.5 与仓库配置基线
+3. [Codex-CLI配置](./assets/documents/guides/getting-started/Codex-CLI配置.md) - 默认 AI CLI 路线，使用 gpt-5.5 与仓库配置基线
+4. [开发环境搭建](./assets/documents/guides/getting-started/开发环境搭建.md) - 安装 Git、Node.js、Python、编辑器等基础环境
 
 </details>
 

@@ -7,8 +7,8 @@
 0. [问题求解能力](../../principles/fundamentals/问题求解能力.md) - 先学会定义问题与验收标准
 1. [Vibe Coding 经验](./Vibe%20Coding%20经验.md) - 明确语言化、门禁、人机分工与工程闭环
 2. [网络环境配置](./网络环境配置.md) - 配置网络访问
-3. [开发环境搭建](./开发环境搭建.md) - 搭建 Git、Node.js、Python、编辑器等基础环境
-4. [Codex CLI 配置](./Codex-CLI配置.md) - 默认 AI CLI 路线
+3. [Codex CLI 配置](./Codex-CLI配置.md) - 默认 AI CLI 路线
+4. [开发环境搭建](./开发环境搭建.md) - 搭建 Git、Node.js、Python、编辑器等基础环境
 
 ## 🔗 相关资源
 - [基础指南](../../principles/fundamentals/) - 核心理念与方法论
