@@ -129,4 +129,4 @@
 - 子模块检查：`git submodule status --recursive` 正常。
 - 远端检查：`develop` 最新提交只有 Labeler，没有 CI；CI 分支触发条件与默认分支不一致。
 - 修复后本地复测：`make lint`、本地 Markdown 相对链接检查、`git diff --check`、断软链接检查、submodule 状态检查均通过。
-- 修复后需要再次 push 触发远端 CI，确认 `markdown-lint` 不再因 Node 16 崩溃。
+- 修复后远端验证：`93d0341` 触发的 push CI 成功，PR CI 成功，Labeler 成功；`markdown-lint` 不再因 Node 16 崩溃。
