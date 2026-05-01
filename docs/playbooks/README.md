@@ -6,7 +6,6 @@
 
 - [ProxyCast 配置](ProxyCast配置文档.md) - AI 凭证代理服务配置
 - [TradeCat Sheets API 使用说明](tradecat-sheets-api-usage.md) - 把公开 Google Sheet 当作 API 注册表与数据面（Data Plane）
-- [VS Code Remote Tunnel（WSL）](REMOTE_TUNNEL_GUIDE.md) - 在 WSL 内开通 VS Code Tunnel 供远程访问
 - [GEMINI-HEADLESS](GEMINI-HEADLESS.md) - Gemini 无头模式配置
 
 ## 🛠️ 开发经验
