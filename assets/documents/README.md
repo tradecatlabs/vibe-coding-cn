@@ -32,7 +32,7 @@ assets/documents/
 3. **范式** → [软件开发范式演进](./principles/fundamentals/软件开发范式演进.md)
 4. **底层** → [底层程序逻辑设计与工程优化项](./principles/fundamentals/底层程序逻辑设计与工程优化项.md)
 5. **思维** → [philosophy](./principles/philosophy/README.md)
-6. **理念** → [拼好码（胶水原则）](./principles/fundamentals/拼好码.md)
+6. **理念** → [拼好码（胶水编程的超集）](./principles/fundamentals/拼好码.md)
 7. **校验** → [Vibe Coding 校验](./guides/getting-started/Vibe%20Coding%20校验.md)
 8. **环境** → [开发环境搭建](./guides/getting-started/开发环境搭建.md)
 9. **默认 CLI** → [Codex CLI 配置](./guides/getting-started/Codex-CLI配置.md)

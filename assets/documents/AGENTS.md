@@ -24,7 +24,7 @@ assets/documents/
 - `guides/getting-started/Vibe Coding 校验.md`：语言化、门禁、人机分工与 Vibe Coding 工程闭环。
 - `guides/getting-started/Codex-CLI配置.md`：默认 AI CLI 路线。
 - `guides/getting-started/OpenCode-CLI配置.md`：Codex CLI 不可用时的备选路线。
-- `principles/fundamentals/拼好码.md`：胶水原则与复用优先的工程交付方法。
+- `principles/fundamentals/拼好码.md`：胶水编程的超集，覆盖复用优先、能力编排、边界治理与工程门禁。
 
 ## 操作规范
 
