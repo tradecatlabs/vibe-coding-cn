@@ -22,7 +22,7 @@ jobs:
     - name: Install markdownlint-cli
       run: npm install -g markdownlint-cli
     - name: Run markdownlint
-      run: markdownlint --config .github/lint_config.json '**/*.md'
+      run: markdownlint --config .github/lint_config.json --ignore .history --ignore tools/external --ignore scripts/backups/gz '**/*.md'
 
   link-checker:
     runs-on: ubuntu-latest
@@ -31,4 +31,4 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.5.0
         with:
-          args: --verbose --no-progress './**/*.md'
+          args: --verbose --no-progress --exclude-path .history --exclude-path .github/wiki --exclude-path tools/external --exclude-path tools/chat-vault --exclude-path scripts/backups/gz './**/*.md'

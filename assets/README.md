@@ -1,14 +1,14 @@
 # 📎 Assets
 
-本目录用于统一收纳仓库的关键资产与索引入口：
+本目录只存放静态资产与外部资源入口，不再承载知识库、技能库、提示词库或外部仓库源码。
 
-- `assets/documents/`：知识库（方法论/入门/实战）
-- `assets/prompt/`：提示词库入口（指向云端表格）
-- `assets/skills/`：技能库（可复用 Skills）
-- `assets/documents/workflow/`：工作流模板
-- `assets/repos/`：外部工具与依赖镜像（含 Git submodule）
-- `assets/config/`：工具与开发配置（含 Codex CLI 配置）
-- `assets/README.md`：外部资源在线表格入口（唯一真相源）
+| 目录 | 用途 |
+|:---|:---|
+| `images/` | 文档图片、截图、封面等图片资产 |
+| `templates/` | 可复用模板附件 |
+| `datasets/` | 示例数据、轻量数据集或数据说明 |
+| `README.md` | 外部资源在线表格入口 |
+| `AGENTS.md` | 本目录维护规则 |
 
 ## 外部资源在线表格（唯一真相源）
 
@@ -18,4 +18,7 @@
 ## 与仓库文档的关系
 
 - 外部资源的新增/删除/去重/更新，以在线表格为准。
-- 旧的 `documents/04-资源/` 已移除，仓库内所有入口统一指向 `assets/README.md`。
+- 核心知识库位于 `docs/`。
+- 提示词库入口位于 `prompts/`。
+- 技能库位于 `skills/`。
+- 外部工具、子模块与本地配置位于 `tools/`。

@@ -16,7 +16,7 @@ help:
 lint:
 	@echo "Linting markdown files..."
 	@npm install -g markdownlint-cli
-	@markdownlint --config .github/lint_config.json '**/*.md'
+	@markdownlint --config .github/lint_config.json --ignore .history --ignore tools/external --ignore scripts/backups/gz '**/*.md'
 
 build:
 	@echo "Building the project..."

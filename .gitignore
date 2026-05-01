@@ -52,10 +52,10 @@ assets/tasks/
 
 # Skill Seekers (linked tool output)
 output/
-assets/skills/auto-skill/scripts/.venv-skill-seekers/
+skills/auto-skill/scripts/.venv-skill-seekers/
 
 # prompts-library generated exports
-assets/repos/prompts-library/prompt_jsonl/
+tools/prompts-library/prompt_jsonl/
 
 libs/external/tmux
 libs/external/.tmux
@@ -80,7 +80,7 @@ libs/external/.tmux
 
 # Backup
 backups/gz/
-assets/repos/backups/gz/
+scripts/backups/gz/
 *.bak
 *.tmp
 

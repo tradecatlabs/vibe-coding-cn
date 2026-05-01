@@ -22,14 +22,14 @@
 
 新手优先看：
 
-1. `assets/documents/guides/getting-started/README.md`
-2. `assets/documents/principles/fundamentals/问题求解能力.md`
-3. `assets/documents/guides/getting-started/Vibe Coding 经验.md`
-4. `assets/documents/guides/getting-started/Codex-CLI配置.md`
+1. `docs/getting-started/README.md`
+2. `docs/concepts/问题求解能力.md`
+3. `docs/getting-started/Vibe Coding 经验.md`
+4. `docs/getting-started/Codex-CLI配置.md`
 
 进阶用户优先看：
 
-1. `assets/documents/principles/fundamentals/拼好码.md`
-2. `assets/documents/principles/fundamentals/强前置条件约束.md`
-3. `assets/skills/README.md`
-4. `assets/documents/workflow/README.md`
+1. `docs/concepts/拼好码.md`
+2. `docs/references/强前置条件约束.md`
+3. `skills/README.md`
+4. `docs/playbooks/workflows/README.md`

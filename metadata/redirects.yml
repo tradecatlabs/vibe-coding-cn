@@ -1,21 +1,31 @@
 redirects:
-  - from: assets/documents/guides/getting-started/
+  - from: docs/guides/getting-started/
     to: docs/getting-started/
-  - from: assets/documents/principles/fundamentals/
+  - from: docs/principles/fundamentals/
     to: docs/concepts/ 或 docs/references/
-  - from: assets/documents/principles/philosophy/
+  - from: docs/principles/philosophy/
     to: docs/concepts/philosophy/
-  - from: assets/documents/guides/playbook/
+  - from: docs/guides/playbook/
     to: docs/playbooks/
-  - from: assets/documents/workflow/
+  - from: docs/workflow/
     to: docs/playbooks/workflows/
-  - from: assets/documents/case-studies/
+  - from: docs/case-studies/
     to: docs/case-studies/
+  - from: skills/
+    to: skills/
+  - from: prompts/
+    to: prompts/
+  - from: tools/external/
+    to: tools/external/
+  - from: assets/documents/
+    to: docs/
   - from: assets/skills/
     to: skills/
   - from: assets/prompt/
     to: prompts/
   - from: assets/repos/
-    to: tools/
+    to: tools/external/
   - from: assets/config/
+    to: tools/config/
+  - from: tools/config/
     to: tools/config/

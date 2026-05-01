@@ -1,12 +1,12 @@
-[submodule "repos/.tmux"]
-	path = assets/repos/.tmux
+[submodule "tools/external/.tmux"]
+	path = tools/external/.tmux
 	url = https://github.com/gpakosz/.tmux.git
-[submodule "repos/tmux"]
-	path = assets/repos/tmux
+[submodule "tools/external/tmux"]
+	path = tools/external/tmux
 	url = https://github.com/tmux/tmux.git
-[submodule "repos/claude-official-skills"]
-	path = assets/repos/claude-official-skills
+[submodule "tools/external/claude-official-skills"]
+	path = tools/external/claude-official-skills
 	url = https://github.com/anthropics/skills.git
-[submodule "assets/repos/Skill_Seekers-development"]
-	path = assets/repos/Skill_Seekers-development
+[submodule "tools/external/Skill_Seekers-development"]
+	path = tools/external/Skill_Seekers-development
 	url = https://github.com/yusufkaraaslan/Skill_Seekers.git
