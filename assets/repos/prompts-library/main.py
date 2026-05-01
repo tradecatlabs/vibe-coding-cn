@@ -336,7 +336,7 @@ def run_jsonl_excel_to_jsonl(excel_path: Path, project_root: Path) -> int:
                             sheet_lines.append(json.dumps({
                                 "category_id": cat_id,
                                 "category": cat_name,
-                                "row": row_idx + 2,
+                                "row": row_idx + 1,
                                 "col": col_idx + 1,
                                 "title": obj["title"][:80],
                                 "content": obj["content"]
