@@ -32,6 +32,7 @@
 	  <a href="./docs/getting-started/学习地图.md"><img src="https://img.shields.io/badge/🗺️_学习地图-路线导航-orange?style=for-the-badge" alt="学习地图"></a>
 	  <a href="./docs/getting-started/README.md"><img src="https://img.shields.io/badge/🚀_从零开始-新手入门-red?style=for-the-badge" alt="从零开始"></a>
 	  <a href="./docs/concepts/问题求解能力.md"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解能力"></a>
+	  <a href="./docs/concepts/思维模型.md"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
 	  <a href="./docs/getting-started/Vibe%20Coding%20经验.md"><img src="https://img.shields.io/badge/🧠_Vibe经验-必读-crimson?style=for-the-badge" alt="Vibe Coding 经验"></a>
 	  <a href="./docs/concepts/philosophy/README.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
 	  <a href="./docs/references/强前置条件约束.md"><img src="https://img.shields.io/badge/🚫_硬约束-铁律-darkred?style=for-the-badge" alt="强前置条件约束"></a>
