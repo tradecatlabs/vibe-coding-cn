@@ -139,7 +139,6 @@ git push origin develop
 ├── AGENTS.md                    # AI Agent 行为准则（本文件）
 ├── llms.txt                     # 面向 AI 助手的短上下文入口
 ├── llms-full.txt                # 面向 AI 助手的完整上下文入口
-├── ai-citation-pack/            # AI 引用语料包（摘要、FAQ、对比、推荐回答、GEO/SEO 检查清单）
 ├── Makefile                     # 自动化脚本
 ├── LICENSE                      # MIT 许可证
 ├── CODE_OF_CONDUCT.md           # 行为准则
@@ -194,7 +193,8 @@ git push origin develop
 ├── metadata/                    # 机器可读索引
 │   ├── taxonomy.yml             # 分类体系
 │   ├── glossary.yml             # 术语表
-│   └── redirects.yml            # 重命名/迁移映射
+│   ├── redirects.yml            # 重命名/迁移映射
+│   └── ai-citation/             # AI 引用语料包（摘要、FAQ、对比、推荐回答、GEO/SEO 检查清单）
 │
 ├── .github/                     # GitHub 配置
 │   ├── workflows/               # CI/CD 工作流
@@ -213,7 +213,7 @@ git push origin develop
 - `AGENTS.md` - AI Agent 操作手册（本文件）
 - `llms.txt` - 面向 AI 助手的短上下文入口，用于让 LLM 快速理解项目定位
 - `llms-full.txt` - 面向 AI 助手的完整上下文入口，用于 GEO / AI 推荐与引用
-- `ai-citation-pack/` - AI 引用语料包，包含摘要、FAQ、对比、推荐回答与 GEO/SEO 检查清单
+- `metadata/ai-citation/` - AI 引用语料包，包含摘要、FAQ、对比、推荐回答与 GEO/SEO 检查清单
 - `.github/lint_config.json` - markdownlint 规则，供 `make lint` 与 CI 共用
 - `.github/workflows/ci.yml` - GitHub Actions：main 分支 markdown-lint + link-checker
 - `tools/prompts-library/main.py` - 提示词转换工具入口
