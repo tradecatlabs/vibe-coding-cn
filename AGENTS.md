@@ -96,7 +96,6 @@ git push origin develop
 - `docs/` - 中文知识库（方法论/入门/实战/资源）
 - `prompts/` - 提示词入口与云端索引
 - `skills/` - 可复用技能库（每个子目录一个 Skill）
-- `docs/playbooks/workflows/` - 可复用工作流模板（自动开发闭环等）
 - `tools/config/` - 工具与开发配置（例如 Codex CLI）
 - `tools/external/` - 外部工具与依赖（含 Git submodule）
 

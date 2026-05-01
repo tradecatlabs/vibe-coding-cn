@@ -16,3 +16,4 @@
 - 清退 `docs/case-studies/` 实战案例目录，并同步更新 docs 索引、目录级 AGENTS、metadata、labeler 和相关 README 链接口径。
 - 清退 `docs/playbooks/` 下 7 个工具型/旧方法论文档，并同步更新 playbooks 索引、README、学习地图与相关概念页链接。
 - 清退 `docs/playbooks/REMOTE_TUNNEL_GUIDE.md`，继续收缩工具型旧文档。
+- 清退 `docs/playbooks/workflows/` 工作流模板目录，并同步移除学习地图、AI FAQ、redirects、labeler 与 AGENTS 中的旧入口。

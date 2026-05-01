@@ -33,8 +33,3 @@ prompt:
 repos:
   - changed-files:
     - any-glob-to-any-file: 'tools/external/**'
-
-# 工作流模板相关的标签
-workflow:
-  - changed-files:
-    - any-glob-to-any-file: 'docs/playbooks/workflows/**'

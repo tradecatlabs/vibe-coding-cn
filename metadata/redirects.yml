@@ -7,8 +7,6 @@ redirects:
     to: docs/concepts/philosophy/
   - from: docs/guides/playbook/
     to: docs/playbooks/
-  - from: docs/workflow/
-    to: docs/playbooks/workflows/
   - from: skills/
     to: skills/
   - from: prompts/
