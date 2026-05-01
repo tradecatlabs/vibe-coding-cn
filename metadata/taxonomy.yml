@@ -1,0 +1,33 @@
+sections:
+  getting-started:
+    path: docs/getting-started
+    purpose: 从零开始学习路径、学习地图、环境配置与 AI CLI 配置
+  concepts:
+    path: docs/concepts
+    purpose: 核心概念、方法论、问题求解与工程思想
+  guides:
+    path: docs/guides
+    purpose: 操作型指南
+  playbooks:
+    path: docs/playbooks
+    purpose: 可复用流程、工具实践与工作流
+  references:
+    path: docs/references
+    purpose: 清单、模板、强约束、常见坑与审查标准
+  case-studies:
+    path: docs/case-studies
+    purpose: 实战案例与问题记录
+
+top_level:
+  skills:
+    path: skills
+    purpose: 可复用 AI Skills
+  prompts:
+    path: prompts
+    purpose: 提示词入口与提示词资产
+  tools:
+    path: tools
+    purpose: 辅助工具、外部仓库与工具配置
+  assets:
+    path: assets
+    purpose: 图片、模板、数据文件等静态资产

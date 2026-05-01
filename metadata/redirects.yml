@@ -1,0 +1,21 @@
+redirects:
+  - from: assets/documents/guides/getting-started/
+    to: docs/getting-started/
+  - from: assets/documents/principles/fundamentals/
+    to: docs/concepts/ 或 docs/references/
+  - from: assets/documents/principles/philosophy/
+    to: docs/concepts/philosophy/
+  - from: assets/documents/guides/playbook/
+    to: docs/playbooks/
+  - from: assets/documents/workflow/
+    to: docs/playbooks/workflows/
+  - from: assets/documents/case-studies/
+    to: docs/case-studies/
+  - from: assets/skills/
+    to: skills/
+  - from: assets/prompt/
+    to: prompts/
+  - from: assets/repos/
+    to: tools/
+  - from: assets/config/
+    to: tools/config/
