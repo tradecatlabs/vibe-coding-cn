@@ -394,9 +394,6 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**元提示词**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 用于生成提示词的高级提示词。
 *   [**通用项目架构模板**](docs/references/通用项目架构模板.md): 可用于快速搭建标准化的项目目录结构。
 *   [**元技能：Auto Skill**](./skills/auto-skill/SKILL.md): 用于生成、重构与校验 Skills 的元技能。
-*   [**tmux快捷键大全**](docs/playbooks/tmux快捷键大全.md): tmux 的快捷键参考文档。
-*   [**LazyVim快捷键大全**](docs/playbooks/LazyVim快捷键大全.md): LazyVim 的快捷键参考文档。
-*   [**手机远程 Vibe Coding**](docs/playbooks/关于手机ssh任意位置链接本地计算机，基于frp实现的方法.md): 基于 frp 实现手机 SSH 远程控制本地电脑进行 Vibe Coding。
 
 ### 外部教程与资源
 
@@ -417,7 +414,6 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**系统提示词构建原则**](docs/references/系统提示词构建原则.md): 构建高效 AI 系统提示词的综合指南。
 *   [**开发经验总结**](docs/references/开发经验.md): 变量命名、文件结构、编码规范、架构原则等。
 *   [**通用项目架构模板**](docs/references/通用项目架构模板.md): 多种项目类型的标准目录结构。
-*   [**Augment MCP 配置文档**](docs/playbooks/auggie-mcp配置文档.md): Augment 上下文引擎配置说明。
 *   [**系统提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): AI 开发的系统提示词，含多版本开发规范（云端表格）。
 *   [**TradeCat Sheets API 使用说明**](docs/playbooks/tradecat-sheets-api-usage.md): 把公开 Google Sheet 当作 API 注册表与数据面（Data Plane），供 Agent/服务端消费结构化 JSON。
 *   [**外部资源（在线表格）**](./assets/README.md): 外部资源的唯一真相源（按类型分表），本地 Markdown 保留为历史参考。

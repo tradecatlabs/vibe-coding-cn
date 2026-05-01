@@ -14,3 +14,4 @@
 - 创建 `baseline-skill-cleanup-20260502-041941` 基线标签，开始清理领域型/工具型 Skills。
 - 清退 `ccxt`、`claude-code-guide`、`claude-cookbooks`、`coingecko`、`cryptofeed`、`ddd-doc-steward`、`headless-cli`、`hummingbot`、`markdown-to-epub`、`polymarket`、`postgresql`、`proxychains`、`snapdom`、`sop-generator`、`telegram-dev`、`timescaledb`、`tmux-autopilot`、`twscrape` 等 Skill 目录，仅保留 `auto-skill` 与 Claude 官方 skills 软链接入口。
 - 清退 `docs/case-studies/` 实战案例目录，并同步更新 docs 索引、目录级 AGENTS、metadata、labeler 和相关 README 链接口径。
+- 清退 `docs/playbooks/` 下 7 个工具型/旧方法论文档，并同步更新 playbooks 索引、README、学习地图与相关概念页链接。
