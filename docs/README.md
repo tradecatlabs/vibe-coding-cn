@@ -9,7 +9,6 @@
 | [getting-started](./getting-started/) | 从零开始、学习地图、环境配置与默认 AI CLI 路线 |
 | [concepts](./concepts/) | Vibe Coding、拼好码、问题求解、语言层、工程范式等核心概念 |
 | [references](./references/) | 清单、模板、强约束与常见坑 |
-| [faq.md](./faq.md) | 高频问题 |
 
 ## 推荐入口
 

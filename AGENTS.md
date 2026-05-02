@@ -145,8 +145,7 @@ git push origin develop
 │   ├── README.md                # docs 总索引
 │   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
 │   ├── concepts/                # 核心概念、方法论与底层模型
-│   ├── references/              # 清单、约束、常见坑、模板
-│   └── faq.md                   # 高频问题
+│   └── references/              # 清单、约束、常见坑、模板
 │
 ├── prompts/                     # 提示词库入口（指向云端表格）
 │   ├── README.md                # 在线表格链接
