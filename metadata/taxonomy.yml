@@ -5,9 +5,6 @@ sections:
   concepts:
     path: docs/concepts
     purpose: 核心概念、方法论、问题求解与工程思想
-  playbooks:
-    path: docs/playbooks
-    purpose: 工具实践与专项方法文档
   references:
     path: docs/references
     purpose: 清单、模板、强约束与常见坑

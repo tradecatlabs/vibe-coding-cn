@@ -6,7 +6,17 @@ redirects:
   - from: docs/principles/philosophy/
     to: docs/concepts/philosophy/
   - from: docs/guides/playbook/
-    to: docs/playbooks/
+    to: docs/README.md
+  - from: docs/playbooks/
+    to: docs/README.md
+  - from: docs/playbooks/GEO与SEO优化方法.md
+    to: assets/ai-citation/geo-seo-checklist.md
+  - from: docs/playbooks/GEMINI-HEADLESS.md
+    to: docs/README.md
+  - from: docs/playbooks/ProxyCast配置文档.md
+    to: docs/README.md
+  - from: docs/playbooks/tradecat-sheets-api-usage.md
+    to: docs/README.md
   - from: docs/getting-started/Codex-CLI配置.md
     to: docs/getting-started/README.md
   - from: docs/getting-started/学习地图.md

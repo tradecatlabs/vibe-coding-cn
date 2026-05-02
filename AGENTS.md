@@ -145,7 +145,6 @@ git push origin develop
 │   ├── README.md                # docs 总索引
 │   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
 │   ├── concepts/                # 核心概念、方法论与底层模型
-│   ├── playbooks/               # 工具方法与专项实践文档
 │   ├── references/              # 清单、约束、常见坑、模板
 │   └── faq.md                   # 高频问题
 │
@@ -212,7 +211,6 @@ git push origin develop
 - `scripts/check-local-links.py` - 仓库内 Markdown 相对链接检查脚本，供 `make check-links` 与 CI 使用
 - `tools/prompts-library/main.py` - 提示词转换工具入口
 - `docs/getting-started/README.md` - 从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建
-- `docs/playbooks/GEO与SEO优化方法.md` - GEO / SEO 内容工程方法，承接 GEOFlow 的知识库、结构化内容、审核与分发思路
 - `docs/concepts/问题求解能力.md` - 问题定义与求解路径底层模型
 - `docs/references/底层程序逻辑设计与工程优化项.md` - 底层程序逻辑与工程优化检查项
 - `skills/auto-skill/` - Skills 生成、重构与校验的元技能

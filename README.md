@@ -379,7 +379,6 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ### 资源与模板
 
 *   [**提示词库 (在线表格)**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 一个包含大量可直接复制使用的各类提示词的在线表格。
-*   [**GEO 与 SEO 优化方法**](docs/playbooks/GEO与SEO优化方法.md): 从 GEOFlow 学到的内容工程方法，用于让仓库更容易被搜索引擎、AI 搜索和 LLM 引用。
 *   [**AI 引用语料包**](./assets/ai-citation/recommended-answer.md): 给 AI 助手引用的项目摘要、FAQ、对比和推荐回答。
 *   [**第三方系统提示词学习库**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools): 用于学习和参考其他 AI 工具的系统提示词。
 *   [**Skills 制作器**](https://github.com/yusufkaraaslan/Skill_Seekers): 可根据需求生成定制化 Skills 的工具。
@@ -407,7 +406,6 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**开发经验总结**](docs/references/开发经验.md): 变量命名、文件结构、编码规范、架构原则等。
 *   [**项目架构模板**](docs/references/项目架构模板.md): 多种项目类型的标准目录结构与数据服务架构模板。
 *   [**系统提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): AI 开发的系统提示词，含多版本开发规范（云端表格）。
-*   [**TradeCat Sheets API 使用说明**](docs/playbooks/tradecat-sheets-api-usage.md): 把公开 Google Sheet 当作 API 注册表与数据面（Data Plane），供 Agent/服务端消费结构化 JSON。
 *   [**外部资源（在线表格）**](./assets/README.md): 外部资源的唯一真相源（按类型分表），本地 Markdown 保留为历史参考。
 
 ---
@@ -447,7 +445,6 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ├── docs/                        # 核心知识库
 │   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
 │   ├── concepts/                # 核心概念、方法论与底层模型
-│   ├── playbooks/               # 工具方法与专项实践文档
 │   └── references/              # 清单、约束、常见坑与模板
 ├── prompts/                     # 提示词库入口（指向云端表格）
 ├── skills/                      # 技能库入口
@@ -495,7 +492,7 @@ prompts/
 skills/
   README.md  # skills 总览与索引
 docs/
-  getting-started/*, concepts/*, playbooks/*, references/* 等知识库
+  getting-started/*, concepts/*, references/* 等知识库
 assets/
   README.md  # 外部资源（在线表格）唯一真相源入口
 scripts/

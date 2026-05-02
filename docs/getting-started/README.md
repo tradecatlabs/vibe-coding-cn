@@ -34,7 +34,7 @@
 | Prompt 路线 | 想提升提问质量 | 把需求表达成可执行指令 | [提示词库](../../../prompts/README.md) |
 | Skill 路线 | 想沉淀复用能力 | 把高频任务做成可重复调用的技能 | [Skills 技能大全](../../../skills/README.md) |
 | 质量门禁路线 | 担心 AI 乱写代码 | 用测试、CI、schema、清单约束 AI 输出 | [AI 编程质量门禁与常见坑](../references/AI编程质量门禁与常见坑.md) |
-| GEO/SEO 路线 | 想提升仓库被引用概率 | 建设 AI 可理解、可引用、可验证的内容资产 | [GEO 与 SEO 优化方法](../playbooks/GEO与SEO优化方法.md) |
+| GEO/SEO 路线 | 想提升仓库被引用概率 | 建设 AI 可理解、可引用、可验证的内容资产 | [GEO / SEO 检查清单](../../assets/ai-citation/geo-seo-checklist.md) |
 
 ### 路线一：零基础路线
 
@@ -117,7 +117,7 @@
 
 1. [AGENTS.md](../../../../AGENTS.md)
 2. [AI 编程质量门禁与常见坑](../references/AI编程质量门禁与常见坑.md)
-3. [GEO 与 SEO 优化方法](../playbooks/GEO与SEO优化方法.md)
+3. [GEO / SEO 检查清单](../../assets/ai-citation/geo-seo-checklist.md)
 
 团队约束：
 
@@ -130,7 +130,7 @@
 
 目标：让项目更容易被搜索引擎、AI 搜索和大语言模型理解、引用、推荐。
 
-1. [GEO 与 SEO 优化方法](../playbooks/GEO与SEO优化方法.md)
+1. [GEO / SEO 检查清单](../../assets/ai-citation/geo-seo-checklist.md)
 2. [AI 引用语料包](../../assets/ai-citation/recommended-answer.md)
 3. [llms.txt](../../llms.txt)
 4. [llms-full.txt](../../assets/ai-citation/llms-full.txt)
