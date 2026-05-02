@@ -30,7 +30,7 @@ reading_paths:
     title: 新手路径
     documents:
       - docs/getting-started/README.md
-      - docs/getting-started/README.md#2-vibe-coding-经验
+      - docs/getting-started/README.md#1-vibe-coding-经验
       - docs/concepts/问题求解.md
       - docs/concepts/拼好码.md
       - docs/references/工程实践.md
@@ -54,7 +54,7 @@ reading_paths:
       - AGENTS.md
       - docs/AGENTS.md
       - docs/getting-started/README.md
-      - docs/getting-started/README.md#2-vibe-coding-经验
+      - docs/getting-started/README.md#1-vibe-coding-经验
       - docs/references/工程实践.md
       - assets/ai-citation/README.md
 
@@ -70,7 +70,7 @@ documents:
     - path: docs/getting-started/README.md
       title: 从零开始完整入门
       role: 新手线性路线、网络环境、Codex CLI、开发环境与 Vibe Coding 经验
-    - path: docs/getting-started/README.md#2-vibe-coding-经验
+    - path: docs/getting-started/README.md#1-vibe-coding-经验
       title: Vibe Coding 经验
       role: 通用语言能力、人机分工、机器门禁和入门铁律
   concepts:

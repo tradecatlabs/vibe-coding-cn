@@ -32,7 +32,7 @@
 <!-- 🔴 核心理念 (红色系) -->
 <p>
 	  <a href="./docs/getting-started/README.md#1-学习地图"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
-	  <a href="./docs/getting-started/README.md#2-vibe-coding-经验"><img src="https://img.shields.io/badge/🧠_Vibe_Coding-经验必读-crimson?style=for-the-badge" alt="Vibe Coding 经验"></a>
+	  <a href="./docs/getting-started/README.md#1-vibe-coding-经验"><img src="https://img.shields.io/badge/🧠_Vibe_Coding-经验必读-crimson?style=for-the-badge" alt="Vibe Coding 经验"></a>
 	  <a href="./docs/concepts/问题求解.md"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解"></a>
 	  <a href="./docs/philosophy/思维模型.md"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
 	  <a href="./docs/philosophy/README.md#怎么选"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
@@ -175,7 +175,7 @@
 完全新手？按顺序完成以下步骤：
 
 0. [从零开始完整入门](docs/getting-started/README.md#1-学习地图) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
-1. [Vibe Coding 经验](docs/getting-started/README.md#2-vibe-coding-经验) - 通用语言能力、人机分工、机器门禁和入门铁律
+1. [Vibe Coding 经验](docs/getting-started/README.md#1-vibe-coding-经验) - 通用语言能力、人机分工、机器门禁和入门铁律
 2. [问题求解](docs/concepts/问题求解.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
 3. [拼好码](docs/concepts/拼好码.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
 4. [工程实践](docs/references/工程实践.md#4-ai-编程质量门禁与常见坑) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
