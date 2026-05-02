@@ -32,15 +32,23 @@ redirects:
   - from: docs/getting-started/开发环境搭建.md
     to: docs/getting-started/README.md
   - from: docs/references/通用项目架构模板.md
-    to: docs/references/项目架构模板.md
+    to: docs/references/工程实践.md
   - from: docs/references/数据集导向数据服务模板.md
-    to: docs/references/项目架构模板.md
+    to: docs/references/工程实践.md
   - from: docs/references/系统提示词构建原则.md
-    to: docs/references/AI编程质量门禁与常见坑.md
+    to: docs/references/工程实践.md
   - from: docs/references/强前置条件约束.md
-    to: docs/references/AI编程质量门禁与常见坑.md
+    to: docs/references/工程实践.md
   - from: docs/references/常见坑汇总.md
-    to: docs/references/AI编程质量门禁与常见坑.md
+    to: docs/references/工程实践.md
+  - from: docs/references/项目架构模板.md
+    to: docs/references/工程实践.md
+  - from: docs/references/AI编程质量门禁与常见坑.md
+    to: docs/references/工程实践.md
+  - from: docs/references/代码组织.md
+    to: docs/references/工程实践.md
+  - from: docs/references/开发经验.md
+    to: docs/references/工程实践.md
   - from: skills/
     to: skills/
   - from: prompts/

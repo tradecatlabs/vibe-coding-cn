@@ -17,6 +17,6 @@
 2. [问题求解能力](./concepts/问题求解能力.md)
 3. [思维模型](./concepts/思维模型.md)
 4. [拼好码](./concepts/拼好码.md)
-5. [AI 编程质量门禁与常见坑](./references/AI编程质量门禁与常见坑.md)
+5. [工程实践](./references/工程实践.md)
 6. [技术栈](./references/技术栈.md)
 7. [哲学方法论](./philosophy/README.md)

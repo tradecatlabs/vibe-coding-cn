@@ -25,11 +25,11 @@
 1. `docs/getting-started/README.md`
 2. `docs/concepts/问题求解能力.md`
 3. `docs/concepts/拼好码.md`
-4. `docs/references/AI编程质量门禁与常见坑.md`
+4. `docs/references/工程实践.md`
 
 进阶用户优先看：
 
 1. `docs/concepts/拼好码.md`
-2. `docs/references/AI编程质量门禁与常见坑.md`
+2. `docs/references/工程实践.md`
 3. `skills/README.md`
-4. `docs/references/项目架构模板.md`
+4. `docs/references/工程实践.md`

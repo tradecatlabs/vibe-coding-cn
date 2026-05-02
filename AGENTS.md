@@ -213,6 +213,7 @@ git push origin develop
 - `docs/getting-started/README.md` - 从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建
 - `docs/concepts/问题求解能力.md` - 问题定义与求解路径底层模型
 - `docs/references/底层程序逻辑设计与工程优化项.md` - 底层程序逻辑与工程优化检查项
+- `docs/references/工程实践.md` - 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口
 - `docs/references/技术栈.md` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
 - `skills/auto-skill/` - Skills 生成、重构与校验的元技能
 
