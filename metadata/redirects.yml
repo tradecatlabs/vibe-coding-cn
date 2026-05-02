@@ -17,6 +17,8 @@ redirects:
     to: docs/philosophy/README.md
   - from: docs/philosophy/控制论与科学方法论.md
     to: docs/philosophy/README.md
+  - from: docs/philosophy/理解世界、描述变化、整理知识的一套较小框架.md
+    to: docs/philosophy/组合描述模型.md
   - from: docs/guides/playbook/
     to: docs/README.md
   - from: docs/playbooks/
