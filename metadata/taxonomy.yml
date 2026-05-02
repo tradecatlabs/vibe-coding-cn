@@ -25,6 +25,44 @@ sections:
     entry: docs/references/README.md
     agent_guide: docs/references/AGENTS.md
 
+reading_paths:
+  beginner:
+    title: 新手路径
+    documents:
+      - docs/getting-started/README.md
+      - docs/concepts/问题求解.md
+      - docs/concepts/拼好码.md
+      - docs/references/工程实践.md
+  developer:
+    title: 开发者路径
+    documents:
+      - docs/concepts/拼好码.md
+      - docs/concepts/系统构建方法.md
+      - docs/references/技术栈.md
+      - docs/references/工程实践.md
+  thinking:
+    title: 思维模型路径
+    documents:
+      - docs/philosophy/思维模型.md
+      - docs/philosophy/组合描述模型.md
+      - docs/philosophy/编程之道.md
+      - docs/concepts/递归自优化系统.md
+  agent:
+    title: AI Agent 读取路径
+    documents:
+      - AGENTS.md
+      - docs/AGENTS.md
+      - docs/getting-started/README.md
+      - docs/references/工程实践.md
+      - assets/ai-citation/README.md
+
+selection_rules:
+  concepts: 需要理解核心概念、术语、问题求解、系统构建或复用优先原则时读取。
+  philosophy: 需要思维模型、底层认知框架、编程哲学或复杂系统描述方法时读取。
+  references: 需要工程模板、质量门禁、技术栈、常见坑和可执行检查清单时读取。
+  research: 需要新技术、新 repo、工程趋势和采用前判断时读取。
+  getting-started: 需要从零开始配置网络、Codex CLI、开发环境并完成最小闭环时读取。
+
 documents:
   getting-started:
     - path: docs/getting-started/README.md
