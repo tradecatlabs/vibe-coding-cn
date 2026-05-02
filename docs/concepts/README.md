@@ -58,9 +58,9 @@
 ## 和其他目录的边界
 
 - 具体入门步骤放在 [getting-started](../getting-started/README.md#顶部导航)。
-- 工程模板、质量门禁、常见坑和技术栈放在 [references](../references/README.md)。
-- 思维模型、编程哲学和底层认知模型放在 [philosophy](../philosophy/README.md)。
-- 新技术、优秀 repo 和趋势判断先放在 [research](../research/README.md)。
+- 工程模板、质量门禁、常见坑和技术栈放在 [references](../references/README.md#目录定位)。
+- 思维模型、编程哲学和底层认知模型放在 [philosophy](../philosophy/README.md#怎么选)。
+- 新技术、优秀 repo 和趋势判断先放在 [research](../research/README.md#目录定位)。
 
 ## 维护规则
 

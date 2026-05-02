@@ -10,6 +10,8 @@
 
 <div align="center">
 
+<a id="vibe-coding-指南"></a>
+
 # vibe-coding-cn：中文 Vibe Coding 从入门到精通教程
 
 **从想法到产品的 AI 结对编程工作流标准：Prompt + Skill + Context + Quality Gate + 工程闭环**
@@ -29,11 +31,11 @@
 <!-- 资源直达 - 按重要性分组 -->
 <!-- 🔴 核心理念 (红色系) -->
 <p>
-	  <a href="./docs/getting-started/README.md"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
+	  <a href="./docs/getting-started/README.md#1-学习地图"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
 	  <a href="./docs/concepts/问题求解.md"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解"></a>
 	  <a href="./docs/philosophy/思维模型.md"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
-	  <a href="./docs/philosophy/README.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
-	  <a href="./docs/references/工程实践.md"><img src="https://img.shields.io/badge/🛡️_工程实践-质量门禁-darkred?style=for-the-badge" alt="工程实践"></a>
+	  <a href="./docs/philosophy/README.md#怎么选"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
+	  <a href="./docs/references/工程实践.md#4-ai-编程质量门禁与常见坑"><img src="https://img.shields.io/badge/🛡️_工程实践-质量门禁-darkred?style=for-the-badge" alt="工程实践"></a>
 	  <a href="./docs/concepts/语言层要素.md"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>
   <a href="./skills/"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
   <a href="https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
@@ -296,7 +298,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 **核心理念**：哲学不是空谈，是可落地的工程方法。
 
-👉 [深入了解哲学方法论工具箱](docs/philosophy/README.md)
+👉 [深入了解哲学方法论工具箱](docs/philosophy/README.md#方法论)
 
 </details>
 

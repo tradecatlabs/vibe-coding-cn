@@ -6,27 +6,27 @@
 
 | 目录 | 定位 | 首选入口 |
 |:---|:---|:---|
-| [getting-started](./getting-started/) | 从零开始的线性入门教程 | [从零开始完整入门](./getting-started/README.md) |
+| [getting-started](./getting-started/) | 从零开始的线性入门教程 | [从零开始完整入门](./getting-started/README.md#1-学习地图) |
 | [concepts](./concepts/) | 核心概念、问题求解与工程思想 | [核心概念索引](./concepts/README.md) |
-| [philosophy](./philosophy/) | 哲学方法论、思维模型与底层认知模型 | [哲学方法论工具箱](./philosophy/README.md) |
-| [references](./references/) | 工程实践、技术栈、模板和检查清单 | [参考资料索引](./references/README.md) |
+| [philosophy](./philosophy/) | 哲学方法论、思维模型与底层认知模型 | [哲学方法论工具箱](./philosophy/README.md#怎么选) |
+| [references](./references/) | 工程实践、技术栈、模板和检查清单 | [参考资料索引](./references/README.md#目录定位) |
 | [research](./research/) | 新技术、优秀 repo 与工程范式研究 | [研究笔记索引](./research/README.md) |
 
 ## 推荐阅读路径
 
 ### 新手路径
 
-1. [从零开始完整入门](./getting-started/README.md)
+1. [从零开始完整入门](./getting-started/README.md#1-学习地图)
 2. [问题求解](./concepts/问题求解.md)
 3. [拼好码](./concepts/拼好码.md)
-4. [工程实践](./references/工程实践.md)
+4. [工程实践](./references/工程实践.md#顶部导航)
 
 ### 开发者路径
 
 1. [拼好码](./concepts/拼好码.md)
 2. [系统构建方法](./concepts/系统构建方法.md)
-3. [技术栈](./references/技术栈.md)
-4. [工程实践](./references/工程实践.md)
+3. [技术栈](./references/技术栈.md#顶部导航)
+4. [工程实践](./references/工程实践.md#顶部导航)
 
 ### 思维模型路径
 
@@ -39,15 +39,15 @@
 
 1. [根目录 AGENTS](../AGENTS.md)
 2. [docs 目录 AGENTS](./AGENTS.md)
-3. [从零开始完整入门](./getting-started/README.md)
-4. [工程实践](./references/工程实践.md)
+3. [从零开始完整入门](./getting-started/README.md#1-学习地图)
+4. [工程实践](./references/工程实践.md#顶部导航)
 5. [AI 引用语料](../assets/ai-citation/README.md)
 
 ## 全部文档索引
 
 ### getting-started
 
-- [README](./getting-started/README.md) - 从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建。
+- [README](./getting-started/README.md#顶部导航) - 从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建。
 - [AGENTS](./getting-started/AGENTS.md) - 入门教程目录操作规则。
 
 ### concepts
@@ -63,7 +63,7 @@
 
 ### philosophy
 
-- [README](./philosophy/README.md) - 哲学方法论工具箱。
+- [README](./philosophy/README.md#怎么选) - 哲学方法论工具箱。
 - [AGENTS](./philosophy/AGENTS.md) - 哲学方法论目录操作规则。
 - [思维模型](./philosophy/思维模型.md) - 可复用思维模型索引。
 - [组合描述模型](./philosophy/组合描述模型.md) - 用对象、状态、快照、序列、过程、变换、同一/差异与关系描述复杂系统。
@@ -73,8 +73,8 @@
 
 - [README](./references/README.md) - 参考资料索引。
 - [AGENTS](./references/AGENTS.md) - 参考资料目录操作规则。
-- [工程实践](./references/工程实践.md) - 项目架构、代码组织、开发经验、质量门禁与常见坑。
-- [技术栈](./references/技术栈.md) - 技术栈选型、组合案例与初学者学习路径。
+- [工程实践](./references/工程实践.md#顶部导航) - 项目架构、代码组织、开发经验、质量门禁与常见坑。
+- [技术栈](./references/技术栈.md#顶部导航) - 技术栈选型、组合案例与初学者学习路径。
 
 ### research
 
