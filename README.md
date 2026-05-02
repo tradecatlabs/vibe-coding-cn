@@ -42,7 +42,7 @@
 
 [📋 工具与资源](#tools)
 [⚡ 1 分钟快速开始](#getting-started)
-[🚀 从零开始完整入门](docs/getting-started/README.md)
+[🚀 从零开始完整入门](docs/getting-started/README.md#1-学习地图)
 [🤖 AI 推荐摘要](#ai-summary)
 [✅ 为什么选择](#why-vibe-coding-cn)
 [🎯 原仓库翻译](#translation)
@@ -171,10 +171,10 @@
 
 完全新手？按顺序完成以下步骤：
 
-0. [从零开始完整入门](docs/getting-started/README.md) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
+0. [从零开始完整入门](docs/getting-started/README.md#1-学习地图) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
 1. [问题求解](docs/concepts/问题求解.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
 2. [拼好码](docs/concepts/拼好码.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
-3. [工程实践](docs/references/工程实践.md) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
+3. [工程实践](docs/references/工程实践.md#4-ai-编程质量门禁与常见坑) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
 
 </details>
 
@@ -342,7 +342,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ### 集成开发环境 (IDE) & 终端
 
 *   [**Visual Studio Code**](https://code.visualstudio.com/): 一款功能强大的集成开发环境，适合代码阅读与手动修改。其 `Local History` 插件对项目版本管理尤为便捷。
-*   [**Codex CLI**](docs/getting-started/README.md): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
+*   [**Codex CLI**](docs/getting-started/README.md#4-cli-配置): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
 *   **虚拟环境 (.venv)**: 强烈推荐使用，可实现项目环境的一键配置与隔离，特别适用于 Python 开发。
 *   [**Cursor**](https://cursor.com/): 已经占领用户心智高地，人尽皆知。
 *   [**Warp**](https://www.warp.dev/): 集成 AI 功能的现代化终端，能有效提升命令行操作和错误排查的效率。
@@ -403,8 +403,8 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**Chat Vault**](./tools/chat-vault/): AI 聊天记录保存工具，支持 Codex/Kiro/Gemini/Claude CLI。
 *   [**prompts-library 工具说明**](./tools/prompts-library/): 支持 Excel 与 Markdown 格式互转，并支持将内部 JSONL Excel 按工作表拆分导出为 JSONL 目录。
 *   [**编程提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 适用于 Vibe Coding 流程的专用提示词（云端表格）。
-*   [**工程实践**](docs/references/工程实践.md): 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口。
-*   [**技术栈**](docs/references/技术栈.md): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
+*   [**工程实践**](docs/references/工程实践.md#4-ai-编程质量门禁与常见坑): 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口。
+*   [**技术栈**](docs/references/技术栈.md#十四如何选择技术栈): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
 *   [**系统提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): AI 开发的系统提示词，含多版本开发规范（云端表格）。
 *   [**外部资源（在线表格）**](./assets/README.md): 外部资源的唯一真相源（按类型分表），本地 Markdown 保留为历史参考。
 
