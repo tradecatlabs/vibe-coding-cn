@@ -406,6 +406,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**AI 编程质量门禁与常见坑**](docs/references/AI编程质量门禁与常见坑.md): 系统提示词、硬约束、质量门禁与常见问题排查的合并入口。
 *   [**开发经验总结**](docs/references/开发经验.md): 变量命名、文件结构、编码规范、架构原则等。
 *   [**项目架构模板**](docs/references/项目架构模板.md): 多种项目类型的标准目录结构与数据服务架构模板。
+*   [**技术栈**](docs/references/技术栈.md): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
 *   [**系统提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): AI 开发的系统提示词，含多版本开发规范（云端表格）。
 *   [**外部资源（在线表格）**](./assets/README.md): 外部资源的唯一真相源（按类型分表），本地 Markdown 保留为历史参考。
 

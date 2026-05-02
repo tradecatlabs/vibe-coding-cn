@@ -18,4 +18,5 @@
 3. [思维模型](./concepts/思维模型.md)
 4. [拼好码](./concepts/拼好码.md)
 5. [AI 编程质量门禁与常见坑](./references/AI编程质量门禁与常见坑.md)
-6. [哲学方法论](./philosophy/README.md)
+6. [技术栈](./references/技术栈.md)
+7. [哲学方法论](./philosophy/README.md)
