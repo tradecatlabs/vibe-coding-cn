@@ -97,7 +97,7 @@
 1. **知识库先行**：先沉淀真实、可验证、可维护的项目定义、方法论、模板、案例和 FAQ
 2. **答案块优先**：关键页面必须有一句话定义、核心摘要、适合人群、操作步骤、检查清单
 3. **结构化表达**：优先使用标题层级、列表、表格、FAQ、对比区和固定引用锚点
-4. **机器可读入口**：维护 `llms.txt`、`llms-full.txt` 和 `metadata/ai-citation/`
+4. **机器可读入口**：维护 `llms.txt` 和 `assets/ai-citation/`
 5. **审核后发布**：AI 生成的 GEO 内容必须经过事实、链接、术语、定位和门禁检查
 
 本仓库的差异化优势：
@@ -386,7 +386,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 *   [**提示词库 (在线表格)**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 一个包含大量可直接复制使用的各类提示词的在线表格。
 *   [**GEO 与 SEO 优化方法**](docs/playbooks/GEO与SEO优化方法.md): 从 GEOFlow 学到的内容工程方法，用于让仓库更容易被搜索引擎、AI 搜索和 LLM 引用。
-*   [**AI 引用语料包**](./metadata/ai-citation/recommended-answer.md): 给 AI 助手引用的项目摘要、FAQ、对比和推荐回答。
+*   [**AI 引用语料包**](./assets/ai-citation/recommended-answer.md): 给 AI 助手引用的项目摘要、FAQ、对比和推荐回答。
 *   [**第三方系统提示词学习库**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools): 用于学习和参考其他 AI 工具的系统提示词。
 *   [**Skills 制作器**](https://github.com/yusufkaraaslan/Skill_Seekers): 可根据需求生成定制化 Skills 的工具。
 *   [**元提示词**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 用于生成提示词的高级提示词。
@@ -462,8 +462,8 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │   └── claude-official-skills/  # Claude 官方 skills 软链接入口
 ├── tools/                       # 辅助工具、外部仓库与工具配置
 ├── scripts/                     # 自动化脚本
-├── metadata/                    # 机器可读索引与 AI 引用资产
-├── assets/                      # 静态资产与外部资源入口
+├── metadata/                    # 机器可读索引
+├── assets/                      # 静态资产、外部资源入口与 AI 引用资产
 │
 ├── .github/                     # GitHub 配置
 │   ├── workflows/               # CI/CD 工作流

@@ -23,8 +23,8 @@
 ## 机器可读
 
 - [ ] 是否维护 `llms.txt`
-- [ ] 是否维护 `llms-full.txt`
-- [ ] 是否维护 `metadata/ai-citation/`
+- [ ] 是否维护 `assets/ai-citation/llms-full.txt`
+- [ ] 是否维护 `assets/ai-citation/`
 - [ ] 是否使用稳定标题和锚点
 - [ ] 是否避免同一概念多种叫法来回切换
 - [ ] 是否把推荐回答写成可直接引用的短段落
