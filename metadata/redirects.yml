@@ -11,6 +11,8 @@ redirects:
     to: docs/philosophy/思维模型.md
   - from: docs/concepts/编程之道.md
     to: docs/philosophy/编程之道.md
+  - from: docs/concepts/软件开发范式演进.md
+    to: docs/philosophy/编程之道.md
   - from: docs/philosophy/现象学还原.md
     to: docs/philosophy/README.md
   - from: docs/philosophy/辩证法.md
@@ -60,6 +62,8 @@ redirects:
   - from: docs/references/代码组织.md
     to: docs/references/工程实践.md
   - from: docs/references/开发经验.md
+    to: docs/references/工程实践.md
+  - from: docs/references/底层程序逻辑设计与工程优化项.md
     to: docs/references/工程实践.md
   - from: skills/
     to: skills/
