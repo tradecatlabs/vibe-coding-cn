@@ -2,7 +2,7 @@
 
 ## 目录用途
 
-`docs/` 存放项目核心知识库文档，包含入门路径、核心概念、操作指南、工具方法与参考清单。
+`docs/` 存放项目核心知识库文档，包含入门路径、核心概念、工具方法与参考清单。
 
 ## 目录结构
 
@@ -11,9 +11,8 @@ docs/
 ├── README.md             # 知识库总索引
 ├── getting-started/      # 从零开始、学习地图、环境与 AI CLI 配置
 ├── concepts/             # 核心概念、方法论与底层模型
-├── guides/               # 操作型指南
 ├── playbooks/            # 工具方法与专项实践文档
-├── references/           # 清单、约束、常见坑、审查标准
+├── references/           # 清单、约束、常见坑、模板
 └── faq.md                # 高频问题
 ```
 
@@ -24,7 +23,6 @@ docs/
 - `getting-started/Vibe Coding 经验.md`：语言化、门禁、人机分工与 Vibe Coding 工程闭环。
 - `getting-started/CLI配置.md`：默认 AI CLI 路线。
 - `concepts/拼好码.md`：复用优先、能力编排、边界治理与工程门禁。
-- `guides/仓库维护与质量门禁.md`：仓库维护、迁移检查和质量门禁指南。
 
 ## 操作规范
 

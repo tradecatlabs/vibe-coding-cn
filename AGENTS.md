@@ -145,9 +145,8 @@ git push origin develop
 │   ├── README.md                # docs 总索引
 │   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
 │   ├── concepts/                # 核心概念、方法论与底层模型
-│   ├── guides/                  # 操作指南预留区
 │   ├── playbooks/               # 工具方法与专项实践文档
-│   ├── references/              # 清单、约束、常见坑、审查标准
+│   ├── references/              # 清单、约束、常见坑、模板
 │   └── faq.md                   # 高频问题
 │
 ├── prompts/                     # 提示词库入口（指向云端表格）
@@ -211,7 +210,6 @@ git push origin develop
 - `.github/lint_config.json` - markdownlint 规则，供 `make lint` 与 CI 共用
 - `.github/workflows/ci.yml` - GitHub Actions：develop/master 分支 markdown-lint + link-checker
 - `scripts/check-local-links.py` - 仓库内 Markdown 相对链接检查脚本，供 `make check-links` 与 CI 使用
-- `docs/guides/仓库维护与质量门禁.md` - 仓库维护、迁移检查和质量门禁指南
 - `tools/prompts-library/main.py` - 提示词转换工具入口
 - `docs/getting-started/CLI配置.md` - 默认 AI CLI 配置入口，文末包含 OpenCode 备选方案
 - `docs/playbooks/GEO与SEO优化方法.md` - GEO / SEO 内容工程方法，承接 GEOFlow 的知识库、结构化内容、审核与分发思路

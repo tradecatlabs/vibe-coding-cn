@@ -453,9 +453,8 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ├── docs/                        # 核心知识库
 │   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
 │   ├── concepts/                # 核心概念、方法论与底层模型
-│   ├── guides/                  # 操作指南
 │   ├── playbooks/               # 工具方法与专项实践文档
-│   └── references/              # 清单、约束、常见坑、审查标准
+│   └── references/              # 清单、约束、常见坑与模板
 ├── prompts/                     # 提示词库入口（指向云端表格）
 ├── skills/                      # 技能库入口
 │   ├── auto-skill/              # 元技能核心
@@ -502,7 +501,7 @@ prompts/
 skills/
   README.md  # skills 总览与索引
 docs/
-  getting-started/*, concepts/*, guides/*, playbooks/*, references/* 等知识库
+  getting-started/*, concepts/*, playbooks/*, references/* 等知识库
 assets/
   README.md  # 外部资源（在线表格）唯一真相源入口
 scripts/
