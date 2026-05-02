@@ -2,18 +2,74 @@ sections:
   getting-started:
     path: docs/getting-started
     purpose: 从零开始学习路径、学习地图、环境配置与 AI CLI 配置
+    entry: docs/getting-started/README.md
+    agent_guide: docs/getting-started/AGENTS.md
   concepts:
     path: docs/concepts
     purpose: 核心概念、问题求解与工程思想
+    entry: docs/concepts/README.md
+    agent_guide: docs/concepts/AGENTS.md
   philosophy:
     path: docs/philosophy
     purpose: 哲学方法论、思维模型、编程哲学与底层认知模型
+    entry: docs/philosophy/README.md
+    agent_guide: docs/philosophy/AGENTS.md
   research:
     path: docs/research
     purpose: 新技术、技术栈、优秀 repo、工程范式和工具趋势的短篇研究
+    entry: docs/research/README.md
+    agent_guide: docs/research/AGENTS.md
   references:
     path: docs/references
     purpose: 清单、模板、强约束与常见坑
+    entry: docs/references/README.md
+    agent_guide: docs/references/AGENTS.md
+
+documents:
+  getting-started:
+    - path: docs/getting-started/README.md
+      title: 从零开始完整入门
+      role: 新手线性路线、网络环境、Codex CLI、开发环境与 Vibe Coding 经验
+  concepts:
+    - path: docs/concepts/问题求解.md
+      title: 问题求解
+      role: 目标、现状、差距、标准、约束、对象与路径
+    - path: docs/concepts/拼好码.md
+      title: 拼好码
+      role: 复用成熟能力、胶水原则、能力编排与业务交付
+    - path: docs/concepts/系统构建方法.md
+      title: 系统构建方法
+      role: 自顶向下、自底向上与分而治之
+    - path: docs/concepts/开发范式演进.md
+      title: 开发范式演进
+      role: 软件工程组织方式演进
+    - path: docs/concepts/语言层要素.md
+      title: 语言层要素
+      role: 代码理解所需语言层级
+    - path: docs/concepts/递归自优化系统.md
+      title: 递归自优化系统
+      role: 递归自优化生成系统的形式化模型
+  philosophy:
+    - path: docs/philosophy/思维模型.md
+      title: 思维模型
+      role: 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具
+    - path: docs/philosophy/组合描述模型.md
+      title: 组合描述模型
+      role: 对象、状态、快照、序列、过程、变换、同一/差异与关系
+    - path: docs/philosophy/编程之道.md
+      title: 编程之道
+      role: 编程哲学、结构、状态、复杂度与工程判断
+  references:
+    - path: docs/references/工程实践.md
+      title: 工程实践
+      role: 项目架构、代码组织、开发经验、质量门禁与常见坑
+    - path: docs/references/技术栈.md
+      title: 技术栈
+      role: 技术栈选型、组合案例与学习路径
+  research:
+    - path: docs/research/Harness工程解析.md
+      title: Harness 工程解析
+      role: 工程控制、评估器、反馈闭环与 AI 生成系统可靠性
 
 top_level:
   skills:

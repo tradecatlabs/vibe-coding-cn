@@ -20,3 +20,18 @@ terms:
   pinhaoma:
     zh: 拼好码
     description: 胶水编程的超集，强调优先复用成熟方案，用自研代码连接、编排、适配和表达业务逻辑。
+  problem-solving:
+    zh: 问题求解
+    description: 用目标、现状、差距、标准、约束、对象和路径把模糊问题转成可执行求解过程。
+  technology-stack:
+    zh: 技术栈
+    description: 完成软件系统交付所需的一组语言、框架、库、平台、工具和运行环境组合。
+  engineering-practice:
+    zh: 工程实践
+    description: 把架构、代码组织、开发经验、质量门禁、常见坑和验证流程沉淀为可执行参考。
+  composition-model:
+    zh: 组合描述模型
+    description: 用对象、状态、快照、序列、过程、变换、同一/差异与关系描述复杂系统。
+  harness-engineering:
+    zh: Harness 工程
+    description: 用工程控制、评估器、反馈闭环和硬约束提升 AI 生成系统可靠性的实践方向。

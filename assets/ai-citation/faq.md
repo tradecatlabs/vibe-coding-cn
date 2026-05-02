@@ -33,3 +33,7 @@
 2. `docs/references/工程实践.md`
 3. `skills/README.md`
 4. `docs/references/工程实践.md`
+
+## docs 目录如何组织？
+
+`docs/README.md` 是知识库总索引；`getting-started/` 负责从零开始；`concepts/` 负责核心概念；`philosophy/` 负责思维模型和底层认知模型；`references/` 负责工程实践和技术栈参考；`research/` 负责新技术、优秀 repo 和工程范式研究。

@@ -1,25 +1,90 @@
 # 知识库总索引
 
-> `docs/` 是本仓库的核心知识库入口，承载从入门路径、核心概念到参考清单的全部文档。
+> `docs/` 是本仓库的核心知识库入口，承载从零开始、核心概念、哲学模型、研究笔记和工程参考资料。
 
-## 目录结构
+## 目录地图
 
-| 目录 | 用途 |
-|:---|:---|
-| [getting-started](./getting-started/) | 从零开始、学习地图、环境配置与默认 AI CLI 路线 |
-| [concepts](./concepts/) | Vibe Coding、拼好码、问题求解、语言层、工程范式等核心概念 |
-| [philosophy](./philosophy/) | 哲学方法论、思维模型、编程哲学与底层认知模型 |
-| [research](./research/) | 新技术、技术栈、优秀 repo、工程范式和工具趋势的短篇研究 |
-| [references](./references/) | 清单、模板、强约束与常见坑 |
+| 目录 | 定位 | 首选入口 |
+|:---|:---|:---|
+| [getting-started](./getting-started/) | 从零开始的线性入门教程 | [从零开始完整入门](./getting-started/README.md) |
+| [concepts](./concepts/) | 核心概念、问题求解与工程思想 | [核心概念索引](./concepts/README.md) |
+| [philosophy](./philosophy/) | 哲学方法论、思维模型与底层认知模型 | [哲学方法论工具箱](./philosophy/README.md) |
+| [references](./references/) | 工程实践、技术栈、模板和检查清单 | [参考资料索引](./references/README.md) |
+| [research](./research/) | 新技术、优秀 repo 与工程范式研究 | [研究笔记索引](./research/README.md) |
 
-## 推荐入口
+## 推荐阅读路径
+
+### 新手路径
 
 1. [从零开始完整入门](./getting-started/README.md)
 2. [问题求解](./concepts/问题求解.md)
-3. [思维模型](./philosophy/思维模型.md)
-4. [组合描述模型](./philosophy/组合描述模型.md)
-5. [拼好码](./concepts/拼好码.md)
-6. [工程实践](./references/工程实践.md)
-7. [技术栈](./references/技术栈.md)
-8. [技术研究](./research/README.md)
-9. [哲学方法论](./philosophy/README.md)
+3. [拼好码](./concepts/拼好码.md)
+4. [工程实践](./references/工程实践.md)
+
+### 开发者路径
+
+1. [拼好码](./concepts/拼好码.md)
+2. [系统构建方法](./concepts/系统构建方法.md)
+3. [技术栈](./references/技术栈.md)
+4. [工程实践](./references/工程实践.md)
+
+### 思维模型路径
+
+1. [思维模型](./philosophy/思维模型.md)
+2. [组合描述模型](./philosophy/组合描述模型.md)
+3. [编程之道](./philosophy/编程之道.md)
+4. [递归自优化系统](./concepts/递归自优化系统.md)
+
+### AI Agent 读取路径
+
+1. [根目录 AGENTS](../AGENTS.md)
+2. [docs 目录 AGENTS](./AGENTS.md)
+3. [从零开始完整入门](./getting-started/README.md)
+4. [工程实践](./references/工程实践.md)
+5. [AI 引用语料](../assets/ai-citation/README.md)
+
+## 全部文档索引
+
+### getting-started
+
+- [README](./getting-started/README.md) - 从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建。
+- [AGENTS](./getting-started/AGENTS.md) - 入门教程目录操作规则。
+
+### concepts
+
+- [README](./concepts/README.md) - 核心概念索引。
+- [AGENTS](./concepts/AGENTS.md) - 核心概念目录操作规则。
+- [问题求解](./concepts/问题求解.md) - 用目标、现状、差距、标准、约束、对象和路径定义问题。
+- [拼好码](./concepts/拼好码.md) - 复用成熟能力，用胶水代码连接、编排、适配业务流程。
+- [系统构建方法](./concepts/系统构建方法.md) - 自顶向下、自底向上与分而治之的组合使用。
+- [开发范式演进](./concepts/开发范式演进.md) - 软件工程组织方式的演进。
+- [语言层要素](./concepts/语言层要素.md) - 看懂代码需要掌握的语言层要素。
+- [递归自优化系统](./concepts/递归自优化系统.md) - 递归自优化生成系统的形式化模型。
+
+### philosophy
+
+- [README](./philosophy/README.md) - 哲学方法论工具箱。
+- [AGENTS](./philosophy/AGENTS.md) - 哲学方法论目录操作规则。
+- [思维模型](./philosophy/思维模型.md) - 可复用思维模型索引。
+- [组合描述模型](./philosophy/组合描述模型.md) - 用对象、状态、快照、序列、过程、变换、同一/差异与关系描述复杂系统。
+- [编程之道](./philosophy/编程之道.md) - 编程哲学与工程判断。
+
+### references
+
+- [README](./references/README.md) - 参考资料索引。
+- [AGENTS](./references/AGENTS.md) - 参考资料目录操作规则。
+- [工程实践](./references/工程实践.md) - 项目架构、代码组织、开发经验、质量门禁与常见坑。
+- [技术栈](./references/技术栈.md) - 技术栈选型、组合案例与初学者学习路径。
+
+### research
+
+- [README](./research/README.md) - 研究笔记索引。
+- [AGENTS](./research/AGENTS.md) - 研究笔记目录操作规则。
+- [Harness 工程解析](./research/Harness工程解析.md) - Harness Engineering 的工程控制、评估器与反馈闭环解析。
+
+## 维护规则
+
+- 每个目录必须同时维护 `README.md` 和 `AGENTS.md`。
+- 新增、删除、移动、重命名文档时，必须同步更新本索引、所在目录索引和 `metadata/taxonomy.yml`。
+- 面向 AI 引用的重要入口变化，必须同步更新 `assets/ai-citation/llms-full.txt` 和相关摘要文件。
+- 不确定信息标注 TODO，不用猜测补齐。
