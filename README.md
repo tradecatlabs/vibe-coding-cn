@@ -245,7 +245,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 > 一句话：用“生成器/优化器”的递归闭环，构建一个能持续自我优化的 AI 系统。
 >
-> 延伸阅读：[A Formalization of Recursive Self-Optimizing Generative Systems](docs/concepts/A%20Formalization%20of%20Recursive%20Self-Optimizing%20Generative%20Systems.md)
+> 延伸阅读：[递归自优化生成系统形式化](docs/concepts/递归自优化生成系统形式化.md)
 
 ### 核心角色
 - **α-提示词（生成器）**：一个“母体”提示词，其唯一职责是生成其他提示词或技能。

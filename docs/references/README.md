@@ -9,7 +9,7 @@
 - [语言层要素](../concepts/语言层要素.md) - 看懂 100% 代码的 8 个层级
 
 ### 理论基础
-- [递归自优化系统形式化](../concepts/A%20Formalization%20of%20Recursive%20Self-Optimizing%20Generative%20Systems.md) - 元方法论
+- [递归自优化生成系统形式化](../concepts/递归自优化生成系统形式化.md) - 元方法论
 - [编程之道](../philosophy/编程之道.md) - 编程哲学
 
 ### 软件工程基础
