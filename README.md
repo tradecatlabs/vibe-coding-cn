@@ -35,8 +35,7 @@
 	  <a href="./docs/concepts/思维模型.md"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
 	  <a href="./docs/getting-started/Vibe%20Coding%20经验.md"><img src="https://img.shields.io/badge/🧠_Vibe经验-必读-crimson?style=for-the-badge" alt="Vibe Coding 经验"></a>
 	  <a href="./docs/concepts/philosophy/README.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
-	  <a href="./docs/references/强前置条件约束.md"><img src="https://img.shields.io/badge/🚫_硬约束-铁律-darkred?style=for-the-badge" alt="强前置条件约束"></a>
-	  <a href="./docs/references/常见坑汇总.md"><img src="https://img.shields.io/badge/🕳️_常见坑-避坑指南-yellow?style=for-the-badge" alt="常见坑汇总"></a>
+	  <a href="./docs/references/AI编程质量门禁与常见坑.md"><img src="https://img.shields.io/badge/🛡️_质量门禁-避坑指南-darkred?style=for-the-badge" alt="AI 编程质量门禁与常见坑"></a>
 	  <a href="./docs/concepts/语言层要素.md"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>
   <a href="./skills/"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
   <a href="https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
@@ -409,7 +408,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**Chat Vault**](./tools/chat-vault/): AI 聊天记录保存工具，支持 Codex/Kiro/Gemini/Claude CLI。
 *   [**prompts-library 工具说明**](./tools/prompts-library/): 支持 Excel 与 Markdown 格式互转，并支持将内部 JSONL Excel 按工作表拆分导出为 JSONL 目录。
 *   [**编程提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 适用于 Vibe Coding 流程的专用提示词（云端表格）。
-*   [**系统提示词构建原则**](docs/references/系统提示词构建原则.md): 构建高效 AI 系统提示词的综合指南。
+*   [**AI 编程质量门禁与常见坑**](docs/references/AI编程质量门禁与常见坑.md): 系统提示词、硬约束、质量门禁与常见问题排查的合并入口。
 *   [**开发经验总结**](docs/references/开发经验.md): 变量命名、文件结构、编码规范、架构原则等。
 *   [**项目架构模板**](docs/references/项目架构模板.md): 多种项目类型的标准目录结构与数据服务架构模板。
 *   [**系统提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): AI 开发的系统提示词，含多版本开发规范（云端表格）。

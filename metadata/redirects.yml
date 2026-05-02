@@ -13,6 +13,12 @@ redirects:
     to: docs/references/项目架构模板.md
   - from: docs/references/数据集导向数据服务模板.md
     to: docs/references/项目架构模板.md
+  - from: docs/references/系统提示词构建原则.md
+    to: docs/references/AI编程质量门禁与常见坑.md
+  - from: docs/references/强前置条件约束.md
+    to: docs/references/AI编程质量门禁与常见坑.md
+  - from: docs/references/常见坑汇总.md
+    to: docs/references/AI编程质量门禁与常见坑.md
   - from: skills/
     to: skills/
   - from: prompts/
