@@ -11,6 +11,12 @@ redirects:
     to: docs/philosophy/思维模型.md
   - from: docs/concepts/编程之道.md
     to: docs/philosophy/编程之道.md
+  - from: docs/philosophy/现象学还原.md
+    to: docs/philosophy/README.md
+  - from: docs/philosophy/辩证法.md
+    to: docs/philosophy/README.md
+  - from: docs/philosophy/控制论与科学方法论.md
+    to: docs/philosophy/README.md
   - from: docs/guides/playbook/
     to: docs/README.md
   - from: docs/playbooks/
