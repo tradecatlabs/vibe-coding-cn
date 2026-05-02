@@ -291,6 +291,9 @@ cd tools/prompts-library && python3 main.py
 # Lint 所有 Markdown 文件
 make lint
 
+# 本地质量门禁
+make test
+
 ```
 
 ## Architecture & Structure
@@ -298,8 +301,9 @@ make lint
 ### Core Directories
 - **`prompts/`**: 提示词库入口（指向云端表格）
 - **`skills/`**: 扁平化技能库（详见 skills/README.md）
-- **`docs/`**: 知识库（getting-started、concepts、guides、playbooks、references）
+- **`docs/`**: 知识库（getting-started、concepts、philosophy、references）
 - **`assets/`**: 外部资源（在线表格）入口与使用说明
+- **`assets/ai-citation/`**: AI 引用语料包与 `llms-full.txt`
 - **`tools/prompts-library/`**: Excel ↔ Markdown 转换工具
 - **`tools/chat-vault/`**: AI 聊天记录保存工具
 
@@ -308,12 +312,13 @@ make lint
 2. **Conversion Tool**: 使用 Python + pandas + openpyxl
 3. **Documentation Standard**: 用户文档使用中文；代码/文件名使用英文
 4. **Skills**: 每个技能有独立的 `SKILL.md`
+5. **Quality Gates**: `make test` 执行 Markdown lint 与本地相对链接检查
 
 ## Development Workflow
 
 1. 遵循现有的提示词和技能分类系统
 2. 使用 `prompts-library` 工具进行提示词更新
-3. Markdown 修改后运行 `make lint`
+3. Markdown 修改后运行 `make test`
 4. 重大重构前先确认 Git 状态，并必要时创建 checkpoint commit
 
 ---
@@ -322,14 +327,14 @@ make lint
 
 ## 项目概述
 
-`vibe-coding-cn` 是一个通过与 AI 结对编程实现"将想法变为现实"的终极工作流程。强调"规划驱动"和"模块化"核心理念。
+`vibe-coding-cn` 是一个通过与 AI 结对编程实现"将想法变为现实"的中文 Vibe Coding 从入门到精通教程。强调"规划驱动"、"模块化"、"上下文固定"与"质量门禁"。
 
 ## 技术栈
 
-- **核心语言:** Python
-- **CLI 交互:** `rich`, `InquirerPy`
-- **数据处理:** `pandas`, `openpyxl`
-- **配置管理:** `PyYAML`
+- **核心形态:** Markdown 知识库 + Python 工具脚本
+- **提示词转换工具:** `tools/prompts-library/`
+- **数据处理:** `pandas`, `openpyxl`（prompts-library）
+- **配置管理:** `PyYAML`（prompts-library）
 - **文档规范:** `markdownlint-cli`
 - **版本控制:** Git
 - **自动化:** Makefile

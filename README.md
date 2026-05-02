@@ -173,7 +173,8 @@
 
 0. [从零开始完整入门](docs/getting-started/README.md) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
 1. [问题求解能力](docs/concepts/问题求解能力.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
-2. [从零开始完整入门](docs/getting-started/README.md) - 明确语言化、门禁、人机分工、网络、CLI 与开发环境
+2. [拼好码](docs/concepts/拼好码.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
+3. [AI 编程质量门禁与常见坑](docs/references/AI编程质量门禁与常见坑.md) - 用硬门禁约束 AI 输出并排查常见失败模式
 
 </details>
 
