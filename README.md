@@ -399,6 +399,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ### 项目内部文档
 
 *   [**拼好码（胶水编程的超集）**](docs/concepts/拼好码.md): 复用成熟能力，用胶水代码连接、编排、适配业务流程。
+*   [**组合描述模型**](docs/philosophy/组合描述模型.md): 用对象、状态、快照、序列、过程、变换、同一/差异与关系描述复杂系统。
 *   [**Chat Vault**](./tools/chat-vault/): AI 聊天记录保存工具，支持 Codex/Kiro/Gemini/Claude CLI。
 *   [**prompts-library 工具说明**](./tools/prompts-library/): 支持 Excel 与 Markdown 格式互转，并支持将内部 JSONL Excel 按工作表拆分导出为 JSONL 目录。
 *   [**编程提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 适用于 Vibe Coding 流程的专用提示词（云端表格）。

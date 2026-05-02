@@ -22,6 +22,7 @@ docs/
 - `concepts/拼好码.md`：复用优先、能力编排、边界治理与工程门禁。
 - `philosophy/README.md`：哲学方法论工具箱入口。
 - `philosophy/思维模型.md`：可复用认知工具入口。
+- `philosophy/组合描述模型.md`：对象、状态、快照、序列、过程、变换、同一/差异与关系的组合描述模型。
 - `philosophy/编程之道.md`：编程哲学与工程判断入口。
 
 ## 操作规范
