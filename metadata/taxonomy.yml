@@ -8,6 +8,9 @@ sections:
   philosophy:
     path: docs/philosophy
     purpose: 哲学方法论、思维模型、编程哲学与底层认知模型
+  research:
+    path: docs/research
+    purpose: 新技术、技术栈、优秀 repo、工程范式和工具趋势的短篇研究
   references:
     path: docs/references
     purpose: 清单、模板、强约束与常见坑

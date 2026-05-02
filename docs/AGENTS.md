@@ -12,6 +12,7 @@ docs/
 ├── getting-started/      # 从零开始、学习地图、环境与 AI CLI 配置
 ├── concepts/             # 核心概念、方法论与工程思想
 ├── philosophy/           # 哲学方法论、思维模型与底层认知模型
+├── research/             # 新技术、技术栈、优秀 repo、工程范式和工具趋势研究
 └── references/           # 清单、约束、常见坑、模板
 ```
 
@@ -24,6 +25,7 @@ docs/
 - `philosophy/思维模型.md`：可复用认知工具入口。
 - `philosophy/组合描述模型.md`：对象、状态、快照、序列、过程、变换、同一/差异与关系的组合描述模型。
 - `philosophy/编程之道.md`：编程哲学与工程判断入口。
+- `research/README.md`：新技术、技术栈、优秀 repo、工程范式和工具趋势研究入口。
 
 ## 操作规范
 
