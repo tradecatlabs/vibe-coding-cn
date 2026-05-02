@@ -19,9 +19,7 @@ docs/
 ## 关键入口
 
 - `README.md`：知识库总索引。
-- `getting-started/学习地图.md`：按目标选择学习路径。
-- `getting-started/Vibe Coding 经验.md`：语言化、门禁、人机分工与 Vibe Coding 工程闭环。
-- `getting-started/CLI配置.md`：默认 AI CLI 路线。
+- `getting-started/README.md`：从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建。
 - `concepts/拼好码.md`：复用优先、能力编排、边界治理与工程门禁。
 
 ## 操作规范

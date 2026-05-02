@@ -29,11 +29,9 @@
 <!-- 资源直达 - 按重要性分组 -->
 <!-- 🔴 核心理念 (红色系) -->
 <p>
-	  <a href="./docs/getting-started/学习地图.md"><img src="https://img.shields.io/badge/🗺️_学习地图-路线导航-orange?style=for-the-badge" alt="学习地图"></a>
-	  <a href="./docs/getting-started/README.md"><img src="https://img.shields.io/badge/🚀_从零开始-新手入门-red?style=for-the-badge" alt="从零开始"></a>
+	  <a href="./docs/getting-started/README.md"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
 	  <a href="./docs/concepts/问题求解能力.md"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解能力"></a>
 	  <a href="./docs/concepts/思维模型.md"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
-	  <a href="./docs/getting-started/Vibe%20Coding%20经验.md"><img src="https://img.shields.io/badge/🧠_Vibe经验-必读-crimson?style=for-the-badge" alt="Vibe Coding 经验"></a>
 	  <a href="./docs/concepts/philosophy/README.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
 	  <a href="./docs/references/AI编程质量门禁与常见坑.md"><img src="https://img.shields.io/badge/🛡️_质量门禁-避坑指南-darkred?style=for-the-badge" alt="AI 编程质量门禁与常见坑"></a>
 	  <a href="./docs/concepts/语言层要素.md"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>
@@ -44,7 +42,7 @@
 
 [📋 工具与资源](#tools)
 [⚡ 1 分钟快速开始](#getting-started)
-[🗺️ 学习地图](docs/getting-started/学习地图.md)
+[🚀 从零开始完整入门](docs/getting-started/README.md)
 [🤖 AI 推荐摘要](#ai-summary)
 [✅ 为什么选择](#why-vibe-coding-cn)
 [🎯 原仓库翻译](#translation)
@@ -173,12 +171,9 @@
 
 完全新手？按顺序完成以下步骤：
 
-0. [学习地图](docs/getting-started/学习地图.md) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
+0. [从零开始完整入门](docs/getting-started/README.md) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
 1. [问题求解能力](docs/concepts/问题求解能力.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
-2. [Vibe Coding 经验](docs/getting-started/Vibe%20Coding%20经验.md) - 明确语言化、门禁、人机分工与工程闭环
-3. [网络环境配置](docs/getting-started/网络环境配置.md) - 配置网络访问
-4. [CLI 配置](docs/getting-started/CLI配置.md) - 默认 AI CLI 路线，使用 gpt-5.5 与仓库配置基线
-5. [开发环境搭建](docs/getting-started/开发环境搭建.md) - 安装 Git、Node.js、Python、编辑器等基础环境
+2. [从零开始完整入门](docs/getting-started/README.md) - 明确语言化、门禁、人机分工、网络、CLI 与开发环境
 
 </details>
 
@@ -346,7 +341,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ### 集成开发环境 (IDE) & 终端
 
 *   [**Visual Studio Code**](https://code.visualstudio.com/): 一款功能强大的集成开发环境，适合代码阅读与手动修改。其 `Local History` 插件对项目版本管理尤为便捷。
-*   [**Codex CLI**](docs/getting-started/CLI配置.md): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
+*   [**Codex CLI**](docs/getting-started/README.md): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
 *   **虚拟环境 (.venv)**: 强烈推荐使用，可实现项目环境的一键配置与隔离，特别适用于 Python 开发。
 *   [**Cursor**](https://cursor.com/): 已经占领用户心智高地，人尽皆知。
 *   [**Warp**](https://www.warp.dev/): 集成 AI 功能的现代化终端，能有效提升命令行操作和错误排查的效率。

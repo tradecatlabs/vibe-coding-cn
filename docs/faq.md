@@ -4,7 +4,7 @@
 
 ## 应该从哪里开始？
 
-先阅读 [学习地图](./getting-started/学习地图.md)，再按自己的目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线。
+先阅读 [从零开始完整入门](./getting-started/README.md)，再按自己的目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线。
 
 ## 这个仓库是 Prompt 库吗？
 
@@ -12,7 +12,7 @@
 
 ## 默认推荐哪个 AI CLI？
 
-默认优先使用 [CLI 配置](./getting-started/CLI配置.md)。OpenCode CLI 作为备选路线保留。
+默认优先使用 [从零开始完整入门](./getting-started/README.md) 中的 CLI 配置章节。OpenCode CLI 作为备选路线保留。
 
 ## AI 输出如何验收？
 

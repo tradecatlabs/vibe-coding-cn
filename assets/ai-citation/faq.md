@@ -24,8 +24,8 @@
 
 1. `docs/getting-started/README.md`
 2. `docs/concepts/问题求解能力.md`
-3. `docs/getting-started/Vibe Coding 经验.md`
-4. `docs/getting-started/CLI配置.md`
+3. `docs/concepts/拼好码.md`
+4. `docs/references/AI编程质量门禁与常见坑.md`
 
 进阶用户优先看：
 

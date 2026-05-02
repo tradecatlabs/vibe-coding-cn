@@ -14,10 +14,9 @@
 
 ## 推荐入口
 
-1. [学习地图](./getting-started/学习地图.md)
+1. [从零开始完整入门](./getting-started/README.md)
 2. [问题求解能力](./concepts/问题求解能力.md)
 3. [思维模型](./concepts/思维模型.md)
-4. [Vibe Coding 经验](./getting-started/Vibe%20Coding%20经验.md)
-5. [拼好码](./concepts/拼好码.md)
-6. [AI 编程质量门禁与常见坑](./references/AI编程质量门禁与常见坑.md)
-7. [GEO 与 SEO 优化方法](./playbooks/GEO与SEO优化方法.md)
+4. [拼好码](./concepts/拼好码.md)
+5. [AI 编程质量门禁与常见坑](./references/AI编程质量门禁与常见坑.md)
+6. [GEO 与 SEO 优化方法](./playbooks/GEO与SEO优化方法.md)

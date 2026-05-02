@@ -8,7 +8,17 @@ redirects:
   - from: docs/guides/playbook/
     to: docs/playbooks/
   - from: docs/getting-started/Codex-CLI配置.md
-    to: docs/getting-started/CLI配置.md
+    to: docs/getting-started/README.md
+  - from: docs/getting-started/学习地图.md
+    to: docs/getting-started/README.md
+  - from: docs/getting-started/Vibe Coding 经验.md
+    to: docs/getting-started/README.md
+  - from: docs/getting-started/网络环境配置.md
+    to: docs/getting-started/README.md
+  - from: docs/getting-started/CLI配置.md
+    to: docs/getting-started/README.md
+  - from: docs/getting-started/开发环境搭建.md
+    to: docs/getting-started/README.md
   - from: docs/references/通用项目架构模板.md
     to: docs/references/项目架构模板.md
   - from: docs/references/数据集导向数据服务模板.md
