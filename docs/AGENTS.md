@@ -21,11 +21,18 @@ docs/
 - `README.md`：知识库总索引。
 - `getting-started/README.md`：从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建。
 - `concepts/拼好码.md`：复用优先、能力编排、边界治理与工程门禁。
+- `concepts/问题求解.md`：目标、现状、差距、标准与反馈迭代的底层能力。
+- `concepts/系统构建方法.md`：自顶向下、自底向上与分而治之的组合方法。
+- `concepts/开发范式演进.md`：软件工程组织方式的历史演进。
+- `concepts/递归自优化系统.md`：递归自优化生成系统的形式化模型。
 - `philosophy/README.md`：哲学方法论工具箱入口。
 - `philosophy/思维模型.md`：可复用认知工具入口。
 - `philosophy/组合描述模型.md`：对象、状态、快照、序列、过程、变换、同一/差异与关系的组合描述模型。
 - `philosophy/编程之道.md`：编程哲学与工程判断入口。
 - `research/README.md`：新技术、技术栈、优秀 repo、工程范式和工具趋势研究入口。
+- `research/Harness工程解析.md`：Harness Engineering 的工程控制、评估器与反馈闭环解析。
+- `references/工程实践.md`：项目架构、代码组织、开发经验、质量门禁与常见坑的统一入口。
+- `references/技术栈.md`：技术栈选型、组合案例与初学者学习路径。
 
 ## 操作规范
 

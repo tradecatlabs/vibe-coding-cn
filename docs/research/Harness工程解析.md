@@ -1,4 +1,4 @@
-# Harness Engineering 的本质拆解
+# Harness 工程解析
 
 1. Harness Engineering 的本质是用确定性的工程控制系统，把大模型的非确定性输出压缩进可预测的轨道里，让“概率生成”变成“可验收的产出”
 

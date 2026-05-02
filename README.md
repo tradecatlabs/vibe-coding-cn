@@ -30,7 +30,7 @@
 <!-- 🔴 核心理念 (红色系) -->
 <p>
 	  <a href="./docs/getting-started/README.md"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
-	  <a href="./docs/concepts/问题求解能力.md"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解能力"></a>
+	  <a href="./docs/concepts/问题求解.md"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解"></a>
 	  <a href="./docs/philosophy/思维模型.md"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
 	  <a href="./docs/philosophy/README.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
 	  <a href="./docs/references/工程实践.md"><img src="https://img.shields.io/badge/🛡️_工程实践-质量门禁-darkred?style=for-the-badge" alt="工程实践"></a>
@@ -172,7 +172,7 @@
 完全新手？按顺序完成以下步骤：
 
 0. [从零开始完整入门](docs/getting-started/README.md) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
-1. [问题求解能力](docs/concepts/问题求解能力.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
+1. [问题求解](docs/concepts/问题求解.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
 2. [拼好码](docs/concepts/拼好码.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
 3. [工程实践](docs/references/工程实践.md) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
 
@@ -245,7 +245,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 > 一句话：用“生成器/优化器”的递归闭环，构建一个能持续自我优化的 AI 系统。
 >
-> 延伸阅读：[递归自优化生成系统形式化](docs/concepts/递归自优化生成系统形式化.md)
+> 延伸阅读：[递归自优化系统](docs/concepts/递归自优化系统.md)
 
 ### 核心角色
 - **α-提示词（生成器）**：一个“母体”提示词，其唯一职责是生成其他提示词或技能。

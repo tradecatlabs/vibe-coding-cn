@@ -12,9 +12,19 @@ redirects:
   - from: docs/concepts/编程之道.md
     to: docs/philosophy/编程之道.md
   - from: docs/concepts/A Formalization of Recursive Self-Optimizing Generative Systems.md
-    to: docs/concepts/递归自优化生成系统形式化.md
+    to: docs/concepts/递归自优化系统.md
+  - from: docs/concepts/软件开发范式演进.md
+    to: docs/concepts/开发范式演进.md
+  - from: docs/concepts/递归自优化生成系统形式化.md
+    to: docs/concepts/递归自优化系统.md
+  - from: docs/concepts/问题分析与系统构建方法.md
+    to: docs/concepts/系统构建方法.md
+  - from: docs/concepts/问题求解能力.md
+    to: docs/concepts/问题求解.md
   - from: docs/concepts/Harness Engineering 的本质拆解.md
-    to: docs/research/Harness Engineering 的本质拆解.md
+    to: docs/research/Harness工程解析.md
+  - from: docs/research/Harness Engineering 的本质拆解.md
+    to: docs/research/Harness工程解析.md
   - from: docs/philosophy/现象学还原.md
     to: docs/philosophy/README.md
   - from: docs/philosophy/辩证法.md

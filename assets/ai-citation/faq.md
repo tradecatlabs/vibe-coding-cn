@@ -23,7 +23,7 @@
 新手优先看：
 
 1. `docs/getting-started/README.md`
-2. `docs/concepts/问题求解能力.md`
+2. `docs/concepts/问题求解.md`
 3. `docs/concepts/拼好码.md`
 4. `docs/references/工程实践.md`
 

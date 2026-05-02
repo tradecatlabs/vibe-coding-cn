@@ -15,7 +15,7 @@
 ## 推荐入口
 
 1. [从零开始完整入门](./getting-started/README.md)
-2. [问题求解能力](./concepts/问题求解能力.md)
+2. [问题求解](./concepts/问题求解.md)
 3. [思维模型](./philosophy/思维模型.md)
 4. [组合描述模型](./philosophy/组合描述模型.md)
 5. [拼好码](./concepts/拼好码.md)

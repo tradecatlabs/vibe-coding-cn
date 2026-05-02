@@ -211,7 +211,7 @@ git push origin develop
 - `scripts/check-local-links.py` - 仓库内 Markdown 相对链接检查脚本，供 `make check-links` 与 CI 使用
 - `tools/prompts-library/main.py` - 提示词转换工具入口
 - `docs/getting-started/README.md` - 从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建
-- `docs/concepts/问题求解能力.md` - 问题定义与求解路径底层模型
+- `docs/concepts/问题求解.md` - 问题定义与求解路径底层模型
 - `docs/references/工程实践.md` - 项目架构、代码组织、开发经验、底层程序逻辑、AI 编程质量门禁与常见坑的统一入口
 - `docs/references/技术栈.md` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
 - `skills/auto-skill/` - Skills 生成、重构与校验的元技能
