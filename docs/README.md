@@ -6,7 +6,7 @@
 
 | 目录 | 定位 | 首选入口 |
 |:---|:---|:---|
-| [getting-started](./getting-started/) | 从零开始的线性入门教程 | [从零开始完整入门](./getting-started/README.md#1-学习地图) |
+| [getting-started](./getting-started/) | 从零开始的线性入门教程 | [学习地图](./getting-started/README.md#1-学习地图) / [Vibe Coding 经验](./getting-started/README.md#2-vibe-coding-经验) |
 | [concepts](./concepts/) | 核心概念、问题求解与工程思想 | [核心概念索引](./concepts/README.md) |
 | [philosophy](./philosophy/) | 哲学方法论、思维模型与底层认知模型 | [哲学方法论工具箱](./philosophy/README.md#怎么选) |
 | [references](./references/) | 工程实践、技术栈、模板和检查清单 | [参考资料索引](./references/README.md#目录定位) |
@@ -17,9 +17,10 @@
 ### 新手路径
 
 1. [从零开始完整入门](./getting-started/README.md#1-学习地图)
-2. [问题求解](./concepts/问题求解.md)
-3. [拼好码](./concepts/拼好码.md)
-4. [工程实践](./references/工程实践.md#顶部导航)
+2. [Vibe Coding 经验](./getting-started/README.md#2-vibe-coding-经验)
+3. [问题求解](./concepts/问题求解.md)
+4. [拼好码](./concepts/拼好码.md)
+5. [工程实践](./references/工程实践.md#顶部导航)
 
 ### 开发者路径
 
@@ -40,14 +41,16 @@
 1. [根目录 AGENTS](../AGENTS.md)
 2. [docs 目录 AGENTS](./AGENTS.md)
 3. [从零开始完整入门](./getting-started/README.md#1-学习地图)
-4. [工程实践](./references/工程实践.md#顶部导航)
-5. [AI 引用语料](../assets/ai-citation/README.md)
+4. [Vibe Coding 经验](./getting-started/README.md#2-vibe-coding-经验)
+5. [工程实践](./references/工程实践.md#顶部导航)
+6. [AI 引用语料](../assets/ai-citation/README.md)
 
 ## 全部文档索引
 
 ### getting-started
 
 - [README](./getting-started/README.md#顶部导航) - 从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建。
+- [Vibe Coding 经验](./getting-started/README.md#2-vibe-coding-经验) - 通用语言能力、人机分工、机器门禁和入门铁律。
 - [AGENTS](./getting-started/AGENTS.md) - 入门教程目录操作规则。
 
 ### concepts

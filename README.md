@@ -174,9 +174,10 @@
 完全新手？按顺序完成以下步骤：
 
 0. [从零开始完整入门](docs/getting-started/README.md#1-学习地图) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
-1. [问题求解](docs/concepts/问题求解.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
-2. [拼好码](docs/concepts/拼好码.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
-3. [工程实践](docs/references/工程实践.md#4-ai-编程质量门禁与常见坑) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
+1. [Vibe Coding 经验](docs/getting-started/README.md#2-vibe-coding-经验) - 通用语言能力、人机分工、机器门禁和入门铁律
+2. [问题求解](docs/concepts/问题求解.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
+3. [拼好码](docs/concepts/拼好码.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
+4. [工程实践](docs/references/工程实践.md#4-ai-编程质量门禁与常见坑) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
 
 </details>
 
