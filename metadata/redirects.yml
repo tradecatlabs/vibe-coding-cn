@@ -9,6 +9,10 @@ redirects:
     to: docs/playbooks/
   - from: docs/getting-started/Codex-CLI配置.md
     to: docs/getting-started/CLI配置.md
+  - from: docs/references/通用项目架构模板.md
+    to: docs/references/项目架构模板.md
+  - from: docs/references/数据集导向数据服务模板.md
+    to: docs/references/项目架构模板.md
   - from: skills/
     to: skills/
   - from: prompts/

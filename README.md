@@ -390,7 +390,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**第三方系统提示词学习库**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools): 用于学习和参考其他 AI 工具的系统提示词。
 *   [**Skills 制作器**](https://github.com/yusufkaraaslan/Skill_Seekers): 可根据需求生成定制化 Skills 的工具。
 *   [**元提示词**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 用于生成提示词的高级提示词。
-*   [**通用项目架构模板**](docs/references/通用项目架构模板.md): 可用于快速搭建标准化的项目目录结构。
+*   [**项目架构模板**](docs/references/项目架构模板.md): 可用于快速搭建标准化项目目录，并覆盖 Dataset First 数据服务架构。
 *   [**元技能：Auto Skill**](./skills/auto-skill/SKILL.md): 用于生成、重构与校验 Skills 的元技能。
 
 ### 外部教程与资源
@@ -411,7 +411,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**编程提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 适用于 Vibe Coding 流程的专用提示词（云端表格）。
 *   [**系统提示词构建原则**](docs/references/系统提示词构建原则.md): 构建高效 AI 系统提示词的综合指南。
 *   [**开发经验总结**](docs/references/开发经验.md): 变量命名、文件结构、编码规范、架构原则等。
-*   [**通用项目架构模板**](docs/references/通用项目架构模板.md): 多种项目类型的标准目录结构。
+*   [**项目架构模板**](docs/references/项目架构模板.md): 多种项目类型的标准目录结构与数据服务架构模板。
 *   [**系统提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): AI 开发的系统提示词，含多版本开发规范（云端表格）。
 *   [**TradeCat Sheets API 使用说明**](docs/playbooks/tradecat-sheets-api-usage.md): 把公开 Google Sheet 当作 API 注册表与数据面（Data Plane），供 Agent/服务端消费结构化 JSON。
 *   [**外部资源（在线表格）**](./assets/README.md): 外部资源的唯一真相源（按类型分表），本地 Markdown 保留为历史参考。

@@ -32,4 +32,4 @@
 1. `docs/concepts/拼好码.md`
 2. `docs/references/强前置条件约束.md`
 3. `skills/README.md`
-4. `docs/references/通用项目架构模板.md`
+4. `docs/references/项目架构模板.md`
