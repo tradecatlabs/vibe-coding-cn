@@ -8,14 +8,14 @@
 |:---|:---|
 | [getting-started](./getting-started/) | 从零开始、学习地图、环境配置与默认 AI CLI 路线 |
 | [concepts](./concepts/) | Vibe Coding、拼好码、问题求解、语言层、工程范式等核心概念 |
-| [philosophy](./philosophy/) | 哲学方法论与底层认知模型 |
+| [philosophy](./philosophy/) | 哲学方法论、思维模型、编程哲学与底层认知模型 |
 | [references](./references/) | 清单、模板、强约束与常见坑 |
 
 ## 推荐入口
 
 1. [从零开始完整入门](./getting-started/README.md)
 2. [问题求解能力](./concepts/问题求解能力.md)
-3. [思维模型](./concepts/思维模型.md)
+3. [思维模型](./philosophy/思维模型.md)
 4. [拼好码](./concepts/拼好码.md)
 5. [工程实践](./references/工程实践.md)
 6. [技术栈](./references/技术栈.md)

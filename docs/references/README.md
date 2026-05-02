@@ -10,7 +10,7 @@
 
 ### 理论基础
 - [递归自优化系统形式化](../concepts/A%20Formalization%20of%20Recursive%20Self-Optimizing%20Generative%20Systems.md) - 元方法论
-- [编程之道](../concepts/编程之道.md) - 编程哲学
+- [编程之道](../philosophy/编程之道.md) - 编程哲学
 
 ### 软件工程基础
 - [问题求解能力](../concepts/问题求解能力.md) - 目标、现状、差距、标准与反馈迭代的底层能力

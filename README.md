@@ -31,7 +31,7 @@
 <p>
 	  <a href="./docs/getting-started/README.md"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
 	  <a href="./docs/concepts/问题求解能力.md"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解能力"></a>
-	  <a href="./docs/concepts/思维模型.md"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
+	  <a href="./docs/philosophy/思维模型.md"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
 	  <a href="./docs/philosophy/README.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
 	  <a href="./docs/references/工程实践.md"><img src="https://img.shields.io/badge/🛡️_工程实践-质量门禁-darkred?style=for-the-badge" alt="工程实践"></a>
 	  <a href="./docs/concepts/语言层要素.md"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>

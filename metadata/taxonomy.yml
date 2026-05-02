@@ -4,10 +4,10 @@ sections:
     purpose: 从零开始学习路径、学习地图、环境配置与 AI CLI 配置
   concepts:
     path: docs/concepts
-    purpose: 核心概念、方法论、问题求解与工程思想
+    purpose: 核心概念、问题求解与工程思想
   philosophy:
     path: docs/philosophy
-    purpose: 哲学方法论与底层认知模型
+    purpose: 哲学方法论、思维模型、编程哲学与底层认知模型
   references:
     path: docs/references
     purpose: 清单、模板、强约束与常见坑

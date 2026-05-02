@@ -7,6 +7,10 @@ redirects:
     to: docs/philosophy/
   - from: docs/concepts/philosophy/
     to: docs/philosophy/
+  - from: docs/concepts/思维模型.md
+    to: docs/philosophy/思维模型.md
+  - from: docs/concepts/编程之道.md
+    to: docs/philosophy/编程之道.md
   - from: docs/guides/playbook/
     to: docs/README.md
   - from: docs/playbooks/
