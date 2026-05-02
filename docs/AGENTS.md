@@ -11,6 +11,7 @@ docs/
 ├── README.md             # 知识库总索引
 ├── getting-started/      # 从零开始、学习地图、环境与 AI CLI 配置
 ├── concepts/             # 核心概念、方法论与底层模型
+├── philosophy/           # 哲学方法论与底层认知模型
 └── references/           # 清单、约束、常见坑、模板
 ```
 
@@ -19,6 +20,7 @@ docs/
 - `README.md`：知识库总索引。
 - `getting-started/README.md`：从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建。
 - `concepts/拼好码.md`：复用优先、能力编排、边界治理与工程门禁。
+- `philosophy/README.md`：哲学方法论工具箱入口。
 
 ## 操作规范
 

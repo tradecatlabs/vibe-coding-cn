@@ -4,7 +4,9 @@ redirects:
   - from: docs/principles/fundamentals/
     to: docs/concepts/ 或 docs/references/
   - from: docs/principles/philosophy/
-    to: docs/concepts/philosophy/
+    to: docs/philosophy/
+  - from: docs/concepts/philosophy/
+    to: docs/philosophy/
   - from: docs/guides/playbook/
     to: docs/README.md
   - from: docs/playbooks/

@@ -32,7 +32,7 @@
 	  <a href="./docs/getting-started/README.md"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
 	  <a href="./docs/concepts/问题求解能力.md"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解能力"></a>
 	  <a href="./docs/concepts/思维模型.md"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
-	  <a href="./docs/concepts/philosophy/README.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
+	  <a href="./docs/philosophy/README.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
 	  <a href="./docs/references/AI编程质量门禁与常见坑.md"><img src="https://img.shields.io/badge/🛡️_质量门禁-避坑指南-darkred?style=for-the-badge" alt="AI 编程质量门禁与常见坑"></a>
 	  <a href="./docs/concepts/语言层要素.md"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>
   <a href="./skills/"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
@@ -295,7 +295,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 **核心理念**：哲学不是空谈，是可落地的工程方法。
 
-👉 [深入了解哲学方法论工具箱](docs/concepts/philosophy/README.md)
+👉 [深入了解哲学方法论工具箱](docs/philosophy/README.md)
 
 </details>
 
@@ -445,6 +445,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ├── docs/                        # 核心知识库
 │   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
 │   ├── concepts/                # 核心概念、方法论与底层模型
+│   ├── philosophy/              # 哲学方法论与底层认知模型
 │   └── references/              # 清单、约束、常见坑与模板
 ├── prompts/                     # 提示词库入口（指向云端表格）
 ├── skills/                      # 技能库入口
