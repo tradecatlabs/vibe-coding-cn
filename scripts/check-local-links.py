@@ -15,7 +15,6 @@ SKIP_PREFIXES = [
     Path(".github/wiki"),
     Path("tools/external"),
     Path("tools/chat-vault"),
-    Path("scripts/backups/gz"),
 ]
 LINK_PATTERNS = [
     re.compile(r"!??\[[^\]]*\]\(([^)]+)\)"),

@@ -23,3 +23,4 @@
 - 合并 `docs/references/血的教训.md` 到 `docs/references/常见坑汇总.md`，保留“先查成熟方案再开发”的工程教训。
 - 修复已删除 workflow 模板目录的残留入口，统一改为质量门禁与工程闭环口径。
 - 重命名 `docs/getting-started/Codex-CLI配置.md` 为 `docs/getting-started/CLI配置.md`，统一入门路径中的 CLI 配置入口。
+- 清退 `scripts/backups/` 与 `metadata/debug/`，同步移除备份脚本命令、CI 忽略项、链接检查跳过项和目录索引说明。

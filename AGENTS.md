@@ -9,20 +9,18 @@
 ### 允许的操作
 - 读取、修改顶层文档：`README.md`、`AGENTS.md`、`CONTRIBUTING.md` 等
 - 读取、修改 `docs/`、`prompts/`、`skills/`、`tools/config/`、`tools/external/` 下的文档与代码
-- 执行 `make lint`、备份脚本、prompts-library 转换工具
+- 执行 `make lint`、`make check-links`、prompts-library 转换工具
 - 新增/修改提示词、技能、文档
 - 提交符合规范的 commit
 
 ### 禁止的操作
 - 修改 `.github/workflows/` 中的 CI 配置（除非任务明确要求）
-- 删除或覆盖 `scripts/backups/gz/` 中的存档文件
 - 修改 `LICENSE`、`CODE_OF_CONDUCT.md`
 - 在代码中硬编码密钥、Token 或敏感凭证
 - 未经确认的大范围重构
 
 ### 敏感区域（禁止自动修改）
 - `.github/workflows/*.yml` - CI/CD 配置
-- `scripts/backups/gz/` - 历史备份存档
 - `.env*` 文件（如存在）
 
 ---
@@ -57,7 +55,7 @@ git push origin develop
 
 ### 环境要求
 - Node.js 22+（用于 markdownlint-cli）
-- Python 3.8+（用于 prompts-library 工具与备份脚本）
+- Python 3.8+（用于 prompts-library 工具与链接检查脚本）
 - Git
 
 ### 核心命令
@@ -69,8 +67,6 @@ git push origin develop
 | `make check-links` | 校验仓库内 Markdown 相对链接 | Python 3 |
 | `make test` | 执行本地质量门禁 | Node.js 22+、Python 3 |
 | `git submodule update --init --recursive` | 初始化外部 Git 仓库指针 | Git |
-| `bash scripts/backups/一键备份.sh` | 创建完整项目备份 | 无 |
-| `python3 scripts/backups/快速备份.py` | Python 版备份脚本 | Python 3.8+ |
 | `cd tools/prompts-library && python3 main.py` | 提示词格式转换 | `pip install -r tools/prompts-library/requirements.txt` |
 
 ### Python 依赖来源
@@ -174,7 +170,7 @@ git push origin develop
 │
 ├── scripts/                     # 自动化脚本
 │   ├── README.md                # scripts 目录说明
-│   └── backups/                 # 备份脚本与存档忽略规则
+│   └── check-local-links.py     # Markdown 相对链接检查
 │
 ├── tools/                       # 工具、本地配置与外部仓库
 │   ├── README.md                # tools 目录说明
@@ -218,7 +214,6 @@ git push origin develop
 - `scripts/check-local-links.py` - 仓库内 Markdown 相对链接检查脚本，供 `make check-links` 与 CI 使用
 - `docs/guides/仓库维护与质量门禁.md` - 仓库维护、迁移检查和质量门禁指南
 - `tools/prompts-library/main.py` - 提示词转换工具入口
-- `scripts/backups/一键备份.sh` - 备份脚本入口
 - `docs/getting-started/CLI配置.md` - 默认 AI CLI 配置入口，文末包含 OpenCode 备选方案
 - `docs/playbooks/GEO与SEO优化方法.md` - GEO / SEO 内容工程方法，承接 GEOFlow 的知识库、结构化内容、审核与分发思路
 - `docs/concepts/问题求解能力.md` - 问题定义与求解路径底层模型
@@ -236,7 +231,6 @@ git push origin develop
 | prompts-library 辅助脚本报 Google API 依赖错误 | 未安装脚本专用依赖 | `pip install -r tools/prompts-library/scripts/requirements.txt` |
 | CI markdown-lint 失败 | Markdown 规则违规或本地未按 `.github/lint_config.json` 校验 | 运行 `make lint`，按输出修复对应 Markdown |
 | CI link-checker 失败 | 文档中存在失效链接 | 检查并修复 Markdown 中的链接 |
-| 备份脚本权限不足 | Shell 脚本无执行权限 | `chmod +x scripts/backups/一键备份.sh` |
 
 ---
 
@@ -302,8 +296,6 @@ cd tools/prompts-library && python3 main.py
 # Lint 所有 Markdown 文件
 make lint
 
-# 创建完整项目备份
-bash scripts/backups/一键备份.sh
 ```
 
 ## Architecture & Structure
@@ -315,7 +307,6 @@ bash scripts/backups/一键备份.sh
 - **`assets/`**: 外部资源（在线表格）入口与使用说明
 - **`tools/prompts-library/`**: Excel ↔ Markdown 转换工具
 - **`tools/chat-vault/`**: AI 聊天记录保存工具
-- **`scripts/backups/`**: 备份脚本与存档
 
 ### Key Technical Details
 1. **Prompt Organization**: 提示词使用 `(row,col)_` 前缀进行分类
@@ -328,7 +319,7 @@ bash scripts/backups/一键备份.sh
 1. 遵循现有的提示词和技能分类系统
 2. 使用 `prompts-library` 工具进行提示词更新
 3. Markdown 修改后运行 `make lint`
-4. 重大重构前运行备份脚本
+4. 重大重构前先确认 Git 状态，并必要时创建 checkpoint commit
 
 ---
 

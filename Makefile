@@ -17,7 +17,7 @@ help:
 lint:
 	@echo "Linting markdown files..."
 	@npm install -g markdownlint-cli
-	@markdownlint --config .github/lint_config.json --ignore .history --ignore tools/external --ignore scripts/backups/gz '**/*.md'
+	@markdownlint --config .github/lint_config.json --ignore .history --ignore tools/external '**/*.md'
 
 check-links:
 	@echo "Checking local markdown links..."

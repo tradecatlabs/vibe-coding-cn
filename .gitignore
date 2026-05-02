@@ -83,7 +83,6 @@ libs/external/.tmux
 
 # Backup
 backups/gz/
-scripts/backups/gz/
 *.bak
 *.tmp
 

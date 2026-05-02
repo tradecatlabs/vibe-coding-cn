@@ -188,13 +188,13 @@
 
 ## 🛠️ 仓库维护与验证
 
-本仓库是文档与资源型项目，不提供可验证的 dev server、Docker/K8s 部署入口或固定服务端口。当前可验证的自动化入口来自 `Makefile`、`.github/workflows/ci.yml`、`tools/prompts-library/` 与 `scripts/backups/`。
+本仓库是文档与资源型项目，不提供可验证的 dev server、Docker/K8s 部署入口或固定服务端口。当前可验证的自动化入口来自 `Makefile`、`.github/workflows/ci.yml`、`scripts/check-local-links.py` 与 `tools/prompts-library/`。
 
 ### 环境要求
 
 - Git：版本控制与 submodule 初始化
 - Node.js 22+：运行 `markdownlint-cli`，与 GitHub Actions 中的 `setup-node@v4` 配置一致
-- Python 3.8+：运行 prompts-library 与备份脚本
+- Python 3.8+：运行 prompts-library 与链接检查脚本
 
 ### 初始化
 
@@ -218,8 +218,6 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | 本地相对链接检查 | `make check-links` | `scripts/check-local-links.py` |
 | 全部本地质量门禁 | `make test` | `Makefile` |
 | 提示词格式转换 | `cd tools/prompts-library && python3 main.py` | `tools/prompts-library/main.py` |
-| 完整备份 | `bash scripts/backups/一键备份.sh` | `scripts/backups/README.md` |
-| Python 备份 | `python3 scripts/backups/快速备份.py` | `scripts/backups/README.md` |
 | Skill 严格校验示例 | `skills/auto-skill/scripts/validate-skill.sh skills/auto-skill --strict` | `skills/auto-skill/scripts/validate-skill.sh` |
 
 ### 配置与 CI
@@ -507,8 +505,8 @@ docs/
   getting-started/*, concepts/*, guides/*, playbooks/*, references/* 等知识库
 assets/
   README.md  # 外部资源（在线表格）唯一真相源入口
-scripts/backups/
-  一键备份.sh, 快速备份.py  # 本地/远端快照脚本
+scripts/
+  check-local-links.py  # Markdown 相对链接检查脚本
 ```
 
 ```mermaid
@@ -567,7 +565,6 @@ graph TB
 
   subgraph infra_layer[基础设施与横切能力层]
     git[Git 版本控制] --> orchestrator
-    backups[scripts/backups/一键备份.sh · scripts/backups/快速备份.py] --> artifacts_md
     deps[tools/prompts-library/requirements.txt · tools/prompts-library/scripts/requirements.txt] --> orchestrator
     config[tools/prompts-library/scripts/config.yaml] --> orchestrator
     monitor[预留：日志与监控] --> orchestrator
@@ -589,7 +586,7 @@ graph TB
 |:---|:---|:---|
 | 提示命中率 | 一次生成即满足验收的比例 | 待记录；每个任务完成后在 progress.md 记 0/1 |
 | 周转时间 | 需求 → 首个可运行版本所需时间 | 录屏时标注时间戳，或用 CLI 定时器统计 |
-| 变更可复盘度 | 是否同步更新上下文/进度/备份 | 通过手工更新；可在 backups 脚本中加入 git tag/快照 |
+| 变更可复盘度 | 是否同步更新上下文、文档和 Git 提交 | 通过 commit、CHANGELOG 与必要的 tag 留痕 |
 | 例程覆盖 | 是否有最小可运行示例/测试 | 建议每个示例项目保留 README+测试用例 |
 
 </details>
@@ -608,7 +605,7 @@ gantt
     section 近期 (2026 Q1)
     prompts 索引自动生成脚本: 2026-01, 15d
     一键演示/验证 CLI 工作流: 2026-01, 15d
-    备份脚本增加快照与校验: 2026-02, 10d
+    文档索引与引用门禁增强: 2026-02, 10d
     section 中期 (2026 Q2)
     模板化示例项目集: 2026-03, 30d
     多模型对比与评估基线: 2026-04, 30d
