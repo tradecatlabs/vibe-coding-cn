@@ -1,0 +1,11 @@
+{
+  "name": "vibe-coding-cn",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint:md": "markdownlint --config .github/lint_config.json --ignore .history --ignore node_modules --ignore tools/external '**/*.md'"
+  },
+  "devDependencies": {
+    "markdownlint-cli": "0.48.0"
+  }
+}

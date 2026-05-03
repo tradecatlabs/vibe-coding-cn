@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SKIP_PARTS = {".git", ".history"}
+SKIP_PARTS = {".git", ".history", "node_modules"}
 SKIP_PREFIXES = [
     Path(".github/wiki"),
     Path("tools/external"),

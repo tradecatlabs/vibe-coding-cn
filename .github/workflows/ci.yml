@@ -15,19 +15,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '22'
-    - name: Install markdownlint-cli
-      run: npm install -g markdownlint-cli
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
     - name: Run markdownlint
-      run: markdownlint --config .github/lint_config.json --ignore .history --ignore tools/external '**/*.md'
+      run: npm run lint:md
     - name: Check local markdown links and anchors
       run: python3 scripts/check-local-links.py
     - name: Check markdown details and summaries
       run: python3 scripts/check-markdown-details.py
+    - name: Check docs README structure
+      run: python3 scripts/check-doc-structure.py
     - name: Check metadata paths and anchors
       run: python3 scripts/check-metadata.py
     - name: Check llms and AI citation paths and anchors
@@ -36,8 +39,8 @@ jobs:
   link-checker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Link Checker
-        uses: lycheeverse/lychee-action@v1.5.0
+        uses: lycheeverse/lychee-action@v2.8.0
         with:
-          args: --verbose --no-progress --exclude-path .history --exclude-path .github/wiki --exclude-path tools/external --exclude-path tools/chat-vault './**/*.md'
+          args: --verbose --no-progress --exclude-path .history --exclude-path .github/wiki --exclude-path node_modules --exclude-path tools/external --exclude-path tools/chat-vault './**/*.md'

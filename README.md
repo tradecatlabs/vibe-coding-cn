@@ -146,29 +146,33 @@
 
 ## ⚡ 1 分钟快速开始
 
-> 已有网络和开发环境？直接开始 Vibe Coding！
+> 新电脑也可以开始：先用网页 AI 这个零依赖入口，生成适合你系统的网络环境、Codex CLI 和本地 Agent 安装步骤。
 
-**第 1 步**：复制下面的提示词，粘贴到 [ChatGPT](https://chatgpt.com/)
+**第 1 步**：复制下面的提示词，粘贴到 [ChatGPT](https://chatgpt.com/) / Claude / Gemini 网页版
 
 ```
-你是一个专业的 AI 编程助手。我想用 Vibe Coding 的方式开发一个项目。
+你是一个专业的 AI 编程环境配置助手。我要从新电脑开始学习 Vibe Coding。
 
 请先问我：
-1. 你想做什么项目？（一句话描述）
-2. 你熟悉什么编程语言？（不熟悉也没关系）
-3. 你的操作系统是什么？
+1. 我的操作系统是什么？Windows 11 / WSL / Linux / macOS？
+2. 我是否已经能访问 OpenAI、GitHub、Node.js/npm 和系统包管理器？
+3. 我是否已有可用的 Codex / ChatGPT 订阅？
 
 然后帮我：
-1. 推荐最简单的技术栈
-2. 生成项目结构
-3. 一步步指导我完成开发
+1. 先判断网络环境和订阅是否满足 Codex CLI 前置条件。
+2. 按我的系统生成从 0 到 1 安装 Codex CLI 的步骤。
+3. 每条需要在终端执行的命令都单独放在代码块里。
+4. Codex CLI 登录成功后，告诉我如何让本地 Agent 继续配置 Git、Node.js、Python、编辑器、项目依赖、测试命令和 Git 工作流。
+5. 如果我贴报错，请逐条解释原因并给出下一条最小修复命令。
 
-要求：每完成一步问我是否成功，再继续下一步。
+要求：不要跳步；每一步只做一件事；每一步都说明如何判断成功。
 ```
 
-**第 2 步**：跟着 AI 的指导，把想法变成现实 🚀
+**第 2 步**：按网页 AI 生成的步骤先装好 Codex CLI。
 
-**就这么简单！** 更多内容（新手从零开始）请继续阅读 👇
+**第 3 步**：Codex CLI 跑通后，让本地 Agent 读取本仓库文档并主动配置剩余环境。
+
+**核心口径**：网页 AI 是零依赖启动器，Codex CLI 是默认本地执行入口。更多内容（新手从零开始）请继续阅读 👇
 
 ### 🚀 从零开始
 
@@ -192,7 +196,7 @@
 ### 环境要求
 
 - Git：版本控制与 submodule 初始化
-- Node.js 22+：运行 `markdownlint-cli`，与 GitHub Actions 中的 `setup-node@v4` 配置一致
+- Node.js 22+：通过 `package-lock.json` 锁定并运行 `markdownlint-cli`
 - Python 3.8+：运行 prompts-library 与链接检查脚本
 
 ### 初始化
@@ -216,6 +220,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | 全仓 Markdown lint | `make lint` | `Makefile` + `.github/lint_config.json` |
 | 本地相对链接检查 | `make check-links` | `scripts/check-local-links.py` |
 | 折叠块结构检查 | `make check-details` | `scripts/check-markdown-details.py` |
+| docs 线性目录结构检查 | `make check-doc-structure` | `scripts/check-doc-structure.py` |
 | Metadata 路径检查 | `make check-metadata` | `scripts/check-metadata.py` |
 | AI 引用路径检查 | `make check-ai-citation` | `scripts/check-ai-citation.py` |
 | 全部本地质量门禁 | `make test` | `Makefile` |
@@ -225,7 +230,8 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ### 配置与 CI
 
 - Markdown lint 配置：`.github/lint_config.json`
-- CI 配置：`.github/workflows/ci.yml`，在 `develop` / `master` 分支的 push / pull_request 上运行 markdown-lint、本地链接检查与 link-checker
+- Node 依赖锁定：`package.json` 与 `package-lock.json`
+- CI 配置：`.github/workflows/ci.yml`，在 `develop` / `master` 分支的 push / pull_request 上运行 markdown-lint、本地链接检查、docs 结构检查与 link-checker
 - Codex 配置基线：`tools/config/.codex/config.toml`
 - Submodule 来源：`.gitmodules`
 
@@ -454,7 +460,8 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
 │   ├── concepts/                # 核心概念、方法论与底层模型
 │   ├── philosophy/              # 哲学方法论与底层认知模型
-│   └── references/              # 清单、约束、常见坑与模板
+│   ├── references/              # 清单、约束、常见坑与模板
+│   └── research/                # 新技术、优秀 repo 与工程范式研究
 ├── prompts/                     # 提示词库入口（指向云端表格）
 ├── skills/                      # 技能库入口
 │   ├── auto-skill/              # 元技能核心
