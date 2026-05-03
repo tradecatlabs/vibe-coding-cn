@@ -7,49 +7,12 @@ import re
 import sys
 from pathlib import Path
 
+from lib.taxonomy import doc_readmes_from_taxonomy
 
 ROOT = Path(__file__).resolve().parents[1]
-TAXONOMY = ROOT / "metadata/taxonomy.yml"
 SUMMARY_LINE = "<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>"
 ANCHOR_PATTERN = re.compile(r"<a\s+id=[\"']([^\"']+)[\"']")
 HEADING_PATTERN = re.compile(r"^(#{2,6})\s+(.+?)\s*#*\s*$")
-
-
-def strip_quotes(value: str) -> str:
-    return value.strip().strip("\"'")
-
-
-def taxonomy_document_paths() -> list[str]:
-    paths: list[str] = []
-    in_documents = False
-
-    for line in TAXONOMY.read_text(encoding="utf-8").splitlines():
-        if line == "documents:":
-            in_documents = True
-            continue
-        if in_documents and line and not line.startswith(" "):
-            break
-        if not in_documents:
-            continue
-
-        stripped = line.strip()
-        if stripped.startswith("- path:"):
-            _, value = stripped.split(":", 1)
-            paths.append(strip_quotes(value))
-
-    return paths
-
-
-def doc_readmes_from_taxonomy() -> dict[Path, list[str]]:
-    readmes: dict[Path, list[str]] = {}
-
-    for target in taxonomy_document_paths():
-        path_part, _, anchor = target.partition("#")
-        if not anchor or not path_part.startswith("docs/") or not path_part.endswith("/README.md"):
-            continue
-        readmes.setdefault(Path(path_part), []).append(anchor)
-
-    return readmes
 
 
 def heading_after(lines: list[str], start: int) -> tuple[int, str] | None:

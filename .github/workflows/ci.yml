@@ -46,22 +46,4 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v2.8.0
         with:
-          args: >-
-            --verbose
-            --no-progress
-            --exclude-path .history
-            --exclude-path .github/wiki
-            --exclude-path node_modules
-            --exclude-path tools/external
-            --exclude-path tools/chat-vault
-            --exclude-path tools/prompts-library
-            --exclude-path skills/claude-official-skills
-            --exclude-path skills/auto-skill/scripts/Skill_Seekers-development
-            --exclude-path skills/auto-skill/scripts/skill-seekers-src
-            --exclude-path skills/auto-skill/scripts/skill-seekers-configs
-            --exclude 'https://chatgpt.com.*'
-            --exclude 'https://claude.ai.*'
-            --exclude 'https://app.augmentcode.com.*'
-            --exclude 'https://platform.openai.com.*'
-            --exclude 'https://user-images.githubusercontent.com.*'
-            './**/*.md'
+          args: --verbose --no-progress --config .lychee.toml './**/*.md'

@@ -8,9 +8,9 @@ import sys
 import urllib.parse
 from pathlib import Path
 
+from lib.taxonomy import taxonomy_document_paths
 
 ROOT = Path(__file__).resolve().parents[1]
-TAXONOMY = ROOT / "metadata/taxonomy.yml"
 AI_ENTRY_FILES = [
     Path("llms.txt"),
     Path("assets/ai-citation/llms-full.txt"),
@@ -26,31 +26,6 @@ PATH_PATTERN = re.compile(
 )
 MARKDOWN_LINK_PATTERN = re.compile(r"!??\[[^\]]*\]\(([^)]+)\)")
 EXTERNAL_PREFIXES = ("http://", "https://", "mailto:", "tel:", "data:")
-
-
-def strip_quotes(value: str) -> str:
-    return value.strip().strip("\"'")
-
-
-def taxonomy_document_paths() -> list[str]:
-    paths: list[str] = []
-    in_documents = False
-
-    for line in TAXONOMY.read_text(encoding="utf-8").splitlines():
-        if line == "documents:":
-            in_documents = True
-            continue
-        if in_documents and line and not line.startswith(" "):
-            break
-        if not in_documents:
-            continue
-
-        stripped = line.strip()
-        if stripped.startswith("- path:"):
-            _, value = stripped.split(":", 1)
-            paths.append(strip_quotes(value))
-
-    return paths
 
 
 def github_slug(title: str) -> str:

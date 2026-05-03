@@ -1,0 +1,26 @@
+# Lychee link checker configuration for GitHub Actions.
+#
+# The repository checks first-party Markdown links with scripts/check-local-links.py.
+# Lychee is reserved for public external links and first-party Markdown that should
+# be visible to readers. Generated tools, external snapshots and login-only pages
+# are excluded here instead of being repeated in workflow YAML.
+
+exclude_path = [
+  '^\.history(/|$)',
+  '^\.github/wiki(/|$)',
+  '^node_modules(/|$)',
+  '^tools/external(/|$)',
+  '^tools/chat-vault(/|$)',
+  '^tools/prompts-library(/|$)',
+  '^skills/claude-official-skills(/|$)',
+  '^skills/auto-skill/scripts/(Skill_Seekers-development|skill-seekers-src|skill-seekers-configs)(/|$)',
+]
+
+exclude = [
+  '^https://chatgpt\.com.*',
+  '^https://claude\.ai.*',
+  '^https://app\.augmentcode\.com.*',
+  '^https://platform\.openai\.com.*',
+  '^https://user-images\.githubusercontent\.com.*',
+  '^https://notebooklm\.google\.com.*',
+]

@@ -2883,6 +2883,8 @@ pip install -r requirements.txt
 <details open>
 <summary><strong>📦 Node.js 环境相关</strong>（点击展开/收起）</summary>
 
+> 本节是通用 Web / Node.js 项目的排障示例，不代表本仓根目录需要保留 `package.json`、`package-lock.json` 或 `node_modules/`。本仓根目录当前使用 `npx --yes markdownlint-cli@0.48.0` 执行 Markdown lint，不提交本地 Node 依赖目录。
+
 <a id="reference-engineering-practice-常见问题-2"></a>
 ###### 常见问题
 
