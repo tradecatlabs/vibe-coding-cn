@@ -221,6 +221,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | 本地相对链接检查 | `make check-links` | `scripts/check-local-links.py` |
 | 折叠块结构检查 | `make check-details` | `scripts/check-markdown-details.py` |
 | docs 线性目录结构检查 | `make check-doc-structure` | `scripts/check-doc-structure.py` |
+| 目录 README/AGENTS 覆盖检查 | `make check-directory-docs` | `scripts/check-directory-docs.py` |
 | Metadata 路径检查 | `make check-metadata` | `scripts/check-metadata.py` |
 | AI 引用路径检查 | `make check-ai-citation` | `scripts/check-ai-citation.py` |
 | 全部本地质量门禁 | `make test` | `Makefile` |

@@ -6,6 +6,7 @@
 - `assets/images/`：文档图片、截图、封面等图片资产
 - `assets/templates/`：可复用模板附件
 - `assets/datasets/`：示例数据、轻量数据集或数据说明
+- `assets/ai-citation/`：面向 AI 助手、AI 搜索与 GEO/SEO 引用的语料资产
 
 其中“外部资源”类入口文档的典型形态包括：
 

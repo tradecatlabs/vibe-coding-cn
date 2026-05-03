@@ -9,7 +9,7 @@
 ### 允许的操作
 - 读取、修改顶层文档：`README.md`、`AGENTS.md`、`CONTRIBUTING.md` 等
 - 读取、修改 `docs/`、`prompts/`、`skills/`、`tools/config/`、`tools/external/` 下的文档与代码
-- 执行 `make lint`、`make check-links`、`make check-details`、`make check-metadata`、`make check-ai-citation`、prompts-library 转换工具
+- 执行 `make lint`、`make check-links`、`make check-details`、`make check-doc-structure`、`make check-directory-docs`、`make check-metadata`、`make check-ai-citation`、prompts-library 转换工具
 - 新增/修改提示词、技能、文档
 - 提交符合规范的 commit
 
@@ -67,6 +67,7 @@ git push origin develop
 | `make check-links` | 校验仓库内 Markdown 相对链接 | Python 3 |
 | `make check-details` | 校验 Markdown 折叠块 `<details>/<summary>` 结构 | Python 3 |
 | `make check-doc-structure` | 校验 docs 线性 README 主章节顺序、重复锚点与目录入口 | Python 3 |
+| `make check-directory-docs` | 校验仓库自有目录 README/AGENTS 覆盖 | Python 3 |
 | `make check-metadata` | 校验 metadata 路径与锚点 | Python 3 |
 | `make check-ai-citation` | 校验 llms 与 AI 引用语料路径和锚点 | Python 3 |
 | `make test` | 执行本地质量门禁 | Node.js 22+、Python 3 |
@@ -174,10 +175,12 @@ git push origin develop
 │
 ├── scripts/                     # 自动化脚本
 │   ├── README.md                # scripts 目录说明
+│   ├── AGENTS.md                # scripts 目录规则
 │   └── check-local-links.py     # Markdown 相对链接检查
 │
 ├── tools/                       # 工具、本地配置与外部仓库
 │   ├── README.md                # tools 目录说明
+│   ├── AGENTS.md                # tools 目录规则
 │   ├── config/                  # 工具与开发配置（含 Codex CLI）
 │   ├── prompts-library/         # Excel ↔ Markdown 互转工具
 │   ├── chat-vault/              # AI 聊天记录保存工具
@@ -190,6 +193,8 @@ git push origin develop
 │       └── claude-official-skills/ # Claude 官方 skills (submodule)
 │
 ├── metadata/                    # 机器可读索引
+│   ├── README.md                # metadata 目录说明
+│   ├── AGENTS.md                # metadata 目录规则
 │   ├── taxonomy.yml             # 分类体系
 │   ├── glossary.yml             # 术语表
 │   └── redirects.yml            # 重命名/迁移映射
@@ -219,6 +224,7 @@ git push origin develop
 - `scripts/check-local-links.py` - 仓库内 Markdown 相对链接与锚点检查脚本，供 `make check-links` 与 CI 使用
 - `scripts/check-markdown-details.py` - 仓库内 Markdown 折叠块结构检查脚本，供 `make check-details` 与 CI 使用
 - `scripts/check-doc-structure.py` - docs 线性 README 主章节顺序、重复锚点与目录入口检查脚本，供 `make check-doc-structure` 与 CI 使用
+- `scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
 - `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
 - `scripts/check-ai-citation.py` - llms 与 AI 引用语料路径和锚点检查脚本，供 `make check-ai-citation` 与 CI 使用
 - `tools/prompts-library/main.py` - 提示词转换工具入口
@@ -270,9 +276,10 @@ feat|fix|docs|chore|refactor|test: scope - summary
 2. `check local markdown links and anchors` - 仓库内相对链接与锚点检查
 3. `check markdown details and summaries` - Markdown 折叠块结构检查
 4. `check docs README structure` - docs 线性 README 主章节顺序、重复锚点与目录入口检查
-5. `check metadata paths and anchors` - metadata 路径与锚点检查
-6. `check llms and AI citation paths and anchors` - llms 与 AI 引用语料路径和锚点检查
-7. `link-checker` - 链接有效性检查
+5. `check required directory README and AGENTS files` - 仓库自有目录 README/AGENTS 覆盖检查
+6. `check metadata paths and anchors` - metadata 路径与锚点检查
+7. `check llms and AI citation paths and anchors` - llms 与 AI 引用语料路径和锚点检查
+8. `link-checker` - 链接有效性检查
 
 ### 提交前清单
 - [ ] 运行 `make lint` 通过
