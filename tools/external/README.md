@@ -37,8 +37,24 @@ tools/external/
 
 - 提示词转换工具已迁移到 `tools/prompts-library/`。
 - AI 聊天记录保存工具已迁移到 `tools/chat-vault/`。
-- 备份脚本已迁移到 `scripts/backups/`。
 - 技能库入口已迁移到 `skills/`。
+
+## 当前源码表达状态
+
+| 目录 | 当前表达 | 处理策略 |
+|:---|:---|:---|
+| `.tmux/` | Git submodule | 保留 submodule 指针 |
+| `tmux/` | Git submodule | 保留 submodule 指针 |
+| `claude-official-skills/` | Git submodule | 保留 submodule 指针，并通过 `skills/claude-official-skills` 软链接展示 |
+| `Skill_Seekers-development/` | Git submodule | 保留 submodule 指针，并通过 `skills/auto-skill/scripts/Skill_Seekers-development` 软链接供 auto-skill 使用 |
+| `html-tools-main/` | 普通目录 | 体量小，暂作为本仓库工具快照保留；确认上游 URL 后可转 submodule |
+| `my-nvim/` | 普通目录 | 体量小，暂作为配置样例保留；确认上游 URL 后可转 submodule |
+| `MCPlayerTransfer/` | 普通目录 | 体量小，暂作为独立工具快照保留；确认上游 URL 后可转 submodule |
+| `XHS-image-to-PDF-conversion/` | 普通目录 | 体量小，暂作为独立工具快照保留；确认上游 URL 后可转 submodule |
+
+普通目录不得继续扩张为大型源码快照；新增外部仓库默认使用 submodule。
+
+为避免外部工具源码影响主仓库语言统计，根目录 `.gitattributes` 已将 `tools/external/**` 标记为 `linguist-vendored`。
 
 ## 当前软链接显示
 

@@ -49,4 +49,6 @@ skills/auto-skill/scripts/skill-seekers-src -> Skill_Seekers-development/src
 2. **同仓多入口展示**：使用相对软链接，例如 `skills/<name> -> ../tools/external/<name>`。
 3. **项目内小工具**：只有在无上游、体量小、与本项目强耦合时才直接追踪源码。
 4. **生成输出**：默认不跟踪；若必须保留样例，只提交最小样例和生成说明。
-5. **历史备份**：`scripts/backups/` 按项目资产处理，不套用外部仓库清退规则。
+5. **普通目录**：`html-tools-main/`、`my-nvim/`、`MCPlayerTransfer/`、`XHS-image-to-PDF-conversion/` 当前作为小体量工具快照保留；确认上游 URL 后再转 submodule。
+6. **清退触发**：普通目录出现体量膨胀、生成物混入、上游仓库明确或需要频繁升级时，必须优先转 submodule 或迁出主仓库。
+7. **语言统计**：`tools/external/**` 已在根目录 `.gitattributes` 标记为 `linguist-vendored`，避免外部工具源码污染主仓库语言占比。

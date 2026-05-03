@@ -30,7 +30,7 @@ reading_paths:
     title: 新手路径
     documents:
       - docs/getting-started/README.md
-      - docs/getting-started/README.md#1-vibe-coding-经验
+      - docs/getting-started/README.md#vibe-coding-experience
       - docs/concepts/README.md#concept-problem-solving
       - docs/concepts/README.md#concept-glue-coding
       - docs/references/README.md#reference-engineering-practice
@@ -54,7 +54,7 @@ reading_paths:
       - AGENTS.md
       - docs/AGENTS.md
       - docs/getting-started/README.md
-      - docs/getting-started/README.md#1-vibe-coding-经验
+      - docs/getting-started/README.md#vibe-coding-experience
       - docs/references/README.md#reference-engineering-practice
       - assets/ai-citation/README.md
 
@@ -70,19 +70,19 @@ documents:
     - path: docs/getting-started/README.md
       title: 从零开始完整入门
       role: 新手线性路线、网络环境、Codex CLI、开发环境与 Vibe Coding 经验
-    - path: docs/getting-started/README.md#1-vibe-coding-经验
+    - path: docs/getting-started/README.md#vibe-coding-experience
       title: Vibe Coding 经验
       role: 通用语言能力、人机分工、机器门禁和入门铁律
-    - path: docs/getting-started/README.md#1-学习地图
+    - path: docs/getting-started/README.md#learning-map
       title: 学习地图
       role: 新手、开发者、团队、Prompt、Skill、质量门禁和 GEO/SEO 的路线选择
-    - path: docs/getting-started/README.md#3-网络环境配置
+    - path: docs/getting-started/README.md#network-environment
       title: 网络环境配置
       role: OpenAI、GitHub、文档和依赖源访问
-    - path: docs/getting-started/README.md#4-cli-配置
+    - path: docs/getting-started/README.md#cli-setup
       title: CLI 配置
       role: Codex CLI 默认路线与 OpenCode 备选路线
-    - path: docs/getting-started/README.md#5-开发环境搭建
+    - path: docs/getting-started/README.md#development-environment
       title: 开发环境搭建
       role: Agent 主动配置开发依赖、编辑器建议和测试命令
   concepts:

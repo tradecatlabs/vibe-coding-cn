@@ -1,0 +1,6 @@
+# GitHub Linguist classification
+#
+# tools/external/ stores third-party tools and external snapshots. Keep them
+# visible in the repository, but do not let their implementation languages
+# dominate the main repository language statistics.
+tools/external/** linguist-vendored

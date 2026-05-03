@@ -31,8 +31,8 @@
 <!-- 资源直达 - 按重要性分组 -->
 <!-- 🔴 核心理念 (红色系) -->
 <p>
-	  <a href="./docs/getting-started/README.md#1-学习地图"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
-	  <a href="./docs/getting-started/README.md#1-vibe-coding-经验"><img src="https://img.shields.io/badge/🧠_Vibe_Coding-经验必读-crimson?style=for-the-badge" alt="Vibe Coding 经验"></a>
+	  <a href="./docs/getting-started/README.md#learning-map"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
+	  <a href="./docs/getting-started/README.md#vibe-coding-experience"><img src="https://img.shields.io/badge/🧠_Vibe_Coding-经验必读-crimson?style=for-the-badge" alt="Vibe Coding 经验"></a>
 	  <a href="./docs/concepts/README.md#concept-problem-solving"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解"></a>
 	  <a href="./docs/philosophy/README.md#philosophy-thinking-models"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
 	  <a href="./docs/philosophy/README.md#philosophy-methodology-toolbox"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
@@ -45,7 +45,7 @@
 
 [📋 工具与资源](#tools)
 [⚡ 1 分钟快速开始](#getting-started)
-[🚀 从零开始完整入门](docs/getting-started/README.md#1-学习地图)
+[🚀 从零开始完整入门](docs/getting-started/README.md#learning-map)
 [🤖 AI 推荐摘要](#ai-summary)
 [✅ 为什么选择](#why-vibe-coding-cn)
 [🎯 原仓库翻译](#translation)
@@ -174,8 +174,8 @@
 
 完全新手？按顺序完成以下步骤：
 
-0. [从零开始完整入门](docs/getting-started/README.md#1-学习地图) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
-1. [Vibe Coding 经验](docs/getting-started/README.md#1-vibe-coding-经验) - 通用语言能力、人机分工、机器门禁和入门铁律
+0. [从零开始完整入门](docs/getting-started/README.md#learning-map) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
+1. [Vibe Coding 经验](docs/getting-started/README.md#vibe-coding-experience) - 通用语言能力、人机分工、机器门禁和入门铁律
 2. [问题求解](docs/concepts/README.md#concept-problem-solving) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
 3. [拼好码](docs/concepts/README.md#concept-glue-coding) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
 4. [工程实践](docs/references/README.md#quality-gates) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
@@ -217,6 +217,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | 本地相对链接检查 | `make check-links` | `scripts/check-local-links.py` |
 | 折叠块结构检查 | `make check-details` | `scripts/check-markdown-details.py` |
 | Metadata 路径检查 | `make check-metadata` | `scripts/check-metadata.py` |
+| AI 引用路径检查 | `make check-ai-citation` | `scripts/check-ai-citation.py` |
 | 全部本地质量门禁 | `make test` | `Makefile` |
 | 提示词格式转换 | `cd tools/prompts-library && python3 main.py` | `tools/prompts-library/main.py` |
 | Skill 严格校验示例 | `skills/auto-skill/scripts/validate-skill.sh skills/auto-skill --strict` | `skills/auto-skill/scripts/validate-skill.sh` |
@@ -348,7 +349,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ### 集成开发环境 (IDE) & 终端
 
 *   [**Visual Studio Code**](https://code.visualstudio.com/): 一款功能强大的集成开发环境，适合代码阅读与手动修改。其 `Local History` 插件对项目版本管理尤为便捷。
-*   [**Codex CLI**](docs/getting-started/README.md#4-cli-配置): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
+*   [**Codex CLI**](docs/getting-started/README.md#cli-setup): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
 *   **虚拟环境 (.venv)**: 强烈推荐使用，可实现项目环境的一键配置与隔离，特别适用于 Python 开发。
 *   [**Cursor**](https://cursor.com/): 已经占领用户心智高地，人尽皆知。
 *   [**Warp**](https://www.warp.dev/): 集成 AI 功能的现代化终端，能有效提升命令行操作和错误排查的效率。
@@ -446,6 +447,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ├── LICENSE                      # MIT 许可证
 ├── CODE_OF_CONDUCT.md           # 行为准则
 ├── CONTRIBUTING.md              # 贡献指南
+├── .gitattributes               # GitHub Linguist 语言统计规则
 ├── .gitignore                   # Git 忽略规则
 │
 ├── docs/                        # 核心知识库
@@ -471,7 +473,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │   ├── PULL_REQUEST_TEMPLATE.md # PR 模板
 │   ├── SECURITY.md              # 安全政策
 │   ├── FUNDING.yml              # 赞助配置
-│   └── wiki/                    # GitHub Wiki 内容
+│   └── WIKI.md                  # GitHub Wiki 独立仓库说明
 ```
 
 </details>

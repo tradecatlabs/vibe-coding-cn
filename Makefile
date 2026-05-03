@@ -1,6 +1,6 @@
 # Makefile for Vibe Coding Guide
 
-.PHONY: help lint check-links check-details check-metadata build test clean
+.PHONY: help lint check-links check-details check-metadata check-ai-citation build test clean
 
 help:
 	@echo "Makefile for Vibe Coding Guide"
@@ -11,6 +11,7 @@ help:
 	@echo "  check-links - Check local markdown links and anchors"
 	@echo "  check-details - Check markdown details/summary blocks"
 	@echo "  check-metadata - Check metadata paths and anchors"
+	@echo "  check-ai-citation - Check llms and AI citation paths and anchors"
 	@echo "  build    - Verify knowledge base has no build step"
 	@echo "  test     - Run repository quality gates"
 	@echo "  clean    - Remove ignored generated caches"
@@ -33,10 +34,14 @@ check-metadata:
 	@echo "Checking metadata paths and anchors..."
 	@python3 scripts/check-metadata.py
 
+check-ai-citation:
+	@echo "Checking llms and AI citation paths and anchors..."
+	@python3 scripts/check-ai-citation.py
+
 build:
 	@echo "No build step: this repository is a documentation and knowledge-base project."
 
-test: lint check-links check-details check-metadata
+test: lint check-links check-details check-metadata check-ai-citation
 	@echo "Quality gates complete."
 
 clean:

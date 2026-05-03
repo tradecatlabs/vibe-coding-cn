@@ -30,6 +30,8 @@ jobs:
       run: python3 scripts/check-markdown-details.py
     - name: Check metadata paths and anchors
       run: python3 scripts/check-metadata.py
+    - name: Check llms and AI citation paths and anchors
+      run: python3 scripts/check-ai-citation.py
 
   link-checker:
     runs-on: ubuntu-latest
