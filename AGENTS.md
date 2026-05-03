@@ -9,7 +9,7 @@
 ### 允许的操作
 - 读取、修改顶层文档：`README.md`、`AGENTS.md`、`CONTRIBUTING.md` 等
 - 读取、修改 `docs/`、`prompts/`、`skills/`、`tools/config/`、`tools/external/` 下的文档与代码
-- 执行 `make lint`、`make check-links`、`make check-details`、prompts-library 转换工具
+- 执行 `make lint`、`make check-links`、`make check-details`、`make check-metadata`、prompts-library 转换工具
 - 新增/修改提示词、技能、文档
 - 提交符合规范的 commit
 
@@ -66,6 +66,7 @@ git push origin develop
 | `make lint` | 校验全仓库 Markdown | 需安装 markdownlint-cli |
 | `make check-links` | 校验仓库内 Markdown 相对链接 | Python 3 |
 | `make check-details` | 校验 Markdown 折叠块 `<details>/<summary>` 结构 | Python 3 |
+| `make check-metadata` | 校验 metadata 路径与锚点 | Python 3 |
 | `make test` | 执行本地质量门禁 | Node.js 22+、Python 3 |
 | `git submodule update --init --recursive` | 初始化外部 Git 仓库指针 | Git |
 | `cd tools/prompts-library && python3 main.py` | 提示词格式转换 | `pip install -r tools/prompts-library/requirements.txt` |
@@ -211,6 +212,7 @@ git push origin develop
 - `.github/workflows/ci.yml` - GitHub Actions：develop/master 分支 markdown-lint + link-checker
 - `scripts/check-local-links.py` - 仓库内 Markdown 相对链接与锚点检查脚本，供 `make check-links` 与 CI 使用
 - `scripts/check-markdown-details.py` - 仓库内 Markdown 折叠块结构检查脚本，供 `make check-details` 与 CI 使用
+- `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
 - `tools/prompts-library/main.py` - 提示词转换工具入口
 - `docs/getting-started/README.md` - 从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建
 - `docs/concepts/README.md#concept-problem-solving` - 问题定义与求解路径底层模型
@@ -259,7 +261,8 @@ feat|fix|docs|chore|refactor|test: scope - summary
 1. `markdown-lint` - Markdown 格式检查
 2. `check local markdown links and anchors` - 仓库内相对链接与锚点检查
 3. `check markdown details and summaries` - Markdown 折叠块结构检查
-4. `link-checker` - 链接有效性检查
+4. `check metadata paths and anchors` - metadata 路径与锚点检查
+5. `link-checker` - 链接有效性检查
 
 ### 提交前清单
 - [ ] 运行 `make lint` 通过
@@ -316,7 +319,7 @@ make test
 2. **Conversion Tool**: 使用 Python + pandas + openpyxl
 3. **Documentation Standard**: 用户文档使用中文；代码/文件名使用英文
 4. **Skills**: 每个技能有独立的 `SKILL.md`
-5. **Quality Gates**: `make test` 执行 Markdown lint、本地相对链接/锚点检查与折叠块结构检查
+5. **Quality Gates**: `make test` 执行 Markdown lint、本地相对链接/锚点检查、折叠块结构检查与 metadata 路径检查
 
 ## Development Workflow
 

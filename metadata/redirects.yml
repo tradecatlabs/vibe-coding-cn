@@ -2,7 +2,7 @@ redirects:
   - from: docs/guides/getting-started/
     to: docs/getting-started/
   - from: docs/principles/fundamentals/
-    to: docs/concepts/ 或 docs/references/
+    to: docs/README.md
   - from: docs/principles/philosophy/
     to: docs/philosophy/
   - from: docs/concepts/philosophy/
