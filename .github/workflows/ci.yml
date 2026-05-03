@@ -55,6 +55,10 @@ jobs:
             --exclude-path tools/external
             --exclude-path tools/chat-vault
             --exclude-path tools/prompts-library
+            --exclude-path skills/claude-official-skills
+            --exclude-path skills/auto-skill/scripts/Skill_Seekers-development
+            --exclude-path skills/auto-skill/scripts/skill-seekers-src
+            --exclude-path skills/auto-skill/scripts/skill-seekers-configs
             --exclude 'https://chatgpt.com.*'
             --exclude 'https://claude.ai.*'
             --exclude 'https://app.augmentcode.com.*'

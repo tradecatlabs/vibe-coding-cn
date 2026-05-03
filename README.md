@@ -377,7 +377,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**GitHub Copilot**](https://github.com/copilot): 由 GitHub 和 OpenAI 联合开发的 AI 代码补全工具。
 *   [**Kimi K2.5**](https://www.kimi.com/): 一款国产 AI 模型，适用于多种常规任务。
 *   [**GLM**](https://bigmodel.cn/): 由智谱 AI 开发的国产大语言模型。
-*   [**Qwen**](https://qwenlm.github.io/qwen-code-docs/zh/cli/): 由阿里巴巴开发的 AI 模型，其 CLI 工具提供免费使用额度。
+*   [**Qwen**](https://qwenlm.github.io/qwen-code-docs/): 由阿里巴巴开发的 AI 模型，其 CLI 工具提供免费使用额度。
 
 ### 开发与辅助工具
 
