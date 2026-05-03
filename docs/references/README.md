@@ -264,6 +264,9 @@
 
 ---
 
+<details>
+<summary><strong>1. 工程实践</strong> - 项目架构、代码组织、开发经验、质量门禁与常见坑。</summary>
+
 <a id="reference-engineering-practice"></a>
 
 ## 1. 工程实践
@@ -3765,6 +3768,10 @@ CPU 成本
 缺少容量评估
 ```
 
+</details>
+
+<details>
+<summary><strong>2. 技术栈</strong> - 技术栈选型、组合案例与学习路径。</summary>
 
 <a id="reference-technology-stack"></a>
 
@@ -5456,3 +5463,5 @@ AI 路线：
 > Python + PyTorch + FastAPI + 大模型 API
 
 真正重要的不是“知道很多技术名词”，而是能用合适的技术栈，把一个项目稳定、清晰、可维护地做出来。
+
+</details>

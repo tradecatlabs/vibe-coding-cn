@@ -172,6 +172,9 @@
 
 ---
 
+<details>
+<summary><strong>1. 思维模型</strong> - 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。</summary>
+
 <a id="philosophy-thinking-models"></a>
 
 ## 1. 思维模型
@@ -402,6 +405,10 @@
 
 在工程实践中，状态空间思维能防止“一步走死”：重要操作前先建立检查点，优先走可验证、可回滚、可分阶段收敛的路径。
 
+</details>
+
+<details>
+<summary><strong>2. 组合描述模型</strong> - 对象、状态、快照、序列、过程、变换、同一/差异与关系。</summary>
 
 <a id="philosophy-compositional-description-model"></a>
 
@@ -943,6 +950,10 @@ UserInput(组合描述模型)
 
 从这个意义上说，这组概念，几乎就是一切系统性思考的基础语法。
 
+</details>
+
+<details>
+<summary><strong>3. 编程之道</strong> - 编程哲学、结构、状态、复杂度与工程判断。</summary>
 
 <a id="philosophy-programming-dao"></a>
 
@@ -1265,6 +1276,10 @@ UserInput(组合描述模型)
 
 愿你在复杂世界中保持清晰，在代码中看到本质
 
+</details>
+
+<details>
+<summary><strong>4. 方法论工具箱</strong> - 现象学还原、正反合、可证伪主义、形式化方法等提效工具。</summary>
 
 <a id="philosophy-methodology-toolbox"></a>
 
@@ -1981,3 +1996,5 @@ README.md      # 概念表/错误语义/验收指标
 用于 AI 编程时，这套方法可以压缩成一句话：
 
 > 先把目标写成可检验状态，再用测试、日志、反馈、约束和迭代，把模型输出从可能性空间中逐步收缩到可验收结果。
+
+</details>

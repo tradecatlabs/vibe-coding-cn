@@ -171,6 +171,9 @@
 
 ---
 
+<details>
+<summary><strong>1. 问题求解</strong> - 目标、现状、差距、标准、约束、对象与路径。</summary>
+
 <a id="concept-problem-solving"></a>
 
 ## 1. 问题求解
@@ -752,6 +755,10 @@ A 和 B 之间的距离、障碍、路线不清楚的地方，就是问题。
 
 任何问题，都是当前状态到目标状态之间的差距；任何能力，都是推进这个差距收敛的能力。
 
+</details>
+
+<details>
+<summary><strong>2. 拼好码</strong> - 复用成熟能力，用胶水代码连接、编排、适配业务流程。</summary>
 
 <a id="concept-glue-coding"></a>
 
@@ -1263,6 +1270,10 @@ AI 特别适合生成：
 - [语言层要素](#concept-language-layers) - 看懂代码需要掌握的语言层级
 - [胶水开发提示词（在线提示词库入口）](../../../prompts/README.md)
 
+</details>
+
+<details>
+<summary><strong>3. 系统构建方法</strong> - 自顶向下、自底向上与分而治之的组合使用。</summary>
 
 <a id="concept-system-building"></a>
 
@@ -1417,6 +1428,10 @@ AI 特别适合生成：
 
 所以，这三种方法不是“选一个、排斥另外两个”，而是从不同角度帮助我们管理复杂度、组织代码和构建系统。
 
+</details>
+
+<details>
+<summary><strong>4. 开发范式演进</strong> - 软件工程组织方式的演进。</summary>
 
 <a id="concept-development-paradigms"></a>
 
@@ -1446,6 +1461,10 @@ AI 特别适合生成：
 
 上述内容并不表示软件开发存在固定、统一或严格递进的阶段划分。不同范式和架构思想往往并存，并会根据项目规模、业务复杂度、团队协作方式和技术环境被组合使用。
 
+</details>
+
+<details>
+<summary><strong>5. 语言层要素</strong> - 看懂代码所需的语言层要素。</summary>
 
 <a id="concept-language-layers"></a>
 
@@ -2007,6 +2026,10 @@ async def get_user(user_id: int, db: Session = Depends(get_db)):
 
 > 🎯 **目标不是"学完 12 层"，而是"遇到问题知道卡在哪一层"**
 
+</details>
+
+<details>
+<summary><strong>6. 递归自优化系统</strong> - 递归自优化生成系统的形式化模型。</summary>
 
 <a id="concept-recursive-self-optimizing-system"></a>
 
@@ -2198,3 +2221,5 @@ $$
 #### 3. 终极目标
 
 通过这个持续运行的**递归优化循环**，系统在每次迭代中都完成一次**自我超越**，不断逼近我们设定的**理想状态**。
+
+</details>
