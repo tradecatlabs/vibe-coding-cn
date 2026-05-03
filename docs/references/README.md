@@ -35,7 +35,7 @@
 
 ```md
 <details>
-<summary><strong>完整细粒度目录（默认收起）</strong></summary>
+<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
 
 ### 细粒度目录
 
@@ -46,7 +46,7 @@
 ```
 
 <details>
-<summary><strong>完整细粒度目录（默认收起）</strong></summary>
+<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
 
 ### 细粒度目录
 
@@ -265,7 +265,7 @@
 ---
 
 <details>
-<summary><strong>1. 工程实践</strong> - 项目架构、代码组织、开发经验、质量门禁与常见坑。</summary>
+<summary><strong>1. 工程实践</strong> - 项目架构、代码组织、开发经验、质量门禁与常见坑。（点击展开/收起）</summary>
 
 <a id="reference-engineering-practice"></a>
 
@@ -2681,7 +2681,7 @@ Redis 的作用：
 ---
 
 <details open>
-<summary><strong>🤖 AI 对话相关</strong></summary>
+<summary><strong>🤖 AI 对话相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -2698,7 +2698,7 @@ Redis 的作用：
 </details>
 
 <details open>
-<summary><strong>🧭 工程决策相关</strong></summary>
+<summary><strong>🧭 工程决策相关</strong>（点击展开/收起）</summary>
 
 <a id="reference-engineering-practice-先查资料再写代码"></a>
 ###### 先查资料，再写代码
@@ -2724,7 +2724,7 @@ Redis 的作用：
 ---
 
 <details open>
-<summary><strong>🐍 Python 虚拟环境相关</strong></summary>
+<summary><strong>🐍 Python 虚拟环境相关</strong>（点击展开/收起）</summary>
 
 <a id="reference-engineering-practice-为什么要用虚拟环境"></a>
 ###### 为什么要用虚拟环境？
@@ -2786,7 +2786,7 @@ pip install -r requirements.txt
 ---
 
 <details open>
-<summary><strong>📦 Node.js 环境相关</strong></summary>
+<summary><strong>📦 Node.js 环境相关</strong>（点击展开/收起）</summary>
 
 <a id="reference-engineering-practice-常见问题-2"></a>
 ###### 常见问题
@@ -2822,7 +2822,7 @@ nvm use 18
 ---
 
 <details open>
-<summary><strong>🔧 环境配置相关</strong></summary>
+<summary><strong>🔧 环境配置相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -2838,7 +2838,7 @@ nvm use 18
 ---
 
 <details open>
-<summary><strong>🌐 网络相关</strong></summary>
+<summary><strong>🌐 网络相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -2872,7 +2872,7 @@ git config --global https.proxy http://127.0.0.1:7890
 ---
 
 <details open>
-<summary><strong>📝 代码相关</strong></summary>
+<summary><strong>📝 代码相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -2888,7 +2888,7 @@ git config --global https.proxy http://127.0.0.1:7890
 ---
 
 <details open>
-<summary><strong>🎯 Claude Code / Cursor 相关</strong></summary>
+<summary><strong>🎯 Claude Code / Cursor 相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -2904,7 +2904,7 @@ git config --global https.proxy http://127.0.0.1:7890
 ---
 
 <details open>
-<summary><strong>🚀 部署相关</strong></summary>
+<summary><strong>🚀 部署相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -2920,7 +2920,7 @@ git config --global https.proxy http://127.0.0.1:7890
 ---
 
 <details open>
-<summary><strong>🗄️ 数据库相关</strong></summary>
+<summary><strong>🗄️ 数据库相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -2935,7 +2935,7 @@ git config --global https.proxy http://127.0.0.1:7890
 ---
 
 <details open>
-<summary><strong>🐳 Docker 相关</strong></summary>
+<summary><strong>🐳 Docker 相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -2949,7 +2949,7 @@ git config --global https.proxy http://127.0.0.1:7890
 ---
 
 <details open>
-<summary><strong>🧠 大模型使用相关</strong></summary>
+<summary><strong>🧠 大模型使用相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -2968,7 +2968,7 @@ git config --global https.proxy http://127.0.0.1:7890
 ---
 
 <details open>
-<summary><strong>🏗️ 软件架构相关</strong></summary>
+<summary><strong>🏗️ 软件架构相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -2985,7 +2985,7 @@ git config --global https.proxy http://127.0.0.1:7890
 ---
 
 <details open>
-<summary><strong>🔄 Git 版本控制相关</strong></summary>
+<summary><strong>🔄 Git 版本控制相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -3023,7 +3023,7 @@ git stash pop
 ---
 
 <details open>
-<summary><strong>🧪 测试相关</strong></summary>
+<summary><strong>🧪 测试相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -3039,7 +3039,7 @@ git stash pop
 ---
 
 <details open>
-<summary><strong>⚡ 性能相关</strong></summary>
+<summary><strong>⚡ 性能相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -3055,7 +3055,7 @@ git stash pop
 ---
 
 <details open>
-<summary><strong>🔐 安全相关</strong></summary>
+<summary><strong>🔐 安全相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -3071,7 +3071,7 @@ git stash pop
 ---
 
 <details open>
-<summary><strong>📱 前端开发相关</strong></summary>
+<summary><strong>📱 前端开发相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -3088,7 +3088,7 @@ git stash pop
 ---
 
 <details open>
-<summary><strong>🖥️ 后端开发相关</strong></summary>
+<summary><strong>🖥️ 后端开发相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -3104,7 +3104,7 @@ git stash pop
 ---
 
 <details open>
-<summary><strong>🔌 API 设计相关</strong></summary>
+<summary><strong>🔌 API 设计相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -3120,7 +3120,7 @@ git stash pop
 ---
 
 <details open>
-<summary><strong>📊 数据处理相关</strong></summary>
+<summary><strong>📊 数据处理相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -3136,7 +3136,7 @@ git stash pop
 ---
 
 <details open>
-<summary><strong>🤝 协作相关</strong></summary>
+<summary><strong>🤝 协作相关</strong>（点击展开/收起）</summary>
 
 | 问题 | 原因 | 解决方案 |
 |:---|:---|:---|
@@ -3771,7 +3771,7 @@ CPU 成本
 </details>
 
 <details>
-<summary><strong>2. 技术栈</strong> - 技术栈选型、组合案例与学习路径。</summary>
+<summary><strong>2. 技术栈</strong> - 技术栈选型、组合案例与学习路径。（点击展开/收起）</summary>
 
 <a id="reference-technology-stack"></a>
 

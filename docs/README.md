@@ -46,7 +46,7 @@
 6. [AI 引用语料](../assets/ai-citation/README.md)
 
 <details>
-<summary><strong>完整细粒度目录（默认收起）</strong></summary>
+<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
 
 ### 全部文档索引
 

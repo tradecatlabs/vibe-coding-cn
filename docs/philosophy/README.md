@@ -19,7 +19,7 @@
 4. [方法论工具箱](#philosophy-methodology-toolbox) - 现象学还原、正反合、可证伪主义、形式化方法等提效工具。
 
 <details>
-<summary><strong>完整细粒度目录（默认收起）</strong></summary>
+<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
 
 ### 细粒度目录
 
@@ -173,7 +173,7 @@
 ---
 
 <details>
-<summary><strong>1. 思维模型</strong> - 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。</summary>
+<summary><strong>1. 思维模型</strong> - 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。（点击展开/收起）</summary>
 
 <a id="philosophy-thinking-models"></a>
 
@@ -408,7 +408,7 @@
 </details>
 
 <details>
-<summary><strong>2. 组合描述模型</strong> - 对象、状态、快照、序列、过程、变换、同一/差异与关系。</summary>
+<summary><strong>2. 组合描述模型</strong> - 对象、状态、快照、序列、过程、变换、同一/差异与关系。（点击展开/收起）</summary>
 
 <a id="philosophy-compositional-description-model"></a>
 
@@ -953,7 +953,7 @@ UserInput(组合描述模型)
 </details>
 
 <details>
-<summary><strong>3. 编程之道</strong> - 编程哲学、结构、状态、复杂度与工程判断。</summary>
+<summary><strong>3. 编程之道</strong> - 编程哲学、结构、状态、复杂度与工程判断。（点击展开/收起）</summary>
 
 <a id="philosophy-programming-dao"></a>
 
@@ -1279,7 +1279,7 @@ UserInput(组合描述模型)
 </details>
 
 <details>
-<summary><strong>4. 方法论工具箱</strong> - 现象学还原、正反合、可证伪主义、形式化方法等提效工具。</summary>
+<summary><strong>4. 方法论工具箱</strong> - 现象学还原、正反合、可证伪主义、形式化方法等提效工具。（点击展开/收起）</summary>
 
 <a id="philosophy-methodology-toolbox"></a>
 

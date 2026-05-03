@@ -15,7 +15,7 @@
 1. [Harness 工程解析](#research-harness-engineering) - 工程控制、评估器、反馈闭环与 AI 生成系统可靠性。
 
 <details>
-<summary><strong>完整细粒度目录（默认收起）</strong></summary>
+<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
 
 ### 细粒度目录
 
@@ -39,7 +39,7 @@
 ---
 
 <details>
-<summary><strong>1. Harness 工程解析</strong> - 工程控制、评估器、反馈闭环与 AI 生成系统可靠性。</summary>
+<summary><strong>1. Harness 工程解析</strong> - 工程控制、评估器、反馈闭环与 AI 生成系统可靠性。（点击展开/收起）</summary>
 
 <a id="research-harness-engineering"></a>
 
