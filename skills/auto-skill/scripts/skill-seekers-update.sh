@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # ==================== Purpose ====================
-# Legacy updater for the old vendored Skill Seekers source snapshot.
+# Guarded updater for the linked Skill Seekers source.
 #
 # Notes:
 # - Skill Seekers now lives under tools/external/Skill_Seekers-development.
@@ -71,7 +71,7 @@ command -v tar >/dev/null 2>&1 || die "tar not found"
 command -v rsync >/dev/null 2>&1 || die "rsync not found"
 
 if [[ -L "$target_dir" && "$dry_run" -eq 0 ]]; then
-  die "Skill_Seekers-development is linked to tools/external. Update tools/external/Skill_Seekers-development directly instead of overwriting through this legacy updater."
+  die "Skill_Seekers-development is linked to tools/external. Update tools/external/Skill_Seekers-development directly instead of overwriting through this guarded helper."
 fi
 
 tmp_dir="$(mktemp -d)"

@@ -40,7 +40,7 @@ auto-skill/
 - `skills/auto-skill/scripts/skill-seekers-bootstrap.sh`: create a local venv and install deps for the linked Skill Seekers tool.
 - `skills/auto-skill/scripts/skill-seekers.sh`: run Skill Seekers from the linked source (docs/github/pdf -> output/<name>/).
 - `skills/auto-skill/scripts/skill-seekers-import.sh`: import output/<name>/ into the canonical skills/<name>/ tree.
-- `skills/auto-skill/scripts/skill-seekers-update.sh`: legacy updater; guarded because the tool source now lives in `tools/external/`.
+- `skills/auto-skill/scripts/skill-seekers-update.sh`: guarded update helper; do not use it to overwrite the linked source.
 - `skills/auto-skill/scripts/validate-skill.sh`: spec validator (supports `--strict`).
 - `skills/auto-skill/references/index.md`: navigation for this meta-skill's reference docs.
 - `skills/auto-skill/references/README.md`: upstream official reference (lightly adjusted to keep links working in this repo).
@@ -53,5 +53,5 @@ auto-skill/
 
 - `scripts/*.sh`: depend on `bash` + common POSIX tooling; some scripts require extra tooling:
   - `skill-seekers-bootstrap.sh`: requires `python3` + `pip` (network required for PyPI).
-  - `skill-seekers-update.sh`: legacy helper; do not use it to overwrite the linked `tools/external/` source.
+  - `skill-seekers-update.sh`: guarded helper; do not use it to overwrite the linked `tools/external/` source.
 - This directory is about "how to build Skills", not about any specific domain; domain knowledge belongs in `skills/<domain>/`.

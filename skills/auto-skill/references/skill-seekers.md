@@ -8,7 +8,7 @@
 - 运行入口：`skills/auto-skill/scripts/skill-seekers.sh`
 - 依赖初始化：`skills/auto-skill/scripts/skill-seekers-bootstrap.sh`
 - 导入到本仓库：`skills/auto-skill/scripts/skill-seekers-import.sh`
-- 更新源码：直接更新 `tools/external/Skill_Seekers-development` submodule 指针；`skill-seekers-update.sh` 仅保留为受保护的旧入口。
+- 更新源码：直接更新 `tools/external/Skill_Seekers-development` submodule 指针；`skill-seekers-update.sh` 是受保护的辅助入口，不能覆盖链接源码。
 
 ## 推荐工作流（强约束）
 

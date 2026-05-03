@@ -9,7 +9,7 @@
 
 - 本目录回答“为什么这样判断、如何减少幻觉、如何让复杂问题可描述、可推理、可验证”。
 - 它保留可迁移的认知模型和方法论，不放一次性命令、工具清单或新技术观察。
-- 每个原独立文档都已并入本 README，并通过稳定锚点提供细粒度跳转。
+- 本 README 提供稳定锚点和细粒度目录，作为哲学方法论的统一入口。
 
 ## 总目录
 
@@ -149,7 +149,6 @@
   - [通用"性质测试"提示（可复用）](#philosophy-methodology-toolbox-通用性质测试提示可复用)
   - [建议的项目框架（最小）](#philosophy-methodology-toolbox-建议的项目框架最小)
   - [使用指南](#philosophy-methodology-toolbox-使用指南)
-  - [来源文档整合补充](#philosophy-methodology-toolbox-来源文档整合补充)
   - [现象学还原用于 Vibe Coding](#philosophy-methodology-toolbox-现象学还原用于-vibe-coding)
   - [辩证法用于 Vibe Coding：正反合](#philosophy-methodology-toolbox-辩证法用于-vibe-coding正反合)
   - [控制论与科学方法论](#philosophy-methodology-toolbox-控制论与科学方法论)
@@ -1897,11 +1896,6 @@ README.md      # 概念表/错误语义/验收指标
 | 排错提效 | 12（溯因）+ 13/23（贝叶斯更新）+ 17（三角测量） |
 | 复杂系统 | 7（系统论）+ 21（计算哲学）+ 14（反思平衡） |
 | 交互默认争议 | 20（x-phi）+ 6（实用主义指标） |
-
-<a id="philosophy-methodology-toolbox-来源文档整合补充"></a>
-### 来源文档整合补充
-
-本节合并原 `现象学还原.md`、`辩证法.md` 与 `控制论与科学方法论.md` 的核心内容，作为哲学方法论的统一入口。
 
 <a id="philosophy-methodology-toolbox-现象学还原用于-vibe-coding"></a>
 #### 现象学还原用于 Vibe Coding

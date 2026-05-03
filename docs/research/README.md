@@ -8,7 +8,7 @@
 
 - 本目录是“观察与判断区”。
 - 内容还没有稳定到可以放入 `concepts/` 或 `references/`，但已经值得记录、分析和跟踪。
-- 每个原独立研究笔记都已并入本 README，并通过稳定锚点提供细粒度跳转。
+- 本 README 提供稳定锚点和细粒度目录，作为研究笔记的统一入口。
 
 ## 总目录
 
@@ -25,9 +25,9 @@
 
 ## 和其他目录的边界
 
-- 稳定教程应迁入 `getting-started/` 或 `references/`。
-- 核心概念应迁入 `concepts/`。
-- 纯哲学模型应迁入 `philosophy/`。
+- 稳定教程放入 `getting-started/` 或 `references/`。
+- 核心概念放入 `concepts/`。
+- 纯哲学模型放入 `philosophy/`。
 
 ## 维护规则
 

@@ -9,11 +9,11 @@
 | [auto-skill](./auto-skill/SKILL.md) | 生成、重构与校验 Skills 的元技能 |
 | [claude-official-skills](./claude-official-skills/) | Claude 官方 skills 仓库的软链接入口，事实来源在 `tools/external/claude-official-skills/` |
 
-## 清理口径
+## 维护口径
 
 - `auto-skill/` 是本仓库的 Skill 生产与升级入口，继续保留。
 - `claude-official-skills/` 是外部官方仓库展示入口，通过 submodule 管理事实来源。
-- 领域型/工具型 Skill 如交易、数据库、代理、Telegram、tmux、EPUB 等已从主仓库清退；如需恢复，优先以独立仓库、submodule 或重新生成的方式引入。
+- 领域型/工具型 Skill 如交易、数据库、代理、Telegram、tmux、EPUB 等不在主仓库维护；如需引入，优先使用独立仓库、submodule 或重新生成的方式。
 
 ## 外部技能仓库
 

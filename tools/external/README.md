@@ -33,12 +33,6 @@ tools/external/
 - `MCPlayerTransfer/`：MC 玩家迁移工具
 - `XHS-image-to-PDF-conversion/`：图片合并 PDF 工具
 
-## 相关迁移
-
-- 提示词转换工具已迁移到 `tools/prompts-library/`。
-- AI 聊天记录保存工具已迁移到 `tools/chat-vault/`。
-- 技能库入口已迁移到 `skills/`。
-
 ## 当前源码表达状态
 
 | 目录 | 当前表达 | 处理策略 |

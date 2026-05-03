@@ -9,7 +9,7 @@
 
 - 本目录回答“具体工程怎么组织、怎么选技术、怎么设置硬门禁”。
 - 它承载稳定、可执行、可检查、可复用的工程参考资料。
-- 每个原独立文档都已并入本 README，并通过稳定锚点提供细粒度跳转。
+- 本 README 提供稳定锚点和细粒度目录，作为工程参考资料的统一入口。
 
 ## 常用入口
 
@@ -253,7 +253,7 @@
 
 - 检查清单、模板、质量门禁和经验类内容优先收敛到本 README 的工程实践部分。
 - 技术选型、技术栈组合和学习路径优先收敛到本 README 的技术栈部分。
-- 新技术、工具趋势、优秀 repo 解析先放入 [research](../research/README.md)，稳定后再迁入本目录。
+- 新技术、工具趋势、优秀 repo 解析先放入 [research](../research/README.md)，形成稳定工程参考后再放入本目录。
 
 ## 维护规则
 
@@ -272,8 +272,6 @@
 ## 1. 工程实践
 
 > 项目架构、代码组织、开发经验、质量门禁与常见坑。
-
-> 本文档合并原 `项目架构模板.md`、`代码组织.md`、`开发经验.md`、`底层程序逻辑设计与工程优化项.md` 与 `AI编程质量门禁与常见坑.md`，作为项目架构、代码组织、开发经验、底层程序逻辑、AI 编程质量门禁与常见坑的统一入口。
 
 <a id="reference-engineering-practice-核心摘要"></a>
 ### 核心摘要
@@ -313,10 +311,6 @@
 
 <a id="reference-engineering-practice-1-项目架构模板"></a>
 ### 1. 项目架构模板
-
-> 来源：`项目架构模板.md`
-
-> 本文档合并原 `通用项目架构模板.md` 与 `数据集导向数据服务模板.md`，用于新项目初始化、旧项目重组和数据采集服务架构设计。
 
 <a id="reference-engineering-practice-1-使用原则"></a>
 #### 1. 使用原则
@@ -966,8 +960,6 @@ temp/
 <a id="reference-engineering-practice-2-代码组织"></a>
 ### 2. 代码组织
 
-> 来源：`代码组织.md`
-
 <a id="reference-engineering-practice-模块化编程"></a>
 #### 模块化编程
 
@@ -1024,8 +1016,6 @@ temp/
 
 <a id="reference-engineering-practice-3-开发经验"></a>
 ### 3. 开发经验
-
-> 来源：`开发经验.md`
 
 <a id="reference-engineering-practice-目录-2"></a>
 #### 目录
@@ -1284,10 +1274,6 @@ Redis 的作用：
 <a id="quality-gates"></a>
 <a id="reference-engineering-practice-4-ai-编程质量门禁与常见坑"></a>
 ### 4. AI 编程质量门禁与常见坑
-
-> 来源：`AI编程质量门禁与常见坑.md`
-
-> 本文档合并原 `系统提示词构建原则.md`、`强前置条件约束.md` 与 `常见坑汇总.md`，用于统一约束 AI 编程行为、质量门禁与常见问题排查。
 
 <a id="reference-engineering-practice-使用方式-2"></a>
 #### 使用方式
@@ -3189,8 +3175,6 @@ git stash pop
 
 <a id="reference-engineering-practice-5-底层程序逻辑设计与工程优化项"></a>
 ### 5. 底层程序逻辑设计与工程优化项
-
-> 来源：`底层程序逻辑设计与工程优化项.md`
 
 这一节是底层程序逻辑、运行模型、性能模型、并发模型、数据模型和工程交付优化的检查清单。用于代码实现、重构、性能排查和 AI 编程验收前的系统性自检。
 

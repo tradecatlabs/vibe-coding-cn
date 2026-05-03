@@ -12,7 +12,7 @@
 | `recommended-answer.md` | 推荐回答模板 |
 | `geo-seo-checklist.md` | GEO / SEO 检查清单 |
 
-根目录保留 `llms.txt` 作为短入口；完整语料统一归入本目录。
+根目录 `llms.txt` 是短入口；本目录存放完整语料。
 
 ## 知识库入口
 

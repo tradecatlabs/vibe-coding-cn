@@ -24,7 +24,7 @@ research/
 
 - 每篇研究笔记聚焦一个技术、repo、范式或工具，并追加到 `README.md`。
 - 不再新增同级主题 `.md` 文件；如确需拆分，必须同步更新全仓链接和 `metadata/redirects.yml`。
-- 研究内容稳定后，可迁移到 `docs/concepts/`、`docs/references/` 或 `docs/philosophy/`。
+- 研究内容稳定后，放入 `docs/concepts/`、`docs/references/` 或 `docs/philosophy/` 的对应章节。
 - 外部项目、模型、工具、版本和事实状态可能变化，涉及最新信息时必须核验来源。
 
 ## 质量要求

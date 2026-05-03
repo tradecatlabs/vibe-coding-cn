@@ -1,7 +1,5 @@
 # 从零开始：Vibe Coding 完整入门教程
 
-> 本文件合并原 `学习地图.md`、`Vibe Coding 经验.md`、`网络环境配置.md`、`CLI配置.md` 与 `开发环境搭建.md`，作为零基础到独立交付项目的线性入门版本。
-
 ## 核心摘要
 
 这是一条面向新电脑和零基础用户的线性路线：先解决网络环境与 Codex / ChatGPT 订阅，再跑通 Codex CLI，随后让本地 Agent 主动检查和配置 Git、Node.js、Python、编辑器、项目依赖、测试命令和 Git 工作流。

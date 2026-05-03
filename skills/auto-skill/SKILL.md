@@ -65,7 +65,7 @@ Import the generated skill into this repo's canonical `skills/` tree:
 ./skills/auto-skill/scripts/skill-seekers-import.sh react --force
 ```
 
-Update the linked source by moving the `tools/external/Skill_Seekers-development` submodule pointer directly. The legacy updater is guarded to avoid overwriting the linked repository.
+Update the linked source by moving the `tools/external/Skill_Seekers-development` submodule pointer directly. The update helper is guarded to avoid overwriting the linked repository.
 
 ```bash
 ./skills/auto-skill/scripts/skill-seekers-update.sh --dry-run
