@@ -20,11 +20,8 @@ jobs:
       uses: actions/setup-node@v6
       with:
         node-version: '22'
-        cache: npm
-    - name: Install dependencies
-      run: npm ci
     - name: Run markdownlint
-      run: npm run lint:md
+      run: make lint
     - name: Check local markdown links and anchors
       run: python3 scripts/check-local-links.py
     - name: Check markdown details and summaries

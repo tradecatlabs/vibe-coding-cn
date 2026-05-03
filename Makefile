@@ -2,6 +2,8 @@
 
 .PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation sync-doc-toc build test clean clean-deps
 
+MARKDOWNLINT = npx --yes markdownlint-cli@0.48.0
+
 help:
 	@echo "Makefile for Vibe Coding Guide"
 	@echo ""
@@ -21,12 +23,9 @@ help:
 	@echo "  clean-deps - Remove local dependency caches"
 	@echo ""
 
-node_modules/.bin/markdownlint: package.json package-lock.json
-	@npm ci
-
-lint: node_modules/.bin/markdownlint
+lint:
 	@echo "Linting markdown files..."
-	@npm run lint:md
+	@$(MARKDOWNLINT) --config .github/lint_config.json --ignore .history --ignore tools/external '**/*.md'
 
 check-links:
 	@echo "Checking local markdown links and anchors..."

@@ -196,7 +196,7 @@
 ### 环境要求
 
 - Git：版本控制与 submodule 初始化
-- Node.js 22+：通过 `package-lock.json` 锁定并运行 `markdownlint-cli`
+- Node.js 22+：通过 `npx --yes markdownlint-cli@0.48.0` 运行固定版本 Markdown lint
 - Python 3.8+：运行 prompts-library 与链接检查脚本
 
 ### 初始化
@@ -232,7 +232,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ### 配置与 CI
 
 - Markdown lint 配置：`.github/lint_config.json`
-- Node 依赖锁定：`package.json` 与 `package-lock.json`
+- Markdown lint 版本：`Makefile` 中固定为 `markdownlint-cli@0.48.0`
 - CI 配置：`.github/workflows/ci.yml`，在 `develop` / `master` 分支的 push / pull_request 上运行 markdown-lint、本地链接检查、docs 结构检查与 link-checker
 - Codex 配置基线：`tools/config/.codex/config.toml`
 - Submodule 来源：`.gitmodules`

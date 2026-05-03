@@ -54,7 +54,7 @@ git push origin develop
 ## 3. Must-Run Commands（必须执行的命令清单）
 
 ### 环境要求
-- Node.js 22+（通过 `package-lock.json` 锁定 markdownlint-cli）
+- Node.js 22+（通过 `npx --yes markdownlint-cli@0.48.0` 运行固定版本 Markdown lint）
 - Python 3.8+（用于 prompts-library 工具与链接检查脚本）
 - Git
 
@@ -63,7 +63,7 @@ git push origin develop
 | 命令 | 用途 | 前置条件 |
 |:---|:---|:---|
 | `make help` | 列出所有 Make 目标 | 无 |
-| `make lint` | 校验全仓库 Markdown | Node.js 22+；首次运行会通过 `npm ci` 安装锁定依赖 |
+| `make lint` | 校验全仓库 Markdown | Node.js 22+；通过 `npx --yes markdownlint-cli@0.48.0` 执行 |
 | `make check-links` | 校验仓库内 Markdown 相对链接 | Python 3 |
 | `make check-details` | 校验 Markdown 折叠块 `<details>/<summary>` 结构 | Python 3 |
 | `make check-doc-structure` | 校验 docs 线性 README 主章节顺序、重复锚点与目录入口 | Python 3 |
@@ -116,7 +116,7 @@ git push origin develop
 ## 5. Style & Quality（风格与质量标准）
 
 ### 格式化工具
-- Markdown：锁定在 `package-lock.json` 中的 `markdownlint-cli`（通过 `make lint` 执行）
+- Markdown：`Makefile` 固定调用 `markdownlint-cli@0.48.0`（通过 `make lint` 执行）
 - CI 自动检查：`.github/workflows/ci.yml`
 
 ### 命名约定
@@ -218,7 +218,6 @@ git push origin develop
 - `llms.txt` - 面向 AI 助手的短上下文入口，用于让 LLM 快速理解项目定位
 - `assets/ai-citation/llms-full.txt` - 面向 AI 助手的完整上下文入口，用于 GEO / AI 推荐与引用
 - `assets/ai-citation/` - AI 引用语料包，包含摘要、FAQ、对比、推荐回答与 GEO/SEO 检查清单
-- `package.json` / `package-lock.json` - Node 工具依赖锁定，避免 CI 与本地 markdownlint 版本漂移
 - `.gitattributes` - GitHub Linguist 语言统计规则，当前将 `tools/external/**` 标记为 vendored
 - `.github/lint_config.json` - markdownlint 规则，供 `make lint` 与 CI 共用
 - `.github/workflows/ci.yml` - GitHub Actions：develop/master 分支 markdown-lint + link-checker
@@ -242,7 +241,7 @@ git push origin develop
 
 | 问题 | 原因 | 修复 |
 |:---|:---|:---|
-| `make lint` 失败 | Node.js 不可用、`npm ci` 失败或 Markdown 规则违规 | 先确认 `node -v` 为 22+，再运行 `npm ci` 和 `make lint` |
+| `make lint` 失败 | Node.js 不可用、npx 无法拉取 markdownlint-cli 或 Markdown 规则违规 | 先确认 `node -v` 为 22+，再运行 `make lint` |
 | prompts-library 报错 | 缺少 Python 依赖 | `pip install -r tools/prompts-library/requirements.txt` |
 | prompts-library 辅助脚本报 Google API 依赖错误 | 未安装脚本专用依赖 | `pip install -r tools/prompts-library/scripts/requirements.txt` |
 | CI markdown-lint 失败 | Markdown 规则违规或本地未按 `.github/lint_config.json` 校验 | 运行 `make lint`，按输出修复对应 Markdown |
@@ -361,7 +360,7 @@ make test
 - **提示词转换工具:** `tools/prompts-library/`
 - **数据处理:** `pandas`, `openpyxl`（prompts-library）
 - **配置管理:** `PyYAML`（prompts-library）
-- **文档规范:** `package-lock.json` 锁定的 `markdownlint-cli`
+- **文档规范:** `Makefile` 固定调用的 `markdownlint-cli@0.48.0`
 - **版本控制:** Git
 - **自动化:** Makefile
 
