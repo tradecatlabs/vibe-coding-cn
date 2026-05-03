@@ -9,6 +9,7 @@ exclude_path = [
   '^\.history(/|$)',
   '^\.github/wiki(/|$)',
   '^node_modules(/|$)',
+  '^docs/references/sources(/|$)',
   '^tools/external(/|$)',
   '^tools/chat-vault(/|$)',
   '^tools/prompts-library(/|$)',

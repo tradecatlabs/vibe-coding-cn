@@ -225,6 +225,8 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | Metadata 路径检查 | `make check-metadata` | `scripts/check-metadata.py` |
 | AI 引用路径检查 | `make check-ai-citation` | `scripts/check-ai-citation.py` |
 | 重建 docs 细粒度目录 | `make sync-doc-toc` | `scripts/sync-doc-toc.py` |
+| 重建 references 线性总文档 | `make sync-reference-readme` | `scripts/build-reference-readme.py` |
+| 检查 references 生成状态 | `make check-reference-readme` | `scripts/build-reference-readme.py` |
 | 全部本地质量门禁 | `make test` | `Makefile` |
 | 提示词格式转换 | `cd tools/prompts-library && python3 main.py` | `tools/prompts-library/main.py` |
 | Skill 严格校验示例 | `skills/auto-skill/scripts/validate-skill.sh skills/auto-skill --strict` | `skills/auto-skill/scripts/validate-skill.sh` |
@@ -462,7 +464,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
 │   ├── concepts/                # 核心概念、方法论与底层模型
 │   ├── philosophy/              # 哲学方法论与底层认知模型
-│   ├── references/              # 清单、约束、常见坑与模板
+│   ├── references/              # 清单、约束、常见坑与模板（总文档由 sources/ 生成）
 │   └── research/                # 新技术、优秀 repo 与工程范式研究
 ├── prompts/                     # 提示词库入口（指向云端表格）
 ├── skills/                      # 技能库入口

@@ -28,6 +28,8 @@ jobs:
       run: python3 scripts/check-local-links.py
     - name: Check markdown details and summaries
       run: python3 scripts/check-markdown-details.py
+    - name: Check references README generated state
+      run: python3 scripts/build-reference-readme.py --check
     - name: Check docs README structure
       run: python3 scripts/check-doc-structure.py
     - name: Check required directory README and AGENTS files

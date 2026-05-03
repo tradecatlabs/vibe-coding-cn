@@ -16,6 +16,10 @@ SKIP_PREFIXES = [
     Path("tools/external"),
     Path("tools/chat-vault"),
 ]
+GENERATED_SOURCE_DIRS = {
+    Path("docs/references/sources"),
+}
+SOURCE_DOC_NAMES = {"README.md", "AGENTS.md"}
 LINK_PATTERNS = [
     re.compile(r"!??\[[^\]]*\]\(([^)]+)\)"),
     re.compile(r"\b(?:href|src)=[\"']([^\"']+)[\"']"),
@@ -100,6 +104,8 @@ def markdown_anchors(path: Path) -> set[str]:
 def should_skip(path: Path) -> bool:
     rel = path.relative_to(ROOT)
     if any(part in SKIP_PARTS for part in rel.parts):
+        return True
+    if rel.parent in GENERATED_SOURCE_DIRS and rel.name not in SOURCE_DOC_NAMES:
         return True
     return any(rel == prefix or prefix in rel.parents for prefix in SKIP_PREFIXES)
 
