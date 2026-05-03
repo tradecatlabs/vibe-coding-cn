@@ -16,6 +16,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v6
+      with:
+        submodules: recursive
     - name: Setup Node.js
       uses: actions/setup-node@v6
       with:
@@ -39,7 +41,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          submodules: recursive
       - name: Link Checker
         uses: lycheeverse/lychee-action@v2.8.0
         with:
-          args: --verbose --no-progress --exclude-path .history --exclude-path .github/wiki --exclude-path node_modules --exclude-path tools/external --exclude-path tools/chat-vault './**/*.md'
+          args: >-
+            --verbose
+            --no-progress
+            --exclude-path .history
+            --exclude-path .github/wiki
+            --exclude-path node_modules
+            --exclude-path tools/external
+            --exclude-path tools/chat-vault
+            --exclude-path tools/prompts-library
+            --exclude 'https://chatgpt.com.*'
+            --exclude 'https://claude.ai.*'
+            --exclude 'https://app.augmentcode.com.*'
+            --exclude 'https://platform.openai.com.*'
+            --exclude 'https://user-images.githubusercontent.com.*'
+            './**/*.md'

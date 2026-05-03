@@ -6,7 +6,7 @@
 
 我们恳请您通过电子邮件向我们报告任何潜在的安全漏洞，而不是在公共 Issue 跟踪器中披露。这将使我们有机会在漏洞被公开利用之前进行修复。
 
-请将详细信息发送至：tukuai.ai@gmail.com
+请将详细信息发送至：[tukuai.ai@gmail.com](mailto:tukuai.ai@gmail.com)
 
 请在报告中包含以下信息：
 *   漏洞的详细描述。

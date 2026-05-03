@@ -1277,7 +1277,7 @@ AI 特别适合生成：
 ### 延伸阅读
 
 - [语言层要素](#concept-language-layers) - 看懂代码需要掌握的语言层级
-- [胶水开发提示词（在线提示词库入口）](../../../prompts/README.md)
+- [胶水开发提示词（在线提示词库入口）](../../prompts/README.md)
 
 </details>
 

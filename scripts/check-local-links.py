@@ -141,6 +141,7 @@ def main() -> int:
                 try:
                     destination.relative_to(ROOT)
                 except ValueError:
+                    missing_links.append((markdown_file.relative_to(ROOT), raw, destination))
                     continue
 
                 if not destination.exists():
@@ -155,7 +156,11 @@ def main() -> int:
     if missing_links or missing_anchors:
         print("MISSING_LINKS")
         for source, raw, resolved in missing_links:
-            print(f"{source} -> {raw} => {resolved.relative_to(ROOT)}")
+            try:
+                display_path = resolved.relative_to(ROOT)
+            except ValueError:
+                display_path = resolved
+            print(f"{source} -> {raw} => {display_path}")
         print("MISSING_ANCHORS")
         for source, raw, destination, anchor in missing_anchors:
             print(f"{source} -> {raw} => {destination}#{anchor}")
