@@ -73,6 +73,18 @@ documents:
     - path: docs/getting-started/README.md#1-vibe-coding-经验
       title: Vibe Coding 经验
       role: 通用语言能力、人机分工、机器门禁和入门铁律
+    - path: docs/getting-started/README.md#1-学习地图
+      title: 学习地图
+      role: 新手、开发者、团队、Prompt、Skill、质量门禁和 GEO/SEO 的路线选择
+    - path: docs/getting-started/README.md#3-网络环境配置
+      title: 网络环境配置
+      role: OpenAI、GitHub、文档和依赖源访问
+    - path: docs/getting-started/README.md#4-cli-配置
+      title: CLI 配置
+      role: Codex CLI 默认路线与 OpenCode 备选路线
+    - path: docs/getting-started/README.md#5-开发环境搭建
+      title: 开发环境搭建
+      role: Agent 主动配置开发依赖、编辑器建议和测试命令
   concepts:
     - path: docs/concepts/README.md#concept-problem-solving
       title: 问题求解
@@ -102,6 +114,9 @@ documents:
     - path: docs/philosophy/README.md#philosophy-programming-dao
       title: 编程之道
       role: 编程哲学、结构、状态、复杂度与工程判断
+    - path: docs/philosophy/README.md#philosophy-methodology-toolbox
+      title: 方法论工具箱
+      role: 现象学还原、正反合、可证伪主义、形式化方法等提效工具
   references:
     - path: docs/references/README.md#reference-engineering-practice
       title: 工程实践

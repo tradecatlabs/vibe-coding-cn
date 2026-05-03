@@ -5,3 +5,4 @@
 当前已有：
 
 - `check-local-links.py`：仓库内 Markdown 相对链接与锚点检查脚本。
+- `check-markdown-details.py`：仓库内 Markdown `<details>/<summary>` 折叠块结构检查脚本。

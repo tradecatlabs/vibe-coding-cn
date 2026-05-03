@@ -26,6 +26,8 @@ jobs:
       run: markdownlint --config .github/lint_config.json --ignore .history --ignore tools/external '**/*.md'
     - name: Check local markdown links and anchors
       run: python3 scripts/check-local-links.py
+    - name: Check markdown details and summaries
+      run: python3 scripts/check-markdown-details.py
 
   link-checker:
     runs-on: ubuntu-latest

@@ -215,6 +215,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | 查看 Make 任务 | `make help` | `Makefile` |
 | 全仓 Markdown lint | `make lint` | `Makefile` + `.github/lint_config.json` |
 | 本地相对链接检查 | `make check-links` | `scripts/check-local-links.py` |
+| 折叠块结构检查 | `make check-details` | `scripts/check-markdown-details.py` |
 | 全部本地质量门禁 | `make test` | `Makefile` |
 | 提示词格式转换 | `cd tools/prompts-library && python3 main.py` | `tools/prompts-library/main.py` |
 | Skill 严格校验示例 | `skills/auto-skill/scripts/validate-skill.sh skills/auto-skill --strict` | `skills/auto-skill/scripts/validate-skill.sh` |
