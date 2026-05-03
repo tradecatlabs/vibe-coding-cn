@@ -45,7 +45,10 @@
 5. [工程实践](references/README.md#reference-engineering-practice)
 6. [AI 引用语料](../assets/ai-citation/README.md)
 
-## 全部文档索引
+<details>
+<summary><strong>完整细粒度目录（默认收起）</strong></summary>
+
+### 全部文档索引
 
 ### getting-started
 
@@ -84,6 +87,8 @@
 - [README](./research/README.md) - 研究笔记索引。
 - [AGENTS](./research/AGENTS.md) - 研究笔记目录操作规则。
 - [Harness 工程解析](research/README.md#research-harness-engineering) - Harness Engineering 的工程控制、评估器与反馈闭环解析。
+
+</details>
 
 ## 维护规则
 

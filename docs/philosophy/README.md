@@ -18,7 +18,10 @@
 3. [编程之道](#philosophy-programming-dao) - 编程哲学、结构、状态、复杂度与工程判断。
 4. [方法论工具箱](#philosophy-methodology-toolbox) - 现象学还原、正反合、可证伪主义、形式化方法等提效工具。
 
-## 细粒度目录
+<details>
+<summary><strong>完整细粒度目录（默认收起）</strong></summary>
+
+### 细粒度目录
 
 - [1. 思维模型](#philosophy-thinking-models)
   - [使用原则](#philosophy-thinking-models-使用原则)
@@ -150,6 +153,8 @@
   - [现象学还原用于 Vibe Coding](#philosophy-methodology-toolbox-现象学还原用于-vibe-coding)
   - [辩证法用于 Vibe Coding：正反合](#philosophy-methodology-toolbox-辩证法用于-vibe-coding正反合)
   - [控制论与科学方法论](#philosophy-methodology-toolbox-控制论与科学方法论)
+
+</details>
 
 ## 和其他目录的边界
 

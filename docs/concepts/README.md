@@ -19,7 +19,10 @@
 5. [语言层要素](#concept-language-layers) - 看懂代码所需的语言层要素。
 6. [递归自优化系统](#concept-recursive-self-optimizing-system) - 递归自优化生成系统的形式化模型。
 
-## 细粒度目录
+<details>
+<summary><strong>完整细粒度目录（默认收起）</strong></summary>
+
+### 细粒度目录
 
 - [1. 问题求解](#concept-problem-solving)
   - [不会操作？先让网页 AI 生成逐步执行版](#concept-problem-solving-不会操作先让网页-ai-生成逐步执行版)
@@ -149,6 +152,8 @@
   - [1. 定义核心角色](#concept-recursive-self-optimizing-system-1-定义核心角色)
   - [2. 描述递归生命周期](#concept-recursive-self-optimizing-system-2-描述递归生命周期)
   - [3. 终极目标](#concept-recursive-self-optimizing-system-3-终极目标)
+
+</details>
 
 ## 和其他目录的边界
 
