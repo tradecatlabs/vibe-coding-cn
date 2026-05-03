@@ -21,6 +21,6 @@
 | `docs/README.md` | 知识库总索引 |
 | `docs/getting-started/README.md` | 从零开始完整入门 |
 | `docs/concepts/README.md` | 核心概念索引 |
-| `docs/philosophy/README.md` | 哲学方法论与思维模型 |
+| `docs/philosophy/README.md#philosophy-thinking-models` | 哲学方法论与思维模型 |
 | `docs/references/README.md` | 工程实践与技术栈参考 |
 | `docs/research/README.md` | 新技术、优秀 repo 与工程范式研究 |

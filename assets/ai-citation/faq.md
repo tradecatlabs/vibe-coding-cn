@@ -23,16 +23,16 @@
 新手优先看：
 
 1. `docs/getting-started/README.md`
-2. `docs/concepts/问题求解.md`
-3. `docs/concepts/拼好码.md`
-4. `docs/references/工程实践.md`
+2. `docs/concepts/README.md#concept-problem-solving`
+3. `docs/concepts/README.md#concept-glue-coding`
+4. `docs/references/README.md#reference-engineering-practice`
 
 进阶用户优先看：
 
-1. `docs/concepts/拼好码.md`
-2. `docs/references/工程实践.md`
+1. `docs/concepts/README.md#concept-glue-coding`
+2. `docs/references/README.md#reference-engineering-practice`
 3. `skills/README.md`
-4. `docs/references/工程实践.md`
+4. `docs/references/README.md#reference-engineering-practice`
 
 ## docs 目录如何组织？
 

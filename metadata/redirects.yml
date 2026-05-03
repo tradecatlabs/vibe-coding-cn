@@ -8,31 +8,31 @@ redirects:
   - from: docs/concepts/philosophy/
     to: docs/philosophy/
   - from: docs/concepts/思维模型.md
-    to: docs/philosophy/思维模型.md
+    to: docs/philosophy/README.md#philosophy-thinking-models
   - from: docs/concepts/编程之道.md
-    to: docs/philosophy/编程之道.md
+    to: docs/philosophy/README.md#philosophy-programming-dao
   - from: docs/concepts/A Formalization of Recursive Self-Optimizing Generative Systems.md
-    to: docs/concepts/递归自优化系统.md
+    to: docs/concepts/README.md#concept-recursive-self-optimizing-system
   - from: docs/concepts/软件开发范式演进.md
-    to: docs/concepts/开发范式演进.md
+    to: docs/concepts/README.md#concept-development-paradigms
   - from: docs/concepts/递归自优化生成系统形式化.md
-    to: docs/concepts/递归自优化系统.md
+    to: docs/concepts/README.md#concept-recursive-self-optimizing-system
   - from: docs/concepts/问题分析与系统构建方法.md
-    to: docs/concepts/系统构建方法.md
+    to: docs/concepts/README.md#concept-system-building
   - from: docs/concepts/问题求解能力.md
-    to: docs/concepts/问题求解.md
+    to: docs/concepts/README.md#concept-problem-solving
   - from: docs/concepts/Harness Engineering 的本质拆解.md
-    to: docs/research/Harness工程解析.md
+    to: docs/research/README.md#research-harness-engineering
   - from: docs/research/Harness Engineering 的本质拆解.md
-    to: docs/research/Harness工程解析.md
+    to: docs/research/README.md#research-harness-engineering
   - from: docs/philosophy/现象学还原.md
-    to: docs/philosophy/README.md
+    to: docs/philosophy/README.md#philosophy-methodology-toolbox
   - from: docs/philosophy/辩证法.md
-    to: docs/philosophy/README.md
+    to: docs/philosophy/README.md#philosophy-methodology-toolbox
   - from: docs/philosophy/控制论与科学方法论.md
-    to: docs/philosophy/README.md
+    to: docs/philosophy/README.md#philosophy-methodology-toolbox
   - from: docs/philosophy/理解世界、描述变化、整理知识的一套较小框架.md
-    to: docs/philosophy/组合描述模型.md
+    to: docs/philosophy/README.md#philosophy-compositional-description-model
   - from: docs/guides/playbook/
     to: docs/README.md
   - from: docs/playbooks/
@@ -58,25 +58,25 @@ redirects:
   - from: docs/getting-started/开发环境搭建.md
     to: docs/getting-started/README.md
   - from: docs/references/通用项目架构模板.md
-    to: docs/references/工程实践.md
+    to: docs/references/README.md#reference-engineering-practice
   - from: docs/references/数据集导向数据服务模板.md
-    to: docs/references/工程实践.md
+    to: docs/references/README.md#reference-engineering-practice
   - from: docs/references/系统提示词构建原则.md
-    to: docs/references/工程实践.md
+    to: docs/references/README.md#reference-engineering-practice
   - from: docs/references/强前置条件约束.md
-    to: docs/references/工程实践.md
+    to: docs/references/README.md#reference-engineering-practice
   - from: docs/references/常见坑汇总.md
-    to: docs/references/工程实践.md
+    to: docs/references/README.md#reference-engineering-practice
   - from: docs/references/项目架构模板.md
-    to: docs/references/工程实践.md
+    to: docs/references/README.md#reference-engineering-practice
   - from: docs/references/AI编程质量门禁与常见坑.md
-    to: docs/references/工程实践.md
+    to: docs/references/README.md#reference-engineering-practice
   - from: docs/references/代码组织.md
-    to: docs/references/工程实践.md
+    to: docs/references/README.md#reference-engineering-practice
   - from: docs/references/开发经验.md
-    to: docs/references/工程实践.md
+    to: docs/references/README.md#reference-engineering-practice
   - from: docs/references/底层程序逻辑设计与工程优化项.md
-    to: docs/references/工程实践.md
+    to: docs/references/README.md#reference-engineering-practice
   - from: skills/
     to: skills/
   - from: prompts/
@@ -95,3 +95,27 @@ redirects:
     to: tools/config/
   - from: tools/config/
     to: tools/config/
+  - from: docs/concepts/问题求解.md
+    to: docs/concepts/README.md#concept-problem-solving
+  - from: docs/concepts/拼好码.md
+    to: docs/concepts/README.md#concept-glue-coding
+  - from: docs/concepts/系统构建方法.md
+    to: docs/concepts/README.md#concept-system-building
+  - from: docs/concepts/开发范式演进.md
+    to: docs/concepts/README.md#concept-development-paradigms
+  - from: docs/concepts/语言层要素.md
+    to: docs/concepts/README.md#concept-language-layers
+  - from: docs/concepts/递归自优化系统.md
+    to: docs/concepts/README.md#concept-recursive-self-optimizing-system
+  - from: docs/philosophy/思维模型.md
+    to: docs/philosophy/README.md#philosophy-thinking-models
+  - from: docs/philosophy/组合描述模型.md
+    to: docs/philosophy/README.md#philosophy-compositional-description-model
+  - from: docs/philosophy/编程之道.md
+    to: docs/philosophy/README.md#philosophy-programming-dao
+  - from: docs/references/工程实践.md
+    to: docs/references/README.md#reference-engineering-practice
+  - from: docs/references/技术栈.md
+    to: docs/references/README.md#reference-technology-stack
+  - from: docs/research/Harness工程解析.md
+    to: docs/research/README.md#research-harness-engineering

@@ -31,23 +31,23 @@ reading_paths:
     documents:
       - docs/getting-started/README.md
       - docs/getting-started/README.md#1-vibe-coding-经验
-      - docs/concepts/问题求解.md
-      - docs/concepts/拼好码.md
-      - docs/references/工程实践.md
+      - docs/concepts/README.md#concept-problem-solving
+      - docs/concepts/README.md#concept-glue-coding
+      - docs/references/README.md#reference-engineering-practice
   developer:
     title: 开发者路径
     documents:
-      - docs/concepts/拼好码.md
-      - docs/concepts/系统构建方法.md
-      - docs/references/技术栈.md
-      - docs/references/工程实践.md
+      - docs/concepts/README.md#concept-glue-coding
+      - docs/concepts/README.md#concept-system-building
+      - docs/references/README.md#reference-technology-stack
+      - docs/references/README.md#reference-engineering-practice
   thinking:
     title: 思维模型路径
     documents:
-      - docs/philosophy/思维模型.md
-      - docs/philosophy/组合描述模型.md
-      - docs/philosophy/编程之道.md
-      - docs/concepts/递归自优化系统.md
+      - docs/philosophy/README.md#philosophy-thinking-models
+      - docs/philosophy/README.md#philosophy-compositional-description-model
+      - docs/philosophy/README.md#philosophy-programming-dao
+      - docs/concepts/README.md#concept-recursive-self-optimizing-system
   agent:
     title: AI Agent 读取路径
     documents:
@@ -55,7 +55,7 @@ reading_paths:
       - docs/AGENTS.md
       - docs/getting-started/README.md
       - docs/getting-started/README.md#1-vibe-coding-经验
-      - docs/references/工程实践.md
+      - docs/references/README.md#reference-engineering-practice
       - assets/ai-citation/README.md
 
 selection_rules:
@@ -74,43 +74,43 @@ documents:
       title: Vibe Coding 经验
       role: 通用语言能力、人机分工、机器门禁和入门铁律
   concepts:
-    - path: docs/concepts/问题求解.md
+    - path: docs/concepts/README.md#concept-problem-solving
       title: 问题求解
       role: 目标、现状、差距、标准、约束、对象与路径
-    - path: docs/concepts/拼好码.md
+    - path: docs/concepts/README.md#concept-glue-coding
       title: 拼好码
       role: 复用成熟能力、胶水原则、能力编排与业务交付
-    - path: docs/concepts/系统构建方法.md
+    - path: docs/concepts/README.md#concept-system-building
       title: 系统构建方法
       role: 自顶向下、自底向上与分而治之
-    - path: docs/concepts/开发范式演进.md
+    - path: docs/concepts/README.md#concept-development-paradigms
       title: 开发范式演进
       role: 软件工程组织方式演进
-    - path: docs/concepts/语言层要素.md
+    - path: docs/concepts/README.md#concept-language-layers
       title: 语言层要素
       role: 代码理解所需语言层级
-    - path: docs/concepts/递归自优化系统.md
+    - path: docs/concepts/README.md#concept-recursive-self-optimizing-system
       title: 递归自优化系统
       role: 递归自优化生成系统的形式化模型
   philosophy:
-    - path: docs/philosophy/思维模型.md
+    - path: docs/philosophy/README.md#philosophy-thinking-models
       title: 思维模型
       role: 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具
-    - path: docs/philosophy/组合描述模型.md
+    - path: docs/philosophy/README.md#philosophy-compositional-description-model
       title: 组合描述模型
       role: 对象、状态、快照、序列、过程、变换、同一/差异与关系
-    - path: docs/philosophy/编程之道.md
+    - path: docs/philosophy/README.md#philosophy-programming-dao
       title: 编程之道
       role: 编程哲学、结构、状态、复杂度与工程判断
   references:
-    - path: docs/references/工程实践.md
+    - path: docs/references/README.md#reference-engineering-practice
       title: 工程实践
       role: 项目架构、代码组织、开发经验、质量门禁与常见坑
-    - path: docs/references/技术栈.md
+    - path: docs/references/README.md#reference-technology-stack
       title: 技术栈
       role: 技术栈选型、组合案例与学习路径
   research:
-    - path: docs/research/Harness工程解析.md
+    - path: docs/research/README.md#research-harness-engineering
       title: Harness 工程解析
       role: 工程控制、评估器、反馈闭环与 AI 生成系统可靠性
 

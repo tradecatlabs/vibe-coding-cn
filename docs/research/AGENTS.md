@@ -16,15 +16,14 @@
 
 ```text
 research/
-├── README.md             # 研究笔记索引
-├── AGENTS.md             # 本目录操作规则
-└── Harness工程解析.md    # Harness Engineering 技术解析
+├── README.md  # 线性总文档：研究笔记集合
+└── AGENTS.md  # 本目录操作规则
 ```
 
 ## 修改规则
 
-- 每篇研究笔记聚焦一个技术、repo、范式或工具。
-- 新增研究笔记时，必须同步更新 `README.md`。
+- 每篇研究笔记聚焦一个技术、repo、范式或工具，并追加到 `README.md`。
+- 不再新增同级主题 `.md` 文件；如确需拆分，必须同步更新全仓链接和 `metadata/redirects.yml`。
 - 研究内容稳定后，可迁移到 `docs/concepts/`、`docs/references/` 或 `docs/philosophy/`。
 - 外部项目、模型、工具、版本和事实状态可能变化，涉及最新信息时必须核验来源。
 
