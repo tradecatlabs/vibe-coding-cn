@@ -41,6 +41,11 @@ REQUIRED_DIRS = [
     Path("tools/prompts-library/docs"),
     Path("tools/prompts-library/scripts"),
 ]
+README_OPTIONAL_DIRS = {
+    # GitHub repository pages can surface `.github/README.md` as an overview file.
+    # Keep the root project README authoritative and use `.github/AGENTS.md` only.
+    Path(".github"),
+}
 GENERATED_OR_VENDOR_DIRS = [
     Path("node_modules"),
 ]
@@ -84,7 +89,8 @@ def main() -> int:
         if not directory.is_dir():
             errors.append(f"{rel_dir}: required directory is missing")
             continue
-        for filename in ("README.md", "AGENTS.md"):
+        required_files = ["AGENTS.md"] if rel_dir in README_OPTIONAL_DIRS else ["README.md", "AGENTS.md"]
+        for filename in required_files:
             if not (directory / filename).is_file():
                 errors.append(f"{rel_dir}/{filename}: missing required directory document")
 
