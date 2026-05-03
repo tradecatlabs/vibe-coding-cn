@@ -1,6 +1,6 @@
 # Makefile for Vibe Coding Guide
 
-.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation build test clean
+.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation sync-doc-toc build test clean clean-deps
 
 help:
 	@echo "Makefile for Vibe Coding Guide"
@@ -14,9 +14,11 @@ help:
 	@echo "  check-directory-docs - Check required README/AGENTS pairs"
 	@echo "  check-metadata - Check metadata paths and anchors"
 	@echo "  check-ai-citation - Check llms and AI citation paths and anchors"
+	@echo "  sync-doc-toc - Regenerate docs fine-grained TOC blocks"
 	@echo "  build    - Verify knowledge base has no build step"
 	@echo "  test     - Run repository quality gates"
 	@echo "  clean    - Remove ignored generated caches"
+	@echo "  clean-deps - Remove local dependency caches"
 	@echo ""
 
 node_modules/.bin/markdownlint: package.json package-lock.json
@@ -50,14 +52,23 @@ check-ai-citation:
 	@echo "Checking llms and AI citation paths and anchors..."
 	@python3 scripts/check-ai-citation.py
 
+sync-doc-toc:
+	@echo "Regenerating docs fine-grained TOC blocks..."
+	@python3 scripts/sync-doc-toc.py
+
 build:
 	@echo "No build step: this repository is a documentation and knowledge-base project."
 
 test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation
 	@echo "Quality gates complete."
 
-clean:
+clean: clean-deps
 	@echo "Cleaning ignored generated caches..."
 	@find . -type d -name '__pycache__' -prune -exec rm -rf {} +
 	@rm -rf tools/prompts-library/prompt_jsonl
 	@echo "Cleanup complete."
+
+clean-deps:
+	@echo "Cleaning local dependency caches..."
+	@rm -rf node_modules
+	@echo "Dependency cleanup complete."

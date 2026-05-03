@@ -38,8 +38,8 @@
 
 ### 细粒度目录
 
-- [1. Vibe Coding 经验](#vibe-coding-experience)
-- [2. 学习地图](#learning-map)
+  - [vibe-coding-experience](#vibe-coding-experience)
+  - [learning-map](#learning-map)
 - [3. 网络环境配置](#network-environment)
 - [4. CLI 配置](#cli-setup)
 - [5. 开发环境搭建](#development-environment)

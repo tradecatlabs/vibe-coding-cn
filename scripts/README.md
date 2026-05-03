@@ -10,3 +10,4 @@
 - `check-directory-docs.py`：仓库自有目录 `README.md` / `AGENTS.md` 覆盖检查脚本。
 - `check-metadata.py`：`metadata/taxonomy.yml` 与 `metadata/redirects.yml` 路径和锚点检查脚本。
 - `check-ai-citation.py`：`llms.txt`、`assets/ai-citation/llms-full.txt` 与 AI 引用语料路径和锚点检查脚本。
+- `sync-doc-toc.py`：根据 `metadata/taxonomy.yml` 和文档锚点重建 docs 线性 README 的完整细粒度目录。

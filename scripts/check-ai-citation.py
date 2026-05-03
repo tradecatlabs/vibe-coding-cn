@@ -10,6 +10,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+TAXONOMY = ROOT / "metadata/taxonomy.yml"
 AI_ENTRY_FILES = [
     Path("llms.txt"),
     Path("assets/ai-citation/llms-full.txt"),
@@ -25,6 +26,31 @@ PATH_PATTERN = re.compile(
 )
 MARKDOWN_LINK_PATTERN = re.compile(r"!??\[[^\]]*\]\(([^)]+)\)")
 EXTERNAL_PREFIXES = ("http://", "https://", "mailto:", "tel:", "data:")
+
+
+def strip_quotes(value: str) -> str:
+    return value.strip().strip("\"'")
+
+
+def taxonomy_document_paths() -> list[str]:
+    paths: list[str] = []
+    in_documents = False
+
+    for line in TAXONOMY.read_text(encoding="utf-8").splitlines():
+        if line == "documents:":
+            in_documents = True
+            continue
+        if in_documents and line and not line.startswith(" "):
+            break
+        if not in_documents:
+            continue
+
+        stripped = line.strip()
+        if stripped.startswith("- path:"):
+            _, value = stripped.split(":", 1)
+            paths.append(strip_quotes(value))
+
+    return paths
 
 
 def github_slug(title: str) -> str:
@@ -156,6 +182,15 @@ def main() -> int:
             error = validate_target(rel_path, lineno, target, anchor_cache)
             if error:
                 errors.append(error)
+
+    llms_full = ROOT / "assets/ai-citation/llms-full.txt"
+    if not llms_full.exists():
+        errors.append("assets/ai-citation/llms-full.txt: missing full AI citation context")
+    else:
+        llms_full_text = llms_full.read_text(encoding="utf-8", errors="ignore")
+        for target in taxonomy_document_paths():
+            if target not in llms_full_text:
+                errors.append(f"assets/ai-citation/llms-full.txt: missing taxonomy document coverage: {target}")
 
     if errors:
         print("AI_CITATION_ERRORS")
