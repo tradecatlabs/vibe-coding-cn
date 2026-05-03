@@ -20,14 +20,14 @@
 2. [Vibe Coding 经验](./getting-started/README.md#1-vibe-coding-经验)
 3. [问题求解](concepts/README.md#concept-problem-solving)
 4. [拼好码](concepts/README.md#concept-glue-coding)
-5. [工程实践](references/README.md#reference-engineering-practice-顶部导航)
+5. [工程实践](references/README.md#reference-engineering-practice)
 
 ### 开发者路径
 
 1. [拼好码](concepts/README.md#concept-glue-coding)
 2. [系统构建方法](concepts/README.md#concept-system-building)
-3. [技术栈](references/README.md#reference-technology-stack-顶部导航)
-4. [工程实践](references/README.md#reference-engineering-practice-顶部导航)
+3. [技术栈](references/README.md#reference-technology-stack)
+4. [工程实践](references/README.md#reference-engineering-practice)
 
 ### 思维模型路径
 
@@ -42,7 +42,7 @@
 2. [docs 目录 AGENTS](./AGENTS.md)
 3. [从零开始完整入门](./getting-started/README.md#1-学习地图)
 4. [Vibe Coding 经验](./getting-started/README.md#1-vibe-coding-经验)
-5. [工程实践](references/README.md#reference-engineering-practice-顶部导航)
+5. [工程实践](references/README.md#reference-engineering-practice)
 6. [AI 引用语料](../assets/ai-citation/README.md)
 
 ## 全部文档索引
@@ -76,8 +76,8 @@
 
 - [README](./references/README.md) - 参考资料索引。
 - [AGENTS](./references/AGENTS.md) - 参考资料目录操作规则。
-- [工程实践](references/README.md#reference-engineering-practice-顶部导航) - 项目架构、代码组织、开发经验、质量门禁与常见坑。
-- [技术栈](references/README.md#reference-technology-stack-顶部导航) - 技术栈选型、组合案例与初学者学习路径。
+- [工程实践](references/README.md#reference-engineering-practice) - 项目架构、代码组织、开发经验、质量门禁与常见坑。
+- [技术栈](references/README.md#reference-technology-stack) - 技术栈选型、组合案例与初学者学习路径。
 
 ### research
 

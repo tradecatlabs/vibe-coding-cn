@@ -8,7 +8,7 @@ help:
 	@echo "Available commands:"
 	@echo "  help     - Show this help message"
 	@echo "  lint     - Lint all markdown files"
-	@echo "  check-links - Check local markdown links"
+	@echo "  check-links - Check local markdown links and anchors"
 	@echo "  build    - Verify knowledge base has no build step"
 	@echo "  test     - Run repository quality gates"
 	@echo "  clean    - Remove ignored generated caches"
@@ -20,7 +20,7 @@ lint:
 	@markdownlint --config .github/lint_config.json --ignore .history --ignore tools/external '**/*.md'
 
 check-links:
-	@echo "Checking local markdown links..."
+	@echo "Checking local markdown links and anchors..."
 	@python3 scripts/check-local-links.py
 
 build:

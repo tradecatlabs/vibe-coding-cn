@@ -36,7 +36,7 @@
 	  <a href="docs/concepts/README.md#concept-problem-solving"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解"></a>
 	  <a href="docs/philosophy/README.md#philosophy-thinking-models"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
 	  <a href="docs/philosophy/README.md#philosophy-methodology-toolbox"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
-	  <a href="docs/references/README.md#reference-engineering-practice-4-ai-编程质量门禁与常见坑"><img src="https://img.shields.io/badge/🛡️_工程实践-质量门禁-darkred?style=for-the-badge" alt="工程实践"></a>
+	  <a href="docs/references/README.md#quality-gates"><img src="https://img.shields.io/badge/🛡️_工程实践-质量门禁-darkred?style=for-the-badge" alt="工程实践"></a>
 	  <a href="docs/concepts/README.md#concept-language-layers"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>
   <a href="./skills/"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
   <a href="https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
@@ -178,7 +178,7 @@
 1. [Vibe Coding 经验](docs/getting-started/README.md#1-vibe-coding-经验) - 通用语言能力、人机分工、机器门禁和入门铁律
 2. [问题求解](docs/concepts/README.md#concept-problem-solving) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
 3. [拼好码](docs/concepts/README.md#concept-glue-coding) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
-4. [工程实践](docs/references/README.md#reference-engineering-practice-4-ai-编程质量门禁与常见坑) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
+4. [工程实践](docs/references/README.md#quality-gates) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
 
 </details>
 
@@ -407,8 +407,8 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**Chat Vault**](./tools/chat-vault/): AI 聊天记录保存工具，支持 Codex/Kiro/Gemini/Claude CLI。
 *   [**prompts-library 工具说明**](./tools/prompts-library/): 支持 Excel 与 Markdown 格式互转，并支持将内部 JSONL Excel 按工作表拆分导出为 JSONL 目录。
 *   [**编程提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 适用于 Vibe Coding 流程的专用提示词（云端表格）。
-*   [**工程实践**](docs/references/README.md#reference-engineering-practice-4-ai-编程质量门禁与常见坑): 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口。
-*   [**技术栈**](docs/references/README.md#reference-technology-stack-十四如何选择技术栈): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
+*   [**工程实践**](docs/references/README.md#quality-gates): 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口。
+*   [**技术栈**](docs/references/README.md#tech-stack-selection): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
 *   [**系统提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): AI 开发的系统提示词，含多版本开发规范（云端表格）。
 *   [**外部资源（在线表格）**](./assets/README.md): 外部资源的唯一真相源（按类型分表），本地 Markdown 保留为历史参考。
 

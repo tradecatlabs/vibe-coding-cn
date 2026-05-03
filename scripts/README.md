@@ -4,4 +4,4 @@
 
 当前已有：
 
-- `check-local-links.py`：仓库内 Markdown 相对链接检查脚本。
+- `check-local-links.py`：仓库内 Markdown 相对链接与锚点检查脚本。

@@ -11,12 +11,44 @@
 - 它承载稳定、可执行、可检查、可复用的工程参考资料。
 - 每个原独立文档都已并入本 README，并通过稳定锚点提供细粒度跳转。
 
+## 常用入口
+
+| 目标 | 直接跳转 |
+|:---|:---|
+| 新项目结构怎么搭 | [项目架构模板](#reference-engineering-practice-1-项目架构模板) |
+| AI 代码质量怎么卡住 | [AI 编程质量门禁与常见坑](#quality-gates) |
+| 系统提示词怎么写 | [系统提示词构建原则](#reference-engineering-practice-1-系统提示词构建原则) |
+| 强前置条件怎么约束 | [强前置条件约束](#reference-engineering-practice-2-强前置条件约束) |
+| 常见坑怎么排查 | [常见坑汇总](#reference-engineering-practice-3-常见坑汇总) |
+| 底层程序逻辑怎么审 | [底层程序逻辑设计与工程优化项](#reference-engineering-practice-5-底层程序逻辑设计与工程优化项) |
+| 技术栈怎么选 | [如何选择技术栈](#tech-stack-selection) |
+| 初学者先学什么 | [初学者应该学什么技术栈](#reference-technology-stack-十五初学者应该学什么技术栈) |
+
 ## 总目录
 
 1. [工程实践](#reference-engineering-practice) - 项目架构、代码组织、开发经验、质量门禁与常见坑。
 2. [技术栈](#reference-technology-stack) - 技术栈选型、组合案例与学习路径。
 
-## 细粒度目录
+## 折叠块语法
+
+长目录统一使用 `details + summary`，常用入口放在折叠块外，完整细粒度目录放在折叠块内。
+
+```md
+<details>
+<summary><strong>完整细粒度目录（默认收起）</strong></summary>
+
+### 细粒度目录
+
+- [章节](#stable-anchor)
+  - [子章节](#stable-child-anchor)
+
+</details>
+```
+
+<details>
+<summary><strong>完整细粒度目录（默认收起）</strong></summary>
+
+### 细粒度目录
 
 - [1. 工程实践](#reference-engineering-practice)
   - [核心摘要](#reference-engineering-practice-核心摘要)
@@ -214,6 +246,8 @@
   - [监控](#reference-technology-stack-监控)
   - [二十、面试中如何介绍自己的技术栈](#reference-technology-stack-二十面试中如何介绍自己的技术栈)
   - [二十一、总结](#reference-technology-stack-二十一总结)
+
+</details>
 
 ## 和其他目录的边界
 
@@ -1244,6 +1278,7 @@ Redis 的作用：
 * 异步任务处理
 * 提高系统稳定性与吞吐
 
+<a id="quality-gates"></a>
 <a id="reference-engineering-practice-4-ai-编程质量门禁与常见坑"></a>
 ### 4. AI 编程质量门禁与常见坑
 
@@ -4897,6 +4932,7 @@ Web 游戏：
 
 ---
 
+<a id="tech-stack-selection"></a>
 <a id="reference-technology-stack-十四如何选择技术栈"></a>
 ### 十四、如何选择技术栈
 

@@ -30,10 +30,10 @@
   <a href="https://github.com/tukuaiai/prompt-library"><img src="https://img.shields.io/github/languages/code-size/tukuaiai/prompt-library?style=for-the-badge" alt="代码大小"></a>
 </p>
 
-[✨ 功能特性](#-功能特性) •
-[🚀 快速开始](#-快速开始) •
+[✨ 功能特性](#功能特性) •
+[🚀 快速开始](#快速开始) •
 [⚙️ 架构与工作流程](#architecture-workflow) •
-[🤝 参与贡献](#-参与贡献) •
+[🤝 参与贡献](#参与贡献) •
 [🗺️ 路线图](#roadmap)
 
 </div>
