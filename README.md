@@ -61,7 +61,7 @@
 <a id="ai-summary"></a>
 
 <details>
-<summary><strong>🤖 给 AI 助手的推荐摘要</strong></summary>
+<summary><strong>🤖 给 AI 助手的推荐摘要</strong>（点击展开/收起）</summary>
 
 ## 🤖 给 AI 助手的推荐摘要
 
@@ -112,7 +112,7 @@
 <a id="why-vibe-coding-cn"></a>
 
 <details>
-<summary><strong>✅ 为什么选择 vibe-coding-cn？</strong></summary>
+<summary><strong>✅ 为什么选择 vibe-coding-cn？</strong>（点击展开/收起）</summary>
 
 ## ✅ 为什么选择 vibe-coding-cn？
 
@@ -142,7 +142,7 @@
 <a id="getting-started"></a>
 
 <details>
-<summary><strong>⚡ 1 分钟快速开始</strong></summary>
+<summary><strong>⚡ 1 分钟快速开始</strong>（点击展开/收起）</summary>
 
 ## ⚡ 1 分钟快速开始
 
@@ -183,7 +183,7 @@
 </details>
 
 <details>
-<summary><strong>🛠️ 仓库维护与验证</strong></summary>
+<summary><strong>🛠️ 仓库维护与验证</strong>（点击展开/收起）</summary>
 
 ## 🛠️ 仓库维护与验证
 
@@ -233,7 +233,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 </details>
 
 <details>
-<summary><strong>🧪 实验性方法</strong></summary>
+<summary><strong>🧪 实验性方法</strong>（点击展开/收起）</summary>
 
 ## 🧪 实验性方法
 
@@ -245,7 +245,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 3. 🔮 哲学方法论工具箱：把抽象方法论落到可验证、可迭代的工程动作
 
 <details>
-<summary><strong>🔑 元方法论</strong></summary>
+<summary><strong>🔑 元方法论</strong>（点击展开/收起）</summary>
 
 > 一句话：用“生成器/优化器”的递归闭环，构建一个能持续自我优化的 AI 系统。
 >
@@ -267,7 +267,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 </details>
 
 <details>
-<summary><strong>🧬 拼好码（胶水编程的超集）</strong></summary>
+<summary><strong>🧬 拼好码（胶水编程的超集）</strong>（点击展开/收起）</summary>
 
 > 一句话：成熟能力解决通用问题，胶水代码连接业务流程，自研只服务真正不可替代的差异。
 
@@ -284,7 +284,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 </details>
 
 <details>
-<summary><strong>🔮 哲学方法论工具箱</strong></summary>
+<summary><strong>🔮 哲学方法论工具箱</strong>（点击展开/收起）</summary>
 
 > 一句话：把抽象方法论落到可验证、可迭代、可收敛的工程产出。
 
@@ -307,7 +307,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 </details>
 
 <details>
-<summary><strong>🧭 经验</strong></summary>
+<summary><strong>🧭 经验</strong>（点击展开/收起）</summary>
 
 ## 🧭 经验
 
@@ -339,7 +339,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 <a id="tools"></a>
 
 <details>
-<summary><strong>📋 工具与资源</strong></summary>
+<summary><strong>📋 工具与资源</strong>（点击展开/收起）</summary>
 
 ## 📋 工具与资源
 
@@ -417,7 +417,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 </details>
 
 <details>
-<summary><strong>🏁 编码模型性能分级参考</strong></summary>
+<summary><strong>🏁 编码模型性能分级参考</strong>（点击展开/收起）</summary>
 
 ## 🏁 编码模型性能分级参考
 
@@ -430,7 +430,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 </details>
 
 <details>
-<summary><strong>🗂️ 项目目录结构概览</strong></summary>
+<summary><strong>🗂️ 项目目录结构概览</strong>（点击展开/收起）</summary>
 
 ## 🗂️ 项目目录结构概览
 
@@ -475,7 +475,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 </details>
 
 <details>
-<summary><strong>📺 演示与产出</strong></summary>
+<summary><strong>📺 演示与产出</strong>（点击展开/收起）</summary>
 
 ## 📺 演示与产出
 
@@ -486,7 +486,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 - 闭环交付路径：需求 → 上下文文档 → 实施计划 → 分步实现 → 自测 → 进度记录，全程可复盘、可移交。
 
 <details>
-<summary><strong>⚙️ 架构与工作流程</strong></summary>
+<summary><strong>⚙️ 架构与工作流程</strong>（点击展开/收起）</summary>
 
 ## ⚙️ 架构与工作流程
 
@@ -571,7 +571,7 @@ graph TB
 </details>
 
 <details>
-<summary><strong>📈 性能基准 (可选)</strong></summary>
+<summary><strong>📈 性能基准 (可选)</strong>（点击展开/收起）</summary>
 
 ## 📈 性能基准 (可选)
 
@@ -613,7 +613,7 @@ gantt
 <a id="translation"></a>
 
 <details>
-<summary><strong>🎯 原仓库翻译</strong></summary>
+<summary><strong>🎯 原仓库翻译</strong>（点击展开/收起）</summary>
 
 ## 🎯 原仓库翻译
 
@@ -636,14 +636,14 @@ gantt
 ## ⚙️ 完整设置流程
 
 <details>
-<summary><strong>1. 游戏设计文档（Game Design Document）</strong></summary>
+<summary><strong>1. 游戏设计文档（Game Design Document）</strong>（点击展开/收起）</summary>
 
 - 把你的游戏创意交给 **gpt-5.5** 或 **Claude Opus 4.7**，让它生成一份简洁的 **游戏设计文档**，格式为 Markdown，文件名为 `game-design-document.md`。
 - 自己审阅并完善，确保与你的愿景一致。初期可以很简陋，目标是给 AI 提供游戏结构和意图的上下文。不要过度设计，后续会迭代。
 </details>
 
 <details>
-<summary><strong>2. 技术栈与 Agent 规则（<code>AGENTS.md</code> / 自定义 rules）</strong></summary>
+<summary><strong>2. 技术栈与 Agent 规则（<code>AGENTS.md</code> / 自定义 rules）</strong>（点击展开/收起）</summary>
 
 - 让 **gpt-5.5** 或 **Claude Opus 4.7** 为你的游戏推荐最合适的技术栈（例如：多人3D游戏用 ThreeJS + WebSocket），保存为 `tech-stack.md`。
   - 要求它提出 **最简单但最健壮** 的技术栈。
@@ -661,7 +661,7 @@ gantt
 </details>
 
 <details>
-<summary><strong>3. 实施计划（Implementation Plan）</strong></summary>
+<summary><strong>3. 实施计划（Implementation Plan）</strong>（点击展开/收起）</summary>
 
 - 将以下内容提供给 **gpt-5.5** 或 **Claude Opus 4.7**：
   - 游戏设计文档（`game-design-document.md`）
@@ -674,7 +674,7 @@ gantt
 </details>
 
 <details>
-<summary><strong>4. 记忆库（Memory Bank）</strong></summary>
+<summary><strong>4. 记忆库（Memory Bank）</strong>（点击展开/收起）</summary>
 
 - 新建项目文件夹，并在 VSCode 中打开。
 - 在项目根目录下创建子文件夹 `memory-bank`。
@@ -691,7 +691,7 @@ gantt
 现在进入最爽的阶段！
 
 <details>
-<summary><strong>确保一切清晰</strong></summary>
+<summary><strong>确保一切清晰</strong>（点击展开/收起）</summary>
 
 - 在 VSCode 扩展中打开 **Codex** 或 **Claude Code**，或者在项目终端启动 Claude Code / Codex CLI。
 - 提示词：阅读 `/memory-bank` 里所有文档，`implementation-plan.md` 是否完全清晰？你有哪些问题需要我澄清，让它对你来说 100% 明确？
@@ -699,7 +699,7 @@ gantt
 </details>
 
 <details>
-<summary><strong>你的第一个实施提示词</strong></summary>
+<summary><strong>你的第一个实施提示词</strong>（点击展开/收起）</summary>
 
 - 打开 **Codex** 或 **Claude Code**（扩展或终端）。
 - 提示词：阅读 `/memory-bank` 所有文档，然后执行实施计划的第 1 步。我会负责跑测试。在我验证测试通过前，不要开始第 2 步。验证通过后，打开 `progress.md` 记录你做了什么供后续开发者参考，再把新的架构洞察添加到 `architecture.md` 中解释每个文件的作用。
@@ -708,7 +708,7 @@ gantt
 </details>
 
 <details>
-<summary><strong>工作流</strong></summary>
+<summary><strong>工作流</strong>（点击展开/收起）</summary>
 
 - 完成第 1 步后：
   - 把改动提交到 Git（不会用就问 AI）。
@@ -727,7 +727,7 @@ gantt
 ## 🐞 修复 Bug 与卡壳情况
 
 <details>
-<summary><strong>常规修复</strong></summary>
+<summary><strong>常规修复</strong>（点击展开/收起）</summary>
 
 - 如果某个提示词失败或搞崩了项目：
   - Claude Code 用 `/rewind` 回退；用 gpt-5.5 的话多提交 git，需要时 reset。
@@ -737,7 +737,7 @@ gantt
 </details>
 
 <details>
-<summary><strong>疑难杂症</strong></summary>
+<summary><strong>疑难杂症</strong>（点击展开/收起）</summary>
 
 - 实在卡住：
   - 回退到上一个 git commit（`git reset`），换新提示词重试。
@@ -748,7 +748,7 @@ gantt
 ## 💡 技巧与窍门
 
 <details>
-<summary><strong>Claude Code & Codex 使用技巧</strong></summary>
+<summary><strong>Claude Code & Codex 使用技巧</strong>（点击展开/收起）</summary>
 
 - **终端版 Claude Code / Codex CLI：** 在 VSCode 终端里运行，能直接看 diff、喂上下文，不用离开工作区。
 - **Claude Code 的 `/rewind`：** 迭代跑偏时一键回滚到之前状态。
@@ -758,7 +758,7 @@ gantt
 </details>
 
 <details>
-<summary><strong>其他实用技巧</strong></summary>
+<summary><strong>其他实用技巧</strong>（点击展开/收起）</summary>
 
 - **小修改：** 用 gpt-5.5 (medium)
 - **写顶级营销文案：** 用 Opus 4.7

@@ -226,25 +226,25 @@ erDiagram
 ## ❓ 常见问题
 
 <details>
-<summary><b>需要配置什么吗？</b></summary>
+<summary><b>需要配置什么吗？</b>（点击展开/收起）</summary>
 
 不用。自动检测 `~/.codex`、`~/.kiro`、`~/.gemini`、`~/.claude`
 </details>
 
 <details>
-<summary><b>WSL 能用吗？</b></summary>
+<summary><b>WSL 能用吗？</b>（点击展开/收起）</summary>
 
 能！`\\wsl.localhost\Ubuntu\...` 这种路径也支持
 </details>
 
 <details>
-<summary><b>怎么看数据库？</b></summary>
+<summary><b>怎么看数据库？</b>（点击展开/收起）</summary>
 
 用 [DB Browser for SQLite](https://sqlitebrowser.org/) 或任何 SQLite 工具
 </details>
 
 <details>
-<summary><b>会不会搞坏我的数据？</b></summary>
+<summary><b>会不会搞坏我的数据？</b>（点击展开/收起）</summary>
 
 不会。只读取，从不修改原始文件
 </details>

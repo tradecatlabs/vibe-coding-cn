@@ -116,7 +116,7 @@ graph LR
 ### 2. 安装
 
 <details>
-<summary><b>从源码构建</b></summary>
+<summary><b>从源码构建</b>（点击展开/收起）</summary>
 
 ```bash
 git clone https://github.com/tukuaiai/prompt-library.git
@@ -128,7 +128,7 @@ pip install -r requirements.txt
 ### 3. 使用
 
 <details>
-<summary><b>Excel → Markdown 转换</b></summary>
+<summary><b>Excel → Markdown 转换</b>（点击展开/收起）</summary>
 
 ```bash
 # 运行交互式转换
@@ -138,7 +138,7 @@ python3 main.py
 </details>
 
 <details>
-<summary><b>Markdown → Excel 转换</b></summary>
+<summary><b>Markdown → Excel 转换</b>（点击展开/收起）</summary>
 
 ```bash
 # 运行交互式转换
@@ -148,7 +148,7 @@ python3 main.py
 </details>
 
 <details>
-<summary><b>非交互式转换</b></summary>
+<summary><b>非交互式转换</b>（点击展开/收起）</summary>
 
 ```bash
 # 指定要转换的 Excel 文件
@@ -161,7 +161,7 @@ python3 main.py --select "prompt_docs/your_docs_folder"
 </details>
 
 <details>
-<summary><b>Gemini 无头：Markdown → JSONL 批处理</b></summary>
+<summary><b>Gemini 无头：Markdown → JSONL 批处理</b>（点击展开/收起）</summary>
 
 ```bash
 # 将目录中的 .md 提示词批量转为 JSONL（默认输入 2/，输出 2/prompts.jsonl）
@@ -174,7 +174,7 @@ python3 scripts/gemini_jsonl_batch.py --input 2 --output 2/prompts.jsonl --model
 </details>
 
 <details>
-<summary><b>内部 JSONL Excel → JSONL 目录</b></summary>
+<summary><b>内部 JSONL Excel → JSONL 目录</b>（点击展开/收起）</summary>
 
 ```bash
 # 将内部 JSONL 格式的 xlsx 按工作表拆分为多个 jsonl 文件
@@ -191,7 +191,7 @@ python3 main.py --select "prompt_excel/prompt_jsonl.xlsx" --mode jsonl_excel2jso
 ---
 
 <details>
-<summary>❓ 常见问题 (FAQ) (可选)</summary>
+<summary>❓ 常见问题 (FAQ) (可选)（点击展开/收起）</summary>
 
 - **Q: 为什么转换会失败？**
   - **A:** 请确保您的Excel文件格式与提供的示例一致，特别是工作表（Sheet）的名称和列的标题。

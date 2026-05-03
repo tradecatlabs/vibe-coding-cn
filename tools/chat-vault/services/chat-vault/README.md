@@ -233,25 +233,25 @@ Send [docs/AI_PROMPT.md](docs/AI_PROMPT.md) to your AI assistant for:
 ## ❓ FAQ
 
 <details>
-<summary><b>Do I need to configure anything?</b></summary>
+<summary><b>Do I need to configure anything?</b>（点击展开/收起）</summary>
 
 No. Auto-detects `~/.codex`, `~/.kiro`, `~/.gemini`, `~/.claude`
 </details>
 
 <details>
-<summary><b>Does it work with WSL?</b></summary>
+<summary><b>Does it work with WSL?</b>（点击展开/收起）</summary>
 
 Yes! Paths like `\\wsl.localhost\Ubuntu\...` are supported
 </details>
 
 <details>
-<summary><b>How do I view the database?</b></summary>
+<summary><b>How do I view the database?</b>（点击展开/收起）</summary>
 
 Use [DB Browser for SQLite](https://sqlitebrowser.org/) or any SQLite tool
 </details>
 
 <details>
-<summary><b>Is my data safe?</b></summary>
+<summary><b>Is my data safe?</b>（点击展开/收起）</summary>
 
 Yes. We only READ from AI tools, never modify original files
 </details>
