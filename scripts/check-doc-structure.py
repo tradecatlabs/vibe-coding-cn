@@ -16,6 +16,7 @@ SKIP_PREFIXES = [
     Path("tools/external"),
 ]
 ANCHOR_PATTERN = re.compile(r"<a\s+id=[\"']([^\"']+)[\"']")
+HEADING_PATTERN = re.compile(r"^(#{1,6})\s+(.+?)\s*#*\s*$")
 SUMMARY_LINE = "<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>"
 STANDARD_README_BLOCKS = [
     ("顶部标题块", re.compile(r"^#\s+.+$", re.MULTILINE)),
@@ -24,6 +25,7 @@ STANDARD_README_BLOCKS = [
     ("完整细粒度目录", re.compile(re.escape(SUMMARY_LINE))),
     ("使用方式", re.compile(r"^##\s+使用方式\s*$", re.MULTILINE)),
 ]
+DISALLOWED_README_HEADINGS = {"和其他目录的边界", "维护规则"}
 
 
 def strip_fenced_code(text: str) -> str:
@@ -121,6 +123,11 @@ def check_standard_readme_blocks(path: Path, text: str) -> list[str]:
     rel = path.relative_to(ROOT)
     errors: list[str] = []
     positions: list[tuple[str, int]] = []
+
+    for lineno, line in enumerate(text.splitlines(), start=1):
+        heading = HEADING_PATTERN.match(line.strip())
+        if heading and heading.group(2).strip() in DISALLOWED_README_HEADINGS:
+            errors.append(f"{rel}:{lineno}: README must not contain heading '{heading.group(2).strip()}'")
 
     for block_name, pattern in STANDARD_README_BLOCKS:
         match = pattern.search(text)

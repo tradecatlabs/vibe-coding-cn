@@ -153,7 +153,7 @@ git push origin develop
 │   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
 │   ├── concepts/                # 核心概念、方法论与工程思想
 │   ├── philosophy/              # 哲学方法论、思维模型与底层认知模型
-│   ├── references/              # 清单、约束、常见坑、模板（README 由 sources/ 生成）
+│   ├── references/              # 清单、约束、常见坑、模板和技术栈参考
 │   └── research/                # 新技术、优秀 repo 与工程范式研究
 │
 ├── prompts/                     # 提示词库入口（指向云端表格）
@@ -239,6 +239,14 @@ git push origin develop
 - `docs/references/README.md#reference-engineering-practice` - 项目架构、代码组织、开发经验、底层程序逻辑、AI 编程质量门禁与常见坑的统一入口
 - `docs/references/README.md#reference-technology-stack` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
 - `skills/auto-skill/` - Skills 生成、重构与校验的元技能
+
+### docs README 结构契约
+
+- `docs/**/README.md` 面向人类读者；维护者规则、目录边界和同步要求写入对应 `AGENTS.md`。
+- 标准块顺序固定为：顶部标题块 -> `## 字多不看` -> `## 快速导航` -> 完整细粒度目录 -> `## 使用方式` -> `## 正文`。
+- H1 后必须直接进入 `## 字多不看`，禁止在两者之间插入引用块、说明段或其他夹层内容。
+- README 中禁止出现 `和其他目录的边界` 与 `维护规则` 标题。
+- 修改 docs README 后，运行 `make sync-doc-toc` 和 `make test`；`make check-doc-structure` 是硬门禁。
 
 ---
 
