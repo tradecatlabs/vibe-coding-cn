@@ -66,7 +66,7 @@ git push origin develop
 | `make lint` | 校验全仓库 Markdown | Node.js 22+；通过 `npx --yes markdownlint-cli@0.48.0` 执行 |
 | `make check-links` | 校验仓库内 Markdown 相对链接 | Python 3 |
 | `make check-details` | 校验 Markdown 折叠块 `<details>/<summary>` 结构 | Python 3 |
-| `make check-doc-structure` | 校验 docs 线性 README 主章节顺序、重复锚点与目录入口 | Python 3 |
+| `make check-doc-structure` | 校验 docs 线性 README 标准块顺序、主章节顺序、重复锚点与目录入口 | Python 3 |
 | `make check-directory-docs` | 校验仓库自有目录 README/AGENTS 覆盖 | Python 3 |
 | `make check-metadata` | 校验 metadata 路径与锚点 | Python 3 |
 | `make check-ai-citation` | 校验 llms 与 AI 引用语料路径和锚点 | Python 3 |
@@ -228,7 +228,7 @@ git push origin develop
 - `.github/workflows/ci.yml` - GitHub Actions：develop/master 分支 markdown-lint + link-checker
 - `scripts/check-local-links.py` - 仓库内 Markdown 相对链接与锚点检查脚本，供 `make check-links` 与 CI 使用
 - `scripts/check-markdown-details.py` - 仓库内 Markdown 折叠块结构检查脚本，供 `make check-details` 与 CI 使用
-- `scripts/check-doc-structure.py` - docs 线性 README 主章节顺序、重复锚点与目录入口检查脚本，供 `make check-doc-structure` 与 CI 使用
+- `scripts/check-doc-structure.py` - docs 线性 README 标准块顺序、主章节顺序、重复锚点与目录入口检查脚本，供 `make check-doc-structure` 与 CI 使用
 - `scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
 - `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
 - `scripts/check-ai-citation.py` - llms 与 AI 引用语料路径和锚点检查脚本，供 `make check-ai-citation` 与 CI 使用
@@ -281,7 +281,7 @@ feat|fix|docs|chore|refactor|test: scope - summary
 1. `markdown-lint` - Markdown 格式检查
 2. `check local markdown links and anchors` - 仓库内相对链接与锚点检查
 3. `check markdown details and summaries` - Markdown 折叠块结构检查
-4. `check docs README structure` - docs 线性 README 主章节顺序、重复锚点与目录入口检查
+4. `check docs README structure` - docs 线性 README 标准块顺序、主章节顺序、重复锚点与目录入口检查
 5. `check required directory README and AGENTS files` - 仓库自有目录 README/AGENTS 覆盖检查
 6. `check metadata paths and anchors` - metadata 路径与锚点检查
 7. `check llms and AI citation paths and anchors` - llms 与 AI 引用语料路径和锚点检查

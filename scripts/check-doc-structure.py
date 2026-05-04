@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check docs README structure, stable anchors and duplicate manual anchors."""
+"""Check docs README standard blocks, stable anchors and duplicate manual anchors."""
 
 from __future__ import annotations
 
@@ -17,6 +17,13 @@ SKIP_PREFIXES = [
 ]
 ANCHOR_PATTERN = re.compile(r"<a\s+id=[\"']([^\"']+)[\"']")
 SUMMARY_LINE = "<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>"
+STANDARD_README_BLOCKS = [
+    ("顶部标题块", re.compile(r"^#\s+.+$", re.MULTILINE)),
+    ("字多不看", re.compile(r"^##\s+字多不看\s*$", re.MULTILINE)),
+    ("快速导航", re.compile(r"^##\s+快速导航\s*$", re.MULTILINE)),
+    ("完整细粒度目录", re.compile(re.escape(SUMMARY_LINE))),
+    ("使用方式", re.compile(r"^##\s+使用方式\s*$", re.MULTILINE)),
+]
 
 
 def strip_fenced_code(text: str) -> str:
@@ -69,6 +76,8 @@ def check_linear_readme(path: Path, expected_anchors: list[str]) -> list[str]:
     text = strip_fenced_code(path.read_text(encoding="utf-8", errors="ignore"))
     errors: list[str] = []
 
+    errors.extend(check_standard_readme_blocks(path, text))
+
     if "完整细粒度目录（点击展开/收起）" not in text:
         errors.append(f"{rel}: missing collapsible full fine-grained table of contents")
 
@@ -103,6 +112,33 @@ def check_linear_readme(path: Path, expected_anchors: list[str]) -> list[str]:
         if anchor in expected_anchors or anchor.startswith(required_prefixes):
             if f"#{anchor}" not in toc_text:
                 errors.append(f"{rel}: fine-grained TOC does not link to manual anchor '#{anchor}'")
+
+    return errors
+
+
+def check_standard_readme_blocks(path: Path, text: str) -> list[str]:
+    """Validate the standard top-level README block order used under docs/."""
+    rel = path.relative_to(ROOT)
+    errors: list[str] = []
+    positions: list[tuple[str, int]] = []
+
+    for block_name, pattern in STANDARD_README_BLOCKS:
+        match = pattern.search(text)
+        if match is None:
+            errors.append(f"{rel}: missing standard README block '{block_name}'")
+            continue
+        positions.append((block_name, match.start()))
+
+    if len(positions) != len(STANDARD_README_BLOCKS):
+        return errors
+
+    previous_name, previous_pos = positions[0]
+    for block_name, position in positions[1:]:
+        if position <= previous_pos:
+            errors.append(
+                f"{rel}: standard README block '{block_name}' must appear after '{previous_name}'"
+            )
+        previous_name, previous_pos = block_name, position
 
     return errors
 
@@ -179,6 +215,11 @@ def main() -> int:
             errors.append(f"{rel_path}: missing docs README")
             continue
         errors.extend(check_linear_readme(path, expected_anchors))
+
+    docs_index = ROOT / "docs" / "README.md"
+    if docs_index.exists():
+        text = strip_fenced_code(docs_index.read_text(encoding="utf-8", errors="ignore"))
+        errors.extend(check_standard_readme_blocks(docs_index, text))
 
     errors.extend(check_docs_index())
 
