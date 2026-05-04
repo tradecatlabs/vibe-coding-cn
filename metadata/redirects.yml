@@ -1,4 +1,5 @@
 redirects:
+  # Legacy directory moves.
   - from: docs/guides/getting-started/
     to: docs/getting-started/
   - from: docs/principles/fundamentals/
@@ -7,6 +8,8 @@ redirects:
     to: docs/philosophy/
   - from: docs/concepts/philosophy/
     to: docs/philosophy/
+
+  # Merged concept documents.
   - from: docs/concepts/思维模型.md
     to: docs/philosophy/README.md#philosophy-thinking-models
   - from: docs/concepts/编程之道.md
@@ -33,6 +36,8 @@ redirects:
     to: docs/philosophy/README.md#philosophy-methodology-toolbox
   - from: docs/philosophy/理解世界、描述变化、整理知识的一套较小框架.md
     to: docs/philosophy/README.md#philosophy-compositional-description-model
+
+  # Removed playbook directories and documents.
   - from: docs/guides/playbook/
     to: docs/README.md
   - from: docs/playbooks/
@@ -45,6 +50,8 @@ redirects:
     to: docs/README.md
   - from: docs/playbooks/tradecat-sheets-api-usage.md
     to: docs/README.md
+
+  # Merged getting-started documents.
   - from: docs/getting-started/Codex-CLI配置.md
     to: docs/getting-started/README.md
   - from: docs/getting-started/学习地图.md
@@ -57,6 +64,8 @@ redirects:
     to: docs/getting-started/README.md
   - from: docs/getting-started/开发环境搭建.md
     to: docs/getting-started/README.md
+
+  # Merged reference documents.
   - from: docs/references/通用项目架构模板.md
     to: docs/references/README.md#reference-engineering-practice
   - from: docs/references/数据集导向数据服务模板.md
@@ -77,12 +86,8 @@ redirects:
     to: docs/references/README.md#reference-engineering-practice
   - from: docs/references/底层程序逻辑设计与工程优化项.md
     to: docs/references/README.md#reference-engineering-practice
-  - from: skills/
-    to: skills/
-  - from: prompts/
-    to: prompts/
-  - from: tools/external/
-    to: tools/external/
+
+  # Moved top-level resource directories.
   - from: assets/documents/
     to: docs/
   - from: assets/skills/
@@ -93,8 +98,8 @@ redirects:
     to: tools/external/
   - from: assets/config/
     to: tools/config/
-  - from: tools/config/
-    to: tools/config/
+
+  # Stable legacy per-topic entry points.
   - from: docs/concepts/问题求解.md
     to: docs/concepts/README.md#concept-problem-solving
   - from: docs/concepts/拼好码.md

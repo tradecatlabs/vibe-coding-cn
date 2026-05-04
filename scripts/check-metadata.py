@@ -82,6 +82,47 @@ def metadata_targets(path: Path) -> list[tuple[int, str]]:
     return targets
 
 
+def redirect_pairs(path: Path) -> list[tuple[int, str, str]]:
+    pairs: list[tuple[int, str, str]] = []
+    current_from: tuple[int, str] | None = None
+
+    for lineno, line in enumerate(path.read_text(encoding="utf-8", errors="ignore").splitlines(), start=1):
+        stripped = line.strip()
+        if stripped.startswith("- from:"):
+            _, value = stripped.split(":", 1)
+            current_from = (lineno, value.strip().strip("\"'"))
+            continue
+        if stripped.startswith("to:") and current_from:
+            _, value = stripped.split(":", 1)
+            pairs.append((current_from[0], current_from[1], value.strip().strip("\"'")))
+            current_from = None
+
+    return pairs
+
+
+def validate_redirects(path: Path) -> list[str]:
+    errors: list[str] = []
+    seen_from: dict[str, int] = {}
+
+    for lineno, source, target in redirect_pairs(path):
+        normalized_source = source.rstrip("/")
+        normalized_target = target.split("#", 1)[0].rstrip("/")
+
+        if normalized_source == normalized_target:
+            errors.append(f"{path}:{lineno}: no-op redirect maps '{source}' to itself")
+
+        if source in seen_from:
+            errors.append(f"{path}:{lineno}: duplicate redirect source '{source}', first seen at line {seen_from[source]}")
+        else:
+            seen_from[source] = lineno
+
+        source_path = ROOT / source
+        if source_path.exists():
+            errors.append(f"{path}:{lineno}: redirect source still exists in repository: {source}")
+
+    return errors
+
+
 def validate_target(source: Path, lineno: int, raw: str, anchor_cache: dict[Path, set[str]]) -> str | None:
     if not raw or raw.startswith(("http://", "https://", "mailto:", "tel:")):
         return None
@@ -122,6 +163,8 @@ def main() -> int:
             error = validate_target(rel_path, lineno, target, anchor_cache)
             if error:
                 errors.append(error)
+        if rel_path == Path("metadata/redirects.yml"):
+            errors.extend(validate_redirects(rel_path))
 
     if errors:
         print("METADATA_ERRORS")

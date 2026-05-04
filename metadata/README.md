@@ -6,7 +6,7 @@
 
 - `taxonomy.yml`：知识库分类、阅读路径和关键文档入口。
 - `glossary.yml`：项目术语表。
-- `redirects.yml`：历史路径到当前入口的映射，供维护和 AI 上下文使用。
+- `redirects.yml`：已经不存在的历史路径到当前入口的映射，供维护和 AI 上下文使用。
 
 ## 使用
 
