@@ -462,7 +462,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
 │   ├── concepts/                # 核心概念、方法论与底层模型
 │   ├── philosophy/              # 哲学方法论与底层认知模型
-│   ├── references/              # 清单、约束、常见坑与模板（总文档由 sources/ 生成）
+│   ├── references/              # 清单、约束、常见坑、模板和技术栈参考
 │   └── research/                # 新技术、优秀 repo 与工程范式研究
 ├── prompts/                     # 提示词库入口（指向云端表格）
 ├── skills/                      # 技能库入口
