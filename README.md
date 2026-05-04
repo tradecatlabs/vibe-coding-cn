@@ -471,6 +471,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │   ├── auto-skill/              # 元技能核心
 │   └── claude-official-skills/  # Claude 官方 skills 软链接入口
 ├── tools/                       # 辅助工具、外部仓库与工具配置
+├── Workflow/                    # 开发流程类 Markdown
 ├── scripts/                     # 自动化脚本
 ├── metadata/                    # 机器可读索引
 ├── assets/                      # 静态资产、外部资源入口与 AI 引用资产

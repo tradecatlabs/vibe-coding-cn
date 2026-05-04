@@ -162,6 +162,10 @@ git push origin develop
 │   ├── README.md                # 在线表格链接
 │   └── AGENTS.md                # prompts/ 目录规则
 │
+├── Workflow/                    # 开发流程类 Markdown
+│   ├── README.md                # 开发流程入口
+│   └── AGENTS.md                # Workflow 目录规则
+│
 ├── skills/                      # 技能库（每个子目录一个 Skill）
 │   ├── README.md                # skills 总览与索引
 │   ├── AGENTS.md                # skills/ 目录规则
