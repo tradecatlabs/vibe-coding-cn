@@ -132,6 +132,13 @@ def check_standard_readme_blocks(path: Path, text: str) -> list[str]:
     if len(positions) != len(STANDARD_README_BLOCKS):
         return errors
 
+    title_end = positions[0][1] + text[positions[0][1] :].find("\n")
+    if title_end < positions[0][1]:
+        title_end = len(text)
+    between_title_and_summary = text[title_end:positions[1][1]].strip()
+    if between_title_and_summary:
+        errors.append(f"{rel}: standard README block '字多不看' must immediately follow the top title")
+
     previous_name, previous_pos = positions[0]
     for block_name, position in positions[1:]:
         if position <= previous_pos:
