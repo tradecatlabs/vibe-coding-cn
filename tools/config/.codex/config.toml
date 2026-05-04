@@ -14,7 +14,7 @@ model_provider = "openai-http"
 # - xhigh  → 最深，适合架构级设计/大范围推理（可能更慢）
 # 注意：
 # - 不同模型对选项支持范围可能不同；遇到报错优先降一档再试。
-model_reasoning_effort = "medium"
+model_reasoning_effort = "xhigh"
 
 # 运行策略
 # sandbox_mode：
@@ -58,7 +58,7 @@ startup_timeout_ms = 20000
 notifications = true
 
 [tui.model_availability_nux]
-"gpt-5.5" = 3
+"gpt-5.5" = 4
 
 [features]
 # Codex 里的 “subagent” 基本就是 Multi-agents（多代理/子线程）功能：主代理会按需 spawn 子代理并行干活，最后汇总结果。
@@ -84,10 +84,24 @@ hide_rate_limit_model_nudge = true
 # 模型迁移映射：
 # - 当某些老模型名不可用/被迁移时，用这里的映射做自动替换。
 # - 建议只保留你确实用得到的映射，避免未来产生“我没注意但被自动换了”的困惑。
-"gpt-5.1-codex-max" = "gpt-5.5"
-"gpt-5.2" = "gpt-5.5"
-"gpt-5.3-codex-max" = "gpt-5.5"
-"gpt-5.4" = "gpt-5.5"
+"gpt-5.1-codex-max" = "gpt-5.2-codex"
+"gpt-5.2" = "gpt-5.4"
+
+# ==================== 本地模型 Profiles ====================
+
+[profiles.ollama-gemma4]
+# WSL 内部的 Codex CLI 通过 localhost 转发调用 Win11 Ollama。
+# 该 provider 为 Codex CLI 0.125.0 内置本地 provider，默认访问 http://localhost:11434/v1。
+model = "gemma4:31b"
+model_provider = "ollama"
+model_reasoning_effort = "medium"
+
+[profiles.ollama-gemma4-262k]
+# 基于 gemma4:31b 的派生模型，强制 Ollama 运行上下文为模型理论上限 262144。
+# 注意：这是理论上限配置，显存/内存压力极高，Codex agent 实用性可能很差。
+model = "gemma4-31b-262k"
+model_provider = "ollama"
+model_reasoning_effort = "medium"
 
 [projects."/home/lenovo/.projects/cat/tradecat"]
 trust_level = "trusted"
@@ -149,6 +163,9 @@ trust_level = "trusted"
 [projects."/home/lenovo/.projects/vibe-coding-cn"]
 trust_level = "trusted"
 
+[projects."/mnt/c/Users/13208/Downloads/cdda-windows-with-graphics-and-sounds-x64-2026-05-02-1743"]
+trust_level = "trusted"
+
 # ==================== MCP Servers（示例，默认关闭） ====================
 # 说明：
 # - 下面这些块默认都注释掉，作为“可复制的模板”。
@@ -161,7 +178,7 @@ trust_level = "trusted"
 # args = ["-y", "@upstash/context7-mcp@latest"]
 # startup_timeout_ms = 20000
 
-# Completion Notifier - 完成声音提示
+# # Completion Notifier - 完成声音提示
 # [mcp_servers."completion-notifier"]
 # command = "node"
 # args = ["/home/lenovo/.codex/mcp-servers/completion-notifier/#index.js"]
