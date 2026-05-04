@@ -225,8 +225,6 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | Metadata 路径检查 | `make check-metadata` | `scripts/check-metadata.py` |
 | AI 引用路径检查 | `make check-ai-citation` | `scripts/check-ai-citation.py` |
 | 重建 docs 细粒度目录 | `make sync-doc-toc` | `scripts/sync-doc-toc.py` |
-| 重建 references 线性总文档 | `make sync-reference-readme` | `scripts/build-reference-readme.py` |
-| 检查 references 生成状态 | `make check-reference-readme` | `scripts/build-reference-readme.py` |
 | 全部本地质量门禁 | `make test` | `Makefile` |
 | 提示词格式转换 | `cd tools/prompts-library && python3 main.py` | `tools/prompts-library/main.py` |
 | Skill 严格校验示例 | `skills/auto-skill/scripts/validate-skill.sh skills/auto-skill --strict` | `skills/auto-skill/scripts/validate-skill.sh` |

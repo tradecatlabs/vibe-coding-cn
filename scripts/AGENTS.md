@@ -8,7 +8,6 @@
 - 新增检查脚本时，同步更新 `scripts/README.md`、`Makefile`、CI 和根目录 `AGENTS.md` 的命令清单。
 - `check-directory-docs.py` 对根 `.github/` 只要求 `AGENTS.md`，不要重新补 `.github/README.md`。
 - 修改 docs 线性 README 的主章节或锚点后，优先运行 `python3 scripts/sync-doc-toc.py`，再运行 `make test`。
-- 修改 `docs/references/sources/` 后，运行 `make sync-reference-readme`，再运行 `make test`。
 - 检查失败输出应包含文件路径、行号或可定位的错误信息。
 - 跳过目录必须明确，至少跳过 `.git`、`.history`、`node_modules` 和外部源码快照。
 

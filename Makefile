@@ -1,6 +1,6 @@
 # Makefile for Vibe Coding Guide
 
-.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation sync-doc-toc sync-reference-readme check-reference-readme build test clean clean-deps
+.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation sync-doc-toc build test clean clean-deps
 
 MARKDOWNLINT = npx --yes markdownlint-cli@0.48.0
 
@@ -17,8 +17,6 @@ help:
 	@echo "  check-metadata - Check metadata paths and anchors"
 	@echo "  check-ai-citation - Check llms and AI citation paths and anchors"
 	@echo "  sync-doc-toc - Regenerate docs fine-grained TOC blocks"
-	@echo "  sync-reference-readme - Regenerate docs/references/README.md from source fragments"
-	@echo "  check-reference-readme - Check docs/references/README.md generated state"
 	@echo "  build    - Verify knowledge base has no build step"
 	@echo "  test     - Run repository quality gates"
 	@echo "  clean    - Remove ignored generated caches"
@@ -57,18 +55,10 @@ sync-doc-toc:
 	@echo "Regenerating docs fine-grained TOC blocks..."
 	@python3 scripts/sync-doc-toc.py
 
-sync-reference-readme:
-	@echo "Regenerating docs/references/README.md from source fragments..."
-	@python3 scripts/build-reference-readme.py
-
-check-reference-readme:
-	@echo "Checking docs/references/README.md generated state..."
-	@python3 scripts/build-reference-readme.py --check
-
 build:
 	@echo "No build step: this repository is a documentation and knowledge-base project."
 
-test: lint check-links check-details check-reference-readme check-doc-structure check-directory-docs check-metadata check-ai-citation
+test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation
 	@echo "Quality gates complete."
 
 clean: clean-deps

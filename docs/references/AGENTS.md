@@ -15,15 +15,13 @@
 
 ```text
 references/
-├── README.md  # 生成后的线性总文档：工程实践、技术栈
+├── README.md  # 线性总文档：工程实践、技术栈
 ├── AGENTS.md  # 本目录操作规则
-└── sources/   # README.md 的有序源片段
 ```
 
 ## 修改规则
 
-- 新增参考资料时，必须追加到 `sources/` 的对应源片段，再运行 `make sync-reference-readme`。
-- 不直接编辑 `README.md` 主体内容；它由 `scripts/build-reference-readme.py` 从源片段生成。
+- 新增参考资料时，直接追加到 `README.md` 的对应章节。
 - 检查清单、模板、质量门禁和经验类内容优先合并进 `工程实践` 章节。
 - 技术选型、技术栈组合和学习路径优先合并进 `技术栈` 章节。
 - 不在本目录写一次性研究笔记；新技术判断应先放入 `docs/research/`。
@@ -33,4 +31,4 @@ references/
 - 参考文档必须可执行、可检查、可复用。
 - 门禁类内容尽量转成测试、CI、脚本、schema、类型或检查清单。
 - 不确定项必须标注 TODO，不能编造成熟结论。
-- 提交前必须运行 `make test`，确保生成状态、锚点、链接和目录结构一致。
+- 提交前必须运行 `make test`，确保锚点、链接和目录结构一致。
