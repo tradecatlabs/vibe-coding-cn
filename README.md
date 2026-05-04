@@ -463,13 +463,13 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │   ├── concepts/                # 核心概念、方法论与底层模型
 │   ├── philosophy/              # 哲学方法论与底层认知模型
 │   ├── references/              # 清单、约束、常见坑、模板和技术栈参考
-│   └── research/                # 新技术、优秀 repo 与工程范式研究
+│   ├── research/                # 新技术、优秀 repo 与工程范式研究
+│   └── workflow/                # 开发流程、质量门禁和交付闭环
 ├── prompts/                     # 提示词库入口（指向云端表格）
 ├── skills/                      # 技能库入口
 │   ├── auto-skill/              # 元技能核心
 │   └── claude-official-skills/  # Claude 官方 skills 软链接入口
 ├── tools/                       # 辅助工具、外部仓库与工具配置
-├── Workflow/                    # 开发流程类 Markdown
 ├── scripts/                     # 自动化脚本
 ├── metadata/                    # 机器可读索引
 ├── assets/                      # 静态资产、外部资源入口与 AI 引用资产

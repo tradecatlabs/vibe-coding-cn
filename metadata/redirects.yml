@@ -8,6 +8,8 @@ redirects:
     to: docs/philosophy/
   - from: docs/concepts/philosophy/
     to: docs/philosophy/
+  - from: Workflow/
+    to: docs/workflow/
 
   # Merged concept documents.
   - from: docs/concepts/思维模型.md

@@ -23,6 +23,7 @@ REQUIRED_DIRS = [
     Path("docs/philosophy"),
     Path("docs/references"),
     Path("docs/research"),
+    Path("docs/workflow"),
     Path("metadata"),
     Path("prompts"),
     Path("scripts"),

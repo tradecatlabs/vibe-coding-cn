@@ -7,6 +7,7 @@
 - 想补思维模型和方法论，读 `philosophy/`。
 - 想查工程模板、质量门禁、技术栈和常见坑，读 `references/`。
 - 想记录新技术、优秀 repo 或工程趋势，读 `research/`。
+- 想按标准流程推进任务、提交和推送，读 `workflow/`。
 
 ## 快速导航
 
@@ -17,6 +18,7 @@
 | [philosophy](./philosophy/) | 哲学方法论、思维模型与底层认知模型 | [哲学方法论工具箱](philosophy/README.md#philosophy-methodology-toolbox-怎么选) |
 | [references](./references/) | 工程实践、技术栈、模板和检查清单 | [参考资料索引](./references/README.md#目录定位) |
 | [research](./research/) | 新技术、优秀 repo 与工程范式研究 | [研究笔记索引](./research/README.md) |
+| [workflow](./workflow/) | 开发流程、质量门禁和交付闭环 | [开发流程](./workflow/README.md#workflow-development-process) |
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
@@ -61,6 +63,12 @@
 - [AGENTS](./research/AGENTS.md) - 研究笔记目录操作规则。
 - [Harness 工程解析](research/README.md#research-harness-engineering) - Harness Engineering 的工程控制、评估器与反馈闭环解析。
 
+### workflow
+
+- [README](./workflow/README.md) - 开发流程索引。
+- [AGENTS](./workflow/AGENTS.md) - 开发流程目录操作规则。
+- [开发流程](workflow/README.md#workflow-development-process) - 默认任务推进顺序、质量门禁和交付闭环。
+
 </details>
 
 ## 使用方式
@@ -68,6 +76,7 @@
 - 只想快速开始：从 [getting-started](./getting-started/README.md) 进入。
 - 已经有项目问题：先读 [问题求解](concepts/README.md#concept-problem-solving)，再读 [工程实践](references/README.md#reference-engineering-practice)。
 - 需要给 AI Agent 上下文：先给它 [AGENTS](./AGENTS.md)，再给它当前任务对应目录的 README。
+- 需要规范执行顺序：读 [开发流程](workflow/README.md#workflow-development-process)。
 - 新增内容时，先判断它属于教程、概念、哲学、参考还是研究，再放入对应目录。
 
 ## 正文
@@ -102,5 +111,6 @@
 2. [docs 目录 AGENTS](./AGENTS.md)
 3. [从零开始完整入门](./getting-started/README.md#learning-map)
 4. [Vibe Coding 经验](./getting-started/README.md#vibe-coding-experience)
-5. [工程实践](references/README.md#reference-engineering-practice)
-6. [AI 引用语料](../assets/ai-citation/README.md)
+5. [开发流程](workflow/README.md#workflow-development-process)
+6. [工程实践](references/README.md#reference-engineering-practice)
+7. [AI 引用语料](../assets/ai-citation/README.md)

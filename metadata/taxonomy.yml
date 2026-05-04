@@ -19,6 +19,11 @@ sections:
     purpose: 新技术、技术栈、优秀 repo、工程范式和工具趋势的短篇研究
     entry: docs/research/README.md
     agent_guide: docs/research/AGENTS.md
+  workflow:
+    path: docs/workflow
+    purpose: 开发流程、质量门禁、版本控制和文档同步的执行顺序
+    entry: docs/workflow/README.md
+    agent_guide: docs/workflow/AGENTS.md
   references:
     path: docs/references
     purpose: 清单、模板、强约束与常见坑
@@ -53,6 +58,7 @@ reading_paths:
     documents:
       - AGENTS.md
       - docs/AGENTS.md
+      - docs/workflow/README.md#workflow-development-process
       - docs/getting-started/README.md
       - docs/getting-started/README.md#vibe-coding-experience
       - docs/references/README.md#reference-engineering-practice
@@ -63,6 +69,7 @@ selection_rules:
   philosophy: 需要思维模型、底层认知框架、编程哲学或复杂系统描述方法时读取。
   references: 需要工程模板、质量门禁、技术栈、常见坑和可执行检查清单时读取。
   research: 需要新技术、新 repo、工程趋势和采用前判断时读取。
+  workflow: 需要标准开发顺序、质量门禁、版本控制和文档同步流程时读取。
   getting-started: 需要从零开始配置网络、Codex CLI、开发环境并完成最小闭环时读取。
 
 documents:
@@ -128,6 +135,10 @@ documents:
     - path: docs/research/README.md#research-harness-engineering
       title: Harness 工程解析
       role: 工程控制、评估器、反馈闭环与 AI 生成系统可靠性
+  workflow:
+    - path: docs/workflow/README.md#workflow-development-process
+      title: 开发流程
+      role: 默认任务推进顺序、质量门禁和交付闭环
 
 top_level:
   skills:

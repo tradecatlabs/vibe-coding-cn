@@ -14,7 +14,8 @@ docs/
 ├── concepts/             # 线性总文档：核心概念、问题求解与工程思想
 ├── philosophy/           # 线性总文档：哲学方法论、思维模型与底层认知模型
 ├── research/             # 线性总文档：新技术、优秀 repo、工程范式和工具趋势研究
-└── references/           # 线性总文档：工程实践、技术栈、清单与质量门禁
+├── references/           # 线性总文档：工程实践、技术栈、清单与质量门禁
+└── workflow/             # 线性总文档：开发流程、质量门禁、版本控制和文档同步
 ```
 
 ## 关键入口
@@ -31,6 +32,8 @@ docs/
 - `references/AGENTS.md`：参考资料目录操作规则。
 - `research/README.md`：线性总文档，包含新技术、优秀 repo、工程范式和工具趋势研究笔记。
 - `research/AGENTS.md`：研究笔记目录操作规则。
+- `workflow/README.md`：线性总文档，包含默认开发流程、质量门禁和交付闭环。
+- `workflow/AGENTS.md`：开发流程目录操作规则。
 
 ## 操作规范
 

@@ -154,15 +154,12 @@ git push origin develop
 │   ├── concepts/                # 核心概念、方法论与工程思想
 │   ├── philosophy/              # 哲学方法论、思维模型与底层认知模型
 │   ├── references/              # 清单、约束、常见坑、模板和技术栈参考
-│   └── research/                # 新技术、优秀 repo 与工程范式研究
+│   ├── research/                # 新技术、优秀 repo 与工程范式研究
+│   └── workflow/                # 开发流程、质量门禁和交付闭环
 │
 ├── prompts/                     # 提示词库入口（指向云端表格）
 │   ├── README.md                # 在线表格链接
 │   └── AGENTS.md                # prompts/ 目录规则
-│
-├── Workflow/                    # 开发流程类 Markdown
-│   ├── README.md                # 开发流程入口
-│   └── AGENTS.md                # Workflow 目录规则
 │
 ├── skills/                      # 技能库（每个子目录一个 Skill）
 │   ├── README.md                # skills 总览与索引
