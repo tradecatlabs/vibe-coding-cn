@@ -116,7 +116,6 @@
 - [4. 方法论工具箱](#philosophy-methodology-toolbox)
   - [目录定位](#philosophy-methodology-toolbox-目录定位)
   - [怎么选](#philosophy-methodology-toolbox-怎么选)
-  - [和其他目录的边界](#philosophy-methodology-toolbox-和其他目录的边界)
   - [相关文档](#philosophy-methodology-toolbox-相关文档)
   - [目录](#philosophy-methodology-toolbox-目录)
   - [总体作业流](#philosophy-methodology-toolbox-总体作业流)
@@ -163,20 +162,6 @@
 - 需要形成可复用方法，读 [方法论工具箱](#philosophy-methodology-toolbox)。
 
 ## 正文
-
-### 和其他目录的边界
-
-- `concepts/` 负责 Vibe Coding 核心概念和工程思想。
-- `references/` 负责可执行的工程实践、技术栈、门禁和清单。
-- `research/` 负责新技术、新 repo 和趋势判断。
-- 本目录只保留能迁移到多个问题上的认知模型和方法论。
-
-### 维护规则
-
-- 本目录采用“线性总文档”结构，正文统一收敛到 `README.md`。
-- 新增内容时优先追加到对应大章节，并同步补充快速导航或完整细粒度目录。
-- 不再新增同级主题 `.md` 文件；如确需拆分，必须同步更新全仓索引、AGENTS 与 metadata。
-- 目录内只保留 `README.md` 与 `AGENTS.md`。
 
 ---
 
@@ -1318,14 +1303,6 @@ UserInput(组合描述模型)
 | 想描述复杂系统的对象、状态和变化 | [组合描述模型](#philosophy-compositional-description-model) |
 | 想理解代码、结构、状态和复杂度 | [编程之道](#philosophy-programming-dao) |
 | 想把探索过程变成可验证工程流程 | 本文件的方法论工具箱 |
-
-<a id="philosophy-methodology-toolbox-和其他目录的边界"></a>
-### 和其他目录的边界
-
-- `concepts/` 负责 Vibe Coding 核心概念和工程思想。
-- `references/` 负责可执行的工程实践、技术栈、门禁和清单。
-- `research/` 负责新技术、新 repo 和趋势判断。
-- 本目录只保留能迁移到多个问题上的认知模型和方法论。
 
 <a id="philosophy-methodology-toolbox-相关文档"></a>
 ### 相关文档

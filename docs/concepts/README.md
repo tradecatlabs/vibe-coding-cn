@@ -167,26 +167,8 @@
 ## 使用方式
 
 - 先从 [问题求解](#concept-problem-solving) 建立任务定义，再进入具体工具和工程实践。
-- 如果内容是步骤、命令和环境配置，放到 [getting-started](../getting-started/README.md)。
-- 如果内容是工程清单、模板、质量门禁或技术栈，放到 [references](../references/README.md#目录定位)。
-- 如果内容是思维模型、哲学模型或底层认知框架，放到 [philosophy](../philosophy/README.md#philosophy-methodology-toolbox-怎么选)。
-- 如果内容是新技术、优秀 repo 或趋势判断，放到 [research](../research/README.md#目录定位)。
 
 ## 正文
-
-### 和其他目录的边界
-
-- 具体入门步骤放在 [getting-started](../getting-started/README.md)。
-- 工程模板、质量门禁、常见坑和技术栈放在 [references](../references/README.md#目录定位)。
-- 思维模型、编程哲学和底层认知模型放在 [philosophy](../philosophy/README.md#philosophy-methodology-toolbox-怎么选)。
-- 新技术、优秀 repo 和趋势判断先放在 [research](../research/README.md#目录定位)。
-
-### 维护规则
-
-- 本目录采用“线性总文档”结构，正文统一收敛到 `README.md`。
-- 新增内容时优先追加到对应大章节，并同步补充快速导航或完整细粒度目录。
-- 不再新增同级主题 `.md` 文件；如确需拆分，必须同步更新全仓索引、AGENTS 与 metadata。
-- 目录内只保留 `README.md` 与 `AGENTS.md`。
 
 ---
 

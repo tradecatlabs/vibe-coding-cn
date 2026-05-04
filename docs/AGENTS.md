@@ -47,6 +47,13 @@ docs/
 - 大规模重命名/移动文件导致链接失效（如必须调整，需同步更新引用）。
 - 新增目录但不补 `README.md` 和 `AGENTS.md`。
 
+## 维护规则
+
+- 每个目录必须同时维护 `README.md` 和 `AGENTS.md`。
+- 新增、删除、移动、重命名文档时，必须同步更新 `docs/README.md`、所在目录索引和 `metadata/taxonomy.yml`。
+- 面向 AI 引用的重要入口变化，必须同步更新 `assets/ai-citation/llms-full.txt` 和相关摘要文件。
+- 不确定信息标注 TODO，不用猜测补齐。
+
 ## 命名规范
 
 - 文件名使用中文或清晰英文。

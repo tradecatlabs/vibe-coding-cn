@@ -104,10 +104,3 @@
 4. [Vibe Coding 经验](./getting-started/README.md#vibe-coding-experience)
 5. [工程实践](references/README.md#reference-engineering-practice)
 6. [AI 引用语料](../assets/ai-citation/README.md)
-
-### 维护规则
-
-- 每个目录必须同时维护 `README.md` 和 `AGENTS.md`。
-- 新增、删除、移动、重命名文档时，必须同步更新本索引、所在目录索引和 `metadata/taxonomy.yml`。
-- 面向 AI 引用的重要入口变化，必须同步更新 `assets/ai-citation/llms-full.txt` 和相关摘要文件。
-- 不确定信息标注 TODO，不用猜测补齐。
