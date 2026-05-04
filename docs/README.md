@@ -2,7 +2,15 @@
 
 > `docs/` 是本仓库的核心知识库入口，承载从零开始、核心概念、哲学模型、研究笔记和工程参考资料。
 
-## 目录地图
+## 字多不看
+
+- 新手先读 `getting-started/`，按网络环境、CLI 配置、开发环境和 Git 闭环推进。
+- 想理解 Vibe Coding 的底层概念，读 `concepts/`。
+- 想补思维模型和方法论，读 `philosophy/`。
+- 想查工程模板、质量门禁、技术栈和常见坑，读 `references/`。
+- 想记录新技术、优秀 repo 或工程趋势，读 `research/`。
+
+## 快速导航
 
 | 目录 | 定位 | 首选入口 |
 |:---|:---|:---|
@@ -12,39 +20,6 @@
 | [references](./references/) | 工程实践、技术栈、模板和检查清单 | [参考资料索引](./references/README.md#目录定位) |
 | [research](./research/) | 新技术、优秀 repo 与工程范式研究 | [研究笔记索引](./research/README.md) |
 
-## 推荐阅读路径
-
-### 新手路径
-
-1. [从零开始完整入门](./getting-started/README.md#learning-map)
-2. [Vibe Coding 经验](./getting-started/README.md#vibe-coding-experience)
-3. [问题求解](concepts/README.md#concept-problem-solving)
-4. [拼好码](concepts/README.md#concept-glue-coding)
-5. [工程实践](references/README.md#reference-engineering-practice)
-
-### 开发者路径
-
-1. [拼好码](concepts/README.md#concept-glue-coding)
-2. [系统构建方法](concepts/README.md#concept-system-building)
-3. [技术栈](references/README.md#reference-technology-stack)
-4. [工程实践](references/README.md#reference-engineering-practice)
-
-### 思维模型路径
-
-1. [思维模型](philosophy/README.md#philosophy-thinking-models)
-2. [组合描述模型](philosophy/README.md#philosophy-compositional-description-model)
-3. [编程之道](philosophy/README.md#philosophy-programming-dao)
-4. [递归自优化系统](concepts/README.md#concept-recursive-self-optimizing-system)
-
-### AI Agent 读取路径
-
-1. [根目录 AGENTS](../AGENTS.md)
-2. [docs 目录 AGENTS](./AGENTS.md)
-3. [从零开始完整入门](./getting-started/README.md#learning-map)
-4. [Vibe Coding 经验](./getting-started/README.md#vibe-coding-experience)
-5. [工程实践](references/README.md#reference-engineering-practice)
-6. [AI 引用语料](../assets/ai-citation/README.md)
-
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
 
@@ -52,7 +27,7 @@
 
 ### getting-started
 
-- [README](./getting-started/README.md#顶部导航) - 从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建。
+- [README](./getting-started/README.md#快速导航) - 从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建。
 - [Vibe Coding 经验](./getting-started/README.md#vibe-coding-experience) - 通用语言能力、人机分工、机器门禁和入门铁律。
 - [AGENTS](./getting-started/AGENTS.md) - 入门教程目录操作规则。
 
@@ -90,7 +65,49 @@
 
 </details>
 
-## 维护规则
+## 使用方式
+
+- 只想快速开始：从 [getting-started](./getting-started/README.md) 进入。
+- 已经有项目问题：先读 [问题求解](concepts/README.md#concept-problem-solving)，再读 [工程实践](references/README.md#reference-engineering-practice)。
+- 需要给 AI Agent 上下文：先给它 [AGENTS](./AGENTS.md)，再给它当前任务对应目录的 README。
+- 新增内容时，先判断它属于教程、概念、哲学、参考还是研究，再放入对应目录。
+
+## 正文
+
+### 推荐阅读路径
+
+#### 新手路径
+
+1. [从零开始完整入门](./getting-started/README.md#learning-map)
+2. [Vibe Coding 经验](./getting-started/README.md#vibe-coding-experience)
+3. [问题求解](concepts/README.md#concept-problem-solving)
+4. [拼好码](concepts/README.md#concept-glue-coding)
+5. [工程实践](references/README.md#reference-engineering-practice)
+
+#### 开发者路径
+
+1. [拼好码](concepts/README.md#concept-glue-coding)
+2. [系统构建方法](concepts/README.md#concept-system-building)
+3. [技术栈](references/README.md#reference-technology-stack)
+4. [工程实践](references/README.md#reference-engineering-practice)
+
+#### 思维模型路径
+
+1. [思维模型](philosophy/README.md#philosophy-thinking-models)
+2. [组合描述模型](philosophy/README.md#philosophy-compositional-description-model)
+3. [编程之道](philosophy/README.md#philosophy-programming-dao)
+4. [递归自优化系统](concepts/README.md#concept-recursive-self-optimizing-system)
+
+#### AI Agent 读取路径
+
+1. [根目录 AGENTS](../AGENTS.md)
+2. [docs 目录 AGENTS](./AGENTS.md)
+3. [从零开始完整入门](./getting-started/README.md#learning-map)
+4. [Vibe Coding 经验](./getting-started/README.md#vibe-coding-experience)
+5. [工程实践](references/README.md#reference-engineering-practice)
+6. [AI 引用语料](../assets/ai-citation/README.md)
+
+### 维护规则
 
 - 每个目录必须同时维护 `README.md` 和 `AGENTS.md`。
 - 新增、删除、移动、重命名文档时，必须同步更新本索引、所在目录索引和 `metadata/taxonomy.yml`。

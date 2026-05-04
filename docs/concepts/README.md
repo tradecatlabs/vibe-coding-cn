@@ -4,13 +4,15 @@
 
 > `concepts/` 是 Vibe Coding 的核心概念手册，用一个线性文档承载问题求解、拼好码、系统构建、开发范式、语言层要素与递归自优化系统。
 
-## 核心摘要
+## 字多不看
 
 - 本目录回答“先用什么概念理解问题”。
-- 它不是操作教程，也不是工具清单，而是把 Vibe Coding 中反复出现的关键概念沉淀成稳定入口。
-- 本 README 提供稳定锚点和细粒度目录，作为核心概念的统一入口。
+- 先读“问题求解”，把目标、现状、差距、标准、约束、对象和路径说清楚。
+- 再读“拼好码”，把复用成熟能力作为默认工程路径。
+- 需要搭系统时读“系统构建方法”和“开发范式演进”。
+- 需要理解代码和 AI 生成系统时读“语言层要素”和“递归自优化系统”。
 
-## 总目录
+## 快速导航
 
 1. [问题求解](#concept-problem-solving) - 目标、现状、差距、标准、约束、对象与路径。
 2. [拼好码](#concept-glue-coding) - 复用成熟能力，用胶水代码连接、编排、适配业务流程。
@@ -164,17 +166,27 @@
 
 </details>
 
-## 和其他目录的边界
+## 使用方式
 
-- 具体入门步骤放在 [getting-started](../getting-started/README.md#顶部导航)。
+- 先从 [问题求解](#concept-problem-solving) 建立任务定义，再进入具体工具和工程实践。
+- 如果内容是步骤、命令和环境配置，放到 [getting-started](../getting-started/README.md)。
+- 如果内容是工程清单、模板、质量门禁或技术栈，放到 [references](../references/README.md#目录定位)。
+- 如果内容是思维模型、哲学模型或底层认知框架，放到 [philosophy](../philosophy/README.md#philosophy-methodology-toolbox-怎么选)。
+- 如果内容是新技术、优秀 repo 或趋势判断，放到 [research](../research/README.md#目录定位)。
+
+## 正文
+
+### 和其他目录的边界
+
+- 具体入门步骤放在 [getting-started](../getting-started/README.md)。
 - 工程模板、质量门禁、常见坑和技术栈放在 [references](../references/README.md#目录定位)。
 - 思维模型、编程哲学和底层认知模型放在 [philosophy](../philosophy/README.md#philosophy-methodology-toolbox-怎么选)。
 - 新技术、优秀 repo 和趋势判断先放在 [research](../research/README.md#目录定位)。
 
-## 维护规则
+### 维护规则
 
 - 本目录采用“线性总文档”结构，正文统一收敛到 `README.md`。
-- 新增内容时优先追加到对应大章节，并同步补充总目录或细粒度目录。
+- 新增内容时优先追加到对应大章节，并同步补充快速导航或完整细粒度目录。
 - 不再新增同级主题 `.md` 文件；如确需拆分，必须同步更新全仓索引、AGENTS 与 metadata。
 - 目录内只保留 `README.md` 与 `AGENTS.md`。
 

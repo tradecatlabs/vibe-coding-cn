@@ -1,37 +1,23 @@
 # 从零开始：Vibe Coding 完整入门教程
 
-## 核心摘要
+## 字多不看
 
-这是一条面向新电脑和零基础用户的线性路线：先解决网络环境与 Codex / ChatGPT 订阅，再跑通 Codex CLI，随后让本地 Agent 主动检查和配置 Git、Node.js、Python、编辑器、项目依赖、测试命令和 Git 工作流。
+- 这是一条面向新电脑和零基础用户的线性路线。
+- 先解决网络环境与 Codex / ChatGPT 订阅，再跑通 Codex CLI。
+- Codex CLI 跑通后，让本地 Agent 主动检查和配置 Git、Node.js、Python、编辑器、项目依赖、测试命令和 Git 工作流。
+- 不要一开始手工配置完整开发环境；先获得一个能读写文件、执行命令、修复报错的本地 AI 入口。
+- 用户主要负责授权、复制报错、确认结果和保存版本。
 
-本文件的目标不是让用户手工记住所有安装细节，而是让用户先获得一个可执行的 AI CLI 入口，再用 Agent 带动后续环境配置和项目交付。
-
-## 顶部导航
+## 快速导航
 
 | 章节 | 解决的问题 |
 |:---|:---|
 | [使用方式](#使用方式) | 不会操作时如何让网页 AI 生成逐步执行方案 |
-| [最短路径：先跑通 Codex CLI](#最短路径先跑通-codex-cli) | 为什么先配置 AI CLI，而不是先手工配置完整开发环境 |
 | [Vibe Coding 经验](#vibe-coding-experience) | 人机分工、门禁、复盘和 AI 审 AI |
 | [学习地图](#learning-map) | 根据新手、开发者、团队、Prompt、Skill、质量门禁和 GEO/SEO 选择路线 |
 | [网络环境配置](#network-environment) | OpenAI、GitHub、文档和依赖源访问 |
 | [CLI 配置](#cli-setup) | Codex CLI 默认路线与 OpenCode 备选路线 |
 | [开发环境搭建](#development-environment) | 让 Agent 主动配置开发依赖、编辑器建议和测试命令 |
-
-## 使用方式
-
-从上到下阅读即可：先明确学习路线和人机分工，再解决网络、CLI 与开发环境。遇到卡点时，把当前小节全文、你执行的命令和完整报错一起发给网页版 AI，让它按你的系统生成逐步修复命令。
-
-## 最短路径：先跑通 Codex CLI
-
-对新手来说，最优先配置的不是完整开发环境，而是先满足 Codex CLI 的两个前置条件：可访问 OpenAI 的网络环境，以及可用的 Codex / ChatGPT 订阅。只要 Codex CLI 跑通，就可以让 Codex Agent 读取本文档和当前系统信息，主动完成 Git、Node.js、Python、编辑器、项目依赖、测试命令、Git 初始化等后续配置。用户主要负责提供授权、复制报错、确认结果和保存版本。
-
-默认策略：
-
-- 先解决网络环境和 Codex / ChatGPT 订阅。
-- 再安装并登录 Codex CLI。
-- Codex CLI 可用后，优先让本地 Agent 主动配置剩余开发环境。
-- 只有遇到网页登录、订阅购买、验证码、系统密码、管理员授权、敏感凭证或不可逆操作时，才需要用户介入。
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
@@ -45,6 +31,19 @@
 - [5. 开发环境搭建](#development-environment)
 
 </details>
+
+## 使用方式
+
+从上到下阅读即可：先明确学习路线和人机分工，再解决网络、CLI 与开发环境。遇到卡点时，把当前小节全文、你执行的命令和完整报错一起发给网页版 AI，让它按你的系统生成逐步修复命令。
+
+默认策略：
+
+- 先解决网络环境和 Codex / ChatGPT 订阅。
+- 再安装并登录 Codex CLI。
+- Codex CLI 可用后，优先让本地 Agent 主动配置剩余开发环境。
+- 只有遇到网页登录、订阅购买、验证码、系统密码、管理员授权、敏感凭证或不可逆操作时，才需要用户介入。
+
+## 正文
 
 <details>
 <summary><strong>1. Vibe Coding 经验</strong> - 通用语言能力、人机分工、机器门禁和入门铁律。（点击展开/收起）</summary>
