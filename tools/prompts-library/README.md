@@ -10,6 +10,7 @@
 - Markdown -> Excel：把 Markdown 文档目录还原为 Excel 工作簿。
 - Markdown -> JSONL：把 Markdown 提示词转换为 JSONL。
 - JSONL -> Excel：把 JSONL 数据转换为 Excel。
+- JSONL 目录 -> Excel：把 Excel(JSONL) 导出的工作表级 JSONL 目录重新合并为 Excel。
 - Excel(JSONL) -> JSONL：把内部 JSONL 格式的 Excel 按工作表拆成 JSONL 文件。
 
 ## 目录结构
@@ -58,6 +59,7 @@ python3 main.py --select "prompt_excel/example.xlsx" --mode excel2docs
 python3 main.py --select "prompt_docs/example" --mode docs2excel
 python3 main.py --select "prompt_docs/example" --mode docs2jsonl
 python3 main.py --select "prompt_jsonl/example.jsonl" --mode jsonl2excel
+python3 main.py --select "prompt_jsonl/example_2025_1222_004537" --mode jsonl2excel
 python3 main.py --select "prompt_excel/prompt_jsonl.xlsx" --mode jsonl_excel2jsonl
 ```
 
