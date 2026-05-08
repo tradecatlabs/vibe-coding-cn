@@ -49,6 +49,7 @@ reading_paths:
   thinking:
     title: 思维模型路径
     documents:
+      - docs/philosophy/README.md#philosophy-vibe-coding-dao-fa-shu-qi
       - docs/philosophy/README.md#philosophy-thinking-models
       - docs/philosophy/README.md#philosophy-compositional-description-model
       - docs/philosophy/README.md#philosophy-programming-dao
@@ -112,6 +113,9 @@ documents:
       title: 递归自优化系统
       role: 递归自优化生成系统的形式化模型
   philosophy:
+    - path: docs/philosophy/README.md#philosophy-vibe-coding-dao-fa-shu-qi
+      title: Vibe Coding 道法术器
+      role: 用道、法、术、器拆解 AI 协作的问题观、方法论、流程和工具
     - path: docs/philosophy/README.md#philosophy-thinking-models
       title: 思维模型
       role: 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具

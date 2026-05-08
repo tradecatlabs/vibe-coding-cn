@@ -46,6 +46,7 @@
 
 - [README](philosophy/README.md#philosophy-methodology-toolbox-怎么选) - 哲学方法论工具箱。
 - [AGENTS](./philosophy/AGENTS.md) - 哲学方法论目录操作规则。
+- [Vibe Coding 道法术器](philosophy/README.md#philosophy-vibe-coding-dao-fa-shu-qi) - 用道、法、术、器拆解 AI 协作的问题观、方法论、流程和工具。
 - [思维模型](philosophy/README.md#philosophy-thinking-models) - 可复用思维模型索引。
 - [组合描述模型](philosophy/README.md#philosophy-compositional-description-model) - 用对象、状态、快照、序列、过程、变换、同一/差异与关系描述复杂系统。
 - [编程之道](philosophy/README.md#philosophy-programming-dao) - 编程哲学与工程判断。
@@ -100,10 +101,11 @@
 
 #### 思维模型路径
 
-1. [思维模型](philosophy/README.md#philosophy-thinking-models)
-2. [组合描述模型](philosophy/README.md#philosophy-compositional-description-model)
-3. [编程之道](philosophy/README.md#philosophy-programming-dao)
-4. [递归自优化系统](concepts/README.md#concept-recursive-self-optimizing-system)
+1. [Vibe Coding 道法术器](philosophy/README.md#philosophy-vibe-coding-dao-fa-shu-qi)
+2. [思维模型](philosophy/README.md#philosophy-thinking-models)
+3. [组合描述模型](philosophy/README.md#philosophy-compositional-description-model)
+4. [编程之道](philosophy/README.md#philosophy-programming-dao)
+5. [递归自优化系统](concepts/README.md#concept-recursive-self-optimizing-system)
 
 #### AI Agent 读取路径
 

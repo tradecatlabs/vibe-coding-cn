@@ -6,24 +6,31 @@
 ## 字多不看
 
 - 本目录回答“为什么这样判断、如何减少幻觉、如何让复杂问题可描述、可推理、可验证”。
-- 先用“思维模型”选择认知工具。
+- 先用“Vibe Coding 道法术器”确定人与 AI 的关系、方法层级和落地路径。
+- 再用“思维模型”选择认知工具。
 - 再用“组合描述模型”把对象、状态、序列、过程和关系说清楚。
 - 需要工程判断时读“编程之道”。
 - 需要提效方法时读“方法论工具箱”。
 
 ## 快速导航
 
-1. [思维模型](#philosophy-thinking-models) - 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。
-2. [组合描述模型](#philosophy-compositional-description-model) - 对象、状态、快照、序列、过程、变换、同一/差异与关系。
-3. [编程之道](#philosophy-programming-dao) - 编程哲学、结构、状态、复杂度与工程判断。
-4. [方法论工具箱](#philosophy-methodology-toolbox) - 现象学还原、正反合、可证伪主义、形式化方法等提效工具。
+1. [Vibe Coding 道法术器](#philosophy-vibe-coding-dao-fa-shu-qi) - 用道、法、术、器拆解 AI 协作的问题观、方法论、流程和工具。
+2. [思维模型](#philosophy-thinking-models) - 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。
+3. [组合描述模型](#philosophy-compositional-description-model) - 对象、状态、快照、序列、过程、变换、同一/差异与关系。
+4. [编程之道](#philosophy-programming-dao) - 编程哲学、结构、状态、复杂度与工程判断。
+5. [方法论工具箱](#philosophy-methodology-toolbox) - 现象学还原、正反合、可证伪主义、形式化方法等提效工具。
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
 
 ### 细粒度目录
 
-- [1. 思维模型](#philosophy-thinking-models)
+- [1. Vibe Coding 道法术器](#philosophy-vibe-coding-dao-fa-shu-qi)
+  - [道](#philosophy-vibe-coding-dao-fa-shu-qi-道)
+  - [法](#philosophy-vibe-coding-dao-fa-shu-qi-法)
+  - [术](#philosophy-vibe-coding-dao-fa-shu-qi-术)
+  - [器](#philosophy-vibe-coding-dao-fa-shu-qi-器)
+- [2. 思维模型](#philosophy-thinking-models)
   - [使用原则](#philosophy-thinking-models-使用原则)
   - [模型记录区](#philosophy-thinking-models-模型记录区)
     - [第一性原理](#philosophy-thinking-models-第一性原理)
@@ -34,7 +41,7 @@
     - [多阶思维](#philosophy-thinking-models-多阶思维)
     - [组合描述模型](#philosophy-thinking-models-组合描述模型)
     - [状态空间思维模型](#philosophy-thinking-models-状态空间思维模型)
-- [2. 组合描述模型](#philosophy-compositional-description-model)
+- [3. 组合描述模型](#philosophy-compositional-description-model)
   - [一、对象](#philosophy-compositional-description-model-一对象)
   - [二、状态](#philosophy-compositional-description-model-二状态)
   - [三、快照](#philosophy-compositional-description-model-三快照)
@@ -65,7 +72,7 @@
     - [第五层：结构层](#philosophy-compositional-description-model-第五层结构层)
   - [十四、作为一种分析方法](#philosophy-compositional-description-model-十四作为一种分析方法)
   - [十五、结语](#philosophy-compositional-description-model-十五结语)
-- [3. 编程之道](#philosophy-programming-dao)
+- [4. 编程之道](#philosophy-programming-dao)
   - [1. 程序本体论：程序是什么](#philosophy-programming-dao-1-程序本体论程序是什么)
   - [2. 三大核心：数据 · 函数 · 抽象](#philosophy-programming-dao-2-三大核心数据-函数-抽象)
   - [数据](#philosophy-programming-dao-数据)
@@ -113,7 +120,7 @@
   - [程序即决策](#philosophy-programming-dao-程序即决策)
   - [18. 语录](#philosophy-programming-dao-18-语录)
   - [结束语](#philosophy-programming-dao-结束语)
-- [4. 方法论工具箱](#philosophy-methodology-toolbox)
+- [5. 方法论工具箱](#philosophy-methodology-toolbox)
   - [目录定位](#philosophy-methodology-toolbox-目录定位)
   - [怎么选](#philosophy-methodology-toolbox-怎么选)
   - [相关文档](#philosophy-methodology-toolbox-相关文档)
@@ -156,7 +163,8 @@
 
 ## 使用方式
 
-- 遇到复杂问题，先读 [思维模型](#philosophy-thinking-models)，选择合适的分析工具。
+- 需要建立 Vibe Coding 的整体层级，先读 [Vibe Coding 道法术器](#philosophy-vibe-coding-dao-fa-shu-qi)。
+- 遇到复杂问题，再读 [思维模型](#philosophy-thinking-models)，选择合适的分析工具。
 - 需要把复杂对象拆清楚，读 [组合描述模型](#philosophy-compositional-description-model)。
 - 需要判断代码、架构和复杂度，读 [编程之道](#philosophy-programming-dao)。
 - 需要形成可复用方法，读 [方法论工具箱](#philosophy-methodology-toolbox)。
@@ -166,11 +174,94 @@
 ---
 
 <details>
-<summary><strong>1. 思维模型</strong> - 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。（点击展开/收起）</summary>
+<summary><strong>1. Vibe Coding 道法术器</strong> - 用道、法、术、器拆解 AI 协作的问题观、方法论、流程和工具。（点击展开/收起）</summary>
+
+<a id="philosophy-vibe-coding-dao-fa-shu-qi"></a>
+
+## 1. Vibe Coding 道法术器
+
+> 先解决人工智能协作问题，再用人工智能解决其他可表达、可拆解、可约束、可验证的问题。
+
+Vibe Coding 的“道法术器”不是把概念堆成玄学，而是给 AI 协作建立层级：
+
+- **道**：人与 AI 的关系，以及为什么先解决 AI 协作这个元问题。
+- **法**：问题求解、思维模型和抽象方法。
+- **术**：工作流、技术文档、技术栈和具体做法。
+- **器**：软件开发工具、IDE、数据库工具、CLI、脚本、CI 和相关工具。
+
+一句话：
+
+> 道生人，人生 AI，人与 AI 生（操作）万物。
+
+这里的“万物”不是无限夸张，而是指所有能被语言表达、拆解、约束、工具化和验证化的问题，都可以进入人与 AI 的协作系统。
+
+<a id="philosophy-vibe-coding-dao-fa-shu-qi-道"></a>
+### 道
+
+道层面先解决“人工智能如何被正确使用”的问题，然后再用人工智能解决其他问题。
+
+大语言模型的底层能力是**通用语言能力**：理解、改写、分类、推理、规划、翻译、归纳、生成和校验语言结构。
+
+所以遇到任何任务，第一步不是问“AI 会不会做”，而是判断：这个任务能否被语言表达、拆解、约束和验证；它能否通过语言能力直接完成，或间接转化为工具调用、文件修改、流程编排、数据处理与代码实现。
+
+代码能力只是最直观的例子：编程本质上是把人的意图翻译成计算机可执行的指令。Vibe Coding 的关键，就是把“模糊想法”逐步压缩成“明确语言”，再把明确语言转成可运行、可测试、可回滚的工程产物。
+
+这一层的核心判断：
+
+- 人负责目标、价值、边界、取舍和最终验收。
+- AI 负责理解上下文、生成计划、调用工具、修改文件、整理证据和放大执行。
+- 可靠性不来自 AI 的口头保证，而来自测试、脚本、类型、schema、CI、检查清单和可审查 diff。
+- 先把 AI 协作方式固定下来，才能稳定地用 AI 解决编程、写作、分析、研究、自动化和系统构建问题。
+
+<a id="philosophy-vibe-coding-dao-fa-shu-qi-法"></a>
+### 法
+
+法层面回答“怎么定义问题、拆解问题、抽象问题”。
+
+它包含：
+
+- 问题求解：目标、现状、差距、标准、约束、对象、路径。
+- 思维模型：第一性原理、奥卡姆剃刀、逆向思维、多阶思维、状态空间。
+- 抽象方法：把复杂对象拆成状态、关系、过程、变换和不变量。
+
+法的作用是防止 AI 沿着模糊需求直接开写。没有法，AI 只是在执行不稳定意图。
+
+<a id="philosophy-vibe-coding-dao-fa-shu-qi-术"></a>
+### 术
+
+术层面回答“具体怎么做”。
+
+它包含：
+
+- 工作流：从需求表达、计划拆解、执行修改、运行门禁到提交推送。
+- 技术文档：把环境、命令、配置、接口、约束和验收标准写清楚。
+- 技术栈：选择成熟、稳定、可维护、可替换的工程组合。
+- 具体方法：提示词、任务清单、检查清单、调试流程、审查流程和复盘方式。
+
+术把法变成可执行动作，让人与 AI 可以按同一套流程协作。
+
+<a id="philosophy-vibe-coding-dao-fa-shu-qi-器"></a>
+### 器
+
+器层面回答“用什么工具承载方法和流程”。
+
+它包含：
+
+- AI CLI：Codex CLI、Claude Code、OpenCode 等。
+- 开发工具：IDE、编辑器、终端、Git、GitHub、调试器。
+- 数据工具：数据库、数据管理工具、查询工具、迁移工具。
+- 工程工具：测试框架、lint、formatter、CI、脚本、容器、部署工具。
+
+器不是核心，但器决定效率和可执行边界。没有器，道、法、术只能停留在语言里；有了器，AI 才能从聊天框进入真实文件、命令、测试和版本控制。
+
+</details>
+
+<details>
+<summary><strong>2. 思维模型</strong> - 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。（点击展开/收起）</summary>
 
 <a id="philosophy-thinking-models"></a>
 
-## 1. 思维模型
+## 2. 思维模型
 
 > 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。
 
@@ -401,11 +492,11 @@
 </details>
 
 <details>
-<summary><strong>2. 组合描述模型</strong> - 对象、状态、快照、序列、过程、变换、同一/差异与关系。（点击展开/收起）</summary>
+<summary><strong>3. 组合描述模型</strong> - 对象、状态、快照、序列、过程、变换、同一/差异与关系。（点击展开/收起）</summary>
 
 <a id="philosophy-compositional-description-model"></a>
 
-## 2. 组合描述模型
+## 3. 组合描述模型
 
 > 对象、状态、快照、序列、过程、变换、同一/差异与关系。
 
@@ -946,11 +1037,11 @@ UserInput(组合描述模型)
 </details>
 
 <details>
-<summary><strong>3. 编程之道</strong> - 编程哲学、结构、状态、复杂度与工程判断。（点击展开/收起）</summary>
+<summary><strong>4. 编程之道</strong> - 编程哲学、结构、状态、复杂度与工程判断。（点击展开/收起）</summary>
 
 <a id="philosophy-programming-dao"></a>
 
-## 3. 编程之道
+## 4. 编程之道
 
 > 编程哲学、结构、状态、复杂度与工程判断。
 
@@ -1272,11 +1363,11 @@ UserInput(组合描述模型)
 </details>
 
 <details>
-<summary><strong>4. 方法论工具箱</strong> - 现象学还原、正反合、可证伪主义、形式化方法等提效工具。（点击展开/收起）</summary>
+<summary><strong>5. 方法论工具箱</strong> - 现象学还原、正反合、可证伪主义、形式化方法等提效工具。（点击展开/收起）</summary>
 
 <a id="philosophy-methodology-toolbox"></a>
 
-## 4. 方法论工具箱
+## 5. 方法论工具箱
 
 > 现象学还原、正反合、可证伪主义、形式化方法等提效工具。
 
