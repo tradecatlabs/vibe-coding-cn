@@ -391,6 +391,15 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 器层面回答“用什么工具承载方法和流程”，重点是把 AI 协作落到可读写文件、可执行命令、可验证结果和可回滚版本的真实环境中。
 
+#### 操作系统与运行底座
+
+*   [**WSL2**](https://learn.microsoft.com/windows/wsl/): Windows 用户推荐优先启用 WSL2，把 Linux 开发环境放进 Windows 内部，兼顾本地桌面软件和类 Linux 命令行生态。
+*   [**Ubuntu**](https://ubuntu.com/): 新手和通用开发场景优先推荐 Ubuntu，软件包、教程、社区资料和服务器环境最完整，适合作为 WSL2、服务器和本地 Linux 的默认发行版。
+*   [**Windows 11 + WSL2 + Ubuntu**](https://learn.microsoft.com/windows/wsl/install): 新电脑最推荐组合；Windows 负责桌面、浏览器、IDE 和日常软件，Ubuntu 负责 Git、Node.js、Python、脚本、数据库客户端和 AI CLI。
+*   [**macOS**](https://www.apple.com/macos/): 适合移动开发、前端开发和日常独立开发，配合 Homebrew、终端、Git、Node.js、Python 和 AI CLI 可以形成稳定工作站。
+*   [**Linux Server**](https://ubuntu.com/server): 适合长期运行、部署、自动化任务、数据库、爬虫、后台服务和远程开发；优先选择 Ubuntu Server LTS。
+*   **不推荐裸 Windows 命令行作为主开发环境**: 可以使用 Windows 桌面工具，但复杂开发、脚本、依赖安装和 AI CLI 执行优先放在 WSL2/Ubuntu 中完成。
+
 #### AI CLI 与模型服务
 
 *   [**Codex CLI**](docs/getting-started/README.md#cli-setup): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
