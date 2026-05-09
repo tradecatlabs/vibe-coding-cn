@@ -217,12 +217,15 @@
 <a id="philosophy-vibe-coding-dao-fa-shu-qi-器"></a>
 ### 🧰 器
 
-器层面回答“用什么工具承载方法和流程”。
+器层面回答“用什么工具承载方法和流程”，重点是把 AI 协作落到可读写文件、可执行命令、可验证结果和可回滚版本的真实环境中。
 
-- AI CLI：Codex CLI、Claude Code、OpenCode 等。
-- 开发工具：IDE、编辑器、终端、Git、GitHub、调试器。
-- 数据工具：数据库、数据管理工具、查询工具、迁移工具。
-- 工程工具：测试框架、lint、formatter、CI、脚本、容器、部署工具。
+- AI CLI：Codex CLI 作为默认本地 Agent 入口；Claude Code、OpenCode 等作为备选执行入口；网页 AI 用于无本地依赖时生成安装步骤、解释报错和审计产出。
+- 编辑与开发环境：VS Code、Cursor、JetBrains、Neovim、终端、Shell、WSL、包管理器、调试器，用来承载文件编辑、命令执行、断点调试和环境配置。
+- 版本控制与协作：Git、GitHub、Issue、Pull Request、Code Review、Actions、Release，用来固定变更、记录证据、回滚错误和分发协作。
+- 数据与存储工具：PostgreSQL、SQLite、MySQL、Redis、对象存储、数据库客户端、迁移工具、备份恢复工具，用来管理状态、查询数据和验证数据变化。
+- 工程质量工具：测试框架、lint、formatter、type checker、schema 校验、pre-commit、CI、覆盖率、链接检查，用来把验收标准变成硬门禁。
+- 自动化与运行环境：Makefile、脚本、Docker、Compose、任务调度、部署平台、日志、监控、告警，用来把流程变成可重复执行的流水线。
+- 资料与知识工具：README、AGENTS、技术文档、提示词库、Skill、Workflow、llms.txt、索引和检索工具，用来保存上下文、降低重复解释成本。
 
 器不是核心，但器决定效率和可执行边界。没有器，道、法、术只能停留在语言里；有了器，AI 才能从聊天框进入真实文件、命令、测试和版本控制。
 
