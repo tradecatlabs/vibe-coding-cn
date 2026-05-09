@@ -116,7 +116,7 @@ redirects:
     to: docs/concepts/README.md#concept-recursive-self-optimizing-system
   - from: docs/philosophy/思维模型.md
     to: docs/philosophy/README.md#philosophy-thinking-models
-  - from: docs/philosophy/Vibe Coding 道法术器.md
+  - from: docs/philosophy/道法术器.md
     to: README.md#dao-fa-shu-qi
   - from: docs/philosophy/组合描述模型.md
     to: docs/philosophy/README.md#philosophy-compositional-description-model
