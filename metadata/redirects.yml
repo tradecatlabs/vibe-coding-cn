@@ -117,7 +117,7 @@ redirects:
   - from: docs/philosophy/思维模型.md
     to: docs/philosophy/README.md#philosophy-thinking-models
   - from: docs/philosophy/Vibe Coding 道法术器.md
-    to: docs/philosophy/README.md#philosophy-vibe-coding-dao-fa-shu-qi
+    to: README.md#dao-fa-shu-qi
   - from: docs/philosophy/组合描述模型.md
     to: docs/philosophy/README.md#philosophy-compositional-description-model
   - from: docs/philosophy/编程之道.md

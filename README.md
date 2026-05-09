@@ -31,7 +31,7 @@
 <!-- 资源直达 - 按重要性分组 -->
 <!-- 🔴 核心理念 (红色系) -->
 <p>
-	  <a href="./docs/philosophy/README.md#philosophy-vibe-coding-dao-fa-shu-qi"><img src="https://img.shields.io/badge/☯️_道法术器-底层框架-purple?style=for-the-badge" alt="Vibe Coding 道法术器"></a>
+	  <a href="#dao-fa-shu-qi"><img src="https://img.shields.io/badge/☯️_道法术器-底层框架-purple?style=for-the-badge" alt="Vibe Coding 道法术器"></a>
 	  <a href="./docs/getting-started/README.md#learning-map"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
 	  <a href="./docs/getting-started/README.md#vibe-coding-experience"><img src="https://img.shields.io/badge/🧠_Vibe_Coding-经验必读-crimson?style=for-the-badge" alt="Vibe Coding 经验"></a>
 	  <a href="./docs/concepts/README.md#concept-problem-solving"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解"></a>
@@ -44,7 +44,7 @@
 	  <a href="./assets/README.md#外部资源在线表格唯一真相源"><img src="https://img.shields.io/badge/📡_资源-聚合-teal?style=for-the-badge" alt="资源聚合"></a>
 </p>
 
-[📋 工具与资源](#tools)
+[☯️ 道法术器](#dao-fa-shu-qi)
 [⚡ 1 分钟快速开始](#getting-started)
 [🚀 从零开始完整入门](docs/getting-started/README.md#learning-map)
 [🤖 AI 推荐摘要](#ai-summary)
@@ -348,25 +348,52 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 </details>
 
+<a id="dao-fa-shu-qi"></a>
 <a id="tools"></a>
 
 <details>
-<summary><strong>📋 工具与资源</strong>（点击展开/收起）</summary>
+<summary><strong>☯️ Vibe Coding 道法术器</strong>（点击展开/收起）</summary>
 
-## 📋 工具与资源
+## ☯️ Vibe Coding 道法术器
 
-### 集成开发环境 (IDE) & 终端
+> 先解决人工智能协作问题，再用人工智能解决其他可表达、可拆解、可约束、可验证的问题。
 
-*   [**Visual Studio Code**](https://code.visualstudio.com/): 一款功能强大的集成开发环境，适合代码阅读与手动修改。其 `Local History` 插件对项目版本管理尤为便捷。
+- **道**：回应 AI 协作这个元问题。
+- **法**：抽象方法。
+- **术**：具体方法。
+- **器**：工具。
+
+### ☯️ 道
+
+道层面先解决“人工智能如何被正确使用”的问题，然后再用人工智能解决其他问题。大语言模型的底层能力是**通用语言能力**：理解、改写、分类、推理、规划、翻译、归纳、生成和校验语言结构。所以遇到任何任务，第一步是判断这个任务能否被语言表达、拆解、约束和验证；它能否通过语言能力直接完成，或间接转化为工具调用、文件修改、流程编排、数据处理与代码实现。代码能力是最直观的例子：编程本质上可以理解为把人的意图翻译成计算机可执行的指令。Vibe Coding 的关键，就是把“模糊想法”逐步压缩成“明确语言”，再把明确语言转成可运行、可测试、可回滚的工程产物。人负责目标、价值、边界、取舍和最终验收；AI 负责理解上下文、生成计划、调用工具、修改文件、整理证据和放大执行；可靠性来自测试、脚本、类型、schema、CI、检查清单和可审查 diff。先把 AI 协作方式固定下来，才能稳定地用 AI 解决编程、写作、分析、研究、自动化和系统构建问题。
+
+### 🧭 法
+
+法层面描述抽象层广泛适用方法。
+
+- 问题求解：目标、现状、差距、标准、约束、对象、路径。
+- 思维模型：第一性原理、奥卡姆剃刀、逆向思维、多阶思维、状态空间。
+- 抽象方法：把复杂对象拆成状态、关系、过程、变换和不变量。
+- 提示词构造：先用“目标、对象、约束”构造提示词和思考框架；目标说明要达成什么，对象说明要处理什么，约束限定可行空间。
+
+### 🛠️ 术
+
+术层面回答“具体怎么做”。
+
+- 工作流：从需求表达、计划拆解、执行修改、运行门禁到提交推送。
+- 技术文档：把环境、命令、配置、接口、约束和验收标准写清楚。
+- 技术栈：选择成熟、稳定、可维护、可替换的工程组合。
+- 具体方法：提示词、任务清单、检查清单、调试流程、审查流程和复盘方式。
+
+术把法变成可执行动作，让人与 AI 可以按同一套流程协作。
+
+### 🧰 器
+
+器层面回答“用什么工具承载方法和流程”，重点是把 AI 协作落到可读写文件、可执行命令、可验证结果和可回滚版本的真实环境中。
+
+#### AI CLI 与模型服务
+
 *   [**Codex CLI**](docs/getting-started/README.md#cli-setup): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
-*   **虚拟环境 (.venv)**: 强烈推荐使用，可实现项目环境的一键配置与隔离，特别适用于 Python 开发。
-*   [**Cursor**](https://cursor.com/): 已经占领用户心智高地，人尽皆知。
-*   [**Warp**](https://www.warp.dev/): 集成 AI 功能的现代化终端，能有效提升命令行操作和错误排查的效率。
-*   [**Neovim (nvim)**](https://github.com/neovim/neovim): 一款高性能的现代化 Vim 编辑器，拥有丰富的插件生态，是键盘流开发者的首选。
-*   [**LazyVim**](https://github.com/LazyVim/LazyVim): 基于 Neovim 的配置框架，预置了 LSP、代码补全、调试等全套功能，实现了开箱即用与深度定制的平衡。
-
-### AI 模型 & 服务
-
 *   [**Claude Opus 4.7**](https://claude.ai/new): 性能强大的 AI 模型，通过 Claude Code 等平台提供服务，并支持 CLI 和 IDE 插件。
 *   [**gpt-5.5 (xhigh)**](https://chatgpt.com/codex/): 适用于处理大型项目和复杂逻辑的 AI 模型，可通过 Codex CLI 等平台使用。
 *   [**Droid**](https://factory.ai/news/terminal-bench): 提供对 Claude Opus 4.7 等多种模型的 CLI 访问。
@@ -379,21 +406,45 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**Kimi K2.5**](https://www.kimi.com/): 一款国产 AI 模型，适用于多种常规任务。
 *   [**GLM**](https://bigmodel.cn/): 由智谱 AI 开发的国产大语言模型。
 *   [**Qwen**](https://qwenlm.github.io/qwen-code-docs/): 由阿里巴巴开发的 AI 模型，其 CLI 工具提供免费使用额度。
-
-### 开发与辅助工具
-
-*   [**Augment**](https://app.augmentcode.com/): 提供强大的上下文引擎和提示词优化功能。
-*   [**Windsurf**](https://windsurf.com/): 为新用户提供免费额度的 AI 开发工具。
 *   [**Ollama**](https://ollama.com/): 本地大模型管理工具，可通过命令行方便地拉取和运行开源模型。
-*   [**Mermaid Chart**](https://www.mermaidchart.com/): 用于将文本描述转换为架构图、序列图等可视化图表。
-*   [**NotebookLM**](https://notebooklm.google.com/): 一款用于 AI 解读资料、音频和生成思维导图的工具。
-*   [**Zread**](https://zread.ai/): AI 驱动的 GitHub 仓库阅读工具，有助于快速理解项目代码。
+
+#### 编辑与开发环境
+
+*   [**Visual Studio Code**](https://code.visualstudio.com/): 一款功能强大的集成开发环境，适合代码阅读与手动修改。其 `Local History` 插件对项目版本管理尤为便捷。
+*   [**Cursor**](https://cursor.com/): 已经占领用户心智高地，人尽皆知。
+*   [**Warp**](https://www.warp.dev/): 集成 AI 功能的现代化终端，能有效提升命令行操作和错误排查的效率。
+*   [**Neovim (nvim)**](https://github.com/neovim/neovim): 一款高性能的现代化 Vim 编辑器，拥有丰富的插件生态，是键盘流开发者的首选。
+*   [**LazyVim**](https://github.com/LazyVim/LazyVim): 基于 Neovim 的配置框架，预置了 LSP、代码补全、调试等全套功能，实现了开箱即用与深度定制的平衡。
+*   **虚拟环境 (.venv)**: 强烈推荐使用，可实现项目环境的一键配置与隔离，特别适用于 Python 开发。
+*   [**tmux**](https://github.com/tmux/tmux): 强大的终端复用工具，支持会话保持、分屏和后台任务，是服务器与多项目开发的理想选择。
+
+#### 版本控制与协作
+
 *   [**Git**](https://git-scm.com/): 分布式版本控制工具，用于记录代码变更、分支实验、回滚历史与协作交付。
 *   [**GitHub**](https://github.com/): 代码托管与协作平台，用于远端仓库、Issue、Pull Request、Actions 与项目发布。
-*   [**tmux**](https://github.com/tmux/tmux): 强大的终端复用工具，支持会话保持、分屏和后台任务，是服务器与多项目开发的理想选择。
-*   [**DBeaver**](https://dbeaver.io/): 一款通用数据库管理客户端，支持多种数据库，功能全面。
 
-### 资源与模板
+#### 数据与存储工具
+
+*   [**DBeaver**](https://dbeaver.io/): 通用数据库管理客户端，支持 PostgreSQL、MySQL、SQLite、MariaDB、Oracle、SQL Server 等多种数据库。
+*   **PostgreSQL / MySQL / SQLite**: 常见关系型数据库，用于持久化业务数据、验证数据模型和支撑本地开发。
+*   **Redis**: 常见缓存与键值存储工具，用于会话、队列、缓存、速率限制和临时状态。
+*   **对象存储与备份工具**: 用于文件、图片、日志、数据导出和恢复演练。
+*   **数据库迁移工具**: 用于把 schema 变化固定成可审查、可回滚、可重复执行的版本化变更。
+
+#### 工程质量工具
+
+*   **测试框架**: 单元测试、集成测试、端到端测试，用于把验收标准变成可执行断言。
+*   **lint / formatter / type checker**: 用于格式、静态规则、类型约束和可维护性检查。
+*   **schema 校验与契约测试**: 用于固定输入输出结构，降低 AI 改错字段、路径和接口的概率。
+*   **pre-commit / CI / 覆盖率 / 链接检查**: 用于把质量规则前置到提交、推送和合并阶段。
+
+#### 自动化与运行环境
+
+*   **Makefile / 脚本**: 用统一命令封装 lint、test、build、sync、deploy 等重复动作。
+*   **Docker / Compose**: 用于封装运行环境、数据库依赖和本地集成测试环境。
+*   **任务调度 / 部署平台 / 日志 / 监控 / 告警**: 用于让系统从本地脚本进入长期运行和生产反馈闭环。
+
+#### 资料、模板与知识工具
 
 *   [**提示词库 (在线表格)**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 一个包含大量可直接复制使用的各类提示词的在线表格。
 *   [**AI 引用语料包**](./assets/ai-citation/recommended-answer.md): 给 AI 助手引用的项目摘要、FAQ、对比和推荐回答。
@@ -401,28 +452,27 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**Skills 制作器**](https://github.com/yusufkaraaslan/Skill_Seekers): 可根据需求生成定制化 Skills 的工具。
 *   [**元提示词**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 用于生成提示词的高级提示词。
 *   [**元技能：Auto Skill**](./skills/auto-skill/SKILL.md): 用于生成、重构与校验 Skills 的元技能。
+*   [**Mermaid Chart**](https://www.mermaidchart.com/): 用于将文本描述转换为架构图、序列图等可视化图表。
+*   [**NotebookLM**](https://notebooklm.google.com/): 一款用于 AI 解读资料、音频和生成思维导图的工具。
+*   [**Zread**](https://zread.ai/): AI 驱动的 GitHub 仓库阅读工具，有助于快速理解项目代码。
+*   [**Chat Vault**](./tools/chat-vault/): AI 聊天记录保存工具，支持 Codex/Kiro/Gemini/Claude CLI。
+*   [**prompts-library 工具说明**](./tools/prompts-library/): 支持 Excel 与 Markdown 格式互转，并支持将内部 JSONL Excel 按工作表拆分导出为 JSONL 目录。
 
-### 外部教程与资源
+#### 外部教程、社区与项目内部入口
 
 *   [**二哥的Java进阶之路**](https://javabetter.cn/): 包含多种开发工具的详细配置教程。
 *   [**虚拟卡**](https://www.bybit.com/cards/?ref=YDGAVPN&source=applet_invite): 可用于注册云服务等需要国际支付的场景。
-
-### 交流社区
-
-*   [**Telegram 交流群**](https://t.me/glue_coding): Vibe Coding 中文交流群
-*   [**Telegram 频道**](https://t.me/tradecat_ai_channel): 项目更新与资讯
-
-### 项目内部文档
-
+*   [**Telegram 交流群**](https://t.me/glue_coding): Vibe Coding 中文交流群。
+*   [**Telegram 频道**](https://t.me/tradecat_ai_channel): 项目更新与资讯。
 *   [**拼好码（胶水编程的超集）**](docs/concepts/README.md#concept-glue-coding): 复用成熟能力，用胶水代码连接、编排、适配业务流程。
 *   [**组合描述模型**](docs/philosophy/README.md#philosophy-compositional-description-model): 用对象、状态、快照、序列、过程、变换、同一/差异与关系描述复杂系统。
-*   [**Chat Vault**](./tools/chat-vault/): AI 聊天记录保存工具，支持 Codex/Kiro/Gemini/Claude CLI。
-*   [**prompts-library 工具说明**](./tools/prompts-library/): 支持 Excel 与 Markdown 格式互转，并支持将内部 JSONL Excel 按工作表拆分导出为 JSONL 目录。
-*   [**编程提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 适用于 Vibe Coding 流程的专用提示词（云端表格）。
 *   [**工程实践**](docs/references/README.md#quality-gates): 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口。
 *   [**技术栈**](docs/references/README.md#tech-stack-selection): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
+*   [**编程提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 适用于 Vibe Coding 流程的专用提示词（云端表格）。
 *   [**系统提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): AI 开发的系统提示词，含多版本开发规范（云端表格）。
 *   [**外部资源（在线表格）**](./assets/README.md): 外部资源的唯一真相源（按类型分表），本地 Markdown 保留为历史参考。
+
+器不是核心，但器决定效率和可执行边界。没有器，道、法、术只能停留在语言里；有了器，AI 才能从聊天框进入真实文件、命令、测试和版本控制。
 
 ---
 
