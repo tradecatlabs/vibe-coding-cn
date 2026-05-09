@@ -473,10 +473,28 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**虚拟卡**](https://www.bybit.com/cards/?ref=YDGAVPN&source=applet_invite): 可用于注册云服务等需要国际支付的场景。
 *   [**Telegram 交流群**](https://t.me/glue_coding): Vibe Coding 中文交流群。
 *   [**Telegram 频道**](https://t.me/tradecat_ai_channel): 项目更新与资讯。
+*   [**知识库总索引**](docs/README.md): 从入门、概念、哲学、参考、研究和工作流进入完整文档体系。
+*   [**从零开始完整入门**](docs/getting-started/README.md#learning-map): 新手从网络环境、CLI 配置、开发环境和 Git 闭环开始。
+*   [**Vibe Coding 经验**](docs/getting-started/README.md#vibe-coding-experience): 通用语言能力、人机分工、机器门禁和入门铁律。
+*   [**CLI 配置**](docs/getting-started/README.md#cli-setup): Codex CLI 默认路线与 OpenCode 备选路线。
+*   [**开发流程**](docs/workflow/README.md#workflow-development-process): 默认任务推进顺序、质量门禁、版本控制和交付闭环。
+*   [**问题求解**](docs/concepts/README.md#concept-problem-solving): 用目标、现状、差距、标准、约束、对象和路径定义问题。
 *   [**拼好码（胶水编程的超集）**](docs/concepts/README.md#concept-glue-coding): 复用成熟能力，用胶水代码连接、编排、适配业务流程。
+*   [**系统构建方法**](docs/concepts/README.md#concept-system-building): 自顶向下、自底向上与分而治之的组合使用。
+*   [**开发范式演进**](docs/concepts/README.md#concept-development-paradigms): 软件工程组织方式与 AI 编程范式的演进。
+*   [**语言层要素**](docs/concepts/README.md#concept-language-layers): 理解代码所需的语言层级、执行模型、类型系统和工程语义。
+*   [**思维模型**](docs/philosophy/README.md#philosophy-thinking-models): 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。
 *   [**组合描述模型**](docs/philosophy/README.md#philosophy-compositional-description-model): 用对象、状态、快照、序列、过程、变换、同一/差异与关系描述复杂系统。
+*   [**编程之道**](docs/philosophy/README.md#philosophy-programming-dao): 编程哲学、结构、状态、复杂度与工程判断。
 *   [**工程实践**](docs/references/README.md#quality-gates): 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口。
 *   [**技术栈**](docs/references/README.md#tech-stack-selection): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
+*   [**Harness 工程解析**](docs/research/README.md#research-harness-engineering): Harness Engineering 的工程控制、评估器与反馈闭环解析。
+*   [**Skills 技能库**](skills/README.md#当前保留): 当前保留的可复用技能入口。
+*   [**提示词入口**](prompts/README.md#在线提示词库): 在线提示词库入口。
+*   [**外部资源入口**](assets/README.md#外部资源在线表格唯一真相源): 外部资源在线表格唯一真相源。
+*   [**AI Agent 操作规则**](AGENTS.md): AI Agent 执行任务时必须遵守的项目操作手册。
+*   [**llms.txt**](llms.txt): 面向 AI 助手的短上下文入口。
+*   [**llms-full.txt**](assets/ai-citation/llms-full.txt): 面向 AI 助手的完整上下文入口。
 *   [**编程提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 适用于 Vibe Coding 流程的专用提示词（云端表格）。
 *   [**系统提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): AI 开发的系统提示词，含多版本开发规范（云端表格）。
 *   [**外部资源（在线表格）**](./assets/README.md): 外部资源的唯一真相源（按类型分表），本地 Markdown 保留为历史参考。
