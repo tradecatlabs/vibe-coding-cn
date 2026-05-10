@@ -121,6 +121,9 @@ documents:
     - path: docs/philosophy/README.md#philosophy-programming-dao
       title: 编程之道
       role: 编程哲学、结构、状态、复杂度与工程判断
+    - path: docs/philosophy/README.md#philosophy-software-engineering-truths
+      title: 软件工程的朴素真理
+      role: 代码、复杂度、需求、维护、质量、架构和团队的工程常识
     - path: docs/philosophy/README.md#philosophy-methodology-toolbox
       title: 方法论工具箱
       role: 现象学还原、正反合、可证伪主义、形式化方法等提效工具

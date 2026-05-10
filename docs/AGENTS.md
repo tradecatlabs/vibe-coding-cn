@@ -26,7 +26,7 @@ docs/
 - `getting-started/AGENTS.md`：入门教程目录操作规则。
 - `concepts/README.md`：线性总文档，包含问题求解、拼好码、系统构建方法、开发范式演进、语言层要素和递归自优化系统。
 - `concepts/AGENTS.md`：核心概念目录操作规则。
-- `philosophy/README.md`：线性总文档，包含思维模型、组合描述模型、编程之道和方法论工具箱。
+- `philosophy/README.md`：线性总文档，包含思维模型、组合描述模型、编程之道、软件工程的朴素真理和方法论工具箱。
 - `philosophy/AGENTS.md`：哲学方法论目录操作规则。
 - `references/README.md`：线性总文档，包含工程实践和技术栈。
 - `references/AGENTS.md`：参考资料目录操作规则。

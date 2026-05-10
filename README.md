@@ -487,6 +487,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**思维模型**](docs/philosophy/README.md#philosophy-thinking-models): 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。
 *   [**组合描述模型**](docs/philosophy/README.md#philosophy-compositional-description-model): 用对象、状态、快照、序列、过程、变换、同一/差异与关系描述复杂系统。
 *   [**编程之道**](docs/philosophy/README.md#philosophy-programming-dao): 编程哲学、结构、状态、复杂度与工程判断。
+*   [**软件工程的朴素真理**](docs/philosophy/README.md#philosophy-software-engineering-truths): 代码、复杂度、需求、维护、质量、架构和团队的工程常识。
 *   [**工程实践**](docs/references/README.md#quality-gates): 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口。
 *   [**技术栈**](docs/references/README.md#tech-stack-selection): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
 *   [**Harness 工程解析**](docs/research/README.md#research-harness-engineering): Harness Engineering 的工程控制、评估器与反馈闭环解析。

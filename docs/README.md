@@ -4,7 +4,7 @@
 
 - 新手先读 `getting-started/`，按网络环境、CLI 配置、开发环境和 Git 闭环推进。
 - 想理解 Vibe Coding 的底层概念，读 `concepts/`。
-- 想补思维模型和方法论，读 `philosophy/`。
+- 想补思维模型、软件工程常识和方法论，读 `philosophy/`。
 - 想查工程模板、质量门禁、技术栈和常见坑，读 `references/`。
 - 想记录新技术、优秀 repo 或工程趋势，读 `research/`。
 - 想按标准流程推进任务、提交和推送，读 `workflow/`。
@@ -49,6 +49,7 @@
 - [思维模型](philosophy/README.md#philosophy-thinking-models) - 可复用思维模型索引。
 - [组合描述模型](philosophy/README.md#philosophy-compositional-description-model) - 用对象、状态、快照、序列、过程、变换、同一/差异与关系描述复杂系统。
 - [编程之道](philosophy/README.md#philosophy-programming-dao) - 编程哲学与工程判断。
+- [软件工程的朴素真理](philosophy/README.md#philosophy-software-engineering-truths) - 代码、复杂度、需求、维护、质量、架构和团队的工程常识。
 
 ### references
 
@@ -103,7 +104,8 @@
 1. [思维模型](philosophy/README.md#philosophy-thinking-models)
 2. [组合描述模型](philosophy/README.md#philosophy-compositional-description-model)
 3. [编程之道](philosophy/README.md#philosophy-programming-dao)
-4. [递归自优化系统](concepts/README.md#concept-recursive-self-optimizing-system)
+4. [软件工程的朴素真理](philosophy/README.md#philosophy-software-engineering-truths)
+5. [递归自优化系统](concepts/README.md#concept-recursive-self-optimizing-system)
 
 #### AI Agent 读取路径
 
