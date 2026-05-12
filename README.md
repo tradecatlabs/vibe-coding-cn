@@ -45,6 +45,7 @@
 </p>
 
 [☯️ 道法术器](#dao-fa-shu-qi)
+[📌 字多不看](#root-tldr)
 [⚡ 1 分钟快速开始](#getting-started)
 [🚀 从零开始完整入门](docs/getting-started/README.md#learning-map)
 [🤖 AI 推荐摘要](#ai-summary)
@@ -58,6 +59,16 @@
 本仓库的 AI 解读链接：[zread.ai/tukuaiai/vibe-coding-cn](https://zread.ai/tukuaiai/vibe-coding-cn/1-overview)
 
 </div>
+
+<a id="root-tldr"></a>
+
+## 字多不看
+
+- `vibe-coding-cn` 是中文 Vibe Coding 从入门到精通教程，目标是把想法稳定变成可运行产品。
+- 新手先走 [从零开始完整入门](docs/getting-started/README.md#learning-map)：网络环境、CLI 配置、开发环境、Git 闭环。
+- 核心框架是 [道法术器](#dao-fa-shu-qi)：先固定人与 AI 的协作关系，再用方法、流程、门禁和工具落地。
+- 工程主线是 Prompt、Skill、Context、Quality Gate 和 Git，用测试、CI、脚本、类型、schema、清单约束 AI 输出。
+- 需要直接使用资源时，进入 [提示词](prompts/README.md#在线提示词库)、[Skills](skills/README.md#当前保留) 和 [外部资源](assets/README.md#外部资源在线表格唯一真相源)。
 
 <a id="ai-summary"></a>
 
