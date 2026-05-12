@@ -65,7 +65,7 @@
 <details>
 <summary><strong>📌 字多不看</strong>（点击展开/收起）</summary>
 
-## 字多不看
+## 📌 字多不看
 
 - `vibe-coding-cn` 是中文 Vibe Coding 从入门到精通教程，目标是把想法稳定变成可运行产品。
 - 新手先走 [从零开始完整入门](docs/getting-started/README.md#learning-map)：网络环境、CLI 配置、开发环境、Git 闭环。
