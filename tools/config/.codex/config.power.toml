@@ -1,0 +1,47 @@
+# ==================== Codex CLI 高权限基线 ====================
+#
+# 这个 profile 面向完全可信的本地机器和仓库：
+# - sandbox_mode = "danger-full-access" 会放开文件系统和命令执行能力。
+# - approval_policy = "never" 会减少确认弹窗，让 Agent 自动推进。
+# - 不包含任何本机 projects 信任路径；请按需在本地 config.toml 中追加。
+#
+# 安装方式：
+#   bash install.sh --profile power
+
+model = "gpt-5.5"
+model_provider = "openai-http"
+model_reasoning_effort = "xhigh"
+
+sandbox_mode = "danger-full-access"
+approval_policy = "never"
+
+web_search = "live"
+personality = "pragmatic"
+
+startup_timeout_ms = 20000
+
+[tui]
+notifications = true
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
+[features]
+multi_agent = true
+responses_websockets = false
+responses_websockets_v2 = false
+
+[model_providers.openai-http]
+name = "OpenAI"
+wire_api = "responses"
+requires_openai_auth = true
+supports_websockets = false
+
+[notice]
+hide_gpt5_1_migration_prompt = true
+"hide_gpt-5.1-codex-max_migration_prompt" = true
+hide_rate_limit_model_nudge = true
+
+# 本地可信项目示例：
+# [projects."/absolute/path/to/your/project"]
+# trust_level = "trusted"

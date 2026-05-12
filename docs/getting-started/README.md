@@ -540,7 +540,7 @@ ____
   -> npm 安装 Codex CLI
   -> codex --version 验证
   -> codex login 浏览器登录
-  -> 复制本仓库 Codex 配置基线
+  -> 安全安装本仓库 Codex 配置基线
   -> 进入项目运行 codex
 ```
 
@@ -719,17 +719,36 @@ $env:OPENAI_API_KEY | codex login --with-api-key
 
 ### 使用仓库配置基线
 
-本仓库已经提供 CLI 配置基线：
+本仓库已经提供可回滚的 Codex CLI 配置基线：
 
 - `tools/config/.codex/config.toml`
+- `tools/config/.codex/config.power.toml`
+- `tools/config/.codex/AGENTS.safe.md`
 - `tools/config/.codex/AGENTS.md`
+- `tools/config/.codex/install.sh`
 
-在仓库根目录执行：
+推荐使用安全默认版。脚本会先备份你已有的 `~/.codex/config.toml` 和 `~/.codex/AGENTS.md`，再安装新配置：
 
 ```bash
-mkdir -p ~/.codex
-cp -f tools/config/.codex/config.toml ~/.codex/config.toml
-cp -f tools/config/.codex/AGENTS.md ~/.codex/AGENTS.md
+curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/develop/tools/config/.codex/install.sh | bash
+```
+
+如果已经 clone 本仓库，也可以在仓库根目录执行：
+
+```bash
+bash tools/config/.codex/install.sh
+```
+
+需要完全可信本地环境下的高权限配置时，显式安装 `power` profile：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/develop/tools/config/.codex/install.sh | bash -s -- --profile power
+```
+
+恢复最近一次安装前的配置：
+
+```bash
+bash ~/.codex/backups/vibe-coding-cn/LATEST/restore.sh
 ```
 
 详细说明见：[Codex 配置基线](../../tools/config/.codex/README.md)。

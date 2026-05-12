@@ -34,6 +34,7 @@
 	  <a href="#dao-fa-shu-qi"><img src="https://img.shields.io/badge/☯️_道法术器-底层框架-purple?style=for-the-badge" alt="道法术器"></a>
 	  <a href="./docs/getting-started/README.md#learning-map"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
 	  <a href="./docs/getting-started/README.md#vibe-coding-experience"><img src="https://img.shields.io/badge/🧠_Vibe_Coding-经验必读-crimson?style=for-the-badge" alt="Vibe Coding 经验"></a>
+	  <a href="./tools/config/.codex/README.md"><img src="https://img.shields.io/badge/⚙️_Codex配置-一键安装-blue?style=for-the-badge" alt="Codex 配置一键安装"></a>
 	  <a href="./docs/concepts/README.md#concept-problem-solving"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解"></a>
 	  <a href="./docs/philosophy/README.md#philosophy-thinking-models"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
 	  <a href="./docs/philosophy/README.md#philosophy-methodology-toolbox"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
@@ -251,7 +252,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 - Markdown lint 配置：`.github/lint_config.json`
 - Markdown lint 版本：`Makefile` 中固定为 `markdownlint-cli@0.48.0`
 - CI 配置：`.github/workflows/ci.yml`，在 `develop` / `master` 分支的 push / pull_request 上运行 markdown-lint、本地链接检查、docs 结构检查与 link-checker
-- Codex 配置基线：`tools/config/.codex/config.toml`
+- Codex 配置基线：`tools/config/.codex/README.md`，支持一键安装、自动备份和恢复。
 - Submodule 来源：`.gitmodules`
 
 ### 部署
@@ -420,6 +421,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 #### AI CLI 与模型服务
 
 *   [**Codex CLI**](docs/getting-started/README.md#cli-setup): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
+*   [**Codex CLI 配置基线**](tools/config/.codex/README.md): 可通过一条命令安装到 `~/.codex/`，安装前自动备份，支持恢复。
 *   [**Claude Opus 4.7**](https://claude.ai/new): 性能强大的 AI 模型，通过 Claude Code 等平台提供服务，并支持 CLI 和 IDE 插件。
 *   [**gpt-5.5 (xhigh)**](https://chatgpt.com/codex/): 适用于处理大型项目和复杂逻辑的 AI 模型，可通过 Codex CLI 等平台使用。
 *   [**Droid**](https://factory.ai/news/terminal-bench): 提供对 Claude Opus 4.7 等多种模型的 CLI 访问。
@@ -494,6 +496,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**从零开始完整入门**](docs/getting-started/README.md#learning-map): 新手从网络环境、CLI 配置、开发环境和 Git 闭环开始。
 *   [**Vibe Coding 经验**](docs/getting-started/README.md#vibe-coding-experience): 通用语言能力、人机分工、机器门禁和入门铁律。
 *   [**CLI 配置**](docs/getting-started/README.md#cli-setup): Codex CLI 默认路线与 OpenCode 备选路线。
+*   [**Codex 配置一键安装**](tools/config/.codex/README.md): 安全默认配置、高权限配置、自动备份和一键恢复。
 *   [**开发流程**](docs/workflow/README.md#workflow-development-process): 默认任务推进顺序、质量门禁、版本控制和交付闭环。
 *   [**问题求解**](docs/concepts/README.md#concept-problem-solving): 用目标、现状、差距、标准、约束、对象和路径定义问题。
 *   [**拼好码（胶水编程的超集）**](docs/concepts/README.md#concept-glue-coding): 复用成熟能力，用胶水代码连接、编排、适配业务流程。
