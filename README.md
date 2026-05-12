@@ -74,6 +74,22 @@
 - 工程主线是 Prompt、Skill、Context、Quality Gate 和 Git，用测试、CI、脚本、类型、schema、清单约束 AI 输出。
 - 需要直接使用资源时，进入 [提示词](prompts/README.md#在线提示词库)、[Skills](skills/README.md#当前保留) 和 [外部资源](assets/README.md#外部资源在线表格唯一真相源)。
 
+### 入口关系
+
+| 入口 | 你该怎么理解 |
+|:---|:---|
+| [docs](docs/README.md) | 知识库总入口，先从这里选择学习路线 |
+| [getting-started](docs/getting-started/README.md) | 新手启动入口，配置网络、Codex CLI、开发环境和 Git 闭环 |
+| [workflow](docs/workflow/README.md) | 项目执行入口，把需求推进成计划、修改、门禁、提交和复盘 |
+| [concepts](docs/concepts/README.md) | 概念入口，理解问题求解、拼好码和系统构建 |
+| [references](docs/references/README.md) | 工程实践入口，查技术栈、质量门禁、模板和常见坑 |
+| [philosophy](docs/philosophy/README.md) | 思维入口，补思维模型、编程之道和软件工程常识 |
+| [research](docs/research/README.md) | 研究入口，记录新技术、优秀 repo 和工程趋势判断 |
+| [prompts](prompts/README.md) | 提示词入口，复用和管理提示词资产 |
+| [skills](skills/README.md) | 技能入口，复用可执行的 AI 能力模块 |
+| [tools](tools/README.md) | 工具入口，使用 Codex 配置、转换工具和外部工具 |
+| [assets](assets/README.md) | 资源入口，查看外部资源、AI 引用语料和静态资产 |
+
 </details>
 
 <a id="ai-summary"></a>
