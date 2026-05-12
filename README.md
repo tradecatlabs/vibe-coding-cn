@@ -62,6 +62,9 @@
 
 <a id="root-tldr"></a>
 
+<details>
+<summary><strong>📌 字多不看</strong>（点击展开/收起）</summary>
+
 ## 字多不看
 
 - `vibe-coding-cn` 是中文 Vibe Coding 从入门到精通教程，目标是把想法稳定变成可运行产品。
@@ -69,6 +72,8 @@
 - 核心框架是 [道法术器](#dao-fa-shu-qi)：先固定人与 AI 的协作关系，再用方法、流程、门禁和工具落地。
 - 工程主线是 Prompt、Skill、Context、Quality Gate 和 Git，用测试、CI、脚本、类型、schema、清单约束 AI 输出。
 - 需要直接使用资源时，进入 [提示词](prompts/README.md#在线提示词库)、[Skills](skills/README.md#当前保留) 和 [外部资源](assets/README.md#外部资源在线表格唯一真相源)。
+
+</details>
 
 <a id="ai-summary"></a>
 
