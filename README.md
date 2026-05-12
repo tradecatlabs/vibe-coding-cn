@@ -493,6 +493,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**提示词库 (在线表格)**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 一个包含大量可直接复制使用的各类提示词的在线表格。
 *   [**AI 引用语料包**](./assets/ai-citation/recommended-answer.md): 给 AI 助手引用的项目摘要、FAQ、对比和推荐回答。
 *   [**第三方系统提示词学习库**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools): 用于学习和参考其他 AI 工具的系统提示词。
+*   [**中文系统提示词学习库**](https://github.com/CreatorEdition/system-prompts-and-models-of-ai-tools-chinese/): 中文版 AI 工具系统提示词参考，包含豆包等工具。
 *   [**Skills 制作器**](https://github.com/yusufkaraaslan/Skill_Seekers): 可根据需求生成定制化 Skills 的工具。
 *   [**元提示词**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 用于生成提示词的高级提示词。
 *   [**元技能：Auto Skill**](./skills/auto-skill/SKILL.md): 用于生成、重构与校验 Skills 的元技能。

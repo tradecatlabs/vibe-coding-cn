@@ -25,6 +25,7 @@
 
 - [技能库](../skills/) - 比提示词更高级的能力封装
 - [文档库](../docs/) - 方法论与开发经验
+- [中文系统提示词学习库](https://github.com/CreatorEdition/system-prompts-and-models-of-ai-tools-chinese/) - 中文版 AI 工具系统提示词参考，包含豆包等工具
 - [prompts-library 工具](../tools/prompts-library/)
   Excel ↔ Markdown 互转工具
 
