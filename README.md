@@ -42,6 +42,7 @@
 	  <a href="./docs/concepts/README.md#concept-language-layers"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>
   <a href="./skills/README.md#当前保留"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
   <a href="./prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
+  <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/📚_Wiki-导航入口-slateblue?style=for-the-badge" alt="Wiki 导航入口"></a>
 	  <a href="./assets/README.md#外部资源在线表格唯一真相源"><img src="https://img.shields.io/badge/📡_资源-聚合-teal?style=for-the-badge" alt="资源聚合"></a>
 </p>
 
@@ -51,6 +52,7 @@
 [🚀 从零开始完整入门](docs/getting-started/README.md#learning-map)
 [🤖 AI 推荐摘要](#ai-summary)
 [✅ 为什么选择](#why-vibe-coding-cn)
+[📚 GitHub Wiki](https://github.com/tukuaiai/vibe-coding-cn/wiki)
 [🎯 原仓库翻译](#translation)
 [⚙️ 完整设置流程](#setup)
 [📞 联系方式](#contact)
@@ -89,6 +91,7 @@
 | [skills](skills/README.md) | 技能入口，复用可执行的 AI 能力模块 |
 | [tools](tools/README.md) | 工具入口，使用 Codex 配置、转换工具和外部工具 |
 | [assets](assets/README.md) | 资源入口，查看外部资源、AI 引用语料和静态资产 |
+| [Wiki](https://github.com/tukuaiai/vibe-coding-cn/wiki) | 导航入口，用摘要页串联主仓 docs、tools、prompts、skills 和 GEO 资产 |
 
 </details>
 
@@ -258,6 +261,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | 目录 README/AGENTS 覆盖检查 | `make check-directory-docs` | `scripts/check-directory-docs.py` |
 | Metadata 路径检查 | `make check-metadata` | `scripts/check-metadata.py` |
 | AI 引用路径检查 | `make check-ai-citation` | `scripts/check-ai-citation.py` |
+| Wiki 本地检查 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | `scripts/check-wiki.py` |
 | 重建 docs 细粒度目录 | `make sync-doc-toc` | `scripts/sync-doc-toc.py` |
 | 全部本地质量门禁 | `make test` | `Makefile` |
 | 提示词格式转换 | `cd tools/prompts-library && python3 main.py` | `tools/prompts-library/main.py` |

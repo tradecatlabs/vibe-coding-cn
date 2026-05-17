@@ -15,3 +15,4 @@
 - 不要让 `docs/` 反向依赖 `.github/wiki/`。
 - Wiki 若继续使用，按独立仓库自行提交和发布。
 - Wiki 中沉淀出的稳定内容，应优先放入 `docs/` 的对应线性总文档。
+- 修改 Wiki 后，在主仓运行 `make check-wiki WIKI_DIR=/path/to/vibe-coding-cn.wiki` 做页面覆盖、内链、旧口径和 Markdown 检查。
