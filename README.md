@@ -291,7 +291,8 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 **建议阅读顺序（从抽象到落地）**
 1. 🔑 元方法论：用“生成器/优化器”的递归闭环让系统自我进化
 2. 🧬 拼好码：复用成熟能力，用胶水代码连接、编排、适配业务流程
-3. 🔮 哲学方法论工具箱：把抽象方法论落到可验证、可迭代的工程动作
+3. 🐝 tmux 蜂群协作：用 tmux 让多个 AI 终端可感知、可调度、可救援
+4. 🔮 哲学方法论工具箱：把抽象方法论落到可验证、可迭代的工程动作
 
 <details>
 <summary><strong>🔑 元方法论</strong>（点击展开/收起）</summary>
@@ -329,6 +330,29 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | 🎓 交付不稳定 | ✅ 胶水代码只负责连接、编排、适配和业务规则 |
 
 👉 [深入了解拼好码](docs/concepts/README.md#concept-glue-coding)
+
+</details>
+
+<details>
+<summary><strong>🐝 tmux 蜂群协作</strong>（点击展开/收起）</summary>
+
+> 一句话：用 tmux 的 `capture-pane`、`send-keys` 和脚本化封装，让多个 AI 终端从孤立会话变成可巡检、可调度、可救援的协作系统。
+
+传统模式里，人要分别盯住多个 AI 会话；蜂群模式里，人主要定义目标、边界和验收，commander 负责分发与巡检，worker 负责执行单一任务。
+
+| 能力 | 当前入口 | 用途 |
+|:---|:---|:---|
+| 感知 | `auto-tmux.sh capture` / `scan` | 读取单个或多个 pane 输出 |
+| 控制 | `auto-tmux.sh send` | 向明确 target 发送任务或按键 |
+| 救援 | `auto-tmux.sh rescue` | 对等待确认、卡住任务做最小干预 |
+| 记录 | `auto-tmux.sh record` | 为长任务保留审计日志 |
+| 调度 | `auto-tmux.sh hub` | 创建 commander + worker 工作台 |
+
+**使用边界**：这是实验性方法，不是无人值守生产系统。敏感凭证、生产数据库、危险命令和不可逆操作必须人工确认。
+
+👉 [研究判断](docs/research/README.md#research-tmux-ai-swarm)
+👉 [完整技术文档](skills/auto-tmux/references/ai-swarm-collaboration.md)
+👉 [可执行技能入口](skills/auto-tmux/SKILL.md)
 
 </details>
 

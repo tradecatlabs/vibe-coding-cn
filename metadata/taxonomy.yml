@@ -138,6 +138,9 @@ documents:
     - path: docs/research/README.md#research-harness-engineering
       title: Harness 工程解析
       role: 工程控制、评估器、反馈闭环与 AI 生成系统可靠性
+    - path: docs/research/README.md#research-tmux-ai-swarm
+      title: tmux 蜂群协作
+      role: 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式
   workflow:
     - path: docs/workflow/README.md#workflow-development-process
       title: 开发流程

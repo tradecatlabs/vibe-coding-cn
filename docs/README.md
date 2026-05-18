@@ -63,6 +63,7 @@
 - [README](./research/README.md) - 研究笔记索引。
 - [AGENTS](./research/AGENTS.md) - 研究笔记目录操作规则。
 - [Harness 工程解析](research/README.md#research-harness-engineering) - Harness Engineering 的工程控制、评估器与反馈闭环解析。
+- [tmux 蜂群协作](research/README.md#research-tmux-ai-swarm) - 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式。
 
 ### workflow
 

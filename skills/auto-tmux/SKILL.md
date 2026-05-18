@@ -183,6 +183,7 @@ skills/auto-tmux/scripts/auto-tmux.sh wait -t <session>:<window>.<pane> --patter
 - `references/getting_started.md`: 术语、oh-my-tmux 最小接入步骤
 - `references/api.md`: tmux/oh-my-tmux 常用命令、选项与 gpakosz 特色键位
 - `references/automation.md`: `scripts/auto-tmux.sh` 子命令、安全模型与 AI 蜂群协作流程
+- `references/ai-swarm-collaboration.md`: tmux 蜂群协作历史文档、架构模式、协议、案例和风险限制
 - `references/examples.md`: 蜂群协议脚本与长示例
 - `references/troubleshooting.md`: 典型故障到修复路径
 - `scripts/auto-tmux.sh`: 安全封装的 tmux 自动化脚本入口

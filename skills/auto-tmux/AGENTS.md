@@ -20,6 +20,7 @@ skills/auto-tmux/
     ├── getting_started.md
     ├── api.md
     ├── automation.md
+    ├── ai-swarm-collaboration.md
     ├── examples.md
     └── troubleshooting.md
 ```
