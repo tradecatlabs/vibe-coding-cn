@@ -18,6 +18,7 @@ Usage:
   auto-tmux.sh inspect -t TARGET [-n LINES] [--no-redact]
   auto-tmux.sh capture -t TARGET [-n LINES] [--save FILE] [--no-redact]
   auto-tmux.sh send -t TARGET (--text TEXT | --key KEY) [--enter] [--clear] [--force] [--dry-run]
+  auto-tmux.sh paste -t TARGET --file FILE [--enter] [--clear] [--force] [--dry-run]
   auto-tmux.sh broadcast --session NAME (--text TEXT | --key KEY) [--enter] [--clear] [--force] [--dry-run]
   auto-tmux.sh rescue -t TARGET [--pattern REGEX] [--reply TEXT] [-n LINES] [--force] [--dry-run]
   auto-tmux.sh scan [--session NAME] [-n LINES] [--pattern REGEX] [--rescue] [--reply TEXT] [--save-dir DIR]
@@ -36,6 +37,7 @@ Examples:
   auto-tmux.sh inspect -t <target-from-topology> -n 40
   auto-tmux.sh capture -t <target-from-topology> -n 80
   auto-tmux.sh send -t <target-from-topology> --text "make test" --enter
+  auto-tmux.sh paste -t <target-from-topology> --file /tmp/prompt.md --enter --dry-run
   auto-tmux.sh broadcast --session ai-hub --text "pwd" --enter --dry-run
   auto-tmux.sh rescue -t <target-from-topology> --pattern "(y/n)" --reply y
   auto-tmux.sh scan --session ai-hub --pattern "ERROR|Traceback"
@@ -379,6 +381,56 @@ cmd_send() {
   fi
 }
 
+cmd_paste() {
+  local target=""
+  local file=""
+  local enter="0"
+  local clear="0"
+  local force="0"
+  local dry_run="0"
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -t|--target) target="${2:-}"; shift 2 ;;
+      --file) file="${2:-}"; shift 2 ;;
+      --enter) enter="1"; shift ;;
+      --clear) clear="1"; shift ;;
+      --force) force="1"; shift ;;
+      --dry-run) dry_run="1"; shift ;;
+      -h|--help) usage; exit 0 ;;
+      *) die "unknown paste option: $1" ;;
+    esac
+  done
+
+  require_tmux
+  require_target "$target"
+  [[ -n "$file" ]] || die "paste requires --file FILE"
+  [[ -f "$file" ]] || die "paste file not found: $file"
+
+  printf -- '--- current context: %s ---\n' "$target" >&2
+  capture_print "$target" 40 0 >&2 || true
+
+  if [[ "$force" != "1" ]] && is_dangerous_text "$(cat "$file")"; then
+    die "refusing dangerous paste file without --force: $file"
+  fi
+
+  if [[ "$dry_run" == "1" ]]; then
+    printf '[dry-run] target=%s clear=%s file=%s bytes=%s enter=%s\n' \
+      "$target" "$clear" "$file" "$(wc -c < "$file" | tr -d ' ')" "$enter"
+    return 0
+  fi
+
+  cancel_copy_mode_if_needed "$target"
+  if [[ "$clear" == "1" ]]; then
+    tmux send-keys -t "$target" C-u
+  fi
+  local buffer_name="auto-tmux-paste-$$"
+  tmux load-buffer -b "$buffer_name" "$file"
+  tmux paste-buffer -t "$target" -b "$buffer_name" -d
+  if [[ "$enter" == "1" ]]; then
+    tmux send-keys -t "$target" Enter
+  fi
+}
+
 cmd_rescue() {
   local target=""
   local pattern="$DEFAULT_RESCUE_PATTERN"
@@ -619,6 +671,7 @@ main() {
     inspect) cmd_inspect "$@" ;;
     capture) cmd_capture "$@" ;;
     send) cmd_send "$@" ;;
+    paste) cmd_paste "$@" ;;
     broadcast) cmd_broadcast "$@" ;;
     rescue) cmd_rescue "$@" ;;
     scan) cmd_scan "$@" ;;

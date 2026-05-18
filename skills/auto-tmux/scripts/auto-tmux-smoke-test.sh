@@ -17,10 +17,11 @@ BRIEF_DIR="/tmp/auto-tmux-smoke-brief-$$"
 WATCH_DIR="/tmp/auto-tmux-smoke-watch-$$"
 DISPATCH_PROMPT="/tmp/auto-tmux-smoke-dispatch-$$.md"
 TASK_IMPORT_FILE="/tmp/auto-tmux-smoke-tasks-$$.txt"
+PASTE_FILE="/tmp/auto-tmux-smoke-paste-$$.txt"
 
 cleanup() {
   tmux kill-session -t "$SESSION" 2>/dev/null || true
-  rm -rf "$SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$BRIEF_DIR" "$WATCH_DIR" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE"
+  rm -rf "$SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$BRIEF_DIR" "$WATCH_DIR" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE" "$PASTE_FILE"
 }
 trap cleanup EXIT
 
@@ -46,6 +47,8 @@ worker_target="$(tmux list-panes -t "$SESSION:worker1" -F '#S:#I.#P' | head -n 1
 "$AUTO_TMUX" capture -t "$commander_target" -n 10 >/tmp/auto-tmux-smoke-capture.txt
 "$AUTO_TMUX" inspect -t "$commander_target" -n 10 >/tmp/auto-tmux-smoke-inspect.txt
 grep -q 'pane inspect' /tmp/auto-tmux-smoke-inspect.txt
+printf '%s\n' 'echo AUTO_TMUX_PASTE_OK' > "$PASTE_FILE"
+"$AUTO_TMUX" paste -t "$worker_target" --file "$PASTE_FILE" --enter --dry-run >/tmp/auto-tmux-smoke-paste-dry-run.txt
 "$AUTO_TMUX" broadcast --session "$SESSION" --text "pwd" --enter --dry-run >/tmp/auto-tmux-smoke-broadcast.txt
 "$AUTO_TMUX" send -t "$worker_target" --text "echo AUTO_TMUX_SMOKE_OK" --enter
 "$AUTO_TMUX" wait -t "$worker_target" --pattern "AUTO_TMUX_SMOKE_OK" --timeout 10 >/tmp/auto-tmux-smoke-wait.txt

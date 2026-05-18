@@ -33,6 +33,7 @@ skills/auto-tmux/scripts/auto-tmux.sh capture -t "$target" -n 80
 
 # 发送命令并回车
 skills/auto-tmux/scripts/auto-tmux.sh send -t "$target" --text "make test" --enter
+skills/auto-tmux/scripts/auto-tmux.sh paste -t "$target" --file /tmp/prompt.md --enter --dry-run
 
 # 扫描某个 session 的错误
 skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub --pattern "ERROR|Traceback"

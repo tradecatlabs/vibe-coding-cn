@@ -95,6 +95,16 @@ skills/auto-tmux/scripts/auto-tmux.sh send \
   --enter
 ```
 
+长 prompt 可以用 tmux buffer 粘贴：
+
+```bash
+skills/auto-tmux/scripts/auto-tmux.sh paste \
+  -t "$target" \
+  --file /tmp/worker-prompt.md \
+  --enter \
+  --dry-run
+```
+
 ## 注意事项
 
 - Prompt 只定义职责和边界，不替代测试、lint、diff、CI 等硬门禁。

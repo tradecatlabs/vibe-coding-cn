@@ -20,6 +20,7 @@
 | `inspect` | 输出单个 pane 元信息和最近输出 | 默认脱敏，只读 |
 | `capture` | 读取指定 pane 最近输出 | 默认脱敏，可保存到文件 |
 | `send` | 向指定 pane 发送文本或按键 | 先打印上下文，危险文本需 `--force` |
+| `paste` | 通过 tmux buffer 粘贴文件内容 | 适合长 prompt，多行内容先 `--dry-run` |
 | `broadcast` | 向指定 session 全部 pane 发送文本或按键 | 必须显式 session，支持 `--dry-run` |
 | `rescue` | pattern 命中后发送确认 | 不命中不发送 |
 | `scan` | 批量巡检 pane 输出 | 可按 session 限定范围 |
@@ -114,6 +115,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target "$target" --ta
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
 skills/auto-tmux/scripts/auto-tmux.sh inspect -t "$target" -n 40
 skills/auto-tmux/scripts/auto-tmux.sh send -t "$target" --text "make test" --enter
+skills/auto-tmux/scripts/auto-tmux.sh paste -t "$target" --file /tmp/prompt.md --enter --dry-run
 ```
 
 如果要清空当前输入行后发送：

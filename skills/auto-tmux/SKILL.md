@@ -76,6 +76,7 @@ tmux capture-pane -t <session>:<window>.<pane> -p -S -120
 **向指定 pane 发送命令或确认键**
 ```bash
 skills/auto-tmux/scripts/auto-tmux.sh send -t <session>:<window>.<pane> --text "make test" --enter
+skills/auto-tmux/scripts/auto-tmux.sh paste -t <session>:<window>.<pane> --file /tmp/prompt.md --enter --dry-run
 skills/auto-tmux/scripts/auto-tmux.sh rescue -t <session>:<window>.<pane> --pattern "(y/n)" --reply y
 ```
 
