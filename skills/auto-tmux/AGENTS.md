@@ -15,6 +15,7 @@ skills/auto-tmux/
 │   ├── auto-tmux.sh
 │   ├── swarm-state.sh
 │   ├── swarm-brief.sh
+│   ├── swarm-watch.sh
 │   ├── render-swarm-prompt.sh
 │   ├── swarm-dispatch.sh
 │   ├── auto-tmux-smoke-test.sh
@@ -40,6 +41,7 @@ skills/auto-tmux/
 - `scripts/auto-tmux.sh` 是技能执行层，封装 topology/capture/send/scan/rescue/record/snapshot/hub/wait。
 - `scripts/swarm-state.sh` 是蜂群协作状态层，管理任务、锁、状态日志和结果报告。
 - `scripts/swarm-brief.sh` 是只读交接层，汇总 doctor/topology/scan/report 形成上下文快照。
+- `scripts/swarm-watch.sh` 是有限轮次巡检层，按间隔采集 pane 输出与 swarm report。
 - `scripts/render-swarm-prompt.sh` 是提示词渲染层，生成 commander/worker/reviewer 协议文本。
 - `scripts/swarm-dispatch.sh` 是提示词下发层，默认写文件，显式 `--send` 后才发送到 pane。
 - `scripts/validate-auto-tmux.sh` 是技能专属质量门禁，覆盖脚本、文档索引和 smoke test。
@@ -51,4 +53,4 @@ skills/auto-tmux/
 - 上游来源：`tools/external/.tmux` 与 `tools/external/tmux`。
 - 下游使用：`SKILL.md` 和 `references/` 中的命令示例。
 - 验证入口：`skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict`。
-- 脚本验证：`skills/auto-tmux/scripts/validate-auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh`、`bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh`、`bash -n skills/auto-tmux/scripts/swarm-dispatch.sh`、`skills/auto-tmux/scripts/auto-tmux-smoke-test.sh`。
+- 脚本验证：`skills/auto-tmux/scripts/validate-auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh`、`bash -n skills/auto-tmux/scripts/swarm-watch.sh`、`bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh`、`bash -n skills/auto-tmux/scripts/swarm-dispatch.sh`、`skills/auto-tmux/scripts/auto-tmux-smoke-test.sh`。

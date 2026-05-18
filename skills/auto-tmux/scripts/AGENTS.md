@@ -11,6 +11,7 @@ scripts/
 ├── auto-tmux.sh    # 统一 tmux 自动化命令入口
 ├── swarm-state.sh  # 蜂群状态、任务、锁和报告管理
 ├── swarm-brief.sh  # 只读生成蜂群交接报告
+├── swarm-watch.sh  # 有限轮次只读巡检和状态采样
 ├── render-swarm-prompt.sh # commander/worker/reviewer 提示词渲染
 ├── swarm-dispatch.sh # 渲染并可选下发蜂群提示词
 ├── auto-tmux-smoke-test.sh # 临时 tmux 会话端到端自测
@@ -27,6 +28,7 @@ scripts/
 - Prompt 渲染脚本只输出文本，不直接控制 tmux。
 - Prompt 下发脚本默认只写文件；真实发送必须显式 `--send`，批量使用前先 `--dry-run`。
 - 交接报告脚本只读调用 doctor/topology/scan/report，不直接发送按键。
+- 巡检脚本必须是有限轮次，不允许默认无限循环。
 - 状态脚本只能写入显式状态目录，不保存密钥、Token、密码或私密项目内容。
 - 自测脚本必须创建独立临时 tmux session，并在退出时清理。
 - 专属校验脚本必须覆盖脚本权限、语法、help 输出、关键索引、strict 校验和 smoke test。

@@ -27,6 +27,7 @@
 | `hub` | 初始化 AI 多终端工作台 | 已存在 session 不覆盖 |
 | `wait` | 等待 pane 输出出现某个 pattern | 超时失败 |
 | `swarm-brief.sh` | 生成只读交接报告 | 不发送按键，只汇总证据 |
+| `swarm-watch.sh` | 有限轮次巡检 pane 输出和状态 | 不默认无限循环 |
 | `swarm-dispatch.sh` | 渲染并可选下发提示词 | 默认只写文件，发送需 `--send` |
 | `validate-auto-tmux.sh` | 执行技能专属质量门禁 | 覆盖脚本、文档索引、strict 和 smoke |
 
@@ -84,6 +85,12 @@ skills/auto-tmux/scripts/auto-tmux.sh snapshot --session ai-hub --dir /tmp/auto-
 
 ```bash
 skills/auto-tmux/scripts/swarm-brief.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/auto-tmux-brief -n 80
+```
+
+采集连续巡检证据：
+
+```bash
+skills/auto-tmux/scripts/swarm-watch.sh --session ai-hub --swarm-dir /tmp/ai_swarm --iterations 3 --interval 10 -n 80
 ```
 
 执行 auto-tmux 专属质量门禁：
@@ -212,6 +219,7 @@ skills/auto-tmux/scripts/swarm-state.sh report
 bash -n skills/auto-tmux/scripts/auto-tmux.sh
 bash -n skills/auto-tmux/scripts/swarm-state.sh
 bash -n skills/auto-tmux/scripts/swarm-brief.sh
+bash -n skills/auto-tmux/scripts/swarm-watch.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
 bash -n skills/auto-tmux/scripts/swarm-dispatch.sh
 bash -n skills/auto-tmux/scripts/validate-auto-tmux.sh

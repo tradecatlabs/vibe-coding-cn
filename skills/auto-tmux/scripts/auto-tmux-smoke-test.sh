@@ -7,17 +7,19 @@ AUTO_TMUX="$SCRIPT_DIR/auto-tmux.sh"
 SWARM_STATE="$SCRIPT_DIR/swarm-state.sh"
 RENDER_PROMPT="$SCRIPT_DIR/render-swarm-prompt.sh"
 SWARM_BRIEF="$SCRIPT_DIR/swarm-brief.sh"
+SWARM_WATCH="$SCRIPT_DIR/swarm-watch.sh"
 SWARM_DISPATCH="$SCRIPT_DIR/swarm-dispatch.sh"
 SESSION="auto-tmux-smoke-$$"
 SWARM_DIR="/tmp/auto-tmux-smoke-swarm-$$"
 SNAPSHOT_DIR="/tmp/auto-tmux-smoke-snapshot-$$"
 RECORD_DIR="/tmp/auto-tmux-smoke-record-$$"
 BRIEF_DIR="/tmp/auto-tmux-smoke-brief-$$"
+WATCH_DIR="/tmp/auto-tmux-smoke-watch-$$"
 DISPATCH_PROMPT="/tmp/auto-tmux-smoke-dispatch-$$.md"
 
 cleanup() {
   tmux kill-session -t "$SESSION" 2>/dev/null || true
-  rm -rf "$SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$BRIEF_DIR" "$DISPATCH_PROMPT"
+  rm -rf "$SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$BRIEF_DIR" "$WATCH_DIR" "$DISPATCH_PROMPT"
 }
 trap cleanup EXIT
 
@@ -30,6 +32,7 @@ bash -n "$AUTO_TMUX"
 bash -n "$SWARM_STATE"
 bash -n "$RENDER_PROMPT"
 bash -n "$SWARM_BRIEF"
+bash -n "$SWARM_WATCH"
 bash -n "$SWARM_DISPATCH"
 
 "$AUTO_TMUX" hub --session "$SESSION" --workers 1 --cmd bash
@@ -67,6 +70,8 @@ grep -q 'BLOCKED' /tmp/auto-tmux-smoke-report.txt
 grep -q 'FAIL' /tmp/auto-tmux-smoke-report.txt
 "$SWARM_BRIEF" --session "$SESSION" --swarm-dir "$SWARM_DIR" --out "$BRIEF_DIR" -n 10 >/tmp/auto-tmux-smoke-brief.txt
 grep -q 'auto-tmux Swarm Brief' "$BRIEF_DIR/brief.md"
+"$SWARM_WATCH" --session "$SESSION" --swarm-dir "$SWARM_DIR" --out "$WATCH_DIR" --iterations 1 --interval 0 -n 10 >/tmp/auto-tmux-smoke-watch.txt
+grep -q 'auto-tmux Swarm Watch' "$WATCH_DIR/index.md"
 "$RENDER_PROMPT" commander --session "$SESSION" --swarm-dir "$SWARM_DIR" --task "smoke" >/tmp/auto-tmux-smoke-commander-prompt.md
 "$RENDER_PROMPT" worker --session "$SESSION" --target "$worker_target" --swarm-dir "$SWARM_DIR" --task "smoke" >/tmp/auto-tmux-smoke-worker-prompt.md
 "$SWARM_DISPATCH" --role worker --target "$worker_target" --session "$SESSION" --swarm-dir "$SWARM_DIR" --task "smoke" --out "$DISPATCH_PROMPT" >/tmp/auto-tmux-smoke-dispatch-render.txt
