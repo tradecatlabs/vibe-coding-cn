@@ -56,6 +56,8 @@ skills/auto-tmux/scripts/swarm-state.sh task-next --owner "$target" --dir /tmp/a
 skills/auto-tmux/scripts/swarm-state.sh lock-prune --older-than 3600 --dry-run --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh task-block --id task-001 --owner "$target" --reason "等待输入" --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh task-fail --id task-001 --owner "$target" --reason "测试失败" --dir /tmp/ai_swarm
+skills/auto-tmux/scripts/swarm-state.sh task-list --status FAIL --dir /tmp/ai_swarm
+skills/auto-tmux/scripts/swarm-state.sh task-reopen --id task-001 --owner "$target" --reason "重新执行" --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh validate --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh report --dir /tmp/ai_swarm
 

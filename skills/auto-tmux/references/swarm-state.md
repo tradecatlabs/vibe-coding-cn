@@ -127,7 +127,20 @@ skills/auto-tmux/scripts/swarm-state.sh task-fail \
 
 ```bash
 skills/auto-tmux/scripts/swarm-state.sh task-list
+skills/auto-tmux/scripts/swarm-state.sh task-list --status FAIL
+skills/auto-tmux/scripts/swarm-state.sh task-list --owner "ai-hub:2.1"
 ```
+
+重开失败或阻塞任务：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh task-reopen \
+  --id task-001 \
+  --owner "ai-hub:2.1" \
+  --reason "修复依赖后重新执行"
+```
+
+`task-reopen` 会把任务状态改回 `TODO`，同时在状态日志中记录 `REOPEN`。
 
 校验状态一致性：
 

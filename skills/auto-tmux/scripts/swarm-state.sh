@@ -19,12 +19,13 @@ Usage:
   swarm-state.sh status [--dir DIR]
   swarm-state.sh task-add --text TEXT [--id ID] [--dir DIR]
   swarm-state.sh task-import --file FILE [--prefix PREFIX] [--dir DIR]
-  swarm-state.sh task-list [--dir DIR]
+  swarm-state.sh task-list [--status STATUS] [--owner TARGET] [--dir DIR]
   swarm-state.sh task-next --owner TARGET [--dir DIR]
   swarm-state.sh task-claim --id ID --owner TARGET [--dir DIR]
   swarm-state.sh task-done --id ID --owner TARGET [--result TEXT] [--dir DIR]
   swarm-state.sh task-block --id ID --owner TARGET --reason TEXT [--dir DIR]
   swarm-state.sh task-fail --id ID --owner TARGET --reason TEXT [--dir DIR]
+  swarm-state.sh task-reopen --id ID --owner TARGET --reason TEXT [--dir DIR]
   swarm-state.sh lock-acquire --name NAME --owner TARGET [--dir DIR]
   swarm-state.sh lock-release --name NAME --owner TARGET [--dir DIR] [--force]
   swarm-state.sh lock-list [--dir DIR]
@@ -181,14 +182,27 @@ cmd_task_import() {
 }
 
 cmd_task_list() {
+  local status_filter="" owner_filter=""
   while [[ $# -gt 0 ]]; do
     case "$1" in
       --dir) set_dir "${2:-}"; shift 2 ;;
+      --status) status_filter="${2:-}"; shift 2 ;;
+      --owner) owner_filter="${2:-}"; shift 2 ;;
       *) die "unknown task-list option: $1" ;;
     esac
   done
   ensure_init
-  column -t -s $'\t' "$TASKS_TSV" 2>/dev/null || cat "$TASKS_TSV"
+  awk -F '\t' -v OFS='\t' -v status="$status_filter" -v owner="$owner_filter" '
+    NR == 1 {print; next}
+    status != "" && $2 != status {next}
+    owner != "" && $3 != owner {next}
+    {print}
+  ' "$TASKS_TSV" | column -t -s $'\t' 2>/dev/null || awk -F '\t' -v OFS='\t' -v status="$status_filter" -v owner="$owner_filter" '
+    NR == 1 {print; next}
+    status != "" && $2 != status {next}
+    owner != "" && $3 != owner {next}
+    {print}
+  ' "$TASKS_TSV"
 }
 
 update_task() {
@@ -303,6 +317,27 @@ cmd_task_terminal() {
   update_task "$id" "$status" "$owner" "$reason"
   printf '%s\n' "$reason" > "$RESULTS_DIR/$id.txt"
   cmd_log --target "$owner" --status "$status" --message "$id $reason"
+}
+
+cmd_task_reopen() {
+  local id="" owner="" reason=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --dir) set_dir "${2:-}"; shift 2 ;;
+      --id) id="${2:-}"; shift 2 ;;
+      --owner) owner="${2:-}"; shift 2 ;;
+      --reason) reason="${2:-}"; shift 2 ;;
+      *) die "unknown task-reopen option: $1" ;;
+    esac
+  done
+  [[ -n "$id" ]] || die "missing --id"
+  [[ -n "$owner" ]] || die "missing --owner"
+  [[ -n "$reason" ]] || die "missing --reason"
+  ensure_init
+  reason="$(printf '%s' "$reason" | sanitize)"
+  update_task "$id" "TODO" "-" "reopened: $reason"
+  cmd_log --target "$owner" --status "REOPEN" --message "$id $reason"
+  printf 'task reopened: %s\n' "$id"
 }
 
 lock_path() {
@@ -519,6 +554,7 @@ main() {
     task-done) cmd_task_done "$@" ;;
     task-block) cmd_task_terminal "BLOCKED" "$@" ;;
     task-fail) cmd_task_terminal "FAIL" "$@" ;;
+    task-reopen) cmd_task_reopen "$@" ;;
     lock-acquire) cmd_lock_acquire "$@" ;;
     lock-release) cmd_lock_release "$@" ;;
     lock-list) cmd_lock_list "$@" ;;

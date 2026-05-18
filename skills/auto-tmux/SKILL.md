@@ -153,6 +153,8 @@ skills/auto-tmux/scripts/swarm-state.sh lock-acquire --name README.md --owner <s
 skills/auto-tmux/scripts/swarm-state.sh lock-prune --older-than 3600 --dry-run
 skills/auto-tmux/scripts/swarm-state.sh task-block --id task-001 --owner <session>:<window>.<pane> --reason "等待输入"
 skills/auto-tmux/scripts/swarm-state.sh task-fail --id task-001 --owner <session>:<window>.<pane> --reason "测试失败"
+skills/auto-tmux/scripts/swarm-state.sh task-list --status FAIL --dir /tmp/ai_swarm
+skills/auto-tmux/scripts/swarm-state.sh task-reopen --id task-001 --owner <session>:<window>.<pane> --reason "重新执行"
 skills/auto-tmux/scripts/swarm-state.sh validate --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh report --dir /tmp/ai_swarm
 ```

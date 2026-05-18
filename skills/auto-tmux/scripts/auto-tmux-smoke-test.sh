@@ -70,12 +70,17 @@ grep -q 'imported-001' /tmp/auto-tmux-smoke-task-next.txt
 "$SWARM_STATE" task-block --dir "$SWARM_DIR" --id imported-001 --owner "$worker_target" --reason "waiting for input"
 "$SWARM_STATE" task-add --dir "$SWARM_DIR" --id smoke-fail --text "fail task" >/tmp/auto-tmux-smoke-task-fail-add.txt
 "$SWARM_STATE" task-fail --dir "$SWARM_DIR" --id smoke-fail --owner "$worker_target" --reason "expected failure"
+"$SWARM_STATE" task-list --dir "$SWARM_DIR" --status FAIL >/tmp/auto-tmux-smoke-task-list-fail.txt
+grep -q 'smoke-fail' /tmp/auto-tmux-smoke-task-list-fail.txt
 "$SWARM_STATE" report --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-report.txt
 "$SWARM_STATE" validate --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-state-validate.txt
 grep -q 'smoke-task' /tmp/auto-tmux-smoke-report.txt
 grep -q 'imported-001' /tmp/auto-tmux-smoke-report.txt
 grep -q 'BLOCKED' /tmp/auto-tmux-smoke-report.txt
 grep -q 'FAIL' /tmp/auto-tmux-smoke-report.txt
+"$SWARM_STATE" task-reopen --dir "$SWARM_DIR" --id smoke-fail --owner "$worker_target" --reason "retry after failure"
+"$SWARM_STATE" task-list --dir "$SWARM_DIR" --status TODO >/tmp/auto-tmux-smoke-task-list-todo.txt
+grep -q 'smoke-fail' /tmp/auto-tmux-smoke-task-list-todo.txt
 "$SWARM_BRIEF" --session "$SESSION" --swarm-dir "$SWARM_DIR" --out "$BRIEF_DIR" -n 10 >/tmp/auto-tmux-smoke-brief.txt
 grep -q 'auto-tmux Swarm Brief' "$BRIEF_DIR/brief.md"
 "$SWARM_WATCH" --session "$SESSION" --swarm-dir "$SWARM_DIR" --out "$WATCH_DIR" --iterations 1 --interval 0 -n 10 >/tmp/auto-tmux-smoke-watch.txt

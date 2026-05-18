@@ -199,6 +199,8 @@ skills/auto-tmux/scripts/swarm-state.sh task-next --owner "ai-hub:2.1"
 ```bash
 skills/auto-tmux/scripts/swarm-state.sh task-block --id task-001 --owner "ai-hub:2.1" --reason "等待用户确认"
 skills/auto-tmux/scripts/swarm-state.sh task-fail --id task-001 --owner "ai-hub:2.1" --reason "make test failed"
+skills/auto-tmux/scripts/swarm-state.sh task-list --status FAIL
+skills/auto-tmux/scripts/swarm-state.sh task-reopen --id task-001 --owner "ai-hub:2.1" --reason "修复后重试"
 ```
 
 获取文件锁：
