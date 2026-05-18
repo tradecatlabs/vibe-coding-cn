@@ -30,7 +30,7 @@
 | 22 | `cc69865` | worker 分配 | `swarm-assign.sh` |
 | 23 | `004d942` | replay 审计 | `record-summary.sh` |
 | 24 | `16afbee` | 健康检查 | `swarm-health.sh` |
-| 25 | `本轮` | shell completion | `completion.bash` |
+| 25 | `38ccefe` | shell completion | `completion.bash` |
 
 ## 后续候选方向
 
