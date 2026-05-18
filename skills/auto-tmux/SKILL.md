@@ -151,6 +151,8 @@ skills/auto-tmux/scripts/auto-tmux.sh wait -t <session>:<window>.<pane> --patter
 skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
 skills/auto-tmux/scripts/swarm-state.sh task-import --file /tmp/tasks.txt --prefix batch --dir /tmp/ai_swarm
+skills/auto-tmux/scripts/swarm-state.sh task-depend --id task-002 --blocked-by task-001 --dir /tmp/ai_swarm
+skills/auto-tmux/scripts/swarm-state.sh task-ready --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh task-next --owner <session>:<window>.<pane>
 skills/auto-tmux/scripts/swarm-state.sh lock-acquire --name README.md --owner <session>:<window>.<pane>
 skills/auto-tmux/scripts/swarm-state.sh lock-prune --older-than 3600 --dry-run

@@ -84,6 +84,15 @@ skills/auto-tmux/scripts/swarm-state.sh task-import --file /tmp/tasks.txt --pref
 
 `task-import` 会跳过空行和 `#` 注释行，自动去掉行首 `- ` 或 `* `，并生成 `batch-001` 这类任务 ID。
 
+声明任务依赖：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh task-depend --id batch-002 --blocked-by batch-001
+skills/auto-tmux/scripts/swarm-state.sh task-ready
+```
+
+`task-ready` 只列出状态为 `TODO` 且所有依赖都已经 `DONE` 的任务，适合 commander 给空闲 worker 分配下一步。
+
 认领任务：
 
 ```bash

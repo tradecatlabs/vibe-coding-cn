@@ -5,6 +5,7 @@ set -euo pipefail
 SWARM_DIR="${AUTO_TMUX_SWARM_DIR:-/tmp/ai_swarm}"
 STATUS_LOG="$SWARM_DIR/status.log"
 TASKS_TSV="$SWARM_DIR/tasks.tsv"
+DEPS_TSV="$SWARM_DIR/deps.tsv"
 LOCKS_DIR="$SWARM_DIR/locks"
 RESULTS_DIR="$SWARM_DIR/results"
 STATE_LOCK_DIR="$SWARM_DIR/.state.lock.d"
@@ -20,6 +21,8 @@ Usage:
   swarm-state.sh task-add --text TEXT [--id ID] [--dir DIR]
   swarm-state.sh task-import --file FILE [--prefix PREFIX] [--dir DIR]
   swarm-state.sh task-list [--status STATUS] [--owner TARGET] [--dir DIR]
+  swarm-state.sh task-depend --id ID --blocked-by ID [--dir DIR]
+  swarm-state.sh task-ready [--dir DIR]
   swarm-state.sh task-next --owner TARGET [--dir DIR]
   swarm-state.sh task-claim --id ID --owner TARGET [--dir DIR]
   swarm-state.sh task-done --id ID --owner TARGET [--result TEXT] [--dir DIR]
@@ -53,6 +56,7 @@ set_dir() {
   SWARM_DIR="$dir"
   STATUS_LOG="$SWARM_DIR/status.log"
   TASKS_TSV="$SWARM_DIR/tasks.tsv"
+  DEPS_TSV="$SWARM_DIR/deps.tsv"
   LOCKS_DIR="$SWARM_DIR/locks"
   RESULTS_DIR="$SWARM_DIR/results"
   STATE_LOCK_DIR="$SWARM_DIR/.state.lock.d"
@@ -60,9 +64,12 @@ set_dir() {
 
 ensure_init() {
   mkdir -p "$LOCKS_DIR" "$RESULTS_DIR"
-  touch "$STATUS_LOG" "$TASKS_TSV"
+  touch "$STATUS_LOG" "$TASKS_TSV" "$DEPS_TSV"
   if [[ ! -s "$TASKS_TSV" ]]; then
     printf 'id\tstatus\towner\ttext\tresult\n' > "$TASKS_TSV"
+  fi
+  if [[ ! -s "$DEPS_TSV" ]]; then
+    printf 'task_id\tblocked_by\n' > "$DEPS_TSV"
   fi
 }
 
@@ -206,6 +213,11 @@ cmd_task_list() {
   ' "$TASKS_TSV"
 }
 
+task_exists() {
+  local id="$1"
+  awk -F '\t' -v id="$id" 'NR > 1 && $1 == id {found = 1} END {exit found ? 0 : 1}' "$TASKS_TSV"
+}
+
 update_task() {
   local id="$1" status="$2" owner="$3" result="$4"
   local tmp
@@ -224,6 +236,61 @@ update_task() {
     exit "$code"
   }
   mv "$tmp" "$TASKS_TSV"
+}
+
+cmd_task_depend() {
+  local id="" blocked_by=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --dir) set_dir "${2:-}"; shift 2 ;;
+      --id) id="${2:-}"; shift 2 ;;
+      --blocked-by) blocked_by="${2:-}"; shift 2 ;;
+      *) die "unknown task-depend option: $1" ;;
+    esac
+  done
+  [[ -n "$id" ]] || die "missing --id"
+  [[ -n "$blocked_by" ]] || die "missing --blocked-by"
+  [[ "$id" != "$blocked_by" ]] || die "task cannot depend on itself: $id"
+  ensure_init
+  task_exists "$id" || die "task not found: $id"
+  task_exists "$blocked_by" || die "blocked-by task not found: $blocked_by"
+  if awk -F '\t' -v id="$id" -v blocked_by="$blocked_by" 'NR > 1 && $1 == id && $2 == blocked_by {found = 1} END {exit found ? 0 : 1}' "$DEPS_TSV"; then
+    printf 'dependency already exists: %s blocked_by %s\n' "$id" "$blocked_by"
+    return 0
+  fi
+  printf '%s\t%s\n' "$id" "$blocked_by" >> "$DEPS_TSV"
+  printf 'dependency added: %s blocked_by %s\n' "$id" "$blocked_by"
+}
+
+cmd_task_ready() {
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --dir) set_dir "${2:-}"; shift 2 ;;
+      *) die "unknown task-ready option: $1" ;;
+    esac
+  done
+  ensure_init
+  awk -F '\t' -v OFS='\t' '
+    FILENAME == ARGV[1] {
+      if (FNR == 1) {header = $0; next}
+      status[$1] = $2
+      row[$1] = $0
+      order[++n] = $1
+      next
+    }
+    FILENAME == ARGV[2] {
+      if (FNR == 1) next
+      if (status[$2] != "DONE") blocked[$1] = 1
+      next
+    }
+    END {
+      print header
+      for (i = 1; i <= n; i++) {
+        id = order[i]
+        if (status[id] == "TODO" && !blocked[id]) print row[id]
+      }
+    }
+  ' "$TASKS_TSV" "$DEPS_TSV" | column -t -s $'\t' 2>/dev/null || true
 }
 
 cmd_task_claim() {
@@ -464,6 +531,8 @@ cmd_report() {
   cmd_task_list
   printf '\n## locks\n\n'
   cmd_lock_list || true
+  printf '\n## dependencies\n\n'
+  column -t -s $'\t' "$DEPS_TSV" 2>/dev/null || cat "$DEPS_TSV"
   printf '\n## recent status\n\n'
   cmd_status -n 20
 }
@@ -500,12 +569,20 @@ cmd_validate() {
 
   local failures=0
   local expected_header=$'id\tstatus\towner\ttext\tresult'
+  local expected_deps_header=$'task_id\tblocked_by'
   local actual_header
   actual_header="$(head -n 1 "$TASKS_TSV")"
   if [[ "$actual_header" == "$expected_header" ]]; then
     printf '[OK] tasks header\n'
   else
     printf '[FAIL] invalid tasks header: %s\n' "$actual_header" >&2
+    failures=$((failures + 1))
+  fi
+  actual_header="$(head -n 1 "$DEPS_TSV")"
+  if [[ "$actual_header" == "$expected_deps_header" ]]; then
+    printf '[OK] deps header\n'
+  else
+    printf '[FAIL] invalid deps header: %s\n' "$actual_header" >&2
     failures=$((failures + 1))
   fi
 
@@ -539,6 +616,19 @@ cmd_validate() {
     esac
   done < <(tail -n +2 "$TASKS_TSV")
 
+  local task_id blocked_by
+  while IFS=$'\t' read -r task_id blocked_by; do
+    [[ -n "$task_id" ]] || continue
+    if ! task_exists "$task_id"; then
+      printf '[FAIL] dependency task missing: %s\n' "$task_id" >&2
+      failures=$((failures + 1))
+    fi
+    if ! task_exists "$blocked_by"; then
+      printf '[FAIL] dependency blocked_by missing: %s\n' "$blocked_by" >&2
+      failures=$((failures + 1))
+    fi
+  done < <(tail -n +2 "$DEPS_TSV")
+
   local path name
   while IFS= read -r path; do
     [[ -n "$path" ]] || continue
@@ -571,6 +661,8 @@ main() {
     task-add) cmd_task_add "$@" ;;
     task-import) cmd_task_import "$@" ;;
     task-list) cmd_task_list "$@" ;;
+    task-depend) cmd_task_depend "$@" ;;
+    task-ready) cmd_task_ready "$@" ;;
     task-next) cmd_task_next "$@" ;;
     task-claim) cmd_task_claim "$@" ;;
     task-done) cmd_task_done "$@" ;;

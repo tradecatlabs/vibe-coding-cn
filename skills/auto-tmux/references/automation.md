@@ -196,6 +196,8 @@ skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
 ```bash
 skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
 skills/auto-tmux/scripts/swarm-state.sh task-import --file /tmp/tasks.txt --prefix batch
+skills/auto-tmux/scripts/swarm-state.sh task-depend --id batch-002 --blocked-by batch-001
+skills/auto-tmux/scripts/swarm-state.sh task-ready
 skills/auto-tmux/scripts/swarm-state.sh task-claim --id task-001 --owner "ai-hub:2.1"
 skills/auto-tmux/scripts/swarm-state.sh task-next --owner "ai-hub:2.1"
 ```

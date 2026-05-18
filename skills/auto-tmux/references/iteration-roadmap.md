@@ -22,6 +22,7 @@
 | 14 | `b8e77f6` | pane 取证 | `auto-tmux.sh inspect` |
 | 15 | `bc37fc1` | 长文本粘贴 | `auto-tmux.sh paste --file` |
 | 16 | `075a803` | session 清理 | `auto-tmux.sh cleanup --session` |
+| 17 | `本轮` | 任务依赖 | `task-depend`、`task-ready` |
 
 ## 后续候选方向
 

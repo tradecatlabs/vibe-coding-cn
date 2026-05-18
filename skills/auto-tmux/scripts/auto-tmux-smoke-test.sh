@@ -63,6 +63,14 @@ test -s "$SNAPSHOT_DIR/topology.txt"
 "$SWARM_STATE" task-add --dir "$SWARM_DIR" --id smoke-task --text "run smoke task" >/tmp/auto-tmux-smoke-task-add.txt
 printf '%s\n' "- import task one" "- import task two" > "$TASK_IMPORT_FILE"
 "$SWARM_STATE" task-import --dir "$SWARM_DIR" --file "$TASK_IMPORT_FILE" --prefix imported >/tmp/auto-tmux-smoke-task-import.txt
+"$SWARM_STATE" task-add --dir "$SWARM_DIR" --id dep-a --text "dependency root" >/tmp/auto-tmux-smoke-dep-a.txt
+"$SWARM_STATE" task-add --dir "$SWARM_DIR" --id dep-b --text "dependency child" >/tmp/auto-tmux-smoke-dep-b.txt
+"$SWARM_STATE" task-depend --dir "$SWARM_DIR" --id dep-b --blocked-by dep-a >/tmp/auto-tmux-smoke-depend.txt
+"$SWARM_STATE" task-ready --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-ready-before.txt
+! grep -q 'dep-b' /tmp/auto-tmux-smoke-ready-before.txt
+"$SWARM_STATE" task-done --dir "$SWARM_DIR" --id dep-a --owner "$worker_target" --result "dep ok"
+"$SWARM_STATE" task-ready --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-ready-after.txt
+grep -q 'dep-b' /tmp/auto-tmux-smoke-ready-after.txt
 "$SWARM_STATE" task-claim --dir "$SWARM_DIR" --id smoke-task --owner "$worker_target"
 "$SWARM_STATE" lock-acquire --dir "$SWARM_DIR" --name smoke-file --owner "$worker_target" >/tmp/auto-tmux-smoke-lock.txt
 "$SWARM_STATE" lock-release --dir "$SWARM_DIR" --name smoke-file --owner "$worker_target" >/tmp/auto-tmux-smoke-unlock.txt
