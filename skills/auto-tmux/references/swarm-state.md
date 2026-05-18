@@ -105,6 +105,8 @@ skills/auto-tmux/scripts/swarm-state.sh task-claim --id task-001 --owner "ai-hub
 skills/auto-tmux/scripts/swarm-state.sh task-next --owner "ai-hub:2.1"
 ```
 
+`task-next` 会跳过依赖尚未完成的 `TODO` 任务；它与 `task-ready` 使用同一套 blocked-by 判断。
+
 完成任务：
 
 ```bash

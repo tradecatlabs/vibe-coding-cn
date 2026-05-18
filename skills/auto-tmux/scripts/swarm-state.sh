@@ -324,7 +324,28 @@ cmd_task_next() {
 
   acquire_state_lock
   local id tmp
-  id="$(awk -F '\t' 'NR > 1 && $2 == "TODO" {print $1; exit}' "$TASKS_TSV")"
+  id="$(awk -F '\t' '
+    FILENAME == ARGV[1] {
+      if (FNR == 1) next
+      status[$1] = $2
+      order[++n] = $1
+      next
+    }
+    FILENAME == ARGV[2] {
+      if (FNR == 1) next
+      if (status[$2] != "DONE") blocked[$1] = 1
+      next
+    }
+    END {
+      for (i = 1; i <= n; i++) {
+        id = order[i]
+        if (status[id] == "TODO" && !blocked[id]) {
+          print id
+          exit
+        }
+      }
+    }
+  ' "$TASKS_TSV" "$DEPS_TSV")"
   if [[ -z "$id" ]]; then
     release_state_lock
     printf 'no TODO task available\n'

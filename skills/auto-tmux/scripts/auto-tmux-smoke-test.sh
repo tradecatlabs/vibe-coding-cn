@@ -14,6 +14,7 @@ SAFETY_CHECK="$SCRIPT_DIR/safety-check.sh"
 SWARM_DISPATCH="$SCRIPT_DIR/swarm-dispatch.sh"
 SESSION="auto-tmux-smoke-$$"
 SWARM_DIR="/tmp/auto-tmux-smoke-swarm-$$"
+DEP_SWARM_DIR="/tmp/auto-tmux-smoke-dep-swarm-$$"
 SNAPSHOT_DIR="/tmp/auto-tmux-smoke-snapshot-$$"
 RECORD_DIR="/tmp/auto-tmux-smoke-record-$$"
 BRIEF_DIR="/tmp/auto-tmux-smoke-brief-$$"
@@ -26,7 +27,7 @@ PASTE_FILE="/tmp/auto-tmux-smoke-paste-$$.txt"
 
 cleanup() {
   tmux kill-session -t "$SESSION" 2>/dev/null || true
-  rm -rf "$SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$BRIEF_DIR" "$WATCH_DIR" "$ARCHIVE_FILE" "$BOARD_FILE" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE" "$PASTE_FILE"
+  rm -rf "$SWARM_DIR" "$DEP_SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$BRIEF_DIR" "$WATCH_DIR" "$ARCHIVE_FILE" "$BOARD_FILE" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE" "$PASTE_FILE"
 }
 trap cleanup EXIT
 
@@ -82,6 +83,16 @@ printf '%s\n' "- import task one" "- import task two" > "$TASK_IMPORT_FILE"
 "$SWARM_STATE" task-depend --dir "$SWARM_DIR" --id dep-b --blocked-by dep-a >/tmp/auto-tmux-smoke-depend.txt
 "$SWARM_STATE" task-ready --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-ready-before.txt
 ! grep -q 'dep-b' /tmp/auto-tmux-smoke-ready-before.txt
+"$SWARM_STATE" init --dir "$DEP_SWARM_DIR" >/tmp/auto-tmux-smoke-dep-only-init.txt
+"$SWARM_STATE" task-add --dir "$DEP_SWARM_DIR" --id dep-only-a --text "dependency root" >/tmp/auto-tmux-smoke-dep-only-a.txt
+"$SWARM_STATE" task-add --dir "$DEP_SWARM_DIR" --id dep-only-b --text "dependency child" >/tmp/auto-tmux-smoke-dep-only-b.txt
+"$SWARM_STATE" task-depend --dir "$DEP_SWARM_DIR" --id dep-only-b --blocked-by dep-only-a >/tmp/auto-tmux-smoke-dep-only-link.txt
+"$SWARM_STATE" task-next --dir "$DEP_SWARM_DIR" --owner "$worker_target" >/tmp/auto-tmux-smoke-dep-only-next-a.txt
+grep -q 'dep-only-a' /tmp/auto-tmux-smoke-dep-only-next-a.txt
+! grep -q 'dep-only-b' /tmp/auto-tmux-smoke-dep-only-next-a.txt
+"$SWARM_STATE" task-done --dir "$DEP_SWARM_DIR" --id dep-only-a --owner "$worker_target" --result "dep root done"
+"$SWARM_STATE" task-next --dir "$DEP_SWARM_DIR" --owner "$worker_target" >/tmp/auto-tmux-smoke-dep-only-next-b.txt
+grep -q 'dep-only-b' /tmp/auto-tmux-smoke-dep-only-next-b.txt
 "$SWARM_STATE" task-done --dir "$SWARM_DIR" --id dep-a --owner "$worker_target" --result "dep ok"
 "$SWARM_STATE" task-ready --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-ready-after.txt
 grep -q 'dep-b' /tmp/auto-tmux-smoke-ready-after.txt

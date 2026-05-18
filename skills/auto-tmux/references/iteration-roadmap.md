@@ -25,7 +25,8 @@
 | 17 | `dc59ee2` | 任务依赖 | `task-depend`、`task-ready` |
 | 18 | `42bca78` | 结果归档 | `swarm-archive.sh` |
 | 19 | `07ac877` | 安全策略 | `safety-check.sh`、`safety-policy.md` |
-| 20 | `本轮` | 状态可视化 | `swarm-board.sh` |
+| 20 | `6d46748` | 状态可视化 | `swarm-board.sh` |
+| 21 | `本轮` | 依赖领取一致性 | `task-next` 尊重 `blocked-by` |
 
 ## 后续候选方向
 
