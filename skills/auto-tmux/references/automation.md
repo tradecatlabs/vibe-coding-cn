@@ -35,6 +35,7 @@
 | `swarm-archive.sh` | 打包 brief、snapshot 和 state | 生成可交接 `.tar.gz` |
 | `swarm-board.sh` | 渲染任务、依赖、锁和状态日志 | 只读生成 Markdown 看板 |
 | `swarm-assign.sh` | 生成 ready task 到 worker pane 的分配建议 | 只读，不 claim，不发送 |
+| `record-summary.sh` | 汇总 pane 录制日志 | 只读，输出默认脱敏 |
 | `swarm-dispatch.sh` | 渲染并可选下发提示词 | 默认只写文件，发送需 `--send` |
 | `validate-auto-tmux.sh` | 执行技能专属质量门禁 | 覆盖脚本、文档索引、strict 和 smoke |
 
@@ -174,6 +175,7 @@ skills/auto-tmux/scripts/auto-tmux.sh record start -t "$target" --dir /tmp/auto-
 ```bash
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
 skills/auto-tmux/scripts/auto-tmux.sh record stop -t "$target"
+skills/auto-tmux/scripts/record-summary.sh --dir /tmp/auto-tmux-records --out /tmp/auto-tmux-record-summary.md
 ```
 
 ## AI 蜂群协作建议
@@ -256,6 +258,7 @@ bash -n skills/auto-tmux/scripts/swarm-watch.sh
 bash -n skills/auto-tmux/scripts/swarm-archive.sh
 bash -n skills/auto-tmux/scripts/swarm-board.sh
 bash -n skills/auto-tmux/scripts/swarm-assign.sh
+bash -n skills/auto-tmux/scripts/record-summary.sh
 bash -n skills/auto-tmux/scripts/safety-check.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
 bash -n skills/auto-tmux/scripts/swarm-dispatch.sh

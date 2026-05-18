@@ -40,6 +40,7 @@ bash -n skills/auto-tmux/scripts/swarm-watch.sh
 bash -n skills/auto-tmux/scripts/swarm-archive.sh
 bash -n skills/auto-tmux/scripts/swarm-board.sh
 bash -n skills/auto-tmux/scripts/swarm-assign.sh
+bash -n skills/auto-tmux/scripts/record-summary.sh
 bash -n skills/auto-tmux/scripts/safety-check.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
 bash -n skills/auto-tmux/scripts/swarm-dispatch.sh
@@ -148,6 +149,7 @@ cp -n "$repo_root/skills/auto-tmux/assets/oh-my-tmux/.tmux.conf.local" ~/.tmux.c
 ```bash
 skills/auto-tmux/scripts/auto-tmux.sh record start -t <session>:<window>.<pane> --dir /tmp/auto-tmux-records
 skills/auto-tmux/scripts/auto-tmux.sh record stop -t <session>:<window>.<pane>
+skills/auto-tmux/scripts/record-summary.sh --dir /tmp/auto-tmux-records --out /tmp/auto-tmux-record-summary.md
 ```
 
 **等待 pane 出现完成信号**
@@ -265,6 +267,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `scripts/swarm-archive.sh`: 打包 brief、snapshot 和 swarm state 的交接归档
 - `scripts/swarm-board.sh`: 渲染任务、依赖、锁和状态日志的 Markdown 看板
 - `scripts/swarm-assign.sh`: 根据 ready tasks 和 worker pane 生成只读分配建议
+- `scripts/record-summary.sh`: 汇总 pane 录制日志并生成复盘摘要
 - `scripts/safety-check.sh`: 发送/粘贴/分发前检查危险命令、敏感信息和过大 payload
 - `scripts/render-swarm-prompt.sh`: commander/worker/reviewer 提示词渲染脚本
 - `scripts/swarm-dispatch.sh`: 渲染并可选下发 commander/worker/reviewer 提示词
@@ -288,6 +291,6 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 4. ≥3 个端到端示例，含输入/步骤/验收。
 5. 长文档放在 `references/` 并可导航；无文档堆砌。
 6. 不确定项给出验证路径；禁止虚构 tmux 行为。
-7. `bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh`、`bash -n skills/auto-tmux/scripts/swarm-watch.sh`、`bash -n skills/auto-tmux/scripts/swarm-archive.sh`、`bash -n skills/auto-tmux/scripts/swarm-board.sh`、`bash -n skills/auto-tmux/scripts/swarm-assign.sh`、`bash -n skills/auto-tmux/scripts/safety-check.sh`、`bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh`、`bash -n skills/auto-tmux/scripts/swarm-dispatch.sh` 与 `bash -n skills/auto-tmux/scripts/validate-auto-tmux.sh` 通过。
+7. `bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh`、`bash -n skills/auto-tmux/scripts/swarm-watch.sh`、`bash -n skills/auto-tmux/scripts/swarm-archive.sh`、`bash -n skills/auto-tmux/scripts/swarm-board.sh`、`bash -n skills/auto-tmux/scripts/swarm-assign.sh`、`bash -n skills/auto-tmux/scripts/record-summary.sh`、`bash -n skills/auto-tmux/scripts/safety-check.sh`、`bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh`、`bash -n skills/auto-tmux/scripts/swarm-dispatch.sh` 与 `bash -n skills/auto-tmux/scripts/validate-auto-tmux.sh` 通过。
 8. `skills/auto-tmux/scripts/auto-tmux-smoke-test.sh` 通过或在无 tmux 环境下明确跳过。
 9. 运行 `skills/auto-tmux/scripts/validate-auto-tmux.sh` 和 `skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict` 通过。

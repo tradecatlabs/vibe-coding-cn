@@ -11,6 +11,7 @@ SWARM_WATCH="$SCRIPT_DIR/swarm-watch.sh"
 SWARM_ARCHIVE="$SCRIPT_DIR/swarm-archive.sh"
 SWARM_BOARD="$SCRIPT_DIR/swarm-board.sh"
 SWARM_ASSIGN="$SCRIPT_DIR/swarm-assign.sh"
+RECORD_SUMMARY="$SCRIPT_DIR/record-summary.sh"
 SAFETY_CHECK="$SCRIPT_DIR/safety-check.sh"
 SWARM_DISPATCH="$SCRIPT_DIR/swarm-dispatch.sh"
 SESSION="auto-tmux-smoke-$$"
@@ -18,6 +19,7 @@ SWARM_DIR="/tmp/auto-tmux-smoke-swarm-$$"
 DEP_SWARM_DIR="/tmp/auto-tmux-smoke-dep-swarm-$$"
 SNAPSHOT_DIR="/tmp/auto-tmux-smoke-snapshot-$$"
 RECORD_DIR="/tmp/auto-tmux-smoke-record-$$"
+RECORD_SUMMARY_FILE="/tmp/auto-tmux-smoke-record-summary-$$.md"
 BRIEF_DIR="/tmp/auto-tmux-smoke-brief-$$"
 WATCH_DIR="/tmp/auto-tmux-smoke-watch-$$"
 ARCHIVE_FILE="/tmp/auto-tmux-smoke-archive-$$.tar.gz"
@@ -29,7 +31,7 @@ PASTE_FILE="/tmp/auto-tmux-smoke-paste-$$.txt"
 
 cleanup() {
   tmux kill-session -t "$SESSION" 2>/dev/null || true
-  rm -rf "$SWARM_DIR" "$DEP_SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$BRIEF_DIR" "$WATCH_DIR" "$ARCHIVE_FILE" "$BOARD_FILE" "$ASSIGN_FILE" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE" "$PASTE_FILE"
+  rm -rf "$SWARM_DIR" "$DEP_SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$RECORD_SUMMARY_FILE" "$BRIEF_DIR" "$WATCH_DIR" "$ARCHIVE_FILE" "$BOARD_FILE" "$ASSIGN_FILE" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE" "$PASTE_FILE"
 }
 trap cleanup EXIT
 
@@ -46,6 +48,7 @@ bash -n "$SWARM_WATCH"
 bash -n "$SWARM_ARCHIVE"
 bash -n "$SWARM_BOARD"
 bash -n "$SWARM_ASSIGN"
+bash -n "$RECORD_SUMMARY"
 bash -n "$SAFETY_CHECK"
 bash -n "$SWARM_DISPATCH"
 
@@ -75,7 +78,12 @@ fi
 test -s "$SNAPSHOT_DIR/topology.txt"
 
 "$AUTO_TMUX" record start -t "$worker_target" --dir "$RECORD_DIR" >/tmp/auto-tmux-smoke-record-start.txt
+"$AUTO_TMUX" send -t "$worker_target" --text "echo AUTO_TMUX_RECORD_OK" --enter
+"$AUTO_TMUX" wait -t "$worker_target" --pattern "AUTO_TMUX_RECORD_OK" --timeout 10 >/tmp/auto-tmux-smoke-record-wait.txt
 "$AUTO_TMUX" record stop -t "$worker_target" >/tmp/auto-tmux-smoke-record-stop.txt
+"$RECORD_SUMMARY" --dir "$RECORD_DIR" --out "$RECORD_SUMMARY_FILE" -n 20 >/tmp/auto-tmux-smoke-record-summary.txt
+grep -q 'auto-tmux Record Summary' "$RECORD_SUMMARY_FILE"
+grep -q 'AUTO_TMUX_RECORD_OK' "$RECORD_SUMMARY_FILE"
 
 "$SWARM_STATE" init --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-swarm-init.txt
 "$SWARM_STATE" task-add --dir "$SWARM_DIR" --id smoke-task --text "run smoke task" >/tmp/auto-tmux-smoke-task-add.txt
