@@ -17,6 +17,7 @@
 |:---|:---|:---|
 | `doctor` | 检查 tmux、脚本、资产、session 健康状态 | 只读诊断 |
 | `topology` | 列出 session/window/pane 拓扑 | 只读 |
+| `inspect` | 输出单个 pane 元信息和最近输出 | 默认脱敏，只读 |
 | `capture` | 读取指定 pane 最近输出 | 默认脱敏，可保存到文件 |
 | `send` | 向指定 pane 发送文本或按键 | 先打印上下文，危险文本需 `--force` |
 | `broadcast` | 向指定 session 全部 pane 发送文本或按键 | 必须显式 session，支持 `--dry-run` |
@@ -111,6 +112,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target "$target" --ta
 
 ```bash
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
+skills/auto-tmux/scripts/auto-tmux.sh inspect -t "$target" -n 40
 skills/auto-tmux/scripts/auto-tmux.sh send -t "$target" --text "make test" --enter
 ```
 

@@ -64,6 +64,7 @@ tmux list-panes   -a -F '#S:#I.#P #{pane_current_command} #{pane_title}'
 
 **读取指定 pane 最近输出**
 ```bash
+skills/auto-tmux/scripts/auto-tmux.sh inspect -t <session>:<window>.<pane> -n 40
 skills/auto-tmux/scripts/auto-tmux.sh capture -t <session>:<window>.<pane> -n 120
 ```
 

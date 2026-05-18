@@ -44,6 +44,8 @@ commander_target="$(tmux list-panes -t "$SESSION:commander" -F '#S:#I.#P' | head
 worker_target="$(tmux list-panes -t "$SESSION:worker1" -F '#S:#I.#P' | head -n 1)"
 
 "$AUTO_TMUX" capture -t "$commander_target" -n 10 >/tmp/auto-tmux-smoke-capture.txt
+"$AUTO_TMUX" inspect -t "$commander_target" -n 10 >/tmp/auto-tmux-smoke-inspect.txt
+grep -q 'pane inspect' /tmp/auto-tmux-smoke-inspect.txt
 "$AUTO_TMUX" broadcast --session "$SESSION" --text "pwd" --enter --dry-run >/tmp/auto-tmux-smoke-broadcast.txt
 "$AUTO_TMUX" send -t "$worker_target" --text "echo AUTO_TMUX_SMOKE_OK" --enter
 "$AUTO_TMUX" wait -t "$worker_target" --pattern "AUTO_TMUX_SMOKE_OK" --timeout 10 >/tmp/auto-tmux-smoke-wait.txt

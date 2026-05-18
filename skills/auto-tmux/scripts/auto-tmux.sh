@@ -15,6 +15,7 @@ Usage:
   auto-tmux.sh help
   auto-tmux.sh doctor [--session NAME]
   auto-tmux.sh topology [--session NAME]
+  auto-tmux.sh inspect -t TARGET [-n LINES] [--no-redact]
   auto-tmux.sh capture -t TARGET [-n LINES] [--save FILE] [--no-redact]
   auto-tmux.sh send -t TARGET (--text TEXT | --key KEY) [--enter] [--clear] [--force] [--dry-run]
   auto-tmux.sh broadcast --session NAME (--text TEXT | --key KEY) [--enter] [--clear] [--force] [--dry-run]
@@ -32,6 +33,7 @@ Target format:
 Examples:
   auto-tmux.sh doctor --session ai-hub
   auto-tmux.sh topology
+  auto-tmux.sh inspect -t <target-from-topology> -n 40
   auto-tmux.sh capture -t <target-from-topology> -n 80
   auto-tmux.sh send -t <target-from-topology> --text "make test" --enter
   auto-tmux.sh broadcast --session ai-hub --text "pwd" --enter --dry-run
@@ -207,6 +209,36 @@ cmd_topology() {
     tmux list-windows -a -F '  window #S:#{window_index}: #{window_name} #{window_flags}'
     tmux list-panes -a -F '    pane #S:#{window_index}.#{pane_index} cmd=#{pane_current_command} path=#{pane_current_path}'
   fi
+}
+
+cmd_inspect() {
+  local target=""
+  local lines=40
+  local no_redact="0"
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -t|--target) target="${2:-}"; shift 2 ;;
+      -n|--lines) lines="${2:-}"; shift 2 ;;
+      --no-redact) no_redact="1"; shift ;;
+      -h|--help) usage; exit 0 ;;
+      *) die "unknown inspect option: $1" ;;
+    esac
+  done
+
+  require_tmux
+  require_target "$target"
+  printf '# pane inspect\n\n'
+  tmux display-message -pt "$target" 'target=#{session_name}:#{window_index}.#{pane_index}'
+  tmux display-message -pt "$target" 'pane_id=#{pane_id}'
+  tmux display-message -pt "$target" 'window=#{window_name}'
+  tmux display-message -pt "$target" 'command=#{pane_current_command}'
+  tmux display-message -pt "$target" 'pid=#{pane_pid}'
+  tmux display-message -pt "$target" 'path=#{pane_current_path}'
+  tmux display-message -pt "$target" 'title=#{pane_title}'
+  tmux display-message -pt "$target" 'in_mode=#{pane_in_mode}'
+  tmux display-message -pt "$target" 'size=#{pane_width}x#{pane_height}'
+  printf '\n## recent output\n\n'
+  capture_print "$target" "$lines" "$no_redact"
 }
 
 cmd_broadcast() {
@@ -584,6 +616,7 @@ main() {
     help|-h|--help) usage ;;
     doctor) cmd_doctor "$@" ;;
     topology) cmd_topology "$@" ;;
+    inspect) cmd_inspect "$@" ;;
     capture) cmd_capture "$@" ;;
     send) cmd_send "$@" ;;
     broadcast) cmd_broadcast "$@" ;;

@@ -83,6 +83,7 @@ skills/auto-tmux/scripts/auto-tmux.sh topology --session ai-hub
 
 ```bash
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
+skills/auto-tmux/scripts/auto-tmux.sh inspect -t "$target" -n 40
 skills/auto-tmux/scripts/auto-tmux.sh capture -t "$target" -n 120
 ```
 

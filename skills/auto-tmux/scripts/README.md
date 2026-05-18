@@ -28,6 +28,7 @@ skills/auto-tmux/scripts/auto-tmux.sh doctor --session ai-hub
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
 
 # 读取指定 pane 最近 80 行
+skills/auto-tmux/scripts/auto-tmux.sh inspect -t "$target" -n 40
 skills/auto-tmux/scripts/auto-tmux.sh capture -t "$target" -n 80
 
 # 发送命令并回车
