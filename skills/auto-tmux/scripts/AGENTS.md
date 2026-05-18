@@ -17,6 +17,7 @@ scripts/
 ├── swarm-assign.sh # 生成 ready task 到 worker pane 的分配建议
 ├── swarm-health.sh # 汇总只读健康检查报告包
 ├── record-summary.sh # 汇总 pipe-pane 录制日志
+├── completion.bash # Bash completion
 ├── safety-check.sh # 发送/粘贴/分发前的 payload 安全预检
 ├── render-swarm-prompt.sh # commander/worker/reviewer 提示词渲染
 ├── swarm-dispatch.sh # 渲染并可选下发蜂群提示词
@@ -40,6 +41,7 @@ scripts/
 - 分配建议脚本只读任务和 pane 拓扑，不 claim 任务、不发送 prompt。
 - 健康检查脚本只读 tmux 与 swarm state，失败项写入报告，不做自动修复。
 - 录制摘要脚本只读 record 日志，输出默认脱敏，不修改日志源文件。
+- completion 文件只能定义 shell completion，不执行 tmux 写操作。
 - 安全预检脚本只能读取文本或文件，不控制 tmux，不写状态目录。
 - 状态脚本只能写入显式状态目录，不保存密钥、Token、密码或私密项目内容。
 - 自测脚本必须创建独立临时 tmux session，并在退出时清理。

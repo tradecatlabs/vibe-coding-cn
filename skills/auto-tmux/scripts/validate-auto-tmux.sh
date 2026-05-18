@@ -97,6 +97,9 @@ for script in "${scripts[@]}"; do
   run_gate "bash syntax: ${script##*/}" bash -n "$script"
 done
 
+[[ -f "$script_dir/completion.bash" ]] && pass "completion file: skills/auto-tmux/scripts/completion.bash" || fail "missing completion.bash"
+run_gate "bash syntax: completion.bash" bash -n "$script_dir/completion.bash"
+
 run_gate "auto-tmux help" "$script_dir/auto-tmux.sh" help
 run_gate "swarm-state help" "$script_dir/swarm-state.sh" help
 run_gate "swarm-brief help" "$script_dir/swarm-brief.sh" --help
@@ -124,6 +127,7 @@ require_contains "$skill_dir/SKILL.md" "scripts/swarm-board.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-assign.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-health.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/record-summary.sh"
+require_contains "$skill_dir/SKILL.md" "scripts/completion.bash"
 require_contains "$skill_dir/SKILL.md" "scripts/safety-check.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-dispatch.sh"
 require_contains "$skill_dir/references/index.md" "automation.md"
@@ -138,6 +142,7 @@ require_contains "$script_dir/README.md" "swarm-board.sh"
 require_contains "$script_dir/README.md" "swarm-assign.sh"
 require_contains "$script_dir/README.md" "swarm-health.sh"
 require_contains "$script_dir/README.md" "record-summary.sh"
+require_contains "$script_dir/README.md" "completion.bash"
 require_contains "$script_dir/README.md" "safety-check.sh"
 require_contains "$script_dir/AGENTS.md" "validate-auto-tmux.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-dispatch.sh"
@@ -147,6 +152,7 @@ require_contains "$script_dir/AGENTS.md" "swarm-board.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-assign.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-health.sh"
 require_contains "$script_dir/AGENTS.md" "record-summary.sh"
+require_contains "$script_dir/AGENTS.md" "completion.bash"
 require_contains "$script_dir/AGENTS.md" "safety-check.sh"
 
 if [[ -x "$repo_root/skills/auto-skill/scripts/validate-skill.sh" ]]; then

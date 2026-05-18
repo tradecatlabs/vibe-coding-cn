@@ -13,6 +13,7 @@
 - [`swarm-assign.sh`](./swarm-assign.sh) - 根据 ready tasks 和 worker pane 生成只读分配建议。
 - [`swarm-health.sh`](./swarm-health.sh) - 汇总 doctor、topology、scan、validate、metrics、board 和 assign。
 - [`record-summary.sh`](./record-summary.sh) - 汇总 `record start` 产生的 pane 日志，生成复盘摘要。
+- [`completion.bash`](./completion.bash) - Bash completion，补全 `auto-tmux.sh` 和 `swarm-state.sh` 子命令。
 - [`safety-check.sh`](./safety-check.sh) - 发送、粘贴或分发前检查危险命令、敏感信息和过大 payload。
 - [`render-swarm-prompt.sh`](./render-swarm-prompt.sh) - commander、worker、reviewer 提示词渲染。
 - [`swarm-dispatch.sh`](./swarm-dispatch.sh) - 渲染提示词并可选发送到指定 pane，默认只写文件。
@@ -73,6 +74,9 @@ skills/auto-tmux/scripts/swarm-health.sh --session ai-hub --swarm-dir /tmp/ai_sw
 
 # 汇总 pane 录制日志
 skills/auto-tmux/scripts/record-summary.sh --dir /tmp/auto-tmux-records --out /tmp/auto-tmux-record-summary.md
+
+# 启用当前 shell 的补全
+source skills/auto-tmux/scripts/completion.bash
 
 # 初始化蜂群状态并添加任务
 skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
