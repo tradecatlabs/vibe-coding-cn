@@ -26,13 +26,13 @@
 | 18 | `42bca78` | 结果归档 | `swarm-archive.sh` |
 | 19 | `07ac877` | 安全策略 | `safety-check.sh`、`safety-policy.md` |
 | 20 | `6d46748` | 状态可视化 | `swarm-board.sh` |
-| 21 | `本轮` | 依赖领取一致性 | `task-next` 尊重 `blocked-by` |
+| 21 | `d8e7d31` | 依赖领取一致性 | `task-next` 尊重 `blocked-by` |
+| 22 | `本轮` | worker 分配 | `swarm-assign.sh` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P2 | worker 分配 | 根据 TODO 队列和空闲 pane 自动生成 dispatch 建议 |
 | P2 | replay 审计 | 从 record 日志生成复盘摘要 |
 | P3 | 远程 session | SSH 场景下的只读拓扑和安全边界 |
 | P3 | shell completion | 为常用子命令生成补全脚本 |

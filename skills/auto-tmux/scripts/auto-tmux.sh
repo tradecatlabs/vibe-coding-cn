@@ -153,7 +153,7 @@ cmd_doctor() {
     status_line "WARN" "tmux server has no reachable session yet"
   fi
 
-  for script in auto-tmux.sh swarm-state.sh swarm-brief.sh swarm-watch.sh swarm-archive.sh swarm-board.sh safety-check.sh render-swarm-prompt.sh swarm-dispatch.sh auto-tmux-smoke-test.sh validate-auto-tmux.sh; do
+  for script in auto-tmux.sh swarm-state.sh swarm-brief.sh swarm-watch.sh swarm-archive.sh swarm-board.sh swarm-assign.sh safety-check.sh render-swarm-prompt.sh swarm-dispatch.sh auto-tmux-smoke-test.sh validate-auto-tmux.sh; do
     if [[ -x "$script_dir/$script" ]]; then
       status_line "OK" "script executable: $script"
     else

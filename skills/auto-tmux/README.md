@@ -25,6 +25,7 @@ bash -n skills/auto-tmux/scripts/swarm-brief.sh
 bash -n skills/auto-tmux/scripts/swarm-watch.sh
 bash -n skills/auto-tmux/scripts/swarm-archive.sh
 bash -n skills/auto-tmux/scripts/swarm-board.sh
+bash -n skills/auto-tmux/scripts/swarm-assign.sh
 bash -n skills/auto-tmux/scripts/safety-check.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
 bash -n skills/auto-tmux/scripts/swarm-dispatch.sh

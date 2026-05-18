@@ -18,6 +18,7 @@ skills/auto-tmux/
 │   ├── swarm-watch.sh
 │   ├── swarm-archive.sh
 │   ├── swarm-board.sh
+│   ├── swarm-assign.sh
 │   ├── safety-check.sh
 │   ├── render-swarm-prompt.sh
 │   ├── swarm-dispatch.sh
@@ -47,6 +48,7 @@ skills/auto-tmux/
 - `scripts/swarm-watch.sh` 是有限轮次巡检层，按间隔采集 pane 输出与 swarm report。
 - `scripts/swarm-archive.sh` 是归档层，打包 brief、snapshot 和 swarm state 供复盘交接。
 - `scripts/swarm-board.sh` 是看板层，将任务、依赖、锁和状态日志渲染为 Markdown。
+- `scripts/swarm-assign.sh` 是分配建议层，将 ready task 轮询映射到 worker pane。
 - `scripts/safety-check.sh` 是安全预检层，检查待发送 payload 的危险命令、敏感信息和大小。
 - `scripts/render-swarm-prompt.sh` 是提示词渲染层，生成 commander/worker/reviewer 协议文本。
 - `scripts/swarm-dispatch.sh` 是提示词下发层，默认写文件，显式 `--send` 后才发送到 pane。
@@ -59,4 +61,4 @@ skills/auto-tmux/
 - 上游来源：`tools/external/.tmux` 与 `tools/external/tmux`。
 - 下游使用：`SKILL.md` 和 `references/` 中的命令示例。
 - 验证入口：`skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict`。
-- 脚本验证：`skills/auto-tmux/scripts/validate-auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh`、`bash -n skills/auto-tmux/scripts/swarm-watch.sh`、`bash -n skills/auto-tmux/scripts/swarm-archive.sh`、`bash -n skills/auto-tmux/scripts/swarm-board.sh`、`bash -n skills/auto-tmux/scripts/safety-check.sh`、`bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh`、`bash -n skills/auto-tmux/scripts/swarm-dispatch.sh`、`skills/auto-tmux/scripts/auto-tmux-smoke-test.sh`。
+- 脚本验证：`skills/auto-tmux/scripts/validate-auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh`、`bash -n skills/auto-tmux/scripts/swarm-watch.sh`、`bash -n skills/auto-tmux/scripts/swarm-archive.sh`、`bash -n skills/auto-tmux/scripts/swarm-board.sh`、`bash -n skills/auto-tmux/scripts/swarm-assign.sh`、`bash -n skills/auto-tmux/scripts/safety-check.sh`、`bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh`、`bash -n skills/auto-tmux/scripts/swarm-dispatch.sh`、`skills/auto-tmux/scripts/auto-tmux-smoke-test.sh`。

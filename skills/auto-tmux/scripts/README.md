@@ -10,6 +10,7 @@
 - [`swarm-watch.sh`](./swarm-watch.sh) - 有限轮次巡检蜂群 pane 输出和状态报告，形成连续证据。
 - [`swarm-archive.sh`](./swarm-archive.sh) - 打包 brief、snapshot 和 swarm state，生成可交接归档。
 - [`swarm-board.sh`](./swarm-board.sh) - 将 `tasks.tsv`、依赖、锁和状态日志渲染为 Markdown 看板。
+- [`swarm-assign.sh`](./swarm-assign.sh) - 根据 ready tasks 和 worker pane 生成只读分配建议。
 - [`safety-check.sh`](./safety-check.sh) - 发送、粘贴或分发前检查危险命令、敏感信息和过大 payload。
 - [`render-swarm-prompt.sh`](./render-swarm-prompt.sh) - commander、worker、reviewer 提示词渲染。
 - [`swarm-dispatch.sh`](./swarm-dispatch.sh) - 渲染提示词并可选发送到指定 pane，默认只写文件。
@@ -61,6 +62,9 @@ skills/auto-tmux/scripts/swarm-archive.sh --session ai-hub --swarm-dir /tmp/ai_s
 
 # 生成任务看板
 skills/auto-tmux/scripts/swarm-board.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-board.md
+
+# 生成 worker 分配建议
+skills/auto-tmux/scripts/swarm-assign.sh --swarm-dir /tmp/ai_swarm --session ai-hub --out /tmp/ai-swarm-assign.md
 
 # 初始化蜂群状态并添加任务
 skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
