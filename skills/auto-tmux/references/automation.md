@@ -219,6 +219,7 @@ skills/auto-tmux/scripts/swarm-state.sh lock-prune --older-than 3600 --dry-run
 
 ```bash
 skills/auto-tmux/scripts/swarm-state.sh task-done --id task-001 --owner "ai-hub:2.1" --result "make test passed"
+skills/auto-tmux/scripts/swarm-state.sh metrics
 skills/auto-tmux/scripts/swarm-state.sh validate
 skills/auto-tmux/scripts/swarm-state.sh report
 ```

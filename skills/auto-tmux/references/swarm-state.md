@@ -145,8 +145,11 @@ skills/auto-tmux/scripts/swarm-state.sh task-reopen \
 校验状态一致性：
 
 ```bash
+skills/auto-tmux/scripts/swarm-state.sh metrics
 skills/auto-tmux/scripts/swarm-state.sh validate
 ```
+
+`metrics` 会按任务状态、owner 和当前锁数量输出摘要，适合 commander 快速判断蜂群是否堵塞。
 
 `validate` 会检查 `tasks.tsv` 表头、字段数量、重复任务 ID、非法状态、终态任务结果文件，以及锁目录中的 `owner` / `created_at`。
 

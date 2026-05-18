@@ -72,6 +72,8 @@ grep -q 'imported-001' /tmp/auto-tmux-smoke-task-next.txt
 "$SWARM_STATE" task-fail --dir "$SWARM_DIR" --id smoke-fail --owner "$worker_target" --reason "expected failure"
 "$SWARM_STATE" task-list --dir "$SWARM_DIR" --status FAIL >/tmp/auto-tmux-smoke-task-list-fail.txt
 grep -q 'smoke-fail' /tmp/auto-tmux-smoke-task-list-fail.txt
+"$SWARM_STATE" metrics --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-metrics.txt
+grep -q 'FAIL' /tmp/auto-tmux-smoke-metrics.txt
 "$SWARM_STATE" report --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-report.txt
 "$SWARM_STATE" validate --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-state-validate.txt
 grep -q 'smoke-task' /tmp/auto-tmux-smoke-report.txt

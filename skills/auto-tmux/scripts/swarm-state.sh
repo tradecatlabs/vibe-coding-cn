@@ -31,6 +31,7 @@ Usage:
   swarm-state.sh lock-list [--dir DIR]
   swarm-state.sh lock-prune --older-than SEC [--dir DIR] [--dry-run]
   swarm-state.sh report [--dir DIR]
+  swarm-state.sh metrics [--dir DIR]
   swarm-state.sh validate [--dir DIR]
 
 Environment:
@@ -467,6 +468,27 @@ cmd_report() {
   cmd_status -n 20
 }
 
+cmd_metrics() {
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --dir) set_dir "${2:-}"; shift 2 ;;
+      *) die "unknown metrics option: $1" ;;
+    esac
+  done
+  ensure_init
+  printf '# swarm metrics\n\n'
+  printf 'dir: %s\n\n' "$SWARM_DIR"
+  printf '## by status\n\n'
+  awk -F '\t' 'NR > 1 {count[$2]++} END {for (status in count) print status "\t" count[status]}' "$TASKS_TSV" |
+    sort | column -t -s $'\t' 2>/dev/null || true
+  printf '\n## by owner\n\n'
+  awk -F '\t' 'NR > 1 {count[$3]++} END {for (owner in count) print owner "\t" count[owner]}' "$TASKS_TSV" |
+    sort | column -t -s $'\t' 2>/dev/null || true
+  printf '\n## locks\n\n'
+  find "$LOCKS_DIR" -mindepth 1 -maxdepth 1 -type d -name '*.lock.d' | wc -l | awk '{print "active_locks\t" $1}' |
+    column -t -s $'\t' 2>/dev/null || true
+}
+
 cmd_validate() {
   while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -560,6 +582,7 @@ main() {
     lock-list) cmd_lock_list "$@" ;;
     lock-prune) cmd_lock_prune "$@" ;;
     report) cmd_report "$@" ;;
+    metrics) cmd_metrics "$@" ;;
     validate) cmd_validate "$@" ;;
     *) die "unknown command: $cmd" ;;
   esac
