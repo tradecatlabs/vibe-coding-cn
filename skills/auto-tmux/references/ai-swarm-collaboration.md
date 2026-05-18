@@ -24,7 +24,7 @@ tmux 蜂群协作的核心是：让 AI 不再只是孤立会话，而是通过 t
 | 巡检 | `auto-tmux.sh scan` | 批量检查多个 pane 状态 |
 | 救援 | `auto-tmux.sh rescue` | 对等待确认、卡住或异常的 pane 做最小干预 |
 | 记录 | `pipe-pane` / `auto-tmux.sh record` | 保留长任务审计日志 |
-| 协调 | 共享状态文件 + 明确 target | 任务同步、分工、避免冲突 |
+| 协调 | `swarm-state.sh` + 明确 target | 任务同步、分工、加锁、避免冲突 |
 
 ```text
 传统模式: 人 <-> AI1, 人 <-> AI2, 人 <-> AI3
@@ -108,7 +108,13 @@ skills/auto-tmux/scripts/auto-tmux.sh wait -t "$target" --pattern "done|完成|T
 
 ### 4.2 状态目录
 
-可选共享状态目录：
+推荐使用 `scripts/swarm-state.sh` 初始化共享状态目录：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
+```
+
+默认共享状态目录：
 
 ```text
 /tmp/ai_swarm/
@@ -144,6 +150,33 @@ skills/auto-tmux/scripts/auto-tmux.sh wait -t "$target" --pattern "done|完成|T
 5. **主动救援**：发现等待确认、卡死或明显错误时先 `capture`，再 `rescue --dry-run`。
 6. **保留证据**：长任务开启 `record`，关键检查保存 scan 日志。
 7. **人工兜底**：危险操作、敏感凭证、生产环境变更必须人工确认。
+
+### 4.4 任务与锁
+
+添加任务：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
+```
+
+worker 认领任务：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh task-claim --id task-001 --owner "ai-hub:2.1"
+```
+
+修改文件前获取锁：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh lock-acquire --name README.md --owner "ai-hub:2.1"
+```
+
+完成后释放锁并记录结果：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh lock-release --name README.md --owner "ai-hub:2.1"
+skills/auto-tmux/scripts/swarm-state.sh task-done --id task-001 --owner "ai-hub:2.1" --result "make test passed"
+```
 
 ## 5. 架构模式
 

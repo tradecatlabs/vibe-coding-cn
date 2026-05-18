@@ -20,6 +20,7 @@ Usage:
   auto-tmux.sh scan [--session NAME] [-n LINES] [--pattern REGEX] [--rescue] [--reply TEXT] [--save-dir DIR]
   auto-tmux.sh record start -t TARGET [--dir DIR]
   auto-tmux.sh record stop -t TARGET
+  auto-tmux.sh snapshot [--session NAME] [--dir DIR] [-n LINES]
   auto-tmux.sh hub [--session NAME] [--workers N] [--cmd CMD] [--commander-cmd CMD] [--attach]
   auto-tmux.sh wait -t TARGET --pattern REGEX [--timeout SEC] [--interval SEC] [-n LINES]
 
@@ -32,6 +33,7 @@ Examples:
   auto-tmux.sh send -t <target-from-topology> --text "make test" --enter
   auto-tmux.sh rescue -t <target-from-topology> --pattern "(y/n)" --reply y
   auto-tmux.sh scan --session ai-hub --pattern "ERROR|Traceback"
+  auto-tmux.sh snapshot --session ai-hub --dir /tmp/auto-tmux-snapshot
   auto-tmux.sh hub --session ai-hub --workers 3 --cmd "codex"
 EOF
 }
@@ -332,6 +334,39 @@ cmd_record() {
   esac
 }
 
+cmd_snapshot() {
+  local session=""
+  local dir="/tmp/auto-tmux-snapshot-$(date +%Y%m%d-%H%M%S)"
+  local lines=120
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --session) session="${2:-}"; shift 2 ;;
+      --dir) dir="${2:-}"; shift 2 ;;
+      -n|--lines) lines="${2:-}"; shift 2 ;;
+      -h|--help) usage; exit 0 ;;
+      *) die "unknown snapshot option: $1" ;;
+    esac
+  done
+
+  require_tmux
+  mkdir -p "$dir/panes"
+  {
+    printf 'auto-tmux snapshot\n'
+    printf 'created_at=%s\n' "$(date -Is)"
+    printf 'session=%s\n\n' "${session:-<all>}"
+    cmd_topology ${session:+--session "$session"}
+  } > "$dir/topology.txt"
+
+  local pane safe_name
+  while IFS= read -r pane; do
+    [[ -n "$pane" ]] || continue
+    safe_name="${pane//[:.]/-}.log"
+    capture_print "$pane" "$lines" 0 > "$dir/panes/$safe_name"
+  done < <(pane_list "$session")
+
+  printf 'snapshot written: %s\n' "$dir"
+}
+
 cmd_hub() {
   local session="ai-hub"
   local workers=3
@@ -419,6 +454,7 @@ main() {
     rescue) cmd_rescue "$@" ;;
     scan) cmd_scan "$@" ;;
     record) cmd_record "$@" ;;
+    snapshot) cmd_snapshot "$@" ;;
     hub) cmd_hub "$@" ;;
     wait) cmd_wait "$@" ;;
     *) die "unknown command: $cmd" ;;

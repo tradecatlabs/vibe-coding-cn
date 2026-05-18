@@ -1,11 +1,11 @@
 ---
 name: auto-tmux
-description: "tmux 自动化操控：用 scripts/auto-tmux.sh 安全读取、发送、巡检、救援、录制 session|window|pane，并基于 oh-my-tmux 组织多 AI 终端协作。触发：capture-pane、send-keys、批量巡检、蜂群 AI 协作、卡死救援、tmux 工作台初始化。"
+description: "tmux 自动化操控：用 scripts/auto-tmux.sh 安全读取、发送、巡检、救援、录制 session|window|pane，用 swarm-state.sh 管理蜂群任务/锁/状态，并基于 oh-my-tmux 组织多 AI 终端协作。触发：capture-pane、send-keys、批量巡检、蜂群 AI 协作、卡死救援、tmux 工作台初始化。"
 ---
 
 # auto-tmux Skill
 
-让 AI 像熟练运维一样操作 tmux：优先使用 `scripts/auto-tmux.sh` 安全封装读取终端输出、发送按键、批量巡检、协作/救援其他终端；必要时再回退到 tmux 原生命令。默认兼容 `tools/external/.tmux`（gpakosz/oh-my-tmux），并在本技能内通过 `assets/oh-my-tmux` 与 `assets/tmux-src` 暴露上游 submodule。
+让 AI 像熟练运维一样操作 tmux：优先使用 `scripts/auto-tmux.sh` 安全封装读取终端输出、发送按键、批量巡检、协作/救援其他终端；使用 `scripts/swarm-state.sh` 管理蜂群任务、锁、状态和结果；必要时再回退到 tmux 原生命令。默认兼容 `tools/external/.tmux`（gpakosz/oh-my-tmux），并在本技能内通过 `assets/oh-my-tmux` 与 `assets/tmux-src` 暴露上游 submodule。
 
 ## When to Use This Skill
 
@@ -14,6 +14,7 @@ description: "tmux 自动化操控：用 scripts/auto-tmux.sh 安全读取、发
 - 需要向指定 pane 发送按键/命令（确认 `y`、`Enter`、`Ctrl+C`、广播同一窗口）。
 - 需要批量巡检/接管多 AI 终端（蜂群协作、自动救援卡死任务）。
 - 需要初始化 AI 多终端工作台、等待输出 pattern、录制 pane 日志或保存巡检证据。
+- 需要给 tmux 蜂群建立任务队列、状态日志、文件锁和结果报告。
 - 需要快速回忆 oh-my-tmux 快捷键、前缀或同步面板操作。
 - 需要在当前仓库复用 `tools/external/.tmux` 配置并避免修改主配置。
 - 需要从技能目录内快速查看 oh-my-tmux 配置或 tmux 上游源码入口。
@@ -33,7 +34,9 @@ description: "tmux 自动化操控：用 scripts/auto-tmux.sh 安全读取、发
 **脚本帮助与语法检查**
 ```bash
 bash -n skills/auto-tmux/scripts/auto-tmux.sh
+bash -n skills/auto-tmux/scripts/swarm-state.sh
 skills/auto-tmux/scripts/auto-tmux.sh help
+skills/auto-tmux/scripts/swarm-state.sh help
 ```
 
 **查看快捷键帮助**（oh-my-tmux 双前缀：主 `C-a`，备用 `C-b`，前缀后按 `?`）
@@ -92,6 +95,11 @@ skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub -n 80
 skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub --pattern "ERROR|Traceback" --save-dir /tmp/auto-tmux-scan
 ```
 
+**生成证据快照**
+```bash
+skills/auto-tmux/scripts/auto-tmux.sh snapshot --session ai-hub --dir /tmp/auto-tmux-snapshot -n 120
+```
+
 **远程救援：发现等待输入即发送 y**
 ```bash
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
@@ -123,6 +131,19 @@ skills/auto-tmux/scripts/auto-tmux.sh record stop -t <session>:<window>.<pane>
 skills/auto-tmux/scripts/auto-tmux.sh wait -t <session>:<window>.<pane> --pattern "Tests passed|BUILD SUCCESS" --timeout 300
 ```
 
+**初始化蜂群状态、任务和锁**
+```bash
+skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
+skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
+skills/auto-tmux/scripts/swarm-state.sh lock-acquire --name README.md --owner <session>:<window>.<pane>
+skills/auto-tmux/scripts/swarm-state.sh report --dir /tmp/ai_swarm
+```
+
+**脚本端到端自测**
+```bash
+skills/auto-tmux/scripts/auto-tmux-smoke-test.sh
+```
+
 ## Rules & Constraints
 
 - MUST：优先使用 `scripts/auto-tmux.sh`；直接使用 tmux 原生命令时必须保留同等安全约束。
@@ -133,6 +154,7 @@ skills/auto-tmux/scripts/auto-tmux.sh wait -t <session>:<window>.<pane> --patter
 - SHOULD：发送完整命令行时避免先发 `Escape`；先 `C-c` 中断、`C-u` 清行，再用 `send-keys -l` 逐字发送完整命令。
 - SHOULD：pane 处在 Codex UI 时，先发送 `/exit` 回到 shell 再执行命令。
 - SHOULD：长任务开启 `pipe-pane` 记录审计；广播完成后立即 `synchronize-panes off`。
+- SHOULD：多 worker 修改同一文件、目录或服务前，先用 `swarm-state.sh lock-acquire` 声明锁。
 - NEVER：在未知 pane 发送破坏性命令；NEVER 在 root 会话不经确认发送 `Ctrl+C`/`Ctrl+D`。
 
 ## Examples
@@ -183,10 +205,13 @@ skills/auto-tmux/scripts/auto-tmux.sh wait -t <session>:<window>.<pane> --patter
 - `references/getting_started.md`: 术语、oh-my-tmux 最小接入步骤
 - `references/api.md`: tmux/oh-my-tmux 常用命令、选项与 gpakosz 特色键位
 - `references/automation.md`: `scripts/auto-tmux.sh` 子命令、安全模型与 AI 蜂群协作流程
+- `references/swarm-state.md`: 蜂群状态、任务、锁和报告协议
 - `references/ai-swarm-collaboration.md`: tmux 蜂群协作历史文档、架构模式、协议、案例和风险限制
 - `references/examples.md`: 蜂群协议脚本与长示例
 - `references/troubleshooting.md`: 典型故障到修复路径
 - `scripts/auto-tmux.sh`: 安全封装的 tmux 自动化脚本入口
+- `scripts/swarm-state.sh`: 蜂群任务、锁、状态和报告脚本
+- `scripts/auto-tmux-smoke-test.sh`: tmux 自动化脚本端到端自测
 - `assets/oh-my-tmux`: gpakosz/oh-my-tmux submodule 的相对软链接入口
 - `assets/tmux-src`: tmux/tmux submodule 的相对软链接入口
 
@@ -205,5 +230,6 @@ skills/auto-tmux/scripts/auto-tmux.sh wait -t <session>:<window>.<pane> --patter
 4. ≥3 个端到端示例，含输入/步骤/验收。
 5. 长文档放在 `references/` 并可导航；无文档堆砌。
 6. 不确定项给出验证路径；禁止虚构 tmux 行为。
-7. `bash -n skills/auto-tmux/scripts/auto-tmux.sh` 通过。
-8. 运行 `skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict` 通过。
+7. `bash -n skills/auto-tmux/scripts/auto-tmux.sh` 与 `bash -n skills/auto-tmux/scripts/swarm-state.sh` 通过。
+8. `skills/auto-tmux/scripts/auto-tmux-smoke-test.sh` 通过或在无 tmux 环境下明确跳过。
+9. 运行 `skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict` 通过。

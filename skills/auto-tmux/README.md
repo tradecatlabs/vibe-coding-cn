@@ -20,7 +20,10 @@
 
 ```bash
 bash -n skills/auto-tmux/scripts/auto-tmux.sh
+bash -n skills/auto-tmux/scripts/swarm-state.sh
 skills/auto-tmux/scripts/auto-tmux.sh help
+skills/auto-tmux/scripts/swarm-state.sh help
+skills/auto-tmux/scripts/auto-tmux-smoke-test.sh
 skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict
 ```
 
@@ -29,5 +32,6 @@ skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict
 - 优先使用 `scripts/auto-tmux.sh`，需要低层调试时再直接使用 tmux 原生命令。
 - 发送按键前必须先 `capture-pane` 复核目标上下文；脚本会默认打印最近上下文。
 - 批量操作前必须先列出 session/window/pane 白名单。
+- 多 worker 并发前用 `swarm-state.sh` 管理任务、锁和状态，避免重复修改同一资源。
 - 不在未知 pane 中发送破坏性命令。
 - 不在本目录复制或修改上游 tmux / oh-my-tmux 源码。

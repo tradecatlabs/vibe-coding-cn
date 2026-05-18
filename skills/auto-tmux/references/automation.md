@@ -20,6 +20,7 @@
 | `rescue` | pattern 命中后发送确认 | 不命中不发送 |
 | `scan` | 批量巡检 pane 输出 | 可按 session 限定范围 |
 | `record` | 开启/停止 pane 输出审计日志 | 文件写入到显式目录 |
+| `snapshot` | 导出拓扑和 pane 输出证据包 | 默认脱敏，写入显式目录 |
 | `hub` | 初始化 AI 多终端工作台 | 已存在 session 不覆盖 |
 | `wait` | 等待 pane 输出出现某个 pattern | 超时失败 |
 
@@ -53,6 +54,12 @@ skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub --pattern "ERROR|Tra
 
 ```bash
 skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub --save-dir /tmp/auto-tmux-scan
+```
+
+生成完整证据快照：
+
+```bash
+skills/auto-tmux/scripts/auto-tmux.sh snapshot --session ai-hub --dir /tmp/auto-tmux-snapshot -n 120
 ```
 
 ### 3. 安全发送命令
@@ -123,11 +130,43 @@ ai-hub
 3. commander 用 `scan` 收集状态，用 `capture` 保留证据。
 4. 需要确认输入时，用 `rescue --dry-run` 先验证 pattern，再真实发送。
 5. 长任务用 `record start` 留日志，结束后 `record stop`。
+6. 多 worker 修改同一文件、目录或服务前，用 `swarm-state.sh lock-acquire` 声明锁。
+
+## 状态与锁脚本
+
+初始化状态目录：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
+```
+
+添加并认领任务：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
+skills/auto-tmux/scripts/swarm-state.sh task-claim --id task-001 --owner "ai-hub:2.1"
+```
+
+获取文件锁：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh lock-acquire --name README.md --owner "ai-hub:2.1"
+```
+
+完成任务并生成报告：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh task-done --id task-001 --owner "ai-hub:2.1" --result "make test passed"
+skills/auto-tmux/scripts/swarm-state.sh report
+```
 
 ## 验证命令
 
 ```bash
 bash -n skills/auto-tmux/scripts/auto-tmux.sh
+bash -n skills/auto-tmux/scripts/swarm-state.sh
 skills/auto-tmux/scripts/auto-tmux.sh help
+skills/auto-tmux/scripts/swarm-state.sh help
+skills/auto-tmux/scripts/auto-tmux-smoke-test.sh
 skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict
 ```
