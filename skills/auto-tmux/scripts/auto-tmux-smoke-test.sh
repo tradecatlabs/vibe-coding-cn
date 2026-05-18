@@ -69,6 +69,7 @@ grep -q 'smoke-next' /tmp/auto-tmux-smoke-task-next.txt
 "$SWARM_STATE" task-add --dir "$SWARM_DIR" --id smoke-fail --text "fail task" >/tmp/auto-tmux-smoke-task-fail-add.txt
 "$SWARM_STATE" task-fail --dir "$SWARM_DIR" --id smoke-fail --owner "$worker_target" --reason "expected failure"
 "$SWARM_STATE" report --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-report.txt
+"$SWARM_STATE" validate --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-state-validate.txt
 grep -q 'smoke-task' /tmp/auto-tmux-smoke-report.txt
 grep -q 'BLOCKED' /tmp/auto-tmux-smoke-report.txt
 grep -q 'FAIL' /tmp/auto-tmux-smoke-report.txt

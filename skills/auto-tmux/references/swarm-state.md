@@ -115,6 +115,14 @@ skills/auto-tmux/scripts/swarm-state.sh task-fail \
 skills/auto-tmux/scripts/swarm-state.sh task-list
 ```
 
+校验状态一致性：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh validate
+```
+
+`validate` 会检查 `tasks.tsv` 表头、字段数量、重复任务 ID、非法状态、终态任务结果文件，以及锁目录中的 `owner` / `created_at`。
+
 ## 锁管理
 
 锁用于避免多个 worker 同时修改同一文件、目录或服务。
@@ -164,6 +172,8 @@ skills/auto-tmux/scripts/swarm-state.sh report
 - 任务列表。
 - 当前锁。
 - 最近状态日志。
+
+报告前建议先运行 `validate`，避免把坏状态继续传给 commander 或 reviewer。
 
 ## 推荐协作流
 

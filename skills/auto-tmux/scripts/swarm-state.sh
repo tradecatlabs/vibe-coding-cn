@@ -29,6 +29,7 @@ Usage:
   swarm-state.sh lock-list [--dir DIR]
   swarm-state.sh lock-prune --older-than SEC [--dir DIR] [--dry-run]
   swarm-state.sh report [--dir DIR]
+  swarm-state.sh validate [--dir DIR]
 
 Environment:
   AUTO_TMUX_SWARM_DIR overrides the default /tmp/ai_swarm.
@@ -396,6 +397,77 @@ cmd_report() {
   cmd_status -n 20
 }
 
+cmd_validate() {
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --dir) set_dir "${2:-}"; shift 2 ;;
+      *) die "unknown validate option: $1" ;;
+    esac
+  done
+  ensure_init
+
+  local failures=0
+  local expected_header=$'id\tstatus\towner\ttext\tresult'
+  local actual_header
+  actual_header="$(head -n 1 "$TASKS_TSV")"
+  if [[ "$actual_header" == "$expected_header" ]]; then
+    printf '[OK] tasks header\n'
+  else
+    printf '[FAIL] invalid tasks header: %s\n' "$actual_header" >&2
+    failures=$((failures + 1))
+  fi
+
+  local awk_output
+  if awk_output="$(awk -F '\t' '
+    NR == 1 {next}
+    NF != 5 {print "[FAIL] invalid field count at line " NR ": " NF; bad = 1; next}
+    $1 == "" {print "[FAIL] empty task id at line " NR; bad = 1}
+    seen[$1]++ {print "[FAIL] duplicate task id: " $1; bad = 1}
+    $2 !~ /^(TODO|DOING|DONE|BLOCKED|FAIL)$/ {print "[FAIL] invalid status for " $1 ": " $2; bad = 1}
+    END {exit bad ? 1 : 0}
+  ' "$TASKS_TSV" 2>&1)"; then
+    printf '[OK] tasks rows\n'
+  else
+    printf '%s\n' "$awk_output" >&2
+    failures=$((failures + 1))
+  fi
+
+  local id status owner text result
+  while IFS=$'\t' read -r id status owner text result; do
+    [[ -n "$id" ]] || continue
+    case "$status" in
+      DONE|BLOCKED|FAIL)
+        if [[ -s "$RESULTS_DIR/$id.txt" ]]; then
+          printf '[OK] result exists: %s\n' "$id"
+        else
+          printf '[FAIL] missing result file: %s\n' "$id" >&2
+          failures=$((failures + 1))
+        fi
+        ;;
+    esac
+  done < <(tail -n +2 "$TASKS_TSV")
+
+  local path name
+  while IFS= read -r path; do
+    [[ -n "$path" ]] || continue
+    name="$(basename "$path" .lock.d)"
+    if [[ ! -s "$path/owner" ]]; then
+      printf '[FAIL] lock missing owner: %s\n' "$name" >&2
+      failures=$((failures + 1))
+    fi
+    if [[ ! -s "$path/created_at" ]]; then
+      printf '[FAIL] lock missing created_at: %s\n' "$name" >&2
+      failures=$((failures + 1))
+    fi
+  done < <(find "$LOCKS_DIR" -mindepth 1 -maxdepth 1 -type d -name '*.lock.d' -print | sort)
+
+  if (( failures > 0 )); then
+    printf 'swarm state invalid: %s issue(s)\n' "$failures" >&2
+    return 1
+  fi
+  printf 'swarm state valid: %s\n' "$SWARM_DIR"
+}
+
 main() {
   local cmd="${1:-help}"
   shift || true
@@ -416,6 +488,7 @@ main() {
     lock-list) cmd_lock_list "$@" ;;
     lock-prune) cmd_lock_prune "$@" ;;
     report) cmd_report "$@" ;;
+    validate) cmd_validate "$@" ;;
     *) die "unknown command: $cmd" ;;
   esac
 }
