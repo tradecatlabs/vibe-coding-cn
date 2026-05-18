@@ -7,13 +7,13 @@
 | 技能 | 说明 |
 |:---|:---|
 | [auto-skill](./auto-skill/SKILL.md) | 生成、重构与校验 Skills 的元技能 |
-| [auto-tmux](./auto-tmux/SKILL.md) | tmux 自动化操控、pane 巡检、按键注入、蜂群协作和 oh-my-tmux 参考入口 |
+| [auto-tmux](./auto-tmux/SKILL.md) | tmux 自动化操控、脚本化 pane 巡检、按键注入、日志录制、蜂群协作和 oh-my-tmux 参考入口 |
 | [claude-official-skills](./claude-official-skills/) | Claude 官方 skills 仓库的软链接入口，事实来源在 `tools/external/claude-official-skills/` |
 
 ## 维护口径
 
 - `auto-skill/` 是本仓库的 Skill 生产与升级入口，继续保留。
-- `auto-tmux/` 是 tmux 自动化与多 AI 终端协作入口，通过软链接复用 `tools/external/.tmux` 与 `tools/external/tmux`。
+- `auto-tmux/` 是 tmux 自动化与多 AI 终端协作入口，包含 `scripts/auto-tmux.sh` 执行层，并通过软链接复用 `tools/external/.tmux` 与 `tools/external/tmux`。
 - `claude-official-skills/` 是外部官方仓库展示入口，通过 submodule 管理事实来源。
 - 领域型/工具型 Skill 如交易、数据库、代理、Telegram、EPUB 等不在主仓库维护；如需引入，优先使用独立仓库、submodule 或重新生成的方式。
 
@@ -51,6 +51,6 @@ git submodule update --init --recursive
 ## 相关资源
 
 - [元技能文件](./auto-skill/SKILL.md) - 生成、重构与校验 Skills
-- [auto-tmux](./auto-tmux/SKILL.md) - tmux 自动化操控与多终端协作
+- [auto-tmux](./auto-tmux/SKILL.md) - tmux 自动化操控、脚本化巡检与多终端协作
 - [提示词库](../prompts/) - 更细粒度的提示词集合
 - [文档库](../docs/) - 方法论与开发经验

@@ -11,10 +11,15 @@ skills/auto-tmux/
 ├── assets/                   # 外部 tmux 相关仓库的只读软链接入口
 │   ├── oh-my-tmux -> ../../../tools/external/.tmux
 │   └── tmux-src -> ../../../tools/external/tmux
+├── scripts/                  # 安全封装的 tmux 自动化脚本
+│   ├── auto-tmux.sh
+│   ├── README.md
+│   └── AGENTS.md
 └── references/               # 长文档、示例与故障排查
     ├── index.md
     ├── getting_started.md
     ├── api.md
+    ├── automation.md
     ├── examples.md
     └── troubleshooting.md
 ```
@@ -23,6 +28,7 @@ skills/auto-tmux/
 
 - `assets/oh-my-tmux` 只暴露 gpakosz/oh-my-tmux submodule，不在技能目录内复制配置源码。
 - `assets/tmux-src` 只暴露 tmux/tmux submodule，供需要查看源码或上游文档时定位。
+- `scripts/auto-tmux.sh` 是技能执行层，封装 topology/capture/send/scan/rescue/record/hub/wait。
 - 技能文档可以引用软链接入口；更新上游内容必须通过 `tools/external/` 下的 submodule 指针完成。
 - 不在本目录直接修改 submodule 内容；如需改造，先 fork 上游并更新 submodule 来源。
 
@@ -31,3 +37,4 @@ skills/auto-tmux/
 - 上游来源：`tools/external/.tmux` 与 `tools/external/tmux`。
 - 下游使用：`SKILL.md` 和 `references/` 中的命令示例。
 - 验证入口：`skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict`。
+- 脚本验证：`bash -n skills/auto-tmux/scripts/auto-tmux.sh`。

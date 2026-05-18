@@ -7,5 +7,6 @@
 | [index.md](./index.md) | 参考资料索引 |
 | [getting_started.md](./getting_started.md) | 术语、最短路径和工作姿势 |
 | [api.md](./api.md) | tmux / oh-my-tmux 常用命令与配置速查 |
+| [automation.md](./automation.md) | `auto-tmux.sh` 脚本子命令、安全模型和 AI 蜂群协作流程 |
 | [examples.md](./examples.md) | 巡检、救援、审计和多 AI 工作台示例 |
 | [troubleshooting.md](./troubleshooting.md) | 常见故障与修复路径 |

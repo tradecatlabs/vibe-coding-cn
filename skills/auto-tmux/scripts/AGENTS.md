@@ -1,0 +1,20 @@
+# skills/auto-tmux/scripts
+
+本目录承载 `auto-tmux` 的可执行脚本层。脚本必须安全封装 tmux 常用操作，减少手写 `capture-pane` / `send-keys` 时的误控风险。
+
+## 目录结构
+
+```text
+scripts/
+├── AGENTS.md       # 本文件：脚本维护规则
+├── README.md       # 面向人类的脚本入口说明
+└── auto-tmux.sh    # 统一 tmux 自动化命令入口
+```
+
+## 维护规则
+
+- 脚本必须使用 Bash 标准能力，不引入额外运行时依赖。
+- 发送按键类功能必须先验证目标 pane 存在，并优先打印上下文。
+- 捕获输出默认脱敏；只有显式 `--no-redact` 才允许输出原文。
+- 批量救援必须通过 pattern 匹配触发，不允许无条件向所有 pane 发送输入。
+- 新增脚本后必须更新 `README.md`、`SKILL.md`、`references/index.md`，并运行 `bash -n` 与 skill strict 校验。
