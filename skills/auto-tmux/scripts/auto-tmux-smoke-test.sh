@@ -5,6 +5,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 AUTO_TMUX="$SCRIPT_DIR/auto-tmux.sh"
 SWARM_STATE="$SCRIPT_DIR/swarm-state.sh"
+RENDER_PROMPT="$SCRIPT_DIR/render-swarm-prompt.sh"
 SESSION="auto-tmux-smoke-$$"
 SWARM_DIR="/tmp/auto-tmux-smoke-swarm-$$"
 SNAPSHOT_DIR="/tmp/auto-tmux-smoke-snapshot-$$"
@@ -23,14 +24,17 @@ command -v tmux >/dev/null 2>&1 || {
 
 bash -n "$AUTO_TMUX"
 bash -n "$SWARM_STATE"
+bash -n "$RENDER_PROMPT"
 
 "$AUTO_TMUX" hub --session "$SESSION" --workers 1 --cmd bash
+"$AUTO_TMUX" doctor --session "$SESSION" >/tmp/auto-tmux-smoke-doctor.txt
 "$AUTO_TMUX" topology --session "$SESSION" >/tmp/auto-tmux-smoke-topology.txt
 
 commander_target="$(tmux list-panes -t "$SESSION:commander" -F '#S:#I.#P' | head -n 1)"
 worker_target="$(tmux list-panes -t "$SESSION:worker1" -F '#S:#I.#P' | head -n 1)"
 
 "$AUTO_TMUX" capture -t "$commander_target" -n 10 >/tmp/auto-tmux-smoke-capture.txt
+"$AUTO_TMUX" broadcast --session "$SESSION" --text "pwd" --enter --dry-run >/tmp/auto-tmux-smoke-broadcast.txt
 "$AUTO_TMUX" send -t "$worker_target" --text "echo AUTO_TMUX_SMOKE_OK" --enter
 "$AUTO_TMUX" wait -t "$worker_target" --pattern "AUTO_TMUX_SMOKE_OK" --timeout 10 >/tmp/auto-tmux-smoke-wait.txt
 "$AUTO_TMUX" snapshot --session "$SESSION" --dir "$SNAPSHOT_DIR" -n 20 >/tmp/auto-tmux-smoke-snapshot.txt
@@ -47,5 +51,9 @@ test -s "$SNAPSHOT_DIR/topology.txt"
 "$SWARM_STATE" task-done --dir "$SWARM_DIR" --id smoke-task --owner "$worker_target" --result "ok"
 "$SWARM_STATE" report --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-report.txt
 grep -q 'smoke-task' /tmp/auto-tmux-smoke-report.txt
+"$RENDER_PROMPT" commander --session "$SESSION" --swarm-dir "$SWARM_DIR" --task "smoke" >/tmp/auto-tmux-smoke-commander-prompt.md
+"$RENDER_PROMPT" worker --session "$SESSION" --target "$worker_target" --swarm-dir "$SWARM_DIR" --task "smoke" >/tmp/auto-tmux-smoke-worker-prompt.md
+grep -q 'Commander Prompt' /tmp/auto-tmux-smoke-commander-prompt.md
+grep -q 'Worker Prompt' /tmp/auto-tmux-smoke-worker-prompt.md
 
 printf 'auto-tmux smoke test ok: session=%s worker=%s\n' "$SESSION" "$worker_target"

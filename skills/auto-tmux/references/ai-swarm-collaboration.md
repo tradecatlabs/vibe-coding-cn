@@ -22,6 +22,7 @@ tmux 蜂群协作的核心是：让 AI 不再只是孤立会话，而是通过 t
 | 感知 | `capture-pane` / `auto-tmux.sh capture` | 读取指定终端输出 |
 | 控制 | `send-keys` / `auto-tmux.sh send` | 向指定终端发送按键或命令 |
 | 巡检 | `auto-tmux.sh scan` | 批量检查多个 pane 状态 |
+| 广播 | `auto-tmux.sh broadcast` | 受控批量下发同一指令 |
 | 救援 | `auto-tmux.sh rescue` | 对等待确认、卡住或异常的 pane 做最小干预 |
 | 记录 | `pipe-pane` / `auto-tmux.sh record` | 保留长任务审计日志 |
 | 协调 | `swarm-state.sh` + 明确 target | 任务同步、分工、加锁、避免冲突 |
@@ -291,6 +292,12 @@ skills/auto-tmux/scripts/auto-tmux.sh rescue -t "$target" --pattern "(y/n)" --re
 
 ### 7.1 Worker 模板
 
+推荐直接渲染：
+
+```bash
+skills/auto-tmux/scripts/render-swarm-prompt.sh worker --target <target> --task "只处理指定子任务"
+```
+
 ```markdown
 你是 tmux AI 蜂群中的 worker。
 
@@ -303,6 +310,12 @@ skills/auto-tmux/scripts/auto-tmux.sh rescue -t "$target" --pattern "(y/n)" --re
 ```
 
 ### 7.2 Commander 模板
+
+推荐直接渲染：
+
+```bash
+skills/auto-tmux/scripts/render-swarm-prompt.sh commander --session ai-hub --task "拆分并推进任务"
+```
 
 ```markdown
 你是 tmux AI 蜂群中的 commander。

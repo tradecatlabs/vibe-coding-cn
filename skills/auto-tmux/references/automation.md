@@ -14,9 +14,11 @@
 
 | 子命令 | 用途 | 风险控制 |
 |:---|:---|:---|
+| `doctor` | 检查 tmux、脚本、资产、session 健康状态 | 只读诊断 |
 | `topology` | 列出 session/window/pane 拓扑 | 只读 |
 | `capture` | 读取指定 pane 最近输出 | 默认脱敏，可保存到文件 |
 | `send` | 向指定 pane 发送文本或按键 | 先打印上下文，危险文本需 `--force` |
+| `broadcast` | 向指定 session 全部 pane 发送文本或按键 | 必须显式 session，支持 `--dry-run` |
 | `rescue` | pattern 命中后发送确认 | 不命中不发送 |
 | `scan` | 批量巡检 pane 输出 | 可按 session 限定范围 |
 | `record` | 开启/停止 pane 输出审计日志 | 文件写入到显式目录 |
@@ -25,6 +27,12 @@
 | `wait` | 等待 pane 输出出现某个 pattern | 超时失败 |
 
 ## 典型流程
+
+### 0. 诊断环境
+
+```bash
+skills/auto-tmux/scripts/auto-tmux.sh doctor --session ai-hub
+```
 
 ### 1. 建立 AI 工作台
 
@@ -54,6 +62,12 @@ skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub --pattern "ERROR|Tra
 
 ```bash
 skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub --save-dir /tmp/auto-tmux-scan
+```
+
+受控广播前先预览：
+
+```bash
+skills/auto-tmux/scripts/auto-tmux.sh broadcast --session ai-hub --text "pwd" --enter --dry-run
 ```
 
 生成完整证据快照：
@@ -165,8 +179,10 @@ skills/auto-tmux/scripts/swarm-state.sh report
 ```bash
 bash -n skills/auto-tmux/scripts/auto-tmux.sh
 bash -n skills/auto-tmux/scripts/swarm-state.sh
+bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
 skills/auto-tmux/scripts/auto-tmux.sh help
 skills/auto-tmux/scripts/swarm-state.sh help
+skills/auto-tmux/scripts/render-swarm-prompt.sh commander --session ai-hub --task "smoke"
 skills/auto-tmux/scripts/auto-tmux-smoke-test.sh
 skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict
 ```

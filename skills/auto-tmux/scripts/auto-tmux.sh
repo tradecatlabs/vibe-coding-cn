@@ -13,9 +13,11 @@ auto-tmux: safe tmux automation wrapper
 
 Usage:
   auto-tmux.sh help
+  auto-tmux.sh doctor [--session NAME]
   auto-tmux.sh topology [--session NAME]
   auto-tmux.sh capture -t TARGET [-n LINES] [--save FILE] [--no-redact]
   auto-tmux.sh send -t TARGET (--text TEXT | --key KEY) [--enter] [--clear] [--force] [--dry-run]
+  auto-tmux.sh broadcast --session NAME (--text TEXT | --key KEY) [--enter] [--clear] [--force] [--dry-run]
   auto-tmux.sh rescue -t TARGET [--pattern REGEX] [--reply TEXT] [-n LINES] [--force] [--dry-run]
   auto-tmux.sh scan [--session NAME] [-n LINES] [--pattern REGEX] [--rescue] [--reply TEXT] [--save-dir DIR]
   auto-tmux.sh record start -t TARGET [--dir DIR]
@@ -28,9 +30,11 @@ Target format:
   <session>:<window>.<pane>
 
 Examples:
+  auto-tmux.sh doctor --session ai-hub
   auto-tmux.sh topology
   auto-tmux.sh capture -t <target-from-topology> -n 80
   auto-tmux.sh send -t <target-from-topology> --text "make test" --enter
+  auto-tmux.sh broadcast --session ai-hub --text "pwd" --enter --dry-run
   auto-tmux.sh rescue -t <target-from-topology> --pattern "(y/n)" --reply y
   auto-tmux.sh scan --session ai-hub --pattern "ERROR|Traceback"
   auto-tmux.sh snapshot --session ai-hub --dir /tmp/auto-tmux-snapshot
@@ -45,6 +49,12 @@ die() {
 
 warn() {
   printf 'warn: %s\n' "$*" >&2
+}
+
+status_line() {
+  local status="$1"
+  local message="$2"
+  printf '[%s] %s\n' "$status" "$message"
 }
 
 require_tmux() {
@@ -110,6 +120,71 @@ pane_list() {
   fi
 }
 
+cmd_doctor() {
+  local session=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --session) session="${2:-}"; shift 2 ;;
+      -h|--help) usage; exit 0 ;;
+      *) die "unknown doctor option: $1" ;;
+    esac
+  done
+
+  local failures=0
+  local script_dir
+  script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+  if command -v tmux >/dev/null 2>&1; then
+    status_line "OK" "tmux found: $(tmux -V)"
+  else
+    status_line "FAIL" "tmux not found in PATH"
+    failures=$((failures + 1))
+  fi
+
+  if tmux list-sessions >/dev/null 2>&1; then
+    status_line "OK" "tmux server is reachable"
+  else
+    status_line "WARN" "tmux server has no reachable session yet"
+  fi
+
+  for script in auto-tmux.sh swarm-state.sh auto-tmux-smoke-test.sh render-swarm-prompt.sh; do
+    if [[ -x "$script_dir/$script" ]]; then
+      status_line "OK" "script executable: $script"
+    else
+      status_line "FAIL" "script missing or not executable: $script"
+      failures=$((failures + 1))
+    fi
+  done
+
+  local root
+  root="$(git -C "$script_dir" rev-parse --show-toplevel 2>/dev/null || true)"
+  if [[ -n "$root" ]]; then
+    for rel in skills/auto-tmux/assets/oh-my-tmux skills/auto-tmux/assets/tmux-src; do
+      if [[ -e "$root/$rel" ]]; then
+        status_line "OK" "asset exists: $rel"
+      else
+        status_line "WARN" "asset missing: $rel (run git submodule update --init --recursive)"
+      fi
+    done
+  else
+    status_line "WARN" "not inside a git worktree; skipped asset checks"
+  fi
+
+  if [[ -n "$session" ]]; then
+    if tmux has-session -t "$session" 2>/dev/null; then
+      status_line "OK" "session exists: $session"
+      tmux list-panes -t "$session" -F '  pane #S:#{window_index}.#{pane_index} cmd=#{pane_current_command}'
+    else
+      status_line "FAIL" "session not found: $session"
+      failures=$((failures + 1))
+    fi
+  fi
+
+  if (( failures > 0 )); then
+    return 1
+  fi
+}
+
 cmd_topology() {
   local session=""
   while [[ $# -gt 0 ]]; do
@@ -132,6 +207,65 @@ cmd_topology() {
     tmux list-windows -a -F '  window #S:#{window_index}: #{window_name} #{window_flags}'
     tmux list-panes -a -F '    pane #S:#{window_index}.#{pane_index} cmd=#{pane_current_command} path=#{pane_current_path}'
   fi
+}
+
+cmd_broadcast() {
+  local session=""
+  local text=""
+  local key=""
+  local enter="0"
+  local clear="0"
+  local force="0"
+  local dry_run="0"
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --session) session="${2:-}"; shift 2 ;;
+      --text) text="${2:-}"; shift 2 ;;
+      --key) key="${2:-}"; shift 2 ;;
+      --enter) enter="1"; shift ;;
+      --clear) clear="1"; shift ;;
+      --force) force="1"; shift ;;
+      --dry-run) dry_run="1"; shift ;;
+      -h|--help) usage; exit 0 ;;
+      *) die "unknown broadcast option: $1" ;;
+    esac
+  done
+
+  require_tmux
+  [[ -n "$session" ]] || die "broadcast requires --session NAME"
+  tmux has-session -t "$session" 2>/dev/null || die "session not found: $session"
+  [[ -n "$text" || -n "$key" ]] || die "broadcast requires --text TEXT or --key KEY"
+  [[ -z "$text" || -z "$key" ]] || die "broadcast accepts only one of --text or --key"
+  if [[ -n "$text" && "$force" != "1" ]] && is_dangerous_text "$text"; then
+    die "refusing dangerous broadcast text without --force: $text"
+  fi
+
+  local panes=()
+  mapfile -t panes < <(pane_list "$session")
+  [[ "${#panes[@]}" -gt 0 ]] || die "no panes found in session: $session"
+  printf 'broadcast targets (%s):\n' "${#panes[@]}"
+  printf '  %s\n' "${panes[@]}"
+
+  local pane
+  for pane in "${panes[@]}"; do
+    if [[ "$dry_run" == "1" ]]; then
+      printf '[dry-run] would send to %s\n' "$pane"
+      continue
+    fi
+    if [[ -n "$text" ]]; then
+      local args=(-t "$pane" --text "$text")
+      [[ "$enter" == "1" ]] && args+=(--enter)
+      [[ "$clear" == "1" ]] && args+=(--clear)
+      [[ "$force" == "1" ]] && args+=(--force)
+      cmd_send "${args[@]}"
+    else
+      local args=(-t "$pane" --key "$key")
+      [[ "$enter" == "1" ]] && args+=(--enter)
+      [[ "$clear" == "1" ]] && args+=(--clear)
+      [[ "$force" == "1" ]] && args+=(--force)
+      cmd_send "${args[@]}"
+    fi
+  done
 }
 
 cmd_capture() {
@@ -448,9 +582,11 @@ main() {
   shift || true
   case "$cmd" in
     help|-h|--help) usage ;;
+    doctor) cmd_doctor "$@" ;;
     topology) cmd_topology "$@" ;;
     capture) cmd_capture "$@" ;;
     send) cmd_send "$@" ;;
+    broadcast) cmd_broadcast "$@" ;;
     rescue) cmd_rescue "$@" ;;
     scan) cmd_scan "$@" ;;
     record) cmd_record "$@" ;;

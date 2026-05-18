@@ -1,0 +1,92 @@
+# Swarm Prompt Templates
+
+`scripts/render-swarm-prompt.sh` 用于渲染 tmux 蜂群协作的 commander、worker 和 reviewer 提示词。它把常用协作协议固化成可复制模板，避免每次手写时遗漏边界、状态、锁和验收要求。
+
+## 子命令
+
+| 角色 | 命令 | 用途 |
+|:---|:---|:---|
+| commander | `render-swarm-prompt.sh commander` | 任务拆分、巡检、救援、验收 |
+| worker | `render-swarm-prompt.sh worker` | 执行单一子任务并回报证据 |
+| reviewer | `render-swarm-prompt.sh reviewer` | 独立审查 worker 产出 |
+
+## Commander Prompt
+
+```bash
+skills/auto-tmux/scripts/render-swarm-prompt.sh commander \
+  --session ai-hub \
+  --swarm-dir /tmp/ai_swarm \
+  --task "重构 README 实验性方法入口"
+```
+
+适用场景：
+
+- 开始一个多 worker 协作任务。
+- 需要统一任务拆分、锁、巡检和验收。
+- 需要让 commander 只做调度，不直接混入 worker 实现。
+
+## Worker Prompt
+
+先获取 worker target：
+
+```bash
+target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
+```
+
+渲染 worker 提示词：
+
+```bash
+skills/auto-tmux/scripts/render-swarm-prompt.sh worker \
+  --session ai-hub \
+  --target "$target" \
+  --swarm-dir /tmp/ai_swarm \
+  --task "只检查 docs/research/README.md 的链接和锚点"
+```
+
+适用场景：
+
+- 给某个 worker 下发边界清晰的单一任务。
+- 需要强制 worker 在修改前加锁，完成后写状态和结果。
+- 需要让 worker 汇报修改文件、验证结果、风险和下一步。
+
+## Reviewer Prompt
+
+```bash
+skills/auto-tmux/scripts/render-swarm-prompt.sh reviewer \
+  --session ai-hub \
+  --swarm-dir /tmp/ai_swarm \
+  --task "审查本轮 auto-tmux 脚本和文档改动"
+```
+
+适用场景：
+
+- worker 完成后，需要另一个 AI 做独立审查。
+- 需要重点检查 correctness、越界修改、缺失测试、文档不同步。
+- 需要避免同一上下文自我确认。
+
+## 推荐下发方式
+
+渲染到临时文件：
+
+```bash
+skills/auto-tmux/scripts/render-swarm-prompt.sh worker \
+  --target "$target" \
+  --task "运行 make test 并分析失败" \
+  > /tmp/worker-prompt.md
+```
+
+发送到 worker：
+
+```bash
+skills/auto-tmux/scripts/auto-tmux.sh send \
+  -t "$target" \
+  --text "$(cat /tmp/worker-prompt.md)" \
+  --enter
+```
+
+## 注意事项
+
+- Prompt 只定义职责和边界，不替代测试、lint、diff、CI 等硬门禁。
+- commander、worker、reviewer 应使用不同 pane，避免角色混淆。
+- 长任务必须配合 `record` 或 `snapshot` 保留证据。
+- 多 worker 修改同一资源前必须配合 `swarm-state.sh lock-acquire`。

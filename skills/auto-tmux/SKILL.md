@@ -35,6 +35,7 @@ description: "tmux 自动化操控：用 scripts/auto-tmux.sh 安全读取、发
 ```bash
 bash -n skills/auto-tmux/scripts/auto-tmux.sh
 bash -n skills/auto-tmux/scripts/swarm-state.sh
+bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
 skills/auto-tmux/scripts/auto-tmux.sh help
 skills/auto-tmux/scripts/swarm-state.sh help
 ```
@@ -95,6 +96,11 @@ skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub -n 80
 skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub --pattern "ERROR|Traceback" --save-dir /tmp/auto-tmux-scan
 ```
 
+**受控广播到指定 session**
+```bash
+skills/auto-tmux/scripts/auto-tmux.sh broadcast --session ai-hub --text "pwd" --enter --dry-run
+```
+
 **生成证据快照**
 ```bash
 skills/auto-tmux/scripts/auto-tmux.sh snapshot --session ai-hub --dir /tmp/auto-tmux-snapshot -n 120
@@ -144,6 +150,13 @@ skills/auto-tmux/scripts/swarm-state.sh report --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/auto-tmux-smoke-test.sh
 ```
 
+**渲染 commander / worker / reviewer 提示词**
+```bash
+skills/auto-tmux/scripts/render-swarm-prompt.sh commander --session ai-hub --task "拆分并推进任务"
+skills/auto-tmux/scripts/render-swarm-prompt.sh worker --target <session>:<window>.<pane> --task "只处理指定子任务"
+skills/auto-tmux/scripts/render-swarm-prompt.sh reviewer --session ai-hub --task "审查 worker 产出"
+```
+
 ## Rules & Constraints
 
 - MUST：优先使用 `scripts/auto-tmux.sh`；直接使用 tmux 原生命令时必须保留同等安全约束。
@@ -155,6 +168,7 @@ skills/auto-tmux/scripts/auto-tmux-smoke-test.sh
 - SHOULD：pane 处在 Codex UI 时，先发送 `/exit` 回到 shell 再执行命令。
 - SHOULD：长任务开启 `pipe-pane` 记录审计；广播完成后立即 `synchronize-panes off`。
 - SHOULD：多 worker 修改同一文件、目录或服务前，先用 `swarm-state.sh lock-acquire` 声明锁。
+- SHOULD：批量下发先用 `broadcast --dry-run` 预览目标，再决定是否真实发送。
 - NEVER：在未知 pane 发送破坏性命令；NEVER 在 root 会话不经确认发送 `Ctrl+C`/`Ctrl+D`。
 
 ## Examples
@@ -206,11 +220,13 @@ skills/auto-tmux/scripts/auto-tmux-smoke-test.sh
 - `references/api.md`: tmux/oh-my-tmux 常用命令、选项与 gpakosz 特色键位
 - `references/automation.md`: `scripts/auto-tmux.sh` 子命令、安全模型与 AI 蜂群协作流程
 - `references/swarm-state.md`: 蜂群状态、任务、锁和报告协议
+- `references/prompt-templates.md`: commander/worker/reviewer 提示词模板和下发方式
 - `references/ai-swarm-collaboration.md`: tmux 蜂群协作历史文档、架构模式、协议、案例和风险限制
 - `references/examples.md`: 蜂群协议脚本与长示例
 - `references/troubleshooting.md`: 典型故障到修复路径
 - `scripts/auto-tmux.sh`: 安全封装的 tmux 自动化脚本入口
 - `scripts/swarm-state.sh`: 蜂群任务、锁、状态和报告脚本
+- `scripts/render-swarm-prompt.sh`: commander/worker/reviewer 提示词渲染脚本
 - `scripts/auto-tmux-smoke-test.sh`: tmux 自动化脚本端到端自测
 - `assets/oh-my-tmux`: gpakosz/oh-my-tmux submodule 的相对软链接入口
 - `assets/tmux-src`: tmux/tmux submodule 的相对软链接入口
@@ -230,6 +246,6 @@ skills/auto-tmux/scripts/auto-tmux-smoke-test.sh
 4. ≥3 个端到端示例，含输入/步骤/验收。
 5. 长文档放在 `references/` 并可导航；无文档堆砌。
 6. 不确定项给出验证路径；禁止虚构 tmux 行为。
-7. `bash -n skills/auto-tmux/scripts/auto-tmux.sh` 与 `bash -n skills/auto-tmux/scripts/swarm-state.sh` 通过。
+7. `bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh` 与 `bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh` 通过。
 8. `skills/auto-tmux/scripts/auto-tmux-smoke-test.sh` 通过或在无 tmux 环境下明确跳过。
 9. 运行 `skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict` 通过。
