@@ -40,6 +40,7 @@ bash -n "$SWARM_DISPATCH"
 "$AUTO_TMUX" hub --session "$SESSION" --workers 1 --cmd bash
 "$AUTO_TMUX" doctor --session "$SESSION" >/tmp/auto-tmux-smoke-doctor.txt
 "$AUTO_TMUX" topology --session "$SESSION" >/tmp/auto-tmux-smoke-topology.txt
+"$AUTO_TMUX" cleanup --session "$SESSION" --dry-run >/tmp/auto-tmux-smoke-cleanup-dry-run.txt
 
 commander_target="$(tmux list-panes -t "$SESSION:commander" -F '#S:#I.#P' | head -n 1)"
 worker_target="$(tmux list-panes -t "$SESSION:worker1" -F '#S:#I.#P' | head -n 1)"

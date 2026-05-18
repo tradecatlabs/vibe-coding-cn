@@ -27,6 +27,7 @@
 | `record` | 开启/停止 pane 输出审计日志 | 文件写入到显式目录 |
 | `snapshot` | 导出拓扑和 pane 输出证据包 | 默认脱敏，写入显式目录 |
 | `hub` | 初始化 AI 多终端工作台 | 已存在 session 不覆盖 |
+| `cleanup` | 清理指定 tmux session | 真实 kill 必须显式 `--force` |
 | `wait` | 等待 pane 输出出现某个 pattern | 超时失败 |
 | `swarm-brief.sh` | 生成只读交接报告 | 不发送按键，只汇总证据 |
 | `swarm-watch.sh` | 有限轮次巡检 pane 输出和状态 | 不默认无限循环 |
@@ -51,6 +52,7 @@ skills/auto-tmux/scripts/auto-tmux.sh hub --session ai-hub --workers 3 --cmd "co
 
 ```bash
 skills/auto-tmux/scripts/auto-tmux.sh topology --session ai-hub
+skills/auto-tmux/scripts/auto-tmux.sh cleanup --session ai-hub --dry-run
 ```
 
 ### 2. 巡检全部 worker

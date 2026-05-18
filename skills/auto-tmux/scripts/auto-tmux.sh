@@ -26,6 +26,7 @@ Usage:
   auto-tmux.sh record stop -t TARGET
   auto-tmux.sh snapshot [--session NAME] [--dir DIR] [-n LINES]
   auto-tmux.sh hub [--session NAME] [--workers N] [--cmd CMD] [--commander-cmd CMD] [--attach]
+  auto-tmux.sh cleanup --session NAME [--dry-run] [--force]
   auto-tmux.sh wait -t TARGET --pattern REGEX [--timeout SEC] [--interval SEC] [-n LINES]
 
 Target format:
@@ -43,6 +44,7 @@ Examples:
   auto-tmux.sh scan --session ai-hub --pattern "ERROR|Traceback"
   auto-tmux.sh snapshot --session ai-hub --dir /tmp/auto-tmux-snapshot
   auto-tmux.sh hub --session ai-hub --workers 3 --cmd "codex"
+  auto-tmux.sh cleanup --session ai-hub --dry-run
 EOF
 }
 
@@ -621,6 +623,41 @@ cmd_hub() {
   fi
 }
 
+cmd_cleanup() {
+  local session=""
+  local dry_run="0"
+  local force="0"
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --session) session="${2:-}"; shift 2 ;;
+      --dry-run) dry_run="1"; shift ;;
+      --force) force="1"; shift ;;
+      -h|--help) usage; exit 0 ;;
+      *) die "unknown cleanup option: $1" ;;
+    esac
+  done
+
+  command -v tmux >/dev/null 2>&1 || die "tmux is not installed or not in PATH"
+  [[ -n "$session" ]] || die "cleanup requires --session NAME"
+  tmux has-session -t "$session" 2>/dev/null || die "session not found: $session"
+
+  local attached windows
+  attached="$(tmux display-message -pt "$session" '#{session_attached}' 2>/dev/null || printf '0')"
+  windows="$(tmux display-message -pt "$session" '#{session_windows}' 2>/dev/null || printf '?')"
+  printf 'cleanup target: session=%s windows=%s attached=%s\n' "$session" "$windows" "$attached"
+
+  if [[ "$dry_run" == "1" ]]; then
+    printf '[dry-run] would kill session: %s\n' "$session"
+    return 0
+  fi
+  [[ "$force" == "1" ]] || die "cleanup requires --force without --dry-run"
+  if [[ "$attached" != "0" ]]; then
+    warn "session is attached; killing anyway because --force was provided"
+  fi
+  tmux kill-session -t "$session"
+  printf 'session killed: %s\n' "$session"
+}
+
 cmd_wait() {
   local target=""
   local pattern=""
@@ -678,6 +715,7 @@ main() {
     record) cmd_record "$@" ;;
     snapshot) cmd_snapshot "$@" ;;
     hub) cmd_hub "$@" ;;
+    cleanup) cmd_cleanup "$@" ;;
     wait) cmd_wait "$@" ;;
     *) die "unknown command: $cmd" ;;
   esac

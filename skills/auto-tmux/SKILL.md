@@ -125,6 +125,7 @@ skills/auto-tmux/scripts/auto-tmux.sh rescue -t "$target" --pattern "(y/n)" --re
 ```bash
 skills/auto-tmux/scripts/auto-tmux.sh hub --session ai-hub --workers 3 --cmd "codex"
 skills/auto-tmux/scripts/auto-tmux.sh topology --session ai-hub
+skills/auto-tmux/scripts/auto-tmux.sh cleanup --session ai-hub --dry-run
 ```
 
 **启用 oh-my-tmux 配置（仓库内版本）**

@@ -21,6 +21,7 @@ skills/auto-tmux/scripts/auto-tmux.sh help
 
 # 查看 tmux 拓扑
 skills/auto-tmux/scripts/auto-tmux.sh topology
+skills/auto-tmux/scripts/auto-tmux.sh cleanup --session ai-hub --dry-run
 
 # 诊断环境
 skills/auto-tmux/scripts/auto-tmux.sh doctor --session ai-hub
