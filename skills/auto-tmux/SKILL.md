@@ -38,6 +38,7 @@ bash -n skills/auto-tmux/scripts/swarm-state.sh
 bash -n skills/auto-tmux/scripts/swarm-brief.sh
 bash -n skills/auto-tmux/scripts/swarm-watch.sh
 bash -n skills/auto-tmux/scripts/swarm-archive.sh
+bash -n skills/auto-tmux/scripts/safety-check.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
 bash -n skills/auto-tmux/scripts/swarm-dispatch.sh
 bash -n skills/auto-tmux/scripts/validate-auto-tmux.sh
@@ -76,7 +77,9 @@ tmux capture-pane -t <session>:<window>.<pane> -p -S -120
 
 **向指定 pane 发送命令或确认键**
 ```bash
+skills/auto-tmux/scripts/safety-check.sh --text "make test"
 skills/auto-tmux/scripts/auto-tmux.sh send -t <session>:<window>.<pane> --text "make test" --enter
+skills/auto-tmux/scripts/safety-check.sh --file /tmp/prompt.md --strict
 skills/auto-tmux/scripts/auto-tmux.sh paste -t <session>:<window>.<pane> --file /tmp/prompt.md --enter --dry-run
 skills/auto-tmux/scripts/auto-tmux.sh rescue -t <session>:<window>.<pane> --pattern "(y/n)" --reply y
 ```
@@ -189,6 +192,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - MUST：批量操作前先 `list-windows`/`list-panes` 建立白名单，避免误控用户窗口。
 - SHOULD：救援/确认前先 grep 关键词（如 `(y/n)`、`password`），只对匹配目标发送。
 - SHOULD：发送完整命令行时避免先发 `Escape`；先 `C-c` 中断、`C-u` 清行，再用 `send-keys -l` 逐字发送完整命令。
+- SHOULD：长 prompt、文件粘贴、跨 worker 分发前运行 `scripts/safety-check.sh`，批量发送先 `--dry-run`。
 - SHOULD：pane 处在 Codex UI 时，先发送 `/exit` 回到 shell 再执行命令。
 - SHOULD：长任务开启 `pipe-pane` 记录审计；广播完成后立即 `synchronize-panes off`。
 - SHOULD：多 worker 修改同一文件、目录或服务前，先用 `swarm-state.sh lock-acquire` 声明锁。
@@ -243,6 +247,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `references/getting_started.md`: 术语、oh-my-tmux 最小接入步骤
 - `references/api.md`: tmux/oh-my-tmux 常用命令、选项与 gpakosz 特色键位
 - `references/automation.md`: `scripts/auto-tmux.sh` 子命令、安全模型与 AI 蜂群协作流程
+- `references/safety-policy.md`: 发送、广播、清理、归档和敏感信息处理的安全策略
 - `references/swarm-state.md`: 蜂群状态、任务、锁和报告协议
 - `references/prompt-templates.md`: commander/worker/reviewer 提示词模板和下发方式
 - `references/ai-swarm-collaboration.md`: tmux 蜂群协作历史文档、架构模式、协议、案例和风险限制
@@ -254,6 +259,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `scripts/swarm-brief.sh`: 只读生成 tmux 蜂群交接报告
 - `scripts/swarm-watch.sh`: 有限轮次巡检 tmux 蜂群输出和状态报告
 - `scripts/swarm-archive.sh`: 打包 brief、snapshot 和 swarm state 的交接归档
+- `scripts/safety-check.sh`: 发送/粘贴/分发前检查危险命令、敏感信息和过大 payload
 - `scripts/render-swarm-prompt.sh`: commander/worker/reviewer 提示词渲染脚本
 - `scripts/swarm-dispatch.sh`: 渲染并可选下发 commander/worker/reviewer 提示词
 - `scripts/auto-tmux-smoke-test.sh`: tmux 自动化脚本端到端自测
@@ -276,6 +282,6 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 4. ≥3 个端到端示例，含输入/步骤/验收。
 5. 长文档放在 `references/` 并可导航；无文档堆砌。
 6. 不确定项给出验证路径；禁止虚构 tmux 行为。
-7. `bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh`、`bash -n skills/auto-tmux/scripts/swarm-watch.sh`、`bash -n skills/auto-tmux/scripts/swarm-archive.sh`、`bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh`、`bash -n skills/auto-tmux/scripts/swarm-dispatch.sh` 与 `bash -n skills/auto-tmux/scripts/validate-auto-tmux.sh` 通过。
+7. `bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh`、`bash -n skills/auto-tmux/scripts/swarm-watch.sh`、`bash -n skills/auto-tmux/scripts/swarm-archive.sh`、`bash -n skills/auto-tmux/scripts/safety-check.sh`、`bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh`、`bash -n skills/auto-tmux/scripts/swarm-dispatch.sh` 与 `bash -n skills/auto-tmux/scripts/validate-auto-tmux.sh` 通过。
 8. `skills/auto-tmux/scripts/auto-tmux-smoke-test.sh` 通过或在无 tmux 环境下明确跳过。
 9. 运行 `skills/auto-tmux/scripts/validate-auto-tmux.sh` 和 `skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict` 通过。

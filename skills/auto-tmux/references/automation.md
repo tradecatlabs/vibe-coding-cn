@@ -26,6 +26,7 @@
 | `scan` | 批量巡检 pane 输出 | 可按 session 限定范围 |
 | `record` | 开启/停止 pane 输出审计日志 | 文件写入到显式目录 |
 | `snapshot` | 导出拓扑和 pane 输出证据包 | 默认脱敏，写入显式目录 |
+| `safety-check.sh` | 检查待发送文本或文件 | 发现危险命令失败，敏感信息按 strict 策略告警或失败 |
 | `hub` | 初始化 AI 多终端工作台 | 已存在 session 不覆盖 |
 | `cleanup` | 清理指定 tmux session | 真实 kill 必须显式 `--force` |
 | `wait` | 等待 pane 输出出现某个 pattern | 超时失败 |
@@ -97,6 +98,13 @@ skills/auto-tmux/scripts/swarm-brief.sh --session ai-hub --swarm-dir /tmp/ai_swa
 ```bash
 skills/auto-tmux/scripts/swarm-watch.sh --session ai-hub --swarm-dir /tmp/ai_swarm --iterations 3 --interval 10 -n 80
 skills/auto-tmux/scripts/swarm-archive.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/ai-hub-handoff.tar.gz
+```
+
+发送前对 payload 做安全预检：
+
+```bash
+skills/auto-tmux/scripts/safety-check.sh --text "make test"
+skills/auto-tmux/scripts/safety-check.sh --file /tmp/prompt.md --strict
 ```
 
 执行 auto-tmux 专属质量门禁：
@@ -242,6 +250,7 @@ bash -n skills/auto-tmux/scripts/swarm-state.sh
 bash -n skills/auto-tmux/scripts/swarm-brief.sh
 bash -n skills/auto-tmux/scripts/swarm-watch.sh
 bash -n skills/auto-tmux/scripts/swarm-archive.sh
+bash -n skills/auto-tmux/scripts/safety-check.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
 bash -n skills/auto-tmux/scripts/swarm-dispatch.sh
 bash -n skills/auto-tmux/scripts/validate-auto-tmux.sh

@@ -9,6 +9,7 @@
 - [`swarm-brief.sh`](./swarm-brief.sh) - 只读生成蜂群交接报告，汇总 doctor、topology、pane 输出和状态报告。
 - [`swarm-watch.sh`](./swarm-watch.sh) - 有限轮次巡检蜂群 pane 输出和状态报告，形成连续证据。
 - [`swarm-archive.sh`](./swarm-archive.sh) - 打包 brief、snapshot 和 swarm state，生成可交接归档。
+- [`safety-check.sh`](./safety-check.sh) - 发送、粘贴或分发前检查危险命令、敏感信息和过大 payload。
 - [`render-swarm-prompt.sh`](./render-swarm-prompt.sh) - commander、worker、reviewer 提示词渲染。
 - [`swarm-dispatch.sh`](./swarm-dispatch.sh) - 渲染提示词并可选发送到指定 pane，默认只写文件。
 - [`auto-tmux-smoke-test.sh`](./auto-tmux-smoke-test.sh) - 创建临时 tmux 会话，端到端验证脚本能力。
@@ -34,7 +35,9 @@ skills/auto-tmux/scripts/auto-tmux.sh inspect -t "$target" -n 40
 skills/auto-tmux/scripts/auto-tmux.sh capture -t "$target" -n 80
 
 # 发送命令并回车
+skills/auto-tmux/scripts/safety-check.sh --text "make test"
 skills/auto-tmux/scripts/auto-tmux.sh send -t "$target" --text "make test" --enter
+skills/auto-tmux/scripts/safety-check.sh --file /tmp/prompt.md --strict
 skills/auto-tmux/scripts/auto-tmux.sh paste -t "$target" --file /tmp/prompt.md --enter --dry-run
 
 # 扫描某个 session 的错误
@@ -89,6 +92,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target "$target" --ta
 - 默认对捕获输出做密钥脱敏。
 - `send` 会先打印目标 pane 最近上下文，再发送按键。
 - 危险命令默认拒绝，必须显式 `--force`。
+- 长 prompt、文件粘贴和 prompt 下发前先运行 `safety-check.sh`。
 - 批量操作必须使用明确的 session/window/pane 目标。
 - 批量广播必须先 `--dry-run`，确认目标列表后再真实发送。
 - 多 worker 协作时用 `swarm-state.sh lock-acquire` 声明文件、目录或服务锁。

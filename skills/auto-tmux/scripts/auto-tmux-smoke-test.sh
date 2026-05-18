@@ -9,6 +9,7 @@ RENDER_PROMPT="$SCRIPT_DIR/render-swarm-prompt.sh"
 SWARM_BRIEF="$SCRIPT_DIR/swarm-brief.sh"
 SWARM_WATCH="$SCRIPT_DIR/swarm-watch.sh"
 SWARM_ARCHIVE="$SCRIPT_DIR/swarm-archive.sh"
+SAFETY_CHECK="$SCRIPT_DIR/safety-check.sh"
 SWARM_DISPATCH="$SCRIPT_DIR/swarm-dispatch.sh"
 SESSION="auto-tmux-smoke-$$"
 SWARM_DIR="/tmp/auto-tmux-smoke-swarm-$$"
@@ -38,6 +39,7 @@ bash -n "$RENDER_PROMPT"
 bash -n "$SWARM_BRIEF"
 bash -n "$SWARM_WATCH"
 bash -n "$SWARM_ARCHIVE"
+bash -n "$SAFETY_CHECK"
 bash -n "$SWARM_DISPATCH"
 
 "$AUTO_TMUX" hub --session "$SESSION" --workers 1 --cmd bash
@@ -52,6 +54,12 @@ worker_target="$(tmux list-panes -t "$SESSION:worker1" -F '#S:#I.#P' | head -n 1
 "$AUTO_TMUX" inspect -t "$commander_target" -n 10 >/tmp/auto-tmux-smoke-inspect.txt
 grep -q 'pane inspect' /tmp/auto-tmux-smoke-inspect.txt
 printf '%s\n' 'echo AUTO_TMUX_PASTE_OK' > "$PASTE_FILE"
+"$SAFETY_CHECK" --text "make test" >/tmp/auto-tmux-smoke-safety-clean.txt
+if "$SAFETY_CHECK" --text "rm -rf /tmp/example" >/tmp/auto-tmux-smoke-safety-danger.txt 2>&1; then
+  echo "expected safety-check to reject dangerous text" >&2
+  exit 1
+fi
+"$SAFETY_CHECK" --file "$PASTE_FILE" --strict >/tmp/auto-tmux-smoke-safety-file.txt
 "$AUTO_TMUX" paste -t "$worker_target" --file "$PASTE_FILE" --enter --dry-run >/tmp/auto-tmux-smoke-paste-dry-run.txt
 "$AUTO_TMUX" broadcast --session "$SESSION" --text "pwd" --enter --dry-run >/tmp/auto-tmux-smoke-broadcast.txt
 "$AUTO_TMUX" send -t "$worker_target" --text "echo AUTO_TMUX_SMOKE_OK" --enter
