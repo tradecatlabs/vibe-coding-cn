@@ -141,7 +141,15 @@ skills/auto-tmux/scripts/swarm-state.sh lock-release \
 skills/auto-tmux/scripts/swarm-state.sh lock-list
 ```
 
+清理过期锁前先演练：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh lock-prune --older-than 3600 --dry-run
+skills/auto-tmux/scripts/swarm-state.sh lock-prune --older-than 3600
+```
+
 锁使用 `mkdir` 创建目录，具备基本原子性。若锁归属不匹配，默认拒绝释放；确需人工回收时才使用 `--force`。
+`lock-prune` 用于 worker 崩溃或会话中断后的过期锁回收，必须先 `--dry-run` 确认目标。
 
 ## 报告
 

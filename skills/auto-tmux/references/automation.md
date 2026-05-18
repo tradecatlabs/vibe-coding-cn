@@ -206,6 +206,12 @@ skills/auto-tmux/scripts/swarm-state.sh task-fail --id task-001 --owner "ai-hub:
 skills/auto-tmux/scripts/swarm-state.sh lock-acquire --name README.md --owner "ai-hub:2.1"
 ```
 
+回收过期锁前先 dry-run：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh lock-prune --older-than 3600 --dry-run
+```
+
 完成任务并生成报告：
 
 ```bash

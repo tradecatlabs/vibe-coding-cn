@@ -149,6 +149,7 @@ skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
 skills/auto-tmux/scripts/swarm-state.sh task-next --owner <session>:<window>.<pane>
 skills/auto-tmux/scripts/swarm-state.sh lock-acquire --name README.md --owner <session>:<window>.<pane>
+skills/auto-tmux/scripts/swarm-state.sh lock-prune --older-than 3600 --dry-run
 skills/auto-tmux/scripts/swarm-state.sh task-block --id task-001 --owner <session>:<window>.<pane> --reason "等待输入"
 skills/auto-tmux/scripts/swarm-state.sh task-fail --id task-001 --owner <session>:<window>.<pane> --reason "测试失败"
 skills/auto-tmux/scripts/swarm-state.sh report --dir /tmp/ai_swarm

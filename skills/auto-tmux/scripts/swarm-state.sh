@@ -27,6 +27,7 @@ Usage:
   swarm-state.sh lock-acquire --name NAME --owner TARGET [--dir DIR]
   swarm-state.sh lock-release --name NAME --owner TARGET [--dir DIR] [--force]
   swarm-state.sh lock-list [--dir DIR]
+  swarm-state.sh lock-prune --older-than SEC [--dir DIR] [--dry-run]
   swarm-state.sh report [--dir DIR]
 
 Environment:
@@ -343,6 +344,40 @@ cmd_lock_list() {
   done
 }
 
+cmd_lock_prune() {
+  local older_than="" dry_run="0"
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --dir) set_dir "${2:-}"; shift 2 ;;
+      --older-than) older_than="${2:-}"; shift 2 ;;
+      --dry-run) dry_run="1"; shift ;;
+      *) die "unknown lock-prune option: $1" ;;
+    esac
+  done
+  [[ -n "$older_than" ]] || die "missing --older-than SEC"
+  [[ "$older_than" =~ ^[0-9]+$ ]] || die "--older-than must be seconds"
+  ensure_init
+
+  local now path created_at created_epoch age name
+  now="$(date +%s)"
+  find "$LOCKS_DIR" -mindepth 1 -maxdepth 1 -type d -name '*.lock.d' -print | sort | while read -r path; do
+    created_at="$(cat "$path/created_at" 2>/dev/null || true)"
+    created_epoch="$(date -d "$created_at" +%s 2>/dev/null || printf '0')"
+    [[ "$created_epoch" != "0" ]] || continue
+    age=$((now - created_epoch))
+    name="$(basename "$path" .lock.d)"
+    if (( age >= older_than )); then
+      if [[ "$dry_run" == "1" ]]; then
+        printf '[dry-run] would prune lock: %s age=%ss\n' "$name" "$age"
+      else
+        rm -rf "$path"
+        cmd_log --target "swarm-state" --status "UNLOCK" --message "pruned stale lock $name age=${age}s"
+        printf 'lock pruned: %s age=%ss\n' "$name" "$age"
+      fi
+    fi
+  done
+}
+
 cmd_report() {
   while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -379,6 +414,7 @@ main() {
     lock-acquire) cmd_lock_acquire "$@" ;;
     lock-release) cmd_lock_release "$@" ;;
     lock-list) cmd_lock_list "$@" ;;
+    lock-prune) cmd_lock_prune "$@" ;;
     report) cmd_report "$@" ;;
     *) die "unknown command: $cmd" ;;
   esac

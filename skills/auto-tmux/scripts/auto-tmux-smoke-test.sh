@@ -57,6 +57,10 @@ test -s "$SNAPSHOT_DIR/topology.txt"
 "$SWARM_STATE" task-claim --dir "$SWARM_DIR" --id smoke-task --owner "$worker_target"
 "$SWARM_STATE" lock-acquire --dir "$SWARM_DIR" --name smoke-file --owner "$worker_target" >/tmp/auto-tmux-smoke-lock.txt
 "$SWARM_STATE" lock-release --dir "$SWARM_DIR" --name smoke-file --owner "$worker_target" >/tmp/auto-tmux-smoke-unlock.txt
+"$SWARM_STATE" lock-acquire --dir "$SWARM_DIR" --name stale-file --owner "$worker_target" >/tmp/auto-tmux-smoke-stale-lock.txt
+"$SWARM_STATE" lock-prune --dir "$SWARM_DIR" --older-than 0 --dry-run >/tmp/auto-tmux-smoke-lock-prune-dry-run.txt
+"$SWARM_STATE" lock-prune --dir "$SWARM_DIR" --older-than 0 >/tmp/auto-tmux-smoke-lock-prune.txt
+grep -q 'stale-file' /tmp/auto-tmux-smoke-lock-prune.txt
 "$SWARM_STATE" task-done --dir "$SWARM_DIR" --id smoke-task --owner "$worker_target" --result "ok"
 "$SWARM_STATE" task-add --dir "$SWARM_DIR" --id smoke-next --text "claim next task" >/tmp/auto-tmux-smoke-task-next-add.txt
 "$SWARM_STATE" task-next --dir "$SWARM_DIR" --owner "$worker_target" >/tmp/auto-tmux-smoke-task-next.txt
