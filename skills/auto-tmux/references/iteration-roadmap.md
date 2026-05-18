@@ -28,7 +28,8 @@
 | 20 | `6d46748` | 状态可视化 | `swarm-board.sh` |
 | 21 | `d8e7d31` | 依赖领取一致性 | `task-next` 尊重 `blocked-by` |
 | 22 | `cc69865` | worker 分配 | `swarm-assign.sh` |
-| 23 | `本轮` | replay 审计 | `record-summary.sh` |
+| 23 | `004d942` | replay 审计 | `record-summary.sh` |
+| 24 | `本轮` | 健康检查 | `swarm-health.sh` |
 
 ## 后续候选方向
 

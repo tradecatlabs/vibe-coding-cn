@@ -11,6 +11,7 @@ SWARM_WATCH="$SCRIPT_DIR/swarm-watch.sh"
 SWARM_ARCHIVE="$SCRIPT_DIR/swarm-archive.sh"
 SWARM_BOARD="$SCRIPT_DIR/swarm-board.sh"
 SWARM_ASSIGN="$SCRIPT_DIR/swarm-assign.sh"
+SWARM_HEALTH="$SCRIPT_DIR/swarm-health.sh"
 RECORD_SUMMARY="$SCRIPT_DIR/record-summary.sh"
 SAFETY_CHECK="$SCRIPT_DIR/safety-check.sh"
 SWARM_DISPATCH="$SCRIPT_DIR/swarm-dispatch.sh"
@@ -25,13 +26,14 @@ WATCH_DIR="/tmp/auto-tmux-smoke-watch-$$"
 ARCHIVE_FILE="/tmp/auto-tmux-smoke-archive-$$.tar.gz"
 BOARD_FILE="/tmp/auto-tmux-smoke-board-$$.md"
 ASSIGN_FILE="/tmp/auto-tmux-smoke-assign-$$.md"
+HEALTH_DIR="/tmp/auto-tmux-smoke-health-$$"
 DISPATCH_PROMPT="/tmp/auto-tmux-smoke-dispatch-$$.md"
 TASK_IMPORT_FILE="/tmp/auto-tmux-smoke-tasks-$$.txt"
 PASTE_FILE="/tmp/auto-tmux-smoke-paste-$$.txt"
 
 cleanup() {
   tmux kill-session -t "$SESSION" 2>/dev/null || true
-  rm -rf "$SWARM_DIR" "$DEP_SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$RECORD_SUMMARY_FILE" "$BRIEF_DIR" "$WATCH_DIR" "$ARCHIVE_FILE" "$BOARD_FILE" "$ASSIGN_FILE" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE" "$PASTE_FILE"
+  rm -rf "$SWARM_DIR" "$DEP_SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$RECORD_SUMMARY_FILE" "$BRIEF_DIR" "$WATCH_DIR" "$ARCHIVE_FILE" "$BOARD_FILE" "$ASSIGN_FILE" "$HEALTH_DIR" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE" "$PASTE_FILE"
 }
 trap cleanup EXIT
 
@@ -48,6 +50,7 @@ bash -n "$SWARM_WATCH"
 bash -n "$SWARM_ARCHIVE"
 bash -n "$SWARM_BOARD"
 bash -n "$SWARM_ASSIGN"
+bash -n "$SWARM_HEALTH"
 bash -n "$RECORD_SUMMARY"
 bash -n "$SAFETY_CHECK"
 bash -n "$SWARM_DISPATCH"
@@ -146,6 +149,10 @@ grep -q 'smoke-fail' "$BOARD_FILE"
 "$SWARM_ASSIGN" --swarm-dir "$SWARM_DIR" --session "$SESSION" --out "$ASSIGN_FILE" --limit 20 >/tmp/auto-tmux-smoke-assign.txt
 grep -q 'auto-tmux Swarm Assignment Suggestions' "$ASSIGN_FILE"
 grep -q 'swarm-dispatch.sh' "$ASSIGN_FILE"
+"$SWARM_HEALTH" --session "$SESSION" --swarm-dir "$SWARM_DIR" --out "$HEALTH_DIR" -n 10 >/tmp/auto-tmux-smoke-health.txt
+grep -q 'auto-tmux Swarm Health' "$HEALTH_DIR/index.md"
+test -s "$HEALTH_DIR/state-validate.txt"
+test -s "$HEALTH_DIR/board.md"
 "$RENDER_PROMPT" commander --session "$SESSION" --swarm-dir "$SWARM_DIR" --task "smoke" >/tmp/auto-tmux-smoke-commander-prompt.md
 "$RENDER_PROMPT" worker --session "$SESSION" --target "$worker_target" --swarm-dir "$SWARM_DIR" --task "smoke" >/tmp/auto-tmux-smoke-worker-prompt.md
 "$SWARM_DISPATCH" --role worker --target "$worker_target" --session "$SESSION" --swarm-dir "$SWARM_DIR" --task "smoke" --out "$DISPATCH_PROMPT" >/tmp/auto-tmux-smoke-dispatch-render.txt

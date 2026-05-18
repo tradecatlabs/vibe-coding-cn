@@ -84,6 +84,7 @@ scripts=(
   "$script_dir/swarm-archive.sh"
   "$script_dir/swarm-board.sh"
   "$script_dir/swarm-assign.sh"
+  "$script_dir/swarm-health.sh"
   "$script_dir/record-summary.sh"
   "$script_dir/safety-check.sh"
   "$script_dir/render-swarm-prompt.sh"
@@ -103,6 +104,7 @@ run_gate "swarm-watch help" "$script_dir/swarm-watch.sh" --help
 run_gate "swarm-archive help" "$script_dir/swarm-archive.sh" --help
 run_gate "swarm-board help" "$script_dir/swarm-board.sh" --help
 run_gate "swarm-assign help" "$script_dir/swarm-assign.sh" --help
+run_gate "swarm-health help" "$script_dir/swarm-health.sh" --help
 run_gate "record-summary help" "$script_dir/record-summary.sh" --help
 run_gate "safety-check help" "$script_dir/safety-check.sh" --help
 run_gate "safety-check clean text" "$script_dir/safety-check.sh" --text "make test"
@@ -120,6 +122,7 @@ require_contains "$skill_dir/SKILL.md" "scripts/swarm-watch.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-archive.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-board.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-assign.sh"
+require_contains "$skill_dir/SKILL.md" "scripts/swarm-health.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/record-summary.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/safety-check.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-dispatch.sh"
@@ -133,6 +136,7 @@ require_contains "$script_dir/README.md" "swarm-watch.sh"
 require_contains "$script_dir/README.md" "swarm-archive.sh"
 require_contains "$script_dir/README.md" "swarm-board.sh"
 require_contains "$script_dir/README.md" "swarm-assign.sh"
+require_contains "$script_dir/README.md" "swarm-health.sh"
 require_contains "$script_dir/README.md" "record-summary.sh"
 require_contains "$script_dir/README.md" "safety-check.sh"
 require_contains "$script_dir/AGENTS.md" "validate-auto-tmux.sh"
@@ -141,6 +145,7 @@ require_contains "$script_dir/AGENTS.md" "swarm-watch.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-archive.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-board.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-assign.sh"
+require_contains "$script_dir/AGENTS.md" "swarm-health.sh"
 require_contains "$script_dir/AGENTS.md" "record-summary.sh"
 require_contains "$script_dir/AGENTS.md" "safety-check.sh"
 
