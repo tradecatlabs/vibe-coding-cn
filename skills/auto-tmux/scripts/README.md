@@ -8,6 +8,7 @@
 - [`swarm-state.sh`](./swarm-state.sh) - 蜂群状态、任务、锁和报告管理。
 - [`swarm-brief.sh`](./swarm-brief.sh) - 只读生成蜂群交接报告，汇总 doctor、topology、pane 输出和状态报告。
 - [`render-swarm-prompt.sh`](./render-swarm-prompt.sh) - commander、worker、reviewer 提示词渲染。
+- [`swarm-dispatch.sh`](./swarm-dispatch.sh) - 渲染提示词并可选发送到指定 pane，默认只写文件。
 - [`auto-tmux-smoke-test.sh`](./auto-tmux-smoke-test.sh) - 创建临时 tmux 会话，端到端验证脚本能力。
 - [`validate-auto-tmux.sh`](./validate-auto-tmux.sh) - 汇总脚本权限、语法、help、文档索引、strict 和 smoke 门禁。
 
@@ -59,6 +60,9 @@ skills/auto-tmux/scripts/validate-auto-tmux.sh
 
 # 渲染 worker prompt
 skills/auto-tmux/scripts/render-swarm-prompt.sh worker --target "$target" --task "只运行 make test"
+
+# 渲染并预演下发 worker prompt
+skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target "$target" --task "只运行 make test" --send --dry-run
 ```
 
 ## 安全约束

@@ -7,15 +7,17 @@ AUTO_TMUX="$SCRIPT_DIR/auto-tmux.sh"
 SWARM_STATE="$SCRIPT_DIR/swarm-state.sh"
 RENDER_PROMPT="$SCRIPT_DIR/render-swarm-prompt.sh"
 SWARM_BRIEF="$SCRIPT_DIR/swarm-brief.sh"
+SWARM_DISPATCH="$SCRIPT_DIR/swarm-dispatch.sh"
 SESSION="auto-tmux-smoke-$$"
 SWARM_DIR="/tmp/auto-tmux-smoke-swarm-$$"
 SNAPSHOT_DIR="/tmp/auto-tmux-smoke-snapshot-$$"
 RECORD_DIR="/tmp/auto-tmux-smoke-record-$$"
 BRIEF_DIR="/tmp/auto-tmux-smoke-brief-$$"
+DISPATCH_PROMPT="/tmp/auto-tmux-smoke-dispatch-$$.md"
 
 cleanup() {
   tmux kill-session -t "$SESSION" 2>/dev/null || true
-  rm -rf "$SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$BRIEF_DIR"
+  rm -rf "$SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$BRIEF_DIR" "$DISPATCH_PROMPT"
 }
 trap cleanup EXIT
 
@@ -28,6 +30,7 @@ bash -n "$AUTO_TMUX"
 bash -n "$SWARM_STATE"
 bash -n "$RENDER_PROMPT"
 bash -n "$SWARM_BRIEF"
+bash -n "$SWARM_DISPATCH"
 
 "$AUTO_TMUX" hub --session "$SESSION" --workers 1 --cmd bash
 "$AUTO_TMUX" doctor --session "$SESSION" >/tmp/auto-tmux-smoke-doctor.txt
@@ -66,7 +69,10 @@ grep -q 'FAIL' /tmp/auto-tmux-smoke-report.txt
 grep -q 'auto-tmux Swarm Brief' "$BRIEF_DIR/brief.md"
 "$RENDER_PROMPT" commander --session "$SESSION" --swarm-dir "$SWARM_DIR" --task "smoke" >/tmp/auto-tmux-smoke-commander-prompt.md
 "$RENDER_PROMPT" worker --session "$SESSION" --target "$worker_target" --swarm-dir "$SWARM_DIR" --task "smoke" >/tmp/auto-tmux-smoke-worker-prompt.md
+"$SWARM_DISPATCH" --role worker --target "$worker_target" --session "$SESSION" --swarm-dir "$SWARM_DIR" --task "smoke" --out "$DISPATCH_PROMPT" >/tmp/auto-tmux-smoke-dispatch-render.txt
+"$SWARM_DISPATCH" --role worker --target "$worker_target" --session "$SESSION" --swarm-dir "$SWARM_DIR" --task "smoke" --send --dry-run >/tmp/auto-tmux-smoke-dispatch-dry-run.txt
 grep -q 'Commander Prompt' /tmp/auto-tmux-smoke-commander-prompt.md
 grep -q 'Worker Prompt' /tmp/auto-tmux-smoke-worker-prompt.md
+grep -q 'Worker Prompt' "$DISPATCH_PROMPT"
 
 printf 'auto-tmux smoke test ok: session=%s worker=%s\n' "$SESSION" "$worker_target"

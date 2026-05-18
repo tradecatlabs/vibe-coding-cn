@@ -12,6 +12,7 @@ scripts/
 ├── swarm-state.sh  # 蜂群状态、任务、锁和报告管理
 ├── swarm-brief.sh  # 只读生成蜂群交接报告
 ├── render-swarm-prompt.sh # commander/worker/reviewer 提示词渲染
+├── swarm-dispatch.sh # 渲染并可选下发蜂群提示词
 ├── auto-tmux-smoke-test.sh # 临时 tmux 会话端到端自测
 └── validate-auto-tmux.sh # auto-tmux 专属质量门禁
 ```
@@ -24,6 +25,7 @@ scripts/
 - 批量救援必须通过 pattern 匹配触发，不允许无条件向所有 pane 发送输入。
 - 批量广播必须要求显式 session，并支持 `--dry-run`。
 - Prompt 渲染脚本只输出文本，不直接控制 tmux。
+- Prompt 下发脚本默认只写文件；真实发送必须显式 `--send`，批量使用前先 `--dry-run`。
 - 交接报告脚本只读调用 doctor/topology/scan/report，不直接发送按键。
 - 状态脚本只能写入显式状态目录，不保存密钥、Token、密码或私密项目内容。
 - 自测脚本必须创建独立临时 tmux session，并在退出时清理。

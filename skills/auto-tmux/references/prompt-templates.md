@@ -66,6 +66,17 @@ skills/auto-tmux/scripts/render-swarm-prompt.sh reviewer \
 
 ## 推荐下发方式
 
+优先使用封装脚本渲染并预演：
+
+```bash
+skills/auto-tmux/scripts/swarm-dispatch.sh \
+  --role worker \
+  --target "$target" \
+  --task "运行 make test 并分析失败" \
+  --send \
+  --dry-run
+```
+
 渲染到临时文件：
 
 ```bash

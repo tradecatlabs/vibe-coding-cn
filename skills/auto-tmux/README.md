@@ -23,6 +23,7 @@ bash -n skills/auto-tmux/scripts/auto-tmux.sh
 bash -n skills/auto-tmux/scripts/swarm-state.sh
 bash -n skills/auto-tmux/scripts/swarm-brief.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
+bash -n skills/auto-tmux/scripts/swarm-dispatch.sh
 bash -n skills/auto-tmux/scripts/validate-auto-tmux.sh
 skills/auto-tmux/scripts/auto-tmux.sh help
 skills/auto-tmux/scripts/swarm-state.sh help
