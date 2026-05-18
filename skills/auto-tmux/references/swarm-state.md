@@ -70,6 +70,20 @@ skills/auto-tmux/scripts/swarm-state.sh status -n 20
 skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
 ```
 
+从文本文件批量导入任务：
+
+```bash
+cat > /tmp/tasks.txt <<'EOF'
+- 检查 README 链接
+- 运行 make test
+- 汇总风险和下一步
+EOF
+
+skills/auto-tmux/scripts/swarm-state.sh task-import --file /tmp/tasks.txt --prefix batch
+```
+
+`task-import` 会跳过空行和 `#` 注释行，自动去掉行首 `- ` 或 `* `，并生成 `batch-001` 这类任务 ID。
+
 认领任务：
 
 ```bash

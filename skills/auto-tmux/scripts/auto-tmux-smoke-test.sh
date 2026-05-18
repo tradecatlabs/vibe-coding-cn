@@ -16,10 +16,11 @@ RECORD_DIR="/tmp/auto-tmux-smoke-record-$$"
 BRIEF_DIR="/tmp/auto-tmux-smoke-brief-$$"
 WATCH_DIR="/tmp/auto-tmux-smoke-watch-$$"
 DISPATCH_PROMPT="/tmp/auto-tmux-smoke-dispatch-$$.md"
+TASK_IMPORT_FILE="/tmp/auto-tmux-smoke-tasks-$$.txt"
 
 cleanup() {
   tmux kill-session -t "$SESSION" 2>/dev/null || true
-  rm -rf "$SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$BRIEF_DIR" "$WATCH_DIR" "$DISPATCH_PROMPT"
+  rm -rf "$SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$BRIEF_DIR" "$WATCH_DIR" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE"
 }
 trap cleanup EXIT
 
@@ -54,6 +55,8 @@ test -s "$SNAPSHOT_DIR/topology.txt"
 
 "$SWARM_STATE" init --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-swarm-init.txt
 "$SWARM_STATE" task-add --dir "$SWARM_DIR" --id smoke-task --text "run smoke task" >/tmp/auto-tmux-smoke-task-add.txt
+printf '%s\n' "- import task one" "- import task two" > "$TASK_IMPORT_FILE"
+"$SWARM_STATE" task-import --dir "$SWARM_DIR" --file "$TASK_IMPORT_FILE" --prefix imported >/tmp/auto-tmux-smoke-task-import.txt
 "$SWARM_STATE" task-claim --dir "$SWARM_DIR" --id smoke-task --owner "$worker_target"
 "$SWARM_STATE" lock-acquire --dir "$SWARM_DIR" --name smoke-file --owner "$worker_target" >/tmp/auto-tmux-smoke-lock.txt
 "$SWARM_STATE" lock-release --dir "$SWARM_DIR" --name smoke-file --owner "$worker_target" >/tmp/auto-tmux-smoke-unlock.txt
@@ -62,15 +65,15 @@ test -s "$SNAPSHOT_DIR/topology.txt"
 "$SWARM_STATE" lock-prune --dir "$SWARM_DIR" --older-than 0 >/tmp/auto-tmux-smoke-lock-prune.txt
 grep -q 'stale-file' /tmp/auto-tmux-smoke-lock-prune.txt
 "$SWARM_STATE" task-done --dir "$SWARM_DIR" --id smoke-task --owner "$worker_target" --result "ok"
-"$SWARM_STATE" task-add --dir "$SWARM_DIR" --id smoke-next --text "claim next task" >/tmp/auto-tmux-smoke-task-next-add.txt
 "$SWARM_STATE" task-next --dir "$SWARM_DIR" --owner "$worker_target" >/tmp/auto-tmux-smoke-task-next.txt
-grep -q 'smoke-next' /tmp/auto-tmux-smoke-task-next.txt
-"$SWARM_STATE" task-block --dir "$SWARM_DIR" --id smoke-next --owner "$worker_target" --reason "waiting for input"
+grep -q 'imported-001' /tmp/auto-tmux-smoke-task-next.txt
+"$SWARM_STATE" task-block --dir "$SWARM_DIR" --id imported-001 --owner "$worker_target" --reason "waiting for input"
 "$SWARM_STATE" task-add --dir "$SWARM_DIR" --id smoke-fail --text "fail task" >/tmp/auto-tmux-smoke-task-fail-add.txt
 "$SWARM_STATE" task-fail --dir "$SWARM_DIR" --id smoke-fail --owner "$worker_target" --reason "expected failure"
 "$SWARM_STATE" report --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-report.txt
 "$SWARM_STATE" validate --dir "$SWARM_DIR" >/tmp/auto-tmux-smoke-state-validate.txt
 grep -q 'smoke-task' /tmp/auto-tmux-smoke-report.txt
+grep -q 'imported-001' /tmp/auto-tmux-smoke-report.txt
 grep -q 'BLOCKED' /tmp/auto-tmux-smoke-report.txt
 grep -q 'FAIL' /tmp/auto-tmux-smoke-report.txt
 "$SWARM_BRIEF" --session "$SESSION" --swarm-dir "$SWARM_DIR" --out "$BRIEF_DIR" -n 10 >/tmp/auto-tmux-smoke-brief.txt

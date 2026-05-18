@@ -51,6 +51,7 @@ skills/auto-tmux/scripts/swarm-watch.sh --session ai-hub --swarm-dir /tmp/ai_swa
 # 初始化蜂群状态并添加任务
 skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
+skills/auto-tmux/scripts/swarm-state.sh task-import --file /tmp/tasks.txt --prefix batch --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh task-next --owner "$target" --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh lock-prune --older-than 3600 --dry-run --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh task-block --id task-001 --owner "$target" --reason "等待输入" --dir /tmp/ai_swarm

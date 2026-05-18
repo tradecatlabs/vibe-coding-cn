@@ -18,6 +18,7 @@ Usage:
   swarm-state.sh log --target TARGET --status STATUS --message TEXT [--dir DIR]
   swarm-state.sh status [--dir DIR]
   swarm-state.sh task-add --text TEXT [--id ID] [--dir DIR]
+  swarm-state.sh task-import --file FILE [--prefix PREFIX] [--dir DIR]
   swarm-state.sh task-list [--dir DIR]
   swarm-state.sh task-next --owner TARGET [--dir DIR]
   swarm-state.sh task-claim --id ID --owner TARGET [--dir DIR]
@@ -143,6 +144,40 @@ cmd_task_add() {
   text="$(printf '%s' "$text" | sanitize)"
   printf '%s\tTODO\t-\t%s\t-\n' "$id" "$text" >> "$TASKS_TSV"
   printf 'task added: %s\n' "$id"
+}
+
+cmd_task_import() {
+  local file="" prefix=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --dir) set_dir "${2:-}"; shift 2 ;;
+      --file) file="${2:-}"; shift 2 ;;
+      --prefix) prefix="${2:-}"; shift 2 ;;
+      *) die "unknown task-import option: $1" ;;
+    esac
+  done
+  [[ -n "$file" ]] || die "missing --file"
+  [[ -f "$file" ]] || die "task import file not found: $file"
+  ensure_init
+  if [[ -z "$prefix" ]]; then
+    prefix="task-$(date +%Y%m%d%H%M%S)"
+  fi
+
+  local count=0 line text id
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    text="$(printf '%s' "$line" | sed -E 's/\r$//; s/^[[:space:]]*[-*][[:space:]]+//; s/^[[:space:]]+//; s/[[:space:]]+$//')"
+    [[ -n "$text" ]] || continue
+    [[ "$text" == \#* ]] && continue
+    count=$((count + 1))
+    id="${prefix}-$(printf '%03d' "$count")"
+    if awk -F '\t' -v id="$id" 'NR > 1 && $1 == id {found = 1} END {exit found ? 0 : 1}' "$TASKS_TSV"; then
+      die "task id already exists: $id"
+    fi
+    text="$(printf '%s' "$text" | sanitize)"
+    printf '%s\tTODO\t-\t%s\t-\n' "$id" "$text" >> "$TASKS_TSV"
+  done < "$file"
+
+  printf 'tasks imported: %s prefix=%s\n' "$count" "$prefix"
 }
 
 cmd_task_list() {
@@ -477,6 +512,7 @@ main() {
     log) cmd_log "$@" ;;
     status) cmd_status "$@" ;;
     task-add) cmd_task_add "$@" ;;
+    task-import) cmd_task_import "$@" ;;
     task-list) cmd_task_list "$@" ;;
     task-next) cmd_task_next "$@" ;;
     task-claim) cmd_task_claim "$@" ;;
