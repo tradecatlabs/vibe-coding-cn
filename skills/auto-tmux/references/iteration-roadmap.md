@@ -22,14 +22,14 @@
 | 14 | `b8e77f6` | pane 取证 | `auto-tmux.sh inspect` |
 | 15 | `bc37fc1` | 长文本粘贴 | `auto-tmux.sh paste --file` |
 | 16 | `075a803` | session 清理 | `auto-tmux.sh cleanup --session` |
-| 17 | `本轮` | 任务依赖 | `task-depend`、`task-ready` |
+| 17 | `dc59ee2` | 任务依赖 | `task-depend`、`task-ready` |
+| 18 | `本轮` | 结果归档 | `swarm-archive.sh` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
 | P1 | 任务依赖 | 让任务声明 blocked-by / depends-on，减少 worker 乱序执行 |
-| P1 | 结果归档 | 将 scan、brief、watch、state report 打包成可交接 archive |
 | P1 | 安全策略 | 将危险命令、敏感输出、生产会话规则集中到可维护策略文档 |
 | P2 | worker 分配 | 根据 TODO 队列和空闲 pane 自动生成 dispatch 建议 |
 | P2 | 状态可视化 | 从 `tasks.tsv` 生成 Markdown 看板 |

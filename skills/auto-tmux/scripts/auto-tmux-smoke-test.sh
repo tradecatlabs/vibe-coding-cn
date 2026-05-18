@@ -8,6 +8,7 @@ SWARM_STATE="$SCRIPT_DIR/swarm-state.sh"
 RENDER_PROMPT="$SCRIPT_DIR/render-swarm-prompt.sh"
 SWARM_BRIEF="$SCRIPT_DIR/swarm-brief.sh"
 SWARM_WATCH="$SCRIPT_DIR/swarm-watch.sh"
+SWARM_ARCHIVE="$SCRIPT_DIR/swarm-archive.sh"
 SWARM_DISPATCH="$SCRIPT_DIR/swarm-dispatch.sh"
 SESSION="auto-tmux-smoke-$$"
 SWARM_DIR="/tmp/auto-tmux-smoke-swarm-$$"
@@ -15,13 +16,14 @@ SNAPSHOT_DIR="/tmp/auto-tmux-smoke-snapshot-$$"
 RECORD_DIR="/tmp/auto-tmux-smoke-record-$$"
 BRIEF_DIR="/tmp/auto-tmux-smoke-brief-$$"
 WATCH_DIR="/tmp/auto-tmux-smoke-watch-$$"
+ARCHIVE_FILE="/tmp/auto-tmux-smoke-archive-$$.tar.gz"
 DISPATCH_PROMPT="/tmp/auto-tmux-smoke-dispatch-$$.md"
 TASK_IMPORT_FILE="/tmp/auto-tmux-smoke-tasks-$$.txt"
 PASTE_FILE="/tmp/auto-tmux-smoke-paste-$$.txt"
 
 cleanup() {
   tmux kill-session -t "$SESSION" 2>/dev/null || true
-  rm -rf "$SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$BRIEF_DIR" "$WATCH_DIR" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE" "$PASTE_FILE"
+  rm -rf "$SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$BRIEF_DIR" "$WATCH_DIR" "$ARCHIVE_FILE" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE" "$PASTE_FILE"
 }
 trap cleanup EXIT
 
@@ -35,6 +37,7 @@ bash -n "$SWARM_STATE"
 bash -n "$RENDER_PROMPT"
 bash -n "$SWARM_BRIEF"
 bash -n "$SWARM_WATCH"
+bash -n "$SWARM_ARCHIVE"
 bash -n "$SWARM_DISPATCH"
 
 "$AUTO_TMUX" hub --session "$SESSION" --workers 1 --cmd bash
@@ -101,6 +104,8 @@ grep -q 'smoke-fail' /tmp/auto-tmux-smoke-task-list-todo.txt
 grep -q 'auto-tmux Swarm Brief' "$BRIEF_DIR/brief.md"
 "$SWARM_WATCH" --session "$SESSION" --swarm-dir "$SWARM_DIR" --out "$WATCH_DIR" --iterations 1 --interval 0 -n 10 >/tmp/auto-tmux-smoke-watch.txt
 grep -q 'auto-tmux Swarm Watch' "$WATCH_DIR/index.md"
+"$SWARM_ARCHIVE" --session "$SESSION" --swarm-dir "$SWARM_DIR" --out "$ARCHIVE_FILE" -n 10 >/tmp/auto-tmux-smoke-archive.txt
+test -s "$ARCHIVE_FILE"
 "$RENDER_PROMPT" commander --session "$SESSION" --swarm-dir "$SWARM_DIR" --task "smoke" >/tmp/auto-tmux-smoke-commander-prompt.md
 "$RENDER_PROMPT" worker --session "$SESSION" --target "$worker_target" --swarm-dir "$SWARM_DIR" --task "smoke" >/tmp/auto-tmux-smoke-worker-prompt.md
 "$SWARM_DISPATCH" --role worker --target "$worker_target" --session "$SESSION" --swarm-dir "$SWARM_DIR" --task "smoke" --out "$DISPATCH_PROMPT" >/tmp/auto-tmux-smoke-dispatch-render.txt
