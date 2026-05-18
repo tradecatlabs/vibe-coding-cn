@@ -82,6 +82,7 @@ scripts=(
   "$script_dir/swarm-brief.sh"
   "$script_dir/swarm-watch.sh"
   "$script_dir/swarm-archive.sh"
+  "$script_dir/swarm-board.sh"
   "$script_dir/safety-check.sh"
   "$script_dir/render-swarm-prompt.sh"
   "$script_dir/swarm-dispatch.sh"
@@ -98,6 +99,7 @@ run_gate "swarm-state help" "$script_dir/swarm-state.sh" help
 run_gate "swarm-brief help" "$script_dir/swarm-brief.sh" --help
 run_gate "swarm-watch help" "$script_dir/swarm-watch.sh" --help
 run_gate "swarm-archive help" "$script_dir/swarm-archive.sh" --help
+run_gate "swarm-board help" "$script_dir/swarm-board.sh" --help
 run_gate "safety-check help" "$script_dir/safety-check.sh" --help
 run_gate "safety-check clean text" "$script_dir/safety-check.sh" --text "make test"
 if "$script_dir/safety-check.sh" --text "rm -rf /tmp/example" >/tmp/auto-tmux-validate-gate.log 2>&1; then
@@ -112,6 +114,7 @@ require_contains "$skill_dir/SKILL.md" "scripts/validate-auto-tmux.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-brief.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-watch.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-archive.sh"
+require_contains "$skill_dir/SKILL.md" "scripts/swarm-board.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/safety-check.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-dispatch.sh"
 require_contains "$skill_dir/references/index.md" "automation.md"
@@ -122,11 +125,13 @@ require_contains "$script_dir/README.md" "validate-auto-tmux.sh"
 require_contains "$script_dir/README.md" "swarm-dispatch.sh"
 require_contains "$script_dir/README.md" "swarm-watch.sh"
 require_contains "$script_dir/README.md" "swarm-archive.sh"
+require_contains "$script_dir/README.md" "swarm-board.sh"
 require_contains "$script_dir/README.md" "safety-check.sh"
 require_contains "$script_dir/AGENTS.md" "validate-auto-tmux.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-dispatch.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-watch.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-archive.sh"
+require_contains "$script_dir/AGENTS.md" "swarm-board.sh"
 require_contains "$script_dir/AGENTS.md" "safety-check.sh"
 
 if [[ -x "$repo_root/skills/auto-skill/scripts/validate-skill.sh" ]]; then

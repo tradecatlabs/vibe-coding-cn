@@ -24,14 +24,14 @@
 | 16 | `075a803` | session 清理 | `auto-tmux.sh cleanup --session` |
 | 17 | `dc59ee2` | 任务依赖 | `task-depend`、`task-ready` |
 | 18 | `42bca78` | 结果归档 | `swarm-archive.sh` |
-| 19 | `本轮` | 安全策略 | `safety-check.sh`、`safety-policy.md` |
+| 19 | `07ac877` | 安全策略 | `safety-check.sh`、`safety-policy.md` |
+| 20 | `本轮` | 状态可视化 | `swarm-board.sh` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
 | P2 | worker 分配 | 根据 TODO 队列和空闲 pane 自动生成 dispatch 建议 |
-| P2 | 状态可视化 | 从 `tasks.tsv` 生成 Markdown 看板 |
 | P2 | replay 审计 | 从 record 日志生成复盘摘要 |
 | P3 | 远程 session | SSH 场景下的只读拓扑和安全边界 |
 | P3 | shell completion | 为常用子命令生成补全脚本 |

@@ -156,11 +156,14 @@ skills/auto-tmux/scripts/swarm-state.sh task-reopen \
 ```bash
 skills/auto-tmux/scripts/swarm-state.sh metrics
 skills/auto-tmux/scripts/swarm-state.sh validate
+skills/auto-tmux/scripts/swarm-board.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-board.md
 ```
 
 `metrics` 会按任务状态、owner 和当前锁数量输出摘要，适合 commander 快速判断蜂群是否堵塞。
 
 `validate` 会检查 `tasks.tsv` 表头、字段数量、重复任务 ID、非法状态、终态任务结果文件，以及锁目录中的 `owner` / `created_at`。
+
+`swarm-board.sh` 会把 `tasks.tsv`、`deps.tsv`、锁目录和最近状态日志渲染成 Markdown 看板，适合交接给 commander 或 reviewer。
 
 ## 锁管理
 
