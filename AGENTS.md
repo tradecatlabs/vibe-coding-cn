@@ -166,6 +166,7 @@ git push origin develop
 │   ├── README.md                # skills 总览与索引
 │   ├── AGENTS.md                # skills/ 目录规则
 │   ├── auto-skill/              # 元技能核心
+│   ├── auto-tmux/               # tmux 自动化操控与多终端协作
 │   └── claude-official-skills/  # Claude 官方 skills 软链接入口
 │
 ├── assets/                      # 静态资产与外部资源入口
@@ -238,6 +239,7 @@ git push origin develop
 - `docs/references/README.md#reference-engineering-practice` - 项目架构、代码组织、开发经验、底层程序逻辑、AI 编程质量门禁与常见坑的统一入口
 - `docs/references/README.md#reference-technology-stack` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
 - `skills/auto-skill/` - Skills 生成、重构与校验的元技能
+- `skills/auto-tmux/` - tmux 自动化操控、pane 巡检、按键注入与多终端协作技能
 
 ### docs README 结构契约
 

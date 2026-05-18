@@ -14,7 +14,8 @@ skills/
 │   ├── scripts/                  # (可选) 可执行脚本/自动化
 │   ├── assets/                   # (可选) 模板/样例/静态资源
 │   └── agents/                   # (可选) Agent 元数据（如 openai.yaml）
-└── auto-skill/                   # 元技能：生成/校验/脚手架化其它技能
+├── auto-skill/                   # 元技能：生成/校验/脚手架化其它技能
+└── auto-tmux/                    # tmux 自动化操控、pane 巡检与多终端协作
 ```
 
 ## 外部仓库引用（约定）
@@ -46,5 +47,6 @@ skills/
 ## 快速定位（常用技能）
 
 - `skills/auto-skill/`：元技能（技能生成/校验/脚手架）
+- `skills/auto-tmux/`：tmux 自动化技能；通过 `assets/` 软链接复用 `tools/external/.tmux` 与 `tools/external/tmux`
 - `skills/claude-official-skills/`：Claude 官方 skills 仓库（Anthropic）的软链接入口
 - `skills/auto-skill/scripts/Skill_Seekers-development`：Skill Seekers submodule 的软链接入口
