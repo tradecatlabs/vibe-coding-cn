@@ -12,7 +12,8 @@ scripts/
 ├── swarm-state.sh  # 蜂群状态、任务、锁和报告管理
 ├── swarm-brief.sh  # 只读生成蜂群交接报告
 ├── render-swarm-prompt.sh # commander/worker/reviewer 提示词渲染
-└── auto-tmux-smoke-test.sh # 临时 tmux 会话端到端自测
+├── auto-tmux-smoke-test.sh # 临时 tmux 会话端到端自测
+└── validate-auto-tmux.sh # auto-tmux 专属质量门禁
 ```
 
 ## 维护规则
@@ -26,4 +27,5 @@ scripts/
 - 交接报告脚本只读调用 doctor/topology/scan/report，不直接发送按键。
 - 状态脚本只能写入显式状态目录，不保存密钥、Token、密码或私密项目内容。
 - 自测脚本必须创建独立临时 tmux session，并在退出时清理。
+- 专属校验脚本必须覆盖脚本权限、语法、help 输出、关键索引、strict 校验和 smoke test。
 - 新增脚本后必须更新 `README.md`、`SKILL.md`、`references/index.md`，并运行 `bash -n` 与 skill strict 校验。

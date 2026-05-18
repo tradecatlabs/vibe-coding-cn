@@ -23,11 +23,13 @@ bash -n skills/auto-tmux/scripts/auto-tmux.sh
 bash -n skills/auto-tmux/scripts/swarm-state.sh
 bash -n skills/auto-tmux/scripts/swarm-brief.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
+bash -n skills/auto-tmux/scripts/validate-auto-tmux.sh
 skills/auto-tmux/scripts/auto-tmux.sh help
 skills/auto-tmux/scripts/swarm-state.sh help
 skills/auto-tmux/scripts/swarm-brief.sh --help
 skills/auto-tmux/scripts/render-swarm-prompt.sh commander --session ai-hub --task "smoke"
 skills/auto-tmux/scripts/auto-tmux-smoke-test.sh
+skills/auto-tmux/scripts/validate-auto-tmux.sh
 skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict
 ```
 

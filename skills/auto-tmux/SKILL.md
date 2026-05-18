@@ -37,6 +37,7 @@ bash -n skills/auto-tmux/scripts/auto-tmux.sh
 bash -n skills/auto-tmux/scripts/swarm-state.sh
 bash -n skills/auto-tmux/scripts/swarm-brief.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
+bash -n skills/auto-tmux/scripts/validate-auto-tmux.sh
 skills/auto-tmux/scripts/auto-tmux.sh help
 skills/auto-tmux/scripts/swarm-state.sh help
 ```
@@ -153,6 +154,7 @@ skills/auto-tmux/scripts/swarm-state.sh report --dir /tmp/ai_swarm
 **脚本端到端自测**
 ```bash
 skills/auto-tmux/scripts/auto-tmux-smoke-test.sh
+skills/auto-tmux/scripts/validate-auto-tmux.sh
 ```
 
 **渲染 commander / worker / reviewer 提示词**
@@ -234,6 +236,7 @@ skills/auto-tmux/scripts/render-swarm-prompt.sh reviewer --session ai-hub --task
 - `scripts/swarm-brief.sh`: 只读生成 tmux 蜂群交接报告
 - `scripts/render-swarm-prompt.sh`: commander/worker/reviewer 提示词渲染脚本
 - `scripts/auto-tmux-smoke-test.sh`: tmux 自动化脚本端到端自测
+- `scripts/validate-auto-tmux.sh`: auto-tmux 专属质量门禁
 - `assets/oh-my-tmux`: gpakosz/oh-my-tmux submodule 的相对软链接入口
 - `assets/tmux-src`: tmux/tmux submodule 的相对软链接入口
 
@@ -252,6 +255,6 @@ skills/auto-tmux/scripts/render-swarm-prompt.sh reviewer --session ai-hub --task
 4. ≥3 个端到端示例，含输入/步骤/验收。
 5. 长文档放在 `references/` 并可导航；无文档堆砌。
 6. 不确定项给出验证路径；禁止虚构 tmux 行为。
-7. `bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh` 与 `bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh` 通过。
+7. `bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh`、`bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh` 与 `bash -n skills/auto-tmux/scripts/validate-auto-tmux.sh` 通过。
 8. `skills/auto-tmux/scripts/auto-tmux-smoke-test.sh` 通过或在无 tmux 环境下明确跳过。
-9. 运行 `skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict` 通过。
+9. 运行 `skills/auto-tmux/scripts/validate-auto-tmux.sh` 和 `skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict` 通过。

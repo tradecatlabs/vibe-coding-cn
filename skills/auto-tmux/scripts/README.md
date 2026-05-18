@@ -9,6 +9,7 @@
 - [`swarm-brief.sh`](./swarm-brief.sh) - 只读生成蜂群交接报告，汇总 doctor、topology、pane 输出和状态报告。
 - [`render-swarm-prompt.sh`](./render-swarm-prompt.sh) - commander、worker、reviewer 提示词渲染。
 - [`auto-tmux-smoke-test.sh`](./auto-tmux-smoke-test.sh) - 创建临时 tmux 会话，端到端验证脚本能力。
+- [`validate-auto-tmux.sh`](./validate-auto-tmux.sh) - 汇总脚本权限、语法、help、文档索引、strict 和 smoke 门禁。
 
 ## 常用命令
 
@@ -52,6 +53,9 @@ skills/auto-tmux/scripts/swarm-state.sh report --dir /tmp/ai_swarm
 
 # 端到端自测
 skills/auto-tmux/scripts/auto-tmux-smoke-test.sh
+
+# auto-tmux 专属质量门禁
+skills/auto-tmux/scripts/validate-auto-tmux.sh
 
 # 渲染 worker prompt
 skills/auto-tmux/scripts/render-swarm-prompt.sh worker --target "$target" --task "只运行 make test"
