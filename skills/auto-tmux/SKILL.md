@@ -242,6 +242,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `references/swarm-state.md`: 蜂群状态、任务、锁和报告协议
 - `references/prompt-templates.md`: commander/worker/reviewer 提示词模板和下发方式
 - `references/ai-swarm-collaboration.md`: tmux 蜂群协作历史文档、架构模式、协议、案例和风险限制
+- `references/iteration-roadmap.md`: 多轮迭代记录、能力层和后续候选方向
 - `references/examples.md`: 蜂群协议脚本与长示例
 - `references/troubleshooting.md`: 典型故障到修复路径
 - `scripts/auto-tmux.sh`: 安全封装的 tmux 自动化脚本入口

@@ -11,5 +11,6 @@
 | [swarm-state.md](./swarm-state.md) | 蜂群状态、任务、锁和报告协议 |
 | [prompt-templates.md](./prompt-templates.md) | commander/worker/reviewer 提示词模板和下发方式 |
 | [ai-swarm-collaboration.md](./ai-swarm-collaboration.md) | tmux 蜂群协作完整说明、架构模式、协议、案例和风险限制 |
+| [iteration-roadmap.md](./iteration-roadmap.md) | 多轮迭代记录、能力层和后续候选方向 |
 | [examples.md](./examples.md) | 巡检、救援、审计和多 AI 工作台示例 |
 | [troubleshooting.md](./troubleshooting.md) | 常见故障与修复路径 |
