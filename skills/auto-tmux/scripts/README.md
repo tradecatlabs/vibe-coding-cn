@@ -6,6 +6,7 @@
 
 - [`auto-tmux.sh`](./auto-tmux.sh) - 统一命令入口，支持拓扑、读取、发送、巡检、救援、录制、等待和 AI 工作台初始化。
 - [`swarm-state.sh`](./swarm-state.sh) - 蜂群状态、任务、锁和报告管理。
+- [`swarm-brief.sh`](./swarm-brief.sh) - 只读生成蜂群交接报告，汇总 doctor、topology、pane 输出和状态报告。
 - [`render-swarm-prompt.sh`](./render-swarm-prompt.sh) - commander、worker、reviewer 提示词渲染。
 - [`auto-tmux-smoke-test.sh`](./auto-tmux-smoke-test.sh) - 创建临时 tmux 会话，端到端验证脚本能力。
 
@@ -38,9 +39,15 @@ skills/auto-tmux/scripts/auto-tmux.sh broadcast --session ai-hub --text "pwd" --
 # 生成证据快照
 skills/auto-tmux/scripts/auto-tmux.sh snapshot --session ai-hub --dir /tmp/auto-tmux-snapshot
 
+# 生成蜂群交接报告
+skills/auto-tmux/scripts/swarm-brief.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/auto-tmux-brief
+
 # 初始化蜂群状态并添加任务
 skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
+skills/auto-tmux/scripts/swarm-state.sh task-next --owner "$target" --dir /tmp/ai_swarm
+skills/auto-tmux/scripts/swarm-state.sh task-block --id task-001 --owner "$target" --reason "等待输入" --dir /tmp/ai_swarm
+skills/auto-tmux/scripts/swarm-state.sh task-fail --id task-001 --owner "$target" --reason "测试失败" --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh report --dir /tmp/ai_swarm
 
 # 端到端自测

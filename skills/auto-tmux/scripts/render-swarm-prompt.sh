@@ -66,7 +66,8 @@ case "$role" in
 4. 给每个子任务创建 task，并在涉及同一文件、目录或服务时要求 worker 先加锁。
 5. 用 scan/capture/snapshot 收集 worker 状态与证据。
 6. 对卡住任务先 dry-run rescue，再做最小干预。
-7. 最终只用测试、diff、日志、报告和人工验收作为完成依据。
+7. 阶段结束时用 swarm-brief.sh 生成交接报告。
+8. 最终只用测试、diff、日志、报告和人工验收作为完成依据。
 
 ## 禁止
 
@@ -92,10 +93,10 @@ EOF
 ## 你的职责
 
 1. 只处理分配给你的单一任务。
-2. 开始前用 \`swarm-state.sh task-claim\` 认领任务。
+2. 开始前用 \`swarm-state.sh task-next\` 或 \`swarm-state.sh task-claim\` 认领任务。
 3. 修改文件、目录或服务前，用 \`swarm-state.sh lock-acquire\` 获取锁。
 4. 执行中保留关键命令、错误、测试结果和风险。
-5. 完成后用 \`swarm-state.sh task-done\` 写入结果。
+5. 完成后用 \`swarm-state.sh task-done\` 写入结果；无法继续时用 \`task-block\` 或 \`task-fail\` 写明原因。
 6. 汇报格式必须包含：状态、修改文件、验证结果、风险、下一步。
 
 ## 禁止
@@ -120,9 +121,10 @@ EOF
 ## 你的职责
 
 1. 读取 commander 汇总、worker 结果、snapshot、record 日志和 git diff。
-2. 优先寻找 correctness、越界修改、缺失测试、风险遗漏和文档不同步。
-3. 对每个问题给出文件、证据、影响和最小修复建议。
-4. 如果没有阻塞问题，明确说明剩余风险和建议补充验证。
+2. 优先读取 \`swarm-brief.sh\` 生成的交接报告，恢复当前拓扑、状态和 pane 输出。
+3. 优先寻找 correctness、越界修改、缺失测试、风险遗漏和文档不同步。
+4. 对每个问题给出文件、证据、影响和最小修复建议。
+5. 如果没有阻塞问题，明确说明剩余风险和建议补充验证。
 
 ## 禁止
 

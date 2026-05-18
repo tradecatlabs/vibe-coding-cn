@@ -4,7 +4,7 @@
 
 - `getting_started.md`：术语、最小安装、前缀说明
 - `api.md`：tmux/oh-my-tmux 常用命令、同步广播、安全写法
-- `automation.md`：`scripts/auto-tmux.sh` 子命令、安全模型与 AI 蜂群协作流程
+- `automation.md`：`scripts/auto-tmux.sh` / `scripts/swarm-brief.sh` 子命令、安全模型与 AI 蜂群协作流程
 - `swarm-state.md`：蜂群状态、任务、锁和报告协议
 - `prompt-templates.md`：commander/worker/reviewer 提示词模板和下发方式
 - `ai-swarm-collaboration.md`：tmux 蜂群协作完整说明、架构模式、协议、案例和风险限制

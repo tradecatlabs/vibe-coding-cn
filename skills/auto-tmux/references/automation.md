@@ -8,6 +8,7 @@
 - **默认脱敏**：读取 pane 输出时自动遮蔽常见 token、API key、password、Bearer token。
 - **拒绝危险动作**：`rm -rf`、`git reset --hard`、`git clean -fd`、`tmux kill-server` 等命令默认拒绝，必须显式 `--force`。
 - **批量动作可解释**：scan/rescue 都基于明确 session、pane、pattern 和 reply，不做无条件广播。
+- **交接报告只读**：brief 汇总 doctor、topology、scan 和 state report，不发送按键、不改变 tmux 状态。
 - **不改用户配置**：脚本只操作 tmux server，不写 `~/.tmux.conf`；oh-my-tmux 配置仍走 `assets/oh-my-tmux` 参考入口。
 
 ## 子命令总览
@@ -25,6 +26,7 @@
 | `snapshot` | 导出拓扑和 pane 输出证据包 | 默认脱敏，写入显式目录 |
 | `hub` | 初始化 AI 多终端工作台 | 已存在 session 不覆盖 |
 | `wait` | 等待 pane 输出出现某个 pattern | 超时失败 |
+| `swarm-brief.sh` | 生成只读交接报告 | 不发送按键，只汇总证据 |
 
 ## 典型流程
 
@@ -74,6 +76,12 @@ skills/auto-tmux/scripts/auto-tmux.sh broadcast --session ai-hub --text "pwd" --
 
 ```bash
 skills/auto-tmux/scripts/auto-tmux.sh snapshot --session ai-hub --dir /tmp/auto-tmux-snapshot -n 120
+```
+
+生成可交接的蜂群报告：
+
+```bash
+skills/auto-tmux/scripts/swarm-brief.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/auto-tmux-brief -n 80
 ```
 
 ### 3. 安全发送命令
@@ -159,6 +167,14 @@ skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
 ```bash
 skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
 skills/auto-tmux/scripts/swarm-state.sh task-claim --id task-001 --owner "ai-hub:2.1"
+skills/auto-tmux/scripts/swarm-state.sh task-next --owner "ai-hub:2.1"
+```
+
+标记阻塞或失败：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh task-block --id task-001 --owner "ai-hub:2.1" --reason "等待用户确认"
+skills/auto-tmux/scripts/swarm-state.sh task-fail --id task-001 --owner "ai-hub:2.1" --reason "make test failed"
 ```
 
 获取文件锁：
@@ -179,9 +195,11 @@ skills/auto-tmux/scripts/swarm-state.sh report
 ```bash
 bash -n skills/auto-tmux/scripts/auto-tmux.sh
 bash -n skills/auto-tmux/scripts/swarm-state.sh
+bash -n skills/auto-tmux/scripts/swarm-brief.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
 skills/auto-tmux/scripts/auto-tmux.sh help
 skills/auto-tmux/scripts/swarm-state.sh help
+skills/auto-tmux/scripts/swarm-brief.sh --help
 skills/auto-tmux/scripts/render-swarm-prompt.sh commander --session ai-hub --task "smoke"
 skills/auto-tmux/scripts/auto-tmux-smoke-test.sh
 skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict

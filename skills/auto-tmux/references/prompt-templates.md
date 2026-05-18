@@ -88,5 +88,5 @@ skills/auto-tmux/scripts/auto-tmux.sh send \
 
 - Prompt 只定义职责和边界，不替代测试、lint、diff、CI 等硬门禁。
 - commander、worker、reviewer 应使用不同 pane，避免角色混淆。
-- 长任务必须配合 `record` 或 `snapshot` 保留证据。
+- 长任务必须配合 `record`、`snapshot` 或 `swarm-brief.sh` 保留证据。
 - 多 worker 修改同一资源前必须配合 `swarm-state.sh lock-acquire`。

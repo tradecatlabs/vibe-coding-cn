@@ -26,6 +26,7 @@ tmux 蜂群协作的核心是：让 AI 不再只是孤立会话，而是通过 t
 | 救援 | `auto-tmux.sh rescue` | 对等待确认、卡住或异常的 pane 做最小干预 |
 | 记录 | `pipe-pane` / `auto-tmux.sh record` | 保留长任务审计日志 |
 | 协调 | `swarm-state.sh` + 明确 target | 任务同步、分工、加锁、避免冲突 |
+| 交接 | `swarm-brief.sh` | 导出只读状态报告，便于新会话或 reviewer 接手 |
 
 ```text
 传统模式: 人 <-> AI1, 人 <-> AI2, 人 <-> AI3
@@ -120,7 +121,7 @@ skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
 ```text
 /tmp/ai_swarm/
 ├── status.log
-├── tasks.json
+├── tasks.tsv
 ├── locks/
 └── results/
 ```
@@ -136,6 +137,8 @@ skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
 ```text
 [START]  开始任务
 [DONE]   完成任务
+[BLOCKED] 阻塞，等待输入、依赖或权限
+[FAIL]   任务失败，需要 commander 处理
 [WAIT]   等待依赖或确认
 [ERROR]  出现错误
 [HELP]   请求帮助
@@ -150,7 +153,8 @@ skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
 4. **避免冲突**：涉及同一文件、同一服务、同一配置时先加锁或等待。
 5. **主动救援**：发现等待确认、卡死或明显错误时先 `capture`，再 `rescue --dry-run`。
 6. **保留证据**：长任务开启 `record`，关键检查保存 scan 日志。
-7. **人工兜底**：危险操作、敏感凭证、生产环境变更必须人工确认。
+7. **交接可恢复**：阶段结束或上下文切换前生成 `swarm-brief.sh` 报告。
+8. **人工兜底**：危险操作、敏感凭证、生产环境变更必须人工确认。
 
 ### 4.4 任务与锁
 
@@ -164,6 +168,7 @@ worker 认领任务：
 
 ```bash
 skills/auto-tmux/scripts/swarm-state.sh task-claim --id task-001 --owner "ai-hub:2.1"
+skills/auto-tmux/scripts/swarm-state.sh task-next --owner "ai-hub:2.1"
 ```
 
 修改文件前获取锁：
@@ -177,6 +182,19 @@ skills/auto-tmux/scripts/swarm-state.sh lock-acquire --name README.md --owner "a
 ```bash
 skills/auto-tmux/scripts/swarm-state.sh lock-release --name README.md --owner "ai-hub:2.1"
 skills/auto-tmux/scripts/swarm-state.sh task-done --id task-001 --owner "ai-hub:2.1" --result "make test passed"
+```
+
+阻塞或失败时显式记录：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh task-block --id task-001 --owner "ai-hub:2.1" --reason "等待用户确认"
+skills/auto-tmux/scripts/swarm-state.sh task-fail --id task-001 --owner "ai-hub:2.1" --reason "make test failed"
+```
+
+生成交接报告：
+
+```bash
+skills/auto-tmux/scripts/swarm-brief.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/auto-tmux-brief
 ```
 
 ## 5. 架构模式
@@ -396,7 +414,7 @@ window:
 - Web 面板：把 topology、scan、record 状态暴露为只读监控页面。
 - 智能调度：根据 worker 空闲程度、任务类型和失败状态分配任务。
 - CI 集成：让 GitHub Actions 或本地 gate 接收 worker 结果，统一决定是否通过。
-- 状态机治理：用 JSON schema 约束 `/tmp/ai_swarm/tasks.json` 与 `results/`。
+- 状态机治理：用 schema 或校验脚本约束 `/tmp/ai_swarm/tasks.tsv` 与 `results/`。
 
 ## 11. 快速参考
 

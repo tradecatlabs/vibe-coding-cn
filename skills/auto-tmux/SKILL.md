@@ -35,6 +35,7 @@ description: "tmux 自动化操控：用 scripts/auto-tmux.sh 安全读取、发
 ```bash
 bash -n skills/auto-tmux/scripts/auto-tmux.sh
 bash -n skills/auto-tmux/scripts/swarm-state.sh
+bash -n skills/auto-tmux/scripts/swarm-brief.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
 skills/auto-tmux/scripts/auto-tmux.sh help
 skills/auto-tmux/scripts/swarm-state.sh help
@@ -101,9 +102,10 @@ skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub --pattern "ERROR|Tra
 skills/auto-tmux/scripts/auto-tmux.sh broadcast --session ai-hub --text "pwd" --enter --dry-run
 ```
 
-**生成证据快照**
+**生成证据快照/交接报告**
 ```bash
 skills/auto-tmux/scripts/auto-tmux.sh snapshot --session ai-hub --dir /tmp/auto-tmux-snapshot -n 120
+skills/auto-tmux/scripts/swarm-brief.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/auto-tmux-brief
 ```
 
 **远程救援：发现等待输入即发送 y**
@@ -141,7 +143,10 @@ skills/auto-tmux/scripts/auto-tmux.sh wait -t <session>:<window>.<pane> --patter
 ```bash
 skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
 skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
+skills/auto-tmux/scripts/swarm-state.sh task-next --owner <session>:<window>.<pane>
 skills/auto-tmux/scripts/swarm-state.sh lock-acquire --name README.md --owner <session>:<window>.<pane>
+skills/auto-tmux/scripts/swarm-state.sh task-block --id task-001 --owner <session>:<window>.<pane> --reason "等待输入"
+skills/auto-tmux/scripts/swarm-state.sh task-fail --id task-001 --owner <session>:<window>.<pane> --reason "测试失败"
 skills/auto-tmux/scripts/swarm-state.sh report --dir /tmp/ai_swarm
 ```
 
@@ -226,6 +231,7 @@ skills/auto-tmux/scripts/render-swarm-prompt.sh reviewer --session ai-hub --task
 - `references/troubleshooting.md`: 典型故障到修复路径
 - `scripts/auto-tmux.sh`: 安全封装的 tmux 自动化脚本入口
 - `scripts/swarm-state.sh`: 蜂群任务、锁、状态和报告脚本
+- `scripts/swarm-brief.sh`: 只读生成 tmux 蜂群交接报告
 - `scripts/render-swarm-prompt.sh`: commander/worker/reviewer 提示词渲染脚本
 - `scripts/auto-tmux-smoke-test.sh`: tmux 自动化脚本端到端自测
 - `assets/oh-my-tmux`: gpakosz/oh-my-tmux submodule 的相对软链接入口
@@ -246,6 +252,6 @@ skills/auto-tmux/scripts/render-swarm-prompt.sh reviewer --session ai-hub --task
 4. ≥3 个端到端示例，含输入/步骤/验收。
 5. 长文档放在 `references/` 并可导航；无文档堆砌。
 6. 不确定项给出验证路径；禁止虚构 tmux 行为。
-7. `bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh` 与 `bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh` 通过。
+7. `bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh` 与 `bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh` 通过。
 8. `skills/auto-tmux/scripts/auto-tmux-smoke-test.sh` 通过或在无 tmux 环境下明确跳过。
 9. 运行 `skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict` 通过。

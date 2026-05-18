@@ -53,6 +53,8 @@ skills/auto-tmux/scripts/swarm-state.sh status -n 20
 |:---|:---|
 | `START` | 开始任务 |
 | `DONE` | 完成任务 |
+| `BLOCKED` | 阻塞，等待依赖、输入或权限 |
+| `FAIL` | 任务失败，需要 commander 处理 |
 | `WAIT` | 等待依赖、输入或门禁 |
 | `ERROR` | 出现错误 |
 | `HELP` | 请求帮助 |
@@ -74,6 +76,12 @@ skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 RE
 skills/auto-tmux/scripts/swarm-state.sh task-claim --id task-001 --owner "ai-hub:2.1"
 ```
 
+领取下一条 `TODO` 任务：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh task-next --owner "ai-hub:2.1"
+```
+
 完成任务：
 
 ```bash
@@ -81,6 +89,24 @@ skills/auto-tmux/scripts/swarm-state.sh task-done \
   --id task-001 \
   --owner "ai-hub:2.1" \
   --result "make test passed"
+```
+
+标记阻塞：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh task-block \
+  --id task-001 \
+  --owner "ai-hub:2.1" \
+  --reason "等待用户确认 API key 配置"
+```
+
+标记失败：
+
+```bash
+skills/auto-tmux/scripts/swarm-state.sh task-fail \
+  --id task-001 \
+  --owner "ai-hub:2.1" \
+  --reason "make test failed"
 ```
 
 查看任务：
@@ -136,9 +162,9 @@ skills/auto-tmux/scripts/swarm-state.sh report
 1. commander 初始化状态目录。
 2. commander 将任务写入 `tasks.tsv`。
 3. worker 获取文件或服务锁。
-4. worker 认领任务并写入 `START`。
+4. worker 用 `task-next` 或 `task-claim` 认领任务并写入 `START`。
 5. worker 执行任务，必要时用 `auto-tmux.sh record` 保留日志。
-6. worker 完成后写入 `DONE` 和结果。
+6. worker 完成后写入 `DONE` 和结果；无法继续时写入 `BLOCKED` 或 `FAIL`。
 7. commander 用 `report` 汇总状态，再用测试、diff、日志做验收。
 
 ## 安全边界
