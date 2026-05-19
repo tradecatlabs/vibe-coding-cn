@@ -55,7 +55,7 @@
 | 47 | `d6a309f` | 事故报告脚本 | `incident-report.sh` |
 | 48 | `1ac2ee4` | 脚本清单速查 | `script-cheatsheet.md` |
 | 49 | `022d812` | 包一致性审计 | `audit-package.sh` |
-| 50 | `本轮` | 迭代收尾说明 | `iteration-closeout.md` |
+| 50 | `2b96f6e` | 迭代收尾说明 | `iteration-closeout.md` |
 
 ## 后续候选方向
 
