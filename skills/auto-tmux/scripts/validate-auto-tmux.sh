@@ -145,6 +145,9 @@ run_gate "swarm-report-pack attachment" bash -c '
   printf "remote evidence\n" > "$tmp/remote/remote-tmux.txt"
   "$1" --dir "$tmp/swarm" --out "$tmp/out" --attach "$tmp/remote" >/dev/null
   grep -Fq "attachments.md" "$tmp/out/index.md"
+  grep -Fq "manifest.json" "$tmp/out/index.md"
+  grep -Fq "\"type\": \"auto-tmux-swarm-report-pack\"" "$tmp/out/manifest.json"
+  grep -Fq "\"attachments\"" "$tmp/out/manifest.json"
   grep -Fq "remote-tmux.txt" "$tmp/out/attachments/remote/remote-tmux.txt"
   rm -rf "$tmp"
 ' _ "$script_dir/swarm-report-pack.sh"

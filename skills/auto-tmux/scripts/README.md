@@ -15,6 +15,7 @@
 - [`swarm-timeline.sh`](./swarm-timeline.sh) - 将 `status.log` 渲染为 Markdown 时间线。
 - [`swarm-blockers.sh`](./swarm-blockers.sh) - 聚合 BLOCKED/FAIL 任务、锁和最近异常状态。
 - [`swarm-report-pack.sh`](./swarm-report-pack.sh) - 聚合 board、依赖图、时间线、阻塞清单、分配建议和 JSONL 导出。
+- 报告包根目录会生成 `index.md` 和 `manifest.json`，附件目录通过 `--attach` 显式加入。
 - [`swarm-assign.sh`](./swarm-assign.sh) - 根据 ready tasks 和 worker pane 生成只读分配建议。
 - [`swarm-health.sh`](./swarm-health.sh) - 汇总 doctor、topology、scan、validate、metrics、board 和 assign。
 - [`remote-readonly.sh`](./remote-readonly.sh) - 通过 SSH 只读采集远端 tmux 拓扑、pane 输出和 `metadata.jsonl`。

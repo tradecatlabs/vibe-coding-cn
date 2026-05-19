@@ -39,13 +39,14 @@
 | 31 | `565352b` | 远程只读采集 | `remote-readonly.sh` |
 | 32 | `4a35cbc` | session 安全策略 | `session-safety.md` |
 | 33 | `ff8cd86` | 远程证据包增强 | `remote-readonly.sh` 输出 `metadata.jsonl`，validator 覆盖 fake SSH |
-| 34 | `本轮` | 报告附件索引 | `swarm-report-pack.sh --attach` |
+| 34 | `5677df3` | 报告附件索引 | `swarm-report-pack.sh --attach` |
+| 35 | `本轮` | 报告包 manifest | `swarm-report-pack.sh` 输出根级 `manifest.json` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P3 | 报告包 manifest 增强 | 为 `swarm-report-pack.sh` 输出机器可读 `manifest.json` |
+| P3 | 报告包压缩 | 为 `swarm-report-pack.sh` 增加可选 tar.gz 打包 |
 
 ## 每轮验收清单
 

@@ -289,7 +289,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `scripts/swarm-export.sh`: 导出任务、依赖和锁的 JSONL 状态包
 - `scripts/swarm-timeline.sh`: 渲染 `status.log` 的 Markdown 时间线
 - `scripts/swarm-blockers.sh`: 聚合 BLOCKED/FAIL 任务、锁和最近异常状态
-- `scripts/swarm-report-pack.sh`: 聚合 board、依赖图、时间线、阻塞清单、分配建议、附件和 JSONL 导出
+- `scripts/swarm-report-pack.sh`: 聚合 board、依赖图、时间线、阻塞清单、分配建议、附件和 `manifest.json`
 - `scripts/swarm-assign.sh`: 根据 ready tasks 和 worker pane 生成只读分配建议
 - `scripts/swarm-health.sh`: 汇总 tmux 与 swarm state 的只读健康检查报告包
 - `scripts/remote-readonly.sh`: 通过 SSH 只读采集远端 tmux 拓扑、pane 输出和 `metadata.jsonl`

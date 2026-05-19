@@ -23,11 +23,22 @@ die() {
   exit 1
 }
 
+json_escape() {
+  local value="$1"
+  value="${value//\\/\\\\}"
+  value="${value//\"/\\\"}"
+  value="${value//$'\n'/\\n}"
+  value="${value//$'\r'/\\r}"
+  value="${value//$'\t'/\\t}"
+  printf '%s' "$value"
+}
+
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 swarm_dir="${AUTO_TMUX_SWARM_DIR:-/tmp/ai_swarm}"
 session=""
 out_dir="/tmp/auto-tmux-report-pack-$(date +%Y%m%d-%H%M%S)"
 attachments=()
+created_at="$(date -Is)"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -83,6 +94,8 @@ else
 fi
 
 attachment_lines=""
+attachment_json=""
+attachment_count=0
 if ((${#attachments[@]} > 0)); then
   mkdir -p "$out_dir/attachments"
   cat > "$out_dir/attachments.md" <<EOF
@@ -103,13 +116,39 @@ EOF
     rel_path="attachments/$(basename "$dest")"
     printf -- '- [%s](./%s)\n' "$attachment" "$rel_path" >> "$out_dir/attachments.md"
     attachment_lines+="- [$rel_path](./$rel_path)"$'\n'
+    if ((attachment_count > 0)); then
+      attachment_json+=","$'\n'
+    fi
+    attachment_json+="    {\"source\":\"$(json_escape "$attachment")\",\"path\":\"$(json_escape "$rel_path")\"}"
+    attachment_count=$((attachment_count + 1))
   done
 fi
+
+cat > "$out_dir/manifest.json" <<EOF
+{
+  "type": "auto-tmux-swarm-report-pack",
+  "created_at": "$(json_escape "$created_at")",
+  "swarm_dir": "$(json_escape "$swarm_dir")",
+  "session": "$(json_escape "${session:-<not provided>}")",
+  "files": [
+    "index.md",
+    "board.md",
+    "deps.md",
+    "timeline.md",
+    "blockers.md",
+    "assign.md",
+    "export/manifest.json"
+  ],
+  "attachments": [
+$attachment_json
+  ]
+}
+EOF
 
 cat > "$out_dir/index.md" <<EOF
 # auto-tmux Swarm Report Pack
 
-- created_at: \`$(date -Is)\`
+- created_at: \`$created_at\`
 - swarm_dir: \`$swarm_dir\`
 - session: \`${session:-<not provided>}\`
 
@@ -120,6 +159,7 @@ cat > "$out_dir/index.md" <<EOF
 - [timeline.md](./timeline.md)
 - [blockers.md](./blockers.md)
 - [assign.md](./assign.md)
+- [manifest.json](./manifest.json)
 - [export/manifest.json](./export/manifest.json)
 $(if [[ -n "$attachment_lines" ]]; then printf '%s' "- [attachments.md](./attachments.md)"; fi)
 EOF
