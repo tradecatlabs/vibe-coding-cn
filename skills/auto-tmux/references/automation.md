@@ -37,6 +37,7 @@
 | `swarm-deps-graph.sh` | 渲染任务依赖图 | 只读生成 Mermaid |
 | `swarm-export.sh` | 导出 JSONL 状态包 | 只读读取 state，写显式输出目录 |
 | `swarm-timeline.sh` | 渲染状态日志时间线 | 只读生成 Markdown |
+| `swarm-blockers.sh` | 聚合阻塞、失败、锁和异常状态 | 只读生成 Markdown |
 | `swarm-assign.sh` | 生成 ready task 到 worker pane 的分配建议 | 只读，不 claim，不发送 |
 | `swarm-health.sh` | 汇总 tmux 与 swarm state 健康报告 | 只读，不自动修复 |
 | `record-summary.sh` | 汇总 pane 录制日志 | 只读，输出默认脱敏 |
@@ -110,6 +111,7 @@ skills/auto-tmux/scripts/swarm-board.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-
 skills/auto-tmux/scripts/swarm-deps-graph.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-deps.md
 skills/auto-tmux/scripts/swarm-export.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-export
 skills/auto-tmux/scripts/swarm-timeline.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-timeline.md
+skills/auto-tmux/scripts/swarm-blockers.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-blockers.md
 skills/auto-tmux/scripts/swarm-assign.sh --swarm-dir /tmp/ai_swarm --session ai-hub --out /tmp/ai-swarm-assign.md
 skills/auto-tmux/scripts/swarm-health.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/auto-tmux-health
 ```
@@ -269,6 +271,7 @@ bash -n skills/auto-tmux/scripts/swarm-board.sh
 bash -n skills/auto-tmux/scripts/swarm-deps-graph.sh
 bash -n skills/auto-tmux/scripts/swarm-export.sh
 bash -n skills/auto-tmux/scripts/swarm-timeline.sh
+bash -n skills/auto-tmux/scripts/swarm-blockers.sh
 bash -n skills/auto-tmux/scripts/swarm-assign.sh
 bash -n skills/auto-tmux/scripts/swarm-health.sh
 bash -n skills/auto-tmux/scripts/record-summary.sh

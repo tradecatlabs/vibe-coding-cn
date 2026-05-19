@@ -86,6 +86,7 @@ scripts=(
   "$script_dir/swarm-deps-graph.sh"
   "$script_dir/swarm-export.sh"
   "$script_dir/swarm-timeline.sh"
+  "$script_dir/swarm-blockers.sh"
   "$script_dir/swarm-assign.sh"
   "$script_dir/swarm-health.sh"
   "$script_dir/record-summary.sh"
@@ -112,6 +113,7 @@ run_gate "swarm-board help" "$script_dir/swarm-board.sh" --help
 run_gate "swarm-deps-graph help" "$script_dir/swarm-deps-graph.sh" --help
 run_gate "swarm-export help" "$script_dir/swarm-export.sh" --help
 run_gate "swarm-timeline help" "$script_dir/swarm-timeline.sh" --help
+run_gate "swarm-blockers help" "$script_dir/swarm-blockers.sh" --help
 run_gate "swarm-assign help" "$script_dir/swarm-assign.sh" --help
 run_gate "swarm-health help" "$script_dir/swarm-health.sh" --help
 run_gate "record-summary help" "$script_dir/record-summary.sh" --help
@@ -133,6 +135,7 @@ require_contains "$skill_dir/SKILL.md" "scripts/swarm-board.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-deps-graph.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-export.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-timeline.sh"
+require_contains "$skill_dir/SKILL.md" "scripts/swarm-blockers.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-assign.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-health.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/record-summary.sh"
@@ -151,6 +154,7 @@ require_contains "$script_dir/README.md" "swarm-board.sh"
 require_contains "$script_dir/README.md" "swarm-deps-graph.sh"
 require_contains "$script_dir/README.md" "swarm-export.sh"
 require_contains "$script_dir/README.md" "swarm-timeline.sh"
+require_contains "$script_dir/README.md" "swarm-blockers.sh"
 require_contains "$script_dir/README.md" "swarm-assign.sh"
 require_contains "$script_dir/README.md" "swarm-health.sh"
 require_contains "$script_dir/README.md" "record-summary.sh"
@@ -164,6 +168,7 @@ require_contains "$script_dir/AGENTS.md" "swarm-board.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-deps-graph.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-export.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-timeline.sh"
+require_contains "$script_dir/AGENTS.md" "swarm-blockers.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-assign.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-health.sh"
 require_contains "$script_dir/AGENTS.md" "record-summary.sh"
