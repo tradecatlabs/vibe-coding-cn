@@ -88,6 +88,7 @@ skills/auto-tmux/scripts/swarm-blockers.sh --dir /tmp/ai_swarm --out /tmp/ai-swa
 
 # 汇总 worker 结果
 skills/auto-tmux/scripts/swarm-results.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-results.md
+skills/auto-tmux/scripts/swarm-results.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-results.md --jsonl /tmp/ai-swarm-results.jsonl
 
 # 生成完整报告包
 skills/auto-tmux/scripts/swarm-report-pack.sh --dir /tmp/ai_swarm --session ai-hub --out /tmp/ai-swarm-report-pack

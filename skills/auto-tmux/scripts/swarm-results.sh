@@ -7,11 +7,12 @@ usage() {
 swarm-results: summarize DONE/FAIL/BLOCKED worker results
 
 Usage:
-  swarm-results.sh [--dir DIR] [--out FILE] [--limit N]
+  swarm-results.sh [--dir DIR] [--out FILE] [--jsonl FILE] [--limit N]
 
 Defaults:
   --dir   AUTO_TMUX_SWARM_DIR or /tmp/ai_swarm
   --out   stdout
+  --jsonl optional JSONL output for terminal results
   --limit 80 result rows
 
 This script is read-only. It does not mutate swarm state.
@@ -23,8 +24,19 @@ die() {
   exit 1
 }
 
+json_escape() {
+  local value="$1"
+  value="${value//\\/\\\\}"
+  value="${value//\"/\\\"}"
+  value="${value//$'\n'/\\n}"
+  value="${value//$'\r'/\\r}"
+  value="${value//$'\t'/\\t}"
+  printf '%s' "$value"
+}
+
 swarm_dir="${AUTO_TMUX_SWARM_DIR:-/tmp/ai_swarm}"
 out_file=""
+jsonl_file=""
 limit=80
 
 while [[ $# -gt 0 ]]; do
@@ -35,6 +47,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --out)
       out_file="${2:-}"
+      shift 2
+      ;;
+    --jsonl)
+      jsonl_file="${2:-}"
       shift 2
       ;;
     --limit)
@@ -110,10 +126,36 @@ render_results() {
   fi
 }
 
+write_jsonl() {
+  local created_at id status owner text result
+  created_at="$(date -Is)"
+  mkdir -p "$(dirname "$jsonl_file")"
+  while IFS=$'\t' read -r id status owner text result; do
+    [[ "$id" == "id" ]] && continue
+    case "$status" in
+      DONE|FAIL|BLOCKED)
+        printf '{"type":"swarm-result","created_at":"%s","swarm_dir":"%s","id":"%s","status":"%s","owner":"%s","text":"%s","result":"%s"}\n' \
+          "$(json_escape "$created_at")" \
+          "$(json_escape "$swarm_dir")" \
+          "$(json_escape "$id")" \
+          "$(json_escape "$status")" \
+          "$(json_escape "$owner")" \
+          "$(json_escape "$text")" \
+          "$(json_escape "$result")"
+        ;;
+    esac
+  done < "$tasks_tsv" > "$jsonl_file"
+}
+
 if [[ -n "$out_file" ]]; then
   mkdir -p "$(dirname "$out_file")"
   render_results > "$out_file"
   printf 'swarm results written: %s\n' "$out_file"
 else
   render_results
+fi
+
+if [[ -n "$jsonl_file" ]]; then
+  write_jsonl
+  printf 'swarm results jsonl written: %s\n' "$jsonl_file"
 fi

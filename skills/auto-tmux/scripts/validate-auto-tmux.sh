@@ -139,6 +139,17 @@ run_gate "swarm-export help" "$script_dir/swarm-export.sh" --help
 run_gate "swarm-timeline help" "$script_dir/swarm-timeline.sh" --help
 run_gate "swarm-blockers help" "$script_dir/swarm-blockers.sh" --help
 run_gate "swarm-results help" "$script_dir/swarm-results.sh" --help
+run_gate "swarm-results jsonl" bash -c '
+  tmp="$(mktemp -d)"
+  mkdir -p "$tmp/swarm/results"
+  printf "id\tstatus\towner\ttext\tresult\n" > "$tmp/swarm/tasks.tsv"
+  printf "t1\tDONE\tai-hub:1.0\tRun tests\tpassed\n" >> "$tmp/swarm/tasks.tsv"
+  printf "passed\n" > "$tmp/swarm/results/t1.txt"
+  "$1" --dir "$tmp/swarm" --out "$tmp/results.md" --jsonl "$tmp/results.jsonl" >/dev/null
+  grep -Fq "t1" "$tmp/results.md"
+  grep -Fq "\"type\":\"swarm-result\"" "$tmp/results.jsonl"
+  rm -rf "$tmp"
+' _ "$script_dir/swarm-results.sh"
 run_gate "swarm-report-pack help" "$script_dir/swarm-report-pack.sh" --help
 run_gate "swarm-report-pack attachment" bash -c '
   tmp="$(mktemp -d)"
@@ -148,6 +159,7 @@ run_gate "swarm-report-pack attachment" bash -c '
   "$1" --dir "$tmp/swarm" --out "$tmp/out" --attach "$tmp/remote" >/dev/null
   grep -Fq "attachments.md" "$tmp/out/index.md"
   grep -Fq "results.md" "$tmp/out/index.md"
+  grep -Fq "results.jsonl" "$tmp/out/index.md"
   grep -Fq "manifest.json" "$tmp/out/index.md"
   grep -Fq "\"type\": \"auto-tmux-swarm-report-pack\"" "$tmp/out/manifest.json"
   grep -Fq "\"attachments\"" "$tmp/out/manifest.json"

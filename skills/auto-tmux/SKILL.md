@@ -135,6 +135,7 @@ skills/auto-tmux/scripts/swarm-export.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm
 skills/auto-tmux/scripts/swarm-timeline.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-timeline.md
 skills/auto-tmux/scripts/swarm-blockers.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-blockers.md
 skills/auto-tmux/scripts/swarm-results.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-results.md
+skills/auto-tmux/scripts/swarm-results.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-results.md --jsonl /tmp/ai-swarm-results.jsonl
 skills/auto-tmux/scripts/swarm-report-pack.sh --dir /tmp/ai_swarm --session ai-hub --out /tmp/ai-swarm-report-pack
 skills/auto-tmux/scripts/swarm-report-pack.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-report-pack --attach /tmp/auto-tmux-remote
 skills/auto-tmux/scripts/swarm-report-pack.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-report-pack --tar
@@ -292,7 +293,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `scripts/swarm-export.sh`: 导出任务、依赖和锁的 JSONL 状态包
 - `scripts/swarm-timeline.sh`: 渲染 `status.log` 的 Markdown 时间线
 - `scripts/swarm-blockers.sh`: 聚合 BLOCKED/FAIL 任务、锁和最近异常状态
-- `scripts/swarm-results.sh`: 汇总 DONE/FAIL/BLOCKED worker 结果
+- `scripts/swarm-results.sh`: 汇总 DONE/FAIL/BLOCKED worker 结果，支持 JSONL 导出
 - `scripts/swarm-report-pack.sh`: 聚合 board、依赖图、时间线、阻塞清单、分配建议、附件、`manifest.json` 和可选 tar.gz
 - `scripts/swarm-assign.sh`: 根据 ready tasks 和 worker pane 生成只读分配建议
 - `scripts/swarm-health.sh`: 汇总 tmux 与 swarm state 的只读健康检查报告包

@@ -42,13 +42,14 @@
 | 34 | `5677df3` | 报告附件索引 | `swarm-report-pack.sh --attach` |
 | 35 | `7a2ff13` | 报告包 manifest | `swarm-report-pack.sh` 输出根级 `manifest.json` |
 | 36 | `9eac52f` | 报告包压缩 | `swarm-report-pack.sh --tar` |
-| 37 | `本轮` | worker 结果收敛 | `swarm-results.sh` |
+| 37 | `ab6d8f2` | worker 结果收敛 | `swarm-results.sh` |
+| 38 | `本轮` | 结果摘要导出 | `swarm-results.sh --jsonl` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P3 | 结果摘要导出 | 为 `swarm-results.sh` 增加 JSONL 导出 |
+| P3 | 结果摘要校验 | 对 `swarm-results.sh` 输出做 schema-like 字段检查 |
 
 ## 每轮验收清单
 
