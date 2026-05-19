@@ -114,6 +114,7 @@ scripts=(
   "$script_dir/swarm-health.sh"
   "$script_dir/remote-readonly.sh"
   "$script_dir/record-summary.sh"
+  "$script_dir/check-jsonl.sh"
   "$script_dir/safety-check.sh"
   "$script_dir/render-swarm-prompt.sh"
   "$script_dir/swarm-dispatch.sh"
@@ -148,8 +149,9 @@ run_gate "swarm-results jsonl" bash -c '
   "$1" --dir "$tmp/swarm" --out "$tmp/results.md" --jsonl "$tmp/results.jsonl" >/dev/null
   grep -Fq "t1" "$tmp/results.md"
   grep -Fq "\"type\":\"swarm-result\"" "$tmp/results.jsonl"
+  "$2" "$tmp/results.jsonl" --require-key type --require-key id --require-key status >/dev/null
   rm -rf "$tmp"
-' _ "$script_dir/swarm-results.sh"
+' _ "$script_dir/swarm-results.sh" "$script_dir/check-jsonl.sh"
 run_gate "swarm-report-pack help" "$script_dir/swarm-report-pack.sh" --help
 run_gate "swarm-report-pack attachment" bash -c '
   tmp="$(mktemp -d)"
@@ -174,6 +176,13 @@ run_gate "remote-readonly help" "$script_dir/remote-readonly.sh" --help
 run_gate "remote-readonly dry-run" "$script_dir/remote-readonly.sh" --host example.com --dry-run
 run_gate "remote-readonly package with fake ssh" test_remote_readonly_package
 run_gate "record-summary help" "$script_dir/record-summary.sh" --help
+run_gate "check-jsonl help" "$script_dir/check-jsonl.sh" --help
+run_gate "check-jsonl required keys" bash -c '
+  tmp="$(mktemp)"
+  printf "{\"type\":\"swarm-result\",\"id\":\"t1\",\"status\":\"DONE\"}\n" > "$tmp"
+  "$1" "$tmp" --require-key type --require-key id --require-key status >/dev/null
+  rm -f "$tmp"
+' _ "$script_dir/check-jsonl.sh"
 run_gate "safety-check help" "$script_dir/safety-check.sh" --help
 run_gate "safety-check clean text" "$script_dir/safety-check.sh" --text "make test"
 if "$script_dir/safety-check.sh" --text "rm -rf /tmp/example" >/tmp/auto-tmux-validate-gate.log 2>&1; then
@@ -199,6 +208,7 @@ require_contains "$skill_dir/SKILL.md" "scripts/swarm-assign.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-health.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/remote-readonly.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/record-summary.sh"
+require_contains "$skill_dir/SKILL.md" "scripts/check-jsonl.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/completion.bash"
 require_contains "$skill_dir/SKILL.md" "scripts/safety-check.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-dispatch.sh"
@@ -227,6 +237,7 @@ require_contains "$script_dir/README.md" "swarm-health.sh"
 require_contains "$script_dir/README.md" "remote-readonly.sh"
 require_contains "$script_dir/README.md" "metadata.jsonl"
 require_contains "$script_dir/README.md" "record-summary.sh"
+require_contains "$script_dir/README.md" "check-jsonl.sh"
 require_contains "$script_dir/README.md" "completion.bash"
 require_contains "$script_dir/README.md" "safety-check.sh"
 require_contains "$script_dir/AGENTS.md" "validate-auto-tmux.sh"
@@ -244,6 +255,7 @@ require_contains "$script_dir/AGENTS.md" "swarm-assign.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-health.sh"
 require_contains "$script_dir/AGENTS.md" "remote-readonly.sh"
 require_contains "$script_dir/AGENTS.md" "record-summary.sh"
+require_contains "$script_dir/AGENTS.md" "check-jsonl.sh"
 require_contains "$script_dir/AGENTS.md" "completion.bash"
 require_contains "$script_dir/AGENTS.md" "safety-check.sh"
 

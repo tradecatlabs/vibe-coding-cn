@@ -35,6 +35,7 @@ bash -n skills/auto-tmux/scripts/swarm-assign.sh
 bash -n skills/auto-tmux/scripts/swarm-health.sh
 bash -n skills/auto-tmux/scripts/remote-readonly.sh
 bash -n skills/auto-tmux/scripts/record-summary.sh
+bash -n skills/auto-tmux/scripts/check-jsonl.sh
 bash -n skills/auto-tmux/scripts/completion.bash
 bash -n skills/auto-tmux/scripts/safety-check.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh

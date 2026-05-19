@@ -43,13 +43,14 @@
 | 35 | `7a2ff13` | 报告包 manifest | `swarm-report-pack.sh` 输出根级 `manifest.json` |
 | 36 | `9eac52f` | 报告包压缩 | `swarm-report-pack.sh --tar` |
 | 37 | `ab6d8f2` | worker 结果收敛 | `swarm-results.sh` |
-| 38 | `本轮` | 结果摘要导出 | `swarm-results.sh --jsonl` |
+| 38 | `3b10fb6` | 结果摘要导出 | `swarm-results.sh --jsonl` |
+| 39 | `本轮` | JSONL 字段门禁 | `check-jsonl.sh` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P3 | 结果摘要校验 | 对 `swarm-results.sh` 输出做 schema-like 字段检查 |
+| P3 | JSONL 格式治理 | 将 remote metadata 和 swarm results 的字段约定写入 reference |
 
 ## 每轮验收清单
 
