@@ -46,13 +46,14 @@
 | 38 | `3b10fb6` | 结果摘要导出 | `swarm-results.sh --jsonl` |
 | 39 | `842cd2d` | JSONL 字段门禁 | `check-jsonl.sh` |
 | 40 | `2824c06` | JSONL 格式治理 | `jsonl-schema.md` |
-| 41 | `本轮` | 交付包审计清单 | `review-checklist.sh` |
+| 41 | `a74be2c` | 交付包审计清单 | `review-checklist.sh` |
+| 42 | `本轮` | 审计清单结果门禁 | `review-checklist.sh --strict` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P3 | 审计清单结果门禁 | 检查 report pack 必需文件缺失时输出 WARN/FAIL 摘要 |
+| P3 | report pack 自检命令 | 为报告包新增一条统一 verify 命令 |
 
 ## 每轮验收清单
 

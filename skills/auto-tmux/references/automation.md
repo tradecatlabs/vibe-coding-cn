@@ -201,6 +201,7 @@ skills/auto-tmux/scripts/auto-tmux.sh record stop -t "$target"
 skills/auto-tmux/scripts/record-summary.sh --dir /tmp/auto-tmux-records --out /tmp/auto-tmux-record-summary.md
 skills/auto-tmux/scripts/check-jsonl.sh /tmp/ai-swarm-results.jsonl --require-key type --require-key id --require-key status
 skills/auto-tmux/scripts/review-checklist.sh --pack /tmp/ai-swarm-report-pack --out /tmp/ai-swarm-report-pack/review-checklist.md
+skills/auto-tmux/scripts/review-checklist.sh --pack /tmp/ai-swarm-report-pack --strict
 ```
 
 ## AI 蜂群协作建议

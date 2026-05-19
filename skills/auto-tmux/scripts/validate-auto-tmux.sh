@@ -186,6 +186,15 @@ run_gate "check-jsonl required keys" bash -c '
   rm -f "$tmp"
 ' _ "$script_dir/check-jsonl.sh"
 run_gate "review-checklist help" "$script_dir/review-checklist.sh" --help
+run_gate "review-checklist strict failure" bash -c '
+  tmp="$(mktemp -d)"
+  if "$1" --pack "$tmp" --strict >/tmp/auto-tmux-review-check.log 2>&1; then
+    rm -rf "$tmp"
+    exit 1
+  fi
+  grep -Fq "missing required files" /tmp/auto-tmux-review-check.log
+  rm -rf "$tmp" /tmp/auto-tmux-review-check.log
+' _ "$script_dir/review-checklist.sh"
 run_gate "safety-check help" "$script_dir/safety-check.sh" --help
 run_gate "safety-check clean text" "$script_dir/safety-check.sh" --text "make test"
 if "$script_dir/safety-check.sh" --text "rm -rf /tmp/example" >/tmp/auto-tmux-validate-gate.log 2>&1; then

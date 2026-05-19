@@ -115,6 +115,7 @@ skills/auto-tmux/scripts/check-jsonl.sh /tmp/ai-swarm-results.jsonl --require-ke
 
 # 生成 report pack 审计清单
 skills/auto-tmux/scripts/review-checklist.sh --pack /tmp/ai-swarm-report-pack --out /tmp/ai-swarm-report-pack/review-checklist.md
+skills/auto-tmux/scripts/review-checklist.sh --pack /tmp/ai-swarm-report-pack --strict
 
 # 启用当前 shell 的补全
 source skills/auto-tmux/scripts/completion.bash

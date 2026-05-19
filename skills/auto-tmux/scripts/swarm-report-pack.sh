@@ -177,7 +177,7 @@ cat > "$out_dir/index.md" <<EOF
 $(if [[ -n "$attachment_lines" ]]; then printf '%s' "- [attachments.md](./attachments.md)"; fi)
 EOF
 
-run_report "review checklist" "$script_dir/review-checklist.sh" --pack "$out_dir" --out "$out_dir/review-checklist.md"
+run_report "review checklist" "$script_dir/review-checklist.sh" --pack "$out_dir" --out "$out_dir/review-checklist.md" --strict
 
 rm -f /tmp/auto-tmux-report-pack.log
 if [[ "$make_tar" == "1" ]]; then

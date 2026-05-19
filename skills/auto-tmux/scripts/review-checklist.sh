@@ -7,12 +7,13 @@ usage() {
 review-checklist: render a reviewer checklist for an auto-tmux report pack
 
 Usage:
-  review-checklist.sh --pack DIR [--out FILE]
+  review-checklist.sh --pack DIR [--out FILE] [--strict]
 
 Defaults:
   --out stdout
 
 This script is read-only for the report pack. It writes only when --out is set.
+Use --strict to fail when required files are missing.
 EOF
 }
 
@@ -23,6 +24,9 @@ die() {
 
 pack_dir=""
 out_file=""
+strict="0"
+missing_count=0
+required_files=(index.md manifest.json board.md deps.md timeline.md blockers.md results.md results.jsonl assign.md export/manifest.json)
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -33,6 +37,10 @@ while [[ $# -gt 0 ]]; do
     --out)
       out_file="${2:-}"
       shift 2
+      ;;
+    --strict)
+      strict="1"
+      shift
       ;;
     -h|--help)
       usage
@@ -56,6 +64,14 @@ exists_mark() {
   fi
 }
 
+count_missing() {
+  local file
+  missing_count=0
+  for file in "${required_files[@]}"; do
+    [[ -e "$pack_dir/$file" ]] || missing_count=$((missing_count + 1))
+  done
+}
+
 render_checklist() {
   printf '# auto-tmux Report Review Checklist\n\n'
   printf -- '- pack_dir: `%s`\n' "$pack_dir"
@@ -63,9 +79,12 @@ render_checklist() {
 
   printf '## Required Files\n\n'
   local file
-  for file in index.md manifest.json board.md deps.md timeline.md blockers.md results.md results.jsonl assign.md export/manifest.json; do
+  for file in "${required_files[@]}"; do
     printf -- '- [%s] `%s`\n' "$(exists_mark "$file")" "$file"
   done
+
+  printf '\n## Strict Summary\n\n'
+  printf -- '- missing_required_files: `%s`\n' "$missing_count"
 
   printf '\n## Review Gates\n\n'
   printf -- '- [ ] `manifest.json` type is `auto-tmux-swarm-report-pack`.\n'
@@ -82,10 +101,16 @@ render_checklist() {
   printf '```\n'
 }
 
+count_missing
+
 if [[ -n "$out_file" ]]; then
   mkdir -p "$(dirname "$out_file")"
   render_checklist > "$out_file"
   printf 'review checklist written: %s\n' "$out_file"
 else
   render_checklist
+fi
+
+if [[ "$strict" == "1" && "$missing_count" -gt 0 ]]; then
+  die "strict review failed: missing required files=$missing_count"
 fi
