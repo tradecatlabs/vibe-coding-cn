@@ -12,6 +12,7 @@
 - [`swarm-board.sh`](./swarm-board.sh) - 将 `tasks.tsv`、依赖、锁和状态日志渲染为 Markdown 看板。
 - [`swarm-deps-graph.sh`](./swarm-deps-graph.sh) - 将 `deps.tsv` 渲染为 Mermaid 依赖图。
 - [`swarm-export.sh`](./swarm-export.sh) - 将任务、依赖和锁导出为 JSONL 包。
+- [`swarm-timeline.sh`](./swarm-timeline.sh) - 将 `status.log` 渲染为 Markdown 时间线。
 - [`swarm-assign.sh`](./swarm-assign.sh) - 根据 ready tasks 和 worker pane 生成只读分配建议。
 - [`swarm-health.sh`](./swarm-health.sh) - 汇总 doctor、topology、scan、validate、metrics、board 和 assign。
 - [`record-summary.sh`](./record-summary.sh) - 汇总 `record start` 产生的 pane 日志，生成复盘摘要。
@@ -73,6 +74,9 @@ skills/auto-tmux/scripts/swarm-deps-graph.sh --dir /tmp/ai_swarm --out /tmp/ai-s
 
 # 导出机器可读状态包
 skills/auto-tmux/scripts/swarm-export.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-export
+
+# 生成状态时间线
+skills/auto-tmux/scripts/swarm-timeline.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-timeline.md
 
 # 生成 worker 分配建议
 skills/auto-tmux/scripts/swarm-assign.sh --swarm-dir /tmp/ai_swarm --session ai-hub --out /tmp/ai-swarm-assign.md

@@ -32,7 +32,8 @@
 | 24 | `16afbee` | 健康检查 | `swarm-health.sh` |
 | 25 | `38ccefe` | shell completion | `completion.bash` |
 | 26 | `9e33018` | 依赖可视化 | `swarm-deps-graph.sh` |
-| 27 | `本轮` | 机器可读导出 | `swarm-export.sh` |
+| 27 | `f98841d` | 机器可读导出 | `swarm-export.sh` |
+| 28 | `本轮` | 状态时间线 | `swarm-timeline.sh` |
 
 ## 后续候选方向
 
