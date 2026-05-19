@@ -15,6 +15,7 @@ scripts/
 ├── swarm-archive.sh # 打包 brief、snapshot 和 swarm state
 ├── swarm-board.sh # 从 swarm state 渲染 Markdown 看板
 ├── swarm-deps-graph.sh # 从 deps.tsv 渲染 Mermaid 依赖图
+├── swarm-export.sh # 导出 JSONL 状态包
 ├── swarm-assign.sh # 生成 ready task 到 worker pane 的分配建议
 ├── swarm-health.sh # 汇总只读健康检查报告包
 ├── record-summary.sh # 汇总 pipe-pane 录制日志
@@ -40,6 +41,7 @@ scripts/
 - 归档脚本只复制状态和只读证据，不修改 tmux pane 或 swarm state。
 - 看板脚本只读 `tasks.tsv`、`deps.tsv`、锁和状态日志，不改写状态目录。
 - 依赖图脚本只读 `tasks.tsv` 和 `deps.tsv`，不改写状态目录。
+- 导出脚本只读 `tasks.tsv`、`deps.tsv` 和锁目录，只写显式输出目录。
 - 分配建议脚本只读任务和 pane 拓扑，不 claim 任务、不发送 prompt。
 - 健康检查脚本只读 tmux 与 swarm state，失败项写入报告，不做自动修复。
 - 录制摘要脚本只读 record 日志，输出默认脱敏，不修改日志源文件。

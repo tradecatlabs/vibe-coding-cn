@@ -31,7 +31,8 @@
 | 23 | `004d942` | replay 审计 | `record-summary.sh` |
 | 24 | `16afbee` | 健康检查 | `swarm-health.sh` |
 | 25 | `38ccefe` | shell completion | `completion.bash` |
-| 26 | `本轮` | 依赖可视化 | `swarm-deps-graph.sh` |
+| 26 | `9e33018` | 依赖可视化 | `swarm-deps-graph.sh` |
+| 27 | `本轮` | 机器可读导出 | `swarm-export.sh` |
 
 ## 后续候选方向
 

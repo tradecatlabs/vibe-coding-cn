@@ -11,6 +11,7 @@ SWARM_WATCH="$SCRIPT_DIR/swarm-watch.sh"
 SWARM_ARCHIVE="$SCRIPT_DIR/swarm-archive.sh"
 SWARM_BOARD="$SCRIPT_DIR/swarm-board.sh"
 SWARM_DEPS_GRAPH="$SCRIPT_DIR/swarm-deps-graph.sh"
+SWARM_EXPORT="$SCRIPT_DIR/swarm-export.sh"
 SWARM_ASSIGN="$SCRIPT_DIR/swarm-assign.sh"
 SWARM_HEALTH="$SCRIPT_DIR/swarm-health.sh"
 RECORD_SUMMARY="$SCRIPT_DIR/record-summary.sh"
@@ -28,6 +29,7 @@ WATCH_DIR="/tmp/auto-tmux-smoke-watch-$$"
 ARCHIVE_FILE="/tmp/auto-tmux-smoke-archive-$$.tar.gz"
 BOARD_FILE="/tmp/auto-tmux-smoke-board-$$.md"
 DEPS_GRAPH_FILE="/tmp/auto-tmux-smoke-deps-graph-$$.md"
+EXPORT_DIR="/tmp/auto-tmux-smoke-export-$$"
 ASSIGN_FILE="/tmp/auto-tmux-smoke-assign-$$.md"
 HEALTH_DIR="/tmp/auto-tmux-smoke-health-$$"
 DISPATCH_PROMPT="/tmp/auto-tmux-smoke-dispatch-$$.md"
@@ -36,7 +38,7 @@ PASTE_FILE="/tmp/auto-tmux-smoke-paste-$$.txt"
 
 cleanup() {
   tmux kill-session -t "$SESSION" 2>/dev/null || true
-  rm -rf "$SWARM_DIR" "$DEP_SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$RECORD_SUMMARY_FILE" "$BRIEF_DIR" "$WATCH_DIR" "$ARCHIVE_FILE" "$BOARD_FILE" "$DEPS_GRAPH_FILE" "$ASSIGN_FILE" "$HEALTH_DIR" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE" "$PASTE_FILE"
+  rm -rf "$SWARM_DIR" "$DEP_SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$RECORD_SUMMARY_FILE" "$BRIEF_DIR" "$WATCH_DIR" "$ARCHIVE_FILE" "$BOARD_FILE" "$DEPS_GRAPH_FILE" "$EXPORT_DIR" "$ASSIGN_FILE" "$HEALTH_DIR" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE" "$PASTE_FILE"
 }
 trap cleanup EXIT
 
@@ -53,6 +55,7 @@ bash -n "$SWARM_WATCH"
 bash -n "$SWARM_ARCHIVE"
 bash -n "$SWARM_BOARD"
 bash -n "$SWARM_DEPS_GRAPH"
+bash -n "$SWARM_EXPORT"
 bash -n "$SWARM_ASSIGN"
 bash -n "$SWARM_HEALTH"
 bash -n "$RECORD_SUMMARY"
@@ -154,6 +157,10 @@ grep -q 'smoke-fail' "$BOARD_FILE"
 "$SWARM_DEPS_GRAPH" --dir "$SWARM_DIR" --out "$DEPS_GRAPH_FILE" >/tmp/auto-tmux-smoke-deps-graph.txt
 grep -q 'auto-tmux Swarm Dependency Graph' "$DEPS_GRAPH_FILE"
 grep -q 'task_dep_a --> task_dep_b' "$DEPS_GRAPH_FILE"
+"$SWARM_EXPORT" --dir "$SWARM_DIR" --out "$EXPORT_DIR" >/tmp/auto-tmux-smoke-export.txt
+grep -q '"type":"auto-tmux-swarm-export"' "$EXPORT_DIR/manifest.json"
+grep -q '"id":"smoke-task"' "$EXPORT_DIR/tasks.jsonl"
+grep -q '"task_id":"dep-b"' "$EXPORT_DIR/deps.jsonl"
 "$SWARM_ASSIGN" --swarm-dir "$SWARM_DIR" --session "$SESSION" --out "$ASSIGN_FILE" --limit 20 >/tmp/auto-tmux-smoke-assign.txt
 grep -q 'auto-tmux Swarm Assignment Suggestions' "$ASSIGN_FILE"
 grep -q 'swarm-dispatch.sh' "$ASSIGN_FILE"
