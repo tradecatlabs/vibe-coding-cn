@@ -138,6 +138,16 @@ run_gate "swarm-export help" "$script_dir/swarm-export.sh" --help
 run_gate "swarm-timeline help" "$script_dir/swarm-timeline.sh" --help
 run_gate "swarm-blockers help" "$script_dir/swarm-blockers.sh" --help
 run_gate "swarm-report-pack help" "$script_dir/swarm-report-pack.sh" --help
+run_gate "swarm-report-pack attachment" bash -c '
+  tmp="$(mktemp -d)"
+  mkdir -p "$tmp/swarm" "$tmp/remote"
+  printf "id\ttext\tstatus\towner\tupdated_at\tresult\n" > "$tmp/swarm/tasks.tsv"
+  printf "remote evidence\n" > "$tmp/remote/remote-tmux.txt"
+  "$1" --dir "$tmp/swarm" --out "$tmp/out" --attach "$tmp/remote" >/dev/null
+  grep -Fq "attachments.md" "$tmp/out/index.md"
+  grep -Fq "remote-tmux.txt" "$tmp/out/attachments/remote/remote-tmux.txt"
+  rm -rf "$tmp"
+' _ "$script_dir/swarm-report-pack.sh"
 run_gate "swarm-assign help" "$script_dir/swarm-assign.sh" --help
 run_gate "swarm-health help" "$script_dir/swarm-health.sh" --help
 run_gate "remote-readonly help" "$script_dir/remote-readonly.sh" --help

@@ -7,13 +7,14 @@ usage() {
 swarm-report-pack: build an auto-tmux swarm report pack
 
 Usage:
-  swarm-report-pack.sh [--dir DIR] [--session NAME] [--out DIR]
+  swarm-report-pack.sh [--dir DIR] [--session NAME] [--out DIR] [--attach DIR ...]
 
 Defaults:
   --dir AUTO_TMUX_SWARM_DIR or /tmp/ai_swarm
   --out /tmp/auto-tmux-report-pack-YYYYmmdd-HHMMSS
 
 This script is read-only for tmux and swarm state. It writes only to --out.
+Use --attach to copy explicit external evidence directories into the report pack.
 EOF
 }
 
@@ -26,6 +27,7 @@ script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 swarm_dir="${AUTO_TMUX_SWARM_DIR:-/tmp/ai_swarm}"
 session=""
 out_dir="/tmp/auto-tmux-report-pack-$(date +%Y%m%d-%H%M%S)"
+attachments=()
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -39,6 +41,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --out)
       out_dir="${2:-}"
+      shift 2
+      ;;
+    --attach)
+      attachments+=("${2:-}")
       shift 2
       ;;
     -h|--help)
@@ -76,6 +82,30 @@ else
   run_report "assign" "$script_dir/swarm-assign.sh" --swarm-dir "$swarm_dir" --out "$out_dir/assign.md"
 fi
 
+attachment_lines=""
+if ((${#attachments[@]} > 0)); then
+  mkdir -p "$out_dir/attachments"
+  cat > "$out_dir/attachments.md" <<EOF
+# Attachments
+
+EOF
+  for attachment in "${attachments[@]}"; do
+    [[ -d "$attachment" ]] || die "attachment is not a directory: $attachment"
+    name="$(basename "$attachment")"
+    safe_name="$(printf '%s' "$name" | tr -c 'A-Za-z0-9._-' '_')"
+    dest="$out_dir/attachments/$safe_name"
+    suffix=1
+    while [[ -e "$dest" ]]; do
+      dest="$out_dir/attachments/${safe_name}_$suffix"
+      suffix=$((suffix + 1))
+    done
+    cp -a "$attachment" "$dest"
+    rel_path="attachments/$(basename "$dest")"
+    printf -- '- [%s](./%s)\n' "$attachment" "$rel_path" >> "$out_dir/attachments.md"
+    attachment_lines+="- [$rel_path](./$rel_path)"$'\n'
+  done
+fi
+
 cat > "$out_dir/index.md" <<EOF
 # auto-tmux Swarm Report Pack
 
@@ -91,6 +121,7 @@ cat > "$out_dir/index.md" <<EOF
 - [blockers.md](./blockers.md)
 - [assign.md](./assign.md)
 - [export/manifest.json](./export/manifest.json)
+$(if [[ -n "$attachment_lines" ]]; then printf '%s' "- [attachments.md](./attachments.md)"; fi)
 EOF
 
 rm -f /tmp/auto-tmux-report-pack.log
