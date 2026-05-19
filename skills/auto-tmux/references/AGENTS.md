@@ -8,4 +8,5 @@
 - 上游来源统一写为 `tools/external/.tmux`、`tools/external/tmux` 或 `tools/external/Skill_Seekers-development`。
 - 示例命令必须优先使用可复制的占位符或 `git rev-parse --show-toplevel` 动态定位仓库根目录。
 - 脚本类说明优先引用 `skills/auto-tmux/scripts/auto-tmux.sh`，再给原生命令兜底。
+- SSH/远程 session 规则写入 `session-safety.md`；远程默认只读，不把只读采集扩展成控制入口。
 - 不确定的 tmux 行为必须给出验证命令，不编造。

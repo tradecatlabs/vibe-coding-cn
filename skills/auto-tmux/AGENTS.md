@@ -40,6 +40,8 @@ skills/auto-tmux/
     ├── getting_started.md
     ├── api.md
     ├── automation.md
+    ├── safety-policy.md
+    ├── session-safety.md
     ├── swarm-state.md
     ├── prompt-templates.md
     ├── ai-swarm-collaboration.md
@@ -73,6 +75,7 @@ skills/auto-tmux/
 - `scripts/validate-auto-tmux.sh` 是技能专属质量门禁，覆盖脚本、文档索引和 smoke test。
 - 技能文档可以引用软链接入口；更新上游内容必须通过 `tools/external/` 下的 submodule 指针完成。
 - 不在本目录直接修改 submodule 内容；如需改造，先 fork 上游并更新 submodule 来源。
+- SSH/远程 session 的默认边界写在 `references/session-safety.md`；不得把 `remote-readonly.sh` 扩展成远程写操作入口。
 
 ## 依赖关系
 

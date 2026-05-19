@@ -212,6 +212,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - MUST：在发送按键前用 `capture-pane` 复核目标上下文；按键操作必须带 `<session>:<window>.<pane>` 绝对定位。
 - MUST：遵循 oh-my-tmux 约定，不修改主配置文件；自定义写入 `~/.tmux.conf.local`。
 - MUST：批量操作前先 `list-windows`/`list-panes` 建立白名单，避免误控用户窗口。
+- MUST：SSH/远程场景默认只读，先用 `scripts/remote-readonly.sh` 采集证据；远程控制必须另行确认，不从只读脚本升级。
 - SHOULD：救援/确认前先 grep 关键词（如 `(y/n)`、`password`），只对匹配目标发送。
 - SHOULD：发送完整命令行时避免先发 `Escape`；先 `C-c` 中断、`C-u` 清行，再用 `send-keys -l` 逐字发送完整命令。
 - SHOULD：长 prompt、文件粘贴、跨 worker 分发前运行 `scripts/safety-check.sh`，批量发送先 `--dry-run`。
@@ -270,6 +271,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `references/api.md`: tmux/oh-my-tmux 常用命令、选项与 gpakosz 特色键位
 - `references/automation.md`: `scripts/auto-tmux.sh` 子命令、安全模型与 AI 蜂群协作流程
 - `references/safety-policy.md`: 发送、广播、清理、归档和敏感信息处理的安全策略
+- `references/session-safety.md`: 本地 session、远程 SSH 和多 Agent 协作的分层安全边界
 - `references/swarm-state.md`: 蜂群状态、任务、锁和报告协议
 - `references/prompt-templates.md`: commander/worker/reviewer 提示词模板和下发方式
 - `references/ai-swarm-collaboration.md`: tmux 蜂群协作历史文档、架构模式、协议、案例和风险限制

@@ -9,6 +9,7 @@
 - **拒绝危险动作**：`rm -rf`、`git reset --hard`、`git clean -fd`、`tmux kill-server` 等命令默认拒绝，必须显式 `--force`。
 - **批量动作可解释**：scan/rescue 都基于明确 session、pane、pattern 和 reply，不做无条件广播。
 - **交接报告只读**：brief 汇总 doctor、topology、scan 和 state report，不发送按键、不改变 tmux 状态。
+- **远程默认只读**：SSH 场景使用 `remote-readonly.sh` 采集证据，远程控制规则见 `session-safety.md`。
 - **不改用户配置**：脚本只操作 tmux server，不写 `~/.tmux.conf`；oh-my-tmux 配置仍走 `assets/oh-my-tmux` 参考入口。
 
 ## 子命令总览

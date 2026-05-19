@@ -36,13 +36,14 @@
 | 28 | `c6eeb1f` | 状态时间线 | `swarm-timeline.sh` |
 | 29 | `4417e87` | 阻塞报告 | `swarm-blockers.sh` |
 | 30 | `0cabf50` | 报告包 | `swarm-report-pack.sh` |
-| 31 | `本轮` | 远程只读采集 | `remote-readonly.sh` |
+| 31 | `565352b` | 远程只读采集 | `remote-readonly.sh` |
+| 32 | `本轮` | session 安全策略 | `session-safety.md` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P3 | session 安全策略 | 远程只读采集后的 SSH 场景规则细化 |
+| P3 | 远程证据包增强 | 远程只读采集后的 JSONL 摘要与归档元数据 |
 
 ## 每轮验收清单
 
