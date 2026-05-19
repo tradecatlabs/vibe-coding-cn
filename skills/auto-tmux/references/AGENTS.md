@@ -10,4 +10,5 @@
 - 脚本类说明优先引用 `skills/auto-tmux/scripts/auto-tmux.sh`，再给原生命令兜底。
 - SSH/远程 session 规则写入 `session-safety.md`；远程默认只读，不把只读采集扩展成控制入口。
 - 机器可读输出字段约定写入 `jsonl-schema.md`；新增 JSONL/manifest 输出必须同步维护。
+- report pack 审查路径写入 `report-pack-review.md`；新增报告文件时同步更新阅读顺序和通过标准。
 - 不确定的 tmux 行为必须给出验证命令，不编造。
