@@ -317,6 +317,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `scripts/review-checklist.sh`: 为 report pack 生成 reviewer 审计清单
 - `scripts/verify-report-pack.sh`: 统一验证 report pack 的 manifest、JSONL 和审计清单
 - `scripts/incident-report.sh`: 生成误发送、误广播、远程采集和敏感信息风险复盘模板
+- `scripts/audit-package.sh`: 检查脚本、参考资料、SKILL 入口和 validator 的索引一致性
 - `scripts/completion.bash`: Bash completion，补全 `auto-tmux.sh` 与 `swarm-state.sh`
 - `scripts/safety-check.sh`: 发送/粘贴/分发前检查危险命令、敏感信息和过大 payload
 - `scripts/render-swarm-prompt.sh`: commander/worker/reviewer 提示词渲染脚本

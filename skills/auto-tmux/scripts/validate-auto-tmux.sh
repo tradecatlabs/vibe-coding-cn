@@ -118,6 +118,7 @@ scripts=(
   "$script_dir/review-checklist.sh"
   "$script_dir/verify-report-pack.sh"
   "$script_dir/incident-report.sh"
+  "$script_dir/audit-package.sh"
   "$script_dir/safety-check.sh"
   "$script_dir/render-swarm-prompt.sh"
   "$script_dir/swarm-dispatch.sh"
@@ -201,6 +202,8 @@ run_gate "review-checklist strict failure" bash -c '
 run_gate "verify-report-pack help" "$script_dir/verify-report-pack.sh" --help
 run_gate "incident-report help" "$script_dir/incident-report.sh" --help
 run_gate "incident-report render" "$script_dir/incident-report.sh" --type mis-send
+run_gate "audit-package help" "$script_dir/audit-package.sh" --help
+run_gate "audit-package consistency" "$script_dir/audit-package.sh"
 run_gate "safety-check help" "$script_dir/safety-check.sh" --help
 run_gate "safety-check clean text" "$script_dir/safety-check.sh" --text "make test"
 if "$script_dir/safety-check.sh" --text "rm -rf /tmp/example" >/tmp/auto-tmux-validate-gate.log 2>&1; then
@@ -230,6 +233,7 @@ require_contains "$skill_dir/SKILL.md" "scripts/check-jsonl.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/review-checklist.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/verify-report-pack.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/incident-report.sh"
+require_contains "$skill_dir/SKILL.md" "scripts/audit-package.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/completion.bash"
 require_contains "$skill_dir/SKILL.md" "scripts/safety-check.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-dispatch.sh"
@@ -281,6 +285,7 @@ require_contains "$script_dir/README.md" "check-jsonl.sh"
 require_contains "$script_dir/README.md" "review-checklist.sh"
 require_contains "$script_dir/README.md" "verify-report-pack.sh"
 require_contains "$script_dir/README.md" "incident-report.sh"
+require_contains "$script_dir/README.md" "audit-package.sh"
 require_contains "$script_dir/README.md" "completion.bash"
 require_contains "$script_dir/README.md" "safety-check.sh"
 require_contains "$script_dir/AGENTS.md" "validate-auto-tmux.sh"
@@ -302,6 +307,7 @@ require_contains "$script_dir/AGENTS.md" "check-jsonl.sh"
 require_contains "$script_dir/AGENTS.md" "review-checklist.sh"
 require_contains "$script_dir/AGENTS.md" "verify-report-pack.sh"
 require_contains "$script_dir/AGENTS.md" "incident-report.sh"
+require_contains "$script_dir/AGENTS.md" "audit-package.sh"
 require_contains "$script_dir/AGENTS.md" "completion.bash"
 require_contains "$script_dir/AGENTS.md" "safety-check.sh"
 

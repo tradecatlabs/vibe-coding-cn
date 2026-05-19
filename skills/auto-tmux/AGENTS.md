@@ -32,6 +32,7 @@ skills/auto-tmux/
 │   ├── review-checklist.sh
 │   ├── verify-report-pack.sh
 │   ├── incident-report.sh
+│   ├── audit-package.sh
 │   ├── completion.bash
 │   ├── safety-check.sh
 │   ├── render-swarm-prompt.sh

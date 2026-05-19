@@ -53,13 +53,14 @@
 | 45 | `63d7831` | 文档摘要索引 | `reading-paths.md` |
 | 46 | `07d4850` | 操作事故 runbook | `incident-runbook.md` |
 | 47 | `d6a309f` | 事故报告脚本 | `incident-report.sh` |
-| 48 | `本轮` | 脚本清单速查 | `script-cheatsheet.md` |
+| 48 | `1ac2ee4` | 脚本清单速查 | `script-cheatsheet.md` |
+| 49 | `本轮` | 包一致性审计 | `audit-package.sh` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P3 | 最终一致性审计 | 对 roadmap、脚本索引和 references 做一次收尾一致性检查 |
+| P3 | 迭代收尾说明 | 汇总 50 轮能力层、验证路径和后续维护边界 |
 
 ## 每轮验收清单
 

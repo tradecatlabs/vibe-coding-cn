@@ -25,6 +25,7 @@
 - [`review-checklist.sh`](./review-checklist.sh) - 为 report pack 生成 reviewer 审计清单。
 - [`verify-report-pack.sh`](./verify-report-pack.sh) - 统一验证 report pack 的 manifest、JSONL 和审计清单。
 - [`incident-report.sh`](./incident-report.sh) - 生成误发送、误广播、远程采集和敏感信息风险复盘模板。
+- [`audit-package.sh`](./audit-package.sh) - 检查脚本、参考资料、SKILL 入口和 validator 的索引一致性。
 - [`completion.bash`](./completion.bash) - Bash completion，补全 `auto-tmux.sh` 和 `swarm-state.sh` 子命令。
 - [`safety-check.sh`](./safety-check.sh) - 发送、粘贴或分发前检查危险命令、敏感信息和过大 payload。
 - [`render-swarm-prompt.sh`](./render-swarm-prompt.sh) - commander、worker、reviewer 提示词渲染。
@@ -122,6 +123,9 @@ skills/auto-tmux/scripts/verify-report-pack.sh --pack /tmp/ai-swarm-report-pack
 
 # 生成事故复盘模板
 skills/auto-tmux/scripts/incident-report.sh --type mis-send --out /tmp/auto-tmux-incident.md
+
+# 审计 auto-tmux 包索引一致性
+skills/auto-tmux/scripts/audit-package.sh
 
 # 启用当前 shell 的补全
 source skills/auto-tmux/scripts/completion.bash
