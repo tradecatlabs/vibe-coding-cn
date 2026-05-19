@@ -12,4 +12,5 @@
 - 机器可读输出字段约定写入 `jsonl-schema.md`；新增 JSONL/manifest 输出必须同步维护。
 - report pack 审查路径写入 `report-pack-review.md`；新增报告文件时同步更新阅读顺序和通过标准。
 - 角色化阅读路线写入 `reading-paths.md`；新增关键 reference 时同步判断是否进入某个角色路径。
+- 操作事故处理流程写入 `incident-runbook.md`；新增控制类脚本时同步补事故处理路径。
 - 不确定的 tmux 行为必须给出验证命令，不编造。
