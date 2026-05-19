@@ -286,6 +286,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `references/session-safety.md`: 本地 session、远程 SSH 和多 Agent 协作的分层安全边界
 - `references/jsonl-schema.md`: JSONL/manifest 机器可读输出字段约定
 - `references/report-pack-review.md`: report pack reviewer 最短验收路径
+- `references/reading-paths.md`: commander、worker、reviewer、operator 的角色化阅读路线
 - `references/swarm-state.md`: 蜂群状态、任务、锁和报告协议
 - `references/prompt-templates.md`: commander/worker/reviewer 提示词模板和下发方式
 - `references/ai-swarm-collaboration.md`: tmux 蜂群协作历史文档、架构模式、协议、案例和风险限制

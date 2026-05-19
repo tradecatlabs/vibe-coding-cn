@@ -49,13 +49,14 @@
 | 41 | `a74be2c` | 交付包审计清单 | `review-checklist.sh` |
 | 42 | `01b4a6f` | 审计清单结果门禁 | `review-checklist.sh --strict` |
 | 43 | `82486a7` | report pack 自检命令 | `verify-report-pack.sh` |
-| 44 | `本轮` | report pack 自检文档 | `report-pack-review.md` |
+| 44 | `d448fdb` | report pack 自检文档 | `report-pack-review.md` |
+| 45 | `本轮` | 文档摘要索引 | `reading-paths.md` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P3 | 文档摘要索引 | 为 auto-tmux references 生成角色化阅读路线 |
+| P3 | 操作事故 runbook | 为误发送、误广播、远程采集失败补处理流程 |
 
 ## 每轮验收清单
 

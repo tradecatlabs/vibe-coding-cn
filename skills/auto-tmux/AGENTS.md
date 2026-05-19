@@ -48,6 +48,7 @@ skills/auto-tmux/
     ├── session-safety.md
     ├── jsonl-schema.md
     ├── report-pack-review.md
+    ├── reading-paths.md
     ├── swarm-state.md
     ├── prompt-templates.md
     ├── ai-swarm-collaboration.md
