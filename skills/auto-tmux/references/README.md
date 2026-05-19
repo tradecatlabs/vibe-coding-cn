@@ -10,6 +10,7 @@
 | [automation.md](./automation.md) | `auto-tmux.sh` / `swarm-brief.sh` 脚本子命令、安全模型和 AI 蜂群协作流程 |
 | [safety-policy.md](./safety-policy.md) | 发送、广播、清理、归档和敏感信息处理的安全策略 |
 | [session-safety.md](./session-safety.md) | 本地 session、远程 SSH 和多 Agent 协作的分层安全边界 |
+| [jsonl-schema.md](./jsonl-schema.md) | JSONL/manifest 机器可读输出字段约定 |
 | [swarm-state.md](./swarm-state.md) | 蜂群状态、任务、锁和报告协议 |
 | [prompt-templates.md](./prompt-templates.md) | commander/worker/reviewer 提示词模板和下发方式 |
 | [ai-swarm-collaboration.md](./ai-swarm-collaboration.md) | tmux 蜂群协作完整说明、架构模式、协议、案例和风险限制 |

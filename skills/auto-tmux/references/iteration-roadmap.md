@@ -44,13 +44,14 @@
 | 36 | `9eac52f` | 报告包压缩 | `swarm-report-pack.sh --tar` |
 | 37 | `ab6d8f2` | worker 结果收敛 | `swarm-results.sh` |
 | 38 | `3b10fb6` | 结果摘要导出 | `swarm-results.sh --jsonl` |
-| 39 | `本轮` | JSONL 字段门禁 | `check-jsonl.sh` |
+| 39 | `842cd2d` | JSONL 字段门禁 | `check-jsonl.sh` |
+| 40 | `本轮` | JSONL 格式治理 | `jsonl-schema.md` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P3 | JSONL 格式治理 | 将 remote metadata 和 swarm results 的字段约定写入 reference |
+| P3 | 交付包审计清单 | 为报告包补一页 reviewer 审计 checklist |
 
 ## 每轮验收清单
 

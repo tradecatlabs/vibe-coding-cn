@@ -44,6 +44,7 @@ skills/auto-tmux/
     ├── automation.md
     ├── safety-policy.md
     ├── session-safety.md
+    ├── jsonl-schema.md
     ├── swarm-state.md
     ├── prompt-templates.md
     ├── ai-swarm-collaboration.md
