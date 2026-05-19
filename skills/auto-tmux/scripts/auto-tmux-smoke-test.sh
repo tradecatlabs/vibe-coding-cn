@@ -14,6 +14,7 @@ SWARM_DEPS_GRAPH="$SCRIPT_DIR/swarm-deps-graph.sh"
 SWARM_EXPORT="$SCRIPT_DIR/swarm-export.sh"
 SWARM_TIMELINE="$SCRIPT_DIR/swarm-timeline.sh"
 SWARM_BLOCKERS="$SCRIPT_DIR/swarm-blockers.sh"
+SWARM_REPORT_PACK="$SCRIPT_DIR/swarm-report-pack.sh"
 SWARM_ASSIGN="$SCRIPT_DIR/swarm-assign.sh"
 SWARM_HEALTH="$SCRIPT_DIR/swarm-health.sh"
 RECORD_SUMMARY="$SCRIPT_DIR/record-summary.sh"
@@ -34,6 +35,7 @@ DEPS_GRAPH_FILE="/tmp/auto-tmux-smoke-deps-graph-$$.md"
 EXPORT_DIR="/tmp/auto-tmux-smoke-export-$$"
 TIMELINE_FILE="/tmp/auto-tmux-smoke-timeline-$$.md"
 BLOCKERS_FILE="/tmp/auto-tmux-smoke-blockers-$$.md"
+REPORT_PACK_DIR="/tmp/auto-tmux-smoke-report-pack-$$"
 ASSIGN_FILE="/tmp/auto-tmux-smoke-assign-$$.md"
 HEALTH_DIR="/tmp/auto-tmux-smoke-health-$$"
 DISPATCH_PROMPT="/tmp/auto-tmux-smoke-dispatch-$$.md"
@@ -42,7 +44,7 @@ PASTE_FILE="/tmp/auto-tmux-smoke-paste-$$.txt"
 
 cleanup() {
   tmux kill-session -t "$SESSION" 2>/dev/null || true
-  rm -rf "$SWARM_DIR" "$DEP_SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$RECORD_SUMMARY_FILE" "$BRIEF_DIR" "$WATCH_DIR" "$ARCHIVE_FILE" "$BOARD_FILE" "$DEPS_GRAPH_FILE" "$EXPORT_DIR" "$TIMELINE_FILE" "$BLOCKERS_FILE" "$ASSIGN_FILE" "$HEALTH_DIR" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE" "$PASTE_FILE"
+  rm -rf "$SWARM_DIR" "$DEP_SWARM_DIR" "$SNAPSHOT_DIR" "$RECORD_DIR" "$RECORD_SUMMARY_FILE" "$BRIEF_DIR" "$WATCH_DIR" "$ARCHIVE_FILE" "$BOARD_FILE" "$DEPS_GRAPH_FILE" "$EXPORT_DIR" "$TIMELINE_FILE" "$BLOCKERS_FILE" "$REPORT_PACK_DIR" "$ASSIGN_FILE" "$HEALTH_DIR" "$DISPATCH_PROMPT" "$TASK_IMPORT_FILE" "$PASTE_FILE"
 }
 trap cleanup EXIT
 
@@ -62,6 +64,7 @@ bash -n "$SWARM_DEPS_GRAPH"
 bash -n "$SWARM_EXPORT"
 bash -n "$SWARM_TIMELINE"
 bash -n "$SWARM_BLOCKERS"
+bash -n "$SWARM_REPORT_PACK"
 bash -n "$SWARM_ASSIGN"
 bash -n "$SWARM_HEALTH"
 bash -n "$RECORD_SUMMARY"
@@ -173,6 +176,10 @@ grep -q 'DONE' "$TIMELINE_FILE"
 "$SWARM_BLOCKERS" --dir "$SWARM_DIR" --out "$BLOCKERS_FILE" -n 50 >/tmp/auto-tmux-smoke-blockers.txt
 grep -q 'auto-tmux Swarm Blockers' "$BLOCKERS_FILE"
 grep -q 'smoke-fail' "$BLOCKERS_FILE"
+"$SWARM_REPORT_PACK" --dir "$SWARM_DIR" --session "$SESSION" --out "$REPORT_PACK_DIR" >/tmp/auto-tmux-smoke-report-pack.txt
+grep -q 'auto-tmux Swarm Report Pack' "$REPORT_PACK_DIR/index.md"
+test -s "$REPORT_PACK_DIR/board.md"
+test -s "$REPORT_PACK_DIR/export/tasks.jsonl"
 "$SWARM_ASSIGN" --swarm-dir "$SWARM_DIR" --session "$SESSION" --out "$ASSIGN_FILE" --limit 20 >/tmp/auto-tmux-smoke-assign.txt
 grep -q 'auto-tmux Swarm Assignment Suggestions' "$ASSIGN_FILE"
 grep -q 'swarm-dispatch.sh' "$ASSIGN_FILE"

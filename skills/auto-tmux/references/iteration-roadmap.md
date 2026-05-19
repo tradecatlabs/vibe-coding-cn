@@ -34,7 +34,8 @@
 | 26 | `9e33018` | 依赖可视化 | `swarm-deps-graph.sh` |
 | 27 | `f98841d` | 机器可读导出 | `swarm-export.sh` |
 | 28 | `c6eeb1f` | 状态时间线 | `swarm-timeline.sh` |
-| 29 | `本轮` | 阻塞报告 | `swarm-blockers.sh` |
+| 29 | `4417e87` | 阻塞报告 | `swarm-blockers.sh` |
+| 30 | `本轮` | 报告包 | `swarm-report-pack.sh` |
 
 ## 后续候选方向
 
