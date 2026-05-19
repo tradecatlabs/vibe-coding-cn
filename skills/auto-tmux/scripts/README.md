@@ -17,7 +17,7 @@
 - [`swarm-report-pack.sh`](./swarm-report-pack.sh) - 聚合 board、依赖图、时间线、阻塞清单、分配建议和 JSONL 导出。
 - [`swarm-assign.sh`](./swarm-assign.sh) - 根据 ready tasks 和 worker pane 生成只读分配建议。
 - [`swarm-health.sh`](./swarm-health.sh) - 汇总 doctor、topology、scan、validate、metrics、board 和 assign。
-- [`remote-readonly.sh`](./remote-readonly.sh) - 通过 SSH 只读采集远端 tmux 拓扑和 pane 输出。
+- [`remote-readonly.sh`](./remote-readonly.sh) - 通过 SSH 只读采集远端 tmux 拓扑、pane 输出和 `metadata.jsonl`。
 - [`record-summary.sh`](./record-summary.sh) - 汇总 `record start` 产生的 pane 日志，生成复盘摘要。
 - [`completion.bash`](./completion.bash) - Bash completion，补全 `auto-tmux.sh` 和 `swarm-state.sh` 子命令。
 - [`safety-check.sh`](./safety-check.sh) - 发送、粘贴或分发前检查危险命令、敏感信息和过大 payload。
@@ -95,6 +95,7 @@ skills/auto-tmux/scripts/swarm-health.sh --session ai-hub --swarm-dir /tmp/ai_sw
 
 # 只读采集远端 tmux 证据
 skills/auto-tmux/scripts/remote-readonly.sh --host user@example.com --session ai-hub --out /tmp/auto-tmux-remote --dry-run
+# 真实采集后输出 index.md、remote-tmux.txt 和 metadata.jsonl
 
 # 汇总 pane 录制日志
 skills/auto-tmux/scripts/record-summary.sh --dir /tmp/auto-tmux-records --out /tmp/auto-tmux-record-summary.md

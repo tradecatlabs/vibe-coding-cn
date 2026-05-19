@@ -54,6 +54,7 @@ skills/auto-tmux/scripts/auto-tmux.sh capture -t "$target" -n 80
 
 - 输出证据默认脱敏；发现 token、API key、password、Bearer、`sk-` 等内容时不在报告中原样保留。
 - 远程采集结果写入显式输出目录，避免混入仓库。
+- 远程证据包必须包含 `index.md`、`remote-tmux.txt` 和 `metadata.jsonl`，便于人工阅读和机器审计。
 - 不把 `/tmp/auto-tmux-*` 证据包直接提交到 Git。
 - 需要分享证据时，优先分享摘要、状态、错误类型和可复现命令，不分享完整 pane 历史。
 

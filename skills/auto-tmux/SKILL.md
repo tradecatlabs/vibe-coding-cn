@@ -291,7 +291,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `scripts/swarm-report-pack.sh`: 聚合 board、依赖图、时间线、阻塞清单、分配建议和 JSONL 导出
 - `scripts/swarm-assign.sh`: 根据 ready tasks 和 worker pane 生成只读分配建议
 - `scripts/swarm-health.sh`: 汇总 tmux 与 swarm state 的只读健康检查报告包
-- `scripts/remote-readonly.sh`: 通过 SSH 只读采集远端 tmux 拓扑和 pane 输出
+- `scripts/remote-readonly.sh`: 通过 SSH 只读采集远端 tmux 拓扑、pane 输出和 `metadata.jsonl`
 - `scripts/record-summary.sh`: 汇总 pane 录制日志并生成复盘摘要
 - `scripts/completion.bash`: Bash completion，补全 `auto-tmux.sh` 与 `swarm-state.sh`
 - `scripts/safety-check.sh`: 发送/粘贴/分发前检查危险命令、敏感信息和过大 payload

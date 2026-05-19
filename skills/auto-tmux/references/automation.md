@@ -42,7 +42,7 @@
 | `swarm-report-pack.sh` | 聚合多个只读报告与 JSONL 导出 | 只写显式输出目录 |
 | `swarm-assign.sh` | 生成 ready task 到 worker pane 的分配建议 | 只读，不 claim，不发送 |
 | `swarm-health.sh` | 汇总 tmux 与 swarm state 健康报告 | 只读，不自动修复 |
-| `remote-readonly.sh` | SSH 只读采集远端 tmux 证据 | 不发送按键，输出默认脱敏 |
+| `remote-readonly.sh` | SSH 只读采集远端 tmux 证据 | 不发送按键，输出默认脱敏，生成 `metadata.jsonl` |
 | `record-summary.sh` | 汇总 pane 录制日志 | 只读，输出默认脱敏 |
 | `completion.bash` | Bash 子命令和常用参数补全 | 只定义 shell completion |
 | `swarm-dispatch.sh` | 渲染并可选下发提示词 | 默认只写文件，发送需 `--send` |

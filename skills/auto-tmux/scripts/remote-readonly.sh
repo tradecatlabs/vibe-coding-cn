@@ -15,6 +15,10 @@ Defaults:
 
 This script is read-only. It runs tmux list/capture commands on the remote host.
 It never sends keys and never mutates remote tmux state.
+Outputs:
+  - remote-tmux.txt: redacted tmux topology and pane output
+  - metadata.jsonl: machine-readable evidence metadata
+  - index.md: human-readable evidence index
 EOF
 }
 
@@ -71,6 +75,16 @@ redact() {
     -e 's/(sk-[A-Za-z0-9_-]{12,})/<redacted-openai-key>/g'
 }
 
+json_escape() {
+  local value="$1"
+  value="${value//\\/\\\\}"
+  value="${value//\"/\\\"}"
+  value="${value//$'\n'/\\n}"
+  value="${value//$'\r'/\\r}"
+  value="${value//$'\t'/\\t}"
+  printf '%s' "$value"
+}
+
 remote_script='
 set -e
 session_filter="$1"
@@ -103,18 +117,33 @@ if [[ "$dry_run" == "1" ]]; then
 fi
 
 mkdir -p "$out_dir"
+created_at="$(date -Is)"
 ssh "$host" "bash -s" -- "$session" "$lines" <<EOF | redact > "$out_dir/remote-tmux.txt"
 $remote_script
+EOF
+
+evidence_file="$out_dir/remote-tmux.txt"
+evidence_bytes="$(wc -c < "$evidence_file" | tr -d '[:space:]')"
+evidence_lines="$(wc -l < "$evidence_file" | tr -d '[:space:]')"
+if command -v sha256sum >/dev/null 2>&1; then
+  evidence_sha256="$(sha256sum "$evidence_file" | awk '{print $1}')"
+else
+  evidence_sha256=""
+fi
+
+cat > "$out_dir/metadata.jsonl" <<EOF
+{"type":"remote-readonly","created_at":"$(json_escape "$created_at")","host":"$(json_escape "$host")","session":"$(json_escape "${session:-<all>}")","lines":$lines,"evidence_file":"remote-tmux.txt","evidence_bytes":$evidence_bytes,"evidence_lines":$evidence_lines,"evidence_sha256":"$(json_escape "$evidence_sha256")","read_only":true,"redacted":true}
 EOF
 
 cat > "$out_dir/index.md" <<EOF
 # auto-tmux Remote Readonly
 
-- created_at: \`$(date -Is)\`
+- created_at: \`$created_at\`
 - host: \`$host\`
 - session: \`${session:-<all>}\`
 - lines: \`$lines\`
 - evidence: [remote-tmux.txt](./remote-tmux.txt)
+- metadata: [metadata.jsonl](./metadata.jsonl)
 EOF
 
 printf 'remote readonly evidence written: %s\n' "$out_dir"

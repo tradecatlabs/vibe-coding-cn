@@ -76,6 +76,27 @@ run_gate() {
   fi
 }
 
+test_remote_readonly_package() {
+  local tmp_dir fake_bin out_dir
+  tmp_dir="$(mktemp -d)"
+  fake_bin="$tmp_dir/bin"
+  out_dir="$tmp_dir/out"
+  mkdir -p "$fake_bin"
+  cat > "$fake_bin/ssh" <<'EOF'
+#!/usr/bin/env bash
+cat >/dev/null
+printf 'session: ai-hub windows=1 attached=0\n'
+printf '===== [ai-hub:0.0] =====\n'
+printf 'OPENAI_API_KEY=sk-testsecret000000\n'
+EOF
+  chmod +x "$fake_bin/ssh"
+  PATH="$fake_bin:$PATH" "$script_dir/remote-readonly.sh" --host example.com --session ai-hub --out "$out_dir" >/dev/null
+  grep -Fq 'metadata.jsonl' "$out_dir/index.md"
+  grep -Fq '"read_only":true' "$out_dir/metadata.jsonl"
+  grep -Fq '<redacted-openai-key>' "$out_dir/remote-tmux.txt"
+  rm -rf "$tmp_dir"
+}
+
 scripts=(
   "$script_dir/auto-tmux.sh"
   "$script_dir/swarm-state.sh"
@@ -121,6 +142,7 @@ run_gate "swarm-assign help" "$script_dir/swarm-assign.sh" --help
 run_gate "swarm-health help" "$script_dir/swarm-health.sh" --help
 run_gate "remote-readonly help" "$script_dir/remote-readonly.sh" --help
 run_gate "remote-readonly dry-run" "$script_dir/remote-readonly.sh" --host example.com --dry-run
+run_gate "remote-readonly package with fake ssh" test_remote_readonly_package
 run_gate "record-summary help" "$script_dir/record-summary.sh" --help
 run_gate "safety-check help" "$script_dir/safety-check.sh" --help
 run_gate "safety-check clean text" "$script_dir/safety-check.sh" --text "make test"
@@ -157,6 +179,7 @@ require_contains "$skill_dir/references/README.md" "safety-policy.md"
 require_contains "$skill_dir/references/README.md" "session-safety.md"
 require_contains "$skill_dir/references/session-safety.md" "remote-readonly.sh"
 require_contains "$skill_dir/references/session-safety.md" "远程默认只读"
+require_contains "$skill_dir/references/session-safety.md" "metadata.jsonl"
 require_contains "$script_dir/README.md" "validate-auto-tmux.sh"
 require_contains "$script_dir/README.md" "swarm-dispatch.sh"
 require_contains "$script_dir/README.md" "swarm-watch.sh"
@@ -170,6 +193,7 @@ require_contains "$script_dir/README.md" "swarm-report-pack.sh"
 require_contains "$script_dir/README.md" "swarm-assign.sh"
 require_contains "$script_dir/README.md" "swarm-health.sh"
 require_contains "$script_dir/README.md" "remote-readonly.sh"
+require_contains "$script_dir/README.md" "metadata.jsonl"
 require_contains "$script_dir/README.md" "record-summary.sh"
 require_contains "$script_dir/README.md" "completion.bash"
 require_contains "$script_dir/README.md" "safety-check.sh"
