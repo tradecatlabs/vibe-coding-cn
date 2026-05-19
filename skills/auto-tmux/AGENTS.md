@@ -30,6 +30,7 @@ skills/auto-tmux/
 │   ├── record-summary.sh
 │   ├── check-jsonl.sh
 │   ├── review-checklist.sh
+│   ├── verify-report-pack.sh
 │   ├── completion.bash
 │   ├── safety-check.sh
 │   ├── render-swarm-prompt.sh
@@ -75,6 +76,7 @@ skills/auto-tmux/
 - `scripts/record-summary.sh` 是复盘摘要层，将 pane 录制日志整理为 Markdown。
 - `scripts/check-jsonl.sh` 是轻量 JSONL 字段门禁层，不替代完整 JSON parser。
 - `scripts/review-checklist.sh` 是报告包审计层，为 reviewer 生成固定检查清单。
+- `scripts/verify-report-pack.sh` 是报告包统一验证层，组合 manifest、JSONL 和审计清单门禁。
 - `scripts/completion.bash` 是本地补全层，补全 `auto-tmux.sh` 与 `swarm-state.sh`。
 - `scripts/safety-check.sh` 是安全预检层，检查待发送 payload 的危险命令、敏感信息和大小。
 - `scripts/render-swarm-prompt.sh` 是提示词渲染层，生成 commander/worker/reviewer 协议文本。
@@ -89,4 +91,4 @@ skills/auto-tmux/
 - 上游来源：`tools/external/.tmux` 与 `tools/external/tmux`。
 - 下游使用：`SKILL.md` 和 `references/` 中的命令示例。
 - 验证入口：`skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict`。
-- 脚本验证：`skills/auto-tmux/scripts/validate-auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh`、`bash -n skills/auto-tmux/scripts/swarm-watch.sh`、`bash -n skills/auto-tmux/scripts/swarm-archive.sh`、`bash -n skills/auto-tmux/scripts/swarm-board.sh`、`bash -n skills/auto-tmux/scripts/swarm-deps-graph.sh`、`bash -n skills/auto-tmux/scripts/swarm-export.sh`、`bash -n skills/auto-tmux/scripts/swarm-timeline.sh`、`bash -n skills/auto-tmux/scripts/swarm-blockers.sh`、`bash -n skills/auto-tmux/scripts/swarm-results.sh`、`bash -n skills/auto-tmux/scripts/swarm-report-pack.sh`、`bash -n skills/auto-tmux/scripts/swarm-assign.sh`、`bash -n skills/auto-tmux/scripts/swarm-health.sh`、`bash -n skills/auto-tmux/scripts/remote-readonly.sh`、`bash -n skills/auto-tmux/scripts/record-summary.sh`、`bash -n skills/auto-tmux/scripts/check-jsonl.sh`、`bash -n skills/auto-tmux/scripts/review-checklist.sh`、`bash -n skills/auto-tmux/scripts/completion.bash`、`bash -n skills/auto-tmux/scripts/safety-check.sh`、`bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh`、`bash -n skills/auto-tmux/scripts/swarm-dispatch.sh`、`skills/auto-tmux/scripts/auto-tmux-smoke-test.sh`。
+- 脚本验证：`skills/auto-tmux/scripts/validate-auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh`、`bash -n skills/auto-tmux/scripts/swarm-watch.sh`、`bash -n skills/auto-tmux/scripts/swarm-archive.sh`、`bash -n skills/auto-tmux/scripts/swarm-board.sh`、`bash -n skills/auto-tmux/scripts/swarm-deps-graph.sh`、`bash -n skills/auto-tmux/scripts/swarm-export.sh`、`bash -n skills/auto-tmux/scripts/swarm-timeline.sh`、`bash -n skills/auto-tmux/scripts/swarm-blockers.sh`、`bash -n skills/auto-tmux/scripts/swarm-results.sh`、`bash -n skills/auto-tmux/scripts/swarm-report-pack.sh`、`bash -n skills/auto-tmux/scripts/swarm-assign.sh`、`bash -n skills/auto-tmux/scripts/swarm-health.sh`、`bash -n skills/auto-tmux/scripts/remote-readonly.sh`、`bash -n skills/auto-tmux/scripts/record-summary.sh`、`bash -n skills/auto-tmux/scripts/check-jsonl.sh`、`bash -n skills/auto-tmux/scripts/review-checklist.sh`、`bash -n skills/auto-tmux/scripts/verify-report-pack.sh`、`bash -n skills/auto-tmux/scripts/completion.bash`、`bash -n skills/auto-tmux/scripts/safety-check.sh`、`bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh`、`bash -n skills/auto-tmux/scripts/swarm-dispatch.sh`、`skills/auto-tmux/scripts/auto-tmux-smoke-test.sh`。

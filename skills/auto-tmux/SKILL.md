@@ -51,6 +51,7 @@ bash -n skills/auto-tmux/scripts/remote-readonly.sh
 bash -n skills/auto-tmux/scripts/record-summary.sh
 bash -n skills/auto-tmux/scripts/check-jsonl.sh
 bash -n skills/auto-tmux/scripts/review-checklist.sh
+bash -n skills/auto-tmux/scripts/verify-report-pack.sh
 bash -n skills/auto-tmux/scripts/completion.bash
 bash -n skills/auto-tmux/scripts/safety-check.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
@@ -175,6 +176,7 @@ skills/auto-tmux/scripts/record-summary.sh --dir /tmp/auto-tmux-records --out /t
 skills/auto-tmux/scripts/check-jsonl.sh /tmp/ai-swarm-results.jsonl --require-key type --require-key id --require-key status
 skills/auto-tmux/scripts/review-checklist.sh --pack /tmp/ai-swarm-report-pack --out /tmp/ai-swarm-report-pack/review-checklist.md
 skills/auto-tmux/scripts/review-checklist.sh --pack /tmp/ai-swarm-report-pack --strict
+skills/auto-tmux/scripts/verify-report-pack.sh --pack /tmp/ai-swarm-report-pack
 ```
 
 **等待 pane 出现完成信号**
@@ -307,6 +309,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `scripts/record-summary.sh`: 汇总 pane 录制日志并生成复盘摘要
 - `scripts/check-jsonl.sh`: 轻量检查 JSONL 行和必需字段
 - `scripts/review-checklist.sh`: 为 report pack 生成 reviewer 审计清单
+- `scripts/verify-report-pack.sh`: 统一验证 report pack 的 manifest、JSONL 和审计清单
 - `scripts/completion.bash`: Bash completion，补全 `auto-tmux.sh` 与 `swarm-state.sh`
 - `scripts/safety-check.sh`: 发送/粘贴/分发前检查危险命令、敏感信息和过大 payload
 - `scripts/render-swarm-prompt.sh`: commander/worker/reviewer 提示词渲染脚本
@@ -331,6 +334,6 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 4. ≥3 个端到端示例，含输入/步骤/验收。
 5. 长文档放在 `references/` 并可导航；无文档堆砌。
 6. 不确定项给出验证路径；禁止虚构 tmux 行为。
-7. `bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh`、`bash -n skills/auto-tmux/scripts/swarm-watch.sh`、`bash -n skills/auto-tmux/scripts/swarm-archive.sh`、`bash -n skills/auto-tmux/scripts/swarm-board.sh`、`bash -n skills/auto-tmux/scripts/swarm-deps-graph.sh`、`bash -n skills/auto-tmux/scripts/swarm-export.sh`、`bash -n skills/auto-tmux/scripts/swarm-timeline.sh`、`bash -n skills/auto-tmux/scripts/swarm-blockers.sh`、`bash -n skills/auto-tmux/scripts/swarm-results.sh`、`bash -n skills/auto-tmux/scripts/swarm-report-pack.sh`、`bash -n skills/auto-tmux/scripts/swarm-assign.sh`、`bash -n skills/auto-tmux/scripts/swarm-health.sh`、`bash -n skills/auto-tmux/scripts/remote-readonly.sh`、`bash -n skills/auto-tmux/scripts/record-summary.sh`、`bash -n skills/auto-tmux/scripts/check-jsonl.sh`、`bash -n skills/auto-tmux/scripts/review-checklist.sh`、`bash -n skills/auto-tmux/scripts/completion.bash`、`bash -n skills/auto-tmux/scripts/safety-check.sh`、`bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh`、`bash -n skills/auto-tmux/scripts/swarm-dispatch.sh` 与 `bash -n skills/auto-tmux/scripts/validate-auto-tmux.sh` 通过。
+7. `bash -n skills/auto-tmux/scripts/auto-tmux.sh`、`bash -n skills/auto-tmux/scripts/swarm-state.sh`、`bash -n skills/auto-tmux/scripts/swarm-brief.sh`、`bash -n skills/auto-tmux/scripts/swarm-watch.sh`、`bash -n skills/auto-tmux/scripts/swarm-archive.sh`、`bash -n skills/auto-tmux/scripts/swarm-board.sh`、`bash -n skills/auto-tmux/scripts/swarm-deps-graph.sh`、`bash -n skills/auto-tmux/scripts/swarm-export.sh`、`bash -n skills/auto-tmux/scripts/swarm-timeline.sh`、`bash -n skills/auto-tmux/scripts/swarm-blockers.sh`、`bash -n skills/auto-tmux/scripts/swarm-results.sh`、`bash -n skills/auto-tmux/scripts/swarm-report-pack.sh`、`bash -n skills/auto-tmux/scripts/swarm-assign.sh`、`bash -n skills/auto-tmux/scripts/swarm-health.sh`、`bash -n skills/auto-tmux/scripts/remote-readonly.sh`、`bash -n skills/auto-tmux/scripts/record-summary.sh`、`bash -n skills/auto-tmux/scripts/check-jsonl.sh`、`bash -n skills/auto-tmux/scripts/review-checklist.sh`、`bash -n skills/auto-tmux/scripts/verify-report-pack.sh`、`bash -n skills/auto-tmux/scripts/completion.bash`、`bash -n skills/auto-tmux/scripts/safety-check.sh`、`bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh`、`bash -n skills/auto-tmux/scripts/swarm-dispatch.sh` 与 `bash -n skills/auto-tmux/scripts/validate-auto-tmux.sh` 通过。
 8. `skills/auto-tmux/scripts/auto-tmux-smoke-test.sh` 通过或在无 tmux 环境下明确跳过。
 9. 运行 `skills/auto-tmux/scripts/validate-auto-tmux.sh` 和 `skills/auto-skill/scripts/validate-skill.sh skills/auto-tmux --strict` 通过。

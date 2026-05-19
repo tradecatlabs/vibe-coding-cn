@@ -116,6 +116,7 @@ scripts=(
   "$script_dir/record-summary.sh"
   "$script_dir/check-jsonl.sh"
   "$script_dir/review-checklist.sh"
+  "$script_dir/verify-report-pack.sh"
   "$script_dir/safety-check.sh"
   "$script_dir/render-swarm-prompt.sh"
   "$script_dir/swarm-dispatch.sh"
@@ -168,10 +169,11 @@ run_gate "swarm-report-pack attachment" bash -c '
   grep -Fq "\"type\": \"auto-tmux-swarm-report-pack\"" "$tmp/out/manifest.json"
   grep -Fq "\"attachments\"" "$tmp/out/manifest.json"
   grep -Fq "remote-tmux.txt" "$tmp/out/attachments/remote/remote-tmux.txt"
+  "$2" --pack "$tmp/out" >/dev/null
   "$1" --dir "$tmp/swarm" --out "$tmp/out-tar" --attach "$tmp/remote" --tar >/dev/null
   test -f "$tmp/out-tar.tar.gz"
   rm -rf "$tmp"
-' _ "$script_dir/swarm-report-pack.sh"
+' _ "$script_dir/swarm-report-pack.sh" "$script_dir/verify-report-pack.sh"
 run_gate "swarm-assign help" "$script_dir/swarm-assign.sh" --help
 run_gate "swarm-health help" "$script_dir/swarm-health.sh" --help
 run_gate "remote-readonly help" "$script_dir/remote-readonly.sh" --help
@@ -195,6 +197,7 @@ run_gate "review-checklist strict failure" bash -c '
   grep -Fq "missing required files" /tmp/auto-tmux-review-check.log
   rm -rf "$tmp" /tmp/auto-tmux-review-check.log
 ' _ "$script_dir/review-checklist.sh"
+run_gate "verify-report-pack help" "$script_dir/verify-report-pack.sh" --help
 run_gate "safety-check help" "$script_dir/safety-check.sh" --help
 run_gate "safety-check clean text" "$script_dir/safety-check.sh" --text "make test"
 if "$script_dir/safety-check.sh" --text "rm -rf /tmp/example" >/tmp/auto-tmux-validate-gate.log 2>&1; then
@@ -222,6 +225,7 @@ require_contains "$skill_dir/SKILL.md" "scripts/remote-readonly.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/record-summary.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/check-jsonl.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/review-checklist.sh"
+require_contains "$skill_dir/SKILL.md" "scripts/verify-report-pack.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/completion.bash"
 require_contains "$skill_dir/SKILL.md" "scripts/safety-check.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-dispatch.sh"
@@ -256,6 +260,7 @@ require_contains "$script_dir/README.md" "metadata.jsonl"
 require_contains "$script_dir/README.md" "record-summary.sh"
 require_contains "$script_dir/README.md" "check-jsonl.sh"
 require_contains "$script_dir/README.md" "review-checklist.sh"
+require_contains "$script_dir/README.md" "verify-report-pack.sh"
 require_contains "$script_dir/README.md" "completion.bash"
 require_contains "$script_dir/README.md" "safety-check.sh"
 require_contains "$script_dir/AGENTS.md" "validate-auto-tmux.sh"
@@ -275,6 +280,7 @@ require_contains "$script_dir/AGENTS.md" "remote-readonly.sh"
 require_contains "$script_dir/AGENTS.md" "record-summary.sh"
 require_contains "$script_dir/AGENTS.md" "check-jsonl.sh"
 require_contains "$script_dir/AGENTS.md" "review-checklist.sh"
+require_contains "$script_dir/AGENTS.md" "verify-report-pack.sh"
 require_contains "$script_dir/AGENTS.md" "completion.bash"
 require_contains "$script_dir/AGENTS.md" "safety-check.sh"
 

@@ -47,13 +47,14 @@
 | 39 | `842cd2d` | JSONL 字段门禁 | `check-jsonl.sh` |
 | 40 | `2824c06` | JSONL 格式治理 | `jsonl-schema.md` |
 | 41 | `a74be2c` | 交付包审计清单 | `review-checklist.sh` |
-| 42 | `本轮` | 审计清单结果门禁 | `review-checklist.sh --strict` |
+| 42 | `01b4a6f` | 审计清单结果门禁 | `review-checklist.sh --strict` |
+| 43 | `本轮` | report pack 自检命令 | `verify-report-pack.sh` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P3 | report pack 自检命令 | 为报告包新增一条统一 verify 命令 |
+| P3 | report pack 自检文档 | 为 reviewer 写最短验收路径 |
 
 ## 每轮验收清单
 
