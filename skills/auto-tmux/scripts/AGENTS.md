@@ -25,6 +25,7 @@ scripts/
 ├── remote-readonly.sh # SSH 只读采集远端 tmux 证据
 ├── record-summary.sh # 汇总 pipe-pane 录制日志
 ├── check-jsonl.sh # 轻量 JSONL 字段门禁
+├── review-checklist.sh # report pack reviewer 审计清单
 ├── completion.bash # Bash completion
 ├── safety-check.sh # 发送/粘贴/分发前的 payload 安全预检
 ├── render-swarm-prompt.sh # commander/worker/reviewer 提示词渲染
@@ -57,6 +58,7 @@ scripts/
 - 远端脚本只能运行 tmux list/capture 等只读命令，不允许 send-keys、kill 或配置写入。
 - 录制摘要脚本只读 record 日志，输出默认脱敏，不修改日志源文件。
 - JSONL 检查脚本只能做轻量字段门禁，不替代完整 JSON parser。
+- 审计清单脚本只读报告包目录，不修改报告源文件。
 - completion 文件只能定义 shell completion，不执行 tmux 写操作。
 - 安全预检脚本只能读取文本或文件，不控制 tmux，不写状态目录。
 - 状态脚本只能写入显式状态目录，不保存密钥、Token、密码或私密项目内容。

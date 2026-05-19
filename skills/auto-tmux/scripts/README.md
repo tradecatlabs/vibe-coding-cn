@@ -22,6 +22,7 @@
 - [`remote-readonly.sh`](./remote-readonly.sh) - 通过 SSH 只读采集远端 tmux 拓扑、pane 输出和 `metadata.jsonl`。
 - [`record-summary.sh`](./record-summary.sh) - 汇总 `record start` 产生的 pane 日志，生成复盘摘要。
 - [`check-jsonl.sh`](./check-jsonl.sh) - 轻量检查 JSONL 行和必需字段。
+- [`review-checklist.sh`](./review-checklist.sh) - 为 report pack 生成 reviewer 审计清单。
 - [`completion.bash`](./completion.bash) - Bash completion，补全 `auto-tmux.sh` 和 `swarm-state.sh` 子命令。
 - [`safety-check.sh`](./safety-check.sh) - 发送、粘贴或分发前检查危险命令、敏感信息和过大 payload。
 - [`render-swarm-prompt.sh`](./render-swarm-prompt.sh) - commander、worker、reviewer 提示词渲染。
@@ -111,6 +112,9 @@ skills/auto-tmux/scripts/record-summary.sh --dir /tmp/auto-tmux-records --out /t
 
 # 检查 JSONL 字段
 skills/auto-tmux/scripts/check-jsonl.sh /tmp/ai-swarm-results.jsonl --require-key type --require-key id --require-key status
+
+# 生成 report pack 审计清单
+skills/auto-tmux/scripts/review-checklist.sh --pack /tmp/ai-swarm-report-pack --out /tmp/ai-swarm-report-pack/review-checklist.md
 
 # 启用当前 shell 的补全
 source skills/auto-tmux/scripts/completion.bash

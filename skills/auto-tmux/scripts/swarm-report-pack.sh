@@ -146,6 +146,7 @@ cat > "$out_dir/manifest.json" <<EOF
     "results.md",
     "results.jsonl",
     "assign.md",
+    "review-checklist.md",
     "export/manifest.json"
   ],
   "attachments": [
@@ -170,10 +171,13 @@ cat > "$out_dir/index.md" <<EOF
 - [results.md](./results.md)
 - [results.jsonl](./results.jsonl)
 - [assign.md](./assign.md)
+- [review-checklist.md](./review-checklist.md)
 - [manifest.json](./manifest.json)
 - [export/manifest.json](./export/manifest.json)
 $(if [[ -n "$attachment_lines" ]]; then printf '%s' "- [attachments.md](./attachments.md)"; fi)
 EOF
+
+run_report "review checklist" "$script_dir/review-checklist.sh" --pack "$out_dir" --out "$out_dir/review-checklist.md"
 
 rm -f /tmp/auto-tmux-report-pack.log
 if [[ "$make_tar" == "1" ]]; then

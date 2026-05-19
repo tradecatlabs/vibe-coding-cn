@@ -46,6 +46,7 @@
 | `remote-readonly.sh` | SSH 只读采集远端 tmux 证据 | 不发送按键，输出默认脱敏，生成 `metadata.jsonl` |
 | `record-summary.sh` | 汇总 pane 录制日志 | 只读，输出默认脱敏 |
 | `check-jsonl.sh` | 轻量检查 JSONL 行和必需字段 | 无 jq 依赖，不替代完整 JSON parser |
+| `review-checklist.sh` | 为 report pack 生成 reviewer 审计清单 | 只读报告包目录 |
 | `completion.bash` | Bash 子命令和常用参数补全 | 只定义 shell completion |
 | `swarm-dispatch.sh` | 渲染并可选下发提示词 | 默认只写文件，发送需 `--send` |
 | `validate-auto-tmux.sh` | 执行技能专属质量门禁 | 覆盖脚本、文档索引、strict 和 smoke |
@@ -199,6 +200,7 @@ target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
 skills/auto-tmux/scripts/auto-tmux.sh record stop -t "$target"
 skills/auto-tmux/scripts/record-summary.sh --dir /tmp/auto-tmux-records --out /tmp/auto-tmux-record-summary.md
 skills/auto-tmux/scripts/check-jsonl.sh /tmp/ai-swarm-results.jsonl --require-key type --require-key id --require-key status
+skills/auto-tmux/scripts/review-checklist.sh --pack /tmp/ai-swarm-report-pack --out /tmp/ai-swarm-report-pack/review-checklist.md
 ```
 
 ## AI 蜂群协作建议
@@ -291,6 +293,7 @@ bash -n skills/auto-tmux/scripts/swarm-health.sh
 bash -n skills/auto-tmux/scripts/remote-readonly.sh
 bash -n skills/auto-tmux/scripts/record-summary.sh
 bash -n skills/auto-tmux/scripts/check-jsonl.sh
+bash -n skills/auto-tmux/scripts/review-checklist.sh
 bash -n skills/auto-tmux/scripts/completion.bash
 bash -n skills/auto-tmux/scripts/safety-check.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
