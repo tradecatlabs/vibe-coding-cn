@@ -52,6 +52,7 @@ bash -n skills/auto-tmux/scripts/record-summary.sh
 bash -n skills/auto-tmux/scripts/check-jsonl.sh
 bash -n skills/auto-tmux/scripts/review-checklist.sh
 bash -n skills/auto-tmux/scripts/verify-report-pack.sh
+bash -n skills/auto-tmux/scripts/incident-report.sh
 bash -n skills/auto-tmux/scripts/completion.bash
 bash -n skills/auto-tmux/scripts/safety-check.sh
 bash -n skills/auto-tmux/scripts/render-swarm-prompt.sh
@@ -177,6 +178,7 @@ skills/auto-tmux/scripts/check-jsonl.sh /tmp/ai-swarm-results.jsonl --require-ke
 skills/auto-tmux/scripts/review-checklist.sh --pack /tmp/ai-swarm-report-pack --out /tmp/ai-swarm-report-pack/review-checklist.md
 skills/auto-tmux/scripts/review-checklist.sh --pack /tmp/ai-swarm-report-pack --strict
 skills/auto-tmux/scripts/verify-report-pack.sh --pack /tmp/ai-swarm-report-pack
+skills/auto-tmux/scripts/incident-report.sh --type mis-send --out /tmp/auto-tmux-incident.md
 ```
 
 **等待 pane 出现完成信号**
@@ -313,6 +315,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `scripts/check-jsonl.sh`: 轻量检查 JSONL 行和必需字段
 - `scripts/review-checklist.sh`: 为 report pack 生成 reviewer 审计清单
 - `scripts/verify-report-pack.sh`: 统一验证 report pack 的 manifest、JSONL 和审计清单
+- `scripts/incident-report.sh`: 生成误发送、误广播、远程采集和敏感信息风险复盘模板
 - `scripts/completion.bash`: Bash completion，补全 `auto-tmux.sh` 与 `swarm-state.sh`
 - `scripts/safety-check.sh`: 发送/粘贴/分发前检查危险命令、敏感信息和过大 payload
 - `scripts/render-swarm-prompt.sh`: commander/worker/reviewer 提示词渲染脚本

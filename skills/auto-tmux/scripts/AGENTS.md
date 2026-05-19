@@ -27,6 +27,7 @@ scripts/
 ├── check-jsonl.sh # 轻量 JSONL 字段门禁
 ├── review-checklist.sh # report pack reviewer 审计清单
 ├── verify-report-pack.sh # report pack 统一验证入口
+├── incident-report.sh # 事故复盘模板生成
 ├── completion.bash # Bash completion
 ├── safety-check.sh # 发送/粘贴/分发前的 payload 安全预检
 ├── render-swarm-prompt.sh # commander/worker/reviewer 提示词渲染
@@ -61,6 +62,7 @@ scripts/
 - JSONL 检查脚本只能做轻量字段门禁，不替代完整 JSON parser。
 - 审计清单脚本只读报告包目录，不修改报告源文件。
 - 报告包验证脚本只组合本目录已有只读门禁，不修改报告包内容。
+- 事故报告脚本只生成模板，不自动判断责任或影响范围。
 - completion 文件只能定义 shell completion，不执行 tmux 写操作。
 - 安全预检脚本只能读取文本或文件，不控制 tmux，不写状态目录。
 - 状态脚本只能写入显式状态目录，不保存密钥、Token、密码或私密项目内容。

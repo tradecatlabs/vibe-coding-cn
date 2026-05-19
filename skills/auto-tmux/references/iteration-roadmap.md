@@ -51,13 +51,14 @@
 | 43 | `82486a7` | report pack 自检命令 | `verify-report-pack.sh` |
 | 44 | `d448fdb` | report pack 自检文档 | `report-pack-review.md` |
 | 45 | `63d7831` | 文档摘要索引 | `reading-paths.md` |
-| 46 | `本轮` | 操作事故 runbook | `incident-runbook.md` |
+| 46 | `07d4850` | 操作事故 runbook | `incident-runbook.md` |
+| 47 | `本轮` | 事故报告脚本 | `incident-report.sh` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P3 | 事故报告脚本 | 从模板生成 incident report |
+| P3 | 脚本清单速查 | 为所有脚本补一页按场景分类的命令速查 |
 
 ## 每轮验收清单
 

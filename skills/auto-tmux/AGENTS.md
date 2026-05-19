@@ -31,6 +31,7 @@ skills/auto-tmux/
 │   ├── check-jsonl.sh
 │   ├── review-checklist.sh
 │   ├── verify-report-pack.sh
+│   ├── incident-report.sh
 │   ├── completion.bash
 │   ├── safety-check.sh
 │   ├── render-swarm-prompt.sh
@@ -80,6 +81,7 @@ skills/auto-tmux/
 - `scripts/check-jsonl.sh` 是轻量 JSONL 字段门禁层，不替代完整 JSON parser。
 - `scripts/review-checklist.sh` 是报告包审计层，为 reviewer 生成固定检查清单。
 - `scripts/verify-report-pack.sh` 是报告包统一验证层，组合 manifest、JSONL 和审计清单门禁。
+- `scripts/incident-report.sh` 是事故复盘层，生成误发送、误广播和敏感信息风险模板。
 - `scripts/completion.bash` 是本地补全层，补全 `auto-tmux.sh` 与 `swarm-state.sh`。
 - `scripts/safety-check.sh` 是安全预检层，检查待发送 payload 的危险命令、敏感信息和大小。
 - `scripts/render-swarm-prompt.sh` 是提示词渲染层，生成 commander/worker/reviewer 协议文本。
