@@ -51,6 +51,7 @@ skills/auto-tmux/
     ├── report-pack-review.md
     ├── reading-paths.md
     ├── incident-runbook.md
+    ├── script-cheatsheet.md
     ├── swarm-state.md
     ├── prompt-templates.md
     ├── ai-swarm-collaboration.md

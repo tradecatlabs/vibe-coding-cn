@@ -290,6 +290,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `references/report-pack-review.md`: report pack reviewer 最短验收路径
 - `references/reading-paths.md`: commander、worker、reviewer、operator 的角色化阅读路线
 - `references/incident-runbook.md`: 误发送、误广播、远程采集失败和敏感信息风险处理流程
+- `references/script-cheatsheet.md`: 观察、控制、协作、报告、审计和事故处理脚本速查
 - `references/swarm-state.md`: 蜂群状态、任务、锁和报告协议
 - `references/prompt-templates.md`: commander/worker/reviewer 提示词模板和下发方式
 - `references/ai-swarm-collaboration.md`: tmux 蜂群协作历史文档、架构模式、协议、案例和风险限制

@@ -52,13 +52,14 @@
 | 44 | `d448fdb` | report pack 自检文档 | `report-pack-review.md` |
 | 45 | `63d7831` | 文档摘要索引 | `reading-paths.md` |
 | 46 | `07d4850` | 操作事故 runbook | `incident-runbook.md` |
-| 47 | `本轮` | 事故报告脚本 | `incident-report.sh` |
+| 47 | `d6a309f` | 事故报告脚本 | `incident-report.sh` |
+| 48 | `本轮` | 脚本清单速查 | `script-cheatsheet.md` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P3 | 脚本清单速查 | 为所有脚本补一页按场景分类的命令速查 |
+| P3 | 最终一致性审计 | 对 roadmap、脚本索引和 references 做一次收尾一致性检查 |
 
 ## 每轮验收清单
 
