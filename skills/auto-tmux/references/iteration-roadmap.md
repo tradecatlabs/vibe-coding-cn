@@ -35,13 +35,14 @@
 | 27 | `f98841d` | 机器可读导出 | `swarm-export.sh` |
 | 28 | `c6eeb1f` | 状态时间线 | `swarm-timeline.sh` |
 | 29 | `4417e87` | 阻塞报告 | `swarm-blockers.sh` |
-| 30 | `本轮` | 报告包 | `swarm-report-pack.sh` |
+| 30 | `0cabf50` | 报告包 | `swarm-report-pack.sh` |
+| 31 | `本轮` | 远程只读采集 | `remote-readonly.sh` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P3 | 远程 session | SSH 场景下的只读拓扑和安全边界 |
+| P3 | session 安全策略 | 远程只读采集后的 SSH 场景规则细化 |
 
 ## 每轮验收清单
 

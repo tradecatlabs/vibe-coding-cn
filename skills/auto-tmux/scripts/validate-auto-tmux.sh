@@ -90,6 +90,7 @@ scripts=(
   "$script_dir/swarm-report-pack.sh"
   "$script_dir/swarm-assign.sh"
   "$script_dir/swarm-health.sh"
+  "$script_dir/remote-readonly.sh"
   "$script_dir/record-summary.sh"
   "$script_dir/safety-check.sh"
   "$script_dir/render-swarm-prompt.sh"
@@ -118,6 +119,8 @@ run_gate "swarm-blockers help" "$script_dir/swarm-blockers.sh" --help
 run_gate "swarm-report-pack help" "$script_dir/swarm-report-pack.sh" --help
 run_gate "swarm-assign help" "$script_dir/swarm-assign.sh" --help
 run_gate "swarm-health help" "$script_dir/swarm-health.sh" --help
+run_gate "remote-readonly help" "$script_dir/remote-readonly.sh" --help
+run_gate "remote-readonly dry-run" "$script_dir/remote-readonly.sh" --host example.com --dry-run
 run_gate "record-summary help" "$script_dir/record-summary.sh" --help
 run_gate "safety-check help" "$script_dir/safety-check.sh" --help
 run_gate "safety-check clean text" "$script_dir/safety-check.sh" --text "make test"
@@ -141,6 +144,7 @@ require_contains "$skill_dir/SKILL.md" "scripts/swarm-blockers.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-report-pack.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-assign.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-health.sh"
+require_contains "$skill_dir/SKILL.md" "scripts/remote-readonly.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/record-summary.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/completion.bash"
 require_contains "$skill_dir/SKILL.md" "scripts/safety-check.sh"
@@ -161,6 +165,7 @@ require_contains "$script_dir/README.md" "swarm-blockers.sh"
 require_contains "$script_dir/README.md" "swarm-report-pack.sh"
 require_contains "$script_dir/README.md" "swarm-assign.sh"
 require_contains "$script_dir/README.md" "swarm-health.sh"
+require_contains "$script_dir/README.md" "remote-readonly.sh"
 require_contains "$script_dir/README.md" "record-summary.sh"
 require_contains "$script_dir/README.md" "completion.bash"
 require_contains "$script_dir/README.md" "safety-check.sh"
@@ -176,6 +181,7 @@ require_contains "$script_dir/AGENTS.md" "swarm-blockers.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-report-pack.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-assign.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-health.sh"
+require_contains "$script_dir/AGENTS.md" "remote-readonly.sh"
 require_contains "$script_dir/AGENTS.md" "record-summary.sh"
 require_contains "$script_dir/AGENTS.md" "completion.bash"
 require_contains "$script_dir/AGENTS.md" "safety-check.sh"

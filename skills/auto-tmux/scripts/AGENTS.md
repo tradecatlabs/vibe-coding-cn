@@ -21,6 +21,7 @@ scripts/
 ├── swarm-report-pack.sh # 聚合只读报告包
 ├── swarm-assign.sh # 生成 ready task 到 worker pane 的分配建议
 ├── swarm-health.sh # 汇总只读健康检查报告包
+├── remote-readonly.sh # SSH 只读采集远端 tmux 证据
 ├── record-summary.sh # 汇总 pipe-pane 录制日志
 ├── completion.bash # Bash completion
 ├── safety-check.sh # 发送/粘贴/分发前的 payload 安全预检
@@ -50,6 +51,7 @@ scripts/
 - 报告包脚本只编排只读脚本并写入显式输出目录，不 claim 任务、不发送 prompt。
 - 分配建议脚本只读任务和 pane 拓扑，不 claim 任务、不发送 prompt。
 - 健康检查脚本只读 tmux 与 swarm state，失败项写入报告，不做自动修复。
+- 远端脚本只能运行 tmux list/capture 等只读命令，不允许 send-keys、kill 或配置写入。
 - 录制摘要脚本只读 record 日志，输出默认脱敏，不修改日志源文件。
 - completion 文件只能定义 shell completion，不执行 tmux 写操作。
 - 安全预检脚本只能读取文本或文件，不控制 tmux，不写状态目录。

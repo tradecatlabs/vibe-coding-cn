@@ -17,6 +17,7 @@ SWARM_BLOCKERS="$SCRIPT_DIR/swarm-blockers.sh"
 SWARM_REPORT_PACK="$SCRIPT_DIR/swarm-report-pack.sh"
 SWARM_ASSIGN="$SCRIPT_DIR/swarm-assign.sh"
 SWARM_HEALTH="$SCRIPT_DIR/swarm-health.sh"
+REMOTE_READONLY="$SCRIPT_DIR/remote-readonly.sh"
 RECORD_SUMMARY="$SCRIPT_DIR/record-summary.sh"
 COMPLETION="$SCRIPT_DIR/completion.bash"
 SAFETY_CHECK="$SCRIPT_DIR/safety-check.sh"
@@ -67,6 +68,7 @@ bash -n "$SWARM_BLOCKERS"
 bash -n "$SWARM_REPORT_PACK"
 bash -n "$SWARM_ASSIGN"
 bash -n "$SWARM_HEALTH"
+bash -n "$REMOTE_READONLY"
 bash -n "$RECORD_SUMMARY"
 bash -n "$COMPLETION"
 bash -n "$SAFETY_CHECK"
@@ -187,6 +189,8 @@ grep -q 'swarm-dispatch.sh' "$ASSIGN_FILE"
 grep -q 'auto-tmux Swarm Health' "$HEALTH_DIR/index.md"
 test -s "$HEALTH_DIR/state-validate.txt"
 test -s "$HEALTH_DIR/board.md"
+"$REMOTE_READONLY" --host example.com --session "$SESSION" --dry-run >/tmp/auto-tmux-smoke-remote-readonly.txt
+grep -q 'example.com' /tmp/auto-tmux-smoke-remote-readonly.txt
 "$RENDER_PROMPT" commander --session "$SESSION" --swarm-dir "$SWARM_DIR" --task "smoke" >/tmp/auto-tmux-smoke-commander-prompt.md
 "$RENDER_PROMPT" worker --session "$SESSION" --target "$worker_target" --swarm-dir "$SWARM_DIR" --task "smoke" >/tmp/auto-tmux-smoke-worker-prompt.md
 "$SWARM_DISPATCH" --role worker --target "$worker_target" --session "$SESSION" --swarm-dir "$SWARM_DIR" --task "smoke" --out "$DISPATCH_PROMPT" >/tmp/auto-tmux-smoke-dispatch-render.txt
