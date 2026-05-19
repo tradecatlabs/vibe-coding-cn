@@ -54,13 +54,14 @@
 | 46 | `07d4850` | 操作事故 runbook | `incident-runbook.md` |
 | 47 | `d6a309f` | 事故报告脚本 | `incident-report.sh` |
 | 48 | `1ac2ee4` | 脚本清单速查 | `script-cheatsheet.md` |
-| 49 | `本轮` | 包一致性审计 | `audit-package.sh` |
+| 49 | `022d812` | 包一致性审计 | `audit-package.sh` |
+| 50 | `本轮` | 迭代收尾说明 | `iteration-closeout.md` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P3 | 迭代收尾说明 | 汇总 50 轮能力层、验证路径和后续维护边界 |
+| P3 | 示例包 | 增加最小可复制的 `/tmp/ai_swarm` 示例数据，方便演示报告链路 |
 
 ## 每轮验收清单
 

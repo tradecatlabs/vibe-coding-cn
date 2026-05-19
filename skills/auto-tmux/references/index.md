@@ -16,6 +16,7 @@
 - `prompt-templates.md`：commander/worker/reviewer 提示词模板和下发方式
 - `ai-swarm-collaboration.md`：tmux 蜂群协作完整说明、架构模式、协议、案例和风险限制
 - `iteration-roadmap.md`：多轮迭代记录、能力层和后续候选方向
+- `iteration-closeout.md`：50 轮迭代后的能力收尾、验证链路和维护边界
 - `examples.md`：蜂群巡检脚本、自动救援脚本、Skill Seeker 抓取示例
 - `troubleshooting.md`：常见报错与修复路径
 

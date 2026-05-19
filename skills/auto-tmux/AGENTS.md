@@ -56,6 +56,8 @@ skills/auto-tmux/
     ├── swarm-state.md
     ├── prompt-templates.md
     ├── ai-swarm-collaboration.md
+    ├── iteration-roadmap.md
+    ├── iteration-closeout.md
     ├── examples.md
     └── troubleshooting.md
 ```

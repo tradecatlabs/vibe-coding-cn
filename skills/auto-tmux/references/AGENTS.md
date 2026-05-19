@@ -14,4 +14,5 @@
 - 角色化阅读路线写入 `reading-paths.md`；新增关键 reference 时同步判断是否进入某个角色路径。
 - 操作事故处理流程写入 `incident-runbook.md`；新增控制类脚本时同步补事故处理路径。
 - 脚本场景速查写入 `script-cheatsheet.md`；新增脚本时必须放入对应场景分组。
+- 多轮迭代收尾写入 `iteration-closeout.md`；后续新增能力时同步更新能力层和维护边界。
 - 不确定的 tmux 行为必须给出验证命令，不编造。
