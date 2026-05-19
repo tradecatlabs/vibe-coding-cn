@@ -108,6 +108,7 @@ scripts=(
   "$script_dir/swarm-export.sh"
   "$script_dir/swarm-timeline.sh"
   "$script_dir/swarm-blockers.sh"
+  "$script_dir/swarm-results.sh"
   "$script_dir/swarm-report-pack.sh"
   "$script_dir/swarm-assign.sh"
   "$script_dir/swarm-health.sh"
@@ -137,6 +138,7 @@ run_gate "swarm-deps-graph help" "$script_dir/swarm-deps-graph.sh" --help
 run_gate "swarm-export help" "$script_dir/swarm-export.sh" --help
 run_gate "swarm-timeline help" "$script_dir/swarm-timeline.sh" --help
 run_gate "swarm-blockers help" "$script_dir/swarm-blockers.sh" --help
+run_gate "swarm-results help" "$script_dir/swarm-results.sh" --help
 run_gate "swarm-report-pack help" "$script_dir/swarm-report-pack.sh" --help
 run_gate "swarm-report-pack attachment" bash -c '
   tmp="$(mktemp -d)"
@@ -145,6 +147,7 @@ run_gate "swarm-report-pack attachment" bash -c '
   printf "remote evidence\n" > "$tmp/remote/remote-tmux.txt"
   "$1" --dir "$tmp/swarm" --out "$tmp/out" --attach "$tmp/remote" >/dev/null
   grep -Fq "attachments.md" "$tmp/out/index.md"
+  grep -Fq "results.md" "$tmp/out/index.md"
   grep -Fq "manifest.json" "$tmp/out/index.md"
   grep -Fq "\"type\": \"auto-tmux-swarm-report-pack\"" "$tmp/out/manifest.json"
   grep -Fq "\"attachments\"" "$tmp/out/manifest.json"
@@ -178,6 +181,7 @@ require_contains "$skill_dir/SKILL.md" "scripts/swarm-deps-graph.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-export.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-timeline.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-blockers.sh"
+require_contains "$skill_dir/SKILL.md" "scripts/swarm-results.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-report-pack.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-assign.sh"
 require_contains "$skill_dir/SKILL.md" "scripts/swarm-health.sh"
@@ -204,6 +208,7 @@ require_contains "$script_dir/README.md" "swarm-deps-graph.sh"
 require_contains "$script_dir/README.md" "swarm-export.sh"
 require_contains "$script_dir/README.md" "swarm-timeline.sh"
 require_contains "$script_dir/README.md" "swarm-blockers.sh"
+require_contains "$script_dir/README.md" "swarm-results.sh"
 require_contains "$script_dir/README.md" "swarm-report-pack.sh"
 require_contains "$script_dir/README.md" "swarm-assign.sh"
 require_contains "$script_dir/README.md" "swarm-health.sh"
@@ -221,6 +226,7 @@ require_contains "$script_dir/AGENTS.md" "swarm-deps-graph.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-export.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-timeline.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-blockers.sh"
+require_contains "$script_dir/AGENTS.md" "swarm-results.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-report-pack.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-assign.sh"
 require_contains "$script_dir/AGENTS.md" "swarm-health.sh"

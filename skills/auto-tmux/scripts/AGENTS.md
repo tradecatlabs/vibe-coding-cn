@@ -18,6 +18,7 @@ scripts/
 ├── swarm-export.sh # 导出 JSONL 状态包
 ├── swarm-timeline.sh # 从 status.log 渲染 Markdown 时间线
 ├── swarm-blockers.sh # 聚合 BLOCKED/FAIL、锁和异常状态
+├── swarm-results.sh # 汇总 DONE/FAIL/BLOCKED worker 结果
 ├── swarm-report-pack.sh # 聚合只读报告包
 ├── swarm-assign.sh # 生成 ready task 到 worker pane 的分配建议
 ├── swarm-health.sh # 汇总只读健康检查报告包
@@ -48,6 +49,7 @@ scripts/
 - 导出脚本只读 `tasks.tsv`、`deps.tsv` 和锁目录，只写显式输出目录。
 - 时间线脚本只读 `status.log`，不改写状态目录。
 - 阻塞报告脚本只读任务、锁和状态日志，不做自动修复。
+- 结果收敛脚本只读任务、结果文件和状态日志，不改写状态目录。
 - 报告包脚本只编排只读脚本并写入显式输出目录，不 claim 任务、不发送 prompt。
 - 分配建议脚本只读任务和 pane 拓扑，不 claim 任务、不发送 prompt。
 - 健康检查脚本只读 tmux 与 swarm state，失败项写入报告，不做自动修复。

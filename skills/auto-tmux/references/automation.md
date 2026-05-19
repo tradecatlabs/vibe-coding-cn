@@ -39,6 +39,7 @@
 | `swarm-export.sh` | 导出 JSONL 状态包 | 只读读取 state，写显式输出目录 |
 | `swarm-timeline.sh` | 渲染状态日志时间线 | 只读生成 Markdown |
 | `swarm-blockers.sh` | 聚合阻塞、失败、锁和异常状态 | 只读生成 Markdown |
+| `swarm-results.sh` | 汇总 DONE/FAIL/BLOCKED worker 结果 | 只读生成 Markdown |
 | `swarm-report-pack.sh` | 聚合多个只读报告、附件与 JSONL 导出 | 生成 `index.md` 和 `manifest.json` |
 | `swarm-assign.sh` | 生成 ready task 到 worker pane 的分配建议 | 只读，不 claim，不发送 |
 | `swarm-health.sh` | 汇总 tmux 与 swarm state 健康报告 | 只读，不自动修复 |
@@ -115,6 +116,7 @@ skills/auto-tmux/scripts/swarm-deps-graph.sh --dir /tmp/ai_swarm --out /tmp/ai-s
 skills/auto-tmux/scripts/swarm-export.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-export
 skills/auto-tmux/scripts/swarm-timeline.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-timeline.md
 skills/auto-tmux/scripts/swarm-blockers.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-blockers.md
+skills/auto-tmux/scripts/swarm-results.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-results.md
 skills/auto-tmux/scripts/swarm-report-pack.sh --dir /tmp/ai_swarm --session ai-hub --out /tmp/ai-swarm-report-pack
 skills/auto-tmux/scripts/swarm-report-pack.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-report-pack --attach /tmp/auto-tmux-remote
 skills/auto-tmux/scripts/swarm-report-pack.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-report-pack --tar
@@ -279,6 +281,7 @@ bash -n skills/auto-tmux/scripts/swarm-deps-graph.sh
 bash -n skills/auto-tmux/scripts/swarm-export.sh
 bash -n skills/auto-tmux/scripts/swarm-timeline.sh
 bash -n skills/auto-tmux/scripts/swarm-blockers.sh
+bash -n skills/auto-tmux/scripts/swarm-results.sh
 bash -n skills/auto-tmux/scripts/swarm-report-pack.sh
 bash -n skills/auto-tmux/scripts/swarm-assign.sh
 bash -n skills/auto-tmux/scripts/swarm-health.sh

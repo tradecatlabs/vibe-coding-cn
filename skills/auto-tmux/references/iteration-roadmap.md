@@ -41,13 +41,14 @@
 | 33 | `ff8cd86` | 远程证据包增强 | `remote-readonly.sh` 输出 `metadata.jsonl`，validator 覆盖 fake SSH |
 | 34 | `5677df3` | 报告附件索引 | `swarm-report-pack.sh --attach` |
 | 35 | `7a2ff13` | 报告包 manifest | `swarm-report-pack.sh` 输出根级 `manifest.json` |
-| 36 | `本轮` | 报告包压缩 | `swarm-report-pack.sh --tar` |
+| 36 | `9eac52f` | 报告包压缩 | `swarm-report-pack.sh --tar` |
+| 37 | `本轮` | worker 结果收敛 | `swarm-results.sh` |
 
 ## 后续候选方向
 
 | 优先级 | 方向 | 说明 |
 |:---|:---|:---|
-| P3 | worker 结果收敛 | 从 report pack 中提取 worker 产出摘要 |
+| P3 | 结果摘要导出 | 为 `swarm-results.sh` 增加 JSONL 导出 |
 
 ## 每轮验收清单
 

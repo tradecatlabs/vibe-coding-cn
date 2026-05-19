@@ -91,6 +91,7 @@ run_report "board" "$script_dir/swarm-board.sh" --dir "$swarm_dir" --out "$out_d
 run_report "dependency graph" "$script_dir/swarm-deps-graph.sh" --dir "$swarm_dir" --out "$out_dir/deps.md"
 run_report "timeline" "$script_dir/swarm-timeline.sh" --dir "$swarm_dir" --out "$out_dir/timeline.md"
 run_report "blockers" "$script_dir/swarm-blockers.sh" --dir "$swarm_dir" --out "$out_dir/blockers.md"
+run_report "results" "$script_dir/swarm-results.sh" --dir "$swarm_dir" --out "$out_dir/results.md"
 run_report "export" "$script_dir/swarm-export.sh" --dir "$swarm_dir" --out "$out_dir/export"
 
 if [[ -n "$session" ]]; then
@@ -142,6 +143,7 @@ cat > "$out_dir/manifest.json" <<EOF
     "deps.md",
     "timeline.md",
     "blockers.md",
+    "results.md",
     "assign.md",
     "export/manifest.json"
   ],
@@ -164,6 +166,7 @@ cat > "$out_dir/index.md" <<EOF
 - [deps.md](./deps.md)
 - [timeline.md](./timeline.md)
 - [blockers.md](./blockers.md)
+- [results.md](./results.md)
 - [assign.md](./assign.md)
 - [manifest.json](./manifest.json)
 - [export/manifest.json](./export/manifest.json)
