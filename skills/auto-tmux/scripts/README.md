@@ -10,6 +10,7 @@
 - [`swarm-watch.sh`](./swarm-watch.sh) - 有限轮次巡检蜂群 pane 输出和状态报告，形成连续证据。
 - [`swarm-archive.sh`](./swarm-archive.sh) - 打包 brief、snapshot 和 swarm state，生成可交接归档。
 - [`swarm-board.sh`](./swarm-board.sh) - 将 `tasks.tsv`、依赖、锁和状态日志渲染为 Markdown 看板。
+- [`swarm-deps-graph.sh`](./swarm-deps-graph.sh) - 将 `deps.tsv` 渲染为 Mermaid 依赖图。
 - [`swarm-assign.sh`](./swarm-assign.sh) - 根据 ready tasks 和 worker pane 生成只读分配建议。
 - [`swarm-health.sh`](./swarm-health.sh) - 汇总 doctor、topology、scan、validate、metrics、board 和 assign。
 - [`record-summary.sh`](./record-summary.sh) - 汇总 `record start` 产生的 pane 日志，生成复盘摘要。
@@ -65,6 +66,9 @@ skills/auto-tmux/scripts/swarm-archive.sh --session ai-hub --swarm-dir /tmp/ai_s
 
 # 生成任务看板
 skills/auto-tmux/scripts/swarm-board.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-board.md
+
+# 生成依赖图
+skills/auto-tmux/scripts/swarm-deps-graph.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-deps.md
 
 # 生成 worker 分配建议
 skills/auto-tmux/scripts/swarm-assign.sh --swarm-dir /tmp/ai_swarm --session ai-hub --out /tmp/ai-swarm-assign.md
