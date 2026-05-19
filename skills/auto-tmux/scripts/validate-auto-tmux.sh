@@ -149,6 +149,8 @@ run_gate "swarm-report-pack attachment" bash -c '
   grep -Fq "\"type\": \"auto-tmux-swarm-report-pack\"" "$tmp/out/manifest.json"
   grep -Fq "\"attachments\"" "$tmp/out/manifest.json"
   grep -Fq "remote-tmux.txt" "$tmp/out/attachments/remote/remote-tmux.txt"
+  "$1" --dir "$tmp/swarm" --out "$tmp/out-tar" --attach "$tmp/remote" --tar >/dev/null
+  test -f "$tmp/out-tar.tar.gz"
   rm -rf "$tmp"
 ' _ "$script_dir/swarm-report-pack.sh"
 run_gate "swarm-assign help" "$script_dir/swarm-assign.sh" --help

@@ -7,7 +7,7 @@ usage() {
 swarm-report-pack: build an auto-tmux swarm report pack
 
 Usage:
-  swarm-report-pack.sh [--dir DIR] [--session NAME] [--out DIR] [--attach DIR ...]
+  swarm-report-pack.sh [--dir DIR] [--session NAME] [--out DIR] [--attach DIR ...] [--tar]
 
 Defaults:
   --dir AUTO_TMUX_SWARM_DIR or /tmp/ai_swarm
@@ -15,6 +15,7 @@ Defaults:
 
 This script is read-only for tmux and swarm state. It writes only to --out.
 Use --attach to copy explicit external evidence directories into the report pack.
+Use --tar to create OUT.tar.gz after the directory report pack is written.
 EOF
 }
 
@@ -39,6 +40,7 @@ session=""
 out_dir="/tmp/auto-tmux-report-pack-$(date +%Y%m%d-%H%M%S)"
 attachments=()
 created_at="$(date -Is)"
+make_tar="0"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -57,6 +59,10 @@ while [[ $# -gt 0 ]]; do
     --attach)
       attachments+=("${2:-}")
       shift 2
+      ;;
+    --tar)
+      make_tar="1"
+      shift
       ;;
     -h|--help)
       usage
@@ -165,4 +171,11 @@ $(if [[ -n "$attachment_lines" ]]; then printf '%s' "- [attachments.md](./attach
 EOF
 
 rm -f /tmp/auto-tmux-report-pack.log
+if [[ "$make_tar" == "1" ]]; then
+  command -v tar >/dev/null 2>&1 || die "tar not found"
+  parent_dir="$(cd "$(dirname "$out_dir")" && pwd)"
+  base_dir="$(basename "$out_dir")"
+  tar -C "$parent_dir" -czf "$out_dir.tar.gz" "$base_dir"
+  printf 'swarm report archive written: %s\n' "$out_dir.tar.gz"
+fi
 printf 'swarm report pack written: %s\n' "$out_dir"
