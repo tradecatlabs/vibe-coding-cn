@@ -146,6 +146,6 @@
 
 ### 下一步
 
-- 新手：回到 [学习地图](#learning-map)，从第 0 步开始。
+- 新手：回到 [学习地图](learning-map.md)，从第 0 步开始。
 - 开发者：阅读 [Vibe Coding 经验](vibe-coding-experience.md)，再选择 Skill 或质量门禁路线。
 - 团队：先统一 [AGENTS.md](../../AGENTS.md)、强前置条件和质量门禁。
