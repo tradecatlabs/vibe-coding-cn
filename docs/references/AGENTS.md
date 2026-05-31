@@ -19,6 +19,7 @@ references/
 ├── project-architecture-template.md
 ├── python-project-skeleton.md
 ├── enterprise-architecture-template.md
+├── modern-enterprise-architecture-template.md
 ├── dataset-first-data-service.md
 ├── code-organization.md
 ├── development-experience.md

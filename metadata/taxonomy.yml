@@ -139,6 +139,9 @@ documents:
     - path: docs/references/enterprise-architecture-template.md
       title: 企业级 Monorepo / Multi-repo 架构模板
       role: 中大型工程组织、平台工程和多产品线参考模型
+    - path: docs/references/modern-enterprise-architecture-template.md
+      title: 现代企业数字化平台架构
+      role: 面向领域产品网络、内部平台、数据产品和联邦治理的完整说明文档
     - path: docs/references/dataset-first-data-service.md
       title: Dataset First 数据服务结构
       role: dataset、contract、registry、runtime 为核心的数据服务模板
