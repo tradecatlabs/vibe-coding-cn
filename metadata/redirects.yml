@@ -13,31 +13,31 @@ redirects:
 
   # Merged concept documents.
   - from: docs/concepts/思维模型.md
-    to: docs/philosophy/README.md#philosophy-thinking-models
+    to: docs/philosophy/thinking-models.md
   - from: docs/concepts/编程之道.md
-    to: docs/philosophy/README.md#philosophy-programming-dao
+    to: docs/philosophy/programming-dao.md
   - from: docs/concepts/A Formalization of Recursive Self-Optimizing Generative Systems.md
-    to: docs/concepts/README.md#concept-recursive-self-optimizing-system
+    to: docs/concepts/recursive-self-optimizing-system.md
   - from: docs/concepts/软件开发范式演进.md
-    to: docs/concepts/README.md#concept-development-paradigms
+    to: docs/concepts/development-paradigms.md
   - from: docs/concepts/递归自优化生成系统形式化.md
-    to: docs/concepts/README.md#concept-recursive-self-optimizing-system
+    to: docs/concepts/recursive-self-optimizing-system.md
   - from: docs/concepts/问题分析与系统构建方法.md
-    to: docs/concepts/README.md#concept-system-building
+    to: docs/concepts/system-building.md
   - from: docs/concepts/问题求解能力.md
-    to: docs/concepts/README.md#concept-problem-solving
+    to: docs/concepts/problem-solving.md
   - from: docs/concepts/Harness Engineering 的本质拆解.md
-    to: docs/research/README.md#research-harness-engineering
+    to: docs/research/harness-engineering.md
   - from: docs/research/Harness Engineering 的本质拆解.md
-    to: docs/research/README.md#research-harness-engineering
+    to: docs/research/harness-engineering.md
   - from: docs/philosophy/现象学还原.md
-    to: docs/philosophy/README.md#philosophy-methodology-toolbox
+    to: docs/philosophy/methodology-toolbox.md
   - from: docs/philosophy/辩证法.md
-    to: docs/philosophy/README.md#philosophy-methodology-toolbox
+    to: docs/philosophy/methodology-toolbox.md
   - from: docs/philosophy/控制论与科学方法论.md
-    to: docs/philosophy/README.md#philosophy-methodology-toolbox
+    to: docs/philosophy/methodology-toolbox.md
   - from: docs/philosophy/理解世界、描述变化、整理知识的一套较小框架.md
-    to: docs/philosophy/README.md#philosophy-compositional-description-model
+    to: docs/philosophy/compositional-description-model.md
 
   # Removed playbook directories and documents.
   - from: docs/guides/playbook/
@@ -55,39 +55,39 @@ redirects:
 
   # Merged getting-started documents.
   - from: docs/getting-started/Codex-CLI配置.md
-    to: docs/getting-started/README.md
+    to: docs/getting-started/cli-setup.md
   - from: docs/getting-started/学习地图.md
-    to: docs/getting-started/README.md
+    to: docs/getting-started/learning-map.md
   - from: docs/getting-started/Vibe Coding 经验.md
-    to: docs/getting-started/README.md
+    to: docs/getting-started/vibe-coding-experience.md
   - from: docs/getting-started/网络环境配置.md
-    to: docs/getting-started/README.md
+    to: docs/getting-started/network-environment.md
   - from: docs/getting-started/CLI配置.md
-    to: docs/getting-started/README.md
+    to: docs/getting-started/cli-setup.md
   - from: docs/getting-started/开发环境搭建.md
-    to: docs/getting-started/README.md
+    to: docs/getting-started/development-environment.md
 
-  # Merged reference documents.
+  # Split reference documents.
   - from: docs/references/通用项目架构模板.md
-    to: docs/references/README.md#reference-engineering-practice
+    to: docs/references/project-architecture-template.md
   - from: docs/references/数据集导向数据服务模板.md
-    to: docs/references/README.md#reference-engineering-practice
+    to: docs/references/dataset-first-data-service.md
   - from: docs/references/系统提示词构建原则.md
-    to: docs/references/README.md#reference-engineering-practice
+    to: docs/references/quality-gates-and-pitfalls.md
   - from: docs/references/强前置条件约束.md
-    to: docs/references/README.md#reference-engineering-practice
+    to: docs/references/quality-gates-and-pitfalls.md
   - from: docs/references/常见坑汇总.md
-    to: docs/references/README.md#reference-engineering-practice
+    to: docs/references/quality-gates-and-pitfalls.md
   - from: docs/references/项目架构模板.md
-    to: docs/references/README.md#reference-engineering-practice
+    to: docs/references/project-architecture-template.md
   - from: docs/references/AI编程质量门禁与常见坑.md
-    to: docs/references/README.md#reference-engineering-practice
+    to: docs/references/quality-gates-and-pitfalls.md
   - from: docs/references/代码组织.md
-    to: docs/references/README.md#reference-engineering-practice
+    to: docs/references/code-organization.md
   - from: docs/references/开发经验.md
-    to: docs/references/README.md#reference-engineering-practice
+    to: docs/references/development-experience.md
   - from: docs/references/底层程序逻辑设计与工程优化项.md
-    to: docs/references/README.md#reference-engineering-practice
+    to: docs/references/low-level-program-logic.md
 
   # Moved top-level resource directories.
   - from: assets/documents/
@@ -103,28 +103,28 @@ redirects:
 
   # Stable legacy per-topic entry points.
   - from: docs/concepts/问题求解.md
-    to: docs/concepts/README.md#concept-problem-solving
+    to: docs/concepts/problem-solving.md
   - from: docs/concepts/拼好码.md
-    to: docs/concepts/README.md#concept-glue-coding
+    to: docs/concepts/glue-coding.md
   - from: docs/concepts/系统构建方法.md
-    to: docs/concepts/README.md#concept-system-building
+    to: docs/concepts/system-building.md
   - from: docs/concepts/开发范式演进.md
-    to: docs/concepts/README.md#concept-development-paradigms
+    to: docs/concepts/development-paradigms.md
   - from: docs/concepts/语言层要素.md
-    to: docs/concepts/README.md#concept-language-layers
+    to: docs/concepts/language-layers.md
   - from: docs/concepts/递归自优化系统.md
-    to: docs/concepts/README.md#concept-recursive-self-optimizing-system
+    to: docs/concepts/recursive-self-optimizing-system.md
   - from: docs/philosophy/思维模型.md
-    to: docs/philosophy/README.md#philosophy-thinking-models
+    to: docs/philosophy/thinking-models.md
   - from: docs/philosophy/道法术器.md
     to: README.md#dao-fa-shu-qi
   - from: docs/philosophy/组合描述模型.md
-    to: docs/philosophy/README.md#philosophy-compositional-description-model
+    to: docs/philosophy/compositional-description-model.md
   - from: docs/philosophy/编程之道.md
-    to: docs/philosophy/README.md#philosophy-programming-dao
+    to: docs/philosophy/programming-dao.md
   - from: docs/references/工程实践.md
-    to: docs/references/README.md#reference-engineering-practice
+    to: docs/references/project-architecture-template.md
   - from: docs/references/技术栈.md
-    to: docs/references/README.md#reference-technology-stack
+    to: docs/references/technology-stack.md
   - from: docs/research/Harness工程解析.md
-    to: docs/research/README.md#research-harness-engineering
+    to: docs/research/harness-engineering.md

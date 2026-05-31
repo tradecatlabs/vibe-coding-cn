@@ -66,12 +66,12 @@ git push origin develop
 | `make lint` | 校验全仓库 Markdown | Node.js 22+；通过 `npx --yes markdownlint-cli@0.48.0` 执行 |
 | `make check-links` | 校验仓库内 Markdown 相对链接 | Python 3 |
 | `make check-details` | 校验 Markdown 折叠块 `<details>/<summary>` 结构 | Python 3 |
-| `make check-doc-structure` | 校验 docs 线性 README 标准块顺序、主章节顺序、重复锚点与目录入口 | Python 3 |
+| `make check-doc-structure` | 校验 docs README 标准块顺序、目录入口和重复锚点 | Python 3 |
 | `make check-directory-docs` | 校验仓库自有目录 README/AGENTS 覆盖 | Python 3 |
 | `make check-metadata` | 校验 metadata 路径与锚点 | Python 3 |
 | `make check-ai-citation` | 校验 llms 与 AI 引用语料路径和锚点 | Python 3 |
 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | 校验 GitHub Wiki 独立仓库本地 checkout 的页面覆盖、内链、旧口径和 Markdown | Python 3、Node.js 22+、本地 Wiki checkout |
-| `make sync-doc-toc` | 根据 taxonomy 和文档锚点重建 docs 细粒度目录 | Python 3 |
+| `make sync-doc-toc` | 兼容旧线性 README 目录生成；当前拆分结构下通常无变更 | Python 3 |
 | `make test` | 执行本地质量门禁 | Node.js 22+、Python 3 |
 | `git submodule update --init --recursive` | 初始化外部 Git 仓库指针 | Git |
 | `cd tools/prompts-library && python3 main.py` | 提示词格式转换 | `pip install -r tools/prompts-library/requirements.txt` |
@@ -227,17 +227,17 @@ git push origin develop
 - `.github/workflows/ci.yml` - GitHub Actions：develop/master 分支 markdown-lint + link-checker
 - `scripts/check-local-links.py` - 仓库内 Markdown 相对链接与锚点检查脚本，供 `make check-links` 与 CI 使用
 - `scripts/check-markdown-details.py` - 仓库内 Markdown 折叠块结构检查脚本，供 `make check-details` 与 CI 使用
-- `scripts/check-doc-structure.py` - docs 线性 README 标准块顺序、主章节顺序、重复锚点与目录入口检查脚本，供 `make check-doc-structure` 与 CI 使用
+- `scripts/check-doc-structure.py` - docs README 标准块顺序、目录入口和重复锚点检查脚本，供 `make check-doc-structure` 与 CI 使用
 - `scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
 - `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
 - `scripts/check-ai-citation.py` - llms 与 AI 引用语料路径和锚点检查脚本，供 `make check-ai-citation` 与 CI 使用
 - `scripts/check-wiki.py` - GitHub Wiki 独立仓库本地 checkout 页面覆盖、内链和旧口径检查脚本，供 `make check-wiki` 使用
-- `scripts/sync-doc-toc.py` - docs 线性 README 细粒度目录重建脚本，供 `make sync-doc-toc` 使用
+- `scripts/sync-doc-toc.py` - docs README 细粒度目录兼容脚本，当前拆分结构下通常无变更，供 `make sync-doc-toc` 使用
 - `tools/prompts-library/main.py` - 提示词转换工具入口
-- `docs/getting-started/README.md` - 从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建
-- `docs/concepts/README.md#concept-problem-solving` - 问题定义与求解路径底层模型
-- `docs/references/README.md#reference-engineering-practice` - 项目架构、代码组织、开发经验、底层程序逻辑、AI 编程质量门禁与常见坑的统一入口
-- `docs/references/README.md#reference-technology-stack` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
+- `docs/getting-started/README.md` - 从零开始索引入口，正文拆分到学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建
+- `docs/concepts/problem-solving.md` - 问题定义与求解路径底层模型
+- `docs/references/project-architecture-template.md` - 常见项目结构、架构设计原则、最低门禁和检查清单
+- `docs/references/technology-stack.md` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
 - `skills/auto-skill/` - Skills 生成、重构与校验的元技能
 - `skills/auto-tmux/` - tmux 自动化操控、脚本化 pane 巡检、按键注入、日志录制与多终端协作技能
 
@@ -247,7 +247,7 @@ git push origin develop
 - 标准块顺序固定为：顶部标题块 -> `## 字多不看` -> `## 快速导航` -> 完整细粒度目录 -> `## 使用方式` -> `## 正文`。
 - H1 后必须直接进入 `## 字多不看`，禁止在两者之间插入引用块、说明段或其他夹层内容。
 - README 中禁止出现 `和其他目录的边界` 与 `维护规则` 标题。
-- 修改 docs README 后，运行 `make sync-doc-toc` 和 `make test`；`make check-doc-structure` 是硬门禁。
+- 修改 docs README 或新增主题文档后，运行 `make sync-doc-toc` 和 `make test`；`make check-doc-structure` 是硬门禁。
 
 ---
 
@@ -290,7 +290,7 @@ feat|fix|docs|chore|refactor|test: scope - summary
 1. `markdown-lint` - Markdown 格式检查
 2. `check local markdown links and anchors` - 仓库内相对链接与锚点检查
 3. `check markdown details and summaries` - Markdown 折叠块结构检查
-4. `check docs README structure` - docs 线性 README 标准块顺序、主章节顺序、重复锚点与目录入口检查
+4. `check docs README structure` - docs README 标准块顺序、目录入口和重复锚点检查
 5. `check required directory README and AGENTS files` - 仓库自有目录 README/AGENTS 覆盖检查
 6. `check metadata paths and anchors` - metadata 路径与锚点检查
 7. `check llms and AI citation paths and anchors` - llms 与 AI 引用语料路径和锚点检查

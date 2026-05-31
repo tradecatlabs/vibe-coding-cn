@@ -122,7 +122,12 @@ def main() -> int:
     changed: list[str] = []
     errors: list[str] = []
 
-    for rel_path, main_anchors in doc_readmes_from_taxonomy().items():
+    doc_readmes = doc_readmes_from_taxonomy()
+    if not doc_readmes:
+        print("OK synced docs TOC blocks: 0 changed")
+        return 0
+
+    for rel_path, main_anchors in doc_readmes.items():
         path = ROOT / rel_path
         if not path.exists():
             errors.append(f"{rel_path}: missing docs README")

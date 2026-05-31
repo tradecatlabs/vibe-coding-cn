@@ -14,14 +14,19 @@
 
 ```text
 getting-started/
-├── README.md   # 从零开始完整入门教程
+├── README.md   # 从零开始索引入口
+├── vibe-coding-experience.md
+├── learning-map.md
+├── network-environment.md
+├── cli-setup.md
+├── development-environment.md
 └── AGENTS.md   # 本目录操作规则
 ```
 
 ## 修改规则
 
 - 继承 `docs/AGENTS.md` 的 README 结构契约：H1 后直接进入 `## 字多不看`，再按 `快速导航 -> 完整细粒度目录 -> 使用方式 -> 正文` 排列。
-- 保持 `README.md` 作为单文件线性教程，避免重新拆散为多个碎片文档。
+- `README.md` 只做索引入口；正文写入同目录独立主题文档。
 - 新增步骤时，必须说明适用系统、前置条件、执行命令和成功判断。
 - 命令必须可复制执行；涉及平台差异时分别写明 Windows、WSL、Linux 或 macOS。
 - 默认路线优先是：网络环境和订阅准备 -> Codex CLI -> 让 Agent 配置后续环境。

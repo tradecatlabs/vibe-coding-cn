@@ -11,28 +11,28 @@ docs/
 ├── README.md             # 知识库总索引
 ├── AGENTS.md             # docs 总操作规则
 ├── getting-started/      # 从零开始、学习地图、环境与 AI CLI 配置
-├── concepts/             # 线性总文档：核心概念、问题求解与工程思想
-├── philosophy/           # 线性总文档：哲学方法论、思维模型与底层认知模型
-├── research/             # 线性总文档：新技术、优秀 repo、工程范式和工具趋势研究
-├── references/           # 线性总文档：工程实践、技术栈、清单与质量门禁
-└── workflow/             # 线性总文档：开发流程、质量门禁、版本控制和文档同步
+├── concepts/             # 索引 + 独立正文文档：核心概念、问题求解与工程思想
+├── philosophy/           # 索引 + 独立正文文档：哲学方法论、思维模型与底层认知模型
+├── research/             # 索引 + 独立正文文档：新技术、优秀 repo、工程范式和工具趋势研究
+├── references/           # 索引 + 独立正文文档：工程实践、技术栈、清单与质量门禁
+└── workflow/             # 索引 + 独立正文文档：开发流程、质量门禁、版本控制和文档同步
 ```
 
 ## 关键入口
 
 - `README.md`：知识库总索引。
 - `AGENTS.md`：`docs/` 总操作规则。
-- `getting-started/README.md`：从零开始完整入门，包含学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建。
+- `getting-started/README.md`：从零开始索引，正文拆分为学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建。
 - `getting-started/AGENTS.md`：入门教程目录操作规则。
-- `concepts/README.md`：线性总文档，包含问题求解、拼好码、系统构建方法、开发范式演进、语言层要素和递归自优化系统。
+- `concepts/README.md`：核心概念索引，正文拆分到同目录主题文档。
 - `concepts/AGENTS.md`：核心概念目录操作规则。
-- `philosophy/README.md`：线性总文档，包含思维模型、组合描述模型、编程之道、软件工程的朴素真理和方法论工具箱。
+- `philosophy/README.md`：哲学方法论索引，正文拆分到同目录主题文档。
 - `philosophy/AGENTS.md`：哲学方法论目录操作规则。
-- `references/README.md`：线性总文档，包含工程实践和技术栈。
+- `references/README.md`：参考资料索引，正文拆分到同目录模板、清单和技术栈文档。
 - `references/AGENTS.md`：参考资料目录操作规则。
-- `research/README.md`：线性总文档，包含新技术、优秀 repo、工程范式和工具趋势研究笔记。
+- `research/README.md`：研究索引，正文拆分到同目录研究笔记。
 - `research/AGENTS.md`：研究笔记目录操作规则。
-- `workflow/README.md`：线性总文档，包含默认开发流程、质量门禁和交付闭环。
+- `workflow/README.md`：流程索引，正文拆分到同目录流程文档。
 - `workflow/AGENTS.md`：开发流程目录操作规则。
 
 ## 操作规范
@@ -59,7 +59,7 @@ docs/
 3. `## 快速导航`：列出主要章节、路线或常用入口。
 4. `完整细粒度目录（点击展开/收起）`：使用标准 `<details>/<summary>` 折叠块。
 5. `## 使用方式`：说明人类读者如何使用本文档。
-6. `## 正文`：承载真正内容；没有正文内容时也保留结构锚点。
+6. `## 正文`：只说明正文已拆分到独立文档；README 不再承载长正文。
 
 禁止在 README 中出现以下结构：
 
@@ -73,7 +73,7 @@ docs/
 ## 维护规则
 
 - 每个目录必须同时维护 `README.md` 和 `AGENTS.md`。
-- 新增、删除、移动、重命名文档时，必须同步更新 `docs/README.md`、所在目录索引和 `metadata/taxonomy.yml`。
+- 新增、删除、移动、重命名文档时，必须同步更新 `docs/README.md`、所在目录 README 索引和 `metadata/taxonomy.yml`。
 - 面向 AI 引用的重要入口变化，必须同步更新 `assets/ai-citation/llms-full.txt` 和相关摘要文件。
 - 不确定信息标注 TODO，不用猜测补齐。
 - 修改任意 docs README 后，运行 `make sync-doc-toc` 和 `make test`。

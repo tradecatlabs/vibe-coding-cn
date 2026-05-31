@@ -220,9 +220,6 @@ def main() -> int:
         errors.extend(duplicate_manual_anchors(markdown_file))
 
     doc_readmes = doc_readmes_from_taxonomy()
-    if not doc_readmes:
-        errors.append("metadata/taxonomy.yml: no docs README anchors found under documents")
-
     for rel_path, expected_anchors in doc_readmes.items():
         path = ROOT / rel_path
         if not path.exists():
@@ -230,10 +227,19 @@ def main() -> int:
             continue
         errors.extend(check_linear_readme(path, expected_anchors))
 
-    docs_index = ROOT / "docs" / "README.md"
-    if docs_index.exists():
-        text = strip_fenced_code(docs_index.read_text(encoding="utf-8", errors="ignore"))
-        errors.extend(check_standard_readme_blocks(docs_index, text))
+    readme_paths = {Path("docs/README.md")}
+    for fields in taxonomy_sections().values():
+        entry = fields.get("entry", "")
+        if entry.startswith("docs/") and entry.endswith("/README.md"):
+            readme_paths.add(Path(entry))
+
+    for rel_path in sorted(readme_paths):
+        path = ROOT / rel_path
+        if not path.exists():
+            errors.append(f"{rel_path}: missing docs README")
+            continue
+        text = strip_fenced_code(path.read_text(encoding="utf-8", errors="ignore"))
+        errors.extend(check_standard_readme_blocks(path, text))
 
     errors.extend(check_docs_index())
 
