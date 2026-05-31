@@ -32,14 +32,14 @@
 <!-- 🔴 核心理念 (红色系) -->
 <p>
 	  <a href="#dao-fa-shu-qi"><img src="https://img.shields.io/badge/☯️_道法术器-底层框架-purple?style=for-the-badge" alt="道法术器"></a>
-	  <a href="./docs/getting-started/README.md#learning-map"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
-	  <a href="./docs/getting-started/README.md#vibe-coding-experience"><img src="https://img.shields.io/badge/🧠_Vibe_Coding-经验必读-crimson?style=for-the-badge" alt="Vibe Coding 经验"></a>
+	  <a href="./docs/getting-started/learning-map.md"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
+	  <a href="./docs/getting-started/vibe-coding-experience.md"><img src="https://img.shields.io/badge/🧠_Vibe_Coding-经验必读-crimson?style=for-the-badge" alt="Vibe Coding 经验"></a>
 	  <a href="./tools/config/.codex/README.md"><img src="https://img.shields.io/badge/⚙️_Codex配置-一键安装-blue?style=for-the-badge" alt="Codex 配置一键安装"></a>
-	  <a href="./docs/concepts/README.md#concept-problem-solving"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解"></a>
-	  <a href="./docs/philosophy/README.md#philosophy-thinking-models"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
-	  <a href="./docs/philosophy/README.md#philosophy-methodology-toolbox"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
-	  <a href="./docs/references/README.md#quality-gates"><img src="https://img.shields.io/badge/🛡️_工程实践-质量门禁-darkred?style=for-the-badge" alt="工程实践"></a>
-	  <a href="./docs/concepts/README.md#concept-language-layers"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>
+	  <a href="./docs/concepts/problem-solving.md"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解"></a>
+	  <a href="./docs/philosophy/thinking-models.md"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
+	  <a href="./docs/philosophy/methodology-toolbox.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
+	  <a href="./docs/references/quality-gates-and-pitfalls.md"><img src="https://img.shields.io/badge/🛡️_工程实践-质量门禁-darkred?style=for-the-badge" alt="工程实践"></a>
+	  <a href="./docs/concepts/language-layers.md"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>
   <a href="./skills/README.md#当前保留"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
   <a href="./prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/📚_Wiki-导航入口-slateblue?style=for-the-badge" alt="Wiki 导航入口"></a>
@@ -49,7 +49,7 @@
 [☯️ 道法术器](#dao-fa-shu-qi)
 [📌 字多不看](#root-tldr)
 [⚡ 1 分钟快速开始](#getting-started)
-[🚀 从零开始完整入门](docs/getting-started/README.md#learning-map)
+[🚀 从零开始完整入门](docs/getting-started/learning-map.md)
 [🤖 AI 推荐摘要](#ai-summary)
 [✅ 为什么选择](#why-vibe-coding-cn)
 [📚 GitHub Wiki](https://github.com/tukuaiai/vibe-coding-cn/wiki)
@@ -71,7 +71,7 @@
 ## 📌 字多不看
 
 - `vibe-coding-cn` 是中文 Vibe Coding 从入门到精通教程，目标是把想法稳定变成可运行产品。
-- 新手先走 [从零开始完整入门](docs/getting-started/README.md#learning-map)：网络环境、CLI 配置、开发环境、Git 闭环。
+- 新手先走 [从零开始完整入门](docs/getting-started/learning-map.md)：网络环境、CLI 配置、开发环境、Git 闭环。
 - 核心框架是 [道法术器](#dao-fa-shu-qi)：先固定人与 AI 的协作关系，再用方法、流程、门禁和工具落地。
 - 工程主线是 Prompt、Skill、Context、Quality Gate 和 Git，用测试、CI、脚本、类型、schema、清单约束 AI 输出。
 - 需要直接使用资源时，进入 [提示词](prompts/README.md#在线提示词库)、[Skills](skills/README.md#当前保留) 和 [外部资源](assets/README.md#外部资源在线表格唯一真相源)。
@@ -215,11 +215,11 @@
 
 完全新手？按顺序完成以下步骤：
 
-0. [从零开始完整入门](docs/getting-started/README.md#learning-map) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
-1. [Vibe Coding 经验](docs/getting-started/README.md#vibe-coding-experience) - 通用语言能力、人机分工、机器门禁和入门铁律
-2. [问题求解](docs/concepts/README.md#concept-problem-solving) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
-3. [拼好码](docs/concepts/README.md#concept-glue-coding) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
-4. [工程实践](docs/references/README.md#quality-gates) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
+0. [从零开始完整入门](docs/getting-started/learning-map.md) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
+1. [Vibe Coding 经验](docs/getting-started/vibe-coding-experience.md) - 通用语言能力、人机分工、机器门禁和入门铁律
+2. [问题求解](docs/concepts/problem-solving.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
+3. [拼好码](docs/concepts/glue-coding.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
+4. [工程实践](docs/references/quality-gates-and-pitfalls.md) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
 
 </details>
 
@@ -299,7 +299,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 > 一句话：用“生成器/优化器”的递归闭环，构建一个能持续自我优化的 AI 系统。
 >
-> 延伸阅读：[递归自优化系统](docs/concepts/README.md#concept-recursive-self-optimizing-system)
+> 延伸阅读：[递归自优化系统](docs/concepts/recursive-self-optimizing-system.md)
 
 ### 核心角色
 - **α-提示词（生成器）**：一个“母体”提示词，其唯一职责是生成其他提示词或技能。
@@ -329,7 +329,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | 🧩 复杂性爆炸 | ✅ 通用复杂度交给成熟生态 |
 | 🎓 交付不稳定 | ✅ 胶水代码只负责连接、编排、适配和业务规则 |
 
-👉 [深入了解拼好码](docs/concepts/README.md#concept-glue-coding)
+👉 [深入了解拼好码](docs/concepts/glue-coding.md)
 
 </details>
 
@@ -350,7 +350,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 **使用边界**：这是实验性方法，不是无人值守生产系统。敏感凭证、生产数据库、危险命令和不可逆操作必须人工确认。
 
-👉 [研究判断](docs/research/README.md#research-tmux-ai-swarm)
+👉 [研究判断](docs/research/tmux-ai-swarm.md)
 👉 [完整技术文档](skills/auto-tmux/references/ai-swarm-collaboration.md)
 👉 [可执行技能入口](skills/auto-tmux/SKILL.md)
 
@@ -373,7 +373,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 **核心理念**：哲学不是空谈，是可落地的工程方法。
 
-👉 [深入了解哲学方法论工具箱](docs/philosophy/README.md#philosophy-methodology-toolbox)
+👉 [深入了解哲学方法论工具箱](docs/philosophy/methodology-toolbox.md)
 
 </details>
 
@@ -464,7 +464,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 #### AI CLI 与模型服务
 
-*   [**Codex CLI**](docs/getting-started/README.md#cli-setup): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
+*   [**Codex CLI**](docs/getting-started/cli-setup.md): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
 *   [**Codex CLI 配置基线**](tools/config/.codex/README.md): 可通过一条命令安装到 `~/.codex/`，安装前自动备份，支持恢复。
 *   [**Claude Opus 4.7**](https://claude.ai/new): 性能强大的 AI 模型，通过 Claude Code 等平台提供服务，并支持 CLI 和 IDE 插件。
 *   [**gpt-5.5 (xhigh)**](https://chatgpt.com/codex/): 适用于处理大型项目和复杂逻辑的 AI 模型，可通过 Codex CLI 等平台使用。
@@ -539,23 +539,23 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   [**Telegram 交流群**](https://t.me/glue_coding): Vibe Coding 中文交流群。
 *   [**Telegram 频道**](https://t.me/tradecat_ai_channel): 项目更新与资讯。
 *   [**知识库总索引**](docs/README.md): 从入门、概念、哲学、参考、研究和工作流进入完整文档体系。
-*   [**从零开始完整入门**](docs/getting-started/README.md#learning-map): 新手从网络环境、CLI 配置、开发环境和 Git 闭环开始。
-*   [**Vibe Coding 经验**](docs/getting-started/README.md#vibe-coding-experience): 通用语言能力、人机分工、机器门禁和入门铁律。
-*   [**CLI 配置**](docs/getting-started/README.md#cli-setup): Codex CLI 默认路线与 OpenCode 备选路线。
+*   [**从零开始完整入门**](docs/getting-started/learning-map.md): 新手从网络环境、CLI 配置、开发环境和 Git 闭环开始。
+*   [**Vibe Coding 经验**](docs/getting-started/vibe-coding-experience.md): 通用语言能力、人机分工、机器门禁和入门铁律。
+*   [**CLI 配置**](docs/getting-started/cli-setup.md): Codex CLI 默认路线与 OpenCode 备选路线。
 *   [**Codex 配置一键安装**](tools/config/.codex/README.md): 安全默认配置、高权限配置、自动备份和一键恢复。
-*   [**开发流程**](docs/workflow/README.md#workflow-development-process): 默认任务推进顺序、质量门禁、版本控制和交付闭环。
-*   [**问题求解**](docs/concepts/README.md#concept-problem-solving): 用目标、现状、差距、标准、约束、对象和路径定义问题。
-*   [**拼好码（胶水编程的超集）**](docs/concepts/README.md#concept-glue-coding): 复用成熟能力，用胶水代码连接、编排、适配业务流程。
-*   [**系统构建方法**](docs/concepts/README.md#concept-system-building): 自顶向下、自底向上与分而治之的组合使用。
-*   [**开发范式演进**](docs/concepts/README.md#concept-development-paradigms): 软件工程组织方式与 AI 编程范式的演进。
-*   [**语言层要素**](docs/concepts/README.md#concept-language-layers): 理解代码所需的语言层级、执行模型、类型系统和工程语义。
-*   [**思维模型**](docs/philosophy/README.md#philosophy-thinking-models): 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。
-*   [**组合描述模型**](docs/philosophy/README.md#philosophy-compositional-description-model): 用对象、状态、快照、序列、过程、变换、同一/差异与关系描述复杂系统。
-*   [**编程之道**](docs/philosophy/README.md#philosophy-programming-dao): 编程哲学、结构、状态、复杂度与工程判断。
-*   [**软件工程的朴素真理**](docs/philosophy/README.md#philosophy-software-engineering-truths): 代码、复杂度、需求、维护、质量、架构和团队的工程常识。
-*   [**工程实践**](docs/references/README.md#quality-gates): 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口。
-*   [**技术栈**](docs/references/README.md#tech-stack-selection): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
-*   [**Harness 工程解析**](docs/research/README.md#research-harness-engineering): Harness Engineering 的工程控制、评估器与反馈闭环解析。
+*   [**开发流程**](docs/workflow/development-process.md): 默认任务推进顺序、质量门禁、版本控制和交付闭环。
+*   [**问题求解**](docs/concepts/problem-solving.md): 用目标、现状、差距、标准、约束、对象和路径定义问题。
+*   [**拼好码（胶水编程的超集）**](docs/concepts/glue-coding.md): 复用成熟能力，用胶水代码连接、编排、适配业务流程。
+*   [**系统构建方法**](docs/concepts/system-building.md): 自顶向下、自底向上与分而治之的组合使用。
+*   [**开发范式演进**](docs/concepts/development-paradigms.md): 软件工程组织方式与 AI 编程范式的演进。
+*   [**语言层要素**](docs/concepts/language-layers.md): 理解代码所需的语言层级、执行模型、类型系统和工程语义。
+*   [**思维模型**](docs/philosophy/thinking-models.md): 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。
+*   [**组合描述模型**](docs/philosophy/compositional-description-model.md): 用对象、状态、快照、序列、过程、变换、同一/差异与关系描述复杂系统。
+*   [**编程之道**](docs/philosophy/programming-dao.md): 编程哲学、结构、状态、复杂度与工程判断。
+*   [**软件工程的朴素真理**](docs/philosophy/software-engineering-truths.md): 代码、复杂度、需求、维护、质量、架构和团队的工程常识。
+*   [**工程实践**](docs/references/quality-gates-and-pitfalls.md): 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口。
+*   [**技术栈**](docs/references/technology-stack.md#reference-technology-stack-十四如何选择技术栈): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
+*   [**Harness 工程解析**](docs/research/harness-engineering.md): Harness Engineering 的工程控制、评估器与反馈闭环解析。
 *   [**Skills 技能库**](skills/README.md#当前保留): 当前保留的可复用技能入口。
 *   [**提示词入口**](prompts/README.md#在线提示词库): 在线提示词库入口。
 *   [**外部资源入口**](assets/README.md#外部资源在线表格唯一真相源): 外部资源在线表格唯一真相源。
