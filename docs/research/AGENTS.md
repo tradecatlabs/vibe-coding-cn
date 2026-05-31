@@ -16,15 +16,17 @@
 
 ```text
 research/
-├── README.md  # 线性总文档：研究笔记集合
+├── README.md  # 索引入口：研究笔记导航
+├── harness-engineering.md
+├── tmux-ai-swarm.md
 └── AGENTS.md  # 本目录操作规则
 ```
 
 ## 修改规则
 
 - 继承 `docs/AGENTS.md` 的 README 结构契约：H1 后直接进入 `## 字多不看`，再按 `快速导航 -> 完整细粒度目录 -> 使用方式 -> 正文` 排列。
-- 每篇研究笔记聚焦一个技术、repo、范式或工具，并追加到 `README.md`。
-- 不再新增同级主题 `.md` 文件；如确需拆分，必须同步更新全仓链接和 `metadata/redirects.yml`。
+- 每篇研究笔记聚焦一个技术、repo、范式或工具，并写入独立 `.md` 文档。
+- 新增研究 `.md` 文件时，必须同步更新 `README.md`、`metadata/taxonomy.yml` 和必要的 `redirects.yml`。
 - 研究内容稳定后，放入 `docs/concepts/`、`docs/references/` 或 `docs/philosophy/` 的对应章节。
 - 外部项目、模型、工具、版本和事实状态可能变化，涉及最新信息时必须核验来源。
 - 不在 README 正文中写 `和其他目录的边界` 或 `维护规则`；维护者规则只写本文件。

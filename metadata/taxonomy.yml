@@ -35,33 +35,38 @@ reading_paths:
     title: 新手路径
     documents:
       - docs/getting-started/README.md
-      - docs/getting-started/README.md#vibe-coding-experience
-      - docs/concepts/README.md#concept-problem-solving
-      - docs/concepts/README.md#concept-glue-coding
-      - docs/references/README.md#reference-engineering-practice
+      - docs/getting-started/vibe-coding-experience.md
+      - docs/getting-started/learning-map.md
+      - docs/concepts/problem-solving.md
+      - docs/concepts/glue-coding.md
+      - docs/references/project-architecture-template.md
+      - docs/references/quality-gates-and-pitfalls.md
   developer:
     title: 开发者路径
     documents:
-      - docs/concepts/README.md#concept-glue-coding
-      - docs/concepts/README.md#concept-system-building
-      - docs/references/README.md#reference-technology-stack
-      - docs/references/README.md#reference-engineering-practice
+      - docs/concepts/glue-coding.md
+      - docs/concepts/system-building.md
+      - docs/references/technology-stack.md
+      - docs/references/project-architecture-template.md
+      - docs/references/quality-gates-and-pitfalls.md
   thinking:
     title: 思维模型路径
     documents:
-      - docs/philosophy/README.md#philosophy-thinking-models
-      - docs/philosophy/README.md#philosophy-compositional-description-model
-      - docs/philosophy/README.md#philosophy-programming-dao
-      - docs/concepts/README.md#concept-recursive-self-optimizing-system
+      - docs/philosophy/thinking-models.md
+      - docs/philosophy/compositional-description-model.md
+      - docs/philosophy/programming-dao.md
+      - docs/philosophy/software-engineering-truths.md
+      - docs/concepts/recursive-self-optimizing-system.md
   agent:
     title: AI Agent 读取路径
     documents:
       - AGENTS.md
       - docs/AGENTS.md
-      - docs/workflow/README.md#workflow-development-process
+      - docs/workflow/development-process.md
       - docs/getting-started/README.md
-      - docs/getting-started/README.md#vibe-coding-experience
-      - docs/references/README.md#reference-engineering-practice
+      - docs/getting-started/vibe-coding-experience.md
+      - docs/references/project-architecture-template.md
+      - docs/references/quality-gates-and-pitfalls.md
       - assets/ai-citation/README.md
 
 selection_rules:
@@ -74,75 +79,93 @@ selection_rules:
 
 documents:
   getting-started:
-    - path: docs/getting-started/README.md
-      title: 从零开始完整入门
-      role: 新手线性路线、网络环境、Codex CLI、开发环境与 Vibe Coding 经验
-    - path: docs/getting-started/README.md#vibe-coding-experience
+    - path: docs/getting-started/vibe-coding-experience.md
       title: Vibe Coding 经验
       role: 通用语言能力、人机分工、机器门禁和入门铁律
-    - path: docs/getting-started/README.md#learning-map
+    - path: docs/getting-started/learning-map.md
       title: 学习地图
       role: 新手、开发者、团队、Prompt、Skill、质量门禁和 GEO/SEO 的路线选择
-    - path: docs/getting-started/README.md#network-environment
+    - path: docs/getting-started/network-environment.md
       title: 网络环境配置
       role: OpenAI、GitHub、文档和依赖源访问
-    - path: docs/getting-started/README.md#cli-setup
+    - path: docs/getting-started/cli-setup.md
       title: CLI 配置
       role: Codex CLI 默认路线与 OpenCode 备选路线
-    - path: docs/getting-started/README.md#development-environment
+    - path: docs/getting-started/development-environment.md
       title: 开发环境搭建
       role: Agent 主动配置开发依赖、编辑器建议和测试命令
   concepts:
-    - path: docs/concepts/README.md#concept-problem-solving
+    - path: docs/concepts/problem-solving.md
       title: 问题求解
       role: 目标、现状、差距、标准、约束、对象与路径
-    - path: docs/concepts/README.md#concept-glue-coding
+    - path: docs/concepts/glue-coding.md
       title: 拼好码
       role: 复用成熟能力、胶水原则、能力编排与业务交付
-    - path: docs/concepts/README.md#concept-system-building
+    - path: docs/concepts/system-building.md
       title: 系统构建方法
       role: 自顶向下、自底向上与分而治之
-    - path: docs/concepts/README.md#concept-development-paradigms
+    - path: docs/concepts/development-paradigms.md
       title: 开发范式演进
       role: 软件工程组织方式演进
-    - path: docs/concepts/README.md#concept-language-layers
+    - path: docs/concepts/language-layers.md
       title: 语言层要素
       role: 代码理解所需语言层级
-    - path: docs/concepts/README.md#concept-recursive-self-optimizing-system
+    - path: docs/concepts/recursive-self-optimizing-system.md
       title: 递归自优化系统
       role: 递归自优化生成系统的形式化模型
   philosophy:
-    - path: docs/philosophy/README.md#philosophy-thinking-models
+    - path: docs/philosophy/thinking-models.md
       title: 思维模型
       role: 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具
-    - path: docs/philosophy/README.md#philosophy-compositional-description-model
+    - path: docs/philosophy/compositional-description-model.md
       title: 组合描述模型
       role: 对象、状态、快照、序列、过程、变换、同一/差异与关系
-    - path: docs/philosophy/README.md#philosophy-programming-dao
+    - path: docs/philosophy/programming-dao.md
       title: 编程之道
       role: 编程哲学、结构、状态、复杂度与工程判断
-    - path: docs/philosophy/README.md#philosophy-software-engineering-truths
+    - path: docs/philosophy/software-engineering-truths.md
       title: 软件工程的朴素真理
       role: 代码、复杂度、需求、维护、质量、架构和团队的工程常识
-    - path: docs/philosophy/README.md#philosophy-methodology-toolbox
+    - path: docs/philosophy/methodology-toolbox.md
       title: 方法论工具箱
       role: 现象学还原、正反合、可证伪主义、形式化方法等提效工具
   references:
-    - path: docs/references/README.md#reference-engineering-practice
-      title: 工程实践
-      role: 项目架构、代码组织、开发经验、质量门禁与常见坑
-    - path: docs/references/README.md#reference-technology-stack
+    - path: docs/references/project-architecture-template.md
+      title: 项目架构模板
+      role: 常见项目结构、架构设计原则、最低门禁和检查清单
+    - path: docs/references/python-project-skeleton.md
+      title: 通用 Python 项目骨架
+      role: Python 应用、服务、脚本工具和库项目的通用骨架
+    - path: docs/references/enterprise-architecture-template.md
+      title: 企业级 Monorepo / Multi-repo 架构模板
+      role: 中大型工程组织、平台工程和多产品线参考模型
+    - path: docs/references/dataset-first-data-service.md
+      title: Dataset First 数据服务结构
+      role: dataset、contract、registry、runtime 为核心的数据服务模板
+    - path: docs/references/code-organization.md
+      title: 代码组织
+      role: 模块化、命名、注释、格式化、文档和工具
+    - path: docs/references/development-experience.md
+      title: 开发经验
+      role: 变量名、文件结构、编码规范、架构原则和常见基础设施经验
+    - path: docs/references/quality-gates-and-pitfalls.md
+      title: AI 编程质量门禁与常见坑
+      role: 系统提示词、强前置条件、常见坑和硬门禁
+    - path: docs/references/low-level-program-logic.md
+      title: 底层程序逻辑设计与工程优化项
+      role: 运行模型、并发模型、数据模型、性能模型和工程交付检查清单
+    - path: docs/references/technology-stack.md
       title: 技术栈
       role: 技术栈选型、组合案例与学习路径
   research:
-    - path: docs/research/README.md#research-harness-engineering
+    - path: docs/research/harness-engineering.md
       title: Harness 工程解析
       role: 工程控制、评估器、反馈闭环与 AI 生成系统可靠性
-    - path: docs/research/README.md#research-tmux-ai-swarm
+    - path: docs/research/tmux-ai-swarm.md
       title: tmux 蜂群协作
       role: 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式
   workflow:
-    - path: docs/workflow/README.md#workflow-development-process
+    - path: docs/workflow/development-process.md
       title: 开发流程
       role: 默认任务推进顺序、质量门禁和交付闭环
 

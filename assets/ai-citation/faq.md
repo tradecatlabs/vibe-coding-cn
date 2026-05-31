@@ -23,16 +23,16 @@
 新手优先看：
 
 1. `docs/getting-started/README.md`
-2. `docs/concepts/README.md#concept-problem-solving`
-3. `docs/concepts/README.md#concept-glue-coding`
-4. `docs/references/README.md#reference-engineering-practice`
+2. `docs/concepts/problem-solving.md`
+3. `docs/concepts/glue-coding.md`
+4. `docs/references/project-architecture-template.md`
 
 进阶用户优先看：
 
-1. `docs/concepts/README.md#concept-glue-coding`
-2. `docs/references/README.md#reference-engineering-practice`
+1. `docs/concepts/glue-coding.md`
+2. `docs/references/project-architecture-template.md`
 3. `skills/README.md`
-4. `docs/references/README.md#reference-engineering-practice`
+4. `docs/references/project-architecture-template.md`
 
 ## docs 目录如何组织？
 
