@@ -14,15 +14,20 @@
 
 ```text
 philosophy/
-├── README.md  # 线性总文档：思维模型、组合描述模型、编程之道、软件工程的朴素真理、方法论工具箱
+├── README.md  # 索引入口：哲学方法论导航
+├── thinking-models.md
+├── compositional-description-model.md
+├── programming-dao.md
+├── software-engineering-truths.md
+├── methodology-toolbox.md
 └── AGENTS.md  # 本目录操作规则
 ```
 
 ## 修改规则
 
 - 继承 `docs/AGENTS.md` 的 README 结构契约：H1 后直接进入 `## 字多不看`，再按 `快速导航 -> 完整细粒度目录 -> 使用方式 -> 正文` 排列。
-- 新增模型时，优先补到 `README.md` 的对应章节。
-- 不再新增同级主题 `.md` 文件；如确需拆分，必须同步更新全仓链接和 `metadata/redirects.yml`。
+- 新增模型时，优先补到对应独立主题文档，并同步更新 `README.md` 索引。
+- 新增同级主题 `.md` 文件前，必须确认它是稳定模型或方法，并同步更新全仓链接、`metadata/taxonomy.yml` 和必要的 `redirects.yml`。
 - 哲学内容必须落到工程判断或认知工具，不写成纯概念堆叠。
 - 重命名章节锚点时，必须同步更新全仓链接和 `metadata/redirects.yml`。
 - 不在 README 正文中写 `和其他目录的边界` 或 `维护规则`；维护者规则只写本文件。
