@@ -269,6 +269,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 ### 配置与 CI
 
+- 路径级 owner 评审基线：`.github/CODEOWNERS`
 - Markdown lint 配置：`.github/lint_config.json`
 - Markdown lint 版本：`Makefile` 中固定为 `markdownlint-cli@0.48.0`
 - 外部链接检查配置：`.lychee.toml`，统一管理外链检查的超时、重试、并发上限和排除项
@@ -620,6 +621,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ├── assets/                      # 静态资产、外部资源入口与 AI 引用资产
 │
 ├── .github/                     # GitHub 配置
+│   ├── CODEOWNERS               # 路径级 owner 评审基线
 │   ├── workflows/               # CI/CD 工作流
 │   │   ├── ci.yml               # Markdown lint + link checker
 │   │   ├── labeler.yml          # 自动标签

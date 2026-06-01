@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.24
+**文档版本**：V2.27
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.24 在 V2.23 基础上新增机器可读 AI 事件响应 playbook，让幻觉爆发、工具循环、RAG 索引污染、模型供应商中断、成本异常、检测、遏制、降级、回滚、RAG 恢复、工具 Kill Switch、沟通和复盘进入可执行证据链。
+**专项修订**：V2.27 在 V2.26 基础上新增机器可读仓库变更控制，把 CODEOWNERS、受保护分支、PR 审查、必需检查、签名提交、禁止直推、发布 tag 保护、远端保护状态验证、漂移检测、POA&M 整改和风险登记纳入版本基线保护。
 
 ---
 
@@ -52,7 +52,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.24` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、55 组 starter kit schema/example、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
+| `V2.27` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、58 组 starter kit schema/example、仓库变更控制、远端保护漂移整改、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 证据账本、微调运行证据、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -134,12 +134,15 @@ git diff --check
 | `V2.22` | 2026-06-02 | Minor | 补齐企业架构风险登记和风险到控制、POA&M、审计导出的证据闭环 |
 | `V2.23` | 2026-06-02 | Minor | 补齐机器可读架构决策记录和基线变更 ADR 绑定 |
 | `V2.24` | 2026-06-02 | Minor | 补齐机器可读 AI 事件响应 playbook 和 AI 运行证据闭环 |
+| `V2.25` | 2026-06-02 | Minor | 补齐机器可读 AI 证据账本和 AI 产品级证据闭环 |
+| `V2.26` | 2026-06-02 | Minor | 补齐机器可读微调运行证据和 AI 微调审计闭环 |
+| `V2.27` | 2026-06-02 | Minor | 补齐机器可读仓库变更控制、远端保护验证和版本基线保护 |
 
-### 0.7 V2.24 可执行企业标准路线图
+### 0.7 V2.27 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。V2.12 增加审计导出自动化命令，把版本、控制目录、证据映射、导出清单、脚本和关键制品哈希生成可交付审计包。V2.13 增加控制评估报告，把证据包进一步闭环到控制结果、发现项、整改、剩余风险和签署状态。V2.14 增加架构基线变更记录，把基线升级的影响分析、审批、验证命令和回滚路径纳入可执行证据。V2.15 增加 OSCAL 交换映射和导出摘要，把内部控制证据映射到 catalog、component-definition、system-security-plan、assessment-results 和 POA&M 视图。V2.16 增加审计导出门禁，把导出包生成、JSON/Markdown/OSCAL 输出和关键不变量校验纳入 `make test`。V2.17 增加审计导出完整性清单，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。V2.18 增加审计导出 provenance statement，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。V2.19 增加审计导出签名策略，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入门禁。V2.20 增加审计导出签名验签回执，把外部签名完成后的 bundle 摘要、证书身份、OIDC issuer、透明日志和验签结果纳入证据链。V2.21 增加 POA&M 整改计划，把控制发现项、责任人、整改行动、里程碑、证据、签署和 OSCAL POA&M 输出纳入闭环。V2.22 增加企业架构风险登记，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入闭环。V2.23 增加架构决策记录，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入闭环。V2.24 增加 AI 事件响应 playbook，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘纳入闭环。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。V2.12 增加审计导出自动化命令，把版本、控制目录、证据映射、导出清单、脚本和关键制品哈希生成可交付审计包。V2.13 增加控制评估报告，把证据包进一步闭环到控制结果、发现项、整改、剩余风险和签署状态。V2.14 增加架构基线变更记录，把基线升级的影响分析、审批、验证命令和回滚路径纳入可执行证据。V2.15 增加 OSCAL 交换映射和导出摘要，把内部控制证据映射到 catalog、component-definition、system-security-plan、assessment-results 和 POA&M 视图。V2.16 增加审计导出门禁，把导出包生成、JSON/Markdown/OSCAL 输出和关键不变量校验纳入 `make test`。V2.17 增加审计导出完整性清单，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。V2.18 增加审计导出 provenance statement，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。V2.19 增加审计导出签名策略，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入门禁。V2.20 增加审计导出签名验签回执，把外部签名完成后的 bundle 摘要、证书身份、OIDC issuer、透明日志和验签结果纳入证据链。V2.21 增加 POA&M 整改计划，把控制发现项、责任人、整改行动、里程碑、证据、签署和 OSCAL POA&M 输出纳入闭环。V2.22 增加企业架构风险登记，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入闭环。V2.23 增加架构决策记录，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入闭环。V2.24 增加 AI 事件响应 playbook，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘纳入闭环。V2.25 增加 AI 证据账本，把模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批、留存和复审纳入 AI 产品级证据闭环。V2.26 增加微调运行证据，把训练数据授权、数据准备、实验追踪、评估、模型登记、审批、灰度发布、监控和退役纳入 AI 微调审计闭环。V2.27 增加仓库变更控制，把 CODEOWNERS、受保护分支、PR 审查、必需检查、签名提交、禁止直推、发布 tag 保护、远端保护状态验证、漂移整改、POA&M 和风险登记纳入版本基线保护。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
 
-V2.24 起点包括：
+V2.27 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -149,7 +152,7 @@ V2.24 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `内部 starter kit` 下的 55 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
+9. Starter Kit：提供 `内部 starter kit` 下的 58 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、仓库变更控制、远端保护漂移整改、AI 证据账本、微调运行证据、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
 10. 版本清单：提供 `内部版本清单`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
 11. 控制项覆盖清单：提供 `内部控制项覆盖清单`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
 12. 严格 schema 模式：starter kit 的对象 schema 必须声明 `additionalProperties=false`，新增字段必须先进入契约、示例和 checker 证据链。
@@ -184,6 +187,9 @@ V2.24 起点包括：
 41. 企业架构风险登记：新增 `risk-register.yaml`，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入证据闭环。
 42. 架构决策记录：新增 `architecture-decision-record.yaml`，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入证据闭环。
 43. AI 事件响应 playbook：新增 `ai-incident-playbook.yaml`，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测信号、遏制、降级、回滚、RAG 恢复、工具 Kill Switch、沟通和复盘纳入 AI 运行证据闭环。
+44. AI 证据账本：新增 `ai-evidence.yaml`，把模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批、留存和复审汇总为 AI 产品级证据总账。
+45. 微调运行证据：新增 `fine-tuning-run.yaml`，把训练数据授权、数据准备、实验追踪、评估、模型登记、审批、灰度发布、监控和退役纳入 AI 微调审计闭环。
+46. 仓库变更控制：新增 `repository-change-control.yaml`，把 CODEOWNERS、受保护分支、PR 审查、必需检查、签名提交、禁止直推、发布 tag 保护、远端保护状态验证、漂移整改、POA&M 和风险登记纳入版本基线保护。
 
 ---
 
@@ -406,6 +412,647 @@ repo/
 | `governance/` | 标准、决策、门禁、风险和复盘真相 | 业务代码 |
 | `infra/` | 云资源、运行环境、安全、网络和灾备真相 | 业务逻辑 |
 | `shared/` | 无业务语义的薄复用真相 | 领域模型和业务流程 |
+
+这套目录结构的核心不是“所有企业都必须照抄这些文件夹”，而是把不同生命周期、不同 owner、不同风险等级的资产分开。目录名可以变，职责边界不能变。
+
+### 2.1.1 目录设计的四个判断问题
+
+新增任何目录或文件前，先回答四个问题：
+
+1. 这个资产的 owner 是谁：业务流团队、领域团队、平台团队、SRE、安全、数据治理还是架构治理委员会。
+2. 这个资产的变更频率是什么：随业务每天变、随发布变、随环境变、随治理周期变，还是只在架构决策时变。
+3. 这个资产的消费方是谁：人类开发者、CI/CD、Developer Portal、Kubernetes、审计系统、数据平台还是 AI Runtime。
+4. 这个资产是不是可执行真相源：能否被校验、生成、部署、路由、授权、审计或阻断发布。
+
+如果一个文件同时被多个团队频繁修改、同时服务人类阅读和机器执行、同时表达业务规则和部署细节，通常说明它放错了位置，或者需要拆成契约、实现、部署、目录和治理五类资产。
+
+### 2.1.2 核心目录的深度职责
+
+| 目录 | 主要 owner | 典型变更触发 | 机器消费方 | 深度说明 |
+| ---- | ---------- | ------------ | ---------- | -------- |
+| `apps/` | 体验团队 / 业务流团队 | 新渠道、新页面、新用户流程、A/B 实验 | CI、前端发布平台、观测系统 | 只承载体验交付和体验编排。它可以调用 BFF、API、工作流和 AI 体验入口，但不拥有领域事实，不直接读写领域数据库。 |
+| `ai/` | AI 产品团队 / AI 平台团队 | Prompt 发布、Agent 工具变更、RAG 索引更新、模型路由调整、评估门禁变化 | LLM Gateway、Agent Runtime、Evals、观测系统 | 管 AI 产品的运行资产。这里可以声明 Agent、Prompt、RAG、工具、评估、护栏和微调运行证据，但 AI 层不是新的业务真相源，不能绕过领域 API、数据产品和权限边界。 |
+| `domains/` | 领域团队 / Stream-aligned Team | 领域模型变化、业务服务发布、API/事件契约变化、数据产品发布 | CI、契约测试、catalog、数据平台 | 管领域能力产品。领域内可以放服务源码，但不是唯一合法形态；如果服务在独立仓或顶层 `services/`，必须通过 `service.yaml` 和 `catalog/components` 指回领域 owner、API、事件、数据产品和 GitOps 路径。 |
+| `platform/` | 平台团队 / Platform Team | Golden Path 迭代、脚手架升级、流水线模板升级、平台 API 变化 | Developer Portal、脚手架、CI/CD、准入系统 | 管“如何更容易、更安全地创建和交付”。平台不接管业务服务，也不直接成为每个服务的部署目录；它提供模板、能力、默认路径和自助入口。 |
+| `contracts/` | 契约 owner + 治理 owner | API、事件、数据、AI 工具、资源和策略契约变更 | CI、兼容性检查、代码生成、网关、策略引擎 | 管跨团队协作的机器契约。凡是会影响消费者、权限、兼容性、数据质量或发布准入的接口，都应能在这里或领域内等价位置找到机器可读契约。 |
+| `catalog/` | 平台团队 + 各资产 owner | 新服务、新 API、新数据产品、新 AI 产品、新资源登记 | Developer Portal、Scorecard、审计导出、依赖图 | 管“这是什么、谁负责、在哪里、依赖谁、成熟度如何”。catalog 是发现入口，不是源码仓、不是真实部署状态，也不是运行配置中心。 |
+| `governance/` | 架构治理 / 安全 / 数据治理 / 合规 | 标准变化、ADR、风险登记、例外审批、门禁升级、复盘反哺 | CI、审计系统、Policy as Code、评审流程 | 管规则、决策和证据。治理资产必须尽量机器可读：门禁、风险、例外、控制项、POA&M、ADR、证据账本都应能被自动校验或导出。 |
+| `infra/` | 平台工程 / SRE / 环境 owner | 环境变更、容量调整、镜像版本发布、集群策略、灾备演练 | GitOps、Kubernetes、云平台、观测系统 | 管运行底座和环境期望状态。它不拥有业务逻辑；它回答“跑在哪里、跑几个、用哪个 digest、什么资源、什么策略、什么发布方式”。 |
+| `shared/` | 平台团队或共享库 owner | 通用 SDK、测试夹具、无业务语义工具升级 | 编译、测试、代码生成 | 只能放薄复用能力。若共享代码开始表达订单、客户、支付、履约等业务概念，应回到对应领域，不应把 `shared/` 演化成隐形中台。 |
+
+### 2.1.3 单仓、多仓和混合仓的落地方式
+
+推荐目录结构可以映射到三种仓库拓扑：
+
+| 拓扑 | 适用场景 | 推荐做法 | 风险控制 |
+| ---- | -------- | -------- | -------- |
+| 单仓 Monorepo | 团队协作强、统一门禁成熟、需要跨域重构和统一发布证据 | 保留上述目录，所有资产在一个仓库内通过 CODEOWNERS、路径门禁和 CI 分层校验 | 必须避免所有团队都能随意改所有目录；按 `domains/`、`platform/`、`infra/`、`governance/` 切 owner 和审批规则 |
+| 多仓 Polyrepo | 服务高度自治、权限隔离强、团队发布节奏差异大 | 服务源码在各服务仓；中心仓保留 `contracts/`、`catalog/`、`governance/`、`platform/`、`infra/gitops/` 或用自动同步生成 | 必须用 catalog 记录 `sourceRoot`、`gitopsPath`、owner、API、事件、SLO、证据路径，避免服务失联 |
+| 混合仓 Hybrid | 企业最常见；平台、治理、GitOps 集中，领域服务部分集中、部分独立 | 领域核心契约、catalog、治理和 GitOps 集中；服务源码按团队成熟度放 `domains/*/services/*` 或独立服务仓 | 必须明确哪一份是契约真相源，避免中心仓和服务仓同时维护同一契约导致漂移 |
+
+是否把源码放在 `domains/*/services/*`，取决于仓库拓扑，而不是架构原则本身。架构原则只要求每个服务都能被追溯到：
+
+```text
+领域 owner -> 服务源码 -> API / Event 契约 -> 镜像构建定义 -> 制品 digest -> GitOps 期望状态 -> 运行观测 -> 审计证据
+```
+
+如果服务源码不在 `domains/*/services/*`，至少要在以下位置声明反向索引：
+
+```yaml
+service: customer-profile-service
+domain: customer
+owner: team-customer
+sourceRoot: https://git.example.com/customer/customer-profile-service
+catalogComponent: catalog/components/customer-profile-service.yaml
+gitopsPath: infra/gitops/environments/prod/customer/customer-profile-service
+apis:
+  - contracts/apis/customer-profile.openapi.yaml
+events:
+  publishes:
+    - contracts/events/customer.profile.updated.asyncapi.yaml
+```
+
+### 2.1.4 文件放置决策表
+
+| 要放的东西 | 推荐位置 | 不推荐位置 | 原因 |
+| ---------- | -------- | ---------- | ---- |
+| 服务源码 | `domains/{domain}/services/{service}/` 或独立服务仓并在 catalog 声明 | `platform/`、`infra/` | 服务属于领域能力，不属于平台模板或环境配置 |
+| Dockerfile / Containerfile | 服务源码目录 | `infra/gitops/` | Dockerfile 描述如何构建运行单元，不描述某环境部署哪个版本 |
+| 生产镜像版本 | `infra/gitops/environments/prod/...` 使用 digest | `domains/*/services/*` | 生产运行期望状态由环境 owner 管，不应由源码目录暗含 |
+| OpenAPI / AsyncAPI | `contracts/` 或 `domains/*/apis`、`domains/*/events` | `docs/` | 契约要能被 CI、网关、代码生成和兼容性检查消费 |
+| 数据产品契约 | `domains/*/data-products/` 和 `contracts/datasets/` | BI 报表目录 | 数据产品是可治理资产，不只是报表输入 |
+| RAG 索引契约 | `contracts/ai/`、`ai/rag/` | 应用代码常量 | RAG 来源、权限、刷新和删除策略需要审计和回滚 |
+| Prompt 版本 | `ai/prompts/` 或 `contracts/ai/prompts/` | 工程代码硬编码 | Prompt 是可评估、可回滚、可审批资产 |
+| 微调运行证据 | `ai/fine-tuning/`、`governance/evidence/ai/` 或 starter kit 的 `fine-tuning-run.yaml` | 模型平台截图、聊天记录 | 微调必须证明数据授权、实验追踪、评估、登记、审批和回滚 |
+| Kubernetes Deployment | `infra/kubernetes/` 或 `infra/gitops/` | 服务源码目录作为唯一真相 | Deployment 是环境期望状态，和服务构建定义生命周期不同 |
+| 服务 owner 和依赖关系 | `catalog/components/` + `domains/*/domain.yaml` | README 手写说明 | owner、依赖和生命周期要能被 Developer Portal、审计和 scorecard 消费 |
+| 架构决策 | `governance/decisions/` | 即时聊天记录 | ADR 需要可追溯、可复审、能关联风险和控制项 |
+| 安全例外 | `governance/architecture-gates/` 或 `governance/evidence/` | CI 注释、临时豁免变量 | 例外必须有 owner、到期时间、补偿控制和自动阻断 |
+
+### 2.1.5 最小可执行落地包
+
+如果企业不能一次性建立完整目录，最低也要先落下以下资产：
+
+```text
+domains/{domain}/domain.yaml             # 领域边界、owner、SLO 和上下游
+domains/{domain}/services/{service}/     # 服务源码或 sourceRoot 指针
+contracts/apis/                          # 对外 API 契约
+contracts/events/                        # 跨域事件契约
+contracts/ai/                            # AI 工具、RAG、Prompt、微调和评估契约
+catalog/components/                      # 服务发现、owner、生命周期和 GitOps 路径
+catalog/data-products/                   # 数据产品发现和 owner
+catalog/ai-products/                     # AI 产品发现、风险等级和证据路径
+infra/gitops/environments/               # 环境期望状态
+platform/golden-paths/                   # 标准创建和交付路径
+governance/standards/                    # 标准
+governance/decisions/                    # ADR
+governance/architecture-gates/           # 发布门禁
+governance/evidence/                     # 审计和验证证据
+```
+
+这个最小包能先回答企业落地最关键的问题：
+
+1. 谁拥有这个能力。
+2. 能力的源码在哪里。
+3. 它对外承诺什么契约。
+4. 它部署到哪里、用哪个版本。
+5. 它是否满足发布门禁。
+6. 它的风险、例外、决策和证据在哪里。
+
+### 2.1.6 字段级真相源矩阵
+
+目录结构真正落地时，最容易出问题的不是目录名，而是同一个字段被多处维护。以下字段必须有明确主责位置：
+
+| 字段或信息 | 权威真相源 | 允许的派生位置 | 冲突时以谁为准 |
+| ---------- | ---------- | -------------- | -------------- |
+| 领域 owner、领域边界、领域 SLO | `domains/{domain}/domain.yaml` | `catalog/domains/`、治理评审报告 | `domain.yaml` |
+| 服务 owner、生命周期、runbook | `domains/*/services/*/service.yaml` 或服务仓同名契约 | `catalog/components/`、Developer Portal | `service.yaml` |
+| 服务源码位置 | 服务仓路径或 `domains/*/services/*` | `catalog/components/*.yaml` 的 `sourceRoot` | 实际 Git 源码仓 |
+| 镜像构建方式 | 服务目录 `Dockerfile` / `Containerfile` | 平台脚手架、CI 模板 | 服务目录构建定义 |
+| 镜像制品 digest | Container Registry / provenance | `infra/gitops/`、发布证据 | registry digest + provenance |
+| prod 部署版本、replicas、资源限制 | `infra/gitops/environments/prod/...` | catalog 运行摘要、观测面板 | GitOps 期望状态 |
+| API 契约 | `contracts/apis/` 或 `domains/*/apis/` | API portal、catalog/apis | 机器可读 OpenAPI / GraphQL 契约 |
+| 事件契约 | `contracts/events/` 或 `domains/*/events/` | 事件目录、消息平台 UI | 机器可读 AsyncAPI / Schema 契约 |
+| 数据产品口径、质量、访问策略 | `domains/*/data-products/` + `contracts/datasets/` | catalog/data-products、数据目录 | 数据产品契约 |
+| Prompt、RAG、工具和评估契约 | `ai/` + `contracts/ai/` | catalog/ai-products、AI 观测面板 | 版本化 AI 契约 |
+| 微调数据授权和运行证据 | `ai/fine-tuning/` 或 `governance/evidence/ai/` | starter kit、模型登记系统 | `fine-tuning-run` 证据 |
+| 发布门禁、例外和风险接受 | `governance/architecture-gates/`、`risk-register/`、`evidence/` | PR 评论、审计导出 | 治理证据 |
+
+冲突处理原则：
+
+1. 机器可读契约优先于自然语言说明。
+2. 环境级 GitOps 配置优先于服务默认值。
+3. catalog 负责发现和索引，不能覆盖源码、契约和部署真相。
+4. governance 可以阻断发布、记录例外和要求补偿控制，但不应成为业务字段的日常编辑入口。
+5. README 只能解释，不应成为唯一事实来源；凡是影响发布、权限、兼容性、审计和运行状态的字段，都应进入可校验文件。
+
+### 2.1.7 典型变更链路
+
+目录结构要服务真实工作流。以下三条链路是企业落地时最需要固定的路径。
+
+新建生产微服务：
+
+```text
+领域建模
+-> domains/{domain}/domain.yaml 声明边界和 owner
+-> domains/{domain}/services/{service}/ 或独立服务仓创建源码
+-> service.yaml 声明端口、依赖、SLO、资源诉求和镜像仓库
+-> contracts/apis 与 contracts/events 声明外部协作契约
+-> catalog/components 注册服务和 sourceRoot/gitopsPath
+-> CI 构建镜像、生成 SBOM、provenance、签名和漏洞扫描证据
+-> infra/gitops/environments/{env}/... 声明部署版本和运行策略
+-> governance/evidence 记录生产就绪、发布证据和例外
+```
+
+发布数据产品：
+
+```text
+领域确认数据语义
+-> domains/{domain}/data-products/{data-product}.yaml 声明 owner、指标、SLO 和消费者
+-> contracts/datasets/ 声明 Schema、质量规则、访问策略和保留期限
+-> data-platform 接入血缘、质量检查、权限审批和数据目录
+-> catalog/data-products 注册可发现入口
+-> governance/data-governance 记录 PII、授权、例外和复审周期
+```
+
+发布 AI 产品或 Agent：
+
+```text
+AI 产品定义
+-> ai/applications 或 ai/agents 声明场景、风险等级、工具权限和人工确认点
+-> ai/prompts、ai/rag、ai/tools、ai/evals 版本化 Prompt、检索、工具和评估
+-> contracts/ai/ 固化工具、RAG、Prompt、评估、微调和护栏契约
+-> model-gateway 配置模型路由、限流、成本预算和降级链路
+-> governance/ai-governance 与 governance/evidence/ai 记录审批、证据账本和微调运行证据
+-> catalog/ai-products 注册 owner、风险等级、运行入口、依赖和 scorecard
+```
+
+这三条链路的共同点是：源码、契约、目录、部署、治理和证据必须串起来。只建目录、不建链路，目录会退化成静态分类；只建链路、不分真相源，系统会在规模扩大后失控。
+
+### 2.1.8 目录拆分和合并规则
+
+目录是否需要独立出来，按以下规则判断：
+
+1. owner 不同就倾向拆分：领域团队、平台团队、SRE、安全、数据治理和 AI 治理不应频繁编辑同一类文件。
+2. 生命周期不同就倾向拆分：源码随业务发布变，GitOps 随环境变，治理标准随审查周期变，审计证据随发布和复审变。
+3. 机器消费方不同就倾向拆分：Kubernetes、CI、Developer Portal、策略引擎、审计导出和人类文档不应依赖同一份非结构化文本。
+4. 风险等级不同就倾向拆分：生产部署、权限策略、模型工具调用、PII 数据、密钥和供应链证据必须有更严格 owner 和门禁。
+5. 没有稳定 owner、没有机器消费方、没有门禁价值的目录不要新增；先放入既有目录，等变更频率和职责边界稳定后再拆。
+6. 一个目录如果开始同时承载业务规则、平台模板、环境部署和治理审批，应立即拆成 `domains/`、`platform/`、`infra/` 和 `governance/`。
+7. 一个共享目录如果出现领域名词，应回到领域；共享层只能放无业务语义的 SDK、工具、测试夹具和生成代码。
+
+### 2.1.9 常见错误
+
+1. 把 `platform/` 做成新的大中台，把业务规则、服务部署和审批流程全部塞进去。
+2. 把 `shared/` 做成跨域业务模型垃圾桶，让多个领域通过共享对象强耦合。
+3. 把 `catalog/` 当部署系统，在目录条目里维护 replicas、资源限制和灰度策略。
+4. 把 `docs/` 当契约真相源，只写自然语言说明，没有 OpenAPI、AsyncAPI、JSON Schema 或策略文件。
+5. 把 `infra/` 当业务仓，在 Helm values 或 Kustomize patch 里隐藏业务开关和业务规则。
+6. 把 AI Prompt、RAG 来源、工具权限和微调审批写在应用代码里，导致无法评估、回滚和审计。
+7. 只有服务仓，没有中心 catalog、契约和治理索引，导致企业无法回答“谁依赖谁、谁负责、风险在哪”。
+
+### 2.1.10 目录级 owner、审批和门禁
+
+目录结构只有和 owner、审批规则、自动门禁绑定，才会从“文件夹分类”变成“工程治理系统”。推荐按目录设置
+CODEOWNERS、必需检查和变更证据：
+
+| 路径 | 推荐 owner | 最低审批 | 必需门禁 | 变更证据 |
+| ---- | ---------- | -------- | -------- | -------- |
+| `apps/**` | 体验团队 / 业务流团队 | 应用 owner 1 人 | 单元测试、构建、前端质量、可访问性、契约消费检查 | 发布记录、回滚计划、体验指标 |
+| `ai/**` | AI 产品 owner + AI 平台 owner | AI owner 1 人；高风险工具另需治理审批 | Prompt/RAG/Evals、工具权限、成本预算、护栏、AI 事件响应检查 | AI 证据账本、评估报告、模型/Prompt 版本记录 |
+| `domains/{domain}/**` | 对应领域团队 | 领域 owner 1 人；跨域契约需消费者确认 | 领域测试、契约兼容、SLO、数据产品质量、scorecard | domain 变更记录、契约变更记录 |
+| `platform/**` | 平台团队 | 平台 owner 1 人；破坏性 Golden Path 变更需架构复审 | 脚手架测试、模板回归、平台 API 兼容、开发者体验指标 | 平台发布说明、迁移指南 |
+| `contracts/**` | 契约 owner + 消费者代表 | producer 和至少一个 consumer | OpenAPI/AsyncAPI/Schema 兼容、策略测试、breaking change 检查 | 契约版本、兼容性报告 |
+| `catalog/**` | 平台团队 + 资产 owner | 资产 owner 1 人 | catalog schema、owner 存在性、sourceRoot/gitopsPath 可达性 | 目录同步报告、scorecard |
+| `governance/**` | 架构治理 / 安全 / 数据治理 | 治理 owner 1 人；控制项变更需双人审批 | 控制项覆盖、证据新鲜度、风险/POA&M/ADR 链接完整性 | ADR、风险登记、审计导出 |
+| `infra/**` | SRE / 平台工程 / 环境 owner | 环境 owner 1 人；生产变更需 SRE 审批 | GitOps diff、策略准入、镜像验签、资源限制、灾备影响检查 | 变更单、GitOps 同步记录、回滚证据 |
+| `shared/**` | 共享库 owner | owner 1 人；破坏性变更需所有消费者确认 | API 兼容、依赖影响、反向依赖测试 | 版本说明、消费者迁移记录 |
+
+最重要的规则是：目录 owner 不是“通知人”，而是对资产正确性、演进节奏和事故后果负责的人。审批不能只看
+Markdown 是否写得好，而要验证契约、门禁、证据和运行路径是否闭合。
+
+目录级门禁建议分三层：
+
+1. 路径门禁：用 CODEOWNERS、受保护分支、禁止直推和必需检查保护关键目录。
+2. 语义门禁：用 schema、契约兼容、策略测试、scorecard 和风险规则判断内容是否合理。
+3. 证据门禁：要求每次关键变更绑定 ADR、发布证据、审计证据、风险接受或 POA&M 整改记录。
+
+### 2.1.11 目录和企业工具链的映射
+
+企业落地时，不应要求人手工维护所有索引。目录结构应被成熟工具链消费、校验和回写摘要：
+
+| 工具链能力 | 读取的目录 | 写入或生成的资产 | 关键门禁 |
+| ---------- | ---------- | ---------------- | -------- |
+| Developer Portal | `catalog/`、`domains/`、`contracts/`、`governance/scorecards` | 服务地图、API 门户、数据产品目录、AI 产品目录、scorecard | owner、生命周期、依赖、runbook 必填 |
+| CI/CD | `apps/`、`domains/`、`ai/`、`contracts/`、`shared/` | 构建产物、测试报告、SBOM、provenance、发布证据 | 测试、契约兼容、漏洞、签名、质量阈值 |
+| Container Registry | 服务目录构建定义、CI provenance | 镜像 tag、digest、签名、漏洞报告 | 禁止使用未签名镜像进入生产 GitOps |
+| GitOps / CD | `infra/gitops/`、`infra/kubernetes/` | 环境同步状态、漂移报告、发布历史 | production 使用 digest、策略准入、回滚路径 |
+| API Gateway | `contracts/apis/`、`catalog/apis/` | 路由、鉴权、限流、审计日志 | OpenAPI 合法、权限策略存在、breaking change 受控 |
+| Event Platform | `contracts/events/`、`catalog/` | topic、schema registry、消费者拓扑 | 事件兼容、owner、保留期限、PII 标记 |
+| Data Platform | `domains/*/data-products/`、`contracts/datasets/` | 数据目录、血缘、质量报告、访问审批 | 质量 SLO、PII、保留期限、授权边界 |
+| AI Platform | `ai/`、`contracts/ai/`、`catalog/ai-products/` | Prompt 版本、RAG 索引、评估结果、模型路由 | Evals、Guardrails、预算、人工确认点 |
+| Observability | `catalog/`、`service.yaml`、`domain.yaml`、`infra/` | SLO、仪表盘、告警、错误预算 | owner、SLO、日志/指标/链路追踪接入 |
+| GRC / Audit | `governance/`、`controls.json`、`evidence/`、starter kit | 控制评估、审计导出、POA&M、风险视图 | 证据新鲜度、控制覆盖、签署状态 |
+
+这张映射的意义是把目录从“人看的结构”升级为“工具能执行的接口”。如果某个目录没有稳定 owner、没有工具消费、
+没有门禁和证据输出，就不应被列为企业级标准目录。
+
+### 2.1.12 从现有项目迁移到目标结构
+
+迁移不要从重命名目录开始，而要先找真相源、定 owner、补契约，再逐步移动文件。推荐路径如下：
+
+| 阶段 | 目标 | 动作 | 禁止误区 |
+| ---- | ---- | ---- | -------- |
+| L0 盘点 | 看清现状 | 列出服务、API、事件、数据库、数据产品、AI 资产、部署路径、owner 和证据位置 | 直接批量移动目录，导致 CI、部署和文档同时失效 |
+| L1 索引 | 先能发现 | 建 `catalog/`，为每个服务、数据产品、AI 产品和资源建立 owner、sourceRoot、gitopsPath | 把 catalog 当新的手工台账，不接 CI 和 portal |
+| L2 契约 | 先稳边界 | 把 OpenAPI、AsyncAPI、数据产品、AI 工具和策略契约迁入 `contracts/` 或领域内等价位置 | 只迁 README，不迁机器可读契约 |
+| L3 部署 | 分离运行状态 | 把环境级部署期望状态收敛到 `infra/gitops/`，生产使用镜像 digest 和策略准入 | 让服务源码目录同时决定 prod 版本和资源配额 |
+| L4 治理 | 补齐控制 | 增加 `governance/`、ADR、门禁、风险、POA&M、证据和目录级 owner | 只增加审批流程，不增加自动校验和证据 |
+| L5 平台化 | 降低认知负载 | 用 `platform/golden-paths`、脚手架、portal 和 scorecard 把标准路径产品化 | 让每个团队手写一套不同模板和检查脚本 |
+
+迁移期间可以长期保持混合形态：新服务走目标结构，旧服务通过 catalog 指针接入。真正要避免的是同一事实在旧目录和新目录
+双写。任何双写字段都必须有主真相源、派生方向和漂移检查。
+
+### 2.1.13 目录结构验收清单
+
+一套目录结构是否合格，不看目录名是否“先进”，看它能否稳定回答以下问题：
+
+1. 每个服务是否能找到领域 owner、源码位置、契约、GitOps 路径、SLO、runbook 和最近一次发布证据。
+2. 每个 API 和事件是否有机器可读契约、兼容规则、消费者影响面和 breaking change 流程。
+3. 每个数据产品是否有 owner、语义口径、质量规则、访问策略、PII 标记、血缘和复审周期。
+4. 每个 AI 产品是否有 Prompt/RAG/工具/模型/评估/护栏/预算/人工确认点/事件响应证据。
+5. 每个生产部署是否由 GitOps 管理，并明确镜像 digest、资源限制、HPA、策略准入和回滚路径。
+6. 每个共享库是否能证明没有承载领域业务语义，并有反向依赖测试和破坏性变更流程。
+7. 每个治理控制项是否能映射到 schema、示例、checker、证据路径和审计导出结果。
+8. 每个目录是否有 CODEOWNERS、必需检查、变更证据和定期 owner 复核。
+9. 每个关键字段是否只有一个权威真相源，catalog 和文档是否只是派生视图或说明。
+10. 新人能否通过 Developer Portal 或 catalog 在 10 分钟内找到某个能力的 owner、契约、运行状态和风险。
+
+如果以上问题无法回答，说明目录只是“看起来现代”，还没有形成可运营、可审计、可演进的企业架构骨架。
+
+### 2.1.14 服务源码组织的合法形态
+
+`domains/{domain}/services/{service}/` 是推荐默认值，不是唯一正确答案。它的优点是领域边界、服务源码、API、
+事件、数据产品和 owner 放在同一上下文里，新人容易理解“这个服务为什么存在”。但企业真实落地时，源码位置往往受
+团队历史、权限隔离、构建系统、语言生态和发布节奏影响。判断一个服务放得对不对，不看目录名字，而看服务能否稳定
+接入领域、契约、catalog、GitOps、治理和审计链路。
+
+常见形态如下：
+
+| 形态 | 示例路径 | 适用场景 | 必须补齐的索引 |
+| ---- | -------- | -------- | -------------- |
+| 领域内服务 | `domains/customer/services/customer-profile-service/` | 单仓或领域仓；领域团队对模型、服务和契约端到端负责 | `service.yaml`、`domain.yaml`、catalog component、GitOps 路径 |
+| 顶层服务目录 | `services/customer-profile-service/` 或 `services/customer/customer-profile-service/` | 历史仓库已有 `services/` 约定；平台工具默认扫描顶层服务 | `service.yaml.domain`、`service.yaml.owner`、catalog component、领域映射 |
+| 语言工作区 | `packages/customer-profile-service/`、`apps/customer-api/` | Node、Go、Java、.NET 等 monorepo workspace 已有生态约定 | workspace package metadata、`service.yaml`、catalog sourceRoot |
+| 独立服务仓 | `git@example.com/customer/customer-profile-service.git` | 多仓自治、权限隔离强、服务发布节奏差异大 | 中心 catalog 的 `sourceRoot`、契约路径、GitOps 路径、证据路径 |
+| 遗留系统适配仓 | `legacy-adapters/customer-mainframe-adapter/` | 旧系统绞杀迁移、主机/ERP/SaaS 集成、反腐层建设 | 领域归属、接口契约、迁移状态、弃用计划、风险登记 |
+
+无论源码放在哪里，都必须满足以下不变量：
+
+```yaml
+service: customer-profile-service
+domain: customer
+owner: team-customer
+sourceRoot: domains/customer/services/customer-profile-service
+runtimeUnit: container
+buildDefinition: Dockerfile
+catalogComponent: catalog/components/customer-profile-service.yaml
+gitopsPath: infra/gitops/environments/prod/customer/customer-profile-service
+apiContracts:
+  - contracts/apis/customer-profile.openapi.yaml
+eventContracts:
+  publishes:
+    - contracts/events/customer.profile.updated.asyncapi.yaml
+sloRef: governance/slo/tier-2.yaml
+runbook: governance/playbooks/customer-profile-service.md
+```
+
+目录名只是线索，不是治理事实。最终权威必须落在机器可读契约里：`service.yaml` 说明服务是谁、怎么构建、依赖什么；
+`domain.yaml` 说明领域边界和 owner；`catalog/components` 提供发现入口；`infra/gitops` 说明生产跑哪个版本；治理证据说明
+能否发布、谁批准、风险是否接受。
+
+### 2.1.15 单个服务目录的最小内部结构
+
+一个服务目录不应只是源码文件夹，而应是“可构建、可测试、可观测、可审计”的运行单元源头。推荐最小结构如下：
+
+```text
+customer-profile-service/
+├── README.md                    # 给人看的服务说明、启动方式、依赖和排障入口
+├── service.yaml                 # 给机器看的服务契约：owner、domain、端口、依赖、SLO、镜像仓库
+├── Dockerfile                   # 镜像构建定义；生产使用 digest，不把镜像本体提交进 Git
+├── src/                         # 服务源码；具体结构服从语言生态和框架最佳实践
+├── tests/                       # 单元测试、组件测试和契约消费测试
+├── apis/                        # 服务拥有的本地 API 契约；可同步或引用到 contracts/apis/
+├── events/                      # 服务发布/订阅的本地事件契约；可同步或引用到 contracts/events/
+├── migrations/                  # 该服务独占数据库的 schema 迁移；跨域共享库禁止放这里
+├── config/                      # 非敏感默认配置和本地开发配置；不保存生产密钥
+├── runbooks/                    # 服务级操作手册；企业级通用 playbook 仍放 governance/
+└── docs/                        # 设计说明、领域补充和局部 ADR 链接
+```
+
+服务目录内允许放“构建和运行这个服务所需的默认事实”，不允许放“某个环境的最终部署事实”。例如端口、健康检查路径、
+依赖声明、最低资源诉求、镜像仓库名称可以放在 `service.yaml`；生产副本数、生产镜像 digest、生产命名空间、生产
+ServiceAccount、生产 HPA 阈值应放在 `infra/gitops/environments/prod/...`。
+
+| 内容 | 放服务目录 | 放 GitOps / Infra | 原因 |
+| ---- | ---------- | ----------------- | ---- |
+| 服务源码、测试、Dockerfile | 是 | 否 | 它们描述如何构建服务 |
+| 默认端口、健康检查、依赖声明 | 是 | 可派生 | 它们属于服务运行契约 |
+| 生产镜像 digest | 否 | 是 | 它属于环境期望状态和发布证据 |
+| 生产 replicas、HPA、PDB | 否 | 是 | 它们随环境和容量策略变化 |
+| 明文 Secret | 否 | 否 | 只能保存 Secret 引用和外部密钥绑定 |
+| 跨域数据库访问脚本 | 否 | 否 | 违反领域边界，应改为 API、事件或数据产品协作 |
+
+如果一个服务目录开始承载多个领域的业务规则，说明服务边界过大；如果一个服务目录开始维护生产环境策略，说明源码和
+运行期望状态混在了一起；如果一个服务目录没有 `service.yaml` 或等价契约，说明它还不能被平台和审计系统稳定识别。
+
+### 2.1.16 GitOps 目录的最小内部结构
+
+GitOps 目录回答的是“某个环境期望运行什么”，不是“服务代码是什么”。推荐把环境无关 base、环境 overlay 和环境级
+发布状态分开：
+
+```text
+infra/
+├── kubernetes/
+│   ├── base/
+│   │   └── services/
+│   │       └── customer-profile-service/
+│   │           ├── deployment.yaml     # 环境无关工作负载骨架
+│   │           ├── service.yaml        # Kubernetes Service，不等同于业务 service.yaml
+│   │           ├── hpa.yaml            # 默认自动扩缩容策略
+│   │           ├── pdb.yaml            # 可用性保护
+│   │           ├── network-policy.yaml # 默认网络边界
+│   │           └── kustomization.yaml
+│   └── policies/
+│       ├── image-verification/         # 镜像签名、SBOM、provenance 准入
+│       ├── pod-security/               # Pod 安全基线
+│       └── network/                    # 集群网络策略
+└── gitops/
+    └── environments/
+        ├── dev/customer/customer-profile-service/
+        │   └── kustomization.yaml      # 开发环境 overlay，可使用短生命周期 tag
+        ├── staging/customer/customer-profile-service/
+        │   └── kustomization.yaml      # 预发环境 overlay，接近生产
+        └── prod/customer/customer-profile-service/
+            ├── kustomization.yaml      # 生产 overlay，必须引用不可变 digest
+            ├── rollout.yaml            # 金丝雀、蓝绿或渐进式发布策略
+            └── release-evidence.yaml   # 发布证据索引或指针
+```
+
+GitOps 目录的关键规则：
+
+1. `base/` 只放环境无关模板，不写生产专属镜像版本、命名空间和容量。
+2. `dev/` 可以更灵活，但仍不应绕过镜像扫描和基础策略。
+3. `staging/` 应尽量接近生产，用来验证迁移、发布策略、回滚和观测。
+4. `prod/` 必须使用不可变镜像 digest，禁止只用可变 tag 作为生产准入依据。
+5. GitOps 记录期望状态，实际运行状态由 Kubernetes、Argo CD、Flux 和观测系统提供。
+6. 环境 owner 对 replicas、资源配额、节点选择、灰度策略和回滚窗口负责，服务 owner 对镜像和服务行为负责。
+
+这层拆清楚后，服务团队可以高频提交源码，平台或 SRE 可以稳定治理环境，审计人员可以追溯“哪个 commit 构建了哪个
+镜像、哪个 digest 被部署到哪个环境、哪次 GitOps 同步把它推到生产”。
+
+### 2.1.17 Catalog、service.yaml 和 domain.yaml 的去重规则
+
+catalog 的价值是发现和索引，不是制造新的手工台账。最稳的做法是让 `domain.yaml`、`service.yaml`、GitOps 和契约文件
+成为字段真相源，catalog 通过同步、生成或校验来汇总。如果必须人工维护 catalog，也必须记录 sourceRef 和 lastSynced，
+并由 CI 检查 catalog 与源契约是否漂移。
+
+| 字段 | 主真相源 | catalog 中的角色 | 漂移处理 |
+| ---- | -------- | ---------------- | -------- |
+| 领域边界、领域 owner | `domains/{domain}/domain.yaml` | 展示领域地图和团队入口 | catalog 不得覆盖；冲突时阻断合并 |
+| 服务 owner、生命周期、运行等级 | `service.yaml` | 展示服务卡片和 scorecard | catalog 只能派生或引用 |
+| 源码位置 | 实际 Git 路径 / `sourceRoot` | 提供跳转入口 | 路径不可达时阻断 catalog 检查 |
+| API / Event 契约 | `contracts/` 或领域内契约 | 提供 API 门户和消费者索引 | 契约缺失或版本不兼容时阻断发布 |
+| GitOps 路径 | `infra/gitops/` | 提供环境入口和发布状态摘要 | catalog 不维护 replicas 和 digest |
+| SLO、runbook、on-call | `service.yaml` + `governance/slo/` | 聚合到服务详情页 | 缺 owner、缺 runbook 或缺 SLO 时降 scorecard |
+| 生产运行状态 | Kubernetes / Argo CD / Observability | 展示只读摘要 | 运行状态不回写为 catalog 真相 |
+
+推荐的同步方向如下：
+
+```text
+domain.yaml + service.yaml + contracts/* + infra/gitops/*
+  -> catalog/components/*
+  -> Developer Portal / Scorecard / 审计导出
+```
+
+反方向更新只能用于辅助生成 PR，不能让 portal 表单直接无审查地改写领域契约、生产 GitOps 或治理证据。这样可以避免
+“看起来所有系统都有信息，实际上每个系统都维护一份不同事实”的失控状态。
+
+### 2.1.18 目录级说明文件和 AI 协作边界
+
+企业仓库越来越多由人类、CI、平台机器人和 AI agent 共同维护。目录结构不仅要让人能看懂，也要让自动化工具知道哪里
+能改、哪里不能改、改完要跑什么检查。推荐每个一级目录至少有 `README.md`，需要 AI 或自动化协作的关键目录再补
+`AGENTS.md` 或等价维护说明。
+
+| 文件 | 读者 | 应说明的内容 | 不应承担的职责 |
+| ---- | ---- | ------------ | -------------- |
+| `README.md` | 人类开发者、架构师、审计人员 | 目录用途、入口、常见流程、运行方式、参考链接 | 不作为机器契约唯一来源 |
+| `AGENTS.md` | AI agent、自动化脚本维护者 | 可改范围、禁止事项、验证命令、目录边界、常见坑 | 不保存业务事实和生产状态 |
+| `*.schema.json` | CI、生成器、审计导出 | 字段结构、类型、必填项和扩展边界 | 不解释业务背景 |
+| `*.example.yaml` | 团队落地样例、测试夹具 | 最小可执行字段、跨文件一致性示例 | 不替代真实项目配置 |
+
+目录级说明文件要短、准、可执行。它应该告诉后来者“这个目录为什么存在、谁负责、文件怎么放、改完跑什么门禁”，而不是
+复制主架构文档。主文档说明原则，目录说明文件约束局部行为，schema 和 checker 负责机器验证。
+
+### 2.1.19 不同规模企业的落地深度
+
+目录结构可以分阶段落地，不能为了“看起来完整”一次性铺满所有目录。不同规模的组织应采用不同深度：
+
+| 阶段 | 适用组织 | 必须具备 | 可以暂缓 |
+| ---- | -------- | -------- | -------- |
+| S0 起步 | 少量团队、少量服务 | `domains/`、`contracts/apis/`、`catalog/components/`、`infra/gitops/`、`governance/decisions/` | 完整平台门户、完整审计导出、全量 scorecard |
+| S1 产品化 | 多领域、多服务、开始平台化 | `platform/golden-paths`、`service.yaml`、API/Event 契约、GitOps 环境分层、CODEOWNERS | 复杂 FinOps、全量 OSCAL、自动化证据新鲜度 |
+| S2 规模化 | 多业务线、多团队、多环境 | Developer Portal、数据产品目录、AI 产品目录、供应链证据、风险/POA&M、scorecard | 少数低风险遗留系统可通过 catalog 指针接入 |
+| S3 受监管 | 金融、医疗、政企、关键基础设施 | 审计导出、控制评估、签名验签、访问复核、证据新鲜度、事故复盘、合规映射 | 手工例外必须有到期和补偿控制 |
+
+阶段越早，越要避免目录过度复杂；阶段越成熟，越要避免事实散落在聊天记录、平台 UI、人工表格和个人经验里。成熟度提升的
+标志不是目录变多，而是更多关键事实可以被机器校验、被 portal 发现、被审计导出、被运行系统证明。
+
+### 2.1.20 目录变更评审清单
+
+新增、移动或删除目录时，必须先回答以下问题，再进入执行：
+
+1. 这个目录是否有明确 owner；如果没有 owner，不应新增。
+2. 这个目录是否承载新的真相源；如果只是分类更好看，不应新增。
+3. 这个目录的机器消费方是谁；如果没有 CI、portal、GitOps、策略引擎或审计消费方，应先放入现有目录。
+4. 这个目录是否会和已有目录维护同一字段；如果会，必须定义主真相源和派生方向。
+5. 这个目录是否需要 CODEOWNERS、分支保护、必需检查或发布证据；如果需要，必须同步补门禁。
+6. 这个目录是否影响现有服务、契约、GitOps 或审计导出；如果影响，必须补迁移计划和回滚路径。
+7. 这个目录是否降低团队认知负载；如果只是增加文件层级和审批步骤，应回到平台产品化设计。
+
+目录变更的验收不应只看“文件移动完成”。真正完成的标准是：旧路径有迁移说明，新路径有 owner 和说明文件，相关契约、
+catalog、GitOps、治理证据和自动化检查都能找到新位置，并且没有同一事实在新旧路径双写。
+
+### 2.1.21 目录结构的三类事实
+
+企业级目录结构不是简单的文件分类，而是在仓库中表达三类事实：权威事实、派生事实和观察事实。把这三类事实混在一起，
+是目录越做越乱的根因。
+
+| 事实类型 | 定义 | 典型位置 | 变更方式 | 校验方式 |
+| -------- | ---- | -------- | -------- | -------- |
+| 权威事实 | 某个字段或行为的唯一真相源 | `domains/`、`contracts/`、`infra/gitops/`、`governance/` | 通过 PR、owner 审批和门禁修改 | schema、contract test、policy check、CODEOWNERS |
+| 派生事实 | 从权威事实生成或同步出来的索引、视图、门户卡片 | `catalog/`、Developer Portal、审计导出包 | 自动生成或受控同步 | 漂移检测、sourceRef、lastSynced |
+| 观察事实 | 运行系统在某一时刻观测到的实际状态 | Kubernetes、Argo CD、Flux、Observability、SIEM | 由运行系统产生，不手写入 Git | SLO、告警、运行探针、审计日志 |
+
+因此，`catalog/components/customer-profile-service.yaml` 可以展示生产环境当前状态摘要，但不能成为生产副本数、镜像 digest
+或资源配额的权威来源；`docs/` 可以解释领域设计，但不能替代 `domain.yaml`、OpenAPI、AsyncAPI 或数据产品契约；平台
+门户可以提供修改入口，但最终仍应生成 PR，由对应权威目录完成审查、合并、部署和审计。
+
+判断某个字段应该放在哪里时，优先使用以下规则：
+
+1. 会直接改变业务行为的字段，放领域或 AI 产品的权威契约中。
+2. 会直接改变生产运行状态的字段，放 `infra/gitops/` 或环境 IaC 中。
+3. 会改变跨团队兼容性的字段，放 `contracts/` 或领域内等价契约中。
+4. 会改变准入、风险、合规或例外处理的字段，放 `governance/` 中。
+5. 只用于发现、导航、搜索和聚合展示的字段，放 `catalog/`，并指向权威来源。
+6. 只用于解释背景、设计原因和操作说明的内容，放 `docs/` 或局部 `README.md`。
+
+### 2.1.22 目录与自动化链路
+
+成熟的目录结构必须能被工具链消费。否则它只是“看起来整齐”的文档目录，无法形成平台能力。
+
+```text
+service.yaml / domain.yaml / contracts/*
+  -> CI 契约校验
+  -> catalog 同步
+  -> Developer Portal 展示
+  -> scorecard 评分
+  -> release gate 准入
+  -> audit export 证据导出
+
+Dockerfile / SBOM / provenance / signature
+  -> CI 构建
+  -> registry 入库
+  -> 镜像签名和验签
+  -> GitOps 引用 digest
+  -> Kubernetes 准入控制
+
+infra/gitops/environments/*
+  -> Argo CD / Flux 同步
+  -> runtime 状态观测
+  -> SLO 和告警
+  -> 事故响应和回滚证据
+
+governance/* / controls.json / evidence/*
+  -> policy check
+  -> risk register / POA&M
+  -> audit package
+  -> 管理层例外和复核
+```
+
+每个一级目录都应至少接入一种自动化消费方：
+
+| 目录 | 最低自动化消费方 | 未接入时的风险 |
+| ---- | ---------------- | -------------- |
+| `apps/` | CI、发布系统、前端监控 | 体验变更无法和 API、SLO、回滚证据关联 |
+| `ai/` | Evals、LLM Gateway、AI observability | Prompt、Agent 和工具权限变成手工配置，无法审计 |
+| `domains/` | 契约测试、服务构建、catalog 同步 | 领域边界停留在文档，服务和 owner 容易漂移 |
+| `platform/` | 脚手架、portal、scorecard | 平台只是一组散装脚本，不能降低认知负载 |
+| `contracts/` | 兼容性检查、代码生成、网关、策略引擎 | 跨团队协作依赖口头约定，breaking change 难以及时发现 |
+| `catalog/` | Developer Portal、依赖图、审计导出 | 服务、资源和 owner 无法被统一发现 |
+| `governance/` | 门禁脚本、审计导出、风险工作流 | 标准和例外无法闭环，审计只能补材料 |
+| `infra/` | GitOps、Kubernetes、云平台、准入控制 | 生产状态依赖人工操作，回滚和追责困难 |
+
+目录一旦进入企业级标准，就必须定义“谁消费它”。没有消费方的目录应先作为局部文档或实验目录，不应升级为一级标准目录。
+
+### 2.1.23 资产生命周期和目录字段
+
+服务、API、事件、数据产品、AI 产品、模型、Agent、平台能力和治理控制项都应有生命周期字段。生命周期不清楚，目录就会
+不断堆积僵尸资产。
+
+| 状态 | 含义 | 允许行为 | 必填证据 |
+| ---- | ---- | -------- | -------- |
+| `proposed` | 已提出但未进入生产依赖 | 可评审、可试点，不得被生产消费者强依赖 | owner、目标场景、风险初评、退出条件 |
+| `active` | 正式运行并可被消费者依赖 | 可发布、可扩展、可进入 scorecard | SLO、runbook、契约、GitOps、监控、on-call |
+| `deprecated` | 已宣布弃用但仍需兼容 | 不新增消费者，只允许安全修复和迁移支持 | 替代方案、迁移窗口、消费者清单、到期日 |
+| `retired` | 已退役，不再承载生产职责 | 不允许被部署、调用或列入新依赖 | 下线证据、数据归档、DNS/API/topic 清理记录 |
+| `exception` | 临时偏离标准 | 只能在到期日前带补偿控制运行 | 风险 owner、到期日、补偿控制、POA&M |
+
+推荐在不同资产中统一保留以下字段名，减少跨目录理解成本：
+
+```yaml
+name: customer-profile-service
+lifecycle: active
+owner: team-customer
+domain: customer
+tier: tier-2
+sourceRoot: domains/customer/services/customer-profile-service
+contractRefs:
+  - contracts/apis/customer-profile.openapi.yaml
+gitopsRefs:
+  - infra/gitops/environments/prod/customer/customer-profile-service
+sloRef: governance/slo/tier-2.yaml
+runbookRef: governance/playbooks/customer-profile-service.md
+riskRefs:
+  - governance/risk-register/risk-customer-profile.yaml
+evidenceRefs:
+  - governance/evidence/releases/customer-profile-service-2026-06.yaml
+```
+
+字段名可以按企业标准调整，但语义必须稳定。尤其是 `owner`、`lifecycle`、`sourceRoot`、`contractRefs`、`gitopsRefs`、
+`sloRef`、`runbookRef` 和 `evidenceRefs`，应成为 catalog、scorecard、审计导出和 AI agent 协作的公共接口。
+
+### 2.1.24 环境、租户和区域的目录表达
+
+不要把环境差异混进服务源码。服务源码表达“服务是什么”，环境目录表达“它在某个环境如何运行”。多租户、多区域、多云和
+受监管环境尤其要遵守这条边界。
+
+推荐表达方式如下：
+
+```text
+infra/gitops/environments/
+├── dev/
+│   └── customer/customer-profile-service/
+├── staging/
+│   └── customer/customer-profile-service/
+├── prod/
+│   ├── region-cn-north/customer/customer-profile-service/
+│   └── region-us-east/customer/customer-profile-service/
+└── regulated/
+    └── finance/customer/customer-profile-service/
+```
+
+环境目录应管理以下事实：
+
+| 维度 | 应放环境目录 | 不应放服务源码 |
+| ---- | ------------ | -------------- |
+| 容量 | replicas、HPA、资源配额、GPU 配额 | 不同环境的生产容量 |
+| 网络 | namespace、Ingress、Gateway、NetworkPolicy | 生产域名和网络放通细节 |
+| 安全 | ServiceAccount、准入策略、镜像验签、Secret 引用 | 明文密钥和环境权限 |
+| 发布 | digest、灰度策略、回滚窗口、冻结期 | 生产版本选择 |
+| 合规 | 数据驻留、审计日志、加密、备份保留 | 监管环境专属例外 |
+
+如果企业采用多仓 GitOps，也应保持同样结构，只是把 `infra/gitops/` 拆到独立环境仓。服务仓通过 `service.yaml.gitopsRefs`
+或 catalog 指回环境仓路径，不能让服务仓单方面决定生产部署事实。
+
+### 2.1.25 目录结构的常见反模式和修复
+
+| 反模式 | 表现 | 后果 | 修复方式 |
+| ------ | ---- | ---- | -------- |
+| `shared/` 变成业务中台 | 所有领域都把通用业务逻辑塞进共享库 | 领域边界消失，升级牵一发动全身 | 只保留无业务语义工具；业务能力迁回领域服务或领域包 |
+| `platform/` 接管业务部署 | 平台目录里维护每个业务服务的生产配置 | 平台团队成为发布瓶颈，服务 owner 失责 | 平台只提供模板和能力；环境期望状态放 `infra/gitops/` |
+| `catalog/` 手工双写事实 | catalog 里手填 owner、路径、digest、SLO | portal 看起来完整，实际和源码/GitOps 漂移 | catalog 只引用或派生；CI 做 sourceRef 漂移检查 |
+| `docs/` 替代契约 | README 写了 API、事件和数据口径，但无机器契约 | 消费者无法自动发现 breaking change | 建 OpenAPI、AsyncAPI、Schema 和 data contract |
+| `infra/` 混入业务规则 | Helm values 或 Kustomize overlay 写业务开关和领域逻辑 | 运行团队被迫理解业务，回滚风险扩大 | 业务规则回到服务配置或领域策略；环境只管运行差异 |
+| `ai/` 绕过领域边界 | Agent 直接读业务库或直接改核心状态 | AI 层成为隐形超级用户，审计和一致性失控 | Agent 只能通过 API、事件、数据产品和受控工具访问能力 |
+| `governance/` 只有文档没有门禁 | 标准写得完整，但 CI、准入和审计不消费 | 规则无法执行，例外无法关闭 | 为控制项补 schema、checker、evidence 和 owner |
+
+目录治理的原则是：能从结构上消除的混乱，不要靠培训解决；能被机器校验的事实，不要靠人工复核兜底；能由平台默认路径
+生成的模板，不要让每个团队重新手写一遍。
+
+### 2.1.26 2.1 的最终验收标准
+
+评审 2.1 推荐目录结构时，应把问题问到可执行层，而不是停在“目录是否全面”：
+
+1. 任意一个服务，从 catalog 入口能否追到源码、契约、GitOps、SLO、runbook、owner 和发布证据。
+2. 任意一个生产 Pod，能否反向追溯到镜像 digest、SBOM、provenance、签名、构建 commit 和代码 owner。
+3. 任意一个 API breaking change，能否自动识别消费者、触发兼容性门禁，并进入迁移或例外流程。
+4. 任意一个数据产品，能否证明语义口径、质量规则、PII、血缘、访问授权和 AI 使用边界。
+5. 任意一个 AI Agent，能否证明 Prompt 版本、工具权限、RAG 数据源、评估结果、护栏、人工确认点和事故响应路径。
+6. 任意一个治理控制项，能否追到标准、schema、示例、checker、证据、风险、POA&M 和审计导出结果。
+7. 任意一个目录变更，能否说明 owner、消费方、主真相源、派生方向、门禁、迁移方式和回滚方式。
+
+如果这些问题可以被自动化工具回答大部分，目录结构就是企业级平台架构；如果只能靠人开会解释，目录结构仍然只是文档草图。
 
 ---
 
@@ -2640,52 +3287,55 @@ runbook:
   rollback: docs/rollback.md
 ```
 
-V2.24 starter kit 还提供以下可执行契约模板：
+V2.27 starter kit 还提供以下可执行契约模板：
 
 1. `api-contract.yaml`：API producer、consumer、auth、版本和兼容策略。
 2. `event-contract.yaml`：事件 topic、schema、幂等键、投递语义和消费者。
 3. `ai-tool-contract.yaml`：AI 工具输入输出、风险等级、人工确认、权限、审计和运行限制。
 4. `rag-index-contract.yaml`：RAG 来源、Embedding、切分、访问控制、刷新和删除策略。
 5. `fine-tuning-contract.yaml`：微调数据授权、实验追踪、评估、发布门禁和回滚。
-6. `gitops-deployment.yaml`：环境、namespace、镜像 digest、资源、ServiceAccount、Pod 安全、网络策略、HPA、PDB、配置引用、发布策略和供应链准入。
-7. `catalog-data-product.yaml`、`catalog-ai-product.yaml`：catalog 指针、owner、生命周期和运行索引。
-8. `scorecard.yaml`：生产就绪、供应链、运行证据和复审周期。
-9. `release-evidence.yaml`：发布版本、commit、GitOps revision、镜像 digest、catalog 指针、pipeline run、测试和批准证据。
-10. `supply-chain-attestation.yaml`：构建来源、source control、SLSA 等级、builder identity、SBOM、provenance、签名、证书、透明日志、漏洞扫描、OpenSSF Scorecard 和验签命令。
-11. `policy-exception.yaml`：治理例外、补偿控制、批准日期、到期日期、补救计划和过期自动阻断要求。
-12. `api-compatibility-report.yaml`：API 版本兼容、消费者影响、breaking change 明细、豁免状态和发布决策。
-13. `event-compatibility-report.yaml`：事件 Schema 兼容、消费者影响、重放要求、豁免状态和发布决策。
-14. `gitops-drift-report.yaml`：GitOps 期望状态、运行观测状态、镜像/config/policy 漂移和发布阻断决策。
-15. `extension-policy.yaml`：严格 schema 下的受控扩展前缀、审批记录、默认拒绝和未知字段行为。
-16. `feature-flag-control.yaml`：Feature Flag、评估上下文、灰度策略、Kill Switch、SLO 燃尽回滚和曝光事件。
-17. `ai-threat-model.yaml`：OWASP LLM / Agentic AI、MCP 工具边界、Prompt Injection 测试、红队结果和残余风险接受。
-18. `lineage-event.yaml`：数据产品运行血缘事件、producer job、run state、输入输出数据集、schema 和质量证据。
-19. `platform-product-metrics.yaml`：Platform PM、Golden Path、采用率、开发者满意度、认知负载、自助完成率和平台 SLO。
-20. `privacy-impact-assessment.yaml`：隐私影响评估、处理目的、合法基础、主体权利、删除传播和 AI 使用限制。
-21. `tenant-boundary.yaml`：租户、namespace、ServiceAccount、Secret 范围、ResourceQuota、NetworkPolicy 和准入策略。
-22. `recovery-drill-evidence.yaml`：恢复演练、RTO/RPO 目标、实际恢复结果、备份、恢复日志和复盘证据。
-23. `policy-test-report.yaml`：策略引擎、策略版本、测试总数、失败数、阻断决策和执行命令证据。
-24. `genai-observability-contract.yaml`：OpenTelemetry GenAI、模型路由、Token、成本、工具调用、RAG span、日志脱敏和留存。
-25. `ai-incident-playbook.yaml`：AI 事件响应 playbook、幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚、工具 Kill Switch 和复盘。
-26. `cost-allocation-evidence.yaml`：成本周期、owner、allocation tag、标签覆盖率、未分摊成本、成本来源和优化行动。
-27. `identity-access-review.yaml`：身份源、角色、权限范围、特权身份、break-glass、MFA 和访问复核证据。
-28. `secrets-rotation-evidence.yaml`：Secret provider、KMS、静态加密、轮换周期、轮换结果和泄露扫描证据。
-29. `vulnerability-remediation-evidence.yaml`：漏洞 ID、严重度、KEV 状态、修复 SLA、残余风险和发布准入决策。
-30. `incident-postmortem.yaml`：事故影响、检测/恢复时间、根因、纠正行动、runbook 更新、门禁反哺和关闭审批。
-31. `evidence-freshness-policy.yaml`：证据最大年龄、按类型过期策略、必需证据、CI 执行和过期阻断策略。
-32. `control-evidence-map.yaml`：控制项 ID、证据路径、状态、新鲜度、必需性和阻断属性。
-33. `audit-export-manifest.yaml`：审计导出包范围、内容清单、验证结果、签名要求和留存复审。
-34. `control-assessment-report.yaml`：控制评估范围、评估人、控制结果、发现项、整改、剩余风险和签署状态。
-35. `baseline-change-record.yaml`：架构基线变更版本、前序版本、决策记录、影响分析、审批、验证命令、回滚计划和留存复审。
-36. `architecture-decision-record.yaml`：ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和留存。
-37. `oscal-export-profile.yaml`：OSCAL catalog、component-definition、SSP、assessment-results 和 POA&M 交换映射。
-38. `audit-export-gate.yaml`：审计导出命令、本地质量门禁、输出不变量、OSCAL 摘要一致性和留存复审。
-39. `audit-export-integrity.yaml`：审计导出生成物、SHA-256 摘要、源制品哈希和防篡改校验。
-40. `audit-export-provenance.yaml`：审计导出 subject、构建定义、导出命令、源码提交和源证据依赖追溯。
-41. `audit-export-signing-policy.yaml`：审计导出 provenance payload 摘要、Cosign 签名交接、验签命令和本地门禁边界。
-42. `audit-export-signature-receipt.yaml`：审计导出外部签名完成后的 payload 摘要、bundle 摘要、证书身份、透明日志和验签结果。
-43. `poam-record.yaml`：POA&M 发现项、责任人、整改行动、里程碑、证据、签署和复审。
-44. `risk-register.yaml`：企业架构风险、处理策略、关联控制项、关联 POA&M、缓解行动、残余风险和复审。
+6. `fine-tuning-run.yaml`：单次微调运行的数据授权、数据准备、实验 run、评估、模型登记、审批、灰度发布、监控和退役证据。
+7. `repository-change-control.yaml` 与 `repository-protection-runbook.md`：CODEOWNERS、受保护分支、PR 审查、必需检查、签名提交、禁止直推、发布 tag 保护、远端保护状态验证、标准整改、break-glass、POA&M 和风险登记。
+8. `gitops-deployment.yaml`：环境、namespace、镜像 digest、资源、ServiceAccount、Pod 安全、网络策略、HPA、PDB、配置引用、发布策略和供应链准入。
+9. `catalog-data-product.yaml`、`catalog-ai-product.yaml`：catalog 指针、owner、生命周期和运行索引。
+10. `scorecard.yaml`：生产就绪、供应链、运行证据和复审周期。
+11. `release-evidence.yaml`：发布版本、commit、GitOps revision、镜像 digest、catalog 指针、pipeline run、测试和批准证据。
+12. `supply-chain-attestation.yaml`：构建来源、source control、SLSA 等级、builder identity、SBOM、provenance、签名、证书、透明日志、漏洞扫描、OpenSSF Scorecard 和验签命令。
+13. `policy-exception.yaml`：治理例外、补偿控制、批准日期、到期日期、补救计划和过期自动阻断要求。
+14. `api-compatibility-report.yaml`：API 版本兼容、消费者影响、breaking change 明细、豁免状态和发布决策。
+15. `event-compatibility-report.yaml`：事件 Schema 兼容、消费者影响、重放要求、豁免状态和发布决策。
+16. `gitops-drift-report.yaml`：GitOps 期望状态、运行观测状态、镜像/config/policy 漂移和发布阻断决策。
+17. `extension-policy.yaml`：严格 schema 下的受控扩展前缀、审批记录、默认拒绝和未知字段行为。
+18. `feature-flag-control.yaml`：Feature Flag、评估上下文、灰度策略、Kill Switch、SLO 燃尽回滚和曝光事件。
+19. `ai-threat-model.yaml`：OWASP LLM / Agentic AI、MCP 工具边界、Prompt Injection 测试、红队结果和残余风险接受。
+20. `lineage-event.yaml`：数据产品运行血缘事件、producer job、run state、输入输出数据集、schema 和质量证据。
+21. `platform-product-metrics.yaml`：Platform PM、Golden Path、采用率、开发者满意度、认知负载、自助完成率和平台 SLO。
+22. `privacy-impact-assessment.yaml`：隐私影响评估、处理目的、合法基础、主体权利、删除传播和 AI 使用限制。
+23. `tenant-boundary.yaml`：租户、namespace、ServiceAccount、Secret 范围、ResourceQuota、NetworkPolicy 和准入策略。
+24. `recovery-drill-evidence.yaml`：恢复演练、RTO/RPO 目标、实际恢复结果、备份、恢复日志和复盘证据。
+25. `policy-test-report.yaml`：策略引擎、策略版本、测试总数、失败数、阻断决策和执行命令证据。
+26. `genai-observability-contract.yaml`：OpenTelemetry GenAI、模型路由、Token、成本、工具调用、RAG span、日志脱敏和留存。
+27. `ai-incident-playbook.yaml`：AI 事件响应 playbook、幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚、工具 Kill Switch 和复盘。
+28. `cost-allocation-evidence.yaml`：成本周期、owner、allocation tag、标签覆盖率、未分摊成本、成本来源和优化行动。
+29. `identity-access-review.yaml`：身份源、角色、权限范围、特权身份、break-glass、MFA 和访问复核证据。
+30. `secrets-rotation-evidence.yaml`：Secret provider、KMS、静态加密、轮换周期、轮换结果和泄露扫描证据。
+31. `vulnerability-remediation-evidence.yaml`：漏洞 ID、严重度、KEV 状态、修复 SLA、残余风险和发布准入决策。
+32. `incident-postmortem.yaml`：事故影响、检测/恢复时间、根因、纠正行动、runbook 更新、门禁反哺和关闭审批。
+33. `evidence-freshness-policy.yaml`：证据最大年龄、按类型过期策略、必需证据、CI 执行和过期阻断策略。
+34. `control-evidence-map.yaml`：控制项 ID、证据路径、状态、新鲜度、必需性和阻断属性。
+35. `audit-export-manifest.yaml`：审计导出包范围、内容清单、验证结果、签名要求和留存复审。
+36. `control-assessment-report.yaml`：控制评估范围、评估人、控制结果、发现项、整改、剩余风险和签署状态。
+37. `baseline-change-record.yaml`：架构基线变更版本、前序版本、决策记录、影响分析、审批、验证命令、回滚计划和留存复审。
+38. `architecture-decision-record.yaml`：ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和留存。
+39. `oscal-export-profile.yaml`：OSCAL catalog、component-definition、SSP、assessment-results 和 POA&M 交换映射。
+40. `audit-export-gate.yaml`：审计导出命令、本地质量门禁、输出不变量、OSCAL 摘要一致性和留存复审。
+41. `audit-export-integrity.yaml`：审计导出生成物、SHA-256 摘要、源制品哈希和防篡改校验。
+42. `audit-export-provenance.yaml`：审计导出 subject、构建定义、导出命令、源码提交和源证据依赖追溯。
+43. `audit-export-signing-policy.yaml`：审计导出 provenance payload 摘要、Cosign 签名交接、验签命令和本地门禁边界。
+44. `audit-export-signature-receipt.yaml`：审计导出外部签名完成后的 payload 摘要、bundle 摘要、证书身份、透明日志和验签结果。
+45. `poam-record.yaml`：POA&M 发现项、责任人、整改行动、里程碑、证据、签署和复审。
+46. `risk-register.yaml`：企业架构风险、处理策略、关联控制项、关联 POA&M、缓解行动、残余风险和复审。
+47. `ai-evidence.yaml`：AI 产品证据账本、模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批、留存和复审。
 
 ### 10.10.3 自动化门禁映射
 
@@ -2703,6 +3353,7 @@ V2.24 starter kit 还提供以下可执行契约模板：
 | 密钥治理 | Secret provider、KMS、静态加密、轮换周期、泄露扫描 | `secrets-rotation-evidence.yaml`、密钥系统、扫描器 | 密钥未轮换、无静态加密、发现泄露仍放行 |
 | 渐进式发布 | Feature Flag、Kill Switch、曝光事件、SLO 燃尽回滚 | `feature-flag-control.yaml`、GitOps、observability | 无关闭开关、无默认变体、无成功指标、无回滚条件 |
 | AI 发布 | 评估集、红队、RAG 权限、工具权限、人工确认策略 | `ai-product.yaml`、`contracts/ai/` | 高风险工具无人工确认、评估未达标 |
+| AI 证据账本 | 模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批和复审 | `ai-evidence.yaml`、`ai-product.yaml`、`ai-tool-contract.yaml`、`rag-index-contract.yaml`、`genai-observability-contract.yaml` | AI 证据分散、模型版本错配、工具权限和事件响应证据无法按产品聚合 |
 | AI 安全 | Prompt Injection、工具同意、出站限制、残余风险接受 | `ai-threat-model.yaml`、`ai-tool-contract.yaml`、评估证据 | 高风险工具无同意、红队失败、风险接受过期 |
 | AI 事件响应 | 幻觉爆发、工具循环、RAG 污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘 | `ai-incident-playbook.yaml`、`ai-product.yaml`、`ai-threat-model.yaml`、`genai-observability-contract.yaml` | 高风险 AI 无 playbook、触发器不全、无法人工接管或回滚 |
 | 隐私工程 | DPIA、合法基础、主体权利、删除传播、AI 使用限制 | `privacy-impact-assessment.yaml`、数据产品、RAG 删除证据 | 有 PII 但无 DPIA、删除无法传播到向量索引、训练退出未声明 |
@@ -2759,7 +3410,7 @@ V2.24 starter kit 还提供以下可执行契约模板：
 
 可执行企业标准不能只证明“字段存在”，还要证明关键控制项确实被 schema、example 和 checker 覆盖。
 
-V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项进入同一清单；V2.8 起，扩展策略、发布开关、AI 威胁模型、运行血缘和平台产品指标也进入同一清单；V2.9 起，隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测和成本分摊证据也进入同一清单；V2.10 起，访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度也进入同一清单；V2.11 起，控制证据映射和审计导出清单也进入同一清单；V2.12 起，审计导出自动化命令也进入同一清单；V2.13 起，控制评估报告也进入同一清单；V2.14 起，架构基线变更记录也进入同一清单；V2.15 起，OSCAL 交换映射也进入同一清单；V2.16 起，审计导出门禁也进入同一清单；V2.17 起，审计导出完整性清单也进入同一清单；V2.18 起，审计导出 provenance statement 也进入同一清单；V2.19 起，审计导出签名策略也进入同一清单；V2.20 起，审计导出签名验签回执也进入同一清单；V2.21 起，POA&M 整改计划也进入同一清单；V2.22 起，企业架构风险登记也进入同一清单；V2.23 起，架构决策记录也进入同一清单；V2.24 起，AI 事件响应 playbook 也进入同一清单：
+V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项进入同一清单；V2.8 起，扩展策略、发布开关、AI 威胁模型、运行血缘和平台产品指标也进入同一清单；V2.9 起，隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测和成本分摊证据也进入同一清单；V2.10 起，访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度也进入同一清单；V2.11 起，控制证据映射和审计导出清单也进入同一清单；V2.12 起，审计导出自动化命令也进入同一清单；V2.13 起，控制评估报告也进入同一清单；V2.14 起，架构基线变更记录也进入同一清单；V2.15 起，OSCAL 交换映射也进入同一清单；V2.16 起，审计导出门禁也进入同一清单；V2.17 起，审计导出完整性清单也进入同一清单；V2.18 起，审计导出 provenance statement 也进入同一清单；V2.19 起，审计导出签名策略也进入同一清单；V2.20 起，审计导出签名验签回执也进入同一清单；V2.21 起，POA&M 整改计划也进入同一清单；V2.22 起，企业架构风险登记也进入同一清单；V2.23 起，架构决策记录也进入同一清单；V2.24 起，AI 事件响应 playbook 也进入同一清单；V2.25 起，AI 证据账本也进入同一清单；V2.26 起，微调运行证据也进入同一清单；V2.27 起，仓库变更控制和远端保护漂移整改也进入同一清单：
 
 ```text
 内部控制项覆盖清单
@@ -2779,8 +3430,10 @@ V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema
 | 问题 | 证明方式 |
 | ---- | -------- |
 | 文档说生产服务必须有 RTO/RPO，机器是否能证明 | 控制项要求 `service.schema.json` 和 `service.example.yaml` 包含 `reliability.rto`、`reliability.rpo` |
+| 文档说架构基线仓库必须受保护，机器是否能证明 | 控制项要求 `repository-change-control.schema.json`、示例和 runbook 包含 CODEOWNERS、受保护分支、必需检查、签名提交、禁止直推、远端验证、漂移整改、POA&M 和风险登记 |
 | 文档说数据产品必须有访问审计，机器是否能证明 | 控制项要求 `data-product.schema.json` 和示例包含 `accessPolicy`、`audit`、`retention` |
 | 文档说 AI 产品必须可降级和控成本，机器是否能证明 | 控制项要求 `ai-product.schema.json` 和示例包含 `budget`、`fallback`、`providerPolicy` |
+| 文档说 AI 产品证据必须可追踪，机器是否能证明 | 控制项要求 `ai-evidence.schema.json` 和示例包含模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批和复审 |
 | 文档说 AI 事件响应必须有专门 playbook，机器是否能证明 | 控制项要求 `ai-incident-playbook.schema.json` 和示例包含触发器、检测、遏制、降级、回滚、RAG 恢复、工具 Kill Switch 和复盘 |
 | 文档说 GitOps 必须有运行安全，机器是否能证明 | 控制项要求 `gitops-deployment.schema.json` 和示例包含 `serviceAccount`、`security`、`scaling` |
 | 文档说供应链必须有漏洞和 Scorecard 证据，机器是否能证明 | 控制项要求 `supply-chain-attestation.schema.json` 和示例包含 `vulnerability`、`scorecard` |
@@ -2920,7 +3573,7 @@ V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema
 starter kit 校验命令
 ```
 
-该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、55 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
+该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、58 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、仓库变更控制、远端保护漂移整改、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 证据账本、微调运行证据、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
 
 审计导出包由以下命令生成：
 

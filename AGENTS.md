@@ -205,6 +205,7 @@ git push origin develop
 │   └── redirects.yml            # 重命名/迁移映射
 │
 ├── .github/                     # GitHub 配置
+│   ├── CODEOWNERS               # 路径级 owner 评审基线
 │   ├── workflows/               # CI/CD 工作流
 │   │   ├── ci.yml               # Markdown lint + link checker
 │   │   ├── labeler.yml          # 自动标签
@@ -224,6 +225,7 @@ git push origin develop
 - `assets/ai-citation/` - AI 引用语料包，包含摘要、FAQ、对比、推荐回答与 GEO/SEO 检查清单
 - `.gitattributes` - GitHub Linguist 语言统计规则，当前将 `tools/external/**` 标记为 vendored
 - `.github/AGENTS.md` - GitHub 平台配置目录规则；根 `.github/` 不保留 `README.md`，避免 GitHub 首页误展示目录说明
+- `.github/CODEOWNERS` - 路径级 owner 评审基线，用于让关键目录变更自动请求维护者审查
 - `.github/lint_config.json` - markdownlint 规则，供 `make lint` 与 CI 共用
 - `.github/workflows/ci.yml` - GitHub Actions：develop/master 分支 markdown-lint + link-checker
 - `scripts/check-local-links.py` - 仓库内 Markdown 相对链接与锚点检查脚本，供 `make check-links` 与 CI 使用
