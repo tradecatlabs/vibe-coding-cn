@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.23
+**文档版本**：V2.24
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.23 在 V2.22 基础上新增机器可读架构决策记录，让 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定进入可执行证据链。
+**专项修订**：V2.24 在 V2.23 基础上新增机器可读 AI 事件响应 playbook，让幻觉爆发、工具循环、RAG 索引污染、模型供应商中断、成本异常、检测、遏制、降级、回滚、RAG 恢复、工具 Kill Switch、沟通和复盘进入可执行证据链。
 
 ---
 
@@ -52,7 +52,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.23` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、54 组 starter kit schema/example、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
+| `V2.24` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、55 组 starter kit schema/example、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -133,12 +133,13 @@ git diff --check
 | `V2.21` | 2026-06-02 | Minor | 补齐 POA&M 整改计划和 OSCAL 整改视图证据闭环 |
 | `V2.22` | 2026-06-02 | Minor | 补齐企业架构风险登记和风险到控制、POA&M、审计导出的证据闭环 |
 | `V2.23` | 2026-06-02 | Minor | 补齐机器可读架构决策记录和基线变更 ADR 绑定 |
+| `V2.24` | 2026-06-02 | Minor | 补齐机器可读 AI 事件响应 playbook 和 AI 运行证据闭环 |
 
-### 0.7 V2.23 可执行企业标准路线图
+### 0.7 V2.24 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。V2.12 增加审计导出自动化命令，把版本、控制目录、证据映射、导出清单、脚本和关键制品哈希生成可交付审计包。V2.13 增加控制评估报告，把证据包进一步闭环到控制结果、发现项、整改、剩余风险和签署状态。V2.14 增加架构基线变更记录，把基线升级的影响分析、审批、验证命令和回滚路径纳入可执行证据。V2.15 增加 OSCAL 交换映射和导出摘要，把内部控制证据映射到 catalog、component-definition、system-security-plan、assessment-results 和 POA&M 视图。V2.16 增加审计导出门禁，把导出包生成、JSON/Markdown/OSCAL 输出和关键不变量校验纳入 `make test`。V2.17 增加审计导出完整性清单，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。V2.18 增加审计导出 provenance statement，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。V2.19 增加审计导出签名策略，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入门禁。V2.20 增加审计导出签名验签回执，把外部签名完成后的 bundle 摘要、证书身份、OIDC issuer、透明日志和验签结果纳入证据链。V2.21 增加 POA&M 整改计划，把控制发现项、责任人、整改行动、里程碑、证据、签署和 OSCAL POA&M 输出纳入闭环。V2.22 增加企业架构风险登记，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入闭环。V2.23 增加架构决策记录，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入闭环。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。V2.12 增加审计导出自动化命令，把版本、控制目录、证据映射、导出清单、脚本和关键制品哈希生成可交付审计包。V2.13 增加控制评估报告，把证据包进一步闭环到控制结果、发现项、整改、剩余风险和签署状态。V2.14 增加架构基线变更记录，把基线升级的影响分析、审批、验证命令和回滚路径纳入可执行证据。V2.15 增加 OSCAL 交换映射和导出摘要，把内部控制证据映射到 catalog、component-definition、system-security-plan、assessment-results 和 POA&M 视图。V2.16 增加审计导出门禁，把导出包生成、JSON/Markdown/OSCAL 输出和关键不变量校验纳入 `make test`。V2.17 增加审计导出完整性清单，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。V2.18 增加审计导出 provenance statement，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。V2.19 增加审计导出签名策略，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入门禁。V2.20 增加审计导出签名验签回执，把外部签名完成后的 bundle 摘要、证书身份、OIDC issuer、透明日志和验签结果纳入证据链。V2.21 增加 POA&M 整改计划，把控制发现项、责任人、整改行动、里程碑、证据、签署和 OSCAL POA&M 输出纳入闭环。V2.22 增加企业架构风险登记，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入闭环。V2.23 增加架构决策记录，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入闭环。V2.24 增加 AI 事件响应 playbook，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘纳入闭环。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
 
-V2.23 起点包括：
+V2.24 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -148,7 +149,7 @@ V2.23 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 54 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
+9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 55 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
 10. 版本清单：提供 `docs/references/modern-enterprise-architecture-version.json`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
 11. 控制项覆盖清单：提供 `docs/references/modern-enterprise-architecture-controls.json`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
 12. 严格 schema 模式：starter kit 的对象 schema 必须声明 `additionalProperties=false`，新增字段必须先进入契约、示例和 checker 证据链。
@@ -182,6 +183,7 @@ V2.23 起点包括：
 40. POA&M 整改计划：新增 `poam-record.yaml`，把控制发现项、责任人、整改行动、里程碑、证据、签署和复审纳入 OSCAL POA&M 证据闭环。
 41. 企业架构风险登记：新增 `risk-register.yaml`，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入证据闭环。
 42. 架构决策记录：新增 `architecture-decision-record.yaml`，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入证据闭环。
+43. AI 事件响应 playbook：新增 `ai-incident-playbook.yaml`，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测信号、遏制、降级、回滚、RAG 恢复、工具 Kill Switch、沟通和复盘纳入 AI 运行证据闭环。
 
 ---
 
@@ -2638,7 +2640,7 @@ runbook:
   rollback: docs/rollback.md
 ```
 
-V2.23 starter kit 还提供以下可执行契约模板：
+V2.24 starter kit 还提供以下可执行契约模板：
 
 1. `api-contract.yaml`：API producer、consumer、auth、版本和兼容策略。
 2. `event-contract.yaml`：事件 topic、schema、幂等键、投递语义和消费者。
@@ -2664,25 +2666,26 @@ V2.23 starter kit 还提供以下可执行契约模板：
 22. `recovery-drill-evidence.yaml`：恢复演练、RTO/RPO 目标、实际恢复结果、备份、恢复日志和复盘证据。
 23. `policy-test-report.yaml`：策略引擎、策略版本、测试总数、失败数、阻断决策和执行命令证据。
 24. `genai-observability-contract.yaml`：OpenTelemetry GenAI、模型路由、Token、成本、工具调用、RAG span、日志脱敏和留存。
-25. `cost-allocation-evidence.yaml`：成本周期、owner、allocation tag、标签覆盖率、未分摊成本、成本来源和优化行动。
-26. `identity-access-review.yaml`：身份源、角色、权限范围、特权身份、break-glass、MFA 和访问复核证据。
-27. `secrets-rotation-evidence.yaml`：Secret provider、KMS、静态加密、轮换周期、轮换结果和泄露扫描证据。
-28. `vulnerability-remediation-evidence.yaml`：漏洞 ID、严重度、KEV 状态、修复 SLA、残余风险和发布准入决策。
-29. `incident-postmortem.yaml`：事故影响、检测/恢复时间、根因、纠正行动、runbook 更新、门禁反哺和关闭审批。
-30. `evidence-freshness-policy.yaml`：证据最大年龄、按类型过期策略、必需证据、CI 执行和过期阻断策略。
-31. `control-evidence-map.yaml`：控制项 ID、证据路径、状态、新鲜度、必需性和阻断属性。
-32. `audit-export-manifest.yaml`：审计导出包范围、内容清单、验证结果、签名要求和留存复审。
-33. `control-assessment-report.yaml`：控制评估范围、评估人、控制结果、发现项、整改、剩余风险和签署状态。
-34. `baseline-change-record.yaml`：架构基线变更版本、前序版本、决策记录、影响分析、审批、验证命令、回滚计划和留存复审。
-35. `architecture-decision-record.yaml`：ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和留存。
-36. `oscal-export-profile.yaml`：OSCAL catalog、component-definition、SSP、assessment-results 和 POA&M 交换映射。
-37. `audit-export-gate.yaml`：审计导出命令、本地质量门禁、输出不变量、OSCAL 摘要一致性和留存复审。
-38. `audit-export-integrity.yaml`：审计导出生成物、SHA-256 摘要、源制品哈希和防篡改校验。
-39. `audit-export-provenance.yaml`：审计导出 subject、构建定义、导出命令、源码提交和源证据依赖追溯。
-40. `audit-export-signing-policy.yaml`：审计导出 provenance payload 摘要、Cosign 签名交接、验签命令和本地门禁边界。
-41. `audit-export-signature-receipt.yaml`：审计导出外部签名完成后的 payload 摘要、bundle 摘要、证书身份、透明日志和验签结果。
-42. `poam-record.yaml`：POA&M 发现项、责任人、整改行动、里程碑、证据、签署和复审。
-43. `risk-register.yaml`：企业架构风险、处理策略、关联控制项、关联 POA&M、缓解行动、残余风险和复审。
+25. `ai-incident-playbook.yaml`：AI 事件响应 playbook、幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚、工具 Kill Switch 和复盘。
+26. `cost-allocation-evidence.yaml`：成本周期、owner、allocation tag、标签覆盖率、未分摊成本、成本来源和优化行动。
+27. `identity-access-review.yaml`：身份源、角色、权限范围、特权身份、break-glass、MFA 和访问复核证据。
+28. `secrets-rotation-evidence.yaml`：Secret provider、KMS、静态加密、轮换周期、轮换结果和泄露扫描证据。
+29. `vulnerability-remediation-evidence.yaml`：漏洞 ID、严重度、KEV 状态、修复 SLA、残余风险和发布准入决策。
+30. `incident-postmortem.yaml`：事故影响、检测/恢复时间、根因、纠正行动、runbook 更新、门禁反哺和关闭审批。
+31. `evidence-freshness-policy.yaml`：证据最大年龄、按类型过期策略、必需证据、CI 执行和过期阻断策略。
+32. `control-evidence-map.yaml`：控制项 ID、证据路径、状态、新鲜度、必需性和阻断属性。
+33. `audit-export-manifest.yaml`：审计导出包范围、内容清单、验证结果、签名要求和留存复审。
+34. `control-assessment-report.yaml`：控制评估范围、评估人、控制结果、发现项、整改、剩余风险和签署状态。
+35. `baseline-change-record.yaml`：架构基线变更版本、前序版本、决策记录、影响分析、审批、验证命令、回滚计划和留存复审。
+36. `architecture-decision-record.yaml`：ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和留存。
+37. `oscal-export-profile.yaml`：OSCAL catalog、component-definition、SSP、assessment-results 和 POA&M 交换映射。
+38. `audit-export-gate.yaml`：审计导出命令、本地质量门禁、输出不变量、OSCAL 摘要一致性和留存复审。
+39. `audit-export-integrity.yaml`：审计导出生成物、SHA-256 摘要、源制品哈希和防篡改校验。
+40. `audit-export-provenance.yaml`：审计导出 subject、构建定义、导出命令、源码提交和源证据依赖追溯。
+41. `audit-export-signing-policy.yaml`：审计导出 provenance payload 摘要、Cosign 签名交接、验签命令和本地门禁边界。
+42. `audit-export-signature-receipt.yaml`：审计导出外部签名完成后的 payload 摘要、bundle 摘要、证书身份、透明日志和验签结果。
+43. `poam-record.yaml`：POA&M 发现项、责任人、整改行动、里程碑、证据、签署和复审。
+44. `risk-register.yaml`：企业架构风险、处理策略、关联控制项、关联 POA&M、缓解行动、残余风险和复审。
 
 ### 10.10.3 自动化门禁映射
 
@@ -2701,6 +2704,7 @@ V2.23 starter kit 还提供以下可执行契约模板：
 | 渐进式发布 | Feature Flag、Kill Switch、曝光事件、SLO 燃尽回滚 | `feature-flag-control.yaml`、GitOps、observability | 无关闭开关、无默认变体、无成功指标、无回滚条件 |
 | AI 发布 | 评估集、红队、RAG 权限、工具权限、人工确认策略 | `ai-product.yaml`、`contracts/ai/` | 高风险工具无人工确认、评估未达标 |
 | AI 安全 | Prompt Injection、工具同意、出站限制、残余风险接受 | `ai-threat-model.yaml`、`ai-tool-contract.yaml`、评估证据 | 高风险工具无同意、红队失败、风险接受过期 |
+| AI 事件响应 | 幻觉爆发、工具循环、RAG 污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘 | `ai-incident-playbook.yaml`、`ai-product.yaml`、`ai-threat-model.yaml`、`genai-observability-contract.yaml` | 高风险 AI 无 playbook、触发器不全、无法人工接管或回滚 |
 | 隐私工程 | DPIA、合法基础、主体权利、删除传播、AI 使用限制 | `privacy-impact-assessment.yaml`、数据产品、RAG 删除证据 | 有 PII 但无 DPIA、删除无法传播到向量索引、训练退出未声明 |
 | 租户隔离 | namespace、ServiceAccount、Secret 范围、ResourceQuota、NetworkPolicy 默认拒绝 | `tenant-boundary.yaml`、GitOps、Kubernetes policy | 生产 namespace 无配额、默认放通网络、服务账号越界 |
 | 数据发布 | schema、质量规则、权限、血缘、freshness 校验 | `data-product.yaml`、数据契约 | 无质量规则、无分级分类、无下游通知 |
@@ -2755,7 +2759,7 @@ V2.23 starter kit 还提供以下可执行契约模板：
 
 可执行企业标准不能只证明“字段存在”，还要证明关键控制项确实被 schema、example 和 checker 覆盖。
 
-V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项进入同一清单；V2.8 起，扩展策略、发布开关、AI 威胁模型、运行血缘和平台产品指标也进入同一清单；V2.9 起，隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测和成本分摊证据也进入同一清单；V2.10 起，访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度也进入同一清单；V2.11 起，控制证据映射和审计导出清单也进入同一清单；V2.12 起，审计导出自动化命令也进入同一清单；V2.13 起，控制评估报告也进入同一清单；V2.14 起，架构基线变更记录也进入同一清单；V2.15 起，OSCAL 交换映射也进入同一清单；V2.16 起，审计导出门禁也进入同一清单；V2.17 起，审计导出完整性清单也进入同一清单；V2.18 起，审计导出 provenance statement 也进入同一清单；V2.19 起，审计导出签名策略也进入同一清单；V2.20 起，审计导出签名验签回执也进入同一清单；V2.21 起，POA&M 整改计划也进入同一清单；V2.22 起，企业架构风险登记也进入同一清单；V2.23 起，架构决策记录也进入同一清单：
+V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项进入同一清单；V2.8 起，扩展策略、发布开关、AI 威胁模型、运行血缘和平台产品指标也进入同一清单；V2.9 起，隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测和成本分摊证据也进入同一清单；V2.10 起，访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度也进入同一清单；V2.11 起，控制证据映射和审计导出清单也进入同一清单；V2.12 起，审计导出自动化命令也进入同一清单；V2.13 起，控制评估报告也进入同一清单；V2.14 起，架构基线变更记录也进入同一清单；V2.15 起，OSCAL 交换映射也进入同一清单；V2.16 起，审计导出门禁也进入同一清单；V2.17 起，审计导出完整性清单也进入同一清单；V2.18 起，审计导出 provenance statement 也进入同一清单；V2.19 起，审计导出签名策略也进入同一清单；V2.20 起，审计导出签名验签回执也进入同一清单；V2.21 起，POA&M 整改计划也进入同一清单；V2.22 起，企业架构风险登记也进入同一清单；V2.23 起，架构决策记录也进入同一清单；V2.24 起，AI 事件响应 playbook 也进入同一清单：
 
 ```text
 docs/references/modern-enterprise-architecture-controls.json
@@ -2777,6 +2781,7 @@ docs/references/modern-enterprise-architecture-controls.json
 | 文档说生产服务必须有 RTO/RPO，机器是否能证明 | 控制项要求 `service.schema.json` 和 `service.example.yaml` 包含 `reliability.rto`、`reliability.rpo` |
 | 文档说数据产品必须有访问审计，机器是否能证明 | 控制项要求 `data-product.schema.json` 和示例包含 `accessPolicy`、`audit`、`retention` |
 | 文档说 AI 产品必须可降级和控成本，机器是否能证明 | 控制项要求 `ai-product.schema.json` 和示例包含 `budget`、`fallback`、`providerPolicy` |
+| 文档说 AI 事件响应必须有专门 playbook，机器是否能证明 | 控制项要求 `ai-incident-playbook.schema.json` 和示例包含触发器、检测、遏制、降级、回滚、RAG 恢复、工具 Kill Switch 和复盘 |
 | 文档说 GitOps 必须有运行安全，机器是否能证明 | 控制项要求 `gitops-deployment.schema.json` 和示例包含 `serviceAccount`、`security`、`scaling` |
 | 文档说供应链必须有漏洞和 Scorecard 证据，机器是否能证明 | 控制项要求 `supply-chain-attestation.schema.json` 和示例包含 `vulnerability`、`scorecard` |
 | 文档说 starter kit 必须拒绝未知字段，机器是否能证明 | 控制项要求 checker 包含 `additionalProperties must be false` 和 `unexpected field` 证据 |
@@ -2915,7 +2920,7 @@ docs/references/modern-enterprise-architecture-kit/
 make check-modern-architecture-kit
 ```
 
-该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、54 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
+该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、55 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
 
 审计导出包由以下命令生成：
 
