@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.7
+**文档版本**：V2.8
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.7 在 V2.6 基础上启用 starter kit 严格 schema 模式，要求 schema 对象节点使用 `additionalProperties=false`，并阻断示例中的未知字段。
+**专项修订**：V2.8 在 V2.7 基础上新增扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标控制项，并把它们纳入 starter kit、控制目录和 checker 证据链。
 
 ---
 
@@ -52,7 +52,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.7` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、25 组 starter kit schema/example、严格 schema 模式、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
+| `V2.8` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、30 组 starter kit schema/example、严格 schema 模式、扩展字段策略、Feature Flag、AI 威胁模型、运行血缘和平台产品指标、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -117,12 +117,13 @@ git diff --check
 | `V2.5` | 2026-06-02 | Minor | 加固可靠性、数据治理、AI 运行、GitOps 安全和供应链门禁字段 |
 | `V2.6` | 2026-06-02 | Minor | 新增机器可读控制项覆盖清单，校验控制项到 schema、example 和 checker 的证据链 |
 | `V2.7` | 2026-06-02 | Minor | 启用 starter kit 严格 schema 模式，要求 `additionalProperties=false` 并阻断未知字段通过门禁 |
+| `V2.8` | 2026-06-02 | Minor | 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标控制项 |
 
-### 0.7 V2.7 可执行企业标准路线图
+### 0.7 V2.8 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段，避免字段拼写错误、私有字段和非治理扩展绕过企业标准。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标，避免严格 schema 无扩展出口、灰度发布无开关证据、AI 安全只停留在运行声明、数据血缘只停留在静态文档、平台工程缺少产品化度量。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
 
-V2.7 起点包括：
+V2.8 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -132,10 +133,15 @@ V2.7 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 25 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、GitOps 安全、证据链验真字段和示例跨文件一致性检查。
+9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 30 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、GitOps 安全、证据链验真字段和示例跨文件一致性检查。
 10. 版本清单：提供 `docs/references/modern-enterprise-architecture-version.json`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
 11. 控制项覆盖清单：提供 `docs/references/modern-enterprise-architecture-controls.json`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
 12. 严格 schema 模式：starter kit 的对象 schema 必须声明 `additionalProperties=false`，新增字段必须先进入契约、示例和 checker 证据链。
+13. 扩展字段策略：新增 `extension-policy.yaml`，让企业自定义字段只能通过受控前缀、审批和默认拒绝策略进入标准。
+14. 渐进式发布控制：新增 `feature-flag-control.yaml`，把 Feature Flag、Kill Switch、灰度指标、SLO 燃尽回滚和曝光事件纳入门禁。
+15. AI 威胁模型：新增 `ai-threat-model.yaml`，把 OWASP LLM / Agentic AI、MCP 工具同意、红队、出站限制和残余风险接受纳入证据链。
+16. 运行血缘：新增 `lineage-event.yaml`，把数据产品的 producer job、run、input/output dataset、schema、质量证据和血缘后端纳入审计。
+17. 平台产品指标：新增 `platform-product-metrics.yaml`，把 Platform PM、Golden Path 采用率、开发者满意度、认知负载和平台 SLO 纳入可执行标准。
 
 ---
 
@@ -2592,7 +2598,7 @@ runbook:
   rollback: docs/rollback.md
 ```
 
-V2.7 starter kit 还提供以下可执行契约模板：
+V2.8 starter kit 还提供以下可执行契约模板：
 
 1. `api-contract.yaml`：API producer、consumer、auth、版本和兼容策略。
 2. `event-contract.yaml`：事件 topic、schema、幂等键、投递语义和消费者。
@@ -2608,6 +2614,11 @@ V2.7 starter kit 还提供以下可执行契约模板：
 12. `api-compatibility-report.yaml`：API 版本兼容、消费者影响、breaking change 明细、豁免状态和发布决策。
 13. `event-compatibility-report.yaml`：事件 Schema 兼容、消费者影响、重放要求、豁免状态和发布决策。
 14. `gitops-drift-report.yaml`：GitOps 期望状态、运行观测状态、镜像/config/policy 漂移和发布阻断决策。
+15. `extension-policy.yaml`：严格 schema 下的受控扩展前缀、审批记录、默认拒绝和未知字段行为。
+16. `feature-flag-control.yaml`：Feature Flag、评估上下文、灰度策略、Kill Switch、SLO 燃尽回滚和曝光事件。
+17. `ai-threat-model.yaml`：OWASP LLM / Agentic AI、MCP 工具边界、Prompt Injection 测试、红队结果和残余风险接受。
+18. `lineage-event.yaml`：数据产品运行血缘事件、producer job、run state、输入输出数据集、schema 和质量证据。
+19. `platform-product-metrics.yaml`：Platform PM、Golden Path、采用率、开发者满意度、认知负载、自助完成率和平台 SLO。
 
 ### 10.10.3 自动化门禁映射
 
@@ -2620,8 +2631,12 @@ V2.7 starter kit 还提供以下可执行契约模板：
 | 构建 | 单元测试、依赖锁定、漏洞、许可证、密钥扫描 | 源码、锁文件、Dockerfile | 高危漏洞、未知许可证、密钥泄露 |
 | 制品 | SBOM、provenance、镜像签名、基础镜像策略 | 镜像、构建日志、制品摘要、供应链证明 | 无 SBOM、无签名、来源不可证明 |
 | 发布 | GitOps diff、策略准入、资源配额、SLO 和 runbook 校验 | GitOps overlay、catalog、service.yaml、发布证据 | 无 owner、无 runbook、无 digest、资源未声明 |
+| 渐进式发布 | Feature Flag、Kill Switch、曝光事件、SLO 燃尽回滚 | `feature-flag-control.yaml`、GitOps、observability | 无关闭开关、无默认变体、无成功指标、无回滚条件 |
 | AI 发布 | 评估集、红队、RAG 权限、工具权限、人工确认策略 | `ai-product.yaml`、`contracts/ai/` | 高风险工具无人工确认、评估未达标 |
+| AI 安全 | Prompt Injection、工具同意、出站限制、残余风险接受 | `ai-threat-model.yaml`、`ai-tool-contract.yaml`、评估证据 | 高风险工具无同意、红队失败、风险接受过期 |
 | 数据发布 | schema、质量规则、权限、血缘、freshness 校验 | `data-product.yaml`、数据契约 | 无质量规则、无分级分类、无下游通知 |
+| 数据运行 | 运行血缘、producer job、input/output dataset、质量证据 | `lineage-event.yaml`、调度系统、数据质量报告 | 无运行事件、血缘断裂、输出数据产品不匹配 |
+| 平台运营 | Golden Path 采用率、开发者满意度、认知负载、平台 SLO | `platform-product-metrics.yaml`、平台门户、问卷和工单数据 | 认知负载过高、平台 SLO 不达标、改进行动无 owner |
 | 运行 | SLO、成本、漂移、异常调用、供应链策略漂移 | runtime、observability、audit、漂移报告 | 错误预算耗尽、成本超预算、策略漂移 |
 
 ### 10.10.4 漂移检测规则
@@ -2651,7 +2666,7 @@ V2.7 starter kit 还提供以下可执行契约模板：
 
 可执行企业标准不能只证明“字段存在”，还要证明关键控制项确实被 schema、example 和 checker 覆盖。
 
-V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项也进入同一清单：
+V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项进入同一清单；V2.8 起，扩展策略、发布开关、AI 威胁模型、运行血缘和平台产品指标也进入同一清单：
 
 ```text
 docs/references/modern-enterprise-architecture-controls.json
@@ -2676,6 +2691,11 @@ docs/references/modern-enterprise-architecture-controls.json
 | 文档说 GitOps 必须有运行安全，机器是否能证明 | 控制项要求 `gitops-deployment.schema.json` 和示例包含 `serviceAccount`、`security`、`scaling` |
 | 文档说供应链必须有漏洞和 Scorecard 证据，机器是否能证明 | 控制项要求 `supply-chain-attestation.schema.json` 和示例包含 `vulnerability`、`scorecard` |
 | 文档说 starter kit 必须拒绝未知字段，机器是否能证明 | 控制项要求 checker 包含 `additionalProperties must be false` 和 `unexpected field` 证据 |
+| 文档说严格 schema 必须有扩展出口，机器是否能证明 | 控制项要求 `extension-policy.schema.json` 和示例包含受控前缀、审批和默认拒绝策略 |
+| 文档说生产灰度必须可关闭，机器是否能证明 | 控制项要求 `feature-flag-control.schema.json` 和示例包含 `killSwitch`、`rollbackOnSloBurn` 和曝光事件 |
+| 文档说 AI 产品必须做威胁建模，机器是否能证明 | 控制项要求 `ai-threat-model.schema.json` 和示例包含 OWASP、MCP、红队、工具同意和残余风险 |
+| 文档说数据产品必须有运行血缘，机器是否能证明 | 控制项要求 `lineage-event.schema.json` 和示例包含 job、run、inputs、outputs、schema 和质量证据 |
+| 文档说平台工程必须作为产品运营，机器是否能证明 | 控制项要求 `platform-product-metrics.schema.json` 和示例包含 Platform PM、Golden Path、满意度、认知负载和改进行动 |
 
 `make check-modern-architecture-kit` 必须校验控制清单自身，并校验清单中声明的 schema 字段、example 字段和 checker 证据确实存在。
 
@@ -2783,7 +2803,7 @@ docs/references/modern-enterprise-architecture-kit/
 make check-modern-architecture-kit
 ```
 
-该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、25 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、严格 schema 模式、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier 和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
+该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、30 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、严格 schema 模式、扩展字段策略、Feature Flag、AI 威胁模型、运行血缘和平台产品指标、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier 和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
 
 ```text
 governance/evidence/releases/{service-release}.yaml
@@ -2791,6 +2811,8 @@ governance/evidence/supply-chain/{service-attestation}.yaml
 governance/evidence/exceptions/{policy-exception}.yaml
 governance/evidence/compatibility/{api-or-event-report}.yaml
 governance/evidence/drift/{service-drift-report}.yaml
+governance/evidence/lineage/{data-product-run}.yaml
+governance/evidence/platform/{platform-product-period}.yaml
 governance/evidence/audit-evidence-index.md
 governance/evidence/drill-evidence-template.md
 catalog/components/{service}.yaml
@@ -2800,6 +2822,9 @@ contracts/apis/{api}.openapi.yaml
 contracts/events/{event}.asyncapi.yaml
 contracts/datasets/{data-product}.yaml
 contracts/ai/tools/{tool}.yaml
+contracts/release/feature-flags/{flag}.yaml
+contracts/ai/threat-models/{ai-product}.yaml
+contracts/data/lineage/{data-product-run}.yaml
 infra/gitops/environments/prod/{domain}/{service}/kustomization.yaml
 ```
 
@@ -3417,11 +3442,15 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 | Lakehouse / Open Table Format | 企业通常先需要稳定存储、表格式、血缘和批流底座，再进入完整数据产品网络 | 增加 Lakehouse 到数据产品网络的过渡路径 |
 | Feature Store | 训练和推理使用同一特征定义，是避免线上模型偏差的关键机制 | 增加离线特征、在线特征、实时推理端点和训练-推理偏斜检查 |
 | OWASP LLM Top 10 | Prompt 注入、敏感信息泄露、过度代理、向量/Embedding 风险和成本消耗是 LLM 应用核心风险 | 增加 AI 安全、Guardrails、工具权限、RAG 权限和成本治理 |
+| OWASP Agentic AI | Agent 风险集中在工具误用、过度权限、目标偏移、上下文污染和不可控自动化 | 增加 AI 威胁模型、工具同意、人工确认、出站限制和红队证据 |
 | NIST AI RMF / GenAI Profile | AI 风险管理需要覆盖治理、映射、度量和管理闭环 | 增加 AI 风险等级、评估集、审计、回放和人工接管 |
 | ISO/IEC 42001 | AI 管理体系要求企业把 AI 风险、责任、过程和持续改进纳入管理系统 | 增加 AI 风险分级、资产证据链和治理到期复审 |
 | EU AI Act | 高风险 AI 场景需要更强的数据治理、透明度、人工监督和记录保存 | 增加 R4/R5 风险等级、人工复核和受限场景控制 |
 | OpenTelemetry GenAI | 生成式 AI 需要标准化观测模型、Token、模型、系统、操作和成本指标 | 增加 AI Observability 与 GenAI 指标 |
 | MCP / A2A | Agent 生态正在走向工具、上下文和 Agent 协作协议化 | 增加 Agent 协议与工具边界，避免协议绕过治理 |
+| OpenFeature | Feature Flag 需要标准化评估上下文、默认值、hook、tracking 和 provider 边界 | 增加发布开关、Kill Switch、曝光事件、灰度策略和 SLO 燃尽回滚 |
+| OpenLineage | 数据运行血缘需要以 Job、Run、Dataset、输入输出和事件为核心证据 | 增加 `lineage-event.yaml` 和数据产品运行血缘门禁 |
+| CNCF Platforms White Paper | 平台应作为产品服务业务团队，降低认知负载并提高自助交付能力 | 增加 Platform PM、Golden Path、开发者满意度、认知负载和平台产品指标 |
 | SLSA / SBOM / Sigstore | 现代供应链安全必须证明构建来源、依赖、产物和签名验签链路 | 增加 SBOM、provenance、签名、验签和发布准入 |
 | NIST SSDF / CISA Secure by Design | 安全应前移到需求、设计、编码、构建、测试、发布和响应全链路 | 增加安全开发证据、威胁建模和安全准入材料 |
 | FinOps Framework / FOCUS | 成本治理需要统一成本语义、分摊、优化和持续运营 | 增加 FinOps 运行机制和 AI 单任务成本指标 |
@@ -3527,12 +3556,20 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
   <https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai>
 - OWASP Top 10 for Large Language Model Applications
   <https://owasp.org/www-project-top-10-for-large-language-model-applications/>
+- OWASP Generative AI Security
+  <https://genai.owasp.org/>
 - OpenTelemetry Semantic Conventions for Generative AI Systems
   <https://github.com/open-telemetry/semantic-conventions/blob/main/docs/gen-ai/README.md>
 - Model Context Protocol Specification
   <https://modelcontextprotocol.io/specification/2025-06-18>
 - Agent2Agent Protocol
   <https://github.com/a2aproject/A2A>
+- OpenFeature Specification
+  <https://openfeature.dev/specification/>
+- OpenLineage Documentation
+  <https://openlineage.io/docs/>
+- CNCF TAG App Delivery: Platforms White Paper
+  <https://tag-app-delivery.cncf.io/whitepapers/platforms/>
 - MLflow: AI Engineering Platform for LLMs and Agents
   <https://mlflow.org/docs/latest/genai/>
 - MLflow Tracking
