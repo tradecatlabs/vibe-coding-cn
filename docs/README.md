@@ -63,9 +63,9 @@
 - [通用 Python 项目骨架](./references/python-project-skeleton.md) - Python 应用、服务、脚本工具和库项目的通用骨架。
 - [企业级架构模板](./references/enterprise-architecture-template.md) - 中大型工程组织、平台工程和多产品线参考模型。
 - [现代企业数字化平台架构](./references/modern-enterprise-architecture-template.md) - 面向领域产品网络、微服务容器 GitOps 边界、AI 原生能力、微调治理、AI 事件响应、内部平台、数据产品、供应链安全、FinOps 成本治理、版本治理、可执行标准、RACI 决策权、可靠性分级、仓库拓扑、迁移弃用、审计证据、联邦治理和行业对标矩阵的完整说明文档。
-- [现代企业数字化平台版本清单](./references/modern-enterprise-architecture-version.json) - 现代企业数字化平台 V2.22 的机器可读版本、发布状态、pair 清单、控制项数量和同步校验入口。
-- [现代企业数字化平台控制项覆盖清单](./references/modern-enterprise-architecture-controls.json) - 现代企业数字化平台 V2.22 的控制项到 schema、example 和 checker 的证据链清单。
-- [现代企业数字化平台 Starter Kit](./references/modern-enterprise-architecture-kit/README.md) - 现代企业数字化平台 V2.22 的 53 组 schema、YAML 示例、严格 schema 模式、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、可靠性、数据治理、AI 运行、GitOps 安全、证据链字段和跨文件一致性校验入口。
+- [现代企业数字化平台版本清单](./references/modern-enterprise-architecture-version.json) - 现代企业数字化平台 V2.23 的机器可读版本、发布状态、pair 清单、控制项数量和同步校验入口。
+- [现代企业数字化平台控制项覆盖清单](./references/modern-enterprise-architecture-controls.json) - 现代企业数字化平台 V2.23 的控制项到 schema、example 和 checker 的证据链清单。
+- [现代企业数字化平台 Starter Kit](./references/modern-enterprise-architecture-kit/README.md) - 现代企业数字化平台 V2.23 的 54 组 schema、YAML 示例、严格 schema 模式、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、可靠性、数据治理、AI 运行、GitOps 安全、证据链字段和跨文件一致性校验入口。
 - [Dataset First 数据服务](./references/dataset-first-data-service.md) - 数据服务模板。
 - [代码组织](./references/code-organization.md) - 模块化、命名、注释、格式化、文档和工具。
 - [开发经验](./references/development-experience.md) - 编码规范、架构原则和常见基础设施经验。
