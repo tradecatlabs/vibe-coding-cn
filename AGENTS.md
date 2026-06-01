@@ -239,7 +239,7 @@ git push origin develop
 - `docs/getting-started/README.md` - 从零开始索引入口，正文拆分到学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建
 - `docs/concepts/problem-solving.md` - 问题定义与求解路径底层模型
 - `docs/references/project-architecture-template.md` - 常见项目结构、架构设计原则、最低门禁和检查清单
-- `docs/references/modern-enterprise-architecture-kit/README.md` - 现代企业数字化平台 V2.0 starter kit、schema 和示例入口
+- `docs/references/modern-enterprise-architecture-kit/README.md` - 现代企业数字化平台 V2.1 starter kit、schema、示例和一致性校验入口
 - `docs/references/technology-stack.md` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
 - `skills/auto-skill/` - Skills 生成、重构与校验的元技能
 - `skills/auto-tmux/` - tmux 自动化操控、脚本化 pane 巡检、按键注入、日志录制与多终端协作技能
