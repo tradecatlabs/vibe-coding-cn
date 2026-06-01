@@ -99,3 +99,7 @@ backups/gz/
 docs/references/modern-enterprise-architecture-kit/
 docs/references/modern-enterprise-architecture-controls.json
 docs/references/modern-enterprise-architecture-version.json
+scripts/check-modern-architecture-kit.py
+scripts/check-modern-architecture-audit-export.py
+scripts/export-modern-architecture-audit.py
+scripts/check-repository-remote-protection.py

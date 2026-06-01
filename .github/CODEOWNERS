@@ -1,0 +1,28 @@
+# 仓库级变更的 GitHub owner review 基线。
+#
+# 下方账号来自 README、FUNDING 和最近 Git 历史中的公开维护者。
+# 如果仓库迁移到组织团队维护，应替换为对应 GitHub 团队，例如 @org/platform。
+
+* @tukuaiai
+
+# 仓库治理和自动化配置。
+/.github/ @tukuaiai
+/.github/workflows/ @tukuaiai
+/AGENTS.md @tukuaiai
+/README.md @tukuaiai
+/CONTRIBUTING.md @tukuaiai
+
+# 文档、提示词、技能和机器可读索引。
+/docs/ @tukuaiai
+/prompts/ @tukuaiai
+/skills/ @tukuaiai
+/assets/ @tukuaiai
+/metadata/ @tukuaiai
+
+# 工具、脚本和外部集成指针。
+/scripts/ @tukuaiai
+/tools/ @tukuaiai
+/Makefile @tukuaiai
+/.gitattributes @tukuaiai
+/.gitignore @tukuaiai
+/.gitmodules @tukuaiai
