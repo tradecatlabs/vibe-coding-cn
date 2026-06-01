@@ -3418,8 +3418,8 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
   <https://docs.feast.dev/>
 - Apache Iceberg
   <https://iceberg.apache.org/>
-- Milvus Documentation
-  <https://milvus.io/docs/>
+- Milvus GitHub Repository
+  <https://github.com/milvus-io/milvus>
 - FinOps Framework
   <https://www.finops.org/framework/>
 - FOCUS: FinOps Open Cost and Usage Specification
