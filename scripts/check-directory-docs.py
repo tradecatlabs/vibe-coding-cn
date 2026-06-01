@@ -48,9 +48,10 @@ README_OPTIONAL_DIRS = {
     Path(".github"),
 }
 GENERATED_OR_VENDOR_DIRS = [
+    Path("build"),
     Path("node_modules"),
 ]
-SKIP_PARTS = {".git", ".history", "node_modules", "__pycache__"}
+SKIP_PARTS = {".git", ".history", "build", "node_modules", "__pycache__"}
 SKIP_PREFIXES = [
     Path(".github/wiki"),
 ]
