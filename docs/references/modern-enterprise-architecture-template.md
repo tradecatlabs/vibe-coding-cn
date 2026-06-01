@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.4
+**文档版本**：V2.5
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.4 在 V2.3 基础上新增机器可读版本清单、starter kit pair 清单和版本同步校验规则。
+**专项修订**：V2.5 在 V2.4 基础上加固可靠性、数据治理、AI 运行、GitOps 安全和供应链门禁字段。
 
 ---
 
@@ -52,7 +52,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.4` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、25 组 starter kit schema/example、证据链一致性和自动化校验入口 |
+| `V2.5` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、25 组 starter kit schema/example、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -113,12 +113,13 @@ git diff --check
 | `V2.2` | 2026-06-01 | Minor | 补齐 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 契约模板 |
 | `V2.3` | 2026-06-01 | Minor | 补齐发布证据、供应链证明、治理例外、API/Event 兼容性报告和 GitOps 漂移报告契约模板 |
 | `V2.4` | 2026-06-01 | Minor | 增加机器可读版本清单、starter kit pair 清单和版本同步校验规则 |
+| `V2.5` | 2026-06-02 | Minor | 加固可靠性、数据治理、AI 运行、GitOps 安全和供应链门禁字段 |
 
-### 0.7 V2.4 可执行企业标准路线图
+### 0.7 V2.5 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
 
-V2.4 起点包括：
+V2.5 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -128,7 +129,7 @@ V2.4 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 25 组 schema/example、嵌套字段校验、格式校验、证据链验真字段和示例跨文件一致性检查。
+9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 25 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、GitOps 安全、证据链验真字段和示例跨文件一致性检查。
 10. 版本清单：提供 `docs/references/modern-enterprise-architecture-version.json`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
 
 ---
@@ -2442,6 +2443,7 @@ service: order-command-service
 domain: order
 owner: team-order
 lifecycle: production
+tier: tier-1
 runtime:
   type: kubernetes
   imageRepository: registry.company.com/order/order-command-service
@@ -2468,6 +2470,12 @@ dependencies:
 slo:
   availability: 99.9
   latencyP95Ms: 300
+reliability:
+  rto: 1h
+  rpo: 15m
+  onCall: governance/ownership/escalation-policy.md
+  errorBudgetPolicy: governance/slo/error-budget-policy.md
+  drillEvidence: governance/evidence/drills/order-command-service-2026-q2.md
 runbook: docs/runbook.md
 rollback: docs/rollback.md
 ```
@@ -2479,27 +2487,47 @@ dataProduct: order-facts
 domain: order
 owner: team-order
 lifecycle: production
+tier: tier-2
+consumers:
+  - revenue-dashboard
+  - customer-service-agent
 schema: schema/order-facts.schema.yaml
 semanticGrain: one row per order state transition
 freshness: 15m
 quality:
   completeness: ">= 99.5%"
+  validity: ">= 99.0%"
   uniqueness: order_event_id
+  accuracy: reconciled with payment settlement daily
 classification:
   level: confidential
   pii:
     - customer_id
+retention: 2y
+accessPolicy:
+  policy: governance/data-governance/order-facts-access.rego
+  approvalRequired: true
+audit:
+  enabled: true
+  logRetention: 2y
 lineage:
   upstream:
     - order-command-service
   downstream:
     - revenue-dashboard
+    - customer-service-agent
 aiUsage:
   allowed:
     - rag
     - evaluation
   disallowed:
     - foundation-model-training
+cost:
+  owner: team-order
+  allocationTag: cost.domain.order
+slo:
+  freshness: 15m
+  availability: 99.5
 ```
 
 `ai-product.yaml` 最低字段：
@@ -2512,6 +2540,8 @@ riskTier: R3
 businessGoal: assist support agents with grounded answers
 model:
   gatewayRoute: support-safe-default
+  approvedModel: vendor-support-model
+  modelVersion: "2026-05"
 prompts:
   system: prompts/system.prompt.md
 rag:
@@ -2519,6 +2549,7 @@ rag:
   vectorIndex: vector:customer-support-policy:v12
 tools:
   - tool: refund-preview
+    riskLevel: high
     requiresHumanApproval: true
 evals:
   regression: evals/regression.yaml
@@ -2528,20 +2559,46 @@ guardrails:
 observability:
   traceRetentionDays: 180
   replayEnabled: true
+slo:
+  taskCompletionRate: ">= 85%"
+  groundedAnswerRate: ">= 95%"
+  toolErrorRate: "<= 2%"
+  p95LatencyMs: 6000
+budget:
+  monthlyUsd: 3000
+  costPerSuccessfulTaskUsd: 0.12
+  owner: team-support-ai
+fallback:
+  degradedMode: human-support-queue
+  humanHandoff: support-workbench
+  rollbackPrompt: prompts/system.previous.prompt.md
+providerPolicy:
+  logRetention: 30d
+  dataTrainingOptOut: true
+  crossBorderReview: governance/security/cross-border-ai-review.md
+dataUsePolicy:
+  allowed:
+    - rag
+    - evaluation
+  disallowed:
+    - foundation-model-training
+runbook:
+  incident: governance/playbooks/ai-incident-playbook.md
+  rollback: docs/rollback.md
 ```
 
-V2.4 starter kit 还提供以下可执行契约模板：
+V2.5 starter kit 还提供以下可执行契约模板：
 
 1. `api-contract.yaml`：API producer、consumer、auth、版本和兼容策略。
 2. `event-contract.yaml`：事件 topic、schema、幂等键、投递语义和消费者。
 3. `ai-tool-contract.yaml`：AI 工具输入输出、风险等级、人工确认、权限、审计和运行限制。
 4. `rag-index-contract.yaml`：RAG 来源、Embedding、切分、访问控制、刷新和删除策略。
 5. `fine-tuning-contract.yaml`：微调数据授权、实验追踪、评估、发布门禁和回滚。
-6. `gitops-deployment.yaml`：环境、namespace、镜像 digest、资源、发布策略和供应链准入。
+6. `gitops-deployment.yaml`：环境、namespace、镜像 digest、资源、ServiceAccount、Pod 安全、网络策略、HPA、PDB、配置引用、发布策略和供应链准入。
 7. `catalog-data-product.yaml`、`catalog-ai-product.yaml`：catalog 指针、owner、生命周期和运行索引。
 8. `scorecard.yaml`：生产就绪、供应链、运行证据和复审周期。
 9. `release-evidence.yaml`：发布版本、commit、GitOps revision、镜像 digest、catalog 指针、pipeline run、测试和批准证据。
-10. `supply-chain-attestation.yaml`：构建来源、SLSA 等级、builder identity、SBOM、provenance、签名、证书、透明日志和验签命令。
+10. `supply-chain-attestation.yaml`：构建来源、source control、SLSA 等级、builder identity、SBOM、provenance、签名、证书、透明日志、漏洞扫描、OpenSSF Scorecard 和验签命令。
 11. `policy-exception.yaml`：治理例外、补偿控制、批准日期、到期日期、补救计划和过期自动阻断要求。
 12. `api-compatibility-report.yaml`：API 版本兼容、消费者影响、breaking change 明细、豁免状态和发布决策。
 13. `event-compatibility-report.yaml`：事件 Schema 兼容、消费者影响、重放要求、豁免状态和发布决策。
