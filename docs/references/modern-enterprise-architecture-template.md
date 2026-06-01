@@ -3415,7 +3415,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 - Sigstore Policy Controller
   <https://docs.sigstore.dev/policy-controller/overview/>
 - OpenSSF Scorecard
-  <https://scorecard.dev/>
+  <https://github.com/ossf/scorecard>
 - NIST AI Risk Management Framework
   <https://www.nist.gov/itl/ai-risk-management-framework>
 - NIST AI 600-1: Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile
