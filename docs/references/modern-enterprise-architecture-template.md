@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.3
+**文档版本**：V2.4
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.3 在 V2.2 基础上补齐发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告的 starter kit 契约。
+**专项修订**：V2.4 在 V2.3 基础上新增机器可读版本清单、starter kit pair 清单和版本同步校验规则。
 
 ---
 
@@ -52,7 +52,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.3` | `Baseline Candidate` | 用作可执行企业标准起点；包含 25 组 starter kit schema/example、证据链一致性和自动化校验入口 |
+| `V2.4` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、25 组 starter kit schema/example、证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -70,10 +70,11 @@
 1. 变更摘要：说明新增、修改、删除和废弃内容。
 2. 影响范围：列出受影响的架构层、目录、团队、契约、门禁和落地流程。
 3. 决策记录：重大变更必须链接 ADR 或评审记录。
-4. 索引同步：同步更新 `docs/README.md`、`docs/references/README.md`、`metadata/taxonomy.yml` 和 AI 引用语料入口。
-5. 链接校验：仓库内 Markdown 链接和锚点必须通过检查。
-6. 格式校验：Markdown lint 和文档结构检查必须通过。
-7. 回滚入口：保留上一版本引用、Git commit 或变更记录，保证可以回退到上一基线。
+4. 版本清单：同步更新 `docs/references/modern-enterprise-architecture-version.json`，并让 CI 校验版本、状态、pair 数量和索引提及。
+5. 索引同步：同步更新 `docs/README.md`、`docs/references/README.md`、`metadata/taxonomy.yml` 和 AI 引用语料入口。
+6. 链接校验：仓库内 Markdown 链接和锚点必须通过检查。
+7. 格式校验：Markdown lint 和文档结构检查必须通过。
+8. 回滚入口：保留上一版本引用、Git commit 或变更记录，保证可以回退到上一基线。
 
 推荐发布检查：
 
@@ -111,12 +112,13 @@ git diff --check
 | `V2.1` | 2026-06-01 | Minor | 增强 starter kit schema 嵌套约束、格式校验、跨文件一致性检查和 CI 门禁口径 |
 | `V2.2` | 2026-06-01 | Minor | 补齐 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 契约模板 |
 | `V2.3` | 2026-06-01 | Minor | 补齐发布证据、供应链证明、治理例外、API/Event 兼容性报告和 GitOps 漂移报告契约模板 |
+| `V2.4` | 2026-06-01 | Minor | 增加机器可读版本清单、starter kit pair 清单和版本同步校验规则 |
 
-### 0.7 V2.3 可执行企业标准路线图
+### 0.7 V2.4 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
 
-V2.3 起点包括：
+V2.4 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -127,6 +129,7 @@ V2.3 起点包括：
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
 9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 25 组 schema/example、嵌套字段校验、格式校验、证据链验真字段和示例跨文件一致性检查。
+10. 版本清单：提供 `docs/references/modern-enterprise-architecture-version.json`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
 
 ---
 
@@ -2527,7 +2530,7 @@ observability:
   replayEnabled: true
 ```
 
-V2.3 starter kit 还提供以下可执行契约模板：
+V2.4 starter kit 还提供以下可执行契约模板：
 
 1. `api-contract.yaml`：API producer、consumer、auth、版本和兼容策略。
 2. `event-contract.yaml`：事件 topic、schema、幂等键、投递语义和消费者。
