@@ -20,7 +20,7 @@ references/
 ├── python-project-skeleton.md
 ├── enterprise-architecture-template.md
 ├── modern-enterprise-architecture-template.md  # 现代企业数字化平台、版本治理、可执行标准、RACI、可靠性分级、仓库拓扑、迁移弃用、审计证据、微服务容器 GitOps、AI 原生能力、供应链安全和联邦治理蓝图
-├── modern-enterprise-architecture-kit/  # 现代企业数字化平台 V2.0 starter kit、schema 和示例
+├── modern-enterprise-architecture-kit/  # 现代企业数字化平台 V2.1 starter kit、schema、示例和一致性校验
 ├── dataset-first-data-service.md
 ├── code-organization.md
 ├── development-experience.md
