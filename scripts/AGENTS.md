@@ -10,7 +10,7 @@
 - 修改 docs README 或主题正文的主章节、锚点、索引后，优先运行 `python3 scripts/sync-doc-toc.py`，再运行 `make test`。
 - 修改 GitHub Wiki 独立仓库后，运行 `make check-wiki WIKI_DIR=/path/to/wiki`；不要把 Wiki checkout 提交进主仓。
 - 检查失败输出应包含文件路径、行号或可定位的错误信息。
-- 跳过目录必须明确，至少跳过 `.git`、`.history`、`node_modules` 和外部源码快照。
+- 跳过目录必须明确，至少跳过 `.git`、`.history`、`build`、`node_modules` 和外部源码快照。
 
 ## 验证
 

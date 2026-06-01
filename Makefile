@@ -1,6 +1,6 @@
 # Makefile for Vibe Coding Guide
 
-.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-modern-architecture-kit check-wiki sync-doc-toc build test clean clean-deps
+.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-modern-architecture-kit export-modern-architecture-audit check-wiki sync-doc-toc build test clean clean-deps
 
 MARKDOWNLINT = npx --yes markdownlint-cli@0.48.0
 
@@ -17,6 +17,7 @@ help:
 	@echo "  check-metadata - Check metadata paths and anchors"
 	@echo "  check-ai-citation - Check llms and AI citation paths and anchors"
 	@echo "  check-modern-architecture-kit - Check modern enterprise architecture starter kit"
+	@echo "  export-modern-architecture-audit - Export modern architecture audit evidence packet"
 	@echo "  check-wiki - Check local GitHub Wiki checkout when present"
 	@echo "  sync-doc-toc - Regenerate docs fine-grained TOC blocks"
 	@echo "  build    - Verify knowledge base has no build step"
@@ -56,6 +57,10 @@ check-ai-citation:
 check-modern-architecture-kit:
 	@echo "Checking modern enterprise architecture starter kit..."
 	@python3 scripts/check-modern-architecture-kit.py
+
+export-modern-architecture-audit:
+	@echo "Exporting modern enterprise architecture audit packet..."
+	@python3 scripts/export-modern-architecture-audit.py
 
 check-wiki:
 	@echo "Checking local GitHub Wiki checkout..."
