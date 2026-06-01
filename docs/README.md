@@ -62,7 +62,8 @@
 - [项目架构模板](./references/project-architecture-template.md) - 常见项目结构、架构设计原则、最低门禁和检查清单。
 - [通用 Python 项目骨架](./references/python-project-skeleton.md) - Python 应用、服务、脚本工具和库项目的通用骨架。
 - [企业级架构模板](./references/enterprise-architecture-template.md) - 中大型工程组织、平台工程和多产品线参考模型。
-- [现代企业数字化平台架构](./references/modern-enterprise-architecture-template.md) - 面向领域产品网络、内部平台、数据产品和联邦治理的完整说明文档。
+- [现代企业数字化平台架构](./references/modern-enterprise-architecture-template.md) - 面向领域产品网络、微服务容器 GitOps 边界、AI 原生能力、微调治理、AI 事件响应、内部平台、数据产品、供应链安全、FinOps 成本治理、版本治理、可执行标准、RACI 决策权、可靠性分级、仓库拓扑、迁移弃用、审计证据、联邦治理和行业对标矩阵的完整说明文档。
+- [现代企业数字化平台 Starter Kit](./references/modern-enterprise-architecture-kit/README.md) - 现代企业数字化平台 V2.0 的 schema、YAML 示例和 starter kit 校验入口。
 - [Dataset First 数据服务](./references/dataset-first-data-service.md) - 数据服务模板。
 - [代码组织](./references/code-organization.md) - 模块化、命名、注释、格式化、文档和工具。
 - [开发经验](./references/development-experience.md) - 编码规范、架构原则和常见基础设施经验。
