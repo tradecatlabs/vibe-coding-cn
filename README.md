@@ -261,6 +261,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | 目录 README/AGENTS 覆盖检查 | `make check-directory-docs` | `scripts/check-directory-docs.py` |
 | Metadata 路径检查 | `make check-metadata` | `scripts/check-metadata.py` |
 | AI 引用路径检查 | `make check-ai-citation` | `scripts/check-ai-citation.py` |
+| 现代企业架构 starter kit 检查 | `make check-modern-architecture-kit` | `scripts/check-modern-architecture-kit.py` |
 | Wiki 本地检查 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | `scripts/check-wiki.py` |
 | 重建 docs 细粒度目录 | `make sync-doc-toc` | `scripts/sync-doc-toc.py` |
 | 全部本地质量门禁 | `make test` | `Makefile` |
@@ -271,6 +272,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 - Markdown lint 配置：`.github/lint_config.json`
 - Markdown lint 版本：`Makefile` 中固定为 `markdownlint-cli@0.48.0`
+- 外部链接检查配置：`.lychee.toml`，排除生成物、外部仓库和指向 `tools/external/` 的软链接资产
 - CI 配置：`.github/workflows/ci.yml`，在 `develop` / `master` 分支的 push / pull_request 上运行 markdown-lint、本地链接检查、docs 结构检查与 link-checker
 - Codex 配置基线：`tools/config/.codex/README.md`，支持一键安装、自动备份和恢复。
 - Submodule 来源：`.gitmodules`
