@@ -1,6 +1,6 @@
 # Makefile for Vibe Coding Guide
 
-.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-modern-architecture-kit export-modern-architecture-audit check-wiki sync-doc-toc build test clean clean-deps
+.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-modern-architecture-kit check-modern-architecture-audit-export export-modern-architecture-audit check-wiki sync-doc-toc build test clean clean-deps
 
 MARKDOWNLINT = npx --yes markdownlint-cli@0.48.0
 
@@ -17,6 +17,7 @@ help:
 	@echo "  check-metadata - Check metadata paths and anchors"
 	@echo "  check-ai-citation - Check llms and AI citation paths and anchors"
 	@echo "  check-modern-architecture-kit - Check modern enterprise architecture starter kit"
+	@echo "  check-modern-architecture-audit-export - Check generated modern architecture audit packet"
 	@echo "  export-modern-architecture-audit - Export modern architecture audit evidence packet"
 	@echo "  check-wiki - Check local GitHub Wiki checkout when present"
 	@echo "  sync-doc-toc - Regenerate docs fine-grained TOC blocks"
@@ -58,6 +59,10 @@ check-modern-architecture-kit:
 	@echo "Checking modern enterprise architecture starter kit..."
 	@python3 scripts/check-modern-architecture-kit.py
 
+check-modern-architecture-audit-export:
+	@echo "Checking modern enterprise architecture audit export..."
+	@python3 scripts/check-modern-architecture-audit-export.py
+
 export-modern-architecture-audit:
 	@echo "Exporting modern enterprise architecture audit packet..."
 	@python3 scripts/export-modern-architecture-audit.py
@@ -74,7 +79,7 @@ sync-doc-toc:
 build:
 	@echo "No build step: this repository is a documentation and knowledge-base project."
 
-test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-modern-architecture-kit
+test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-modern-architecture-kit check-modern-architecture-audit-export
 	@echo "Quality gates complete."
 
 clean: clean-deps
