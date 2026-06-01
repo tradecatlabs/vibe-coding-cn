@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.10
+**文档版本**：V2.11
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.10 在 V2.9 基础上新增访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度控制项，并把它们纳入 starter kit、控制目录和 checker 证据链。
+**专项修订**：V2.11 在 V2.10 基础上新增控制证据映射和审计导出清单，并把控制项、证据路径、验证结果、签名要求和留存策略纳入 checker 证据链。
 
 ---
 
@@ -52,7 +52,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.10` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、41 组 starter kit schema/example、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
+| `V2.11` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、43 组 starter kit schema/example、控制证据映射、审计导出清单、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -120,12 +120,13 @@ git diff --check
 | `V2.8` | 2026-06-02 | Minor | 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标控制项 |
 | `V2.9` | 2026-06-02 | Minor | 补齐隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测和成本分摊证据 |
 | `V2.10` | 2026-06-02 | Minor | 补齐访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度控制项 |
+| `V2.11` | 2026-06-02 | Minor | 补齐控制证据映射和审计导出清单 |
 
-### 0.7 V2.10 可执行企业标准路线图
+### 0.7 V2.11 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
 
-V2.10 起点包括：
+V2.11 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -135,7 +136,7 @@ V2.10 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 41 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、GitOps 安全、证据链验真字段和示例跨文件一致性检查。
+9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 43 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、GitOps 安全、证据链验真字段和示例跨文件一致性检查。
 10. 版本清单：提供 `docs/references/modern-enterprise-architecture-version.json`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
 11. 控制项覆盖清单：提供 `docs/references/modern-enterprise-architecture-controls.json`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
 12. 严格 schema 模式：starter kit 的对象 schema 必须声明 `additionalProperties=false`，新增字段必须先进入契约、示例和 checker 证据链。
@@ -155,6 +156,8 @@ V2.10 起点包括：
 26. 漏洞修复：新增 `vulnerability-remediation-evidence.yaml`，把漏洞严重度、KEV 状态、SLA、修复日期、残余风险和发布准入纳入控制项。
 27. 事故复盘：新增 `incident-postmortem.yaml`，把检测/恢复时间、影响、根因、纠正行动、runbook 更新和门禁反哺纳入闭环。
 28. 证据新鲜度：新增 `evidence-freshness-policy.yaml`，把证据最大年龄、按类型过期策略、CI 执行和过期阻断纳入审计生命周期。
+29. 控制证据映射：新增 `control-evidence-map.yaml`，把控制项 ID、证据路径、状态、新鲜度、必需性和阻断属性纳入审计总账。
+30. 审计导出清单：新增 `audit-export-manifest.yaml`，把导出包范围、内容、验证结果、签名要求和留存策略纳入可交付证据。
 
 ---
 
@@ -2611,7 +2614,7 @@ runbook:
   rollback: docs/rollback.md
 ```
 
-V2.10 starter kit 还提供以下可执行契约模板：
+V2.11 starter kit 还提供以下可执行契约模板：
 
 1. `api-contract.yaml`：API producer、consumer、auth、版本和兼容策略。
 2. `event-contract.yaml`：事件 topic、schema、幂等键、投递语义和消费者。
@@ -2643,6 +2646,8 @@ V2.10 starter kit 还提供以下可执行契约模板：
 28. `vulnerability-remediation-evidence.yaml`：漏洞 ID、严重度、KEV 状态、修复 SLA、残余风险和发布准入决策。
 29. `incident-postmortem.yaml`：事故影响、检测/恢复时间、根因、纠正行动、runbook 更新、门禁反哺和关闭审批。
 30. `evidence-freshness-policy.yaml`：证据最大年龄、按类型过期策略、必需证据、CI 执行和过期阻断策略。
+31. `control-evidence-map.yaml`：控制项 ID、证据路径、状态、新鲜度、必需性和阻断属性。
+32. `audit-export-manifest.yaml`：审计导出包范围、内容清单、验证结果、签名要求和留存复审。
 
 ### 10.10.3 自动化门禁映射
 
@@ -2672,6 +2677,8 @@ V2.10 starter kit 还提供以下可执行契约模板：
 | FinOps | 成本标签覆盖、未分摊成本、云/AI/数据成本、优化行动 | `cost-allocation-evidence.yaml`、OpenCost / FOCUS / 云账单 | 成本无 owner、标签覆盖不足、未分摊成本持续存在 |
 | 事故复盘 | 影响、根因、检测/恢复时间、纠正行动、门禁反哺 | `incident-postmortem.yaml`、SRE 复盘、告警系统 | 事故未关闭、runbook 未更新、门禁未反哺 |
 | 证据生命周期 | 证据最大年龄、按类型过期策略、CI 执行、过期阻断 | `evidence-freshness-policy.yaml`、审计索引、CI | 过期证据继续准入、关键证据不是必需项 |
+| 控制证据映射 | 控制项 ID、证据路径、状态、新鲜度、必需性、阻断属性 | `control-evidence-map.yaml`、控制目录、CI | 控制项无证据、证据过期、非阻断控制被误放行 |
+| 审计导出 | 架构版本、控制数量、starter kit 数量、导出内容、验证结果、签名、留存 | `audit-export-manifest.yaml`、审计包、签名系统 | 导出包范围不明、缺关键文件、未验证通过、未签名 |
 | 运行 | SLO、成本、漂移、异常调用、供应链策略漂移 | runtime、observability、audit、漂移报告 | 错误预算耗尽、成本超预算、策略漂移 |
 
 ### 10.10.4 漂移检测规则
@@ -2701,7 +2708,7 @@ V2.10 starter kit 还提供以下可执行契约模板：
 
 可执行企业标准不能只证明“字段存在”，还要证明关键控制项确实被 schema、example 和 checker 覆盖。
 
-V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项进入同一清单；V2.8 起，扩展策略、发布开关、AI 威胁模型、运行血缘和平台产品指标也进入同一清单；V2.9 起，隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测和成本分摊证据也进入同一清单；V2.10 起，访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度也进入同一清单：
+V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项进入同一清单；V2.8 起，扩展策略、发布开关、AI 威胁模型、运行血缘和平台产品指标也进入同一清单；V2.9 起，隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测和成本分摊证据也进入同一清单；V2.10 起，访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度也进入同一清单；V2.11 起，控制证据映射和审计导出清单也进入同一清单：
 
 ```text
 docs/references/modern-enterprise-architecture-controls.json
@@ -2742,6 +2749,8 @@ docs/references/modern-enterprise-architecture-controls.json
 | 文档说高危漏洞必须修复，机器是否能证明 | 控制项要求 `vulnerability-remediation-evidence.schema.json` 和示例包含 SLA、修复日期、残余风险和发布准入 |
 | 文档说生产事故必须复盘反哺，机器是否能证明 | 控制项要求 `incident-postmortem.schema.json` 和示例包含根因、行动项、runbook 更新和门禁更新 |
 | 文档说证据不能过期继续准入，机器是否能证明 | 控制项要求 `evidence-freshness-policy.schema.json` 和示例包含最大年龄、过期阻断和 CI 执行 |
+| 文档说每个控制项都必须有可追踪证据，机器是否能证明 | 控制项要求 `control-evidence-map.schema.json` 和示例覆盖全部控制项 ID、证据路径、状态和新鲜度 |
+| 文档说审计包必须可导出和复核，机器是否能证明 | 控制项要求 `audit-export-manifest.schema.json` 和示例包含范围、内容、验证、签名和留存 |
 
 `make check-modern-architecture-kit` 必须校验控制清单自身，并校验清单中声明的 schema 字段、example 字段和 checker 证据确实存在。
 
@@ -2849,7 +2858,7 @@ docs/references/modern-enterprise-architecture-kit/
 make check-modern-architecture-kit
 ```
 
-该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、41 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
+该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、43 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、控制证据映射、审计导出清单、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
 
 ```text
 governance/evidence/releases/{service-release}.yaml
@@ -2868,6 +2877,8 @@ governance/evidence/secrets/{secrets-rotation}.yaml
 governance/evidence/vulnerabilities/{vulnerability-remediation}.yaml
 governance/postmortems/{incident-postmortem}.md
 governance/evidence/freshness/{freshness-report}.json
+governance/evidence/control-map/{control-evidence-map}.yaml
+governance/evidence/audit-export/{audit-export-manifest}.yaml
 governance/evidence/audit-evidence-index.md
 governance/evidence/drill-evidence-template.md
 catalog/components/{service}.yaml
@@ -2917,6 +2928,8 @@ make check-modern-architecture-kit
 15. 高危漏洞、KEV、修复 SLA、残余风险和发布阻断检查。
 16. 事故复盘、纠正行动、runbook 更新和门禁反哺检查。
 17. 审计证据最大年龄、过期动作和 CI 阻断检查。
+18. 控制项到证据路径、状态、新鲜度和阻断属性的映射检查。
+19. 审计导出包范围、内容、验证结果、签名和留存复审检查。
 
 ### 10.13.2 审计证据索引
 
@@ -2935,6 +2948,8 @@ make check-modern-architecture-kit
 | 密钥证据 | Secret provider、KMS、轮换记录、泄露扫描 | 平台团队和安全团队 | 覆盖每个轮换周期 |
 | 漏洞证据 | 扫描结果、KEV、修复 SLA、残余风险和发布准入 | 安全团队和服务 owner | 覆盖每个高危发现 |
 | 事故证据 | 事故时间线、根因、行动项、runbook 和门禁更新 | SRE 和服务 owner | 事故关闭后继续保留一个审计周期 |
+| 控制映射证据 | 控制目录、证据路径、状态、新鲜度和阻断属性 | 治理团队和平台团队 | 覆盖每个基线版本 |
+| 审计导出证据 | 导出范围、内容清单、验证结果、签名和留存复审 | 治理团队和安全团队 | 覆盖每次正式审计导出 |
 | 例外证据 | 例外申请、风险接受、到期复审、关闭记录 | 治理团队 | 例外关闭后继续保留一个审计周期 |
 
 `governance/evidence/audit-evidence-index.md` 应至少记录：
@@ -3527,6 +3542,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 | Kubernetes Multi-tenancy / ResourceQuota | 多团队或多租户 Kubernetes 需要 namespace、配额、网络隔离和准入策略配合 | 增加 `tenant-boundary.yaml`、ResourceQuota、NetworkPolicy 默认拒绝和准入策略证据 |
 | NIST Cybersecurity Framework 2.0 | 企业安全运营需要把识别、保护、检测、响应和恢复连接成证据闭环 | 增加访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度控制项 |
 | NIST SP 800-61 | 事件响应需要准备、检测分析、遏制恢复和事后活动闭环 | 增加 `incident-postmortem.yaml`、纠正行动、runbook 更新和门禁反哺 |
+| NIST OSCAL | 安全和合规控制应尽量使用机器可读目录、实施状态、评估结果和证据包组织 | 增加 `control-evidence-map.yaml`、`audit-export-manifest.yaml` 和审计导出证据 |
 | Kubernetes Secrets | Kubernetes Secret 需要加密、访问控制、轮换和外部密钥系统配合 | 增加 `secrets-rotation-evidence.yaml`、KMS、轮换和泄露扫描证据 |
 | CISA KEV Catalog | 已知被利用漏洞需要优先、限期、可证明地处置 | 增加 `vulnerability-remediation-evidence.yaml`、KEV 状态、修复 SLA 和残余风险 |
 | SLSA / SBOM / Sigstore | 现代供应链安全必须证明构建来源、依赖、产物和签名验签链路 | 增加 SBOM、provenance、签名、验签和发布准入 |
@@ -3634,6 +3650,8 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
   <https://www.nist.gov/cyberframework>
 - NIST SP 800-61 Rev. 2: Computer Security Incident Handling Guide
   <https://csrc.nist.gov/pubs/sp/800/61/r2/final>
+- NIST OSCAL
+  <https://pages.nist.gov/OSCAL/>
 - CISA: Secure by Design
   <https://www.cisa.gov/securebydesign>
 - CISA: Known Exploited Vulnerabilities Catalog
