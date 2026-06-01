@@ -17,8 +17,7 @@ exclude_path = [
   '^docs/references/sources(/|$)',
   # This architecture blueprint contains many official external references
   # whose CDNs can timeout from GitHub-hosted runners. Internal links and
-  # executable artifacts remain covered by scripts/check-local-links.py and
-  # scripts/check-modern-architecture-kit.py.
+  # executable artifacts remain covered by scripts/check-local-links.py.
   '^docs/references/modern-enterprise-architecture-template\.md$',
   '^tools/external(/|$)',
   '^tools/chat-vault(/|$)',
