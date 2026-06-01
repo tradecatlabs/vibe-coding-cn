@@ -70,7 +70,7 @@ git push origin develop
 | `make check-directory-docs` | 校验仓库自有目录 README/AGENTS 覆盖 | Python 3 |
 | `make check-metadata` | 校验 metadata 路径与锚点 | Python 3 |
 | `make check-ai-citation` | 校验 llms 与 AI 引用语料路径和锚点 | Python 3 |
-| `make check-modern-architecture-kit` | 校验现代企业数字化平台版本清单、25 组 starter kit schema、示例和跨文件一致性 | Python 3 |
+| `make check-modern-architecture-kit` | 校验现代企业数字化平台版本清单、控制项覆盖清单、25 组 starter kit schema、示例和跨文件一致性 | Python 3 |
 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | 校验 GitHub Wiki 独立仓库本地 checkout 的页面覆盖、内链、旧口径和 Markdown | Python 3、Node.js 22+、本地 Wiki checkout |
 | `make sync-doc-toc` | 兼容旧线性 README 目录生成；当前拆分结构下通常无变更 | Python 3 |
 | `make test` | 执行本地质量门禁 | Node.js 22+、Python 3 |
@@ -233,15 +233,16 @@ git push origin develop
 - `scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
 - `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
 - `scripts/check-ai-citation.py` - llms 与 AI 引用语料路径和锚点检查脚本，供 `make check-ai-citation` 与 CI 使用
-- `scripts/check-modern-architecture-kit.py` - 现代企业数字化平台版本清单、25 组 starter kit schema、示例和跨文件一致性检查脚本，供 `make check-modern-architecture-kit` 与 CI 使用
+- `scripts/check-modern-architecture-kit.py` - 现代企业数字化平台版本清单、控制项覆盖清单、25 组 starter kit schema、示例和跨文件一致性检查脚本，供 `make check-modern-architecture-kit` 与 CI 使用
 - `scripts/check-wiki.py` - GitHub Wiki 独立仓库本地 checkout 页面覆盖、内链和旧口径检查脚本，供 `make check-wiki` 使用
 - `scripts/sync-doc-toc.py` - docs README 细粒度目录兼容脚本，当前拆分结构下通常无变更，供 `make sync-doc-toc` 使用
 - `tools/prompts-library/main.py` - 提示词转换工具入口
 - `docs/getting-started/README.md` - 从零开始索引入口，正文拆分到学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建
 - `docs/concepts/problem-solving.md` - 问题定义与求解路径底层模型
 - `docs/references/project-architecture-template.md` - 常见项目结构、架构设计原则、最低门禁和检查清单
-- `docs/references/modern-enterprise-architecture-version.json` - 现代企业数字化平台 V2.5 机器可读版本、发布状态、pair 清单和同步校验入口
-- `docs/references/modern-enterprise-architecture-kit/README.md` - 现代企业数字化平台 V2.5 starter kit、schema、示例和一致性校验入口
+- `docs/references/modern-enterprise-architecture-version.json` - 现代企业数字化平台 V2.6 机器可读版本、发布状态、pair 清单、控制项数量和同步校验入口
+- `docs/references/modern-enterprise-architecture-controls.json` - 现代企业数字化平台 V2.6 控制项到 schema、example 和 checker 的证据链清单
+- `docs/references/modern-enterprise-architecture-kit/README.md` - 现代企业数字化平台 V2.6 starter kit、schema、示例和一致性校验入口
 - `docs/references/technology-stack.md` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
 - `skills/auto-skill/` - Skills 生成、重构与校验的元技能
 - `skills/auto-tmux/` - tmux 自动化操控、脚本化 pane 巡检、按键注入、日志录制与多终端协作技能
