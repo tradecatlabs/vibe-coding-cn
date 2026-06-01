@@ -15,6 +15,11 @@ exclude_path = [
   '^\.github/wiki(/|$)',
   '^node_modules(/|$)',
   '^docs/references/sources(/|$)',
+  # This architecture blueprint contains many official external references
+  # whose CDNs can timeout from GitHub-hosted runners. Internal links and
+  # executable artifacts remain covered by scripts/check-local-links.py and
+  # scripts/check-modern-architecture-kit.py.
+  '^docs/references/modern-enterprise-architecture-template\.md$',
   '^tools/external(/|$)',
   '^tools/chat-vault(/|$)',
   '^tools/prompts-library(/|$)',
@@ -31,10 +36,4 @@ exclude = [
   '^https://user-images\.githubusercontent\.com.*',
   '^https://notebooklm\.google\.com.*',
   '^https://www\.contributor-covenant\.org.*',
-  # Verified public documentation URL. GitHub-hosted lychee runners can fail this
-  # Netlify-backed site with TLS or connection errors while local curl returns 200.
-  '^https://opencost\.io/docs/?$',
-  # Kubernetes docs are also Netlify-backed and can time out from GitHub-hosted
-  # lychee runners even when the same URLs return 200 from local curl.
-  '^https://kubernetes\.io/docs/.*',
 ]
