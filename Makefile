@@ -1,6 +1,6 @@
 # Makefile for Vibe Coding Guide
 
-.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-wiki sync-doc-toc build test clean clean-deps
+.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-modern-architecture-kit check-wiki sync-doc-toc build test clean clean-deps
 
 MARKDOWNLINT = npx --yes markdownlint-cli@0.48.0
 
@@ -16,6 +16,7 @@ help:
 	@echo "  check-directory-docs - Check required README/AGENTS pairs"
 	@echo "  check-metadata - Check metadata paths and anchors"
 	@echo "  check-ai-citation - Check llms and AI citation paths and anchors"
+	@echo "  check-modern-architecture-kit - Check modern enterprise architecture starter kit"
 	@echo "  check-wiki - Check local GitHub Wiki checkout when present"
 	@echo "  sync-doc-toc - Regenerate docs fine-grained TOC blocks"
 	@echo "  build    - Verify knowledge base has no build step"
@@ -52,6 +53,10 @@ check-ai-citation:
 	@echo "Checking llms and AI citation paths and anchors..."
 	@python3 scripts/check-ai-citation.py
 
+check-modern-architecture-kit:
+	@echo "Checking modern enterprise architecture starter kit..."
+	@python3 scripts/check-modern-architecture-kit.py
+
 check-wiki:
 	@echo "Checking local GitHub Wiki checkout..."
 	@python3 scripts/check-wiki.py --wiki-dir "$${WIKI_DIR:-/tmp/vibe-coding-cn.wiki}"
@@ -64,7 +69,7 @@ sync-doc-toc:
 build:
 	@echo "No build step: this repository is a documentation and knowledge-base project."
 
-test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation
+test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-modern-architecture-kit
 	@echo "Quality gates complete."
 
 clean: clean-deps
