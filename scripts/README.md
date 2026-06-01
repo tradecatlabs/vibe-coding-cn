@@ -10,6 +10,6 @@
 - `check-directory-docs.py`：仓库自有目录 `README.md` / `AGENTS.md` 覆盖检查脚本；根 `.github/` 仅要求 `AGENTS.md`，避免 GitHub 首页误展示平台配置说明。
 - `check-metadata.py`：`metadata/taxonomy.yml` 与 `metadata/redirects.yml` 路径和锚点检查脚本。
 - `check-ai-citation.py`：`llms.txt`、`assets/ai-citation/llms-full.txt` 与 AI 引用语料路径和锚点检查脚本。
-- `check-modern-architecture-kit.py`：现代企业数字化平台版本清单、控制项覆盖清单、36 组 starter kit schema、示例、严格 schema、隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测、成本分摊证据和跨文件一致性检查脚本。
+- `check-modern-architecture-kit.py`：现代企业数字化平台版本清单、控制项覆盖清单、41 组 starter kit schema、示例、严格 schema、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度和跨文件一致性检查脚本。
 - `check-wiki.py`：GitHub Wiki 独立仓库本地 checkout 的页面覆盖、内链和旧口径检查脚本。
 - `sync-doc-toc.py`：兼容旧线性 README 的细粒度目录生成脚本；当前拆分结构下通常无变更。
