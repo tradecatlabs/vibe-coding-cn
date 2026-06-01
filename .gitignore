@@ -94,3 +94,8 @@ backups/gz/
 
 # Wiki (separate repo)
 .github/wiki/
+
+# Local-only enterprise architecture evidence kit
+docs/references/modern-enterprise-architecture-kit/
+docs/references/modern-enterprise-architecture-controls.json
+docs/references/modern-enterprise-architecture-version.json
