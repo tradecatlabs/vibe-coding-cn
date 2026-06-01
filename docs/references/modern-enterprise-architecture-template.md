@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.5
+**文档版本**：V2.6
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.5 在 V2.4 基础上加固可靠性、数据治理、AI 运行、GitOps 安全和供应链门禁字段。
+**专项修订**：V2.6 在 V2.5 基础上新增机器可读控制项覆盖清单，校验控制项到 schema、example 和 checker 的证据链。
 
 ---
 
@@ -52,7 +52,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.5` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、25 组 starter kit schema/example、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
+| `V2.6` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、25 组 starter kit schema/example、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -70,11 +70,12 @@
 1. 变更摘要：说明新增、修改、删除和废弃内容。
 2. 影响范围：列出受影响的架构层、目录、团队、契约、门禁和落地流程。
 3. 决策记录：重大变更必须链接 ADR 或评审记录。
-4. 版本清单：同步更新 `docs/references/modern-enterprise-architecture-version.json`，并让 CI 校验版本、状态、pair 数量和索引提及。
-5. 索引同步：同步更新 `docs/README.md`、`docs/references/README.md`、`metadata/taxonomy.yml` 和 AI 引用语料入口。
-6. 链接校验：仓库内 Markdown 链接和锚点必须通过检查。
-7. 格式校验：Markdown lint 和文档结构检查必须通过。
-8. 回滚入口：保留上一版本引用、Git commit 或变更记录，保证可以回退到上一基线。
+4. 版本清单：同步更新 `docs/references/modern-enterprise-architecture-version.json`，并让 CI 校验版本、状态、pair 数量、控制项数量和索引提及。
+5. 控制覆盖：同步更新 `docs/references/modern-enterprise-architecture-controls.json`，并让 CI 校验控制项到 schema、example 和 checker 证据链。
+6. 索引同步：同步更新 `docs/README.md`、`docs/references/README.md`、`metadata/taxonomy.yml` 和 AI 引用语料入口。
+7. 链接校验：仓库内 Markdown 链接和锚点必须通过检查。
+8. 格式校验：Markdown lint 和文档结构检查必须通过。
+9. 回滚入口：保留上一版本引用、Git commit 或变更记录，保证可以回退到上一基线。
 
 推荐发布检查：
 
@@ -114,12 +115,13 @@ git diff --check
 | `V2.3` | 2026-06-01 | Minor | 补齐发布证据、供应链证明、治理例外、API/Event 兼容性报告和 GitOps 漂移报告契约模板 |
 | `V2.4` | 2026-06-01 | Minor | 增加机器可读版本清单、starter kit pair 清单和版本同步校验规则 |
 | `V2.5` | 2026-06-02 | Minor | 加固可靠性、数据治理、AI 运行、GitOps 安全和供应链门禁字段 |
+| `V2.6` | 2026-06-02 | Minor | 新增机器可读控制项覆盖清单，校验控制项到 schema、example 和 checker 的证据链 |
 
-### 0.7 V2.5 可执行企业标准路线图
+### 0.7 V2.6 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
 
-V2.5 起点包括：
+V2.6 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -131,6 +133,7 @@ V2.5 起点包括：
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
 9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 25 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、GitOps 安全、证据链验真字段和示例跨文件一致性检查。
 10. 版本清单：提供 `docs/references/modern-enterprise-architecture-version.json`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
+11. 控制项覆盖清单：提供 `docs/references/modern-enterprise-architecture-controls.json`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
 
 ---
 
@@ -2587,7 +2590,7 @@ runbook:
   rollback: docs/rollback.md
 ```
 
-V2.5 starter kit 还提供以下可执行契约模板：
+V2.6 starter kit 还提供以下可执行契约模板：
 
 1. `api-contract.yaml`：API producer、consumer、auth、版本和兼容策略。
 2. `event-contract.yaml`：事件 topic、schema、幂等键、投递语义和消费者。
@@ -2641,6 +2644,37 @@ V2.5 starter kit 还提供以下可执行契约模板：
 2. 运行时紧急修复必须在事后回写 GitOps 或形成 incident / postmortem，不能长期保留手工状态。
 3. catalog 漂移优先通过重新生成或重新校验修复，不应手工覆盖源头契约。
 4. 涉及生产安全、AI 高风险工具、数据权限和供应链证明的漂移必须阻断发布。
+
+### 10.10.5 控制项覆盖清单
+
+可执行企业标准不能只证明“字段存在”，还要证明关键控制项确实被 schema、example 和 checker 覆盖。
+
+V2.6 起，控制项覆盖清单由以下文件维护：
+
+```text
+docs/references/modern-enterprise-architecture-controls.json
+```
+
+该清单采用轻量控制目录结构，不替代完整 OSCAL 实施。它至少记录：
+
+1. 控制项 ID、分类、标题和控制声明。
+2. 控制项对齐的参考来源，例如 NIST OSCAL、SLSA、NIST SSDF。
+3. 必须存在的文档、schema、example 或脚本。
+4. 必须出现在 schema `required` 和 `properties` 中的字段。
+5. 必须出现在 YAML example 中的字段。
+6. 必须出现在 checker 中的自动化证据规则。
+
+控制项覆盖清单用于回答：
+
+| 问题 | 证明方式 |
+| ---- | -------- |
+| 文档说生产服务必须有 RTO/RPO，机器是否能证明 | 控制项要求 `service.schema.json` 和 `service.example.yaml` 包含 `reliability.rto`、`reliability.rpo` |
+| 文档说数据产品必须有访问审计，机器是否能证明 | 控制项要求 `data-product.schema.json` 和示例包含 `accessPolicy`、`audit`、`retention` |
+| 文档说 AI 产品必须可降级和控成本，机器是否能证明 | 控制项要求 `ai-product.schema.json` 和示例包含 `budget`、`fallback`、`providerPolicy` |
+| 文档说 GitOps 必须有运行安全，机器是否能证明 | 控制项要求 `gitops-deployment.schema.json` 和示例包含 `serviceAccount`、`security`、`scaling` |
+| 文档说供应链必须有漏洞和 Scorecard 证据，机器是否能证明 | 控制项要求 `supply-chain-attestation.schema.json` 和示例包含 `vulnerability`、`scorecard` |
+
+`make check-modern-architecture-kit` 必须校验控制清单自身，并校验清单中声明的 schema 字段、example 字段和 checker 证据确实存在。
 
 ## 10.11 仓库拓扑剖面
 
@@ -2746,7 +2780,7 @@ docs/references/modern-enterprise-architecture-kit/
 make check-modern-architecture-kit
 ```
 
-该命令是仓库内零依赖 starter gate，用于校验本仓库 25 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier 和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
+该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、25 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier 和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
 
 ```text
 governance/evidence/releases/{service-release}.yaml
