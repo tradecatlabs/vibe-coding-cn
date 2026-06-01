@@ -34,4 +34,7 @@ exclude = [
   # Verified public documentation URL. GitHub-hosted lychee runners can fail this
   # Netlify-backed site with TLS or connection errors while local curl returns 200.
   '^https://opencost\.io/docs/?$',
+  # Kubernetes docs are also Netlify-backed and can time out from GitHub-hosted
+  # lychee runners even when the same URLs return 200 from local curl.
+  '^https://kubernetes\.io/docs/.*',
 ]
