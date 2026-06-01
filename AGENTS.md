@@ -269,7 +269,7 @@ git push origin develop
 | prompts-library 报错 | 缺少 Python 依赖 | `pip install -r tools/prompts-library/requirements.txt` |
 | prompts-library 辅助脚本报 Google API 依赖错误 | 未安装脚本专用依赖 | `pip install -r tools/prompts-library/scripts/requirements.txt` |
 | CI markdown-lint 失败 | Markdown 规则违规或本地未按 `.github/lint_config.json` 校验 | 运行 `make lint`，按输出修复对应 Markdown |
-| CI link-checker 失败 | 文档中存在失效链接 | 检查并修复 Markdown 中的链接 |
+| CI link-checker 失败 | 文档中存在失效链接，或少数官方外链在 GitHub runner 上网络/TLS 不稳定 | 先本地验证链接；真实失效则修复 Markdown，已验证但 runner 不稳定的外链用 `.lychee.toml` 精确排除 |
 
 ---
 
