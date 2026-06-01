@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.0
+**文档版本**：V2.1
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.0 将 V1.9 的文档化基线升级为可执行企业标准起点，新增 starter kit、JSON Schema、YAML 示例和 `make check-modern-architecture-kit` 校验入口。
+**专项修订**：V2.1 在 V2.0 starter kit 基础上增强 schema 嵌套约束、格式校验、跨文件一致性检查和 CI 门禁口径。
 
 ---
 
@@ -26,13 +26,13 @@
 | `V0.x` | 研究草案版 | 用于概念探索、资料整理和内部讨论，不作为企业执行基线 |
 | `V1.x` | 正式蓝图迭代版 | 架构原则、分层、职责边界和治理方向已经稳定，可用于方案评审和试点规划 |
 | `V1.x.y` | 勘误和补丁版 | 只修正文案、链接、格式、局部示例或不改变执行含义的小问题 |
-| `V2.0` | 可执行企业标准版 | 必须具备模板、契约、门禁、RACI、自动化校验和落地 starter kit |
+| `V2.x` | 可执行企业标准版 | 必须具备模板、契约、门禁、RACI、自动化校验和落地 starter kit |
 | `V3.0` | 组织级规模化运营版 | 已与平台门户、catalog、GitOps、成本、审计和运行指标形成闭环 |
 
 版本升级规则：
 
 1. 只改错别字、格式、链接和引用，不提升主版本，可使用补丁记录。
-2. 新增章节、职责边界、治理要求、技术基线或路线图，提升 `V1.x` 小版本。
+2. 新增章节、职责边界、治理要求、技术基线或路线图，提升当前主版本的小版本。
 3. 改变目录真相源、团队职责、发布准入、风险等级或运行边界，必须提升小版本并记录影响面。
 4. 改变执行模型、组织模型、平台边界或兼容策略，必须进入架构评审并形成 ADR。
 5. 升级到 `V2.0` 前，必须证明本文档不只是说明文，而是能被仓库模板、机器契约和 CI 门禁执行。
@@ -52,7 +52,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.0` | `Baseline Candidate` | 用作可执行企业标准起点；包含 starter kit、schema、示例和自动化校验入口 |
+| `V2.1` | `Baseline Candidate` | 用作可执行企业标准起点；包含 starter kit、schema、示例、嵌套约束、跨文件一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -108,12 +108,13 @@ git diff --check
 | `V1.8` | 2026-06-01 | Major | 增加 RACI 决策权矩阵、可靠性分级、RTO/RPO、错误预算、灾备演练和升级路径 |
 | `V1.9` | 2026-06-01 | Major | 增加仓库拓扑剖面、迁移与弃用策略、验证包和审计证据清单 |
 | `V2.0` | 2026-06-01 | Major | 新增可执行 starter kit、JSON Schema、YAML 示例和自动化校验入口 |
+| `V2.1` | 2026-06-01 | Minor | 增强 starter kit schema 嵌套约束、格式校验、跨文件一致性检查和 CI 门禁口径 |
 
-### 0.7 V2.0 可执行企业标准路线图
+### 0.7 V2.1 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。后续 `V2.x` 迭代应继续扩大 schema 覆盖、接入真实 CI、补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。后续 `V2.x` 迭代应继续扩大 schema 覆盖、补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
 
-V2.0 起点包括：
+V2.1 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -123,7 +124,7 @@ V2.0 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 schema、示例和校验脚本。
+9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 schema、示例、嵌套字段校验、格式校验和示例跨文件一致性检查。
 
 ---
 
@@ -355,7 +356,7 @@ repo/
 
 | 问题 | 真相源位置 |
 | ---- | ---------- |
-| 服务代码在哪里 | `domains/{domain}/services/{service}/` |
+| 服务代码推荐放哪里 | 默认放 `domains/{domain}/services/{service}/`；若采用 `services/*`、`apps/*`、polyrepo 或独立服务仓，必须在 `service.yaml` / catalog 中声明源码路径 |
 | Dockerfile / Containerfile 在哪里 | `domains/{domain}/services/{service}/Dockerfile` |
 | 镜像本体在哪里 | Container Registry / Artifact Registry，不进入 Git 仓库 |
 | 哪个镜像版本部署到 prod | `infra/gitops/environments/prod/...` |
@@ -370,7 +371,7 @@ repo/
 推荐边界：
 
 ```text
-服务源码与镜像构建定义：domains/*/services/*
+服务源码与镜像构建定义：domains/*/services/* 或 catalog/sourceRoot 指向的服务仓库路径
 镜像制品：container registry
 部署期望状态：infra/gitops/* 或 infra/kubernetes/*
 实际运行调度：Kubernetes
@@ -2357,8 +2358,10 @@ scorecards:
 | 服务 | 服务名、所属领域、owner、端口、健康检查、依赖、资源诉求、SLO、runbook | `domains/{domain}/services/{service}/service.yaml` | `catalog/components/`、CI、平台门户、生产就绪门禁 | 在 GitOps overlay 或 catalog 中改服务 owner 和领域 |
 | API | endpoint、operation、schema、版本、兼容策略、鉴权要求 | `contracts/apis/` 或 `domains/*/apis/` | API Portal、SDK 生成器、兼容性测试 | 只在 README 或代码注释里维护接口契约 |
 | 事件 | topic、schema、生产者、消费者、幂等键、兼容策略 | `contracts/events/` 或 `domains/*/events/` | Schema Registry、事件目录、消费者影响分析 | 未声明消费者就发布 breaking change |
-| 数据产品 | schema、语义粒度、质量规则、分级分类、血缘、freshness、AI 使用策略 | `domains/{domain}/data-products/` 和 `contracts/datasets/` | 数据目录、质量看板、AI 数据授权、成本看板 | 让数据目录替代数据产品契约 |
-| AI 产品 | 风险等级、模型路由、Prompt、RAG、工具、评估集、护栏、人工确认 | `ai/applications/{ai-product}/ai-product.yaml` 和 `contracts/ai/` | AI catalog、LLM Gateway、Agent Runtime、审计系统 | 让 Agent 直接绕过领域 API 或工具注册表 |
+| 数据产品 | 产品身份、owner、语义粒度、质量规则、分级分类、血缘、freshness、AI 使用策略 | `domains/{domain}/data-products/{data-product}/data-product.yaml` | 数据目录、质量看板、AI 数据授权、成本看板 | 让数据目录替代数据产品契约 |
+| 数据契约 | schema、字段语义、兼容策略、访问策略、质量断言 | `contracts/datasets/` | 数据平台、Schema Registry、质量检查、权限网关 | 只在报表或口头口径里维护数据语义 |
+| AI 产品 | 风险等级、模型路由、Prompt 引用、RAG 引用、工具引用、评估集、护栏、人工确认 | `ai/applications/{ai-product}/ai-product.yaml` | AI catalog、LLM Gateway、Agent Runtime、审计系统 | 让 Agent 直接绕过领域 API 或工具注册表 |
+| AI 契约 | 工具输入输出、Prompt 版本、RAG 来源、评估集、护栏策略、微调数据授权 | `contracts/ai/` | AI 发布门禁、LLM Gateway、Tool Registry、审计系统 | 把 Prompt 或工具权限只藏在应用代码里 |
 | catalog | 展示名、生命周期、owner 引用、关系图、runtime 指针、scorecard 结果 | `catalog/`，其中关键字段从权威源生成或校验 | Developer Portal、审计报表、搜索和发现 | 把 catalog 当 Deployment、领域模型或数据契约真相源 |
 | GitOps | 环境、namespace、镜像 digest、replicas、资源 overlay、灰度策略 | `infra/gitops/environments/{env}/...` 或独立 GitOps 仓 | Argo CD / Flux、发布审计、回滚记录 | 在服务目录中硬编码环境差异 |
 | Kubernetes runtime | pod、deployment、service、live status、事件、当前副本和运行指标 | Kubernetes API 和可观测性平台 | 运行看板、SLO、事件响应 | 把运行时实际状态回写成 Git 中的期望状态 |
@@ -2367,10 +2370,11 @@ scorecards:
 字段流转规则：
 
 1. `domain.yaml`、`service.yaml`、`data-product.yaml` 和 `ai-product.yaml` 是产品团队维护的源头契约。
-2. catalog 优先由源头契约生成或校验，人工维护字段只限展示、分组、关系补充和生命周期说明。
-3. GitOps 只声明环境期望状态，不拥有服务业务身份、领域边界、API 语义和数据语义。
-4. Kubernetes 和可观测性平台只代表实际运行状态，不应反向改写 GitOps 期望状态。
-5. 治理规则必须能被 CI、Policy as Code、平台门户或审计系统消费，否则只是说明文。
+2. `contracts/` 维护机器可校验的接口、事件、数据、AI 工具、Prompt、RAG 和策略契约。
+3. catalog 优先由源头契约和 `contracts/` 生成或校验，人工维护字段只限展示、分组、关系补充和生命周期说明。
+4. GitOps 只声明环境期望状态，不拥有服务业务身份、领域边界、API 语义和数据语义。
+5. Kubernetes 和可观测性平台只代表实际运行状态，不应反向改写 GitOps 期望状态。
+6. 治理规则必须能被 CI、Policy as Code、平台门户或审计系统消费，否则只是说明文。
 
 ### 10.10.2 Starter Kit 最小模板
 
@@ -2654,6 +2658,8 @@ docs/references/modern-enterprise-architecture-kit/
 make check-modern-architecture-kit
 ```
 
+该命令是仓库内零依赖 starter gate，用于校验本仓库示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test 和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
+
 ```text
 governance/evidence/release-evidence-checklist.md
 governance/evidence/audit-evidence-index.md
@@ -2676,6 +2682,7 @@ make check-links
 make check-doc-structure
 make check-metadata
 make check-ai-citation
+make check-modern-architecture-kit
 ```
 
 企业落地时还应补充：
