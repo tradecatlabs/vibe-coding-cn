@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.6
+**文档版本**：V2.7
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.6 在 V2.5 基础上新增机器可读控制项覆盖清单，校验控制项到 schema、example 和 checker 的证据链。
+**专项修订**：V2.7 在 V2.6 基础上启用 starter kit 严格 schema 模式，要求 schema 对象节点使用 `additionalProperties=false`，并阻断示例中的未知字段。
 
 ---
 
@@ -52,7 +52,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.6` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、25 组 starter kit schema/example、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
+| `V2.7` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、25 组 starter kit schema/example、严格 schema 模式、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -116,12 +116,13 @@ git diff --check
 | `V2.4` | 2026-06-01 | Minor | 增加机器可读版本清单、starter kit pair 清单和版本同步校验规则 |
 | `V2.5` | 2026-06-02 | Minor | 加固可靠性、数据治理、AI 运行、GitOps 安全和供应链门禁字段 |
 | `V2.6` | 2026-06-02 | Minor | 新增机器可读控制项覆盖清单，校验控制项到 schema、example 和 checker 的证据链 |
+| `V2.7` | 2026-06-02 | Minor | 启用 starter kit 严格 schema 模式，要求 `additionalProperties=false` 并阻断未知字段通过门禁 |
 
-### 0.7 V2.6 可执行企业标准路线图
+### 0.7 V2.7 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段，避免字段拼写错误、私有字段和非治理扩展绕过企业标准。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
 
-V2.6 起点包括：
+V2.7 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -134,6 +135,7 @@ V2.6 起点包括：
 9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 25 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、GitOps 安全、证据链验真字段和示例跨文件一致性检查。
 10. 版本清单：提供 `docs/references/modern-enterprise-architecture-version.json`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
 11. 控制项覆盖清单：提供 `docs/references/modern-enterprise-architecture-controls.json`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
+12. 严格 schema 模式：starter kit 的对象 schema 必须声明 `additionalProperties=false`，新增字段必须先进入契约、示例和 checker 证据链。
 
 ---
 
@@ -2590,7 +2592,7 @@ runbook:
   rollback: docs/rollback.md
 ```
 
-V2.6 starter kit 还提供以下可执行契约模板：
+V2.7 starter kit 还提供以下可执行契约模板：
 
 1. `api-contract.yaml`：API producer、consumer、auth、版本和兼容策略。
 2. `event-contract.yaml`：事件 topic、schema、幂等键、投递语义和消费者。
@@ -2649,7 +2651,7 @@ V2.6 starter kit 还提供以下可执行契约模板：
 
 可执行企业标准不能只证明“字段存在”，还要证明关键控制项确实被 schema、example 和 checker 覆盖。
 
-V2.6 起，控制项覆盖清单由以下文件维护：
+V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项也进入同一清单：
 
 ```text
 docs/references/modern-enterprise-architecture-controls.json
@@ -2673,6 +2675,7 @@ docs/references/modern-enterprise-architecture-controls.json
 | 文档说 AI 产品必须可降级和控成本，机器是否能证明 | 控制项要求 `ai-product.schema.json` 和示例包含 `budget`、`fallback`、`providerPolicy` |
 | 文档说 GitOps 必须有运行安全，机器是否能证明 | 控制项要求 `gitops-deployment.schema.json` 和示例包含 `serviceAccount`、`security`、`scaling` |
 | 文档说供应链必须有漏洞和 Scorecard 证据，机器是否能证明 | 控制项要求 `supply-chain-attestation.schema.json` 和示例包含 `vulnerability`、`scorecard` |
+| 文档说 starter kit 必须拒绝未知字段，机器是否能证明 | 控制项要求 checker 包含 `additionalProperties must be false` 和 `unexpected field` 证据 |
 
 `make check-modern-architecture-kit` 必须校验控制清单自身，并校验清单中声明的 schema 字段、example 字段和 checker 证据确实存在。
 
@@ -2780,7 +2783,7 @@ docs/references/modern-enterprise-architecture-kit/
 make check-modern-architecture-kit
 ```
 
-该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、25 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier 和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
+该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、25 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、严格 schema 模式、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier 和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
 
 ```text
 governance/evidence/releases/{service-release}.yaml
