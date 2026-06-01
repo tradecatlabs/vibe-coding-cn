@@ -3431,7 +3431,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 - OWASP Top 10 for Large Language Model Applications
   <https://owasp.org/www-project-top-10-for-large-language-model-applications/>
 - OpenTelemetry Semantic Conventions for Generative AI Systems
-  <https://opentelemetry.io/docs/specs/semconv/gen-ai/>
+  <https://github.com/open-telemetry/semantic-conventions/blob/main/docs/gen-ai/README.md>
 - Model Context Protocol Specification
   <https://modelcontextprotocol.io/specification/2025-06-18>
 - Agent2Agent Protocol
@@ -3445,7 +3445,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 - Google Secure AI Framework
   <https://saif.google/>
 - Open Policy Agent
-  <https://www.openpolicyagent.org/docs/latest/>
+  <https://github.com/open-policy-agent/opa>
 - Cedar Policy Language
   <https://docs.cedarpolicy.com/>
 - Kyverno
