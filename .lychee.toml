@@ -5,6 +5,11 @@
 # be visible to readers. Generated tools, external snapshots and login-only pages
 # are excluded here instead of being repeated in workflow YAML.
 
+timeout = 20
+max_retries = 3
+retry_wait_time = 2
+max_concurrency = 32
+
 exclude_path = [
   '^\.history(/|$)',
   '^\.github/wiki(/|$)',

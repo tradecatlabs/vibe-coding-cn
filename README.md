@@ -272,7 +272,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 - Markdown lint 配置：`.github/lint_config.json`
 - Markdown lint 版本：`Makefile` 中固定为 `markdownlint-cli@0.48.0`
-- 外部链接检查配置：`.lychee.toml`，排除生成物、外部仓库、指向 `tools/external/` 的软链接资产，以及已验证但 GitHub runner 网络不稳定的官方外链
+- 外部链接检查配置：`.lychee.toml`，统一管理外链检查的超时、重试、并发上限和排除项
 - CI 配置：`.github/workflows/ci.yml`，在 `develop` / `master` 分支的 push / pull_request 上运行 markdown-lint、本地链接检查、docs 结构检查与 link-checker
 - Codex 配置基线：`tools/config/.codex/README.md`，支持一键安装、自动备份和恢复。
 - Submodule 来源：`.gitmodules`
