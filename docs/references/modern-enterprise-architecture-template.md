@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.1
+**文档版本**：V2.2
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.1 在 V2.0 starter kit 基础上增强 schema 嵌套约束、格式校验、跨文件一致性检查和 CI 门禁口径。
+**专项修订**：V2.2 在 V2.1 基础上补齐 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 的 starter kit 契约。
 
 ---
 
@@ -52,7 +52,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.1` | `Baseline Candidate` | 用作可执行企业标准起点；包含 starter kit、schema、示例、嵌套约束、跨文件一致性和自动化校验入口 |
+| `V2.2` | `Baseline Candidate` | 用作可执行企业标准起点；包含 19 组 starter kit schema/example、跨文件一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -109,12 +109,13 @@ git diff --check
 | `V1.9` | 2026-06-01 | Major | 增加仓库拓扑剖面、迁移与弃用策略、验证包和审计证据清单 |
 | `V2.0` | 2026-06-01 | Major | 新增可执行 starter kit、JSON Schema、YAML 示例和自动化校验入口 |
 | `V2.1` | 2026-06-01 | Minor | 增强 starter kit schema 嵌套约束、格式校验、跨文件一致性检查和 CI 门禁口径 |
+| `V2.2` | 2026-06-01 | Minor | 补齐 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 契约模板 |
 
-### 0.7 V2.1 可执行企业标准路线图
+### 0.7 V2.2 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。后续 `V2.x` 迭代应继续扩大 schema 覆盖、补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
 
-V2.1 起点包括：
+V2.2 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -124,7 +125,7 @@ V2.1 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 schema、示例、嵌套字段校验、格式校验和示例跨文件一致性检查。
+9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 19 组 schema/example、嵌套字段校验、格式校验和示例跨文件一致性检查。
 
 ---
 
@@ -2517,6 +2518,17 @@ observability:
   replayEnabled: true
 ```
 
+V2.2 starter kit 还提供以下可执行契约模板：
+
+1. `api-contract.yaml`：API producer、consumer、auth、版本和兼容策略。
+2. `event-contract.yaml`：事件 topic、schema、幂等键、投递语义和消费者。
+3. `ai-tool-contract.yaml`：AI 工具输入输出、风险等级、人工确认、权限、审计和运行限制。
+4. `rag-index-contract.yaml`：RAG 来源、Embedding、切分、访问控制、刷新和删除策略。
+5. `fine-tuning-contract.yaml`：微调数据授权、实验追踪、评估、发布门禁和回滚。
+6. `gitops-deployment.yaml`：环境、namespace、镜像 digest、资源、发布策略和供应链准入。
+7. `catalog-data-product.yaml`、`catalog-ai-product.yaml`：catalog 指针、owner、生命周期和运行索引。
+8. `scorecard.yaml`：生产就绪、供应链、运行证据和复审周期。
+
 ### 10.10.3 自动化门禁映射
 
 门禁必须尽量前移到提交、构建、发布和运行阶段。人工评审只处理边界争议、风险接受和复杂权衡。
@@ -2658,7 +2670,7 @@ docs/references/modern-enterprise-architecture-kit/
 make check-modern-architecture-kit
 ```
 
-该命令是仓库内零依赖 starter gate，用于校验本仓库示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test 和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
+该命令是仓库内零依赖 starter gate，用于校验本仓库 19 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test 和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
 
 ```text
 governance/evidence/release-evidence-checklist.md
