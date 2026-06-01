@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.2
+**文档版本**：V2.3
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.2 在 V2.1 基础上补齐 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 的 starter kit 契约。
+**专项修订**：V2.3 在 V2.2 基础上补齐发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告的 starter kit 契约。
 
 ---
 
@@ -52,7 +52,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.2` | `Baseline Candidate` | 用作可执行企业标准起点；包含 19 组 starter kit schema/example、跨文件一致性和自动化校验入口 |
+| `V2.3` | `Baseline Candidate` | 用作可执行企业标准起点；包含 25 组 starter kit schema/example、证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -110,12 +110,13 @@ git diff --check
 | `V2.0` | 2026-06-01 | Major | 新增可执行 starter kit、JSON Schema、YAML 示例和自动化校验入口 |
 | `V2.1` | 2026-06-01 | Minor | 增强 starter kit schema 嵌套约束、格式校验、跨文件一致性检查和 CI 门禁口径 |
 | `V2.2` | 2026-06-01 | Minor | 补齐 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 契约模板 |
+| `V2.3` | 2026-06-01 | Minor | 补齐发布证据、供应链证明、治理例外、API/Event 兼容性报告和 GitOps 漂移报告契约模板 |
 
-### 0.7 V2.2 可执行企业标准路线图
+### 0.7 V2.3 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
 
-V2.2 起点包括：
+V2.3 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -125,7 +126,7 @@ V2.2 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 19 组 schema/example、嵌套字段校验、格式校验和示例跨文件一致性检查。
+9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 25 组 schema/example、嵌套字段校验、格式校验、证据链验真字段和示例跨文件一致性检查。
 
 ---
 
@@ -1501,7 +1502,11 @@ governance/
 │   ├── deprecation-policy.md
 │   └── compatibility-policy.md
 ├── evidence/
-│   ├── release-evidence-checklist.md
+│   ├── releases/
+│   ├── supply-chain/
+│   ├── exceptions/
+│   ├── compatibility/
+│   ├── drift/
 │   ├── audit-evidence-index.md
 │   └── drill-evidence-template.md
 ├── risk-register/
@@ -2396,7 +2401,11 @@ governance/architecture-gates/production-readiness.yaml
 governance/ownership/raci.yaml
 governance/slo/tiering-policy.md
 governance/migration/deprecation-policy.md
-governance/evidence/release-evidence-checklist.md
+governance/evidence/releases/{service-release}.yaml
+governance/evidence/supply-chain/{service-attestation}.yaml
+governance/evidence/exceptions/{policy-exception}.yaml
+governance/evidence/compatibility/{api-or-event-report}.yaml
+governance/evidence/drift/{service-drift-report}.yaml
 infra/gitops/environments/dev/{domain}/{service}/kustomization.yaml
 infra/gitops/environments/prod/{domain}/{service}/kustomization.yaml
 ```
@@ -2518,7 +2527,7 @@ observability:
   replayEnabled: true
 ```
 
-V2.2 starter kit 还提供以下可执行契约模板：
+V2.3 starter kit 还提供以下可执行契约模板：
 
 1. `api-contract.yaml`：API producer、consumer、auth、版本和兼容策略。
 2. `event-contract.yaml`：事件 topic、schema、幂等键、投递语义和消费者。
@@ -2528,6 +2537,12 @@ V2.2 starter kit 还提供以下可执行契约模板：
 6. `gitops-deployment.yaml`：环境、namespace、镜像 digest、资源、发布策略和供应链准入。
 7. `catalog-data-product.yaml`、`catalog-ai-product.yaml`：catalog 指针、owner、生命周期和运行索引。
 8. `scorecard.yaml`：生产就绪、供应链、运行证据和复审周期。
+9. `release-evidence.yaml`：发布版本、commit、GitOps revision、镜像 digest、catalog 指针、pipeline run、测试和批准证据。
+10. `supply-chain-attestation.yaml`：构建来源、SLSA 等级、builder identity、SBOM、provenance、签名、证书、透明日志和验签命令。
+11. `policy-exception.yaml`：治理例外、补偿控制、批准日期、到期日期、补救计划和过期自动阻断要求。
+12. `api-compatibility-report.yaml`：API 版本兼容、消费者影响、breaking change 明细、豁免状态和发布决策。
+13. `event-compatibility-report.yaml`：事件 Schema 兼容、消费者影响、重放要求、豁免状态和发布决策。
+14. `gitops-drift-report.yaml`：GitOps 期望状态、运行观测状态、镜像/config/policy 漂移和发布阻断决策。
 
 ### 10.10.3 自动化门禁映射
 
@@ -2536,13 +2551,13 @@ V2.2 starter kit 还提供以下可执行契约模板：
 | 阶段 | 自动化门禁 | 输入 | 阻断条件 |
 | ---- | ---------- | ---- | -------- |
 | 提交 | Markdown、YAML、Schema、Policy 语法检查 | 文档、契约、策略文件 | 语法错误、坏链接、缺失必填字段 |
-| Pull Request | API / Event / Data / AI 契约兼容性检查 | `contracts/`、`domains/`、`ai/` | breaking change 无消费者影响分析 |
+| Pull Request | API / Event / Data / AI 契约兼容性检查 | `contracts/`、`domains/`、`ai/`、兼容性报告 | breaking change 无消费者影响分析 |
 | 构建 | 单元测试、依赖锁定、漏洞、许可证、密钥扫描 | 源码、锁文件、Dockerfile | 高危漏洞、未知许可证、密钥泄露 |
-| 制品 | SBOM、provenance、镜像签名、基础镜像策略 | 镜像、构建日志、制品摘要 | 无 SBOM、无签名、来源不可证明 |
-| 发布 | GitOps diff、策略准入、资源配额、SLO 和 runbook 校验 | GitOps overlay、catalog、service.yaml | 无 owner、无 runbook、无 digest、资源未声明 |
+| 制品 | SBOM、provenance、镜像签名、基础镜像策略 | 镜像、构建日志、制品摘要、供应链证明 | 无 SBOM、无签名、来源不可证明 |
+| 发布 | GitOps diff、策略准入、资源配额、SLO 和 runbook 校验 | GitOps overlay、catalog、service.yaml、发布证据 | 无 owner、无 runbook、无 digest、资源未声明 |
 | AI 发布 | 评估集、红队、RAG 权限、工具权限、人工确认策略 | `ai-product.yaml`、`contracts/ai/` | 高风险工具无人工确认、评估未达标 |
 | 数据发布 | schema、质量规则、权限、血缘、freshness 校验 | `data-product.yaml`、数据契约 | 无质量规则、无分级分类、无下游通知 |
-| 运行 | SLO、成本、漂移、异常调用、供应链策略漂移 | runtime、observability、audit | 错误预算耗尽、成本超预算、策略漂移 |
+| 运行 | SLO、成本、漂移、异常调用、供应链策略漂移 | runtime、observability、audit、漂移报告 | 错误预算耗尽、成本超预算、策略漂移 |
 
 ### 10.10.4 漂移检测规则
 
@@ -2554,10 +2569,11 @@ V2.2 starter kit 还提供以下可执行契约模板：
 2. catalog 指向的 GitOps 路径不存在，或 GitOps 路径指向的服务没有 catalog entry。
 3. GitOps 使用的镜像 tag 无法解析到不可变 digest。
 4. 生产 Deployment 的镜像 digest 与 GitOps 期望状态不一致。
-5. Kubernetes runtime 存在未登记到 catalog 的长期运行工作负载。
-6. 数据产品 schema 与实际表结构或数据契约不一致。
-7. AI 产品运行中的 Prompt、模型、RAG 索引或工具版本与 `ai-product.yaml` 不一致。
-8. 策略例外超过到期时间仍在生产准入中生效。
+5. 生产 Deployment 的 ConfigMap / Secret hash、ServiceAccount、NetworkPolicy、Pod 安全策略或准入策略与 GitOps 期望状态不一致。
+6. Kubernetes runtime 存在未登记到 catalog 的长期运行工作负载。
+7. 数据产品 schema 与实际表结构或数据契约不一致。
+8. AI 产品运行中的 Prompt、模型、RAG 索引或工具版本与 `ai-product.yaml` 不一致。
+9. 策略例外超过到期时间仍在生产准入中生效。
 
 漂移处理规则：
 
@@ -2670,10 +2686,14 @@ docs/references/modern-enterprise-architecture-kit/
 make check-modern-architecture-kit
 ```
 
-该命令是仓库内零依赖 starter gate，用于校验本仓库 19 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test 和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
+该命令是仓库内零依赖 starter gate，用于校验本仓库 25 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier 和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
 
 ```text
-governance/evidence/release-evidence-checklist.md
+governance/evidence/releases/{service-release}.yaml
+governance/evidence/supply-chain/{service-attestation}.yaml
+governance/evidence/exceptions/{policy-exception}.yaml
+governance/evidence/compatibility/{api-or-event-report}.yaml
+governance/evidence/drift/{service-drift-report}.yaml
 governance/evidence/audit-evidence-index.md
 governance/evidence/drill-evidence-template.md
 catalog/components/{service}.yaml
@@ -3175,7 +3195,11 @@ governance/ownership/raci.yaml
 governance/slo/tiering-policy.md
 governance/architecture-gates/production-readiness.yaml
 governance/migration/deprecation-policy.md
-governance/evidence/release-evidence-checklist.md
+governance/evidence/releases/README.md
+governance/evidence/supply-chain/README.md
+governance/evidence/exceptions/README.md
+governance/evidence/compatibility/README.md
+governance/evidence/drift/README.md
 contracts/apis/README.md
 contracts/events/README.md
 contracts/datasets/README.md
