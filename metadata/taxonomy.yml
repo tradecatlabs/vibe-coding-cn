@@ -142,6 +142,7 @@ documents:
     - path: docs/references/modern-enterprise-architecture-template.md
       title: 现代企业数字化平台架构
       role: 面向领域产品网络、微服务容器 GitOps 边界、AI 原生能力、微调治理、AI 事件响应、内部平台、数据产品、供应链安全、FinOps 成本治理、版本治理、可执行标准、RACI 决策权、可靠性分级、仓库拓扑、迁移弃用、审计证据、联邦治理和行业对标矩阵的完整说明文档
+
     - path: docs/references/dataset-first-data-service.md
       title: Dataset First 数据服务结构
       role: dataset、contract、registry、runtime 为核心的数据服务模板
