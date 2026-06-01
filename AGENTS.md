@@ -149,6 +149,7 @@ git push origin develop
 ├── CONTRIBUTING.md              # 贡献指南
 ├── .gitattributes               # GitHub Linguist 语言统计规则
 ├── .gitignore                   # Git 忽略规则
+├── .lychee.toml                 # GitHub Actions 外部链接检查配置
 │
 ├── docs/                        # 核心知识库
 │   ├── README.md                # docs 总索引
