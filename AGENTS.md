@@ -70,7 +70,7 @@ git push origin develop
 | `make check-directory-docs` | 校验仓库自有目录 README/AGENTS 覆盖 | Python 3 |
 | `make check-metadata` | 校验 metadata 路径与锚点 | Python 3 |
 | `make check-ai-citation` | 校验 llms 与 AI 引用语料路径和锚点 | Python 3 |
-| `make check-modern-architecture-kit` | 校验现代企业数字化平台版本清单、控制项覆盖清单、54 组 starter kit schema、示例、严格 schema、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度和跨文件一致性 | Python 3 |
+| `make check-modern-architecture-kit` | 校验现代企业数字化平台版本清单、控制项覆盖清单、55 组 starter kit schema、示例、严格 schema、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度和跨文件一致性 | Python 3 |
 | `make check-modern-architecture-audit-export` | 生成并校验现代企业数字化平台审计包、OSCAL 摘要、POA&M 整改视图、风险登记视图、完整性清单、provenance statement、签名策略、签名验签回执契约和输出不变量 | Python 3；先通过 `check-modern-architecture-kit` |
 | `make export-modern-architecture-audit` | 导出现代企业数字化平台审计证据包、OSCAL 摘要、POA&M 整改视图、风险登记视图、完整性清单、provenance statement、签名策略和签名验签回执契约证据包 | Python 3；先通过 `check-modern-architecture-kit` |
 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | 校验 GitHub Wiki 独立仓库本地 checkout 的页面覆盖、内链、旧口径和 Markdown | Python 3、Node.js 22+、本地 Wiki checkout |
@@ -235,7 +235,7 @@ git push origin develop
 - `scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
 - `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
 - `scripts/check-ai-citation.py` - llms 与 AI 引用语料路径和锚点检查脚本，供 `make check-ai-citation` 与 CI 使用
-- `scripts/check-modern-architecture-kit.py` - 现代企业数字化平台版本清单、控制项覆盖清单、54 组 starter kit schema、示例、严格 schema、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度和跨文件一致性检查脚本，供 `make check-modern-architecture-kit` 与 CI 使用
+- `scripts/check-modern-architecture-kit.py` - 现代企业数字化平台版本清单、控制项覆盖清单、55 组 starter kit schema、示例、严格 schema、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度和跨文件一致性检查脚本，供 `make check-modern-architecture-kit` 与 CI 使用
 - `scripts/export-modern-architecture-audit.py` - 现代企业数字化平台审计包、OSCAL 摘要、POA&M 整改视图、风险登记视图、完整性清单、provenance statement、签名策略和签名验签回执契约证据包导出脚本，供 `make export-modern-architecture-audit` 使用
 - `scripts/check-modern-architecture-audit-export.py` - 现代企业数字化平台审计包输出不变量检查脚本，供 `make check-modern-architecture-audit-export` 使用
 - `scripts/check-wiki.py` - GitHub Wiki 独立仓库本地 checkout 页面覆盖、内链和旧口径检查脚本，供 `make check-wiki` 使用
@@ -244,9 +244,9 @@ git push origin develop
 - `docs/getting-started/README.md` - 从零开始索引入口，正文拆分到学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建
 - `docs/concepts/problem-solving.md` - 问题定义与求解路径底层模型
 - `docs/references/project-architecture-template.md` - 常见项目结构、架构设计原则、最低门禁和检查清单
-- `docs/references/modern-enterprise-architecture-version.json` - 现代企业数字化平台 V2.23 机器可读版本、发布状态、pair 清单、控制项数量和同步校验入口
-- `docs/references/modern-enterprise-architecture-controls.json` - 现代企业数字化平台 V2.23 控制项到 schema、example 和 checker 的证据链清单
-- `docs/references/modern-enterprise-architecture-kit/README.md` - 现代企业数字化平台 V2.23 starter kit、schema、示例和一致性校验入口
+- `docs/references/modern-enterprise-architecture-version.json` - 现代企业数字化平台 V2.24 机器可读版本、发布状态、pair 清单、控制项数量和同步校验入口
+- `docs/references/modern-enterprise-architecture-controls.json` - 现代企业数字化平台 V2.24 控制项到 schema、example 和 checker 的证据链清单
+- `docs/references/modern-enterprise-architecture-kit/README.md` - 现代企业数字化平台 V2.24 starter kit、schema、示例和一致性校验入口
 - `docs/references/technology-stack.md` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
 - `skills/auto-skill/` - Skills 生成、重构与校验的元技能
 - `skills/auto-tmux/` - tmux 自动化操控、脚本化 pane 巡检、按键注入、日志录制与多终端协作技能
