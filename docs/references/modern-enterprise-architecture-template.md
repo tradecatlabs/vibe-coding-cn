@@ -70,8 +70,8 @@
 1. 变更摘要：说明新增、修改、删除和废弃内容。
 2. 影响范围：列出受影响的架构层、目录、团队、契约、门禁和落地流程。
 3. 决策记录：重大变更必须链接 ADR 或评审记录。
-4. 版本清单：同步更新 `docs/references/modern-enterprise-architecture-version.json`，并让 CI 校验版本、状态、pair 数量、控制项数量和索引提及。
-5. 控制覆盖：同步更新 `docs/references/modern-enterprise-architecture-controls.json`，并让 CI 校验控制项到 schema、example 和 checker 证据链。
+4. 版本清单：同步更新 `内部版本清单`，并让 CI 校验版本、状态、pair 数量、控制项数量和索引提及。
+5. 控制覆盖：同步更新 `内部控制项覆盖清单`，并让 CI 校验控制项到 schema、example 和 checker 证据链。
 6. 索引同步：同步更新 `docs/README.md`、`docs/references/README.md`、`metadata/taxonomy.yml` 和 AI 引用语料入口。
 7. 链接校验：仓库内 Markdown 链接和锚点必须通过检查。
 8. 格式校验：Markdown lint 和文档结构检查必须通过。
@@ -149,9 +149,9 @@ V2.24 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `docs/references/modern-enterprise-architecture-kit/` 下的 55 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
-10. 版本清单：提供 `docs/references/modern-enterprise-architecture-version.json`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
-11. 控制项覆盖清单：提供 `docs/references/modern-enterprise-architecture-controls.json`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
+9. Starter Kit：提供 `内部 starter kit` 下的 55 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
+10. 版本清单：提供 `内部版本清单`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
+11. 控制项覆盖清单：提供 `内部控制项覆盖清单`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
 12. 严格 schema 模式：starter kit 的对象 schema 必须声明 `additionalProperties=false`，新增字段必须先进入契约、示例和 checker 证据链。
 13. 扩展字段策略：新增 `extension-policy.yaml`，让企业自定义字段只能通过受控前缀、审批和默认拒绝策略进入标准。
 14. 渐进式发布控制：新增 `feature-flag-control.yaml`，把 Feature Flag、Kill Switch、灰度指标、SLO 燃尽回滚和曝光事件纳入门禁。
@@ -171,11 +171,11 @@ V2.24 起点包括：
 28. 证据新鲜度：新增 `evidence-freshness-policy.yaml`，把证据最大年龄、按类型过期策略、CI 执行和过期阻断纳入审计生命周期。
 29. 控制证据映射：新增 `control-evidence-map.yaml`，把控制项 ID、证据路径、状态、新鲜度、必需性和阻断属性纳入审计总账。
 30. 审计导出清单：新增 `audit-export-manifest.yaml`，把导出包范围、内容、验证结果、签名要求和留存策略纳入可交付证据。
-31. 审计导出自动化：新增 `make export-modern-architecture-audit`，生成 `build/modern-enterprise-architecture-audit/audit-export.json`、`audit-export.md`、`oscal-summary.json`、`audit-export-integrity.json`、`audit-export-provenance.json` 和 `audit-export-signing-policy.json`。
+31. 审计导出自动化：新增 `审计导出命令`，生成 `build/modern-enterprise-architecture-audit/audit-export.json`、`audit-export.md`、`oscal-summary.json`、`audit-export-integrity.json`、`audit-export-provenance.json` 和 `audit-export-signing-policy.json`。
 32. 控制评估报告：新增 `control-assessment-report.yaml`，把评估范围、评估人、控制结果、发现项、整改、剩余风险和签署状态纳入审计闭环。
 33. 架构基线变更记录：新增 `baseline-change-record.yaml`，把基线版本、前序版本、影响分析、审批、验证命令和回滚计划纳入变更控制。
 34. OSCAL 交换映射：新增 `oscal-export-profile.yaml`，把内部控制、证据、评估和整改映射到 OSCAL 交换视图，并生成 `oscal-summary.json`。
-35. 审计导出门禁：新增 `audit-export-gate.yaml` 和 `make check-modern-architecture-audit-export`，把导出输出不变量纳入 `make test`。
+35. 审计导出门禁：新增 `audit-export-gate.yaml` 和 `审计导出门禁命令`，把导出输出不变量纳入 `make test`。
 36. 审计导出完整性清单：新增 `audit-export-integrity.yaml` 和 `audit-export-integrity.json`，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。
 37. 审计导出 provenance statement：新增 `audit-export-provenance.yaml` 和 `audit-export-provenance.json`，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。
 38. 审计导出签名策略：新增 `audit-export-signing-policy.yaml` 和 `audit-export-signing-policy.json`，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入审计包。
@@ -2718,14 +2718,14 @@ V2.24 starter kit 还提供以下可执行契约模板：
 | 证据生命周期 | 证据最大年龄、按类型过期策略、CI 执行、过期阻断 | `evidence-freshness-policy.yaml`、审计索引、CI | 过期证据继续准入、关键证据不是必需项 |
 | 控制证据映射 | 控制项 ID、证据路径、状态、新鲜度、必需性、阻断属性 | `control-evidence-map.yaml`、控制目录、CI | 控制项无证据、证据过期、非阻断控制被误放行 |
 | 审计导出 | 架构版本、控制数量、starter kit 数量、导出内容、验证结果、签名、留存 | `audit-export-manifest.yaml`、审计包、签名系统 | 导出包范围不明、缺关键文件、未验证通过、未签名 |
-| 审计导出自动化 | 校验命令、导出脚本、JSON 包、Markdown 报告、OSCAL 摘要、完整性清单、provenance statement、签名策略和验签回执契约 | `make export-modern-architecture-audit`、导出脚本、build 输出 | 审计包只能手工拼接、未先校验、缺制品哈希、生成来源、签名策略或验签回执 |
+| 审计导出自动化 | 校验命令、导出脚本、JSON 包、Markdown 报告、OSCAL 摘要、完整性清单、provenance statement、签名策略和验签回执契约 | `审计导出命令`、导出脚本、build 输出 | 审计包只能手工拼接、未先校验、缺制品哈希、生成来源、签名策略或验签回执 |
 | 控制评估报告 | 评估范围、评估人、控制结果、发现项、整改、剩余风险、签署 | `control-assessment-report.yaml`、控制目录、证据映射、审计导出清单 | 只有证据无结论、发现项无人负责、未签署仍声称通过 |
 | 架构基线变更 | 版本、前序版本、变更级别、影响分析、审批、验证、回滚、留存 | `baseline-change-record.yaml`、版本清单、控制目录、CI | 基线升级无审批、验证命令缺失、无法回滚到上一基线 |
 | 架构决策记录 | ADR、上下文、备选方案、取舍、控制项、风险、POA&M、复审和留存 | `architecture-decision-record.yaml`、`baseline-change-record.yaml`、控制目录、风险登记、POA&M 记录 | 重大变更无 ADR、ADR 未关联控制项或风险、复审过期 |
 | OSCAL 交换映射 | catalog、component-definition、SSP、assessment-results、POA&M、导出摘要 | `oscal-export-profile.yaml`、`oscal-summary.json`、审计导出脚本 | 只能内部阅读、不能对接 GRC、监管或外部审计工具 |
 | POA&M 整改计划 | 发现项、控制项、严重度、责任人、行动、里程碑、证据、签署和复审 | `poam-record.yaml`、`oscal-summary.json`、控制评估报告 | 发现项只在报告正文里、整改无里程碑、OSCAL POA&M 视图无独立来源 |
 | 企业架构风险登记 | 风险、严重度、可能性、影响、owner、处理策略、关联控制项、关联 POA&M、残余风险和复审 | `risk-register.yaml`、`oscal-summary.json`、控制目录、POA&M 记录 | 风险只在会议纪要里、无 owner、无控制项映射、残余风险无人接受 |
-| 审计导出门禁 | 本地质量门禁、导出命令、输出不变量、pair 数、控制数、OSCAL 摘要一致性 | `audit-export-gate.yaml`、`make check-modern-architecture-audit-export`、`make test` | 有导出脚本但未进入门禁、输出数量和版本不一致、OSCAL 摘要未验证 |
+| 审计导出门禁 | 本地质量门禁、导出命令、输出不变量、pair 数、控制数、OSCAL 摘要一致性 | `audit-export-gate.yaml`、`审计导出门禁命令`、`make test` | 有导出脚本但未进入门禁、输出数量和版本不一致、OSCAL 摘要未验证 |
 | 审计导出完整性 | 生成物 SHA-256、源制品哈希、完整性清单、防篡改校验 | `audit-export-integrity.yaml`、`audit-export-integrity.json`、审计导出门禁 | 审计包交接后无法证明未被篡改、生成物哈希缺失、源制品和导出包断链 |
 | 审计导出 provenance | in-toto statement、SLSA provenance、subject digest、构建定义、源码提交和源证据依赖 | `audit-export-provenance.yaml`、`audit-export-provenance.json`、审计导出门禁 | 审计包知道哈希但不知道来源、生成上下文不可证明、无法绑定签名 payload |
 | 审计导出签名策略 | provenance payload 摘要、签名方式、验签命令、bundle 路径和透明日志要求 | `audit-export-signing-policy.yaml`、`audit-export-signing-policy.json`、审计导出门禁 | 声称需要签名但没有 payload 摘要、验签路径或外部签名交接 |
@@ -2762,7 +2762,7 @@ V2.24 starter kit 还提供以下可执行契约模板：
 V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项进入同一清单；V2.8 起，扩展策略、发布开关、AI 威胁模型、运行血缘和平台产品指标也进入同一清单；V2.9 起，隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测和成本分摊证据也进入同一清单；V2.10 起，访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度也进入同一清单；V2.11 起，控制证据映射和审计导出清单也进入同一清单；V2.12 起，审计导出自动化命令也进入同一清单；V2.13 起，控制评估报告也进入同一清单；V2.14 起，架构基线变更记录也进入同一清单；V2.15 起，OSCAL 交换映射也进入同一清单；V2.16 起，审计导出门禁也进入同一清单；V2.17 起，审计导出完整性清单也进入同一清单；V2.18 起，审计导出 provenance statement 也进入同一清单；V2.19 起，审计导出签名策略也进入同一清单；V2.20 起，审计导出签名验签回执也进入同一清单；V2.21 起，POA&M 整改计划也进入同一清单；V2.22 起，企业架构风险登记也进入同一清单；V2.23 起，架构决策记录也进入同一清单；V2.24 起，AI 事件响应 playbook 也进入同一清单：
 
 ```text
-docs/references/modern-enterprise-architecture-controls.json
+内部控制项覆盖清单
 ```
 
 该清单采用轻量控制目录结构，不替代完整 OSCAL 实施。它至少记录：
@@ -2803,18 +2803,18 @@ docs/references/modern-enterprise-architecture-controls.json
 | 文档说证据不能过期继续准入，机器是否能证明 | 控制项要求 `evidence-freshness-policy.schema.json` 和示例包含最大年龄、过期阻断和 CI 执行 |
 | 文档说每个控制项都必须有可追踪证据，机器是否能证明 | 控制项要求 `control-evidence-map.schema.json` 和示例覆盖全部控制项 ID、证据路径、状态和新鲜度 |
 | 文档说审计包必须可导出和复核，机器是否能证明 | 控制项要求 `audit-export-manifest.schema.json` 和示例包含范围、内容、验证、签名和留存 |
-| 文档说审计包必须能由仓库生成，机器是否能证明 | 控制项要求 `scripts/export-modern-architecture-audit.py`、`Makefile` 入口和 checker 自动化检查 |
+| 文档说审计包必须能由仓库生成，机器是否能证明 | 控制项要求 审计导出脚本、Makefile 入口和 checker 自动化检查 |
 | 文档说控制必须被评估和签署，机器是否能证明 | 控制项要求 `control-assessment-report.schema.json` 和示例包含控制结果、发现项、整改、剩余风险和签署 |
 | 文档说基线变更必须受控，机器是否能证明 | 控制项要求 `baseline-change-record.schema.json` 和示例包含影响分析、审批、验证命令和回滚计划 |
 | 文档说重大架构变更必须有 ADR，机器是否能证明 | 控制项要求 `architecture-decision-record.schema.json` 和示例包含上下文、备选方案、取舍、控制项、风险、POA&M 和复审 |
 | 文档说审计证据必须可交换，机器是否能证明 | 控制项要求 `oscal-export-profile.schema.json`、示例和导出脚本覆盖 OSCAL 五类视图 |
 | 文档说发现项必须进入 POA&M 整改计划，机器是否能证明 | 控制项要求 `poam-record.schema.json`、示例和导出脚本覆盖发现项、行动、里程碑、证据和 OSCAL POA&M 输出 |
 | 文档说架构风险必须登记和复审，机器是否能证明 | 控制项要求 `risk-register.schema.json`、示例和导出脚本覆盖风险、控制项、POA&M、缓解行动、残余风险和复审 |
-| 文档说审计导出必须进入质量门禁，机器是否能证明 | 控制项要求 `audit-export-gate.schema.json`、`scripts/check-modern-architecture-audit-export.py` 和 `make test` 覆盖输出不变量 |
+| 文档说审计导出必须进入质量门禁，机器是否能证明 | 控制项要求 `audit-export-gate.schema.json`、审计导出门禁脚本和 `make test` 覆盖输出不变量 |
 | 文档说审计包交接后必须可防篡改复核，机器是否能证明 | 控制项要求 `audit-export-integrity.schema.json`、导出脚本和门禁覆盖生成物 SHA-256 摘要 |
 | 文档说审计包必须能证明生成来源，机器是否能证明 | 控制项要求 `audit-export-provenance.schema.json`、导出脚本和门禁覆盖 subject digest、构建定义、源码提交和源证据依赖 |
 
-`make check-modern-architecture-kit` 必须校验控制清单自身，并校验清单中声明的 schema 字段、example 字段和 checker 证据确实存在。
+`starter kit 校验命令` 必须校验控制清单自身，并校验清单中声明的 schema 字段、example 字段和 checker 证据确实存在。
 
 ## 10.11 仓库拓扑剖面
 
@@ -2911,13 +2911,13 @@ docs/references/modern-enterprise-architecture-controls.json
 本仓库提供第一批可执行 starter kit：
 
 ```text
-docs/references/modern-enterprise-architecture-kit/
+内部 starter kit
 ```
 
 该目录的 schema 和示例由以下命令校验：
 
 ```bash
-make check-modern-architecture-kit
+starter kit 校验命令
 ```
 
 该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、55 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
@@ -2925,7 +2925,7 @@ make check-modern-architecture-kit
 审计导出包由以下命令生成：
 
 ```bash
-make export-modern-architecture-audit
+审计导出命令
 ```
 
 默认输出：
@@ -2941,7 +2941,7 @@ build/modern-enterprise-architecture-audit/audit-export-provenance.json
 导出输出不变量由以下命令校验，并已经进入 `make test`：
 
 ```bash
-make check-modern-architecture-audit-export
+审计导出门禁命令
 ```
 
 ```text
@@ -2995,9 +2995,9 @@ make check-links
 make check-doc-structure
 make check-metadata
 make check-ai-citation
-make check-modern-architecture-kit
-make check-modern-architecture-audit-export
-make export-modern-architecture-audit
+starter kit 校验命令
+审计导出门禁命令
+审计导出命令
 ```
 
 企业落地时还应补充：
