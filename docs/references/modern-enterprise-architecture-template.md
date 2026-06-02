@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.97
+**文档版本**：V2.98
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.97 在 V2.96 基础上补齐基线门禁负例测试与故障注入总账，明确 release gate、starter gate、审计导出、运行时准入和状态迁移不仅要证明好样例通过，还必须证明坏样例被稳定拒绝。
+**专项修订**：V2.98 在 V2.97 基础上补齐 AI 系统监管分类与影响评估总账，明确 AI 产品、Agent、RAG、微调模型和模型供应商接入必须具备适用法规分类、风险等级、人工监督、日志、技术文档、后市场监测和合规义务映射。
 
 ---
 
@@ -53,7 +53,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.97` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、127 组 starter kit schema/example、基线版本策略、发布通道、兼容性与冻结控制总账、V2.69 至 V2.92 控制覆盖追溯、公开文档与本地私有可执行资产边界、企业内部命令 URI、证据保证等级、证据采信规则、不可采信证据阻断、证据保证等级在晋级矩阵、制品清单、starter gate 与审计导出中的消费链闭合、基线门禁负例测试、故障注入、期望失败证据、fail-closed 覆盖、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核、仓库变更控制、远端保护漂移整改、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 证据账本、微调运行证据、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、威胁建模、攻击面管理、安全风险治理、访问复核、密钥轮换、漏洞修复、事故复盘、可靠性、性能、容量、成本效率、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
+| `V2.98` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、128 组 starter kit schema/example、基线版本策略、发布通道、兼容性与冻结控制总账、V2.69 至 V2.92 控制覆盖追溯、公开文档与本地私有可执行资产边界、企业内部命令 URI、证据保证等级、证据采信规则、不可采信证据阻断、证据保证等级在晋级矩阵、制品清单、starter gate 与审计导出中的消费链闭合、基线门禁负例测试、AI 系统监管分类与影响评估、故障注入、期望失败证据、fail-closed 覆盖、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核、仓库变更控制、远端保护漂移整改、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 证据账本、AI 系统监管分类与影响评估总账、微调运行证据、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、威胁建模、攻击面管理、安全风险治理、访问复核、密钥轮换、漏洞修复、事故复盘、可靠性、性能、容量、成本效率、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -115,6 +115,8 @@ V2.47 起，企业级基线还必须形成 `baseline-evidence-trace-graph.yaml`�
 V2.48 起，企业级基线还必须形成 `baseline-gate-execution-report.yaml`。它不是替代门禁决策，而是证明门禁命令、runner、策略包、schema 包、输入摘要、规则结果、退出码、重放结果和最终决策来自同一次可复现执行，避免“写了 pass，但没有跑”的空心化放行。
 
 V2.97 起，企业级基线还必须形成 `baseline-gate-negative-test-suite.yaml`。它不是替代 `baseline-gate-execution-report.yaml`，而是证明 release gate、starter gate、审计导出、运行时准入和状态迁移阻断规则在错误输入、过期证据、摘要漂移、签名缺失、私有资产误入、例外过期和证据保证等级不足时会 fail-closed，避免只证明好样例通过、却无法证明坏样例被拒绝。
+
+V2.98 起，企业级基线还必须形成 `baseline-ai-system-regulatory-impact-ledger.yaml`。它不是替代 AI 产品契约、AI 证据账本、DPIA、监管义务总账或风险登记，而是把每个 AI 系统的用途、部署角色、适用司法辖区、风险分类、禁止/高风险/通用目的 AI 判断、人工监督、日志留存、技术文档、数据治理、透明度义务、后市场监测、供应商责任和合规缺口纳入统一证据链；任何高风险 AI 无分类、无人工监督、无日志、无技术文档、无后市场监测、无义务映射或未关闭合规缺口，都必须阻断 baseline/frozen 晋级。
 
 V2.49 起，企业级基线还必须形成 `baseline-publish-transaction.yaml`。它不是替代 Git 或发布证据包，而是证明这次基线发布事务的提交前状态、提交对象、签名 tag、远端 ref、push 回执、保护规则、禁推资产排除和发布后校验来自同一个不可变发布事实。
 
@@ -250,6 +252,7 @@ git diff --check
 | 证据追踪图 | `baseline-evidence-trace-graph.yaml` 必须证明关键证据节点、摘要、依赖、下游使用和状态一致 | 证据对象各自存在但互相引用旧摘要、发布证据没有覆盖会审裁决、审计导出使用了过期节点 |
 | 门禁执行报告 | `baseline-gate-execution-report.yaml` 必须证明门禁命令、runner 镜像、策略包、schema 包、输入摘要、逐条规则结果、退出码、重放结果和最终决策一致 | release gate 有放行结论但没有执行明细、策略包漂移、输入摘要不一致、规则未运行、重放失败或执行结果与最终决策不一致 |
 | 门禁负例测试 | `baseline-gate-negative-test-suite.yaml` 必须声明负例类别、输入 fixture、预期失败规则、实际失败结果、覆盖 gate、复测命令、回归 owner 和阻断状态 | 坏样例被放行、负例只登记未运行、期望失败无实际失败、失败原因和策略规则不一致、负例未覆盖 release/starter/audit/runtime/state-transition 关键门禁 |
+| AI 系统监管分类与影响评估 | `baseline-ai-system-regulatory-impact-ledger.yaml` 必须声明 AI 系统用途、部署角色、适用法规、风险分类、禁止/高风险/通用目的 AI 判断、人工监督、日志留存、技术文档、数据治理、透明度、后市场监测、供应商责任和合规缺口 | 高风险 AI 无分类、无人工监督、无日志留存、无技术文档、无后市场监测、无义务映射、模型供应商责任不清、合规缺口未关闭仍晋级 |
 | 发布事务回执 | `baseline-publish-transaction.yaml` 必须证明提交前检查、干净工作树、source commit、签名 tag、远端 ref、push 结果、tag 保护、禁推资产排除和发布后验证一致 | 文档声称已发布但远端没有 ref、tag 未签名、push 失败、工作树脏、禁推资产进入远端或发布后验证未执行 |
 | 撤销隔离记录 | `baseline-revocation-record.yaml` 必须证明撤销触发条件、隔离范围、受影响引用、通知对象、恢复目标、风险接受、审计归档和状态回写一致 | 坏基线已发布但无法撤销、签名泄露后仍被引用、禁推资产误入远端后没有隔离证据或下游继续采用 |
 | 准入执行策略 | `baseline-enforcement-policy.yaml` 必须把支持矩阵、采纳总账、符合性声明、撤销记录和例外总账转成统一阻断规则 | 低于最低基线仍可部署、撤销/EOL 基线仍可新采用、资产没有符合性声明但通过发布、例外过期仍放行 |
@@ -445,8 +448,9 @@ git diff --check
 | `V2.95` | 2026-06-03 | Minor | 补齐证据保证等级与采信规则，明确 release gate、会审裁决和审计导出必须按证据来源、独立性、完整性、新鲜度和可重放性判断证据是否可采信 |
 | `V2.96` | 2026-06-03 | Minor | 将证据保证等级补线到基线晋级矩阵、制品清单、starter gate、会审裁决、审计导出和基线状态迁移阻断路径 |
 | `V2.97` | 2026-06-03 | Minor | 补齐基线门禁负例测试与故障注入总账，证明 release gate、starter gate、审计导出、运行时准入和状态迁移能稳定拒绝坏样例 |
+| `V2.98` | 2026-06-03 | Minor | 补齐 AI 系统监管分类与影响评估总账，绑定适用法规、风险等级、人工监督、日志留存、技术文档、透明度、后市场监测和合规缺口闭环 |
 
-### 0.8 V2.97 可执行企业标准路线图
+### 0.8 V2.98 可执行企业标准路线图
 
 V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、example 和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。V2.12 增加审计导出自动化命令，把版本、控制目录、证据映射、导出清单、脚本和关键制品哈希生成可交付审计包。V2.13 增加控制评估报告，把证据包进一步闭环到控制结果、发现项、整改、剩余风险和签署状态。V2.14 增加架构基线变更记录，把基线升级的影响分析、审批、验证命令和回滚路径纳入可执行证据。V2.15 增加 OSCAL 交换映射和导出摘要，把内部控制证据映射到 catalog、component-definition、system-security-plan、assessment-results 和 POA&M 视图。V2.16 增加审计导出门禁，把导出包生成、JSON/Markdown/OSCAL 输出和关键不变量校验纳入 `make test`。V2.17 增加审计导出完整性清单，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。V2.18 增加审计导出 provenance statement，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。V2.19 增加审计导出签名策略，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入门禁。V2.20 增加审计导出签名验签回执，把外部签名完成后的 bundle 摘要、证书身份、OIDC issuer、透明日志和验签结果纳入证据链。V2.21 增加 POA&M 整改计划，把控制发现项、责任人、整改行动、里程碑、证据、签署和 OSCAL POA&M 输出纳入闭环。V2.22 增加企业架构风险登记，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入闭环。V2.23 增加架构决策记录，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入闭环。V2.24 增加 AI 事件响应 playbook，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘纳入闭环。V2.25 增加 AI 证据账本，把模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批、留存和复审纳入 AI 产品级证据闭环。V2.26 增加微调运行证据，把训练数据授权、数据准备、实验追踪、评估、模型登记、审批、灰度发布、监控和退役纳入 AI 微调审计闭环。V2.27 增加仓库变更控制，把 CODEOWNERS、受保护分支、PR 审查、必需检查、签名提交、禁止直推、发布 tag 保护、远端保护状态验证、漂移整改、POA&M 和风险登记纳入版本基线保护。V2.28 增加企业执行控制面，把合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核和退出标准变成统一执行协议。V2.29 增加外部标准版本锁定与升级策略，避免把未稳定标准、实验性语义约定或外部规范变更直接带入生产基线。V2.30 增加版本控制面，把基线 ID、发布通道、tag、源 commit、兼容窗口、冻结策略和回滚入口固化为发布不变量。V2.31 增加基线发布证据包，把晋级决策、冻结复核、漂移检查、不可变引用、审计摘要和回滚验证固化为发布证据。V2.32 增加基线兼容性总账，把消费者影响、迁移窗口、弃用截止、例外状态和未迁移风险固化为版本门禁证据。V2.33 增加基线采纳总账，把领域、平台、数据、AI 和生产资产对基线的采用状态、逾期治理和例外整改固化为组织级版本证据。V2.34 增加基线支持矩阵，把旧基线支持状态、维护窗口、安全补丁窗口、EOL 和最低可接受基线固化为版本生命周期门禁。V2.35 增加基线发布列车，把候选窗口、冻结窗口、晋级日期、通知节奏、黑窗和紧急补丁入口固化为版本发布节奏门禁。V2.36 增加资产级基线符合性声明，把资产自声明、证据绑定、例外、复核和采纳总账回写固化为资产级版本证据。V2.37 增加基线制品清单，把源文档、schema、示例、控制项、证据模板、脚本、生成物和外部引用固化为可摘要、可签名、可复现的版本物料清单。V2.38 增加基线验证环境锁定，把校验命令、工具版本、runner 镜像、策略包、schema validator 和验签工具固化为可复现门禁。V2.39 增加基线通知确认总账，把发布列车中的通知计划升级为可审计的送达、确认、异议和例外证据。V2.40 增加基线回滚验证记录，把上一基线检出、GitOps revision 恢复、审计导出恢复和烟测结果升级为独立证据。V2.41 增加基线例外总账，把分散例外、到期、风险接受、POA&M 和冻结阻断收敛为统一审计证据。V2.42 增加基线就绪评分卡，把硬门禁、评分维度、证据摘要和 baseline/frozen 判定统一到最终准入证据。V2.43 增加基线生命周期状态机，把允许迁移、禁止迁移、状态回写、迁移审批和回滚入口统一到状态转换证据。V2.44 增加基线状态对账报告，把状态机、版本控制面、发布证据、支持矩阵、采纳总账和审计导出的状态字段统一对账。V2.45 增加基线 EOL 退役证书，把旧基线生产引用清零、迁移关闭、例外清零、审计归档和新采用阻断固化为退役证据。V2.46 增加基线会审裁决记录，把会审范围、证据核验、投票签署、反对意见、条件动作和最终裁决固化为独立会审证据。V2.47 增加基线证据追踪图，把跨证据依赖、摘要一致性、下游消费和断链阻断固化为可校验证据图。V2.48 增加基线门禁执行报告，把执行命令、策略包、输入摘要、规则结果、退出码和重放证明固化为 release gate 的可审计运行证据。V2.49 增加基线发布事务回执，把提交、签名 tag、远端 ref、push 回执、保护规则和发布后验证固化为版本发布事实。V2.50 增加基线撤销与隔离记录，把坏基线的隔离、撤销、通知、恢复目标、风险接受和审计归档固化为版本事故控制证据。V2.51 增加基线准入执行策略，把最低基线、撤销/EOL、资产声明、例外到期和运行入口阻断固化为统一策略。V2.52 增加基线消费锁定文件，把资产消费端的基线版本、commit、tag 和关键证据摘要固化为不可变锁。V2.53 增加基线迁移工作单，把目标资产迁移到新基线的步骤、依赖、GitOps 变更、消费锁更新、验收证据和回滚动作固化为执行工单。V2.54 增加基线迁移执行回执，把实际命令、actor、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证固化为执行事实。V2.55 增加本地私有制品边界，把本地私有 starter kit、生成 JSON、校验脚本、禁推原因、摘要留存和远端排除固化为受控证据。V2.56 增加审计导出排除清单，把原文白名单、摘要留存项、强制排除项、签名 payload 排除和导出后验证固化为受控证据。V2.57 增加私有制品托管交接清单，把私有制品库引用、访问控制、留存期限、取回命令、恢复验证和摘要一致性固化为受控证据。V2.58 增加干净环境基线重建回执，把远端 checkout、私有制品取回、摘要校验、审计导出重建、门禁重放和禁推资产复核固化为受控证据。V2.59 增加基线证据不可变归档回执，把关键证据的 WORM 留存、legal hold、访问日志、防删除、归档摘要和恢复演练固化为受控证据。V2.60 增加基线长期验签回执，把签名 bundle、证书链、OIDC 身份、透明日志、signed entry timestamp、RFC3161 TSA、撤销状态和验证工具版本固化为长期验签证据。V2.61 增加基线运行时准入回执，把 Kubernetes admission、策略引擎、镜像 digest、签名、provenance、SBOM、消费锁和拒绝样例固化为生产运行入口证据。V2.62 增加基线运行时准入决策总账，把 Kubernetes audit、admission webhook、PolicyReport、OPA decision log、actor、requestUID、allow/deny 和原始日志摘要固化为逐条运行决策证据。V2.63 增加基线连续控制监测总账，把控制项指标、告警、漂移、处置、证据新鲜度和控制运行 SLO 固化为持续监测证据。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps、runtime admission、audit logging、continuous control monitoring 和审计系统连接起来。
 
@@ -518,7 +522,9 @@ V2.96 进一步补齐 V2.95 的消费链闭合问题：`baseline-evidence-assura
 
 V2.97 进一步补齐门禁 fail-closed 证明链：`baseline-gate-negative-test-suite.yaml` 必须把错误 fixture、预期失败规则、实际拒绝结果、失败日志摘要、覆盖的 gate、复测命令和 owner 固化为基线证据。它要求 release gate、starter gate、审计导出、运行时准入和状态迁移都至少具备正例通过与负例拒绝两类证明，禁止只用好样例证明门禁有效。
 
-V2.97 起点包括：
+V2.98 进一步补齐 AI 合规分类与生命周期影响证据：`baseline-ai-system-regulatory-impact-ledger.yaml` 必须把 AI 系统用途、部署角色、适用法规、风险分类、禁止/高风险/通用目的 AI 判断、人工监督、日志留存、技术文档、数据治理、透明度、后市场监测、供应商责任和合规缺口固化为基线证据。它要求 AI 产品、Agent、RAG、微调模型和模型供应商接入都能从 AI 证据账本追溯到监管义务、风险登记、DPIA、会审裁决和 release gate 阻断规则，禁止只用“AI 风险等级”一个字段替代合规分类。
+
+V2.98 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -528,7 +534,7 @@ V2.97 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `本地私有 starter kit` 下的 127 组 schema/example、基线版本策略、发布通道、兼容性与冻结控制总账、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、嵌套字段校验、格式校验、威胁建模、攻击面管理、安全风险治理、可靠性、性能、容量、成本效率、数据治理、AI 运行、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、AI 证据账本、微调运行证据、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据保证等级消费链、基线门禁负例测试、故障注入、期望失败证据、fail-closed 覆盖、证据链验真字段和示例跨文件一致性检查。
+9. Starter Kit：提供 `本地私有 starter kit` 下的 128 组 schema/example、基线版本策略、发布通道、兼容性与冻结控制总账、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、嵌套字段校验、格式校验、威胁建模、攻击面管理、安全风险治理、可靠性、性能、容量、成本效率、数据治理、AI 运行、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、AI 证据账本、AI 系统监管分类与影响评估总账、微调运行证据、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据保证等级消费链、基线门禁负例测试、故障注入、期望失败证据、fail-closed 覆盖、证据链验真字段和示例跨文件一致性检查。
 10. 版本清单：提供 `本地私有版本清单`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
 11. 控制项覆盖清单：提供 `本地私有控制项覆盖清单`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
 12. 严格 schema 模式：starter kit 的对象 schema 必须声明 `additionalProperties=false`，新增字段必须先进入契约、示例和 checker 证据链。
@@ -610,6 +616,8 @@ V2.95 补充项：新增 `baseline-evidence-assurance-classification.yaml` 的�
 
 V2.97 补充项：新增 `baseline-gate-negative-test-suite.yaml` 的公开契约说明，把负例 fixture、故障注入、预期失败规则、实际拒绝结果、失败日志摘要、复测命令、覆盖 gate 和回归 owner 纳入 release gate、starter gate、审计导出、运行时准入和状态迁移 fail-closed 证明；对应私有 schema/example 与负例 fixture 仍按禁推资产边界维护，不进入公开远端。
 
+V2.98 补充项：新增 `baseline-ai-system-regulatory-impact-ledger.yaml` 的公开契约说明，把 AI 系统用途、部署角色、适用法规、风险分类、禁止/高风险/通用目的 AI 判断、人工监督、日志留存、技术文档、数据治理、透明度、后市场监测、供应商责任和合规缺口纳入 release gate、会审裁决、风险登记、监管义务总账和审计导出证据；对应私有 schema/example 仍按禁推资产边界维护，不进入公开远端。
+
 86. 基线共享责任与继承控制总账：新增 `baseline-control-inheritance-ledger.yaml`，把 inherited、shared、provider-managed、domain-owned 和 consumer-owned 控制责任、继承条件、消费者义务、证据引用和失效阻断纳入可执行治理证据。
 87. 基线数据驻留与跨境处理总账：新增 `baseline-data-residency-transfer-ledger.yaml`，把数据类别、监管区域、实际处理位置、跨境传输机制、子处理方、补充保护措施、删除传播和区域漂移阻断纳入可执行治理证据。
 88. 基线第三方与关键供应商风险总账：新增 `baseline-third-party-risk-ledger.yaml`，把关键供应商分级、服务范围、合同控制、DPA/SLA、审计权、保证报告、数据类别、集中度、退出计划、替代路径、连续性和供应商事件阻断纳入可执行治理证据。
@@ -637,7 +645,8 @@ V2.97 补充项：新增 `baseline-gate-negative-test-suite.yaml` 的公开契�
 110. 基线架构视图、运行拓扑与依赖影响总账：新增 `baseline-architecture-view-runtime-topology-dependency-ledger.yaml`，把架构视图、C4/部署视图、catalog 声明依赖、运行时观测依赖、GitOps 拓扑、数据/AI/第三方依赖、blast radius、变更影响和依赖漂移纳入可执行治理证据。
 111. 基线质量属性、架构驱动与权衡决策总账：新增 `baseline-quality-attribute-architecture-driver-tradeoff-ledger.yaml`，把业务驱动、质量属性场景、可度量响应指标、架构驱动、敏感点、权衡点、ADR、适配度函数和验证证据纳入可执行治理证据。
 112. 基线架构原则、约束、反模式与例外执行总账：新增 `baseline-architecture-principle-constraint-exception-ledger.yaml`，把原则 owner、适用范围、强制约束、禁止项、反模式、检测方式、门禁入口、违反处置、例外审批、风险接受、ADR 和复核周期纳入可执行治理证据。
-113. 基线版本策略、发布通道、兼容性与冻结控制总账：新增 `baseline-version-policy-release-control-ledger.yaml`，把版本号语义、发布通道、Conventional Commit 分类、签名 tag、兼容窗口、冻结规则、紧急补丁、撤销隔离、消费锁和迁移窗口纳入可执行治理证据。
+113. AI 系统监管分类与影响评估总账：新增 `baseline-ai-system-regulatory-impact-ledger.yaml`，把 AI 系统用途、部署角色、适用法规、风险分类、禁止/高风险/通用目的 AI 判断、人工监督、日志留存、技术文档、数据治理、透明度、后市场监测、供应商责任和合规缺口纳入可执行治理证据。
+114. 基线版本策略、发布通道、兼容性与冻结控制总账：新增 `baseline-version-policy-release-control-ledger.yaml`，把版本号语义、发布通道、Conventional Commit 分类、签名 tag、兼容窗口、冻结规则、紧急补丁、撤销隔离、消费锁和迁移窗口纳入可执行治理证据。
 
 ---
 
@@ -3865,7 +3874,8 @@ V2.82 starter kit 还提供以下可执行契约模板：
 111. `baseline-architecture-view-runtime-topology-dependency-ledger.yaml`：基线架构视图、运行拓扑与依赖影响总账，覆盖架构视图、C4/部署视图、catalog 声明依赖、运行时观测依赖、GitOps 拓扑、数据/AI/第三方依赖、关键路径、blast radius、变更影响、依赖 owner、漂移和复核状态。
 112. `baseline-quality-attribute-architecture-driver-tradeoff-ledger.yaml`：基线质量属性、架构驱动与权衡决策总账，覆盖业务驱动、质量属性场景、响应指标、架构驱动、敏感点、权衡点、备选方案、ADR、适配度函数、验证证据和复核状态。
 113. `baseline-architecture-principle-constraint-exception-ledger.yaml`：基线架构原则、约束、反模式与例外执行总账，覆盖原则、owner、适用范围、强制约束、禁止项、反模式、检测方式、门禁入口、违反处置、例外、风险接受、ADR 和复核状态。
-114. `baseline-version-policy-release-control-ledger.yaml`：基线版本策略、发布通道、兼容性与冻结控制总账，覆盖版本号语义、发布通道、变更分类、签名 tag、兼容窗口、消费锁、迁移、冻结、紧急补丁、撤销和 EOL 阻断状态。
+114. `baseline-ai-system-regulatory-impact-ledger.yaml`：AI 系统监管分类与影响评估总账，覆盖 AI 系统用途、部署角色、适用法规、风险分类、禁止/高风险/通用目的 AI 判断、人工监督、日志留存、技术文档、数据治理、透明度、后市场监测、供应商责任和合规缺口。
+115. `baseline-version-policy-release-control-ledger.yaml`：基线版本策略、发布通道、兼容性与冻结控制总账，覆盖版本号语义、发布通道、变更分类、签名 tag、兼容窗口、消费锁、迁移、冻结、紧急补丁、撤销和 EOL 阻断状态。
 
 ### 10.10.3 自动化门禁映射
 
@@ -3941,6 +3951,7 @@ V2.82 starter kit 还提供以下可执行契约模板：
 | 渐进式发布 | Feature Flag、Kill Switch、曝光事件、SLO 燃尽回滚 | `feature-flag-control.yaml`、GitOps、observability | 无关闭开关、无默认变体、无成功指标、无回滚条件 |
 | AI 发布 | 评估集、红队、RAG 权限、工具权限、人工确认策略 | `ai-product.yaml`、`contracts/ai/` | 高风险工具无人工确认、评估未达标 |
 | AI 证据账本 | 模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批和复审 | `ai-evidence.yaml`、`ai-product.yaml`、`ai-tool-contract.yaml`、`rag-index-contract.yaml`、`genai-observability-contract.yaml` | AI 证据分散、模型版本错配、工具权限和事件响应证据无法按产品聚合 |
+| AI 系统监管分类与影响评估 | AI 系统用途、部署角色、适用法规、风险分类、禁止/高风险/通用目的 AI 判断、人工监督、日志留存、技术文档、数据治理、透明度、后市场监测、供应商责任和合规缺口 | `baseline-ai-system-regulatory-impact-ledger.yaml`、`ai-evidence.yaml`、`ai-product.yaml`、DPIA、监管义务总账、风险登记、会审裁决、release gate | 高风险 AI 无分类、适用法规未知、人工监督缺失、日志或技术文档缺失、后市场监测缺失、供应商责任不清、合规缺口未关闭 |
 | AI 安全 | Prompt Injection、工具同意、出站限制、残余风险接受 | `ai-threat-model.yaml`、`ai-tool-contract.yaml`、评估证据 | 高风险工具无同意、红队失败、风险接受过期 |
 | AI 事件响应 | 幻觉爆发、工具循环、RAG 污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘 | `ai-incident-playbook.yaml`、`ai-product.yaml`、`ai-threat-model.yaml`、`genai-observability-contract.yaml` | 高风险 AI 无 playbook、触发器不全、无法人工接管或回滚 |
 | 隐私工程 | DPIA、合法基础、主体权利、删除传播、AI 使用限制 | `privacy-impact-assessment.yaml`、数据产品、RAG 删除证据 | 有 PII 但无 DPIA、删除无法传播到向量索引、训练退出未声明 |
@@ -5014,7 +5025,7 @@ baselineReleaseEvidence:
 | 晋级路径 | 必须证明 | 阻断条件 |
 | -------- | -------- | -------- |
 | `draft -> candidate` | 版本号、变更摘要、影响面、索引同步和基础门禁通过 | 文档版本和索引不一致 |
-| `candidate -> baseline` | `baseline-lifecycle-state-machine.yaml`、`baseline-state-reconciliation-report.yaml`、`baseline-evidence-trace-graph.yaml`、`baseline-evidence-assurance-classification.yaml`、`baseline-gate-execution-report.yaml`、`baseline-gate-negative-test-suite.yaml`、`baseline-publish-transaction.yaml`、`baseline-release-evidence.yaml`、`baseline-enforcement-policy.yaml`、`baseline-runtime-admission-receipt.yaml`、`baseline-runtime-admission-decision-ledger.yaml`、`baseline-continuous-control-monitoring-ledger.yaml`、`baseline-operational-resilience-ledger.yaml`、`baseline-secure-configuration-posture-drift-ledger.yaml`、`baseline-production-change-release-ledger.yaml`、`baseline-incident-problem-corrective-action-ledger.yaml`、`baseline-data-product-quality-contract-observability-ledger.yaml`、`baseline-engineering-quality-test-release-verification-ledger.yaml`、`baseline-workforce-competency-training-duty-segregation-ledger.yaml`、`baseline-capacity-performance-cost-efficiency-ledger.yaml`、`baseline-service-reliability-slo-error-budget-observability-ledger.yaml`、`baseline-backup-restore-disaster-recovery-ledger.yaml`、`baseline-regulatory-obligation-ledger.yaml`、`baseline-cryptographic-secrets-key-certificate-ledger.yaml`、`baseline-asset-criticality-classification-ledger.yaml`、`baseline-identity-entitlement-access-ledger.yaml`、`baseline-processing-activity-inventory-ledger.yaml`、`baseline-privacy-rights-consent-ledger.yaml`、`baseline-records-retention-legal-hold-ledger.yaml`、`baseline-consumption-lock.yaml`、`baseline-migration-work-order.yaml`、`baseline-migration-execution-receipt.yaml`、基线就绪评分卡、基线会审裁决记录、版本控制面、验证环境锁、审计导出、控制覆盖、远端 ref、push 回执和 tag 验签通过 | 状态机未允许迁移、状态对账失败、证据追踪图断链、证据保证等级缺失、关键证据低于 gate 最低等级、证据采信状态为 rejected/expired/unverifiable、证据保证等级未被发布证据/会审/审计导出消费、门禁执行报告失败或不可重放、负例套件缺失、坏样例被放行、预期失败未失败、故障注入未覆盖关键门禁、发布事务缺失、准入策略未执行、运行时 admission 未启用、准入决策总账缺失、连续控制监测缺失或关键漂移未关闭、安全配置姿态总账缺失、关键配置基线缺失、critical 配置漂移未关闭、未批准特权 Pod、公共存储暴露、弱 TLS、审计日志关闭、配置修复缺复测、生产变更总账缺失、生产变更未登记、黑窗内非紧急变更、关键依赖冲突未关闭、回滚计划缺失、数据库迁移未演练、Feature Flag 无 kill switch、Prompt/模型变更未评估、紧急变更无事后复盘、变更失败未关闭或未关联事故、事故问题总账缺失、事故未定级、事故无 owner、RCA 缺失、纠正行动逾期、复发防止未验证、runbook 或告警未更新、同类事故复发未升级、客户或监管沟通缺失、问题记录未关闭、数据产品质量契约总账缺失、数据产品无 owner 或契约、schema drift 未关闭、质量断言或 freshness 违约、血缘缺口、消费者未通知、AI/特征/RAG 使用未授权、契约违约未关闭或修复未复测、工程质量总账缺失、需求追踪缺失、关键测试缺失、覆盖率低于阈值、flaky 测试未治理、critical/high 缺陷未关闭或未接受、修复未复测、发布验证缺失、质量风险未签署、人员能力总账缺失、关键角色未任命、培训或专项资格过期、职责未确认、on-call 未认证、审批人与执行人未分离、冲突角色未关闭、代理授权过期、关键岗位无人备份、运营韧性总账缺失、重要业务服务未识别、影响容忍缺失、场景测试失败或超出影响容忍、容量性能成本总账缺失、关键服务无容量模型、压测过期、p95/p99 退化、资源未声明、自动扩缩容缺失、预算超支无审批、单位成本不可解释、异常成本未关闭、服务可靠性总账缺失、关键服务无 SLO、SLI 不可测、错误预算超支未冻结风险变更、关键告警无人接、on-call 缺失、runbook 缺失、合成探测未覆盖用户旅程、日志/指标/链路覆盖缺口、降级策略缺失、备份恢复总账缺失、关键数据存储无备份、不可变或离线副本缺失、恢复演练超期、RTO/RPO 演练失败、备份完整性未校验、勒索隔离不可证明、恢复权限不受控、监管义务总账缺失、强制义务未映射控制、强制义务缺证据、义务 owner 缺失、监管变更超期、义务 POA&M 超期、密码材料总账缺失、未知密钥或秘密未入账、明文存放、弱算法、证书过期、轮换超期、吊销路径缺失、泄露未关闭、签名密钥托管不清、资产分级总账缺失、资产无 owner、数据分类未知、CIA 影响缺失、关键资产低估、L3/L4 与 conformance profile 不一致、AI 风险或互联网暴露未标记、分级复核过期、身份权限总账缺失、生产身份未入账、特权访问无 MFA 或审批、工作负载身份漂移、离职账号仍有效、孤儿账号或过期权限未关闭、处理活动总账缺失、个人数据处理活动未入账、处理活动无 owner、个人数据类别未知、RoPA 与运行资产不一致、隐私权利与同意总账缺失、处理目的无合法基础、同意撤回未传播、权利请求逾期、自动化决策复核缺失、记录留存总账缺失、记录类别无留存排期、legal hold 下允许删除、删除传播缺回执、过期记录未处置、超期留存无目的、拒绝样例不生效、消费锁缺失或浮动引用、迁移工单缺失或无验收证据、迁移执行回执缺失或摘要不一致、远端 ref 不匹配、push 失败、缺少证据包、就绪评分卡未通过、会审裁决缺失或未签署、验证环境未锁定、tag 漂移、控制覆盖不一致 |
+| `candidate -> baseline` | `baseline-lifecycle-state-machine.yaml`、`baseline-state-reconciliation-report.yaml`、`baseline-evidence-trace-graph.yaml`、`baseline-evidence-assurance-classification.yaml`、`baseline-gate-execution-report.yaml`、`baseline-gate-negative-test-suite.yaml`、`baseline-ai-system-regulatory-impact-ledger.yaml`、`baseline-publish-transaction.yaml`、`baseline-release-evidence.yaml`、`baseline-enforcement-policy.yaml`、`baseline-runtime-admission-receipt.yaml`、`baseline-runtime-admission-decision-ledger.yaml`、`baseline-continuous-control-monitoring-ledger.yaml`、`baseline-operational-resilience-ledger.yaml`、`baseline-secure-configuration-posture-drift-ledger.yaml`、`baseline-production-change-release-ledger.yaml`、`baseline-incident-problem-corrective-action-ledger.yaml`、`baseline-data-product-quality-contract-observability-ledger.yaml`、`baseline-engineering-quality-test-release-verification-ledger.yaml`、`baseline-workforce-competency-training-duty-segregation-ledger.yaml`、`baseline-capacity-performance-cost-efficiency-ledger.yaml`、`baseline-service-reliability-slo-error-budget-observability-ledger.yaml`、`baseline-backup-restore-disaster-recovery-ledger.yaml`、`baseline-regulatory-obligation-ledger.yaml`、`baseline-cryptographic-secrets-key-certificate-ledger.yaml`、`baseline-asset-criticality-classification-ledger.yaml`、`baseline-identity-entitlement-access-ledger.yaml`、`baseline-processing-activity-inventory-ledger.yaml`、`baseline-privacy-rights-consent-ledger.yaml`、`baseline-records-retention-legal-hold-ledger.yaml`、`baseline-consumption-lock.yaml`、`baseline-migration-work-order.yaml`、`baseline-migration-execution-receipt.yaml`、基线就绪评分卡、基线会审裁决记录、版本控制面、验证环境锁、审计导出、控制覆盖、远端 ref、push 回执和 tag 验签通过 | 状态机未允许迁移、状态对账失败、证据追踪图断链、证据保证等级缺失、关键证据低于 gate 最低等级、证据采信状态为 rejected/expired/unverifiable、证据保证等级未被发布证据/会审/审计导出消费、门禁执行报告失败或不可重放、负例套件缺失、AI 系统监管分类总账缺失、高风险 AI 分类未知、人工监督或日志留存缺失、技术文档或后市场监测缺失、坏样例被放行、预期失败未失败、故障注入未覆盖关键门禁、发布事务缺失、准入策略未执行、运行时 admission 未启用、准入决策总账缺失、连续控制监测缺失或关键漂移未关闭、安全配置姿态总账缺失、关键配置基线缺失、critical 配置漂移未关闭、未批准特权 Pod、公共存储暴露、弱 TLS、审计日志关闭、配置修复缺复测、生产变更总账缺失、生产变更未登记、黑窗内非紧急变更、关键依赖冲突未关闭、回滚计划缺失、数据库迁移未演练、Feature Flag 无 kill switch、Prompt/模型变更未评估、紧急变更无事后复盘、变更失败未关闭或未关联事故、事故问题总账缺失、事故未定级、事故无 owner、RCA 缺失、纠正行动逾期、复发防止未验证、runbook 或告警未更新、同类事故复发未升级、客户或监管沟通缺失、问题记录未关闭、数据产品质量契约总账缺失、数据产品无 owner 或契约、schema drift 未关闭、质量断言或 freshness 违约、血缘缺口、消费者未通知、AI/特征/RAG 使用未授权、契约违约未关闭或修复未复测、工程质量总账缺失、需求追踪缺失、关键测试缺失、覆盖率低于阈值、flaky 测试未治理、critical/high 缺陷未关闭或未接受、修复未复测、发布验证缺失、质量风险未签署、人员能力总账缺失、关键角色未任命、培训或专项资格过期、职责未确认、on-call 未认证、审批人与执行人未分离、冲突角色未关闭、代理授权过期、关键岗位无人备份、运营韧性总账缺失、重要业务服务未识别、影响容忍缺失、场景测试失败或超出影响容忍、容量性能成本总账缺失、关键服务无容量模型、压测过期、p95/p99 退化、资源未声明、自动扩缩容缺失、预算超支无审批、单位成本不可解释、异常成本未关闭、服务可靠性总账缺失、关键服务无 SLO、SLI 不可测、错误预算超支未冻结风险变更、关键告警无人接、on-call 缺失、runbook 缺失、合成探测未覆盖用户旅程、日志/指标/链路覆盖缺口、降级策略缺失、备份恢复总账缺失、关键数据存储无备份、不可变或离线副本缺失、恢复演练超期、RTO/RPO 演练失败、备份完整性未校验、勒索隔离不可证明、恢复权限不受控、监管义务总账缺失、强制义务未映射控制、强制义务缺证据、义务 owner 缺失、监管变更超期、义务 POA&M 超期、密码材料总账缺失、未知密钥或秘密未入账、明文存放、弱算法、证书过期、轮换超期、吊销路径缺失、泄露未关闭、签名密钥托管不清、资产分级总账缺失、资产无 owner、数据分类未知、CIA 影响缺失、关键资产低估、L3/L4 与 conformance profile 不一致、AI 风险或互联网暴露未标记、分级复核过期、身份权限总账缺失、生产身份未入账、特权访问无 MFA 或审批、工作负载身份漂移、离职账号仍有效、孤儿账号或过期权限未关闭、处理活动总账缺失、个人数据处理活动未入账、处理活动无 owner、个人数据类别未知、RoPA 与运行资产不一致、隐私权利与同意总账缺失、处理目的无合法基础、同意撤回未传播、权利请求逾期、自动化决策复核缺失、记录留存总账缺失、记录类别无留存排期、legal hold 下允许删除、删除传播缺回执、过期记录未处置、超期留存无目的、拒绝样例不生效、消费锁缺失或浮动引用、迁移工单缺失或无验收证据、迁移执行回执缺失或摘要不一致、远端 ref 不匹配、push 失败、缺少证据包、就绪评分卡未通过、会审裁决缺失或未签署、验证环境未锁定、tag 漂移、控制覆盖不一致 |
 | `baseline -> frozen` | 状态机允许迁移、冻结复核、证据保证等级复核、开放关键发现为 0、就绪评分达到 frozen 阈值、会审裁决同意冻结、例外总账无过期阻断、独立回滚验证和审计导出摘要一致 | 状态机禁止迁移、仍有 critical/high 风险、就绪评分不足、会审反对意见未关闭、证据过期、证据保证等级不足、不可采信主证据未替换、例外过期、阻断例外未关闭、回滚未验证 |
 | `baseline -> emergency-patch` | 事故或安全编号、补丁范围、最小影响分析、补齐证据期限和复盘 owner | 无事故编号、补丁长期化、事后未补 ADR 或复盘 |
 | `baseline/frozen -> quarantined` | `baseline-revocation-record.yaml`、撤销触发、隔离范围、受影响引用、通知确认、恢复目标和风险接受 | 无撤销记录、签名或证据污染未隔离、通知对象未知、恢复目标未验证 |
@@ -5024,7 +5035,7 @@ baselineReleaseEvidence:
 执行规则：
 
 1. `baseline-release-evidence.yaml` 必须追加写入，不得覆盖历史基线证据。
-2. `immutableRefs.sourceCommit`、`releaseTag`、发布事务摘要、准入策略摘要、消费锁摘要、迁移工作单摘要、迁移执行回执摘要、撤销隔离摘要、生命周期状态机摘要、状态对账报告摘要、证据追踪图摘要、证据保证等级摘要、门禁执行报告摘要、门禁负例套件摘要、EOL 退役证书摘要、会审裁决摘要、架构原则与约束执行总账摘要、服务可靠性与可观测性总账摘要、备份恢复与灾备总账摘要、资产关键性与分类摘要、验证环境锁摘要、基线制品清单摘要、基线就绪评分卡摘要、基线例外总账摘要、审计导出摘要和控制覆盖摘要必须来自同一基线。
+2. `immutableRefs.sourceCommit`、`releaseTag`、发布事务摘要、准入策略摘要、消费锁摘要、迁移工作单摘要、迁移执行回执摘要、撤销隔离摘要、生命周期状态机摘要、状态对账报告摘要、证据追踪图摘要、证据保证等级摘要、门禁执行报告摘要、门禁负例套件摘要、AI 系统监管分类摘要、EOL 退役证书摘要、会审裁决摘要、架构原则与约束执行总账摘要、服务可靠性与可观测性总账摘要、备份恢复与灾备总账摘要、资产关键性与分类摘要、验证环境锁摘要、基线制品清单摘要、基线就绪评分卡摘要、基线例外总账摘要、审计导出摘要和控制覆盖摘要必须来自同一基线。
 3. `candidate -> baseline` 和 `baseline -> frozen` 前必须消费 `baseline-threat-model-attack-surface-risk-ledger.yaml`，并证明关键威胁模型、攻击面、安全测试和剩余风险摘要进入同一发布证据包。
 4. `candidate -> baseline` 和 `baseline -> frozen` 前必须消费 `baseline-vulnerability-exposure-remediation-ledger.yaml`，并证明 critical/KEV 漏洞、互联网暴露 high 漏洞、扫描覆盖、SLA、复测、VEX/CSAF 状态、例外和风险接受已经闭合。
 5. `candidate -> baseline` 和 `baseline -> frozen` 前必须消费 `baseline-secure-configuration-posture-drift-ledger.yaml`，并证明安全配置基线、CIS/NIST/SCAP/Pod Security 姿态、critical 配置漂移、特权 Pod、公开暴露、弱 TLS、审计日志、配置复测、例外和风险接受已经闭合。
@@ -5035,9 +5046,10 @@ baselineReleaseEvidence:
 10. `candidate -> baseline` 和 `baseline -> frozen` 前必须消费 `baseline-workforce-competency-training-duty-segregation-ledger.yaml`，并证明关键角色任命、岗位资格、职责确认、培训完成、专项训练、on-call 资格、审批授权、代理授权、职责分离、冲突角色、备份人员和到期复核已经闭合。
 11. `candidate -> baseline` 和 `baseline -> frozen` 前必须消费 `baseline-evidence-assurance-classification.yaml`，并证明 release gate、会审裁决、审计导出和证据追踪图引用的是同一组证据等级、采信状态、完整性证明、新鲜度窗口和可重放要求。
 12. `candidate -> baseline` 和 `baseline -> frozen` 前必须消费 `baseline-gate-negative-test-suite.yaml`，并证明 schema/starter gate、证据新鲜度、证据保证等级、制品清单、审计导出排除、签名/provenance、运行时准入和状态迁移阻断路径都具备负例、故障注入或拒绝日志证据。
-13. 任意禁推本地资产出现在远端树中，`forbiddenLocalAssetsAbsentFromRemote` 必须为 `false`，并阻断基线晋级。
-14. `frozen` 晋级必须先完成状态对账、漂移复核、基线就绪评分卡、基线会审裁决、证据保证等级复核、门禁负例复测和基线例外总账复核；如果存在状态冲突、关键漂移、评分不足、未关闭反对意见、过期例外、不可采信主证据、坏样例被放行或阻断例外，只能创建 POA&M 或风险接受，不能冻结。
-15. 回滚验证必须指向 `baseline-rollback-verification.yaml`，并证明上一基线 tag、commit、GitOps revision、审计导出和烟测结果有效，不能只写自然语言说明。
+13. `candidate -> baseline` 和 `baseline -> frozen` 前必须消费 `baseline-ai-system-regulatory-impact-ledger.yaml`，并证明 AI 产品、Agent、RAG、微调模型、模型供应商接入和自动化决策流程已经完成适用法规、风险分类、人工监督、日志、技术文档、透明度、后市场监测、供应商责任和合规缺口闭环。
+14. 任意禁推本地资产出现在远端树中，`forbiddenLocalAssetsAbsentFromRemote` 必须为 `false`，并阻断基线晋级。
+15. `frozen` 晋级必须先完成状态对账、漂移复核、基线就绪评分卡、基线会审裁决、证据保证等级复核、门禁负例复测和基线例外总账复核；如果存在状态冲突、关键漂移、评分不足、未关闭反对意见、过期例外、不可采信主证据、坏样例被放行或阻断例外，只能创建 POA&M 或风险接受，不能冻结。
+16. 回滚验证必须指向 `baseline-rollback-verification.yaml`，并证明上一基线 tag、commit、GitOps revision、审计导出和烟测结果有效，不能只写自然语言说明。
 
 可执行验收标准：
 
@@ -5045,6 +5057,7 @@ baselineReleaseEvidence:
 2. 任意证据包都能证明版本清单、基线准入执行策略、基线运行时准入回执、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、生命周期状态机、状态对账报告、证据追踪图、证据保证等级、门禁执行报告、基线发布事务回执、基线撤销与隔离记录、EOL 退役证书、会审裁决记录、数据产品质量与契约可观测性总账、服务可靠性与可观测性总账、备份恢复与灾备总账、资产关键性与分类总账、验证环境锁、基线制品清单、基线就绪评分卡、基线例外总账、控制覆盖、标准基线和审计导出摘要一致。
 3. 任意冻结基线都能证明开放关键发现为 0、就绪评分达到 frozen 阈值、过期阻断例外为 0，会审反对意见已经关闭，且回滚路径已经验证。
 4. 任意审计人员都能从证据包直接定位 source commit、release tag、验签结果和验证命令。
+5. 任意生产 AI 系统都能从 release gate 反查到 `baseline-ai-system-regulatory-impact-ledger.yaml`、AI 证据账本、DPIA、监管义务总账、风险登记、供应商责任记录和未关闭合规缺口为 0 的裁决证据。
 
 ### 10.10.10 基线兼容性总账与消费者迁移闭环
 
@@ -6169,6 +6182,8 @@ V2.96 补充规则：`baseline-evidence-assurance-classification.yaml` 属于必
 
 V2.97 补充规则：`baseline-gate-negative-test-suite.yaml` 属于必需证据模板。缺失时不能证明 release gate、starter gate、审计导出、运行时准入和状态迁移阻断规则会在坏样例、过期证据、摘要漂移、签名缺失、例外过期、私有资产误入和证据保证等级不足时 fail-closed，基线不得晋级或冻结。
 
+V2.98 补充规则：`baseline-ai-system-regulatory-impact-ledger.yaml` 属于必需证据模板。缺失时不能证明 AI 产品、Agent、RAG、微调模型、模型供应商接入和自动化决策流程已经完成适用法规、风险分类、禁止/高风险/通用目的 AI 判断、人工监督、日志留存、技术文档、透明度、后市场监测、供应商责任和合规缺口闭环，基线不得晋级或冻结。
+
 可执行验收标准：
 
 1. 任意基线都能列出本次发布包含的源文档、schema、示例、控制项、证据模板、脚本、生成物和外部引用。
@@ -6204,6 +6219,7 @@ V2.97 补充规则：`baseline-gate-negative-test-suite.yaml` 属于必需证据
 31. 任意生产基线都能从制品清单反查到 `baseline-version-policy-release-control-ledger.yaml`，证明版本号语义、发布通道、签名 tag、兼容窗口、消费锁、迁移窗口、冻结规则、紧急补丁、撤销和 EOL 阻断已经闭合。
 32. 任意生产基线都能从制品清单反查到 `baseline-evidence-assurance-classification.yaml`，证明关键证据节点的保证等级、采信状态、独立性、完整性、新鲜度和重放要求已经进入 release gate、会审裁决和审计导出。
 33. 任意生产基线都能从制品清单反查到 `baseline-gate-negative-test-suite.yaml`，证明 release gate、starter gate、审计导出、运行时准入和状态迁移阻断规则至少各有一类坏样例被拒绝，且实际失败原因与预期策略规则一致。
+34. 任意生产 AI 系统都能从制品清单反查到 `baseline-ai-system-regulatory-impact-ledger.yaml`，证明系统用途、部署角色、适用法规、风险分类、人工监督、日志留存、技术文档、透明度、后市场监测、供应商责任、DPIA/监管义务映射和合规缺口关闭证据已经进入同一基线。
 
 ### 10.10.16 基线验证环境锁定
 
@@ -11854,6 +11870,98 @@ baselineGateNegativeTestSuite:
 3. 负例 fixture 必须进入制品清单或私有制品边界；本地私有 fixture 只能保留摘要、取回入口和排除证明，不能进入公开远端。
 4. 负例测试必须能与 `baseline-gate-execution-report.yaml` 同源重放，策略包、schema 包、runner 和验证锁摘要必须一致。
 5. 会审裁决和审计导出必须消费负例套件摘要；不能只引用 release gate pass 结果。
+
+### 10.10.26.2 AI 系统监管分类与影响评估总账
+
+`baseline-ai-system-regulatory-impact-ledger.yaml` 是 V2.98 起新增的 AI 合规分类证明。它不替代 `ai-product.yaml`、
+`ai-evidence.yaml`、DPIA、监管义务总账或风险登记；它负责把每个 AI 系统的监管身份、风险分类、生命周期义务和
+发布阻断条件统一成一份可审计总账，避免高风险 AI 只靠“风险等级字段”或模型卡片被放行。
+
+```yaml
+baselineAiSystemRegulatoryImpactLedger:
+  ledgerId: basr-20260603-mea-v298
+  baselineId: mea-v2.98-20260603
+  documentVersion: V2.98
+  owner: ai-governance
+  generatedAt: 2026-06-03T21:10:00+08:00
+  scope:
+    assets:
+      - catalog/ai-products/customer-service-agent.yaml
+      - catalog/models/support-answer-style-v3/model-card.md
+      - governance/evidence/ai/ai-evidence.yaml
+    jurisdictions:
+      - EU
+      - US
+      - CN
+    lifecycleStages:
+      - design
+      - training
+      - evaluation
+      - deployment
+      - monitoring
+      - retirement
+  systems:
+    - systemId: customer-service-agent
+      aiProduct: customer-service-agent
+      deploymentRole: deployer
+      provider: internal-ai-platform
+      purpose: customer support answer drafting with human review
+      userImpact: customer-facing-assisted-decision
+      regulatoryClassification:
+        prohibitedUse: false
+        highRisk: false
+        generalPurposeAiDependency: true
+        classificationBasis:
+          - NIST AI RMF Govern Map Measure Manage
+          - EU AI Act limited-risk transparency and logging review
+          - ISO/IEC 42001 AI management system control mapping
+      requiredControls:
+        riskManagement: governance/ai-risk/customer-service-agent-risk.md
+        dataGovernance: governance/data-products/customer-service-agent-data-quality.md
+        technicalDocumentation: governance/ai-docs/customer-service-agent-system-card.md
+        logging: observability/genai/customer-service-agent-logging-policy.yaml
+        transparencyNotice: governance/legal/customer-service-agent-ai-disclosure.md
+        humanOversight: governance/ai-controls/customer-service-agent-human-oversight.yaml
+        accuracyRobustnessCybersecurity: governance/ai-evals/customer-service-agent-eval-report.md
+        postMarketMonitoring: governance/ai-monitoring/customer-service-agent-post-market-monitoring.yaml
+      supplierResponsibility:
+        modelProvider: model-provider-x
+        contract: contracts/vendors/model-provider-x-ai-terms.pdf
+        assuranceReport: governance/third-party/model-provider-x-assurance.md
+        fallbackProvider: model-provider-y
+      gaps:
+        - gapId: ai-transparency-notice-refresh
+          severity: low
+          owner: ai-governance
+          dueDate: 2026-06-30
+          status: closed
+      gateDecision:
+        result: pass
+        blocking: false
+        reason: required classification, logging, human oversight, documentation and monitoring evidence are present
+  rollups:
+    totalSystems: 1
+    highRiskSystems: 0
+    prohibitedUseSystems: 0
+    openBlockingGaps: 0
+    systemsWithoutHumanOversight: 0
+    systemsWithoutPostMarketMonitoring: 0
+  downstreamConsumers:
+    - ai-evidence.yaml
+    - baseline-regulatory-obligation-ledger.yaml
+    - privacy-impact-assessment.yaml
+    - risk-register.yaml
+    - baseline-review-board-decision.yaml
+    - release-gate-decision.yaml
+```
+
+执行规则：
+
+1. 每个生产 AI 产品、Agent、RAG、微调模型、模型供应商接入和自动化决策流程都必须有一条系统记录。
+2. `regulatoryClassification` 必须声明是否触及禁止用途、高风险用途、通用目的 AI 依赖、透明度义务和适用司法辖区；不能只写内部风险等级。
+3. 高风险 AI 必须绑定风险管理、数据治理、技术文档、日志、人工监督、准确性/鲁棒性/网络安全、后市场监测和供应商责任证据。
+4. 涉及个人数据、自动化决策、客户影响或受监管业务的 AI 系统，必须能追溯到 DPIA、处理活动总账、隐私权利总账和监管义务总账。
+5. 任一禁止用途为 true、关键分类未知、人工监督缺失、日志缺失、技术文档缺失、后市场监测缺失或阻断型 gap 未关闭时，release gate、baseline 晋级和 frozen 晋级必须 fail-closed。
 
 ### 10.10.27 基线发布事务回执
 
@@ -20122,7 +20230,7 @@ versionPolicyReleaseControlLedger:
 internal-command://architecture/check-modern-architecture-kit
 ```
 
-该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、127 组示例的 JSON Schema 子集、YAML 示例、基线版本策略、发布通道、兼容性与冻结控制总账、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、威胁建模、攻击面管理、安全风险治理、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 证据账本、微调运行证据、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段、证据保证等级消费链、门禁负例测试、故障注入、期望失败结果和示例间一致性。V2.96 起，该 gate 必须证明 `baseline-evidence-assurance-classification.yaml` 中的最低保证等级、采信状态、完整性证明、新鲜度窗口和可重放要求已经被 release gate、会审裁决、审计导出和基线状态迁移阻断路径引用；V2.97 起，该 gate 还必须证明 `baseline-gate-negative-test-suite.yaml` 中的关键负例 fixture、预期失败规则、实际拒绝结果和失败日志摘要已经被 release gate、audit export gate、runtime admission 和状态迁移阻断路径引用；对应私有 schema/example 与负例 fixture 仍受禁推资产边界保护。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链、GitOps diff 工具、Kubernetes admission policy test、Kubernetes audit log checker、Kyverno PolicyReport checker、OPA decision log checker、Prometheus rule checker 和 Alertmanager route checker；本仓库脚本只作为 starter kit 的最小可执行证明。
+该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、128 组示例的 JSON Schema 子集、YAML 示例、基线版本策略、发布通道、兼容性与冻结控制总账、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、威胁建模、攻击面管理、安全风险治理、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 证据账本、AI 系统监管分类与影响评估总账、微调运行证据、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段、证据保证等级消费链、门禁负例测试、故障注入、期望失败结果和示例间一致性。V2.96 起，该 gate 必须证明 `baseline-evidence-assurance-classification.yaml` 中的最低保证等级、采信状态、完整性证明、新鲜度窗口和可重放要求已经被 release gate、会审裁决、审计导出和基线状态迁移阻断路径引用；V2.97 起，该 gate 还必须证明 `baseline-gate-negative-test-suite.yaml` 中的关键负例 fixture、预期失败规则、实际拒绝结果和失败日志摘要已经被 release gate、audit export gate、runtime admission 和状态迁移阻断路径引用；V2.98 起，该 gate 还必须证明 `baseline-ai-system-regulatory-impact-ledger.yaml` 中的 AI 系统监管分类、适用法规、人工监督、日志留存、技术文档、后市场监测、供应商责任和合规缺口已经被 release gate、会审裁决、监管义务总账、风险登记和审计导出引用；对应私有 schema/example 与负例 fixture 仍受禁推资产边界保护。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链、GitOps diff 工具、Kubernetes admission policy test、Kubernetes audit log checker、Kyverno PolicyReport checker、OPA decision log checker、Prometheus rule checker 和 Alertmanager route checker；本仓库脚本只作为 starter kit 的最小可执行证明。
 
 审计导出包由以下命令生成：
 
@@ -20990,6 +21098,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 64. 所有 L3 / L4 企业级基线都有基线质量属性、架构驱动与权衡决策总账，能证明业务驱动、质量属性场景、响应度量、架构驱动、敏感点、权衡点、ADR、适配度函数和验证证据已经闭合。
 65. 所有 L3 / L4 企业级基线都有基线架构原则、约束、反模式与例外执行总账，能证明强制原则、owner、适用范围、可检测约束、禁止项、反模式、违反处置、例外审批、风险接受和复核周期已经闭合。
 66. 所有企业级基线都有基线版本策略、发布通道、兼容性与冻结控制总账，能证明版本号语义、发布通道、签名 tag、兼容窗口、消费锁、迁移窗口、冻结规则、紧急补丁、撤销和 EOL 阻断已经闭合。
+67. 所有生产 AI 系统都有基线 AI 系统监管分类与影响评估总账，能证明系统用途、部署角色、适用法规、风险分类、人工监督、日志留存、技术文档、透明度、后市场监测、供应商责任和合规缺口已经闭合。
 
 ---
 
@@ -21038,6 +21147,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 | 证据链断裂        | 单个证据文件都存在，但摘要互相引用旧值、关键证据没有被 release gate 消费或审计导出缺少追踪图 | 用基线证据追踪图绑定证据节点、依赖边、摘要一致性、下游消费和断链阻断 |
 | 门禁伪执行        | release gate 写了 pass，但实际命令、策略包、输入摘要、规则结果、退出码或重放记录缺失 | 用基线门禁执行报告绑定执行命令、runner、策略包、schema 包、输入摘要、逐条规则结果、退出码、重放结果和最终决策 |
 | 门禁快乐路径空心化 | release gate、starter gate、审计导出或 runtime admission 只证明好样例通过，没有证明坏样例、过期证据、摘要漂移、签名缺失或例外过期会被拒绝 | 用基线门禁负例测试套件绑定负例 fixture、故障注入、预期失败规则、实际拒绝结果、失败日志摘要、复测命令和回归 owner |
+| AI 合规分类空心化 | AI 产品只有内部风险等级、模型卡或评估集，但无法证明适用法规、部署角色、高风险判断、人工监督、日志、技术文档、后市场监测和供应商责任已经闭合 | 用基线 AI 系统监管分类与影响评估总账绑定 AI 系统用途、监管分类、DPIA、监管义务、风险登记、供应商保证、会审裁决和 release gate 阻断 |
 | 发布事务空心化    | 文档声明基线已发布，但远端 ref、签名 tag、push 回执、保护规则或禁推资产排除没有证据 | 用基线发布事务回执绑定 source commit、签名 tag、远端 ref、push 回执、保护规则、禁推资产排除和发布后验证 |
 | 撤销隔离缺失      | 已发布基线发现签名泄露、远端保护漂移、证据污染或错误 tag 后，没有隔离状态、受影响引用、通知和恢复目标 | 用基线撤销与隔离记录绑定触发、隔离范围、通知确认、阻断新采用、恢复目标、风险接受和审计归档 |
 | 准入策略断层      | 支持矩阵、采纳总账、符合性声明和撤销记录都存在，但 GitOps、catalog、Golden Path 或 runtime admission 仍允许低基线、EOL 或撤销基线进入生产 | 用基线准入执行策略统一最低基线、支持状态、撤销/EOL、资产声明、例外到期、策略包和决策日志，并把阻断结果回写 release gate |
@@ -21135,6 +21245,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 V2.95 补充目标：任意 baseline、frozen、正式审计导出和 L3 / L4 生产准入都能证明关键证据达到最低保证等级，且没有过期、不可重放、无完整性证明、无来源独立性或不可采信的主证据。
 V2.96 补充目标：任意证据保证等级结论都必须被基线晋级矩阵、制品清单、starter gate、会审裁决、审计导出和状态迁移阻断路径消费，且不存在孤儿证据等级、未消费采信状态或与发布证据摘要不一致的保证等级记录。
 V2.97 补充目标：任意 critical gate 都必须具备正例通过和负例拒绝两类证明；如果坏 fixture 被放行、预期失败没有触发、失败日志不可追溯或负例套件未被会审和审计导出消费，baseline/frozen 晋级必须被阻断。
+V2.98 补充目标：任意生产 AI 系统都必须完成 AI 系统监管分类与影响评估；如果适用法规未知、高风险分类未知、人工监督缺失、日志或技术文档缺失、后市场监测缺失、供应商责任不清或合规缺口未关闭，baseline/frozen 晋级必须被阻断。
 48. 任意 L3 / L4 企业级基线都能证明共享控制和继承控制具备明确责任边界，且继承条件、消费者义务、证据有效期、失效阻断、例外和审计映射已经闭环。
 49. 任意 L3 / L4 企业级基线都能证明数据驻留和跨境处理具备事实级证据，且存储、处理、备份、日志、向量索引、模型供应商、人工支持访问、子处理方和删除传播没有未批准漂移。
 50. 任意 L3 / L4 企业级基线都能证明关键供应商和 ICT / SaaS / 云 / 模型 / 外包 / 子处理方依赖具备合同控制、审计权、保证报告、退出计划、替代路径、集中度阈值、连续性和供应商事件阻断闭环。
@@ -21179,7 +21290,7 @@ V2.97 补充目标：任意 critical gate 都必须具备正例通过和负例�
 
 | 对标来源 | 关键结论 | 本文档落点 |
 | -------- | -------- | ---------- |
-| Semantic Versioning / Conventional Commits / Keep a Changelog | 版本号、提交语义和变更记录必须表达兼容性、影响面、发布通道、冻结规则、撤销状态、消费锁定、迁移执行事实、证据摘要和升级意图 | 增加 `baseline-version-policy-release-control-ledger.yaml`、`version-governance.yaml`、`baseline-enforcement-policy.yaml`、`baseline-consumption-lock.yaml`、`baseline-migration-work-order.yaml`、`baseline-migration-execution-receipt.yaml`、`baseline-lifecycle-state-machine.yaml`、`baseline-state-reconciliation-report.yaml`、`baseline-evidence-trace-graph.yaml`、`baseline-gate-execution-report.yaml`、`baseline-gate-negative-test-suite.yaml`、`baseline-publish-transaction.yaml`、`baseline-revocation-record.yaml`、`baseline-eol-retirement-certificate.yaml`、`baseline-review-board-decision.yaml`、`baseline-readiness-scorecard.yaml`、`baseline-rollback-verification.yaml`、`baseline-notification-ledger.yaml`、`baseline-verification-lock.yaml`、`baseline-artifact-inventory.yaml`、`baseline-conformance-claim.yaml`、`baseline-release-train.yaml`、`baseline-support-matrix.yaml`、`baseline-compatibility-ledger.yaml`、基线版本策略、发布通道、签名 tag、冻结窗口、紧急补丁、撤销隔离、基线消费锁定、消费者迁移、逐资产迁移执行事实和回滚入口 |
+| Semantic Versioning / Conventional Commits / Keep a Changelog | 版本号、提交语义和变更记录必须表达兼容性、影响面、发布通道、冻结规则、撤销状态、消费锁定、迁移执行事实、证据摘要和升级意图 | 增加 `baseline-version-policy-release-control-ledger.yaml`、`version-governance.yaml`、`baseline-enforcement-policy.yaml`、`baseline-consumption-lock.yaml`、`baseline-migration-work-order.yaml`、`baseline-migration-execution-receipt.yaml`、`baseline-lifecycle-state-machine.yaml`、`baseline-state-reconciliation-report.yaml`、`baseline-evidence-trace-graph.yaml`、`baseline-gate-execution-report.yaml`、`baseline-gate-negative-test-suite.yaml`、`baseline-ai-system-regulatory-impact-ledger.yaml`、`baseline-publish-transaction.yaml`、`baseline-revocation-record.yaml`、`baseline-eol-retirement-certificate.yaml`、`baseline-review-board-decision.yaml`、`baseline-readiness-scorecard.yaml`、`baseline-rollback-verification.yaml`、`baseline-notification-ledger.yaml`、`baseline-verification-lock.yaml`、`baseline-artifact-inventory.yaml`、`baseline-conformance-claim.yaml`、`baseline-release-train.yaml`、`baseline-support-matrix.yaml`、`baseline-compatibility-ledger.yaml`、基线版本策略、发布通道、签名 tag、冻结窗口、紧急补丁、撤销隔离、基线消费锁定、消费者迁移、逐资产迁移执行事实和回滚入口 |
 | DORA 2025 | AI 辅助交付必须与组织能力、平台能力和可度量交付质量一起治理 | 补齐 AI 指标、Platform PM、认知负载和 AI 发布门禁 |
 | CNCF Platform Engineering Maturity Model | 平台工程成熟度核心是自助、产品化、治理和可度量能力 | 保留 Developer Portal、Golden Path、平台产品契约和平台指标 |
 | Team Topologies | 降低团队认知负载是平台团队存在的核心理由之一 | 增加认知负载度量、Platform PM 和平台用户研究 |
@@ -21191,6 +21302,7 @@ V2.97 补充目标：任意 critical gate 都必须具备正例通过和负例�
 | NIST AI RMF / GenAI Profile | AI 风险管理需要覆盖治理、映射、度量和管理闭环 | 增加 AI 风险等级、评估集、审计、回放和人工接管 |
 | ISO/IEC 42001 | AI 管理体系要求企业把 AI 风险、责任、过程和持续改进纳入管理系统 | 增加 AI 风险分级、资产证据链和治理到期复审 |
 | EU AI Act | 高风险 AI 场景需要更强的数据治理、透明度、人工监督和记录保存 | 增加 R4/R5 风险等级、人工复核和受限场景控制 |
+| NIST AI RMF / NIST AI 600-1 / ISO/IEC 42001 / EU AI Act | AI 治理不能只证明模型评估或内部风险等级，还必须把 AI 系统用途、部署角色、适用法规、风险分类、人工监督、日志、技术文档、透明度、后市场监测和供应商责任纳入生命周期证据 | 增加 `baseline-ai-system-regulatory-impact-ledger.yaml`，把 AI 产品、Agent、RAG、微调模型、模型供应商接入和自动化决策流程的监管分类、DPIA/义务映射、会审裁决、合规缺口和 release gate 阻断绑定到同一基线 |
 | OpenTelemetry GenAI | 生成式 AI 需要标准化观测模型、Token、模型、系统、操作和成本指标 | 增加 `genai-observability-contract.yaml`、AI Observability 与 GenAI 指标 |
 | OpenTelemetry GenAI Stability | GenAI semantic conventions 仍处于 Development 状态，生产基线必须锁定版本并控制 opt-in | 增加 `standards-baseline.yaml`，把 Development 状态标准默认设为 observe 而不是全局 enforce |
 | MCP / A2A | Agent 生态正在走向工具、上下文和 Agent 协作协议化 | 增加 Agent 协议与工具边界，避免协议绕过治理 |
@@ -21214,7 +21326,7 @@ V2.97 补充目标：任意 critical gate 都必须具备正例通过和负例�
 | Kubernetes Multi-tenancy / ResourceQuota | 多团队或多租户 Kubernetes 需要 namespace、配额、网络隔离和准入策略配合 | 增加 `tenant-boundary.yaml`、ResourceQuota、NetworkPolicy 默认拒绝和准入策略证据 |
 | NIST Cybersecurity Framework 2.0 | 企业安全运营需要把识别、保护、检测、响应和恢复连接成证据闭环 | 增加访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度控制项 |
 | NIST SP 800-61 Rev. 3 / Google SRE Incident Management / Google SRE Postmortem Culture / DORA Four Keys / ISO/IEC 20000-1 | 事故响应不能只关闭告警或复盘文档，还必须把时间线、RCA、问题记录、纠正行动、复发防止、runbook/告警/门禁反哺、沟通和恢复指标纳入统一证据 | 增加 `baseline-incident-problem-corrective-action-ledger.yaml`，把生产事故、安全事件、隐私事件、AI 事件、供应商事件、near miss、重大告警、RCA、问题记录、纠正行动、复发防止和 DORA 恢复指标纳入基线晋级证据 |
-| NIST OSCAL / NIST SP 800-128 / NIST SP 800-137 | 安全和合规控制应尽量使用机器可读目录、实施状态、评估结果、配置变更控制、持续监测和证据包组织 | 增加 `control-evidence-map.yaml`、`audit-export-manifest.yaml`、`audit-export-exclusion-manifest.yaml`、`private-artifact-escrow-manifest.yaml`、`baseline-clean-room-reconstruction-receipt.yaml`、`baseline-evidence-archive-receipt.yaml`、`baseline-signature-ltv-receipt.yaml`、`baseline-runtime-admission-receipt.yaml`、`baseline-runtime-admission-decision-ledger.yaml`、`baseline-continuous-control-monitoring-ledger.yaml`、`control-assessment-report.yaml`、`baseline-change-record.yaml`、`baseline-enforcement-policy.yaml`、`baseline-consumption-lock.yaml`、`baseline-migration-work-order.yaml`、`baseline-migration-execution-receipt.yaml`、`baseline-local-artifact-boundary.yaml`、`baseline-evidence-trace-graph.yaml`、`baseline-gate-execution-report.yaml`、`baseline-gate-negative-test-suite.yaml`、`baseline-publish-transaction.yaml`、`baseline-revocation-record.yaml`、`oscal-export-profile.yaml`、迁移执行事实、本地私有制品边界、审计导出排除清单、私有制品托管交接、干净环境重建回执、不可变归档回执、长期验签回执、运行时准入回执、准入决策总账、连续控制监测和审计导出证据 |
+| NIST OSCAL / NIST SP 800-128 / NIST SP 800-137 | 安全和合规控制应尽量使用机器可读目录、实施状态、评估结果、配置变更控制、持续监测和证据包组织 | 增加 `control-evidence-map.yaml`、`audit-export-manifest.yaml`、`audit-export-exclusion-manifest.yaml`、`private-artifact-escrow-manifest.yaml`、`baseline-clean-room-reconstruction-receipt.yaml`、`baseline-evidence-archive-receipt.yaml`、`baseline-signature-ltv-receipt.yaml`、`baseline-runtime-admission-receipt.yaml`、`baseline-runtime-admission-decision-ledger.yaml`、`baseline-continuous-control-monitoring-ledger.yaml`、`control-assessment-report.yaml`、`baseline-change-record.yaml`、`baseline-enforcement-policy.yaml`、`baseline-consumption-lock.yaml`、`baseline-migration-work-order.yaml`、`baseline-migration-execution-receipt.yaml`、`baseline-local-artifact-boundary.yaml`、`baseline-evidence-trace-graph.yaml`、`baseline-gate-execution-report.yaml`、`baseline-gate-negative-test-suite.yaml`、`baseline-ai-system-regulatory-impact-ledger.yaml`、`baseline-publish-transaction.yaml`、`baseline-revocation-record.yaml`、`oscal-export-profile.yaml`、迁移执行事实、本地私有制品边界、审计导出排除清单、私有制品托管交接、干净环境重建回执、不可变归档回执、长期验签回执、运行时准入回执、准入决策总账、连续控制监测和审计导出证据 |
 | NIST SP 800-53A / OSCAL Assessment Results | 控制评估不能只证明证据存在，还必须定义评估目标、测试方法、抽样、发现项、结果和可机读评估输出 | 增加 `baseline-control-assurance-sampling-ledger.yaml`，把独立评估人、控制总体、抽样计划、设计有效性、运行有效性、发现项、POA&M、风险接受和 OSCAL Assessment Results 绑定为基线晋级证据 |
 | NIST SP 800-53A / OSCAL Assessment Results / SLSA Provenance | 企业审计不能把所有证据视为同等强度；证据必须按检查、访谈、测试、自动化生成、可重放、独立评估和签名证明区分保证等级 | 增加 `baseline-evidence-assurance-classification.yaml`，把 E0-E4 保证等级、采信状态、来源独立性、完整性证明、新鲜度、可重放要求和 gate 最低等级阻断纳入基线晋级证据 |
 | NIST SP 800-53A / OSCAL Assessment Results / OPA Policy Testing / Kyverno CLI Test / SLSA Provenance | 企业门禁不能只证明好样例通过，还必须证明坏样例、过期证据、摘要漂移、签名缺失、例外过期和私有资产误入会被策略与验证链稳定拒绝 | 增加 `baseline-gate-negative-test-suite.yaml`，把负例 fixture、故障注入、预期失败规则、实际拒绝结果、失败日志摘要、复测命令和回归 owner 纳入基线晋级、会审裁决和审计导出证据 |
