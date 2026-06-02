@@ -13,6 +13,7 @@ description: "tmux 自动化操控：用 scripts/auto-tmux.sh 安全读取、发
 - 需要远程读取/复制某个 tmux pane 的最新输出（日志、提示、错误）。
 - 需要向指定 pane 发送按键/命令（确认 `y`、`Enter`、`Ctrl+C`、广播同一窗口）。
 - 需要批量巡检/接管多 AI 终端（蜂群协作、自动救援卡死任务）。
+- 用户显式要求进入 Codex Pilot Mode：让当前主 Codex 通过 tmux 控制一个持久化、交互式、对人类可见的 worker Codex pane。
 - 需要初始化 AI 多终端工作台、等待输出 pattern、录制 pane 日志或保存巡检证据。
 - 需要给 tmux 蜂群建立任务队列、状态日志、文件锁和结果报告。
 - 需要快速回忆 oh-my-tmux 快捷键、前缀或同步面板操作。
@@ -162,6 +163,21 @@ skills/auto-tmux/scripts/auto-tmux.sh topology --session ai-hub
 skills/auto-tmux/scripts/auto-tmux.sh cleanup --session ai-hub --dry-run
 ```
 
+**Codex Pilot Mode（主 Codex 控制一个持久化交互式 worker Codex）**
+```bash
+# 只在用户显式输入 Codex Pilot Mode 激活提示词后使用；完整提示词见 references/codex-pilot-mode.md。
+tmux new-session -d -s codex-pilot -n worker 'codex'
+bash skills/auto-tmux/scripts/auto-tmux.sh topology --session codex-pilot
+bash skills/auto-tmux/scripts/auto-tmux.sh capture -t codex-pilot:worker.0 -n 120
+bash skills/auto-tmux/scripts/swarm-dispatch.sh \
+  --role codex-worker \
+  --target codex-pilot:worker.0 \
+  --session codex-pilot \
+  --task "进入持久 worker 待命状态，等待主 Codex 后续分派任务" \
+  --send \
+  --dry-run
+```
+
 **启用 oh-my-tmux 配置（仓库内版本）**
 ```bash
 repo_root="$(git rev-parse --show-toplevel)"
@@ -226,10 +242,13 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - MUST：在发送按键前用 `capture-pane` 复核目标上下文；按键操作必须带 `<session>:<window>.<pane>` 绝对定位。
 - MUST：遵循 oh-my-tmux 约定，不修改主配置文件；自定义写入 `~/.tmux.conf.local`。
 - MUST：批量操作前先 `list-windows`/`list-panes` 建立白名单，避免误控用户窗口。
+- MUST：Codex Pilot Mode 只能在用户显式激活后进入；默认只控制一个持久化 worker Codex pane，且该 pane 必须对人类可见。
+- MUST：Codex Pilot Mode 的 worker 必须是交互式 `codex`，禁止用无头 `codex exec` 替代。
 - MUST：SSH/远程场景默认只读，先用 `scripts/remote-readonly.sh` 采集证据；远程控制必须另行确认，不从只读脚本升级。
 - SHOULD：救援/确认前先 grep 关键词（如 `(y/n)`、`password`），只对匹配目标发送。
 - SHOULD：发送完整命令行时避免先发 `Escape`；先 `C-c` 中断、`C-u` 清行，再用 `send-keys -l` 逐字发送完整命令。
 - SHOULD：长 prompt、文件粘贴、跨 worker 分发前运行 `scripts/safety-check.sh`，批量发送先 `--dry-run`。
+- SHOULD：Codex Pilot Mode 中主 Codex 每次发送前先 `inspect/capture` worker pane，并把需求、上下文、边界、验收和验证命令整理成高质量提示词。
 - SHOULD：pane 处在 Codex UI 时，先发送 `/exit` 回到 shell 再执行命令。
 - SHOULD：长任务开启 `pipe-pane` 记录审计；广播完成后立即 `synchronize-panes off`。
 - SHOULD：多 worker 修改同一文件、目录或服务前，先用 `swarm-state.sh lock-acquire` 声明锁。
@@ -293,6 +312,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `references/script-cheatsheet.md`: 观察、控制、协作、报告、审计和事故处理脚本速查
 - `references/swarm-state.md`: 蜂群状态、任务、锁和报告协议
 - `references/prompt-templates.md`: commander/worker/reviewer 提示词模板和下发方式
+- `references/codex-pilot-mode.md`: 主 Codex 控制一个持久化交互式 worker Codex 的激活提示词、边界和验收协议
 - `references/ai-swarm-collaboration.md`: tmux 蜂群协作历史文档、架构模式、协议、案例和风险限制
 - `references/iteration-roadmap.md`: 多轮迭代记录、能力层和后续候选方向
 - `references/iteration-closeout.md`: 50 轮迭代后的能力收尾、验证链路和维护边界
@@ -321,7 +341,7 @@ skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target <session>:<win
 - `scripts/audit-package.sh`: 检查脚本、参考资料、SKILL 入口和 validator 的索引一致性
 - `scripts/completion.bash`: Bash completion，补全 `auto-tmux.sh` 与 `swarm-state.sh`
 - `scripts/safety-check.sh`: 发送/粘贴/分发前检查危险命令、敏感信息和过大 payload
-- `scripts/render-swarm-prompt.sh`: commander/worker/reviewer 提示词渲染脚本
+- `scripts/render-swarm-prompt.sh`: commander/worker/reviewer/codex-worker 提示词渲染脚本
 - `scripts/swarm-dispatch.sh`: 渲染并可选下发 commander/worker/reviewer 提示词
 - `scripts/auto-tmux-smoke-test.sh`: tmux 自动化脚本端到端自测
 - `scripts/validate-auto-tmux.sh`: auto-tmux 专属质量门禁

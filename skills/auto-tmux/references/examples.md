@@ -1,25 +1,5 @@
 # Long Examples
 
-## 用例 0：使用脚本入口完成巡检、发送和救援
-
-```bash
-# 查看拓扑
-skills/auto-tmux/scripts/auto-tmux.sh topology --session ai-hub
-
-target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
-
-# 读取 worker 输出
-skills/auto-tmux/scripts/auto-tmux.sh capture -t "$target" -n 100
-
-# 发送测试命令
-skills/auto-tmux/scripts/auto-tmux.sh send -t "$target" --text "make test" --enter
-
-# 对等待确认的 pane 执行救援
-skills/auto-tmux/scripts/auto-tmux.sh rescue -t "$target" --pattern "(y/n)" --reply y
-```
-
-- 推荐优先使用脚本入口；下面的 Bash 片段保留为理解 tmux 原生命令的参考。
-
 ## 用例 1：巡检 + 自动救援脚本（bash）
 
 ```bash
@@ -31,7 +11,7 @@ for w in $(tmux list-windows -a -F '#S:#I'); do
   panes=$(tmux list-panes -t "$w" -F '#S:#I.#P')
   for p in $panes; do
     log=$(tmux capture-pane -t "$p" -p -S -80)
-    printf -- '--- [%s] ---\n%s\n' "$p" "$log"
+    printf '--- [%s] ---\n%s\n' "$p" "$log"
     if echo "$log" | grep -qi "(y/n)"; then
       tmux send-keys -t "$p" "y" Enter
       echo "[action] sent y to $p"
@@ -61,8 +41,7 @@ echo "audit pipes enabled under /tmp/*-ai-hub-*.log"
 > 目的：在需要更全面文档时，用仓库自带的 `Skill_Seekers-development` 自动抓取 gpakosz/.tmux 与 README，生成扩展参考文件，再手动筛选进 `references/`。
 
 ```bash
-repo_root="$(git rev-parse --show-toplevel)"
-cd "$repo_root/tools/external/Skill_Seekers-development"
+cd /home/lenovo/zip/vibe-coding-cn/libs/external/Skill_Seekers-development
 # 准备 Python 环境（如未安装）
 uv tool install skill-seekers  # 或 pip install skill-seekers
 

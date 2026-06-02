@@ -13,11 +13,13 @@ Roles:
   commander
   worker
   reviewer
+  codex-worker
 
 Examples:
   swarm-dispatch.sh --role worker --target ai-hub:2.1 --task "只运行 make test" --out /tmp/worker.md
   swarm-dispatch.sh --role worker --target ai-hub:2.1 --task "只运行 make test" --send --dry-run
   swarm-dispatch.sh --role commander --target ai-hub:1.1 --task "拆分并推进 README 重构" --send
+  swarm-dispatch.sh --role codex-worker --target codex-pilot:worker.0 --task "进入持久 worker 待命状态" --send --dry-run
 EOF
 }
 
@@ -34,7 +36,7 @@ role=""
 target=""
 session="ai-hub"
 swarm_dir="${AUTO_TMUX_SWARM_DIR:-/tmp/ai_swarm}"
-task="未指定；请等待 commander 分配具体任务。"
+task="未指定；请等待主 Codex 分配具体任务。"
 out_file=""
 send="0"
 dry_run="0"
@@ -59,7 +61,7 @@ done
 
 case "$role" in
   commander|reviewer) ;;
-  worker) ;;
+  worker|codex-worker) ;;
   *) die "unknown role: $role" ;;
 esac
 
@@ -69,11 +71,11 @@ if [[ -z "$prompt_file" ]]; then
 fi
 
 render_args=("$role" --session "$session" --swarm-dir "$swarm_dir" --task "$task")
-if [[ "$role" == "worker" ]]; then
+if [[ "$role" == "worker" || "$role" == "codex-worker" ]]; then
   render_args+=(--target "$target")
 fi
 
-"$render" "${render_args[@]}" > "$prompt_file"
+bash "$render" "${render_args[@]}" > "$prompt_file"
 printf 'prompt written: %s\n' "$prompt_file"
 
 if [[ "$send" != "1" ]]; then
@@ -86,4 +88,4 @@ if [[ "$dry_run" == "1" ]]; then
   send_args+=(--dry-run)
 fi
 
-"$auto_tmux" send "${send_args[@]}"
+bash "$auto_tmux" send "${send_args[@]}"
