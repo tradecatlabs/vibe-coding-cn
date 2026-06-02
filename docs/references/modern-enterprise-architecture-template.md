@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.29
+**文档版本**：V2.30
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.29 在 V2.28 基础上新增外部标准版本锁定与升级策略，把 SLSA、OpenTelemetry GenAI、NIST AI RMF、OSCAL、OWASP、CNCF 和 Kubernetes 等外部标准的版本、稳定性、采纳等级、复核周期和升级门禁纳入基线控制。
+**专项修订**：V2.30 在 V2.29 基础上新增版本控制面，把基线 ID、发布通道、Git tag、源 commit、兼容窗口、升级窗口、冻结策略、回滚入口和版本不变量纳入同一套可执行发布协议。
 
 ---
 
@@ -52,7 +52,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.29` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、62 组 starter kit schema/example、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核、仓库变更控制、远端保护漂移整改、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 证据账本、微调运行证据、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
+| `V2.30` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、63 组 starter kit schema/example、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核、仓库变更控制、远端保护漂移整改、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 证据账本、微调运行证据、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -95,7 +95,50 @@ git diff --check
 4. 被替代版本必须标记为 `Superseded`，并说明新版本位置和迁移注意事项。
 5. 冻结版本不得与未冻结草案混用；项目启动、审计和平台模板必须引用明确版本。
 
-### 0.6 版本记录
+### 0.6 版本控制面不变量
+
+版本控制面用于回答“这次基线到底是哪一版、谁批准、从哪个 commit 发布、覆盖哪些契约、能不能兼容、如何回滚”。它不替代 Git、release note 或审计导出包，而是把这些证据绑定成同一个发布事实。
+
+基线发布必须满足以下不变量：
+
+| 不变量 | 最低要求 | 阻断条件 |
+| ------ | -------- | -------- |
+| 基线身份 | `baselineId`、`documentVersion`、`status` 唯一且不可复用 | 同一版本号对应多个基线或状态不一致 |
+| 源码绑定 | 每个基线绑定 `sourceCommit`、`releaseTag` 和签署人 | 无 tag、tag 不指向源 commit、签名缺失 |
+| 证据绑定 | 版本清单、控制项覆盖、审计导出、控制评估和门禁决策必须引用同一基线 | 证据包版本和文档版本不一致 |
+| 兼容窗口 | `Minor` / `Major` / `Breaking` 必须声明兼容窗口、迁移截止和消费者影响 | breaking change 无迁移窗口或消费者确认 |
+| 冻结策略 | `Frozen` 基线只能通过补丁、紧急修复或下一基线替代 | 直接修改冻结基线核心内容 |
+| 回滚入口 | 每个基线必须能回滚到上一基线、上一 tag 或上一 GitOps revision | 无回滚 commit、无回滚说明或回滚证据过期 |
+| 外部标准 | 外部标准必须绑定版本、稳定性和采纳等级 | 引用 `latest` 或实验标准直接阻断生产 |
+
+发布通道分为五类：
+
+| 通道 | 用途 | 可进入生产 | 典型证据 |
+| ---- | ---- | ---------- | -------- |
+| `draft` | 设计草案和方案探索 | 否 | 草案记录、待决问题 |
+| `candidate` | 评审候选和试点准备 | 仅低风险试点 | 评审意见、控制差距、试点范围 |
+| `baseline` | 已批准的执行基线 | 是 | tag、版本清单、门禁结果、签署记录 |
+| `frozen` | 审计、招标、监管或大规模推广口径 | 是 | 冻结声明、审计导出、例外清单 |
+| `emergency-patch` | 安全、合规或生产事故紧急修复 | 受控允许 | 事故编号、补丁范围、事后复盘 |
+
+版本提升门禁：
+
+1. `Editorial` 只能修正文案、链接和格式，不能改变任何执行含义。
+2. `Minor` 必须证明向后兼容，且不得改变目录真相源、owner、风险等级或发布准入。
+3. `Major` 必须有 ADR、影响分析、迁移窗口、示例更新和控制项覆盖更新。
+4. `Breaking` 必须有消费者清单、弃用策略、并行运行窗口、回滚路径和风险接受记录。
+5. 任意版本提升都必须能通过 `make sync-doc-toc`、`make test` 和 `git diff --check`。
+6. 任意生产基线都必须能从 `version-governance.yaml` 追溯到版本清单、控制项覆盖、标准基线、审计导出和门禁决策。
+
+禁止事项：
+
+1. 禁止同一版本号复用到不同内容。
+2. 禁止发布未打 tag、tag 漂移或 tag 与文档版本不一致的基线。
+3. 禁止只改主文档版本号，不同步索引、版本清单、控制覆盖和审计导出范围。
+4. 禁止以“兼容”名义偷偷改变契约语义、owner、证据字段或生产准入规则。
+5. 禁止把 emergency patch 当作常规发布通道长期使用。
+
+### 0.7 版本记录
 
 | 版本 | 日期 | 变更级别 | 关键变化 |
 | ---- | ---- | -------- | -------- |
@@ -139,12 +182,13 @@ git diff --check
 | `V2.27` | 2026-06-02 | Minor | 补齐机器可读仓库变更控制、远端保护验证和版本基线保护 |
 | `V2.28` | 2026-06-02 | Minor | 补齐企业执行控制面、合规等级、门禁决策、例外放行和季度复核闭环 |
 | `V2.29` | 2026-06-02 | Minor | 补齐外部标准版本锁定、稳定性分级、采纳等级和升级门禁 |
+| `V2.30` | 2026-06-02 | Minor | 补齐版本控制面、发布通道、版本不变量、兼容窗口、冻结升级和回滚门禁 |
 
-### 0.7 V2.29 可执行企业标准路线图
+### 0.8 V2.30 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。V2.12 增加审计导出自动化命令，把版本、控制目录、证据映射、导出清单、脚本和关键制品哈希生成可交付审计包。V2.13 增加控制评估报告，把证据包进一步闭环到控制结果、发现项、整改、剩余风险和签署状态。V2.14 增加架构基线变更记录，把基线升级的影响分析、审批、验证命令和回滚路径纳入可执行证据。V2.15 增加 OSCAL 交换映射和导出摘要，把内部控制证据映射到 catalog、component-definition、system-security-plan、assessment-results 和 POA&M 视图。V2.16 增加审计导出门禁，把导出包生成、JSON/Markdown/OSCAL 输出和关键不变量校验纳入 `make test`。V2.17 增加审计导出完整性清单，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。V2.18 增加审计导出 provenance statement，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。V2.19 增加审计导出签名策略，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入门禁。V2.20 增加审计导出签名验签回执，把外部签名完成后的 bundle 摘要、证书身份、OIDC issuer、透明日志和验签结果纳入证据链。V2.21 增加 POA&M 整改计划，把控制发现项、责任人、整改行动、里程碑、证据、签署和 OSCAL POA&M 输出纳入闭环。V2.22 增加企业架构风险登记，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入闭环。V2.23 增加架构决策记录，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入闭环。V2.24 增加 AI 事件响应 playbook，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘纳入闭环。V2.25 增加 AI 证据账本，把模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批、留存和复审纳入 AI 产品级证据闭环。V2.26 增加微调运行证据，把训练数据授权、数据准备、实验追踪、评估、模型登记、审批、灰度发布、监控和退役纳入 AI 微调审计闭环。V2.27 增加仓库变更控制，把 CODEOWNERS、受保护分支、PR 审查、必需检查、签名提交、禁止直推、发布 tag 保护、远端保护状态验证、漂移整改、POA&M 和风险登记纳入版本基线保护。V2.28 增加企业执行控制面，把合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核和退出标准变成统一执行协议。V2.29 增加外部标准版本锁定与升级策略，避免把未稳定标准、实验性语义约定或外部规范变更直接带入生产基线。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。V2.12 增加审计导出自动化命令，把版本、控制目录、证据映射、导出清单、脚本和关键制品哈希生成可交付审计包。V2.13 增加控制评估报告，把证据包进一步闭环到控制结果、发现项、整改、剩余风险和签署状态。V2.14 增加架构基线变更记录，把基线升级的影响分析、审批、验证命令和回滚路径纳入可执行证据。V2.15 增加 OSCAL 交换映射和导出摘要，把内部控制证据映射到 catalog、component-definition、system-security-plan、assessment-results 和 POA&M 视图。V2.16 增加审计导出门禁，把导出包生成、JSON/Markdown/OSCAL 输出和关键不变量校验纳入 `make test`。V2.17 增加审计导出完整性清单，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。V2.18 增加审计导出 provenance statement，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。V2.19 增加审计导出签名策略，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入门禁。V2.20 增加审计导出签名验签回执，把外部签名完成后的 bundle 摘要、证书身份、OIDC issuer、透明日志和验签结果纳入证据链。V2.21 增加 POA&M 整改计划，把控制发现项、责任人、整改行动、里程碑、证据、签署和 OSCAL POA&M 输出纳入闭环。V2.22 增加企业架构风险登记，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入闭环。V2.23 增加架构决策记录，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入闭环。V2.24 增加 AI 事件响应 playbook，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘纳入闭环。V2.25 增加 AI 证据账本，把模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批、留存和复审纳入 AI 产品级证据闭环。V2.26 增加微调运行证据，把训练数据授权、数据准备、实验追踪、评估、模型登记、审批、灰度发布、监控和退役纳入 AI 微调审计闭环。V2.27 增加仓库变更控制，把 CODEOWNERS、受保护分支、PR 审查、必需检查、签名提交、禁止直推、发布 tag 保护、远端保护状态验证、漂移整改、POA&M 和风险登记纳入版本基线保护。V2.28 增加企业执行控制面，把合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核和退出标准变成统一执行协议。V2.29 增加外部标准版本锁定与升级策略，避免把未稳定标准、实验性语义约定或外部规范变更直接带入生产基线。V2.30 增加版本控制面，把基线 ID、发布通道、tag、源 commit、兼容窗口、冻结策略和回滚入口固化为发布不变量。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
 
-V2.29 起点包括：
+V2.30 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -154,7 +198,7 @@ V2.29 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `内部 starter kit` 下的 62 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、AI 证据账本、微调运行证据、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
+9. Starter Kit：提供 `内部 starter kit` 下的 63 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、AI 证据账本、微调运行证据、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
 10. 版本清单：提供 `内部版本清单`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
 11. 控制项覆盖清单：提供 `内部控制项覆盖清单`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
 12. 严格 schema 模式：starter kit 的对象 schema 必须声明 `additionalProperties=false`，新增字段必须先进入契约、示例和 checker 证据链。
@@ -196,6 +240,7 @@ V2.29 起点包括：
 48. 执行控制面：新增 `control-plane.yaml`，把控制项、证据、owner、阻断级别、自动化状态、复核周期和退出标准汇总到统一执行账本。
 49. 门禁决策记录：新增 `release-gate-decision.yaml`，把每次放行、阻断、条件放行、例外、break-glass 和回滚要求纳入可审计证据。
 50. 标准基线锁定：新增 `standards-baseline.yaml`，把外部标准名称、版本、稳定性、采纳等级、owner、复核周期、升级条件和回滚策略纳入可执行基线。
+51. 版本控制面：新增 `version-governance.yaml`，把基线 ID、发布通道、tag、源 commit、兼容窗口、冻结策略、升级规则和回滚入口纳入可执行发布协议。
 
 ---
 
@@ -3120,6 +3165,7 @@ governance/control-plane/conformance-profile.yaml
 governance/control-plane/control-plane.yaml
 governance/control-plane/release-gate-decision.yaml
 governance/control-plane/standards-baseline.yaml
+governance/control-plane/version-governance.yaml
 infra/gitops/environments/dev/{domain}/{service}/kustomization.yaml
 infra/gitops/environments/prod/{domain}/{service}/kustomization.yaml
 ```
@@ -3297,7 +3343,7 @@ runbook:
   rollback: docs/rollback.md
 ```
 
-V2.29 starter kit 还提供以下可执行契约模板：
+V2.30 starter kit 还提供以下可执行契约模板：
 
 1. `api-contract.yaml`：API producer、consumer、auth、版本和兼容策略。
 2. `event-contract.yaml`：事件 topic、schema、幂等键、投递语义和消费者。
@@ -3350,6 +3396,7 @@ V2.29 starter kit 还提供以下可执行契约模板：
 49. `control-plane.yaml`：企业执行控制面总账、控制项、证据、owner、阻断级别、自动化状态、复核周期和退出标准。
 50. `release-gate-decision.yaml`：门禁决策、通过、阻断、条件放行、例外、break-glass、回滚要求和复核证据。
 51. `standards-baseline.yaml`：外部标准版本、稳定性分级、采纳等级、适用范围、复核周期、升级门禁和回滚策略。
+52. `version-governance.yaml`：基线身份、发布通道、源 commit、release tag、兼容窗口、冻结策略、升级门禁和回滚入口。
 
 ### 10.10.3 自动化门禁映射
 
@@ -3384,6 +3431,7 @@ V2.29 starter kit 还提供以下可执行契约模板：
 | 控制证据映射 | 控制项 ID、证据路径、状态、新鲜度、必需性、阻断属性 | `control-evidence-map.yaml`、控制目录、CI | 控制项无证据、证据过期、非阻断控制被误放行 |
 | 执行控制面 | 合规等级、控制项、证据、owner、阻断级别、自动化状态、复核周期和退出标准 | `conformance-profile.yaml`、`control-plane.yaml`、`release-gate-decision.yaml`、控制目录、CI | 不同团队用不同放行口径、条件放行无证据、例外过期仍继续发布 |
 | 标准基线 | 外部标准名称、版本、稳定性、采纳等级、适用范围、owner、复核周期和升级门禁 | `standards-baseline.yaml`、参考资料、ADR、控制面 | 直接追随 latest、把 Development 状态规范当生产硬门禁、升级无兼容评估 |
+| 版本控制面 | 基线 ID、版本、发布通道、source commit、release tag、兼容窗口、冻结状态和回滚入口 | `version-governance.yaml`、版本清单、tag、ADR、审计导出 | tag 漂移、版本复用、发布证据版本不一致、冻结基线被直接修改 |
 | 审计导出 | 架构版本、控制数量、starter kit 数量、导出内容、验证结果、签名、留存 | `audit-export-manifest.yaml`、审计包、签名系统 | 导出包范围不明、缺关键文件、未验证通过、未签名 |
 | 审计导出自动化 | 校验命令、导出脚本、JSON 包、Markdown 报告、OSCAL 摘要、完整性清单、provenance statement、签名策略和验签回执契约 | `审计导出命令`、导出脚本、build 输出 | 审计包只能手工拼接、未先校验、缺制品哈希、生成来源、签名策略或验签回执 |
 | 控制评估报告 | 评估范围、评估人、控制结果、发现项、整改、剩余风险、签署 | `control-assessment-report.yaml`、控制目录、证据映射、审计导出清单 | 只有证据无结论、发现项无人负责、未签署仍声称通过 |
@@ -3426,7 +3474,7 @@ V2.29 starter kit 还提供以下可执行契约模板：
 
 可执行企业标准不能只证明“字段存在”，还要证明关键控制项确实被 schema、example 和 checker 覆盖。
 
-V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项进入同一清单；V2.8 起，扩展策略、发布开关、AI 威胁模型、运行血缘和平台产品指标也进入同一清单；V2.9 起，隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测和成本分摊证据也进入同一清单；V2.10 起，访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度也进入同一清单；V2.11 起，控制证据映射和审计导出清单也进入同一清单；V2.12 起，审计导出自动化命令也进入同一清单；V2.13 起，控制评估报告也进入同一清单；V2.14 起，架构基线变更记录也进入同一清单；V2.15 起，OSCAL 交换映射也进入同一清单；V2.16 起，审计导出门禁也进入同一清单；V2.17 起，审计导出完整性清单也进入同一清单；V2.18 起，审计导出 provenance statement 也进入同一清单；V2.19 起，审计导出签名策略也进入同一清单；V2.20 起，审计导出签名验签回执也进入同一清单；V2.21 起，POA&M 整改计划也进入同一清单；V2.22 起，企业架构风险登记也进入同一清单；V2.23 起，架构决策记录也进入同一清单；V2.24 起，AI 事件响应 playbook 也进入同一清单；V2.25 起，AI 证据账本也进入同一清单；V2.26 起，微调运行证据也进入同一清单；V2.27 起，仓库变更控制和远端保护漂移整改也进入同一清单；V2.28 起，合规等级、执行控制面和门禁决策也进入同一清单；V2.29 起，外部标准版本锁定和升级门禁也进入同一清单：
+V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项进入同一清单；V2.8 起，扩展策略、发布开关、AI 威胁模型、运行血缘和平台产品指标也进入同一清单；V2.9 起，隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测和成本分摊证据也进入同一清单；V2.10 起，访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度也进入同一清单；V2.11 起，控制证据映射和审计导出清单也进入同一清单；V2.12 起，审计导出自动化命令也进入同一清单；V2.13 起，控制评估报告也进入同一清单；V2.14 起，架构基线变更记录也进入同一清单；V2.15 起，OSCAL 交换映射也进入同一清单；V2.16 起，审计导出门禁也进入同一清单；V2.17 起，审计导出完整性清单也进入同一清单；V2.18 起，审计导出 provenance statement 也进入同一清单；V2.19 起，审计导出签名策略也进入同一清单；V2.20 起，审计导出签名验签回执也进入同一清单；V2.21 起，POA&M 整改计划也进入同一清单；V2.22 起，企业架构风险登记也进入同一清单；V2.23 起，架构决策记录也进入同一清单；V2.24 起，AI 事件响应 playbook 也进入同一清单；V2.25 起，AI 证据账本也进入同一清单；V2.26 起，微调运行证据也进入同一清单；V2.27 起，仓库变更控制和远端保护漂移整改也进入同一清单；V2.28 起，合规等级、执行控制面和门禁决策也进入同一清单；V2.29 起，外部标准版本锁定和升级门禁也进入同一清单；V2.30 起，版本控制面和基线发布不变量也进入同一清单：
 
 ```text
 内部控制项覆盖清单
@@ -3452,6 +3500,7 @@ V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema
 | 文档说 AI 产品证据必须可追踪，机器是否能证明 | 控制项要求 `ai-evidence.schema.json` 和示例包含模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批和复审 |
 | 文档说企业不同风险等级必须使用不同门禁，机器是否能证明 | 控制项要求 `conformance-profile.schema.json`、`control-plane.schema.json` 和 `release-gate-decision.schema.json` 绑定等级、证据、阻断级别、例外和复核 |
 | 文档说外部标准不能直接追随 latest，机器是否能证明 | 控制项要求 `standards-baseline.schema.json` 和示例包含标准名称、版本、稳定性、采纳等级、复核周期和升级门禁 |
+| 文档说基线版本必须可追溯且不可复用，机器是否能证明 | 控制项要求 `version-governance.schema.json` 和示例包含基线 ID、发布通道、源 commit、release tag、兼容窗口、冻结策略和回滚入口 |
 | 文档说 AI 事件响应必须有专门 playbook，机器是否能证明 | 控制项要求 `ai-incident-playbook.schema.json` 和示例包含触发器、检测、遏制、降级、回滚、RAG 恢复、工具 Kill Switch 和复盘 |
 | 文档说 GitOps 必须有运行安全，机器是否能证明 | 控制项要求 `gitops-deployment.schema.json` 和示例包含 `serviceAccount`、`security`、`scaling` |
 | 文档说供应链必须有漏洞和 Scorecard 证据，机器是否能证明 | 控制项要求 `supply-chain-attestation.schema.json` 和示例包含 `vulnerability`、`scorecard` |
@@ -3752,6 +3801,67 @@ standards:
 4. 禁止标准升级只改文档、不改 checker、证据字段和迁移说明。
 5. 禁止一个团队私自升级共享门禁标准，导致其他团队 CI 或审计导出漂移。
 
+### 10.10.8 版本控制面和基线发布协议
+
+`version-governance.yaml` 是架构基线发布的控制面。它不存放正文内容，而是把版本、Git、证据和门禁绑定成同一条可验证事实链。
+
+```yaml
+versionGovernance:
+  baselineId: mea-v2.30-20260602
+  documentVersion: V2.30
+  releaseChannel: candidate
+  status: Baseline Candidate
+  owner: architecture-governance-board
+  sourceCommit: <git-sha-of-baseline-commit>
+  releaseTag: architecture/v2.30-candidate
+  tagSigned: true
+  effectiveFrom: 2026-06-02
+  supersedes: V2.29
+  compatibility:
+    changeLevel: minor
+    backwardCompatible: true
+    compatibilityWindow: P90D
+    migrationRequired: false
+  linkedBaselines:
+    versionManifest: governance/control-plane/version-manifest.yaml
+    controlCoverage: governance/control-plane/control-coverage.yaml
+    standardsBaseline: governance/control-plane/standards-baseline.yaml
+    auditExportManifest: governance/evidence/audit-export/audit-export-manifest.yaml
+  gates:
+    required:
+      - make sync-doc-toc
+      - make test
+      - git diff --check
+    releaseDecision: governance/control-plane/release-gate-decision.yaml
+  freezePolicy:
+    canFreezeAfter:
+      - architecture-review-approved
+      - audit-export-generated
+      - open-critical-findings-zero
+    emergencyPatchAllowed: true
+  rollback:
+    previousBaseline: V2.29
+    rollbackCommit: <git-sha-of-previous-baseline>
+    rollbackGuide: governance/evidence/baseline-changes/baseline-change-record.yaml
+```
+
+执行规则：
+
+1. `documentVersion` 必须等于主文档版本、版本清单版本和审计导出版本。
+2. `baselineId` 一经发布不得复用；同一 `baselineId` 不得指向不同 commit。
+3. `releaseTag` 必须指向 `sourceCommit`，生产级基线必须使用签名 tag。
+4. `releaseChannel=baseline` 或 `frozen` 时，必须有 `release-gate-decision.yaml` 和审计导出清单。
+5. `changeLevel=major` 或 `breaking` 时，必须引用 ADR、迁移计划、弃用策略和消费者影响分析。
+6. `compatibilityWindow` 到期后，未迁移消费者必须转入例外、POA&M 或风险接受记录。
+7. 回滚不能只写“回退上一版”，必须指向可 checkout 的 commit、tag、GitOps revision 或制品 digest。
+
+可执行验收标准：
+
+1. 任意基线都能从 `version-governance.yaml` 追溯到源 commit、release tag、版本清单和审计导出。
+2. 任意冻结基线都能证明没有被直接修改；后续变更只能通过补丁或新基线替代。
+3. 任意 breaking change 都能找到兼容窗口、消费者清单、迁移说明和回滚入口。
+4. 任意 emergency patch 都能找到事故或安全编号、补丁范围、事后复盘和补齐证据。
+
 ## 10.11 仓库拓扑剖面
 
 目录结构可以按企业规模、团队自治程度和合规要求裁剪，但真相源边界不能裁剪。仓库拓扑的选择应先看 ownership、变更频率、权限隔离、发布节奏和审计要求，而不是看团队偏好的 Git 管理方式。
@@ -3856,7 +3966,7 @@ standards:
 starter kit 校验命令
 ```
 
-该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、62 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 证据账本、微调运行证据、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
+该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、63 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 证据账本、微调运行证据、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
 
 审计导出包由以下命令生成：
 
@@ -3902,6 +4012,7 @@ governance/control-plane/{conformance-profile}.yaml
 governance/control-plane/{control-plane}.yaml
 governance/control-plane/{release-gate-decision}.yaml
 governance/control-plane/{standards-baseline}.yaml
+governance/control-plane/{version-governance}.yaml
 governance/evidence/audit-export/{audit-export-manifest}.yaml
 governance/evidence/control-assessments/{control-assessment-report}.yaml
 governance/evidence/baseline-changes/{baseline-change-record}.yaml
@@ -4461,6 +4572,7 @@ governance/control-plane/conformance-profile.yaml
 governance/control-plane/control-plane.yaml
 governance/control-plane/release-gate-decision.yaml
 governance/control-plane/standards-baseline.yaml
+governance/control-plane/version-governance.yaml
 governance/migration/deprecation-policy.md
 governance/evidence/releases/README.md
 governance/evidence/supply-chain/README.md
@@ -4502,6 +4614,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 13. 所有生产发布有可追溯的验证包和审计证据索引。
 14. 所有生产资产有合规等级画像、控制面记录和门禁决策证据。
 15. 所有生产门禁引用的外部标准都有版本锁定、稳定性等级和升级门禁。
+16. 所有生产基线都有唯一基线 ID、发布通道、源 commit、release tag、兼容窗口和回滚入口。
 
 ---
 
@@ -4525,6 +4638,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 | 容器真相源混乱  | 服务目录、部署目录、catalog 和运行状态互相覆盖 | 按源码、镜像、GitOps、Kubernetes、catalog、platform 分层管理 |
 | 门禁口径漂移    | 不同团队对同一风险使用不同放行规则，例外长期不过期 | 用合规等级、控制面总账和门禁决策记录统一 pass、fail、exception 和 break-glass 口径 |
 | 外部标准漂移    | 生产门禁直接追随 latest，实验性规范变化导致证据格式和 CI 结果不稳定 | 锁定标准版本、标记稳定性、分级采纳，并通过 ADR 和灰度升级 |
+| 版本基线漂移    | 文档版本、tag、审计导出、控制清单和发布证据互相对不上 | 用版本控制面绑定 baseline ID、source commit、release tag、兼容窗口和回滚入口 |
 
 ---
 
@@ -4556,6 +4670,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 10. 生产制品具备 SBOM、签名、provenance 和可验证发布准入。
 11. 任意生产发布都能追溯到合规等级、控制项、门禁决策、例外状态和审计证据。
 12. 任意外部标准升级都能追溯到版本锁定、影响分析、灰度验证、ADR 和回滚路径。
+13. 任意架构基线都能追溯到唯一 baseline ID、source commit、release tag、版本证据包和上一基线回滚入口。
 
 ---
 
@@ -4586,6 +4701,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 
 | 对标来源 | 关键结论 | 本文档落点 |
 | -------- | -------- | ---------- |
+| Semantic Versioning / Conventional Commits / Keep a Changelog | 版本号、提交语义和变更记录必须表达兼容性、影响面和升级意图 | 增加 `version-governance.yaml`、发布通道、基线不变量、兼容窗口和回滚入口 |
 | DORA 2025 | AI 辅助交付必须与组织能力、平台能力和可度量交付质量一起治理 | 补齐 AI 指标、Platform PM、认知负载和 AI 发布门禁 |
 | CNCF Platform Engineering Maturity Model | 平台工程成熟度核心是自助、产品化、治理和可度量能力 | 保留 Developer Portal、Golden Path、平台产品契约和平台指标 |
 | Team Topologies | 降低团队认知负载是平台团队存在的核心理由之一 | 增加认知负载度量、Platform PM 和平台用户研究 |
@@ -4674,6 +4790,12 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
   <https://kubernetes.io/docs/concepts/containers/images/>
 - OpenGitOps Principles
   <https://opengitops.dev/>
+- Semantic Versioning 2.0.0
+  <https://semver.org/spec/v2.0.0.html>
+- Conventional Commits 1.0.0
+  <https://www.conventionalcommits.org/en/v1.0.0/>
+- Keep a Changelog
+  <https://keepachangelog.com/>
 - Argo CD Documentation
   <https://argo-cd.readthedocs.io/>
 - Flux Documentation
