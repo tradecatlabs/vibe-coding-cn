@@ -55,6 +55,7 @@ skills/auto-tmux/
     ├── script-cheatsheet.md
     ├── swarm-state.md
     ├── prompt-templates.md
+    ├── codex-pilot-mode.md
     ├── ai-swarm-collaboration.md
     ├── iteration-roadmap.md
     ├── iteration-closeout.md
@@ -88,8 +89,9 @@ skills/auto-tmux/
 - `scripts/incident-report.sh` 是事故复盘层，生成误发送、误广播和敏感信息风险模板。
 - `scripts/completion.bash` 是本地补全层，补全 `auto-tmux.sh` 与 `swarm-state.sh`。
 - `scripts/safety-check.sh` 是安全预检层，检查待发送 payload 的危险命令、敏感信息和大小。
-- `scripts/render-swarm-prompt.sh` 是提示词渲染层，生成 commander/worker/reviewer 协议文本。
-- `scripts/swarm-dispatch.sh` 是提示词下发层，默认写文件，显式 `--send` 后才发送到 pane。
+- `scripts/render-swarm-prompt.sh` 是提示词渲染层，生成 commander/worker/reviewer/codex-worker 协议文本。
+- `scripts/swarm-dispatch.sh` 是提示词下发层，默认写文件，显式 `--send` 后才发送到 pane；支持 Codex Pilot Mode 的单 worker 下发。
+- `references/codex-pilot-mode.md` 是显式激活协议，定义主 Codex 控制一个人类可旁观、持久化交互式 worker Codex pane 的提示词、边界和验收。
 - `scripts/validate-auto-tmux.sh` 是技能专属质量门禁，覆盖脚本、文档索引和 smoke test。
 - 技能文档可以引用软链接入口；更新上游内容必须通过 `tools/external/` 下的 submodule 指针完成。
 - 不在本目录直接修改 submodule 内容；如需改造，先 fork 上游并更新 submodule 来源。
