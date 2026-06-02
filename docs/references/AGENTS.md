@@ -19,7 +19,7 @@ references/
 ├── project-architecture-template.md
 ├── python-project-skeleton.md
 ├── enterprise-architecture-template.md
-├── modern-enterprise-architecture-template.md  # 现代企业数字化平台、版本治理、版本控制面、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、外部标准版本锁定、可执行标准、执行控制面、门禁决策、RACI、可靠性分级、仓库拓扑、迁移弃用、审计证据、微服务容器 GitOps、AI 原生能力、供应链安全和联邦治理蓝图
+├── modern-enterprise-architecture-template.md  # 现代企业数字化平台、版本治理、版本控制面、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、外部标准版本锁定、可执行标准、执行控制面、门禁决策、RACI、可靠性分级、仓库拓扑、迁移弃用、审计证据、微服务容器 GitOps、AI 原生能力、供应链安全和联邦治理蓝图
 ├── dataset-first-data-service.md
 ├── code-organization.md
 ├── development-experience.md
