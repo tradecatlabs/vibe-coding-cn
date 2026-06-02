@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.87
+**文档版本**：V2.88
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.87 在 V2.86 基础上新增基线业务结果、价值实现与组合收益总账，把业务目标、价值假设、收益 owner、投资组合、关键结果、前后基线、采用证据、收益实现、成本效率、风险接受和停投/加投决策统一到同一证据链，避免“架构治理证明了合规、安全和可靠，却无法证明真实业务价值与投资收益”的断层。
+**专项修订**：V2.88 在 V2.87 基础上新增基线价值流、关键旅程与端到端流程总账，把跨领域价值流、客户旅程、BPMN/流程模型、流程 owner、端到端指标、步骤级遥测、瓶颈、例外、人工兜底、控制点和改进动作统一到同一证据链，避免“业务结果已入账，但从客户触发到业务完成的跨域流程本身不可观测、不可审计、不可优化”的断层。
 
 ---
 
@@ -53,7 +53,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.87` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、120 组 starter kit schema/example、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核、仓库变更控制、远端保护漂移整改、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 证据账本、微调运行证据、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、威胁建模、攻击面管理、安全风险治理、访问复核、密钥轮换、漏洞修复、事故复盘、可靠性、性能、容量、成本效率、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
+| `V2.88` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、121 组 starter kit schema/example、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核、仓库变更控制、远端保护漂移整改、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 证据账本、微调运行证据、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、威胁建模、攻击面管理、安全风险治理、访问复核、密钥轮换、漏洞修复、事故复盘、可靠性、性能、容量、成本效率、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -192,6 +192,8 @@ V2.86 起，企业级基线还必须形成 `baseline-workforce-competency-traini
 
 V2.87 起，企业级基线还必须形成 `baseline-business-outcome-value-realization-portfolio-ledger.yaml`。它不是替代 OKR、KPI、投资组合管理、财务预算、产品指标、FinOps 报表、采纳总账或会审裁决；这些系统分别记录局部事实。该总账证明每个 L3/L4 架构基线、领域能力、平台能力、数据产品、AI 产品和重大生产变更都有业务目标、价值假设、收益 owner、投资组合归属、关键结果、前后基线、采用证据、收益实现状态、成本效率、风险接受和停投/加投决策闭环；任何无业务目标、无收益 owner、关键结果不可测、前后基线缺失、收益未实现且无决策、成本效率不可解释或价值总账未进入 release gate，都必须阻断 baseline/frozen 晋级。
 
+V2.88 起，企业级基线还必须形成 `baseline-value-stream-journey-process-ledger.yaml`。它不是替代业务流程图、BPMN 模型、流程挖掘平台、产品分析、服务 SLO、运营韧性总账或业务结果总账；这些系统分别记录局部事实。该总账证明每个 L3/L4 关键价值流、客户旅程和跨领域业务流程都有流程 owner、触发事件、完成定义、步骤模型、跨域责任、服务/数据/API/AI 依赖、端到端指标、步骤级遥测、等待时间、重试与异常、人工兜底、控制点、瓶颈、改进动作和结果联动闭环；任何关键流程无 owner、模型过期、步骤遥测缺失、跨域交接不可追溯、瓶颈未处置、异常未闭环、人工兜底未演练或流程总账未进入 release gate，都必须阻断 baseline/frozen 晋级。
+
 推荐发布检查：
 
 ```bash
@@ -261,6 +263,7 @@ git diff --check
 | 工程质量、测试证据、缺陷与发布验证 | `baseline-engineering-quality-test-release-verification-ledger.yaml` 必须声明资产 owner、需求追踪、测试策略、测试金字塔、契约/E2E/回归/验收测试、覆盖率、测试环境、测试数据、flaky 测试、缺陷、回归复测、发布前验证、灰度/冒烟结果和质量风险接受 | 无需求追踪、关键测试缺失、覆盖率低于阈值、flaky 测试未治理、critical/high 缺陷未关闭、修复未复测、发布验证缺失、已知缺陷无风险接受仍晋级 |
 | 人员能力、培训、职责履职与职责分离 | `baseline-workforce-competency-training-duty-segregation-ledger.yaml` 必须声明关键角色、任命来源、岗位资格、职责确认、培训记录、专项训练、值班资格、审批授权、代理授权、职责分离、冲突角色、备份人员和到期复核 | 关键 owner 未任命、培训或专项资格过期、职责未确认、on-call 未认证、审批人与执行人未分离、冲突角色未关闭、代理授权过期或关键岗位无人备份仍晋级 |
 | 业务结果、价值实现与组合收益 | `baseline-business-outcome-value-realization-portfolio-ledger.yaml` 必须声明业务目标、价值假设、收益 owner、投资组合、关键结果、前后基线、采用证据、收益实现、成本效率、风险接受、停投/加投决策和复核周期 | 架构基线只证明交付或合规、无法证明业务结果、收益实现、成本效率、未实现价值处置和组合决策仍晋级 |
+| 价值流、关键旅程与端到端流程 | `baseline-value-stream-journey-process-ledger.yaml` 必须声明价值流、客户旅程、BPMN/流程模型、流程 owner、触发事件、完成定义、步骤责任、跨域交接、服务/数据/API/AI 依赖、端到端指标、步骤级遥测、瓶颈、异常、人工兜底、控制点和改进动作 | 业务结果已入账但关键旅程不可追踪、流程模型过期、跨域交接无 owner、步骤遥测缺失、瓶颈未处置、异常和人工兜底未演练仍晋级 |
 | 漏洞、暴露面与修复验证 | `baseline-vulnerability-exposure-remediation-ledger.yaml` 必须声明资产、镜像、依赖、基础镜像、IaC、Kubernetes、云配置、API、AI 工具、外部暴露、CVE/KEV/EPSS/CVSS、VEX/CSAF、owner、SLA、修复、复测、例外和发布准入 | critical/KEV 未关闭、互联网暴露 high 未关闭、扫描覆盖缺口、漏洞 owner 缺失、SLA 超期、修复未复测、例外过期、VEX/CSAF 状态缺失或未进入 release gate 仍晋级 |
 | 容量、性能、弹性伸缩与成本效率 | `baseline-capacity-performance-cost-efficiency-ledger.yaml` 必须声明关键服务、关键用户旅程、容量预测、压测窗口、性能基准、资源 requests/limits、HPA/VPA/KEDA、队列和数据库容量、预算、单位经济、成本分摊、异常成本和优化行动 | 关键服务无容量模型、压测过期、p95/p99 退化、资源未声明、自动扩缩容缺失、队列积压不可解释、数据库容量不足、预算超支无审批、单位成本不可解释或成本异常未关闭仍晋级 |
 | 服务可靠性、SLO、错误预算与可观测性 | `baseline-service-reliability-slo-error-budget-observability-ledger.yaml` 必须声明生产服务、用户旅程、SLI/SLO、错误预算、告警规则、on-call、runbook、指标/日志/链路覆盖、合成探测、降级策略和 owner | 关键服务无 SLO、SLI 不可测、错误预算超支仍放行风险变更、关键告警无人接、runbook 缺失、合成探测未覆盖用户旅程、日志/指标/链路缺口或仪表盘不可用仍晋级 |
@@ -414,8 +417,9 @@ git diff --check
 | `V2.85` | 2026-06-03 | Minor | 补齐基线工程质量、测试证据、缺陷与发布验证总账、需求追踪、单元/集成/契约/E2E/回归/验收测试、覆盖率、flaky 测试、缺陷分级、修复复测、发布前验证和质量风险接受闭环 |
 | `V2.86` | 2026-06-03 | Minor | 补齐基线人员能力、培训、职责履职与职责分离总账、关键角色任命、岗位资格、职责确认、专项培训、on-call 资格、审批授权、职责分离、冲突角色和代理授权闭环 |
 | `V2.87` | 2026-06-03 | Minor | 补齐基线业务结果、价值实现与组合收益总账、业务目标、价值假设、收益 owner、投资组合、关键结果、前后基线、采用证据、收益实现、成本效率和停投/加投决策闭环 |
+| `V2.88` | 2026-06-03 | Minor | 补齐基线价值流、关键旅程与端到端流程总账、BPMN/流程模型、流程 owner、跨域交接、步骤级遥测、瓶颈、异常、人工兜底和改进动作闭环 |
 
-### 0.8 V2.87 可执行企业标准路线图
+### 0.8 V2.88 可执行企业标准路线图
 
 V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、example 和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。V2.12 增加审计导出自动化命令，把版本、控制目录、证据映射、导出清单、脚本和关键制品哈希生成可交付审计包。V2.13 增加控制评估报告，把证据包进一步闭环到控制结果、发现项、整改、剩余风险和签署状态。V2.14 增加架构基线变更记录，把基线升级的影响分析、审批、验证命令和回滚路径纳入可执行证据。V2.15 增加 OSCAL 交换映射和导出摘要，把内部控制证据映射到 catalog、component-definition、system-security-plan、assessment-results 和 POA&M 视图。V2.16 增加审计导出门禁，把导出包生成、JSON/Markdown/OSCAL 输出和关键不变量校验纳入 `make test`。V2.17 增加审计导出完整性清单，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。V2.18 增加审计导出 provenance statement，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。V2.19 增加审计导出签名策略，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入门禁。V2.20 增加审计导出签名验签回执，把外部签名完成后的 bundle 摘要、证书身份、OIDC issuer、透明日志和验签结果纳入证据链。V2.21 增加 POA&M 整改计划，把控制发现项、责任人、整改行动、里程碑、证据、签署和 OSCAL POA&M 输出纳入闭环。V2.22 增加企业架构风险登记，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入闭环。V2.23 增加架构决策记录，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入闭环。V2.24 增加 AI 事件响应 playbook，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘纳入闭环。V2.25 增加 AI 证据账本，把模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批、留存和复审纳入 AI 产品级证据闭环。V2.26 增加微调运行证据，把训练数据授权、数据准备、实验追踪、评估、模型登记、审批、灰度发布、监控和退役纳入 AI 微调审计闭环。V2.27 增加仓库变更控制，把 CODEOWNERS、受保护分支、PR 审查、必需检查、签名提交、禁止直推、发布 tag 保护、远端保护状态验证、漂移整改、POA&M 和风险登记纳入版本基线保护。V2.28 增加企业执行控制面，把合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核和退出标准变成统一执行协议。V2.29 增加外部标准版本锁定与升级策略，避免把未稳定标准、实验性语义约定或外部规范变更直接带入生产基线。V2.30 增加版本控制面，把基线 ID、发布通道、tag、源 commit、兼容窗口、冻结策略和回滚入口固化为发布不变量。V2.31 增加基线发布证据包，把晋级决策、冻结复核、漂移检查、不可变引用、审计摘要和回滚验证固化为发布证据。V2.32 增加基线兼容性总账，把消费者影响、迁移窗口、弃用截止、例外状态和未迁移风险固化为版本门禁证据。V2.33 增加基线采纳总账，把领域、平台、数据、AI 和生产资产对基线的采用状态、逾期治理和例外整改固化为组织级版本证据。V2.34 增加基线支持矩阵，把旧基线支持状态、维护窗口、安全补丁窗口、EOL 和最低可接受基线固化为版本生命周期门禁。V2.35 增加基线发布列车，把候选窗口、冻结窗口、晋级日期、通知节奏、黑窗和紧急补丁入口固化为版本发布节奏门禁。V2.36 增加资产级基线符合性声明，把资产自声明、证据绑定、例外、复核和采纳总账回写固化为资产级版本证据。V2.37 增加基线制品清单，把源文档、schema、示例、控制项、证据模板、脚本、生成物和外部引用固化为可摘要、可签名、可复现的版本物料清单。V2.38 增加基线验证环境锁定，把校验命令、工具版本、runner 镜像、策略包、schema validator 和验签工具固化为可复现门禁。V2.39 增加基线通知确认总账，把发布列车中的通知计划升级为可审计的送达、确认、异议和例外证据。V2.40 增加基线回滚验证记录，把上一基线检出、GitOps revision 恢复、审计导出恢复和烟测结果升级为独立证据。V2.41 增加基线例外总账，把分散例外、到期、风险接受、POA&M 和冻结阻断收敛为统一审计证据。V2.42 增加基线就绪评分卡，把硬门禁、评分维度、证据摘要和 baseline/frozen 判定统一到最终准入证据。V2.43 增加基线生命周期状态机，把允许迁移、禁止迁移、状态回写、迁移审批和回滚入口统一到状态转换证据。V2.44 增加基线状态对账报告，把状态机、版本控制面、发布证据、支持矩阵、采纳总账和审计导出的状态字段统一对账。V2.45 增加基线 EOL 退役证书，把旧基线生产引用清零、迁移关闭、例外清零、审计归档和新采用阻断固化为退役证据。V2.46 增加基线会审裁决记录，把会审范围、证据核验、投票签署、反对意见、条件动作和最终裁决固化为独立会审证据。V2.47 增加基线证据追踪图，把跨证据依赖、摘要一致性、下游消费和断链阻断固化为可校验证据图。V2.48 增加基线门禁执行报告，把执行命令、策略包、输入摘要、规则结果、退出码和重放证明固化为 release gate 的可审计运行证据。V2.49 增加基线发布事务回执，把提交、签名 tag、远端 ref、push 回执、保护规则和发布后验证固化为版本发布事实。V2.50 增加基线撤销与隔离记录，把坏基线的隔离、撤销、通知、恢复目标、风险接受和审计归档固化为版本事故控制证据。V2.51 增加基线准入执行策略，把最低基线、撤销/EOL、资产声明、例外到期和运行入口阻断固化为统一策略。V2.52 增加基线消费锁定文件，把资产消费端的基线版本、commit、tag 和关键证据摘要固化为不可变锁。V2.53 增加基线迁移工作单，把目标资产迁移到新基线的步骤、依赖、GitOps 变更、消费锁更新、验收证据和回滚动作固化为执行工单。V2.54 增加基线迁移执行回执，把实际命令、actor、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证固化为执行事实。V2.55 增加本地私有制品边界，把内部 starter kit、生成 JSON、校验脚本、禁推原因、摘要留存和远端排除固化为受控证据。V2.56 增加审计导出排除清单，把原文白名单、摘要留存项、强制排除项、签名 payload 排除和导出后验证固化为受控证据。V2.57 增加私有制品托管交接清单，把私有制品库引用、访问控制、留存期限、取回命令、恢复验证和摘要一致性固化为受控证据。V2.58 增加干净环境基线重建回执，把远端 checkout、私有制品取回、摘要校验、审计导出重建、门禁重放和禁推资产复核固化为受控证据。V2.59 增加基线证据不可变归档回执，把关键证据的 WORM 留存、legal hold、访问日志、防删除、归档摘要和恢复演练固化为受控证据。V2.60 增加基线长期验签回执，把签名 bundle、证书链、OIDC 身份、透明日志、signed entry timestamp、RFC3161 TSA、撤销状态和验证工具版本固化为长期验签证据。V2.61 增加基线运行时准入回执，把 Kubernetes admission、策略引擎、镜像 digest、签名、provenance、SBOM、消费锁和拒绝样例固化为生产运行入口证据。V2.62 增加基线运行时准入决策总账，把 Kubernetes audit、admission webhook、PolicyReport、OPA decision log、actor、requestUID、allow/deny 和原始日志摘要固化为逐条运行决策证据。V2.63 增加基线连续控制监测总账，把控制项指标、告警、漂移、处置、证据新鲜度和控制运行 SLO 固化为持续监测证据。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps、runtime admission、audit logging、continuous control monitoring 和审计系统连接起来。
 
@@ -477,7 +481,7 @@ V2.87 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `内部 starter kit` 下的 120 组 schema/example、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、嵌套字段校验、格式校验、威胁建模、攻击面管理、安全风险治理、可靠性、性能、容量、成本效率、数据治理、AI 运行、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、AI 证据账本、微调运行证据、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
+9. Starter Kit：提供 `内部 starter kit` 下的 121 组 schema/example、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、嵌套字段校验、格式校验、威胁建模、攻击面管理、安全风险治理、可靠性、性能、容量、成本效率、数据治理、AI 运行、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、AI 证据账本、微调运行证据、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
 10. 版本清单：提供 `内部版本清单`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
 11. 控制项覆盖清单：提供 `内部控制项覆盖清单`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
 12. 严格 schema 模式：starter kit 的对象 schema 必须声明 `additionalProperties=false`，新增字段必须先进入契约、示例和 checker 证据链。
@@ -577,6 +581,7 @@ V2.87 起点包括：
 106. 基线工程质量、测试证据、缺陷与发布验证总账：新增 `baseline-engineering-quality-test-release-verification-ledger.yaml`，把需求追踪、测试策略、单元/集成/契约/E2E/回归/验收测试、覆盖率、测试环境、测试数据、flaky 测试、缺陷、修复复测、发布前验证、灰度/冒烟结果和质量风险接受纳入可执行治理证据。
 107. 基线人员能力、培训、职责履职与职责分离总账：新增 `baseline-workforce-competency-training-duty-segregation-ledger.yaml`，把关键角色任命、岗位资格、职责确认、培训完成、专项训练、on-call 资格、审批授权、代理授权、职责分离、冲突角色、备份人员和到期复核纳入可执行治理证据。
 108. 基线业务结果、价值实现与组合收益总账：新增 `baseline-business-outcome-value-realization-portfolio-ledger.yaml`，把业务目标、价值假设、收益 owner、投资组合、关键结果、前后基线、采用证据、收益实现、成本效率、风险接受和停投/加投决策纳入可执行治理证据。
+109. 基线价值流、关键旅程与端到端流程总账：新增 `baseline-value-stream-journey-process-ledger.yaml`，把跨领域价值流、客户旅程、BPMN/流程模型、流程 owner、步骤级遥测、瓶颈、异常、人工兜底、控制点和改进动作纳入可执行治理证据。
 
 ---
 
@@ -3800,6 +3805,7 @@ V2.82 starter kit 还提供以下可执行契约模板：
 107. `baseline-engineering-quality-test-release-verification-ledger.yaml`：基线工程质量、测试证据、缺陷与发布验证总账，覆盖资产 owner、需求追踪、测试策略、单元/集成/契约/E2E/回归/验收测试、覆盖率、测试环境、测试数据、flaky 测试、缺陷分级、修复复测、发布前验证、灰度/冒烟结果和质量风险接受。
 108. `baseline-workforce-competency-training-duty-segregation-ledger.yaml`：基线人员能力、培训、职责履职与职责分离总账，覆盖关键角色任命、岗位资格、职责确认、培训完成、专项训练、on-call 资格、审批授权、代理授权、职责分离、冲突角色、备份人员和到期复核。
 109. `baseline-business-outcome-value-realization-portfolio-ledger.yaml`：基线业务结果、价值实现与组合收益总账，覆盖业务目标、价值假设、收益 owner、投资组合、关键结果、前后基线、采用证据、收益实现、成本效率、风险接受和停投/加投决策。
+110. `baseline-value-stream-journey-process-ledger.yaml`：基线价值流、关键旅程与端到端流程总账，覆盖价值流、客户旅程、BPMN/流程模型、流程 owner、触发事件、完成定义、跨域交接、步骤级遥测、瓶颈、异常、人工兜底、控制点和改进动作。
 
 ### 10.10.3 自动化门禁映射
 
@@ -3822,6 +3828,7 @@ V2.82 starter kit 还提供以下可执行契约模板：
 | 基线工程质量与发布验证 | 需求追踪、测试计划、单元/集成/契约/E2E/回归/验收测试、覆盖率、flaky、缺陷、修复复测、发布前验证、灰度/冒烟和质量风险接受 | `baseline-engineering-quality-test-release-verification-ledger.yaml`、CI reports、test reports、coverage reports、contract test results、defect tracker、release evidence、canary/smoke reports | 关键测试缺失、覆盖率低于阈值、flaky 未治理、critical/high 缺陷开放、修复未复测、发布验证缺失或质量风险未签署 |
 | 基线人员能力与职责分离 | 关键角色任命、职责确认、岗位资格、培训完成、专项训练、on-call 资格、审批授权、代理授权、职责分离、冲突角色和备份覆盖 | `baseline-workforce-competency-training-duty-segregation-ledger.yaml`、HRIS、LMS、IAM/PAM、RACI、on-call roster、approval log、access review、review board decision | 关键角色未任命、培训过期、专项资格缺失、职责未确认、on-call 未认证、审批人与执行人未分离、冲突角色未关闭、代理授权过期或关键岗位无人备份 |
 | 基线业务结果与价值实现 | 业务目标、价值假设、收益 owner、投资组合、关键结果、前后基线、采用证据、收益实现、成本效率、风险接受和停投/加投决策 | `baseline-business-outcome-value-realization-portfolio-ledger.yaml`、OKR/KPI、portfolio backlog、product analytics、adoption ledger、FinOps unit economics、release evidence、review board decision | 无业务目标、价值假设无 owner、关键结果不可测、前后基线缺失、收益未实现且无决策、成本效率不可解释或停投/加投决策缺失 |
+| 基线价值流与端到端流程 | 价值流、客户旅程、BPMN/流程模型、流程 owner、触发事件、完成定义、步骤级遥测、跨域交接、瓶颈、异常、人工兜底、控制点和改进动作 | `baseline-value-stream-journey-process-ledger.yaml`、BPMN/process model、journey analytics、OpenTelemetry traces、process mining、business outcome ledger、service reliability ledger、operational resilience ledger | 关键旅程无 owner、流程模型过期、步骤遥测缺失、跨域交接不可追踪、瓶颈未处置、异常未闭环、人工兜底未演练 |
 | 基线发布 | 晋级决策、冻结复核、漂移检查、不可变引用、签名验签和回滚验证 | `baseline-release-evidence.yaml`、`version-governance.yaml`、审计导出、Git tag | 无晋级证据、tag 与 commit 不一致、漂移复核缺失、回滚未验证 |
 | 基线发布事务 | 提交前检查、干净工作树、source commit、签名 tag、远端 ref、push 回执、保护规则、禁推资产排除和发布后验证 | `baseline-publish-transaction.yaml`、Git remote refs、repository protection、release evidence、version governance | 未完成 push、远端 ref 不存在、tag 未签名、工作树脏、保护规则失效、禁推资产进入远端或发布后验证失败 |
 | 基线撤销隔离 | 撤销触发、隔离范围、受影响引用、通知确认、恢复目标、风险接受、状态回写和审计归档 | `baseline-revocation-record.yaml`、support matrix、adoption ledger、publish transaction、release evidence、risk register | 坏基线无法隔离、签名泄露后仍允许采用、禁推资产误入后无通知、恢复目标未验证或审计归档缺失 |
@@ -3994,6 +4001,7 @@ V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema
 | 文档说工程质量、测试证据、缺陷和发布验证必须闭合，机器是否能证明 | 控制项要求 `baseline-engineering-quality-test-release-verification-ledger.schema.json` 和示例包含需求追踪、测试策略、测试层级、覆盖率、测试环境、测试数据、flaky 测试、缺陷分级、修复复测、发布前验证、灰度/冒烟结果和质量风险接受 |
 | 文档说关键角色能力、培训、职责履职和职责分离必须闭合，机器是否能证明 | 控制项要求 `baseline-workforce-competency-training-duty-segregation-ledger.schema.json` 和示例包含关键角色任命、岗位资格、职责确认、培训完成、专项训练、on-call 资格、审批授权、代理授权、职责分离、冲突角色、备份人员和到期复核 |
 | 文档说架构基线必须证明业务结果、价值实现和组合收益闭合，机器是否能证明 | 控制项要求 `baseline-business-outcome-value-realization-portfolio-ledger.schema.json` 和示例包含业务目标、价值假设、收益 owner、投资组合、关键结果、前后基线、采用证据、收益实现、成本效率、风险接受和停投/加投决策 |
+| 文档说关键价值流、客户旅程和端到端流程必须可观测、可审计、可优化，机器是否能证明 | 控制项要求 `baseline-value-stream-journey-process-ledger.schema.json` 和示例包含价值流、旅程、流程模型、owner、触发事件、完成定义、步骤级遥测、跨域交接、瓶颈、异常、人工兜底、控制点和改进动作 |
 | 文档说供应链必须有漏洞和 Scorecard 证据，机器是否能证明 | 控制项要求 `supply-chain-attestation.schema.json` 和示例包含 `vulnerability`、`scorecard` |
 | 文档说 starter kit 必须拒绝未知字段，机器是否能证明 | 控制项要求 checker 包含 `additionalProperties must be false` 和 `unexpected field` 证据 |
 | 文档说严格 schema 必须有扩展出口，机器是否能证明 | 控制项要求 `extension-policy.schema.json` 和示例包含受控前缀、审批和默认拒绝策略 |
@@ -4363,6 +4371,7 @@ versionGovernance:
     engineeringQualityTestReleaseVerificationLedger: governance/evidence/baselines/baseline-engineering-quality-test-release-verification-ledger.yaml
     workforceCompetencyTrainingDutySegregationLedger: governance/evidence/baselines/baseline-workforce-competency-training-duty-segregation-ledger.yaml
     businessOutcomeValueRealizationPortfolioLedger: governance/evidence/baselines/baseline-business-outcome-value-realization-portfolio-ledger.yaml
+    valueStreamJourneyProcessLedger: governance/evidence/baselines/baseline-value-stream-journey-process-ledger.yaml
     capacityPerformanceCostEfficiencyLedger: governance/evidence/baselines/baseline-capacity-performance-cost-efficiency-ledger.yaml
     serviceReliabilitySloErrorBudgetObservabilityLedger: governance/evidence/baselines/baseline-service-reliability-slo-error-budget-observability-ledger.yaml
     backupRestoreDisasterRecoveryLedger: governance/evidence/baselines/baseline-backup-restore-disaster-recovery-ledger.yaml
@@ -4400,14 +4409,14 @@ versionGovernance:
 1. `documentVersion` 必须等于主文档版本、版本清单版本和审计导出版本。
 2. `baselineId` 一经发布不得复用；同一 `baselineId` 不得指向不同 commit。
 3. `releaseTag` 必须指向 `sourceCommit`，生产级基线必须使用签名 tag。
-4. `releaseChannel=baseline` 或 `frozen` 时，必须有 `release-gate-decision.yaml`、基线准入执行策略、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、本地私有制品边界、审计导出排除清单、私有制品托管交接清单、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、基线生命周期状态机、基线状态对账报告、基线证据追踪图、基线门禁执行报告、基线发布事务回执、基线撤销与隔离记录、基线验证环境锁、基线制品清单、基线就绪评分卡、基线会审裁决记录、基线例外总账、通知确认总账、回滚验证记录和审计导出清单。
+4. `releaseChannel=baseline` 或 `frozen` 时，必须有 `release-gate-decision.yaml`、基线准入执行策略、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、本地私有制品边界、审计导出排除清单、私有制品托管交接清单、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、基线生命周期状态机、基线状态对账报告、基线证据追踪图、基线门禁执行报告、基线发布事务回执、基线撤销与隔离记录、基线验证环境锁、基线制品清单、基线就绪评分卡、基线会审裁决记录、基线例外总账、通知确认总账、回滚验证记录和审计导出清单。
 5. `changeLevel=major` 或 `breaking` 时，必须引用 ADR、迁移计划、弃用策略和消费者影响分析。
 6. `compatibilityWindow` 到期后，未迁移消费者必须转入例外、POA&M 或风险接受记录。
 7. 回滚不能只写“回退上一版”，必须指向可 checkout 的 commit、tag、GitOps revision 或制品 digest。
 
 可执行验收标准：
 
-1. 任意基线都能从 `version-governance.yaml` 追溯到源 commit、release tag、版本清单、基线准入执行策略、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、本地私有制品边界、审计导出排除清单、私有制品托管交接清单、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、基线生命周期状态机、基线状态对账报告、基线证据追踪图、基线门禁执行报告、基线发布事务回执、基线撤销与隔离记录、基线就绪评分卡、基线会审裁决记录、基线例外总账、通知确认总账、回滚验证记录、验证环境锁、基线制品清单、EOL 退役证书和审计导出。
+1. 任意基线都能从 `version-governance.yaml` 追溯到源 commit、release tag、版本清单、基线准入执行策略、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、本地私有制品边界、审计导出排除清单、私有制品托管交接清单、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、基线生命周期状态机、基线状态对账报告、基线证据追踪图、基线门禁执行报告、基线发布事务回执、基线撤销与隔离记录、基线就绪评分卡、基线会审裁决记录、基线例外总账、通知确认总账、回滚验证记录、验证环境锁、基线制品清单、EOL 退役证书和审计导出。
 2. 任意冻结基线都能证明没有被直接修改；后续变更只能通过补丁或新基线替代。
 3. 任意 breaking change 都能找到兼容窗口、消费者清单、迁移说明和回滚入口。
 4. 任意 emergency patch 都能找到事故或安全编号、补丁范围、事后复盘和补齐证据。
@@ -4464,6 +4473,7 @@ baselineReleaseEvidence:
     engineeringQualityTestReleaseVerificationLedgerDigest: sha256:<baseline-engineering-quality-test-release-verification-ledger-digest>
     workforceCompetencyTrainingDutySegregationLedgerDigest: sha256:<baseline-workforce-competency-training-duty-segregation-ledger-digest>
     businessOutcomeValueRealizationPortfolioLedgerDigest: sha256:<baseline-business-outcome-value-realization-portfolio-ledger-digest>
+    valueStreamJourneyProcessLedgerDigest: sha256:<baseline-value-stream-journey-process-ledger-digest>
     capacityPerformanceCostEfficiencyLedgerDigest: sha256:<baseline-capacity-performance-cost-efficiency-ledger-digest>
     serviceReliabilitySloErrorBudgetObservabilityLedgerDigest: sha256:<baseline-service-reliability-slo-error-budget-observability-ledger-digest>
     regulatoryObligationLedgerDigest: sha256:<baseline-regulatory-obligation-ledger-digest>
@@ -4775,6 +4785,15 @@ baselineReleaseEvidence:
     unitEconomicsExplained: true
     stopOrScaleDecisionRecorded: true
     releaseGateConsumesBusinessOutcomeLedger: true
+    valueStreamJourneyProcessLedgerPresent: true
+    valueStreamsMapped: true
+    criticalJourneysOwned: true
+    processModelsCurrent: true
+    stepTelemetryCovered: true
+    crossDomainHandoffsTraceable: true
+    bottlenecksHaveActions: true
+    manualFallbacksExercised: true
+    releaseGateConsumesValueStreamLedger: true
     starterKitPairCountMatches: true
     forbiddenLocalAssetsAbsentFromRemote: true
     noLatestExternalStandardInGate: true
@@ -4796,6 +4815,7 @@ baselineReleaseEvidence:
       - governance/evidence/baselines/baseline-engineering-quality-test-release-verification-ledger.yaml
       - governance/evidence/baselines/baseline-workforce-competency-training-duty-segregation-ledger.yaml
       - governance/evidence/baselines/baseline-business-outcome-value-realization-portfolio-ledger.yaml
+      - governance/evidence/baselines/baseline-value-stream-journey-process-ledger.yaml
       - governance/evidence/baselines/baseline-eol-retirement-certificate.yaml
       - governance/evidence/baselines/baseline-review-board-decision.yaml
       - governance/evidence/verification/baseline-verification-lock.yaml
@@ -5515,6 +5535,7 @@ baselineArtifactInventory:
     engineeringQualityTestReleaseVerificationLedger: governance/evidence/baselines/baseline-engineering-quality-test-release-verification-ledger.yaml
     workforceCompetencyTrainingDutySegregationLedger: governance/evidence/baselines/baseline-workforce-competency-training-duty-segregation-ledger.yaml
     businessOutcomeValueRealizationPortfolioLedger: governance/evidence/baselines/baseline-business-outcome-value-realization-portfolio-ledger.yaml
+    valueStreamJourneyProcessLedger: governance/evidence/baselines/baseline-value-stream-journey-process-ledger.yaml
     capacityPerformanceCostEfficiencyLedger: governance/evidence/baselines/baseline-capacity-performance-cost-efficiency-ledger.yaml
     serviceReliabilitySloErrorBudgetObservabilityLedger: governance/evidence/baselines/baseline-service-reliability-slo-error-budget-observability-ledger.yaml
     regulatoryObligationLedger: governance/evidence/baselines/baseline-regulatory-obligation-ledger.yaml
@@ -5718,6 +5739,14 @@ baselineArtifactInventory:
       signed: true
       exportedTo:
         - build/modern-enterprise-architecture-audit/audit-export.json
+    - path: governance/evidence/baselines/baseline-value-stream-journey-process-ledger.yaml
+      type: evidence-template
+      required: true
+      owner: business-architecture-team
+      digest: sha256:<baseline-value-stream-journey-process-ledger-digest>
+      signed: true
+      exportedTo:
+        - build/modern-enterprise-architecture-audit/audit-export.json
     - path: governance/evidence/baselines/baseline-capacity-performance-cost-efficiency-ledger.yaml
       type: evidence-template
       required: true
@@ -5911,6 +5940,7 @@ baselineArtifactInventory:
     dataProductQualityContractObservabilityLedgerDeclared: true
     serviceReliabilitySloErrorBudgetObservabilityLedgerDeclared: true
     businessOutcomeValueRealizationPortfolioLedgerDeclared: true
+    valueStreamJourneyProcessLedgerDeclared: true
     regulatoryObligationLedgerDeclared: true
     cryptographicSecretsKeyCertificateLedgerDeclared: true
     assetCriticalityClassificationLedgerDeclared: true
@@ -5967,6 +5997,7 @@ baselineArtifactInventory:
 28. 基线隐私权利请求、同意偏好与合法基础执行总账属于必需证据模板；缺失时不能证明处理目的、合法基础、同意撤回传播、主体权利请求 SLA、自动化决策复核和第三方下游处理限制符合基线，基线不得晋级或冻结。
 29. 基线记录留存、法律保全与可防御删除总账属于必需证据模板；缺失时不能证明记录类别、留存排期、legal hold、删除资格、删除传播和可防御删除回执符合基线，基线不得晋级或冻结。
 30. 基线业务结果、价值实现与组合收益总账属于必需证据模板；缺失时不能证明业务目标、价值假设、收益 owner、关键结果、采用证据、收益实现、成本效率和组合决策符合基线，基线不得晋级或冻结。
+31. 基线价值流、关键旅程与端到端流程总账属于必需证据模板；缺失时不能证明跨域流程 owner、BPMN/流程模型、步骤级遥测、跨域交接、瓶颈、异常、人工兜底、控制点和改进动作符合基线，基线不得晋级或冻结。
 
 可执行验收标准：
 
@@ -5996,6 +6027,7 @@ baselineArtifactInventory:
 24. 任意生产基线都能从制品清单反查到 `baseline-privacy-rights-consent-ledger.yaml`，证明处理目的、合法基础、同意偏好、撤回传播、权利请求履约、自动化决策复核和下游处理阻断证据已经闭合。
 25. 任意生产基线都能从制品清单反查到 `baseline-records-retention-legal-hold-ledger.yaml`，证明记录类别、留存排期、legal hold、删除资格、删除传播和可防御删除回执证据已经闭合。
 26. 任意生产基线都能从制品清单反查到 `baseline-business-outcome-value-realization-portfolio-ledger.yaml`，证明业务目标、价值假设、收益 owner、关键结果、采用证据、收益实现、成本效率和停投/加投决策证据已经闭合。
+27. 任意生产基线都能从制品清单反查到 `baseline-value-stream-journey-process-ledger.yaml`，证明价值流、关键旅程、端到端流程、步骤遥测、跨域交接、瓶颈、异常和人工兜底证据已经闭合。
 
 ### 10.10.16 基线验证环境锁定
 
@@ -6781,6 +6813,7 @@ baselineLifecycleStateMachine:
         - baseline-verification-lock
         - baseline-runtime-admission-receipt
         - baseline-business-outcome-value-realization-portfolio-ledger
+        - baseline-value-stream-journey-process-ledger
         - baseline-exception-ledger
         - baseline-rollback-verification
         - baseline-review-board-decision
@@ -6808,6 +6841,7 @@ baselineLifecycleStateMachine:
         - baseline-publish-transaction-remote-refs-locked
         - baseline-runtime-admission-receipt
         - baseline-business-outcome-value-realization-portfolio-ledger
+        - baseline-value-stream-journey-process-ledger
         - audit-export-signature-receipt
         - baseline-review-board-decision
       approvers:
@@ -7112,6 +7146,7 @@ baselineStateReconciliationReport:
     engineeringQualityTestReleaseVerificationLedger: governance/evidence/baselines/baseline-engineering-quality-test-release-verification-ledger.yaml
     workforceCompetencyTrainingDutySegregationLedger: governance/evidence/baselines/baseline-workforce-competency-training-duty-segregation-ledger.yaml
     businessOutcomeValueRealizationPortfolioLedger: governance/evidence/baselines/baseline-business-outcome-value-realization-portfolio-ledger.yaml
+    valueStreamJourneyProcessLedger: governance/evidence/baselines/baseline-value-stream-journey-process-ledger.yaml
     serviceReliabilitySloErrorBudgetObservabilityLedger: governance/evidence/baselines/baseline-service-reliability-slo-error-budget-observability-ledger.yaml
     backupRestoreDisasterRecoveryLedger: governance/evidence/baselines/baseline-backup-restore-disaster-recovery-ledger.yaml
     regulatoryObligationLedger: governance/evidence/baselines/baseline-regulatory-obligation-ledger.yaml
@@ -7161,7 +7196,7 @@ baselineStateReconciliationReport:
       baselineId: mea-v2.53-20260602
       documentVersion: V2.53
       result: pass
-      rulesExecuted: 46
+      rulesExecuted: 47
       blockingFailures: 0
       replayResult: pass
       decisionMatchesExecution: true
@@ -7725,6 +7760,20 @@ baselineStateReconciliationReport:
       expiredBenefitReviews: 0
       releaseGateReferences: 64
       status: match
+    valueStreamJourneyProcessLedger:
+      ledgerId: vsjp-20260603-mea-v288
+      valueStreamsCovered: 18
+      criticalJourneysCovered: 42
+      journeysWithOwners: 42
+      currentProcessModels: 42
+      stepTelemetryCoveragePercent: 100
+      crossDomainHandoffsTraceable: 96
+      openCriticalBottlenecks: 0
+      unresolvedProcessExceptions: 0
+      manualFallbacksExercised: 24
+      improvementActionsOverdue: 0
+      releaseGateReferences: 42
+      status: match
     capacityPerformanceCostEfficiencyLedger:
       ledgerId: bcpce-20260602-mea-v278
       criticalServicesCovered: 64
@@ -7809,6 +7858,7 @@ baselineStateReconciliationReport:
     engineeringQualityTestReleaseVerificationLedgerReconciled: true
     workforceCompetencyTrainingDutySegregationLedgerReconciled: true
     businessOutcomeValueRealizationPortfolioLedgerReconciled: true
+    valueStreamJourneyProcessLedgerReconciled: true
     capacityPerformanceCostEfficiencyLedgerReconciled: true
     serviceReliabilitySloErrorBudgetObservabilityLedgerReconciled: true
     backupRestoreDisasterRecoveryLedgerReconciled: true
@@ -8849,6 +8899,24 @@ baselineEvidenceTraceGraph:
       path: governance/evidence/baselines/baseline-business-outcome-value-realization-portfolio-ledger.yaml
       digest: sha256:<baseline-business-outcome-value-realization-portfolio-ledger-digest>
       producer: portfolio-governance-team
+      requiredFor:
+        - candidate-to-baseline
+        - baseline-to-frozen
+        - baseline-to-quarantined
+        - superseded-to-eol
+      status: present
+      consumedBy:
+        - baseline-release-evidence
+        - baseline-gate-execution-report
+        - baseline-review-board-decision
+        - baseline-state-reconciliation-report
+        - audit-export-manifest
+        - baseline-evidence-archive-receipt
+    - id: baseline-value-stream-journey-process-ledger
+      type: value-stream-journey-process
+      path: governance/evidence/baselines/baseline-value-stream-journey-process-ledger.yaml
+      digest: sha256:<baseline-value-stream-journey-process-ledger-digest>
+      producer: business-architecture-team
       requiredFor:
         - candidate-to-baseline
         - baseline-to-frozen
@@ -10335,17 +10403,18 @@ baselineEvidenceTraceGraph:
 27. `baseline-engineering-quality-test-release-verification-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明需求追踪、测试证据、覆盖率、flaky 测试、缺陷关闭、修复复测、发布前验证、灰度/冒烟和质量风险接受已经入账。
 28. `baseline-workforce-competency-training-duty-segregation-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明关键角色任命、岗位资格、职责确认、培训完成、专项训练、on-call 资格、审批授权、职责分离、冲突角色和代理授权已经入账。
 29. `baseline-business-outcome-value-realization-portfolio-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明业务目标、价值假设、收益 owner、关键结果、前后基线、采用证据、收益实现、成本效率和停投/加投决策已经入账。
-30. `baseline-capacity-performance-cost-efficiency-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明容量预测、压测、性能基准、资源 requests/limits、弹性伸缩、预算、单位经济、异常成本和优化行动已经入账。
-31. `baseline-service-reliability-slo-error-budget-observability-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明生产服务、关键用户旅程、SLI/SLO、错误预算、告警路由、on-call、runbook、合成探测、遥测覆盖和降级策略已经入账。
-32. `baseline-backup-restore-disaster-recovery-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明关键系统、关键数据存储、不可变/离线副本、恢复演练、RTO/RPO、完整性校验、勒索隔离和恢复权限已经入账。
-33. `baseline-regulatory-obligation-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明适用监管义务、客户合同义务、标准要求和内部政策要求已经映射到控制、证据、owner、例外和整改。
-34. `baseline-cryptographic-secrets-key-certificate-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明 KMS/HSM key、TLS 证书、签名密钥、API token、数据库凭据、webhook secret、工作负载密钥、轮换、过期、吊销和泄露响应已经入账。
-35. `baseline-asset-criticality-classification-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明资产 owner、业务关键性、SLO Tier、L3/L4、CIA 影响、数据敏感度、AI 风险、互联网暴露和分级复核已经入账。
-36. `baseline-identity-entitlement-access-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明人类身份、服务账号、工作负载身份、JML、MFA、PAM/JIT、break-glass、孤儿账号、过期权限和运行时身份绑定已经入账。
-37. `baseline-processing-activity-inventory-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明所有个人数据处理活动、数据主体类别、个人数据类别、接收方、跨境传输、保留映射、DPIA、合法基础和发现覆盖已经入账。
-38. `baseline-privacy-rights-consent-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明处理目的合法基础、同意撤回传播、权利请求 SLA、自动化决策复核和第三方下游传播已经闭合。
-39. `baseline-records-retention-legal-hold-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明记录留存排期、legal hold、删除资格、删除传播和可防御删除回执已经闭合。
-40. 条件放行只能降低非阻断节点的处理优先级，不能绕过断链、摘要不一致或必需节点缺失。
+30. `baseline-value-stream-journey-process-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明价值流、关键旅程、端到端流程、步骤遥测、跨域交接、瓶颈、异常、人工兜底和改进动作已经入账。
+31. `baseline-capacity-performance-cost-efficiency-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明容量预测、压测、性能基准、资源 requests/limits、弹性伸缩、预算、单位经济、异常成本和优化行动已经入账。
+32. `baseline-service-reliability-slo-error-budget-observability-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明生产服务、关键用户旅程、SLI/SLO、错误预算、告警路由、on-call、runbook、合成探测、遥测覆盖和降级策略已经入账。
+33. `baseline-backup-restore-disaster-recovery-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明关键系统、关键数据存储、不可变/离线副本、恢复演练、RTO/RPO、完整性校验、勒索隔离和恢复权限已经入账。
+34. `baseline-regulatory-obligation-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明适用监管义务、客户合同义务、标准要求和内部政策要求已经映射到控制、证据、owner、例外和整改。
+35. `baseline-cryptographic-secrets-key-certificate-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明 KMS/HSM key、TLS 证书、签名密钥、API token、数据库凭据、webhook secret、工作负载密钥、轮换、过期、吊销和泄露响应已经入账。
+36. `baseline-asset-criticality-classification-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明资产 owner、业务关键性、SLO Tier、L3/L4、CIA 影响、数据敏感度、AI 风险、互联网暴露和分级复核已经入账。
+37. `baseline-identity-entitlement-access-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明人类身份、服务账号、工作负载身份、JML、MFA、PAM/JIT、break-glass、孤儿账号、过期权限和运行时身份绑定已经入账。
+38. `baseline-processing-activity-inventory-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明所有个人数据处理活动、数据主体类别、个人数据类别、接收方、跨境传输、保留映射、DPIA、合法基础和发现覆盖已经入账。
+39. `baseline-privacy-rights-consent-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明处理目的合法基础、同意撤回传播、权利请求 SLA、自动化决策复核和第三方下游传播已经闭合。
+40. `baseline-records-retention-legal-hold-ledger.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决、审计导出和证据归档同时消费；否则不能证明记录留存排期、legal hold、删除资格、删除传播和可防御删除回执已经闭合。
+41. 条件放行只能降低非阻断节点的处理优先级，不能绕过断链、摘要不一致或必需节点缺失。
 
 可执行验收标准：
 
@@ -10359,35 +10428,36 @@ baselineEvidenceTraceGraph:
 8. 任意 L3 / L4 生产资产的工程质量、测试证据、缺陷和发布验证都必须作为 `baseline-engineering-quality-test-release-verification-ledger.yaml` 证据节点进入发布证据、门禁执行、状态对账、会审裁决和审计导出。
 9. 任意 L3 / L4 关键角色的任命、培训、专项资格、职责确认、on-call 资格、审批授权、职责分离、冲突角色和代理授权都必须作为 `baseline-workforce-competency-training-duty-segregation-ledger.yaml` 证据节点进入发布证据、门禁执行、状态对账、会审裁决和审计导出。
 10. 任意 L3 / L4 业务结果和收益实现都必须作为 `baseline-business-outcome-value-realization-portfolio-ledger.yaml` 证据节点进入发布证据、门禁执行、状态对账、会审裁决和审计导出。
-11. 任意 L3 / L4 资产的 `baseline-consumption-lock.yaml` 都必须作为证据节点被发布证据、门禁执行、状态对账、会审裁决、采纳总账和审计导出消费。
-12. 任意 L3 / L4 资产的 `baseline-migration-work-order.yaml` 都必须作为证据节点被发布证据、门禁执行、状态对账、会审裁决、采纳总账和审计导出消费。
-13. 任意 L3 / L4 资产的 `baseline-migration-execution-receipt.yaml` 都必须作为证据节点被发布证据、门禁执行、状态对账、会审裁决、采纳总账和审计导出消费。
-14. 任意正式审计导出都必须把 `audit-export-exclusion-manifest.yaml` 作为证据节点，证明本地私有原文没有进入导出包或签名 payload。
-15. 任意本地、私有、生成或禁推可执行资产都必须把 `private-artifact-escrow-manifest.yaml` 作为证据节点，证明私有制品引用、访问授权、留存、取回命令和恢复验证已经闭合。
-16. 任意 baseline 或 frozen 晋级都必须把 `baseline-clean-room-reconstruction-receipt.yaml` 作为证据节点，证明干净 runner 能从远端 commit、私有托管制品和锁定工具链重建同一基线。
-17. 任意 baseline 或 frozen 晋级都必须把 `baseline-evidence-archive-receipt.yaml` 作为证据节点，证明审计导出、发布证据、门禁执行、签名回执和重建回执已经进入不可变归档并完成恢复演练。
-18. 任意 baseline 或 frozen 晋级都必须把 `baseline-signature-ltv-receipt.yaml` 作为证据节点，证明签名 bundle、证书链、透明日志 proof、signed entry timestamp、RFC3161 TSA、撤销状态和验签工具版本已经闭合。
-19. 任意 baseline 或 frozen 晋级都必须把 `baseline-runtime-admission-receipt.yaml` 作为证据节点，证明 admission controller、策略引擎、镜像证明、消费锁、撤销/EOL 阻断和拒绝样例已经闭合。
-20. 任意 baseline 或 frozen 晋级都必须把 `baseline-runtime-admission-decision-ledger.yaml` 作为证据节点，证明 allow/deny 的 requestUID、策略规则、actor、workload、镜像 digest 和原始日志摘要已经闭合。
-21. 任意 baseline 或 frozen 晋级都必须把 `baseline-continuous-control-monitoring-ledger.yaml` 作为证据节点，证明关键控制有指标、告警、owner、处置和新鲜证据。
-22. 任意 baseline 或 frozen 晋级都必须把 `baseline-control-assurance-sampling-ledger.yaml` 作为证据节点，证明 critical 控制样本、设计有效性、运行有效性、发现项关闭或风险接受和独立评估签署已经闭合。
-23. 任意 baseline 或 frozen 晋级都必须把 `baseline-control-inheritance-ledger.yaml` 作为证据节点，证明 inherited/shared/provider/domain/consumer 控制责任、消费者义务、继承条件和失效阻断已经闭合。
-24. 任意 baseline 或 frozen 晋级都必须把 `baseline-data-residency-transfer-ledger.yaml` 作为证据节点，证明数据驻留要求、实际处理区域、跨境传输机制、子处理方、补充保护措施和删除传播已经闭合。
-25. 任意 baseline 或 frozen 晋级都必须把 `baseline-third-party-risk-ledger.yaml` 作为证据节点，证明关键供应商分级、合同控制、审计权、保证报告、退出计划、集中度、替代路径和供应商事件状态已经闭合。
-26. 任意 baseline 或 frozen 晋级都必须把 `baseline-operational-resilience-ledger.yaml` 作为证据节点，证明重要业务服务、影响容忍、BIA、端到端依赖、严重但合理场景测试、恢复结果、沟通计划和超限升级已经闭合。
-27. 任意 baseline 或 frozen 晋级都必须把 `baseline-threat-model-attack-surface-risk-ledger.yaml` 作为证据节点，证明威胁模型、攻击面、滥用场景、安全测试、剩余风险、POA&M 和签署状态已经闭合。
-28. 任意 baseline 或 frozen 晋级都必须把 `baseline-production-change-release-ledger.yaml` 作为证据节点，证明生产变更登记、发布编排、冲突检测、回滚、失败恢复、紧急变更复盘和 DORA 指标已经闭合。
-29. 任意 baseline 或 frozen 晋级都必须把 `baseline-incident-problem-corrective-action-ledger.yaml` 作为证据节点，证明事故定级、时间线、RCA、问题记录、纠正行动、复发防止、runbook/告警/门禁反哺、沟通和 DORA 恢复指标已经闭合。
-30. 任意 baseline 或 frozen 晋级都必须把 `baseline-capacity-performance-cost-efficiency-ledger.yaml` 作为证据节点，证明容量预测、压测、性能基准、资源 requests/limits、HPA/VPA/KEDA、预算、单位经济、成本分摊、异常成本和优化行动已经闭合。
-31. 任意 baseline 或 frozen 晋级都必须把 `baseline-service-reliability-slo-error-budget-observability-ledger.yaml` 作为证据节点，证明生产服务、关键用户旅程、SLI/SLO、错误预算、告警路由、on-call、runbook、合成探测、遥测覆盖、仪表盘和降级策略已经闭合。
-32. 任意 baseline 或 frozen 晋级都必须把 `baseline-backup-restore-disaster-recovery-ledger.yaml` 作为证据节点，证明关键系统、关键数据存储、备份策略、不可变/离线副本、恢复演练、RTO/RPO、完整性校验、勒索隔离和恢复权限已经闭合。
-33. 任意 baseline 或 frozen 晋级都必须把 `baseline-regulatory-obligation-ledger.yaml` 作为证据节点，证明强制义务、适用范围、控制目标、控制项、证据路径、owner、监管变更和 POA&M 已经闭合。
-34. 任意 baseline 或 frozen 晋级都必须把 `baseline-cryptographic-secrets-key-certificate-ledger.yaml` 作为证据节点，证明 KMS/HSM key、TLS 证书、签名密钥、API token、数据库凭据、webhook secret、工作负载密钥、轮换、过期、吊销、泄露响应和访问边界已经闭合。
-35. 任意 baseline 或 frozen 晋级都必须把 `baseline-asset-criticality-classification-ledger.yaml` 作为证据节点，证明资产 owner、业务关键性、SLO Tier、L3/L4、CIA 影响、数据敏感度、AI 风险、互联网暴露和分级复核已经闭合。
-36. 任意 baseline 或 frozen 晋级都必须把 `baseline-identity-entitlement-access-ledger.yaml` 作为证据节点，证明人类身份、服务账号、工作负载身份、JML、MFA、PAM/JIT、break-glass、最小权限、孤儿账号、过期权限和运行时身份绑定已经闭合。
-37. 任意 baseline 或 frozen 晋级都必须把 `baseline-processing-activity-inventory-ledger.yaml` 作为证据节点，证明处理活动、数据主体类别、个人数据类别、控制者/处理者角色、接收方、跨境传输、保留映射、DPIA、合法基础、AI/数据产品用途和发现覆盖已经闭合。
-38. 任意 baseline 或 frozen 晋级都必须把 `baseline-privacy-rights-consent-ledger.yaml` 作为证据节点，证明处理目的、合法基础、同意偏好、撤回传播、主体权利请求、自动化决策复核、下游处理限制和第三方传播已经闭合。
-39. 任意 baseline 或 frozen 晋级都必须把 `baseline-records-retention-legal-hold-ledger.yaml` 作为证据节点，证明记录类别、留存排期、义务来源、legal hold、删除资格、删除传播、保全解除和可防御删除回执已经闭合。
+11. 任意 L3 / L4 价值流、关键旅程和端到端流程都必须作为 `baseline-value-stream-journey-process-ledger.yaml` 证据节点进入发布证据、门禁执行、状态对账、会审裁决和审计导出。
+12. 任意 L3 / L4 资产的 `baseline-consumption-lock.yaml` 都必须作为证据节点被发布证据、门禁执行、状态对账、会审裁决、采纳总账和审计导出消费。
+13. 任意 L3 / L4 资产的 `baseline-migration-work-order.yaml` 都必须作为证据节点被发布证据、门禁执行、状态对账、会审裁决、采纳总账和审计导出消费。
+14. 任意 L3 / L4 资产的 `baseline-migration-execution-receipt.yaml` 都必须作为证据节点被发布证据、门禁执行、状态对账、会审裁决、采纳总账和审计导出消费。
+15. 任意正式审计导出都必须把 `audit-export-exclusion-manifest.yaml` 作为证据节点，证明本地私有原文没有进入导出包或签名 payload。
+16. 任意本地、私有、生成或禁推可执行资产都必须把 `private-artifact-escrow-manifest.yaml` 作为证据节点，证明私有制品引用、访问授权、留存、取回命令和恢复验证已经闭合。
+17. 任意 baseline 或 frozen 晋级都必须把 `baseline-clean-room-reconstruction-receipt.yaml` 作为证据节点，证明干净 runner 能从远端 commit、私有托管制品和锁定工具链重建同一基线。
+18. 任意 baseline 或 frozen 晋级都必须把 `baseline-evidence-archive-receipt.yaml` 作为证据节点，证明审计导出、发布证据、门禁执行、签名回执和重建回执已经进入不可变归档并完成恢复演练。
+19. 任意 baseline 或 frozen 晋级都必须把 `baseline-signature-ltv-receipt.yaml` 作为证据节点，证明签名 bundle、证书链、透明日志 proof、signed entry timestamp、RFC3161 TSA、撤销状态和验签工具版本已经闭合。
+20. 任意 baseline 或 frozen 晋级都必须把 `baseline-runtime-admission-receipt.yaml` 作为证据节点，证明 admission controller、策略引擎、镜像证明、消费锁、撤销/EOL 阻断和拒绝样例已经闭合。
+21. 任意 baseline 或 frozen 晋级都必须把 `baseline-runtime-admission-decision-ledger.yaml` 作为证据节点，证明 allow/deny 的 requestUID、策略规则、actor、workload、镜像 digest 和原始日志摘要已经闭合。
+22. 任意 baseline 或 frozen 晋级都必须把 `baseline-continuous-control-monitoring-ledger.yaml` 作为证据节点，证明关键控制有指标、告警、owner、处置和新鲜证据。
+23. 任意 baseline 或 frozen 晋级都必须把 `baseline-control-assurance-sampling-ledger.yaml` 作为证据节点，证明 critical 控制样本、设计有效性、运行有效性、发现项关闭或风险接受和独立评估签署已经闭合。
+24. 任意 baseline 或 frozen 晋级都必须把 `baseline-control-inheritance-ledger.yaml` 作为证据节点，证明 inherited/shared/provider/domain/consumer 控制责任、消费者义务、继承条件和失效阻断已经闭合。
+25. 任意 baseline 或 frozen 晋级都必须把 `baseline-data-residency-transfer-ledger.yaml` 作为证据节点，证明数据驻留要求、实际处理区域、跨境传输机制、子处理方、补充保护措施和删除传播已经闭合。
+26. 任意 baseline 或 frozen 晋级都必须把 `baseline-third-party-risk-ledger.yaml` 作为证据节点，证明关键供应商分级、合同控制、审计权、保证报告、退出计划、集中度、替代路径和供应商事件状态已经闭合。
+27. 任意 baseline 或 frozen 晋级都必须把 `baseline-operational-resilience-ledger.yaml` 作为证据节点，证明重要业务服务、影响容忍、BIA、端到端依赖、严重但合理场景测试、恢复结果、沟通计划和超限升级已经闭合。
+28. 任意 baseline 或 frozen 晋级都必须把 `baseline-threat-model-attack-surface-risk-ledger.yaml` 作为证据节点，证明威胁模型、攻击面、滥用场景、安全测试、剩余风险、POA&M 和签署状态已经闭合。
+29. 任意 baseline 或 frozen 晋级都必须把 `baseline-production-change-release-ledger.yaml` 作为证据节点，证明生产变更登记、发布编排、冲突检测、回滚、失败恢复、紧急变更复盘和 DORA 指标已经闭合。
+30. 任意 baseline 或 frozen 晋级都必须把 `baseline-incident-problem-corrective-action-ledger.yaml` 作为证据节点，证明事故定级、时间线、RCA、问题记录、纠正行动、复发防止、runbook/告警/门禁反哺、沟通和 DORA 恢复指标已经闭合。
+31. 任意 baseline 或 frozen 晋级都必须把 `baseline-capacity-performance-cost-efficiency-ledger.yaml` 作为证据节点，证明容量预测、压测、性能基准、资源 requests/limits、HPA/VPA/KEDA、预算、单位经济、成本分摊、异常成本和优化行动已经闭合。
+32. 任意 baseline 或 frozen 晋级都必须把 `baseline-service-reliability-slo-error-budget-observability-ledger.yaml` 作为证据节点，证明生产服务、关键用户旅程、SLI/SLO、错误预算、告警路由、on-call、runbook、合成探测、遥测覆盖、仪表盘和降级策略已经闭合。
+33. 任意 baseline 或 frozen 晋级都必须把 `baseline-backup-restore-disaster-recovery-ledger.yaml` 作为证据节点，证明关键系统、关键数据存储、备份策略、不可变/离线副本、恢复演练、RTO/RPO、完整性校验、勒索隔离和恢复权限已经闭合。
+34. 任意 baseline 或 frozen 晋级都必须把 `baseline-regulatory-obligation-ledger.yaml` 作为证据节点，证明强制义务、适用范围、控制目标、控制项、证据路径、owner、监管变更和 POA&M 已经闭合。
+35. 任意 baseline 或 frozen 晋级都必须把 `baseline-cryptographic-secrets-key-certificate-ledger.yaml` 作为证据节点，证明 KMS/HSM key、TLS 证书、签名密钥、API token、数据库凭据、webhook secret、工作负载密钥、轮换、过期、吊销、泄露响应和访问边界已经闭合。
+36. 任意 baseline 或 frozen 晋级都必须把 `baseline-asset-criticality-classification-ledger.yaml` 作为证据节点，证明资产 owner、业务关键性、SLO Tier、L3/L4、CIA 影响、数据敏感度、AI 风险、互联网暴露和分级复核已经闭合。
+37. 任意 baseline 或 frozen 晋级都必须把 `baseline-identity-entitlement-access-ledger.yaml` 作为证据节点，证明人类身份、服务账号、工作负载身份、JML、MFA、PAM/JIT、break-glass、最小权限、孤儿账号、过期权限和运行时身份绑定已经闭合。
+38. 任意 baseline 或 frozen 晋级都必须把 `baseline-processing-activity-inventory-ledger.yaml` 作为证据节点，证明处理活动、数据主体类别、个人数据类别、控制者/处理者角色、接收方、跨境传输、保留映射、DPIA、合法基础、AI/数据产品用途和发现覆盖已经闭合。
+39. 任意 baseline 或 frozen 晋级都必须把 `baseline-privacy-rights-consent-ledger.yaml` 作为证据节点，证明处理目的、合法基础、同意偏好、撤回传播、主体权利请求、自动化决策复核、下游处理限制和第三方传播已经闭合。
+40. 任意 baseline 或 frozen 晋级都必须把 `baseline-records-retention-legal-hold-ledger.yaml` 作为证据节点，证明记录类别、留存排期、义务来源、legal hold、删除资格、删除传播、保全解除和可防御删除回执已经闭合。
 
 ### 10.10.26 基线门禁执行报告
 
@@ -10505,6 +10575,9 @@ baselineGateExecutionReport:
     businessOutcomeValueRealizationPortfolioLedger:
       path: governance/evidence/baselines/baseline-business-outcome-value-realization-portfolio-ledger.yaml
       digest: sha256:<baseline-business-outcome-value-realization-portfolio-ledger-digest>
+    valueStreamJourneyProcessLedger:
+      path: governance/evidence/baselines/baseline-value-stream-journey-process-ledger.yaml
+      digest: sha256:<baseline-value-stream-journey-process-ledger-digest>
     capacityPerformanceCostEfficiencyLedger:
       path: governance/evidence/baselines/baseline-capacity-performance-cost-efficiency-ledger.yaml
       digest: sha256:<baseline-capacity-performance-cost-efficiency-ledger-digest>
@@ -11018,6 +11091,20 @@ baselineGateExecutionReport:
         - capacityPerformanceCostEfficiencyLedger
         - reviewBoardDecision
         - releaseEvidence
+        - evidenceTraceGraph
+        - stateReconciliation
+      result: pass
+      blocking: true
+    - id: BGE-040
+      title: value streams, critical journeys, and end-to-end processes are governed
+      source: governance/policies/baseline-gates/value-stream-journey-process.rego
+      inputRefs:
+        - valueStreamJourneyProcessLedger
+        - businessOutcomeValueRealizationPortfolioLedger
+        - serviceReliabilitySloErrorBudgetObservabilityLedger
+        - operationalResilienceLedger
+        - dataProductQualityContractObservabilityLedger
+        - productionChangeReleaseLedger
         - evidenceTraceGraph
         - stateReconciliation
       result: pass
@@ -18400,6 +18487,150 @@ businessOutcomeValueRealizationPortfolioLedger:
 4. 任意未实现收益都能进入 release gate 阻断、POA&M、组合会审或期限明确的风险接受。
 5. 任意审计导出都能证明无无主业务结果、无不可测关键结果、无缺失前后基线、无缺失采用证据、无未解释单位经济和无缺失停投/加投决策。
 
+### 10.10.66 基线价值流、关键旅程与端到端流程总账
+
+`baseline-value-stream-journey-process-ledger.yaml` 是企业级基线的价值流、关键旅程和端到端流程执行证据。它不替代
+BPMN 模型、流程图、流程挖掘平台、产品分析、服务 SLO、运营韧性总账、业务结果总账或事故系统；这些系统负责产生局部事实。
+该总账回答的是：“客户或业务事件从哪里触发；跨哪些领域、服务、数据产品、AI 产品和人工步骤；每一步由谁负责；
+什么叫完成；端到端时延、等待、重试、失败、异常和人工兜底是否可观测；瓶颈是否进入改进动作；流程表现是否支撑业务结果”。
+它对齐 BPMN 2.0.2 对流程模型与事件/活动/网关的表达、TOGAF Business Architecture 对 business capability / value stream
+的建模、ITIL 4 对 value streams and processes 的服务价值链视角，以及 DORA 对价值流交付性能的度量要求：企业不能只证明
+“组件健康”和“收益结果”，还必须证明“从触发到完成的跨域流程正在按设计运行”。
+
+```yaml
+valueStreamJourneyProcessLedger:
+  ledgerId: vsjp-20260603-mea-v288
+  baselineId: mea-v2.88-20260603
+  documentVersion: V2.88
+  owner: business-architecture-team
+  generatedAt: 2026-06-03T17:20:00+08:00
+  linkedEvidence:
+    businessCapabilityMap: governance/business-architecture/capability-map.yaml
+    valueStreamMap: governance/business-architecture/value-stream-map.yaml
+    bpmnModels: governance/business-process/bpmn/
+    journeyAnalytics: governance/evidence/product-analytics/journeys/
+    serviceReliabilityLedger: governance/evidence/baselines/baseline-service-reliability-slo-error-budget-observability-ledger.yaml
+    operationalResilienceLedger: governance/evidence/baselines/baseline-operational-resilience-ledger.yaml
+    businessOutcomeLedger: governance/evidence/baselines/baseline-business-outcome-value-realization-portfolio-ledger.yaml
+    incidentProblemLedger: governance/evidence/baselines/baseline-incident-problem-corrective-action-ledger.yaml
+  policy:
+    requireLedgerForLevels:
+      - L3
+      - L4
+    requireNamedJourneyOwner: true
+    requireCurrentProcessModel: true
+    requireStepLevelTelemetry: true
+    requireCrossDomainHandoffOwner: true
+    requireManualFallbackForCriticalJourney: true
+    blockOnUnownedJourney: true
+    blockOnStaleProcessModel: true
+    blockOnMissingStepTelemetry: true
+    blockOnUnresolvedCriticalBottleneck: true
+  valueStreams:
+    - valueStreamId: value-stream:order-to-cash
+      owner: commerce-business-architecture
+      businessOutcomeRefs:
+        - outcome:checkout-conversion
+      trigger: customer submits checkout
+      completionDefinition: payment captured and order committed to fulfillment
+      processModel:
+        notation: BPMN
+        modelRef: governance/business-process/bpmn/order-to-cash.bpmn
+        version: 2026.06.03
+        lastValidatedAt: 2026-06-03T16:30:00+08:00
+      steps:
+        - stepId: step:cart-validation
+          owner: checkout-domain-team
+          systems:
+            - service:checkout-service
+          telemetry:
+            traceName: checkout.cart.validate
+            p95LatencyMs: 120
+            errorRatePercent: 0.02
+            coveragePercent: 100
+          handoff:
+            nextStep: step:payment-authorization
+            contractRef: contracts/events/checkout.validated.asyncapi.yaml
+          status: process-step-healthy
+        - stepId: step:payment-authorization
+          owner: payments-domain-team
+          systems:
+            - service:payment-service
+            - data-product:payment-risk-score
+          telemetry:
+            traceName: payment.authorize
+            p95LatencyMs: 420
+            errorRatePercent: 0.05
+            coveragePercent: 100
+          manualFallback:
+            runbookRef: runbooks/payments/manual-authorization.md
+            lastExerciseAt: 2026-05-28T10:00:00+08:00
+            exerciseResult: pass
+          status: process-step-healthy
+      bottlenecks:
+        - bottleneckId: bottleneck:payment-provider-timeout
+          severity: medium
+          evidenceRef: governance/evidence/product-analytics/payment-timeout-analysis.yaml
+          actionRef: governance/evidence/improvements/payment-provider-retry-tuning.yaml
+          dueAt: 2026-06-20T23:59:59+08:00
+          status: improvement-tracked
+      controls:
+        segregationOfDutiesChecked: true
+        privacyPurposeMapped: true
+        resilienceScenarioCovered: true
+        rollbackOrFallbackDefined: true
+      status: journey-healthy
+  summary:
+    valueStreamsCovered: 18
+    criticalJourneysCovered: 42
+    journeysWithOwners: 42
+    currentProcessModels: 42
+    stepTelemetryCoveragePercent: 100
+    crossDomainHandoffsTraceable: 96
+    openCriticalBottlenecks: 0
+    unresolvedProcessExceptions: 0
+    manualFallbacksExercised: 24
+    improvementActionsOpen: 6
+    improvementActionsOverdue: 0
+    releaseGateReferences: 42
+```
+
+价值流、关键旅程与端到端流程状态只能使用以下值：
+
+| 状态 | 含义 | 是否阻断 |
+| ---- | ---- | -------- |
+| `journey-healthy` | owner、模型、步骤遥测、交接、异常、兜底和改进动作均闭合 | 否 |
+| `process-step-healthy` | 单个步骤的 owner、契约、遥测和交接均闭合 | 否 |
+| `journey-owner-missing` | 关键旅程或价值流没有明确 owner | 是 |
+| `process-model-stale` | BPMN/流程模型超过复核周期或与运行链路不一致 | 是 |
+| `step-telemetry-missing` | 关键步骤缺少指标、日志、链路追踪、事件或产品分析证据 | 是 |
+| `handoff-unowned` | 跨领域、系统、数据或人工交接没有 owner、契约或确认机制 | 是 |
+| `critical-bottleneck-open` | 关键瓶颈影响业务结果、SLO 或影响容忍且无关闭动作 | 是 |
+| `process-exception-unresolved` | 重试、补偿、人工审核、异常队列或失败订单没有关闭证据 | 是 |
+| `manual-fallback-untested` | 关键旅程需要人工兜底但未演练、无 runbook 或无授权角色 | 是 |
+| `improvement-tracked` | 非阻断改进动作进入 backlog、owner 和到期日明确 | 条件放行 |
+| `risk-accepted` | 残余流程风险已由授权角色接受，且有期限和复核条件 | 条件放行 |
+| `not-applicable` | 当前资产不承载关键旅程，且有 owner 签署理由 | 否 |
+
+执行规则：
+
+1. 所有 L3/L4 关键价值流、客户旅程、重要业务服务、核心交易链路、跨域运营流程、AI 辅助流程和人工兜底流程都必须入账。
+2. 每个价值流必须绑定业务能力、业务结果、流程 owner、触发事件、完成定义、BPMN/流程模型、参与领域、依赖服务、数据产品、AI 产品和人工角色。
+3. 每个关键步骤必须有 owner、输入输出、契约或事件、步骤级遥测、错误/异常口径、等待时间、重试或补偿机制；不能只画流程图。
+4. 跨域交接必须有明确 owner、契约、SLO/OLA、确认机制和失败处理；不能靠团队口头约定。
+5. 关键旅程必须把端到端指标与业务结果、服务可靠性、运营韧性、容量成本和事故问题总账绑定；不能只看单个服务健康。
+6. 瓶颈、掉队、异常队列、人工审核积压和反复失败必须进入改进动作、POA&M 或风险接受；不能只在产品分析或流程挖掘工具中展示。
+7. 人工兜底必须有 runbook、授权角色、演练证据和升级路径；不能在自动化失败时临时找人处理。
+8. 总账必须进入发布证据、状态对账、证据追踪图、门禁执行报告、会审裁决、审计导出和证据归档。
+
+可执行验收标准：
+
+1. 任意 L3/L4 关键旅程都能追到 owner、流程模型、触发事件、完成定义、步骤责任、跨域交接和运行遥测。
+2. 任意跨领域流程瓶颈都能追到证据、owner、改进动作、到期日、复核结果或风险接受。
+3. 任意流程异常、补偿、重试、人工审核或失败队列都能证明已关闭、已进入改进动作或已被授权风险接受。
+4. 任意人工兜底都能证明 runbook、授权角色、最近演练、演练结果和升级路径有效。
+5. 任意审计导出都能证明无无主关键旅程、无过期流程模型、无关键步骤遥测缺口、无未关闭 critical 瓶颈、无未演练人工兜底和无孤立流程改进动作。
+
 ## 10.11 仓库拓扑剖面
 
 目录结构可以按企业规模、团队自治程度和合规要求裁剪，但真相源边界不能裁剪。仓库拓扑的选择应先看 ownership、变更频率、权限隔离、发布节奏和审计要求，而不是看团队偏好的 Git 管理方式。
@@ -18507,7 +18738,7 @@ businessOutcomeValueRealizationPortfolioLedger:
 starter kit 校验命令
 ```
 
-该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、120 组示例的 JSON Schema 子集、YAML 示例、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、威胁建模、攻击面管理、安全风险治理、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 证据账本、微调运行证据、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链、GitOps diff 工具、Kubernetes admission policy test、Kubernetes audit log checker、Kyverno PolicyReport checker、OPA decision log checker、Prometheus rule checker 和 Alertmanager route checker；本仓库脚本只作为 starter kit 的最小可执行证明。
+该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、121 组示例的 JSON Schema 子集、YAML 示例、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、威胁建模、攻击面管理、安全风险治理、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 证据账本、微调运行证据、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链、GitOps diff 工具、Kubernetes admission policy test、Kubernetes audit log checker、Kyverno PolicyReport checker、OPA decision log checker、Prometheus rule checker 和 Alertmanager route checker；本仓库脚本只作为 starter kit 的最小可执行证明。
 
 审计导出包由以下命令生成：
 
@@ -19258,6 +19489,7 @@ governance/evidence/baselines/baseline-data-product-quality-contract-observabili
 governance/evidence/baselines/baseline-engineering-quality-test-release-verification-ledger.yaml
 governance/evidence/baselines/baseline-workforce-competency-training-duty-segregation-ledger.yaml
 governance/evidence/baselines/baseline-business-outcome-value-realization-portfolio-ledger.yaml
+governance/evidence/baselines/baseline-value-stream-journey-process-ledger.yaml
 governance/evidence/baselines/baseline-capacity-performance-cost-efficiency-ledger.yaml
 governance/evidence/baselines/baseline-threat-model-attack-surface-risk-ledger.yaml
 governance/evidence/baselines/baseline-service-reliability-slo-error-budget-observability-ledger.yaml
@@ -19363,6 +19595,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 59. 所有 L3 / L4 企业级基线都有基线记录留存、法律保全与可防御删除总账，能证明记录类别、留存排期、义务来源、legal hold、删除资格、删除传播、备份/日志/向量索引处置和可防御删除回执已经闭合。
 60. 所有 L3 / L4 企业级基线都有基线人员能力、培训、职责履职与职责分离总账，能证明关键角色任命、岗位资格、职责确认、培训完成、专项训练、on-call 资格、审批授权、职责分离、冲突角色、代理授权、备份人员和到期复核已经闭合。
 61. 所有 L3 / L4 企业级基线都有基线业务结果、价值实现与组合收益总账，能证明业务目标、价值假设、收益 owner、关键结果、前后基线、采用证据、收益实现、成本效率和停投/加投决策已经闭合。
+62. 所有 L3 / L4 企业级基线都有基线价值流、关键旅程与端到端流程总账，能证明价值流、旅程 owner、BPMN/流程模型、步骤级遥测、跨域交接、瓶颈、异常、人工兜底和改进动作已经闭合。
 
 ---
 
@@ -19385,6 +19618,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 | 平台认知负载过高 | 平台功能多但团队不会用       | Platform PM 运营用户旅程和 Golden Path |
 | 人员职责履职空心化 | RACI、owner 和审批人存在，但培训过期、职责未确认、审批执行未分离或代理授权失效 | 用基线人员能力、培训、职责履职与职责分离总账绑定任命、培训、专项资格、on-call、授权、职责分离、冲突角色、代理授权和备份人员 |
 | 价值实现空心化 | 架构治理证明了交付、合规和控制，但没有业务目标、收益 owner、关键结果、收益复核或停投/加投决策 | 用基线业务结果、价值实现与组合收益总账绑定业务目标、价值假设、收益 owner、前后基线、采用证据、单位经济和组合决策 |
+| 端到端流程空心化 | 业务结果、服务 SLO 和流程图各自存在，但客户旅程、跨域交接、步骤遥测、瓶颈和人工兜底无法串成证据链 | 用基线价值流、关键旅程与端到端流程总账绑定流程 owner、模型、步骤遥测、跨域交接、异常、人工兜底和改进动作 |
 | 容器真相源混乱  | 服务目录、部署目录、catalog 和运行状态互相覆盖 | 按源码、镜像、GitOps、Kubernetes、catalog、platform 分层管理 |
 | 门禁口径漂移    | 不同团队对同一风险使用不同放行规则，例外长期不过期 | 用合规等级、控制面总账和门禁决策记录统一 pass、fail、exception 和 break-glass 口径 |
 | 外部标准漂移    | 生产门禁直接追随 latest，实验性规范变化导致证据格式和 CI 结果不稳定 | 锁定标准版本、标记稳定性、分级采纳，并通过 ADR 和灰度升级 |
@@ -19507,6 +19741,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 54. 任意 L3 / L4 企业级基线都能证明记录类别、留存排期、法律保全、删除资格、删除传播、备份/日志/向量索引处置和可防御删除回执已经闭合，且无 under-hold 删除、无过期未处置记录和无无目的超期留存。
 55. 任意 L3 / L4 企业级基线都能证明关键角色任命、岗位资格、职责确认、培训完成、专项训练、on-call 资格、审批授权、职责分离、冲突角色、代理授权、备份人员和到期复核已经闭合，且无未任命关键角色、无过期培训、无未授权审批和无开放职责分离失败。
 56. 任意 L3/L4 企业级基线都能证明业务目标、价值假设、收益 owner、关键结果、前后基线、采用证据、收益实现、成本效率和停投/加投决策已经闭合，且无无主业务结果、无不可测关键结果、无缺失采用证据和无未处置收益缺口。
+57. 任意 L3/L4 企业级基线都能证明价值流、关键旅程、端到端流程、流程 owner、BPMN/流程模型、步骤级遥测、跨域交接、瓶颈、异常、人工兜底和改进动作已经闭合，且无无主关键旅程、无过期流程模型、无关键步骤遥测缺口、无未关闭 critical 瓶颈和无未演练人工兜底。
 
 ---
 
@@ -19559,6 +19794,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 | ISO/IEC/IEEE 29119 / NIST SSDF / DORA Four Keys | 工程质量不能只靠 CI 绿勾或人工 UAT，需要把需求追踪、风险化测试计划、测试层级、覆盖率、测试环境、测试数据、flaky 测试、缺陷、复测和发布验证连成同一条证据链 | 增加 `baseline-engineering-quality-test-release-verification-ledger.yaml`，把单元、集成、契约、E2E、回归、验收、覆盖率、缺陷分级、已知风险接受、灰度、冒烟和 DORA 发布质量指标纳入基线晋级证据 |
 | NIST SP 800-53 AT / PS / AC、CIS Controls v8 Control 14、NIST NICE Framework、ISO/IEC 27001 | 企业不能只记录 owner 和 RACI，还必须证明关键角色具备岗位能力、完成培训、确认职责、授权有效、审批执行分离、代理授权未过期且关键岗位有备份 | 增加 `baseline-workforce-competency-training-duty-segregation-ledger.yaml`，把关键角色任命、岗位资格、培训、专项训练、职责确认、on-call、审批授权、职责分离、冲突角色、代理授权和备份人员纳入基线晋级证据 |
 | ISO/IEC 38500 / COBIT / ITIL 4 / FinOps Unit Economics | 企业架构治理必须证明 IT 使用对组织目标、收益交付、服务价值和单位经济产生可复核结果，不能只证明控制存在 | 增加 `baseline-business-outcome-value-realization-portfolio-ledger.yaml`，把业务目标、价值假设、收益 owner、关键结果、采用证据、收益实现、成本效率和组合决策纳入基线晋级证据 |
+| BPMN 2.0.2 / TOGAF Business Architecture / ITIL 4 Value Streams / DORA Value Streams | 企业不能只证明组件健康和收益结果，还必须证明从客户或业务触发到完成的跨领域价值流、关键旅程和端到端流程具备 owner、模型、遥测、瓶颈、异常和改进闭环 | 增加 `baseline-value-stream-journey-process-ledger.yaml`，把价值流、旅程、BPMN/流程模型、步骤级遥测、跨域交接、人工兜底和改进动作纳入基线晋级证据 |
 | CNCF Platforms White Paper | 平台应作为产品服务业务团队，降低认知负载并提高自助交付能力 | 增加 Platform PM、Golden Path、开发者满意度、认知负载和平台产品指标 |
 | NIST Privacy Framework | 隐私风险需要围绕数据处理目的、主体权利、控制、沟通和保护形成管理闭环 | 增加 `privacy-impact-assessment.yaml`、DPIA、删除传播和 AI 使用限制 |
 | NIST FIPS 199 / NIST SP 800-60 / NIST CSF 2.0 ID.AM / CIS Controls v8 Control 1 | 企业必须先识别、分类和定级信息与资产，并按保密性、完整性、可用性影响和业务关键性决定保护强度 | 增加 `baseline-asset-criticality-classification-ledger.yaml`，把资产 owner、业务关键性、SLO Tier、L3/L4、CIA 影响、数据敏感度、AI 风险、互联网暴露和复核状态纳入基线晋级证据 |
@@ -19688,6 +19924,10 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
   <https://prometheus.io/docs/alerting/latest/alertmanager/>
 - DORA Research: 2025 DORA Report
   <https://dora.dev/research/2025/dora-report/>
+- OMG BPMN 2.0.2 Specification
+  <https://www.omg.org/spec/BPMN/2.0.2/>
+- The Open Group TOGAF Standard: Business Architecture
+  <https://pubs.opengroup.org/togaf-standard/business-architecture/>
 - ISO/IEC 38500:2024 Information technology - Governance of IT for the organization
   <https://www.iso.org/standard/81684.html>
 - ISACA COBIT
