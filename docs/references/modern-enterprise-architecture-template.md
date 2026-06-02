@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.93
+**文档版本**：V2.94
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.93 在 V2.92 基础上补齐控制项覆盖清单的版本增量追溯，把 V2.69 至 V2.92 新增的监管义务、记录留存、隐私权利、身份权限、业务结果、架构视图、质量属性、架构原则和版本策略控制显式纳入同一控制覆盖口径，避免“主文档已经有证据总账，但控制覆盖清单没有证明 schema/example/checker 覆盖到最新基线”的断层。
+**专项修订**：V2.94 在 V2.93 基础上收敛公开文档与本地私有可执行资产的边界表达，把 starter kit、版本清单、控制项覆盖清单、审计导出执行入口和私有制品取回入口统一写成受控私有制品引用或企业内部命令 URI，避免公开远端文档出现裸占位符，也避免误导团队把禁推资产提交到远端。
 
 ---
 
@@ -53,7 +53,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.93` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、125 组 starter kit schema/example、基线版本策略、发布通道、兼容性与冻结控制总账、V2.69 至 V2.92 控制覆盖追溯、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核、仓库变更控制、远端保护漂移整改、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 证据账本、微调运行证据、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、威胁建模、攻击面管理、安全风险治理、访问复核、密钥轮换、漏洞修复、事故复盘、可靠性、性能、容量、成本效率、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
+| `V2.94` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、125 组 starter kit schema/example、基线版本策略、发布通道、兼容性与冻结控制总账、V2.69 至 V2.92 控制覆盖追溯、公开文档与本地私有可执行资产边界、企业内部命令 URI、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核、仓库变更控制、远端保护漂移整改、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 证据账本、微调运行证据、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、威胁建模、攻击面管理、安全风险治理、访问复核、密钥轮换、漏洞修复、事故复盘、可靠性、性能、容量、成本效率、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -71,8 +71,8 @@
 1. 变更摘要：说明新增、修改、删除和废弃内容。
 2. 影响范围：列出受影响的架构层、目录、团队、契约、门禁和落地流程。
 3. 决策记录：重大变更必须链接 ADR 或评审记录。
-4. 版本清单：同步更新 `内部版本清单`，并让 CI 校验版本、状态、pair 数量、控制项数量和索引提及。
-5. 控制覆盖：同步更新 `内部控制项覆盖清单`，并让 CI 校验控制项到 schema、example 和 checker 证据链。
+4. 版本清单：同步更新 `本地私有版本清单`，并让 CI 校验版本、状态、pair 数量、控制项数量和索引提及。
+5. 控制覆盖：同步更新 `本地私有控制项覆盖清单`，并让 CI 校验控制项到 schema、example 和 checker 证据链。
 6. 索引同步：同步更新 `docs/README.md`、`docs/references/README.md`、`metadata/taxonomy.yml` 和 AI 引用语料入口。
 7. 链接校验：仓库内 Markdown 链接和锚点必须通过检查。
 8. 格式校验：Markdown lint 和文档结构检查必须通过。
@@ -250,7 +250,7 @@ git diff --check
 | 消费锁定文件 | `baseline-consumption-lock.yaml` 必须由资产仓库锁定 baseline ID、source commit、release tag、证据图摘要、制品清单摘要、验证锁摘要和准入策略摘要 | 资产只声明 `V2.x` 浮动版本、消费锁摘要与发布证据不一致、锁文件过期或未回写采纳总账 |
 | 迁移工作单 | `baseline-migration-work-order.yaml` 必须把目标资产、当前基线、目标基线、执行步骤、依赖、消费锁更新、GitOps 变更、验收证据和回滚动作绑定 | 采纳总账要求迁移但无执行工单、工单无 owner/截止时间/验收证据、迁移完成但未更新消费锁或 GitOps |
 | 迁移执行回执 | `baseline-migration-execution-receipt.yaml` 必须证明每个迁移步骤的实际命令、actor、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证 | 工单显示 completed 但没有执行日志、摘要变化不可证明、执行人未知、验收日志缺失或无法回滚 |
-| 本地私有制品边界 | `baseline-local-artifact-boundary.yaml` 必须声明内部 starter kit、生成 JSON、校验脚本和其他禁推资产的分类、摘要策略、允许用途、远端排除和验证命令 | 可执行资产缺失但没有私有边界说明、禁推资产被误推、审计导出误包含本地生成物或签名 payload 覆盖不清 |
+| 本地私有制品边界 | `baseline-local-artifact-boundary.yaml` 必须声明本地私有 starter kit、生成 JSON、校验脚本和其他禁推资产的分类、摘要策略、允许用途、远端排除和验证命令 | 可执行资产缺失但没有私有边界说明、禁推资产被误推、审计导出误包含本地生成物或签名 payload 覆盖不清 |
 | 审计导出排除清单 | `audit-export-exclusion-manifest.yaml` 必须声明审计导出原文白名单、摘要留存项、强制排除项、签名 payload 排除项和导出后验证命令 | 本地私有资产边界存在但导出包仍误含原文、签名 payload 覆盖范围不清、审计包和边界摘要不一致 |
 | 私有制品托管交接 | `private-artifact-escrow-manifest.yaml` 必须声明私有制品库引用、不可变摘要、访问角色、留存期限、取回命令、恢复验证和摘要一致性 | 禁推资产不在远端也不在私有库、只有本地副本、权限不可审计、制品摘要和边界摘要不一致、恢复演练无法取回 |
 | 干净环境基线重建 | `baseline-clean-room-reconstruction-receipt.yaml` 必须声明干净 runner、远端 checkout、私有制品取回、摘要校验、审计导出重建、门禁重放和禁推资产复核 | 只在作者机器可运行、重建依赖未登记本地文件、私有制品无法按摘要取回、审计导出重建摘要不一致或门禁重放失败 |
@@ -435,10 +435,11 @@ git diff --check
 | `V2.91` | 2026-06-03 | Minor | 补齐基线架构原则、约束、反模式与例外执行总账、原则 owner、适用范围、禁止项、检测方式、门禁入口、违反处置、例外、风险接受和复核闭环 |
 | `V2.92` | 2026-06-03 | Minor | 补齐基线版本策略、发布通道、兼容性与冻结控制总账、SemVer 语义、Conventional Commit 分类、签名 tag、兼容窗口、紧急补丁、撤销隔离、消费锁和迁移窗口闭环 |
 | `V2.93` | 2026-06-03 | Patch | 补齐控制项覆盖清单的 V2.69 至 V2.92 增量追溯，明确最新版本策略控制已进入 schema、example 和 checker 覆盖口径 |
+| `V2.94` | 2026-06-03 | Patch | 收敛公开文档与本地私有可执行资产边界表达，用受控私有制品引用和企业内部命令 URI 替代裸占位符 |
 
-### 0.8 V2.93 可执行企业标准路线图
+### 0.8 V2.94 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、example 和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。V2.12 增加审计导出自动化命令，把版本、控制目录、证据映射、导出清单、脚本和关键制品哈希生成可交付审计包。V2.13 增加控制评估报告，把证据包进一步闭环到控制结果、发现项、整改、剩余风险和签署状态。V2.14 增加架构基线变更记录，把基线升级的影响分析、审批、验证命令和回滚路径纳入可执行证据。V2.15 增加 OSCAL 交换映射和导出摘要，把内部控制证据映射到 catalog、component-definition、system-security-plan、assessment-results 和 POA&M 视图。V2.16 增加审计导出门禁，把导出包生成、JSON/Markdown/OSCAL 输出和关键不变量校验纳入 `make test`。V2.17 增加审计导出完整性清单，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。V2.18 增加审计导出 provenance statement，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。V2.19 增加审计导出签名策略，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入门禁。V2.20 增加审计导出签名验签回执，把外部签名完成后的 bundle 摘要、证书身份、OIDC issuer、透明日志和验签结果纳入证据链。V2.21 增加 POA&M 整改计划，把控制发现项、责任人、整改行动、里程碑、证据、签署和 OSCAL POA&M 输出纳入闭环。V2.22 增加企业架构风险登记，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入闭环。V2.23 增加架构决策记录，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入闭环。V2.24 增加 AI 事件响应 playbook，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘纳入闭环。V2.25 增加 AI 证据账本，把模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批、留存和复审纳入 AI 产品级证据闭环。V2.26 增加微调运行证据，把训练数据授权、数据准备、实验追踪、评估、模型登记、审批、灰度发布、监控和退役纳入 AI 微调审计闭环。V2.27 增加仓库变更控制，把 CODEOWNERS、受保护分支、PR 审查、必需检查、签名提交、禁止直推、发布 tag 保护、远端保护状态验证、漂移整改、POA&M 和风险登记纳入版本基线保护。V2.28 增加企业执行控制面，把合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核和退出标准变成统一执行协议。V2.29 增加外部标准版本锁定与升级策略，避免把未稳定标准、实验性语义约定或外部规范变更直接带入生产基线。V2.30 增加版本控制面，把基线 ID、发布通道、tag、源 commit、兼容窗口、冻结策略和回滚入口固化为发布不变量。V2.31 增加基线发布证据包，把晋级决策、冻结复核、漂移检查、不可变引用、审计摘要和回滚验证固化为发布证据。V2.32 增加基线兼容性总账，把消费者影响、迁移窗口、弃用截止、例外状态和未迁移风险固化为版本门禁证据。V2.33 增加基线采纳总账，把领域、平台、数据、AI 和生产资产对基线的采用状态、逾期治理和例外整改固化为组织级版本证据。V2.34 增加基线支持矩阵，把旧基线支持状态、维护窗口、安全补丁窗口、EOL 和最低可接受基线固化为版本生命周期门禁。V2.35 增加基线发布列车，把候选窗口、冻结窗口、晋级日期、通知节奏、黑窗和紧急补丁入口固化为版本发布节奏门禁。V2.36 增加资产级基线符合性声明，把资产自声明、证据绑定、例外、复核和采纳总账回写固化为资产级版本证据。V2.37 增加基线制品清单，把源文档、schema、示例、控制项、证据模板、脚本、生成物和外部引用固化为可摘要、可签名、可复现的版本物料清单。V2.38 增加基线验证环境锁定，把校验命令、工具版本、runner 镜像、策略包、schema validator 和验签工具固化为可复现门禁。V2.39 增加基线通知确认总账，把发布列车中的通知计划升级为可审计的送达、确认、异议和例外证据。V2.40 增加基线回滚验证记录，把上一基线检出、GitOps revision 恢复、审计导出恢复和烟测结果升级为独立证据。V2.41 增加基线例外总账，把分散例外、到期、风险接受、POA&M 和冻结阻断收敛为统一审计证据。V2.42 增加基线就绪评分卡，把硬门禁、评分维度、证据摘要和 baseline/frozen 判定统一到最终准入证据。V2.43 增加基线生命周期状态机，把允许迁移、禁止迁移、状态回写、迁移审批和回滚入口统一到状态转换证据。V2.44 增加基线状态对账报告，把状态机、版本控制面、发布证据、支持矩阵、采纳总账和审计导出的状态字段统一对账。V2.45 增加基线 EOL 退役证书，把旧基线生产引用清零、迁移关闭、例外清零、审计归档和新采用阻断固化为退役证据。V2.46 增加基线会审裁决记录，把会审范围、证据核验、投票签署、反对意见、条件动作和最终裁决固化为独立会审证据。V2.47 增加基线证据追踪图，把跨证据依赖、摘要一致性、下游消费和断链阻断固化为可校验证据图。V2.48 增加基线门禁执行报告，把执行命令、策略包、输入摘要、规则结果、退出码和重放证明固化为 release gate 的可审计运行证据。V2.49 增加基线发布事务回执，把提交、签名 tag、远端 ref、push 回执、保护规则和发布后验证固化为版本发布事实。V2.50 增加基线撤销与隔离记录，把坏基线的隔离、撤销、通知、恢复目标、风险接受和审计归档固化为版本事故控制证据。V2.51 增加基线准入执行策略，把最低基线、撤销/EOL、资产声明、例外到期和运行入口阻断固化为统一策略。V2.52 增加基线消费锁定文件，把资产消费端的基线版本、commit、tag 和关键证据摘要固化为不可变锁。V2.53 增加基线迁移工作单，把目标资产迁移到新基线的步骤、依赖、GitOps 变更、消费锁更新、验收证据和回滚动作固化为执行工单。V2.54 增加基线迁移执行回执，把实际命令、actor、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证固化为执行事实。V2.55 增加本地私有制品边界，把内部 starter kit、生成 JSON、校验脚本、禁推原因、摘要留存和远端排除固化为受控证据。V2.56 增加审计导出排除清单，把原文白名单、摘要留存项、强制排除项、签名 payload 排除和导出后验证固化为受控证据。V2.57 增加私有制品托管交接清单，把私有制品库引用、访问控制、留存期限、取回命令、恢复验证和摘要一致性固化为受控证据。V2.58 增加干净环境基线重建回执，把远端 checkout、私有制品取回、摘要校验、审计导出重建、门禁重放和禁推资产复核固化为受控证据。V2.59 增加基线证据不可变归档回执，把关键证据的 WORM 留存、legal hold、访问日志、防删除、归档摘要和恢复演练固化为受控证据。V2.60 增加基线长期验签回执，把签名 bundle、证书链、OIDC 身份、透明日志、signed entry timestamp、RFC3161 TSA、撤销状态和验证工具版本固化为长期验签证据。V2.61 增加基线运行时准入回执，把 Kubernetes admission、策略引擎、镜像 digest、签名、provenance、SBOM、消费锁和拒绝样例固化为生产运行入口证据。V2.62 增加基线运行时准入决策总账，把 Kubernetes audit、admission webhook、PolicyReport、OPA decision log、actor、requestUID、allow/deny 和原始日志摘要固化为逐条运行决策证据。V2.63 增加基线连续控制监测总账，把控制项指标、告警、漂移、处置、证据新鲜度和控制运行 SLO 固化为持续监测证据。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps、runtime admission、audit logging、continuous control monitoring 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、example 和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。V2.12 增加审计导出自动化命令，把版本、控制目录、证据映射、导出清单、脚本和关键制品哈希生成可交付审计包。V2.13 增加控制评估报告，把证据包进一步闭环到控制结果、发现项、整改、剩余风险和签署状态。V2.14 增加架构基线变更记录，把基线升级的影响分析、审批、验证命令和回滚路径纳入可执行证据。V2.15 增加 OSCAL 交换映射和导出摘要，把内部控制证据映射到 catalog、component-definition、system-security-plan、assessment-results 和 POA&M 视图。V2.16 增加审计导出门禁，把导出包生成、JSON/Markdown/OSCAL 输出和关键不变量校验纳入 `make test`。V2.17 增加审计导出完整性清单，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。V2.18 增加审计导出 provenance statement，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。V2.19 增加审计导出签名策略，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入门禁。V2.20 增加审计导出签名验签回执，把外部签名完成后的 bundle 摘要、证书身份、OIDC issuer、透明日志和验签结果纳入证据链。V2.21 增加 POA&M 整改计划，把控制发现项、责任人、整改行动、里程碑、证据、签署和 OSCAL POA&M 输出纳入闭环。V2.22 增加企业架构风险登记，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入闭环。V2.23 增加架构决策记录，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入闭环。V2.24 增加 AI 事件响应 playbook，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘纳入闭环。V2.25 增加 AI 证据账本，把模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批、留存和复审纳入 AI 产品级证据闭环。V2.26 增加微调运行证据，把训练数据授权、数据准备、实验追踪、评估、模型登记、审批、灰度发布、监控和退役纳入 AI 微调审计闭环。V2.27 增加仓库变更控制，把 CODEOWNERS、受保护分支、PR 审查、必需检查、签名提交、禁止直推、发布 tag 保护、远端保护状态验证、漂移整改、POA&M 和风险登记纳入版本基线保护。V2.28 增加企业执行控制面，把合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核和退出标准变成统一执行协议。V2.29 增加外部标准版本锁定与升级策略，避免把未稳定标准、实验性语义约定或外部规范变更直接带入生产基线。V2.30 增加版本控制面，把基线 ID、发布通道、tag、源 commit、兼容窗口、冻结策略和回滚入口固化为发布不变量。V2.31 增加基线发布证据包，把晋级决策、冻结复核、漂移检查、不可变引用、审计摘要和回滚验证固化为发布证据。V2.32 增加基线兼容性总账，把消费者影响、迁移窗口、弃用截止、例外状态和未迁移风险固化为版本门禁证据。V2.33 增加基线采纳总账，把领域、平台、数据、AI 和生产资产对基线的采用状态、逾期治理和例外整改固化为组织级版本证据。V2.34 增加基线支持矩阵，把旧基线支持状态、维护窗口、安全补丁窗口、EOL 和最低可接受基线固化为版本生命周期门禁。V2.35 增加基线发布列车，把候选窗口、冻结窗口、晋级日期、通知节奏、黑窗和紧急补丁入口固化为版本发布节奏门禁。V2.36 增加资产级基线符合性声明，把资产自声明、证据绑定、例外、复核和采纳总账回写固化为资产级版本证据。V2.37 增加基线制品清单，把源文档、schema、示例、控制项、证据模板、脚本、生成物和外部引用固化为可摘要、可签名、可复现的版本物料清单。V2.38 增加基线验证环境锁定，把校验命令、工具版本、runner 镜像、策略包、schema validator 和验签工具固化为可复现门禁。V2.39 增加基线通知确认总账，把发布列车中的通知计划升级为可审计的送达、确认、异议和例外证据。V2.40 增加基线回滚验证记录，把上一基线检出、GitOps revision 恢复、审计导出恢复和烟测结果升级为独立证据。V2.41 增加基线例外总账，把分散例外、到期、风险接受、POA&M 和冻结阻断收敛为统一审计证据。V2.42 增加基线就绪评分卡，把硬门禁、评分维度、证据摘要和 baseline/frozen 判定统一到最终准入证据。V2.43 增加基线生命周期状态机，把允许迁移、禁止迁移、状态回写、迁移审批和回滚入口统一到状态转换证据。V2.44 增加基线状态对账报告，把状态机、版本控制面、发布证据、支持矩阵、采纳总账和审计导出的状态字段统一对账。V2.45 增加基线 EOL 退役证书，把旧基线生产引用清零、迁移关闭、例外清零、审计归档和新采用阻断固化为退役证据。V2.46 增加基线会审裁决记录，把会审范围、证据核验、投票签署、反对意见、条件动作和最终裁决固化为独立会审证据。V2.47 增加基线证据追踪图，把跨证据依赖、摘要一致性、下游消费和断链阻断固化为可校验证据图。V2.48 增加基线门禁执行报告，把执行命令、策略包、输入摘要、规则结果、退出码和重放证明固化为 release gate 的可审计运行证据。V2.49 增加基线发布事务回执，把提交、签名 tag、远端 ref、push 回执、保护规则和发布后验证固化为版本发布事实。V2.50 增加基线撤销与隔离记录，把坏基线的隔离、撤销、通知、恢复目标、风险接受和审计归档固化为版本事故控制证据。V2.51 增加基线准入执行策略，把最低基线、撤销/EOL、资产声明、例外到期和运行入口阻断固化为统一策略。V2.52 增加基线消费锁定文件，把资产消费端的基线版本、commit、tag 和关键证据摘要固化为不可变锁。V2.53 增加基线迁移工作单，把目标资产迁移到新基线的步骤、依赖、GitOps 变更、消费锁更新、验收证据和回滚动作固化为执行工单。V2.54 增加基线迁移执行回执，把实际命令、actor、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证固化为执行事实。V2.55 增加本地私有制品边界，把本地私有 starter kit、生成 JSON、校验脚本、禁推原因、摘要留存和远端排除固化为受控证据。V2.56 增加审计导出排除清单，把原文白名单、摘要留存项、强制排除项、签名 payload 排除和导出后验证固化为受控证据。V2.57 增加私有制品托管交接清单，把私有制品库引用、访问控制、留存期限、取回命令、恢复验证和摘要一致性固化为受控证据。V2.58 增加干净环境基线重建回执，把远端 checkout、私有制品取回、摘要校验、审计导出重建、门禁重放和禁推资产复核固化为受控证据。V2.59 增加基线证据不可变归档回执，把关键证据的 WORM 留存、legal hold、访问日志、防删除、归档摘要和恢复演练固化为受控证据。V2.60 增加基线长期验签回执，把签名 bundle、证书链、OIDC 身份、透明日志、signed entry timestamp、RFC3161 TSA、撤销状态和验证工具版本固化为长期验签证据。V2.61 增加基线运行时准入回执，把 Kubernetes admission、策略引擎、镜像 digest、签名、provenance、SBOM、消费锁和拒绝样例固化为生产运行入口证据。V2.62 增加基线运行时准入决策总账，把 Kubernetes audit、admission webhook、PolicyReport、OPA decision log、actor、requestUID、allow/deny 和原始日志摘要固化为逐条运行决策证据。V2.63 增加基线连续控制监测总账，把控制项指标、告警、漂移、处置、证据新鲜度和控制运行 SLO 固化为持续监测证据。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps、runtime admission、audit logging、continuous control monitoring 和审计系统连接起来。
 
 V2.64 进一步增加基线独立控制保证抽样总账，把独立评估、控制总体、样本、设计有效性、运行有效性、发现项、整改和 OSCAL Assessment Results 固化为可复核证据。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps、runtime admission、audit logging、continuous control monitoring、control assurance sampling 和审计系统连接起来。
 
@@ -500,7 +501,9 @@ V2.92 进一步增加基线版本策略、发布通道、兼容性与冻结控�
 
 V2.93 进一步把 V2.69 至 V2.92 的控制项覆盖增量补齐到同一清单，确保监管义务、隐私、身份、业务结果、架构视图、质量属性、架构原则和版本策略控制不仅存在于正文和证据总账，也能被 schema、example 和 checker 规则证明。
 
-V2.93 起点包括：
+V2.94 进一步把公开文档中的本地私有资产、审计导出和制品取回入口统一收敛为受控私有制品引用或企业内部命令 URI，确保远端基线只暴露可审计边界，不误推本地 schema/example、生成清单、内部脚本或审计导出原文。
+
+V2.94 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -510,9 +513,9 @@ V2.93 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `内部 starter kit` 下的 125 组 schema/example、基线版本策略、发布通道、兼容性与冻结控制总账、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、嵌套字段校验、格式校验、威胁建模、攻击面管理、安全风险治理、可靠性、性能、容量、成本效率、数据治理、AI 运行、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、AI 证据账本、微调运行证据、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
-10. 版本清单：提供 `内部版本清单`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
-11. 控制项覆盖清单：提供 `内部控制项覆盖清单`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
+9. Starter Kit：提供 `本地私有 starter kit` 下的 125 组 schema/example、基线版本策略、发布通道、兼容性与冻结控制总账、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、嵌套字段校验、格式校验、威胁建模、攻击面管理、安全风险治理、可靠性、性能、容量、成本效率、数据治理、AI 运行、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、AI 证据账本、微调运行证据、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
+10. 版本清单：提供 `本地私有版本清单`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
+11. 控制项覆盖清单：提供 `本地私有控制项覆盖清单`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
 12. 严格 schema 模式：starter kit 的对象 schema 必须声明 `additionalProperties=false`，新增字段必须先进入契约、示例和 checker 证据链。
 13. 扩展字段策略：新增 `extension-policy.yaml`，让企业自定义字段只能通过受控前缀、审批和默认拒绝策略进入标准。
 14. 渐进式发布控制：新增 `feature-flag-control.yaml`，把 Feature Flag、Kill Switch、灰度指标、SLO 燃尽回滚和曝光事件纳入门禁。
@@ -532,11 +535,11 @@ V2.93 起点包括：
 28. 证据新鲜度：新增 `evidence-freshness-policy.yaml`，把证据最大年龄、按类型过期策略、CI 执行和过期阻断纳入审计生命周期。
 29. 控制证据映射：新增 `control-evidence-map.yaml`，把控制项 ID、证据路径、状态、新鲜度、必需性和阻断属性纳入审计总账。
 30. 审计导出清单：新增 `audit-export-manifest.yaml`，把导出包范围、内容、验证结果、签名要求和留存策略纳入可交付证据。
-31. 审计导出自动化：新增 `审计导出命令`，生成 `build/modern-enterprise-architecture-audit/audit-export.json`、`audit-export.md`、`oscal-summary.json`、`audit-export-integrity.json`、`audit-export-provenance.json` 和 `audit-export-signing-policy.json`。
+31. 审计导出自动化：新增 `internal-command://architecture/export-modern-architecture-audit`，生成 `build/modern-enterprise-architecture-audit/audit-export.json`、`audit-export.md`、`oscal-summary.json`、`audit-export-integrity.json`、`audit-export-provenance.json` 和 `audit-export-signing-policy.json`。
 32. 控制评估报告：新增 `control-assessment-report.yaml`，把评估范围、评估人、控制结果、发现项、整改、剩余风险和签署状态纳入审计闭环。
 33. 架构基线变更记录：新增 `baseline-change-record.yaml`，把基线版本、前序版本、影响分析、审批、验证命令和回滚计划纳入变更控制。
 34. OSCAL 交换映射：新增 `oscal-export-profile.yaml`，把内部控制、证据、评估和整改映射到 OSCAL 交换视图，并生成 `oscal-summary.json`。
-35. 审计导出门禁：新增 `audit-export-gate.yaml` 和 `审计导出门禁命令`，把导出输出不变量纳入 `make test`。
+35. 审计导出门禁：新增 `audit-export-gate.yaml` 和 `internal-command://architecture/check-modern-architecture-audit-export`，把导出输出不变量纳入 `make test`。
 36. 审计导出完整性清单：新增 `audit-export-integrity.yaml` 和 `audit-export-integrity.json`，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。
 37. 审计导出 provenance statement：新增 `audit-export-provenance.yaml` 和 `audit-export-provenance.json`，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。
 38. 审计导出签名策略：新增 `audit-export-signing-policy.yaml` 和 `audit-export-signing-policy.json`，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入审计包。
@@ -577,7 +580,7 @@ V2.93 起点包括：
 73. 基线消费锁定文件：新增 `baseline-consumption-lock.yaml`，把资产实际消费的 baseline ID、source commit、release tag、证据图摘要、制品清单摘要、验证锁摘要和准入策略摘要纳入消费端版本控制。
 74. 基线迁移工作单：新增 `baseline-migration-work-order.yaml`，把目标资产从当前基线迁移到目标基线的步骤、依赖、GitOps 变更、消费锁更新、验收证据和回滚动作纳入执行闭环。
 75. 基线迁移执行回执：新增 `baseline-migration-execution-receipt.yaml`，把迁移实际命令、执行人、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证纳入独立执行证据。
-76. 本地私有制品边界：新增 `baseline-local-artifact-boundary.yaml`，把内部 starter kit、生成清单、校验脚本、禁推原因、摘要留存、远端排除和审计留存纳入受控边界。
+76. 本地私有制品边界：新增 `baseline-local-artifact-boundary.yaml`，把本地私有 starter kit、生成清单、校验脚本、禁推原因、摘要留存、远端排除和审计留存纳入受控边界。
 77. 审计导出排除清单：新增 `audit-export-exclusion-manifest.yaml`，把导出原文白名单、摘要留存项、强制排除项、签名 payload 排除项和导出后验证纳入审计包门禁。
 78. 私有制品托管交接清单：新增 `private-artifact-escrow-manifest.yaml`，把禁推可执行资产的私有 registry / 制品库引用、摘要、访问控制、留存、取回命令和恢复验证纳入证据链。
 79. 干净环境基线重建回执：新增 `baseline-clean-room-reconstruction-receipt.yaml`，把远端 checkout、私有制品取回、摘要校验、审计导出重建、门禁重放和禁推资产复核纳入基线可重建证明。
@@ -3768,7 +3771,7 @@ V2.82 starter kit 还提供以下可执行契约模板：
 37. `baseline-change-record.yaml`：架构基线变更版本、前序版本、决策记录、影响分析、审批、验证命令、回滚计划和留存复审。
 38. `architecture-decision-record.yaml`：ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和留存。
 39. `oscal-export-profile.yaml`：OSCAL catalog、component-definition、SSP、assessment-results 和 POA&M 交换映射。
-40. `audit-export-gate.yaml`：审计导出命令、本地质量门禁、输出不变量、OSCAL 摘要一致性和留存复审。
+40. `audit-export-gate.yaml`：internal-command://architecture/export-modern-architecture-audit、本地质量门禁、输出不变量、OSCAL 摘要一致性和留存复审。
 41. `audit-export-integrity.yaml`：审计导出生成物、SHA-256 摘要、源制品哈希和防篡改校验。
 42. `audit-export-provenance.yaml`：审计导出 subject、构建定义、导出命令、源码提交和源证据依赖追溯。
 43. `audit-export-signing-policy.yaml`：审计导出 provenance payload 摘要、Cosign 签名交接、验签命令和本地门禁边界。
@@ -3805,7 +3808,7 @@ V2.82 starter kit 还提供以下可执行契约模板：
 74. `baseline-consumption-lock.yaml`：资产消费端锁定 baseline ID、source commit、release tag、证据图摘要、制品清单摘要、验证锁摘要、准入策略摘要和过期复核证明。
 75. `baseline-migration-work-order.yaml`：目标资产、当前基线、目标基线、迁移步骤、依赖、GitOps 变更、消费锁更新、验收证据和回滚动作证明。
 76. `baseline-migration-execution-receipt.yaml`：迁移实际命令、执行人、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证证明。
-77. `baseline-local-artifact-boundary.yaml`：内部 starter kit、生成 JSON、校验脚本、禁推原因、摘要留存、允许用途、远端排除和审计留存证明。
+77. `baseline-local-artifact-boundary.yaml`：本地私有 starter kit、生成 JSON、校验脚本、禁推原因、摘要留存、允许用途、远端排除和审计留存证明。
 78. `audit-export-exclusion-manifest.yaml`：审计导出原文白名单、摘要留存项、强制排除项、签名 payload 排除项和导出后验证证明。
 79. `private-artifact-escrow-manifest.yaml`：本地私有和禁推可执行资产的私有制品库引用、不可变摘要、访问控制、留存、取回和恢复验证证明。
 80. `baseline-clean-room-reconstruction-receipt.yaml`：干净 runner 从远端 commit、私有托管制品和锁定工具链重建基线、审计导出和门禁结果的证明。
@@ -3877,7 +3880,7 @@ V2.82 starter kit 还提供以下可执行契约模板：
 | 基线消费锁定 | 资产消费端的 baseline ID、source commit、release tag、证据摘要、锁文件签署、过期复核和 rollup 回写 | `baseline-consumption-lock.yaml`、conformance claim、adoption ledger、release evidence、evidence trace graph、catalog、GitOps | 只写 `V2.x` 浮动版本、锁摘要与发布证据不一致、锁文件过期、锁文件未回写采纳总账或 catalog |
 | 基线迁移执行 | 目标资产、当前基线、目标基线、迁移步骤、依赖、GitOps 变更、消费锁更新、验收证据和回滚动作 | `baseline-migration-work-order.yaml`、adoption ledger、compatibility ledger、consumption lock、GitOps、catalog、release gate | 采纳总账要求迁移但无工单、工单无 owner 或截止时间、迁移步骤未执行、消费锁未更新、GitOps 指针未变更、验收证据或回滚动作缺失 |
 | 基线迁移回执 | 实际命令、执行人、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证 | `baseline-migration-execution-receipt.yaml`、work order、CI logs、GitOps diff、catalog diff、consumption lock、rollback verification | 工单完成但无执行日志、执行 actor 不可追溯、before/after 摘要不一致、验收日志缺失或回滚未验证 |
-| 本地私有制品边界 | 内部 starter kit、生成 JSON、校验脚本、分类、禁推原因、摘要留存、允许用途、远端排除和审计留存 | `baseline-local-artifact-boundary.yaml`、artifact inventory、publish transaction、verification lock、audit export、git status | 可执行资产不进远程但无边界说明、exclude pattern 无 owner、私有制品被误签名或审计导出误包含 |
+| 本地私有制品边界 | 本地私有 starter kit、生成 JSON、校验脚本、分类、禁推原因、摘要留存、允许用途、远端排除和审计留存 | `baseline-local-artifact-boundary.yaml`、artifact inventory、publish transaction、verification lock、audit export、git status | 可执行资产不进远程但无边界说明、exclude pattern 无 owner、私有制品被误签名或审计导出误包含 |
 | 审计导出排除 | 原文白名单、摘要留存项、强制排除项、签名 payload 排除项和导出后验证 | `audit-export-exclusion-manifest.yaml`、local artifact boundary、audit export manifest、integrity、provenance、signing policy | 审计包误含私有原文、payload 排除不清、摘要留存和边界证据不一致 |
 | 私有制品托管 | 私有 registry / 制品库引用、不可变摘要、访问控制、留存期限、取回命令、恢复验证和摘要一致性 | `private-artifact-escrow-manifest.yaml`、local artifact boundary、artifact inventory、verification lock、release gate、audit export exclusion | 禁推资产只有本地副本、私有制品库缺引用、权限不可审计、留存过期、取回失败或摘要与边界证据不一致 |
 | 干净环境基线重建 | 远端 checkout、私有制品取回、摘要校验、审计导出重建、门禁重放和禁推资产复核 | `baseline-clean-room-reconstruction-receipt.yaml`、verification lock、artifact inventory、private artifact escrow、audit export、gate execution | 重建依赖个人工作区、私有制品未按摘要恢复、重建审计导出摘要漂移、门禁重放失败或禁推资产误入远端 |
@@ -3938,14 +3941,14 @@ V2.82 starter kit 还提供以下可执行契约模板：
 | 基线状态对账 | 状态机、版本控制面、发布证据、支持矩阵、采纳总账、符合性声明和审计导出状态一致性 | `baseline-state-reconciliation-report.yaml`、`baseline-lifecycle-state-machine.yaml`、`version-governance.yaml`、审计导出 | 各账本状态字段冲突、审计导出引用旧状态、状态回写失败 |
 | 基线会审裁决 | 晋级、冻结、紧急补丁、替代或 EOL 前的证据核验、投票签署、反对意见和最终裁决 | `baseline-review-board-decision.yaml`、readiness scorecard、release evidence、state reconciliation、exception ledger、POA&M、risk register | 评分卡通过但无独立会审签署、关键角色缺席、反对意见无关闭、条件动作无 owner 或到期 |
 | 审计导出 | 架构版本、控制数量、starter kit 数量、导出内容、验证结果、签名、留存 | `audit-export-manifest.yaml`、审计包、签名系统 | 导出包范围不明、缺关键文件、未验证通过、未签名 |
-| 审计导出自动化 | 校验命令、导出脚本、JSON 包、Markdown 报告、OSCAL 摘要、完整性清单、provenance statement、签名策略和验签回执契约 | `审计导出命令`、导出脚本、build 输出 | 审计包只能手工拼接、未先校验、缺制品哈希、生成来源、签名策略或验签回执 |
+| 审计导出自动化 | 校验命令、导出脚本、JSON 包、Markdown 报告、OSCAL 摘要、完整性清单、provenance statement、签名策略和验签回执契约 | `internal-command://architecture/export-modern-architecture-audit`、导出脚本、build 输出 | 审计包只能手工拼接、未先校验、缺制品哈希、生成来源、签名策略或验签回执 |
 | 控制评估报告 | 评估范围、评估人、控制结果、发现项、整改、剩余风险、签署 | `control-assessment-report.yaml`、控制目录、证据映射、审计导出清单 | 只有证据无结论、发现项无人负责、未签署仍声称通过 |
 | 架构基线变更 | 版本、前序版本、变更级别、影响分析、审批、验证、回滚、留存 | `baseline-change-record.yaml`、版本清单、控制目录、CI | 基线升级无审批、验证命令缺失、无法回滚到上一基线 |
 | 架构决策记录 | ADR、上下文、备选方案、取舍、控制项、风险、POA&M、复审和留存 | `architecture-decision-record.yaml`、`baseline-change-record.yaml`、控制目录、风险登记、POA&M 记录 | 重大变更无 ADR、ADR 未关联控制项或风险、复审过期 |
 | OSCAL 交换映射 | catalog、component-definition、SSP、assessment-results、POA&M、导出摘要 | `oscal-export-profile.yaml`、`oscal-summary.json`、审计导出脚本 | 只能内部阅读、不能对接 GRC、监管或外部审计工具 |
 | POA&M 整改计划 | 发现项、控制项、严重度、责任人、行动、里程碑、证据、签署和复审 | `poam-record.yaml`、`oscal-summary.json`、控制评估报告 | 发现项只在报告正文里、整改无里程碑、OSCAL POA&M 视图无独立来源 |
 | 企业架构风险登记 | 风险、严重度、可能性、影响、owner、处理策略、关联控制项、关联 POA&M、残余风险和复审 | `risk-register.yaml`、`oscal-summary.json`、控制目录、POA&M 记录 | 风险只在会议纪要里、无 owner、无控制项映射、残余风险无人接受 |
-| 审计导出门禁 | 本地质量门禁、导出命令、输出不变量、pair 数、控制数、OSCAL 摘要一致性 | `audit-export-gate.yaml`、`审计导出门禁命令`、`make test` | 有导出脚本但未进入门禁、输出数量和版本不一致、OSCAL 摘要未验证 |
+| 审计导出门禁 | 本地质量门禁、导出命令、输出不变量、pair 数、控制数、OSCAL 摘要一致性 | `audit-export-gate.yaml`、`internal-command://architecture/check-modern-architecture-audit-export`、`make test` | 有导出脚本但未进入门禁、输出数量和版本不一致、OSCAL 摘要未验证 |
 | 审计导出完整性 | 生成物 SHA-256、源制品哈希、完整性清单、防篡改校验 | `audit-export-integrity.yaml`、`audit-export-integrity.json`、审计导出门禁 | 审计包交接后无法证明未被篡改、生成物哈希缺失、源制品和导出包断链 |
 | 审计导出 provenance | in-toto statement、SLSA provenance、subject digest、构建定义、源码提交和源证据依赖 | `audit-export-provenance.yaml`、`audit-export-provenance.json`、审计导出门禁 | 审计包知道哈希但不知道来源、生成上下文不可证明、无法绑定签名 payload |
 | 审计导出签名策略 | provenance payload 摘要、签名方式、验签命令、bundle 路径和透明日志要求 | `audit-export-signing-policy.yaml`、`audit-export-signing-policy.json`、审计导出门禁 | 声称需要签名但没有 payload 摘要、验签路径或外部签名交接 |
@@ -3984,7 +3987,7 @@ V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema
 V2.69 起，监管与合规义务、记录留存、隐私权利、处理活动、身份权限、资产分级、密码材料、备份恢复、服务可靠性、容量性能、威胁建模、漏洞修复、安全配置、生产变更、事故纠正、数据产品质量、工程质量、人员能力、业务结果、价值流、架构视图、质量属性、架构原则和版本策略控制也必须进入同一清单。到 V2.93，控制项覆盖清单必须能证明 `baseline-version-policy-release-control-ledger.schema.json`、示例和 checker 规则已经覆盖 SemVer 语义、Conventional Commit 分类、发布通道、签名 tag、兼容窗口、消费锁、迁移窗口、冻结规则、紧急补丁、撤销隔离、EOL 阻断和禁推资产排除。
 
 ```text
-内部控制项覆盖清单
+本地私有控制项覆盖清单
 ```
 
 该清单采用轻量控制目录结构，不替代完整 OSCAL 实施。它至少记录：
@@ -4090,7 +4093,7 @@ V2.69 起，监管与合规义务、记录留存、隐私权利、处理活动�
 | 文档说审计包交接后必须可防篡改复核，机器是否能证明 | 控制项要求 `audit-export-integrity.schema.json`、导出脚本和门禁覆盖生成物 SHA-256 摘要 |
 | 文档说审计包必须能证明生成来源，机器是否能证明 | 控制项要求 `audit-export-provenance.schema.json`、导出脚本和门禁覆盖 subject digest、构建定义、源码提交和源证据依赖 |
 
-`starter kit 校验命令` 必须校验控制清单自身，并校验清单中声明的 schema 字段、example 字段和 checker 证据确实存在。
+`internal-command://architecture/check-modern-architecture-kit` 必须校验控制清单自身，并校验清单中声明的 schema 字段、example 字段和 checker 证据确实存在。
 
 ### 10.10.6 企业执行控制面
 
@@ -6038,7 +6041,7 @@ baselineArtifactInventory:
   generatedOutputs:
     - path: build/modern-enterprise-architecture-audit/audit-export.json
       digest: sha256:<audit-export-json-digest>
-      generatedBy: 审计导出命令
+      generatedBy: internal-command://architecture/export-modern-architecture-audit
       sourceArtifacts:
         - docs/references/modern-enterprise-architecture-template.md
         - governance/control-plane/version-governance.yaml
@@ -6210,23 +6213,23 @@ baselineVerificationLock:
       required: true
       expectedResult: ignored-only
     - name: audit-export-exclusion-manifest
-      command: 审计导出门禁命令 --check-exclusions
+      command: internal-command://architecture/check-modern-architecture-audit-export --check-exclusions
       required: true
       expectedResult: pass
     - name: private-artifact-escrow-manifest
-      command: starter kit 校验命令 --check-private-artifact-escrow
+      command: internal-command://architecture/check-modern-architecture-kit --check-private-artifact-escrow
       required: true
       expectedResult: pass
     - name: clean-room-reconstruction
-      command: starter kit 校验命令 --clean-room-reconstruct governance/evidence/baselines/baseline-clean-room-reconstruction-receipt.yaml
+      command: internal-command://architecture/check-modern-architecture-kit --clean-room-reconstruct governance/evidence/baselines/baseline-clean-room-reconstruction-receipt.yaml
       required: true
       expectedResult: pass
     - name: evidence-archive-receipt
-      command: starter kit 校验命令 --check-evidence-archive governance/evidence/baselines/baseline-evidence-archive-receipt.yaml
+      command: internal-command://architecture/check-modern-architecture-kit --check-evidence-archive governance/evidence/baselines/baseline-evidence-archive-receipt.yaml
       required: true
       expectedResult: pass
     - name: runtime-admission-receipt
-      command: starter kit 校验命令 --check-runtime-admission governance/evidence/baselines/baseline-runtime-admission-receipt.yaml
+      command: internal-command://architecture/check-modern-architecture-kit --check-runtime-admission governance/evidence/baselines/baseline-runtime-admission-receipt.yaml
       required: true
       expectedResult: pass
   tools:
@@ -6276,7 +6279,7 @@ baselineVerificationLock:
   outputs:
     auditExport:
       path: build/modern-enterprise-architecture-audit/audit-export.json
-      generatedBy: 审计导出命令
+      generatedBy: internal-command://architecture/export-modern-architecture-audit
     integrity:
       path: build/modern-enterprise-architecture-audit/audit-export-integrity.json
     provenance:
@@ -6489,7 +6492,7 @@ baselineRollbackVerification:
       result: pass
       evidenceDigest: sha256:<git-checkout-log-digest>
     - checkId: audit-export-restore
-      command: 审计导出命令
+      command: internal-command://architecture/export-modern-architecture-audit
       expectedResult: pass
       result: pass
       evidenceDigest: sha256:<audit-export-restore-digest>
@@ -10791,7 +10794,7 @@ baselineGateExecutionReport:
   owner: governance-platform
   generatedAt: 2026-06-02T18:40:00+08:00
   execution:
-    command: starter kit 校验命令
+    command: internal-command://architecture/check-modern-architecture-kit
     runnerImage: ghcr.io/company/architecture-gate-runner@sha256:<runner-digest>
     policyBundle: governance/policies/baseline-gates/bundle.tar.gz
     policyBundleDigest: sha256:<policy-bundle-digest>
@@ -11535,7 +11538,7 @@ baselineGateExecutionReport:
       result: pass
       blocking: true
   replay:
-    replayCommand: starter kit 校验命令 --replay governance/evidence/baselines/baseline-gate-execution-report.yaml
+    replayCommand: internal-command://architecture/check-modern-architecture-kit --replay governance/evidence/baselines/baseline-gate-execution-report.yaml
     replayedAt: 2026-06-02T18:45:00+08:00
     replayResult: pass
     deterministic: true
@@ -11670,10 +11673,10 @@ baselinePublishTransaction:
       - git ls-remote --heads origin develop
       - git ls-remote --tags origin architecture/v2.53-candidate
       - make test
-      - starter kit 校验命令 --clean-room-reconstruct governance/evidence/baselines/baseline-clean-room-reconstruction-receipt.yaml
-      - starter kit 校验命令 --check-evidence-archive governance/evidence/baselines/baseline-evidence-archive-receipt.yaml
-      - starter kit 校验命令 --check-signature-ltv governance/evidence/baselines/baseline-signature-ltv-receipt.yaml
-      - starter kit 校验命令 --check-runtime-admission governance/evidence/baselines/baseline-runtime-admission-receipt.yaml
+      - internal-command://architecture/check-modern-architecture-kit --clean-room-reconstruct governance/evidence/baselines/baseline-clean-room-reconstruction-receipt.yaml
+      - internal-command://architecture/check-modern-architecture-kit --check-evidence-archive governance/evidence/baselines/baseline-evidence-archive-receipt.yaml
+      - internal-command://architecture/check-modern-architecture-kit --check-signature-ltv governance/evidence/baselines/baseline-signature-ltv-receipt.yaml
+      - internal-command://architecture/check-modern-architecture-kit --check-runtime-admission governance/evidence/baselines/baseline-runtime-admission-receipt.yaml
     result: pass
   decision:
     result: published
@@ -12183,7 +12186,7 @@ baselineMigrationWorkOrder:
   verification:
     executionReceipt: governance/evidence/migrations/baseline-migration-execution-receipt.yaml
     commands:
-      - starter kit 校验命令 --asset service:order-command-service
+      - internal-command://architecture/check-modern-architecture-kit --asset service:order-command-service
       - git diff --check
       - make test
     results:
@@ -12198,7 +12201,7 @@ baselineMigrationWorkOrder:
     previousConsumptionLock: governance/evidence/conformance/baseline-consumption-lock-v252.yaml
     rollbackGitopsRevision: <gitops-revision-before-migration>
     rollbackCommand: git revert <migration-commit>
-    smokeTest: starter kit 校验命令 --asset service:order-command-service --baseline V2.52
+    smokeTest: internal-command://architecture/check-modern-architecture-kit --asset service:order-command-service --baseline V2.52
   writeBack:
     adoptionLedgerTargetStatus: adopted
     conformanceClaimUpdated: true
@@ -12284,14 +12287,14 @@ baselineMigrationExecutionReceipt:
     gitopsRevisionAfter: <gitops-revision-after>
   stepReceipts:
     - stepId: step-001
-      command: starter kit 校验命令 --asset service:order-command-service --update-conformance-claim
+      command: internal-command://architecture/check-modern-architecture-kit --asset service:order-command-service --update-conformance-claim
       executedBy: team-order-release-bot
       result: pass
       beforeDigest: sha256:<conformance-claim-before-digest>
       afterDigest: sha256:<conformance-claim-after-digest>
       logDigest: sha256:<step-001-log-digest>
     - stepId: step-002
-      command: starter kit 校验命令 --asset service:order-command-service --regenerate-consumption-lock
+      command: internal-command://architecture/check-modern-architecture-kit --asset service:order-command-service --regenerate-consumption-lock
       executedBy: team-order-release-bot
       result: pass
       beforeDigest: sha256:<consumption-lock-before-digest>
@@ -12319,7 +12322,7 @@ baselineMigrationExecutionReceipt:
     adoptionLedgerDigest: sha256:<baseline-adoption-ledger-after-digest>
   validation:
     commands:
-      - starter kit 校验命令 --asset service:order-command-service
+      - internal-command://architecture/check-modern-architecture-kit --asset service:order-command-service
       - make test
       - git diff --check
     results:
@@ -12332,7 +12335,7 @@ baselineMigrationExecutionReceipt:
     previousBaseline: V2.53
     previousConsumptionLockDigest: sha256:<baseline-consumption-lock-before-digest>
     previousGitopsRevision: <gitops-revision-before>
-    command: starter kit 校验命令 --asset service:order-command-service --baseline V2.53 --rollback-smoke
+    command: internal-command://architecture/check-modern-architecture-kit --asset service:order-command-service --baseline V2.53 --rollback-smoke
     smokeTestResult: pass
     verified: true
   decision:
@@ -12395,7 +12398,7 @@ baselineLocalArtifactBoundary:
   localPrivateArtifacts:
     - path: docs/references/modern-enterprise-architecture-kit/
       type: internal-starter-kit
-      reason: 内部 starter kit 包含可执行 schema/example 和组织定制模板，只在本地或私有制品库验证。
+      reason: 本地私有 starter kit 包含可执行 schema/example 和组织定制模板，只在本地或私有制品库验证。
       storage: local-workspace-or-private-artifact-registry
       digestStrategy: recursive-sha256-manifest
       allowedUse:
@@ -12405,7 +12408,7 @@ baselineLocalArtifactBoundary:
       remoteExclusionRequired: true
     - path: docs/references/modern-enterprise-architecture-controls.json
       type: generated-control-catalog
-      reason: 由内部控制项覆盖清单生成，远端只保留边界证据和摘要，不提交生成物本体。
+      reason: 由本地私有控制项覆盖清单生成，远端只保留边界证据和摘要，不提交生成物本体。
       storage: local-workspace-or-private-artifact-registry
       digestStrategy: file-sha256
       allowedUse:
@@ -12605,11 +12608,11 @@ auditExportExclusionManifest:
     - scripts/export-modern-architecture-audit.py
     - scripts/check-repository-remote-protection.py
   postExportVerification:
-    - command: 审计导出门禁命令 --assert-no-raw-private-artifacts
+    - command: internal-command://architecture/check-modern-architecture-audit-export --assert-no-raw-private-artifacts
       expected: pass
-    - command: 审计导出门禁命令 --assert-digest-only-private-artifacts
+    - command: internal-command://architecture/check-modern-architecture-audit-export --assert-digest-only-private-artifacts
       expected: pass
-    - command: 审计导出门禁命令 --assert-signature-payload-exclusions
+    - command: internal-command://architecture/check-modern-architecture-audit-export --assert-signature-payload-exclusions
       expected: pass
   summary:
     rawAllowlistEntries: 1
@@ -12694,10 +12697,10 @@ privateArtifactEscrowManifest:
         class: architecture-baseline-private-artifact
         retainUntil: 2033-06-02
       retrieval:
-        command: 私有制品取回命令 --artifact modern-enterprise-architecture-kit --digest sha256:<kit-digest>
+        command: internal-command://architecture/fetch-private-artifact --artifact modern-enterprise-architecture-kit --digest sha256:<kit-digest>
         expectedRestorePath: docs/references/modern-enterprise-architecture-kit/
       restoreVerification:
-        command: starter kit 校验命令 --verify-restored-private-artifact docs/references/modern-enterprise-architecture-kit/
+        command: internal-command://architecture/check-modern-architecture-kit --verify-restored-private-artifact docs/references/modern-enterprise-architecture-kit/
         result: pass
     - path: docs/references/modern-enterprise-architecture-controls.json
       type: generated-control-catalog
@@ -12711,10 +12714,10 @@ privateArtifactEscrowManifest:
         class: generated-control-evidence
         retainUntil: 2033-06-02
       retrieval:
-        command: 私有制品取回命令 --artifact modern-enterprise-architecture-controls.json --digest sha256:<controls-json-digest>
+        command: internal-command://architecture/fetch-private-artifact --artifact modern-enterprise-architecture-controls.json --digest sha256:<controls-json-digest>
         expectedRestorePath: docs/references/modern-enterprise-architecture-controls.json
       restoreVerification:
-        command: 审计导出门禁命令 --verify-control-catalog-digest sha256:<controls-json-digest>
+        command: internal-command://architecture/check-modern-architecture-audit-export --verify-control-catalog-digest sha256:<controls-json-digest>
         result: pass
     - path: docs/references/modern-enterprise-architecture-version.json
       type: generated-version-manifest
@@ -12728,10 +12731,10 @@ privateArtifactEscrowManifest:
         class: generated-version-evidence
         retainUntil: 2033-06-02
       retrieval:
-        command: 私有制品取回命令 --artifact modern-enterprise-architecture-version.json --digest sha256:<version-json-digest>
+        command: internal-command://architecture/fetch-private-artifact --artifact modern-enterprise-architecture-version.json --digest sha256:<version-json-digest>
         expectedRestorePath: docs/references/modern-enterprise-architecture-version.json
       restoreVerification:
-        command: 审计导出门禁命令 --verify-version-manifest-digest sha256:<version-json-digest>
+        command: internal-command://architecture/check-modern-architecture-audit-export --verify-version-manifest-digest sha256:<version-json-digest>
         result: pass
     - path: scripts/check-modern-architecture-kit.py
       type: local-validation-script
@@ -12745,7 +12748,7 @@ privateArtifactEscrowManifest:
         class: private-validation-script
         retainUntil: 2033-06-02
       retrieval:
-        command: 私有制品取回命令 --artifact check-modern-architecture-kit.py --digest sha256:<check-modern-architecture-kit-digest>
+        command: internal-command://architecture/fetch-private-artifact --artifact check-modern-architecture-kit.py --digest sha256:<check-modern-architecture-kit-digest>
         expectedRestorePath: scripts/check-modern-architecture-kit.py
       restoreVerification:
         command: python3 scripts/check-modern-architecture-kit.py --version
@@ -12762,7 +12765,7 @@ privateArtifactEscrowManifest:
         class: private-validation-script
         retainUntil: 2033-06-02
       retrieval:
-        command: 私有制品取回命令 --artifact check-modern-architecture-audit-export.py --digest sha256:<check-modern-architecture-audit-export-digest>
+        command: internal-command://architecture/fetch-private-artifact --artifact check-modern-architecture-audit-export.py --digest sha256:<check-modern-architecture-audit-export-digest>
         expectedRestorePath: scripts/check-modern-architecture-audit-export.py
       restoreVerification:
         command: python3 scripts/check-modern-architecture-audit-export.py --version
@@ -12779,7 +12782,7 @@ privateArtifactEscrowManifest:
         class: private-generation-script
         retainUntil: 2033-06-02
       retrieval:
-        command: 私有制品取回命令 --artifact export-modern-architecture-audit.py --digest sha256:<export-modern-architecture-audit-digest>
+        command: internal-command://architecture/fetch-private-artifact --artifact export-modern-architecture-audit.py --digest sha256:<export-modern-architecture-audit-digest>
         expectedRestorePath: scripts/export-modern-architecture-audit.py
       restoreVerification:
         command: python3 scripts/export-modern-architecture-audit.py --version
@@ -12796,7 +12799,7 @@ privateArtifactEscrowManifest:
         class: private-validation-script
         retainUntil: 2033-06-02
       retrieval:
-        command: 私有制品取回命令 --artifact check-repository-remote-protection.py --digest sha256:<check-repository-remote-protection-digest>
+        command: internal-command://architecture/fetch-private-artifact --artifact check-repository-remote-protection.py --digest sha256:<check-repository-remote-protection-digest>
         expectedRestorePath: scripts/check-repository-remote-protection.py
       restoreVerification:
         command: python3 scripts/check-repository-remote-protection.py --version
@@ -12888,15 +12891,15 @@ baselineCleanRoomReconstructionReceipt:
       expectedResult: empty
       result: pass
     - id: restore-private-artifacts
-      command: 私有制品取回命令 --manifest governance/evidence/baselines/private-artifact-escrow-manifest.yaml --target /tmp/clean-room/vibe-coding-cn
+      command: internal-command://architecture/fetch-private-artifact --manifest governance/evidence/baselines/private-artifact-escrow-manifest.yaml --target /tmp/clean-room/vibe-coding-cn
       restoredArtifacts: 7
       digestMismatches: 0
       result: pass
     - id: verify-restored-private-artifacts
-      command: starter kit 校验命令 --verify-restored-private-artifacts governance/evidence/baselines/private-artifact-escrow-manifest.yaml
+      command: internal-command://architecture/check-modern-architecture-kit --verify-restored-private-artifacts governance/evidence/baselines/private-artifact-escrow-manifest.yaml
       result: pass
     - id: rebuild-audit-export
-      command: 审计导出命令
+      command: internal-command://architecture/export-modern-architecture-audit
       expectedOutputs:
         - build/modern-enterprise-architecture-audit/audit-export.json
         - build/modern-enterprise-architecture-audit/audit-export.md
@@ -12905,7 +12908,7 @@ baselineCleanRoomReconstructionReceipt:
         - build/modern-enterprise-architecture-audit/audit-export-provenance.json
       result: pass
     - id: replay-release-gate
-      command: starter kit 校验命令 --replay governance/evidence/baselines/baseline-gate-execution-report.yaml
+      command: internal-command://architecture/check-modern-architecture-kit --replay governance/evidence/baselines/baseline-gate-execution-report.yaml
       result: pass
     - id: verify-private-assets-still-not-publishable
       command: git status --short --ignored -- docs/references/modern-enterprise-architecture-kit docs/references/modern-enterprise-architecture-controls.json docs/references/modern-enterprise-architecture-version.json scripts/check-modern-architecture-kit.py scripts/check-modern-architecture-audit-export.py scripts/export-modern-architecture-audit.py scripts/check-repository-remote-protection.py
@@ -19841,16 +19844,16 @@ versionPolicyReleaseControlLedger:
 
 每个试点领域至少提供以下验证包：
 
-本仓库提供第一批可执行 starter kit：
+本仓库提供第一批可执行 starter kit。公开远端只保留私有制品边界、摘要、取回入口和验证口径；schema/example、生成清单、内部脚本和审计导出原文由私有制品库或企业内部 evidence store 托管，禁止直接提交到公开远端：
 
 ```text
-内部 starter kit
+本地私有 starter kit
 ```
 
 该目录的 schema 和示例由以下命令校验：
 
 ```bash
-starter kit 校验命令
+internal-command://architecture/check-modern-architecture-kit
 ```
 
 该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、125 组示例的 JSON Schema 子集、YAML 示例、基线版本策略、发布通道、兼容性与冻结控制总账、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、威胁建模、攻击面管理、安全风险治理、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 证据账本、微调运行证据、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链、GitOps diff 工具、Kubernetes admission policy test、Kubernetes audit log checker、Kyverno PolicyReport checker、OPA decision log checker、Prometheus rule checker 和 Alertmanager route checker；本仓库脚本只作为 starter kit 的最小可执行证明。
@@ -19858,7 +19861,7 @@ starter kit 校验命令
 审计导出包由以下命令生成：
 
 ```bash
-审计导出命令
+internal-command://architecture/export-modern-architecture-audit
 ```
 
 默认输出：
@@ -19874,7 +19877,7 @@ build/modern-enterprise-architecture-audit/audit-export-provenance.json
 导出输出不变量由以下命令校验，并已经进入 `make test`：
 
 ```bash
-审计导出门禁命令
+internal-command://architecture/check-modern-architecture-audit-export
 ```
 
 ```text
@@ -19983,9 +19986,9 @@ make check-links
 make check-doc-structure
 make check-metadata
 make check-ai-citation
-starter kit 校验命令
-审计导出门禁命令
-审计导出命令
+internal-command://architecture/check-modern-architecture-kit
+internal-command://architecture/check-modern-architecture-audit-export
+internal-command://architecture/export-modern-architecture-audit
 ```
 
 企业落地时还应补充：
@@ -20119,7 +20122,7 @@ starter kit 校验命令
 | 基线发布事务证据 | 提交前检查、干净工作树、source commit、签名 tag、远端 ref、push 回执、保护规则、禁推资产排除和发布后验证 | 治理团队、平台团队、安全团队、发布工程团队和审计团队 | 覆盖每次企业基线晋级、冻结、紧急补丁、替代和 EOL |
 | 基线准入执行证据 | 最低基线、支持状态、撤销/EOL、资产符合性声明、例外有效期、策略包、决策日志和入口阻断结果 | 治理团队、平台团队、安全团队、发布工程团队、SRE 和审计团队 | 覆盖每次生产发布、GitOps 晋级、catalog 注册、平台脚手架创建和 runtime admission |
 | 基线消费锁定证据 | 资产锁定的 baseline ID、source commit、release tag、证据图摘要、制品清单摘要、验证锁摘要、准入策略摘要、签署、过期复核和 rollup 回写 | 资产 owner、治理团队、平台团队、发布工程团队和审计团队 | 覆盖每个 L3 / L4 生产资产、GitOps 晋级、catalog 注册和平台脚手架创建 |
-| 本地私有制品边界证据 | 内部 starter kit、生成 JSON、校验脚本、禁推原因、摘要留存、允许用途、远端排除、审计导出排除和签名 payload 排除 | 治理团队、平台团队、安全团队、发布工程团队和审计团队 | 覆盖每个本地、私有、生成或禁推资产 |
+| 本地私有制品边界证据 | 本地私有 starter kit、生成 JSON、校验脚本、禁推原因、摘要留存、允许用途、远端排除、审计导出排除和签名 payload 排除 | 治理团队、平台团队、安全团队、发布工程团队和审计团队 | 覆盖每个本地、私有、生成或禁推资产 |
 | 基线迁移工作单证据 | 目标资产、当前基线、目标基线、迁移步骤、依赖、消费锁更新、GitOps 变更、catalog 回写、验收证据和回滚动作 | 资产 owner、治理团队、平台团队、发布工程团队、SRE 和审计团队 | 覆盖每个从旧基线迁移到目标基线的 L3 / L4 资产 |
 | 基线迁移执行回执证据 | 实际命令、执行 actor、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志、执行日志摘要和回滚验证 | 资产 owner、治理团队、平台团队、发布工程团队、SRE 和审计团队 | 覆盖每个标记为完成的 L3 / L4 基线迁移 |
 | 基线撤销隔离证据 | 撤销触发、隔离范围、受影响引用、通知确认、恢复目标、风险接受、状态回写和审计归档 | 治理团队、平台团队、安全团队、发布工程团队、SRE 和审计团队 | 覆盖每次企业基线隔离、恢复、撤销和误报关闭 |
@@ -20787,7 +20790,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 | 迁移工单空心化    | 采纳总账显示要迁移或已迁移，但没有逐资产执行步骤、消费锁更新、GitOps 变更、验收证据和回滚动作 | 用基线迁移工作单驱动迁移执行，并要求 release gate、状态对账、证据追踪图和采纳总账共同校验完成状态 |
 | 迁移回执空心化    | 迁移工作单显示 completed，但没有实际命令、actor、before/after 摘要、GitOps revision、catalog/lock diff、验收日志或回滚验证 | 用基线迁移执行回执证明真实执行事实，并由准入策略、门禁执行报告、状态对账、证据追踪图和审计导出共同校验 |
 | 本地私有制品边界不清 | starter kit、生成 JSON 或本地校验脚本被禁推后，审计无法判断是漏提交、误删还是受控私有制品 | 用本地私有制品边界声明分类、禁推原因、摘要策略、允许用途、远端排除、审计导出排除和签名 payload 排除，并由发布事务、状态对账和证据追踪图共同校验 |
-| 审计导出误含私有原文 | 本地私有制品边界存在，但审计导出包、OSCAL 摘要或签名 payload 仍误含内部 starter kit、生成 JSON 或本地脚本原文 | 用审计导出排除清单声明原文白名单、摘要留存、强制排除和签名 payload 排除，并由完整性清单、provenance、签名策略和验签回执共同校验 |
+| 审计导出误含私有原文 | 本地私有制品边界存在，但审计导出包、OSCAL 摘要或签名 payload 仍误含本地私有 starter kit、生成 JSON 或本地脚本原文 | 用审计导出排除清单声明原文白名单、摘要留存、强制排除和签名 payload 排除，并由完整性清单、provenance、签名策略和验签回执共同校验 |
 | 私有制品无法取回 | 禁推资产没有进入私有制品库或缺少不可变引用，只存在个人工作区、本地缓存或一次性生成目录中 | 用私有制品托管交接清单绑定私有 registry / 制品库引用、访问角色、留存期限、取回命令、恢复验证和摘要一致性，并由门禁执行和状态对账共同校验 |
 | 基线无法干净重建 | 文档、审计导出或门禁只在作者本机成立，新 runner 缺少本地生成物、私有脚本或临时缓存后无法复现 | 用干净环境基线重建回执证明远端 checkout、私有制品恢复、摘要校验、审计导出重建、门禁重放和禁推资产复核都能在空 runner 中通过 |
 | 证据留存不可证明 | 审计导出、签名回执、发布证据或重建回执只存在于 CI 临时目录、普通对象桶或可改写归档中，审计期无法证明未被删除或篡改 | 用基线证据不可变归档回执绑定不可变存储引用、WORM/对象锁、legal hold、访问日志、删除保护、归档摘要和恢复演练 |
