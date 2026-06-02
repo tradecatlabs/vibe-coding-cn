@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.32
+**文档版本**：V2.33
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.32 在 V2.31 基础上新增基线兼容性总账，把消费者影响、迁移窗口、弃用截止、例外状态和未迁移风险纳入版本发布门禁。
+**专项修订**：V2.33 在 V2.32 基础上新增基线采纳总账，把领域、平台、数据、AI 和生产资产对架构基线的采用状态、截止日期、例外和整改纳入组织级版本治理。
 
 ---
 
@@ -52,7 +52,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.32` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、65 组 starter kit schema/example、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核、仓库变更控制、远端保护漂移整改、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 证据账本、微调运行证据、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
+| `V2.33` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、66 组 starter kit schema/example、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核、仓库变更控制、远端保护漂移整改、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 证据账本、微调运行证据、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -80,6 +80,8 @@
 V2.31 起，生产基线发布还必须形成 `baseline-release-evidence.yaml`。它不是普通 release note，而是晋级、冻结和复核的证据包，用于证明当前基线与版本控制面、控制覆盖、标准基线、审计导出和远端保护状态一致。
 
 V2.32 起，任何 `Major`、`Breaking` 或带迁移窗口的 `Minor` 基线还必须形成 `baseline-compatibility-ledger.yaml`。它用于证明消费者影响已经识别，迁移状态可以跟踪，未迁移对象已经进入例外、POA&M 或风险接受。
+
+V2.33 起，企业级基线还必须形成 `baseline-adoption-ledger.yaml`。它用于证明哪些领域、平台、数据产品、AI 产品、GitOps 环境和生产资产已经采用当前基线，哪些仍在迁移、逾期、例外或整改。
 
 推荐发布检查：
 
@@ -112,6 +114,7 @@ git diff --check
 | 证据绑定 | 版本清单、控制项覆盖、审计导出、控制评估和门禁决策必须引用同一基线 | 证据包版本和文档版本不一致 |
 | 发布证据包 | `baseline-release-evidence.yaml` 必须绑定晋级决策、不可变引用、漂移复核、签名验签和回滚验证 | 基线晋级无证据、证据引用不同 commit、漂移复核缺失 |
 | 兼容性总账 | `baseline-compatibility-ledger.yaml` 必须绑定消费者、受影响契约、迁移状态、到期日和例外闭环 | breaking change 无消费者清单、迁移窗口过期、未迁移对象无风险处理 |
+| 采纳总账 | `baseline-adoption-ledger.yaml` 必须绑定采纳目标、当前基线、目标基线、采纳状态、截止日期和整改闭环 | 企业基线发布后无人采用、采纳状态未知、关键资产逾期未整改 |
 | 兼容窗口 | `Minor` / `Major` / `Breaking` 必须声明兼容窗口、迁移截止和消费者影响 | breaking change 无迁移窗口或消费者确认 |
 | 冻结策略 | `Frozen` 基线只能通过补丁、紧急修复或下一基线替代 | 直接修改冻结基线核心内容 |
 | 回滚入口 | 每个基线必须能回滚到上一基线、上一 tag 或上一 GitOps revision | 无回滚 commit、无回滚说明或回滚证据过期 |
@@ -191,12 +194,13 @@ git diff --check
 | `V2.30` | 2026-06-02 | Minor | 补齐版本控制面、发布通道、版本不变量、兼容窗口、冻结升级和回滚门禁 |
 | `V2.31` | 2026-06-02 | Minor | 补齐基线发布证据包、版本晋级、冻结复核、漂移检查和回滚验证闭环 |
 | `V2.32` | 2026-06-02 | Minor | 补齐基线兼容性总账、消费者影响、迁移窗口、弃用截止和未迁移风险闭环 |
+| `V2.33` | 2026-06-02 | Minor | 补齐基线采纳总账、组织采纳状态、逾期治理、例外和整改闭环 |
 
-### 0.8 V2.32 可执行企业标准路线图
+### 0.8 V2.33 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。V2.12 增加审计导出自动化命令，把版本、控制目录、证据映射、导出清单、脚本和关键制品哈希生成可交付审计包。V2.13 增加控制评估报告，把证据包进一步闭环到控制结果、发现项、整改、剩余风险和签署状态。V2.14 增加架构基线变更记录，把基线升级的影响分析、审批、验证命令和回滚路径纳入可执行证据。V2.15 增加 OSCAL 交换映射和导出摘要，把内部控制证据映射到 catalog、component-definition、system-security-plan、assessment-results 和 POA&M 视图。V2.16 增加审计导出门禁，把导出包生成、JSON/Markdown/OSCAL 输出和关键不变量校验纳入 `make test`。V2.17 增加审计导出完整性清单，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。V2.18 增加审计导出 provenance statement，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。V2.19 增加审计导出签名策略，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入门禁。V2.20 增加审计导出签名验签回执，把外部签名完成后的 bundle 摘要、证书身份、OIDC issuer、透明日志和验签结果纳入证据链。V2.21 增加 POA&M 整改计划，把控制发现项、责任人、整改行动、里程碑、证据、签署和 OSCAL POA&M 输出纳入闭环。V2.22 增加企业架构风险登记，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入闭环。V2.23 增加架构决策记录，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入闭环。V2.24 增加 AI 事件响应 playbook，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘纳入闭环。V2.25 增加 AI 证据账本，把模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批、留存和复审纳入 AI 产品级证据闭环。V2.26 增加微调运行证据，把训练数据授权、数据准备、实验追踪、评估、模型登记、审批、灰度发布、监控和退役纳入 AI 微调审计闭环。V2.27 增加仓库变更控制，把 CODEOWNERS、受保护分支、PR 审查、必需检查、签名提交、禁止直推、发布 tag 保护、远端保护状态验证、漂移整改、POA&M 和风险登记纳入版本基线保护。V2.28 增加企业执行控制面，把合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核和退出标准变成统一执行协议。V2.29 增加外部标准版本锁定与升级策略，避免把未稳定标准、实验性语义约定或外部规范变更直接带入生产基线。V2.30 增加版本控制面，把基线 ID、发布通道、tag、源 commit、兼容窗口、冻结策略和回滚入口固化为发布不变量。V2.31 增加基线发布证据包，把晋级决策、冻结复核、漂移检查、不可变引用、审计摘要和回滚验证固化为发布证据。V2.32 增加基线兼容性总账，把消费者影响、迁移窗口、弃用截止、例外状态和未迁移风险固化为版本门禁证据。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、示例字段和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。V2.12 增加审计导出自动化命令，把版本、控制目录、证据映射、导出清单、脚本和关键制品哈希生成可交付审计包。V2.13 增加控制评估报告，把证据包进一步闭环到控制结果、发现项、整改、剩余风险和签署状态。V2.14 增加架构基线变更记录，把基线升级的影响分析、审批、验证命令和回滚路径纳入可执行证据。V2.15 增加 OSCAL 交换映射和导出摘要，把内部控制证据映射到 catalog、component-definition、system-security-plan、assessment-results 和 POA&M 视图。V2.16 增加审计导出门禁，把导出包生成、JSON/Markdown/OSCAL 输出和关键不变量校验纳入 `make test`。V2.17 增加审计导出完整性清单，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。V2.18 增加审计导出 provenance statement，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。V2.19 增加审计导出签名策略，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入门禁。V2.20 增加审计导出签名验签回执，把外部签名完成后的 bundle 摘要、证书身份、OIDC issuer、透明日志和验签结果纳入证据链。V2.21 增加 POA&M 整改计划，把控制发现项、责任人、整改行动、里程碑、证据、签署和 OSCAL POA&M 输出纳入闭环。V2.22 增加企业架构风险登记，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入闭环。V2.23 增加架构决策记录，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入闭环。V2.24 增加 AI 事件响应 playbook，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘纳入闭环。V2.25 增加 AI 证据账本，把模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批、留存和复审纳入 AI 产品级证据闭环。V2.26 增加微调运行证据，把训练数据授权、数据准备、实验追踪、评估、模型登记、审批、灰度发布、监控和退役纳入 AI 微调审计闭环。V2.27 增加仓库变更控制，把 CODEOWNERS、受保护分支、PR 审查、必需检查、签名提交、禁止直推、发布 tag 保护、远端保护状态验证、漂移整改、POA&M 和风险登记纳入版本基线保护。V2.28 增加企业执行控制面，把合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核和退出标准变成统一执行协议。V2.29 增加外部标准版本锁定与升级策略，避免把未稳定标准、实验性语义约定或外部规范变更直接带入生产基线。V2.30 增加版本控制面，把基线 ID、发布通道、tag、源 commit、兼容窗口、冻结策略和回滚入口固化为发布不变量。V2.31 增加基线发布证据包，把晋级决策、冻结复核、漂移检查、不可变引用、审计摘要和回滚验证固化为发布证据。V2.32 增加基线兼容性总账，把消费者影响、迁移窗口、弃用截止、例外状态和未迁移风险固化为版本门禁证据。V2.33 增加基线采纳总账，把领域、平台、数据、AI 和生产资产对基线的采用状态、逾期治理和例外整改固化为组织级版本证据。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
 
-V2.32 起点包括：
+V2.33 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -206,7 +210,7 @@ V2.32 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `内部 starter kit` 下的 65 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、AI 证据账本、微调运行证据、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
+9. Starter Kit：提供 `内部 starter kit` 下的 66 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、AI 证据账本、微调运行证据、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
 10. 版本清单：提供 `内部版本清单`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
 11. 控制项覆盖清单：提供 `内部控制项覆盖清单`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
 12. 严格 schema 模式：starter kit 的对象 schema 必须声明 `additionalProperties=false`，新增字段必须先进入契约、示例和 checker 证据链。
@@ -251,6 +255,7 @@ V2.32 起点包括：
 51. 版本控制面：新增 `version-governance.yaml`，把基线 ID、发布通道、tag、源 commit、兼容窗口、冻结策略、升级规则和回滚入口纳入可执行发布协议。
 52. 基线发布证据包：新增 `baseline-release-evidence.yaml`，把晋级决策、冻结复核、漂移检查、不可变引用、审计导出摘要和回滚验证纳入可执行证据。
 53. 基线兼容性总账：新增 `baseline-compatibility-ledger.yaml`，把消费者影响、迁移状态、弃用截止、例外、POA&M 和风险接受纳入版本门禁。
+54. 基线采纳总账：新增 `baseline-adoption-ledger.yaml`，把组织内领域、平台、数据、AI 和生产资产的基线采用状态、逾期、例外和整改纳入版本治理。
 
 ---
 
@@ -3178,6 +3183,7 @@ governance/control-plane/standards-baseline.yaml
 governance/control-plane/version-governance.yaml
 governance/evidence/baselines/{baseline-release-evidence}.yaml
 governance/evidence/compatibility/{baseline-compatibility-ledger}.yaml
+governance/evidence/adoption/{baseline-adoption-ledger}.yaml
 infra/gitops/environments/dev/{domain}/{service}/kustomization.yaml
 infra/gitops/environments/prod/{domain}/{service}/kustomization.yaml
 ```
@@ -3355,7 +3361,7 @@ runbook:
   rollback: docs/rollback.md
 ```
 
-V2.32 starter kit 还提供以下可执行契约模板：
+V2.33 starter kit 还提供以下可执行契约模板：
 
 1. `api-contract.yaml`：API producer、consumer、auth、版本和兼容策略。
 2. `event-contract.yaml`：事件 topic、schema、幂等键、投递语义和消费者。
@@ -3411,6 +3417,7 @@ V2.32 starter kit 还提供以下可执行契约模板：
 52. `version-governance.yaml`：基线身份、发布通道、源 commit、release tag、兼容窗口、冻结策略、升级门禁和回滚入口。
 53. `baseline-release-evidence.yaml`：基线晋级决策、不可变引用、漂移复核、冻结检查、审计导出摘要、验签结果和回滚验证。
 54. `baseline-compatibility-ledger.yaml`：消费者影响、受影响契约、迁移状态、弃用截止、例外、POA&M 和风险接受。
+55. `baseline-adoption-ledger.yaml`：基线采用范围、采纳目标、当前基线、目标基线、采纳状态、逾期、例外和整改证据。
 
 ### 10.10.3 自动化门禁映射
 
@@ -3426,6 +3433,7 @@ V2.32 starter kit 还提供以下可执行契约模板：
 | 发布 | GitOps diff、策略准入、资源配额、SLO 和 runbook 校验 | GitOps overlay、catalog、service.yaml、发布证据 | 无 owner、无 runbook、无 digest、资源未声明 |
 | 基线发布 | 晋级决策、冻结复核、漂移检查、不可变引用、签名验签和回滚验证 | `baseline-release-evidence.yaml`、`version-governance.yaml`、审计导出、Git tag | 无晋级证据、tag 与 commit 不一致、漂移复核缺失、回滚未验证 |
 | 基线兼容 | 消费者影响、迁移窗口、弃用截止、未迁移对象和例外闭环 | `baseline-compatibility-ledger.yaml`、API/Event/Data/AI 兼容性报告、catalog | breaking change 无消费者清单、迁移到期仍未完成、例外无到期或 POA&M |
+| 基线采纳 | 领域、平台、数据、AI、GitOps 和生产资产的目标基线、采用状态和逾期整改 | `baseline-adoption-ledger.yaml`、catalog、control assessment、scorecard | 关键资产采纳状态 unknown、L3/L4 资产逾期无例外、采用证据只停留在口头确认 |
 | 访问复核 | 身份源、角色、特权权限、break-glass、MFA、复核报告 | `identity-access-review.yaml`、IAM、Kubernetes RBAC | 生产权限未复核、break-glass 无 MFA、特权账号无审计 |
 | 密钥治理 | Secret provider、KMS、静态加密、轮换周期、泄露扫描 | `secrets-rotation-evidence.yaml`、密钥系统、扫描器 | 密钥未轮换、无静态加密、发现泄露仍放行 |
 | 渐进式发布 | Feature Flag、Kill Switch、曝光事件、SLO 燃尽回滚 | `feature-flag-control.yaml`、GitOps、observability | 无关闭开关、无默认变体、无成功指标、无回滚条件 |
@@ -3490,7 +3498,7 @@ V2.32 starter kit 还提供以下可执行契约模板：
 
 可执行企业标准不能只证明“字段存在”，还要证明关键控制项确实被 schema、example 和 checker 覆盖。
 
-V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项进入同一清单；V2.8 起，扩展策略、发布开关、AI 威胁模型、运行血缘和平台产品指标也进入同一清单；V2.9 起，隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测和成本分摊证据也进入同一清单；V2.10 起，访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度也进入同一清单；V2.11 起，控制证据映射和审计导出清单也进入同一清单；V2.12 起，审计导出自动化命令也进入同一清单；V2.13 起，控制评估报告也进入同一清单；V2.14 起，架构基线变更记录也进入同一清单；V2.15 起，OSCAL 交换映射也进入同一清单；V2.16 起，审计导出门禁也进入同一清单；V2.17 起，审计导出完整性清单也进入同一清单；V2.18 起，审计导出 provenance statement 也进入同一清单；V2.19 起，审计导出签名策略也进入同一清单；V2.20 起，审计导出签名验签回执也进入同一清单；V2.21 起，POA&M 整改计划也进入同一清单；V2.22 起，企业架构风险登记也进入同一清单；V2.23 起，架构决策记录也进入同一清单；V2.24 起，AI 事件响应 playbook 也进入同一清单；V2.25 起，AI 证据账本也进入同一清单；V2.26 起，微调运行证据也进入同一清单；V2.27 起，仓库变更控制和远端保护漂移整改也进入同一清单；V2.28 起，合规等级、执行控制面和门禁决策也进入同一清单；V2.29 起，外部标准版本锁定和升级门禁也进入同一清单；V2.30 起，版本控制面和基线发布不变量也进入同一清单；V2.31 起，基线发布证据包、晋级决策、冻结复核和版本漂移复核也进入同一清单；V2.32 起，基线兼容性总账、消费者迁移和未迁移风险闭环也进入同一清单：
+V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项进入同一清单；V2.8 起，扩展策略、发布开关、AI 威胁模型、运行血缘和平台产品指标也进入同一清单；V2.9 起，隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测和成本分摊证据也进入同一清单；V2.10 起，访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度也进入同一清单；V2.11 起，控制证据映射和审计导出清单也进入同一清单；V2.12 起，审计导出自动化命令也进入同一清单；V2.13 起，控制评估报告也进入同一清单；V2.14 起，架构基线变更记录也进入同一清单；V2.15 起，OSCAL 交换映射也进入同一清单；V2.16 起，审计导出门禁也进入同一清单；V2.17 起，审计导出完整性清单也进入同一清单；V2.18 起，审计导出 provenance statement 也进入同一清单；V2.19 起，审计导出签名策略也进入同一清单；V2.20 起，审计导出签名验签回执也进入同一清单；V2.21 起，POA&M 整改计划也进入同一清单；V2.22 起，企业架构风险登记也进入同一清单；V2.23 起，架构决策记录也进入同一清单；V2.24 起，AI 事件响应 playbook 也进入同一清单；V2.25 起，AI 证据账本也进入同一清单；V2.26 起，微调运行证据也进入同一清单；V2.27 起，仓库变更控制和远端保护漂移整改也进入同一清单；V2.28 起，合规等级、执行控制面和门禁决策也进入同一清单；V2.29 起，外部标准版本锁定和升级门禁也进入同一清单；V2.30 起，版本控制面和基线发布不变量也进入同一清单；V2.31 起，基线发布证据包、晋级决策、冻结复核和版本漂移复核也进入同一清单；V2.32 起，基线兼容性总账、消费者迁移和未迁移风险闭环也进入同一清单；V2.33 起，基线采纳总账、组织采纳状态、逾期整改和例外闭环也进入同一清单：
 
 ```text
 内部控制项覆盖清单
@@ -3519,6 +3527,7 @@ V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema
 | 文档说基线版本必须可追溯且不可复用，机器是否能证明 | 控制项要求 `version-governance.schema.json` 和示例包含基线 ID、发布通道、源 commit、release tag、兼容窗口、冻结策略和回滚入口 |
 | 文档说基线发布必须有晋级、冻结和漂移复核证据，机器是否能证明 | 控制项要求 `baseline-release-evidence.schema.json` 和示例包含晋级决策、不可变引用、漂移复核、审计导出摘要、验签结果和回滚验证 |
 | 文档说 breaking change 必须有消费者迁移闭环，机器是否能证明 | 控制项要求 `baseline-compatibility-ledger.schema.json` 和示例包含消费者、受影响契约、迁移状态、弃用截止、例外、POA&M 和风险接受 |
+| 文档说企业级基线必须被组织采纳，机器是否能证明 | 控制项要求 `baseline-adoption-ledger.schema.json` 和示例包含采纳范围、目标、当前基线、目标基线、采纳状态、截止日期、例外和整改证据 |
 | 文档说 AI 事件响应必须有专门 playbook，机器是否能证明 | 控制项要求 `ai-incident-playbook.schema.json` 和示例包含触发器、检测、遏制、降级、回滚、RAG 恢复、工具 Kill Switch 和复盘 |
 | 文档说 GitOps 必须有运行安全，机器是否能证明 | 控制项要求 `gitops-deployment.schema.json` 和示例包含 `serviceAccount`、`security`、`scaling` |
 | 文档说供应链必须有漏洞和 Scorecard 证据，机器是否能证明 | 控制项要求 `supply-chain-attestation.schema.json` 和示例包含 `vulnerability`、`scorecard` |
@@ -3825,16 +3834,16 @@ standards:
 
 ```yaml
 versionGovernance:
-  baselineId: mea-v2.32-20260602
-  documentVersion: V2.32
+  baselineId: mea-v2.33-20260602
+  documentVersion: V2.33
   releaseChannel: candidate
   status: Baseline Candidate
   owner: architecture-governance-board
   sourceCommit: <git-sha-of-baseline-commit>
-  releaseTag: architecture/v2.32-candidate
+  releaseTag: architecture/v2.33-candidate
   tagSigned: true
   effectiveFrom: 2026-06-02
-  supersedes: V2.31
+  supersedes: V2.32
   compatibility:
     changeLevel: minor
     backwardCompatible: true
@@ -3846,6 +3855,7 @@ versionGovernance:
     standardsBaseline: governance/control-plane/standards-baseline.yaml
     auditExportManifest: governance/evidence/audit-export/audit-export-manifest.yaml
     compatibilityLedger: governance/evidence/compatibility/baseline-compatibility-ledger.yaml
+    adoptionLedger: governance/evidence/adoption/baseline-adoption-ledger.yaml
   gates:
     required:
       - make sync-doc-toc
@@ -3859,7 +3869,7 @@ versionGovernance:
       - open-critical-findings-zero
     emergencyPatchAllowed: true
   rollback:
-    previousBaseline: V2.31
+    previousBaseline: V2.32
     rollbackCommit: <git-sha-of-previous-baseline>
     rollbackGuide: governance/evidence/baseline-changes/baseline-change-record.yaml
 ```
@@ -3887,9 +3897,9 @@ versionGovernance:
 
 ```yaml
 baselineReleaseEvidence:
-  evidenceId: bre-20260602-mea-v232
-  baselineId: mea-v2.32-20260602
-  documentVersion: V2.32
+  evidenceId: bre-20260602-mea-v233
+  baselineId: mea-v2.33-20260602
+  documentVersion: V2.33
   owner: architecture-governance-board
   promotion:
     fromChannel: candidate
@@ -3903,7 +3913,7 @@ baselineReleaseEvidence:
     decidedAt: 2026-06-02T10:30:00+08:00
   immutableRefs:
     sourceCommit: <git-sha-of-baseline-commit>
-    releaseTag: architecture/v2.32-candidate
+    releaseTag: architecture/v2.33-candidate
     tagSignatureVerified: true
     auditExportDigest: sha256:<audit-export-digest>
     controlCoverageDigest: sha256:<control-coverage-digest>
@@ -3934,8 +3944,8 @@ baselineReleaseEvidence:
       expiringWithinDays: 14
   rollback:
     verified: true
-    previousBaseline: V2.31
-    rollbackTag: architecture/v2.31-candidate
+    previousBaseline: V2.32
+    rollbackTag: architecture/v2.32-candidate
     rollbackGuide: governance/evidence/baseline-changes/baseline-change-record.yaml
   verification:
     commands:
@@ -3976,9 +3986,9 @@ baselineReleaseEvidence:
 
 ```yaml
 baselineCompatibilityLedger:
-  ledgerId: bcl-20260602-mea-v232
-  baselineId: mea-v2.32-20260602
-  documentVersion: V2.32
+  ledgerId: bcl-20260602-mea-v233
+  baselineId: mea-v2.33-20260602
+  documentVersion: V2.33
   owner: architecture-governance-board
   change:
     changeLevel: minor
@@ -4059,6 +4069,120 @@ baselineCompatibilityLedger:
 2. 任意未迁移消费者都有到期时间、owner、例外或 POA&M。
 3. 任意冻结基线都不存在 `unknown` 或过期未处理的消费者迁移状态。
 4. 任意删除旧版本的动作都能证明无生产消费者，或有明确风险接受。
+
+### 10.10.11 基线采纳总账与组织级版本落地
+
+`baseline-adoption-ledger.yaml` 是企业级基线的组织采纳总账。它不证明“基线已经发布”，而是证明“哪些团队、系统、模板、环境和生产资产已经真正采用了这条基线”。
+
+```yaml
+baselineAdoptionLedger:
+  ledgerId: bal-20260602-mea-v233
+  baselineId: mea-v2.33-20260602
+  documentVersion: V2.33
+  owner: architecture-governance-board
+  scope:
+    requiredBy: 2026-10-01
+    appliesTo:
+      conformanceProfiles:
+        - standard-prod
+        - regulated-ai-prod
+      gateLevels:
+        - L2
+        - L3
+        - L4
+      assetTypes:
+        - domain
+        - service
+        - data-product
+        - ai-product
+        - platform-golden-path
+        - gitops-environment
+  summary:
+    totalTargets: 4
+    adopted: 2
+    inProgress: 1
+    exceptions: 1
+    overdue: 0
+    unknown: 0
+  targets:
+    - target: domain:order
+      owner: team-order
+      currentBaseline: V2.32
+      targetBaseline: V2.33
+      conformanceProfile: standard-prod
+      gateLevel: L3
+      adoptionStatus: in-progress
+      dueDate: 2026-08-30
+      evidence:
+        - domains/order/domain.yaml
+        - governance/control-plane/version-governance.yaml
+        - governance/evidence/control-assessments/order-domain-v233.yaml
+    - target: ai-product:customer-service-agent
+      owner: team-support-ai
+      currentBaseline: V2.33
+      targetBaseline: V2.33
+      conformanceProfile: regulated-ai-prod
+      gateLevel: L4
+      adoptionStatus: adopted
+      dueDate: 2026-07-15
+      evidence:
+        - ai/applications/customer-service-agent/ai-product.yaml
+        - governance/evidence/ai/customer-service-agent-evidence.yaml
+        - governance/control-plane/release-gate-decision.yaml
+    - target: platform-golden-path:microservice
+      owner: platform-team
+      currentBaseline: V2.33
+      targetBaseline: V2.33
+      conformanceProfile: standard-prod
+      gateLevel: L2
+      adoptionStatus: adopted
+      dueDate: 2026-07-01
+      evidence:
+        - platform/golden-paths/microservice/template.yaml
+        - governance/evidence/platform/microservice-golden-path-v233.yaml
+  exceptions:
+    active:
+      - id: ex-adoption-2026-001
+        target: service:legacy-billing-adapter
+        reason: strangler migration still active
+        expiresAt: 2026-09-15T23:59:59+08:00
+        riskAcceptedBy: enterprise-architecture-lead
+        poam: governance/evidence/poam/legacy-billing-adapter-poam.yaml
+  gateDecision:
+    result: conditional-pass
+    blockingUnknownTargets: 0
+    overdueL3L4Targets: 0
+    expiredExceptions: 0
+```
+
+采纳状态只能使用以下值：
+
+| 状态 | 含义 | 是否阻断 |
+| ---- | ---- | -------- |
+| `not-started` | 已识别目标但尚未启动采用 | 视截止日期和等级而定 |
+| `in-progress` | 正在采用，有 owner、截止日期和证据 | 视截止日期和等级而定 |
+| `adopted` | 已采用目标基线并通过对应门禁 | 否 |
+| `exception` | 经批准暂缓采用 | 例外过期后阻断 |
+| `blocked` | 采用被技术、预算、组织或迁移问题阻塞 | 是 |
+| `overdue` | 超过截止日期仍未采用 | 对 L3/L4 阻断 |
+| `unknown` | 无法确认当前基线或 owner | 是 |
+| `not-applicable` | 明确不适用且有理由 | 否 |
+
+执行规则：
+
+1. 企业级 `baseline` 或 `frozen` 发布必须有采纳范围、采纳目标和采用截止日期。
+2. L3 / L4 资产不得以 `unknown`、逾期 `in-progress` 或逾期 `not-started` 状态进入下一轮冻结基线。
+3. 采纳证据必须来自 catalog、control assessment、scorecard、GitOps、模板版本或资产契约，不能只来自会议纪要。
+4. 平台 Golden Path 采用必须证明模板版本、脚手架版本、CI 模板、policy bundle 和开发者门户入口一致。
+5. 逾期目标必须转入例外、POA&M 或风险登记，并声明到期日和关闭条件。
+6. 采纳总账必须进入季度复核；连续两次未采用的 L3/L4 目标必须升级给架构治理委员会。
+
+可执行验收标准：
+
+1. 任意企业基线都能列出应采用它的领域、平台、数据、AI、GitOps 和生产资产范围。
+2. 任意目标资产都能证明当前基线、目标基线、owner、截止日期、采纳状态和证据路径。
+3. 任意逾期或阻塞采纳都有例外、POA&M 或风险接受。
+4. 任意冻结基线都不存在 L3/L4 资产的 `unknown` 或过期采纳状态。
 
 ## 10.11 仓库拓扑剖面
 
@@ -4167,7 +4291,7 @@ baselineCompatibilityLedger:
 starter kit 校验命令
 ```
 
-该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、65 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 证据账本、微调运行证据、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
+该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、66 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 证据账本、微调运行证据、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
 
 审计导出包由以下命令生成：
 
@@ -4216,6 +4340,7 @@ governance/control-plane/{standards-baseline}.yaml
 governance/control-plane/{version-governance}.yaml
 governance/evidence/baselines/{baseline-release-evidence}.yaml
 governance/evidence/compatibility/{baseline-compatibility-ledger}.yaml
+governance/evidence/adoption/{baseline-adoption-ledger}.yaml
 governance/evidence/audit-export/{audit-export-manifest}.yaml
 governance/evidence/control-assessments/{control-assessment-report}.yaml
 governance/evidence/baseline-changes/{baseline-change-record}.yaml
@@ -4777,6 +4902,7 @@ governance/control-plane/release-gate-decision.yaml
 governance/control-plane/standards-baseline.yaml
 governance/control-plane/version-governance.yaml
 governance/evidence/baselines/README.md
+governance/evidence/adoption/README.md
 governance/migration/deprecation-policy.md
 governance/evidence/releases/README.md
 governance/evidence/supply-chain/README.md
@@ -4821,6 +4947,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 16. 所有生产基线都有唯一基线 ID、发布通道、源 commit、release tag、兼容窗口和回滚入口。
 17. 所有基线晋级都有发布证据包，能证明不可变引用、漂移复核、审计摘要、验签结果和回滚验证。
 18. 所有重大或破坏性基线变更都有兼容性总账，能证明消费者影响、迁移状态、弃用截止和未迁移风险。
+19. 所有企业级基线都有采纳总账，能证明目标资产是否已采用、逾期、例外或进入整改。
 
 ---
 
@@ -4847,6 +4974,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 | 版本基线漂移    | 文档版本、tag、审计导出、控制清单和发布证据互相对不上 | 用版本控制面绑定 baseline ID、source commit、release tag、兼容窗口和回滚入口 |
 | 基线晋级证据缺失 | candidate、baseline 和 frozen 状态切换只有口头结论，没有不可变引用、漂移复核和回滚验证 | 用基线发布证据包记录晋级决策、签名验签、审计摘要、漂移检查和回滚证明 |
 | 消费者迁移失控    | breaking change 已经发布，但消费者清单、迁移到期、例外和风险接受没有统一总账 | 用基线兼容性总账聚合契约影响、消费者迁移、未迁移阻断和 POA&M |
+| 基线采纳失控    | 企业标准发布了，但领域、平台、数据、AI 和生产资产仍停留在旧基线或采纳状态不可见 | 用基线采纳总账跟踪采用范围、当前基线、目标基线、截止日期、例外和整改 |
 
 ---
 
@@ -4881,6 +5009,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 13. 任意架构基线都能追溯到唯一 baseline ID、source commit、release tag、版本证据包和上一基线回滚入口。
 14. 任意基线晋级都能证明不可变引用、漂移复核、开放关键发现、审计导出摘要、验签结果和回滚验证。
 15. 任意重大或破坏性基线变更都能证明消费者影响、迁移状态、例外、POA&M、风险接受和弃用截止。
+16. 任意企业级基线都能证明组织采纳范围、目标资产采用状态、逾期整改、例外和风险接受。
 
 ---
 
