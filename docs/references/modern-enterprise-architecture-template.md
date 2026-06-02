@@ -19611,7 +19611,7 @@ versionPolicyReleaseControlLedger:
   releaseCandidate:
     releaseChannel: candidate
     sourceCommit: <git-sha-of-baseline-commit>
-    releaseTag: architecture/v2.92-candidate
+    releaseTag: architecture/v2.93-candidate
     tagSigned: true
     tagSignatureVerified: true
     tagTargetMatchesSourceCommit: true
@@ -19628,7 +19628,7 @@ versionPolicyReleaseControlLedger:
     executionGateChanged: true
     migrationRequired: false
     adrRequired: false
-    changelogEntry: governance/evidence/releases/changelog-v2.92.md
+    changelogEntry: governance/evidence/releases/changelog-v2.93.md
   channelControls:
     allowedTransitions:
       - from: review
