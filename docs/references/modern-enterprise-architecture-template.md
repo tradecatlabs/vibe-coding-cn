@@ -1,10 +1,10 @@
 # 现代企业数字化平台架构说明文档
 
-**文档版本**：V2.54
+**文档版本**：V2.55
 **适用对象**：企业管理层、产品负责人、架构师、研发负责人、数据负责人、平台团队、安全合规团队
 **适用范围**：中大型企业数字化平台建设、业务系统重构、平台工程建设、数据产品化、组织协同机制设计
 **文档定位**：本文件用于说明现代企业数字化平台的总体架构、核心组成、团队职责、治理机制、技术原则和落地路径。
-**专项修订**：V2.54 在 V2.53 基础上新增基线迁移执行回执，把迁移工作单中的计划动作落到实际执行命令、actor、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证，避免“工单显示完成，但没有独立执行证据”。
+**专项修订**：V2.55 在 V2.54 基础上新增本地私有制品边界，把内部 starter kit、生成控制清单、版本清单和本地校验脚本的禁推原因、摘要策略、验证命令、远端排除和审计留存绑定成独立证据，避免“可执行资产不进远程后审计无法判断它们是缺失还是受控私有制品”。
 
 ---
 
@@ -53,7 +53,7 @@
 
 | 版本 | 状态 | 说明 |
 | ---- | ---- | ---- |
-| `V2.54` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、87 组 starter kit schema/example、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核、仓库变更控制、远端保护漂移整改、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 证据账本、微调运行证据、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
+| `V2.55` | `Baseline Candidate` | 用作可执行企业标准起点；包含机器可读版本清单、控制项覆盖清单、88 组 starter kit schema/example、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核、仓库变更控制、远端保护漂移整改、控制证据映射、审计导出清单、审计导出自动化、控制评估报告、架构基线变更记录、架构决策记录、AI 证据账本、微调运行证据、AI 事件响应 playbook、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、严格 schema 模式、访问复核、密钥轮换、漏洞修复、事故复盘、可靠性、数据治理、AI 运行、GitOps 安全、供应链证据链一致性和自动化校验入口 |
 
 ### 0.3 变更分级
 
@@ -126,6 +126,8 @@ V2.53 起，纳入企业基线治理的资产迁移还必须形成 `baseline-mig
 
 V2.54 起，完成基线迁移的资产还必须形成 `baseline-migration-execution-receipt.yaml`。它不是替代迁移工作单，而是证明工作单中的每一步已经由谁、在什么环境、用哪些命令执行，执行前后摘要如何变化，验收日志和回滚验证是否真实存在。
 
+V2.55 起，所有被声明为本地、私有、生成或禁推的可执行资产还必须形成 `baseline-local-artifact-boundary.yaml`。它不是替代制品清单或发布事务回执，而是证明这些资产为什么不进入远程、如何验证、摘要如何留存、哪些命令证明未被跟踪或推送。
+
 推荐发布检查：
 
 ```bash
@@ -173,6 +175,7 @@ git diff --check
 | 消费锁定文件 | `baseline-consumption-lock.yaml` 必须由资产仓库锁定 baseline ID、source commit、release tag、证据图摘要、制品清单摘要、验证锁摘要和准入策略摘要 | 资产只声明 `V2.x` 浮动版本、消费锁摘要与发布证据不一致、锁文件过期或未回写采纳总账 |
 | 迁移工作单 | `baseline-migration-work-order.yaml` 必须把目标资产、当前基线、目标基线、执行步骤、依赖、消费锁更新、GitOps 变更、验收证据和回滚动作绑定 | 采纳总账要求迁移但无执行工单、工单无 owner/截止时间/验收证据、迁移完成但未更新消费锁或 GitOps |
 | 迁移执行回执 | `baseline-migration-execution-receipt.yaml` 必须证明每个迁移步骤的实际命令、actor、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证 | 工单显示 completed 但没有执行日志、摘要变化不可证明、执行人未知、验收日志缺失或无法回滚 |
+| 本地私有制品边界 | `baseline-local-artifact-boundary.yaml` 必须声明内部 starter kit、生成 JSON、校验脚本和其他禁推资产的分类、摘要策略、允许用途、远端排除和验证命令 | 可执行资产缺失但没有私有边界说明、禁推资产被误推、审计导出误包含本地生成物或签名 payload 覆盖不清 |
 | 发布列车 | `baseline-release-train.yaml` 必须绑定候选窗口、冻结窗口、晋级日期、通知节奏、黑窗、紧急补丁和依赖证据 | 临时发版、绕过冻结窗口、无通知升级、黑窗期间发布非紧急变更 |
 | 通知确认 | `baseline-notification-ledger.yaml` 必须绑定通知对象、渠道、送达、确认、异议、例外和冻结前完成状态 | 冻结前关键消费者未确认、通知失败无补发、异议未关闭或无风险接受 |
 | 回滚验证 | `baseline-rollback-verification.yaml` 必须绑定上一基线、回滚目标、Git/tag/GitOps revision、审计导出恢复、烟测结果和验证时效 | 只写回滚计划、上一基线不可检出、GitOps revision 不存在、审计导出无法恢复或验证过期 |
@@ -282,12 +285,13 @@ git diff --check
 | `V2.52` | 2026-06-02 | Minor | 补齐基线消费锁定文件、不可变摘要锁定、浮动版本阻断和消费端回写闭环 |
 | `V2.53` | 2026-06-02 | Minor | 补齐基线迁移工作单、逐资产迁移步骤、消费锁更新、GitOps 变更、验收证据和回滚动作 |
 | `V2.54` | 2026-06-02 | Minor | 补齐基线迁移执行回执、实际命令、before/after 摘要、GitOps revision、验收日志和回滚验证 |
+| `V2.55` | 2026-06-02 | Minor | 补齐本地私有制品边界、禁推资产分类、摘要留存、远端排除和验证命令 |
 
-### 0.8 V2.54 可执行企业标准路线图
+### 0.8 V2.55 可执行企业标准路线图
 
-V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、example 和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。V2.12 增加审计导出自动化命令，把版本、控制目录、证据映射、导出清单、脚本和关键制品哈希生成可交付审计包。V2.13 增加控制评估报告，把证据包进一步闭环到控制结果、发现项、整改、剩余风险和签署状态。V2.14 增加架构基线变更记录，把基线升级的影响分析、审批、验证命令和回滚路径纳入可执行证据。V2.15 增加 OSCAL 交换映射和导出摘要，把内部控制证据映射到 catalog、component-definition、system-security-plan、assessment-results 和 POA&M 视图。V2.16 增加审计导出门禁，把导出包生成、JSON/Markdown/OSCAL 输出和关键不变量校验纳入 `make test`。V2.17 增加审计导出完整性清单，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。V2.18 增加审计导出 provenance statement，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。V2.19 增加审计导出签名策略，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入门禁。V2.20 增加审计导出签名验签回执，把外部签名完成后的 bundle 摘要、证书身份、OIDC issuer、透明日志和验签结果纳入证据链。V2.21 增加 POA&M 整改计划，把控制发现项、责任人、整改行动、里程碑、证据、签署和 OSCAL POA&M 输出纳入闭环。V2.22 增加企业架构风险登记，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入闭环。V2.23 增加架构决策记录，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入闭环。V2.24 增加 AI 事件响应 playbook，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘纳入闭环。V2.25 增加 AI 证据账本，把模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批、留存和复审纳入 AI 产品级证据闭环。V2.26 增加微调运行证据，把训练数据授权、数据准备、实验追踪、评估、模型登记、审批、灰度发布、监控和退役纳入 AI 微调审计闭环。V2.27 增加仓库变更控制，把 CODEOWNERS、受保护分支、PR 审查、必需检查、签名提交、禁止直推、发布 tag 保护、远端保护状态验证、漂移整改、POA&M 和风险登记纳入版本基线保护。V2.28 增加企业执行控制面，把合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核和退出标准变成统一执行协议。V2.29 增加外部标准版本锁定与升级策略，避免把未稳定标准、实验性语义约定或外部规范变更直接带入生产基线。V2.30 增加版本控制面，把基线 ID、发布通道、tag、源 commit、兼容窗口、冻结策略和回滚入口固化为发布不变量。V2.31 增加基线发布证据包，把晋级决策、冻结复核、漂移检查、不可变引用、审计摘要和回滚验证固化为发布证据。V2.32 增加基线兼容性总账，把消费者影响、迁移窗口、弃用截止、例外状态和未迁移风险固化为版本门禁证据。V2.33 增加基线采纳总账，把领域、平台、数据、AI 和生产资产对基线的采用状态、逾期治理和例外整改固化为组织级版本证据。V2.34 增加基线支持矩阵，把旧基线支持状态、维护窗口、安全补丁窗口、EOL 和最低可接受基线固化为版本生命周期门禁。V2.35 增加基线发布列车，把候选窗口、冻结窗口、晋级日期、通知节奏、黑窗和紧急补丁入口固化为版本发布节奏门禁。V2.36 增加资产级基线符合性声明，把资产自声明、证据绑定、例外、复核和采纳总账回写固化为资产级版本证据。V2.37 增加基线制品清单，把源文档、schema、示例、控制项、证据模板、脚本、生成物和外部引用固化为可摘要、可签名、可复现的版本物料清单。V2.38 增加基线验证环境锁定，把校验命令、工具版本、runner 镜像、策略包、schema validator 和验签工具固化为可复现门禁。V2.39 增加基线通知确认总账，把发布列车中的通知计划升级为可审计的送达、确认、异议和例外证据。V2.40 增加基线回滚验证记录，把上一基线检出、GitOps revision 恢复、审计导出恢复和烟测结果升级为独立证据。V2.41 增加基线例外总账，把分散例外、到期、风险接受、POA&M 和冻结阻断收敛为统一审计证据。V2.42 增加基线就绪评分卡，把硬门禁、评分维度、证据摘要和 baseline/frozen 判定统一到最终准入证据。V2.43 增加基线生命周期状态机，把允许迁移、禁止迁移、状态回写、迁移审批和回滚入口统一到状态转换证据。V2.44 增加基线状态对账报告，把状态机、版本控制面、发布证据、支持矩阵、采纳总账和审计导出的状态字段统一对账。V2.45 增加基线 EOL 退役证书，把旧基线生产引用清零、迁移关闭、例外清零、审计归档和新采用阻断固化为退役证据。V2.46 增加基线会审裁决记录，把会审范围、证据核验、投票签署、反对意见、条件动作和最终裁决固化为独立会审证据。V2.47 增加基线证据追踪图，把跨证据依赖、摘要一致性、下游消费和断链阻断固化为可校验证据图。V2.48 增加基线门禁执行报告，把执行命令、策略包、输入摘要、规则结果、退出码和重放证明固化为 release gate 的可审计运行证据。V2.49 增加基线发布事务回执，把提交、签名 tag、远端 ref、push 回执、保护规则和发布后验证固化为版本发布事实。V2.50 增加基线撤销与隔离记录，把坏基线的隔离、撤销、通知、恢复目标、风险接受和审计归档固化为版本事故控制证据。V2.51 增加基线准入执行策略，把最低基线、撤销/EOL、资产声明、例外到期和运行入口阻断固化为统一策略。V2.52 增加基线消费锁定文件，把资产消费端的基线版本、commit、tag 和关键证据摘要固化为不可变锁。V2.53 增加基线迁移工作单，把目标资产迁移到新基线的步骤、依赖、GitOps 变更、消费锁更新、验收证据和回滚动作固化为执行工单。V2.54 增加基线迁移执行回执，把实际命令、actor、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证固化为执行事实。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
+V2.0 已将 V1.9 的文档化基线转化为第一批可执行资产。V2.1 继续把字段约束、示例一致性和远程 CI 门禁补强为可执行口径。V2.2 把主文档最小验证包中的 API、事件、AI 工具、RAG、微调、GitOps、catalog 和 scorecard 纳入 schema/example 校验。V2.3 继续把发布证据、供应链证明、治理例外、兼容性报告和 GitOps 漂移报告纳入机器可校验基线。V2.4 把当前版本、发布状态、starter kit pair 清单、pair 数量和索引同步要求固化到机器可读版本清单中。V2.5 把可靠性等级、RTO/RPO、数据保留与访问审计、AI 预算与降级、GitOps 运行安全和供应链 source/vulnerability/scorecard 证据提升为 starter kit 强制字段。V2.6 增加控制项覆盖清单，把关键企业控制要求映射到 schema 字段、example 和 checker 规则，避免“文档说有控制、机器无法证明控制存在”。V2.7 启用严格 schema 模式，要求 starter kit 所有对象节点声明 `additionalProperties=false`，并由 checker 阻断未知字段。V2.8 补齐扩展字段策略、Feature Flag / Kill Switch、AI 威胁模型、运行血缘和平台产品指标。V2.9 继续把隐私工程、租户边界、恢复演练、Policy as Code 测试、GenAI 可观测性和 FinOps 成本分摊补成可执行证据。V2.10 把访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度纳入控制目录，避免生产安全运营只停留在“有制度、有人看、事后补”的弱证据状态。V2.11 把每个控制项到证据路径、状态、新鲜度和审计导出包的关系纳入总账，避免审计时只能逐段翻文档、不能一键证明控制覆盖。V2.12 增加审计导出自动化命令，把版本、控制目录、证据映射、导出清单、脚本和关键制品哈希生成可交付审计包。V2.13 增加控制评估报告，把证据包进一步闭环到控制结果、发现项、整改、剩余风险和签署状态。V2.14 增加架构基线变更记录，把基线升级的影响分析、审批、验证命令和回滚路径纳入可执行证据。V2.15 增加 OSCAL 交换映射和导出摘要，把内部控制证据映射到 catalog、component-definition、system-security-plan、assessment-results 和 POA&M 视图。V2.16 增加审计导出门禁，把导出包生成、JSON/Markdown/OSCAL 输出和关键不变量校验纳入 `make test`。V2.17 增加审计导出完整性清单，把生成物 SHA-256、源制品哈希和防篡改校验纳入审计包。V2.18 增加审计导出 provenance statement，把生成物 subject、构建定义、源码提交和源证据依赖纳入可追溯证明。V2.19 增加审计导出签名策略，把 provenance payload 摘要、签名方式、验签命令和外部签名交接纳入门禁。V2.20 增加审计导出签名验签回执，把外部签名完成后的 bundle 摘要、证书身份、OIDC issuer、透明日志和验签结果纳入证据链。V2.21 增加 POA&M 整改计划，把控制发现项、责任人、整改行动、里程碑、证据、签署和 OSCAL POA&M 输出纳入闭环。V2.22 增加企业架构风险登记，把风险、控制项、POA&M、缓解行动、残余风险、复审和审计导出风险视图纳入闭环。V2.23 增加架构决策记录，把 ADR 上下文、备选方案、取舍、决策、关联控制项、风险、POA&M、复审和基线变更绑定纳入闭环。V2.24 增加 AI 事件响应 playbook，把幻觉爆发、工具循环、RAG 索引污染、供应商中断、成本异常、检测、遏制、降级、回滚和复盘纳入闭环。V2.25 增加 AI 证据账本，把模型、Prompt、RAG、工具、评估、威胁模型、观测、事件响应、数据使用、审批、留存和复审纳入 AI 产品级证据闭环。V2.26 增加微调运行证据，把训练数据授权、数据准备、实验追踪、评估、模型登记、审批、灰度发布、监控和退役纳入 AI 微调审计闭环。V2.27 增加仓库变更控制，把 CODEOWNERS、受保护分支、PR 审查、必需检查、签名提交、禁止直推、发布 tag 保护、远端保护状态验证、漂移整改、POA&M 和风险登记纳入版本基线保护。V2.28 增加企业执行控制面，把合规等级、门禁决策、证据新鲜度、例外放行、break-glass、季度复核和退出标准变成统一执行协议。V2.29 增加外部标准版本锁定与升级策略，避免把未稳定标准、实验性语义约定或外部规范变更直接带入生产基线。V2.30 增加版本控制面，把基线 ID、发布通道、tag、源 commit、兼容窗口、冻结策略和回滚入口固化为发布不变量。V2.31 增加基线发布证据包，把晋级决策、冻结复核、漂移检查、不可变引用、审计摘要和回滚验证固化为发布证据。V2.32 增加基线兼容性总账，把消费者影响、迁移窗口、弃用截止、例外状态和未迁移风险固化为版本门禁证据。V2.33 增加基线采纳总账，把领域、平台、数据、AI 和生产资产对基线的采用状态、逾期治理和例外整改固化为组织级版本证据。V2.34 增加基线支持矩阵，把旧基线支持状态、维护窗口、安全补丁窗口、EOL 和最低可接受基线固化为版本生命周期门禁。V2.35 增加基线发布列车，把候选窗口、冻结窗口、晋级日期、通知节奏、黑窗和紧急补丁入口固化为版本发布节奏门禁。V2.36 增加资产级基线符合性声明，把资产自声明、证据绑定、例外、复核和采纳总账回写固化为资产级版本证据。V2.37 增加基线制品清单，把源文档、schema、示例、控制项、证据模板、脚本、生成物和外部引用固化为可摘要、可签名、可复现的版本物料清单。V2.38 增加基线验证环境锁定，把校验命令、工具版本、runner 镜像、策略包、schema validator 和验签工具固化为可复现门禁。V2.39 增加基线通知确认总账，把发布列车中的通知计划升级为可审计的送达、确认、异议和例外证据。V2.40 增加基线回滚验证记录，把上一基线检出、GitOps revision 恢复、审计导出恢复和烟测结果升级为独立证据。V2.41 增加基线例外总账，把分散例外、到期、风险接受、POA&M 和冻结阻断收敛为统一审计证据。V2.42 增加基线就绪评分卡，把硬门禁、评分维度、证据摘要和 baseline/frozen 判定统一到最终准入证据。V2.43 增加基线生命周期状态机，把允许迁移、禁止迁移、状态回写、迁移审批和回滚入口统一到状态转换证据。V2.44 增加基线状态对账报告，把状态机、版本控制面、发布证据、支持矩阵、采纳总账和审计导出的状态字段统一对账。V2.45 增加基线 EOL 退役证书，把旧基线生产引用清零、迁移关闭、例外清零、审计归档和新采用阻断固化为退役证据。V2.46 增加基线会审裁决记录，把会审范围、证据核验、投票签署、反对意见、条件动作和最终裁决固化为独立会审证据。V2.47 增加基线证据追踪图，把跨证据依赖、摘要一致性、下游消费和断链阻断固化为可校验证据图。V2.48 增加基线门禁执行报告，把执行命令、策略包、输入摘要、规则结果、退出码和重放证明固化为 release gate 的可审计运行证据。V2.49 增加基线发布事务回执，把提交、签名 tag、远端 ref、push 回执、保护规则和发布后验证固化为版本发布事实。V2.50 增加基线撤销与隔离记录，把坏基线的隔离、撤销、通知、恢复目标、风险接受和审计归档固化为版本事故控制证据。V2.51 增加基线准入执行策略，把最低基线、撤销/EOL、资产声明、例外到期和运行入口阻断固化为统一策略。V2.52 增加基线消费锁定文件，把资产消费端的基线版本、commit、tag 和关键证据摘要固化为不可变锁。V2.53 增加基线迁移工作单，把目标资产迁移到新基线的步骤、依赖、GitOps 变更、消费锁更新、验收证据和回滚动作固化为执行工单。V2.54 增加基线迁移执行回执，把实际命令、actor、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证固化为执行事实。V2.55 增加本地私有制品边界，把内部 starter kit、生成 JSON、校验脚本、禁推原因、摘要留存和远端排除固化为受控证据。后续 `V2.x` 迭代应继续补充示例仓库，并把平台、catalog、GitOps 和审计系统连接起来。
 
-V2.54 起点包括：
+V2.55 起点包括：
 
 1. 真相源字段矩阵：明确 `domain.yaml`、`service.yaml`、`ai-product.yaml`、`data-product.yaml`、catalog、GitOps 和 runtime 的字段权威。
 2. 契约模板：提供服务、领域、数据产品、AI 产品、Agent 工具、RAG、微调、GitOps 和生产就绪模板。
@@ -297,7 +301,7 @@ V2.54 起点包括：
 6. 可靠性分级：补齐 Tier-1 / Tier-2 / Tier-3、RTO、RPO、灾备演练、错误预算和 on-call 升级路径。
 7. 迁移与弃用：定义旧系统绞杀迁移、API 版本弃用、数据产品兼容、AI 模型退役和平台能力下线流程。
 8. 验证包：提供 `make test`、schema 校验、示例仓库和审计证据清单，证明标准可以落地执行。
-9. Starter Kit：提供 `内部 starter kit` 下的 87 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、AI 证据账本、微调运行证据、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
+9. Starter Kit：提供 `内部 starter kit` 下的 88 组 schema/example、嵌套字段校验、格式校验、可靠性、数据治理、AI 运行、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、AI 证据账本、微调运行证据、AI 事件响应 playbook、GitOps 安全、架构决策记录、风险登记、证据链验真字段和示例跨文件一致性检查。
 10. 版本清单：提供 `内部版本清单`，让当前版本、发布状态、pair 清单和索引同步进入 CI 校验。
 11. 控制项覆盖清单：提供 `内部控制项覆盖清单`，让关键控制项到 schema、example 和 checker 的证据链进入 CI 校验。
 12. 严格 schema 模式：starter kit 的对象 schema 必须声明 `additionalProperties=false`，新增字段必须先进入契约、示例和 checker 证据链。
@@ -364,6 +368,7 @@ V2.54 起点包括：
 73. 基线消费锁定文件：新增 `baseline-consumption-lock.yaml`，把资产实际消费的 baseline ID、source commit、release tag、证据图摘要、制品清单摘要、验证锁摘要和准入策略摘要纳入消费端版本控制。
 74. 基线迁移工作单：新增 `baseline-migration-work-order.yaml`，把目标资产从当前基线迁移到目标基线的步骤、依赖、GitOps 变更、消费锁更新、验收证据和回滚动作纳入执行闭环。
 75. 基线迁移执行回执：新增 `baseline-migration-execution-receipt.yaml`，把迁移实际命令、执行人、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证纳入独立执行证据。
+76. 本地私有制品边界：新增 `baseline-local-artifact-boundary.yaml`，把内部 starter kit、生成清单、校验脚本、禁推原因、摘要留存、远端排除和审计留存纳入受控边界。
 
 ---
 
@@ -3476,7 +3481,7 @@ runbook:
   rollback: docs/rollback.md
 ```
 
-V2.54 starter kit 还提供以下可执行契约模板：
+V2.55 starter kit 还提供以下可执行契约模板：
 
 1. `api-contract.yaml`：API producer、consumer、auth、版本和兼容策略。
 2. `event-contract.yaml`：事件 topic、schema、幂等键、投递语义和消费者。
@@ -3554,6 +3559,7 @@ V2.54 starter kit 还提供以下可执行契约模板：
 74. `baseline-consumption-lock.yaml`：资产消费端锁定 baseline ID、source commit、release tag、证据图摘要、制品清单摘要、验证锁摘要、准入策略摘要和过期复核证明。
 75. `baseline-migration-work-order.yaml`：目标资产、当前基线、目标基线、迁移步骤、依赖、GitOps 变更、消费锁更新、验收证据和回滚动作证明。
 76. `baseline-migration-execution-receipt.yaml`：迁移实际命令、执行人、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证证明。
+77. `baseline-local-artifact-boundary.yaml`：内部 starter kit、生成 JSON、校验脚本、禁推原因、摘要留存、允许用途、远端排除和审计留存证明。
 
 ### 10.10.3 自动化门禁映射
 
@@ -3576,6 +3582,7 @@ V2.54 starter kit 还提供以下可执行契约模板：
 | 基线消费锁定 | 资产消费端的 baseline ID、source commit、release tag、证据摘要、锁文件签署、过期复核和 rollup 回写 | `baseline-consumption-lock.yaml`、conformance claim、adoption ledger、release evidence、evidence trace graph、catalog、GitOps | 只写 `V2.x` 浮动版本、锁摘要与发布证据不一致、锁文件过期、锁文件未回写采纳总账或 catalog |
 | 基线迁移执行 | 目标资产、当前基线、目标基线、迁移步骤、依赖、GitOps 变更、消费锁更新、验收证据和回滚动作 | `baseline-migration-work-order.yaml`、adoption ledger、compatibility ledger、consumption lock、GitOps、catalog、release gate | 采纳总账要求迁移但无工单、工单无 owner 或截止时间、迁移步骤未执行、消费锁未更新、GitOps 指针未变更、验收证据或回滚动作缺失 |
 | 基线迁移回执 | 实际命令、执行人、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证 | `baseline-migration-execution-receipt.yaml`、work order、CI logs、GitOps diff、catalog diff、consumption lock、rollback verification | 工单完成但无执行日志、执行 actor 不可追溯、before/after 摘要不一致、验收日志缺失或回滚未验证 |
+| 本地私有制品边界 | 内部 starter kit、生成 JSON、校验脚本、分类、禁推原因、摘要留存、允许用途、远端排除和审计留存 | `baseline-local-artifact-boundary.yaml`、artifact inventory、publish transaction、verification lock、audit export、git status | 可执行资产不进远程但无边界说明、exclude pattern 无 owner、私有制品被误签名或审计导出误包含 |
 | 基线证据追踪 | 证据节点、依赖边、摘要一致性、下游消费和断链阻断 | `baseline-evidence-trace-graph.yaml`、发布证据、状态对账、审计导出、会审裁决 | 必需节点缺失、摘要不一致、依赖断链、下游引用旧证据或存在未消费关键证据 |
 | 基线门禁执行 | 门禁命令、runner 镜像、策略包、schema 包、输入摘要、逐条规则结果、退出码、重放结果和最终决策 | `baseline-gate-execution-report.yaml`、`release-gate-decision.yaml`、`control-plane.yaml`、`baseline-verification-lock.yaml` | 规则未执行、输入摘要不一致、策略包漂移、重放失败、退出码异常或最终决策与执行结果不一致 |
 | 基线兼容 | 消费者影响、迁移窗口、弃用截止、未迁移对象和例外闭环 | `baseline-compatibility-ledger.yaml`、API/Event/Data/AI 兼容性报告、catalog | breaking change 无消费者清单、迁移到期仍未完成、例外无到期或 POA&M |
@@ -3654,7 +3661,7 @@ V2.54 starter kit 还提供以下可执行契约模板：
 
 可执行企业标准不能只证明“字段存在”，还要证明关键控制项确实被 schema、example 和 checker 覆盖。
 
-V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项进入同一清单；V2.8 起，扩展策略、发布开关、AI 威胁模型、运行血缘和平台产品指标也进入同一清单；V2.9 起，隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测和成本分摊证据也进入同一清单；V2.10 起，访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度也进入同一清单；V2.11 起，控制证据映射和审计导出清单也进入同一清单；V2.12 起，审计导出自动化命令也进入同一清单；V2.13 起，控制评估报告也进入同一清单；V2.14 起，架构基线变更记录也进入同一清单；V2.15 起，OSCAL 交换映射也进入同一清单；V2.16 起，审计导出门禁也进入同一清单；V2.17 起，审计导出完整性清单也进入同一清单；V2.18 起，审计导出 provenance statement 也进入同一清单；V2.19 起，审计导出签名策略也进入同一清单；V2.20 起，审计导出签名验签回执也进入同一清单；V2.21 起，POA&M 整改计划也进入同一清单；V2.22 起，企业架构风险登记也进入同一清单；V2.23 起，架构决策记录也进入同一清单；V2.24 起，AI 事件响应 playbook 也进入同一清单；V2.25 起，AI 证据账本也进入同一清单；V2.26 起，微调运行证据也进入同一清单；V2.27 起，仓库变更控制和远端保护漂移整改也进入同一清单；V2.28 起，合规等级、执行控制面和门禁决策也进入同一清单；V2.29 起，外部标准版本锁定和升级门禁也进入同一清单；V2.30 起，版本控制面和基线发布不变量也进入同一清单；V2.31 起，基线发布证据包、晋级决策、冻结复核和版本漂移复核也进入同一清单；V2.32 起，基线兼容性总账、消费者迁移和未迁移风险闭环也进入同一清单；V2.33 起，基线采纳总账、组织采纳状态、逾期整改和例外闭环也进入同一清单；V2.34 起，基线支持矩阵、维护窗口、安全补丁、EOL 和最低可接受基线也进入同一清单；V2.35 起，基线发布列车、候选窗口、冻结窗口、晋级日期、通知节奏、黑窗和紧急补丁也进入同一清单；V2.36 起，资产级基线符合性声明、资产自声明、证据绑定、例外和采纳总账回写也进入同一清单；V2.37 起，基线制品清单、源制品摘要、必需性、签名状态、导出关系和未登记制品阻断也进入同一清单；V2.38 起，基线验证环境锁定、校验命令、runner 镜像、工具版本、策略包、validator 和验签工具也进入同一清单；V2.39 起，基线通知确认总账、通知对象、送达回执、影响确认、异议、例外和冻结前完成状态也进入同一清单；V2.40 起，基线回滚验证记录、上一基线检出、GitOps revision 恢复、审计导出恢复、烟测结果和验证时效也进入同一清单；V2.41 起，基线例外总账、例外来源聚合、风险接受、POA&M、过期阻断和冻结准入也进入同一清单；V2.42 起，基线就绪评分卡、硬门禁、评分维度、证据绑定和最终准入判定也进入同一清单；V2.43 起，基线生命周期状态机、允许迁移、禁止迁移、迁移审批、状态回写和迁移审计证据也进入同一清单；V2.44 起，基线状态对账报告、跨账本状态一致性、状态漂移阻断和审计导出状态回写也进入同一清单；V2.45 起，基线 EOL 退役证书、生产引用清零、迁移关闭、例外清零和新采用阻断也进入同一清单；V2.46 起，基线会审裁决记录、证据核验、投票签署、反对意见、条件动作和最终裁决也进入同一清单；V2.47 起，基线证据追踪图、证据节点依赖、摘要一致性、下游消费和断链阻断也进入同一清单；V2.48 起，基线门禁执行报告、门禁命令、runner、策略包、schema 包、输入摘要、规则结果、退出码和重放结果也进入同一清单；V2.49 起，基线发布事务回执、提交前检查、干净工作树、签名 tag、远端 ref、push 回执、保护规则和发布后验证也进入同一清单；V2.50 起，基线撤销与隔离记录、撤销触发、隔离范围、受影响引用、通知确认、恢复目标、风险接受和审计归档也进入同一清单；V2.51 起，基线准入执行策略、最低基线阻断、撤销/EOL 阻断、资产声明校验和例外到期阻断也进入同一清单；V2.52 起，基线消费锁定文件、不可变摘要锁定、浮动版本阻断、锁文件签署和采纳总账回写也进入同一清单；V2.53 起，基线迁移工作单、逐资产迁移步骤、消费锁更新、GitOps 变更、验收证据和回滚动作也进入同一清单；V2.54 起，基线迁移执行回执、实际命令、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证也进入同一清单：
+V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema 控制项进入同一清单；V2.8 起，扩展策略、发布开关、AI 威胁模型、运行血缘和平台产品指标也进入同一清单；V2.9 起，隐私影响评估、租户隔离、恢复演练、策略测试、GenAI 观测和成本分摊证据也进入同一清单；V2.10 起，访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度也进入同一清单；V2.11 起，控制证据映射和审计导出清单也进入同一清单；V2.12 起，审计导出自动化命令也进入同一清单；V2.13 起，控制评估报告也进入同一清单；V2.14 起，架构基线变更记录也进入同一清单；V2.15 起，OSCAL 交换映射也进入同一清单；V2.16 起，审计导出门禁也进入同一清单；V2.17 起，审计导出完整性清单也进入同一清单；V2.18 起，审计导出 provenance statement 也进入同一清单；V2.19 起，审计导出签名策略也进入同一清单；V2.20 起，审计导出签名验签回执也进入同一清单；V2.21 起，POA&M 整改计划也进入同一清单；V2.22 起，企业架构风险登记也进入同一清单；V2.23 起，架构决策记录也进入同一清单；V2.24 起，AI 事件响应 playbook 也进入同一清单；V2.25 起，AI 证据账本也进入同一清单；V2.26 起，微调运行证据也进入同一清单；V2.27 起，仓库变更控制和远端保护漂移整改也进入同一清单；V2.28 起，合规等级、执行控制面和门禁决策也进入同一清单；V2.29 起，外部标准版本锁定和升级门禁也进入同一清单；V2.30 起，版本控制面和基线发布不变量也进入同一清单；V2.31 起，基线发布证据包、晋级决策、冻结复核和版本漂移复核也进入同一清单；V2.32 起，基线兼容性总账、消费者迁移和未迁移风险闭环也进入同一清单；V2.33 起，基线采纳总账、组织采纳状态、逾期整改和例外闭环也进入同一清单；V2.34 起，基线支持矩阵、维护窗口、安全补丁、EOL 和最低可接受基线也进入同一清单；V2.35 起，基线发布列车、候选窗口、冻结窗口、晋级日期、通知节奏、黑窗和紧急补丁也进入同一清单；V2.36 起，资产级基线符合性声明、资产自声明、证据绑定、例外和采纳总账回写也进入同一清单；V2.37 起，基线制品清单、源制品摘要、必需性、签名状态、导出关系和未登记制品阻断也进入同一清单；V2.38 起，基线验证环境锁定、校验命令、runner 镜像、工具版本、策略包、validator 和验签工具也进入同一清单；V2.39 起，基线通知确认总账、通知对象、送达回执、影响确认、异议、例外和冻结前完成状态也进入同一清单；V2.40 起，基线回滚验证记录、上一基线检出、GitOps revision 恢复、审计导出恢复、烟测结果和验证时效也进入同一清单；V2.41 起，基线例外总账、例外来源聚合、风险接受、POA&M、过期阻断和冻结准入也进入同一清单；V2.42 起，基线就绪评分卡、硬门禁、评分维度、证据绑定和最终准入判定也进入同一清单；V2.43 起，基线生命周期状态机、允许迁移、禁止迁移、迁移审批、状态回写和迁移审计证据也进入同一清单；V2.44 起，基线状态对账报告、跨账本状态一致性、状态漂移阻断和审计导出状态回写也进入同一清单；V2.45 起，基线 EOL 退役证书、生产引用清零、迁移关闭、例外清零和新采用阻断也进入同一清单；V2.46 起，基线会审裁决记录、证据核验、投票签署、反对意见、条件动作和最终裁决也进入同一清单；V2.47 起，基线证据追踪图、证据节点依赖、摘要一致性、下游消费和断链阻断也进入同一清单；V2.48 起，基线门禁执行报告、门禁命令、runner、策略包、schema 包、输入摘要、规则结果、退出码和重放结果也进入同一清单；V2.49 起，基线发布事务回执、提交前检查、干净工作树、签名 tag、远端 ref、push 回执、保护规则和发布后验证也进入同一清单；V2.50 起，基线撤销与隔离记录、撤销触发、隔离范围、受影响引用、通知确认、恢复目标、风险接受和审计归档也进入同一清单；V2.51 起，基线准入执行策略、最低基线阻断、撤销/EOL 阻断、资产声明校验和例外到期阻断也进入同一清单；V2.52 起，基线消费锁定文件、不可变摘要锁定、浮动版本阻断、锁文件签署和采纳总账回写也进入同一清单；V2.53 起，基线迁移工作单、逐资产迁移步骤、消费锁更新、GitOps 变更、验收证据和回滚动作也进入同一清单；V2.54 起，基线迁移执行回执、实际命令、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证也进入同一清单；V2.55 起，本地私有制品边界、禁推资产分类、摘要留存、允许用途、远端排除和审计留存也进入同一清单：
 
 ```text
 内部控制项覆盖清单
@@ -3692,6 +3699,7 @@ V2.6 起，控制项覆盖清单由以下文件维护；V2.7 起，严格 schema
 | 文档说资产消费基线不能只写浮动版本，机器是否能证明 | 控制项要求 `baseline-consumption-lock.schema.json` 和示例包含 baseline ID、source commit、release tag、证据图摘要、制品清单摘要、验证锁摘要、准入策略摘要、签署和 rollup 回写 |
 | 文档说基线迁移必须逐资产执行，机器是否能证明 | 控制项要求 `baseline-migration-work-order.schema.json` 和示例包含目标资产、当前基线、目标基线、迁移步骤、依赖、GitOps 变更、消费锁更新、验收证据和回滚动作 |
 | 文档说迁移步骤必须被真实执行，机器是否能证明 | 控制项要求 `baseline-migration-execution-receipt.schema.json` 和示例包含执行命令、actor、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证 |
+| 文档说内部可执行资产不能推远程但仍需审计，机器是否能证明 | 控制项要求 `baseline-local-artifact-boundary.schema.json` 和示例包含本地私有资产路径、分类、禁推原因、摘要策略、验证命令、远端排除、审计导出排除和签名 payload 排除 |
 | 文档说基线由哪些源制品构成，机器是否能证明 | 控制项要求 `baseline-artifact-inventory.schema.json` 和示例包含制品路径、类型、摘要、必需性、签名状态、导出关系和未登记制品阻断 |
 | 文档说同一基线必须用同一验证环境复现，机器是否能证明 | 控制项要求 `baseline-verification-lock.schema.json` 和示例包含命令、runner 镜像、工具版本、策略包摘要、schema validator、验签工具和生成环境 |
 | 文档说冻结前必须完成消费者通知确认，机器是否能证明 | 控制项要求 `baseline-notification-ledger.schema.json` 和示例包含通知对象、渠道、送达、确认、异议、例外、补发和冻结前完成状态 |
@@ -4048,6 +4056,7 @@ versionGovernance:
     consumptionLocks: governance/evidence/conformance/baseline-consumption-lock.yaml
     migrationWorkOrders: governance/evidence/migrations/baseline-migration-work-order.yaml
     migrationExecutionReceipts: governance/evidence/migrations/baseline-migration-execution-receipt.yaml
+    localArtifactBoundary: governance/evidence/baselines/baseline-local-artifact-boundary.yaml
     artifactInventory: governance/evidence/baselines/baseline-artifact-inventory.yaml
     verificationLock: governance/evidence/verification/baseline-verification-lock.yaml
   gates:
@@ -4075,14 +4084,14 @@ versionGovernance:
 1. `documentVersion` 必须等于主文档版本、版本清单版本和审计导出版本。
 2. `baselineId` 一经发布不得复用；同一 `baselineId` 不得指向不同 commit。
 3. `releaseTag` 必须指向 `sourceCommit`，生产级基线必须使用签名 tag。
-4. `releaseChannel=baseline` 或 `frozen` 时，必须有 `release-gate-decision.yaml`、基线准入执行策略、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、基线生命周期状态机、基线状态对账报告、基线证据追踪图、基线门禁执行报告、基线发布事务回执、基线撤销与隔离记录、基线验证环境锁、基线制品清单、基线就绪评分卡、基线会审裁决记录、基线例外总账、通知确认总账、回滚验证记录和审计导出清单。
+4. `releaseChannel=baseline` 或 `frozen` 时，必须有 `release-gate-decision.yaml`、基线准入执行策略、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、本地私有制品边界、基线生命周期状态机、基线状态对账报告、基线证据追踪图、基线门禁执行报告、基线发布事务回执、基线撤销与隔离记录、基线验证环境锁、基线制品清单、基线就绪评分卡、基线会审裁决记录、基线例外总账、通知确认总账、回滚验证记录和审计导出清单。
 5. `changeLevel=major` 或 `breaking` 时，必须引用 ADR、迁移计划、弃用策略和消费者影响分析。
 6. `compatibilityWindow` 到期后，未迁移消费者必须转入例外、POA&M 或风险接受记录。
 7. 回滚不能只写“回退上一版”，必须指向可 checkout 的 commit、tag、GitOps revision 或制品 digest。
 
 可执行验收标准：
 
-1. 任意基线都能从 `version-governance.yaml` 追溯到源 commit、release tag、版本清单、基线准入执行策略、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、基线生命周期状态机、基线状态对账报告、基线证据追踪图、基线门禁执行报告、基线发布事务回执、基线撤销与隔离记录、基线就绪评分卡、基线会审裁决记录、基线例外总账、通知确认总账、回滚验证记录、验证环境锁、基线制品清单、EOL 退役证书和审计导出。
+1. 任意基线都能从 `version-governance.yaml` 追溯到源 commit、release tag、版本清单、基线准入执行策略、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、本地私有制品边界、基线生命周期状态机、基线状态对账报告、基线证据追踪图、基线门禁执行报告、基线发布事务回执、基线撤销与隔离记录、基线就绪评分卡、基线会审裁决记录、基线例外总账、通知确认总账、回滚验证记录、验证环境锁、基线制品清单、EOL 退役证书和审计导出。
 2. 任意冻结基线都能证明没有被直接修改；后续变更只能通过补丁或新基线替代。
 3. 任意 breaking change 都能找到兼容窗口、消费者清单、迁移说明和回滚入口。
 4. 任意 emergency patch 都能找到事故或安全编号、补丁范围、事后复盘和补齐证据。
@@ -4116,6 +4125,7 @@ baselineReleaseEvidence:
     consumptionLockDigest: sha256:<baseline-consumption-lock-rollup-digest>
     migrationWorkOrderDigest: sha256:<baseline-migration-work-order-rollup-digest>
     migrationExecutionReceiptDigest: sha256:<baseline-migration-execution-receipt-rollup-digest>
+    localArtifactBoundaryDigest: sha256:<baseline-local-artifact-boundary-digest>
     auditExportDigest: sha256:<audit-export-digest>
     controlCoverageDigest: sha256:<control-coverage-digest>
     lifecycleStateMachineDigest: sha256:<baseline-lifecycle-state-machine-digest>
@@ -4155,6 +4165,9 @@ baselineReleaseEvidence:
     migrationExecutionReceiptsBindActualCommands: true
     migrationExecutionReceiptsMatchBeforeAfterDigests: true
     migrationExecutionReceiptsValidateRollback: true
+    localPrivateArtifactsDeclared: true
+    localPrivateArtifactsAbsentFromRemote: true
+    localPrivateArtifactsExcludedFromSignaturePayload: true
     revocationRecordRequiredWhenRevoked: true
     revokedBaselineIsBlockedForNewAdoption: true
     eolRetirementCertificateRequiredWhenEol: true
@@ -4848,6 +4861,7 @@ baselineArtifactInventory:
       - docs/references/modern-enterprise-architecture-kit/**
       - docs/references/modern-enterprise-architecture-controls.json
       - docs/references/modern-enterprise-architecture-version.json
+    localPrivateArtifactBoundary: governance/evidence/baselines/baseline-local-artifact-boundary.yaml
   artifacts:
     - path: docs/references/modern-enterprise-architecture-template.md
       type: document
@@ -4857,6 +4871,14 @@ baselineArtifactInventory:
       signed: true
       exportedTo:
         - build/modern-enterprise-architecture-audit/audit-export.md
+    - path: governance/evidence/baselines/baseline-local-artifact-boundary.yaml
+      type: evidence-template
+      required: true
+      owner: architecture-governance-board
+      digest: sha256:<baseline-local-artifact-boundary-digest>
+      signed: true
+      exportedTo:
+        - build/modern-enterprise-architecture-audit/audit-export.json
     - path: governance/control-plane/version-governance.yaml
       type: control
       required: true
@@ -4953,6 +4975,7 @@ baselineArtifactInventory:
     requiredArtifactsPresent: true
     artifactDigestsMatchGitTree: true
     noUndeclaredRequiredArtifacts: true
+    localPrivateArtifactBoundaryDeclared: true
     generatedOutputsMatchSources: true
     signaturesVerified: true
 ```
@@ -4977,9 +5000,10 @@ baselineArtifactInventory:
 3. 所有必需源制品必须有路径、类型、owner、摘要、必需性和导出关系。
 4. `required=true` 制品缺失、摘要漂移或 owner 缺失时，不得晋级到 `baseline` 或 `frozen`。
 5. 未登记但被审计导出引用的源制品必须阻断导出，除非明确列入允许的 exclude pattern。
-6. 本地禁推资产可以存在于 exclude pattern，但不得进入远端树、源制品清单、审计导出包或签名 payload。
+6. 本地禁推资产可以存在于 exclude pattern，但必须先进入 `baseline-local-artifact-boundary.yaml`，并不得进入远端树、源制品清单、审计导出包或签名 payload。
 7. 生成物必须能反向追溯到源制品集合；源制品变更后必须重新生成导出包、完整性清单和签名策略。
 8. 基线迁移工作单和迁移执行回执属于必需证据模板；被采纳总账引用但未进入制品清单时，基线不得晋级。
+9. 任意 exclude pattern 都必须能从本地私有制品边界反查到 owner、禁推原因、摘要策略、允许用途和验证命令。
 
 可执行验收标准：
 
@@ -4988,6 +5012,7 @@ baselineArtifactInventory:
 3. 任意必需制品摘要漂移、缺失或未签名时，基线晋级会被阻断。
 4. 任意本地禁推资产都能证明不在远端树、不在基线制品清单、不在导出包、不在签名 payload。
 5. 任意迁移工作单和迁移执行回执都能从制品清单反查到摘要、签名状态和审计导出关系。
+6. 任意本地私有制品都能从制品清单的 exclude pattern 反查到 `baseline-local-artifact-boundary.yaml` 中的受控边界声明。
 
 ### 10.10.16 基线验证环境锁定
 
@@ -5025,6 +5050,10 @@ baselineVerificationLock:
       command: git ls-tree -r --name-only origin/develop -- docs/references/modern-enterprise-architecture-kit
       required: true
       expectedResult: empty
+    - name: local-private-artifact-boundary
+      command: git status --short --ignored -- docs/references/modern-enterprise-architecture-kit docs/references/modern-enterprise-architecture-controls.json docs/references/modern-enterprise-architecture-version.json scripts/check-modern-architecture-kit.py scripts/check-modern-architecture-audit-export.py scripts/export-modern-architecture-audit.py scripts/check-repository-remote-protection.py
+      required: true
+      expectedResult: ignored-only
   tools:
     markdownlint:
       version: 0.48.0
@@ -5052,6 +5081,7 @@ baselineVerificationLock:
     lifecycleStateMachine: governance/evidence/baselines/baseline-lifecycle-state-machine.yaml
     stateReconciliation: governance/evidence/baselines/baseline-state-reconciliation-report.yaml
     artifactInventory: governance/evidence/baselines/baseline-artifact-inventory.yaml
+    localPrivateArtifactBoundary: governance/evidence/baselines/baseline-local-artifact-boundary.yaml
     readinessScorecard: governance/evidence/baselines/baseline-readiness-scorecard.yaml
     exceptionLedger: governance/evidence/exceptions/baseline-exception-ledger.yaml
     standardsBaseline: governance/control-plane/standards-baseline.yaml
@@ -5466,9 +5496,9 @@ baselineExceptionLedger:
 
 ```yaml
 baselineReadinessScorecard:
-  scorecardId: brs-20260602-mea-v253
-  baselineId: mea-v2.53-20260602
-  documentVersion: V2.53
+  scorecardId: brs-20260602-mea-v255
+  baselineId: mea-v2.55-20260602
+  documentVersion: V2.55
   owner: architecture-governance-board
   generatedAt: 2026-06-02T14:00:00+08:00
   scoringPolicy:
@@ -5481,6 +5511,8 @@ baselineReadinessScorecard:
     blockOnRollbackUnverified: true
     blockOnMissingRequiredNotification: true
     blockOnForbiddenRemoteAssets: true
+    blockOnMissingLocalArtifactBoundary: true
+    blockOnLocalPrivateArtifactRawExport: true
     scoreCannotOverrideHardGate: true
   evidenceInputs:
     versionGovernance: governance/control-plane/version-governance.yaml
@@ -5495,6 +5527,7 @@ baselineReadinessScorecard:
     rollbackVerification: governance/evidence/rollback/baseline-rollback-verification.yaml
     auditExportManifest: governance/evidence/audit-export/audit-export-manifest.yaml
     repositoryChangeControl: governance/control-plane/repository-change-control.yaml
+    localArtifactBoundary: governance/evidence/baselines/baseline-local-artifact-boundary.yaml
   dimensions:
     - id: version-identity
       weight: 10
@@ -5514,6 +5547,7 @@ baselineReadinessScorecard:
       status: pass
       evidence:
         - governance/evidence/baselines/baseline-artifact-inventory.yaml
+        - governance/evidence/baselines/baseline-local-artifact-boundary.yaml
         - build/modern-enterprise-architecture-audit/audit-export-integrity.json
     - id: verification-reproducibility
       weight: 10
@@ -5553,6 +5587,7 @@ baselineReadinessScorecard:
       evidence:
         - governance/evidence/audit-export/audit-export-manifest.yaml
         - governance/evidence/audit-export/audit-export-signature-receipt.yaml
+        - governance/evidence/baselines/baseline-local-artifact-boundary.yaml
   hardGates:
     failed: []
     warnings:
@@ -5569,6 +5604,9 @@ baselineReadinessScorecard:
     blockingFindings: 0
     expiredExceptions: 0
     forbiddenRemoteAssets: 0
+    localPrivateArtifactBoundary: pass
+    localPrivateRawAuditExportInclusions: 0
+    localPrivateRawSignaturePayloadInclusions: 0
   decision:
     candidateToBaseline: pass
     baselineToFrozen: not-ready
@@ -5591,7 +5629,7 @@ baselineReadinessScorecard:
 
 1. `baseline-readiness-scorecard.yaml` 必须在 `candidate -> baseline` 和 `baseline -> frozen` 前生成，并写入 `baseline-release-evidence.yaml` 的不可变摘要。
 2. 每个评分维度必须有 `weight`、`score`、`status` 和证据路径；评分维度权重总和必须等于 100。
-3. 硬门禁失败不能被平均分覆盖；只要存在 critical finding、过期例外、回滚未验证、制品摘要漂移或禁推资产进入远端，最终判定必须为 `blocked`。
+3. 硬门禁失败不能被平均分覆盖；只要存在 critical finding、过期例外、回滚未验证、制品摘要漂移、缺失本地私有制品边界、禁推资产进入远端、审计导出原文或签名 payload，最终判定必须为 `blocked`。
 4. `ready-for-baseline` 不等于 `ready-for-frozen`。冻结还必须满足更高分数、冻结窗口、通知确认、例外总账和审计导出要求。
 5. `conditional-pass` 维度必须能追溯到风险接受、POA&M、补偿控制和关闭日期，不能只靠人工签字放行。
 6. 评分卡必须进入季度复核；任何评分策略、权重或硬门禁变化都必须形成基线变更记录或 ADR。
@@ -5601,7 +5639,7 @@ baselineReadinessScorecard:
 1. 任意基线晋级都能找到对应的 `baseline-readiness-scorecard.yaml`。
 2. 任意评分卡都能证明权重总和为 100，且每个维度都有证据路径和状态。
 3. 任意硬门禁失败都会把最终判定置为 `blocked`，不会被总分掩盖。
-4. 任意 `ready-for-frozen` 结论都能证明分数达到 frozen 阈值、过期例外为 0、阻断项为 0、回滚验证未过期且审计导出可验签。
+4. 任意 `ready-for-frozen` 结论都能证明分数达到 frozen 阈值、过期例外为 0、阻断项为 0、回滚验证未过期、本地私有制品未进入远端或公开导出原文，且审计导出可验签。
 5. 任意审计人员都能从评分卡直接判断基线处于 `not-ready`、`ready-for-baseline` 还是 `ready-for-frozen`，不需要人工重新拼装所有证据。
 
 ### 10.10.21 基线生命周期状态机
@@ -5979,6 +6017,7 @@ baselineStateReconciliationReport:
     consumptionLocks: governance/evidence/conformance/baseline-consumption-lock.yaml
     migrationWorkOrders: governance/evidence/migrations/baseline-migration-work-order.yaml
     migrationExecutionReceipts: governance/evidence/migrations/baseline-migration-execution-receipt.yaml
+    localArtifactBoundary: governance/evidence/baselines/baseline-local-artifact-boundary.yaml
     artifactInventory: governance/evidence/baselines/baseline-artifact-inventory.yaml
     verificationLock: governance/evidence/verification/baseline-verification-lock.yaml
     auditExportManifest: governance/evidence/audit-export/audit-export-manifest.yaml
@@ -6019,7 +6058,7 @@ baselineStateReconciliationReport:
       baselineId: mea-v2.53-20260602
       documentVersion: V2.53
       result: pass
-      rulesExecuted: 14
+      rulesExecuted: 15
       blockingFailures: 0
       replayResult: pass
       decisionMatchesExecution: true
@@ -6116,6 +6155,13 @@ baselineStateReconciliationReport:
       beforeAfterDigestMismatches: 0
       rollbackVerificationMissing: 0
       status: match
+    localArtifactBoundary:
+      declaredLocalOnlyArtifacts: 7
+      trackedLocalOnlyArtifacts: 0
+      publishedLocalOnlyArtifacts: 0
+      auditExportRawInclusions: 0
+      signaturePayloadRawInclusions: 0
+      status: match
     auditExportManifest:
       documentVersion: V2.53
       baselineId: mea-v2.53-20260602
@@ -6132,6 +6178,7 @@ baselineStateReconciliationReport:
     consumptionLocksReconciled: true
     migrationWorkOrdersReconciled: true
     migrationExecutionReceiptsReconciled: true
+    localArtifactBoundaryReconciled: true
     releaseEvidenceDigestUpdated: true
     supportMatrixUpdated: true
     adoptionLedgerReconciled: true
@@ -6165,10 +6212,10 @@ baselineStateReconciliationReport:
 执行规则：
 
 1. `baseline-state-reconciliation-report.yaml` 必须在 `candidate -> baseline`、`baseline -> frozen`、`baseline -> emergency-patch`、`baseline -> superseded` 和 `superseded -> eol` 前生成。
-2. 对账输入至少覆盖生命周期状态机、版本控制面、基线准入执行策略、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、发布证据包、证据追踪图、门禁执行报告、发布事务回执、撤销隔离记录、会审裁决记录、发布列车、支持矩阵、EOL 退役证书、采纳总账、符合性声明、制品清单、验证锁和审计导出清单。
+2. 对账输入至少覆盖生命周期状态机、版本控制面、基线准入执行策略、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、本地私有制品边界、发布证据包、证据追踪图、门禁执行报告、发布事务回执、撤销隔离记录、会审裁决记录、发布列车、支持矩阵、EOL 退役证书、采纳总账、符合性声明、制品清单、验证锁和审计导出清单。
 3. `baselineId`、`documentVersion`、`releaseTag`、`sourceCommit` 和生命周期状态在任何权威账本中不一致时，必须阻断晋级。
 4. `releaseEvidence` 允许声明目标状态，例如 `candidate -> baseline`，但必须同时能证明当前状态仍来自状态机，不能把目标状态误当当前状态。
-5. `writeBack` 必须证明状态迁移后的版本控制面、基线准入执行策略、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、支持矩阵、EOL 退役证书、发布证据摘要、采纳总账和审计导出清单已经更新。
+5. `writeBack` 必须证明状态迁移后的版本控制面、基线准入执行策略、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、本地私有制品边界、支持矩阵、EOL 退役证书、发布证据摘要、采纳总账和审计导出清单已经更新。
 6. 对账报告本身必须进入发布证据包摘要和审计导出包，不能只作为临时检查日志。
 7. 任何 `conflict`、`missing`、`stale`、准入策略执行失败、证据追踪图断链、门禁执行报告失败、重放失败、发布事务失败、撤销隔离状态冲突、远端 ref 不匹配、保护规则缺失或 critical/high drift 都必须进入 release gate 阻断、POA&M 或风险接受，不能被就绪总分覆盖。
 
@@ -6184,6 +6231,7 @@ baselineStateReconciliationReport:
 8. 任意 L3 / L4 资产的基线消费锁都能在状态对账报告中看到锁定版本、baseline ID、source commit、release tag、关键摘要、过期状态和浮动引用检查结果。
 9. 任意 L3 / L4 资产的基线迁移都能在状态对账报告中看到工单总数、完成数、阻塞数、过期数、验收证据缺失数、消费锁更新状态和回滚动作定义状态。
 10. 任意 L3 / L4 资产的基线迁移执行都能在状态对账报告中看到回执总数、接受数、失败数、命令证据缺失数、before/after 摘要不一致数和回滚验证缺失数。
+11. 任意本地私有制品都能在状态对账报告中看到声明数、被跟踪数、被发布数、审计导出原文包含数和签名 payload 原文包含数。
 
 ### 10.10.23 基线 EOL 退役证书
 
@@ -6750,6 +6798,21 @@ baselineEvidenceTraceGraph:
       consumedBy:
         - baseline-release-evidence
         - audit-export-manifest
+    - id: baseline-local-artifact-boundary
+      type: local-artifact-boundary
+      path: governance/evidence/baselines/baseline-local-artifact-boundary.yaml
+      digest: sha256:<baseline-local-artifact-boundary-digest>
+      producer: architecture-governance-board
+      requiredFor:
+        - candidate-to-baseline
+        - baseline-to-frozen
+      status: present
+      consumedBy:
+        - baseline-release-evidence
+        - baseline-gate-execution-report
+        - baseline-review-board-decision
+        - baseline-state-reconciliation-report
+        - audit-export-manifest
     - id: baseline-verification-lock
       type: verification
       path: governance/evidence/verification/baseline-verification-lock.yaml
@@ -6845,6 +6908,11 @@ baselineEvidenceTraceGraph:
       digestReferenceMatches: true
       blocking: true
     - from: baseline-release-evidence
+      to: baseline-local-artifact-boundary
+      relation: records-local-artifact-boundary-digest
+      digestReferenceMatches: true
+      blocking: true
+    - from: baseline-release-evidence
       to: baseline-revocation-record
       relation: records-revocation-disposition
       digestReferenceMatches: true
@@ -6882,6 +6950,11 @@ baselineEvidenceTraceGraph:
     - from: baseline-review-board-decision
       to: baseline-migration-execution-receipt
       relation: reviews-migration-execution-receipt
+      digestReferenceMatches: true
+      blocking: true
+    - from: baseline-review-board-decision
+      to: baseline-local-artifact-boundary
+      relation: reviews-local-artifact-boundary
       digestReferenceMatches: true
       blocking: true
     - from: baseline-review-board-decision
@@ -6925,6 +6998,11 @@ baselineEvidenceTraceGraph:
       digestReferenceMatches: true
       blocking: true
     - from: baseline-state-reconciliation-report
+      to: baseline-local-artifact-boundary
+      relation: reconciles-local-artifact-boundary-state
+      digestReferenceMatches: true
+      blocking: true
+    - from: baseline-state-reconciliation-report
       to: baseline-revocation-record
       relation: reconciles-revocation-state
       digestReferenceMatches: true
@@ -6949,6 +7027,11 @@ baselineEvidenceTraceGraph:
       relation: exports-migration-execution-receipt
       digestReferenceMatches: true
       blocking: true
+    - from: audit-export-manifest
+      to: baseline-local-artifact-boundary
+      relation: exports-local-artifact-boundary
+      digestReferenceMatches: true
+      blocking: true
   coverage:
     requiredTransitions:
       candidate-to-baseline:
@@ -6964,6 +7047,7 @@ baselineEvidenceTraceGraph:
           - baseline-consumption-lock
           - baseline-migration-work-order
           - baseline-migration-execution-receipt
+          - baseline-local-artifact-boundary
           - baseline-readiness-scorecard
           - baseline-artifact-inventory
           - baseline-verification-lock
@@ -6981,6 +7065,7 @@ baselineEvidenceTraceGraph:
           - baseline-consumption-lock
           - baseline-migration-work-order
           - baseline-migration-execution-receipt
+          - baseline-local-artifact-boundary
           - baseline-revocation-record
           - baseline-readiness-scorecard
           - baseline-notification-ledger
@@ -7047,6 +7132,10 @@ baselineEvidenceTraceGraph:
     migrationExecutionReceiptsValidateRollback: true
     revocationRecordBlocksNewAdoptionWhenRevoked: true
     revocationRecordArchivedWhenClosed: true
+    localPrivateArtifactsDeclared: true
+    localPrivateArtifactsAbsentFromRemote: true
+    localPrivateArtifactsExcludedFromAuditRawExport: true
+    localPrivateArtifactsExcludedFromSignaturePayload: true
   findings:
     critical: []
     high: []
@@ -7081,7 +7170,8 @@ baselineEvidenceTraceGraph:
 4. 任意 `missing`、`stale`、`digest-mismatch`、`dangling` 或 `orphaned` 的必需节点都必须阻断对应状态迁移。
 5. `audit-export-manifest.yaml`、`audit-export-provenance.yaml` 和签名验签回执必须记录证据追踪图摘要，证明审计包导出的是同一张证据图。
 6. 证据追踪图不能只检查文件存在；必须检查 baseline ID、documentVersion、sourceCommit、releaseTag、digest、freshness 和下游消费关系。
-7. 条件放行只能降低非阻断节点的处理优先级，不能绕过断链、摘要不一致或必需节点缺失。
+7. `baseline-local-artifact-boundary.yaml` 必须被发布证据、门禁执行报告、状态对账、会审裁决和审计导出同时消费；否则本地私有制品会变成未受控的排除项。
+8. 条件放行只能降低非阻断节点的处理优先级，不能绕过断链、摘要不一致或必需节点缺失。
 
 可执行验收标准：
 
@@ -7138,6 +7228,9 @@ baselineGateExecutionReport:
     migrationExecutionReceipt:
       path: governance/evidence/migrations/baseline-migration-execution-receipt.yaml
       digest: sha256:<baseline-migration-execution-receipt-digest>
+    localArtifactBoundary:
+      path: governance/evidence/baselines/baseline-local-artifact-boundary.yaml
+      digest: sha256:<baseline-local-artifact-boundary-digest>
     reviewBoardDecision:
       path: governance/evidence/baselines/baseline-review-board-decision.yaml
       digest: sha256:<baseline-review-board-decision-digest>
@@ -7194,6 +7287,15 @@ baselineGateExecutionReport:
         - stateReconciliation
       result: pass
       blocking: true
+    - id: BGE-007
+      title: local private artifacts are declared and absent from remote
+      source: governance/policies/baseline-gates/local-artifact-boundary.rego
+      inputRefs:
+        - localArtifactBoundary
+        - evidenceTraceGraph
+        - stateReconciliation
+      result: pass
+      blocking: true
   replay:
     replayCommand: starter kit 校验命令 --replay governance/evidence/baselines/baseline-gate-execution-report.yaml
     replayedAt: 2026-06-02T18:45:00+08:00
@@ -7232,7 +7334,7 @@ baselineGateExecutionReport:
 1. `baseline-gate-execution-report.yaml` 必须在 `release-gate-decision.yaml` 最终落盘前生成，并由门禁决策引用其摘要。
 2. 所有阻断型控制项必须在 `ruleResults` 中出现；不能只记录总结果。
 3. `execution.runnerImage`、`policyBundleDigest`、`schemaBundleDigest` 和 `verificationLock` 必须与 `baseline-verification-lock.yaml` 一致。
-4. `inputs` 中每个摘要必须与发布证据包、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、状态对账报告和证据追踪图中的摘要一致。
+4. `inputs` 中每个摘要必须与发布证据包、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、本地私有制品边界、状态对账报告和证据追踪图中的摘要一致。
 5. `exitCode` 非 0、任一阻断规则失败、输入摘要不一致、策略包漂移或重放失败时，`decision.result` 不得为 `pass`。
 6. 任何 `exception`、`conditional-pass` 或 `break-glass` 必须引用例外总账、POA&M、风险接受或事故编号，并声明到期动作。
 7. 基线进入 `baseline`、`frozen` 或 `eol` 前必须完成重放；重放结果必须进入状态对账、发布证据包、会审裁决和审计导出。
@@ -7241,7 +7343,7 @@ baselineGateExecutionReport:
 可执行验收标准：
 
 1. 任意 release gate 的通过、阻断、条件放行或 break-glass 都能找到对应执行报告。
-2. 任意执行报告都能证明命令、runner、策略包、schema 包、输入摘要、迁移执行回执摘要、规则结果、退出码和最终决策一致。
+2. 任意执行报告都能证明命令、runner、策略包、schema 包、输入摘要、迁移执行回执摘要、本地私有制品边界摘要、规则结果、退出码和最终决策一致。
 3. 任意审计人员都能重放同一报告，并得到与初次执行一致的结果。
 4. 任意规则失败都能定位到规则 ID、策略来源、输入引用、阻断属性和整改路径。
 5. 任意最终决策为 `pass` 的基线都不能存在未运行、未重放或摘要不一致的阻断规则。
@@ -7302,6 +7404,9 @@ baselinePublishTransaction:
     directPushAllowed: false
     tagProtectionVerified: true
   forbiddenAssets:
+    boundaryEvidence: governance/evidence/baselines/baseline-local-artifact-boundary.yaml
+    boundaryEvidenceDigest: sha256:<baseline-local-artifact-boundary-digest>
+    declaredLocalOnlyArtifacts: 7
     trackedInHead: false
     trackedInOriginDevelop: false
     trackedInOriginMaster: false
@@ -7336,7 +7441,7 @@ baselinePublishTransaction:
 
 1. `baseline-publish-transaction.yaml` 必须在 commit、tag、push 和远端验证后生成，并在基线标记为 `baseline` 或 `frozen` 前进入证据链。
 2. `baselineId`、`documentVersion`、`commit.sourceCommit` 和 `tag.name` 必须与 `version-governance.yaml`、发布证据包和证据追踪图一致。
-3. 发布前必须证明工作树干净、只包含允许提交的文件、禁推本地资产没有进入 `HEAD`、`origin/develop` 或 `origin/master`。
+3. 发布前必须证明工作树干净、只包含允许提交的文件、禁推本地资产已经进入 `baseline-local-artifact-boundary.yaml`，且没有进入 `HEAD`、`origin/develop` 或 `origin/master`。
 4. 生产级基线必须使用签名 tag；tag 目标 commit 必须等于 `commit.sourceCommit`，远端 tag ref 必须与本地 tag 一致。
 5. 远端 branch ref 必须包含或等于 `commit.sourceCommit`；具体策略由仓库拓扑决定，但不能只依赖本地 commit。
 6. 受保护分支、必需检查、禁止直推和 tag 保护必须被验证；无法验证时必须转入风险接受或阻断晋级。
@@ -7350,6 +7455,7 @@ baselinePublishTransaction:
 3. 任意发布失败都能定位到 preflight、commit、tag、remote、protection、forbiddenAssets 或 postPublishVerification 的具体阶段。
 4. 任意远端保护规则漂移都能进入 release gate 阻断、POA&M 或风险接受，不能靠人工口头确认放行。
 5. 任意版本声明为已发布时，都能用 `git ls-remote`、tag 验签和门禁重放证实该声明不是本地文档状态。
+6. 任意禁推本地资产都能从发布事务回执反查到本地私有制品边界摘要，证明它是受控私有制品而不是漏提交文件。
 
 ### 10.10.28 基线撤销与隔离记录
 
@@ -7886,18 +7992,18 @@ baselineMigrationWorkOrder:
 
 ```yaml
 baselineMigrationExecutionReceipt:
-  receiptId: bmer-20260602-order-command-service-v254
+  receiptId: bmer-20260602-order-command-service-v255
   workOrder: governance/evidence/migrations/baseline-migration-work-order.yaml
-  workOrderId: bmwo-20260602-order-command-service-v254
-  baselineId: mea-v2.54-20260602
-  documentVersion: V2.54
+  workOrderId: bmwo-20260602-order-command-service-v255
+  baselineId: mea-v2.55-20260602
+  documentVersion: V2.55
   owner: team-order
   asset:
     id: service:order-command-service
     type: service
     domain: order
-    currentBaseline: V2.53
-    targetBaseline: V2.54
+    currentBaseline: V2.54
+    targetBaseline: V2.55
     gateLevel: L3
     sourceRoot: domains/order/services/order-command-service
     catalogRef: catalog/components/order-command-service.yaml
@@ -8006,6 +8112,141 @@ baselineMigrationExecutionReceipt:
 4. 任意回执失败都能触发回滚或重新执行，并在采纳总账、状态对账和审计导出中保持失败事实。
 5. 任意审计人员都能用执行回执判断“迁移是否真实发生”，而不是只看工作单状态。
 
+### 10.10.33 本地私有制品边界
+
+`baseline-local-artifact-boundary.yaml` 是可执行资产的远端安全边界证据。它不替代 `baseline-artifact-inventory.yaml`
+或 `baseline-publish-transaction.yaml`；制品清单回答“基线包含什么”，发布事务回答“远端发布了什么”，本地私有制品边界回答
+“哪些可执行资产被刻意留在本地或私有制品库、为什么不能进远端、如何验证它们没有被提交或签名”。
+
+```yaml
+baselineLocalArtifactBoundary:
+  boundaryId: blab-20260602-mea-v255
+  baselineId: mea-v2.55-20260602
+  documentVersion: V2.55
+  owner: architecture-governance-board
+  generatedAt: 2026-06-02T23:45:00+08:00
+  classification:
+    remotePolicy: never-push-to-public-remote
+    auditPolicy: retain-digest-and-command-evidence
+    signaturePolicy: exclude-from-public-release-payload
+    exportPolicy: exclude-raw-assets-include-boundary-evidence
+  localPrivateArtifacts:
+    - path: docs/references/modern-enterprise-architecture-kit/
+      type: internal-starter-kit
+      reason: 内部 starter kit 包含可执行 schema/example 和组织定制模板，只在本地或私有制品库验证。
+      storage: local-workspace-or-private-artifact-registry
+      digestStrategy: recursive-sha256-manifest
+      allowedUse:
+        - local-validation
+        - private-ci
+        - evidence-generation
+      remoteExclusionRequired: true
+    - path: docs/references/modern-enterprise-architecture-controls.json
+      type: generated-control-catalog
+      reason: 由内部控制项覆盖清单生成，远端只保留边界证据和摘要，不提交生成物本体。
+      storage: local-workspace-or-private-artifact-registry
+      digestStrategy: file-sha256
+      allowedUse:
+        - local-validation
+        - audit-export-generation
+      remoteExclusionRequired: true
+    - path: docs/references/modern-enterprise-architecture-version.json
+      type: generated-version-manifest
+      reason: 由版本控制面生成，远端只保留文档和边界摘要，避免生成物漂移被误当源制品。
+      storage: local-workspace-or-private-artifact-registry
+      digestStrategy: file-sha256
+      allowedUse:
+        - local-validation
+        - audit-export-generation
+      remoteExclusionRequired: true
+    - path: scripts/check-modern-architecture-kit.py
+      type: local-validation-script
+      reason: 本地 starter gate 脚本不作为公开基线源制品发布。
+      storage: local-workspace
+      digestStrategy: file-sha256
+      allowedUse:
+        - local-validation
+      remoteExclusionRequired: true
+    - path: scripts/check-modern-architecture-audit-export.py
+      type: local-validation-script
+      reason: 本地审计导出门禁脚本不作为公开基线源制品发布。
+      storage: local-workspace
+      digestStrategy: file-sha256
+      allowedUse:
+        - local-validation
+      remoteExclusionRequired: true
+    - path: scripts/export-modern-architecture-audit.py
+      type: local-generation-script
+      reason: 本地审计导出生成脚本只用于私有证据包生成，不进入公开远端。
+      storage: local-workspace
+      digestStrategy: file-sha256
+      allowedUse:
+        - audit-export-generation
+      remoteExclusionRequired: true
+    - path: scripts/check-repository-remote-protection.py
+      type: local-validation-script
+      reason: 本地远端保护验证脚本只用于发布前检查，不进入公开远端。
+      storage: local-workspace
+      digestStrategy: file-sha256
+      allowedUse:
+        - remote-protection-validation
+      remoteExclusionRequired: true
+  requiredChecks:
+    - command: git status --short --ignored -- docs/references/modern-enterprise-architecture-kit docs/references/modern-enterprise-architecture-controls.json docs/references/modern-enterprise-architecture-version.json scripts/check-modern-architecture-kit.py scripts/check-modern-architecture-audit-export.py scripts/export-modern-architecture-audit.py scripts/check-repository-remote-protection.py
+      expected: ignored-only
+    - command: git ls-files -- docs/references/modern-enterprise-architecture-kit docs/references/modern-enterprise-architecture-controls.json docs/references/modern-enterprise-architecture-version.json scripts/check-modern-architecture-kit.py scripts/check-modern-architecture-audit-export.py scripts/export-modern-architecture-audit.py scripts/check-repository-remote-protection.py
+      expected: empty
+    - command: git ls-tree -r --name-only HEAD -- docs/references/modern-enterprise-architecture-kit docs/references/modern-enterprise-architecture-controls.json docs/references/modern-enterprise-architecture-version.json scripts/check-modern-architecture-kit.py scripts/check-modern-architecture-audit-export.py scripts/export-modern-architecture-audit.py scripts/check-repository-remote-protection.py
+      expected: empty
+    - command: git ls-tree -r --name-only origin/develop -- docs/references/modern-enterprise-architecture-kit docs/references/modern-enterprise-architecture-controls.json docs/references/modern-enterprise-architecture-version.json scripts/check-modern-architecture-kit.py scripts/check-modern-architecture-audit-export.py scripts/export-modern-architecture-audit.py scripts/check-repository-remote-protection.py
+      expected: empty
+  integrations:
+    artifactInventory: governance/evidence/baselines/baseline-artifact-inventory.yaml
+    verificationLock: governance/evidence/verification/baseline-verification-lock.yaml
+    publishTransaction: governance/evidence/baselines/baseline-publish-transaction.yaml
+    readinessScorecard: governance/evidence/baselines/baseline-readiness-scorecard.yaml
+    auditExportManifest: governance/evidence/audit-export/audit-export-manifest.yaml
+  gates:
+    allLocalPrivateArtifactsDeclared: true
+    noLocalPrivateArtifactsTracked: true
+    noLocalPrivateArtifactsInHead: true
+    noLocalPrivateArtifactsInRemote: true
+    rawArtifactsExcludedFromAuditExport: true
+    rawArtifactsExcludedFromSignaturePayload: true
+  decision:
+    status: accepted
+    acceptedBy: architecture-governance-board
+```
+
+本地私有制品状态只能使用以下值：
+
+| 状态 | 含义 | 是否阻断 |
+| ---- | ---- | -------- |
+| `accepted` | 已声明、未跟踪、未进入远端，且摘要策略和用途清晰 | 否 |
+| `missing-boundary` | 本地或私有资产存在，但没有边界声明 | 是 |
+| `tracked` | 本地私有资产被 Git 跟踪 | 是 |
+| `published` | 本地私有资产进入 `HEAD`、远端分支、tag、审计导出原文或签名 payload | 是 |
+| `stale-digest` | 摘要策略存在但摘要未更新或不可复现 | 是 |
+| `unknown-owner` | 资产没有 owner、用途或禁推原因 | 是 |
+| `not-applicable` | 当前基线没有本地私有资产 | 否，但必须显式声明 |
+
+执行规则：
+
+1. 任意 `excludePatterns`、`.gitignore`、私有制品库或本地生成物必须能反查到本地私有制品边界，不能只靠口头说明。
+2. 本地私有制品不得进入 `HEAD`、`origin/develop`、`origin/master`、release tag、审计导出原文或公开签名 payload。
+3. 边界证据必须记录 path、type、reason、storage、digestStrategy、allowedUse 和 remoteExclusionRequired。
+4. 禁推资产检查必须同时覆盖 `git status --ignored`、`git ls-files`、`git ls-tree HEAD` 和远端树查询。
+5. 审计导出可以包含边界证据和摘要，但不得包含本地私有原文、内部脚本或生成 JSON 本体。
+6. 若本地私有资产误入远端，不能只删除文件；必须触发基线撤销与隔离记录、发布事务失败或新基线修复。
+
+可执行验收标准：
+
+1. 任意本地、私有、生成或禁推资产都能在 `baseline-local-artifact-boundary.yaml` 中找到声明。
+2. 任意审计人员都能判断可执行 starter kit 是受控私有资产，而不是缺失源制品。
+3. 任意发布事务都能证明本地私有资产没有进入本地提交、远端分支、tag、审计导出原文或签名 payload。
+4. 任意 exclude pattern 都有 owner、禁推原因、摘要策略、允许用途和验证命令。
+5. 任意本地私有资产边界变化都必须形成基线变更记录或 ADR，并重新生成发布事务回执。
+
 ## 10.11 仓库拓扑剖面
 
 目录结构可以按企业规模、团队自治程度和合规要求裁剪，但真相源边界不能裁剪。仓库拓扑的选择应先看 ownership、变更频率、权限隔离、发布节奏和审计要求，而不是看团队偏好的 Git 管理方式。
@@ -8113,7 +8354,7 @@ baselineMigrationExecutionReceipt:
 starter kit 校验命令
 ```
 
-该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、87 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 证据账本、微调运行证据、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
+该命令是仓库内零依赖 starter gate，用于校验版本清单、控制项覆盖清单、88 组示例的 JSON Schema 子集、YAML 示例、嵌套必填字段、格式约束、数值阈值、严格 schema 模式、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线符合性声明、基线发布列车、基线支持矩阵、基线采纳总账、基线兼容性总账、基线发布证据包、版本控制面、外部标准版本锁定、企业执行控制面、合规等级、门禁决策、仓库变更控制、远端保护漂移整改、访问复核、密钥轮换、漏洞修复、事故复盘、证据新鲜度、AI 证据账本、微调运行证据、AI 事件响应 playbook、控制证据映射、审计导出清单、审计导出自动化命令、控制评估报告、架构基线变更记录、架构决策记录、OSCAL 交换映射、POA&M 整改计划、企业架构风险登记、审计导出门禁、审计导出完整性清单、审计导出 provenance statement、审计导出签名策略、审计导出签名验签回执、未知字段阻断、证据链字段和示例间一致性。企业生产落地时应优先接入成熟校验器，例如 JSON Schema draft 2020-12 validator、YAML parser、OpenAPI / AsyncAPI checker、OPA / Cedar / Kyverno policy test、SLSA / Sigstore verifier、OpenTelemetry collector、OpenCost / FOCUS 工具链、IAM / Secret 管理系统、漏洞管理平台、事故管理系统、OSCAL 工具链和 GitOps diff 工具；本仓库脚本只作为 starter kit 的最小可执行证明。
 
 审计导出包由以下命令生成：
 
@@ -8162,6 +8403,7 @@ governance/control-plane/{standards-baseline}.yaml
 governance/control-plane/{version-governance}.yaml
 governance/control-plane/{baseline-enforcement-policy}.yaml
 governance/evidence/conformance/{baseline-consumption-lock}.yaml
+governance/evidence/baselines/{baseline-local-artifact-boundary}.yaml
 governance/evidence/migrations/{baseline-migration-execution-receipt}.yaml
 governance/evidence/migrations/{baseline-migration-work-order}.yaml
 governance/evidence/baselines/{baseline-lifecycle-state-machine}.yaml
@@ -8268,6 +8510,7 @@ starter kit 校验命令
 42. 基线消费锁定文件、baseline ID、source commit、release tag、关键证据摘要、锁文件签署、过期复核、浮动引用阻断和采纳总账回写检查。
 43. 基线迁移工作单、目标资产、当前基线、目标基线、迁移步骤、消费锁更新、GitOps 变更、验收证据和回滚动作检查。
 44. 基线迁移执行回执、实际命令、执行 actor、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证检查。
+45. 本地私有制品边界、禁推资产分类、摘要策略、允许用途、远端排除、审计导出排除和签名 payload 排除检查。
 
 ### 10.13.2 审计证据索引
 
@@ -8309,6 +8552,7 @@ starter kit 校验命令
 | 基线发布事务证据 | 提交前检查、干净工作树、source commit、签名 tag、远端 ref、push 回执、保护规则、禁推资产排除和发布后验证 | 治理团队、平台团队、安全团队、发布工程团队和审计团队 | 覆盖每次企业基线晋级、冻结、紧急补丁、替代和 EOL |
 | 基线准入执行证据 | 最低基线、支持状态、撤销/EOL、资产符合性声明、例外有效期、策略包、决策日志和入口阻断结果 | 治理团队、平台团队、安全团队、发布工程团队、SRE 和审计团队 | 覆盖每次生产发布、GitOps 晋级、catalog 注册、平台脚手架创建和 runtime admission |
 | 基线消费锁定证据 | 资产锁定的 baseline ID、source commit、release tag、证据图摘要、制品清单摘要、验证锁摘要、准入策略摘要、签署、过期复核和 rollup 回写 | 资产 owner、治理团队、平台团队、发布工程团队和审计团队 | 覆盖每个 L3 / L4 生产资产、GitOps 晋级、catalog 注册和平台脚手架创建 |
+| 本地私有制品边界证据 | 内部 starter kit、生成 JSON、校验脚本、禁推原因、摘要留存、允许用途、远端排除、审计导出排除和签名 payload 排除 | 治理团队、平台团队、安全团队、发布工程团队和审计团队 | 覆盖每个本地、私有、生成或禁推资产 |
 | 基线迁移工作单证据 | 目标资产、当前基线、目标基线、迁移步骤、依赖、消费锁更新、GitOps 变更、catalog 回写、验收证据和回滚动作 | 资产 owner、治理团队、平台团队、发布工程团队、SRE 和审计团队 | 覆盖每个从旧基线迁移到目标基线的 L3 / L4 资产 |
 | 基线迁移执行回执证据 | 实际命令、执行 actor、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志、执行日志摘要和回滚验证 | 资产 owner、治理团队、平台团队、发布工程团队、SRE 和审计团队 | 覆盖每个标记为完成的 L3 / L4 基线迁移 |
 | 基线撤销隔离证据 | 撤销触发、隔离范围、受影响引用、通知确认、恢复目标、风险接受、状态回写和审计归档 | 治理团队、平台团队、安全团队、发布工程团队、SRE 和审计团队 | 覆盖每次企业基线隔离、恢复、撤销和误报关闭 |
@@ -8772,6 +9016,7 @@ governance/control-plane/standards-baseline.yaml
 governance/control-plane/version-governance.yaml
 governance/control-plane/baseline-enforcement-policy.yaml
 governance/evidence/conformance/baseline-consumption-lock.yaml
+governance/evidence/baselines/baseline-local-artifact-boundary.yaml
 governance/evidence/migrations/baseline-migration-execution-receipt.yaml
 governance/evidence/migrations/baseline-migration-work-order.yaml
 governance/evidence/baselines/README.md
@@ -8844,6 +9089,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 36. 所有 L3 / L4 生产资产都有基线消费锁定文件，能证明资产锁定的 baseline ID、source commit、release tag 和关键证据摘要与发布证据、catalog、GitOps 和采纳总账一致。
 37. 所有从旧基线迁移到目标基线的 L3 / L4 生产资产都有基线迁移工作单，能证明迁移步骤、依赖、消费锁更新、GitOps 变更、验收证据和回滚动作闭环。
 38. 所有完成迁移的 L3 / L4 生产资产都有基线迁移执行回执，能证明实际命令、执行 actor、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证闭环。
+39. 所有本地、私有、生成或禁推资产都有本地私有制品边界，能证明资产分类、禁推原因、摘要留存、允许用途、远端排除、审计导出排除和签名 payload 排除闭环。
 
 ---
 
@@ -8890,6 +9136,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 | 消费锁缺失        | 资产只声明 `V2.x` 或某个自然语言版本，未锁定 baseline ID、source commit、release tag 和关键证据摘要，导致审计无法证明实际消费的是哪条基线 | 用基线消费锁定文件在资产仓库本地固定不可变引用，并由准入策略、状态对账、证据追踪图、catalog、GitOps 和采纳总账共同校验 |
 | 迁移工单空心化    | 采纳总账显示要迁移或已迁移，但没有逐资产执行步骤、消费锁更新、GitOps 变更、验收证据和回滚动作 | 用基线迁移工作单驱动迁移执行，并要求 release gate、状态对账、证据追踪图和采纳总账共同校验完成状态 |
 | 迁移回执空心化    | 迁移工作单显示 completed，但没有实际命令、actor、before/after 摘要、GitOps revision、catalog/lock diff、验收日志或回滚验证 | 用基线迁移执行回执证明真实执行事实，并由准入策略、门禁执行报告、状态对账、证据追踪图和审计导出共同校验 |
+| 本地私有制品边界不清 | starter kit、生成 JSON 或本地校验脚本被禁推后，审计无法判断是漏提交、误删还是受控私有制品 | 用本地私有制品边界声明分类、禁推原因、摘要策略、允许用途、远端排除、审计导出排除和签名 payload 排除，并由发布事务、状态对账和证据追踪图共同校验 |
 
 ---
 
@@ -8946,6 +9193,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 35. 任意 L3 / L4 生产资产都能证明自己没有使用浮动基线声明，而是通过 `baseline-consumption-lock.yaml` 锁定 baseline ID、source commit、release tag、关键证据摘要、签署状态、过期复核和 rollup 回写。
 36. 任意从旧基线迁移到目标基线的 L3 / L4 生产资产都能证明迁移工作单已完成，且消费锁、GitOps overlay、catalog runtime 指针、验收证据和回滚动作指向同一目标基线。
 37. 任意标记为完成的 L3 / L4 基线迁移都能证明执行回执已接受，且实际命令、actor、执行环境、before/after 摘要、GitOps revision、catalog/lock diff、验收日志和回滚验证指向同一目标基线。
+38. 任意本地、私有、生成或禁推资产都能证明不是漏提交或误删，而是有 owner、禁推原因、摘要策略、允许用途、远端排除、审计导出排除和签名 payload 排除的受控资产。
 
 ---
 
@@ -8976,7 +9224,7 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 
 | 对标来源 | 关键结论 | 本文档落点 |
 | -------- | -------- | ---------- |
-| Semantic Versioning / Conventional Commits / Keep a Changelog | 版本号、提交语义和变更记录必须表达兼容性、影响面、撤销状态、消费锁定、迁移执行事实和升级意图 | 增加 `version-governance.yaml`、`baseline-enforcement-policy.yaml`、`baseline-consumption-lock.yaml`、`baseline-migration-work-order.yaml`、`baseline-migration-execution-receipt.yaml`、`baseline-lifecycle-state-machine.yaml`、`baseline-state-reconciliation-report.yaml`、`baseline-evidence-trace-graph.yaml`、`baseline-gate-execution-report.yaml`、`baseline-publish-transaction.yaml`、`baseline-revocation-record.yaml`、`baseline-eol-retirement-certificate.yaml`、`baseline-review-board-decision.yaml`、`baseline-readiness-scorecard.yaml`、`baseline-rollback-verification.yaml`、`baseline-notification-ledger.yaml`、`baseline-verification-lock.yaml`、`baseline-artifact-inventory.yaml`、`baseline-conformance-claim.yaml`、`baseline-release-train.yaml`、`baseline-support-matrix.yaml`、`baseline-compatibility-ledger.yaml`、发布通道、基线准入策略、基线消费锁定、迁移工作单、迁移执行回执、生命周期状态机、状态对账、证据追踪图、门禁执行报告、发布事务回执、撤销隔离记录、EOL 退役证据、会审裁决证据、基线不变量、就绪评分、回滚验证、通知确认、验证锁、制品清单、资产声明、发布节奏、支持窗口、兼容窗口、消费者迁移、逐资产迁移执行事实和回滚入口 |
+| Semantic Versioning / Conventional Commits / Keep a Changelog | 版本号、提交语义和变更记录必须表达兼容性、影响面、撤销状态、消费锁定、迁移执行事实、本地私有资产边界和升级意图 | 增加 `version-governance.yaml`、`baseline-enforcement-policy.yaml`、`baseline-consumption-lock.yaml`、`baseline-migration-work-order.yaml`、`baseline-migration-execution-receipt.yaml`、`baseline-local-artifact-boundary.yaml`、`baseline-lifecycle-state-machine.yaml`、`baseline-state-reconciliation-report.yaml`、`baseline-evidence-trace-graph.yaml`、`baseline-gate-execution-report.yaml`、`baseline-publish-transaction.yaml`、`baseline-revocation-record.yaml`、`baseline-eol-retirement-certificate.yaml`、`baseline-review-board-decision.yaml`、`baseline-readiness-scorecard.yaml`、`baseline-rollback-verification.yaml`、`baseline-notification-ledger.yaml`、`baseline-verification-lock.yaml`、`baseline-artifact-inventory.yaml`、`baseline-conformance-claim.yaml`、`baseline-release-train.yaml`、`baseline-support-matrix.yaml`、`baseline-compatibility-ledger.yaml`、发布通道、基线准入策略、基线消费锁定、迁移工作单、迁移执行回执、本地私有制品边界、生命周期状态机、状态对账、证据追踪图、门禁执行报告、发布事务回执、撤销隔离记录、EOL 退役证据、会审裁决证据、基线不变量、就绪评分、回滚验证、通知确认、验证锁、制品清单、资产声明、发布节奏、支持窗口、兼容窗口、消费者迁移、逐资产迁移执行事实和回滚入口 |
 | DORA 2025 | AI 辅助交付必须与组织能力、平台能力和可度量交付质量一起治理 | 补齐 AI 指标、Platform PM、认知负载和 AI 发布门禁 |
 | CNCF Platform Engineering Maturity Model | 平台工程成熟度核心是自助、产品化、治理和可度量能力 | 保留 Developer Portal、Golden Path、平台产品契约和平台指标 |
 | Team Topologies | 降低团队认知负载是平台团队存在的核心理由之一 | 增加认知负载度量、Platform PM 和平台用户研究 |
@@ -8998,20 +9246,20 @@ infra/gitops/environments/prod/example/example-service/kustomization.yaml
 | Kubernetes Multi-tenancy / ResourceQuota | 多团队或多租户 Kubernetes 需要 namespace、配额、网络隔离和准入策略配合 | 增加 `tenant-boundary.yaml`、ResourceQuota、NetworkPolicy 默认拒绝和准入策略证据 |
 | NIST Cybersecurity Framework 2.0 | 企业安全运营需要把识别、保护、检测、响应和恢复连接成证据闭环 | 增加访问复核、密钥轮换、漏洞修复、事故复盘和证据新鲜度控制项 |
 | NIST SP 800-61 | 事件响应需要准备、检测分析、遏制恢复和事后活动闭环 | 增加 `incident-postmortem.yaml`、纠正行动、runbook 更新和门禁反哺 |
-| NIST OSCAL / NIST SP 800-128 | 安全和合规控制应尽量使用机器可读目录、实施状态、评估结果、配置变更控制和证据包组织 | 增加 `control-evidence-map.yaml`、`audit-export-manifest.yaml`、`control-assessment-report.yaml`、`baseline-change-record.yaml`、`baseline-enforcement-policy.yaml`、`baseline-consumption-lock.yaml`、`baseline-migration-work-order.yaml`、`baseline-migration-execution-receipt.yaml`、`baseline-evidence-trace-graph.yaml`、`baseline-gate-execution-report.yaml`、`baseline-publish-transaction.yaml`、`baseline-revocation-record.yaml`、`oscal-export-profile.yaml`、迁移执行事实和审计导出证据 |
+| NIST OSCAL / NIST SP 800-128 | 安全和合规控制应尽量使用机器可读目录、实施状态、评估结果、配置变更控制和证据包组织 | 增加 `control-evidence-map.yaml`、`audit-export-manifest.yaml`、`control-assessment-report.yaml`、`baseline-change-record.yaml`、`baseline-enforcement-policy.yaml`、`baseline-consumption-lock.yaml`、`baseline-migration-work-order.yaml`、`baseline-migration-execution-receipt.yaml`、`baseline-local-artifact-boundary.yaml`、`baseline-evidence-trace-graph.yaml`、`baseline-gate-execution-report.yaml`、`baseline-publish-transaction.yaml`、`baseline-revocation-record.yaml`、`oscal-export-profile.yaml`、迁移执行事实、本地私有制品边界和审计导出证据 |
 | Kubernetes Secrets | Kubernetes Secret 需要加密、访问控制、轮换和外部密钥系统配合 | 增加 `secrets-rotation-evidence.yaml`、KMS、轮换和泄露扫描证据 |
 | CISA KEV Catalog | 已知被利用漏洞需要优先、限期、可证明地处置 | 增加 `vulnerability-remediation-evidence.yaml`、KEV 状态、修复 SLA 和残余风险 |
-| SLSA / SBOM / Sigstore | 现代供应链安全必须证明构建来源、依赖、产物、签名验签链路、坏基线撤销链路、消费端摘要锁定、迁移执行事实和准入阻断链路 | 增加 SBOM、provenance、签名、验签、基线准入执行策略、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、证据追踪图、门禁执行报告、发布事务回执、撤销隔离记录和发布准入 |
+| SLSA / SBOM / Sigstore | 现代供应链安全必须证明构建来源、依赖、产物、签名验签链路、坏基线撤销链路、消费端摘要锁定、迁移执行事实、本地私有制品排除和准入阻断链路 | 增加 SBOM、provenance、签名、验签、基线准入执行策略、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、本地私有制品边界、证据追踪图、门禁执行报告、发布事务回执、撤销隔离记录和发布准入 |
 | NIST SSDF / CISA Secure by Design | 安全应前移到需求、设计、编码、构建、测试、发布和响应全链路 | 增加安全开发证据、威胁建模和安全准入材料 |
 | NIST AI RMF Critical Infrastructure Profile Concept Note | 高风险、关键基础设施相关 AI 场景需要更强的生命周期风险管理和可追溯实践 | 将关键基础设施 AI 相关资料纳入标准基线观察项，不直接当作稳定强制门禁 |
 | FinOps Framework / FOCUS / OpenCost | 成本治理需要统一成本语义、分摊、优化和持续运营 | 增加 `cost-allocation-evidence.yaml`、FinOps 运行机制、成本分摊证据和 AI 单任务成本指标 |
 | Open Data Contract | 数据产品需要机器可读契约来约束 Schema、语义、质量、权限和变更 | 增加数据契约最低字段和 CI 校验要求 |
 | MLflow / Model Cards | 微调模型需要实验追踪、模型登记、评估结果和模型说明卡 | 增加微调治理工作流、微调发布流程和模型证据链 |
 | Google SAIF / AI Incident Response | AI 系统需要面向模型、数据、Prompt、工具和供应商的专门响应流程 | 增加 AI 事件响应机制和 playbook 模板 |
-| OPA / Cedar / Kyverno | Policy as Code 需要明确策略语言、执行边界、策略包摘要和入口阻断证据 | 增加策略语言统一口径、策略引擎分工、`baseline-enforcement-policy.yaml`、`baseline-consumption-lock.yaml`、`baseline-migration-work-order.yaml`、`baseline-migration-execution-receipt.yaml`、决策日志、浮动版本阻断、迁移工单缺失阻断、迁移执行回执缺失阻断和 release gate / GitOps / catalog / runtime admission 阻断 |
-| Kubernetes / OpenGitOps | 容器运行状态和部署期望状态应分离，部署声明需要版本化、可审计、可回滚并受基线准入策略、消费锁、迁移工单和执行回执约束 | 增加微服务容器分层真相源、Kubernetes base、GitOps overlay、基线准入执行策略、消费锁到 GitOps 指针校验、迁移工作单驱动 GitOps 变更、迁移执行回执验证 GitOps revision 和 runtime admission 阻断 |
+| OPA / Cedar / Kyverno | Policy as Code 需要明确策略语言、执行边界、策略包摘要和入口阻断证据 | 增加策略语言统一口径、策略引擎分工、`baseline-enforcement-policy.yaml`、`baseline-consumption-lock.yaml`、`baseline-migration-work-order.yaml`、`baseline-migration-execution-receipt.yaml`、`baseline-local-artifact-boundary.yaml`、决策日志、浮动版本阻断、迁移工单缺失阻断、迁移执行回执缺失阻断、本地私有制品缺失或误发布阻断和 release gate / GitOps / catalog / runtime admission 阻断 |
+| Kubernetes / OpenGitOps | 容器运行状态和部署期望状态应分离，部署声明需要版本化、可审计、可回滚并受基线准入策略、消费锁、迁移工单、执行回执和本地私有资产边界约束 | 增加微服务容器分层真相源、Kubernetes base、GitOps overlay、基线准入执行策略、消费锁到 GitOps 指针校验、迁移工作单驱动 GitOps 变更、迁移执行回执验证 GitOps revision、本地私有制品不进入 GitOps 发布面和 runtime admission 阻断 |
 | OCI Image Spec / Container Registry | 镜像制品应放在 registry 中，生产部署需要可追溯到不可变 digest | 增加镜像 tag / digest、registry 和供应链证据要求 |
-| Backstage Catalog | 服务目录用于发现、owner、依赖和运行指针，不应成为 deployment manifest 真相源，也不应允许无基线声明、无消费锁、迁移工单或迁移执行回执缺失的资产注册为生产对象 | 增加 catalog runtime 指针、部署真相源边界、资产基线符合性声明、基线消费锁定文件、基线迁移工作单、基线迁移执行回执和 catalog 注册准入阻断 |
+| Backstage Catalog | 服务目录用于发现、owner、依赖和运行指针，不应成为 deployment manifest 真相源，也不应允许无基线声明、无消费锁、迁移工单、迁移执行回执或本地私有资产边界缺失的资产注册为生产对象 | 增加 catalog runtime 指针、部署真相源边界、资产基线符合性声明、基线消费锁定文件、基线迁移工作单、基线迁移执行回执、本地私有制品边界和 catalog 注册准入阻断 |
 
 ## 19.2 研究后的架构判断
 
