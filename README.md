@@ -42,6 +42,7 @@
 	  <a href="./docs/concepts/language-layers.md"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>
   <a href="./skills/README.md#当前保留"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
   <a href="./prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
+  <a href="./docs/references/common-sense.md"><img src="https://img.shields.io/badge/💡_常识-提示词入门-orange?style=for-the-badge" alt="常识"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/📚_Wiki-导航入口-slateblue?style=for-the-badge" alt="Wiki 导航入口"></a>
 	  <a href="./assets/README.md#外部资源在线表格唯一真相源"><img src="https://img.shields.io/badge/📡_资源-聚合-teal?style=for-the-badge" alt="资源聚合"></a>
 </p>
@@ -170,7 +171,7 @@
 
 ## 🎲 前言
 
-**这是一个不断生长和自我否定的项目，当下的一切经验和能力都可能因 AI 能力的变化而失去意义，所以请时刻保持以 AI 为主的思维，重视这次宇宙级的变革，所有的经验都可能失效，辩证的看🙏🙏🙏**，**Vibe Coding** 是一个与 AI 结对编程的终极工作流程，旨在帮助开发者丝滑地将想法变为现实。本指南详细介绍了从项目构思、技术选型、实施规划到具体开发、调试和扩展的全过程，强调以**规划驱动**和**模块化**，**索引构建**为核心（受限于模型上下文窗口而生成的解决策略），避免让 AI 失控导致项目混乱，Vibe Coding（氛围编程）是一种以自然语言驱动、让LLM生成大部分代码的开发方式，主张“先沉浸式做出能跑的东西”，以极低门槛快速产出原型但也伴随可控性与可靠性风险，由计算机科学家 [Andrej Karpathy](https://x.com/karpathy) 首次提出。
+**这是一个不断生长和自我否定的项目，当下的一切经验和能力都可能因 AI 能力的变化而失去意义，所以请时刻保持以 AI 为主的思维，重视这次宇宙级的变革，很多的经验都可能失效，辩证的看🙏🙏🙏**，**Vibe Coding** 是一个与 AI 结对编程的终极工作流程，旨在帮助开发者丝滑地将想法变为现实。本指南详细介绍了从项目构思、技术选型、实施规划到具体开发、调试和扩展的全过程，强调以**规划驱动**和**模块化**，**索引构建**为核心（受限于模型上下文窗口而生成的解决策略），避免让 AI 失控导致项目混乱，Vibe Coding（氛围编程）是一种以自然语言驱动、让LLM生成大部分代码的开发方式，主张“先沉浸式做出能跑的东西”，以极低门槛快速产出原型但也伴随可控性与可靠性风险，由计算机科学家 [Andrej Karpathy](https://x.com/karpathy) 首次提出。
 
 > **注意**：以下经验分享并非普遍适用，请在具体实践中结合场景，辩证采纳（点击标题可以展开收起内容）
 

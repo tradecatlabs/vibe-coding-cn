@@ -556,7 +556,7 @@ V2.98 起点包括：
 28. 证据新鲜度：新增 `evidence-freshness-policy.yaml`，把证据最大年龄、按类型过期策略、CI 执行和过期阻断纳入审计生命周期。
 29. 控制证据映射：新增 `control-evidence-map.yaml`，把控制项 ID、证据路径、状态、新鲜度、必需性和阻断属性纳入审计总账。
 30. 审计导出清单：新增 `audit-export-manifest.yaml`，把导出包范围、内容、验证结果、签名要求和留存策略纳入可交付证据。
-31. 审计导出自动化：新增 `internal-command://architecture/export-modern-architecture-audit`，生成 `build/modern-enterprise-architecture-audit/audit-export.json`、`audit-export.md`、`oscal-summary.json`、`audit-export-integrity.json`、`audit-export-provenance.json` 和 `audit-export-signing-policy.json`。
+31. 审计导出自动化：新增 `internal-command://architecture/export-modern-architecture-audit`，生成 `assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json`、`audit-export.md`、`oscal-summary.json`、`audit-export-integrity.json`、`audit-export-provenance.json` 和 `audit-export-signing-policy.json`。
 32. 控制评估报告：新增 `control-assessment-report.yaml`，把评估范围、评估人、控制结果、发现项、整改、剩余风险和签署状态纳入审计闭环。
 33. 架构基线变更记录：新增 `baseline-change-record.yaml`，把基线版本、前序版本、影响分析、审批、验证命令和回滚计划纳入变更控制。
 34. OSCAL 交换映射：新增 `oscal-export-profile.yaml`，把内部控制、证据、评估和整改映射到 OSCAL 交换视图，并生成 `oscal-summary.json`。
@@ -5016,7 +5016,7 @@ baselineReleaseEvidence:
       - make sync-doc-toc
       - make test
       - git diff --check
-      - git ls-tree -r --name-only origin/develop -- docs/references/modern-enterprise-architecture-kit
+      - git ls-tree -r --name-only origin/develop -- assets/templates/modern-enterprise-architecture-private/kit
     result: pass
 ```
 
@@ -5646,9 +5646,9 @@ baselineArtifactInventory:
     excludePatterns:
       - build/**
       - .git/**
-      - docs/references/modern-enterprise-architecture-kit/**
-      - docs/references/modern-enterprise-architecture-controls.json
-      - docs/references/modern-enterprise-architecture-version.json
+      - assets/templates/modern-enterprise-architecture-private/kit/**
+      - assets/templates/modern-enterprise-architecture-private/controls.json
+      - assets/templates/modern-enterprise-architecture-private/version.json
     localPrivateArtifactBoundary: governance/evidence/baselines/baseline-local-artifact-boundary.yaml
     auditExportExclusionManifest: governance/evidence/audit-export/audit-export-exclusion-manifest.yaml
     privateArtifactEscrowManifest: governance/evidence/baselines/private-artifact-escrow-manifest.yaml
@@ -5693,7 +5693,7 @@ baselineArtifactInventory:
       digest: sha256:<document-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.md
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.md
     - path: governance/evidence/baselines/baseline-local-artifact-boundary.yaml
       type: evidence-template
       required: true
@@ -5701,7 +5701,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-local-artifact-boundary-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/audit-export/audit-export-exclusion-manifest.yaml
       type: evidence-template
       required: true
@@ -5709,7 +5709,7 @@ baselineArtifactInventory:
       digest: sha256:<audit-export-exclusion-manifest-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/private-artifact-escrow-manifest.yaml
       type: evidence-template
       required: true
@@ -5717,7 +5717,7 @@ baselineArtifactInventory:
       digest: sha256:<private-artifact-escrow-manifest-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-clean-room-reconstruction-receipt.yaml
       type: evidence-template
       required: true
@@ -5725,7 +5725,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-clean-room-reconstruction-receipt-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-evidence-archive-receipt.yaml
       type: evidence-template
       required: true
@@ -5733,7 +5733,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-evidence-archive-receipt-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-signature-ltv-receipt.yaml
       type: evidence-template
       required: true
@@ -5741,7 +5741,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-signature-ltv-receipt-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-runtime-admission-receipt.yaml
       type: evidence-template
       required: true
@@ -5749,7 +5749,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-runtime-admission-receipt-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-runtime-admission-decision-ledger.yaml
       type: evidence-template
       required: true
@@ -5757,7 +5757,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-runtime-admission-decision-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-continuous-control-monitoring-ledger.yaml
       type: evidence-template
       required: true
@@ -5765,7 +5765,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-continuous-control-monitoring-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-control-assurance-sampling-ledger.yaml
       type: evidence-template
       required: true
@@ -5773,7 +5773,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-control-assurance-sampling-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-control-inheritance-ledger.yaml
       type: evidence-template
       required: true
@@ -5781,7 +5781,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-control-inheritance-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-data-residency-transfer-ledger.yaml
       type: evidence-template
       required: true
@@ -5789,7 +5789,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-data-residency-transfer-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-third-party-risk-ledger.yaml
       type: evidence-template
       required: true
@@ -5797,7 +5797,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-third-party-risk-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-operational-resilience-ledger.yaml
       type: evidence-template
       required: true
@@ -5805,7 +5805,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-operational-resilience-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-threat-model-attack-surface-risk-ledger.yaml
       type: evidence-template
       required: true
@@ -5813,7 +5813,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-threat-model-attack-surface-risk-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-vulnerability-exposure-remediation-ledger.yaml
       type: evidence-template
       required: true
@@ -5821,7 +5821,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-vulnerability-exposure-remediation-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-secure-configuration-posture-drift-ledger.yaml
       type: evidence-template
       required: true
@@ -5829,7 +5829,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-secure-configuration-posture-drift-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-production-change-release-ledger.yaml
       type: evidence-template
       required: true
@@ -5837,7 +5837,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-production-change-release-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-incident-problem-corrective-action-ledger.yaml
       type: evidence-template
       required: true
@@ -5845,7 +5845,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-incident-problem-corrective-action-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-data-product-quality-contract-observability-ledger.yaml
       type: evidence-template
       required: true
@@ -5853,7 +5853,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-data-product-quality-contract-observability-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-engineering-quality-test-release-verification-ledger.yaml
       type: evidence-template
       required: true
@@ -5861,7 +5861,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-engineering-quality-test-release-verification-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-workforce-competency-training-duty-segregation-ledger.yaml
       type: evidence-template
       required: true
@@ -5869,7 +5869,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-workforce-competency-training-duty-segregation-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-business-outcome-value-realization-portfolio-ledger.yaml
       type: evidence-template
       required: true
@@ -5877,7 +5877,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-business-outcome-value-realization-portfolio-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-value-stream-journey-process-ledger.yaml
       type: evidence-template
       required: true
@@ -5885,7 +5885,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-value-stream-journey-process-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-architecture-view-runtime-topology-dependency-ledger.yaml
       type: evidence-template
       required: true
@@ -5893,7 +5893,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-architecture-view-runtime-topology-dependency-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-quality-attribute-architecture-driver-tradeoff-ledger.yaml
       type: evidence-template
       required: true
@@ -5901,7 +5901,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-quality-attribute-architecture-driver-tradeoff-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-architecture-principle-constraint-exception-ledger.yaml
       type: evidence-template
       required: true
@@ -5909,7 +5909,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-architecture-principle-constraint-exception-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-version-policy-release-control-ledger.yaml
       type: evidence-template
       required: true
@@ -5917,7 +5917,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-version-policy-release-control-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-capacity-performance-cost-efficiency-ledger.yaml
       type: evidence-template
       required: true
@@ -5925,7 +5925,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-capacity-performance-cost-efficiency-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-service-reliability-slo-error-budget-observability-ledger.yaml
       type: evidence-template
       required: true
@@ -5933,7 +5933,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-service-reliability-slo-error-budget-observability-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-backup-restore-disaster-recovery-ledger.yaml
       type: evidence-template
       required: true
@@ -5941,7 +5941,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-backup-restore-disaster-recovery-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-regulatory-obligation-ledger.yaml
       type: evidence-template
       required: true
@@ -5949,7 +5949,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-regulatory-obligation-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-cryptographic-secrets-key-certificate-ledger.yaml
       type: evidence-template
       required: true
@@ -5957,7 +5957,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-cryptographic-secrets-key-certificate-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-asset-criticality-classification-ledger.yaml
       type: evidence-template
       required: true
@@ -5965,7 +5965,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-asset-criticality-classification-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-identity-entitlement-access-ledger.yaml
       type: evidence-template
       required: true
@@ -5973,7 +5973,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-identity-entitlement-access-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-processing-activity-inventory-ledger.yaml
       type: evidence-template
       required: true
@@ -5981,7 +5981,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-processing-activity-inventory-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-privacy-rights-consent-ledger.yaml
       type: evidence-template
       required: true
@@ -5989,7 +5989,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-privacy-rights-consent-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-records-retention-legal-hold-ledger.yaml
       type: evidence-template
       required: true
@@ -5997,7 +5997,7 @@ baselineArtifactInventory:
       digest: sha256:<baseline-records-retention-legal-hold-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/control-plane/version-governance.yaml
       type: control
       required: true
@@ -6005,7 +6005,7 @@ baselineArtifactInventory:
       digest: sha256:<version-governance-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-lifecycle-state-machine.yaml
       type: evidence-template
       required: true
@@ -6013,7 +6013,7 @@ baselineArtifactInventory:
       digest: sha256:<lifecycle-state-machine-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-state-reconciliation-report.yaml
       type: evidence-template
       required: true
@@ -6021,7 +6021,7 @@ baselineArtifactInventory:
       digest: sha256:<state-reconciliation-report-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/verification/baseline-verification-lock.yaml
       type: control
       required: true
@@ -6029,7 +6029,7 @@ baselineArtifactInventory:
       digest: sha256:<verification-lock-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/rollback/baseline-rollback-verification.yaml
       type: evidence-template
       required: true
@@ -6037,7 +6037,7 @@ baselineArtifactInventory:
       digest: sha256:<rollback-verification-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/baselines/baseline-readiness-scorecard.yaml
       type: evidence-template
       required: true
@@ -6045,7 +6045,7 @@ baselineArtifactInventory:
       digest: sha256:<readiness-scorecard-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/exceptions/baseline-exception-ledger.yaml
       type: evidence-template
       required: true
@@ -6053,7 +6053,7 @@ baselineArtifactInventory:
       digest: sha256:<exception-ledger-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/conformance/baseline-conformance-claim.yaml
       type: evidence-template
       required: true
@@ -6061,7 +6061,7 @@ baselineArtifactInventory:
       digest: sha256:<conformance-claim-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/migrations/baseline-migration-work-order.yaml
       type: evidence-template
       required: true
@@ -6069,7 +6069,7 @@ baselineArtifactInventory:
       digest: sha256:<migration-work-order-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
     - path: governance/evidence/migrations/baseline-migration-execution-receipt.yaml
       type: evidence-template
       required: true
@@ -6077,9 +6077,9 @@ baselineArtifactInventory:
       digest: sha256:<migration-execution-receipt-digest>
       signed: true
       exportedTo:
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
   generatedOutputs:
-    - path: build/modern-enterprise-architecture-audit/audit-export.json
+    - path: assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
       digest: sha256:<audit-export-json-digest>
       generatedBy: internal-command://architecture/export-modern-architecture-audit
       sourceArtifacts:
@@ -6254,11 +6254,11 @@ baselineVerificationLock:
       required: true
       expectedResult: pass
     - name: forbidden-assets
-      command: git ls-tree -r --name-only origin/develop -- docs/references/modern-enterprise-architecture-kit
+      command: git ls-tree -r --name-only origin/develop -- assets/templates/modern-enterprise-architecture-private/kit
       required: true
       expectedResult: empty
     - name: local-private-artifact-boundary
-      command: git status --short --ignored -- docs/references/modern-enterprise-architecture-kit docs/references/modern-enterprise-architecture-controls.json docs/references/modern-enterprise-architecture-version.json scripts/check-modern-architecture-kit.py scripts/check-modern-architecture-audit-export.py scripts/export-modern-architecture-audit.py scripts/check-repository-remote-protection.py
+      command: git status --short --ignored -- assets/templates/modern-enterprise-architecture-private/kit assets/templates/modern-enterprise-architecture-private/controls.json assets/templates/modern-enterprise-architecture-private/version.json assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py
       required: true
       expectedResult: ignored-only
     - name: audit-export-exclusion-manifest
@@ -6327,12 +6327,12 @@ baselineVerificationLock:
     controlCoverage: governance/control-plane/control-coverage.yaml
   outputs:
     auditExport:
-      path: build/modern-enterprise-architecture-audit/audit-export.json
+      path: assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
       generatedBy: internal-command://architecture/export-modern-architecture-audit
     integrity:
-      path: build/modern-enterprise-architecture-audit/audit-export-integrity.json
+      path: assets/templates/modern-enterprise-architecture-private/build/audit/audit-export-integrity.json
     provenance:
-      path: build/modern-enterprise-architecture-audit/audit-export-provenance.json
+      path: assets/templates/modern-enterprise-architecture-private/build/audit/audit-export-provenance.json
   gates:
     runnerImagePinnedByDigest: true
     noUnpinnedToolDownload: true
@@ -6811,7 +6811,7 @@ baselineReadinessScorecard:
         - governance/evidence/baselines/baseline-evidence-archive-receipt.yaml
         - governance/evidence/baselines/baseline-signature-ltv-receipt.yaml
         - governance/evidence/baselines/baseline-runtime-admission-receipt.yaml
-        - build/modern-enterprise-architecture-audit/audit-export-integrity.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export-integrity.json
     - id: verification-reproducibility
       weight: 10
       score: 95
@@ -12770,7 +12770,7 @@ baselineLocalArtifactBoundary:
     signaturePolicy: exclude-from-public-release-payload
     exportPolicy: exclude-raw-assets-include-boundary-evidence
   localPrivateArtifacts:
-    - path: docs/references/modern-enterprise-architecture-kit/
+    - path: assets/templates/modern-enterprise-architecture-private/kit/
       type: internal-starter-kit
       reason: 本地私有 starter kit 包含可执行 schema/example 和组织定制模板，只在本地或私有制品库验证。
       storage: local-workspace-or-private-artifact-registry
@@ -12780,7 +12780,7 @@ baselineLocalArtifactBoundary:
         - private-ci
         - evidence-generation
       remoteExclusionRequired: true
-    - path: docs/references/modern-enterprise-architecture-controls.json
+    - path: assets/templates/modern-enterprise-architecture-private/controls.json
       type: generated-control-catalog
       reason: 由本地私有控制项覆盖清单生成，远端只保留边界证据和摘要，不提交生成物本体。
       storage: local-workspace-or-private-artifact-registry
@@ -12789,7 +12789,7 @@ baselineLocalArtifactBoundary:
         - local-validation
         - audit-export-generation
       remoteExclusionRequired: true
-    - path: docs/references/modern-enterprise-architecture-version.json
+    - path: assets/templates/modern-enterprise-architecture-private/version.json
       type: generated-version-manifest
       reason: 由版本控制面生成，远端只保留文档和边界摘要，避免生成物漂移被误当源制品。
       storage: local-workspace-or-private-artifact-registry
@@ -12798,7 +12798,7 @@ baselineLocalArtifactBoundary:
         - local-validation
         - audit-export-generation
       remoteExclusionRequired: true
-    - path: scripts/check-modern-architecture-kit.py
+    - path: assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py
       type: local-validation-script
       reason: 本地 starter gate 脚本不作为公开基线源制品发布。
       storage: local-workspace
@@ -12806,7 +12806,7 @@ baselineLocalArtifactBoundary:
       allowedUse:
         - local-validation
       remoteExclusionRequired: true
-    - path: scripts/check-modern-architecture-audit-export.py
+    - path: assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py
       type: local-validation-script
       reason: 本地审计导出门禁脚本不作为公开基线源制品发布。
       storage: local-workspace
@@ -12814,7 +12814,7 @@ baselineLocalArtifactBoundary:
       allowedUse:
         - local-validation
       remoteExclusionRequired: true
-    - path: scripts/export-modern-architecture-audit.py
+    - path: assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py
       type: local-generation-script
       reason: 本地审计导出生成脚本只用于私有证据包生成，不进入公开远端。
       storage: local-workspace
@@ -12822,7 +12822,7 @@ baselineLocalArtifactBoundary:
       allowedUse:
         - audit-export-generation
       remoteExclusionRequired: true
-    - path: scripts/check-repository-remote-protection.py
+    - path: assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py
       type: local-validation-script
       reason: 本地远端保护验证脚本只用于发布前检查，不进入公开远端。
       storage: local-workspace
@@ -12831,13 +12831,13 @@ baselineLocalArtifactBoundary:
         - remote-protection-validation
       remoteExclusionRequired: true
   requiredChecks:
-    - command: git status --short --ignored -- docs/references/modern-enterprise-architecture-kit docs/references/modern-enterprise-architecture-controls.json docs/references/modern-enterprise-architecture-version.json scripts/check-modern-architecture-kit.py scripts/check-modern-architecture-audit-export.py scripts/export-modern-architecture-audit.py scripts/check-repository-remote-protection.py
+    - command: git status --short --ignored -- assets/templates/modern-enterprise-architecture-private/kit assets/templates/modern-enterprise-architecture-private/controls.json assets/templates/modern-enterprise-architecture-private/version.json assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py
       expected: ignored-only
-    - command: git ls-files -- docs/references/modern-enterprise-architecture-kit docs/references/modern-enterprise-architecture-controls.json docs/references/modern-enterprise-architecture-version.json scripts/check-modern-architecture-kit.py scripts/check-modern-architecture-audit-export.py scripts/export-modern-architecture-audit.py scripts/check-repository-remote-protection.py
+    - command: git ls-files -- assets/templates/modern-enterprise-architecture-private/kit assets/templates/modern-enterprise-architecture-private/controls.json assets/templates/modern-enterprise-architecture-private/version.json assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py
       expected: empty
-    - command: git ls-tree -r --name-only HEAD -- docs/references/modern-enterprise-architecture-kit docs/references/modern-enterprise-architecture-controls.json docs/references/modern-enterprise-architecture-version.json scripts/check-modern-architecture-kit.py scripts/check-modern-architecture-audit-export.py scripts/export-modern-architecture-audit.py scripts/check-repository-remote-protection.py
+    - command: git ls-tree -r --name-only HEAD -- assets/templates/modern-enterprise-architecture-private/kit assets/templates/modern-enterprise-architecture-private/controls.json assets/templates/modern-enterprise-architecture-private/version.json assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py
       expected: empty
-    - command: git ls-tree -r --name-only origin/develop -- docs/references/modern-enterprise-architecture-kit docs/references/modern-enterprise-architecture-controls.json docs/references/modern-enterprise-architecture-version.json scripts/check-modern-architecture-kit.py scripts/check-modern-architecture-audit-export.py scripts/export-modern-architecture-audit.py scripts/check-repository-remote-protection.py
+    - command: git ls-tree -r --name-only origin/develop -- assets/templates/modern-enterprise-architecture-private/kit assets/templates/modern-enterprise-architecture-private/controls.json assets/templates/modern-enterprise-architecture-private/version.json assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py
       expected: empty
   integrations:
     artifactInventory: governance/evidence/baselines/baseline-artifact-inventory.yaml
@@ -12920,67 +12920,67 @@ auditExportExclusionManifest:
       reason: public-source-document
       digest: sha256:<document-digest>
       includedIn:
-        - build/modern-enterprise-architecture-audit/audit-export.md
-        - build/modern-enterprise-architecture-audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.md
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
   digestOnly:
-    - path: docs/references/modern-enterprise-architecture-kit/
-      boundaryRef: docs/references/modern-enterprise-architecture-kit/
+    - path: assets/templates/modern-enterprise-architecture-private/kit/
+      boundaryRef: assets/templates/modern-enterprise-architecture-private/kit/
       digestStrategy: recursive-sha256-manifest
       digest: sha256:<modern-enterprise-architecture-kit-digest>
       rawExportAllowed: false
       signaturePayloadRawAllowed: false
-    - path: docs/references/modern-enterprise-architecture-controls.json
-      boundaryRef: docs/references/modern-enterprise-architecture-controls.json
+    - path: assets/templates/modern-enterprise-architecture-private/controls.json
+      boundaryRef: assets/templates/modern-enterprise-architecture-private/controls.json
       digestStrategy: file-sha256
       digest: sha256:<controls-json-digest>
       rawExportAllowed: false
       signaturePayloadRawAllowed: false
-    - path: docs/references/modern-enterprise-architecture-version.json
-      boundaryRef: docs/references/modern-enterprise-architecture-version.json
+    - path: assets/templates/modern-enterprise-architecture-private/version.json
+      boundaryRef: assets/templates/modern-enterprise-architecture-private/version.json
       digestStrategy: file-sha256
       digest: sha256:<version-json-digest>
       rawExportAllowed: false
       signaturePayloadRawAllowed: false
-    - path: scripts/check-modern-architecture-kit.py
-      boundaryRef: scripts/check-modern-architecture-kit.py
+    - path: assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py
+      boundaryRef: assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py
       digestStrategy: file-sha256
       digest: sha256:<check-modern-architecture-kit-digest>
       rawExportAllowed: false
       signaturePayloadRawAllowed: false
-    - path: scripts/check-modern-architecture-audit-export.py
-      boundaryRef: scripts/check-modern-architecture-audit-export.py
+    - path: assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py
+      boundaryRef: assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py
       digestStrategy: file-sha256
       digest: sha256:<check-modern-architecture-audit-export-digest>
       rawExportAllowed: false
       signaturePayloadRawAllowed: false
-    - path: scripts/export-modern-architecture-audit.py
-      boundaryRef: scripts/export-modern-architecture-audit.py
+    - path: assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py
+      boundaryRef: assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py
       digestStrategy: file-sha256
       digest: sha256:<export-modern-architecture-audit-digest>
       rawExportAllowed: false
       signaturePayloadRawAllowed: false
-    - path: scripts/check-repository-remote-protection.py
-      boundaryRef: scripts/check-repository-remote-protection.py
+    - path: assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py
+      boundaryRef: assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py
       digestStrategy: file-sha256
       digest: sha256:<check-repository-remote-protection-digest>
       rawExportAllowed: false
       signaturePayloadRawAllowed: false
   forcedExclusions:
-    - docs/references/modern-enterprise-architecture-kit/**
-    - docs/references/modern-enterprise-architecture-controls.json
-    - docs/references/modern-enterprise-architecture-version.json
-    - scripts/check-modern-architecture-kit.py
-    - scripts/check-modern-architecture-audit-export.py
-    - scripts/export-modern-architecture-audit.py
-    - scripts/check-repository-remote-protection.py
+    - assets/templates/modern-enterprise-architecture-private/kit/**
+    - assets/templates/modern-enterprise-architecture-private/controls.json
+    - assets/templates/modern-enterprise-architecture-private/version.json
+    - assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py
+    - assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py
+    - assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py
+    - assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py
   signaturePayloadExclusions:
-    - docs/references/modern-enterprise-architecture-kit/**
-    - docs/references/modern-enterprise-architecture-controls.json
-    - docs/references/modern-enterprise-architecture-version.json
-    - scripts/check-modern-architecture-kit.py
-    - scripts/check-modern-architecture-audit-export.py
-    - scripts/export-modern-architecture-audit.py
-    - scripts/check-repository-remote-protection.py
+    - assets/templates/modern-enterprise-architecture-private/kit/**
+    - assets/templates/modern-enterprise-architecture-private/controls.json
+    - assets/templates/modern-enterprise-architecture-private/version.json
+    - assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py
+    - assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py
+    - assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py
+    - assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py
   postExportVerification:
     - command: internal-command://architecture/check-modern-architecture-audit-export --assert-no-raw-private-artifacts
       expected: pass
@@ -13058,7 +13058,7 @@ privateArtifactEscrowManifest:
     retentionMinimumDays: 2555
     accessReviewCadence: quarterly
   escrowedArtifacts:
-    - path: docs/references/modern-enterprise-architecture-kit/
+    - path: assets/templates/modern-enterprise-architecture-private/kit/
       type: internal-starter-kit
       storageRef: oci://registry.company.internal/architecture/modern-enterprise-architecture-kit@sha256:<kit-digest>
       digestStrategy: recursive-sha256-manifest
@@ -13072,11 +13072,11 @@ privateArtifactEscrowManifest:
         retainUntil: 2033-06-02
       retrieval:
         command: internal-command://architecture/fetch-private-artifact --artifact modern-enterprise-architecture-kit --digest sha256:<kit-digest>
-        expectedRestorePath: docs/references/modern-enterprise-architecture-kit/
+        expectedRestorePath: assets/templates/modern-enterprise-architecture-private/kit/
       restoreVerification:
-        command: internal-command://architecture/check-modern-architecture-kit --verify-restored-private-artifact docs/references/modern-enterprise-architecture-kit/
+        command: internal-command://architecture/check-modern-architecture-kit --verify-restored-private-artifact assets/templates/modern-enterprise-architecture-private/kit/
         result: pass
-    - path: docs/references/modern-enterprise-architecture-controls.json
+    - path: assets/templates/modern-enterprise-architecture-private/controls.json
       type: generated-control-catalog
       storageRef: artifact://evidence.company.internal/architecture/controls/modern-enterprise-architecture-controls.json@sha256:<controls-json-digest>
       digestStrategy: file-sha256
@@ -13089,11 +13089,11 @@ privateArtifactEscrowManifest:
         retainUntil: 2033-06-02
       retrieval:
         command: internal-command://architecture/fetch-private-artifact --artifact modern-enterprise-architecture-controls.json --digest sha256:<controls-json-digest>
-        expectedRestorePath: docs/references/modern-enterprise-architecture-controls.json
+        expectedRestorePath: assets/templates/modern-enterprise-architecture-private/controls.json
       restoreVerification:
         command: internal-command://architecture/check-modern-architecture-audit-export --verify-control-catalog-digest sha256:<controls-json-digest>
         result: pass
-    - path: docs/references/modern-enterprise-architecture-version.json
+    - path: assets/templates/modern-enterprise-architecture-private/version.json
       type: generated-version-manifest
       storageRef: artifact://evidence.company.internal/architecture/version/modern-enterprise-architecture-version.json@sha256:<version-json-digest>
       digestStrategy: file-sha256
@@ -13106,13 +13106,13 @@ privateArtifactEscrowManifest:
         retainUntil: 2033-06-02
       retrieval:
         command: internal-command://architecture/fetch-private-artifact --artifact modern-enterprise-architecture-version.json --digest sha256:<version-json-digest>
-        expectedRestorePath: docs/references/modern-enterprise-architecture-version.json
+        expectedRestorePath: assets/templates/modern-enterprise-architecture-private/version.json
       restoreVerification:
         command: internal-command://architecture/check-modern-architecture-audit-export --verify-version-manifest-digest sha256:<version-json-digest>
         result: pass
-    - path: scripts/check-modern-architecture-kit.py
+    - path: assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py
       type: local-validation-script
-      storageRef: artifact://evidence.company.internal/architecture/scripts/check-modern-architecture-kit.py@sha256:<check-modern-architecture-kit-digest>
+      storageRef: artifact://evidence.company.internal/architecture/assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py@sha256:<check-modern-architecture-kit-digest>
       digestStrategy: file-sha256
       sourceDigest: sha256:<check-modern-architecture-kit-digest>
       accessRoles:
@@ -13123,13 +13123,13 @@ privateArtifactEscrowManifest:
         retainUntil: 2033-06-02
       retrieval:
         command: internal-command://architecture/fetch-private-artifact --artifact check-modern-architecture-kit.py --digest sha256:<check-modern-architecture-kit-digest>
-        expectedRestorePath: scripts/check-modern-architecture-kit.py
+        expectedRestorePath: assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py
       restoreVerification:
-        command: python3 scripts/check-modern-architecture-kit.py --version
+        command: python3 assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py --version
         result: pass
-    - path: scripts/check-modern-architecture-audit-export.py
+    - path: assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py
       type: local-validation-script
-      storageRef: artifact://evidence.company.internal/architecture/scripts/check-modern-architecture-audit-export.py@sha256:<check-modern-architecture-audit-export-digest>
+      storageRef: artifact://evidence.company.internal/architecture/assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py@sha256:<check-modern-architecture-audit-export-digest>
       digestStrategy: file-sha256
       sourceDigest: sha256:<check-modern-architecture-audit-export-digest>
       accessRoles:
@@ -13140,13 +13140,13 @@ privateArtifactEscrowManifest:
         retainUntil: 2033-06-02
       retrieval:
         command: internal-command://architecture/fetch-private-artifact --artifact check-modern-architecture-audit-export.py --digest sha256:<check-modern-architecture-audit-export-digest>
-        expectedRestorePath: scripts/check-modern-architecture-audit-export.py
+        expectedRestorePath: assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py
       restoreVerification:
-        command: python3 scripts/check-modern-architecture-audit-export.py --version
+        command: python3 assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py --version
         result: pass
-    - path: scripts/export-modern-architecture-audit.py
+    - path: assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py
       type: local-generation-script
-      storageRef: artifact://evidence.company.internal/architecture/scripts/export-modern-architecture-audit.py@sha256:<export-modern-architecture-audit-digest>
+      storageRef: artifact://evidence.company.internal/architecture/assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py@sha256:<export-modern-architecture-audit-digest>
       digestStrategy: file-sha256
       sourceDigest: sha256:<export-modern-architecture-audit-digest>
       accessRoles:
@@ -13157,13 +13157,13 @@ privateArtifactEscrowManifest:
         retainUntil: 2033-06-02
       retrieval:
         command: internal-command://architecture/fetch-private-artifact --artifact export-modern-architecture-audit.py --digest sha256:<export-modern-architecture-audit-digest>
-        expectedRestorePath: scripts/export-modern-architecture-audit.py
+        expectedRestorePath: assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py
       restoreVerification:
-        command: python3 scripts/export-modern-architecture-audit.py --version
+        command: python3 assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py --version
         result: pass
-    - path: scripts/check-repository-remote-protection.py
+    - path: assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py
       type: local-validation-script
-      storageRef: artifact://evidence.company.internal/architecture/scripts/check-repository-remote-protection.py@sha256:<check-repository-remote-protection-digest>
+      storageRef: artifact://evidence.company.internal/architecture/assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py@sha256:<check-repository-remote-protection-digest>
       digestStrategy: file-sha256
       sourceDigest: sha256:<check-repository-remote-protection-digest>
       accessRoles:
@@ -13174,9 +13174,9 @@ privateArtifactEscrowManifest:
         retainUntil: 2033-06-02
       retrieval:
         command: internal-command://architecture/fetch-private-artifact --artifact check-repository-remote-protection.py --digest sha256:<check-repository-remote-protection-digest>
-        expectedRestorePath: scripts/check-repository-remote-protection.py
+        expectedRestorePath: assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py
       restoreVerification:
-        command: python3 scripts/check-repository-remote-protection.py --version
+        command: python3 assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py --version
         result: pass
   summary:
     escrowedArtifacts: 7
@@ -13261,7 +13261,7 @@ baselineCleanRoomReconstructionReceipt:
       result: pass
       outputDigest: sha256:<checkout-tree-digest>
     - id: verify-forbidden-assets-absent-before-restore
-      command: git ls-files -- docs/references/modern-enterprise-architecture-kit docs/references/modern-enterprise-architecture-controls.json docs/references/modern-enterprise-architecture-version.json scripts/check-modern-architecture-kit.py scripts/check-modern-architecture-audit-export.py scripts/export-modern-architecture-audit.py scripts/check-repository-remote-protection.py
+      command: git ls-files -- assets/templates/modern-enterprise-architecture-private/kit assets/templates/modern-enterprise-architecture-private/controls.json assets/templates/modern-enterprise-architecture-private/version.json assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py
       expectedResult: empty
       result: pass
     - id: restore-private-artifacts
@@ -13275,17 +13275,17 @@ baselineCleanRoomReconstructionReceipt:
     - id: rebuild-audit-export
       command: internal-command://architecture/export-modern-architecture-audit
       expectedOutputs:
-        - build/modern-enterprise-architecture-audit/audit-export.json
-        - build/modern-enterprise-architecture-audit/audit-export.md
-        - build/modern-enterprise-architecture-audit/oscal-summary.json
-        - build/modern-enterprise-architecture-audit/audit-export-integrity.json
-        - build/modern-enterprise-architecture-audit/audit-export-provenance.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.md
+        - assets/templates/modern-enterprise-architecture-private/build/audit/oscal-summary.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export-integrity.json
+        - assets/templates/modern-enterprise-architecture-private/build/audit/audit-export-provenance.json
       result: pass
     - id: replay-release-gate
       command: internal-command://architecture/check-modern-architecture-kit --replay governance/evidence/baselines/baseline-gate-execution-report.yaml
       result: pass
     - id: verify-private-assets-still-not-publishable
-      command: git status --short --ignored -- docs/references/modern-enterprise-architecture-kit docs/references/modern-enterprise-architecture-controls.json docs/references/modern-enterprise-architecture-version.json scripts/check-modern-architecture-kit.py scripts/check-modern-architecture-audit-export.py scripts/export-modern-architecture-audit.py scripts/check-repository-remote-protection.py
+      command: git status --short --ignored -- assets/templates/modern-enterprise-architecture-private/kit assets/templates/modern-enterprise-architecture-private/controls.json assets/templates/modern-enterprise-architecture-private/version.json assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-kit.py assets/templates/modern-enterprise-architecture-private/scripts/check-modern-architecture-audit-export.py assets/templates/modern-enterprise-architecture-private/scripts/export-modern-architecture-audit.py assets/templates/modern-enterprise-architecture-private/scripts/check-repository-remote-protection.py
       expectedResult: ignored-only
       result: pass
   rebuiltDigests:
@@ -13408,7 +13408,7 @@ baselineEvidenceArchiveReceipt:
         - legal-lead
   archivedObjects:
     - id: audit-export-json
-      sourcePath: build/modern-enterprise-architecture-audit/audit-export.json
+      sourcePath: assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
       archiveRef: worm://architecture-baseline-evidence/mea-v2.60/audit-export.json@sha256:<audit-export-digest>
       sourceDigest: sha256:<audit-export-digest>
       archiveDigest: sha256:<audit-export-digest>
@@ -13416,7 +13416,7 @@ baselineEvidenceArchiveReceipt:
       legalHold: true
       retainedUntil: 2033-06-02
     - id: audit-export-integrity
-      sourcePath: build/modern-enterprise-architecture-audit/audit-export-integrity.json
+      sourcePath: assets/templates/modern-enterprise-architecture-private/build/audit/audit-export-integrity.json
       archiveRef: worm://architecture-baseline-evidence/mea-v2.60/audit-export-integrity.json@sha256:<audit-export-integrity-digest>
       sourceDigest: sha256:<audit-export-integrity-digest>
       archiveDigest: sha256:<audit-export-integrity-digest>
@@ -13424,7 +13424,7 @@ baselineEvidenceArchiveReceipt:
       legalHold: true
       retainedUntil: 2033-06-02
     - id: audit-export-provenance
-      sourcePath: build/modern-enterprise-architecture-audit/audit-export-provenance.intoto.jsonl
+      sourcePath: assets/templates/modern-enterprise-architecture-private/build/audit/audit-export-provenance.intoto.jsonl
       archiveRef: worm://architecture-baseline-evidence/mea-v2.60/audit-export-provenance.intoto.jsonl@sha256:<audit-export-provenance-digest>
       sourceDigest: sha256:<audit-export-provenance-digest>
       archiveDigest: sha256:<audit-export-provenance-digest>
@@ -13582,7 +13582,7 @@ baselineSignatureLtvReceipt:
     - id: audit-export-provenance
       subjectPath: governance/evidence/audit-export/audit-export-provenance.intoto.jsonl
       subjectDigest: sha256:<audit-export-provenance-digest>
-      signatureBundle: build/modern-enterprise-architecture-audit/audit-export-provenance.sigstore.bundle
+      signatureBundle: assets/templates/modern-enterprise-architecture-private/build/audit/audit-export-provenance.sigstore.bundle
       bundleDigest: sha256:<sigstore-bundle-digest>
       certificate:
         identity: architecture-release-bot@company.com
@@ -13606,7 +13606,7 @@ baselineSignatureLtvReceipt:
         ocspStatus: good
         crlDigest: sha256:<crl-snapshot-digest>
       verification:
-        command: cosign verify-blob --bundle build/modern-enterprise-architecture-audit/audit-export-provenance.sigstore.bundle governance/evidence/audit-export/audit-export-provenance.intoto.jsonl
+        command: cosign verify-blob --bundle assets/templates/modern-enterprise-architecture-private/build/audit/audit-export-provenance.sigstore.bundle governance/evidence/audit-export/audit-export-provenance.intoto.jsonl
         toolchainRef: governance/evidence/verification/baseline-verification-lock.yaml
         result: pass
   archivedValidationMaterials:
@@ -20241,11 +20241,11 @@ internal-command://architecture/export-modern-architecture-audit
 默认输出：
 
 ```text
-build/modern-enterprise-architecture-audit/audit-export.json
-build/modern-enterprise-architecture-audit/audit-export.md
-build/modern-enterprise-architecture-audit/oscal-summary.json
-build/modern-enterprise-architecture-audit/audit-export-integrity.json
-build/modern-enterprise-architecture-audit/audit-export-provenance.json
+assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.json
+assets/templates/modern-enterprise-architecture-private/build/audit/audit-export.md
+assets/templates/modern-enterprise-architecture-private/build/audit/oscal-summary.json
+assets/templates/modern-enterprise-architecture-private/build/audit/audit-export-integrity.json
+assets/templates/modern-enterprise-architecture-private/build/audit/audit-export-provenance.json
 ```
 
 导出输出不变量由以下命令校验，并已经进入 `make test`：
