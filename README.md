@@ -42,6 +42,7 @@
 	  <a href="./docs/concepts/language-layers.md"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>
   <a href="./skills/README.md#当前保留"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
   <a href="./prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
+  <a href="./docs/references/common-sense.md"><img src="https://img.shields.io/badge/💡_常识-提示词入门-orange?style=for-the-badge" alt="常识"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/📚_Wiki-导航入口-slateblue?style=for-the-badge" alt="Wiki 导航入口"></a>
 	  <a href="./assets/README.md#外部资源在线表格唯一真相源"><img src="https://img.shields.io/badge/📡_资源-聚合-teal?style=for-the-badge" alt="资源聚合"></a>
 </p>
