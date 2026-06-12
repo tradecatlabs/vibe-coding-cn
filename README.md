@@ -48,6 +48,7 @@
 </p>
 
 [☯️ 道法术器](#dao-fa-shu-qi)
+[🧠 Vibe Coding 的三条底层命题](#ai-three-propositions)
 [📌 字多不看](#root-tldr)
 [⚡ 1 分钟快速开始](#getting-started)
 [🚀 从零开始完整入门](docs/getting-started/learning-map.md)
@@ -63,6 +64,18 @@
 本仓库的 AI 解读链接：[zread.ai/tukuaiai/vibe-coding-cn](https://zread.ai/tukuaiai/vibe-coding-cn/1-overview)
 
 </div>
+
+<a id="ai-three-propositions"></a>
+
+## 🧠 Vibe Coding 的三条底层命题
+
+> **一、先解决人与 AI 的协作问题，再用 AI 解决其他可表达、可拆解、可约束、可验证的问题。**
+>
+> **二、模型能力会吞噬一切为弥补模型不足而存在的中间层。**
+>
+> **三、生成物可达，即模型能力可达。**
+
+这三句话是本仓库理解 AI 编程的底层口径：先把人机协作、任务表达、约束和验证机制固定下来；再承认当前很多 Prompt、工作流、Agent 编排、索引、外部记忆和脚手架只是模型能力不足时的工程补丁；最后把大语言模型的能力边界定义为它的生成物能够直接或间接实现、驱动、约束、修改、验证或影响的范围。
 
 <a id="root-tldr"></a>
 
