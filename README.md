@@ -67,7 +67,7 @@
 
 <a id="ai-three-propositions"></a>
 
-<details>
+<details open>
 <summary><strong>🧠 三条核心命题</strong>（点击展开/收起）</summary>
 
 ## 🧠 三条核心命题
