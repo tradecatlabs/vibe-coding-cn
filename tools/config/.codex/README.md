@@ -10,6 +10,41 @@
 - 每次安装都会生成恢复脚本，误覆盖后可以一键恢复。
 - 支持通过 `CODEX_HOME` 指定 Codex Home。
 
+## 可选：接入第三方 OpenAI 兼容服务商（以 Atlas Cloud 为例）
+
+<p align="center">
+  <a href="https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=vibe-coding-cn">
+    <img src="./atlas-cloud-logo.png" alt="Atlas Cloud" width="180">
+  </a>
+</p>
+
+默认的 `safe` / `power` 配置走的是 OpenAI 官方订阅鉴权（`wire_api = "responses"` + `requires_openai_auth = true`）。如果你想让 Codex CLI 接到自托管或第三方 **OpenAI 兼容** 服务商（自定义 `base_url` + API Key），可以在自己的 `~/.codex/config.toml` 里**追加一个自定义 provider**，本仓默认配置保持不变。
+
+[Atlas Cloud](https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=vibe-coding-cn) 是一个全模态 AI 推理平台，用一套 OpenAI 兼容的 API 即可访问 DeepSeek、Qwen、GLM、Kimi、MiniMax 等模型，适合在 Codex 里作为按量计费的备用后端；面向编码场景还可参考其 [coding plan](https://www.atlascloud.ai/console/coding-plan)。以它为例，在 `~/.codex/config.toml` 追加：
+
+```toml
+model = "deepseek-ai/deepseek-v4-pro"
+model_provider = "atlascloud"
+
+[model_providers.atlascloud]
+name = "Atlas Cloud"
+base_url = "https://api.atlascloud.ai/v1"
+wire_api = "chat"
+env_key = "ATLASCLOUD_API_KEY"
+```
+
+然后用环境变量提供 API Key（不要把真实 Key 写进配置文件或提交到仓库）：
+
+```bash
+export ATLASCLOUD_API_KEY="<your-atlascloud-api-key>"
+```
+
+说明：
+
+- 自定义 provider 用 `wire_api = "chat"`（`/v1/chat/completions`），不要带 `requires_openai_auth`。
+- `deepseek-ai/deepseek-v4-pro` 是带推理（reasoning）的模型，`max_tokens` 要给足（≥ 512），否则 token 可能先耗在思维链上，导致输出为空。
+- 完整模型清单见官网模型页：<https://www.atlascloud.ai/models>。
+
 ## 一键安装
 
 安全默认版：
