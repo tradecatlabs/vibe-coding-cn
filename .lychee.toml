@@ -36,4 +36,6 @@ exclude = [
   '^https://notebooklm\.google\.com.*',
   '^https://www\.contributor-covenant\.org.*',
   '^https://javabetter\.cn/.*',
+  # zread.ai often returns 504/rate-limit responses from GitHub-hosted runners.
+  '^https://zread\.ai/.*',
 ]
