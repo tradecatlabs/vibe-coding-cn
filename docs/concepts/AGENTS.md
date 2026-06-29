@@ -20,6 +20,7 @@ concepts/
 ├── system-building.md
 ├── development-paradigms.md
 ├── language-layers.md
+├── keyword-system.md
 ├── recursive-self-optimizing-system.md
 └── AGENTS.md  # 本目录操作规则
 ```

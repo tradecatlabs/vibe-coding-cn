@@ -34,6 +34,7 @@ exclude = [
   '^https://platform\.openai\.com.*',
   '^https://user-images\.githubusercontent\.com.*',
   '^https://notebooklm\.google\.com.*',
+  '^https://zread\.ai/.*',
   '^https://www\.contributor-covenant\.org.*',
   '^https://javabetter\.cn/.*',
 ]

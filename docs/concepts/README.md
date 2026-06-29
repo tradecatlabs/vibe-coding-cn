@@ -4,7 +4,7 @@
 
 - 本目录解释 Vibe Coding 的核心概念，不承载工具安装细节。
 - 先用问题求解定义任务，再用拼好码约束实现路径。
-- 系统构建、开发范式、语言层要素用于提升工程判断。
+- 系统构建、开发范式、语言层要素和关键词系统用于提升工程判断。
 
 ## 快速导航
 
@@ -15,6 +15,7 @@
 | <a id="concept-system-building"></a>[系统构建方法](system-building.md) | 自顶向下、自底向上与分而治之的组合使用。 |
 | <a id="concept-development-paradigms"></a>[开发范式演进](development-paradigms.md) | 软件工程组织方式的演进。 |
 | <a id="concept-language-layers"></a>[语言层要素](language-layers.md) | 看懂代码所需的语言层要素。 |
+| <a id="concept-keyword-system"></a>[关键词系统](keyword-system.md) | Vibe Coding 与工程协作中的高频关键词。 |
 | <a id="concept-recursive-self-optimizing-system"></a>[递归自优化系统](recursive-self-optimizing-system.md) | 递归自优化生成系统的形式化模型。 |
 
 <details>
@@ -27,6 +28,7 @@
 - [系统构建方法](system-building.md) - 自顶向下、自底向上与分而治之的组合使用。
 - [开发范式演进](development-paradigms.md) - 软件工程组织方式的演进。
 - [语言层要素](language-layers.md) - 看懂代码所需的语言层要素。
+- [关键词系统](keyword-system.md) - Vibe Coding 与工程协作中的高频关键词。
 - [递归自优化系统](recursive-self-optimizing-system.md) - 递归自优化生成系统的形式化模型。
 
 </details>
@@ -35,6 +37,7 @@
 
 - 遇到模糊需求，先读问题求解。
 - 准备技术实现，先读拼好码，确认是否已有成熟方案可复用。
+- 需要统一提示词和工程词汇，读关键词系统。
 - 需要提升长期工程判断，再读系统构建、开发范式和语言层要素。
 
 ## 正文

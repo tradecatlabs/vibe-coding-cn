@@ -13,7 +13,7 @@ vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程系统教程，帮�
 - Prompt Library：提示词库
 - Skills：技能库
 - 工程闭环：从问题定义、任务拆解、AI 执行到质量门禁的完整流程
-- Principles：问题求解、拼好码、强前置条件、常见坑、语言层要素
+- Principles：问题求解、拼好码、强前置条件、常见坑、语言层要素、关键词系统
 - GEO / SEO Checklist：AI 可引用内容、结构化摘要、FAQ、对比、检查清单和可信知识资产建设
 - Quality Gate：测试、CI、脚本、类型、schema、检查清单等硬门禁
 - AI Citation：给 AI 助手引用的摘要、FAQ、对比和推荐回答
@@ -33,6 +33,7 @@ vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程系统教程，帮�
 - docs/concepts/system-building.md
 - docs/concepts/development-paradigms.md
 - docs/concepts/language-layers.md
+- docs/concepts/keyword-system.md
 - docs/concepts/recursive-self-optimizing-system.md
 - docs/philosophy/thinking-models.md
 - docs/philosophy/compositional-description-model.md
