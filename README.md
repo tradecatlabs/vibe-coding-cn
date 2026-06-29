@@ -257,66 +257,6 @@
 </details>
 
 <details>
-<summary><strong>🛠️ 仓库维护与验证</strong>（点击展开/收起）</summary>
-
-## 🛠️ 仓库维护与验证
-
-本仓库是文档与资源型项目，不提供可验证的 dev server、Docker/K8s 部署入口或固定服务端口。当前可验证的自动化入口来自 `Makefile`、`.github/workflows/ci.yml`、`scripts/check-local-links.py` 与 `tools/prompts-library/`。
-
-### 环境要求
-
-- Git：版本控制与 submodule 初始化
-- Node.js 22+：通过 `npx --yes markdownlint-cli@0.48.0` 运行固定版本 Markdown lint
-- Python 3.8+：运行 prompts-library 与链接检查脚本
-
-### 初始化
-
-```bash
-git submodule update --init --recursive
-pip install -r tools/prompts-library/requirements.txt
-```
-
-如需运行 prompts-library 的 Google API / JSONL 辅助脚本，再安装脚本依赖：
-
-```bash
-pip install -r tools/prompts-library/scripts/requirements.txt
-```
-
-### 常用命令
-
-| 目的 | 命令 | 来源 |
-|:---|:---|:---|
-| 查看 Make 任务 | `make help` | `Makefile` |
-| 全仓 Markdown lint | `make lint` | `Makefile` + `.github/lint_config.json` |
-| 本地相对链接检查 | `make check-links` | `scripts/check-local-links.py` |
-| 折叠块结构检查 | `make check-details` | `scripts/check-markdown-details.py` |
-| docs 线性目录结构检查 | `make check-doc-structure` | 校验标准块顺序、主章节顺序、锚点和目录入口 |
-| 目录 README/AGENTS 覆盖检查 | `make check-directory-docs` | `scripts/check-directory-docs.py` |
-| Metadata 路径检查 | `make check-metadata` | `scripts/check-metadata.py` |
-| AI 引用路径检查 | `make check-ai-citation` | `scripts/check-ai-citation.py` |
-| Wiki 本地检查 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | `scripts/check-wiki.py` |
-| 重建 docs 细粒度目录 | `make sync-doc-toc` | `scripts/sync-doc-toc.py` |
-| 全部本地质量门禁 | `make test` | `Makefile` |
-| 提示词格式转换 | `cd tools/prompts-library && python3 main.py` | `tools/prompts-library/main.py` |
-| Skill 严格校验示例 | `skills/auto-skill/scripts/validate-skill.sh skills/auto-skill --strict` | `skills/auto-skill/scripts/validate-skill.sh` |
-
-### 配置与 CI
-
-- 路径级 owner 评审基线：`.github/CODEOWNERS`
-- Markdown lint 配置：`.github/lint_config.json`
-- Markdown lint 版本：`Makefile` 中固定为 `markdownlint-cli@0.48.0`
-- 外部链接检查配置：`.lychee.toml`，统一管理外链检查的超时、重试、并发上限和排除项
-- CI 配置：`.github/workflows/ci.yml`，在 `develop` / `master` 分支的 push / pull_request 上运行 markdown-lint、本地链接检查、docs 结构检查与 link-checker
-- Codex 配置基线：`tools/config/.codex/README.md`，支持一键安装、自动备份和恢复。
-- Submodule 来源：`.gitmodules`
-
-### 部署
-
-本仓库是文档与知识库项目，当前没有 Dockerfile、docker-compose.yml、K8s/Helm 部署入口或固定服务端口；发布质量以 `make test` 与 GitHub Actions CI 为准。
-
-</details>
-
-<details>
 <summary><strong>🧪 实验性方法</strong>（点击展开/收起）</summary>
 
 ## 🧪 实验性方法
@@ -419,12 +359,15 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 ## 🧭 经验
 
+* **只用最好的模型**
+* **唯结果论，确定你的目的，要求 AI 使用任何方法直到完成你的目的**
+* **使用消费与生产模型**
+* **理解和使用关键词**
 * **状态，变换；数据，函数；输入，处理，输出；抽象/收敛，展开；可解释性；层级；过程；全称/特称，肯定/否定**
 * **明确任务中的：目的，对象，约束**
 * **用 AI 审 AI：重要产出必须新开会话交叉审计，避免同一上下文自我确认**
 * **人下 AI 上**
 * **一切问题问 AI**
-* **基础模型能力决定任务上限，工程化方法决定能否落地；当模型达到可完成大多数任务的能力阈值后，继续堆模型的边际收益会下降，真正拉开差距的是上下文、拆解、验证、门禁和复用能力**
 * **目的主导：开发过程中的一切动作围绕"目的"展开**
 * **上下文是 vibe coding 的第一性要素，垃圾进，垃圾出**
 * **系统性思考，从 实体，链接，功能/目的 开始**
@@ -615,6 +558,66 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 *   **苹果**: [gpt-5.5-xhigh](https://chatgpt.com/codex)
 
 ---
+
+</details>
+
+<details>
+<summary><strong>🛠️ 仓库维护与验证</strong>（点击展开/收起）</summary>
+
+## 🛠️ 仓库维护与验证
+
+本仓库是文档与资源型项目，不提供可验证的 dev server、Docker/K8s 部署入口或固定服务端口。当前可验证的自动化入口来自 `Makefile`、`.github/workflows/ci.yml`、`scripts/check-local-links.py` 与 `tools/prompts-library/`。
+
+### 环境要求
+
+- Git：版本控制与 submodule 初始化
+- Node.js 22+：通过 `npx --yes markdownlint-cli@0.48.0` 运行固定版本 Markdown lint
+- Python 3.8+：运行 prompts-library 与链接检查脚本
+
+### 初始化
+
+```bash
+git submodule update --init --recursive
+pip install -r tools/prompts-library/requirements.txt
+```
+
+如需运行 prompts-library 的 Google API / JSONL 辅助脚本，再安装脚本依赖：
+
+```bash
+pip install -r tools/prompts-library/scripts/requirements.txt
+```
+
+### 常用命令
+
+| 目的 | 命令 | 来源 |
+|:---|:---|:---|
+| 查看 Make 任务 | `make help` | `Makefile` |
+| 全仓 Markdown lint | `make lint` | `Makefile` + `.github/lint_config.json` |
+| 本地相对链接检查 | `make check-links` | `scripts/check-local-links.py` |
+| 折叠块结构检查 | `make check-details` | `scripts/check-markdown-details.py` |
+| docs 线性目录结构检查 | `make check-doc-structure` | 校验标准块顺序、主章节顺序、锚点和目录入口 |
+| 目录 README/AGENTS 覆盖检查 | `make check-directory-docs` | `scripts/check-directory-docs.py` |
+| Metadata 路径检查 | `make check-metadata` | `scripts/check-metadata.py` |
+| AI 引用路径检查 | `make check-ai-citation` | `scripts/check-ai-citation.py` |
+| Wiki 本地检查 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | `scripts/check-wiki.py` |
+| 重建 docs 细粒度目录 | `make sync-doc-toc` | `scripts/sync-doc-toc.py` |
+| 全部本地质量门禁 | `make test` | `Makefile` |
+| 提示词格式转换 | `cd tools/prompts-library && python3 main.py` | `tools/prompts-library/main.py` |
+| Skill 严格校验示例 | `skills/auto-skill/scripts/validate-skill.sh skills/auto-skill --strict` | `skills/auto-skill/scripts/validate-skill.sh` |
+
+### 配置与 CI
+
+- 路径级 owner 评审基线：`.github/CODEOWNERS`
+- Markdown lint 配置：`.github/lint_config.json`
+- Markdown lint 版本：`Makefile` 中固定为 `markdownlint-cli@0.48.0`
+- 外部链接检查配置：`.lychee.toml`，统一管理外链检查的超时、重试、并发上限和排除项
+- CI 配置：`.github/workflows/ci.yml`，在 `develop` / `master` 分支的 push / pull_request 上运行 markdown-lint、本地链接检查、docs 结构检查与 link-checker
+- Codex 配置基线：`tools/config/.codex/README.md`，支持一键安装、自动备份和恢复。
+- Submodule 来源：`.gitmodules`
+
+### 部署
+
+本仓库是文档与知识库项目，当前没有 Dockerfile、docker-compose.yml、K8s/Helm 部署入口或固定服务端口；发布质量以 `make test` 与 GitHub Actions CI 为准。
 
 </details>
 
