@@ -116,7 +116,7 @@
 | [docs](docs/README.md) | 知识库总入口，先从这里选择学习路线 |
 | [getting-started](docs/getting-started/README.md) | 新手启动入口，配置网络、Codex CLI、开发环境和 Git 闭环 |
 | [workflow](docs/workflow/README.md) | 项目执行入口，把需求推进成计划、修改、门禁、提交和复盘 |
-| [concepts](docs/concepts/README.md) | 概念入口，理解问题求解、拼好码和系统构建 |
+| [concepts](docs/concepts/README.md) | 概念入口，理解问题求解、拼好码、系统构建和关键词系统 |
 | [references](docs/references/README.md) | 工程实践入口，查技术栈、质量门禁、模板和常见坑 |
 | [philosophy](docs/philosophy/README.md) | 思维入口，补思维模型、编程之道和软件工程常识 |
 | [research](docs/research/README.md) | 研究入口，记录新技术、优秀 repo 和工程趋势判断 |
@@ -523,6 +523,7 @@
 *   [**系统构建方法**](docs/concepts/system-building.md): 自顶向下、自底向上与分而治之的组合使用。
 *   [**开发范式演进**](docs/concepts/development-paradigms.md): 软件工程组织方式与 AI 编程范式的演进。
 *   [**语言层要素**](docs/concepts/language-layers.md): 理解代码所需的语言层级、执行模型、类型系统和工程语义。
+*   [**关键词系统**](docs/concepts/keyword-system.md): Vibe Coding 与工程协作中的高频关键词。
 *   [**思维模型**](docs/philosophy/thinking-models.md): 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。
 *   [**组合描述模型**](docs/philosophy/compositional-description-model.md): 用对象、状态、快照、序列、过程、变换、同一/差异与关系描述复杂系统。
 *   [**编程之道**](docs/philosophy/programming-dao.md): 编程哲学、结构、状态、复杂度与工程判断。

@@ -6,7 +6,7 @@ sections:
     agent_guide: docs/getting-started/AGENTS.md
   concepts:
     path: docs/concepts
-    purpose: 核心概念、问题求解与工程思想
+    purpose: 核心概念、问题求解、关键词系统与工程思想
     entry: docs/concepts/README.md
     agent_guide: docs/concepts/AGENTS.md
   philosophy:
@@ -45,6 +45,7 @@ reading_paths:
     title: 开发者路径
     documents:
       - docs/concepts/glue-coding.md
+      - docs/concepts/keyword-system.md
       - docs/concepts/system-building.md
       - docs/references/technology-stack.md
       - docs/references/project-architecture-template.md
@@ -110,6 +111,9 @@ documents:
     - path: docs/concepts/language-layers.md
       title: 语言层要素
       role: 代码理解所需语言层级
+    - path: docs/concepts/keyword-system.md
+      title: 关键词系统
+      role: Vibe Coding 与工程协作中的高频关键词
     - path: docs/concepts/recursive-self-optimizing-system.md
       title: 递归自优化系统
       role: 递归自优化生成系统的形式化模型

@@ -14,7 +14,7 @@
 | 目录 | 定位 | 首选入口 |
 |:---|:---|:---|
 | [getting-started](./getting-started/) | 从零开始的入门教程 | [Vibe Coding 经验](./getting-started/vibe-coding-experience.md) / [学习地图](./getting-started/learning-map.md) |
-| [concepts](./concepts/) | 核心概念、问题求解与工程思想 | [问题求解](./concepts/problem-solving.md) / [拼好码](./concepts/glue-coding.md) |
+| [concepts](./concepts/) | 核心概念、问题求解、关键词系统与工程思想 | [问题求解](./concepts/problem-solving.md) / [拼好码](./concepts/glue-coding.md) / [关键词系统](./concepts/keyword-system.md) |
 | [philosophy](./philosophy/) | 哲学方法论、思维模型与底层认知模型 | [思维模型](./philosophy/thinking-models.md) / [方法论工具箱](./philosophy/methodology-toolbox.md) |
 | [references](./references/) | 工程实践、技术栈、模板和检查清单 | [项目架构模板](./references/project-architecture-template.md) / [质量门禁](./references/quality-gates-and-pitfalls.md) |
 | [research](./research/) | 新技术、优秀 repo 与工程范式研究 | [Harness 工程解析](./research/harness-engineering.md) / [tmux 蜂群协作](./research/tmux-ai-swarm.md) |
@@ -43,6 +43,7 @@
 - [系统构建方法](./concepts/system-building.md) - 自顶向下、自底向上与分而治之的组合使用。
 - [开发范式演进](./concepts/development-paradigms.md) - 软件工程组织方式的演进。
 - [语言层要素](./concepts/language-layers.md) - 看懂代码所需的语言层要素。
+- [关键词系统](./concepts/keyword-system.md) - Vibe Coding 与工程协作中的高频关键词。
 - [递归自优化系统](./concepts/recursive-self-optimizing-system.md) - 递归自优化生成系统的形式化模型。
 - [AGENTS](./concepts/AGENTS.md) - 核心概念目录操作规则。
 

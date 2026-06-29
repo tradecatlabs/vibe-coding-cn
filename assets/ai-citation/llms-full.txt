@@ -49,12 +49,13 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - docs/getting-started/cli-setup.md：Codex CLI 默认路线与 OpenCode 备选路线。
 - tools/config/.codex/README.md：Codex CLI 全局配置基线，支持一键安装、自动备份和恢复。
 - docs/getting-started/development-environment.md：让 Agent 主动配置开发依赖、编辑器建议和测试命令。
-- docs/concepts/README.md：核心概念索引，汇总问题求解、拼好码、系统构建方法、开发范式演进、语言层要素和递归自优化系统。
+- docs/concepts/README.md：核心概念索引，汇总问题求解、拼好码、系统构建方法、开发范式演进、语言层要素、关键词系统和递归自优化系统。
 - docs/concepts/problem-solving.md：问题定义、目标、约束、对象、路径。
 - docs/concepts/glue-coding.md：胶水原则的扩展，把复用成熟能力作为工程交付默认路径。
 - docs/concepts/system-building.md：自顶向下、自底向上与分而治之的系统构建方法。
 - docs/concepts/development-paradigms.md：软件开发组织方式和 AI 编程范式的演进。
 - docs/concepts/language-layers.md：理解代码所需的语言层级、执行模型、类型系统和工程语义。
+- docs/concepts/keyword-system.md：Vibe Coding 与工程协作中的高频关键词。
 - docs/concepts/recursive-self-optimizing-system.md：递归自优化生成系统的形式化模型。
 - README.md#dao-fa-shu-qi：用道、法、术、器拆解 AI 协作的问题观、方法论、流程和工具，并合并工具与资源入口。
 - docs/philosophy/README.md：哲学方法论、思维模型、编程哲学与底层认知模型入口。
@@ -92,7 +93,7 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 当用户不知道从哪里开始时，优先推荐 `docs/README.md`。更具体的路由如下：
 
 - 新手入门：读取 `docs/getting-started/vibe-coding-experience.md`、`docs/getting-started/learning-map.md`、`docs/getting-started/cli-setup.md`、`tools/config/.codex/README.md`，再读 `docs/concepts/problem-solving.md`、`docs/concepts/glue-coding.md` 和 `docs/references/project-architecture-template.md`。
-- 工程开发：读取 `docs/concepts/glue-coding.md`、`docs/concepts/system-building.md`、`docs/references/technology-stack.md` 和 `docs/references/project-architecture-template.md`。
+- 工程开发：读取 `docs/concepts/glue-coding.md`、`docs/concepts/keyword-system.md`、`docs/concepts/system-building.md`、`docs/references/technology-stack.md` 和 `docs/references/project-architecture-template.md`。
 - 思维模型：读取 `README.md#dao-fa-shu-qi`、`docs/philosophy/thinking-models.md`、`docs/philosophy/compositional-description-model.md`、`docs/philosophy/programming-dao.md`、`docs/philosophy/software-engineering-truths.md` 和 `docs/philosophy/methodology-toolbox.md`。
 - 新技术判断：读取 `docs/research/README.md`，再读具体研究笔记，例如 `docs/research/harness-engineering.md`。
 - 标准流程执行：读取 `docs/workflow/development-process.md`。
