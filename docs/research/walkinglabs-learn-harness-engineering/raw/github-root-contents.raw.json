@@ -1,0 +1,226 @@
+[
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "f94c46c41587f309ef09ad91509152476bc5f730",
+    "size": 0,
+    "url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/.github?ref=main",
+    "html_url": "https://github.com/walkinglabs/learn-harness-engineering/tree/main/.github",
+    "git_url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/trees/f94c46c41587f309ef09ad91509152476bc5f730",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/.github?ref=main",
+      "git": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/trees/f94c46c41587f309ef09ad91509152476bc5f730",
+      "html": "https://github.com/walkinglabs/learn-harness-engineering/tree/main/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "d86c77a7235307d1943b1d5f87124c692de53d8d",
+    "size": 341,
+    "url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/blobs/d86c77a7235307d1943b1d5f87124c692de53d8d",
+    "download_url": "https://raw.githubusercontent.com/walkinglabs/learn-harness-engineering/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/blobs/d86c77a7235307d1943b1d5f87124c692de53d8d",
+      "html": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": "CLAUDE.md",
+    "path": "CLAUDE.md",
+    "sha": "4ca05c29c3ffd194245deeda918c7be4b0c4b134",
+    "size": 3083,
+    "url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/CLAUDE.md?ref=main",
+    "html_url": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/CLAUDE.md",
+    "git_url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/blobs/4ca05c29c3ffd194245deeda918c7be4b0c4b134",
+    "download_url": "https://raw.githubusercontent.com/walkinglabs/learn-harness-engineering/main/CLAUDE.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/CLAUDE.md?ref=main",
+      "git": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/blobs/4ca05c29c3ffd194245deeda918c7be4b0c4b134",
+      "html": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/CLAUDE.md"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "828bd8559abead81e06920d2424d92f76d158f99",
+    "size": 1067,
+    "url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/blobs/828bd8559abead81e06920d2424d92f76d158f99",
+    "download_url": "https://raw.githubusercontent.com/walkinglabs/learn-harness-engineering/main/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/LICENSE?ref=main",
+      "git": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/blobs/828bd8559abead81e06920d2424d92f76d158f99",
+      "html": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/LICENSE"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "0c94b9d5b46fa41c1897f1444f3b2ec33d059f67",
+    "size": 36562,
+    "url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/README.md?ref=main",
+    "html_url": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/blobs/0c94b9d5b46fa41c1897f1444f3b2ec33d059f67",
+    "download_url": "https://raw.githubusercontent.com/walkinglabs/learn-harness-engineering/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/blobs/0c94b9d5b46fa41c1897f1444f3b2ec33d059f67",
+      "html": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/README.md"
+    }
+  },
+  {
+    "name": "docs-readme",
+    "path": "docs-readme",
+    "sha": "2c8d05dae051d6a228195fd365ef5a398c19a0b1",
+    "size": 0,
+    "url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/docs-readme?ref=main",
+    "html_url": "https://github.com/walkinglabs/learn-harness-engineering/tree/main/docs-readme",
+    "git_url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/trees/2c8d05dae051d6a228195fd365ef5a398c19a0b1",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/docs-readme?ref=main",
+      "git": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/trees/2c8d05dae051d6a228195fd365ef5a398c19a0b1",
+      "html": "https://github.com/walkinglabs/learn-harness-engineering/tree/main/docs-readme"
+    }
+  },
+  {
+    "name": "docs",
+    "path": "docs",
+    "sha": "524e15258f6031fe450d0261088fab18df86de54",
+    "size": 0,
+    "url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/docs?ref=main",
+    "html_url": "https://github.com/walkinglabs/learn-harness-engineering/tree/main/docs",
+    "git_url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/trees/524e15258f6031fe450d0261088fab18df86de54",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/docs?ref=main",
+      "git": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/trees/524e15258f6031fe450d0261088fab18df86de54",
+      "html": "https://github.com/walkinglabs/learn-harness-engineering/tree/main/docs"
+    }
+  },
+  {
+    "name": "get_anthropic_logo.js",
+    "path": "get_anthropic_logo.js",
+    "sha": "9f371b182c51b460a6fdcae211a64a16242d3746",
+    "size": 246,
+    "url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/get_anthropic_logo.js?ref=main",
+    "html_url": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/get_anthropic_logo.js",
+    "git_url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/blobs/9f371b182c51b460a6fdcae211a64a16242d3746",
+    "download_url": "https://raw.githubusercontent.com/walkinglabs/learn-harness-engineering/main/get_anthropic_logo.js",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/get_anthropic_logo.js?ref=main",
+      "git": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/blobs/9f371b182c51b460a6fdcae211a64a16242d3746",
+      "html": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/get_anthropic_logo.js"
+    }
+  },
+  {
+    "name": "package-lock.json",
+    "path": "package-lock.json",
+    "sha": "b59ae3f38e283c6f4acc4ebf465d3feafcc122da",
+    "size": 163209,
+    "url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/package-lock.json?ref=main",
+    "html_url": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/package-lock.json",
+    "git_url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/blobs/b59ae3f38e283c6f4acc4ebf465d3feafcc122da",
+    "download_url": "https://raw.githubusercontent.com/walkinglabs/learn-harness-engineering/main/package-lock.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/package-lock.json?ref=main",
+      "git": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/blobs/b59ae3f38e283c6f4acc4ebf465d3feafcc122da",
+      "html": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/package-lock.json"
+    }
+  },
+  {
+    "name": "package.json",
+    "path": "package.json",
+    "sha": "5891609f7c69e036e782f746b9b72167ca616342",
+    "size": 968,
+    "url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/package.json?ref=main",
+    "html_url": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/package.json",
+    "git_url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/blobs/5891609f7c69e036e782f746b9b72167ca616342",
+    "download_url": "https://raw.githubusercontent.com/walkinglabs/learn-harness-engineering/main/package.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/package.json?ref=main",
+      "git": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/blobs/5891609f7c69e036e782f746b9b72167ca616342",
+      "html": "https://github.com/walkinglabs/learn-harness-engineering/blob/main/package.json"
+    }
+  },
+  {
+    "name": "projects",
+    "path": "projects",
+    "sha": "9270d7cb774a4e05909508166c58638622efe7de",
+    "size": 0,
+    "url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/projects?ref=main",
+    "html_url": "https://github.com/walkinglabs/learn-harness-engineering/tree/main/projects",
+    "git_url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/trees/9270d7cb774a4e05909508166c58638622efe7de",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/projects?ref=main",
+      "git": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/trees/9270d7cb774a4e05909508166c58638622efe7de",
+      "html": "https://github.com/walkinglabs/learn-harness-engineering/tree/main/projects"
+    }
+  },
+  {
+    "name": "scripts",
+    "path": "scripts",
+    "sha": "00603fc11b318853b52a56e71d327e35a4ef67b5",
+    "size": 0,
+    "url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/scripts?ref=main",
+    "html_url": "https://github.com/walkinglabs/learn-harness-engineering/tree/main/scripts",
+    "git_url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/trees/00603fc11b318853b52a56e71d327e35a4ef67b5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/scripts?ref=main",
+      "git": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/trees/00603fc11b318853b52a56e71d327e35a4ef67b5",
+      "html": "https://github.com/walkinglabs/learn-harness-engineering/tree/main/scripts"
+    }
+  },
+  {
+    "name": "skills",
+    "path": "skills",
+    "sha": "1aab46198af95628b525ce92670739d94de1376f",
+    "size": 0,
+    "url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/skills?ref=main",
+    "html_url": "https://github.com/walkinglabs/learn-harness-engineering/tree/main/skills",
+    "git_url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/trees/1aab46198af95628b525ce92670739d94de1376f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/skills?ref=main",
+      "git": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/trees/1aab46198af95628b525ce92670739d94de1376f",
+      "html": "https://github.com/walkinglabs/learn-harness-engineering/tree/main/skills"
+    }
+  },
+  {
+    "name": "tools",
+    "path": "tools",
+    "sha": "f5c6fed4eddb143c0980f277360fdf13c364df64",
+    "size": 0,
+    "url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/tools?ref=main",
+    "html_url": "https://github.com/walkinglabs/learn-harness-engineering/tree/main/tools",
+    "git_url": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/trees/f5c6fed4eddb143c0980f277360fdf13c364df64",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/contents/tools?ref=main",
+      "git": "https://api.github.com/repos/walkinglabs/learn-harness-engineering/git/trees/f5c6fed4eddb143c0980f277360fdf13c364df64",
+      "html": "https://github.com/walkinglabs/learn-harness-engineering/tree/main/tools"
+    }
+  }
+]

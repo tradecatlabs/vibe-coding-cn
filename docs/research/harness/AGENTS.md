@@ -28,6 +28,7 @@ harness/
 - 不承载通用工程模板；稳定模板迁移到 `docs/references/`。
 - 不承载可执行能力；可复用能力迁移到 `skills/`。
 - 不把单个工具、单篇文章或单次实验直接包装成稳定结论。
+- 单个外部仓库的一手研究放到同级独立研究域，例如 `../walkinglabs-learn-harness-engineering/`。
 
 ## 证据要求
 

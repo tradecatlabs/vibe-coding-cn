@@ -16,6 +16,7 @@
 | <a id="research-value-application-map"></a>[研究价值与应用地图](research-value-application-map.md) | 研究体系给用户带来的价值、核心启示、应用位置和下沉路线。 |
 | <a id="research-transfer-synthesis"></a>[研究迁移综合](research-transfer-synthesis.md) | 将对标拆解、改良迭代和杂交创新转成可执行研究路线。 |
 | <a id="research-harness-engineering"></a>[Harness 研究对象](harness/) | 工程控制、评估器、反馈闭环与 AI 生成系统可靠性。 |
+| <a id="research-walkinglabs-learn-harness-engineering"></a>[walkinglabs/learn-harness-engineering 研究域](walkinglabs-learn-harness-engineering/) | Harness Engineering 课程、模板、Skill 与审计工具对标对象。 |
 | <a id="research-tmux-ai-swarm"></a>[tmux 蜂群协作](tmux-ai-swarm.md) | 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式。 |
 | <a id="research-aider-ai-aider"></a>[Aider-AI/aider 研究域](aider-ai-aider/) | 终端 AI 结对编程工具。 |
 | <a id="research-cline-cline"></a>[cline/cline 研究域](cline-cline/) | IDE/SDK/CLI 自主编码 Agent。 |
@@ -45,6 +46,9 @@
 - [研究迁移综合](research-transfer-synthesis.md) - 将对标拆解、改良迭代和杂交创新转成可执行研究路线。
 - [Harness 研究对象](harness/README.md) - 工程控制、评估器、反馈闭环与 AI 生成系统可靠性。
 - [Harness 工程解析](harness/harness-engineering.md) - Harness Engineering 的工程控制、评估器与反馈闭环解析。
+- [walkinglabs/learn-harness-engineering 研究域](walkinglabs-learn-harness-engineering/README.md) - Harness Engineering 课程、模板、Skill 与审计工具对标对象。
+- [walkinglabs/learn-harness-engineering 研究分析](walkinglabs-learn-harness-engineering/analysis.md) - 结构化研究结论、可迁移做法、风险和验证动作。
+- [walkinglabs/learn-harness-engineering 深度研究](walkinglabs-learn-harness-engineering/deep-dive.md) - L2 结构深度研究、关键机制和本仓应用建议。
 - [tmux 蜂群协作](tmux-ai-swarm.md) - 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式。
 - [Aider-AI/aider 研究域](aider-ai-aider/README.md) - 终端 AI 结对编程工具。
 - [Aider-AI/aider 研究分析](aider-ai-aider/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。

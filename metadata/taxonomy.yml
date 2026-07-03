@@ -181,6 +181,15 @@ documents:
   - path: docs/research/harness/harness-engineering.md
     title: Harness 工程解析
     role: 工程控制、评估器、反馈闭环与 AI 生成系统可靠性
+  - path: docs/research/walkinglabs-learn-harness-engineering/README.md
+    title: walkinglabs/learn-harness-engineering 研究域
+    role: Harness Engineering 课程、模板、Skill 与审计工具对标对象
+  - path: docs/research/walkinglabs-learn-harness-engineering/analysis.md
+    title: walkinglabs/learn-harness-engineering 研究分析
+    role: 结构化研究结论、可迁移做法、风险和验证动作
+  - path: docs/research/walkinglabs-learn-harness-engineering/deep-dive.md
+    title: walkinglabs/learn-harness-engineering 深度研究
+    role: L2 结构深度研究、关键机制和本仓应用建议
   - path: docs/research/aider-ai-aider/README.md
     title: Aider-AI/aider 研究域
     role: 终端 AI 结对编程工具

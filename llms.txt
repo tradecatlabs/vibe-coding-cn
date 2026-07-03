@@ -55,6 +55,7 @@ vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程系统教程，帮�
 - docs/research/research-value-application-map.md
 - docs/research/research-transfer-synthesis.md
 - docs/research/harness/harness-engineering.md
+- docs/research/walkinglabs-learn-harness-engineering/README.md
 - docs/research/openai-codex/README.md
 - docs/research/shanraisshan-claude-code-best-practice/README.md
 - docs/research/cline-cline/README.md

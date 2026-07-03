@@ -1,0 +1,58 @@
+{
+  "createdAt": "2026-03-29T12:28:19Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "Harness engineering beginner tutorial, from 0 to 1",
+  "forkCount": 1059,
+  "homepageUrl": "https://walkinglabs.github.io/learn-harness-engineering/",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": null,
+  "licenseInfo": {
+    "key": "mit",
+    "name": "MIT License",
+    "nickname": ""
+  },
+  "nameWithOwner": "walkinglabs/learn-harness-engineering",
+  "primaryLanguage": {
+    "name": "TypeScript"
+  },
+  "pushedAt": "2026-06-30T01:33:03Z",
+  "repositoryTopics": [
+    {
+      "name": "agent"
+    },
+    {
+      "name": "harness"
+    },
+    {
+      "name": "harness-engineering"
+    },
+    {
+      "name": "harness-framework"
+    },
+    {
+      "name": "llm"
+    },
+    {
+      "name": "ai"
+    },
+    {
+      "name": "ai-agent"
+    },
+    {
+      "name": "agentic"
+    },
+    {
+      "name": "agentic-ai"
+    }
+  ],
+  "stargazerCount": 9793,
+  "updatedAt": "2026-07-03T22:42:37Z",
+  "url": "https://github.com/walkinglabs/learn-harness-engineering",
+  "watchers": {
+    "totalCount": 43
+  }
+}

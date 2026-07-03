@@ -2,10 +2,10 @@
 
 ## 字多不看
 
-- 当前研究体系已经覆盖 17 个独立研究域，17 个均已完成 L2 深度研究。
+- 当前研究体系已经覆盖 18 个独立研究域，18 个均已完成 L2 深度研究。
 - 这些研究不是为了介绍外部项目，而是为了把外部项目拆成可验证事实、核心机制、迁移边界和本仓可执行改进项。
-- 17 个研究域的 `analysis.md` 已统一为对标拆解、改良迭代、可迁移清单、不可迁移清单和验证动作格式。
-- 17 个研究域的 `deep-dive.md` 已补齐 L2 证据层、关键机制、迁移边界和 L3 验证任务。
+- 18 个研究域的 `analysis.md` 已统一为对标拆解、改良迭代、可迁移清单、不可迁移清单和验证动作格式。
+- 18 个研究域的 `deep-dive.md` 已补齐 L2 证据层、关键机制、迁移边界和 L3 验证任务。
 - 用户获得的直接价值是少走弯路、看见范式、拿到可落地路线。
 - 本仓获得的直接价值是形成 `getting-started`、`references`、`workflow`、`skills`、`assets`、`scripts`
   和 `research` 的改进输入。
@@ -16,8 +16,8 @@
 
 | 层级 | 数量 | 状态 | 说明 |
 |:---|---:|:---|:---|
-| 研究域 | 17 | 已建立 | 每个外部仓库一个独立研究域，均有 raw 原始事实层、`analysis.md` 和 `deep-dive.md` |
-| L2 深度研究 | 17 | 已完成 | 覆盖工具、课程、资源索引、项目实践、中文主题雷达和归档工具样本 |
+| 研究域 | 18 | 已建立 | 每个外部仓库一个独立研究域，均有 raw 原始事实层、`analysis.md` 和 `deep-dive.md` |
+| L2 深度研究 | 18 | 已完成 | 覆盖工具、课程、资源索引、项目实践、中文主题雷达、Harness 课程和归档工具样本 |
 | L1 观察研究 | 0 | 已清空 | P3 仍是低采用优先级，不再代表研究深度缺口 |
 
 ## 用户能获得什么
@@ -140,6 +140,7 @@
 | 研究来源 | 用户价值 | 本仓应用位置 | 可执行产物 |
 |:---|:---|:---|:---|
 | `openai/codex` | 理解 coding agent 控制面 | `scripts/`、`skills/`、`references/` | 脚本风险分级、沙箱/审批清单、Agent 控制面模板 |
+| `learn-harness-engineering` | 理解 Harness 如何从概念变成课程、模板、Skill 和审计工具 | `docs/research/harness/`、`workflow/`、`scripts/`、`skills/` | 最小 Harness 检查表、feature state 样例、Agent 产出评估表 |
 | `aider` | 理解 Git 驱动 AI 修改闭环 | `workflow/`、`references/` | AI 修改到提交的标准流程、文档 map / repo map 机制 |
 | `cline` | 理解多入口 agent 平台 | `metadata/`、`llms.txt`、`skills/` | 人类入口、AI 入口、脚本入口、skill 入口的入口契约 |
 | `awesome-claude-code` | 理解资源治理 | `assets/external-resources/` | 资源 schema、生命周期字段、资源校验脚本 |

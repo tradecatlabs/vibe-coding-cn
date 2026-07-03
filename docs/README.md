@@ -81,6 +81,9 @@
 - [研究迁移综合](./research/research-transfer-synthesis.md) - 将对标拆解、改良迭代和杂交创新转成可执行研究路线。
 - [Harness 研究对象](./research/harness/README.md) - Harness Engineering 的工程控制、评估器与反馈闭环研究对象。
 - [Harness 工程解析](./research/harness/harness-engineering.md) - Harness Engineering 的工程控制、评估器与反馈闭环解析。
+- [walkinglabs/learn-harness-engineering 研究域](./research/walkinglabs-learn-harness-engineering/README.md) - Harness Engineering 课程、模板、Skill 与审计工具对标对象。
+- [walkinglabs/learn-harness-engineering 研究分析](./research/walkinglabs-learn-harness-engineering/analysis.md) - 结构化研究结论、可迁移做法、风险和验证动作。
+- [walkinglabs/learn-harness-engineering 深度研究](./research/walkinglabs-learn-harness-engineering/deep-dive.md) - L2 结构深度研究、关键机制和本仓应用建议。
 - [tmux 蜂群协作](./research/tmux-ai-swarm.md) - 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式。
 - [Aider-AI/aider 研究域](./research/aider-ai-aider/README.md) - 终端 AI 结对编程工具。
 - [Aider-AI/aider 研究分析](./research/aider-ai-aider/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。

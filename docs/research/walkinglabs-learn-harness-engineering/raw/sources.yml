@@ -1,0 +1,39 @@
+version: 1
+domain_id: walkinglabs-learn-harness-engineering
+object:
+  type: github_repository
+  name: walkinglabs/learn-harness-engineering
+  url: https://github.com/walkinglabs/learn-harness-engineering
+pulled_at: '2026-07-03T22:52:11+00:00'
+puller: scripts/fetch-research-raw.py
+files:
+  - path: repository/
+    kind: git-working-tree
+    status: ok
+    source: 'git -C docs/research/walkinglabs-learn-harness-engineering/raw/repository pull --ff-only'
+    message: 'Already up to date.'
+  - path: github-repo.raw.json
+    kind: repository-metadata
+    status: ok
+    source: 'gh repo view walkinglabs/learn-harness-engineering --json nameWithOwner,url,description,homepageUrl,isArchived,isFork,isMirror,defaultBranchRef,licenseInfo,primaryLanguage,repositoryTopics,stargazerCount,forkCount,watchers,createdAt,updatedAt,pushedAt,latestRelease --jq .'
+  - path: github-readme.raw.md.txt
+    kind: readme
+    status: ok
+    source: 'gh api repos/walkinglabs/learn-harness-engineering/readme -H Accept: application/vnd.github.raw'
+  - path: github-license.raw.txt
+    kind: license
+    status: ok
+    source: 'gh api repos/walkinglabs/learn-harness-engineering/license -H Accept: application/vnd.github.raw'
+  - path: github-root-contents.raw.json
+    kind: root-contents
+    status: ok
+    source: 'gh api repos/walkinglabs/learn-harness-engineering/contents'
+  - path: github-languages.raw.json
+    kind: languages
+    status: ok
+    source: 'gh api repos/walkinglabs/learn-harness-engineering/languages'
+  - path: github-latest-release.raw.json
+    kind: latest-release
+    status: missing_or_error
+    source: 'gh api repos/walkinglabs/learn-harness-engineering/releases/latest'
+    message: 'gh: Not Found (HTTP 404)'
