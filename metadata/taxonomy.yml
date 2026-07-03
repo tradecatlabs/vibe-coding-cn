@@ -283,36 +283,54 @@ documents:
   - path: docs/research/ai-for-developers-awesome-vibe-coding/analysis.md
     title: ai-for-developers/awesome-vibe-coding 研究分析
     role: 结构化研究结论、可借鉴点、风险和下一轮任务
+  - path: docs/research/ai-for-developers-awesome-vibe-coding/deep-dive.md
+    title: ai-for-developers/awesome-vibe-coding 深度研究
+    role: L2 结构深度研究、关键机制、迁移边界和验证任务
   - path: docs/research/daotin-ai-coding/README.md
     title: Daotin/ai-coding 研究域
     role: AI Coding 经验汇总
   - path: docs/research/daotin-ai-coding/analysis.md
     title: Daotin/ai-coding 研究分析
     role: 结构化研究结论、可借鉴点、风险和下一轮任务
+  - path: docs/research/daotin-ai-coding/deep-dive.md
+    title: Daotin/ai-coding 深度研究
+    role: L2 结构深度研究、关键机制、迁移边界和验证任务
   - path: docs/research/earyantle-vibe-coding-skill/README.md
     title: earyantLe/vibe-coding-skill 研究域
     role: Vibe Coding Skill / SOP 化
   - path: docs/research/earyantle-vibe-coding-skill/analysis.md
     title: earyantLe/vibe-coding-skill 研究分析
     role: 结构化研究结论、可借鉴点、风险和下一轮任务
+  - path: docs/research/earyantle-vibe-coding-skill/deep-dive.md
+    title: earyantLe/vibe-coding-skill 深度研究
+    role: L2 结构深度研究、关键机制、迁移边界和验证任务
   - path: docs/research/liyupi-ai-guide/README.md
     title: liyupi/ai-guide 研究域
     role: AI 资源大全与产品实用路线
   - path: docs/research/liyupi-ai-guide/analysis.md
     title: liyupi/ai-guide 研究分析
     role: 结构化研究结论、可借鉴点、风险和下一轮任务
+  - path: docs/research/liyupi-ai-guide/deep-dive.md
+    title: liyupi/ai-guide 深度研究
+    role: L2 结构深度研究、关键机制、迁移边界和验证任务
   - path: docs/research/roocodeinc-roo-code/README.md
     title: RooCodeInc/Roo-Code 研究域
     role: 已归档多 Agent 编辑器工具
   - path: docs/research/roocodeinc-roo-code/analysis.md
     title: RooCodeInc/Roo-Code 研究分析
     role: 结构化研究结论、可借鉴点、风险和下一轮任务
+  - path: docs/research/roocodeinc-roo-code/deep-dive.md
+    title: RooCodeInc/Roo-Code 深度研究
+    role: L2 结构深度研究、关键机制、迁移边界和验证任务
   - path: docs/research/wendy7756-vibe-coding-guide/README.md
     title: wendy7756/vibe-coding-guide 研究域
     role: 非程序员自然语言编程指南
   - path: docs/research/wendy7756-vibe-coding-guide/analysis.md
     title: wendy7756/vibe-coding-guide 研究分析
     role: 结构化研究结论、可借鉴点、风险和下一轮任务
+  - path: docs/research/wendy7756-vibe-coding-guide/deep-dive.md
+    title: wendy7756/vibe-coding-guide 深度研究
+    role: L2 结构深度研究、关键机制、迁移边界和验证任务
   - path: docs/research/tmux-ai-swarm.md
     title: tmux 蜂群协作
     role: 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式

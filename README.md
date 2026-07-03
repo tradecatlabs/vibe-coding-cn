@@ -532,6 +532,7 @@
 *   [**工程实践**](docs/references/quality-gates-and-pitfalls.md): 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口。
 *   [**技术栈**](docs/references/technology-stack.md#reference-technology-stack-十四如何选择技术栈): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
 *   [**研究域治理契约**](docs/research/research-domain-contract.md): 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
+*   [**研究价值与应用地图**](docs/research/research-value-application-map.md): 17 个研究域的用户价值、核心启示、应用位置和下沉路线。
 *   [**研究迁移综合**](docs/research/research-transfer-synthesis.md): 用对标拆解、改良迭代和杂交创新把研究转成可执行路线。
 *   [**Harness 工程解析**](docs/research/harness/harness-engineering.md): Harness Engineering 的工程控制、评估器与反馈闭环解析。
 *   [**OpenAI Codex 研究域**](docs/research/openai-codex/README.md): 官方 coding agent 工具源码研究对象。

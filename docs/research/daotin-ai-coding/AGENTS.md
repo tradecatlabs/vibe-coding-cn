@@ -9,6 +9,7 @@ daotin-ai-coding/
 ├── README.md  # 研究域入口和判断层
 ├── AGENTS.md  # 本目录维护规则
 ├── domain.yml # 事实摘要层：仓库元数据、研究角色、来源证据
+├── deep-dive.md # L2 结构深度研究、关键机制、迁移边界和验证任务
 └── raw/       # 原始事实层：拉取到本地的一手材料快照
 ```
 
