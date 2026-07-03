@@ -1,0 +1,46 @@
+{
+  "createdAt": "2026-01-26T11:49:10Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "The best agent harness.",
+  "forkCount": 661,
+  "homepageUrl": "https://docs.trytrellis.app",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": null,
+  "licenseInfo": {
+    "key": "agpl-3.0",
+    "name": "GNU Affero General Public License v3.0",
+    "nickname": "GNU AGPLv3"
+  },
+  "nameWithOwner": "mindfold-ai/Trellis",
+  "primaryLanguage": {
+    "name": "TypeScript"
+  },
+  "pushedAt": "2026-07-02T04:33:18Z",
+  "repositoryTopics": [
+    {
+      "name": "agentic-coding"
+    },
+    {
+      "name": "ai-workflow"
+    },
+    {
+      "name": "codex"
+    },
+    {
+      "name": "harness"
+    },
+    {
+      "name": "claudecode"
+    }
+  ],
+  "stargazerCount": 11728,
+  "updatedAt": "2026-07-03T22:44:18Z",
+  "url": "https://github.com/mindfold-ai/Trellis",
+  "watchers": {
+    "totalCount": 29
+  }
+}

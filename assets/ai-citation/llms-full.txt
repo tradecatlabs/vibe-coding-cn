@@ -85,6 +85,9 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - docs/research/walkinglabs-learn-harness-engineering/README.md：Harness Engineering 课程、模板、Skill 与审计工具对标研究对象。
 - docs/research/walkinglabs-learn-harness-engineering/analysis.md：walkinglabs/learn-harness-engineering 的结构化研究结论、可迁移做法、风险和验证动作。
 - docs/research/walkinglabs-learn-harness-engineering/deep-dive.md：walkinglabs/learn-harness-engineering 的 L2 结构深度研究、关键机制和本仓应用建议。
+- docs/research/mindfold-ai-trellis/README.md：跨平台 Agent Harness 框架、CLI 与任务/规格/记忆系统研究对象。
+- docs/research/mindfold-ai-trellis/analysis.md：mindfold-ai/Trellis 的结构化研究结论、可迁移做法、风险和验证动作。
+- docs/research/mindfold-ai-trellis/deep-dive.md：mindfold-ai/Trellis 的 L2 结构深度研究、关键机制和本仓应用建议。
 - docs/research/aider-ai-aider/README.md：终端 AI 结对编程工具研究对象。
 - docs/research/aider-ai-aider/analysis.md：Aider-AI/aider 的结构化研究结论、可借鉴点、风险和下一轮任务。
 - docs/research/aider-ai-aider/deep-dive.md：Aider-AI/aider 的 L2 源码/结构深度研究、关键机制和可迁移模式。

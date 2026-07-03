@@ -31,6 +31,13 @@ research/
 │   ├── deep-dive.md
 │   ├── raw/
 │   └── AGENTS.md
+├── mindfold-ai-trellis/
+│   ├── README.md
+│   ├── domain.yml
+│   ├── analysis.md
+│   ├── deep-dive.md
+│   ├── raw/
+│   └── AGENTS.md
 ├── ai-for-developers-awesome-vibe-coding/
 │   ├── README.md
 │   ├── domain.yml
@@ -107,7 +114,7 @@ research/
 
 上方只展开了第一个外部仓库研究域的基础形态；所有外部仓库研究域都必须包含同样的原始事实层、
 `analysis.md` 和 `deep-dive.md`。
-`deep-dive.md` 是 L2 产物；当前 18 个外部仓库研究域已经全部补齐，P3 只表示采用优先级低，
+`deep-dive.md` 是 L2 产物；当前 19 个外部仓库研究域已经全部补齐，P3 只表示采用优先级低，
 不再表示研究深度缺口。
 
 ## 修改规则

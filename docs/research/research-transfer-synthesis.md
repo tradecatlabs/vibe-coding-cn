@@ -3,8 +3,8 @@
 ## 字多不看
 
 - 研究不是证明“我看过资料”，而是把成熟对象拆成可迁移机制、不可迁移边界和可验证动作。
-- 本轮把 P1 研究对象合成为一条主线：Codex 负责执行控制面，Aider 负责 Git 编辑闭环，Cline 负责多入口平台化，Claude Code Best Practice 负责方法论资产化。
-- 当前 18 个研究域均已补齐 `deep-dive.md`，全量进入 L2 证据层。
+- 本轮把 P1 研究对象合成为一条主线：Codex 负责执行控制面，Trellis 负责 Agent Harness 任务/规格/记忆控制面，Aider 负责 Git 编辑闭环，Cline 负责多入口平台化，Claude Code Best Practice 负责方法论资产化。
+- 当前 19 个研究域均已补齐 `deep-dive.md`，全量进入 L2 证据层。
 - 本仓不应该复制任何一个外部项目，而应该杂交成“AI 原生知识库控制面”。
 - 下一步最小试用动作是：补 `scripts` 风险登记、补 Harness 检查表、补资源治理 schema、补工作流验证闭环。
 
@@ -30,6 +30,7 @@
 |:---|:---|:---|:---|:---|:---|
 | `openai/codex` | 执行控制面 | 把配置、沙箱、执行策略、工具、技能和项目上下文显式建模 | `scripts` 风险分级、Agent 执行边界、技能输入输出契约 | 不复制 Rust/Bazel/CLI runtime，本仓不是 coding agent 产品 | 建立 `scripts/manifest.yml`，记录 owner、风险、输入、输出、dry-run 和 CI 状态 |
 | `walkinglabs/learn-harness-engineering` | Harness 课程到工具化 | 把 Agent 可靠性拆成指令、状态、验证、范围、生命周期、模板、Skill 和审计脚本 | 五子系统审计、feature state、init 验证入口、评估表、会话交接 | 不复制 VitePress 站点、多语言工程和 Electron 课程项目 | 为本仓 Harness 研究域补最小检查表，并抽样改写成文档仓库版本 |
+| `mindfold-ai/Trellis` | Agent Harness 任务/规格/记忆控制面 | 把 AI 编程会话转成 `.trellis/spec`、`.trellis/tasks`、workflow breadcrumb、workspace、channel runtime 和多平台配置 | 任务 artifact 最小契约、规格入口一致性、验证后沉淀、jsonl 上下文清单、多 AI 入口同步 | 不复制 AGPL 代码或模板，不把本仓改造成 Trellis runtime | 设计本仓轻量任务 artifact 契约，并用一个复杂文档任务试跑 |
 | `Aider-AI/aider` | Git 驱动编辑闭环 | 让每次 AI 修改都进入 diff、lint/test、commit、回滚和审查链路 | 研究域和文档修改必须保留 diff 证据、门禁命令和失败修复记录 | 不复制 Python 实现、repo map 算法和完整交互式终端产品 | 建立“AI 修改 -> diff 审查 -> make test -> commit”工作流模板 |
 | `cline/cline` | 多入口 agent 平台 | 同一套能力暴露为 IDE、CLI、SDK、rules、skills、examples 和测试平台 | 为人类入口、AI 入口、脚本入口、skill 入口、资源入口和 metadata 入口写清协议 | 不提前做 SDK、服务端 hub 或复杂 UI | 梳理本仓入口矩阵，记录每个入口的输入、输出、owner 和验证命令 |
 | `shanraisshan/claude-code-best-practice` | 方法论资产化 | 把经验拆成 best practice、implementation、workflow、reports、config | 把经验短句下沉为概念、模板、流程、skill 或检查项 | 不照搬 Claude Code 生态绑定配置，不把个人偏好当通用标准 | 建立“经验 -> 产物类型 -> 验证方式”的分流表 |
@@ -42,6 +43,7 @@
 |:---|:---|:---|:---|:---|
 | `openai-codex` | coding-agent-tooling | 执行控制面 | `scripts/`、`workflow/`、`references/` | 建脚本风险登记表 |
 | `walkinglabs-learn-harness-engineering` | harness-engineering | Harness 课程、模板、Skill 与审计工具 | `docs/research/harness/`、`workflow/`、`scripts/`、`skills/` | 建最小 Harness 检查表 |
+| `mindfold-ai-trellis` | agent-harness-framework | 任务、规格、记忆、验证和多平台适配控制面 | `docs/research/harness/`、`workflow/`、`metadata/`、`llms.txt` | 建任务 artifact 最小契约 |
 | `aider-ai-aider` | coding-agent-tooling | Git 驱动编辑闭环 | `workflow/` | 建 AI 修改到提交的证据模板 |
 | `cline-cline` | coding-agent-tooling | 多入口 agent 平台 | `metadata/`、`llms.txt`、`skills/` | 建入口矩阵 |
 | `shanraisshan-claude-code-best-practice` | agentic-engineering-methodology | 方法论资产化 | `concepts/`、`workflow/`、`skills/` | 建经验分流表 |
@@ -67,8 +69,8 @@
 
 | 改动点 | 原模式 | 本仓改良 | 验证指标 |
 |:---|:---|:---|:---|
-| 研究域分析 | 结构观察和可借鉴点 | 对标拆解、迁移边界、试用动作 | 18 个研究域 `analysis.md` 都有可执行动作 |
-| 深度研究 | L2 证据和关键机制 | 保留证据链，另写迁移综合 | 18 个研究域均有 `deep-dive.md` |
+| 研究域分析 | 结构观察和可借鉴点 | 对标拆解、迁移边界、试用动作 | 19 个研究域 `analysis.md` 都有可执行动作 |
+| 深度研究 | L2 证据和关键机制 | 保留证据链，另写迁移综合 | 19 个研究域均有 `deep-dive.md` |
 | 价值地图 | 用户价值说明 | 增加组合方案和验收指标 | 能回答“看完有什么用” |
 
 ### 第二轮：让研究进入仓库控制面

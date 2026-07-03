@@ -1,0 +1,37 @@
+version: 1
+repo:
+  name: mindfold-ai/Trellis
+  source_name: mindfold-ai/Trellis
+  url: https://github.com/mindfold-ai/Trellis
+research:
+  domain_id: mindfold-ai-trellis
+  domain_name: mindfold-ai/Trellis 研究域
+  primary_direction: agent-harness-framework
+  role: 跨平台 Agent Harness 框架、CLI 与任务/规格/记忆系统
+  priority: 1
+  why_study: 直接补强本仓 Harness 研究线，适合提炼任务控制面、规格注入、多平台 Agent 适配和会话记忆机制。
+github_observed:
+  observed_at: '2026-07-04'
+  source: gh repo view
+  stars: 11728
+  forks: 661
+  archived: false
+  language: TypeScript
+  license: AGPL-3.0
+  default_branch: main
+  pushed_at: '2026-07-02T04:33:18Z'
+  updated_at: '2026-07-03T22:44:18Z'
+  latest_release: null
+  homepage: https://docs.trytrellis.app
+  topics:
+  - agentic-coding
+  - ai-workflow
+  - codex
+  - harness
+  - claudecode
+source_evidence:
+  file: user-provided GitHub URL
+  line: null
+maintenance:
+  fact_policy: GitHub 动态字段只代表 observed_at 当日快照，更新结论前必须重新核验。
+  split_policy: 本目录已经是一等研究域；更深分析放入本目录新增文档。

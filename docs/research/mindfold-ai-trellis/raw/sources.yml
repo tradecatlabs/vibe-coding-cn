@@ -1,0 +1,39 @@
+version: 1
+domain_id: mindfold-ai-trellis
+object:
+  type: github_repository
+  name: mindfold-ai/Trellis
+  url: https://github.com/mindfold-ai/Trellis
+pulled_at: '2026-07-03T23:09:26+00:00'
+puller: scripts/fetch-research-raw.py
+files:
+  - path: repository/
+    kind: git-working-tree
+    status: ok
+    source: 'git -C docs/research/mindfold-ai-trellis/raw/repository pull --ff-only'
+    message: 'Already up to date.'
+  - path: github-repo.raw.json
+    kind: repository-metadata
+    status: ok
+    source: 'gh repo view mindfold-ai/Trellis --json nameWithOwner,url,description,homepageUrl,isArchived,isFork,isMirror,defaultBranchRef,licenseInfo,primaryLanguage,repositoryTopics,stargazerCount,forkCount,watchers,createdAt,updatedAt,pushedAt,latestRelease --jq .'
+  - path: github-readme.raw.md.txt
+    kind: readme
+    status: ok
+    source: 'gh api repos/mindfold-ai/Trellis/readme -H Accept: application/vnd.github.raw'
+  - path: github-license.raw.txt
+    kind: license
+    status: ok
+    source: 'gh api repos/mindfold-ai/Trellis/license -H Accept: application/vnd.github.raw'
+  - path: github-root-contents.raw.json
+    kind: root-contents
+    status: ok
+    source: 'gh api repos/mindfold-ai/Trellis/contents'
+  - path: github-languages.raw.json
+    kind: languages
+    status: ok
+    source: 'gh api repos/mindfold-ai/Trellis/languages'
+  - path: github-latest-release.raw.json
+    kind: latest-release
+    status: missing_or_error
+    source: 'gh api repos/mindfold-ai/Trellis/releases/latest'
+    message: 'gh: Not Found (HTTP 404)'

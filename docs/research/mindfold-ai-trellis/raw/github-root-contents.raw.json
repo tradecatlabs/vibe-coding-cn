@@ -1,0 +1,466 @@
+[
+  {
+    "name": ".agents",
+    "path": ".agents",
+    "sha": "6885670ee3a7ed5957ef731428333c0673eb8cc2",
+    "size": 0,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.agents?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/tree/main/.agents",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/6885670ee3a7ed5957ef731428333c0673eb8cc2",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.agents?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/6885670ee3a7ed5957ef731428333c0673eb8cc2",
+      "html": "https://github.com/mindfold-ai/Trellis/tree/main/.agents"
+    }
+  },
+  {
+    "name": ".claude",
+    "path": ".claude",
+    "sha": "79b9deccba46c4a92ec5c265bc54d3ba2af9cb99",
+    "size": 0,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.claude?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/tree/main/.claude",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/79b9deccba46c4a92ec5c265bc54d3ba2af9cb99",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.claude?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/79b9deccba46c4a92ec5c265bc54d3ba2af9cb99",
+      "html": "https://github.com/mindfold-ai/Trellis/tree/main/.claude"
+    }
+  },
+  {
+    "name": ".codex",
+    "path": ".codex",
+    "sha": "d762ddedb772ba9aec2535735129642dd4864f74",
+    "size": 0,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.codex?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/tree/main/.codex",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/d762ddedb772ba9aec2535735129642dd4864f74",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.codex?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/d762ddedb772ba9aec2535735129642dd4864f74",
+      "html": "https://github.com/mindfold-ai/Trellis/tree/main/.codex"
+    }
+  },
+  {
+    "name": ".cursor",
+    "path": ".cursor",
+    "sha": "8de0905de1e19fa2e1853abab8f1f22a501c51af",
+    "size": 0,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.cursor?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/tree/main/.cursor",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/8de0905de1e19fa2e1853abab8f1f22a501c51af",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.cursor?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/8de0905de1e19fa2e1853abab8f1f22a501c51af",
+      "html": "https://github.com/mindfold-ai/Trellis/tree/main/.cursor"
+    }
+  },
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "86aa9e52d726b75bfc43c8c918ebba6112c2748e",
+    "size": 0,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.github?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/tree/main/.github",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/86aa9e52d726b75bfc43c8c918ebba6112c2748e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.github?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/86aa9e52d726b75bfc43c8c918ebba6112c2748e",
+      "html": "https://github.com/mindfold-ai/Trellis/tree/main/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "2d83298a5a222693b0936df0b28c47dc8a591652",
+    "size": 2907,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/2d83298a5a222693b0936df0b28c47dc8a591652",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/2d83298a5a222693b0936df0b28c47dc8a591652",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": ".gitmodules",
+    "path": ".gitmodules",
+    "sha": "8694e6adf63468db89368fc2f8fcd9193a696868",
+    "size": 189,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.gitmodules?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/.gitmodules",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/8694e6adf63468db89368fc2f8fcd9193a696868",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/.gitmodules",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.gitmodules?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/8694e6adf63468db89368fc2f8fcd9193a696868",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/.gitmodules"
+    }
+  },
+  {
+    "name": ".husky",
+    "path": ".husky",
+    "sha": "634ce13f3215730cc01bbce8187a8db8f3e8db63",
+    "size": 0,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.husky?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/tree/main/.husky",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/634ce13f3215730cc01bbce8187a8db8f3e8db63",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.husky?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/634ce13f3215730cc01bbce8187a8db8f3e8db63",
+      "html": "https://github.com/mindfold-ai/Trellis/tree/main/.husky"
+    }
+  },
+  {
+    "name": ".lintstagedrc",
+    "path": ".lintstagedrc",
+    "sha": "d4b1d5d91626144351d5886d6db35464763c0a88",
+    "size": 149,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.lintstagedrc?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/.lintstagedrc",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/d4b1d5d91626144351d5886d6db35464763c0a88",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/.lintstagedrc",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.lintstagedrc?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/d4b1d5d91626144351d5886d6db35464763c0a88",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/.lintstagedrc"
+    }
+  },
+  {
+    "name": ".opencode",
+    "path": ".opencode",
+    "sha": "1acacb1442960c7c7a9ccf7b8ba5a97931eb5e95",
+    "size": 0,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.opencode?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/tree/main/.opencode",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/1acacb1442960c7c7a9ccf7b8ba5a97931eb5e95",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.opencode?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/1acacb1442960c7c7a9ccf7b8ba5a97931eb5e95",
+      "html": "https://github.com/mindfold-ai/Trellis/tree/main/.opencode"
+    }
+  },
+  {
+    "name": ".pi",
+    "path": ".pi",
+    "sha": "e1528793ce23044ef2185c7fd93245e49439232d",
+    "size": 0,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.pi?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/tree/main/.pi",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/e1528793ce23044ef2185c7fd93245e49439232d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.pi?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/e1528793ce23044ef2185c7fd93245e49439232d",
+      "html": "https://github.com/mindfold-ai/Trellis/tree/main/.pi"
+    }
+  },
+  {
+    "name": ".trellis",
+    "path": ".trellis",
+    "sha": "110d68f8e6db5887919cd22bc5f9b811ece24300",
+    "size": 0,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.trellis?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/tree/main/.trellis",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/110d68f8e6db5887919cd22bc5f9b811ece24300",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/.trellis?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/110d68f8e6db5887919cd22bc5f9b811ece24300",
+      "html": "https://github.com/mindfold-ai/Trellis/tree/main/.trellis"
+    }
+  },
+  {
+    "name": "AGENTS.md",
+    "path": "AGENTS.md",
+    "sha": "2e516c4d4c5ebbf733c42ddad064000bb915503f",
+    "size": 3843,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/AGENTS.md?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/AGENTS.md",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/2e516c4d4c5ebbf733c42ddad064000bb915503f",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/AGENTS.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/AGENTS.md?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/2e516c4d4c5ebbf733c42ddad064000bb915503f",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/AGENTS.md"
+    }
+  },
+  {
+    "name": "CLAUDE.md",
+    "path": "CLAUDE.md",
+    "sha": "9f51904bc6657728654a01bcd7a0ed26d44b6c5f",
+    "size": 5127,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/CLAUDE.md?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/CLAUDE.md",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/9f51904bc6657728654a01bcd7a0ed26d44b6c5f",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/CLAUDE.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/CLAUDE.md?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/9f51904bc6657728654a01bcd7a0ed26d44b6c5f",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/CLAUDE.md"
+    }
+  },
+  {
+    "name": "CONTRIBUTING.md",
+    "path": "CONTRIBUTING.md",
+    "sha": "5547fe6a55d28cd89b28bcfa3b09ab3785b4eb62",
+    "size": 4043,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/CONTRIBUTING.md?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/CONTRIBUTING.md",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/5547fe6a55d28cd89b28bcfa3b09ab3785b4eb62",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/CONTRIBUTING.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/CONTRIBUTING.md?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/5547fe6a55d28cd89b28bcfa3b09ab3785b4eb62",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/CONTRIBUTING.md"
+    }
+  },
+  {
+    "name": "CONTRIBUTING_CN.md",
+    "path": "CONTRIBUTING_CN.md",
+    "sha": "42d348480cf7ba40edfed1847c2c5d27d65ed509",
+    "size": 3700,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/CONTRIBUTING_CN.md?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/CONTRIBUTING_CN.md",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/42d348480cf7ba40edfed1847c2c5d27d65ed509",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/CONTRIBUTING_CN.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/CONTRIBUTING_CN.md?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/42d348480cf7ba40edfed1847c2c5d27d65ed509",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/CONTRIBUTING_CN.md"
+    }
+  },
+  {
+    "name": "COPYRIGHT",
+    "path": "COPYRIGHT",
+    "sha": "836b3fd2a97dc50b84b646219f55c71f19464799",
+    "size": 734,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/COPYRIGHT?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/COPYRIGHT",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/836b3fd2a97dc50b84b646219f55c71f19464799",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/COPYRIGHT",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/COPYRIGHT?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/836b3fd2a97dc50b84b646219f55c71f19464799",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/COPYRIGHT"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "0c97efd25b5974b974ed9a8a18207bc4f55bb338",
+    "size": 34020,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/0c97efd25b5974b974ed9a8a18207bc4f55bb338",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/LICENSE?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/0c97efd25b5974b974ed9a8a18207bc4f55bb338",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/LICENSE"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "9c84539811bf2263e1517c2669066362b463c4f4",
+    "size": 8404,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/README.md?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/9c84539811bf2263e1517c2669066362b463c4f4",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/9c84539811bf2263e1517c2669066362b463c4f4",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/README.md"
+    }
+  },
+  {
+    "name": "README_CN.md",
+    "path": "README_CN.md",
+    "sha": "4309bf07d635d9a2f6041604f3ff7eaff9f8843c",
+    "size": 8626,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/README_CN.md?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/README_CN.md",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/4309bf07d635d9a2f6041604f3ff7eaff9f8843c",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/README_CN.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/README_CN.md?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/4309bf07d635d9a2f6041604f3ff7eaff9f8843c",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/README_CN.md"
+    }
+  },
+  {
+    "name": "assets",
+    "path": "assets",
+    "sha": "da15d29ed750299ddaa37c6eac72684db595437c",
+    "size": 0,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/assets?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/tree/main/assets",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/da15d29ed750299ddaa37c6eac72684db595437c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/assets?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/da15d29ed750299ddaa37c6eac72684db595437c",
+      "html": "https://github.com/mindfold-ai/Trellis/tree/main/assets"
+    }
+  },
+  {
+    "name": "docs-site",
+    "path": "docs-site",
+    "sha": "44341c92082bf602594cc10b1e75fe6b09782244",
+    "size": 0,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/docs-site?ref=main",
+    "html_url": "https://github.com/mindfold-ai/docs/tree/44341c92082bf602594cc10b1e75fe6b09782244",
+    "git_url": "https://api.github.com/repos/mindfold-ai/docs/git/trees/44341c92082bf602594cc10b1e75fe6b09782244",
+    "download_url": null,
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/docs-site?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/docs/git/trees/44341c92082bf602594cc10b1e75fe6b09782244",
+      "html": "https://github.com/mindfold-ai/docs/tree/44341c92082bf602594cc10b1e75fe6b09782244"
+    }
+  },
+  {
+    "name": "drafts",
+    "path": "drafts",
+    "sha": "ad9c98443adb0567dd12ed49506101be665c35ef",
+    "size": 0,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/drafts?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/tree/main/drafts",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/ad9c98443adb0567dd12ed49506101be665c35ef",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/drafts?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/ad9c98443adb0567dd12ed49506101be665c35ef",
+      "html": "https://github.com/mindfold-ai/Trellis/tree/main/drafts"
+    }
+  },
+  {
+    "name": "marketplace",
+    "path": "marketplace",
+    "sha": "2f2e30d1465fe3e2a4ea8cd107dab2a1070ef25b",
+    "size": 0,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/marketplace?ref=main",
+    "html_url": "https://github.com/mindfold-ai/marketplace/tree/2f2e30d1465fe3e2a4ea8cd107dab2a1070ef25b",
+    "git_url": "https://api.github.com/repos/mindfold-ai/marketplace/git/trees/2f2e30d1465fe3e2a4ea8cd107dab2a1070ef25b",
+    "download_url": null,
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/marketplace?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/marketplace/git/trees/2f2e30d1465fe3e2a4ea8cd107dab2a1070ef25b",
+      "html": "https://github.com/mindfold-ai/marketplace/tree/2f2e30d1465fe3e2a4ea8cd107dab2a1070ef25b"
+    }
+  },
+  {
+    "name": "package.json",
+    "path": "package.json",
+    "sha": "3d1d1a7415e4b705fc10e26940ea9302daefa082",
+    "size": 1432,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/package.json?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/package.json",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/3d1d1a7415e4b705fc10e26940ea9302daefa082",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/package.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/package.json?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/3d1d1a7415e4b705fc10e26940ea9302daefa082",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/package.json"
+    }
+  },
+  {
+    "name": "packages",
+    "path": "packages",
+    "sha": "7db088fef597fb91a2082a2e5de6c63a35a4db98",
+    "size": 0,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/packages?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/tree/main/packages",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/7db088fef597fb91a2082a2e5de6c63a35a4db98",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/packages?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/trees/7db088fef597fb91a2082a2e5de6c63a35a4db98",
+      "html": "https://github.com/mindfold-ai/Trellis/tree/main/packages"
+    }
+  },
+  {
+    "name": "pnpm-lock.yaml",
+    "path": "pnpm-lock.yaml",
+    "sha": "50e443542014ac876a3bdbd29d6aec4371aaf9f3",
+    "size": 84818,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/pnpm-lock.yaml?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/pnpm-lock.yaml",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/50e443542014ac876a3bdbd29d6aec4371aaf9f3",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/pnpm-lock.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/pnpm-lock.yaml?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/50e443542014ac876a3bdbd29d6aec4371aaf9f3",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/pnpm-lock.yaml"
+    }
+  },
+  {
+    "name": "pnpm-workspace.yaml",
+    "path": "pnpm-workspace.yaml",
+    "sha": "dee51e928d8abc3063b11689792bba48750eb708",
+    "size": 27,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/pnpm-workspace.yaml?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/pnpm-workspace.yaml",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/dee51e928d8abc3063b11689792bba48750eb708",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/pnpm-workspace.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/pnpm-workspace.yaml?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/dee51e928d8abc3063b11689792bba48750eb708",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/pnpm-workspace.yaml"
+    }
+  },
+  {
+    "name": "pyrightconfig.json",
+    "path": "pyrightconfig.json",
+    "sha": "8916d8ad759e1ed04ecdea68f2891aecb0e3b76d",
+    "size": 382,
+    "url": "https://api.github.com/repos/mindfold-ai/Trellis/contents/pyrightconfig.json?ref=main",
+    "html_url": "https://github.com/mindfold-ai/Trellis/blob/main/pyrightconfig.json",
+    "git_url": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/8916d8ad759e1ed04ecdea68f2891aecb0e3b76d",
+    "download_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/main/pyrightconfig.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/mindfold-ai/Trellis/contents/pyrightconfig.json?ref=main",
+      "git": "https://api.github.com/repos/mindfold-ai/Trellis/git/blobs/8916d8ad759e1ed04ecdea68f2891aecb0e3b76d",
+      "html": "https://github.com/mindfold-ai/Trellis/blob/main/pyrightconfig.json"
+    }
+  }
+]
