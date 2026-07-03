@@ -175,6 +175,9 @@ documents:
   - path: docs/research/research-transfer-synthesis.md
     title: 研究迁移综合
     role: 将对标拆解、改良迭代和杂交创新转成可执行研究路线
+  - path: docs/research/harness/README.md
+    title: Harness 研究对象
+    role: 工程控制、评估器、反馈闭环与 AI 生成系统可靠性研究对象
   - path: docs/research/harness/harness-engineering.md
     title: Harness 工程解析
     role: 工程控制、评估器、反馈闭环与 AI 生成系统可靠性
