@@ -17,7 +17,7 @@
 | [concepts](./concepts/) | 核心概念、问题求解、关键词系统与工程思想 | [问题求解](./concepts/problem-solving.md) / [拼好码](./concepts/glue-coding.md) / [关键词系统](./concepts/keyword-system.md) |
 | [philosophy](./philosophy/) | 哲学方法论、思维模型与底层认知模型 | [思维模型](./philosophy/thinking-models.md) / [方法论工具箱](./philosophy/methodology-toolbox.md) |
 | [references](./references/) | 工程实践、技术栈、模板和检查清单 | [项目架构模板](./references/project-architecture-template.md) / [质量门禁](./references/quality-gates-and-pitfalls.md) |
-| [research](./research/) | 新技术、优秀 repo 与工程范式研究 | [研究域治理契约](./research/research-domain-contract.md) / [Harness 研究对象](./research/harness/) |
+| [research](./research/) | 新技术、优秀 repo 与工程范式研究 | [研究域治理契约](./research/research-domain-contract.md) / [研究迁移综合](./research/research-transfer-synthesis.md) |
 | [workflow](./workflow/) | 开发流程、质量门禁和交付闭环 | [开发流程](./workflow/development-process.md) |
 
 <details>
@@ -78,6 +78,7 @@
 - [README](./research/README.md) - 研究笔记索引。
 - [研究域治理契约](./research/research-domain-contract.md) - 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
 - [研究价值与应用地图](./research/research-value-application-map.md) - 研究体系给用户带来的价值、核心启示、应用位置和下沉路线。
+- [研究迁移综合](./research/research-transfer-synthesis.md) - 将对标拆解、改良迭代和杂交创新转成可执行研究路线。
 - [Harness 研究对象](./research/harness/README.md) - Harness Engineering 的工程控制、评估器与反馈闭环研究对象。
 - [Harness 工程解析](./research/harness/harness-engineering.md) - Harness Engineering 的工程控制、评估器与反馈闭环解析。
 - [tmux 蜂群协作](./research/tmux-ai-swarm.md) - 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式。

@@ -2,43 +2,62 @@
 
 ## 本轮结论
 
-- 这是把 Vibe Coding 方法沉淀成 Skill 的小型仓库，价值在结构形态而不是代码规模。
-- 根目录有 `SKILL.md`、`references/`、`PUBLISH.md`、`SUBMISSION.md`，说明它关注 skill 打包、发布和提交流程。
-- 本仓应重点对照其 Skill 文档组织方式，反哺 `skills/` 的最小可发布结构。
+`earyantLe/vibe-coding-skill` 的价值在“小型方法论如何封装成 Skill”。它不是大型教程，也不是复杂应用，
+但它有 `SKILL.md`、`references/`、发布说明和提交流程，适合研究最小可发布 Skill 的骨架。
+
+本仓最应该迁移的是 Skill 产品化边界：一个 Skill 不能只是长提示词，必须有触发条件、输入输出、
+引用资料、约束、验证和发布检查。
 
 ## 本地证据
 
 - 研究对象：`earyantLe/vibe-coding-skill`
 - 当前研究角色：Vibe Coding Skill / SOP 化
-- 本轮成熟度：L1 初步理解
 - 原始仓库：`raw/repository/`
 - 原始来源清单：`raw/sources.yml`
 - 事实摘要：`domain.yml`
 
-## 结构观察
+## 对标拆解
 
-- 根目录包含 `SKILL.md`、`README.md`、`references/`、`PUBLISH.md`、`SUBMISSION.md`、`AGENTS.md`。
-- README 包含文件结构、快速开始、核心内容、方法论、工作流程、约束条件、能力提升。
-- 它不是应用仓库，而是能力封装仓库。
+| 项 | 内容 |
+|:---|:---|
+| 参考对象 | `earyantLe/vibe-coding-skill` |
+| 它解决的核心问题 | 把 Vibe Coding 方法封装成可调用 Skill |
+| 核心机制 | `SKILL.md`、`references/`、`PUBLISH.md`、`SUBMISSION.md` |
+| 真正带来结果的动作 | 让方法论从文档变成有入口、有资料、有发布流程的能力单元 |
+| 可迁移做法 | Skill 最小结构、发布检查、引用资料组织 |
+| 不可迁移条件 | 不把小型 Skill 当成完整方法论体系 |
+| 下一步试用动作 | 为本仓 skills 建最小发布检查清单 |
 
-## 可借鉴点
+## 改良迭代
 
-- Skill 应该有清晰入口、引用资料、发布说明和提交说明。
-- 方法论可以通过 `SKILL.md` 固化为可调用能力。
-- 小仓库也能成为研究域，只要对象边界清晰。
+| 改良目标 | 原模式 | 本仓版本 | 验证指标 |
+|:---|:---|:---|:---|
+| Skill 入口 | 单个 `SKILL.md` | 每个 skill 明确触发、边界、输入输出 | Agent 能判断何时调用 |
+| 引用资料 | `references/` 支撑正文 | 引用资料按任务路由读取 | 不一次性加载无关资料 |
+| 发布检查 | PUBLISH / SUBMISSION | 本仓 skill 校验和归档规则 | skill 可验证、可维护 |
 
-## 风险和边界
+## 可迁移清单
 
-- 规模小，缺少复杂场景验证。
-- Skill 的质量要看具体指令密度和可执行性，不应只看目录完整。
-- 不能把它当作完整 Vibe Coding 教程。
+- 为 Skill 补触发条件、输入输出、边界和验证命令。
+- 把长方法论拆成 `SKILL.md` 和 `references/`。
+- 为发布和提交增加检查清单。
+- 将 SOP 化经验转入 skills，而不是留在零散文档。
 
-## 下一轮研究任务
+## 不可迁移清单
 
-- 逐段审查 `SKILL.md`，和本仓 `skills/auto-*` 的结构做对照。
-- 提炼可复用的 Skill 发布检查清单。
+- 不把每个经验都做成 Skill。
+- 不用 Skill 包装还没验证的方法。
+- 不因为目录完整就认为能力可用。
+
+## 验证动作
+
+| 动作 | 成功信号 | 失败信号 |
+|:---|:---|:---|
+| 抽样一个本仓 skill 做发布检查 | 触发、输入、输出、验证都明确 | 只有提示词正文 |
+| 把一条 SOP 转成 skill 候选 | 能说明为什么需要 skill | 文档已经足够却新增复杂度 |
+| 校验 references 读取边界 | 只读任务相关资料 | skill 一启动就加载全部资料 |
 
 ## 沉淀判断
 
-- 本轮只完成 L1 理解，不直接迁入 concepts、references、workflow 或 skills。
-- 只有经过 L2 源码阅读、实验验证或交叉对照后的结论，才进入稳定层。
+- 稳定结论进入 `skills/AGENTS.md`、`skills/README.md` 或 skill 创建规范。
+- 本研究域保持 P3 Skill 骨架观察对象。

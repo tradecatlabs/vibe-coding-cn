@@ -2,43 +2,61 @@
 
 ## 本轮结论
 
-- Roo Code 是已归档的多模式编辑器 agent 工具，当前更适合作为设计参考和历史样本。
-- 虽然归档，但其 monorepo 结构、modes、schemas、webview-ui、packages 和 src 仍有研究价值。
-- 本仓应借鉴它的模式配置、扩展 UI 与 agent 工具组织，但不应把它列为优先采用对象。
+`RooCodeInc/Roo-Code` 当前已归档，因此它的价值不是采用，而是生命周期和模式设计参考。它仍保留
+多模式、schema、webview UI、packages 和 monorepo 结构，适合研究 IDE agent 的历史设计和归档降级策略。
+
+本仓最应该迁移的是“归档不等于删除”：归档对象应从采用候选降级为历史样本，保留可复用机制，移除采用暗示。
 
 ## 本地证据
 
 - 研究对象：`RooCodeInc/Roo-Code`
 - 当前研究角色：已归档多 Agent 编辑器工具
-- 本轮成熟度：L1 初步理解
 - 原始仓库：`raw/repository/`
 - 原始来源清单：`raw/sources.yml`
 - 事实摘要：`domain.yml`
 
-## 结构观察
+## 对标拆解
 
-- 根目录包含 `apps/`、`packages/`、`src/`、`webview-ui/`、`schemas/`、`locales/`、`.roo/`、`.roomodes`。
-- README 以 What Can Roo Code Do、Modes、Resources、Disclaimer、License 组织。
-- 存在 pnpm workspace、turbo、changeset 等前端/扩展 monorepo 基础设施。
+| 项 | 内容 |
+|:---|:---|
+| 参考对象 | `RooCodeInc/Roo-Code` |
+| 它解决的核心问题 | 曾经尝试用多模式和编辑器 UI 承载 agent 编程工作流 |
+| 核心机制 | `apps/`、`packages/`、`src/`、`webview-ui/`、`schemas/`、`.roomodes` |
+| 真正带来结果的动作 | 用显式模式和 schema 管理 agent 行为差异 |
+| 可迁移做法 | 模式文件、schema 约束、归档对象降级策略 |
+| 不可迁移条件 | 已归档，不作为活跃采用对象，不跟随其生态路线 |
+| 下一步试用动作 | 在研究域治理中明确 archived 对象的降级规则 |
 
-## 可借鉴点
+## 改良迭代
 
-- 多模式 agent 可以通过显式模式文件和 schema 管理。
-- Webview UI 与扩展核心分离是 IDE agent 的常见形态。
-- 归档项目仍可作为迁移风险和生态生命周期样本。
+| 改良目标 | 原模式 | 本仓版本 | 验证指标 |
+|:---|:---|:---|:---|
+| 生命周期治理 | 归档仓库仍可阅读 | 本仓标记 archived / low-frequency reference | 用户不会误以为推荐采用 |
+| 模式设计 | `.roomodes` 和 schema | 本仓 agent 模式或 skill 模式需要 schema 思维 | 模式有输入、输出、边界 |
+| 风险降级 | 历史项目继续被引用 | 引用时标注归档状态和替代对象 | 归档对象不进入 P1 采用清单 |
 
-## 风险和边界
+## 可迁移清单
 
-- `domain.yml` 已标记 archived，不能当作活跃生态主线。
-- 历史实现可能已经被 fork 或替代，采用建议必须重新核验。
-- 仓库体量较大，二轮研究要聚焦模式和 schema，不做全量阅读。
+- 为归档研究对象写明状态、用途和替代对象。
+- 从历史项目中只抽机制，不抽采用建议。
+- 研究模式/schema 如何约束 agent 行为。
+- 在资源表中对 archived/stale 资源做可见标记。
 
-## 下一轮研究任务
+## 不可迁移清单
 
-- 阅读 `.roomodes`、`schemas/` 和 `src/` 中 mode/tool 相关代码。
-- 整理“归档工具如何降级为参考对象”的研究归档规则。
+- 不推荐用户采用已归档项目。
+- 不把归档前的生态热度当作当前价值。
+- 不复制其 monorepo 和 UI 结构。
+
+## 验证动作
+
+| 动作 | 成功信号 | 失败信号 |
+|:---|:---|:---|
+| 检查所有 archived 资源标记 | 归档状态在索引可见 | 用户仍看不出对象已归档 |
+| 抽取一个模式/schema 机制 | 能转成通用模式设计说明 | 只停留在目录观察 |
+| 为归档对象写替代建议 | 有活跃替代对象或降级说明 | 仍像推荐对象 |
 
 ## 沉淀判断
 
-- 本轮只完成 L1 理解，不直接迁入 concepts、references、workflow 或 skills。
-- 只有经过 L2 源码阅读、实验验证或交叉对照后的结论，才进入稳定层。
+- 稳定结论进入研究域治理契约和资源生命周期字段。
+- 本研究域保持 P3 归档历史样本。
