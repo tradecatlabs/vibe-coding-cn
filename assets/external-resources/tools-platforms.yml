@@ -1,0 +1,911 @@
+# Generated from assets_csv.xlsx and later curated imports. Edit intentionally and keep schema.yml in sync.
+version: 1
+category:
+  id: tools-platforms
+  name: 工具与平台
+  description: 用于收录大模型、AI 对话平台、IDE、CLI、Agent 平台、通用工具网站等
+  default_resource_type: tool_or_platform
+defaults:
+  imported_from: assets_csv.xlsx
+  imported_at: '2026-07-03'
+  verification_status: imported-unverified
+  license: unknown
+resources:
+- id: tools-platforms-codex-cli-362bc20a
+  name: Codex CLI
+  description: 唯一推荐的苹果级工具，世界最强最强大模型（编码任务瞬秒其他全部的安卓级工具，.codex配置文件和系统提示词 https://github.com/tukuaiai/vibe-coding-cn/tree/develop/config/.codex）
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://chatgpt.com/codex
+    domain: chatgpt.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 2
+- id: tools-platforms-prompt-jsonl-8e9b2066
+  name: prompt_jsonl
+  description: 超级提示词资产在线表格
+  resource_type: tool_or_platform
+  link:
+    kind: internal_reference
+    locator: prompt_jsonl
+  status: needs-review
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - non-url-locator
+  source_row: 3
+- id: tools-platforms-apps-script-e6b8bbbb
+  name: Apps Script
+  description: Google 脚本
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://script.google.com/
+    domain: script.google.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 4
+- id: tools-platforms-bilibili-23287176
+  name: Bilibili
+  description: 视频教程
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://www.bilibili.com/
+    domain: www.bilibili.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 5
+- id: tools-platforms-claude-opus-4-6-f751380c
+  name: Claude Opus 4.6
+  description: 工具使用能力强，agent类任务首选
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://claude.ai/
+    domain: claude.ai
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 6
+- id: tools-platforms-droid-1b66f6e0
+  name: Droid
+  description: 多模型 CLI 访问
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://factory.ai/
+    domain: factory.ai
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 7
+- id: tools-platforms-gpt-5-1-codex-1ad522a5
+  name: GPT-5.1 Codex
+  description: 复杂逻辑处理
+  resource_type: tool_or_platform
+  link:
+    kind: missing
+  status: needs-review
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - missing-link
+  source_row: 8
+- id: tools-platforms-gemini-2-5-pro-0661c69f
+  name: Gemini 2.5 Pro
+  description: 免费长上下文
+  resource_type: tool_or_platform
+  link:
+    kind: missing
+  status: needs-review
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - missing-link
+  source_row: 9
+- id: tools-platforms-google-sheets-32b827b0
+  name: Google Sheets
+  description: 在线表格
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://docs.google.com/spreadsheets/
+    domain: docs.google.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 10
+- id: tools-platforms-local-history-2b05b2c1
+  name: Local History
+  description: VS Code 本地历史插件
+  resource_type: tool_or_platform
+  link:
+    kind: missing
+  status: needs-review
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - missing-link
+  source_row: 11
+- id: tools-platforms-mermaid-chart-302f49f0
+  name: Mermaid Chart
+  description: 文本转图表
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://www.mermaidchart.com/
+    domain: www.mermaidchart.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 12
+- id: tools-platforms-partial-diff-4787875c
+  name: Partial Diff
+  description: VS Code 差异对比插件
+  resource_type: tool_or_platform
+  link:
+    kind: missing
+  status: needs-review
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - missing-link
+  source_row: 13
+- id: tools-platforms-z-library-31b0d982
+  name: Z-Library
+  description: 电子书资源
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 14
+- id: tools-platforms-docusaurus-09c54423
+  name: Docusaurus
+  description: Meta 开源文档框架
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://docusaurus.io/
+    domain: docusaurus.io
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 15
+- id: tools-platforms-mintlify-0f0b6833
+  name: Mintlify
+  description: AI 文档生成
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://mintlify.com/
+    domain: mintlify.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 16
+- id: tools-platforms-vitepress-da10a919
+  name: VitePress
+  description: Vue 驱动静态站点
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://vitepress.dev/
+    domain: vitepress.dev
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 17
+- id: tools-platforms-zread-6c1ee1d6
+  name: Zread
+  description: AI 仓库阅读工具
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://zread.ai/
+    domain: zread.ai
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 18
+- id: tools-platforms-lazyvim-2f22a781
+  name: LazyVim
+  description: Neovim 配置框架
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://www.lazyvim.org/
+    domain: www.lazyvim.org
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 19
+- id: tools-platforms-neovim-a8b85739
+  name: Neovim
+  description: 键盘流首选
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://neovim.io/
+    domain: neovim.io
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 20
+- id: tools-platforms-pearai-0683754c
+  name: PearAI
+  description: 开源 AI IDE
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://trypear.ai/
+    domain: trypear.ai
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 21
+- id: tools-platforms-vs-code-e8f2d385
+  name: VS Code
+  description: 主流编辑器
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://code.visualstudio.com/
+    domain: code.visualstudio.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 22
+- id: tools-platforms-void-b1594346
+  name: Void
+  description: 开源 AI 代码编辑器
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://voideditor.com/
+    domain: voideditor.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 23
+- id: tools-platforms-django-e05156b6
+  name: Django
+  description: Python 全栈 Web 框架
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://www.djangoproject.com/
+    domain: www.djangoproject.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 24
+- id: tools-platforms-excalidraw-02ba0cb2
+  name: Excalidraw
+  description: 手绘风格图表
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://excalidraw.com/
+    domain: excalidraw.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 25
+- id: tools-platforms-mermaid-cc6f6e7e
+  name: Mermaid
+  description: 文本转图表
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://mermaid.js.org/
+    domain: mermaid.js.org
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 26
+- id: tools-platforms-notebooklm-e1b56ba1
+  name: NotebookLM
+  description: AI 笔记工具
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://notebooklm.google.com/
+    domain: notebooklm.google.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 27
+- id: tools-platforms-dbeaver-aa2fc821
+  name: DBeaver
+  description: 通用数据库客户端
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://dbeaver.io/
+    domain: dbeaver.io
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 28
+- id: tools-platforms-tableplus-9950f31a
+  name: TablePlus
+  description: 现代数据库 GUI
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://tableplus.com/
+    domain: tableplus.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 29
+- id: tools-platforms-warp-14bec77a
+  name: Warp
+  description: AI 终端
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://www.warp.dev/
+    domain: www.warp.dev
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 30
+- id: tools-platforms-zsh-d6d24951
+  name: zsh
+  description: Shell 增强
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://ohmyz.sh/
+    domain: ohmyz.sh
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 31
+- id: tools-platforms-claude-code-11b1e88d
+  name: Claude Code
+  description: Anthropic 官方 CLI
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://code.claude.com/docs/en/overview
+    domain: code.claude.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 32
+- id: tools-platforms-gemini-cli-d077e5cc
+  name: Gemini CLI
+  description: Google 官方 CLI
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://geminicli.com/
+    domain: geminicli.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 33
+- id: tools-platforms-opencode-ada070db
+  name: OpenCode
+  description: 开源终端 AI 助手，Go 编写
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://opencode.ai/
+    domain: opencode.ai
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 34
+- id: tools-platforms-kimi-53c18eae
+  name: Kimi
+  description: Kimi K2.5 / 长文本处理强
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://kimi.moonshot.cn/
+    domain: kimi.moonshot.cn
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 35
+- id: tools-platforms-chatglm-cn-ebc410ba
+  name: 智谱清言
+  description: GLM-4 / 智谱 AI 出品
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://chatglm.cn/
+    domain: chatglm.cn
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 36
+- id: tools-platforms-www-doubao-com-b4d6c78b
+  name: 豆包
+  description: 豆包 / 字节出品
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://www.doubao.com/
+    domain: www.doubao.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 37
+- id: tools-platforms-tongyi-aliyun-com-a528848f
+  name: 通义千问
+  description: Qwen / 阿里出品，免费
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://tongyi.aliyun.com/
+    domain: tongyi.aliyun.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 38
+- id: tools-platforms-ai-studio-2cd869be
+  name: AI Studio
+  description: Google 免费 Gemini
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://aistudio.google.com/
+    domain: aistudio.google.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 39
+- id: tools-platforms-gemini-cli-row40-d077e5cc
+  name: Gemini CLI
+  description: 免费命令行访问
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://geminicli.com/
+    domain: geminicli.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 40
+- id: tools-platforms-qwen-cli-a1b92a34
+  name: Qwen CLI
+  description: 阿里免费 CLI
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://qwenlm.github.io/qwen-code-docs/zh/cli/
+    domain: qwenlm.github.io
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 41
+- id: tools-platforms-antigravity-528a772a
+  name: antigravity
+  description: Google 免费 AI 服务
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://antigravity.google/
+    domain: antigravity.google
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 42
+- id: tools-platforms-bito-0c0619b5
+  name: Bito
+  description: 免费 AI 代码助手
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://bito.ai/
+    domain: bito.ai
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 43
+- id: tools-platforms-codeium-668488a9
+  name: Codeium
+  description: 免费 AI 代码补全
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://codeium.com/
+    domain: codeium.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 44
+- id: tools-platforms-continue-edb7b3bf
+  name: Continue
+  description: 开源 AI 代码助手
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://continue.dev/
+    domain: continue.dev
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 45
+- id: tools-platforms-tabnine-0b2c09aa
+  name: Tabnine
+  description: 免费基础版
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://www.tabnine.com/
+    domain: www.tabnine.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 46
+- id: tools-platforms-chatgpt-935111f5
+  name: ChatGPT
+  description: GPT-5.1 / 综合能力强，支持 Codex
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://chatgpt.com/
+    domain: chatgpt.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 47
+- id: tools-platforms-claude-13dd5e3a
+  name: Claude
+  description: Claude Opus 4.6 / 代码能力强，支持 Artifacts
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://claude.ai/
+    domain: claude.ai
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 48
+- id: tools-platforms-gemini-dc8a36f7
+  name: Gemini
+  description: Gemini 3.0 Pro / 免费额度大，支持长上下文
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://gemini.google.com/
+    domain: gemini.google.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 49
+- id: tools-platforms-dall-e-3-26dc583b
+  name: DALL-E 3
+  description: DALL-E 3
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://chatgpt.com/
+    domain: chatgpt.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 50
+- id: tools-platforms-elevenlabs-5a58d635
+  name: ElevenLabs
+  description: ElevenLabs
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://elevenlabs.io/
+    domain: elevenlabs.io
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 51
+- id: tools-platforms-ideogram-efb6a3b8
+  name: Ideogram
+  description: Ideogram
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://ideogram.ai/
+    domain: ideogram.ai
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 52
+- id: tools-platforms-kling-253d44f3
+  name: Kling
+  description: Kling
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://klingai.com/
+    domain: klingai.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 53
+- id: tools-platforms-leonardo-ai-26816634
+  name: Leonardo AI
+  description: Leonardo AI
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://leonardo.ai/
+    domain: leonardo.ai
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 54
+- id: tools-platforms-meshy-549051bc
+  name: Meshy
+  description: Meshy
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://www.meshy.ai/
+    domain: www.meshy.ai
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 55
+- id: tools-platforms-midjourney-976ad67d
+  name: Midjourney
+  description: Midjourney
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://midjourney.com/
+    domain: midjourney.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 56
+- id: tools-platforms-runway-6c8ab136
+  name: Runway
+  description: Runway
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://runwayml.com/
+    domain: runwayml.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 57
+- id: tools-platforms-sora-3b1d49f7
+  name: Sora
+  description: Sora
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://sora.com/
+    domain: sora.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 58
+- id: tools-platforms-suno-fb9344c5
+  name: Suno
+  description: Suno
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://suno.ai/
+    domain: suno.ai
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 59
+- id: tools-platforms-udio-0d39f909
+  name: Udio
+  description: Udio
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://www.udio.com/
+    domain: www.udio.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 60
+- id: tools-platforms-cursor-8ebf3977
+  name: Cursor
+  description: AI 原生编辑器，基于 VS Code
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://cursor.com/
+    domain: cursor.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 61
+- id: tools-platforms-kiro-47d2b0fc
+  name: Kiro
+  description: AWS 出品，免费 Claude Opus
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://kiro.dev/
+    domain: kiro.dev
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 62
+- id: tools-platforms-windsurf-fdd489a7
+  name: Windsurf
+  description: Codeium 出品
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://windsurf.com/
+    domain: windsurf.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 63
+- id: tools-platforms-zed-07b4820e
+  name: Zed
+  description: 高性能编辑器，支持 AI
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://zed.dev/
+    domain: zed.dev
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 64
+- id: tools-platforms-bolt-new-06379d16
+  name: Bolt.new
+  description: 浏览器内全栈应用构建
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://bolt.new/
+    domain: bolt.new
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 65
+- id: tools-platforms-devin-f5a69caf
+  name: Devin
+  description: 自主 AI 软件工程师，$20/月
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://devin.ai/
+    domain: devin.ai
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 66
+- id: tools-platforms-lovable-5eb584a1
+  name: Lovable
+  description: 原 GPT Engineer，自然语言建应用
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://lovable.dev/
+    domain: lovable.dev
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 67
+- id: tools-platforms-replit-agent-bbd1c2ac
+  name: Replit Agent
+  description: 端到端应用构建 Agent
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://replit.com/
+    domain: replit.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 68
+- id: tools-platforms-v0-by-vercel-fe818ef0
+  name: v0 by Vercel
+  description: AI UI 生成，React + Tailwind
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://v0.dev/
+    domain: v0.dev
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 69
+- id: tools-platforms-chatgpt-exporter-a03efe97
+  name: ChatGPT Exporter
+  description: ChatGPT 对话导出工具；本次 Markdown 导出文件的来源工具。
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://www.chatgptexporter.com
+    domain: www.chatgptexporter.com
+  status: active
+  verification_status: imported-unverified
+  tags:
+  - chatgpt
+  - export
+  risk_flags: []
+  source_row: 166
+  notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.

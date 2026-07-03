@@ -4,3 +4,7 @@
 # visible in the repository, but do not let their implementation languages
 # dominate the main repository language statistics.
 tools/external/** linguist-vendored
+
+# Research raw snapshots preserve external source text; do not normalize
+# upstream whitespace in these captured artifacts.
+docs/research/**/raw/*.raw.* -whitespace

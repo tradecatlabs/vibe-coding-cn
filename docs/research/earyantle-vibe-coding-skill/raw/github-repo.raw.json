@@ -1,0 +1,40 @@
+{
+  "createdAt": "2026-03-23T11:14:03Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "",
+  "forkCount": 0,
+  "homepageUrl": "",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": null,
+  "licenseInfo": null,
+  "nameWithOwner": "earyantLe/vibe-coding-skill",
+  "primaryLanguage": null,
+  "pushedAt": "2026-03-23T12:51:33Z",
+  "repositoryTopics": [
+    {
+      "name": "ai-assistant"
+    },
+    {
+      "name": "canvas"
+    },
+    {
+      "name": "claude-skills"
+    },
+    {
+      "name": "glue-coding"
+    },
+    {
+      "name": "vibe-coding"
+    }
+  ],
+  "stargazerCount": 0,
+  "updatedAt": "2026-03-23T12:51:41Z",
+  "url": "https://github.com/earyantLe/vibe-coding-skill",
+  "watchers": {
+    "totalCount": 0
+  }
+}

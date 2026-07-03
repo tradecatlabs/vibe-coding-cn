@@ -1,0 +1,39 @@
+version: 1
+repo:
+  name: datawhalechina/vibe-vibe
+  source_name: datawhalechina/vibe-vibe
+  url: https://github.com/datawhalechina/vibe-vibe
+research:
+  domain_id: datawhalechina-vibe-vibe
+  domain_name: datawhalechina/vibe-vibe 研究域
+  primary_direction: cn-onboarding
+  role: 中文零基础系统教程
+  priority: 2
+  why_study: 适合作为零基础入口，用来观察中文教程如何把 Vibe Coding 讲成可执行路线。
+github_observed:
+  observed_at: '2026-07-03'
+  source: gh repo view
+  stars: 5633
+  forks: 445
+  archived: false
+  language: Dockerfile
+  license: null
+  default_branch: main
+  pushed_at: '2026-04-30T11:49:58Z'
+  updated_at: '2026-07-02T17:16:02Z'
+  latest_release: null
+  homepage: https://www.vibevibe.cn
+  topics:
+  - agent
+  - agentic-ai
+  - ai
+  - coding-assistant
+  - programming
+  - vibe-coding
+  - vibecoding
+source_evidence:
+  file: ChatGPT-中文Vibe Coding仓库 (2).md
+  line: 25
+maintenance:
+  fact_policy: GitHub 动态字段只代表 observed_at 当日快照，更新结论前必须重新核验。
+  split_policy: 本目录已经是一等研究域；更深分析放入本目录新增文档。

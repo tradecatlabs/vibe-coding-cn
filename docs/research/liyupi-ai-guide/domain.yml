@@ -1,0 +1,52 @@
+version: 1
+repo:
+  name: liyupi/ai-guide
+  source_name: liyupi/ai-guide
+  url: https://github.com/liyupi/ai-guide
+research:
+  domain_id: liyupi-ai-guide
+  domain_name: liyupi/ai-guide 研究域
+  primary_direction: cn-onboarding
+  role: AI 资源大全与产品实用路线
+  priority: 3
+  why_study: 适合补充零基础资源导航和产品上线语境。
+github_observed:
+  observed_at: '2026-07-03'
+  source: gh repo view
+  stars: 16661
+  forks: 1860
+  archived: false
+  language: JavaScript
+  license: null
+  default_branch: main
+  pushed_at: '2026-07-01T14:44:50Z'
+  updated_at: '2026-07-02T16:45:48Z'
+  latest_release: null
+  homepage: https://ai.codefather.cn
+  topics:
+  - ai
+  - artificial-intelligence
+  - chatgpt
+  - deep-learning
+  - deepseek
+  - generative-ai
+  - gpt
+  - llm
+  - openai
+  - python
+  - vue
+  - vuepress
+  - claude
+  - gemini
+  - cursor
+  - mcp
+  - rag
+  - vibe-coding
+  - vibecoding
+  - codex
+source_evidence:
+  file: ChatGPT-中文Vibe Coding仓库 (2).md
+  line: 27
+maintenance:
+  fact_policy: GitHub 动态字段只代表 observed_at 当日快照，更新结论前必须重新核验。
+  split_policy: 本目录已经是一等研究域；更深分析放入本目录新增文档。

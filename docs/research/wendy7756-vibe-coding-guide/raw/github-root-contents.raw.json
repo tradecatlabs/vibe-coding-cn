@@ -1,0 +1,130 @@
+[
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "e43b0f988953ae3a84b00331d0ccf5f7d51cb3cf",
+    "size": 10,
+    "url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/wendy7756/vibe-coding-guide/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/blobs/e43b0f988953ae3a84b00331d0ccf5f7d51cb3cf",
+    "download_url": "https://raw.githubusercontent.com/wendy7756/vibe-coding-guide/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/blobs/e43b0f988953ae3a84b00331d0ccf5f7d51cb3cf",
+      "html": "https://github.com/wendy7756/vibe-coding-guide/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": "IDEs-and-Tools",
+    "path": "IDEs-and-Tools",
+    "sha": "472875ef94f3b3cc4f9a43f1f88347525305319f",
+    "size": 0,
+    "url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/IDEs-and-Tools?ref=main",
+    "html_url": "https://github.com/wendy7756/vibe-coding-guide/tree/main/IDEs-and-Tools",
+    "git_url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/trees/472875ef94f3b3cc4f9a43f1f88347525305319f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/IDEs-and-Tools?ref=main",
+      "git": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/trees/472875ef94f3b3cc4f9a43f1f88347525305319f",
+      "html": "https://github.com/wendy7756/vibe-coding-guide/tree/main/IDEs-and-Tools"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+    "size": 11357,
+    "url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/wendy7756/vibe-coding-guide/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/blobs/261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+    "download_url": "https://raw.githubusercontent.com/wendy7756/vibe-coding-guide/main/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/LICENSE?ref=main",
+      "git": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/blobs/261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "html": "https://github.com/wendy7756/vibe-coding-guide/blob/main/LICENSE"
+    }
+  },
+  {
+    "name": "LLMs",
+    "path": "LLMs",
+    "sha": "e0593945b4771ebe18fb314041a4e724b8179438",
+    "size": 0,
+    "url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/LLMs?ref=main",
+    "html_url": "https://github.com/wendy7756/vibe-coding-guide/tree/main/LLMs",
+    "git_url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/trees/e0593945b4771ebe18fb314041a4e724b8179438",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/LLMs?ref=main",
+      "git": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/trees/e0593945b4771ebe18fb314041a4e724b8179438",
+      "html": "https://github.com/wendy7756/vibe-coding-guide/tree/main/LLMs"
+    }
+  },
+  {
+    "name": "Prompts",
+    "path": "Prompts",
+    "sha": "ee70804eca0b4bae7729d788a52f1fdc9e0685d1",
+    "size": 0,
+    "url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/Prompts?ref=main",
+    "html_url": "https://github.com/wendy7756/vibe-coding-guide/tree/main/Prompts",
+    "git_url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/trees/ee70804eca0b4bae7729d788a52f1fdc9e0685d1",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/Prompts?ref=main",
+      "git": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/trees/ee70804eca0b4bae7729d788a52f1fdc9e0685d1",
+      "html": "https://github.com/wendy7756/vibe-coding-guide/tree/main/Prompts"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "5cba12b4005077b10508996013e05799d3f62a2a",
+    "size": 17734,
+    "url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/README.md?ref=main",
+    "html_url": "https://github.com/wendy7756/vibe-coding-guide/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/blobs/5cba12b4005077b10508996013e05799d3f62a2a",
+    "download_url": "https://raw.githubusercontent.com/wendy7756/vibe-coding-guide/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/blobs/5cba12b4005077b10508996013e05799d3f62a2a",
+      "html": "https://github.com/wendy7756/vibe-coding-guide/blob/main/README.md"
+    }
+  },
+  {
+    "name": "README_EN.md",
+    "path": "README_EN.md",
+    "sha": "481b593998c437852376706e7317cfcb5186e7f6",
+    "size": 20502,
+    "url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/README_EN.md?ref=main",
+    "html_url": "https://github.com/wendy7756/vibe-coding-guide/blob/main/README_EN.md",
+    "git_url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/blobs/481b593998c437852376706e7317cfcb5186e7f6",
+    "download_url": "https://raw.githubusercontent.com/wendy7756/vibe-coding-guide/main/README_EN.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/README_EN.md?ref=main",
+      "git": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/blobs/481b593998c437852376706e7317cfcb5186e7f6",
+      "html": "https://github.com/wendy7756/vibe-coding-guide/blob/main/README_EN.md"
+    }
+  },
+  {
+    "name": "my-experience",
+    "path": "my-experience",
+    "sha": "573c4e979b85943d405daadb6721054b2d78d817",
+    "size": 0,
+    "url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/my-experience?ref=main",
+    "html_url": "https://github.com/wendy7756/vibe-coding-guide/tree/main/my-experience",
+    "git_url": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/trees/573c4e979b85943d405daadb6721054b2d78d817",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/wendy7756/vibe-coding-guide/contents/my-experience?ref=main",
+      "git": "https://api.github.com/repos/wendy7756/vibe-coding-guide/git/trees/573c4e979b85943d405daadb6721054b2d78d817",
+      "html": "https://github.com/wendy7756/vibe-coding-guide/tree/main/my-experience"
+    }
+  }
+]

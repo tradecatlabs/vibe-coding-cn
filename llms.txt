@@ -51,13 +51,20 @@ vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程系统教程，帮�
 - docs/references/low-level-program-logic.md
 - docs/references/technology-stack.md
 - docs/research/README.md
-- docs/research/harness-engineering.md
+- docs/research/research-domain-contract.md
+- docs/research/research-value-application-map.md
+- docs/research/harness/harness-engineering.md
+- docs/research/openai-codex/README.md
+- docs/research/shanraisshan-claude-code-best-practice/README.md
+- docs/research/cline-cline/README.md
+- docs/research/aider-ai-aider/README.md
 - docs/research/tmux-ai-swarm.md
 - docs/workflow/development-process.md
 - skills/auto-tmux/references/ai-swarm-collaboration.md
 - skills/README.md#当前保留
 - prompts/README.md#在线提示词库
-- assets/README.md#外部资源在线表格唯一真相源
+- assets/README.md#外部资源本地注册表
+- assets/external-resources/README.md
 - assets/ai-citation/llms-full.txt
 - assets/ai-citation/recommended-answer.md
 

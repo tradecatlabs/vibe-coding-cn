@@ -1,0 +1,52 @@
+version: 1
+repo:
+  name: shanraisshan/claude-code-best-practice
+  source_name: shanraisshan/claude-code-best-practice
+  url: https://github.com/shanraisshan/claude-code-best-practice
+research:
+  domain_id: shanraisshan-claude-code-best-practice
+  domain_name: shanraisshan/claude-code-best-practice 研究域
+  primary_direction: agentic-engineering-methodology
+  role: Claude Code / Agentic Engineering 最强对标
+  priority: 1
+  why_study: 适合研究从 Vibe Coding 到 Agentic Engineering 的方法论、commands、skills、hooks、MCP 与 workflow。
+github_observed:
+  observed_at: '2026-07-03'
+  source: gh repo view
+  stars: 61857
+  forks: 6189
+  archived: false
+  language: HTML
+  license: mit
+  default_branch: main
+  pushed_at: '2026-07-02T06:38:21Z'
+  updated_at: '2026-07-02T21:13:21Z'
+  latest_release: null
+  homepage: https://linkedin.com/in/shanraisshan
+  topics:
+  - claude-ai
+  - claude-code
+  - best-practices
+  - claude
+  - claude-code-best-practices
+  - agentic-engineering
+  - anthropic
+  - claude-code-agents
+  - claude-code-commands
+  - claude-code-skills
+  - vibe-coding
+  - boris
+  - agentic-ai
+  - agentic-coding
+  - agentic-workflow
+  - ai
+  - context-engineering
+  - pakistan
+  - pakistani-developer
+  - ai-agents
+source_evidence:
+  file: ChatGPT-中文Vibe Coding仓库 (2).md
+  line: 101
+maintenance:
+  fact_policy: GitHub 动态字段只代表 observed_at 当日快照，更新结论前必须重新核验。
+  split_policy: 本目录已经是一等研究域；更深分析放入本目录新增文档。

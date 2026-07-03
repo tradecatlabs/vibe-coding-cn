@@ -1,0 +1,322 @@
+[
+  {
+    "name": ".dockerignore",
+    "path": ".dockerignore",
+    "sha": "830cf8498c3b82005ac8c599502f838ed190e0f0",
+    "size": 61,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/.dockerignore?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/blob/main/.dockerignore",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/blobs/830cf8498c3b82005ac8c599502f838ed190e0f0",
+    "download_url": "https://raw.githubusercontent.com/Aider-AI/aider/main/.dockerignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/.dockerignore?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/blobs/830cf8498c3b82005ac8c599502f838ed190e0f0",
+      "html": "https://github.com/Aider-AI/aider/blob/main/.dockerignore"
+    }
+  },
+  {
+    "name": ".flake8",
+    "path": ".flake8",
+    "sha": "3963261f7b7c8706945140ca6891638e51980353",
+    "size": 50,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/.flake8?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/blob/main/.flake8",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/blobs/3963261f7b7c8706945140ca6891638e51980353",
+    "download_url": "https://raw.githubusercontent.com/Aider-AI/aider/main/.flake8",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/.flake8?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/blobs/3963261f7b7c8706945140ca6891638e51980353",
+      "html": "https://github.com/Aider-AI/aider/blob/main/.flake8"
+    }
+  },
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "30b8800114cd6523ecfd9ff7809de59b385e0631",
+    "size": 0,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/.github?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/tree/main/.github",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/trees/30b8800114cd6523ecfd9ff7809de59b385e0631",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/.github?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/trees/30b8800114cd6523ecfd9ff7809de59b385e0631",
+      "html": "https://github.com/Aider-AI/aider/tree/main/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "fd1fa9a4da7f765e7a9c3515d329d9e7860b552c",
+    "size": 239,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/blobs/fd1fa9a4da7f765e7a9c3515d329d9e7860b552c",
+    "download_url": "https://raw.githubusercontent.com/Aider-AI/aider/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/blobs/fd1fa9a4da7f765e7a9c3515d329d9e7860b552c",
+      "html": "https://github.com/Aider-AI/aider/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": ".pre-commit-config.yaml",
+    "path": ".pre-commit-config.yaml",
+    "sha": "ca81b8a7339e47023be3ddac1babed2006f95fd6",
+    "size": 602,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/.pre-commit-config.yaml?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/blob/main/.pre-commit-config.yaml",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/blobs/ca81b8a7339e47023be3ddac1babed2006f95fd6",
+    "download_url": "https://raw.githubusercontent.com/Aider-AI/aider/main/.pre-commit-config.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/.pre-commit-config.yaml?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/blobs/ca81b8a7339e47023be3ddac1babed2006f95fd6",
+      "html": "https://github.com/Aider-AI/aider/blob/main/.pre-commit-config.yaml"
+    }
+  },
+  {
+    "name": "CNAME",
+    "path": "CNAME",
+    "sha": "83254ef2d2bd88ccafab3613c8c312d551b37ef3",
+    "size": 10,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/CNAME?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/blob/main/CNAME",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/blobs/83254ef2d2bd88ccafab3613c8c312d551b37ef3",
+    "download_url": "https://raw.githubusercontent.com/Aider-AI/aider/main/CNAME",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/CNAME?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/blobs/83254ef2d2bd88ccafab3613c8c312d551b37ef3",
+      "html": "https://github.com/Aider-AI/aider/blob/main/CNAME"
+    }
+  },
+  {
+    "name": "CONTRIBUTING.md",
+    "path": "CONTRIBUTING.md",
+    "sha": "abe35a1c0ee51421144b4513149c63068ade2af0",
+    "size": 7863,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/CONTRIBUTING.md?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/blob/main/CONTRIBUTING.md",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/blobs/abe35a1c0ee51421144b4513149c63068ade2af0",
+    "download_url": "https://raw.githubusercontent.com/Aider-AI/aider/main/CONTRIBUTING.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/CONTRIBUTING.md?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/blobs/abe35a1c0ee51421144b4513149c63068ade2af0",
+      "html": "https://github.com/Aider-AI/aider/blob/main/CONTRIBUTING.md"
+    }
+  },
+  {
+    "name": "HISTORY.md",
+    "path": "HISTORY.md",
+    "sha": "3d523bdccde17e21b8a5f466a7f8b58b56ca5ad1",
+    "size": 77044,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/HISTORY.md?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/blob/main/HISTORY.md",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/blobs/3d523bdccde17e21b8a5f466a7f8b58b56ca5ad1",
+    "download_url": "https://raw.githubusercontent.com/Aider-AI/aider/main/HISTORY.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/HISTORY.md?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/blobs/3d523bdccde17e21b8a5f466a7f8b58b56ca5ad1",
+      "html": "https://github.com/Aider-AI/aider/blob/main/HISTORY.md"
+    }
+  },
+  {
+    "name": "LICENSE.txt",
+    "path": "LICENSE.txt",
+    "sha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+    "size": 11358,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/LICENSE.txt?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/blob/main/LICENSE.txt",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/blobs/d645695673349e3947e8e5ae42332d0ac3164cd7",
+    "download_url": "https://raw.githubusercontent.com/Aider-AI/aider/main/LICENSE.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/LICENSE.txt?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/blobs/d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "html": "https://github.com/Aider-AI/aider/blob/main/LICENSE.txt"
+    }
+  },
+  {
+    "name": "MANIFEST.in",
+    "path": "MANIFEST.in",
+    "sha": "9ab273215b7a269aacce50c21dd746cdb6700b70",
+    "size": 588,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/MANIFEST.in?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/blob/main/MANIFEST.in",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/blobs/9ab273215b7a269aacce50c21dd746cdb6700b70",
+    "download_url": "https://raw.githubusercontent.com/Aider-AI/aider/main/MANIFEST.in",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/MANIFEST.in?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/blobs/9ab273215b7a269aacce50c21dd746cdb6700b70",
+      "html": "https://github.com/Aider-AI/aider/blob/main/MANIFEST.in"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "816c876cb67021fa9f8d37267c8e57923eabdb07",
+    "size": 12406,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/README.md?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/blobs/816c876cb67021fa9f8d37267c8e57923eabdb07",
+    "download_url": "https://raw.githubusercontent.com/Aider-AI/aider/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/blobs/816c876cb67021fa9f8d37267c8e57923eabdb07",
+      "html": "https://github.com/Aider-AI/aider/blob/main/README.md"
+    }
+  },
+  {
+    "name": "aider",
+    "path": "aider",
+    "sha": "38f181379921560c25c44d3c73ed45f7c6a08b4e",
+    "size": 0,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/aider?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/tree/main/aider",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/trees/38f181379921560c25c44d3c73ed45f7c6a08b4e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/aider?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/trees/38f181379921560c25c44d3c73ed45f7c6a08b4e",
+      "html": "https://github.com/Aider-AI/aider/tree/main/aider"
+    }
+  },
+  {
+    "name": "benchmark",
+    "path": "benchmark",
+    "sha": "9545fafb919a443b3840f0eb9efe1ded5a9fd773",
+    "size": 0,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/benchmark?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/tree/main/benchmark",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/trees/9545fafb919a443b3840f0eb9efe1ded5a9fd773",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/benchmark?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/trees/9545fafb919a443b3840f0eb9efe1ded5a9fd773",
+      "html": "https://github.com/Aider-AI/aider/tree/main/benchmark"
+    }
+  },
+  {
+    "name": "docker",
+    "path": "docker",
+    "sha": "75183fa5fbe4f545bf585479137a9e23de28bb30",
+    "size": 0,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/docker?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/tree/main/docker",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/trees/75183fa5fbe4f545bf585479137a9e23de28bb30",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/docker?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/trees/75183fa5fbe4f545bf585479137a9e23de28bb30",
+      "html": "https://github.com/Aider-AI/aider/tree/main/docker"
+    }
+  },
+  {
+    "name": "pyproject.toml",
+    "path": "pyproject.toml",
+    "sha": "653fc2175129b0298c6fc9d46a1279b66ba36aa1",
+    "size": 1580,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/pyproject.toml?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/blob/main/pyproject.toml",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/blobs/653fc2175129b0298c6fc9d46a1279b66ba36aa1",
+    "download_url": "https://raw.githubusercontent.com/Aider-AI/aider/main/pyproject.toml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/pyproject.toml?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/blobs/653fc2175129b0298c6fc9d46a1279b66ba36aa1",
+      "html": "https://github.com/Aider-AI/aider/blob/main/pyproject.toml"
+    }
+  },
+  {
+    "name": "pytest.ini",
+    "path": "pytest.ini",
+    "sha": "7e37e17793017b32db7fe57a76de907ef0bd41df",
+    "size": 194,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/pytest.ini?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/blob/main/pytest.ini",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/blobs/7e37e17793017b32db7fe57a76de907ef0bd41df",
+    "download_url": "https://raw.githubusercontent.com/Aider-AI/aider/main/pytest.ini",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/pytest.ini?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/blobs/7e37e17793017b32db7fe57a76de907ef0bd41df",
+      "html": "https://github.com/Aider-AI/aider/blob/main/pytest.ini"
+    }
+  },
+  {
+    "name": "requirements.txt",
+    "path": "requirements.txt",
+    "sha": "cddf41382622a5348e84fb1cb1cd8dfddde6e64c",
+    "size": 12329,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/requirements.txt?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/blob/main/requirements.txt",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/blobs/cddf41382622a5348e84fb1cb1cd8dfddde6e64c",
+    "download_url": "https://raw.githubusercontent.com/Aider-AI/aider/main/requirements.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/requirements.txt?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/blobs/cddf41382622a5348e84fb1cb1cd8dfddde6e64c",
+      "html": "https://github.com/Aider-AI/aider/blob/main/requirements.txt"
+    }
+  },
+  {
+    "name": "requirements",
+    "path": "requirements",
+    "sha": "dbf88363c16feca71c88d79b129a0965310b3c86",
+    "size": 0,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/requirements?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/tree/main/requirements",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/trees/dbf88363c16feca71c88d79b129a0965310b3c86",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/requirements?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/trees/dbf88363c16feca71c88d79b129a0965310b3c86",
+      "html": "https://github.com/Aider-AI/aider/tree/main/requirements"
+    }
+  },
+  {
+    "name": "scripts",
+    "path": "scripts",
+    "sha": "4afed1d082a5a4e16d64c1a4e5b8421b7dc07b3a",
+    "size": 0,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/scripts?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/tree/main/scripts",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/trees/4afed1d082a5a4e16d64c1a4e5b8421b7dc07b3a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/scripts?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/trees/4afed1d082a5a4e16d64c1a4e5b8421b7dc07b3a",
+      "html": "https://github.com/Aider-AI/aider/tree/main/scripts"
+    }
+  },
+  {
+    "name": "tests",
+    "path": "tests",
+    "sha": "2259b1114fc3ef34139f5ed04079ba49fe5c8f13",
+    "size": 0,
+    "url": "https://api.github.com/repos/Aider-AI/aider/contents/tests?ref=main",
+    "html_url": "https://github.com/Aider-AI/aider/tree/main/tests",
+    "git_url": "https://api.github.com/repos/Aider-AI/aider/git/trees/2259b1114fc3ef34139f5ed04079ba49fe5c8f13",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/Aider-AI/aider/contents/tests?ref=main",
+      "git": "https://api.github.com/repos/Aider-AI/aider/git/trees/2259b1114fc3ef34139f5ed04079ba49fe5c8f13",
+      "html": "https://github.com/Aider-AI/aider/tree/main/tests"
+    }
+  }
+]

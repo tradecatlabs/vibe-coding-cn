@@ -1,0 +1,32 @@
+version: 1
+repo:
+  name: ShouZhengAI/CS146S_CN
+  source_name: ShouZhengAI/CS146S_CN
+  url: https://github.com/ShouZhengAI/CS146S_CN
+research:
+  domain_id: shouzhengai-cs146s-cn
+  domain_name: ShouZhengAI/CS146S_CN 研究域
+  primary_direction: project-practice
+  role: 中文课程与 assignments
+  priority: 2
+  why_study: 适合研究课程化、作业化和工具练习的组合方式。
+github_observed:
+  observed_at: '2026-07-03'
+  source: gh repo view
+  stars: 1388
+  forks: 153
+  archived: false
+  language: Python
+  license: mit
+  default_branch: main
+  pushed_at: '2026-06-04T16:10:40Z'
+  updated_at: '2026-07-02T15:22:40Z'
+  latest_release: null
+  homepage: https://themodernsoftware.dev/
+  topics: []
+source_evidence:
+  file: ChatGPT-中文Vibe Coding仓库 (2).md
+  line: 43
+maintenance:
+  fact_policy: GitHub 动态字段只代表 observed_at 当日快照，更新结论前必须重新核验。
+  split_policy: 本目录已经是一等研究域；更深分析放入本目录新增文档。

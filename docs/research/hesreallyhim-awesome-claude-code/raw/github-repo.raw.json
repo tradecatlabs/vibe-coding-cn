@@ -1,0 +1,88 @@
+{
+  "createdAt": "2025-04-19T20:55:59Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic",
+  "forkCount": 4187,
+  "homepageUrl": "",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": null,
+  "licenseInfo": {
+    "key": "other",
+    "name": "Other",
+    "nickname": ""
+  },
+  "nameWithOwner": "hesreallyhim/awesome-claude-code",
+  "primaryLanguage": {
+    "name": "Python"
+  },
+  "pushedAt": "2026-07-02T20:29:57Z",
+  "repositoryTopics": [
+    {
+      "name": "anthropic"
+    },
+    {
+      "name": "anthropic-claude"
+    },
+    {
+      "name": "awesome"
+    },
+    {
+      "name": "awesome-list"
+    },
+    {
+      "name": "awesome-lists"
+    },
+    {
+      "name": "awesome-resources"
+    },
+    {
+      "name": "claude"
+    },
+    {
+      "name": "claude-code"
+    },
+    {
+      "name": "agentic-code"
+    },
+    {
+      "name": "agentic-coding"
+    },
+    {
+      "name": "ai-workflow-optimization"
+    },
+    {
+      "name": "ai-workflows"
+    },
+    {
+      "name": "coding-agent"
+    },
+    {
+      "name": "coding-agents"
+    },
+    {
+      "name": "coding-assistant"
+    },
+    {
+      "name": "agent-skills"
+    },
+    {
+      "name": "coding-assistants"
+    },
+    {
+      "name": "llm"
+    },
+    {
+      "name": "awesome-claude-code"
+    }
+  ],
+  "stargazerCount": 47803,
+  "updatedAt": "2026-07-02T22:48:27Z",
+  "url": "https://github.com/hesreallyhim/awesome-claude-code",
+  "watchers": {
+    "totalCount": 307
+  }
+}

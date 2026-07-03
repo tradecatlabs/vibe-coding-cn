@@ -1,0 +1,30 @@
+{
+  "createdAt": "2025-11-30T15:52:58Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "动手学CS146S中文版课程，包含assignments，vibe coding工具等，本项目将长期持续维护，致力于打造中文最好的vibe coding教程。",
+  "forkCount": 153,
+  "homepageUrl": "https://themodernsoftware.dev/",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": null,
+  "licenseInfo": {
+    "key": "mit",
+    "name": "MIT License",
+    "nickname": ""
+  },
+  "nameWithOwner": "ShouZhengAI/CS146S_CN",
+  "primaryLanguage": {
+    "name": "Python"
+  },
+  "pushedAt": "2026-06-04T16:10:40Z",
+  "repositoryTopics": null,
+  "stargazerCount": 1388,
+  "updatedAt": "2026-07-02T15:22:40Z",
+  "url": "https://github.com/ShouZhengAI/CS146S_CN",
+  "watchers": {
+    "totalCount": 9
+  }
+}

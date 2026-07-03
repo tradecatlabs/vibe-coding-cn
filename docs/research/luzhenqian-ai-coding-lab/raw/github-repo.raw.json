@@ -1,0 +1,26 @@
+{
+  "createdAt": "2026-03-06T07:56:42Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "适合所有人的 AI 编程、AI 应用开发的实战教程——从 Vibe Coding 到 Agent、RAG，循序渐进，边学边做。",
+  "forkCount": 20,
+  "homepageUrl": "",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": null,
+  "licenseInfo": null,
+  "nameWithOwner": "luzhenqian/ai-coding-lab",
+  "primaryLanguage": {
+    "name": "TypeScript"
+  },
+  "pushedAt": "2026-05-18T13:56:01Z",
+  "repositoryTopics": null,
+  "stargazerCount": 144,
+  "updatedAt": "2026-07-02T12:41:02Z",
+  "url": "https://github.com/luzhenqian/ai-coding-lab",
+  "watchers": {
+    "totalCount": 0
+  }
+}

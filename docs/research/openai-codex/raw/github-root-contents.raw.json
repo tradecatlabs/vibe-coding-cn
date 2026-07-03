@@ -1,0 +1,722 @@
+[
+  {
+    "name": ".bazelignore",
+    "path": ".bazelignore",
+    "sha": "2e90753cb8e29946973b91d1042c9ea249c728cf",
+    "size": 141,
+    "url": "https://api.github.com/repos/openai/codex/contents/.bazelignore?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/.bazelignore",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/2e90753cb8e29946973b91d1042c9ea249c728cf",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/.bazelignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.bazelignore?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/2e90753cb8e29946973b91d1042c9ea249c728cf",
+      "html": "https://github.com/openai/codex/blob/main/.bazelignore"
+    }
+  },
+  {
+    "name": ".bazelrc",
+    "path": ".bazelrc",
+    "sha": "de01a87443feabd16e530ac0d518a4587abd8695",
+    "size": 13390,
+    "url": "https://api.github.com/repos/openai/codex/contents/.bazelrc?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/.bazelrc",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/de01a87443feabd16e530ac0d518a4587abd8695",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/.bazelrc",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.bazelrc?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/de01a87443feabd16e530ac0d518a4587abd8695",
+      "html": "https://github.com/openai/codex/blob/main/.bazelrc"
+    }
+  },
+  {
+    "name": ".bazelversion",
+    "path": ".bazelversion",
+    "sha": "f7ee06693c17a06e2a0f51ef7eb2a61866e77b8e",
+    "size": 6,
+    "url": "https://api.github.com/repos/openai/codex/contents/.bazelversion?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/.bazelversion",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/f7ee06693c17a06e2a0f51ef7eb2a61866e77b8e",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/.bazelversion",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.bazelversion?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/f7ee06693c17a06e2a0f51ef7eb2a61866e77b8e",
+      "html": "https://github.com/openai/codex/blob/main/.bazelversion"
+    }
+  },
+  {
+    "name": ".codespellignore",
+    "path": ".codespellignore",
+    "sha": "23924fe083cb56e71183fbf80541d530d2c8a8b6",
+    "size": 30,
+    "url": "https://api.github.com/repos/openai/codex/contents/.codespellignore?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/.codespellignore",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/23924fe083cb56e71183fbf80541d530d2c8a8b6",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/.codespellignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.codespellignore?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/23924fe083cb56e71183fbf80541d530d2c8a8b6",
+      "html": "https://github.com/openai/codex/blob/main/.codespellignore"
+    }
+  },
+  {
+    "name": ".codespellrc",
+    "path": ".codespellrc",
+    "sha": "838b7e874e460113049f9c7b20c45943d0f9adb5",
+    "size": 321,
+    "url": "https://api.github.com/repos/openai/codex/contents/.codespellrc?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/.codespellrc",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/838b7e874e460113049f9c7b20c45943d0f9adb5",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/.codespellrc",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.codespellrc?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/838b7e874e460113049f9c7b20c45943d0f9adb5",
+      "html": "https://github.com/openai/codex/blob/main/.codespellrc"
+    }
+  },
+  {
+    "name": ".codex",
+    "path": ".codex",
+    "sha": "a6917d204085f77beac621d94836b913a425dd65",
+    "size": 0,
+    "url": "https://api.github.com/repos/openai/codex/contents/.codex?ref=main",
+    "html_url": "https://github.com/openai/codex/tree/main/.codex",
+    "git_url": "https://api.github.com/repos/openai/codex/git/trees/a6917d204085f77beac621d94836b913a425dd65",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.codex?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/trees/a6917d204085f77beac621d94836b913a425dd65",
+      "html": "https://github.com/openai/codex/tree/main/.codex"
+    }
+  },
+  {
+    "name": ".devcontainer",
+    "path": ".devcontainer",
+    "sha": "e2bd112665eb4944596d920bd17c3ef94c353fc7",
+    "size": 0,
+    "url": "https://api.github.com/repos/openai/codex/contents/.devcontainer?ref=main",
+    "html_url": "https://github.com/openai/codex/tree/main/.devcontainer",
+    "git_url": "https://api.github.com/repos/openai/codex/git/trees/e2bd112665eb4944596d920bd17c3ef94c353fc7",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.devcontainer?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/trees/e2bd112665eb4944596d920bd17c3ef94c353fc7",
+      "html": "https://github.com/openai/codex/tree/main/.devcontainer"
+    }
+  },
+  {
+    "name": ".gitattributes",
+    "path": ".gitattributes",
+    "sha": "57c5fe6e88da359dc880c6a710ded60c3932741a",
+    "size": 112,
+    "url": "https://api.github.com/repos/openai/codex/contents/.gitattributes?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/.gitattributes",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/57c5fe6e88da359dc880c6a710ded60c3932741a",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/.gitattributes",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.gitattributes?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/57c5fe6e88da359dc880c6a710ded60c3932741a",
+      "html": "https://github.com/openai/codex/blob/main/.gitattributes"
+    }
+  },
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "1006cce2b3b815581066576a8abf87fea50fe559",
+    "size": 0,
+    "url": "https://api.github.com/repos/openai/codex/contents/.github?ref=main",
+    "html_url": "https://github.com/openai/codex/tree/main/.github",
+    "git_url": "https://api.github.com/repos/openai/codex/git/trees/1006cce2b3b815581066576a8abf87fea50fe559",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.github?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/trees/1006cce2b3b815581066576a8abf87fea50fe559",
+      "html": "https://github.com/openai/codex/tree/main/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "dbcd8633154a13966c231033a6c07ad8be169c73",
+    "size": 931,
+    "url": "https://api.github.com/repos/openai/codex/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/dbcd8633154a13966c231033a6c07ad8be169c73",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/dbcd8633154a13966c231033a6c07ad8be169c73",
+      "html": "https://github.com/openai/codex/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": ".markdownlint-cli2.yaml",
+    "path": ".markdownlint-cli2.yaml",
+    "sha": "15b472c61cb73bf14f6c327266e479229f555eca",
+    "size": 78,
+    "url": "https://api.github.com/repos/openai/codex/contents/.markdownlint-cli2.yaml?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/.markdownlint-cli2.yaml",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/15b472c61cb73bf14f6c327266e479229f555eca",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/.markdownlint-cli2.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.markdownlint-cli2.yaml?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/15b472c61cb73bf14f6c327266e479229f555eca",
+      "html": "https://github.com/openai/codex/blob/main/.markdownlint-cli2.yaml"
+    }
+  },
+  {
+    "name": ".npmrc",
+    "path": ".npmrc",
+    "sha": "4153fe87bb5f08b63514128adf30f1643ef3f1fc",
+    "size": 104,
+    "url": "https://api.github.com/repos/openai/codex/contents/.npmrc?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/.npmrc",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/4153fe87bb5f08b63514128adf30f1643ef3f1fc",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/.npmrc",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.npmrc?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/4153fe87bb5f08b63514128adf30f1643ef3f1fc",
+      "html": "https://github.com/openai/codex/blob/main/.npmrc"
+    }
+  },
+  {
+    "name": ".prettierignore",
+    "path": ".prettierignore",
+    "sha": "f5b50f6ba22810b725c2d07a24f4a77ac3b8004e",
+    "size": 96,
+    "url": "https://api.github.com/repos/openai/codex/contents/.prettierignore?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/.prettierignore",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/f5b50f6ba22810b725c2d07a24f4a77ac3b8004e",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/.prettierignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.prettierignore?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/f5b50f6ba22810b725c2d07a24f4a77ac3b8004e",
+      "html": "https://github.com/openai/codex/blob/main/.prettierignore"
+    }
+  },
+  {
+    "name": ".prettierrc.toml",
+    "path": ".prettierrc.toml",
+    "sha": "4c58c583e5fa327928190f625a1095a9c4d9e72f",
+    "size": 170,
+    "url": "https://api.github.com/repos/openai/codex/contents/.prettierrc.toml?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/.prettierrc.toml",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/4c58c583e5fa327928190f625a1095a9c4d9e72f",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/.prettierrc.toml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.prettierrc.toml?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/4c58c583e5fa327928190f625a1095a9c4d9e72f",
+      "html": "https://github.com/openai/codex/blob/main/.prettierrc.toml"
+    }
+  },
+  {
+    "name": ".vscode",
+    "path": ".vscode",
+    "sha": "b26f3b4bbfa530719068fbf14ad6ea3a4b502b33",
+    "size": 0,
+    "url": "https://api.github.com/repos/openai/codex/contents/.vscode?ref=main",
+    "html_url": "https://github.com/openai/codex/tree/main/.vscode",
+    "git_url": "https://api.github.com/repos/openai/codex/git/trees/b26f3b4bbfa530719068fbf14ad6ea3a4b502b33",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/.vscode?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/trees/b26f3b4bbfa530719068fbf14ad6ea3a4b502b33",
+      "html": "https://github.com/openai/codex/tree/main/.vscode"
+    }
+  },
+  {
+    "name": "AGENTS.md",
+    "path": "AGENTS.md",
+    "sha": "bdfa798f5c695c65e57941ffde020a183a466b14",
+    "size": 22521,
+    "url": "https://api.github.com/repos/openai/codex/contents/AGENTS.md?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/AGENTS.md",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/bdfa798f5c695c65e57941ffde020a183a466b14",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/AGENTS.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/AGENTS.md?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/bdfa798f5c695c65e57941ffde020a183a466b14",
+      "html": "https://github.com/openai/codex/blob/main/AGENTS.md"
+    }
+  },
+  {
+    "name": "BUILD.bazel",
+    "path": "BUILD.bazel",
+    "sha": "a82126e6f1ec2ba080cc51a9d2db61311e3dff87",
+    "size": 2183,
+    "url": "https://api.github.com/repos/openai/codex/contents/BUILD.bazel?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/BUILD.bazel",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/a82126e6f1ec2ba080cc51a9d2db61311e3dff87",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/BUILD.bazel",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/BUILD.bazel?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/a82126e6f1ec2ba080cc51a9d2db61311e3dff87",
+      "html": "https://github.com/openai/codex/blob/main/BUILD.bazel"
+    }
+  },
+  {
+    "name": "CHANGELOG.md",
+    "path": "CHANGELOG.md",
+    "sha": "2eb564c560a4c85507169a26637f6bce59f7e1fb",
+    "size": 93,
+    "url": "https://api.github.com/repos/openai/codex/contents/CHANGELOG.md?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/CHANGELOG.md",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/2eb564c560a4c85507169a26637f6bce59f7e1fb",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/CHANGELOG.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/CHANGELOG.md?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/2eb564c560a4c85507169a26637f6bce59f7e1fb",
+      "html": "https://github.com/openai/codex/blob/main/CHANGELOG.md"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "4606e72e042564097e8780d66c1d4dcb611869bd",
+    "size": 10926,
+    "url": "https://api.github.com/repos/openai/codex/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/4606e72e042564097e8780d66c1d4dcb611869bd",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/LICENSE?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/4606e72e042564097e8780d66c1d4dcb611869bd",
+      "html": "https://github.com/openai/codex/blob/main/LICENSE"
+    }
+  },
+  {
+    "name": "MODULE.bazel",
+    "path": "MODULE.bazel",
+    "sha": "20d80f3962608c733c01ca557821e7dcaf4032f4",
+    "size": 15820,
+    "url": "https://api.github.com/repos/openai/codex/contents/MODULE.bazel?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/MODULE.bazel",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/20d80f3962608c733c01ca557821e7dcaf4032f4",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/MODULE.bazel",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/MODULE.bazel?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/20d80f3962608c733c01ca557821e7dcaf4032f4",
+      "html": "https://github.com/openai/codex/blob/main/MODULE.bazel"
+    }
+  },
+  {
+    "name": "MODULE.bazel.lock",
+    "path": "MODULE.bazel.lock",
+    "sha": "d572f68f21b1d150486b9e050523201b43698c87",
+    "size": 1443536,
+    "url": "https://api.github.com/repos/openai/codex/contents/MODULE.bazel.lock?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/MODULE.bazel.lock",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/d572f68f21b1d150486b9e050523201b43698c87",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/MODULE.bazel.lock",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/MODULE.bazel.lock?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/d572f68f21b1d150486b9e050523201b43698c87",
+      "html": "https://github.com/openai/codex/blob/main/MODULE.bazel.lock"
+    }
+  },
+  {
+    "name": "NOTICE",
+    "path": "NOTICE",
+    "sha": "2805899d56d0332d175cfc613c67d45d6f006db7",
+    "size": 242,
+    "url": "https://api.github.com/repos/openai/codex/contents/NOTICE?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/NOTICE",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/2805899d56d0332d175cfc613c67d45d6f006db7",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/NOTICE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/NOTICE?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/2805899d56d0332d175cfc613c67d45d6f006db7",
+      "html": "https://github.com/openai/codex/blob/main/NOTICE"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "bb2a9d18c3f95ea1a16394a7131634ac1b1ae68e",
+    "size": 2814,
+    "url": "https://api.github.com/repos/openai/codex/contents/README.md?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/bb2a9d18c3f95ea1a16394a7131634ac1b1ae68e",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/bb2a9d18c3f95ea1a16394a7131634ac1b1ae68e",
+      "html": "https://github.com/openai/codex/blob/main/README.md"
+    }
+  },
+  {
+    "name": "SECURITY.md",
+    "path": "SECURITY.md",
+    "sha": "29a9b903df5da8e789d685efe8012fa4edd775e5",
+    "size": 923,
+    "url": "https://api.github.com/repos/openai/codex/contents/SECURITY.md?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/SECURITY.md",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/29a9b903df5da8e789d685efe8012fa4edd775e5",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/SECURITY.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/SECURITY.md?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/29a9b903df5da8e789d685efe8012fa4edd775e5",
+      "html": "https://github.com/openai/codex/blob/main/SECURITY.md"
+    }
+  },
+  {
+    "name": "announcement_tip.toml",
+    "path": "announcement_tip.toml",
+    "sha": "79c0daea761e0f634960dd39e2dff6bdbfd02f63",
+    "size": 999,
+    "url": "https://api.github.com/repos/openai/codex/contents/announcement_tip.toml?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/announcement_tip.toml",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/79c0daea761e0f634960dd39e2dff6bdbfd02f63",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/announcement_tip.toml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/announcement_tip.toml?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/79c0daea761e0f634960dd39e2dff6bdbfd02f63",
+      "html": "https://github.com/openai/codex/blob/main/announcement_tip.toml"
+    }
+  },
+  {
+    "name": "bazel",
+    "path": "bazel",
+    "sha": "2e3e531fbb14710c27ec8bebc8100eb10d2f08c1",
+    "size": 0,
+    "url": "https://api.github.com/repos/openai/codex/contents/bazel?ref=main",
+    "html_url": "https://github.com/openai/codex/tree/main/bazel",
+    "git_url": "https://api.github.com/repos/openai/codex/git/trees/2e3e531fbb14710c27ec8bebc8100eb10d2f08c1",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/bazel?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/trees/2e3e531fbb14710c27ec8bebc8100eb10d2f08c1",
+      "html": "https://github.com/openai/codex/tree/main/bazel"
+    }
+  },
+  {
+    "name": "cliff.toml",
+    "path": "cliff.toml",
+    "sha": "f31e1bd89ccb6a51267988c275379c39d9f6cb6f",
+    "size": 1155,
+    "url": "https://api.github.com/repos/openai/codex/contents/cliff.toml?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/cliff.toml",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/f31e1bd89ccb6a51267988c275379c39d9f6cb6f",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/cliff.toml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/cliff.toml?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/f31e1bd89ccb6a51267988c275379c39d9f6cb6f",
+      "html": "https://github.com/openai/codex/blob/main/cliff.toml"
+    }
+  },
+  {
+    "name": "codex-cli",
+    "path": "codex-cli",
+    "sha": "431909b081ed5200cc84f3679c34ed7eda805e10",
+    "size": 0,
+    "url": "https://api.github.com/repos/openai/codex/contents/codex-cli?ref=main",
+    "html_url": "https://github.com/openai/codex/tree/main/codex-cli",
+    "git_url": "https://api.github.com/repos/openai/codex/git/trees/431909b081ed5200cc84f3679c34ed7eda805e10",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/codex-cli?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/trees/431909b081ed5200cc84f3679c34ed7eda805e10",
+      "html": "https://github.com/openai/codex/tree/main/codex-cli"
+    }
+  },
+  {
+    "name": "codex-rs",
+    "path": "codex-rs",
+    "sha": "3d96779641d8546881385639ac0994676cd8e817",
+    "size": 0,
+    "url": "https://api.github.com/repos/openai/codex/contents/codex-rs?ref=main",
+    "html_url": "https://github.com/openai/codex/tree/main/codex-rs",
+    "git_url": "https://api.github.com/repos/openai/codex/git/trees/3d96779641d8546881385639ac0994676cd8e817",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/codex-rs?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/trees/3d96779641d8546881385639ac0994676cd8e817",
+      "html": "https://github.com/openai/codex/tree/main/codex-rs"
+    }
+  },
+  {
+    "name": "defs.bzl",
+    "path": "defs.bzl",
+    "sha": "c8fd35e039be98abf5212b628c5684a97aa8f03d",
+    "size": 27840,
+    "url": "https://api.github.com/repos/openai/codex/contents/defs.bzl?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/defs.bzl",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/c8fd35e039be98abf5212b628c5684a97aa8f03d",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/defs.bzl",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/defs.bzl?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/c8fd35e039be98abf5212b628c5684a97aa8f03d",
+      "html": "https://github.com/openai/codex/blob/main/defs.bzl"
+    }
+  },
+  {
+    "name": "docs",
+    "path": "docs",
+    "sha": "9dcc9638a2ee96a4c4426c036e6c8d6317f905b5",
+    "size": 0,
+    "url": "https://api.github.com/repos/openai/codex/contents/docs?ref=main",
+    "html_url": "https://github.com/openai/codex/tree/main/docs",
+    "git_url": "https://api.github.com/repos/openai/codex/git/trees/9dcc9638a2ee96a4c4426c036e6c8d6317f905b5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/docs?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/trees/9dcc9638a2ee96a4c4426c036e6c8d6317f905b5",
+      "html": "https://github.com/openai/codex/tree/main/docs"
+    }
+  },
+  {
+    "name": "flake.lock",
+    "path": "flake.lock",
+    "sha": "8348ebd272985a958e66771ca6dd7153af782a1b",
+    "size": 1108,
+    "url": "https://api.github.com/repos/openai/codex/contents/flake.lock?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/flake.lock",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/8348ebd272985a958e66771ca6dd7153af782a1b",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/flake.lock",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/flake.lock?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/8348ebd272985a958e66771ca6dd7153af782a1b",
+      "html": "https://github.com/openai/codex/blob/main/flake.lock"
+    }
+  },
+  {
+    "name": "flake.nix",
+    "path": "flake.nix",
+    "sha": "1fd41c6f14452f64de42f9da30002e8d669a33aa",
+    "size": 2673,
+    "url": "https://api.github.com/repos/openai/codex/contents/flake.nix?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/flake.nix",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/1fd41c6f14452f64de42f9da30002e8d669a33aa",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/flake.nix",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/flake.nix?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/1fd41c6f14452f64de42f9da30002e8d669a33aa",
+      "html": "https://github.com/openai/codex/blob/main/flake.nix"
+    }
+  },
+  {
+    "name": "justfile",
+    "path": "justfile",
+    "sha": "d4a0e6566c6782a72ea1f4e86e3f45650b148c94",
+    "size": 6391,
+    "url": "https://api.github.com/repos/openai/codex/contents/justfile?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/justfile",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/d4a0e6566c6782a72ea1f4e86e3f45650b148c94",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/justfile",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/justfile?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/d4a0e6566c6782a72ea1f4e86e3f45650b148c94",
+      "html": "https://github.com/openai/codex/blob/main/justfile"
+    }
+  },
+  {
+    "name": "package.json",
+    "path": "package.json",
+    "sha": "ddda581bf2ae6ce2aeca68f41f42663d2b49ed9e",
+    "size": 1242,
+    "url": "https://api.github.com/repos/openai/codex/contents/package.json?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/package.json",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/ddda581bf2ae6ce2aeca68f41f42663d2b49ed9e",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/package.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/package.json?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/ddda581bf2ae6ce2aeca68f41f42663d2b49ed9e",
+      "html": "https://github.com/openai/codex/blob/main/package.json"
+    }
+  },
+  {
+    "name": "patches",
+    "path": "patches",
+    "sha": "721b0433fb68636493f2336373248fa4046cc51b",
+    "size": 0,
+    "url": "https://api.github.com/repos/openai/codex/contents/patches?ref=main",
+    "html_url": "https://github.com/openai/codex/tree/main/patches",
+    "git_url": "https://api.github.com/repos/openai/codex/git/trees/721b0433fb68636493f2336373248fa4046cc51b",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/patches?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/trees/721b0433fb68636493f2336373248fa4046cc51b",
+      "html": "https://github.com/openai/codex/tree/main/patches"
+    }
+  },
+  {
+    "name": "pnpm-lock.yaml",
+    "path": "pnpm-lock.yaml",
+    "sha": "2d4c6f34972b61e8336433ff7e6a6d2b35974df9",
+    "size": 172297,
+    "url": "https://api.github.com/repos/openai/codex/contents/pnpm-lock.yaml?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/pnpm-lock.yaml",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/2d4c6f34972b61e8336433ff7e6a6d2b35974df9",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/pnpm-lock.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/pnpm-lock.yaml?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/2d4c6f34972b61e8336433ff7e6a6d2b35974df9",
+      "html": "https://github.com/openai/codex/blob/main/pnpm-lock.yaml"
+    }
+  },
+  {
+    "name": "pnpm-workspace.yaml",
+    "path": "pnpm-workspace.yaml",
+    "sha": "7f5e2d915ed5fd8803d32cf280c07e53e8abfef4",
+    "size": 317,
+    "url": "https://api.github.com/repos/openai/codex/contents/pnpm-workspace.yaml?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/pnpm-workspace.yaml",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/7f5e2d915ed5fd8803d32cf280c07e53e8abfef4",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/pnpm-workspace.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/pnpm-workspace.yaml?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/7f5e2d915ed5fd8803d32cf280c07e53e8abfef4",
+      "html": "https://github.com/openai/codex/blob/main/pnpm-workspace.yaml"
+    }
+  },
+  {
+    "name": "rbe.bzl",
+    "path": "rbe.bzl",
+    "sha": "57e301ac776d9c7196e9c854bc6e27ce2718d886",
+    "size": 1488,
+    "url": "https://api.github.com/repos/openai/codex/contents/rbe.bzl?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/rbe.bzl",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/57e301ac776d9c7196e9c854bc6e27ce2718d886",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/rbe.bzl",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/rbe.bzl?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/57e301ac776d9c7196e9c854bc6e27ce2718d886",
+      "html": "https://github.com/openai/codex/blob/main/rbe.bzl"
+    }
+  },
+  {
+    "name": "scripts",
+    "path": "scripts",
+    "sha": "9b905cd326eebd22c7af999d617e96c94f1885ca",
+    "size": 0,
+    "url": "https://api.github.com/repos/openai/codex/contents/scripts?ref=main",
+    "html_url": "https://github.com/openai/codex/tree/main/scripts",
+    "git_url": "https://api.github.com/repos/openai/codex/git/trees/9b905cd326eebd22c7af999d617e96c94f1885ca",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/scripts?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/trees/9b905cd326eebd22c7af999d617e96c94f1885ca",
+      "html": "https://github.com/openai/codex/tree/main/scripts"
+    }
+  },
+  {
+    "name": "sdk",
+    "path": "sdk",
+    "sha": "78e9530fbbd9503d5fe60b394510ebf1d3b90210",
+    "size": 0,
+    "url": "https://api.github.com/repos/openai/codex/contents/sdk?ref=main",
+    "html_url": "https://github.com/openai/codex/tree/main/sdk",
+    "git_url": "https://api.github.com/repos/openai/codex/git/trees/78e9530fbbd9503d5fe60b394510ebf1d3b90210",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/sdk?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/trees/78e9530fbbd9503d5fe60b394510ebf1d3b90210",
+      "html": "https://github.com/openai/codex/tree/main/sdk"
+    }
+  },
+  {
+    "name": "third_party",
+    "path": "third_party",
+    "sha": "2b829b89c6f6f89d1946636419cb9ac7bec0a7fb",
+    "size": 0,
+    "url": "https://api.github.com/repos/openai/codex/contents/third_party?ref=main",
+    "html_url": "https://github.com/openai/codex/tree/main/third_party",
+    "git_url": "https://api.github.com/repos/openai/codex/git/trees/2b829b89c6f6f89d1946636419cb9ac7bec0a7fb",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/third_party?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/trees/2b829b89c6f6f89d1946636419cb9ac7bec0a7fb",
+      "html": "https://github.com/openai/codex/tree/main/third_party"
+    }
+  },
+  {
+    "name": "tools",
+    "path": "tools",
+    "sha": "8e7fafe48997ecb918b944c0278b533f43598b7d",
+    "size": 0,
+    "url": "https://api.github.com/repos/openai/codex/contents/tools?ref=main",
+    "html_url": "https://github.com/openai/codex/tree/main/tools",
+    "git_url": "https://api.github.com/repos/openai/codex/git/trees/8e7fafe48997ecb918b944c0278b533f43598b7d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/tools?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/trees/8e7fafe48997ecb918b944c0278b533f43598b7d",
+      "html": "https://github.com/openai/codex/tree/main/tools"
+    }
+  },
+  {
+    "name": "workspace_root_test_launcher.bat.tpl",
+    "path": "workspace_root_test_launcher.bat.tpl",
+    "sha": "3613b91d76c9dceac740d6b6ccb12bb899b70275",
+    "size": 5842,
+    "url": "https://api.github.com/repos/openai/codex/contents/workspace_root_test_launcher.bat.tpl?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/workspace_root_test_launcher.bat.tpl",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/3613b91d76c9dceac740d6b6ccb12bb899b70275",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/workspace_root_test_launcher.bat.tpl",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/workspace_root_test_launcher.bat.tpl?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/3613b91d76c9dceac740d6b6ccb12bb899b70275",
+      "html": "https://github.com/openai/codex/blob/main/workspace_root_test_launcher.bat.tpl"
+    }
+  },
+  {
+    "name": "workspace_root_test_launcher.sh.tpl",
+    "path": "workspace_root_test_launcher.sh.tpl",
+    "sha": "4606fd8b15274f3e52aca493a34f32264d124c06",
+    "size": 4713,
+    "url": "https://api.github.com/repos/openai/codex/contents/workspace_root_test_launcher.sh.tpl?ref=main",
+    "html_url": "https://github.com/openai/codex/blob/main/workspace_root_test_launcher.sh.tpl",
+    "git_url": "https://api.github.com/repos/openai/codex/git/blobs/4606fd8b15274f3e52aca493a34f32264d124c06",
+    "download_url": "https://raw.githubusercontent.com/openai/codex/main/workspace_root_test_launcher.sh.tpl",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/codex/contents/workspace_root_test_launcher.sh.tpl?ref=main",
+      "git": "https://api.github.com/repos/openai/codex/git/blobs/4606fd8b15274f3e52aca493a34f32264d124c06",
+      "html": "https://github.com/openai/codex/blob/main/workspace_root_test_launcher.sh.tpl"
+    }
+  }
+]

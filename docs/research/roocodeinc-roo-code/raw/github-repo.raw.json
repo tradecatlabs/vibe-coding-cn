@@ -1,0 +1,35 @@
+{
+  "createdAt": "2024-10-31T17:56:50Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "Roo Code gives you a whole dev team of AI agents in your code editor.",
+  "forkCount": 3349,
+  "homepageUrl": "https://roocode.com",
+  "isArchived": true,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": {
+    "name": "Release v3.54.0",
+    "publishedAt": "2026-05-15T17:52:24Z",
+    "tagName": "v3.54.0",
+    "url": "https://github.com/RooCodeInc/Roo-Code/releases/tag/v3.54.0"
+  },
+  "licenseInfo": {
+    "key": "apache-2.0",
+    "name": "Apache License 2.0",
+    "nickname": ""
+  },
+  "nameWithOwner": "RooCodeInc/Roo-Code",
+  "primaryLanguage": {
+    "name": "TypeScript"
+  },
+  "pushedAt": "2026-05-15T18:08:47Z",
+  "repositoryTopics": null,
+  "stargazerCount": 24300,
+  "updatedAt": "2026-07-02T17:26:16Z",
+  "url": "https://github.com/RooCodeInc/Roo-Code",
+  "watchers": {
+    "totalCount": 141
+  }
+}

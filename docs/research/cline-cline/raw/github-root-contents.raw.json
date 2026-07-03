@@ -1,0 +1,530 @@
+[
+  {
+    "name": ".agents",
+    "path": ".agents",
+    "sha": "7a3eeb9b5e2b8e29b7e4b78257a4d41d144e71b7",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/.agents?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/.agents",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/7a3eeb9b5e2b8e29b7e4b78257a4d41d144e71b7",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.agents?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/7a3eeb9b5e2b8e29b7e4b78257a4d41d144e71b7",
+      "html": "https://github.com/cline/cline/tree/main/.agents"
+    }
+  },
+  {
+    "name": ".changeset",
+    "path": ".changeset",
+    "sha": "18bbe48482fb8a2cf664875fd5b0974ec6a77bf2",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/.changeset?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/.changeset",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/18bbe48482fb8a2cf664875fd5b0974ec6a77bf2",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.changeset?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/18bbe48482fb8a2cf664875fd5b0974ec6a77bf2",
+      "html": "https://github.com/cline/cline/tree/main/.changeset"
+    }
+  },
+  {
+    "name": ".claude",
+    "path": ".claude",
+    "sha": "df764f7f42d7530eebf9cd485d1d660117b8b147",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/.claude?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/.claude",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/df764f7f42d7530eebf9cd485d1d660117b8b147",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.claude?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/df764f7f42d7530eebf9cd485d1d660117b8b147",
+      "html": "https://github.com/cline/cline/tree/main/.claude"
+    }
+  },
+  {
+    "name": ".cline",
+    "path": ".cline",
+    "sha": "af750cd904b3b860efa07741c0f99a022b708ce3",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/.cline?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/.cline",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/af750cd904b3b860efa07741c0f99a022b708ce3",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.cline?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/af750cd904b3b860efa07741c0f99a022b708ce3",
+      "html": "https://github.com/cline/cline/tree/main/.cline"
+    }
+  },
+  {
+    "name": ".clinerules",
+    "path": ".clinerules",
+    "sha": "d7161894935d400d7b0122ee5a553da3f9950545",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/.clinerules?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/.clinerules",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/d7161894935d400d7b0122ee5a553da3f9950545",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.clinerules?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/d7161894935d400d7b0122ee5a553da3f9950545",
+      "html": "https://github.com/cline/cline/tree/main/.clinerules"
+    }
+  },
+  {
+    "name": ".codex",
+    "path": ".codex",
+    "sha": "81c2f677f7d89b8e04f7df77d2a3099f4f168550",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/.codex?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/.codex",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/81c2f677f7d89b8e04f7df77d2a3099f4f168550",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.codex?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/81c2f677f7d89b8e04f7df77d2a3099f4f168550",
+      "html": "https://github.com/cline/cline/tree/main/.codex"
+    }
+  },
+  {
+    "name": ".gitattributes",
+    "path": ".gitattributes",
+    "sha": "9f1ff5fcce328496fed06f20d53b4e767f7a39ab",
+    "size": 122,
+    "url": "https://api.github.com/repos/cline/cline/contents/.gitattributes?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/.gitattributes",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/9f1ff5fcce328496fed06f20d53b4e767f7a39ab",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/.gitattributes",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.gitattributes?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/9f1ff5fcce328496fed06f20d53b4e767f7a39ab",
+      "html": "https://github.com/cline/cline/blob/main/.gitattributes"
+    }
+  },
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "a1485c6bd07ad193f2437ee762886d9dd8e575cd",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/.github?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/.github",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/a1485c6bd07ad193f2437ee762886d9dd8e575cd",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.github?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/a1485c6bd07ad193f2437ee762886d9dd8e575cd",
+      "html": "https://github.com/cline/cline/tree/main/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "5f967a7308e09d6238ce6e74e9128695f591099f",
+    "size": 1441,
+    "url": "https://api.github.com/repos/cline/cline/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/5f967a7308e09d6238ce6e74e9128695f591099f",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/5f967a7308e09d6238ce6e74e9128695f591099f",
+      "html": "https://github.com/cline/cline/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": ".gitleaks.toml",
+    "path": ".gitleaks.toml",
+    "sha": "c0626f558c147f1ae9028dbdfda9e0a9be8ea564",
+    "size": 64,
+    "url": "https://api.github.com/repos/cline/cline/contents/.gitleaks.toml?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/.gitleaks.toml",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/c0626f558c147f1ae9028dbdfda9e0a9be8ea564",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/.gitleaks.toml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.gitleaks.toml?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/c0626f558c147f1ae9028dbdfda9e0a9be8ea564",
+      "html": "https://github.com/cline/cline/blob/main/.gitleaks.toml"
+    }
+  },
+  {
+    "name": ".gitmodules",
+    "path": ".gitmodules",
+    "sha": "929ec96242e4546878c3d5bc8f6a2b07cae567cd",
+    "size": 106,
+    "url": "https://api.github.com/repos/cline/cline/contents/.gitmodules?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/.gitmodules",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/929ec96242e4546878c3d5bc8f6a2b07cae567cd",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/.gitmodules",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.gitmodules?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/929ec96242e4546878c3d5bc8f6a2b07cae567cd",
+      "html": "https://github.com/cline/cline/blob/main/.gitmodules"
+    }
+  },
+  {
+    "name": ".greptile",
+    "path": ".greptile",
+    "sha": "2abebbd25ee4b05dada72123e38784f3f8d132de",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/.greptile?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/.greptile",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/2abebbd25ee4b05dada72123e38784f3f8d132de",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.greptile?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/2abebbd25ee4b05dada72123e38784f3f8d132de",
+      "html": "https://github.com/cline/cline/tree/main/.greptile"
+    }
+  },
+  {
+    "name": ".husky",
+    "path": ".husky",
+    "sha": "42900e6fd2e9843f66373a466f7e99284afc2325",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/.husky?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/.husky",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/42900e6fd2e9843f66373a466f7e99284afc2325",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.husky?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/42900e6fd2e9843f66373a466f7e99284afc2325",
+      "html": "https://github.com/cline/cline/tree/main/.husky"
+    }
+  },
+  {
+    "name": ".kanban",
+    "path": ".kanban",
+    "sha": "3b3fefa11ee0ba6e6b4421776f362bb65bdbd8b6",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/.kanban?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/.kanban",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/3b3fefa11ee0ba6e6b4421776f362bb65bdbd8b6",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.kanban?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/3b3fefa11ee0ba6e6b4421776f362bb65bdbd8b6",
+      "html": "https://github.com/cline/cline/tree/main/.kanban"
+    }
+  },
+  {
+    "name": ".nvmrc",
+    "path": ".nvmrc",
+    "sha": "8fdd954df9831dfd29ceec0d74829b02f3f5d8c3",
+    "size": 2,
+    "url": "https://api.github.com/repos/cline/cline/contents/.nvmrc?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/.nvmrc",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/8fdd954df9831dfd29ceec0d74829b02f3f5d8c3",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/.nvmrc",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.nvmrc?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/8fdd954df9831dfd29ceec0d74829b02f3f5d8c3",
+      "html": "https://github.com/cline/cline/blob/main/.nvmrc"
+    }
+  },
+  {
+    "name": ".tool-versions",
+    "path": ".tool-versions",
+    "sha": "05b561a70e3cbd8f9b8ef0dab234b8b3e97754f2",
+    "size": 19,
+    "url": "https://api.github.com/repos/cline/cline/contents/.tool-versions?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/.tool-versions",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/05b561a70e3cbd8f9b8ef0dab234b8b3e97754f2",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/.tool-versions",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.tool-versions?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/05b561a70e3cbd8f9b8ef0dab234b8b3e97754f2",
+      "html": "https://github.com/cline/cline/blob/main/.tool-versions"
+    }
+  },
+  {
+    "name": ".vscode",
+    "path": ".vscode",
+    "sha": "6bcafa31e9a3de82744eb25dcd9e48b54ce77d8d",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/.vscode?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/.vscode",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/6bcafa31e9a3de82744eb25dcd9e48b54ce77d8d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.vscode?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/6bcafa31e9a3de82744eb25dcd9e48b54ce77d8d",
+      "html": "https://github.com/cline/cline/tree/main/.vscode"
+    }
+  },
+  {
+    "name": ".worktreeinclude",
+    "path": ".worktreeinclude",
+    "sha": "3e4e48b0b5fe6b468434d6767749b399319f2da2",
+    "size": 10,
+    "url": "https://api.github.com/repos/cline/cline/contents/.worktreeinclude?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/.worktreeinclude",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/3e4e48b0b5fe6b468434d6767749b399319f2da2",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/.worktreeinclude",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/.worktreeinclude?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/3e4e48b0b5fe6b468434d6767749b399319f2da2",
+      "html": "https://github.com/cline/cline/blob/main/.worktreeinclude"
+    }
+  },
+  {
+    "name": "CHANGELOG.md",
+    "path": "CHANGELOG.md",
+    "sha": "ef03a66620bf98bd60af5061ec3d8b18ad3fee67",
+    "size": 98472,
+    "url": "https://api.github.com/repos/cline/cline/contents/CHANGELOG.md?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/CHANGELOG.md",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/ef03a66620bf98bd60af5061ec3d8b18ad3fee67",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/CHANGELOG.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/CHANGELOG.md?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/ef03a66620bf98bd60af5061ec3d8b18ad3fee67",
+      "html": "https://github.com/cline/cline/blob/main/CHANGELOG.md"
+    }
+  },
+  {
+    "name": "CODE_OF_CONDUCT.md",
+    "path": "CODE_OF_CONDUCT.md",
+    "sha": "3547e4628bbecb535306117ce22a9ae54ec83ae0",
+    "size": 3373,
+    "url": "https://api.github.com/repos/cline/cline/contents/CODE_OF_CONDUCT.md?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/CODE_OF_CONDUCT.md",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/3547e4628bbecb535306117ce22a9ae54ec83ae0",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/CODE_OF_CONDUCT.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/CODE_OF_CONDUCT.md?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/3547e4628bbecb535306117ce22a9ae54ec83ae0",
+      "html": "https://github.com/cline/cline/blob/main/CODE_OF_CONDUCT.md"
+    }
+  },
+  {
+    "name": "CONTRIBUTING.md",
+    "path": "CONTRIBUTING.md",
+    "sha": "f823b6833ac4a55f8c62b6c5357e2f900f4e8859",
+    "size": 8764,
+    "url": "https://api.github.com/repos/cline/cline/contents/CONTRIBUTING.md?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/CONTRIBUTING.md",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/f823b6833ac4a55f8c62b6c5357e2f900f4e8859",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/CONTRIBUTING.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/CONTRIBUTING.md?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/f823b6833ac4a55f8c62b6c5357e2f900f4e8859",
+      "html": "https://github.com/cline/cline/blob/main/CONTRIBUTING.md"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "05ae14a377caf4df24e26edde0c4f7b22ef3ef30",
+    "size": 11344,
+    "url": "https://api.github.com/repos/cline/cline/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/05ae14a377caf4df24e26edde0c4f7b22ef3ef30",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/LICENSE?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/05ae14a377caf4df24e26edde0c4f7b22ef3ef30",
+      "html": "https://github.com/cline/cline/blob/main/LICENSE"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "328181237cd8d95b8e3a25850236d576e930c884",
+    "size": 9094,
+    "url": "https://api.github.com/repos/cline/cline/contents/README.md?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/328181237cd8d95b8e3a25850236d576e930c884",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/328181237cd8d95b8e3a25850236d576e930c884",
+      "html": "https://github.com/cline/cline/blob/main/README.md"
+    }
+  },
+  {
+    "name": "SECURITY.md",
+    "path": "SECURITY.md",
+    "sha": "4807686929f85d6e15eb364a303b857c3af0103b",
+    "size": 952,
+    "url": "https://api.github.com/repos/cline/cline/contents/SECURITY.md?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/SECURITY.md",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/4807686929f85d6e15eb364a303b857c3af0103b",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/SECURITY.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/SECURITY.md?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/4807686929f85d6e15eb364a303b857c3af0103b",
+      "html": "https://github.com/cline/cline/blob/main/SECURITY.md"
+    }
+  },
+  {
+    "name": "apps",
+    "path": "apps",
+    "sha": "3b76387f10e79e95031b636996178ba675814393",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/apps?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/apps",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/3b76387f10e79e95031b636996178ba675814393",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/apps?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/3b76387f10e79e95031b636996178ba675814393",
+      "html": "https://github.com/cline/cline/tree/main/apps"
+    }
+  },
+  {
+    "name": "assets",
+    "path": "assets",
+    "sha": "e4bf38205adcc40200a9cb8abb3acf3b66e489af",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/assets?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/assets",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/e4bf38205adcc40200a9cb8abb3acf3b66e489af",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/assets?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/e4bf38205adcc40200a9cb8abb3acf3b66e489af",
+      "html": "https://github.com/cline/cline/tree/main/assets"
+    }
+  },
+  {
+    "name": "biome.json",
+    "path": "biome.json",
+    "sha": "d3f6055e801b6b344c369608e342e1fdf1c36380",
+    "size": 4598,
+    "url": "https://api.github.com/repos/cline/cline/contents/biome.json?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/biome.json",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/d3f6055e801b6b344c369608e342e1fdf1c36380",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/biome.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/biome.json?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/d3f6055e801b6b344c369608e342e1fdf1c36380",
+      "html": "https://github.com/cline/cline/blob/main/biome.json"
+    }
+  },
+  {
+    "name": "bun.lock",
+    "path": "bun.lock",
+    "sha": "0039da676352591a02649dc8b977295c3fafbb56",
+    "size": 977222,
+    "url": "https://api.github.com/repos/cline/cline/contents/bun.lock?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/bun.lock",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/0039da676352591a02649dc8b977295c3fafbb56",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/bun.lock",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/bun.lock?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/0039da676352591a02649dc8b977295c3fafbb56",
+      "html": "https://github.com/cline/cline/blob/main/bun.lock"
+    }
+  },
+  {
+    "name": "docs",
+    "path": "docs",
+    "sha": "938f719bb649c6f4b6fc27bc35bbaf30c798ee70",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/docs?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/docs",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/938f719bb649c6f4b6fc27bc35bbaf30c798ee70",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/docs?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/938f719bb649c6f4b6fc27bc35bbaf30c798ee70",
+      "html": "https://github.com/cline/cline/tree/main/docs"
+    }
+  },
+  {
+    "name": "evals",
+    "path": "evals",
+    "sha": "2dfc0234caaee3f637e152f781533981c498ef54",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/evals?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/evals",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/2dfc0234caaee3f637e152f781533981c498ef54",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/evals?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/2dfc0234caaee3f637e152f781533981c498ef54",
+      "html": "https://github.com/cline/cline/tree/main/evals"
+    }
+  },
+  {
+    "name": "package.json",
+    "path": "package.json",
+    "sha": "5687bf7bd86a98da4b623e4588904ded82f06dc2",
+    "size": 3932,
+    "url": "https://api.github.com/repos/cline/cline/contents/package.json?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/package.json",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/5687bf7bd86a98da4b623e4588904ded82f06dc2",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/package.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/package.json?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/5687bf7bd86a98da4b623e4588904ded82f06dc2",
+      "html": "https://github.com/cline/cline/blob/main/package.json"
+    }
+  },
+  {
+    "name": "sdk",
+    "path": "sdk",
+    "sha": "5efb73aa9e074dd9da1c33a9fdb84ed3c28e2cb4",
+    "size": 0,
+    "url": "https://api.github.com/repos/cline/cline/contents/sdk?ref=main",
+    "html_url": "https://github.com/cline/cline/tree/main/sdk",
+    "git_url": "https://api.github.com/repos/cline/cline/git/trees/5efb73aa9e074dd9da1c33a9fdb84ed3c28e2cb4",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/sdk?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/trees/5efb73aa9e074dd9da1c33a9fdb84ed3c28e2cb4",
+      "html": "https://github.com/cline/cline/tree/main/sdk"
+    }
+  },
+  {
+    "name": "vitest.config.ts",
+    "path": "vitest.config.ts",
+    "sha": "f798e90e73bcbe76f08d362f89a1337fd66b9b8d",
+    "size": 312,
+    "url": "https://api.github.com/repos/cline/cline/contents/vitest.config.ts?ref=main",
+    "html_url": "https://github.com/cline/cline/blob/main/vitest.config.ts",
+    "git_url": "https://api.github.com/repos/cline/cline/git/blobs/f798e90e73bcbe76f08d362f89a1337fd66b9b8d",
+    "download_url": "https://raw.githubusercontent.com/cline/cline/main/vitest.config.ts",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/cline/cline/contents/vitest.config.ts?ref=main",
+      "git": "https://api.github.com/repos/cline/cline/git/blobs/f798e90e73bcbe76f08d362f89a1337fd66b9b8d",
+      "html": "https://github.com/cline/cline/blob/main/vitest.config.ts"
+    }
+  }
+]

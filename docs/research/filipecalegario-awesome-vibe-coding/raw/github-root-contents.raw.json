@@ -1,0 +1,178 @@
+[
+  {
+    "name": ".claude",
+    "path": ".claude",
+    "sha": "c284836bd7372da9c3431cf3deaea731528065a5",
+    "size": 0,
+    "url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/.claude?ref=main",
+    "html_url": "https://github.com/filipecalegario/awesome-vibe-coding/tree/main/.claude",
+    "git_url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/trees/c284836bd7372da9c3431cf3deaea731528065a5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/.claude?ref=main",
+      "git": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/trees/c284836bd7372da9c3431cf3deaea731528065a5",
+      "html": "https://github.com/filipecalegario/awesome-vibe-coding/tree/main/.claude"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "d81c27e8af48fd4f45b844b81e17262b7da55c92",
+    "size": 36,
+    "url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/d81c27e8af48fd4f45b844b81e17262b7da55c92",
+    "download_url": "https://raw.githubusercontent.com/filipecalegario/awesome-vibe-coding/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/d81c27e8af48fd4f45b844b81e17262b7da55c92",
+      "html": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "073210b8b2fd1811e0dd85e6b63b2e4882c2c35c",
+    "size": 6457,
+    "url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/073210b8b2fd1811e0dd85e6b63b2e4882c2c35c",
+    "download_url": "https://raw.githubusercontent.com/filipecalegario/awesome-vibe-coding/main/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/LICENSE?ref=main",
+      "git": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/073210b8b2fd1811e0dd85e6b63b2e4882c2c35c",
+      "html": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/LICENSE"
+    }
+  },
+  {
+    "name": "README-CN.md",
+    "path": "README-CN.md",
+    "sha": "8a54991b78733c6dc7a19afdeb35d85c6702af89",
+    "size": 19423,
+    "url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/README-CN.md?ref=main",
+    "html_url": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/README-CN.md",
+    "git_url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/8a54991b78733c6dc7a19afdeb35d85c6702af89",
+    "download_url": "https://raw.githubusercontent.com/filipecalegario/awesome-vibe-coding/main/README-CN.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/README-CN.md?ref=main",
+      "git": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/8a54991b78733c6dc7a19afdeb35d85c6702af89",
+      "html": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/README-CN.md"
+    }
+  },
+  {
+    "name": "README-JP.md",
+    "path": "README-JP.md",
+    "sha": "fb887a62e35f62d7c0e82646a1d89afd97cc6d43",
+    "size": 25326,
+    "url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/README-JP.md?ref=main",
+    "html_url": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/README-JP.md",
+    "git_url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/fb887a62e35f62d7c0e82646a1d89afd97cc6d43",
+    "download_url": "https://raw.githubusercontent.com/filipecalegario/awesome-vibe-coding/main/README-JP.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/README-JP.md?ref=main",
+      "git": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/fb887a62e35f62d7c0e82646a1d89afd97cc6d43",
+      "html": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/README-JP.md"
+    }
+  },
+  {
+    "name": "README-KR.md",
+    "path": "README-KR.md",
+    "sha": "64fef95ad89bc32c80849bc01cf6492343443a05",
+    "size": 22298,
+    "url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/README-KR.md?ref=main",
+    "html_url": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/README-KR.md",
+    "git_url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/64fef95ad89bc32c80849bc01cf6492343443a05",
+    "download_url": "https://raw.githubusercontent.com/filipecalegario/awesome-vibe-coding/main/README-KR.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/README-KR.md?ref=main",
+      "git": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/64fef95ad89bc32c80849bc01cf6492343443a05",
+      "html": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/README-KR.md"
+    }
+  },
+  {
+    "name": "README-PT.md",
+    "path": "README-PT.md",
+    "sha": "d4588492e57b7d122a90943c679ee2470007c983",
+    "size": 22700,
+    "url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/README-PT.md?ref=main",
+    "html_url": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/README-PT.md",
+    "git_url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/d4588492e57b7d122a90943c679ee2470007c983",
+    "download_url": "https://raw.githubusercontent.com/filipecalegario/awesome-vibe-coding/main/README-PT.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/README-PT.md?ref=main",
+      "git": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/d4588492e57b7d122a90943c679ee2470007c983",
+      "html": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/README-PT.md"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "5d294cd39dacba15a1f8927451ac445b542cb16e",
+    "size": 20374,
+    "url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/README.md?ref=main",
+    "html_url": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/5d294cd39dacba15a1f8927451ac445b542cb16e",
+    "download_url": "https://raw.githubusercontent.com/filipecalegario/awesome-vibe-coding/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/5d294cd39dacba15a1f8927451ac445b542cb16e",
+      "html": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/README.md"
+    }
+  },
+  {
+    "name": "code-of-conduct.md",
+    "path": "code-of-conduct.md",
+    "sha": "5a04c0b3bc8a01e92f7829424f93b2793ca76315",
+    "size": 3224,
+    "url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/code-of-conduct.md?ref=main",
+    "html_url": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/code-of-conduct.md",
+    "git_url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/5a04c0b3bc8a01e92f7829424f93b2793ca76315",
+    "download_url": "https://raw.githubusercontent.com/filipecalegario/awesome-vibe-coding/main/code-of-conduct.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/code-of-conduct.md?ref=main",
+      "git": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/5a04c0b3bc8a01e92f7829424f93b2793ca76315",
+      "html": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/code-of-conduct.md"
+    }
+  },
+  {
+    "name": "contributing.md",
+    "path": "contributing.md",
+    "sha": "1e0051d8fc63ba25379fbd8b86fb0d3d8557d679",
+    "size": 1466,
+    "url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/contributing.md?ref=main",
+    "html_url": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/contributing.md",
+    "git_url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/1e0051d8fc63ba25379fbd8b86fb0d3d8557d679",
+    "download_url": "https://raw.githubusercontent.com/filipecalegario/awesome-vibe-coding/main/contributing.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/contributing.md?ref=main",
+      "git": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/1e0051d8fc63ba25379fbd8b86fb0d3d8557d679",
+      "html": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/contributing.md"
+    }
+  },
+  {
+    "name": "to-test.md",
+    "path": "to-test.md",
+    "sha": "746e5579551874d34d7e40b67de41d9145e53ecf",
+    "size": 231,
+    "url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/to-test.md?ref=main",
+    "html_url": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/to-test.md",
+    "git_url": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/746e5579551874d34d7e40b67de41d9145e53ecf",
+    "download_url": "https://raw.githubusercontent.com/filipecalegario/awesome-vibe-coding/main/to-test.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/contents/to-test.md?ref=main",
+      "git": "https://api.github.com/repos/filipecalegario/awesome-vibe-coding/git/blobs/746e5579551874d34d7e40b67de41d9145e53ecf",
+      "html": "https://github.com/filipecalegario/awesome-vibe-coding/blob/main/to-test.md"
+    }
+  }
+]

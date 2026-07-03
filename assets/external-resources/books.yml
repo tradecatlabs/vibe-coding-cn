@@ -1,0 +1,1139 @@
+# Generated from assets_csv.xlsx. Edit intentionally and keep schema.yml in sync.
+version: 1
+category:
+  id: books
+  name: 书单
+  description: 用于收录相关书籍
+  default_resource_type: book
+defaults:
+  imported_from: assets_csv.xlsx
+  imported_at: '2026-07-03'
+  verification_status: imported-unverified
+  license: unknown
+resources:
+- id: books-pytorch-chatglm-39ff6b78
+  name: 从零开始大模型开发与微调：基于PyTorch与ChatGLM - 王晓华
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 2
+- id: books-101-bb513a34
+  name: 编程的原则：改善代码质量的101个方法 - 上田勋
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 3
+- id: books-ai-valliappa-lakshmanan-hannes-hapke-a395414b
+  name: 生成式 AI 设计模式 - Valliappa Lakshmanan & Hannes Hapke
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 4
+- id: books-z-lib-fm-429dbb8a
+  name: 人月神话 - 弗雷德里克·布鲁克斯
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 5
+- id: books-3-tom-demarco-timothy-lister-6bac534e
+  name: 人件（原书第3版） - Tom DeMarco & Timothy Lister
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 6
+- id: books-45-andy-hunt-venkat-subramaniam-307d4cb7
+  name: 高效程序员的45个习惯：敏捷开发修炼之道 - Andy Hunt & Venkat Subramaniam
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 7
+- id: books-z-lib-fm-87ce0da3
+  name: 项目管理修炼之道 - 罗斯曼
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 8
+- id: books-z-lib-fm-56aded01
+  name: 编程珠玑（续） - 乔恩·本特利
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 9
+- id: books-2-1d4ced0b
+  name: 编程珠玑（第2版） - 乔恩·本特利
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 10
+- id: books-max-kanat-alexander-max-kanat-alexande-c2a42ffd
+  name: 编程原则：来自代码大师Max Kanat-Alexander的建议（让简约设计的思想回归到计算机编程，适合软件开发者、开发团队管理者和软件相关专业学生阅读） （华章程序员书库） - Max Kanat-Alexande
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 11
+- id: books-dustin-boswell-trevor-foucher-d3172da0
+  name: 编写可读代码的艺术 - Dustin Boswell & Trevor Foucher
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 12
+- id: books-2-allen-b-downey-be221f02
+  name: 统计思维：程序员数学之概率统计（第2版） - Allen B.Downey
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 13
+- id: books-rust-2-rahul-sharma-vesa-kaihlavirta-7b80f2a0
+  name: 精通Rust（第2版） - Rahul Sharma & Vesa Kaihlavirta
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 14
+- id: books-z-lib-fm-bcd95a71
+  name: 程序员超强大脑（图灵程序设计丛书·程序员修炼系列） - 费莉安·赫尔曼斯
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 15
+- id: books-simon-brown-9bfef93e
+  name: 程序员必读之软件架构 - Simon Brown
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 16
+- id: books-33-josh-carter-8d0fa376
+  name: 程序员修炼之道：专业程序员必知的33个技巧 - Josh·Carter
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 17
+- id: books-python-9ff881b9
+  name: 看漫画学Python：有趣、有料、好玩、好用 - 关东升
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 18
+- id: books-1-2e6960d5
+  name: 混沌工程：通过可控故障实验提升软件系统可靠性 - 米科拉吉·帕利科夫斯基_1
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 19
+- id: books-python-0bbcf8e6
+  name: 深入理解Python特性 - 达恩·巴德尔
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 20
+- id: books-a-863eb5d5
+  name: 微服务实战（覆盖从微服务设计到部署的各个阶段的技术实战书）（异步图书） - 摩根·布鲁斯 & 保罗·A·佩雷拉
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 21
+- id: books-nathanmarz-jameswarren-8ab2c361
+  name: 大数据系统构建：可扩展实时数据系统构建原理与最佳实践 - NathanMarz & JamesWarren
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 22
+- id: books-z-lib-fm-6cc3551e
+  name: 图解性能优化（图灵程序设计丛书） - 小田圭二 & 榑松谷仁 & 平山毅 & 冈田宪昌
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 23
+- id: books-10-sql-python-spark-hadoop-5384e236
+  name: 图灵程序设计丛书：大规模数据处理入门与实战（套装全10册）【图灵出品！一套囊括SQL、Python、Spark、Hadoop、妮哈·纳克海德 & 格温·沙皮拉托德 & 帕利诺 & 本杰明·班福特 & 珍妮·基姆 & 埃伦·弗里德曼
+    & 科斯塔斯·宙马斯
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 24
+- id: books-robert-c-martin-955d383a
+  name: 代码整洁之道 - Robert C. Martin
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 25
+- id: books-z-lib-fm-4344b760
+  name: 代码之髓：编程语言核心概念（图灵程序设计丛书） - 西尾泰和
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 26
+- id: books-z-lib-fm-4c877722
+  name: 人人都懂设计模式：从生活中领悟设计模式 - 罗伟富
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 27
+- id: books-rust-2-steve-klabnik-carol-nichols-24c817f2
+  name: Rust权威指南（第2版） - Steve Klabnik & Carol Nichols
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 28
+- id: books-python-2-e1ce1abf
+  name: Python金融大数据分析（第2版） - 伊夫·希尔皮斯科
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 29
+- id: books-python-hemant-kumar-mehta-1-a1e3f808
+  name: Python科学计算基础教程 - Hemant Kumar Mehta_1
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 30
+- id: books-python-robert-layton-41aab5bd
+  name: Python数据挖掘入门与实践 - Robert Layton
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 31
+- id: books-python-8-4af43bb3
+  name: Python数据分析与算法指南（套装共8册） - 江雪松 & 邹静 & 邓立国 & 翟锟 & 胡锋 & 周晓然 & 王国平 & 白宁超 & 唐聃 & 文俊 & 张若愚 & 洪锦魁
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 32
+- id: books-python-fernando-doglio-e773035e
+  name: Python性能分析与优化 - Fernando Doglio
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 33
+- id: books-python-2-1-c4ef2d25
+  name: Python函数式编程（第2版）（图灵图书） - 史蒂文·洛特_1
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 34
+- id: books-gpt-1-62cd25fa
+  name: GPT时代的量化交易：底层逻辑与技术实践 - 罗勇 & 卢洪波_1
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 35
+- id: books-chatgpt-4d7521ff
+  name: ChatGPT数据分析实践 - 史浩然 & 赵辛 & 吴志成
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 36
+- id: books-ai-python-chatgpt-ac3585a3
+  name: AI时代Python金融大数据分析实战：ChatGPT让金融大数据分析插上翅膀 - 关东升
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 37
+- id: books-john-j-murphy-edf455ef
+  name: 跨市场交易策略 - John J. Murphy
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 38
+- id: books-z-lib-fm-0265f2e1
+  name: 资产定价与机器学习 - 吴轲
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 39
+- id: books-n-9777f559
+  name: 工程思维 - 马克 N. 霍伦斯坦
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 40
+- id: books-andy-hunt-d32d0a93
+  name: 程序员的思维修炼：开发认知潜能的九堂课（图灵程序设计丛书） - Andy Hunt
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 41
+- id: books-2-it-20-5c8d3869
+  name: 程序员修炼之道：通向务实的最高境界（第2版）【这本书颠覆了无数人的软件生涯！并推动整个IT行业走到今天！时隔20年的再版重磅来袭！】 -  大卫·托马斯 & 安德鲁·亨特
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 42
+- id: books-z-lib-fm-a8cd6217
+  name: 不确定状况下的判断：启发式和偏差 - 丹尼尔·卡尼曼
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 43
+- id: books-max-kanant-alexander-24ac31ec
+  name: 简约之美：软件设计之道 - Max Kanant-Alexander
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 44
+- id: books-z-lib-fm-ad98b350
+  name: 程序员的底层思维 - 张建飞
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 45
+- id: books-z-lib-fm-fc1227fa
+  name: 程序员的三门课：技术精进、架构修炼、管理探秘 - 于君泽
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 46
+- id: books-willi-richert-luis-pedro-coelho-d1aa4357
+  name: 机器学习系统设计（图灵程序设计丛书） - Willi Richert & Luis Pedro Coelho
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 47
+- id: books-z-lib-fm-f07613fb
+  name: 思维工程导论 - 钱小一
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 48
+- id: books-python-david-kopec-7003d615
+  name: 算法精粹：经典计算机科学问题的Python实现 - David Kopec
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 49
+- id: books-neal-ford-a9a5d4f1
+  name: 函数式编程思维 (图灵程序设计丛书) - Neal Ford
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 50
+- id: books-python-2-8c9176fd
+  name: Python函数式编程（第2版）（图灵图书） - 史蒂文·洛特
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 51
+- id: books-effective-python-python-90-2-effective-brett-sla-2a92c29a
+  name: Effective Python 编写高质量Python代码的90个有效方法（原书第2版） (Effective系列丛书) - Brett Slatkin
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 52
+- id: books-2-irene-aldridge-3d1976b1
+  name: 高频交易（原书第2版） - Irene Aldridge
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 53
+- id: books-z-lib-fm-6ac5e496
+  name: 高频交易员：华尔街的速度游戏 - 迈克尔·刘易斯
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 54
+- id: books-6-9bec490a
+  name: 金融学原理（第6版） - 彭兴韵
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 55
+- id: books-z-lib-fm-18202525
+  name: 聪明投资者的第一本金融学常识书 - 肖玉红
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 56
+- id: books-michael-lovelady-977999de
+  name: 可视化量化金融 - Michael Lovelady
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 57
+- id: books-gpt-7a40b74d
+  name: GPT时代的量化交易：底层逻辑与技术实践 - 罗勇 & 卢洪波
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 58
+- id: books-4-21a2a6c0
+  name: 图灵经典计算机基础系列（套装全4册） -  矢泽久雄 & 户根勤 & 平泽章
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 59
+- id: books-201-alan-m-davis-ca7f72aa
+  name: 软件开发的201个原则 - Alan M· Davis
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 60
+- id: books-ai-219473f2
+  name: 程序员的AI书：从代码开始 - 张力柯 & 潘晖
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 61
+- id: books-tom-stuart-bfae5a85
+  name: 计算的本质：深入剖析程序和计算机 - Tom Stuart
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 62
+- id: books-stefan-papp-c2e58f0a
+  name: 程序员投资指南 -  Stefan Papp
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 63
+- id: books-3-jeffrey-e-f-friedl-48481d97
+  name: 精通正则表达式（第3版） - Jeffrey E.F.Friedl
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 64
+- id: books-chatgpt-a572bc6d
+  name: 巧用ChatGPT进行数据分析与挖掘 - 谢佳标
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 65
+- id: books-2016-sme-30-fc003ab3
+  name: 工业人工智能三部曲（套装共三册）（世界一流的智能制造专家著作合辑）（2016年被美国制造工程师学会（SME）评选为“美国30位最有远见的智能制造人物”） - 李杰
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 66
+- id: books-z-lib-fm-0cba174b
+  name: 从零构建大模型：算法、训练与微调 - 梁楠
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 67
+- id: books-vibe-coding-building-production-grade-software-w-a1d298f2
+  name: Vibe Coding_ Building Production-Grade Software With GenAI, Chat, Agents, and Beyond - Gene Kim & Steve Yegge
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 68
+- id: books-vibe-coding-ai-86494a22
+  name: Vibe Coding AI 编程完全手册 - 谭星星
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 69
+- id: books-13-j-917d2396
+  name: 计算机科学概论（第13版） - J. 格伦·布鲁克希尔 & 丹尼斯·布里罗
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 70
+- id: books-pro-git-scott-chacon-ben-straub-5841a11b
+  name: Pro Git （中文版） - Scott Chacon & Ben Straub
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 71
+- id: books-v-anton-spraul-cb85a82e
+  name: 像程序员一样思考 - V.Anton Spraul
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 72
+- id: books-python-3-wesley-chun-1-f6a6a130
+  name: Python核心编程（第3版） - Wesley Chun_1
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 73
+- id: books-ai-chip-huyen-4d0252dc
+  name: AI 工程：从基础模型建构应用 - Chip Huyen
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 74
+- id: books-ai-71de4846
+  name: AI辅助编程实战 - 汤姆·陶利
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 75
+- id: books-charles-petzold-816311c9
+  name: 编码：隐匿在计算机软硬件背后的语言 - Charles Petzold
+  description: null
+  resource_type: book
+  link:
+    kind: external_url
+    url: https://z-lib.fm/
+    domain: z-lib.fm
+    access_review: required
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - access-legality-review
+  source_row: 76

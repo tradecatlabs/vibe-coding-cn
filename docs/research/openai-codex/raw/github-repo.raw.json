@@ -1,0 +1,35 @@
+{
+  "createdAt": "2025-04-13T05:37:54Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "Lightweight coding agent that runs in your terminal",
+  "forkCount": 14107,
+  "homepageUrl": "",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": {
+    "name": "0.142.5",
+    "publishedAt": "2026-07-01T01:15:44Z",
+    "tagName": "rust-v0.142.5",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.142.5"
+  },
+  "licenseInfo": {
+    "key": "apache-2.0",
+    "name": "Apache License 2.0",
+    "nickname": ""
+  },
+  "nameWithOwner": "openai/codex",
+  "primaryLanguage": {
+    "name": "Rust"
+  },
+  "pushedAt": "2026-07-02T22:41:54Z",
+  "repositoryTopics": null,
+  "stargazerCount": 95113,
+  "updatedAt": "2026-07-02T22:35:39Z",
+  "url": "https://github.com/openai/codex",
+  "watchers": {
+    "totalCount": 513
+  }
+}

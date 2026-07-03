@@ -1,0 +1,28 @@
+{
+  "createdAt": "2025-10-27T08:40:02Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "AI Coding 方法论，经验分享汇总",
+  "forkCount": 6,
+  "homepageUrl": "",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": null,
+  "licenseInfo": {
+    "key": "mit",
+    "name": "MIT License",
+    "nickname": ""
+  },
+  "nameWithOwner": "Daotin/ai-coding",
+  "primaryLanguage": null,
+  "pushedAt": "2026-01-24T13:27:57Z",
+  "repositoryTopics": null,
+  "stargazerCount": 65,
+  "updatedAt": "2026-07-02T10:34:32Z",
+  "url": "https://github.com/Daotin/ai-coding",
+  "watchers": {
+    "totalCount": 0
+  }
+}

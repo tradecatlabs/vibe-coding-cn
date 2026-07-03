@@ -1,0 +1,114 @@
+[
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "a58c9071baecdeeddfbc5fa5e7892bc001f05f90",
+    "size": 152,
+    "url": "https://api.github.com/repos/earyantLe/vibe-coding-skill/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/earyantLe/vibe-coding-skill/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/earyantLe/vibe-coding-skill/git/blobs/a58c9071baecdeeddfbc5fa5e7892bc001f05f90",
+    "download_url": "https://raw.githubusercontent.com/earyantLe/vibe-coding-skill/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/earyantLe/vibe-coding-skill/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/earyantLe/vibe-coding-skill/git/blobs/a58c9071baecdeeddfbc5fa5e7892bc001f05f90",
+      "html": "https://github.com/earyantLe/vibe-coding-skill/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": "AGENTS.md",
+    "path": "AGENTS.md",
+    "sha": "c2adfce1be6313739b51e36b6f1ab1d39174c73e",
+    "size": 9482,
+    "url": "https://api.github.com/repos/earyantLe/vibe-coding-skill/contents/AGENTS.md?ref=main",
+    "html_url": "https://github.com/earyantLe/vibe-coding-skill/blob/main/AGENTS.md",
+    "git_url": "https://api.github.com/repos/earyantLe/vibe-coding-skill/git/blobs/c2adfce1be6313739b51e36b6f1ab1d39174c73e",
+    "download_url": "https://raw.githubusercontent.com/earyantLe/vibe-coding-skill/main/AGENTS.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/earyantLe/vibe-coding-skill/contents/AGENTS.md?ref=main",
+      "git": "https://api.github.com/repos/earyantLe/vibe-coding-skill/git/blobs/c2adfce1be6313739b51e36b6f1ab1d39174c73e",
+      "html": "https://github.com/earyantLe/vibe-coding-skill/blob/main/AGENTS.md"
+    }
+  },
+  {
+    "name": "PUBLISH.md",
+    "path": "PUBLISH.md",
+    "sha": "c8e8329136485dba6ac8ef0d6c0f56d2ce4bd978",
+    "size": 3197,
+    "url": "https://api.github.com/repos/earyantLe/vibe-coding-skill/contents/PUBLISH.md?ref=main",
+    "html_url": "https://github.com/earyantLe/vibe-coding-skill/blob/main/PUBLISH.md",
+    "git_url": "https://api.github.com/repos/earyantLe/vibe-coding-skill/git/blobs/c8e8329136485dba6ac8ef0d6c0f56d2ce4bd978",
+    "download_url": "https://raw.githubusercontent.com/earyantLe/vibe-coding-skill/main/PUBLISH.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/earyantLe/vibe-coding-skill/contents/PUBLISH.md?ref=main",
+      "git": "https://api.github.com/repos/earyantLe/vibe-coding-skill/git/blobs/c8e8329136485dba6ac8ef0d6c0f56d2ce4bd978",
+      "html": "https://github.com/earyantLe/vibe-coding-skill/blob/main/PUBLISH.md"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "cf7322774a22ac4d46ec00995ec50dc99bbf8f11",
+    "size": 5453,
+    "url": "https://api.github.com/repos/earyantLe/vibe-coding-skill/contents/README.md?ref=main",
+    "html_url": "https://github.com/earyantLe/vibe-coding-skill/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/earyantLe/vibe-coding-skill/git/blobs/cf7322774a22ac4d46ec00995ec50dc99bbf8f11",
+    "download_url": "https://raw.githubusercontent.com/earyantLe/vibe-coding-skill/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/earyantLe/vibe-coding-skill/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/earyantLe/vibe-coding-skill/git/blobs/cf7322774a22ac4d46ec00995ec50dc99bbf8f11",
+      "html": "https://github.com/earyantLe/vibe-coding-skill/blob/main/README.md"
+    }
+  },
+  {
+    "name": "SKILL.md",
+    "path": "SKILL.md",
+    "sha": "3f28a798dbeb3fcf9840b2de7b0c47c08952e871",
+    "size": 17051,
+    "url": "https://api.github.com/repos/earyantLe/vibe-coding-skill/contents/SKILL.md?ref=main",
+    "html_url": "https://github.com/earyantLe/vibe-coding-skill/blob/main/SKILL.md",
+    "git_url": "https://api.github.com/repos/earyantLe/vibe-coding-skill/git/blobs/3f28a798dbeb3fcf9840b2de7b0c47c08952e871",
+    "download_url": "https://raw.githubusercontent.com/earyantLe/vibe-coding-skill/main/SKILL.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/earyantLe/vibe-coding-skill/contents/SKILL.md?ref=main",
+      "git": "https://api.github.com/repos/earyantLe/vibe-coding-skill/git/blobs/3f28a798dbeb3fcf9840b2de7b0c47c08952e871",
+      "html": "https://github.com/earyantLe/vibe-coding-skill/blob/main/SKILL.md"
+    }
+  },
+  {
+    "name": "SUBMISSION.md",
+    "path": "SUBMISSION.md",
+    "sha": "c81ca6e8a61c068e0205bcf5cc78801cf7962119",
+    "size": 3089,
+    "url": "https://api.github.com/repos/earyantLe/vibe-coding-skill/contents/SUBMISSION.md?ref=main",
+    "html_url": "https://github.com/earyantLe/vibe-coding-skill/blob/main/SUBMISSION.md",
+    "git_url": "https://api.github.com/repos/earyantLe/vibe-coding-skill/git/blobs/c81ca6e8a61c068e0205bcf5cc78801cf7962119",
+    "download_url": "https://raw.githubusercontent.com/earyantLe/vibe-coding-skill/main/SUBMISSION.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/earyantLe/vibe-coding-skill/contents/SUBMISSION.md?ref=main",
+      "git": "https://api.github.com/repos/earyantLe/vibe-coding-skill/git/blobs/c81ca6e8a61c068e0205bcf5cc78801cf7962119",
+      "html": "https://github.com/earyantLe/vibe-coding-skill/blob/main/SUBMISSION.md"
+    }
+  },
+  {
+    "name": "references",
+    "path": "references",
+    "sha": "3445f724d5151c229628b79d36c3ab8b490d018a",
+    "size": 0,
+    "url": "https://api.github.com/repos/earyantLe/vibe-coding-skill/contents/references?ref=main",
+    "html_url": "https://github.com/earyantLe/vibe-coding-skill/tree/main/references",
+    "git_url": "https://api.github.com/repos/earyantLe/vibe-coding-skill/git/trees/3445f724d5151c229628b79d36c3ab8b490d018a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/earyantLe/vibe-coding-skill/contents/references?ref=main",
+      "git": "https://api.github.com/repos/earyantLe/vibe-coding-skill/git/trees/3445f724d5151c229628b79d36c3ab8b490d018a",
+      "html": "https://github.com/earyantLe/vibe-coding-skill/tree/main/references"
+    }
+  }
+]

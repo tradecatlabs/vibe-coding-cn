@@ -1,0 +1,50 @@
+version: 1
+repo:
+  name: tradecatlabs/vibe-coding-cn
+  source_name: tradecatlabs/vibe-coding-cn
+  url: https://github.com/tradecatlabs/vibe-coding-cn
+research:
+  domain_id: tradecatlabs-vibe-coding-cn
+  domain_name: tradecatlabs/vibe-coding-cn 研究域
+  primary_direction: workflow-methodology
+  role: 中文主线工程化工作流
+  priority: 1
+  why_study: 本仓库自身是中文工作流基准，用来定义 Prompt、Skill、Context、Quality Gate 和 Git 闭环。
+github_observed:
+  observed_at: '2026-07-03'
+  source: gh repo view
+  stars: 15077
+  forks: 1509
+  archived: false
+  language: Python
+  license: mit
+  default_branch: develop
+  pushed_at: '2026-06-29T20:26:02Z'
+  updated_at: '2026-07-02T17:16:51Z'
+  latest_release: null
+  homepage: https://x.com/123olp
+  topics:
+  - ai
+  - ai-agents
+  - claude-code
+  - codex
+  - prompts
+  - prompt-engineering
+  - skills
+  - workflow
+  - vibe-coding
+  - glue-coding
+  - ai-agent
+  - ai-coding
+  - ai-programming
+  - chinese
+  - cursor
+  - developer-tools
+  - gemini-cli
+  - tutorial
+source_evidence:
+  file: ChatGPT-中文Vibe Coding仓库 (2).md
+  line: 34
+maintenance:
+  fact_policy: GitHub 动态字段只代表 observed_at 当日快照，更新结论前必须重新核验。
+  split_policy: 本目录已经是一等研究域；更深分析放入本目录新增文档。
