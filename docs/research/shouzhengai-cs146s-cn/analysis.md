@@ -2,43 +2,62 @@
 
 ## 本轮结论
 
-- 这是课程型仓库，价值在教学大纲、周次安排和 assignments，而不是工具实现。
-- 它把 coding LLM、coding agent、AI IDE、agent 模式、现代终端、测试安全、软件支持和 UI 自动化放进课程周次。
-- 本仓可借鉴其课程化节奏，把入门、工具、agent 模式、测试安全和自动化分阶段讲清。
+`ShouZhengAI/CS146S_CN` 的核心价值是课程化和 assignments。它把 coding LLM、coding agent、AI IDE、
+agent 模式、现代终端、测试安全、软件支持和 UI 自动化放进周次节奏，并用作业承接学习。
+
+本仓最应该迁移的是“作业作为验证层”：学习路径不能只给阅读材料，还要给可提交、可检查、可反馈的任务。
 
 ## 本地证据
 
 - 研究对象：`ShouZhengAI/CS146S_CN`
 - 当前研究角色：中文课程与 assignments
-- 本轮成熟度：L1 初步理解
 - 原始仓库：`raw/repository/`
 - 原始来源清单：`raw/sources.yml`
 - 事实摘要：`domain.yml`
+- 深度证据：`deep-dive.md`
 
-## 结构观察
+## 对标拆解
 
-- 根目录包含 `Assignments/`、`Resource/`、`README.md`、图片资源和 `LICENSE`。
-- README 以课程简介、教学大纲、周次主题组织。
-- Assignments 说明它有作业驱动的学习形态。
+| 项 | 内容 |
+|:---|:---|
+| 参考对象 | `ShouZhengAI/CS146S_CN` |
+| 它解决的核心问题 | 用课程大纲和 assignments 把 AI 软件工程学习变成阶段任务 |
+| 核心机制 | 周次大纲、`Assignments/`、`Resource/`、课程主题分层 |
+| 真正带来结果的动作 | 让学习者通过作业验证工具、agent、测试和自动化能力 |
+| 可迁移做法 | assignments 验证层、阶段学习节奏、测试安全进入进阶路径 |
+| 不可迁移条件 | 不复制课程内容，不把课程节奏当生产工程流程 |
+| 下一步试用动作 | 为本仓 learning-map 增加最小 assignments 列表 |
 
-## 可借鉴点
+## 改良迭代
 
-- 课程节奏可以作为本仓学习地图的时间序列参考。
-- AI 测试与安全、现代软件支持、自动化 UI 应被纳入进阶路径。
-- Assignments 可以作为实践验证层，而不是只读文档。
+| 改良目标 | 原模式 | 本仓版本 | 验证指标 |
+|:---|:---|:---|:---|
+| 阶段学习 | 周次课程大纲 | getting-started 分阶段路线 | 每阶段有任务和验收 |
+| 作业验证 | Assignments | 本仓练习任务或 workflow checklist | 用户能提交结果或自检 |
+| 进阶主题 | 测试安全、终端、自动化 UI | workflow / references 进阶路径 | 进阶内容不只停留在概念 |
 
-## 风险和边界
+## 可迁移清单
 
-- 课程内容未必覆盖生产工程治理。
-- 作业质量需要逐个验证。
-- 它是课程对象，不适合承担工具生态判断。
+- 为学习路径增加 assignments，而不是只放阅读链接。
+- 把测试、安全、自动化 UI 纳入进阶路径。
+- 将 prompt、tool calling、RAG、MCP、agent workflow 等主题拆成练习。
+- 每个练习提供目标、输入、输出、验证方式和常见失败。
 
-## 下一轮研究任务
+## 不可迁移清单
 
-- 梳理 `Assignments/` 的作业类型，判断能否转成本仓练习。
-- 把教学大纲映射到本仓 getting-started / concepts / workflow。
+- 不复制课程内容或作业答案。
+- 不把课堂节奏等同于项目交付节奏。
+- 不在没有验证路径时扩张练习数量。
+
+## 验证动作
+
+| 动作 | 成功信号 | 失败信号 |
+|:---|:---|:---|
+| 抽样设计 3 个 assignments | 每个有目标、交付物、验收 | 只是阅读题 |
+| 将一个进阶主题转成练习 | 用户能执行并检查结果 | 仍只是概念介绍 |
+| 给练习补常见失败 | 卡住时有排查路径 | 失败只能回到问 AI |
 
 ## 沉淀判断
 
-- 本轮只完成 L1 理解，不直接迁入 concepts、references、workflow 或 skills。
-- 只有经过 L2 源码阅读、实验验证或交叉对照后的结论，才进入稳定层。
+- 稳定结论进入 `docs/getting-started/` 和 `docs/workflow/`。
+- 本研究域保持 P2 课程 assignments 对标对象。
