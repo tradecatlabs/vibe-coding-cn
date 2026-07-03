@@ -1,0 +1,37 @@
+version: 1
+repo:
+  name: earyantLe/vibe-coding-skill
+  source_name: earyantLe/vibe-coding-skill
+  url: https://github.com/earyantLe/vibe-coding-skill
+research:
+  domain_id: earyantle-vibe-coding-skill
+  domain_name: earyantLe/vibe-coding-skill 研究域
+  primary_direction: workflow-methodology
+  role: Vibe Coding Skill / SOP 化
+  priority: 3
+  why_study: 适合观察方法如何沉淀成 Skill 和 SOP。
+github_observed:
+  observed_at: '2026-07-03'
+  source: gh repo view
+  stars: 0
+  forks: 0
+  archived: false
+  language: null
+  license: null
+  default_branch: main
+  pushed_at: '2026-03-23T12:51:33Z'
+  updated_at: '2026-03-23T12:51:41Z'
+  latest_release: null
+  homepage: ''
+  topics:
+  - ai-assistant
+  - canvas
+  - claude-skills
+  - glue-coding
+  - vibe-coding
+source_evidence:
+  file: ChatGPT-中文Vibe Coding仓库 (2).md
+  line: 36
+maintenance:
+  fact_policy: GitHub 动态字段只代表 observed_at 当日快照，更新结论前必须重新核验。
+  split_policy: 本目录已经是一等研究域；更深分析放入本目录新增文档。

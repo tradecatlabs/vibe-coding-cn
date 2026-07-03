@@ -9,7 +9,7 @@
 ### 允许的操作
 - 读取、修改顶层文档：`README.md`、`AGENTS.md`、`CONTRIBUTING.md` 等
 - 读取、修改 `docs/`、`prompts/`、`skills/`、`tools/config/`、`tools/external/` 下的文档与代码
-- 执行 `make lint`、`make check-links`、`make check-details`、`make check-doc-structure`、`make check-directory-docs`、`make check-metadata`、`make check-ai-citation`、`make check-wiki`、`make sync-doc-toc`、prompts-library 转换工具
+- 执行 `make lint`、`make check-links`、`make check-details`、`make check-doc-structure`、`make check-directory-docs`、`make check-metadata`、`make check-ai-citation`、`make check-research-raw`、`make check-wiki`、`make fetch-research-raw`、`make sync-doc-toc`、prompts-library 转换工具
 - 新增/修改提示词、技能、文档
 - 提交符合规范的 commit
 
@@ -70,7 +70,10 @@ git push origin develop
 | `make check-directory-docs` | 校验仓库自有目录 README/AGENTS 覆盖 | Python 3 |
 | `make check-metadata` | 校验 metadata 路径与锚点 | Python 3 |
 | `make check-ai-citation` | 校验 llms 与 AI 引用语料路径和锚点 | Python 3 |
+| `make check-external-resources` | 校验本地外部资源注册表字段、分类统计、ID 与链接形态 | Python 3、PyYAML |
+| `make check-research-raw` | 校验研究域 raw 原始事实层、Git 工作树、来源清单和核心材料文件 | Python 3、Git |
 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | 校验 GitHub Wiki 独立仓库本地 checkout 的页面覆盖、内链、旧口径和 Markdown | Python 3、Node.js 22+、本地 Wiki checkout |
+| `make fetch-research-raw` | 拉取 `docs/research/*/domain.yml` 对应 GitHub 研究对象的 raw 原始事实层和 `repository/` 工作树 | Python 3、Git、GitHub CLI 已认证 |
 | `make sync-doc-toc` | 兼容旧线性 README 目录生成；当前拆分结构下通常无变更 | Python 3 |
 | `make test` | 执行本地质量门禁 | Node.js 22+、Python 3 |
 | `git submodule update --init --recursive` | 初始化外部 Git 仓库指针 | Git |
@@ -99,6 +102,7 @@ git push origin develop
 - `docs/` - 中文知识库（方法论/入门/实战/资源）
 - `prompts/` - 提示词入口与云端索引
 - `skills/` - 可复用技能库（每个子目录一个 Skill）
+- `assets/external-resources/` - 本地外部资源注册表
 - `tools/config/` - 工具与开发配置（例如 Codex CLI）
 - `tools/external/` - 外部工具与依赖（含 Git submodule）
 
@@ -171,8 +175,9 @@ git push origin develop
 │   └── claude-official-skills/  # Claude 官方 skills 软链接入口
 │
 ├── assets/                      # 静态资产与外部资源入口
-│   ├── README.md                # 外部资源在线表格入口
+│   ├── README.md                # 静态资产与外部资源入口
 │   ├── AGENTS.md                # assets/ 目录规则
+│   ├── external-resources/      # 本地外部资源注册表
 │   ├── ai-citation/             # AI 引用语料包与 llms-full
 │   ├── images/                  # 图片资产
 │   ├── templates/               # 模板附件
@@ -234,6 +239,9 @@ git push origin develop
 - `scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
 - `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
 - `scripts/check-ai-citation.py` - llms 与 AI 引用语料路径和锚点检查脚本，供 `make check-ai-citation` 与 CI 使用
+- `scripts/check-external-resources.py` - 本地外部资源注册表检查脚本，供 `make check-external-resources` 与 `make test` 使用
+- `scripts/check-research-raw.py` - 研究域 raw 原始事实层和 Git 工作树检查脚本，供 `make check-research-raw` 与 `make test` 使用
+- `scripts/fetch-research-raw.py` - GitHub 研究对象 raw 原始事实层和 `repository/` 工作树拉取脚本，供 `make fetch-research-raw` 手动刷新使用，不纳入 CI
 - `scripts/check-wiki.py` - GitHub Wiki 独立仓库本地 checkout 页面覆盖、内链和旧口径检查脚本，供 `make check-wiki` 使用
 - `scripts/sync-doc-toc.py` - docs README 细粒度目录兼容脚本，当前拆分结构下通常无变更，供 `make sync-doc-toc` 使用
 - `tools/prompts-library/main.py` - 提示词转换工具入口
@@ -345,7 +353,7 @@ make test
 - **`prompts/`**: 提示词库入口（指向云端表格）
 - **`skills/`**: 扁平化技能库（详见 skills/README.md）
 - **`docs/`**: 知识库（getting-started、concepts、philosophy、references）
-- **`assets/`**: 外部资源（在线表格）入口与使用说明
+- **`assets/`**: 静态资产、外部资源注册表与 AI 引用资产
 - **`assets/ai-citation/`**: AI 引用语料包与 `llms-full.txt`
 - **`tools/prompts-library/`**: Excel ↔ Markdown 转换工具
 - **`tools/chat-vault/`**: AI 聊天记录保存工具

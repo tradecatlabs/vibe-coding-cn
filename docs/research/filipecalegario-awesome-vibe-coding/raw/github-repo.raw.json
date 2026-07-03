@@ -1,0 +1,56 @@
+{
+  "createdAt": "2025-03-13T17:46:56Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "A curated list of vibe coding references, collaborating with AI to write code.",
+  "forkCount": 580,
+  "homepageUrl": "",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": null,
+  "licenseInfo": {
+    "key": "cc0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "nickname": ""
+  },
+  "nameWithOwner": "filipecalegario/awesome-vibe-coding",
+  "primaryLanguage": null,
+  "pushedAt": "2026-04-16T01:34:11Z",
+  "repositoryTopics": [
+    {
+      "name": "ai-agent"
+    },
+    {
+      "name": "ai-agents"
+    },
+    {
+      "name": "ai-coding-assistant"
+    },
+    {
+      "name": "ai-coding-tools"
+    },
+    {
+      "name": "cursor"
+    },
+    {
+      "name": "lovable"
+    },
+    {
+      "name": "vibe-coding"
+    },
+    {
+      "name": "awesome"
+    },
+    {
+      "name": "awesome-list"
+    }
+  ],
+  "stargazerCount": 4848,
+  "updatedAt": "2026-07-02T16:17:40Z",
+  "url": "https://github.com/filipecalegario/awesome-vibe-coding",
+  "watchers": {
+    "totalCount": 57
+  }
+}

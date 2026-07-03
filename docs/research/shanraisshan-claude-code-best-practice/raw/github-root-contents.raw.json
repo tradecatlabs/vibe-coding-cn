@@ -1,0 +1,322 @@
+[
+  {
+    "name": "!",
+    "path": "!",
+    "sha": "43e2f46faf3e3e4a2221d85ba0aa6fe3a9884595",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/!?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/!",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/43e2f46faf3e3e4a2221d85ba0aa6fe3a9884595",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/!?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/43e2f46faf3e3e4a2221d85ba0aa6fe3a9884595",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/!"
+    }
+  },
+  {
+    "name": ".claude",
+    "path": ".claude",
+    "sha": "8b94dd1c958681cc820b8ae5e43b34104bacf388",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/.claude?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/.claude",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/8b94dd1c958681cc820b8ae5e43b34104bacf388",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/.claude?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/8b94dd1c958681cc820b8ae5e43b34104bacf388",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/.claude"
+    }
+  },
+  {
+    "name": ".codex",
+    "path": ".codex",
+    "sha": "da58dcaac5ebfedc07aece55abb3a3f8a6d05d6c",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/.codex?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/.codex",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/da58dcaac5ebfedc07aece55abb3a3f8a6d05d6c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/.codex?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/da58dcaac5ebfedc07aece55abb3a3f8a6d05d6c",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/.codex"
+    }
+  },
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "40c6b2e5ec15538048980daabc568d72a10401cc",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/.github?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/.github",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/40c6b2e5ec15538048980daabc568d72a10401cc",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/.github?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/40c6b2e5ec15538048980daabc568d72a10401cc",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "4873ba44ceac0b0d7f3032183de79e36b09454d2",
+    "size": 233,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/blobs/4873ba44ceac0b0d7f3032183de79e36b09454d2",
+    "download_url": "https://raw.githubusercontent.com/shanraisshan/claude-code-best-practice/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/blobs/4873ba44ceac0b0d7f3032183de79e36b09454d2",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": ".mcp.json",
+    "path": ".mcp.json",
+    "sha": "0b9fdeaa522edb92fddce5c3234f31f65452c544",
+    "size": 388,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/.mcp.json?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/blob/main/.mcp.json",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/blobs/0b9fdeaa522edb92fddce5c3234f31f65452c544",
+    "download_url": "https://raw.githubusercontent.com/shanraisshan/claude-code-best-practice/main/.mcp.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/.mcp.json?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/blobs/0b9fdeaa522edb92fddce5c3234f31f65452c544",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/blob/main/.mcp.json"
+    }
+  },
+  {
+    "name": "CLAUDE.md",
+    "path": "CLAUDE.md",
+    "sha": "953fe929d0d02d06e94604a7bfa3ae697b0aed30",
+    "size": 7809,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/CLAUDE.md?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/blob/main/CLAUDE.md",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/blobs/953fe929d0d02d06e94604a7bfa3ae697b0aed30",
+    "download_url": "https://raw.githubusercontent.com/shanraisshan/claude-code-best-practice/main/CLAUDE.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/CLAUDE.md?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/blobs/953fe929d0d02d06e94604a7bfa3ae697b0aed30",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/blob/main/CLAUDE.md"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "a618c28c1b7517ced276c5b509ae57ee7a58e612",
+    "size": 1073,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/blobs/a618c28c1b7517ced276c5b509ae57ee7a58e612",
+    "download_url": "https://raw.githubusercontent.com/shanraisshan/claude-code-best-practice/main/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/LICENSE?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/blobs/a618c28c1b7517ced276c5b509ae57ee7a58e612",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/blob/main/LICENSE"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "abb175faaa959697868e949673d2fd0f2fb412f9",
+    "size": 76469,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/README.md?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/blobs/abb175faaa959697868e949673d2fd0f2fb412f9",
+    "download_url": "https://raw.githubusercontent.com/shanraisshan/claude-code-best-practice/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/blobs/abb175faaa959697868e949673d2fd0f2fb412f9",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/blob/main/README.md"
+    }
+  },
+  {
+    "name": "agent-teams",
+    "path": "agent-teams",
+    "sha": "e5e2c8ba0e2e05af4b7b41fb761a0ceb6e1accc6",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/agent-teams?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/agent-teams",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/e5e2c8ba0e2e05af4b7b41fb761a0ceb6e1accc6",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/agent-teams?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/e5e2c8ba0e2e05af4b7b41fb761a0ceb6e1accc6",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/agent-teams"
+    }
+  },
+  {
+    "name": "best-practice",
+    "path": "best-practice",
+    "sha": "2f3a918d37f86bbafb60541dc18de4e1365a0446",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/best-practice?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/best-practice",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/2f3a918d37f86bbafb60541dc18de4e1365a0446",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/best-practice?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/2f3a918d37f86bbafb60541dc18de4e1365a0446",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/best-practice"
+    }
+  },
+  {
+    "name": "changelog",
+    "path": "changelog",
+    "sha": "36d883ca2d9883dd8ce76e55dcede32eefa38fa7",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/changelog?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/changelog",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/36d883ca2d9883dd8ce76e55dcede32eefa38fa7",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/changelog?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/36d883ca2d9883dd8ce76e55dcede32eefa38fa7",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/changelog"
+    }
+  },
+  {
+    "name": "development-workflows",
+    "path": "development-workflows",
+    "sha": "a7d92f7843a789efedd24a8d3da3aacf4e619a6d",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/development-workflows?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/development-workflows",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/a7d92f7843a789efedd24a8d3da3aacf4e619a6d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/development-workflows?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/a7d92f7843a789efedd24a8d3da3aacf4e619a6d",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/development-workflows"
+    }
+  },
+  {
+    "name": "implementation",
+    "path": "implementation",
+    "sha": "4ce54b5fb5c781fa0fee7c29bef40300c78264aa",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/implementation?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/implementation",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/4ce54b5fb5c781fa0fee7c29bef40300c78264aa",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/implementation?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/4ce54b5fb5c781fa0fee7c29bef40300c78264aa",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/implementation"
+    }
+  },
+  {
+    "name": "orchestration-workflow",
+    "path": "orchestration-workflow",
+    "sha": "35679f637de6438d3b0cea41d275dbe4dde0ca46",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/orchestration-workflow?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/orchestration-workflow",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/35679f637de6438d3b0cea41d275dbe4dde0ca46",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/orchestration-workflow?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/35679f637de6438d3b0cea41d275dbe4dde0ca46",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/orchestration-workflow"
+    }
+  },
+  {
+    "name": "presentation",
+    "path": "presentation",
+    "sha": "bdc9d9d25211468b3190d5db0d6518d9bece0b82",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/presentation?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/presentation",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/bdc9d9d25211468b3190d5db0d6518d9bece0b82",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/presentation?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/bdc9d9d25211468b3190d5db0d6518d9bece0b82",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/presentation"
+    }
+  },
+  {
+    "name": "reports",
+    "path": "reports",
+    "sha": "b6f521ac2d204d9af3e7f2464d15d6411a6b50f7",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/reports?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/reports",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/b6f521ac2d204d9af3e7f2464d15d6411a6b50f7",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/reports?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/b6f521ac2d204d9af3e7f2464d15d6411a6b50f7",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/reports"
+    }
+  },
+  {
+    "name": "tips",
+    "path": "tips",
+    "sha": "063bd28e69515a4b4c99318dae5c8aec06fa869b",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/tips?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/tips",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/063bd28e69515a4b4c99318dae5c8aec06fa869b",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/tips?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/063bd28e69515a4b4c99318dae5c8aec06fa869b",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/tips"
+    }
+  },
+  {
+    "name": "tutorial",
+    "path": "tutorial",
+    "sha": "801039a4c1d6804b9c20a001e23d5ed6825b5220",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/tutorial?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/tutorial",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/801039a4c1d6804b9c20a001e23d5ed6825b5220",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/tutorial?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/801039a4c1d6804b9c20a001e23d5ed6825b5220",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/tutorial"
+    }
+  },
+  {
+    "name": "videos",
+    "path": "videos",
+    "sha": "b87bc8b353c384d7e29e0ae9db189008e64410d0",
+    "size": 0,
+    "url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/videos?ref=main",
+    "html_url": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/videos",
+    "git_url": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/b87bc8b353c384d7e29e0ae9db189008e64410d0",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/contents/videos?ref=main",
+      "git": "https://api.github.com/repos/shanraisshan/claude-code-best-practice/git/trees/b87bc8b353c384d7e29e0ae9db189008e64410d0",
+      "html": "https://github.com/shanraisshan/claude-code-best-practice/tree/main/videos"
+    }
+  }
+]

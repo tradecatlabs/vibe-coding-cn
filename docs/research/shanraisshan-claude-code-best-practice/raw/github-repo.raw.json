@@ -1,0 +1,91 @@
+{
+  "createdAt": "2025-10-31T14:15:28Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "from vibe coding to agentic engineering - practice makes claude perfect",
+  "forkCount": 6189,
+  "homepageUrl": "https://linkedin.com/in/shanraisshan",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": null,
+  "licenseInfo": {
+    "key": "mit",
+    "name": "MIT License",
+    "nickname": ""
+  },
+  "nameWithOwner": "shanraisshan/claude-code-best-practice",
+  "primaryLanguage": {
+    "name": "HTML"
+  },
+  "pushedAt": "2026-07-02T06:38:21Z",
+  "repositoryTopics": [
+    {
+      "name": "claude-ai"
+    },
+    {
+      "name": "claude-code"
+    },
+    {
+      "name": "best-practices"
+    },
+    {
+      "name": "claude"
+    },
+    {
+      "name": "claude-code-best-practices"
+    },
+    {
+      "name": "agentic-engineering"
+    },
+    {
+      "name": "anthropic"
+    },
+    {
+      "name": "claude-code-agents"
+    },
+    {
+      "name": "claude-code-commands"
+    },
+    {
+      "name": "claude-code-skills"
+    },
+    {
+      "name": "vibe-coding"
+    },
+    {
+      "name": "boris"
+    },
+    {
+      "name": "agentic-ai"
+    },
+    {
+      "name": "agentic-coding"
+    },
+    {
+      "name": "agentic-workflow"
+    },
+    {
+      "name": "ai"
+    },
+    {
+      "name": "context-engineering"
+    },
+    {
+      "name": "pakistan"
+    },
+    {
+      "name": "pakistani-developer"
+    },
+    {
+      "name": "ai-agents"
+    }
+  ],
+  "stargazerCount": 61856,
+  "updatedAt": "2026-07-02T22:34:04Z",
+  "url": "https://github.com/shanraisshan/claude-code-best-practice",
+  "watchers": {
+    "totalCount": 463
+  }
+}

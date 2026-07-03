@@ -1,0 +1,18 @@
+[
+  {
+    "name": "readme.md",
+    "path": "readme.md",
+    "sha": "08caecc9ebbae72b39858e8b75913fa2299481a2",
+    "size": 12435,
+    "url": "https://api.github.com/repos/ai-for-developers/awesome-vibe-coding/contents/readme.md?ref=main",
+    "html_url": "https://github.com/ai-for-developers/awesome-vibe-coding/blob/main/readme.md",
+    "git_url": "https://api.github.com/repos/ai-for-developers/awesome-vibe-coding/git/blobs/08caecc9ebbae72b39858e8b75913fa2299481a2",
+    "download_url": "https://raw.githubusercontent.com/ai-for-developers/awesome-vibe-coding/main/readme.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ai-for-developers/awesome-vibe-coding/contents/readme.md?ref=main",
+      "git": "https://api.github.com/repos/ai-for-developers/awesome-vibe-coding/git/blobs/08caecc9ebbae72b39858e8b75913fa2299481a2",
+      "html": "https://github.com/ai-for-developers/awesome-vibe-coding/blob/main/readme.md"
+    }
+  }
+]

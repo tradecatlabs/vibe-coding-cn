@@ -1,0 +1,70 @@
+version: 1
+name: external-resources
+description: 本地外部资源注册表，分类文件为资源真相源。
+source:
+  current_source_of_truth: assets/external-resources/*.yml
+  imported_from: assets_csv.xlsx
+  imported_at: '2026-07-03'
+  previous_remote_source: https://docs.google.com/spreadsheets/d/1DY0JfSph_OqaSkVPlrnQrg7OKyPUuhDHsCh-431ot-I/edit?usp=sharing
+  import_note: 从维护者提供的本地 Excel 工作簿导入；未提交原始 .xlsx。
+  additional_imports:
+  - imported_from: ChatGPT-中文Vibe Coding仓库 (2).md
+    imported_at: '2026-07-03'
+    detected_repositories: 17
+    added_repositories: 13
+    updated_existing_repositories: 2
+    skipped_existing_repositories: 2
+    added_tools: 1
+    private_or_context_links_not_imported: 1
+governance:
+  schema: schema.yml
+  quality_report: quality-report.md
+  validation_command: make check-external-resources
+  verification_policy: 导入只证明结构化，不证明外链可用、内容合法、许可证可用或推荐等级。
+categories:
+- id: network-payment-services
+  name: 网络与支付服务
+  file: network-payment-services.yml
+  count: 4
+  description: 用于收录网络相关（代理客户端/服务）与支付相关（虚拟卡等）
+- id: creator-accounts
+  name: 博主账号
+  file: creator-accounts.yml
+  count: 18
+  description: 用于收录个人/账号/频道（X/YouTube/B站/小红书/视频号等）
+- id: tools-platforms
+  name: 工具与平台
+  file: tools-platforms.yml
+  count: 69
+  description: 用于收录大模型、AI 对话平台、IDE、CLI、Agent 平台、通用工具网站等
+- id: communities-forums
+  name: 社区与论坛
+  file: communities-forums.yml
+  count: 15
+  description: 用于收录 Telegram/Discord/Reddit/X 社群等
+- id: repo-rules-scaffolds
+  name: 仓库规则脚手架
+  file: repo-rules-scaffolds.yml
+  count: 85
+  description: 用于收录 GitHub 仓库、Rules/规则文件集合、项目脚手架/模板
+- id: docs-courses
+  name: 文档与课程
+  file: docs-courses.yml
+  count: 21
+  description: 用于收录官方文档、教程、课程、学习资料
+- id: books
+  name: 书单
+  file: books.yml
+  count: 75
+  description: 用于收录相关书籍
+stats:
+  total_resources: 287
+  missing_link_resources: 5
+  non_url_locator_resources: 2
+  duplicate_url_count: 6
+  risk_flags:
+    access-legality-review: 76
+    financial-service-review: 2
+    missing-link: 5
+    non-url-locator: 2
+    referral-or-tracking-link: 3

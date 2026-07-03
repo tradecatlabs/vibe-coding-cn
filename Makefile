@@ -1,6 +1,6 @@
 # Makefile for Vibe Coding Guide
 
-.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-wiki sync-doc-toc build test clean clean-deps
+.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-external-resources check-research-raw check-wiki fetch-research-raw sync-doc-toc build test clean clean-deps
 
 MARKDOWNLINT = npx --yes markdownlint-cli@0.48.0
 
@@ -16,7 +16,10 @@ help:
 	@echo "  check-directory-docs - Check required README/AGENTS pairs"
 	@echo "  check-metadata - Check metadata paths and anchors"
 	@echo "  check-ai-citation - Check llms and AI citation paths and anchors"
+	@echo "  check-external-resources - Check local external resources registry"
+	@echo "  check-research-raw - Check research raw fact snapshots and repository clones"
 	@echo "  check-wiki - Check local GitHub Wiki checkout when present"
+	@echo "  fetch-research-raw - Fetch raw GitHub facts and repository clones for research domains"
 	@echo "  sync-doc-toc - Regenerate docs fine-grained TOC blocks"
 	@echo "  build    - Verify knowledge base has no build step"
 	@echo "  test     - Run repository quality gates"
@@ -26,7 +29,7 @@ help:
 
 lint:
 	@echo "Linting markdown files..."
-	@$(MARKDOWNLINT) --config .github/lint_config.json --ignore .history --ignore tools/external '**/*.md'
+	@$(MARKDOWNLINT) --config .github/lint_config.json --ignore .history --ignore tools/external --ignore 'docs/research/**/raw/repository/**' '**/*.md'
 
 check-links:
 	@echo "Checking local markdown links and anchors..."
@@ -52,10 +55,22 @@ check-ai-citation:
 	@echo "Checking llms and AI citation paths and anchors..."
 	@python3 scripts/check-ai-citation.py
 
+check-external-resources:
+	@echo "Checking local external resources registry..."
+	@python3 scripts/check-external-resources.py
+
+check-research-raw:
+	@echo "Checking research raw fact snapshots and repository clones..."
+	@python3 scripts/check-research-raw.py
+
 check-wiki:
 	@echo "Checking local GitHub Wiki checkout..."
 	@python3 scripts/check-wiki.py --wiki-dir "$${WIKI_DIR:-/tmp/vibe-coding-cn.wiki}"
 	@$(MARKDOWNLINT) --config .github/lint_config.json "$${WIKI_DIR:-/tmp/vibe-coding-cn.wiki}"/*.md
+
+fetch-research-raw:
+	@echo "Fetching raw GitHub facts and repository clones for research domains..."
+	@python3 scripts/fetch-research-raw.py
 
 sync-doc-toc:
 	@echo "Regenerating docs fine-grained TOC blocks..."
@@ -64,7 +79,7 @@ sync-doc-toc:
 build:
 	@echo "No build step: this repository is a documentation and knowledge-base project."
 
-test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation
+test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-external-resources check-research-raw
 	@echo "Quality gates complete."
 
 clean: clean-deps

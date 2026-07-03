@@ -1,0 +1,44 @@
+{
+  "createdAt": "2025-07-14T07:02:41Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "Beginner’s Vibe Coding Guide. AI氛围编程指南 Natural Language Programming 自然语言编程",
+  "forkCount": 8,
+  "homepageUrl": "",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": null,
+  "licenseInfo": {
+    "key": "apache-2.0",
+    "name": "Apache License 2.0",
+    "nickname": ""
+  },
+  "nameWithOwner": "wendy7756/vibe-coding-guide",
+  "primaryLanguage": null,
+  "pushedAt": "2025-08-11T07:57:18Z",
+  "repositoryTopics": [
+    {
+      "name": "vibe-coding"
+    },
+    {
+      "name": "ai"
+    },
+    {
+      "name": "coding"
+    },
+    {
+      "name": "developer"
+    },
+    {
+      "name": "developer-tools"
+    }
+  ],
+  "stargazerCount": 69,
+  "updatedAt": "2026-06-30T06:05:14Z",
+  "url": "https://github.com/wendy7756/vibe-coding-guide",
+  "watchers": {
+    "totalCount": 1
+  }
+}

@@ -1,0 +1,70 @@
+# Generated from assets_csv.xlsx. Edit intentionally and keep schema.yml in sync.
+version: 1
+category:
+  id: network-payment-services
+  name: 网络与支付服务
+  description: 用于收录网络相关（代理客户端/服务）与支付相关（虚拟卡等）
+  default_resource_type: network_or_payment_service
+defaults:
+  imported_from: assets_csv.xlsx
+  imported_at: '2026-07-03'
+  verification_status: imported-unverified
+  license: unknown
+resources:
+- id: network-payment-services-www-bsmkweb-com-0960fe59
+  name: 币安支付
+  description: 必备，用于兑换加密货币，充值AI工具订阅
+  resource_type: network_or_payment_service
+  link:
+    kind: external_url
+    url: https://www.bsmkweb.com/join?ref=123OLP
+    domain: www.bsmkweb.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - referral-or-tracking-link
+  - financial-service-review
+  source_row: 2
+- id: network-payment-services-flclash-a974428b
+  name: FlClash
+  description: 跨平台代理客户端
+  resource_type: network_or_payment_service
+  link:
+    kind: external_url
+    url: https://github.com/chen08209/FlClash/releases
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 3
+- id: network-payment-services-xn-9kqz23b19z-com-a271e5a7
+  name: 网络服务
+  description: 云服务
+  resource_type: network_or_payment_service
+  link:
+    kind: external_url
+    url: https://xn--9kqz23b19z.com/#/register?code=35BcnKzl
+    domain: xn--9kqz23b19z.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - referral-or-tracking-link
+  source_row: 4
+- id: network-payment-services-bybit-81d32c91
+  name: Bybit 虚拟卡
+  description: 注册云服务等国际支付
+  resource_type: network_or_payment_service
+  link:
+    kind: external_url
+    url: https://www.bybit.com/cards/?ref=YDGAVPN&source=applet_invite
+    domain: www.bybit.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - referral-or-tracking-link
+  - financial-service-review
+  source_row: 5

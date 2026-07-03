@@ -1,0 +1,16 @@
+{
+  "Rust": 38644372,
+  "Python": 1061534,
+  "Starlark": 91784,
+  "TypeScript": 86475,
+  "Shell": 58255,
+  "PowerShell": 48899,
+  "JavaScript": 28986,
+  "Jupyter Notebook": 20702,
+  "HTML": 18785,
+  "Just": 6391,
+  "Smarty": 5842,
+  "Nix": 4427,
+  "Dockerfile": 883,
+  "C": 52
+}

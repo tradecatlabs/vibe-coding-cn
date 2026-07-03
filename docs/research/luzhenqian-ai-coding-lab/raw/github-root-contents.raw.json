@@ -1,0 +1,162 @@
+[
+  {
+    "name": ".claude",
+    "path": ".claude",
+    "sha": "c32db14935832b24c40c29eb17c8ea9845a1911f",
+    "size": 0,
+    "url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/.claude?ref=main",
+    "html_url": "https://github.com/luzhenqian/ai-coding-lab/tree/main/.claude",
+    "git_url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/trees/c32db14935832b24c40c29eb17c8ea9845a1911f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/.claude?ref=main",
+      "git": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/trees/c32db14935832b24c40c29eb17c8ea9845a1911f",
+      "html": "https://github.com/luzhenqian/ai-coding-lab/tree/main/.claude"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "bb5210c115be41db14bae67cc5859d4ba0516beb",
+    "size": 272,
+    "url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/luzhenqian/ai-coding-lab/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/blobs/bb5210c115be41db14bae67cc5859d4ba0516beb",
+    "download_url": "https://raw.githubusercontent.com/luzhenqian/ai-coding-lab/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/blobs/bb5210c115be41db14bae67cc5859d4ba0516beb",
+      "html": "https://github.com/luzhenqian/ai-coding-lab/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": "README.en.md",
+    "path": "README.en.md",
+    "sha": "ffbf742ba6aa9e8c9727a601dec1a77d7f3ae47e",
+    "size": 4257,
+    "url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/README.en.md?ref=main",
+    "html_url": "https://github.com/luzhenqian/ai-coding-lab/blob/main/README.en.md",
+    "git_url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/blobs/ffbf742ba6aa9e8c9727a601dec1a77d7f3ae47e",
+    "download_url": "https://raw.githubusercontent.com/luzhenqian/ai-coding-lab/main/README.en.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/README.en.md?ref=main",
+      "git": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/blobs/ffbf742ba6aa9e8c9727a601dec1a77d7f3ae47e",
+      "html": "https://github.com/luzhenqian/ai-coding-lab/blob/main/README.en.md"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "fe96eae5aafad7a00fdeda749c2899218c5cdff8",
+    "size": 3927,
+    "url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/README.md?ref=main",
+    "html_url": "https://github.com/luzhenqian/ai-coding-lab/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/blobs/fe96eae5aafad7a00fdeda749c2899218c5cdff8",
+    "download_url": "https://raw.githubusercontent.com/luzhenqian/ai-coding-lab/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/blobs/fe96eae5aafad7a00fdeda749c2899218c5cdff8",
+      "html": "https://github.com/luzhenqian/ai-coding-lab/blob/main/README.md"
+    }
+  },
+  {
+    "name": "agent",
+    "path": "agent",
+    "sha": "ba5adfb408714bc936d676dfcfdb3279c11d61c5",
+    "size": 0,
+    "url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/agent?ref=main",
+    "html_url": "https://github.com/luzhenqian/ai-coding-lab/tree/main/agent",
+    "git_url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/trees/ba5adfb408714bc936d676dfcfdb3279c11d61c5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/agent?ref=main",
+      "git": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/trees/ba5adfb408714bc936d676dfcfdb3279c11d61c5",
+      "html": "https://github.com/luzhenqian/ai-coding-lab/tree/main/agent"
+    }
+  },
+  {
+    "name": "chatbot",
+    "path": "chatbot",
+    "sha": "29550ebff8a56c0e74f401536a3667251b9f031a",
+    "size": 0,
+    "url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/chatbot?ref=main",
+    "html_url": "https://github.com/luzhenqian/ai-coding-lab/tree/main/chatbot",
+    "git_url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/trees/29550ebff8a56c0e74f401536a3667251b9f031a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/chatbot?ref=main",
+      "git": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/trees/29550ebff8a56c0e74f401536a3667251b9f031a",
+      "html": "https://github.com/luzhenqian/ai-coding-lab/tree/main/chatbot"
+    }
+  },
+  {
+    "name": "creative",
+    "path": "creative",
+    "sha": "b3998a3203d675aa8bd04efc7bb98107e9d5bda6",
+    "size": 0,
+    "url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/creative?ref=main",
+    "html_url": "https://github.com/luzhenqian/ai-coding-lab/tree/main/creative",
+    "git_url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/trees/b3998a3203d675aa8bd04efc7bb98107e9d5bda6",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/creative?ref=main",
+      "git": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/trees/b3998a3203d675aa8bd04efc7bb98107e9d5bda6",
+      "html": "https://github.com/luzhenqian/ai-coding-lab/tree/main/creative"
+    }
+  },
+  {
+    "name": "rag",
+    "path": "rag",
+    "sha": "79b7993c1521dc397e87a1234cd70e73c49763da",
+    "size": 0,
+    "url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/rag?ref=main",
+    "html_url": "https://github.com/luzhenqian/ai-coding-lab/tree/main/rag",
+    "git_url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/trees/79b7993c1521dc397e87a1234cd70e73c49763da",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/rag?ref=main",
+      "git": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/trees/79b7993c1521dc397e87a1234cd70e73c49763da",
+      "html": "https://github.com/luzhenqian/ai-coding-lab/tree/main/rag"
+    }
+  },
+  {
+    "name": "skills",
+    "path": "skills",
+    "sha": "377d48ecd35f66f01d100e9ad64e2e8db6b65bac",
+    "size": 0,
+    "url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/skills?ref=main",
+    "html_url": "https://github.com/luzhenqian/ai-coding-lab/tree/main/skills",
+    "git_url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/trees/377d48ecd35f66f01d100e9ad64e2e8db6b65bac",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/skills?ref=main",
+      "git": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/trees/377d48ecd35f66f01d100e9ad64e2e8db6b65bac",
+      "html": "https://github.com/luzhenqian/ai-coding-lab/tree/main/skills"
+    }
+  },
+  {
+    "name": "vibe-coding",
+    "path": "vibe-coding",
+    "sha": "1bcf4ea1f6f6a57cfcf0ae1fcb97331c5ee37033",
+    "size": 0,
+    "url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/vibe-coding?ref=main",
+    "html_url": "https://github.com/luzhenqian/ai-coding-lab/tree/main/vibe-coding",
+    "git_url": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/trees/1bcf4ea1f6f6a57cfcf0ae1fcb97331c5ee37033",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/luzhenqian/ai-coding-lab/contents/vibe-coding?ref=main",
+      "git": "https://api.github.com/repos/luzhenqian/ai-coding-lab/git/trees/1bcf4ea1f6f6a57cfcf0ae1fcb97331c5ee37033",
+      "html": "https://github.com/luzhenqian/ai-coding-lab/tree/main/vibe-coding"
+    }
+  }
+]

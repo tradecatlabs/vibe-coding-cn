@@ -54,7 +54,20 @@ def should_skip(path: Path) -> bool:
     rel = path.relative_to(ROOT)
     if any(part in SKIP_PARTS for part in rel.parts):
         return True
+    if is_research_repository_snapshot(rel):
+        return True
     return any(rel == prefix or prefix in rel.parents for prefix in SKIP_PREFIXES)
+
+
+def is_research_repository_snapshot(rel: Path) -> bool:
+    parts = rel.parts
+    return (
+        len(parts) >= 5
+        and parts[0] == "docs"
+        and parts[1] == "research"
+        and parts[3] == "raw"
+        and parts[4] == "repository"
+    )
 
 
 def duplicate_manual_anchors(path: Path) -> list[str]:

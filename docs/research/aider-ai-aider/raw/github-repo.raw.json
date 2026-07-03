@@ -1,0 +1,75 @@
+{
+  "createdAt": "2023-05-09T18:57:49Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "aider is AI pair programming in your terminal",
+  "forkCount": 4680,
+  "homepageUrl": "https://aider.chat/",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": {
+    "name": "Aider v0.86.0",
+    "publishedAt": "2025-08-09T17:42:19Z",
+    "tagName": "v0.86.0",
+    "url": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0"
+  },
+  "licenseInfo": {
+    "key": "apache-2.0",
+    "name": "Apache License 2.0",
+    "nickname": ""
+  },
+  "nameWithOwner": "Aider-AI/aider",
+  "primaryLanguage": {
+    "name": "Python"
+  },
+  "pushedAt": "2026-05-22T14:02:20Z",
+  "repositoryTopics": [
+    {
+      "name": "chatgpt"
+    },
+    {
+      "name": "cli"
+    },
+    {
+      "name": "command-line"
+    },
+    {
+      "name": "gpt-4"
+    },
+    {
+      "name": "openai"
+    },
+    {
+      "name": "gpt-3"
+    },
+    {
+      "name": "gpt-35-turbo"
+    },
+    {
+      "name": "claude-3"
+    },
+    {
+      "name": "gpt-4o"
+    },
+    {
+      "name": "anthropic"
+    },
+    {
+      "name": "gemini"
+    },
+    {
+      "name": "llama"
+    },
+    {
+      "name": "sonnet"
+    }
+  ],
+  "stargazerCount": 46962,
+  "updatedAt": "2026-07-02T21:52:05Z",
+  "url": "https://github.com/Aider-AI/aider",
+  "watchers": {
+    "totalCount": 255
+  }
+}

@@ -27,9 +27,11 @@ redirects:
   - from: docs/concepts/问题求解能力.md
     to: docs/concepts/problem-solving.md
   - from: docs/concepts/Harness Engineering 的本质拆解.md
-    to: docs/research/harness-engineering.md
+    to: docs/research/harness/harness-engineering.md
   - from: docs/research/Harness Engineering 的本质拆解.md
-    to: docs/research/harness-engineering.md
+    to: docs/research/harness/harness-engineering.md
+  - from: docs/research/harness-engineering.md
+    to: docs/research/harness/harness-engineering.md
   - from: docs/philosophy/现象学还原.md
     to: docs/philosophy/methodology-toolbox.md
   - from: docs/philosophy/辩证法.md
@@ -127,4 +129,4 @@ redirects:
   - from: docs/references/技术栈.md
     to: docs/references/technology-stack.md
   - from: docs/research/Harness工程解析.md
-    to: docs/research/harness-engineering.md
+    to: docs/research/harness/harness-engineering.md

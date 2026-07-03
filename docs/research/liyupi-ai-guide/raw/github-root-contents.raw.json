@@ -1,0 +1,210 @@
+[
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "ba1eeb05dbfd02097d448d187ac78174d4d27d44",
+    "size": 0,
+    "url": "https://api.github.com/repos/liyupi/ai-guide/contents/.github?ref=main",
+    "html_url": "https://github.com/liyupi/ai-guide/tree/main/.github",
+    "git_url": "https://api.github.com/repos/liyupi/ai-guide/git/trees/ba1eeb05dbfd02097d448d187ac78174d4d27d44",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/liyupi/ai-guide/contents/.github?ref=main",
+      "git": "https://api.github.com/repos/liyupi/ai-guide/git/trees/ba1eeb05dbfd02097d448d187ac78174d4d27d44",
+      "html": "https://github.com/liyupi/ai-guide/tree/main/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "84c8a40b55a8071e347d150a046ba8385a30a436",
+    "size": 1910,
+    "url": "https://api.github.com/repos/liyupi/ai-guide/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/liyupi/ai-guide/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/liyupi/ai-guide/git/blobs/84c8a40b55a8071e347d150a046ba8385a30a436",
+    "download_url": "https://raw.githubusercontent.com/liyupi/ai-guide/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/liyupi/ai-guide/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/liyupi/ai-guide/git/blobs/84c8a40b55a8071e347d150a046ba8385a30a436",
+      "html": "https://github.com/liyupi/ai-guide/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": ".vuepress",
+    "path": ".vuepress",
+    "sha": "d1726e59140a261bbdb51a19e41402c77f3e45d1",
+    "size": 0,
+    "url": "https://api.github.com/repos/liyupi/ai-guide/contents/.vuepress?ref=main",
+    "html_url": "https://github.com/liyupi/ai-guide/tree/main/.vuepress",
+    "git_url": "https://api.github.com/repos/liyupi/ai-guide/git/trees/d1726e59140a261bbdb51a19e41402c77f3e45d1",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/liyupi/ai-guide/contents/.vuepress?ref=main",
+      "git": "https://api.github.com/repos/liyupi/ai-guide/git/trees/d1726e59140a261bbdb51a19e41402c77f3e45d1",
+      "html": "https://github.com/liyupi/ai-guide/tree/main/.vuepress"
+    }
+  },
+  {
+    "name": "AI 编程学习资源.md",
+    "path": "AI 编程学习资源.md",
+    "sha": "f3c497b7cb10ee9a49152103e8c925340219f163",
+    "size": 7236,
+    "url": "https://api.github.com/repos/liyupi/ai-guide/contents/AI%20%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90.md?ref=main",
+    "html_url": "https://github.com/liyupi/ai-guide/blob/main/AI%20%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90.md",
+    "git_url": "https://api.github.com/repos/liyupi/ai-guide/git/blobs/f3c497b7cb10ee9a49152103e8c925340219f163",
+    "download_url": "https://raw.githubusercontent.com/liyupi/ai-guide/main/AI 编程学习资源.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/liyupi/ai-guide/contents/AI%20%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90.md?ref=main",
+      "git": "https://api.github.com/repos/liyupi/ai-guide/git/blobs/f3c497b7cb10ee9a49152103e8c925340219f163",
+      "html": "https://github.com/liyupi/ai-guide/blob/main/AI%20%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90.md"
+    }
+  },
+  {
+    "name": "AI",
+    "path": "AI",
+    "sha": "95d49dec67747d51adfe1c838941ed0e5389df9e",
+    "size": 0,
+    "url": "https://api.github.com/repos/liyupi/ai-guide/contents/AI?ref=main",
+    "html_url": "https://github.com/liyupi/ai-guide/tree/main/AI",
+    "git_url": "https://api.github.com/repos/liyupi/ai-guide/git/trees/95d49dec67747d51adfe1c838941ed0e5389df9e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/liyupi/ai-guide/contents/AI?ref=main",
+      "git": "https://api.github.com/repos/liyupi/ai-guide/git/trees/95d49dec67747d51adfe1c838941ed0e5389df9e",
+      "html": "https://github.com/liyupi/ai-guide/tree/main/AI"
+    }
+  },
+  {
+    "name": "OpenClaw 保姆级教程",
+    "path": "OpenClaw 保姆级教程",
+    "sha": "4b9d3fe881a127bd7a7397e0b43ab9ff0442068b",
+    "size": 0,
+    "url": "https://api.github.com/repos/liyupi/ai-guide/contents/OpenClaw%20%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B?ref=main",
+    "html_url": "https://github.com/liyupi/ai-guide/tree/main/OpenClaw%20%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B",
+    "git_url": "https://api.github.com/repos/liyupi/ai-guide/git/trees/4b9d3fe881a127bd7a7397e0b43ab9ff0442068b",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/liyupi/ai-guide/contents/OpenClaw%20%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B?ref=main",
+      "git": "https://api.github.com/repos/liyupi/ai-guide/git/trees/4b9d3fe881a127bd7a7397e0b43ab9ff0442068b",
+      "html": "https://github.com/liyupi/ai-guide/tree/main/OpenClaw%20%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "fed6219aba91708ffa796558eac0ee136df4d33e",
+    "size": 13664,
+    "url": "https://api.github.com/repos/liyupi/ai-guide/contents/README.md?ref=main",
+    "html_url": "https://github.com/liyupi/ai-guide/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/liyupi/ai-guide/git/blobs/fed6219aba91708ffa796558eac0ee136df4d33e",
+    "download_url": "https://raw.githubusercontent.com/liyupi/ai-guide/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/liyupi/ai-guide/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/liyupi/ai-guide/git/blobs/fed6219aba91708ffa796558eac0ee136df4d33e",
+      "html": "https://github.com/liyupi/ai-guide/blob/main/README.md"
+    }
+  },
+  {
+    "name": "Vibe Coding 零基础教程",
+    "path": "Vibe Coding 零基础教程",
+    "sha": "2c30206e9c510cc536755121120d1ff863488c77",
+    "size": 0,
+    "url": "https://api.github.com/repos/liyupi/ai-guide/contents/Vibe%20Coding%20%E9%9B%B6%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B?ref=main",
+    "html_url": "https://github.com/liyupi/ai-guide/tree/main/Vibe%20Coding%20%E9%9B%B6%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B",
+    "git_url": "https://api.github.com/repos/liyupi/ai-guide/git/trees/2c30206e9c510cc536755121120d1ff863488c77",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/liyupi/ai-guide/contents/Vibe%20Coding%20%E9%9B%B6%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B?ref=main",
+      "git": "https://api.github.com/repos/liyupi/ai-guide/git/trees/2c30206e9c510cc536755121120d1ff863488c77",
+      "html": "https://github.com/liyupi/ai-guide/tree/main/Vibe%20Coding%20%E9%9B%B6%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B"
+    }
+  },
+  {
+    "name": "image",
+    "path": "image",
+    "sha": "271f5e6be6691db7d7a4bd7a2f7041789e08bdfe",
+    "size": 0,
+    "url": "https://api.github.com/repos/liyupi/ai-guide/contents/image?ref=main",
+    "html_url": "https://github.com/liyupi/ai-guide/tree/main/image",
+    "git_url": "https://api.github.com/repos/liyupi/ai-guide/git/trees/271f5e6be6691db7d7a4bd7a2f7041789e08bdfe",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/liyupi/ai-guide/contents/image?ref=main",
+      "git": "https://api.github.com/repos/liyupi/ai-guide/git/trees/271f5e6be6691db7d7a4bd7a2f7041789e08bdfe",
+      "html": "https://github.com/liyupi/ai-guide/tree/main/image"
+    }
+  },
+  {
+    "name": "package-lock.json",
+    "path": "package-lock.json",
+    "sha": "27a57ffabdd07f94124bbfa64e4b5a0c4709cfcc",
+    "size": 1052895,
+    "url": "https://api.github.com/repos/liyupi/ai-guide/contents/package-lock.json?ref=main",
+    "html_url": "https://github.com/liyupi/ai-guide/blob/main/package-lock.json",
+    "git_url": "https://api.github.com/repos/liyupi/ai-guide/git/blobs/27a57ffabdd07f94124bbfa64e4b5a0c4709cfcc",
+    "download_url": "https://raw.githubusercontent.com/liyupi/ai-guide/main/package-lock.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/liyupi/ai-guide/contents/package-lock.json?ref=main",
+      "git": "https://api.github.com/repos/liyupi/ai-guide/git/blobs/27a57ffabdd07f94124bbfa64e4b5a0c4709cfcc",
+      "html": "https://github.com/liyupi/ai-guide/blob/main/package-lock.json"
+    }
+  },
+  {
+    "name": "package.json",
+    "path": "package.json",
+    "sha": "05cf92295e5f5784d62759a2039eb65b49afeac5",
+    "size": 994,
+    "url": "https://api.github.com/repos/liyupi/ai-guide/contents/package.json?ref=main",
+    "html_url": "https://github.com/liyupi/ai-guide/blob/main/package.json",
+    "git_url": "https://api.github.com/repos/liyupi/ai-guide/git/blobs/05cf92295e5f5784d62759a2039eb65b49afeac5",
+    "download_url": "https://raw.githubusercontent.com/liyupi/ai-guide/main/package.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/liyupi/ai-guide/contents/package.json?ref=main",
+      "git": "https://api.github.com/repos/liyupi/ai-guide/git/blobs/05cf92295e5f5784d62759a2039eb65b49afeac5",
+      "html": "https://github.com/liyupi/ai-guide/blob/main/package.json"
+    }
+  },
+  {
+    "name": "translations",
+    "path": "translations",
+    "sha": "2ca6bae6d8e6d2af2df6537a142023a8e164ddab",
+    "size": 0,
+    "url": "https://api.github.com/repos/liyupi/ai-guide/contents/translations?ref=main",
+    "html_url": "https://github.com/liyupi/ai-guide/tree/main/translations",
+    "git_url": "https://api.github.com/repos/liyupi/ai-guide/git/trees/2ca6bae6d8e6d2af2df6537a142023a8e164ddab",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/liyupi/ai-guide/contents/translations?ref=main",
+      "git": "https://api.github.com/repos/liyupi/ai-guide/git/trees/2ca6bae6d8e6d2af2df6537a142023a8e164ddab",
+      "html": "https://github.com/liyupi/ai-guide/tree/main/translations"
+    }
+  },
+  {
+    "name": "作者.md",
+    "path": "作者.md",
+    "sha": "b955f77300cfe963eaf16ed74cb24c957a09424f",
+    "size": 5749,
+    "url": "https://api.github.com/repos/liyupi/ai-guide/contents/%E4%BD%9C%E8%80%85.md?ref=main",
+    "html_url": "https://github.com/liyupi/ai-guide/blob/main/%E4%BD%9C%E8%80%85.md",
+    "git_url": "https://api.github.com/repos/liyupi/ai-guide/git/blobs/b955f77300cfe963eaf16ed74cb24c957a09424f",
+    "download_url": "https://raw.githubusercontent.com/liyupi/ai-guide/main/作者.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/liyupi/ai-guide/contents/%E4%BD%9C%E8%80%85.md?ref=main",
+      "git": "https://api.github.com/repos/liyupi/ai-guide/git/blobs/b955f77300cfe963eaf16ed74cb24c957a09424f",
+      "html": "https://github.com/liyupi/ai-guide/blob/main/%E4%BD%9C%E8%80%85.md"
+    }
+  }
+]

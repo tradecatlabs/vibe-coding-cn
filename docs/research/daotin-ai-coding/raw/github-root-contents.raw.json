@@ -1,0 +1,114 @@
+[
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "f3e1f80647a43b2ea3d05c74627e644fbb66a5a8",
+    "size": 0,
+    "url": "https://api.github.com/repos/Daotin/ai-coding/contents/.github?ref=main",
+    "html_url": "https://github.com/Daotin/ai-coding/tree/main/.github",
+    "git_url": "https://api.github.com/repos/Daotin/ai-coding/git/trees/f3e1f80647a43b2ea3d05c74627e644fbb66a5a8",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/Daotin/ai-coding/contents/.github?ref=main",
+      "git": "https://api.github.com/repos/Daotin/ai-coding/git/trees/f3e1f80647a43b2ea3d05c74627e644fbb66a5a8",
+      "html": "https://github.com/Daotin/ai-coding/tree/main/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "832bf5731fff19fbd187b82227368466820f9015",
+    "size": 290,
+    "url": "https://api.github.com/repos/Daotin/ai-coding/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/Daotin/ai-coding/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/Daotin/ai-coding/git/blobs/832bf5731fff19fbd187b82227368466820f9015",
+    "download_url": "https://raw.githubusercontent.com/Daotin/ai-coding/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Daotin/ai-coding/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/Daotin/ai-coding/git/blobs/832bf5731fff19fbd187b82227368466820f9015",
+      "html": "https://github.com/Daotin/ai-coding/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": "BACKUP",
+    "path": "BACKUP",
+    "sha": "a6d6e7c090616bae27f3be223b6edb586359489d",
+    "size": 0,
+    "url": "https://api.github.com/repos/Daotin/ai-coding/contents/BACKUP?ref=main",
+    "html_url": "https://github.com/Daotin/ai-coding/tree/main/BACKUP",
+    "git_url": "https://api.github.com/repos/Daotin/ai-coding/git/trees/a6d6e7c090616bae27f3be223b6edb586359489d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/Daotin/ai-coding/contents/BACKUP?ref=main",
+      "git": "https://api.github.com/repos/Daotin/ai-coding/git/trees/a6d6e7c090616bae27f3be223b6edb586359489d",
+      "html": "https://github.com/Daotin/ai-coding/tree/main/BACKUP"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "c8d4aa9f1a25f65281532f55a3d16b444c7263f8",
+    "size": 1063,
+    "url": "https://api.github.com/repos/Daotin/ai-coding/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/Daotin/ai-coding/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/Daotin/ai-coding/git/blobs/c8d4aa9f1a25f65281532f55a3d16b444c7263f8",
+    "download_url": "https://raw.githubusercontent.com/Daotin/ai-coding/main/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Daotin/ai-coding/contents/LICENSE?ref=main",
+      "git": "https://api.github.com/repos/Daotin/ai-coding/git/blobs/c8d4aa9f1a25f65281532f55a3d16b444c7263f8",
+      "html": "https://github.com/Daotin/ai-coding/blob/main/LICENSE"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "f0b7abe6849f9d1da9d7e25ac914798a9a8e52c1",
+    "size": 6109,
+    "url": "https://api.github.com/repos/Daotin/ai-coding/contents/README.md?ref=main",
+    "html_url": "https://github.com/Daotin/ai-coding/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/Daotin/ai-coding/git/blobs/f0b7abe6849f9d1da9d7e25ac914798a9a8e52c1",
+    "download_url": "https://raw.githubusercontent.com/Daotin/ai-coding/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Daotin/ai-coding/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/Daotin/ai-coding/git/blobs/f0b7abe6849f9d1da9d7e25ac914798a9a8e52c1",
+      "html": "https://github.com/Daotin/ai-coding/blob/main/README.md"
+    }
+  },
+  {
+    "name": "package-lock.json",
+    "path": "package-lock.json",
+    "sha": "5e9ab40f96adc7d1d194e91326f91e7bc54acde1",
+    "size": 7646,
+    "url": "https://api.github.com/repos/Daotin/ai-coding/contents/package-lock.json?ref=main",
+    "html_url": "https://github.com/Daotin/ai-coding/blob/main/package-lock.json",
+    "git_url": "https://api.github.com/repos/Daotin/ai-coding/git/blobs/5e9ab40f96adc7d1d194e91326f91e7bc54acde1",
+    "download_url": "https://raw.githubusercontent.com/Daotin/ai-coding/main/package-lock.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Daotin/ai-coding/contents/package-lock.json?ref=main",
+      "git": "https://api.github.com/repos/Daotin/ai-coding/git/blobs/5e9ab40f96adc7d1d194e91326f91e7bc54acde1",
+      "html": "https://github.com/Daotin/ai-coding/blob/main/package-lock.json"
+    }
+  },
+  {
+    "name": "package.json",
+    "path": "package.json",
+    "sha": "a0632d63c2fe76652a91aa93408a6f3f3a96ee3f",
+    "size": 243,
+    "url": "https://api.github.com/repos/Daotin/ai-coding/contents/package.json?ref=main",
+    "html_url": "https://github.com/Daotin/ai-coding/blob/main/package.json",
+    "git_url": "https://api.github.com/repos/Daotin/ai-coding/git/blobs/a0632d63c2fe76652a91aa93408a6f3f3a96ee3f",
+    "download_url": "https://raw.githubusercontent.com/Daotin/ai-coding/main/package.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/Daotin/ai-coding/contents/package.json?ref=main",
+      "git": "https://api.github.com/repos/Daotin/ai-coding/git/blobs/a0632d63c2fe76652a91aa93408a6f3f3a96ee3f",
+      "html": "https://github.com/Daotin/ai-coding/blob/main/package.json"
+    }
+  }
+]

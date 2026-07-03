@@ -1,0 +1,114 @@
+[
+  {
+    "name": ".DS_Store",
+    "path": ".DS_Store",
+    "sha": "702b814bc5436c1012ccf6958590aedf9afbf5e1",
+    "size": 6148,
+    "url": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/contents/.DS_Store?ref=main",
+    "html_url": "https://github.com/ShouZhengAI/CS146S_CN/blob/main/.DS_Store",
+    "git_url": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/git/blobs/702b814bc5436c1012ccf6958590aedf9afbf5e1",
+    "download_url": "https://raw.githubusercontent.com/ShouZhengAI/CS146S_CN/main/.DS_Store",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/contents/.DS_Store?ref=main",
+      "git": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/git/blobs/702b814bc5436c1012ccf6958590aedf9afbf5e1",
+      "html": "https://github.com/ShouZhengAI/CS146S_CN/blob/main/.DS_Store"
+    }
+  },
+  {
+    "name": "Assignments",
+    "path": "Assignments",
+    "sha": "b2ea70ecac449bd2d7b0e491fb5c7219de1d9cb1",
+    "size": 0,
+    "url": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/contents/Assignments?ref=main",
+    "html_url": "https://github.com/ShouZhengAI/CS146S_CN/tree/main/Assignments",
+    "git_url": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/git/trees/b2ea70ecac449bd2d7b0e491fb5c7219de1d9cb1",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/contents/Assignments?ref=main",
+      "git": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/git/trees/b2ea70ecac449bd2d7b0e491fb5c7219de1d9cb1",
+      "html": "https://github.com/ShouZhengAI/CS146S_CN/tree/main/Assignments"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "975422438e3db821b4d75dc2973f22dd53e3bae5",
+    "size": 1071,
+    "url": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/ShouZhengAI/CS146S_CN/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/git/blobs/975422438e3db821b4d75dc2973f22dd53e3bae5",
+    "download_url": "https://raw.githubusercontent.com/ShouZhengAI/CS146S_CN/main/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/contents/LICENSE?ref=main",
+      "git": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/git/blobs/975422438e3db821b4d75dc2973f22dd53e3bae5",
+      "html": "https://github.com/ShouZhengAI/CS146S_CN/blob/main/LICENSE"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "de1f5a6e72dd2f80893ab7063a9595057da7158c",
+    "size": 25868,
+    "url": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/contents/README.md?ref=main",
+    "html_url": "https://github.com/ShouZhengAI/CS146S_CN/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/git/blobs/de1f5a6e72dd2f80893ab7063a9595057da7158c",
+    "download_url": "https://raw.githubusercontent.com/ShouZhengAI/CS146S_CN/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/git/blobs/de1f5a6e72dd2f80893ab7063a9595057da7158c",
+      "html": "https://github.com/ShouZhengAI/CS146S_CN/blob/main/README.md"
+    }
+  },
+  {
+    "name": "Resource",
+    "path": "Resource",
+    "sha": "8d7a14bda6389b2e1264aa0d00de244b455b3ce7",
+    "size": 0,
+    "url": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/contents/Resource?ref=main",
+    "html_url": "https://github.com/ShouZhengAI/CS146S_CN/tree/main/Resource",
+    "git_url": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/git/trees/8d7a14bda6389b2e1264aa0d00de244b455b3ce7",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/contents/Resource?ref=main",
+      "git": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/git/trees/8d7a14bda6389b2e1264aa0d00de244b455b3ce7",
+      "html": "https://github.com/ShouZhengAI/CS146S_CN/tree/main/Resource"
+    }
+  },
+  {
+    "name": "group6-2.png",
+    "path": "group6-2.png",
+    "sha": "3b41931cd0c91bdd34ddd2a88ac8b809ded3868c",
+    "size": 119727,
+    "url": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/contents/group6-2.png?ref=main",
+    "html_url": "https://github.com/ShouZhengAI/CS146S_CN/blob/main/group6-2.png",
+    "git_url": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/git/blobs/3b41931cd0c91bdd34ddd2a88ac8b809ded3868c",
+    "download_url": "https://raw.githubusercontent.com/ShouZhengAI/CS146S_CN/main/group6-2.png",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/contents/group6-2.png?ref=main",
+      "git": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/git/blobs/3b41931cd0c91bdd34ddd2a88ac8b809ded3868c",
+      "html": "https://github.com/ShouZhengAI/CS146S_CN/blob/main/group6-2.png"
+    }
+  },
+  {
+    "name": "teaser.png",
+    "path": "teaser.png",
+    "sha": "50f7dc8f935c0d4c1e2fae71777115c0312c646d",
+    "size": 192587,
+    "url": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/contents/teaser.png?ref=main",
+    "html_url": "https://github.com/ShouZhengAI/CS146S_CN/blob/main/teaser.png",
+    "git_url": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/git/blobs/50f7dc8f935c0d4c1e2fae71777115c0312c646d",
+    "download_url": "https://raw.githubusercontent.com/ShouZhengAI/CS146S_CN/main/teaser.png",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/contents/teaser.png?ref=main",
+      "git": "https://api.github.com/repos/ShouZhengAI/CS146S_CN/git/blobs/50f7dc8f935c0d4c1e2fae71777115c0312c646d",
+      "html": "https://github.com/ShouZhengAI/CS146S_CN/blob/main/teaser.png"
+    }
+  }
+]

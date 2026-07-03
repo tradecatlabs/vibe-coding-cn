@@ -1,0 +1,89 @@
+version: 1
+description: 外部资源注册表字段契约。
+
+resource_file:
+  required_top_level_fields:
+    - version
+    - category
+    - defaults
+    - resources
+  category_required_fields:
+    - id
+    - name
+    - description
+    - default_resource_type
+
+resource:
+  required_fields:
+    - id
+    - name
+    - resource_type
+    - link
+    - status
+    - verification_status
+    - tags
+    - risk_flags
+    - source_row
+  optional_fields:
+    - description
+    - owner
+    - notes
+    - related_docs
+    - canonical_url
+    - license
+    - last_checked_at
+    - archived_at
+    - archive_reason
+
+link:
+  required_fields:
+    - kind
+  kinds:
+    external_url:
+      required_fields:
+        - url
+        - domain
+      description: 可直接访问的 HTTP/HTTPS URL。
+    internal_reference:
+      required_fields:
+        - locator
+      description: 仓库内或表格内的内部引用，需要人工补齐。
+    search_instruction:
+      required_fields:
+        - locator
+      description: 只能通过搜索定位的入口，需要人工补齐。
+    missing:
+      required_fields: []
+      description: 缺失链接，必须保持 needs-review。
+
+enums:
+  status:
+    - active
+    - needs-review
+    - deprecated
+    - archived
+  verification_status:
+    - imported-unverified
+    - manually-verified
+    - broken
+    - replaced
+  risk_flags:
+    - missing-link
+    - non-url-locator
+    - referral-or-tracking-link
+    - financial-service-review
+    - access-legality-review
+  resource_type:
+    - network_or_payment_service
+    - creator_account
+    - tool_or_platform
+    - community_or_forum
+    - repository_rule_or_scaffold
+    - documentation_or_course
+    - book
+
+governance:
+  import_policy: 导入只证明结构化，不证明外链可用、内容合法、许可证可用或推荐等级。
+  source_of_truth: 分类资源文件是资源数据真相源，resources.yml 是总入口。
+  deletion_policy: 默认归档到 archive.yml，不直接删除历史资源。
+  validation_command: make check-external-resources
