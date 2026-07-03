@@ -14,6 +14,7 @@
 |:---|:---|
 | <a id="research-domain-contract"></a>[研究域治理契约](research-domain-contract.md) | 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。 |
 | <a id="research-value-application-map"></a>[研究价值与应用地图](research-value-application-map.md) | 研究体系给用户带来的价值、核心启示、应用位置和下沉路线。 |
+| <a id="research-transfer-synthesis"></a>[研究迁移综合](research-transfer-synthesis.md) | 将对标拆解、改良迭代和杂交创新转成可执行研究路线。 |
 | <a id="research-harness-engineering"></a>[Harness 研究对象](harness/) | 工程控制、评估器、反馈闭环与 AI 生成系统可靠性。 |
 | <a id="research-tmux-ai-swarm"></a>[tmux 蜂群协作](tmux-ai-swarm.md) | 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式。 |
 | <a id="research-aider-ai-aider"></a>[Aider-AI/aider 研究域](aider-ai-aider/) | 终端 AI 结对编程工具。 |
@@ -41,6 +42,7 @@
 
 - [研究域治理契约](research-domain-contract.md) - 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
 - [研究价值与应用地图](research-value-application-map.md) - 研究体系给用户带来的价值、核心启示、应用位置和下沉路线。
+- [研究迁移综合](research-transfer-synthesis.md) - 将对标拆解、改良迭代和杂交创新转成可执行研究路线。
 - [Harness 研究对象](harness/README.md) - 工程控制、评估器、反馈闭环与 AI 生成系统可靠性。
 - [Harness 工程解析](harness/harness-engineering.md) - Harness Engineering 的工程控制、评估器与反馈闭环解析。
 - [tmux 蜂群协作](tmux-ai-swarm.md) - 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式。

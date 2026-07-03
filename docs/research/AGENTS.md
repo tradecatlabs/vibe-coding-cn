@@ -19,6 +19,7 @@ research/
 ├── README.md  # 索引入口：研究对象与研究笔记导航
 ├── research-domain-contract.md  # 研究域治理契约：结构、分层、成熟度、证据和归档规则
 ├── research-value-application-map.md  # 研究价值与应用地图：用户价值、核心启示和下沉路线
+├── research-transfer-synthesis.md  # 研究迁移综合：对标拆解、改良迭代、杂交创新和验证动作
 ├── harness/
 │   ├── README.md
 │   ├── harness-engineering.md
@@ -108,6 +109,7 @@ research/
 - 外部仓库研究对象采用“一仓库一研究域”，目录名使用 `<owner>-<repo>` 的小写短横线形式。
 - `raw/` 是原始事实层，只保存拉取到本地的一手材料；分析判断写入上一级 `README.md`、`analysis.md` 或 `decisions.md`。
 - `research-value-application-map.md` 是研究体系的转化入口，用于说明研究给用户带来的价值、启示、应用位置和下沉路线。
+- `research-transfer-synthesis.md` 是横向迁移入口，用于把 P1/P2 研究对象拆成机制、迁移边界、改良动作和验证指标。
 - GitHub 仓库 raw 层通过 `python3 scripts/fetch-research-raw.py` 刷新；不要手工改写 `*.raw.*` 文件。
 - 单次短篇观察可以先写成独立 `.md` 文档；如果对象会持续演化，应迁入对象目录。
 - 新增研究对象目录或研究 `.md` 文件时，必须同步更新 `README.md`、`metadata/taxonomy.yml` 和必要的 `redirects.yml`。
@@ -118,6 +120,7 @@ research/
 ## 质量要求
 
 - 不写新闻转述，要给出判断、边界、采用建议和后续观察点。
+- L2 研究不能只写“可借鉴点”，必须写清对标拆解、可迁移做法、不可迁移条件、下一步试用动作和验证指标。
 - 对不确定信息标注“待验证”或 TODO。
 - 引入外部事实时优先引用官方文档、原始仓库、论文或可信一手来源。
 - 修改后必须运行 `make sync-doc-toc` 和 `make test`。

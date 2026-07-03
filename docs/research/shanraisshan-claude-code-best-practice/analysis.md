@@ -2,43 +2,64 @@
 
 ## 本轮结论
 
-- 这是 Agentic Engineering 方法论和 Claude Code 资产集合，属于 P1 对标对象。
-- 它覆盖 concepts、development workflows、cross-model workflows、skill collections、agent collections、tips、orchestration 等层。
-- 本仓应重点吸收其 agent/team/workflow/skill 的组织方式，同时保持本仓自己的中文主线和质量门禁。
+`shanraisshan/claude-code-best-practice` 的核心价值不是“Claude Code 资料多”，而是展示了方法论如何
+变成文件系统、配置、workflow、reports 和 agent teams。它说明经验如果不能落到文件、流程、
+示例或检查项，就只是口号。
+
+本仓最应该迁移的是方法论资产化：把经验短句分流到 concepts、references、workflow、skills、
+research 或 reports，而不是长期堆在一个经验清单里。
 
 ## 本地证据
 
 - 研究对象：`shanraisshan/claude-code-best-practice`
 - 当前研究角色：Claude Code / Agentic Engineering 最强对标
-- 本轮成熟度：L1 初步理解
 - 原始仓库：`raw/repository/`
 - 原始来源清单：`raw/sources.yml`
 - 事实摘要：`domain.yml`
+- 深度证据：`deep-dive.md`
 
-## 结构观察
+## 对标拆解
 
-- 根目录包含 `best-practice/`、`development-workflows/`、`orchestration-workflow/`、`agent-teams/`、`implementation/`、`tips/`、`tutorial/`、`reports/`。
-- 存在 `.claude/`、`.codex/`、`.mcp.json`、`CLAUDE.md`，说明它同时面向多个 AI 工具运行环境。
-- README 是大型导航页，入口多、概念密度高。
+| 项 | 内容 |
+|:---|:---|
+| 参考对象 | `shanraisshan/claude-code-best-practice` |
+| 它解决的核心问题 | 把 Claude Code / Agentic Engineering 经验变成可复用操作资产 |
+| 核心机制 | `best-practice/` 放原则，`implementation/` 放实现，`orchestration-workflow/` 放流程，`reports/` 放复盘，配置文件放运行入口 |
+| 真正带来结果的动作 | 让方法论进入文件、配置、示例、报告和工作流，而不是停留在聊天记录 |
+| 可迁移做法 | 经验分流、agent teams 契约、harness 报告、配置治理、报告层沉淀 |
+| 不可迁移条件 | 不照搬 Claude 生态绑定配置，不把个人实践当通用事实 |
+| 下一步试用动作 | 建立“经验 -> 产物类型 -> 验证方式”的分流表 |
 
-## 可借鉴点
+## 改良迭代
 
-- Agentic Engineering 需要把 workflow、agent team、skills、commands、MCP、tips 分层管理。
-- 跨模型/跨工具工作流应该作为研究对象，而不是只绑定某一个产品。
-- 大型方法论仓库需要强导航，否则会变成资料迷宫。
+| 改良目标 | 原模式 | 本仓版本 | 验证指标 |
+|:---|:---|:---|:---|
+| 方法论分流 | best-practice / implementation / workflow / reports 分层 | concepts / references / workflow / skills / research 分层 | 每条经验能找到落点 |
+| 复杂任务编排 | agent teams 和 orchestration workflow | 本仓任务树、子 Agent、tmux 协作和验收标准 | 多 Agent 任务有职责、输入、输出、依赖、验收 |
+| 报告层沉淀 | reports 承载复盘和比较 | 本仓 research 和 references 承载阶段判断 | 重要结论不只留在对话里 |
 
-## 风险和边界
+## 可迁移清单
 
-- 内容高度个人化，不能直接变成本仓标准。
-- 覆盖面很宽，容易冲淡本仓“Vibe Coding 中文教程 + 工程治理”的定位。
-- 需要区分 Claude Code 专属实践和通用 agent engineering 原则。
+- 对经验短句做分流：概念、模板、流程、skill、检查项、归档。
+- 对复杂研究任务写清角色、输入、输出、依赖和验收标准。
+- 对重要失败或纠偏产出独立报告，避免同类问题反复出现。
+- 把 hooks、settings、MCP、skills 等配置视为 AI 工程系统的一部分，而不是私人工具偏好。
 
-## 下一轮研究任务
+## 不可迁移清单
 
-- 重点拆读 `orchestration-workflow/`、`agent-teams/`、`development-workflows/`。
-- 输出与本仓 `skills/`、`workflow/`、`research-domain-contract.md` 的差距清单。
+- 不把 Claude Code 专属配置当作所有 Agent 的通用标准。
+- 不直接复制命名结构；本仓已有 docs、skills、scripts、assets、metadata，需要按自身结构吸收。
+- 不把未经验证的个人经验写成硬规则。
+
+## 验证动作
+
+| 动作 | 成功信号 | 失败信号 |
+|:---|:---|:---|
+| 抽样 10 条经验做分流 | 每条经验进入概念、流程、模板或 skill | 经验仍只是短句 |
+| 为一次复杂研究任务写 agent teams 契约 | 子任务边界清楚、可验收 | 多 Agent 只是并行堆上下文 |
+| 把一次失败研究写成复盘规则 | 同类失败有前置检查 | 下次继续产出空泛研究 |
 
 ## 沉淀判断
 
-- 本轮只完成 L1 理解，不直接迁入 concepts、references、workflow 或 skills。
-- 只有经过 L2 源码阅读、实验验证或交叉对照后的结论，才进入稳定层。
+- 稳定结论应下沉到 `docs/getting-started/`、`docs/workflow/`、`docs/references/` 和 `skills/`。
+- `deep-dive.md` 保留证据；本文件负责把证据转成迁移动作。

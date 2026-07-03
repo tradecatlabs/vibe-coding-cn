@@ -2,43 +2,63 @@
 
 ## 本轮结论
 
-- Aider 是成熟的终端 AI 结对编程工具，核心价值在 Git 友好、本地仓库理解、多模型适配和测试/提交闭环。
-- 它不是 IDE 产品，而是 terminal-first 的 repo editing loop；这让它特别适合研究“AI 如何安全修改真实仓库”。
-- 本仓应重点吸收它的 Git 工作流、repo map、lint/test 反馈循环和命令行交互边界。
+`Aider-AI/aider` 的核心价值不是终端聊天，而是 Git 驱动的 AI 编辑闭环。它把仓库状态、编辑格式、
+repo map、命令执行、lint/test 和提交协作放进同一条循环，让 AI 修改始终能被 diff、验证、回滚和审查。
+
+本仓最应该迁移的是“AI 修改必须进入证据链”：任何文档、研究、脚本或资源变更，都要能说明 diff 范围、
+验证命令、失败修复和提交边界。
 
 ## 本地证据
 
 - 研究对象：`Aider-AI/aider`
 - 当前研究角色：终端 AI 结对编程工具
-- 本轮成熟度：L1 初步理解
 - 原始仓库：`raw/repository/`
 - 原始来源清单：`raw/sources.yml`
 - 事实摘要：`domain.yml`
+- 深度证据：`deep-dive.md`
 
-## 结构观察
+## 对标拆解
 
-- 根目录包含 `aider/`、`benchmark/`、`tests/`、`scripts/`、`requirements/` 和 `pyproject.toml`。
-- `aider/` 是主实现目录，`tests/` 和 `benchmark/` 说明它不仅是演示工具，而是有持续验证和性能/能力评估意识。
-- README 强调 cloud/local LLM、codebase map、Git integration、linting/testing、copy/paste to web chat 等能力。
+| 项 | 内容 |
+|:---|:---|
+| 参考对象 | `Aider-AI/aider` |
+| 它解决的核心问题 | 让 AI 对真实仓库的修改可 diff、可测试、可提交、可回滚 |
+| 核心机制 | `repo.py` 管 Git 状态，`repomap.py` 压缩上下文，`coders/` 定义编辑协议，`linter.py` 接入反馈 |
+| 真正带来结果的动作 | 把 AI 输出变成 Git 工作流里的可审查补丁，而不是孤立文本 |
+| 可迁移做法 | dirty state 检查、diff 审查、门禁命令、验证证据和提交叙事 |
+| 不可迁移条件 | 不复制完整终端产品、多模型配置和 Python 编辑器实现 |
+| 下一步试用动作 | 在 `docs/workflow/` 沉淀“AI 修改 -> diff 审查 -> make test -> commit”闭环 |
 
-## 可借鉴点
+## 改良迭代
 
-- 把 Git 状态作为 AI 修改的核心护栏：每轮修改都能被 diff、commit、回滚和审查。
-- 把测试和 lint 作为对话内反馈，而不是任务结束后的附属动作。
-- 终端工具可以避免复杂 UI，但必须把 repo context、命令回显和失败恢复做扎实。
+| 改良目标 | 原模式 | 本仓版本 | 验证指标 |
+|:---|:---|:---|:---|
+| Git 状态护栏 | Aider 围绕 Git dirty state 和 commit 工作 | 每次任务先看 `git status`，不覆盖用户改动 | 变更说明能区分用户改动和本轮改动 |
+| 文档上下文压缩 | Aider 用 repo map 选择上下文 | 本仓建立 research/docs 入口地图和索引校验 | 新文档不会漏进 README、metadata、llms |
+| 反馈循环 | Aider 把 lint/test 反馈接进对话 | 本仓统一用 `make test` 做文档门禁 | 修改后失败项能回到具体文件修复 |
 
-## 风险和边界
+## 可迁移清单
 
-- 终端优先意味着非程序员上手门槛高于 IDE 插件。
-- 多模型和多语言支持会带来配置面复杂度。
-- 其很多文档在官网侧，研究时要同步看本地源码和外部文档。
+- 把“修改前检查工作区状态”写成所有 AI 工程任务默认动作。
+- 把 `make test`、`git diff --check` 和关键脚本输出纳入交付说明。
+- 为研究域建立文档地图或索引生成机制，减少长文档漂移。
+- 对大文件修改优先使用局部 patch，避免全文件重写带来无关 diff。
 
-## 下一轮研究任务
+## 不可迁移清单
 
-- 重点阅读 `aider/` 的 repo map、Git 操作和 test/lint 调用路径。
-- 把 Aider 的 terminal loop 抽象为本仓 `workflow/` 可复用闭环。
+- 不把本仓变成 Aider 竞品。
+- 不复制其多模型兼容层、coder 实现和交互式命令系统。
+- 不把 repo map 当成万能方案；本仓优先解决 Markdown 索引漂移和研究域路由。
+
+## 验证动作
+
+| 动作 | 成功信号 | 失败信号 |
+|:---|:---|:---|
+| 为一次文档任务记录状态、diff、门禁和提交说明 | 后续审查能复现变更链路 | 只能从对话里猜为什么这么改 |
+| 抽样新增文档后跑索引检查 | README、metadata、llms 同步 | 新文档存在但入口缺失 |
+| 对同一类研究文档使用固定分析骨架 | 读者能横向比较对象 | 每篇分析结构不同、不可比较 |
 
 ## 沉淀判断
 
-- 本轮只完成 L1 理解，不直接迁入 concepts、references、workflow 或 skills。
-- 只有经过 L2 源码阅读、实验验证或交叉对照后的结论，才进入稳定层。
+- 稳定结论应下沉到 `docs/workflow/` 的 AI 修改闭环。
+- `deep-dive.md` 保留源码证据；本文件负责把证据转成迁移动作。
