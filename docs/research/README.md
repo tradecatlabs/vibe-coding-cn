@@ -81,16 +81,22 @@
 - [ShouZhengAI/CS146S_CN 深度研究](shouzhengai-cs146s-cn/deep-dive.md) - L2 源码/结构深度研究、关键机制和可迁移模式。
 - [ai-for-developers/awesome-vibe-coding 研究域](ai-for-developers-awesome-vibe-coding/README.md) - 精选 Vibe Coding 资料清单。
 - [ai-for-developers/awesome-vibe-coding 研究分析](ai-for-developers-awesome-vibe-coding/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [ai-for-developers/awesome-vibe-coding 深度研究](ai-for-developers-awesome-vibe-coding/deep-dive.md) - L2 结构深度研究、关键机制、迁移边界和验证任务。
 - [Daotin/ai-coding 研究域](daotin-ai-coding/README.md) - AI Coding 经验汇总。
 - [Daotin/ai-coding 研究分析](daotin-ai-coding/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [Daotin/ai-coding 深度研究](daotin-ai-coding/deep-dive.md) - L2 结构深度研究、关键机制、迁移边界和验证任务。
 - [earyantLe/vibe-coding-skill 研究域](earyantle-vibe-coding-skill/README.md) - Vibe Coding Skill / SOP 化。
 - [earyantLe/vibe-coding-skill 研究分析](earyantle-vibe-coding-skill/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [earyantLe/vibe-coding-skill 深度研究](earyantle-vibe-coding-skill/deep-dive.md) - L2 结构深度研究、关键机制、迁移边界和验证任务。
 - [liyupi/ai-guide 研究域](liyupi-ai-guide/README.md) - AI 资源大全与产品实用路线。
 - [liyupi/ai-guide 研究分析](liyupi-ai-guide/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [liyupi/ai-guide 深度研究](liyupi-ai-guide/deep-dive.md) - L2 结构深度研究、关键机制、迁移边界和验证任务。
 - [RooCodeInc/Roo-Code 研究域](roocodeinc-roo-code/README.md) - 已归档多 Agent 编辑器工具；当前已归档，仅作参考。
 - [RooCodeInc/Roo-Code 研究分析](roocodeinc-roo-code/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [RooCodeInc/Roo-Code 深度研究](roocodeinc-roo-code/deep-dive.md) - L2 结构深度研究、关键机制、迁移边界和验证任务。
 - [wendy7756/vibe-coding-guide 研究域](wendy7756-vibe-coding-guide/README.md) - 非程序员自然语言编程指南。
 - [wendy7756/vibe-coding-guide 研究分析](wendy7756-vibe-coding-guide/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [wendy7756/vibe-coding-guide 深度研究](wendy7756-vibe-coding-guide/deep-dive.md) - L2 结构深度研究、关键机制、迁移边界和验证任务。
 
 </details>
 

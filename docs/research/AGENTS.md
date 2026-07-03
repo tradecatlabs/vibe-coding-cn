@@ -98,8 +98,10 @@ research/
 └── AGENTS.md  # 本目录操作规则
 ```
 
-上方只展开了第一个外部仓库研究域的基础形态；所有外部仓库研究域都必须包含同样的原始事实层。
-`deep-dive.md` 是 L2 产物，P1/P2 必须优先补齐，P3 可停留在 L1 观察状态。
+上方只展开了第一个外部仓库研究域的基础形态；所有外部仓库研究域都必须包含同样的原始事实层、
+`analysis.md` 和 `deep-dive.md`。
+`deep-dive.md` 是 L2 产物；当前 17 个外部仓库研究域已经全部补齐，P3 只表示采用优先级低，
+不再表示研究深度缺口。
 
 ## 修改规则
 
@@ -109,7 +111,7 @@ research/
 - 外部仓库研究对象采用“一仓库一研究域”，目录名使用 `<owner>-<repo>` 的小写短横线形式。
 - `raw/` 是原始事实层，只保存拉取到本地的一手材料；分析判断写入上一级 `README.md`、`analysis.md` 或 `decisions.md`。
 - `research-value-application-map.md` 是研究体系的转化入口，用于说明研究给用户带来的价值、启示、应用位置和下沉路线。
-- `research-transfer-synthesis.md` 是横向迁移入口，用于把 P1/P2 研究对象拆成机制、迁移边界、改良动作和验证指标。
+- `research-transfer-synthesis.md` 是横向迁移入口，用于把研究对象拆成机制、迁移边界、改良动作和验证指标。
 - GitHub 仓库 raw 层通过 `python3 scripts/fetch-research-raw.py` 刷新；不要手工改写 `*.raw.*` 文件。
 - 单次短篇观察可以先写成独立 `.md` 文档；如果对象会持续演化，应迁入对象目录。
 - 新增研究对象目录或研究 `.md` 文件时，必须同步更新 `README.md`、`metadata/taxonomy.yml` 和必要的 `redirects.yml`。
