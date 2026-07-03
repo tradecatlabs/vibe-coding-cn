@@ -1,0 +1,1159 @@
+# Generated from assets_csv.xlsx and later curated imports. Edit intentionally and keep schema.yml in sync.
+version: 1
+category:
+  id: repo-rules-scaffolds
+  name: 仓库规则脚手架
+  description: 用于收录 GitHub 仓库、Rules/规则文件集合、项目脚手架/模板
+  default_resource_type: repository_rule_or_scaffold
+defaults:
+  imported_from: assets_csv.xlsx
+  imported_at: '2026-07-03'
+  verification_status: imported-unverified
+  license: unknown
+resources:
+- id: repo-rules-scaffolds-vibe-coding-e16848e0
+  name: Vibe Coding 指南
+  description: 中文 Vibe Coding 主线仓库，覆盖 Prompt、Skill、Context、Quality Gate、Git、测试、CI 等完整 AI 编程闭环。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/tradecatlabs/vibe-coding-cn
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 2
+  notes: Canonical owner updated from ChatGPT-中文Vibe Coding仓库 (2).md; source line 34.
+- id: repo-rules-scaffolds-scientific-skills-0f3f6b96
+  name: scientific-skills
+  description: 一套可直接使用的代理技能，适用于研究、科学、工程、分析、金融和写作
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/K-Dense-AI/claude-scientific-skills
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 3
+- id: repo-rules-scaffolds-github-e755441d
+  name: GitHub
+  description: 代码托管，远程仓库备份和共享你的代码，再也不怕ai删仓库了
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 4
+- id: repo-rules-scaffolds-github-com-e0a40b2e
+  name: 开发者基础知识库
+  description: 这是一份（主要）技术性知识的集合，每个软件开发人员都应该了解这些知识。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/mtdvio/every-programmer-should-know
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 5
+- id: repo-rules-scaffolds-mcaf-47f07717
+  name: MCAF
+  description: AI 编程框架，定义 AGENTS.md 规范
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://mcaf.managed-code.com/
+    domain: mcaf.managed-code.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 6
+- id: repo-rules-scaffolds-autogen-fc00be5e
+  name: autogen
+  description: 多 Agent 对话框架
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/microsoft/autogen
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 7
+- id: repo-rules-scaffolds-browser-use-268f0f95
+  name: browser-use
+  description: AI 浏览器自动化
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/browser-use/browser-use
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 8
+- id: repo-rules-scaffolds-crewai-d9a56566
+  name: crewai
+  description: AI Agent 协作框架
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/joaomdmoura/crewAI
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 9
+- id: repo-rules-scaffolds-dspy-d8bdba82
+  name: dspy
+  description: 编程式 LLM 框架
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/stanfordnlp/dspy
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 10
+- id: repo-rules-scaffolds-langchain-089a07ab
+  name: langchain
+  description: LLM 应用开发框架
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/langchain-ai/langchain
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 11
+- id: repo-rules-scaffolds-pydantic-ai-cb69369e
+  name: pydantic-ai
+  description: 类型安全 AI Agent 框架
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/pydantic/pydantic-ai
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 12
+- id: repo-rules-scaffolds-smolagents-790ade5e
+  name: smolagents
+  description: HuggingFace 轻量 Agent 框架
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/huggingface/smolagents
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 13
+- id: repo-rules-scaffolds-aider-adccc23a
+  name: aider
+  description: 终端里的 AI 结对编程工具，适合练 Git 与本地项目修改。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/aider-ai/aider
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 14
+  notes: Canonical owner updated from ChatGPT-中文Vibe Coding仓库 (2).md; source line 57.
+- id: repo-rules-scaffolds-claude-code-ef1ef8b6
+  name: claude-code
+  description: Anthropic 官方 CLI
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/anthropics/claude-code
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 15
+- id: repo-rules-scaffolds-cline-644a6623
+  name: cline
+  description: VS Code 自主编程 Agent
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/cline/cline
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 16
+- id: repo-rules-scaffolds-continue-d5516851
+  name: continue
+  description: 开源 AI 代码助手
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/continuedev/continue
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 17
+- id: repo-rules-scaffolds-gemini-cli-be45a9ce
+  name: gemini-cli
+  description: Google 官方 CLI
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/google-gemini/gemini-cli
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 18
+- id: repo-rules-scaffolds-gpt-engineer-eaa2e8a8
+  name: gpt-engineer
+  description: 自然语言生成代码
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/gpt-engineer-org/gpt-engineer
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 19
+- id: repo-rules-scaffolds-oh-my-opencode-0348827b
+  name: oh-my-opencode
+  description: OpenCode 配置与插件
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/code-yeongyu/oh-my-opencode
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 20
+- id: repo-rules-scaffolds-open-interpreter-a514262e
+  name: open-interpreter
+  description: 本地代码解释器
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/OpenInterpreter/open-interpreter
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 21
+- id: repo-rules-scaffolds-opencode-e1b762af
+  name: opencode
+  description: 开源终端 AI 助手，Go 编写
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/opencode-ai/opencode
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 22
+- id: repo-rules-scaffolds-spec-kit-a9a40ae2
+  name: spec-kit
+  description: GitHub 官方 Spec-Driven 开发工具包
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/github/spec-kit
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 23
+- id: repo-rules-scaffolds-github-topics-bcc7e192
+  name: GitHub Topics
+  description: 按主题浏览仓库
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/topics
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 24
+- id: repo-rules-scaffolds-github-trending-d46be94c
+  name: GitHub Trending
+  description: 热门仓库排行
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/trending
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 25
+- id: repo-rules-scaffolds-avante-nvim-29a0c49f
+  name: avante.nvim
+  description: Neovim AI 助手插件
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/yetone/avante.nvim
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 26
+- id: repo-rules-scaffolds-codecompanion-nvim-a6f68dc2
+  name: codecompanion.nvim
+  description: Neovim AI 编程伴侣
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/olimorris/codecompanion.nvim
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 27
+- id: repo-rules-scaffolds-codeium-b0b85053
+  name: codeium
+  description: 免费 AI 代码补全
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/Exafunction/codeium.vim
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 28
+- id: repo-rules-scaffolds-copilot-vim-c06b7933
+  name: copilot.vim
+  description: GitHub Copilot Vim 插件
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/github/copilot.vim
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 29
+- id: repo-rules-scaffolds-awesome-mcp-servers-d91d6430
+  name: awesome-mcp-servers
+  description: MCP 资源汇总
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/punkpeye/awesome-mcp-servers
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 30
+- id: repo-rules-scaffolds-mcp-servers-5d60dee4
+  name: mcp-servers
+  description: MCP 服务器集合
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/modelcontextprotocol/servers
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 31
+- id: repo-rules-scaffolds-2025-ai-engineer-reading-list-70f4fbd3
+  name: 2025 AI Engineer Reading List
+  description: 50篇必读论文，涵盖 LLM/RAG/Agent/CodeGen 等10个领域
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://www.latent.space/p/2025-papers
+    domain: www.latent.space
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 32
+- id: repo-rules-scaffolds-ai-547bb859
+  name: AI 编程最佳实践
+  description: ninehills AI 编程经验
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/ninehills/blog/issues/97
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 33
+- id: repo-rules-scaffolds-ai-engineering-d04a5b40
+  name: ai-engineering
+  description: AI 工程实践
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/chiphuyen/aie-book
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 34
+- id: repo-rules-scaffolds-ai-for-grant-writing-0a634380
+  name: ai-for-grant-writing
+  description: AI 辅助撰写资助申请
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/eseckel/ai-for-grant-writing
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 35
+- id: repo-rules-scaffolds-awesome-explorables-2cedba5b
+  name: awesome-explorables
+  description: 交互式可视化学习资源汇总
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/blob42/awesome-explorables
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 36
+- id: repo-rules-scaffolds-awesome-llm-02e83378
+  name: awesome-llm
+  description: LLM 资源汇总
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/Hannibal046/Awesome-LLM
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 37
+- id: repo-rules-scaffolds-generative-ai-for-beginners-3b1db321
+  name: generative-ai-for-beginners
+  description: 微软生成式 AI 教程
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/microsoft/generative-ai-for-beginners
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 38
+- id: repo-rules-scaffolds-llm-course-9227aca8
+  name: llm-course
+  description: LLM 学习路线
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/mlabonne/llm-course
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 39
+- id: repo-rules-scaffolds-lovable-for-beginners-38de2782
+  name: lovable-for-beginners
+  description: Lovable 新手入门教程
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/cporter202/lovable-for-beginners
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 40
+- id: repo-rules-scaffolds-prompt-engineering-guide-5130a915
+  name: prompt-engineering-guide
+  description: 提示工程指南
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/dair-ai/Prompt-Engineering-Guide
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 41
+- id: repo-rules-scaffolds-vibe-vibe-c80a5961
+  name: vibe-vibe
+  description: Datawhale Vibe Coding 教程
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/datawhalechina/vibe-vibe
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 42
+- id: repo-rules-scaffolds-gitingest-ee7a3f76
+  name: gitingest
+  description: Git 仓库转 AI 友好格式
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/cyclotruc/gitingest
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 43
+- id: repo-rules-scaffolds-jan-c4cdcb50
+  name: jan
+  description: 开源本地 AI 助手
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/janhq/jan
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 44
+- id: repo-rules-scaffolds-lmstudio-8b9fe81d
+  name: lmstudio
+  description: 本地模型 GUI 工具
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://lmstudio.ai/
+    domain: lmstudio.ai
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 45
+- id: repo-rules-scaffolds-localai-ea1fbd8b
+  name: localai
+  description: 本地 AI API
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/mudler/LocalAI
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 46
+- id: repo-rules-scaffolds-ollama-33222b83
+  name: ollama
+  description: 本地大模型运行
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/ollama/ollama
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 47
+- id: repo-rules-scaffolds-repomix-5aa70b79
+  name: repomix
+  description: 代码库打包为 AI 上下文
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/yamadashy/repomix
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 48
+- id: repo-rules-scaffolds-text-generation-webui-8ec0aebb
+  name: text-generation-webui
+  description: 文本生成 WebUI
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/oobabooga/text-generation-webui
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 49
+- id: repo-rules-scaffolds-awesome-chatgpt-prompts-ebaf3df7
+  name: awesome-chatgpt-prompts
+  description: ChatGPT 提示词集合
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/f/awesome-chatgpt-prompts
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 50
+- id: repo-rules-scaffolds-awesome-chatgpt-prompts-zh-966cbb5b
+  name: awesome-chatgpt-prompts-zh
+  description: 中文提示词
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/PlexPt/awesome-chatgpt-prompts-zh
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 51
+- id: repo-rules-scaffolds-claude-code-system-prompts-3f0438e1
+  name: claude-code-system-prompts
+  description: Claude Code 系统提示词
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/Piebald-AI/claude-code-system-prompts
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 52
+- id: repo-rules-scaffolds-system-prompts-and-models-of-ai-tools-8290b642
+  name: system-prompts-and-models-of-ai-tools
+  description: AI 工具系统提示词
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 53
+- id: repo-rules-scaffolds-awesome-cursorrules-7f259f16
+  name: awesome-cursorrules
+  description: Cursor Rules 集合
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/PatrickJS/awesome-cursorrules
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 54
+- id: repo-rules-scaffolds-cursor-directory-807839d9
+  name: cursor.directory
+  description: Cursor Rules 在线目录
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://cursor.directory/
+    domain: cursor.directory
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 55
+- id: repo-rules-scaffolds-dotcursorrules-ad20d456
+  name: dotcursorrules
+  description: .cursorrules 模板
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/pontusab/dotcursorrules
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 56
+- id: repo-rules-scaffolds-anythingllm-a3e8a5fc
+  name: AnythingLLM
+  description: 私有文档 AI 助手
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/Mintplex-Labs/anything-llm
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 57
+- id: repo-rules-scaffolds-dify-4f89d10f
+  name: Dify
+  description: LLM 应用开发平台
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/langgenius/dify
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 58
+- id: repo-rules-scaffolds-privategpt-c615ca94
+  name: PrivateGPT
+  description: 私有文档问答
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/zylon-ai/private-gpt
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 59
+- id: repo-rules-scaffolds-quivr-5cc2ab96
+  name: Quivr
+  description: 个人知识库 AI
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/QuivrHQ/quivr
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 60
+- id: repo-rules-scaffolds-ragflow-c92a0918
+  name: RAGFlow
+  description: 开源 RAG 引擎
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/infiniflow/ragflow
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 61
+- id: repo-rules-scaffolds-devdocs-62126dcb
+  name: DevDocs
+  description: 多语言 API 文档聚合浏览器
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/freeCodeCamp/devdocs
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 62
+- id: repo-rules-scaffolds-langgpt-d6b7fb87
+  name: LangGPT
+  description: 结构化提示词框架
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/langgptai/LangGPT
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 63
+- id: repo-rules-scaffolds-skills-cd973130
+  name: Skills 制作器
+  description: 生成定制化 Skills
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/yusufkaraaslan/Skill_Seekers
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 64
+- id: repo-rules-scaffolds-awesome-chatgpt-prompts-4c4b8064
+  name: Awesome ChatGPT Prompts
+  description: null
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/f/awesome-chatgpt-prompts
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 65
+- id: repo-rules-scaffolds-system-prompts-b5948bc8
+  name: System Prompts 仓库
+  description: null
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 66
+- id: repo-rules-scaffolds-create-next-app-1bebc93a
+  name: create-next-app
+  description: Next.js 官方脚手架
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://nextjs.org/docs/app/api-reference/cli/create-next-app
+    domain: nextjs.org
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 67
+- id: repo-rules-scaffolds-create-t3-app-daf8fe4b
+  name: create-t3-app
+  description: 全栈 TypeScript 脚手架
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/t3-oss/create-t3-app
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 68
+- id: repo-rules-scaffolds-fastapi-template-c97cc061
+  name: fastapi-template
+  description: FastAPI 全栈模板
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/tiangolo/full-stack-fastapi-template
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 69
+- id: repo-rules-scaffolds-shadcn-ui-d7cf613e
+  name: shadcn/ui
+  description: React UI 组件库
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://ui.shadcn.com/
+    domain: ui.shadcn.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 70
+- id: repo-rules-scaffolds-vite-3e45b462
+  name: vite
+  description: 现代前端构建工具
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/vitejs/vite
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 71
+- id: repo-rules-scaffolds-tmux-9f36981a
+  name: tmux
+  description: 终端复用
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/tmux/tmux
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 72
+- id: repo-rules-scaffolds-github-copilot-102fb5f8
+  name: GitHub Copilot
+  description: 学生/开源免费
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/copilot
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 73
+- id: repo-rules-scaffolds-easy-vibe-3c217e96
+  name: datawhalechina/easy-vibe
+  description: “会说话就会做应用”，有学习地图和交互式教程入口。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/datawhalechina/easy-vibe
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags:
+  - vibe-coding
+  - learning-path
+  risk_flags: []
+  source_row: 26
+  notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.
+- id: repo-rules-scaffolds-ai-guide-c12bbbfd
+  name: liyupi/ai-guide
+  description: 鱼皮的 AI 资源大全和 Vibe Coding 零基础教程，偏实用和产品上线。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/liyupi/ai-guide
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags:
+  - vibe-coding
+  - learning-path
+  risk_flags: []
+  source_row: 27
+  notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.
+- id: repo-rules-scaffolds-vibe-coding-guide-cf65840a
+  name: wendy7756/vibe-coding-guide
+  description: 面向非程序员的自然语言编程指南。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/wendy7756/vibe-coding-guide
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags:
+  - vibe-coding
+  - learning-path
+  risk_flags: []
+  source_row: 28
+  notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.
+- id: repo-rules-scaffolds-ai-coding-c221421b
+  name: Daotin/ai-coding
+  description: AI Coding 方法论、Cursor、Claude Code、Codex、MCP、AGENTS.md 等实践经验汇总。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/Daotin/ai-coding
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags:
+  - ai-coding
+  - workflow
+  risk_flags: []
+  source_row: 35
+  notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.
+- id: repo-rules-scaffolds-vibe-coding-skill-a5e7c42d
+  name: earyantLe/vibe-coding-skill
+  description: 把 Vibe Coding 方法整理成 Skill 学习路径，适合沉淀可复用规范。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/earyantLe/vibe-coding-skill
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags:
+  - vibe-coding
+  - skill
+  risk_flags: []
+  source_row: 36
+  notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.
+- id: repo-rules-scaffolds-ai-coding-lab-6dc927c2
+  name: luzhenqian/ai-coding-lab
+  description: 从个人链接页、博客、看板到 RAG、Agent 的项目实战学习仓库。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/luzhenqian/ai-coding-lab
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags:
+  - ai-coding
+  - project-practice
+  risk_flags: []
+  source_row: 42
+  notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.
+- id: repo-rules-scaffolds-cs146s-cn-eaea3651
+  name: ShouZhengAI/CS146S_CN
+  description: 中文 CS146S 课程，包含 assignments 和 vibe coding 工具。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/ShouZhengAI/CS146S_CN
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags:
+  - course
+  - vibe-coding
+  risk_flags: []
+  source_row: 43
+  notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.
+- id: repo-rules-scaffolds-awesome-vibe-coding-e5ab67eb
+  name: filipecalegario/awesome-vibe-coding
+  description: 国际版 Vibe Coding 资源索引，覆盖概念、工具、IDE、CLI、任务管理和文档等分类。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/filipecalegario/awesome-vibe-coding
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags:
+  - awesome-list
+  - vibe-coding
+  risk_flags: []
+  source_row: 49
+  notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.
+- id: repo-rules-scaffolds-awesome-vibe-coding-e3ea2b5b
+  name: ai-for-developers/awesome-vibe-coding
+  description: 精选 Vibe Coding 工具与资料清单。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/ai-for-developers/awesome-vibe-coding
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags:
+  - awesome-list
+  - vibe-coding
+  risk_flags: []
+  source_row: 50
+  notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.
+- id: repo-rules-scaffolds-codex-e3c8be51
+  name: openai/codex
+  description: OpenAI Codex CLI，本地运行的 coding agent 源码仓库。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/openai/codex
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags:
+  - coding-agent
+  - tool-source
+  risk_flags: []
+  source_row: 56
+  notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.
+- id: repo-rules-scaffolds-roo-code-36e77dcc
+  name: RooCodeInc/Roo-Code
+  description: 编辑器里的多 Agent 编码工具；源文件提示该仓库已 archive，当前仅作参考资源。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/RooCodeInc/Roo-Code
+    domain: github.com
+  status: needs-review
+  verification_status: imported-unverified
+  tags:
+  - coding-agent
+  - reference-only
+  risk_flags: []
+  source_row: 59
+  notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.
+- id: repo-rules-scaffolds-claude-code-best-practice-01224898
+  name: shanraisshan/claude-code-best-practice
+  description: 从 Vibe Coding 到 Agentic Engineering 的 Claude Code 方法论与工作流仓库。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/shanraisshan/claude-code-best-practice
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags:
+  - agentic-engineering
+  - claude-code
+  risk_flags: []
+  source_row: 101
+  notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.
+- id: repo-rules-scaffolds-awesome-claude-code-5e3406a1
+  name: hesreallyhim/awesome-claude-code
+  description: Claude Code 生态导航，覆盖 skills、hooks、slash commands、agent orchestrators 和 plugins 等资源。
+  resource_type: repository_rule_or_scaffold
+  link:
+    kind: external_url
+    url: https://github.com/hesreallyhim/awesome-claude-code
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags:
+  - awesome-list
+  - claude-code
+  risk_flags: []
+  source_row: 149
+  notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.

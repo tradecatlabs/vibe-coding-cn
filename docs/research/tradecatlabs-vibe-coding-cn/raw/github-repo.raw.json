@@ -1,0 +1,85 @@
+{
+  "createdAt": "2025-11-23T01:52:29Z",
+  "defaultBranchRef": {
+    "name": "develop"
+  },
+  "description": "Vibe Coding 从入门到精通教程｜AI 结对编程工作流｜Prompt、Skill、Workflow、上下文管理、codex实战指南",
+  "forkCount": 1509,
+  "homepageUrl": "https://x.com/123olp",
+  "isArchived": false,
+  "isFork": true,
+  "isMirror": false,
+  "latestRelease": null,
+  "licenseInfo": {
+    "key": "mit",
+    "name": "MIT License",
+    "nickname": ""
+  },
+  "nameWithOwner": "tradecatlabs/vibe-coding-cn",
+  "primaryLanguage": {
+    "name": "Python"
+  },
+  "pushedAt": "2026-06-29T20:26:02Z",
+  "repositoryTopics": [
+    {
+      "name": "ai"
+    },
+    {
+      "name": "ai-agents"
+    },
+    {
+      "name": "claude-code"
+    },
+    {
+      "name": "codex"
+    },
+    {
+      "name": "prompts"
+    },
+    {
+      "name": "prompt-engineering"
+    },
+    {
+      "name": "skills"
+    },
+    {
+      "name": "workflow"
+    },
+    {
+      "name": "vibe-coding"
+    },
+    {
+      "name": "glue-coding"
+    },
+    {
+      "name": "ai-agent"
+    },
+    {
+      "name": "ai-coding"
+    },
+    {
+      "name": "ai-programming"
+    },
+    {
+      "name": "chinese"
+    },
+    {
+      "name": "cursor"
+    },
+    {
+      "name": "developer-tools"
+    },
+    {
+      "name": "gemini-cli"
+    },
+    {
+      "name": "tutorial"
+    }
+  ],
+  "stargazerCount": 15077,
+  "updatedAt": "2026-07-02T17:16:51Z",
+  "url": "https://github.com/tradecatlabs/vibe-coding-cn",
+  "watchers": {
+    "totalCount": 76
+  }
+}

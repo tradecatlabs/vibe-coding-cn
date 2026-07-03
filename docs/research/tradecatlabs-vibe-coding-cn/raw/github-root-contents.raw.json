@@ -1,0 +1,322 @@
+[
+  {
+    "name": ".gitattributes",
+    "path": ".gitattributes",
+    "sha": "b513964e54f1c0f88af530ae7ddf4353a26404ab",
+    "size": 275,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/.gitattributes?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/.gitattributes",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/b513964e54f1c0f88af530ae7ddf4353a26404ab",
+    "download_url": "https://raw.githubusercontent.com/tradecatlabs/vibe-coding-cn/develop/.gitattributes",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/.gitattributes?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/b513964e54f1c0f88af530ae7ddf4353a26404ab",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/.gitattributes"
+    }
+  },
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "a07ab00bd6d7dadbc90a835ac161a802c4435aa2",
+    "size": 0,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/.github?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/.github",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/a07ab00bd6d7dadbc90a835ac161a802c4435aa2",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/.github?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/a07ab00bd6d7dadbc90a835ac161a802c4435aa2",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "b262535bb9f19925d6e85235510634fa972171b0",
+    "size": 1199,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/.gitignore?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/.gitignore",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/b262535bb9f19925d6e85235510634fa972171b0",
+    "download_url": "https://raw.githubusercontent.com/tradecatlabs/vibe-coding-cn/develop/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/.gitignore?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/b262535bb9f19925d6e85235510634fa972171b0",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/.gitignore"
+    }
+  },
+  {
+    "name": ".gitmodules",
+    "path": ".gitmodules",
+    "sha": "f925dbfea65560a8a7ee5e432864c1c3d1ffe2c0",
+    "size": 519,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/.gitmodules?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/.gitmodules",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/f925dbfea65560a8a7ee5e432864c1c3d1ffe2c0",
+    "download_url": "https://raw.githubusercontent.com/tradecatlabs/vibe-coding-cn/develop/.gitmodules",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/.gitmodules?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/f925dbfea65560a8a7ee5e432864c1c3d1ffe2c0",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/.gitmodules"
+    }
+  },
+  {
+    "name": ".lychee.toml",
+    "path": ".lychee.toml",
+    "sha": "37e929bc6fa0a4412f55b7d4d66d113abbabff11",
+    "size": 1494,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/.lychee.toml?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/.lychee.toml",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/37e929bc6fa0a4412f55b7d4d66d113abbabff11",
+    "download_url": "https://raw.githubusercontent.com/tradecatlabs/vibe-coding-cn/develop/.lychee.toml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/.lychee.toml?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/37e929bc6fa0a4412f55b7d4d66d113abbabff11",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/.lychee.toml"
+    }
+  },
+  {
+    "name": "AGENTS.md",
+    "path": "AGENTS.md",
+    "sha": "aa0dadb8bc6fd56250da9c7bb49cbee5edadd6a5",
+    "size": 18420,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/AGENTS.md?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/AGENTS.md",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/aa0dadb8bc6fd56250da9c7bb49cbee5edadd6a5",
+    "download_url": "https://raw.githubusercontent.com/tradecatlabs/vibe-coding-cn/develop/AGENTS.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/AGENTS.md?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/aa0dadb8bc6fd56250da9c7bb49cbee5edadd6a5",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/AGENTS.md"
+    }
+  },
+  {
+    "name": "CHANGELOG.md",
+    "path": "CHANGELOG.md",
+    "sha": "9ee8d508e44722024144fc75c527154208e63fd1",
+    "size": 3213,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/CHANGELOG.md?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/CHANGELOG.md",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/9ee8d508e44722024144fc75c527154208e63fd1",
+    "download_url": "https://raw.githubusercontent.com/tradecatlabs/vibe-coding-cn/develop/CHANGELOG.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/CHANGELOG.md?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/9ee8d508e44722024144fc75c527154208e63fd1",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/CHANGELOG.md"
+    }
+  },
+  {
+    "name": "CODE_OF_CONDUCT.md",
+    "path": "CODE_OF_CONDUCT.md",
+    "sha": "04b1c98d1b9d64ea381f0f7970ec17a05dd8817b",
+    "size": 5011,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/CODE_OF_CONDUCT.md?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/CODE_OF_CONDUCT.md",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/04b1c98d1b9d64ea381f0f7970ec17a05dd8817b",
+    "download_url": "https://raw.githubusercontent.com/tradecatlabs/vibe-coding-cn/develop/CODE_OF_CONDUCT.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/CODE_OF_CONDUCT.md?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/04b1c98d1b9d64ea381f0f7970ec17a05dd8817b",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/CODE_OF_CONDUCT.md"
+    }
+  },
+  {
+    "name": "CONTRIBUTING.md",
+    "path": "CONTRIBUTING.md",
+    "sha": "d9f0d81649b5a2e1e233a8ae7150bd9405b571bb",
+    "size": 905,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/CONTRIBUTING.md?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/CONTRIBUTING.md",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/d9f0d81649b5a2e1e233a8ae7150bd9405b571bb",
+    "download_url": "https://raw.githubusercontent.com/tradecatlabs/vibe-coding-cn/develop/CONTRIBUTING.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/CONTRIBUTING.md?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/d9f0d81649b5a2e1e233a8ae7150bd9405b571bb",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/CONTRIBUTING.md"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "99ca2848b641206a78e86148f2fb5ff0941c2c8d",
+    "size": 1088,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/LICENSE?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/LICENSE",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/99ca2848b641206a78e86148f2fb5ff0941c2c8d",
+    "download_url": "https://raw.githubusercontent.com/tradecatlabs/vibe-coding-cn/develop/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/LICENSE?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/99ca2848b641206a78e86148f2fb5ff0941c2c8d",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/LICENSE"
+    }
+  },
+  {
+    "name": "Makefile",
+    "path": "Makefile",
+    "sha": "6778ede957f429e9fe8d5f4f7d39998d4b1f7f52",
+    "size": 2941,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/Makefile?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/Makefile",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/6778ede957f429e9fe8d5f4f7d39998d4b1f7f52",
+    "download_url": "https://raw.githubusercontent.com/tradecatlabs/vibe-coding-cn/develop/Makefile",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/Makefile?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/6778ede957f429e9fe8d5f4f7d39998d4b1f7f52",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/Makefile"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "4bdff3e760b445e0f1119d5e4a8f4391a2c1f1be",
+    "size": 61412,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/README.md?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/README.md",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/4bdff3e760b445e0f1119d5e4a8f4391a2c1f1be",
+    "download_url": "https://raw.githubusercontent.com/tradecatlabs/vibe-coding-cn/develop/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/README.md?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/4bdff3e760b445e0f1119d5e4a8f4391a2c1f1be",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/README.md"
+    }
+  },
+  {
+    "name": "assets",
+    "path": "assets",
+    "sha": "d772e560e5c11894b0610cdc4b0a5d6da4fc6ac0",
+    "size": 0,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/assets?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/assets",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/d772e560e5c11894b0610cdc4b0a5d6da4fc6ac0",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/assets?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/d772e560e5c11894b0610cdc4b0a5d6da4fc6ac0",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/assets"
+    }
+  },
+  {
+    "name": "docs",
+    "path": "docs",
+    "sha": "1290d35025c8c1f780f76d2f060e5287af045465",
+    "size": 0,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/docs?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/docs",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/1290d35025c8c1f780f76d2f060e5287af045465",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/docs?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/1290d35025c8c1f780f76d2f060e5287af045465",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/docs"
+    }
+  },
+  {
+    "name": "llms.txt",
+    "path": "llms.txt",
+    "sha": "b0c46a94caf649ea773ceb564731d36b64ad01f2",
+    "size": 3010,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/llms.txt?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/llms.txt",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/b0c46a94caf649ea773ceb564731d36b64ad01f2",
+    "download_url": "https://raw.githubusercontent.com/tradecatlabs/vibe-coding-cn/develop/llms.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/llms.txt?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/blobs/b0c46a94caf649ea773ceb564731d36b64ad01f2",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/llms.txt"
+    }
+  },
+  {
+    "name": "metadata",
+    "path": "metadata",
+    "sha": "1c6a970dcb65efa8baab9104912735cec883c741",
+    "size": 0,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/metadata?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/metadata",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/1c6a970dcb65efa8baab9104912735cec883c741",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/metadata?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/1c6a970dcb65efa8baab9104912735cec883c741",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/metadata"
+    }
+  },
+  {
+    "name": "prompts",
+    "path": "prompts",
+    "sha": "bf2a2d3a7b3dabdb85f8da7b67af6dbe74dc5619",
+    "size": 0,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/prompts?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/prompts",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/bf2a2d3a7b3dabdb85f8da7b67af6dbe74dc5619",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/prompts?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/bf2a2d3a7b3dabdb85f8da7b67af6dbe74dc5619",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/prompts"
+    }
+  },
+  {
+    "name": "scripts",
+    "path": "scripts",
+    "sha": "7e23acc321f21b581e2bfb0b0514a2e563243439",
+    "size": 0,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/scripts?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/scripts",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/7e23acc321f21b581e2bfb0b0514a2e563243439",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/scripts?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/7e23acc321f21b581e2bfb0b0514a2e563243439",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/scripts"
+    }
+  },
+  {
+    "name": "skills",
+    "path": "skills",
+    "sha": "c763c55141b8108c3188ff23dbcf2d4e61bc42b3",
+    "size": 0,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/skills?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/skills",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/c763c55141b8108c3188ff23dbcf2d4e61bc42b3",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/skills?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/c763c55141b8108c3188ff23dbcf2d4e61bc42b3",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/skills"
+    }
+  },
+  {
+    "name": "tools",
+    "path": "tools",
+    "sha": "798e3c1c0abe67bc2714324d1d9c06ac060e4996",
+    "size": 0,
+    "url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/tools?ref=develop",
+    "html_url": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/tools",
+    "git_url": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/798e3c1c0abe67bc2714324d1d9c06ac060e4996",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/contents/tools?ref=develop",
+      "git": "https://api.github.com/repos/tradecatlabs/vibe-coding-cn/git/trees/798e3c1c0abe67bc2714324d1d9c06ac060e4996",
+      "html": "https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/tools"
+    }
+  }
+]

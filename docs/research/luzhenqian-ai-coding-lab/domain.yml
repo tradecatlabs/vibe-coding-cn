@@ -1,0 +1,32 @@
+version: 1
+repo:
+  name: luzhenqian/ai-coding-lab
+  source_name: luzhenqian/ai-coding-lab
+  url: https://github.com/luzhenqian/ai-coding-lab
+research:
+  domain_id: luzhenqian-ai-coding-lab
+  domain_name: luzhenqian/ai-coding-lab 研究域
+  primary_direction: project-practice
+  role: AI Coding 项目实验室
+  priority: 2
+  why_study: 适合研究从小项目到 RAG、Agent 的实践路径。
+github_observed:
+  observed_at: '2026-07-03'
+  source: gh repo view
+  stars: 144
+  forks: 20
+  archived: false
+  language: TypeScript
+  license: null
+  default_branch: main
+  pushed_at: '2026-05-18T13:56:01Z'
+  updated_at: '2026-07-02T12:41:02Z'
+  latest_release: null
+  homepage: ''
+  topics: []
+source_evidence:
+  file: ChatGPT-中文Vibe Coding仓库 (2).md
+  line: 42
+maintenance:
+  fact_policy: GitHub 动态字段只代表 observed_at 当日快照，更新结论前必须重新核验。
+  split_policy: 本目录已经是一等研究域；更深分析放入本目录新增文档。

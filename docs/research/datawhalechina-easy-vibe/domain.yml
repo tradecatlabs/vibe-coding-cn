@@ -1,0 +1,52 @@
+version: 1
+repo:
+  name: datawhalechina/easy-vibe
+  source_name: datawhalechina/easy-vibe
+  url: https://github.com/datawhalechina/easy-vibe
+research:
+  domain_id: datawhalechina-easy-vibe
+  domain_name: datawhalechina/easy-vibe 研究域
+  primary_direction: cn-onboarding
+  role: 中文分阶段交互式课程
+  priority: 2
+  why_study: 适合研究学习地图、交互式教程和现代前端课程包装。
+github_observed:
+  observed_at: '2026-07-03'
+  source: gh repo view
+  stars: 17686
+  forks: 1673
+  archived: false
+  language: JavaScript
+  license: null
+  default_branch: main
+  pushed_at: '2026-06-17T01:53:13Z'
+  updated_at: '2026-07-02T21:29:04Z'
+  latest_release: null
+  homepage: https://datawhalechina.github.io/easy-vibe/
+  topics:
+  - ai
+  - course
+  - vibe-coding
+  - coding
+  - genai
+  - low-code
+  - no-code
+  - programming
+  - tutorial
+  - vibecoding
+  - vscode
+  - agent
+  - gemini
+  - gpt
+  - llm
+  - nextjs
+  - openai
+  - workflow
+  - mcp
+  - deepseek
+source_evidence:
+  file: ChatGPT-中文Vibe Coding仓库 (2).md
+  line: 26
+maintenance:
+  fact_policy: GitHub 动态字段只代表 observed_at 当日快照，更新结论前必须重新核验。
+  split_policy: 本目录已经是一等研究域；更深分析放入本目录新增文档。

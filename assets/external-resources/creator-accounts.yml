@@ -1,0 +1,246 @@
+# Generated from assets_csv.xlsx. Edit intentionally and keep schema.yml in sync.
+version: 1
+category:
+  id: creator-accounts
+  name: 博主账号
+  description: 用于收录个人/账号/频道（X/YouTube/B站/小红书/视频号等）
+  default_resource_type: creator_account
+defaults:
+  imported_from: assets_csv.xlsx
+  imported_at: '2026-07-03'
+  verification_status: imported-unverified
+  license: unknown
+resources:
+- id: creator-accounts-0xbard-thomas-036e8441
+  name: '@0XBard_thomas'
+  description: null
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://x.com/0XBard_thomas
+    domain: x.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 2
+- id: creator-accounts-datachaz-1bd163cc
+  name: '@DataChaz'
+  description: null
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://x.com/DataChaz
+    domain: x.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 3
+- id: creator-accounts-github-daily-149e4b9c
+  name: '@GitHub_Daily'
+  description: null
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://x.com/GitHub_Daily
+    domain: x.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 4
+- id: creator-accounts-pluvio9yte-77e75a86
+  name: '@Pluvio9yte'
+  description: null
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://x.com/Pluvio9yte
+    domain: x.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 5
+- id: creator-accounts-geekbb-e05b13a3
+  name: '@geekbb'
+  description: null
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://x.com/geekbb
+    domain: x.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 6
+- id: creator-accounts-rohanpaul-ai-e029af07
+  name: '@rohanpaul_ai'
+  description: null
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://x.com/rohanpaul_ai
+    domain: x.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 7
+- id: creator-accounts-shao-meng-0459bdbb
+  name: '@shao__meng'
+  description: null
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://x.com/shao__meng
+    domain: x.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 8
+- id: creator-accounts-xdinodeer-42da49c8
+  name: '@xDinoDeer'
+  description: null
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://x.com/xDinoDeer
+    domain: x.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 9
+- id: creator-accounts-www-xiaohongshu-com-04f21547
+  name: 编程人生
+  description: 架构师，图解编程知识
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://www.xiaohongshu.com/user/profile/661913b50000000007006a56
+    domain: www.xiaohongshu.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 10
+- id: creator-accounts-1cab5d79
+  name: 美国的牛粪博士
+  description: 来自微信视频号
+  resource_type: creator_account
+  link:
+    kind: missing
+  status: needs-review
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - missing-link
+  source_row: 11
+- id: creator-accounts-coding-e3aacd88
+  name: 小林coding
+  description: null
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://space.bilibili.com/282739748
+    domain: space.bilibili.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 12
+- id: creator-accounts-b23-tv-74a3f2df
+  name: 雍俊海
+  description: 入门级软件安装删除
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://b23.tv/zxptu9g
+    domain: b23.tv
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 13
+- id: creator-accounts-3blue1brown-78ee55af
+  name: 3Blue1Brown
+  description: 数学可视化
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://www.youtube.com/@3blue1brown
+    domain: www.youtube.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 14
+- id: creator-accounts-andrej-karpathy-70ff1399
+  name: Andrej Karpathy
+  description: AI/深度学习
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://www.youtube.com/andrejkarpathy
+    domain: www.youtube.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 15
+- id: creator-accounts-best-partners-765b457e
+  name: Best Partners
+  description: null
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://www.youtube.com/@bestpartners
+    domain: www.youtube.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 16
+- id: creator-accounts-www-youtube-com-6b4f5805
+  name: 即刻风
+  description: null
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://www.youtube.com/@jidifeng
+    domain: www.youtube.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 17
+- id: creator-accounts-www-youtube-com-f5050a03
+  name: 王路飞
+  description: null
+  resource_type: creator_account
+  link:
+    kind: external_url
+    url: https://www.youtube.com/@%E7%8E%8B%E8%B7%AF%E9%A3%9E
+    domain: www.youtube.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 18
+- id: creator-accounts-a057117e
+  name: 科学小神牛
+  description: 科普
+  resource_type: creator_account
+  link:
+    kind: search_instruction
+    locator: 抖音自己搜
+  status: needs-review
+  verification_status: imported-unverified
+  tags: []
+  risk_flags:
+  - non-url-locator
+  source_row: 19

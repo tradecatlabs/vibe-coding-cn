@@ -1,0 +1,35 @@
+{
+  "createdAt": "2024-07-06T07:28:10Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
+  "forkCount": 6822,
+  "homepageUrl": "https://cline.bot",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": {
+    "name": "v4.0.6",
+    "publishedAt": "2026-07-02T18:12:42Z",
+    "tagName": "v4.0.6",
+    "url": "https://github.com/cline/cline/releases/tag/v4.0.6"
+  },
+  "licenseInfo": {
+    "key": "apache-2.0",
+    "name": "Apache License 2.0",
+    "nickname": ""
+  },
+  "nameWithOwner": "cline/cline",
+  "primaryLanguage": {
+    "name": "TypeScript"
+  },
+  "pushedAt": "2026-07-02T22:41:08Z",
+  "repositoryTopics": null,
+  "stargazerCount": 64219,
+  "updatedAt": "2026-07-02T22:40:29Z",
+  "url": "https://github.com/cline/cline",
+  "watchers": {
+    "totalCount": 276
+  }
+}

@@ -1,0 +1,208 @@
+# Generated from assets_csv.xlsx. Edit intentionally and keep schema.yml in sync.
+version: 1
+category:
+  id: communities-forums
+  name: 社区与论坛
+  description: 用于收录 Telegram/Discord/Reddit/X 社群等
+  default_resource_type: community_or_forum
+defaults:
+  imported_from: assets_csv.xlsx
+  imported_at: '2026-07-03'
+  verification_status: imported-unverified
+  license: unknown
+resources:
+- id: communities-forums-vibe-coding-dabb300b
+  name: Vibe Coding 交流群
+  description: null
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://t.me/glue_coding
+    domain: t.me
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 2
+- id: communities-forums-vibe-coding-07437b63
+  name: Vibe Coding 频道
+  description: null
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://t.me/tradecat_ai_channel
+    domain: t.me
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 3
+- id: communities-forums-aider-discord-376f5185
+  name: Aider Discord
+  description: null
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://discord.gg/Tv2uQnR88V
+    domain: discord.gg
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 4
+- id: communities-forums-anthropic-discord-432f602b
+  name: Anthropic Discord
+  description: null
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://discord.gg/anthropic
+    domain: discord.gg
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 5
+- id: communities-forums-cline-discord-037afd01
+  name: Cline Discord
+  description: null
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://discord.gg/cline
+    domain: discord.gg
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 6
+- id: communities-forums-cursor-discord-0037d399
+  name: Cursor Discord
+  description: null
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://discord.gg/cursor
+    domain: discord.gg
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 7
+- id: communities-forums-windsurf-discord-03064a7b
+  name: Windsurf Discord
+  description: null
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://discord.gg/codeium
+    domain: discord.gg
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 8
+- id: communities-forums-r-bard-0a8ddf34
+  name: r/Bard
+  description: Gemini 社区
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://www.reddit.com/r/Bard/
+    domain: www.reddit.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 9
+- id: communities-forums-r-chatgpt-b9e19d32
+  name: r/ChatGPT
+  description: ChatGPT 社区
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://www.reddit.com/r/ChatGPT/
+    domain: www.reddit.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 10
+- id: communities-forums-r-chatgptpromptgenius-ab3c10cc
+  name: r/ChatGPTPromptGenius
+  description: 提示词分享
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://www.reddit.com/r/ChatGPTPromptGenius/
+    domain: www.reddit.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 11
+- id: communities-forums-r-claudeai-ee24f337
+  name: r/ClaudeAI
+  description: Claude 社区
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://www.reddit.com/r/ClaudeAI/
+    domain: www.reddit.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 12
+- id: communities-forums-r-localllama-7a9aebb6
+  name: r/LocalLLaMA
+  description: 本地大模型
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://www.reddit.com/r/LocalLLaMA/
+    domain: www.reddit.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 13
+- id: communities-forums-r-promptengineering-371979a8
+  name: r/PromptEngineering
+  description: 提示词工程
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://www.reddit.com/r/PromptEngineering/
+    domain: www.reddit.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 14
+- id: communities-forums-vibe-coding-68affa2a
+  name: Vibe Coding 社群
+  description: null
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://x.com/i/communities/1993849457210011871
+    domain: x.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 15
+- id: communities-forums-x-com-5b4c7a91
+  name: 社群干货聚合页
+  description: null
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://x.com/vibeverything/status/1999796188053438687
+    domain: x.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 16

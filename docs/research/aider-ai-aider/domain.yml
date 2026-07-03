@@ -1,0 +1,45 @@
+version: 1
+repo:
+  name: Aider-AI/aider
+  source_name: aider-ai/aider
+  url: https://github.com/Aider-AI/aider
+research:
+  domain_id: aider-ai-aider
+  domain_name: Aider-AI/aider 研究域
+  primary_direction: coding-agent-tooling
+  role: 终端 AI 结对编程工具
+  priority: 1
+  why_study: 适合研究 Git 友好、模型无关、终端工作流和真实 repo 修改。
+github_observed:
+  observed_at: '2026-07-03'
+  source: gh repo view
+  stars: 46962
+  forks: 4680
+  archived: false
+  language: Python
+  license: apache-2.0
+  default_branch: main
+  pushed_at: '2026-05-22T14:02:20Z'
+  updated_at: '2026-07-02T21:52:05Z'
+  latest_release: v0.86.0
+  homepage: https://aider.chat/
+  topics:
+  - chatgpt
+  - cli
+  - command-line
+  - gpt-4
+  - openai
+  - gpt-3
+  - gpt-35-turbo
+  - claude-3
+  - gpt-4o
+  - anthropic
+  - gemini
+  - llama
+  - sonnet
+source_evidence:
+  file: ChatGPT-中文Vibe Coding仓库 (2).md
+  line: 57
+maintenance:
+  fact_policy: GitHub 动态字段只代表 observed_at 当日快照，更新结论前必须重新核验。
+  split_policy: 本目录已经是一等研究域；更深分析放入本目录新增文档。

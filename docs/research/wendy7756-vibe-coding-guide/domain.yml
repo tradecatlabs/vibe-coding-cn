@@ -1,0 +1,37 @@
+version: 1
+repo:
+  name: wendy7756/vibe-coding-guide
+  source_name: wendy7756/vibe-coding-guide
+  url: https://github.com/wendy7756/vibe-coding-guide
+research:
+  domain_id: wendy7756-vibe-coding-guide
+  domain_name: wendy7756/vibe-coding-guide 研究域
+  primary_direction: cn-onboarding
+  role: 非程序员自然语言编程指南
+  priority: 3
+  why_study: 适合研究非程序员视角下的表达、门槛和误区。
+github_observed:
+  observed_at: '2026-07-03'
+  source: gh repo view
+  stars: 69
+  forks: 8
+  archived: false
+  language: null
+  license: apache-2.0
+  default_branch: main
+  pushed_at: '2025-08-11T07:57:18Z'
+  updated_at: '2026-06-30T06:05:14Z'
+  latest_release: null
+  homepage: ''
+  topics:
+  - vibe-coding
+  - ai
+  - coding
+  - developer
+  - developer-tools
+source_evidence:
+  file: ChatGPT-中文Vibe Coding仓库 (2).md
+  line: 28
+maintenance:
+  fact_policy: GitHub 动态字段只代表 observed_at 当日快照，更新结论前必须重新核验。
+  split_policy: 本目录已经是一等研究域；更深分析放入本目录新增文档。

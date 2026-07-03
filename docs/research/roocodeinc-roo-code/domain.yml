@@ -1,0 +1,32 @@
+version: 1
+repo:
+  name: RooCodeInc/Roo-Code
+  source_name: RooCodeInc/Roo-Code
+  url: https://github.com/RooCodeInc/Roo-Code
+research:
+  domain_id: roocodeinc-roo-code
+  domain_name: RooCodeInc/Roo-Code 研究域
+  primary_direction: coding-agent-tooling
+  role: 已归档多 Agent 编辑器工具
+  priority: 3
+  why_study: 当前已归档，只适合作为设计参考和迁移/分叉观察样本。
+github_observed:
+  observed_at: '2026-07-03'
+  source: gh repo view
+  stars: 24300
+  forks: 3349
+  archived: true
+  language: TypeScript
+  license: apache-2.0
+  default_branch: main
+  pushed_at: '2026-05-15T18:08:47Z'
+  updated_at: '2026-07-02T17:26:16Z'
+  latest_release: v3.54.0
+  homepage: https://roocode.com
+  topics: []
+source_evidence:
+  file: ChatGPT-中文Vibe Coding仓库 (2).md
+  line: 59
+maintenance:
+  fact_policy: GitHub 动态字段只代表 observed_at 当日快照，更新结论前必须重新核验。
+  split_policy: 本目录已经是一等研究域；更深分析放入本目录新增文档。

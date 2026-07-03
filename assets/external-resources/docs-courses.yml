@@ -1,0 +1,286 @@
+# Generated from assets_csv.xlsx. Edit intentionally and keep schema.yml in sync.
+version: 1
+category:
+  id: docs-courses
+  name: 文档与课程
+  description: 用于收录官方文档、教程、课程、学习资料
+  default_resource_type: documentation_or_course
+defaults:
+  imported_from: assets_csv.xlsx
+  imported_at: '2026-07-03'
+  verification_status: imported-unverified
+  license: unknown
+resources:
+- id: docs-courses-x-com-314aaccd
+  name: 思考的框架
+  description: 123olp 官方
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://x.com/123olp/status/2035796130676772876?s=20
+    domain: x.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 2
+- id: docs-courses-github-com-3e756697
+  name: 系统提示词中文版
+  description: 系统提示词中文版
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://github.com/CreatorEdition/system-prompts-and-models-of-ai-tools-chinese/
+    domain: github.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 3
+- id: docs-courses-claude-documentation-fcbf10ac
+  name: Claude Documentation
+  description: Anthropic 官方
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://docs.anthropic.com/
+    domain: docs.anthropic.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 4
+- id: docs-courses-gemini-documentation-d4572af5
+  name: Gemini Documentation
+  description: Google 官方
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://ai.google.dev/docs
+    domain: ai.google.dev
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 5
+- id: docs-courses-openai-documentation-51095fa0
+  name: OpenAI Documentation
+  description: OpenAI 官方
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://platform.openai.com/docs/
+    domain: platform.openai.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 6
+- id: docs-courses-ai-ee860605
+  name: AI 编程工具对比
+  description: Cursor/Windsurf/Augment 等对比
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://x.com/xiaoying_eth/status/2001865097661309260
+    domain: x.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 7
+- id: docs-courses-claude-code-in-action-8afcae53
+  name: Claude Code in Action
+  description: Anthropic 官方 Claude Code 实战课程
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://anthropic.skilljar.com/claude-code-in-action
+    domain: anthropic.skilljar.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 8
+- id: docs-courses-claude-code-in-action-f34fcda3
+  name: Claude Code in Action 中文版
+  description: Anthropic 官方实战课程中文版
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://qcnernilww58.feishu.cn/wiki/WIKWwO6WXiMjAgkPCTEcVtWHnsh
+    domain: qcnernilww58.feishu.cn
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 9
+- id: docs-courses-conductor-for-gemini-cli-839a8d1b
+  name: Conductor for Gemini CLI
+  description: 上下文驱动开发，Gemini CLI 扩展
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://developers.googleblog.com/conductor-introducing-context-driven-development-for-gemini-cli/
+    domain: developers.googleblog.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 10
+- id: docs-courses-the-modern-software-17e532b3
+  name: The Modern Software
+  description: 现代软件开发实践
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://themodernsoftware.dev/
+    domain: themodernsoftware.dev
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 11
+- id: docs-courses-java-2d3af371
+  name: 二哥的Java进阶之路
+  description: 开发工具配置教程
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://javabetter.cn/
+    domain: javabetter.cn
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 12
+- id: docs-courses-x-com-9df1fcbe
+  name: 超级个体资源清单
+  description: null
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://x.com/BiteyeCN/status/2000856243645157387
+    domain: x.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 13
+- id: docs-courses-docs-google-com-9ba1e1ab
+  name: 元提示词库
+  description: null
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://docs.google.com/spreadsheets/d/1ngoQOhJqdguwNAilCl1joNwTje7FWWN9WiI2bo5VhpU/edit?gid=1770874220#gid=1770874220
+    domain: docs.google.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 14
+- id: docs-courses-docs-google-com-370338b0
+  name: 在线提示词表格
+  description: 推荐
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://docs.google.com/spreadsheets/d/1ngoQOhJqdguwNAilCl1joNwTje7FWWN9WiI2bo5VhpU/edit?gid=2093180351#gid=2093180351&range=A1
+    domain: docs.google.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 15
+- id: docs-courses-anthropic-prompt-engineering-0e179ce8
+  name: Anthropic Prompt Engineering
+  description: 官方
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://docs.anthropic.com/claude/docs/prompt-engineering
+    domain: docs.anthropic.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 16
+- id: docs-courses-google-45423a3c
+  name: Google 提示词最佳实践宝典
+  description: Google 官方提示词最佳实践导航
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://youware.app/project/q9yxq74um5?enter_from=share&screen_status=2
+    domain: youware.app
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 17
+- id: docs-courses-learn-prompting-353fb297
+  name: Learn Prompting
+  description: 中文版
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://learnprompting.org/zh-Hans/
+    domain: learnprompting.org
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 18
+- id: docs-courses-openai-prompt-engineering-617ff398
+  name: OpenAI Prompt Engineering
+  description: 官方
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://platform.openai.com/docs/guides/prompt-engineering
+    domain: platform.openai.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 19
+- id: docs-courses-prompt-engineering-guide-ef579d97
+  name: Prompt Engineering Guide
+  description: 中文版
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://www.promptingguide.ai/zh
+    domain: www.promptingguide.ai
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 20
+- id: docs-courses-state-of-the-art-prompting-ca680bd5
+  name: State-Of-The-Art Prompting
+  description: YC 顶级技巧
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://docs.google.com/document/d/11tBoylc5Pvy8wDp9_i2UaAfDi8x02iMNg9mhCNv65cU/
+    domain: docs.google.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 21
+- id: docs-courses-vibe-coding-101-3b140e25
+  name: Vibe Coding 101
+  description: 入门指南
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://drive.google.com/file/d/1OMiqUviji4aI56E14PLaGVJsbjhOP1L1/view
+    domain: drive.google.com
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 22

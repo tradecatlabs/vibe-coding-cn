@@ -1,0 +1,67 @@
+{
+  "createdAt": "2023-08-28T16:37:06Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "A hand-picked collection of tools and resources for Vibe Coding",
+  "forkCount": 166,
+  "homepageUrl": "",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": null,
+  "licenseInfo": null,
+  "nameWithOwner": "ai-for-developers/awesome-vibe-coding",
+  "primaryLanguage": null,
+  "pushedAt": "2026-04-18T13:36:43Z",
+  "repositoryTopics": [
+    {
+      "name": "ai"
+    },
+    {
+      "name": "ai-app-builder"
+    },
+    {
+      "name": "ai-ide"
+    },
+    {
+      "name": "vibe"
+    },
+    {
+      "name": "vibe-coding"
+    },
+    {
+      "name": "vibecoding"
+    },
+    {
+      "name": "awesome-vibe-coding"
+    },
+    {
+      "name": "ai-agents"
+    },
+    {
+      "name": "ai-tools"
+    },
+    {
+      "name": "awesome-ai"
+    },
+    {
+      "name": "awesome-ai-tools"
+    },
+    {
+      "name": "awesome-list"
+    },
+    {
+      "name": "vibecode"
+    },
+    {
+      "name": "vibecoding-tool"
+    }
+  ],
+  "stargazerCount": 767,
+  "updatedAt": "2026-07-02T14:24:51Z",
+  "url": "https://github.com/ai-for-developers/awesome-vibe-coding",
+  "watchers": {
+    "totalCount": 17
+  }
+}

@@ -1,0 +1,626 @@
+[
+  {
+    "name": ".changeset",
+    "path": ".changeset",
+    "sha": "4a06fd527101bd7f461fa70f1a1c76a773e6b935",
+    "size": 0,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.changeset?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/tree/main/.changeset",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/4a06fd527101bd7f461fa70f1a1c76a773e6b935",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.changeset?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/4a06fd527101bd7f461fa70f1a1c76a773e6b935",
+      "html": "https://github.com/RooCodeInc/Roo-Code/tree/main/.changeset"
+    }
+  },
+  {
+    "name": ".dockerignore",
+    "path": ".dockerignore",
+    "sha": "4579d61580e979d83952fcaf6f06983b7937ab4e",
+    "size": 1147,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.dockerignore?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/.dockerignore",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/4579d61580e979d83952fcaf6f06983b7937ab4e",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/.dockerignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.dockerignore?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/4579d61580e979d83952fcaf6f06983b7937ab4e",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/.dockerignore"
+    }
+  },
+  {
+    "name": ".env.sample",
+    "path": ".env.sample",
+    "sha": "aebe5cca44a6450d7c8884499780e8ac2651bbc7",
+    "size": 218,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.env.sample?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/.env.sample",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/aebe5cca44a6450d7c8884499780e8ac2651bbc7",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/.env.sample",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.env.sample?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/aebe5cca44a6450d7c8884499780e8ac2651bbc7",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/.env.sample"
+    }
+  },
+  {
+    "name": ".git-blame-ignore-revs",
+    "path": ".git-blame-ignore-revs",
+    "sha": "2a350d20e8b42f18cd49ab906074abccedd3b1b7",
+    "size": 160,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.git-blame-ignore-revs?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/.git-blame-ignore-revs",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/2a350d20e8b42f18cd49ab906074abccedd3b1b7",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/.git-blame-ignore-revs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.git-blame-ignore-revs?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/2a350d20e8b42f18cd49ab906074abccedd3b1b7",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/.git-blame-ignore-revs"
+    }
+  },
+  {
+    "name": ".gitattributes",
+    "path": ".gitattributes",
+    "sha": "e9e36432cdc4baee25b13e200c1fd45fb6755baa",
+    "size": 1158,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.gitattributes?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/.gitattributes",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/e9e36432cdc4baee25b13e200c1fd45fb6755baa",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/.gitattributes",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.gitattributes?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/e9e36432cdc4baee25b13e200c1fd45fb6755baa",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/.gitattributes"
+    }
+  },
+  {
+    "name": ".gitconfig",
+    "path": ".gitconfig",
+    "sha": "695df58bc795eb6abebc4dca0ae93bde20075b5a",
+    "size": 48,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.gitconfig?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/.gitconfig",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/695df58bc795eb6abebc4dca0ae93bde20075b5a",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/.gitconfig",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.gitconfig?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/695df58bc795eb6abebc4dca0ae93bde20075b5a",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/.gitconfig"
+    }
+  },
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "72eae0ac3d43426e1b3b7a409e57f95e7a2017d5",
+    "size": 0,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.github?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/tree/main/.github",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/72eae0ac3d43426e1b3b7a409e57f95e7a2017d5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.github?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/72eae0ac3d43426e1b3b7a409e57f95e7a2017d5",
+      "html": "https://github.com/RooCodeInc/Roo-Code/tree/main/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "1dbcdc6a362e601eb47681257c532806c882b169",
+    "size": 496,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/1dbcdc6a362e601eb47681257c532806c882b169",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/1dbcdc6a362e601eb47681257c532806c882b169",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": ".husky",
+    "path": ".husky",
+    "sha": "e8e710765e39b448efedcd91168027eac4969b54",
+    "size": 0,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.husky?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/tree/main/.husky",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/e8e710765e39b448efedcd91168027eac4969b54",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.husky?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/e8e710765e39b448efedcd91168027eac4969b54",
+      "html": "https://github.com/RooCodeInc/Roo-Code/tree/main/.husky"
+    }
+  },
+  {
+    "name": ".nvmrc",
+    "path": ".nvmrc",
+    "sha": "1d898f1fe5627b172ab5308c6aded5e6d778f9c3",
+    "size": 9,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.nvmrc?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/.nvmrc",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/1d898f1fe5627b172ab5308c6aded5e6d778f9c3",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/.nvmrc",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.nvmrc?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/1d898f1fe5627b172ab5308c6aded5e6d778f9c3",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/.nvmrc"
+    }
+  },
+  {
+    "name": ".prettierrc.json",
+    "path": ".prettierrc.json",
+    "sha": "520c1bd5f7cac330dc9c9a663eac9edcb26e1009",
+    "size": 188,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.prettierrc.json?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/.prettierrc.json",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/520c1bd5f7cac330dc9c9a663eac9edcb26e1009",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/.prettierrc.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.prettierrc.json?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/520c1bd5f7cac330dc9c9a663eac9edcb26e1009",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/.prettierrc.json"
+    }
+  },
+  {
+    "name": ".roo",
+    "path": ".roo",
+    "sha": "3576b9e6aebebb5bbd286f3df3bd64bf76354ca7",
+    "size": 0,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.roo?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/tree/main/.roo",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/3576b9e6aebebb5bbd286f3df3bd64bf76354ca7",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.roo?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/3576b9e6aebebb5bbd286f3df3bd64bf76354ca7",
+      "html": "https://github.com/RooCodeInc/Roo-Code/tree/main/.roo"
+    }
+  },
+  {
+    "name": ".rooignore",
+    "path": ".rooignore",
+    "sha": "4c49bd78f1d08f2bc09fa0bd8191ed38b7dce5e3",
+    "size": 5,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.rooignore?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/.rooignore",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/4c49bd78f1d08f2bc09fa0bd8191ed38b7dce5e3",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/.rooignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.rooignore?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/4c49bd78f1d08f2bc09fa0bd8191ed38b7dce5e3",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/.rooignore"
+    }
+  },
+  {
+    "name": ".roomodes",
+    "path": ".roomodes",
+    "sha": "ba17940035a7ca742bcd9902af639fa9d0c4186c",
+    "size": 8806,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.roomodes?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/.roomodes",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/ba17940035a7ca742bcd9902af639fa9d0c4186c",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/.roomodes",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.roomodes?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/ba17940035a7ca742bcd9902af639fa9d0c4186c",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/.roomodes"
+    }
+  },
+  {
+    "name": ".tool-versions",
+    "path": ".tool-versions",
+    "sha": "fc43bbb1c7f318321b87759ae5e1bc052db99692",
+    "size": 27,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.tool-versions?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/.tool-versions",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/fc43bbb1c7f318321b87759ae5e1bc052db99692",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/.tool-versions",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.tool-versions?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/fc43bbb1c7f318321b87759ae5e1bc052db99692",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/.tool-versions"
+    }
+  },
+  {
+    "name": ".vscode",
+    "path": ".vscode",
+    "sha": "b82495e18d4888bb478ada3f257d3a4265ecf652",
+    "size": 0,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.vscode?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/tree/main/.vscode",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/b82495e18d4888bb478ada3f257d3a4265ecf652",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/.vscode?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/b82495e18d4888bb478ada3f257d3a4265ecf652",
+      "html": "https://github.com/RooCodeInc/Roo-Code/tree/main/.vscode"
+    }
+  },
+  {
+    "name": "AGENTS.md",
+    "path": "AGENTS.md",
+    "sha": "ae09fd9b30d39b7aa610931cad32257820b12601",
+    "size": 445,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/AGENTS.md?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/AGENTS.md",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/ae09fd9b30d39b7aa610931cad32257820b12601",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/AGENTS.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/AGENTS.md?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/ae09fd9b30d39b7aa610931cad32257820b12601",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/AGENTS.md"
+    }
+  },
+  {
+    "name": "CHANGELOG.md",
+    "path": "CHANGELOG.md",
+    "sha": "06432ae25d6c32bbf71c95c6f8371425f47f7d70",
+    "size": 196106,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/CHANGELOG.md?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/CHANGELOG.md",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/06432ae25d6c32bbf71c95c6f8371425f47f7d70",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/CHANGELOG.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/CHANGELOG.md?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/06432ae25d6c32bbf71c95c6f8371425f47f7d70",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/CHANGELOG.md"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "302fa51c8a6e47ad20ae0092cc302a3af9f59107",
+    "size": 11344,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/302fa51c8a6e47ad20ae0092cc302a3af9f59107",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/LICENSE?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/302fa51c8a6e47ad20ae0092cc302a3af9f59107",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/LICENSE"
+    }
+  },
+  {
+    "name": "PRIVACY.md",
+    "path": "PRIVACY.md",
+    "sha": "353b8ae560623d337324761f98be2d6623224545",
+    "size": 2811,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/PRIVACY.md?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/PRIVACY.md",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/353b8ae560623d337324761f98be2d6623224545",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/PRIVACY.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/PRIVACY.md?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/353b8ae560623d337324761f98be2d6623224545",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/PRIVACY.md"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "6e2ce6fdaa138becacd85296433132d6c13b1c37",
+    "size": 3387,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/README.md?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/6e2ce6fdaa138becacd85296433132d6c13b1c37",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/6e2ce6fdaa138becacd85296433132d6c13b1c37",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/README.md"
+    }
+  },
+  {
+    "name": "SECURITY.md",
+    "path": "SECURITY.md",
+    "sha": "8057b38bda7e79330b630d0c76570a86e3172f8e",
+    "size": 593,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/SECURITY.md?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/SECURITY.md",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/8057b38bda7e79330b630d0c76570a86e3172f8e",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/SECURITY.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/SECURITY.md?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/8057b38bda7e79330b630d0c76570a86e3172f8e",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/SECURITY.md"
+    }
+  },
+  {
+    "name": "apps",
+    "path": "apps",
+    "sha": "0e44af90bccc46b0bf6d45bac20d1bda2ea89423",
+    "size": 0,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/apps?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/tree/main/apps",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/0e44af90bccc46b0bf6d45bac20d1bda2ea89423",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/apps?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/0e44af90bccc46b0bf6d45bac20d1bda2ea89423",
+      "html": "https://github.com/RooCodeInc/Roo-Code/tree/main/apps"
+    }
+  },
+  {
+    "name": "ellipsis.yaml",
+    "path": "ellipsis.yaml",
+    "sha": "1044b94fdc181e32f89f34bc8c6195bff43b1069",
+    "size": 1070,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/ellipsis.yaml?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/ellipsis.yaml",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/1044b94fdc181e32f89f34bc8c6195bff43b1069",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/ellipsis.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/ellipsis.yaml?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/1044b94fdc181e32f89f34bc8c6195bff43b1069",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/ellipsis.yaml"
+    }
+  },
+  {
+    "name": "knip.json",
+    "path": "knip.json",
+    "sha": "4c63f171cc4c59300c44a5da89e7cffad5331a53",
+    "size": 708,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/knip.json?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/knip.json",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/4c63f171cc4c59300c44a5da89e7cffad5331a53",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/knip.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/knip.json?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/4c63f171cc4c59300c44a5da89e7cffad5331a53",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/knip.json"
+    }
+  },
+  {
+    "name": "locales",
+    "path": "locales",
+    "sha": "b2552b12a50a97577ef3223898d6d3fa7f560984",
+    "size": 0,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/locales?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/tree/main/locales",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/b2552b12a50a97577ef3223898d6d3fa7f560984",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/locales?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/b2552b12a50a97577ef3223898d6d3fa7f560984",
+      "html": "https://github.com/RooCodeInc/Roo-Code/tree/main/locales"
+    }
+  },
+  {
+    "name": "package.json",
+    "path": "package.json",
+    "sha": "b75dd9b5a1b6e095fadfce2388df64c5338c73b8",
+    "size": 2542,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/package.json?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/package.json",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/b75dd9b5a1b6e095fadfce2388df64c5338c73b8",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/package.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/package.json?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/b75dd9b5a1b6e095fadfce2388df64c5338c73b8",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/package.json"
+    }
+  },
+  {
+    "name": "packages",
+    "path": "packages",
+    "sha": "6801d1eab2f9cdfa6af0e14b4b6e62696fc52041",
+    "size": 0,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/packages?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/tree/main/packages",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/6801d1eab2f9cdfa6af0e14b4b6e62696fc52041",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/packages?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/6801d1eab2f9cdfa6af0e14b4b6e62696fc52041",
+      "html": "https://github.com/RooCodeInc/Roo-Code/tree/main/packages"
+    }
+  },
+  {
+    "name": "pnpm-lock.yaml",
+    "path": "pnpm-lock.yaml",
+    "sha": "aeb386507b087ecc60730b18d67dd01fa66d8ffd",
+    "size": 991451,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/pnpm-lock.yaml?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/pnpm-lock.yaml",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/aeb386507b087ecc60730b18d67dd01fa66d8ffd",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/pnpm-lock.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/pnpm-lock.yaml?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/aeb386507b087ecc60730b18d67dd01fa66d8ffd",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/pnpm-lock.yaml"
+    }
+  },
+  {
+    "name": "pnpm-workspace.yaml",
+    "path": "pnpm-workspace.yaml",
+    "sha": "b16bbea150801f5f1e17cd3a2d1a249591a9963f",
+    "size": 131,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/pnpm-workspace.yaml?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/pnpm-workspace.yaml",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/b16bbea150801f5f1e17cd3a2d1a249591a9963f",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/pnpm-workspace.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/pnpm-workspace.yaml?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/b16bbea150801f5f1e17cd3a2d1a249591a9963f",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/pnpm-workspace.yaml"
+    }
+  },
+  {
+    "name": "progress.txt",
+    "path": "progress.txt",
+    "sha": "b3983826b38d3c921b4e00ce9a29ee44a7844205",
+    "size": 2618,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/progress.txt?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/progress.txt",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/b3983826b38d3c921b4e00ce9a29ee44a7844205",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/progress.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/progress.txt?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/b3983826b38d3c921b4e00ce9a29ee44a7844205",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/progress.txt"
+    }
+  },
+  {
+    "name": "releases",
+    "path": "releases",
+    "sha": "bf1a21e060becf08e7dc29d8f24276c65558d56e",
+    "size": 0,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/releases?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/tree/main/releases",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/bf1a21e060becf08e7dc29d8f24276c65558d56e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/releases?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/bf1a21e060becf08e7dc29d8f24276c65558d56e",
+      "html": "https://github.com/RooCodeInc/Roo-Code/tree/main/releases"
+    }
+  },
+  {
+    "name": "renovate.json",
+    "path": "renovate.json",
+    "sha": "00c15329d208dc0f89617ff2bc282b16ed1b2b9b",
+    "size": 167,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/renovate.json?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/renovate.json",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/00c15329d208dc0f89617ff2bc282b16ed1b2b9b",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/renovate.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/renovate.json?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/00c15329d208dc0f89617ff2bc282b16ed1b2b9b",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/renovate.json"
+    }
+  },
+  {
+    "name": "schemas",
+    "path": "schemas",
+    "sha": "fb6b430659f0b93173598346f3102f9fb2c0aa8e",
+    "size": 0,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/schemas?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/tree/main/schemas",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/fb6b430659f0b93173598346f3102f9fb2c0aa8e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/schemas?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/fb6b430659f0b93173598346f3102f9fb2c0aa8e",
+      "html": "https://github.com/RooCodeInc/Roo-Code/tree/main/schemas"
+    }
+  },
+  {
+    "name": "scripts",
+    "path": "scripts",
+    "sha": "2c9c564d7c9d26c79eb31ea5d2bf6053bf52ea90",
+    "size": 0,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/scripts?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/tree/main/scripts",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/2c9c564d7c9d26c79eb31ea5d2bf6053bf52ea90",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/scripts?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/2c9c564d7c9d26c79eb31ea5d2bf6053bf52ea90",
+      "html": "https://github.com/RooCodeInc/Roo-Code/tree/main/scripts"
+    }
+  },
+  {
+    "name": "src",
+    "path": "src",
+    "sha": "733abb46c18e745522fff1918d5c0a66394b0894",
+    "size": 0,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/src?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/tree/main/src",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/733abb46c18e745522fff1918d5c0a66394b0894",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/src?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/733abb46c18e745522fff1918d5c0a66394b0894",
+      "html": "https://github.com/RooCodeInc/Roo-Code/tree/main/src"
+    }
+  },
+  {
+    "name": "tsconfig.json",
+    "path": "tsconfig.json",
+    "sha": "44f734c197a9301bd4ff90895a633608d5524b97",
+    "size": 162,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/tsconfig.json?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/tsconfig.json",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/44f734c197a9301bd4ff90895a633608d5524b97",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/tsconfig.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/tsconfig.json?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/44f734c197a9301bd4ff90895a633608d5524b97",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/tsconfig.json"
+    }
+  },
+  {
+    "name": "turbo.json",
+    "path": "turbo.json",
+    "sha": "707945546484106d94cef41f43c54ab97b4ba91f",
+    "size": 389,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/turbo.json?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/blob/main/turbo.json",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/707945546484106d94cef41f43c54ab97b4ba91f",
+    "download_url": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/turbo.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/turbo.json?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/blobs/707945546484106d94cef41f43c54ab97b4ba91f",
+      "html": "https://github.com/RooCodeInc/Roo-Code/blob/main/turbo.json"
+    }
+  },
+  {
+    "name": "webview-ui",
+    "path": "webview-ui",
+    "sha": "c2af4697b94ed3151f2b5bf373515232d3934d13",
+    "size": 0,
+    "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/webview-ui?ref=main",
+    "html_url": "https://github.com/RooCodeInc/Roo-Code/tree/main/webview-ui",
+    "git_url": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/c2af4697b94ed3151f2b5bf373515232d3934d13",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/RooCodeInc/Roo-Code/contents/webview-ui?ref=main",
+      "git": "https://api.github.com/repos/RooCodeInc/Roo-Code/git/trees/c2af4697b94ed3151f2b5bf373515232d3934d13",
+      "html": "https://github.com/RooCodeInc/Roo-Code/tree/main/webview-ui"
+    }
+  }
+]

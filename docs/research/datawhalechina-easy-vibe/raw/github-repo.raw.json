@@ -1,0 +1,87 @@
+{
+  "createdAt": "2025-12-28T16:45:28Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "💻 vibe coding 2026 | Your First Modern Coding course beginners to master step by step.",
+  "forkCount": 1673,
+  "homepageUrl": "https://datawhalechina.github.io/easy-vibe/",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": null,
+  "licenseInfo": null,
+  "nameWithOwner": "datawhalechina/easy-vibe",
+  "primaryLanguage": {
+    "name": "JavaScript"
+  },
+  "pushedAt": "2026-06-17T01:53:13Z",
+  "repositoryTopics": [
+    {
+      "name": "ai"
+    },
+    {
+      "name": "course"
+    },
+    {
+      "name": "vibe-coding"
+    },
+    {
+      "name": "coding"
+    },
+    {
+      "name": "genai"
+    },
+    {
+      "name": "low-code"
+    },
+    {
+      "name": "no-code"
+    },
+    {
+      "name": "programming"
+    },
+    {
+      "name": "tutorial"
+    },
+    {
+      "name": "vibecoding"
+    },
+    {
+      "name": "vscode"
+    },
+    {
+      "name": "agent"
+    },
+    {
+      "name": "gemini"
+    },
+    {
+      "name": "gpt"
+    },
+    {
+      "name": "llm"
+    },
+    {
+      "name": "nextjs"
+    },
+    {
+      "name": "openai"
+    },
+    {
+      "name": "workflow"
+    },
+    {
+      "name": "mcp"
+    },
+    {
+      "name": "deepseek"
+    }
+  ],
+  "stargazerCount": 17687,
+  "updatedAt": "2026-07-02T22:16:26Z",
+  "url": "https://github.com/datawhalechina/easy-vibe",
+  "watchers": {
+    "totalCount": 57
+  }
+}

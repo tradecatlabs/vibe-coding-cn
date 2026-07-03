@@ -97,3 +97,6 @@ backups/gz/
 
 # Local-only enterprise architecture evidence kit
 assets/templates/modern-enterprise-architecture-private/
+
+# Local research repository clones
+docs/research/**/raw/repository/

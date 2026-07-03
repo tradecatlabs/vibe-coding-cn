@@ -44,7 +44,7 @@
   <a href="./prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
   <a href="./docs/references/common-sense.md"><img src="https://img.shields.io/badge/💡_常识-提示词入门-orange?style=for-the-badge" alt="常识"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/📚_Wiki-导航入口-slateblue?style=for-the-badge" alt="Wiki 导航入口"></a>
-	  <a href="./assets/README.md#外部资源在线表格唯一真相源"><img src="https://img.shields.io/badge/📡_资源-聚合-teal?style=for-the-badge" alt="资源聚合"></a>
+	  <a href="./assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/📡_资源-聚合-teal?style=for-the-badge" alt="资源聚合"></a>
 </p>
 
 [☯️ 道法术器](#dao-fa-shu-qi)
@@ -107,7 +107,7 @@
 - 新手先走 [从零开始完整入门](docs/getting-started/learning-map.md)：网络环境、CLI 配置、开发环境、Git 闭环。
 - 核心框架是 [道法术器](#dao-fa-shu-qi)：先固定人与 AI 的协作关系，再用方法、流程、门禁和工具落地。
 - 工程主线是 Prompt、Skill、Context、Quality Gate 和 Git，用测试、CI、脚本、类型、schema、清单约束 AI 输出。
-- 需要直接使用资源时，进入 [提示词](prompts/README.md#在线提示词库)、[Skills](skills/README.md#当前保留) 和 [外部资源](assets/README.md#外部资源在线表格唯一真相源)。
+- 需要直接使用资源时，进入 [提示词](prompts/README.md#在线提示词库)、[Skills](skills/README.md#当前保留) 和 [外部资源](assets/README.md#外部资源本地注册表)。
 
 ### 入口关系
 
@@ -531,16 +531,21 @@
 *   [**软件工程的朴素真理**](docs/philosophy/software-engineering-truths.md): 代码、复杂度、需求、维护、质量、架构和团队的工程常识。
 *   [**工程实践**](docs/references/quality-gates-and-pitfalls.md): 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口。
 *   [**技术栈**](docs/references/technology-stack.md#reference-technology-stack-十四如何选择技术栈): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
-*   [**Harness 工程解析**](docs/research/harness-engineering.md): Harness Engineering 的工程控制、评估器与反馈闭环解析。
+*   [**研究域治理契约**](docs/research/research-domain-contract.md): 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
+*   [**Harness 工程解析**](docs/research/harness/harness-engineering.md): Harness Engineering 的工程控制、评估器与反馈闭环解析。
+*   [**OpenAI Codex 研究域**](docs/research/openai-codex/README.md): 官方 coding agent 工具源码研究对象。
+*   [**Claude Code Best Practice 研究域**](docs/research/shanraisshan-claude-code-best-practice/README.md): Agentic Engineering 方法论对标研究对象。
+*   [**Cline 研究域**](docs/research/cline-cline/README.md): IDE/SDK/CLI 自主编码 Agent 研究对象。
+*   [**Aider 研究域**](docs/research/aider-ai-aider/README.md): 终端 AI 结对编程工具研究对象。
 *   [**Skills 技能库**](skills/README.md#当前保留): 当前保留的可复用技能入口。
 *   [**提示词入口**](prompts/README.md#在线提示词库): 在线提示词库入口。
-*   [**外部资源入口**](assets/README.md#外部资源在线表格唯一真相源): 外部资源在线表格唯一真相源。
+*   [**外部资源入口**](assets/README.md#外部资源本地注册表): 外部资源本地注册表入口。
 *   [**AI Agent 操作规则**](AGENTS.md): AI Agent 执行任务时必须遵守的项目操作手册。
 *   [**llms.txt**](llms.txt): 面向 AI 助手的短上下文入口。
 *   [**llms-full.txt**](assets/ai-citation/llms-full.txt): 面向 AI 助手的完整上下文入口。
 *   [**编程提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 适用于 Vibe Coding 流程的专用提示词（云端表格）。
 *   [**系统提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): AI 开发的系统提示词，含多版本开发规范（云端表格）。
-*   [**外部资源（在线表格）**](./assets/README.md): 外部资源的唯一真相源（按类型分表），本地 Markdown 保留为历史参考。
+*   [**外部资源本地注册表**](./assets/external-resources/README.md): 外部资源的本地真相源，按类型分类维护。
 
 ---
 
@@ -652,7 +657,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 ├── tools/                       # 辅助工具、外部仓库与工具配置
 ├── scripts/                     # 自动化脚本
 ├── metadata/                    # 机器可读索引
-├── assets/                      # 静态资产、外部资源入口与 AI 引用资产
+├── assets/                      # 静态资产、外部资源注册表与 AI 引用资产
 │
 ├── .github/                     # GitHub 配置
 │   ├── CODEOWNERS               # 路径级 owner 评审基线
@@ -694,7 +699,8 @@ skills/
 docs/
   getting-started/*, concepts/*, references/* 等知识库
 assets/
-  README.md  # 外部资源（在线表格）唯一真相源入口
+  README.md  # 静态资产与外部资源入口
+  external-resources/  # 本地外部资源注册表
 scripts/
   check-local-links.py  # Markdown 相对链接检查脚本
 ```

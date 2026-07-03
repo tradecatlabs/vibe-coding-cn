@@ -1,0 +1,386 @@
+[
+  {
+    "name": ".dockerignore",
+    "path": ".dockerignore",
+    "sha": "1f9ac4e9d883c58a2a72a68c521b40a730c113fd",
+    "size": 204,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.dockerignore?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/.dockerignore",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/1f9ac4e9d883c58a2a72a68c521b40a730c113fd",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/.dockerignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.dockerignore?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/1f9ac4e9d883c58a2a72a68c521b40a730c113fd",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/.dockerignore"
+    }
+  },
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "74698e80f6811c51f6439df6997a7b3f19af963d",
+    "size": 0,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.github?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/tree/main/.github",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/74698e80f6811c51f6439df6997a7b3f19af963d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.github?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/74698e80f6811c51f6439df6997a7b3f19af963d",
+      "html": "https://github.com/datawhalechina/easy-vibe/tree/main/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "9041d2d868000075b93dfe1e0b7a90e9484e0a43",
+    "size": 476,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/9041d2d868000075b93dfe1e0b7a90e9484e0a43",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/9041d2d868000075b93dfe1e0b7a90e9484e0a43",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": ".husky",
+    "path": ".husky",
+    "sha": "fa06f162e64d2d3ac94185f2888e8ac300a878c6",
+    "size": 0,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.husky?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/tree/main/.husky",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/fa06f162e64d2d3ac94185f2888e8ac300a878c6",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.husky?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/fa06f162e64d2d3ac94185f2888e8ac300a878c6",
+      "html": "https://github.com/datawhalechina/easy-vibe/tree/main/.husky"
+    }
+  },
+  {
+    "name": ".prettierignore",
+    "path": ".prettierignore",
+    "sha": "6f797150353660385432710e57300ef558635ee8",
+    "size": 17,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.prettierignore?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/.prettierignore",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/6f797150353660385432710e57300ef558635ee8",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/.prettierignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.prettierignore?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/6f797150353660385432710e57300ef558635ee8",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/.prettierignore"
+    }
+  },
+  {
+    "name": ".prettierrc",
+    "path": ".prettierrc",
+    "sha": "a93b0d69e61ed22162dffb8ceae78026afe24d46",
+    "size": 268,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.prettierrc?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/.prettierrc",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/a93b0d69e61ed22162dffb8ceae78026afe24d46",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/.prettierrc",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.prettierrc?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/a93b0d69e61ed22162dffb8ceae78026afe24d46",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/.prettierrc"
+    }
+  },
+  {
+    "name": ".trae",
+    "path": ".trae",
+    "sha": "e3d37947ef73a7b0ebd7d8d210fc5cae14bf901e",
+    "size": 0,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.trae?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/tree/main/.trae",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/e3d37947ef73a7b0ebd7d8d210fc5cae14bf901e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.trae?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/e3d37947ef73a7b0ebd7d8d210fc5cae14bf901e",
+      "html": "https://github.com/datawhalechina/easy-vibe/tree/main/.trae"
+    }
+  },
+  {
+    "name": ".vscode",
+    "path": ".vscode",
+    "sha": "e533aaf460464e7a529fea09745593a5646f9199",
+    "size": 0,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.vscode?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/tree/main/.vscode",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/e533aaf460464e7a529fea09745593a5646f9199",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/.vscode?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/e533aaf460464e7a529fea09745593a5646f9199",
+      "html": "https://github.com/datawhalechina/easy-vibe/tree/main/.vscode"
+    }
+  },
+  {
+    "name": "AGENTS.md",
+    "path": "AGENTS.md",
+    "sha": "8a8d9a4debb85f91b4be1598637f0b76b05841ca",
+    "size": 2200,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/AGENTS.md?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/AGENTS.md",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/8a8d9a4debb85f91b4be1598637f0b76b05841ca",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/AGENTS.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/AGENTS.md?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/8a8d9a4debb85f91b4be1598637f0b76b05841ca",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/AGENTS.md"
+    }
+  },
+  {
+    "name": "CLAUDE.md",
+    "path": "CLAUDE.md",
+    "sha": "60274bd55ae784cf38681cddd2a4af8327cbb234",
+    "size": 12222,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/CLAUDE.md?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/CLAUDE.md",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/60274bd55ae784cf38681cddd2a4af8327cbb234",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/CLAUDE.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/CLAUDE.md?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/60274bd55ae784cf38681cddd2a4af8327cbb234",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/CLAUDE.md"
+    }
+  },
+  {
+    "name": "Dockerfile",
+    "path": "Dockerfile",
+    "sha": "76f57b1fba8a4d9e1615353fa3ea7cae1d122ecc",
+    "size": 774,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/Dockerfile?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/Dockerfile",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/76f57b1fba8a4d9e1615353fa3ea7cae1d122ecc",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/Dockerfile",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/Dockerfile?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/76f57b1fba8a4d9e1615353fa3ea7cae1d122ecc",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/Dockerfile"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "733bddf81c3aad2c42d83c7998d624cdfd3ebc36",
+    "size": 30877,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/README.md?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/733bddf81c3aad2c42d83c7998d624cdfd3ebc36",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/733bddf81c3aad2c42d83c7998d624cdfd3ebc36",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/README.md"
+    }
+  },
+  {
+    "name": "assets",
+    "path": "assets",
+    "sha": "54ab3cf49cca52b0336cb618705e08674332e3e0",
+    "size": 0,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/assets?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/tree/main/assets",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/54ab3cf49cca52b0336cb618705e08674332e3e0",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/assets?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/54ab3cf49cca52b0336cb618705e08674332e3e0",
+      "html": "https://github.com/datawhalechina/easy-vibe/tree/main/assets"
+    }
+  },
+  {
+    "name": "config",
+    "path": "config",
+    "sha": "4ba824beac3291efac771425ae10eefe11e72343",
+    "size": 0,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/config?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/tree/main/config",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/4ba824beac3291efac771425ae10eefe11e72343",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/config?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/4ba824beac3291efac771425ae10eefe11e72343",
+      "html": "https://github.com/datawhalechina/easy-vibe/tree/main/config"
+    }
+  },
+  {
+    "name": "docs-readme",
+    "path": "docs-readme",
+    "sha": "ad8c4a9a2b0070bd9aa0e4f9aba3d1adc79ba8d8",
+    "size": 0,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/docs-readme?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/tree/main/docs-readme",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/ad8c4a9a2b0070bd9aa0e4f9aba3d1adc79ba8d8",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/docs-readme?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/ad8c4a9a2b0070bd9aa0e4f9aba3d1adc79ba8d8",
+      "html": "https://github.com/datawhalechina/easy-vibe/tree/main/docs-readme"
+    }
+  },
+  {
+    "name": "docs",
+    "path": "docs",
+    "sha": "dccac1e383ceef32353b9bdc4cd53bfd0ae3e893",
+    "size": 0,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/docs?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/tree/main/docs",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/dccac1e383ceef32353b9bdc4cd53bfd0ae3e893",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/docs?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/dccac1e383ceef32353b9bdc4cd53bfd0ae3e893",
+      "html": "https://github.com/datawhalechina/easy-vibe/tree/main/docs"
+    }
+  },
+  {
+    "name": "eslint.config.js",
+    "path": "eslint.config.js",
+    "sha": "ff7b71a0c917994b89ec3bc7e6364a6e7e0514a3",
+    "size": 2110,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/eslint.config.js?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/eslint.config.js",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/ff7b71a0c917994b89ec3bc7e6364a6e7e0514a3",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/eslint.config.js",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/eslint.config.js?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/ff7b71a0c917994b89ec3bc7e6364a6e7e0514a3",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/eslint.config.js"
+    }
+  },
+  {
+    "name": "llms.txt",
+    "path": "llms.txt",
+    "sha": "1b8857f05368197ea5fe3e678976c48cf402af70",
+    "size": 51093,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/llms.txt?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/llms.txt",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/1b8857f05368197ea5fe3e678976c48cf402af70",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/llms.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/llms.txt?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/1b8857f05368197ea5fe3e678976c48cf402af70",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/llms.txt"
+    }
+  },
+  {
+    "name": "ms_deploy.json",
+    "path": "ms_deploy.json",
+    "sha": "febd0cbbae05772059cbdabb9bed02be0b85d29f",
+    "size": 170,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/ms_deploy.json?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/ms_deploy.json",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/febd0cbbae05772059cbdabb9bed02be0b85d29f",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/ms_deploy.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/ms_deploy.json?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/febd0cbbae05772059cbdabb9bed02be0b85d29f",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/ms_deploy.json"
+    }
+  },
+  {
+    "name": "nginx.conf",
+    "path": "nginx.conf",
+    "sha": "03b75bc5972dfefa12e2a58dad0941774aa3efff",
+    "size": 732,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/nginx.conf?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/nginx.conf",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/03b75bc5972dfefa12e2a58dad0941774aa3efff",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/nginx.conf",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/nginx.conf?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/03b75bc5972dfefa12e2a58dad0941774aa3efff",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/nginx.conf"
+    }
+  },
+  {
+    "name": "package-lock.json",
+    "path": "package-lock.json",
+    "sha": "9cb97f86a635f8395d7a40b87e0250a4363eded7",
+    "size": 185918,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/package-lock.json?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/package-lock.json",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/9cb97f86a635f8395d7a40b87e0250a4363eded7",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/package-lock.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/package-lock.json?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/9cb97f86a635f8395d7a40b87e0250a4363eded7",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/package-lock.json"
+    }
+  },
+  {
+    "name": "package.json",
+    "path": "package.json",
+    "sha": "184be23b6d9b3ac459e3b13a379bc0e817bcdd26",
+    "size": 1853,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/package.json?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/package.json",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/184be23b6d9b3ac459e3b13a379bc0e817bcdd26",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/package.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/package.json?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/184be23b6d9b3ac459e3b13a379bc0e817bcdd26",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/package.json"
+    }
+  },
+  {
+    "name": "scripts",
+    "path": "scripts",
+    "sha": "c4c9498c932f9cf1eacd639e094612ab306e9716",
+    "size": 0,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/scripts?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/tree/main/scripts",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/c4c9498c932f9cf1eacd639e094612ab306e9716",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/scripts?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/trees/c4c9498c932f9cf1eacd639e094612ab306e9716",
+      "html": "https://github.com/datawhalechina/easy-vibe/tree/main/scripts"
+    }
+  },
+  {
+    "name": "vercel.json",
+    "path": "vercel.json",
+    "sha": "a2849cc4d7366f9aa155c43622c53e0eff3809c8",
+    "size": 1099,
+    "url": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/vercel.json?ref=main",
+    "html_url": "https://github.com/datawhalechina/easy-vibe/blob/main/vercel.json",
+    "git_url": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/a2849cc4d7366f9aa155c43622c53e0eff3809c8",
+    "download_url": "https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/vercel.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/datawhalechina/easy-vibe/contents/vercel.json?ref=main",
+      "git": "https://api.github.com/repos/datawhalechina/easy-vibe/git/blobs/a2849cc4d7366f9aa155c43622c53e0eff3809c8",
+      "html": "https://github.com/datawhalechina/easy-vibe/blob/main/vercel.json"
+    }
+  }
+]

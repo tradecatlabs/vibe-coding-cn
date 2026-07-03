@@ -1,0 +1,322 @@
+[
+  {
+    "name": ".claude",
+    "path": ".claude",
+    "sha": "55104b69499ddf719aa9d66a868ac8850d3f5e1e",
+    "size": 0,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/.claude?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/.claude",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/55104b69499ddf719aa9d66a868ac8850d3f5e1e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/.claude?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/55104b69499ddf719aa9d66a868ac8850d3f5e1e",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/.claude"
+    }
+  },
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "9cb010af2b782f06951ea4ac816376b27d6c224b",
+    "size": 0,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/.github?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/.github",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/9cb010af2b782f06951ea4ac816376b27d6c224b",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/.github?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/9cb010af2b782f06951ea4ac816376b27d6c224b",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "1ec5a591700ce23e93a49ed70c2ae349b0e78fbd",
+    "size": 314,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/1ec5a591700ce23e93a49ed70c2ae349b0e78fbd",
+    "download_url": "https://raw.githubusercontent.com/hesreallyhim/awesome-claude-code/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/1ec5a591700ce23e93a49ed70c2ae349b0e78fbd",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": ".pre-commit-config.yaml",
+    "path": ".pre-commit-config.yaml",
+    "sha": "47088795431e1dfb53398471b57b0108da2f2623",
+    "size": 1252,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/.pre-commit-config.yaml?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/.pre-commit-config.yaml",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/47088795431e1dfb53398471b57b0108da2f2623",
+    "download_url": "https://raw.githubusercontent.com/hesreallyhim/awesome-claude-code/main/.pre-commit-config.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/.pre-commit-config.yaml?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/47088795431e1dfb53398471b57b0108da2f2623",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/.pre-commit-config.yaml"
+    }
+  },
+  {
+    "name": ".python-version",
+    "path": ".python-version",
+    "sha": "2c0733315e415bfb5e5b353f9996ecd964d395b2",
+    "size": 5,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/.python-version?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/.python-version",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/2c0733315e415bfb5e5b353f9996ecd964d395b2",
+    "download_url": "https://raw.githubusercontent.com/hesreallyhim/awesome-claude-code/main/.python-version",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/.python-version?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/2c0733315e415bfb5e5b353f9996ecd964d395b2",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/.python-version"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "fcd09165cc58346ed13546572f60372b9d38f933",
+    "size": 228,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/fcd09165cc58346ed13546572f60372b9d38f933",
+    "download_url": "https://raw.githubusercontent.com/hesreallyhim/awesome-claude-code/main/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/LICENSE?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/fcd09165cc58346ed13546572f60372b9d38f933",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/LICENSE"
+    }
+  },
+  {
+    "name": "Makefile",
+    "path": "Makefile",
+    "sha": "a53c64e789adfd497c9fb9ee3fc0e5463680f579",
+    "size": 10794,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/Makefile?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/Makefile",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/a53c64e789adfd497c9fb9ee3fc0e5463680f579",
+    "download_url": "https://raw.githubusercontent.com/hesreallyhim/awesome-claude-code/main/Makefile",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/Makefile?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/a53c64e789adfd497c9fb9ee3fc0e5463680f579",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/Makefile"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "7078d856b9f54133f5fc2294895f279b7b7b997d",
+    "size": 547,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/README.md?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/7078d856b9f54133f5fc2294895f279b7b7b997d",
+    "download_url": "https://raw.githubusercontent.com/hesreallyhim/awesome-claude-code/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/7078d856b9f54133f5fc2294895f279b7b7b997d",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/README.md"
+    }
+  },
+  {
+    "name": "README_ALTERNATIVES",
+    "path": "README_ALTERNATIVES",
+    "sha": "44fa2b0738c6304395cd25663da9dd8bc92f339a",
+    "size": 0,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/README_ALTERNATIVES?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/README_ALTERNATIVES",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/44fa2b0738c6304395cd25663da9dd8bc92f339a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/README_ALTERNATIVES?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/44fa2b0738c6304395cd25663da9dd8bc92f339a",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/README_ALTERNATIVES"
+    }
+  },
+  {
+    "name": "THE_RESOURCES_TABLE.csv",
+    "path": "THE_RESOURCES_TABLE.csv",
+    "sha": "9b03388e5a406d4f0704b514d7a239258e45b210",
+    "size": 111026,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/THE_RESOURCES_TABLE.csv?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/THE_RESOURCES_TABLE.csv",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/9b03388e5a406d4f0704b514d7a239258e45b210",
+    "download_url": "https://raw.githubusercontent.com/hesreallyhim/awesome-claude-code/main/THE_RESOURCES_TABLE.csv",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/THE_RESOURCES_TABLE.csv?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/9b03388e5a406d4f0704b514d7a239258e45b210",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/THE_RESOURCES_TABLE.csv"
+    }
+  },
+  {
+    "name": "acc-config.yaml",
+    "path": "acc-config.yaml",
+    "sha": "28d0d4e18c20f691726172702e3e8272c0f15e97",
+    "size": 1610,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/acc-config.yaml?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/acc-config.yaml",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/28d0d4e18c20f691726172702e3e8272c0f15e97",
+    "download_url": "https://raw.githubusercontent.com/hesreallyhim/awesome-claude-code/main/acc-config.yaml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/acc-config.yaml?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/28d0d4e18c20f691726172702e3e8272c0f15e97",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/acc-config.yaml"
+    }
+  },
+  {
+    "name": "assets",
+    "path": "assets",
+    "sha": "255eceaa6f116842e27554672a2c13e2aa5ddca7",
+    "size": 0,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/assets?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/assets",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/255eceaa6f116842e27554672a2c13e2aa5ddca7",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/assets?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/255eceaa6f116842e27554672a2c13e2aa5ddca7",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/assets"
+    }
+  },
+  {
+    "name": "data",
+    "path": "data",
+    "sha": "d4cc4fc3608097cf546c89b8cfb8da60cd5643a2",
+    "size": 0,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/data?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/data",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/d4cc4fc3608097cf546c89b8cfb8da60cd5643a2",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/data?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/d4cc4fc3608097cf546c89b8cfb8da60cd5643a2",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/data"
+    }
+  },
+  {
+    "name": "docs",
+    "path": "docs",
+    "sha": "289ddb3494d8c47511ea4c152c8ea9878e13e00e",
+    "size": 0,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/docs?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/docs",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/289ddb3494d8c47511ea4c152c8ea9878e13e00e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/docs?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/289ddb3494d8c47511ea4c152c8ea9878e13e00e",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/docs"
+    }
+  },
+  {
+    "name": "pyproject.toml",
+    "path": "pyproject.toml",
+    "sha": "2e8e5f62d8a1c9c142fa6351fb16635dd3cab4db",
+    "size": 2376,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/pyproject.toml?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/pyproject.toml",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/2e8e5f62d8a1c9c142fa6351fb16635dd3cab4db",
+    "download_url": "https://raw.githubusercontent.com/hesreallyhim/awesome-claude-code/main/pyproject.toml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/pyproject.toml?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/blobs/2e8e5f62d8a1c9c142fa6351fb16635dd3cab4db",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/blob/main/pyproject.toml"
+    }
+  },
+  {
+    "name": "resources",
+    "path": "resources",
+    "sha": "5093e36d6ef2b3a4ddc6492998c579afe0954c29",
+    "size": 0,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/resources?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/resources",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/5093e36d6ef2b3a4ddc6492998c579afe0954c29",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/resources?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/5093e36d6ef2b3a4ddc6492998c579afe0954c29",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/resources"
+    }
+  },
+  {
+    "name": "scripts",
+    "path": "scripts",
+    "sha": "a83e7c5f32e1ed31316edca017ad36768aaf5a95",
+    "size": 0,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/scripts?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/scripts",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/a83e7c5f32e1ed31316edca017ad36768aaf5a95",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/scripts?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/a83e7c5f32e1ed31316edca017ad36768aaf5a95",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/scripts"
+    }
+  },
+  {
+    "name": "templates",
+    "path": "templates",
+    "sha": "d9c91385d725a1f9492a44f0f25e33773d531870",
+    "size": 0,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/templates?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/templates",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/d9c91385d725a1f9492a44f0f25e33773d531870",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/templates?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/d9c91385d725a1f9492a44f0f25e33773d531870",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/templates"
+    }
+  },
+  {
+    "name": "tests",
+    "path": "tests",
+    "sha": "2d30505b3d07323b11e26a1b3387d14847198bdc",
+    "size": 0,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/tests?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/tests",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/2d30505b3d07323b11e26a1b3387d14847198bdc",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/tests?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/2d30505b3d07323b11e26a1b3387d14847198bdc",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/tests"
+    }
+  },
+  {
+    "name": "tools",
+    "path": "tools",
+    "sha": "0429010ea77bf40c447d72efb05f3c9f42a20c68",
+    "size": 0,
+    "url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/tools?ref=main",
+    "html_url": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/tools",
+    "git_url": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/0429010ea77bf40c447d72efb05f3c9f42a20c68",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/contents/tools?ref=main",
+      "git": "https://api.github.com/repos/hesreallyhim/awesome-claude-code/git/trees/0429010ea77bf40c447d72efb05f3c9f42a20c68",
+      "html": "https://github.com/hesreallyhim/awesome-claude-code/tree/main/tools"
+    }
+  }
+]
