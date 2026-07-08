@@ -76,64 +76,64 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - docs/references/quality-gates-and-pitfalls.md：系统提示词、强前置条件、常见坑和硬门禁。
 - docs/references/low-level-program-logic.md：运行模型、并发模型、数据模型、性能模型和工程交付检查清单。
 - docs/references/technology-stack.md：常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
-- docs/research/README.md：新技术、技术栈、优秀 repo、工程范式和工具趋势研究入口。
-- docs/research/research-domain-contract.md：研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
-- docs/research/research-value-application-map.md：研究体系给用户带来的价值、核心启示、应用位置和下沉路线。
-- docs/research/research-transfer-synthesis.md：将对标拆解、改良迭代和杂交创新转成可执行研究路线。
-- docs/research/harness/README.md：Harness Engineering 的工程控制、评估器与反馈闭环研究对象。
-- docs/research/harness/harness-engineering.md：Harness Engineering 的工程控制、评估器与反馈闭环解析。
-- docs/research/aider-ai-aider/README.md：终端 AI 结对编程工具研究对象。
-- docs/research/aider-ai-aider/analysis.md：Aider-AI/aider 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/aider-ai-aider/deep-dive.md：Aider-AI/aider 的 L2 源码/结构深度研究、关键机制和可迁移模式。
-- docs/research/cline-cline/README.md：IDE/SDK/CLI 自主编码 Agent 研究对象。
-- docs/research/cline-cline/analysis.md：cline/cline 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/cline-cline/deep-dive.md：cline/cline 的 L2 源码/结构深度研究、关键机制和可迁移模式。
-- docs/research/hesreallyhim-awesome-claude-code/README.md：Claude Code 生态索引研究对象。
-- docs/research/hesreallyhim-awesome-claude-code/analysis.md：hesreallyhim/awesome-claude-code 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/hesreallyhim-awesome-claude-code/deep-dive.md：hesreallyhim/awesome-claude-code 的 L2 源码/结构深度研究、关键机制和可迁移模式。
-- docs/research/openai-codex/README.md：OpenAI Codex 官方 coding agent 工具源码研究对象。
-- docs/research/openai-codex/analysis.md：openai/codex 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/openai-codex/deep-dive.md：openai/codex 的 L2 源码/结构深度研究、关键机制和可迁移模式。
-- docs/research/shanraisshan-claude-code-best-practice/README.md：Claude Code / Agentic Engineering 方法论对标研究对象。
-- docs/research/shanraisshan-claude-code-best-practice/analysis.md：shanraisshan/claude-code-best-practice 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/shanraisshan-claude-code-best-practice/deep-dive.md：shanraisshan/claude-code-best-practice 的 L2 源码/结构深度研究、关键机制和可迁移模式。
-- docs/research/tradecatlabs-vibe-coding-cn/README.md：中文主线工程化工作流研究对象。
-- docs/research/tradecatlabs-vibe-coding-cn/analysis.md：tradecatlabs/vibe-coding-cn 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/tradecatlabs-vibe-coding-cn/deep-dive.md：tradecatlabs/vibe-coding-cn 的 L2 源码/结构深度研究、关键机制和可迁移模式。
-- docs/research/datawhalechina-easy-vibe/README.md：中文分阶段交互式课程研究对象。
-- docs/research/datawhalechina-easy-vibe/analysis.md：datawhalechina/easy-vibe 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/datawhalechina-easy-vibe/deep-dive.md：datawhalechina/easy-vibe 的 L2 源码/结构深度研究、关键机制和可迁移模式。
-- docs/research/datawhalechina-vibe-vibe/README.md：中文零基础系统教程研究对象。
-- docs/research/datawhalechina-vibe-vibe/analysis.md：datawhalechina/vibe-vibe 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/datawhalechina-vibe-vibe/deep-dive.md：datawhalechina/vibe-vibe 的 L2 源码/结构深度研究、关键机制和可迁移模式。
-- docs/research/filipecalegario-awesome-vibe-coding/README.md：国际 Vibe Coding 索引研究对象。
-- docs/research/filipecalegario-awesome-vibe-coding/analysis.md：filipecalegario/awesome-vibe-coding 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/filipecalegario-awesome-vibe-coding/deep-dive.md：filipecalegario/awesome-vibe-coding 的 L2 源码/结构深度研究、关键机制和可迁移模式。
-- docs/research/luzhenqian-ai-coding-lab/README.md：AI Coding 项目实验室研究对象。
-- docs/research/luzhenqian-ai-coding-lab/analysis.md：luzhenqian/ai-coding-lab 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/luzhenqian-ai-coding-lab/deep-dive.md：luzhenqian/ai-coding-lab 的 L2 源码/结构深度研究、关键机制和可迁移模式。
-- docs/research/shouzhengai-cs146s-cn/README.md：中文课程与 assignments 研究对象。
-- docs/research/shouzhengai-cs146s-cn/analysis.md：ShouZhengAI/CS146S_CN 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/shouzhengai-cs146s-cn/deep-dive.md：ShouZhengAI/CS146S_CN 的 L2 源码/结构深度研究、关键机制和可迁移模式。
-- docs/research/ai-for-developers-awesome-vibe-coding/README.md：精选 Vibe Coding 资料清单研究对象。
-- docs/research/ai-for-developers-awesome-vibe-coding/analysis.md：ai-for-developers/awesome-vibe-coding 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/ai-for-developers-awesome-vibe-coding/deep-dive.md：ai-for-developers/awesome-vibe-coding 的 L2 结构深度研究、关键机制、迁移边界和验证任务。
-- docs/research/daotin-ai-coding/README.md：AI Coding 经验汇总研究对象。
-- docs/research/daotin-ai-coding/analysis.md：Daotin/ai-coding 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/daotin-ai-coding/deep-dive.md：Daotin/ai-coding 的 L2 结构深度研究、关键机制、迁移边界和验证任务。
-- docs/research/earyantle-vibe-coding-skill/README.md：Vibe Coding Skill / SOP 化研究对象。
-- docs/research/earyantle-vibe-coding-skill/analysis.md：earyantLe/vibe-coding-skill 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/earyantle-vibe-coding-skill/deep-dive.md：earyantLe/vibe-coding-skill 的 L2 结构深度研究、关键机制、迁移边界和验证任务。
-- docs/research/liyupi-ai-guide/README.md：AI 资源大全与产品实用路线研究对象。
-- docs/research/liyupi-ai-guide/analysis.md：liyupi/ai-guide 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/liyupi-ai-guide/deep-dive.md：liyupi/ai-guide 的 L2 结构深度研究、关键机制、迁移边界和验证任务。
-- docs/research/roocodeinc-roo-code/README.md：已归档多 Agent 编辑器工具研究对象。
-- docs/research/roocodeinc-roo-code/analysis.md：RooCodeInc/Roo-Code 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/roocodeinc-roo-code/deep-dive.md：RooCodeInc/Roo-Code 的 L2 结构深度研究、关键机制、迁移边界和验证任务。
-- docs/research/wendy7756-vibe-coding-guide/README.md：非程序员自然语言编程指南研究对象。
-- docs/research/wendy7756-vibe-coding-guide/analysis.md：wendy7756/vibe-coding-guide 的结构化研究结论、可借鉴点、风险和下一轮任务。
-- docs/research/wendy7756-vibe-coding-guide/deep-dive.md：wendy7756/vibe-coding-guide 的 L2 结构深度研究、关键机制、迁移边界和验证任务。
-- docs/research/tmux-ai-swarm.md：tmux 蜂群协作的实验性协作范式判断。
+- research/README.md：新技术、技术栈、优秀 repo、工程范式和工具趋势研究入口。
+- research/research-domain-contract.md：研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
+- research/research-value-application-map.md：研究体系给用户带来的价值、核心启示、应用位置和下沉路线。
+- research/research-transfer-synthesis.md：将对标拆解、改良迭代和杂交创新转成可执行研究路线。
+- research/harness/README.md：Harness Engineering 的工程控制、评估器与反馈闭环研究对象。
+- research/harness/harness-engineering.md：Harness Engineering 的工程控制、评估器与反馈闭环解析。
+- research/aider-ai-aider/README.md：终端 AI 结对编程工具研究对象。
+- research/aider-ai-aider/analysis.md：Aider-AI/aider 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/aider-ai-aider/deep-dive.md：Aider-AI/aider 的 L2 源码/结构深度研究、关键机制和可迁移模式。
+- research/cline-cline/README.md：IDE/SDK/CLI 自主编码 Agent 研究对象。
+- research/cline-cline/analysis.md：cline/cline 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/cline-cline/deep-dive.md：cline/cline 的 L2 源码/结构深度研究、关键机制和可迁移模式。
+- research/hesreallyhim-awesome-claude-code/README.md：Claude Code 生态索引研究对象。
+- research/hesreallyhim-awesome-claude-code/analysis.md：hesreallyhim/awesome-claude-code 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/hesreallyhim-awesome-claude-code/deep-dive.md：hesreallyhim/awesome-claude-code 的 L2 源码/结构深度研究、关键机制和可迁移模式。
+- research/openai-codex/README.md：OpenAI Codex 官方 coding agent 工具源码研究对象。
+- research/openai-codex/analysis.md：openai/codex 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/openai-codex/deep-dive.md：openai/codex 的 L2 源码/结构深度研究、关键机制和可迁移模式。
+- research/shanraisshan-claude-code-best-practice/README.md：Claude Code / Agentic Engineering 方法论对标研究对象。
+- research/shanraisshan-claude-code-best-practice/analysis.md：shanraisshan/claude-code-best-practice 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/shanraisshan-claude-code-best-practice/deep-dive.md：shanraisshan/claude-code-best-practice 的 L2 源码/结构深度研究、关键机制和可迁移模式。
+- research/tradecatlabs-vibe-coding-cn/README.md：中文主线工程化工作流研究对象。
+- research/tradecatlabs-vibe-coding-cn/analysis.md：tradecatlabs/vibe-coding-cn 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/tradecatlabs-vibe-coding-cn/deep-dive.md：tradecatlabs/vibe-coding-cn 的 L2 源码/结构深度研究、关键机制和可迁移模式。
+- research/datawhalechina-easy-vibe/README.md：中文分阶段交互式课程研究对象。
+- research/datawhalechina-easy-vibe/analysis.md：datawhalechina/easy-vibe 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/datawhalechina-easy-vibe/deep-dive.md：datawhalechina/easy-vibe 的 L2 源码/结构深度研究、关键机制和可迁移模式。
+- research/datawhalechina-vibe-vibe/README.md：中文零基础系统教程研究对象。
+- research/datawhalechina-vibe-vibe/analysis.md：datawhalechina/vibe-vibe 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/datawhalechina-vibe-vibe/deep-dive.md：datawhalechina/vibe-vibe 的 L2 源码/结构深度研究、关键机制和可迁移模式。
+- research/filipecalegario-awesome-vibe-coding/README.md：国际 Vibe Coding 索引研究对象。
+- research/filipecalegario-awesome-vibe-coding/analysis.md：filipecalegario/awesome-vibe-coding 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/filipecalegario-awesome-vibe-coding/deep-dive.md：filipecalegario/awesome-vibe-coding 的 L2 源码/结构深度研究、关键机制和可迁移模式。
+- research/luzhenqian-ai-coding-lab/README.md：AI Coding 项目实验室研究对象。
+- research/luzhenqian-ai-coding-lab/analysis.md：luzhenqian/ai-coding-lab 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/luzhenqian-ai-coding-lab/deep-dive.md：luzhenqian/ai-coding-lab 的 L2 源码/结构深度研究、关键机制和可迁移模式。
+- research/shouzhengai-cs146s-cn/README.md：中文课程与 assignments 研究对象。
+- research/shouzhengai-cs146s-cn/analysis.md：ShouZhengAI/CS146S_CN 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/shouzhengai-cs146s-cn/deep-dive.md：ShouZhengAI/CS146S_CN 的 L2 源码/结构深度研究、关键机制和可迁移模式。
+- research/ai-for-developers-awesome-vibe-coding/README.md：精选 Vibe Coding 资料清单研究对象。
+- research/ai-for-developers-awesome-vibe-coding/analysis.md：ai-for-developers/awesome-vibe-coding 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/ai-for-developers-awesome-vibe-coding/deep-dive.md：ai-for-developers/awesome-vibe-coding 的 L2 结构深度研究、关键机制、迁移边界和验证任务。
+- research/daotin-ai-coding/README.md：AI Coding 经验汇总研究对象。
+- research/daotin-ai-coding/analysis.md：Daotin/ai-coding 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/daotin-ai-coding/deep-dive.md：Daotin/ai-coding 的 L2 结构深度研究、关键机制、迁移边界和验证任务。
+- research/earyantle-vibe-coding-skill/README.md：Vibe Coding Skill / SOP 化研究对象。
+- research/earyantle-vibe-coding-skill/analysis.md：earyantLe/vibe-coding-skill 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/earyantle-vibe-coding-skill/deep-dive.md：earyantLe/vibe-coding-skill 的 L2 结构深度研究、关键机制、迁移边界和验证任务。
+- research/liyupi-ai-guide/README.md：AI 资源大全与产品实用路线研究对象。
+- research/liyupi-ai-guide/analysis.md：liyupi/ai-guide 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/liyupi-ai-guide/deep-dive.md：liyupi/ai-guide 的 L2 结构深度研究、关键机制、迁移边界和验证任务。
+- research/roocodeinc-roo-code/README.md：已归档多 Agent 编辑器工具研究对象。
+- research/roocodeinc-roo-code/analysis.md：RooCodeInc/Roo-Code 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/roocodeinc-roo-code/deep-dive.md：RooCodeInc/Roo-Code 的 L2 结构深度研究、关键机制、迁移边界和验证任务。
+- research/wendy7756-vibe-coding-guide/README.md：非程序员自然语言编程指南研究对象。
+- research/wendy7756-vibe-coding-guide/analysis.md：wendy7756/vibe-coding-guide 的结构化研究结论、可借鉴点、风险和下一轮任务。
+- research/wendy7756-vibe-coding-guide/deep-dive.md：wendy7756/vibe-coding-guide 的 L2 结构深度研究、关键机制、迁移边界和验证任务。
+- research/tmux-ai-swarm.md：tmux 蜂群协作的实验性协作范式判断。
 - skills/auto-tmux/references/ai-swarm-collaboration.md：tmux 蜂群协作完整技术文档、架构模式、协议、案例和风险限制。
 - docs/workflow/README.md：开发流程、质量门禁、版本控制和文档同步入口。
 - docs/workflow/development-process.md：默认任务推进顺序、质量门禁和交付闭环。
@@ -151,7 +151,7 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - 新手入门：读取 `docs/getting-started/vibe-coding-experience.md`、`docs/getting-started/learning-map.md`、`docs/getting-started/cli-setup.md`、`tools/config/.codex/README.md`，再读 `docs/concepts/problem-solving.md`、`docs/concepts/glue-coding.md` 和 `docs/references/project-architecture-template.md`。
 - 工程开发：读取 `docs/concepts/glue-coding.md`、`docs/concepts/keyword-system.md`、`docs/concepts/system-building.md`、`docs/references/technology-stack.md` 和 `docs/references/project-architecture-template.md`。
 - 思维模型：读取 `README.md#dao-fa-shu-qi`、`docs/philosophy/thinking-models.md`、`docs/philosophy/compositional-description-model.md`、`docs/philosophy/programming-dao.md`、`docs/philosophy/software-engineering-truths.md` 和 `docs/philosophy/methodology-toolbox.md`。
-- 新技术判断：读取 `docs/research/README.md`，再读具体研究对象或研究笔记，例如 `docs/research/harness/harness-engineering.md`。
+- 新技术判断：读取 `research/README.md`，再读具体研究对象或研究笔记，例如 `research/harness/harness-engineering.md`。
 - 标准流程执行：读取 `docs/workflow/development-process.md`。
 - AI Agent 执行：先读 `AGENTS.md` 与 `docs/AGENTS.md`，再读 `docs/workflow/development-process.md`，然后按任务类型读取 getting-started、concepts、references 或 research。
 

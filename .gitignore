@@ -56,6 +56,9 @@ logs/
 # Local task workspaces
 assets/tasks/
 
+# Research raw repository snapshots are local evidence caches.
+research/**/raw/repository/
+
 # Skill Seekers (linked tool output)
 output/
 skills/auto-skill/scripts/.venv-skill-seekers/

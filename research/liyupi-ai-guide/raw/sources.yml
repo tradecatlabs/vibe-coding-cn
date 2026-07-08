@@ -1,0 +1,39 @@
+version: 1
+domain_id: liyupi-ai-guide
+object:
+  type: github_repository
+  name: liyupi/ai-guide
+  url: https://github.com/liyupi/ai-guide
+pulled_at: '2026-07-02T22:47:14+00:00'
+puller: scripts/fetch-research-raw.py
+files:
+  - path: repository/
+    kind: git-working-tree
+    status: ok
+    source: 'git clone --depth=1 --single-branch --no-tags https://github.com/liyupi/ai-guide.git research/liyupi-ai-guide/raw/repository'
+  - path: github-repo.raw.json
+    kind: repository-metadata
+    status: ok
+    source: 'gh repo view liyupi/ai-guide --json nameWithOwner,url,description,homepageUrl,isArchived,isFork,isMirror,defaultBranchRef,licenseInfo,primaryLanguage,repositoryTopics,stargazerCount,forkCount,watchers,createdAt,updatedAt,pushedAt,latestRelease --jq .'
+  - path: github-readme.raw.md.txt
+    kind: readme
+    status: ok
+    source: 'gh api repos/liyupi/ai-guide/readme -H Accept: application/vnd.github.raw'
+  - path: github-license.raw.txt
+    kind: license
+    status: missing_or_error
+    source: 'gh api repos/liyupi/ai-guide/license -H Accept: application/vnd.github.raw'
+    message: 'gh: Not Found (HTTP 404)'
+  - path: github-root-contents.raw.json
+    kind: root-contents
+    status: ok
+    source: 'gh api repos/liyupi/ai-guide/contents'
+  - path: github-languages.raw.json
+    kind: languages
+    status: ok
+    source: 'gh api repos/liyupi/ai-guide/languages'
+  - path: github-latest-release.raw.json
+    kind: latest-release
+    status: missing_or_error
+    source: 'gh api repos/liyupi/ai-guide/releases/latest'
+    message: 'gh: Not Found (HTTP 404)'

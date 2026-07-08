@@ -1,0 +1,39 @@
+version: 1
+domain_id: earyantle-vibe-coding-skill
+object:
+  type: github_repository
+  name: earyantLe/vibe-coding-skill
+  url: https://github.com/earyantLe/vibe-coding-skill
+pulled_at: '2026-07-02T22:47:14+00:00'
+puller: scripts/fetch-research-raw.py
+files:
+  - path: repository/
+    kind: git-working-tree
+    status: ok
+    source: 'git clone --depth=1 --single-branch --no-tags https://github.com/earyantLe/vibe-coding-skill.git research/earyantle-vibe-coding-skill/raw/repository'
+  - path: github-repo.raw.json
+    kind: repository-metadata
+    status: ok
+    source: 'gh repo view earyantLe/vibe-coding-skill --json nameWithOwner,url,description,homepageUrl,isArchived,isFork,isMirror,defaultBranchRef,licenseInfo,primaryLanguage,repositoryTopics,stargazerCount,forkCount,watchers,createdAt,updatedAt,pushedAt,latestRelease --jq .'
+  - path: github-readme.raw.md.txt
+    kind: readme
+    status: ok
+    source: 'gh api repos/earyantLe/vibe-coding-skill/readme -H Accept: application/vnd.github.raw'
+  - path: github-license.raw.txt
+    kind: license
+    status: missing_or_error
+    source: 'gh api repos/earyantLe/vibe-coding-skill/license -H Accept: application/vnd.github.raw'
+    message: 'gh: Not Found (HTTP 404)'
+  - path: github-root-contents.raw.json
+    kind: root-contents
+    status: ok
+    source: 'gh api repos/earyantLe/vibe-coding-skill/contents'
+  - path: github-languages.raw.json
+    kind: languages
+    status: ok
+    source: 'gh api repos/earyantLe/vibe-coding-skill/languages'
+  - path: github-latest-release.raw.json
+    kind: latest-release
+    status: missing_or_error
+    source: 'gh api repos/earyantLe/vibe-coding-skill/releases/latest'
+    message: 'gh: Not Found (HTTP 404)'
