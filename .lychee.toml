@@ -32,9 +32,12 @@ exclude = [
   '^https://claude\.ai.*',
   '^https://app\.augmentcode\.com.*',
   '^https://platform\.openai\.com.*',
+  '^https://openai\.com/index/.*',
   '^https://user-images\.githubusercontent\.com.*',
   '^https://notebooklm\.google\.com.*',
   '^https://zread\.ai/.*',
+  '^https://api\.star-history\.com/.*',
+  '^https://philpapers\.org/rec/GOOSCT$',
   '^https://www\.contributor-covenant\.org.*',
   '^https://javabetter\.cn/.*',
 ]
