@@ -19,7 +19,7 @@ AI_MARKDOWN_DIR = Path("assets/ai-citation")
 PATH_PATTERN = re.compile(
     r"(?<![\w./-])("
     r"(?:README|AGENTS)\.md"
-    r"|(?:docs|assets|skills|prompts|metadata|scripts|tools)/[^\s`，。；：、)）]+"
+    r"|(?:docs|research|assets|skills|prompts|metadata|scripts|tools)/[^\s`，。；：、)）]+"
     r"|[A-Za-z0-9_.-]+\.(?:md|txt|yml)"
     r"|llms\.txt"
     r")"

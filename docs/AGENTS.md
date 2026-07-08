@@ -2,7 +2,8 @@
 
 ## 目录用途
 
-`docs/` 存放项目核心知识库文档，包含入门路径、核心概念与参考清单。
+`docs/` 存放项目核心知识库文档，包含入门路径、核心概念、哲学方法论、参考清单和工作流。
+根级 `research/` 承载新技术、优秀 repo 和工程范式研究；`docs/` 只保留到研究域的导航链接。
 
 ## 目录结构
 
@@ -13,7 +14,6 @@ docs/
 ├── getting-started/      # 从零开始、学习地图、环境与 AI CLI 配置
 ├── concepts/             # 索引 + 独立正文文档：核心概念、问题求解与工程思想
 ├── philosophy/           # 索引 + 独立正文文档：哲学方法论、思维模型与底层认知模型
-├── research/             # 索引 + 独立正文文档：新技术、优秀 repo、工程范式和工具趋势研究
 ├── references/           # 索引 + 独立正文文档：工程实践、技术栈、清单与质量门禁
 └── workflow/             # 索引 + 独立正文文档：开发流程、质量门禁、版本控制和文档同步
 ```
@@ -30,8 +30,8 @@ docs/
 - `philosophy/AGENTS.md`：哲学方法论目录操作规则。
 - `references/README.md`：参考资料索引，正文拆分到同目录模板、清单和技术栈文档。
 - `references/AGENTS.md`：参考资料目录操作规则。
-- `research/README.md`：研究索引，正文拆分到同目录研究笔记。
-- `research/AGENTS.md`：研究笔记目录操作规则。
+- `../research/README.md`：根级研究索引，正文拆分到研究对象目录或短篇研究笔记。
+- `../research/AGENTS.md`：根级研究域操作规则。
 - `workflow/README.md`：流程索引，正文拆分到同目录流程文档。
 - `workflow/AGENTS.md`：开发流程目录操作规则。
 
@@ -73,7 +73,8 @@ docs/
 ## 维护规则
 
 - 每个目录必须同时维护 `README.md` 和 `AGENTS.md`。
-- 新增、删除、移动、重命名文档时，必须同步更新 `docs/README.md`、所在目录 README 索引和 `metadata/taxonomy.yml`。
+- 新增、删除、移动、重命名 docs 文档时，必须同步更新 `docs/README.md`、所在目录 README 索引和 `metadata/taxonomy.yml`。
+- 新增、删除、移动、重命名 research 文档时，必须同步更新根级 `research/README.md`、必要的 `docs/README.md` 跨入口、根 `README.md`、`metadata/taxonomy.yml` 和必要的 `metadata/redirects.yml`。
 - 面向 AI 引用的重要入口变化，必须同步更新 `assets/ai-citation/llms-full.txt` 和相关摘要文件。
 - 不确定信息标注 TODO，不用猜测补齐。
 - 修改任意 docs README 后，运行 `make sync-doc-toc` 和 `make test`。

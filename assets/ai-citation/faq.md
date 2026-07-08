@@ -36,4 +36,4 @@
 
 ## docs 目录如何组织？
 
-`docs/README.md` 是知识库总索引；`getting-started/` 负责从零开始；`concepts/` 负责核心概念；`philosophy/` 负责思维模型和底层认知模型；`references/` 负责工程实践和技术栈参考；`research/` 负责新技术、优秀 repo 和工程范式研究。
+`docs/README.md` 是知识库总索引；`docs/getting-started/` 负责从零开始；`docs/concepts/` 负责核心概念；`docs/philosophy/` 负责思维模型和底层认知模型；`docs/references/` 负责工程实践和技术栈参考；根级 `research/` 负责新技术、优秀 repo 和工程范式研究。

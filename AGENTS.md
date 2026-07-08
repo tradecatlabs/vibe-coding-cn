@@ -73,7 +73,7 @@ git push origin develop
 | `make check-external-resources` | 校验本地外部资源注册表字段、分类统计、ID 与链接形态 | Python 3、PyYAML |
 | `make check-research-raw` | 校验研究域 raw 原始事实层、Git 工作树、来源清单和核心材料文件 | Python 3、Git |
 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | 校验 GitHub Wiki 独立仓库本地 checkout 的页面覆盖、内链、旧口径和 Markdown | Python 3、Node.js 22+、本地 Wiki checkout |
-| `make fetch-research-raw` | 拉取 `docs/research/*/domain.yml` 对应 GitHub 研究对象的 raw 原始事实层和 `repository/` 工作树 | Python 3、Git、GitHub CLI 已认证 |
+| `make fetch-research-raw` | 拉取 `research/*/domain.yml` 对应 GitHub 研究对象的 raw 原始事实层和 `repository/` 工作树 | Python 3、Git、GitHub CLI 已认证 |
 | `make sync-doc-toc` | 兼容旧线性 README 目录生成；当前拆分结构下通常无变更 | Python 3 |
 | `make test` | 执行本地质量门禁 | Node.js 22+、Python 3 |
 | `git submodule update --init --recursive` | 初始化外部 Git 仓库指针 | Git |
@@ -160,8 +160,12 @@ git push origin develop
 │   ├── concepts/                # 核心概念、方法论与工程思想
 │   ├── philosophy/              # 哲学方法论、思维模型与底层认知模型
 │   ├── references/              # 清单、约束、常见坑、模板和技术栈参考
-│   ├── research/                # 新技术、优秀 repo 与工程范式研究
 │   └── workflow/                # 开发流程、质量门禁和交付闭环
+│
+├── research/                    # 根级研究域：新技术、优秀 repo 与工程范式研究
+│   ├── README.md                # research 总索引
+│   ├── AGENTS.md                # research 目录规则
+│   └── harness/                 # Harness Engineering 研究对象
 │
 ├── prompts/                     # 提示词库入口（指向云端表格）
 │   ├── README.md                # 在线表格链接

@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RESEARCH_DIR = ROOT / "docs" / "research"
+RESEARCH_DIR = ROOT / "research"
 REQUIRED_RAW_FILES = [
     "README.md",
     "AGENTS.md",

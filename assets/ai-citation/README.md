@@ -23,4 +23,4 @@
 | `docs/concepts/README.md` | 核心概念索引 |
 | `docs/philosophy/thinking-models.md` | 哲学方法论与思维模型 |
 | `docs/references/README.md` | 工程实践与技术栈参考 |
-| `docs/research/README.md` | 新技术、优秀 repo 与工程范式研究 |
+| `research/README.md` | 新技术、优秀 repo 与工程范式研究 |

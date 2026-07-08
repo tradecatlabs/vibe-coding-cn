@@ -29,7 +29,7 @@ help:
 
 lint:
 	@echo "Linting markdown files..."
-	@$(MARKDOWNLINT) --config .github/lint_config.json --ignore .history --ignore tools/external --ignore 'docs/research/**/raw/repository/**' '**/*.md'
+	@$(MARKDOWNLINT) --config .github/lint_config.json --ignore .history --ignore tools/external --ignore 'research/**/raw/repository/**' '**/*.md'
 
 check-links:
 	@echo "Checking local markdown links and anchors..."

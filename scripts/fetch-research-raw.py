@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch raw GitHub facts for docs/research repository domains."""
+"""Fetch raw GitHub facts for research repository domains."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RESEARCH_DIR = ROOT / "docs" / "research"
+RESEARCH_DIR = ROOT / "research"
 
 REPO_VIEW_FIELDS = [
     "nameWithOwner",

@@ -109,11 +109,10 @@ def should_skip(path: Path) -> bool:
 def is_research_repository_snapshot(rel: Path) -> bool:
     parts = rel.parts
     return (
-        len(parts) >= 5
-        and parts[0] == "docs"
-        and parts[1] == "research"
-        and parts[3] == "raw"
-        and parts[4] == "repository"
+        len(parts) >= 4
+        and parts[0] == "research"
+        and parts[2] == "raw"
+        and parts[3] == "repository"
     )
 
 
