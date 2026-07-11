@@ -33,7 +33,7 @@
   <a href="#dao-fa-shu-qi"><img src="https://img.shields.io/badge/☯️_道法术器-底层框架-purple?style=for-the-badge" alt="道法术器"></a>
   <a href="#ai-five-propositions"><img src="https://img.shields.io/badge/🧠_五条命题-AI底层认知-crimson?style=for-the-badge" alt="五条核心命题"></a>
   <a href="./docs/getting-started/vibe-coding-experience.md"><img src="https://img.shields.io/badge/💡_Vibe_Coding-经验必读-red?style=for-the-badge" alt="Vibe Coding 经验"></a>
-  <a href="./docs/concepts/glue-coding.md"><img src="https://img.shields.io/badge/🧩_拼好码-能力编排-darkred?style=for-the-badge" alt="拼好码与能力编排"></a>
+  <a href="./docs/concepts/glue-coding.md"><img src="https://img.shields.io/badge/🧩_拼好码-银弹-darkred?style=for-the-badge" alt="拼好码，银弹"></a>
   <a href="./docs/concepts/keyword-system.md"><img src="https://img.shields.io/badge/🔑_关键词-概念入口-gold?style=for-the-badge" alt="关键词系统"></a>
   <a href="./research/README.md"><img src="https://img.shields.io/badge/🔬_研究域-17仓深研-teal?style=for-the-badge" alt="研究域"></a>
 </p>
