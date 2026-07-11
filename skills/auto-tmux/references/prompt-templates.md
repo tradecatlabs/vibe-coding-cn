@@ -41,7 +41,7 @@ bash skills/auto-tmux/scripts/render-swarm-prompt.sh worker \
   --session ai-hub \
   --target "$target" \
   --swarm-dir /tmp/ai_swarm \
-  --task "只检查 docs/research/README.md 的链接和锚点"
+  --task "只检查 research/README.md 的链接和锚点"
 ```
 
 适用场景：

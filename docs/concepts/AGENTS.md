@@ -38,5 +38,5 @@ concepts/
 
 - 每个概念先说明它解决的问题。
 - 尽量给出使用场景、判断标准和简单例子。
-- 不确定的外部事实必须标注 TODO，或放入 `docs/research/` 等待验证。
+- 不确定的外部事实必须标注 TODO，或放入 `research/` 等待验证。
 - 修改后必须运行 `make sync-doc-toc` 和 `make test`。

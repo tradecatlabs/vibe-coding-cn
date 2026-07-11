@@ -1,0 +1,39 @@
+version: 1
+domain_id: luzhenqian-ai-coding-lab
+object:
+  type: github_repository
+  name: luzhenqian/ai-coding-lab
+  url: https://github.com/luzhenqian/ai-coding-lab
+pulled_at: '2026-07-02T22:47:14+00:00'
+puller: scripts/fetch-research-raw.py
+files:
+  - path: repository/
+    kind: git-working-tree
+    status: ok
+    source: 'git clone --depth=1 --single-branch --no-tags https://github.com/luzhenqian/ai-coding-lab.git research/luzhenqian-ai-coding-lab/raw/repository'
+  - path: github-repo.raw.json
+    kind: repository-metadata
+    status: ok
+    source: 'gh repo view luzhenqian/ai-coding-lab --json nameWithOwner,url,description,homepageUrl,isArchived,isFork,isMirror,defaultBranchRef,licenseInfo,primaryLanguage,repositoryTopics,stargazerCount,forkCount,watchers,createdAt,updatedAt,pushedAt,latestRelease --jq .'
+  - path: github-readme.raw.md.txt
+    kind: readme
+    status: ok
+    source: 'gh api repos/luzhenqian/ai-coding-lab/readme -H Accept: application/vnd.github.raw'
+  - path: github-license.raw.txt
+    kind: license
+    status: missing_or_error
+    source: 'gh api repos/luzhenqian/ai-coding-lab/license -H Accept: application/vnd.github.raw'
+    message: 'gh: Not Found (HTTP 404)'
+  - path: github-root-contents.raw.json
+    kind: root-contents
+    status: ok
+    source: 'gh api repos/luzhenqian/ai-coding-lab/contents'
+  - path: github-languages.raw.json
+    kind: languages
+    status: ok
+    source: 'gh api repos/luzhenqian/ai-coding-lab/languages'
+  - path: github-latest-release.raw.json
+    kind: latest-release
+    status: missing_or_error
+    source: 'gh api repos/luzhenqian/ai-coding-lab/releases/latest'
+    message: 'gh: Not Found (HTTP 404)'

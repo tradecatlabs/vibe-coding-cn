@@ -147,7 +147,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 | [concepts](docs/concepts/README.md) | 概念入口，理解问题求解、拼好码、系统构建和关键词系统 |
 | [references](docs/references/README.md) | 工程实践入口，查技术栈、质量门禁、模板和常见坑 |
 | [philosophy](docs/philosophy/README.md) | 思维入口，补思维模型、编程之道和软件工程常识 |
-| [research](docs/research/README.md) | 研究入口，记录新技术、优秀 repo 和工程趋势判断 |
+| [research](research/README.md) | 研究入口，记录新技术、优秀 repo 和工程趋势判断 |
 | [prompts](prompts/README.md) | 提示词入口，复用和管理提示词资产 |
 | [skills](skills/README.md) | 技能入口，复用可执行的 AI 能力模块 |
 | [tools](tools/README.md) | 工具入口，使用 Codex 配置、转换工具和外部工具 |
@@ -353,7 +353,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 
 **使用边界**：这是实验性方法，不是无人值守生产系统。敏感凭证、生产数据库、危险命令和不可逆操作必须人工确认。
 
-👉 [研究判断](docs/research/tmux-ai-swarm.md)
+👉 [研究判断](research/tmux-ai-swarm.md)
 👉 [完整技术文档](skills/auto-tmux/references/ai-swarm-collaboration.md)
 👉 [可执行技能入口](skills/auto-tmux/SKILL.md)
 
@@ -559,14 +559,14 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 *   [**软件工程的朴素真理**](docs/philosophy/software-engineering-truths.md): 代码、复杂度、需求、维护、质量、架构和团队的工程常识。
 *   [**工程实践**](docs/references/quality-gates-and-pitfalls.md): 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口。
 *   [**技术栈**](docs/references/technology-stack.md#reference-technology-stack-十四如何选择技术栈): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
-*   [**研究域治理契约**](docs/research/research-domain-contract.md): 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
-*   [**研究价值与应用地图**](docs/research/research-value-application-map.md): 17 个研究域的用户价值、核心启示、应用位置和下沉路线。
-*   [**研究迁移综合**](docs/research/research-transfer-synthesis.md): 用对标拆解、改良迭代和杂交创新把研究转成可执行路线。
-*   [**Harness 工程解析**](docs/research/harness/harness-engineering.md): Harness Engineering 的工程控制、评估器与反馈闭环解析。
-*   [**OpenAI Codex 研究域**](docs/research/openai-codex/README.md): 官方 coding agent 工具源码研究对象。
-*   [**Claude Code Best Practice 研究域**](docs/research/shanraisshan-claude-code-best-practice/README.md): Agentic Engineering 方法论对标研究对象。
-*   [**Cline 研究域**](docs/research/cline-cline/README.md): IDE/SDK/CLI 自主编码 Agent 研究对象。
-*   [**Aider 研究域**](docs/research/aider-ai-aider/README.md): 终端 AI 结对编程工具研究对象。
+*   [**研究域治理契约**](research/research-domain-contract.md): 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
+*   [**研究价值与应用地图**](research/research-value-application-map.md): 17 个研究域的用户价值、核心启示、应用位置和下沉路线。
+*   [**研究迁移综合**](research/research-transfer-synthesis.md): 用对标拆解、改良迭代和杂交创新把研究转成可执行路线。
+*   [**Harness 工程解析**](research/harness/harness-engineering.md): Harness Engineering 的工程控制、评估器与反馈闭环解析。
+*   [**OpenAI Codex 研究域**](research/openai-codex/README.md): 官方 coding agent 工具源码研究对象。
+*   [**Claude Code Best Practice 研究域**](research/shanraisshan-claude-code-best-practice/README.md): Agentic Engineering 方法论对标研究对象。
+*   [**Cline 研究域**](research/cline-cline/README.md): IDE/SDK/CLI 自主编码 Agent 研究对象。
+*   [**Aider 研究域**](research/aider-ai-aider/README.md): 终端 AI 结对编程工具研究对象。
 *   [**Skills 技能库**](skills/README.md#当前保留): 当前保留的可复用技能入口。
 *   [**提示词入口**](prompts/README.md#在线提示词库): 在线提示词库入口。
 *   [**外部资源入口**](assets/README.md#外部资源本地注册表): 外部资源本地注册表入口。
@@ -677,8 +677,8 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │   ├── concepts/                # 核心概念、方法论与底层模型
 │   ├── philosophy/              # 哲学方法论与底层认知模型
 │   ├── references/              # 清单、约束、常见坑、模板和技术栈参考
-│   ├── research/                # 新技术、优秀 repo 与工程范式研究
 │   └── workflow/                # 开发流程、质量门禁和交付闭环
+├── research/                    # 根级研究域：新技术、优秀 repo 与工程范式研究
 ├── prompts/                     # 提示词库入口（指向云端表格）
 ├── skills/                      # 技能库入口
 │   ├── auto-skill/              # 元技能核心
