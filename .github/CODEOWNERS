@@ -14,6 +14,7 @@
 
 # 文档、提示词、技能和机器可读索引。
 /docs/ @tukuaiai
+/research/ @tukuaiai
 /prompts/ @tukuaiai
 /skills/ @tukuaiai
 /assets/ @tukuaiai
