@@ -7,4 +7,4 @@ tools/external/** linguist-vendored
 
 # Research raw snapshots preserve external source text; do not normalize
 # upstream whitespace in these captured artifacts.
-docs/research/**/raw/*.raw.* -whitespace
+research/**/raw/*.raw.* -whitespace
