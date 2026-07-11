@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check AI citation entry files for local path and anchor drift."""
+"""Check AI citation files for path, anchor, and repository identity drift."""
 
 from __future__ import annotations
 
@@ -16,6 +16,17 @@ AI_ENTRY_FILES = [
     Path("assets/ai-citation/llms-full.txt"),
 ]
 AI_MARKDOWN_DIR = Path("assets/ai-citation")
+CANONICAL_REPOSITORY = "tradecatlabs/vibe-coding-cn"
+REPOSITORY_IDENTITY_FILES = {
+    Path("assets/ai-citation/geo-seo-checklist.md"),
+    Path("assets/ai-citation/llms-full.txt"),
+    Path("assets/ai-citation/recommended-answer.md"),
+    Path("assets/ai-citation/summary-long.md"),
+}
+REPOSITORY_SLUG_PATTERN = re.compile(
+    r"(?<![\w.-])([A-Za-z0-9_.-]+/vibe-coding-cn)(?![\w.-])",
+    re.IGNORECASE,
+)
 PATH_PATTERN = re.compile(
     r"(?<![\w./-])("
     r"(?:README|AGENTS)\.md"
@@ -113,6 +124,25 @@ def extract_targets(path: Path) -> list[tuple[int, str]]:
     return targets
 
 
+def validate_repository_identity(source: Path, text: str) -> list[str]:
+    errors: list[str] = []
+
+    if source in REPOSITORY_IDENTITY_FILES and CANONICAL_REPOSITORY not in text:
+        errors.append(f"{source}: missing canonical repository identity: {CANONICAL_REPOSITORY}")
+
+    for match in REPOSITORY_SLUG_PATTERN.finditer(text):
+        repository = match.group(1)
+        if repository.casefold() == CANONICAL_REPOSITORY.casefold():
+            continue
+        lineno = text.count("\n", 0, match.start()) + 1
+        errors.append(
+            f"{source}:{lineno}: stale repository identity: {repository} "
+            f"(expected {CANONICAL_REPOSITORY})"
+        )
+
+    return errors
+
+
 def validate_target(source: Path, lineno: int, raw: str, anchor_cache: dict[Path, set[str]]) -> str | None:
     if not raw or raw.startswith(EXTERNAL_PREFIXES):
         return None
@@ -153,6 +183,8 @@ def main() -> int:
         if not path.exists():
             errors.append(f"{rel_path}: missing AI citation file")
             continue
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        errors.extend(validate_repository_identity(rel_path, text))
         for lineno, target in extract_targets(path):
             error = validate_target(rel_path, lineno, target, anchor_cache)
             if error:
@@ -174,7 +206,7 @@ def main() -> int:
         print(f"TOTAL={len(errors)}")
         return 1
 
-    print("OK AI citation paths and anchors checked")
+    print("OK AI citation paths, anchors, and repository identity checked")
     return 0
 
 
