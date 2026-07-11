@@ -18,6 +18,7 @@
 
 | 入口 | 用途 |
 |:---|:---|
+| `README.md#ai-five-propositions` | 五条核心命题：生成域、模型吞噬、隔离审查与能力编排 |
 | `docs/README.md` | 知识库总索引 |
 | `docs/getting-started/README.md` | 从零开始完整入门 |
 | `docs/concepts/README.md` | 核心概念索引 |
