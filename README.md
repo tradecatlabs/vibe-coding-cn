@@ -44,7 +44,7 @@
   <a href="./tools/config/.codex/README.md"><img src="https://img.shields.io/badge/⚙️_Codex配置-一键安装-blue?style=for-the-badge" alt="Codex 配置一键安装"></a>
   <a href="./skills/README.md#当前保留"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
   <a href="./prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
-  <a href="./docs/references/modern-enterprise-architecture-template.md"><img src="https://img.shields.io/badge/🏗️_企业架构-完整模板-slateblue?style=for-the-badge" alt="现代企业架构模板"></a>
+  <a href="./docs/references/modern-enterprise-architecture-template.md"><img src="https://img.shields.io/badge/🏗️_单机企业级架构-完整模板-slateblue?style=for-the-badge" alt="现代企业架构模板"></a>
   <a href="./assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/📡_外部资源-本地注册表-teal?style=for-the-badge" alt="外部资源本地注册表"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/📚_Wiki-导航入口-slateblue?style=for-the-badge" alt="Wiki 导航入口"></a>
 </p>
