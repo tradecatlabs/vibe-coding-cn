@@ -35,7 +35,7 @@
   <a href="./docs/getting-started/vibe-coding-experience.md"><img src="https://img.shields.io/badge/💡_Vibe_Coding-经验必读-red?style=for-the-badge" alt="Vibe Coding 经验"></a>
   <a href="./docs/concepts/glue-coding.md"><img src="https://img.shields.io/badge/🧩_拼好码-银弹-darkred?style=for-the-badge" alt="拼好码，银弹"></a>
   <a href="./docs/concepts/keyword-system.md"><img src="https://img.shields.io/badge/🔑_关键词-概念入口-gold?style=for-the-badge" alt="关键词系统"></a>
-  <a href="./research/README.md"><img src="https://img.shields.io/badge/🔬_研究域-17仓深研-teal?style=for-the-badge" alt="研究域"></a>
+  <a href="./research/README.md"><img src="https://img.shields.io/badge/🔬_研究域-新概念解析-teal?style=for-the-badge" alt="研究域，新概念解析"></a>
 </p>
 
 <!-- 资源直达：实践入口 -->
