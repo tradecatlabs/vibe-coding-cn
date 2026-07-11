@@ -17,6 +17,8 @@ vibe-coding-cn 是中文 Vibe Coding 从入门到精通教程。它面向中文�
 
 ## Core method
 
+核心命题入口是 `README.md#ai-five-propositions`，集中说明 AI 的生成域、模型能力对中间层的吞噬、隔离审查和成熟能力编排。
+
 本仓库将 AI 编程拆解为五层：
 
 1. Prompt：一次性指令，解决单次对话的表达问题。
@@ -41,6 +43,7 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 ## Key entry points
 
 - README.md：项目主入口，说明定位、快速开始、工具资源和核心工作流。
+- README.md#ai-five-propositions：五条核心命题，说明 AI 生成域、模型吞噬、隔离审查和能力编排。
 - docs/README.md：知识库总索引，提供新手、开发者、思维模型和 AI Agent 读取路径。
 - docs/getting-started/README.md：从零开始索引入口，正文拆分到学习地图、Vibe Coding 经验、网络环境、CLI 配置与开发环境搭建。
 - docs/getting-started/vibe-coding-experience.md：Vibe Coding 的核心经验入口，包含通用语言能力、人机分工、机器门禁和入门铁律。
@@ -150,7 +153,7 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 
 - 新手入门：读取 `docs/getting-started/vibe-coding-experience.md`、`docs/getting-started/learning-map.md`、`docs/getting-started/cli-setup.md`、`tools/config/.codex/README.md`，再读 `docs/concepts/problem-solving.md`、`docs/concepts/glue-coding.md` 和 `docs/references/project-architecture-template.md`。
 - 工程开发：读取 `docs/concepts/glue-coding.md`、`docs/concepts/keyword-system.md`、`docs/concepts/system-building.md`、`docs/references/technology-stack.md` 和 `docs/references/project-architecture-template.md`。
-- 思维模型：读取 `README.md#dao-fa-shu-qi`、`docs/philosophy/thinking-models.md`、`docs/philosophy/compositional-description-model.md`、`docs/philosophy/programming-dao.md`、`docs/philosophy/software-engineering-truths.md` 和 `docs/philosophy/methodology-toolbox.md`。
+- 思维模型：读取 `README.md#ai-five-propositions`、`README.md#dao-fa-shu-qi`、`docs/philosophy/thinking-models.md`、`docs/philosophy/compositional-description-model.md`、`docs/philosophy/programming-dao.md`、`docs/philosophy/software-engineering-truths.md` 和 `docs/philosophy/methodology-toolbox.md`。
 - 新技术判断：读取 `research/README.md`，再读具体研究对象或研究笔记，例如 `research/harness/harness-engineering.md`。
 - 标准流程执行：读取 `docs/workflow/development-process.md`。
 - AI Agent 执行：先读 `AGENTS.md` 与 `docs/AGENTS.md`，再读 `docs/workflow/development-process.md`，然后按任务类型读取 getting-started、concepts、references 或 research。

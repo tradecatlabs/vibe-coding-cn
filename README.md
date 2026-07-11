@@ -28,27 +28,33 @@
   <a href="https://t.me/glue_coding"><img src="https://img.shields.io/badge/聊天-Telegram-blue?style=for-the-badge&logo=telegram" alt="交流群"></a>
 </p>
 
-<!-- 资源直达 - 按重要性分组 -->
-<!-- 🔴 核心理念 (红色系) -->
+<!-- 资源直达：核心认知 -->
 <p>
-	  <a href="#dao-fa-shu-qi"><img src="https://img.shields.io/badge/☯️_道法术器-底层框架-purple?style=for-the-badge" alt="道法术器"></a>
-	  <a href="./docs/getting-started/learning-map.md"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
-	  <a href="./docs/getting-started/vibe-coding-experience.md"><img src="https://img.shields.io/badge/🧠_Vibe_Coding-经验必读-crimson?style=for-the-badge" alt="Vibe Coding 经验"></a>
-	  <a href="./tools/config/.codex/README.md"><img src="https://img.shields.io/badge/⚙️_Codex配置-一键安装-blue?style=for-the-badge" alt="Codex 配置一键安装"></a>
-	  <a href="./docs/concepts/problem-solving.md"><img src="https://img.shields.io/badge/🧩_问题求解-必读-purple?style=for-the-badge" alt="问题求解"></a>
-	  <a href="./docs/philosophy/thinking-models.md"><img src="https://img.shields.io/badge/🧭_思维模型-认知工具-purple?style=for-the-badge" alt="思维模型"></a>
-	  <a href="./docs/philosophy/methodology-toolbox.md"><img src="https://img.shields.io/badge/🔮_哲学方法论-底层协议-purple?style=for-the-badge" alt="哲学与方法论"></a>
-	  <a href="./docs/references/quality-gates-and-pitfalls.md"><img src="https://img.shields.io/badge/🛡️_工程实践-质量门禁-darkred?style=for-the-badge" alt="工程实践"></a>
-	  <a href="./docs/concepts/language-layers.md"><img src="https://img.shields.io/badge/📊_语言层要素-12层框架-gold?style=for-the-badge" alt="语言层要素"></a>
+  <a href="#dao-fa-shu-qi"><img src="https://img.shields.io/badge/☯️_道法术器-底层框架-purple?style=for-the-badge" alt="道法术器"></a>
+  <a href="#ai-five-propositions"><img src="https://img.shields.io/badge/🧠_五条命题-AI底层认知-crimson?style=for-the-badge" alt="五条核心命题"></a>
+  <a href="./docs/getting-started/vibe-coding-experience.md"><img src="https://img.shields.io/badge/💡_Vibe_Coding-经验必读-red?style=for-the-badge" alt="Vibe Coding 经验"></a>
+  <a href="./docs/concepts/glue-coding.md"><img src="https://img.shields.io/badge/🧩_拼好码-能力编排-darkred?style=for-the-badge" alt="拼好码与能力编排"></a>
+  <a href="./docs/concepts/keyword-system.md"><img src="https://img.shields.io/badge/🔑_关键词-概念入口-gold?style=for-the-badge" alt="关键词系统"></a>
+  <a href="./research/README.md"><img src="https://img.shields.io/badge/🔬_研究域-17仓深研-teal?style=for-the-badge" alt="研究域"></a>
+</p>
+
+<!-- 资源直达：实践入口 -->
+<p>
+  <a href="./docs/getting-started/learning-map.md"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
+  <a href="./tools/config/.codex/README.md"><img src="https://img.shields.io/badge/⚙️_Codex配置-一键安装-blue?style=for-the-badge" alt="Codex 配置一键安装"></a>
   <a href="./skills/README.md#当前保留"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
   <a href="./prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
-  <a href="./docs/references/common-sense.md"><img src="https://img.shields.io/badge/💡_常识-提示词入门-orange?style=for-the-badge" alt="常识"></a>
+  <a href="./docs/references/modern-enterprise-architecture-template.md"><img src="https://img.shields.io/badge/🏗️_企业架构-完整模板-slateblue?style=for-the-badge" alt="现代企业架构模板"></a>
+  <a href="./assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/📡_外部资源-本地注册表-teal?style=for-the-badge" alt="外部资源本地注册表"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/📚_Wiki-导航入口-slateblue?style=for-the-badge" alt="Wiki 导航入口"></a>
-	  <a href="./assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/📡_资源-聚合-teal?style=for-the-badge" alt="资源聚合"></a>
 </p>
 
 [☯️ 道法术器](#dao-fa-shu-qi)
-[🧠 五条核心命题](#ai-three-propositions)
+[🧠 五条核心命题](#ai-five-propositions)
+[🧩 拼好码](docs/concepts/glue-coding.md)
+[🔑 关键词系统](docs/concepts/keyword-system.md)
+[🔬 研究域](research/README.md)
+[🏗️ 企业架构](docs/references/modern-enterprise-architecture-template.md)
 [📌 字多不看](#root-tldr)
 [⚡ 1 分钟快速开始](#getting-started)
 [🚀 从零开始完整入门](docs/getting-started/learning-map.md)
@@ -65,6 +71,7 @@
 
 </div>
 
+<a id="ai-five-propositions"></a>
 <a id="ai-three-propositions"></a>
 
 <details open>
@@ -559,6 +566,9 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 *   [**软件工程的朴素真理**](docs/philosophy/software-engineering-truths.md): 代码、复杂度、需求、维护、质量、架构和团队的工程常识。
 *   [**工程实践**](docs/references/quality-gates-and-pitfalls.md): 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口。
 *   [**技术栈**](docs/references/technology-stack.md#reference-technology-stack-十四如何选择技术栈): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
+*   [**现代企业数字化平台架构**](docs/references/modern-enterprise-architecture-template.md): 企业级领域、平台、数据、AI、治理、可靠性和审计架构参考模型。
+*   [**scripts 仓库控制面治理**](docs/references/modern-enterprise-architecture-template.md#reference-modern-enterprise-scripts-control-plane): 成熟企业项目的脚本分层、风险边界、登记、测试、审计和下线规则。
+*   [**scripts 目录说明**](scripts/README.md): 本仓库自动化入口、验证命令和脚本职责索引。
 *   [**研究域治理契约**](research/research-domain-contract.md): 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
 *   [**研究价值与应用地图**](research/research-value-application-map.md): 17 个研究域的用户价值、核心启示、应用位置和下沉路线。
 *   [**研究迁移综合**](research/research-transfer-synthesis.md): 用对标拆解、改良迭代和杂交创新把研究转成可执行路线。
@@ -728,10 +738,13 @@ skills/
   README.md  # skills 总览与索引
 docs/
   getting-started/*, concepts/*, references/* 等知识库
+research/
+  README.md  # 研究总索引、治理契约、迁移综合与研究对象入口
 assets/
   README.md  # 静态资产与外部资源入口
   external-resources/  # 本地外部资源注册表
 scripts/
+  README.md  # 自动化入口、验证命令与脚本职责索引
   check-local-links.py  # Markdown 相对链接检查脚本
 ```
 
