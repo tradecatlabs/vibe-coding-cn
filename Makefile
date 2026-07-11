@@ -15,7 +15,7 @@ help:
 	@echo "  check-doc-structure - Check docs README anchors, order and duplicate anchors"
 	@echo "  check-directory-docs - Check required README/AGENTS pairs"
 	@echo "  check-metadata - Check metadata paths and anchors"
-	@echo "  check-ai-citation - Check llms and AI citation paths and anchors"
+	@echo "  check-ai-citation - Check AI citation paths, anchors, and repository identity"
 	@echo "  check-external-resources - Check local external resources registry"
 	@echo "  check-research-raw - Check research raw fact snapshots and repository clones"
 	@echo "  check-wiki - Check local GitHub Wiki checkout when present"
@@ -52,7 +52,7 @@ check-metadata:
 	@python3 scripts/check-metadata.py
 
 check-ai-citation:
-	@echo "Checking llms and AI citation paths and anchors..."
+	@echo "Checking AI citation paths, anchors, and repository identity..."
 	@python3 scripts/check-ai-citation.py
 
 check-external-resources:

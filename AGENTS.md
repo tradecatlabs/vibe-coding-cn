@@ -69,7 +69,7 @@ git push origin develop
 | `make check-doc-structure` | 校验 docs README 标准块顺序、目录入口和重复锚点 | Python 3 |
 | `make check-directory-docs` | 校验仓库自有目录 README/AGENTS 覆盖 | Python 3 |
 | `make check-metadata` | 校验 metadata 路径与锚点 | Python 3 |
-| `make check-ai-citation` | 校验 llms 与 AI 引用语料路径和锚点 | Python 3 |
+| `make check-ai-citation` | 校验 llms 与 AI 引用语料路径、锚点和规范仓库身份 | Python 3 |
 | `make check-external-resources` | 校验本地外部资源注册表字段、分类统计、ID 与链接形态 | Python 3、PyYAML |
 | `make check-research-raw` | 校验研究域 raw 原始事实层、Git 工作树、来源清单和核心材料文件 | Python 3、Git |
 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | 校验 GitHub Wiki 独立仓库本地 checkout 的页面覆盖、内链、旧口径和 Markdown | Python 3、Node.js 22+、本地 Wiki checkout |
@@ -242,7 +242,7 @@ git push origin develop
 - `scripts/check-doc-structure.py` - docs README 标准块顺序、目录入口和重复锚点检查脚本，供 `make check-doc-structure` 与 CI 使用
 - `scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
 - `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
-- `scripts/check-ai-citation.py` - llms 与 AI 引用语料路径和锚点检查脚本，供 `make check-ai-citation` 与 CI 使用
+- `scripts/check-ai-citation.py` - llms 与 AI 引用语料路径、锚点和规范仓库身份检查脚本，供 `make check-ai-citation` 与 CI 使用
 - `scripts/check-external-resources.py` - 本地外部资源注册表检查脚本，供 `make check-external-resources` 与 `make test` 使用
 - `scripts/check-research-raw.py` - 研究域 raw 原始事实层和 Git 工作树检查脚本，供 `make check-research-raw` 与 `make test` 使用
 - `scripts/fetch-research-raw.py` - GitHub 研究对象 raw 原始事实层和 `repository/` 工作树拉取脚本，供 `make fetch-research-raw` 手动刷新使用，不纳入 CI
@@ -308,7 +308,7 @@ feat|fix|docs|chore|refactor|test: scope - summary
 4. `check docs README structure` - docs README 标准块顺序、目录入口和重复锚点检查
 5. `check required directory README and AGENTS files` - 仓库自有目录 README/AGENTS 覆盖检查
 6. `check metadata paths and anchors` - metadata 路径与锚点检查
-7. `check llms and AI citation paths and anchors` - llms 与 AI 引用语料路径和锚点检查
+7. `check llms and AI citation paths and anchors` - llms 与 AI 引用语料路径、锚点和规范仓库身份检查
 8. `check modern enterprise architecture kit` - 现代企业架构 starter kit schema 与示例一致性检查
 9. `link-checker` - 链接有效性检查
 
@@ -367,7 +367,7 @@ make test
 2. **Conversion Tool**: 使用 Python + pandas + openpyxl
 3. **Documentation Standard**: 用户文档使用中文；代码/文件名使用英文
 4. **Skills**: 每个技能有独立的 `SKILL.md`
-5. **Quality Gates**: `make test` 执行 Markdown lint、本地相对链接/锚点检查、折叠块结构检查、docs 结构检查、metadata 路径检查、AI 引用路径检查与现代企业架构 starter kit 检查
+5. **Quality Gates**: `make test` 执行 Markdown lint、本地相对链接/锚点检查、折叠块结构检查、docs 结构检查、metadata 路径检查、AI 引用一致性检查与现代企业架构 starter kit 检查
 
 ## Development Workflow
 
