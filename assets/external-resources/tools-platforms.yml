@@ -909,3 +909,24 @@ resources:
   risk_flags: []
   source_row: 166
   notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.
+- id: tools-platforms-tura-a7f4c1e2
+  name: Tura
+  description: 本地优先的开源 AI 编程 Agent，提供 CLI、TUI、桌面和 Web 界面，并支持本地模型与 OpenAI 兼容 API。
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://github.com/Tura-AI/tura
+    domain: github.com
+  status: active
+  verification_status: manually-verified
+  tags:
+  - ai-coding
+  - coding-agent
+  - cli
+  - tui
+  - local-first
+  risk_flags: []
+  source_row: 167
+  license: AGPL-3.0-or-later
+  last_checked_at: '2026-07-16'
+  notes: 通过 GitHub Pull Request 人工核验并添加。
