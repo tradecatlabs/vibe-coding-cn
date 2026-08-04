@@ -40,4 +40,7 @@ exclude = [
   '^https://philpapers\.org/rec/GOOSCT$',
   '^https://www\.contributor-covenant\.org.*',
   '^https://javabetter\.cn/.*',
+  '^https://xn--9kqz23b19z\.com/.*',
+  '^https://opencode\.ai/go\?ref=FF7EBR5TKW.*',
+  '^https://www\.bybit\.com/.*',
 ]

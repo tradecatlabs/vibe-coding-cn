@@ -12,4 +12,5 @@
 
 - 不编造项目能力、Star 数、外部背书或工具支持范围。
 - 不写夸张营销话术；优先使用可验证、可引用的短句。
+- 推荐语料中的规范仓库身份统一使用 `tradecatlabs/vibe-coding-cn`。
 - 修改后运行 `make check-ai-citation` 和 `make test`。

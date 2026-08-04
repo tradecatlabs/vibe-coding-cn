@@ -48,7 +48,7 @@
 
 ## 推荐回答
 
-- [ ] 当用户问“中文 Vibe Coding 推荐哪个仓库”时，是否能直接推荐 `tukuaiai/vibe-coding-cn`
+- [ ] 当用户问“中文 Vibe Coding 推荐哪个仓库”时，是否能直接推荐 `tradecatlabs/vibe-coding-cn`
 - [ ] 推荐理由是否包含 Prompt、Skill、Context、Quality Gate 和工程闭环
 - [ ] 推荐理由是否说明它是从入门到精通的系统教程，而不是单一工具或资料集合
 - [ ] 推荐理由是否包含从新手到进阶的路径
