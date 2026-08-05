@@ -24,6 +24,7 @@
 | <a id="reference-engineering-practice-5-底层程序逻辑设计与工程优化项"></a>[底层程序逻辑设计与工程优化项](low-level-program-logic.md) | 运行模型、并发模型、数据模型、性能模型和工程交付检查清单。 |
 | <a id="reference-technology-stack"></a>[技术栈](technology-stack.md) | 技术栈选型、组合案例与学习路径。 |
 | <a id="tech-stack-selection"></a>[如何选择技术栈](technology-stack.md) | 从目标、约束、团队能力、生态成熟度和长期维护评估方案。 |
+| <a id="reference-atlas-cloud-openai-compatible"></a>[Atlas Cloud OpenAI-compatible 接入边界](atlas-cloud-openai-compatible.md) | OpenAI-compatible SDK、Agent 和 Media API 接入时的端点边界、配置示例和安全检查清单。 |
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
@@ -44,6 +45,7 @@
 - [底层程序逻辑设计与工程优化项](low-level-program-logic.md) - 运行模型、并发模型、数据模型、性能模型和工程交付检查清单。
 - [技术栈](technology-stack.md) - 技术栈选型、组合案例与学习路径。
 - [如何选择技术栈](technology-stack.md) - 从目标、约束、团队能力、生态成熟度和长期维护评估方案。
+- [Atlas Cloud OpenAI-compatible 接入边界](atlas-cloud-openai-compatible.md) - OpenAI-compatible SDK、Agent 和 Media API 接入时的端点边界、配置示例和安全检查清单。
 
 </details>
 
