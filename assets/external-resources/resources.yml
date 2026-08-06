@@ -35,7 +35,7 @@ categories:
 - id: tools-platforms
   name: 工具与平台
   file: tools-platforms.yml
-  count: 69
+  count: 70
   description: 用于收录大模型、AI 对话平台、IDE、CLI、Agent 平台、通用工具网站等
 - id: communities-forums
   name: 社区与论坛
@@ -58,7 +58,7 @@ categories:
   count: 75
   description: 用于收录相关书籍
 stats:
-  total_resources: 287
+  total_resources: 288
   missing_link_resources: 5
   non_url_locator_resources: 2
   duplicate_url_count: 6
