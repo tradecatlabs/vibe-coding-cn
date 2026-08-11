@@ -206,3 +206,16 @@ resources:
   tags: []
   risk_flags: []
   source_row: 16
+- id: communities-forums-paotong-9f2a41c7
+  name: 跑通（paotong.dev）
+  description: 只收跑通过的经验的中文 vibe coding 社区：Claude Code / Cursor / Codex 一线实战复盘、真实成本账单与翻车现场；提供 MCP 接入（agent 可直接读文章）与全文 RSS
+  resource_type: community_or_forum
+  link:
+    kind: external_url
+    url: https://paotong.dev
+    domain: paotong.dev
+  status: active
+  verification_status: imported-unverified
+  tags: []
+  risk_flags: []
+  source_row: 17
