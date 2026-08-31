@@ -1,1 +1,0 @@
-amulet-core>=1.9.0
