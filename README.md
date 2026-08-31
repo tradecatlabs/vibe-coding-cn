@@ -1127,7 +1127,230 @@ gantt
 
 > 本节在保留根 README 原文的基础上，汇总 docs/ 中的教程与知识正文，形成单文件阅读版本。
 
+### 总入口
+
+<a id="minimal-source-docs-readme-md"></a>
+<details>
+<summary><strong>📄 知识库总索引</strong>（点击展开/收起）</summary>
+
+<!-- 来源：docs/README.md -->
+
+<a id="minimal-source-docs-readme-md-知识库总索引"></a>
+### 知识库总索引
+
+<a id="minimal-source-docs-readme-md-字多不看"></a>
+#### 字多不看
+
+- 新手先读 `getting-started/`，按 Vibe Coding 经验、学习地图、网络环境、CLI 配置和开发环境推进。
+- 想理解 Vibe Coding 的底层概念，读 `concepts/`。
+- 想补思维模型、软件工程常识和方法论，读 `philosophy/`。
+- 想查工程模板、质量门禁、技术栈和常见坑，读 `references/`。
+- 想记录新技术、优秀 repo 或工程趋势，读根目录 `research/`。
+- 想按标准流程推进任务、提交和推送，读 `workflow/`。
+
+<a id="minimal-source-docs-readme-md-快速导航"></a>
+#### 快速导航
+
+| 目录 | 定位 | 首选入口 |
+|:---|:---|:---|
+| [getting-started](https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/docs/getting-started) | 从零开始的入门教程 | [Vibe Coding 经验](#minimal-source-docs-getting-started-vibe-coding-experience-md) / [学习地图](#minimal-source-docs-getting-started-learning-map-md) |
+| [concepts](https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/docs/concepts) | 核心概念、问题求解、关键词系统与工程思想 | [问题求解](#minimal-source-docs-concepts-problem-solving-md) / [拼好码](#minimal-source-docs-concepts-glue-coding-md) / [关键词系统](#minimal-source-docs-concepts-keyword-system-md) |
+| [philosophy](https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/docs/philosophy) | 哲学方法论、思维模型与底层认知模型 | [思维模型](#minimal-source-docs-philosophy-thinking-models-md) / [方法论工具箱](#minimal-source-docs-philosophy-methodology-toolbox-md) |
+| [references](https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/docs/references) | 工程实践、技术栈、模板和检查清单 | [项目架构模板](#minimal-source-docs-references-project-architecture-template-md) / [质量门禁](#minimal-source-docs-references-quality-gates-and-pitfalls-md) |
+| [research](https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/research) | 根级研究域：新技术、优秀 repo 与工程范式研究 | [研究域治理契约](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/research-domain-contract.md) / [研究迁移综合](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/research-transfer-synthesis.md) |
+| [workflow](https://github.com/tradecatlabs/vibe-coding-cn/tree/develop/docs/workflow) | 开发流程、质量门禁和交付闭环 | [开发流程](#minimal-source-docs-workflow-development-process-md) |
+
+<details>
+<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
+
+<a id="minimal-source-docs-readme-md-全部文档索引"></a>
+##### 全部文档索引
+
+<a id="minimal-source-docs-readme-md-getting-started"></a>
+##### getting-started
+
+- [README](#minimal-source-docs-getting-started-readme-md) - 从零开始索引。
+- [Vibe Coding 经验](#minimal-source-docs-getting-started-vibe-coding-experience-md) - 通用语言能力、人机分工、机器门禁和入门铁律。
+- [学习地图](#minimal-source-docs-getting-started-learning-map-md) - 新手、开发者、团队、Prompt、Skill、质量门禁和 GEO/SEO 的路线选择。
+- [网络环境配置](#minimal-source-docs-getting-started-network-environment-md) - OpenAI、GitHub、文档和依赖源访问。
+- [CLI 配置](#minimal-source-docs-getting-started-cli-setup-md) - Codex CLI 默认路线与 OpenCode 备选路线。
+- [开发环境搭建](#minimal-source-docs-getting-started-development-environment-md) - 让 Agent 主动配置开发依赖、编辑器建议和测试命令。
+- [AGENTS](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/docs/getting-started/AGENTS.md) - 入门教程目录操作规则。
+
+<a id="minimal-source-docs-readme-md-concepts"></a>
+##### concepts
+
+- [README](#minimal-source-docs-concepts-readme-md) - 核心概念索引。
+- [问题求解](#minimal-source-docs-concepts-problem-solving-md) - 用目标、现状、差距、标准、约束、对象和路径定义问题。
+- [拼好码](#minimal-source-docs-concepts-glue-coding-md) - 复用成熟能力，用胶水代码连接、编排、适配业务流程。
+- [系统构建方法](#minimal-source-docs-concepts-system-building-md) - 自顶向下、自底向上与分而治之的组合使用。
+- [开发范式演进](#minimal-source-docs-concepts-development-paradigms-md) - 软件工程组织方式的演进。
+- [语言层要素](#minimal-source-docs-concepts-language-layers-md) - 看懂代码所需的语言层要素。
+- [关键词系统](#minimal-source-docs-concepts-keyword-system-md) - Vibe Coding 与工程协作中的高频关键词。
+- [递归自优化系统](#minimal-source-docs-concepts-recursive-self-optimizing-system-md) - 递归自优化生成系统的形式化模型。
+- [AGENTS](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/docs/concepts/AGENTS.md) - 核心概念目录操作规则。
+
+<a id="minimal-source-docs-readme-md-philosophy"></a>
+##### philosophy
+
+- [README](#minimal-source-docs-philosophy-readme-md) - 哲学方法论索引。
+- [思维模型](#minimal-source-docs-philosophy-thinking-models-md) - 可复用思维模型索引。
+- [组合描述模型](#minimal-source-docs-philosophy-compositional-description-model-md) - 用对象、状态、快照、序列、过程、变换、同一/差异与关系描述复杂系统。
+- [编程之道](#minimal-source-docs-philosophy-programming-dao-md) - 编程哲学与工程判断。
+- [软件工程的朴素真理](#minimal-source-docs-philosophy-software-engineering-truths-md) - 代码、复杂度、需求、维护、质量、架构和团队的工程常识。
+- [方法论工具箱](#minimal-source-docs-philosophy-methodology-toolbox-md) - 现象学还原、正反合、可证伪主义、形式化方法等提效工具。
+- [AGENTS](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/docs/philosophy/AGENTS.md) - 哲学方法论目录操作规则。
+
+<a id="minimal-source-docs-readme-md-references"></a>
+##### references
+
+- [README](#minimal-source-docs-references-readme-md) - 参考资料索引。
+- [项目架构模板](#minimal-source-docs-references-project-architecture-template-md) - 常见项目结构、架构设计原则、最低门禁和检查清单。
+- [通用 Python 项目骨架](#minimal-source-docs-references-python-project-skeleton-md) - Python 应用、服务、脚本工具和库项目的通用骨架。
+- [企业级架构模板](#minimal-source-docs-references-enterprise-architecture-template-md) - 中大型工程组织、平台工程和多产品线参考模型。
+- [现代企业数字化平台架构](#minimal-source-docs-references-modern-enterprise-architecture-template-md) - 面向领域产品网络、微服务容器 GitOps 边界、AI 原生能力、微调治理、AI 事件响应、内部平台、数据产品、供应链安全、FinOps 成本治理、版本治理、版本控制面、基线版本策略、发布通道、兼容性与冻结控制总账、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、基线运营韧性与重要业务服务影响容忍总账、基线第三方与关键供应商风险总账、基线数据驻留与跨境处理总账、基线共享责任与继承控制总账、基线独立控制保证抽样总账、基线连续控制监测总账、基线运行时准入决策总账、基线运行时准入回执、基线长期验签回执、基线证据不可变归档回执、干净环境基线重建回执、私有制品托管交接清单、审计导出排除清单、本地私有制品边界、基线迁移执行回执、基线迁移工作单、基线消费锁定文件、基线准入执行策略、基线撤销与隔离记录、基线发布事务回执、基线门禁执行报告、基线证据追踪图、基线会审裁决记录、基线 EOL 退役证书、基线状态对账报告、基线生命周期状态机、基线就绪评分卡、基线例外总账、基线回滚验证记录、基线通知确认总账、基线验证环境锁定、基线制品清单、基线发布证据、基线兼容性总账、基线采纳总账、基线支持矩阵、基线发布列车、基线符合性声明、外部标准版本锁定、可执行标准、执行控制面、门禁决策、RACI 决策权、可靠性分级、仓库拓扑、迁移弃用、审计证据、联邦治理和行业对标矩阵的完整说明文档。
+- [常识](#minimal-source-docs-references-common-sense-md) - AI 编程和工程交付前的最低判断线。
+- [Dataset First 数据服务](#minimal-source-docs-references-dataset-first-data-service-md) - 数据服务模板。
+- [代码组织](#minimal-source-docs-references-code-organization-md) - 模块化、命名、注释、格式化、文档和工具。
+- [开发经验](#minimal-source-docs-references-development-experience-md) - 编码规范、架构原则和常见基础设施经验。
+- [AI 编程质量门禁与常见坑](#minimal-source-docs-references-quality-gates-and-pitfalls-md) - 系统提示词、强前置条件、常见坑和硬门禁。
+- [底层程序逻辑设计与工程优化项](#minimal-source-docs-references-low-level-program-logic-md) - 运行模型、并发模型、数据模型、性能模型和工程交付检查清单。
+- [技术栈](#minimal-source-docs-references-technology-stack-md) - 技术栈选型、组合案例与初学者学习路径。
+- [AGENTS](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/docs/references/AGENTS.md) - 参考资料目录操作规则。
+
+<a id="minimal-source-docs-readme-md-research"></a>
+##### research
+
+- [README](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/README.md) - 研究笔记索引。
+- [研究域治理契约](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/research-domain-contract.md) - 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
+- [研究价值与应用地图](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/research-value-application-map.md) - 研究体系给用户带来的价值、核心启示、应用位置和下沉路线。
+- [研究迁移综合](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/research-transfer-synthesis.md) - 将对标拆解、改良迭代和杂交创新转成可执行研究路线。
+- [Harness 研究对象](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/harness/README.md) - Harness Engineering 的工程控制、评估器与反馈闭环研究对象。
+- [Harness 工程解析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/harness/harness-engineering.md) - Harness Engineering 的工程控制、评估器与反馈闭环解析。
+- [tmux 蜂群协作](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/tmux-ai-swarm.md) - 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式。
+- [Aider-AI/aider 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/aider-ai-aider/README.md) - 终端 AI 结对编程工具。
+- [Aider-AI/aider 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/aider-ai-aider/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [Aider-AI/aider 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/aider-ai-aider/deep-dive.md) - L2 源码/结构深度研究、关键机制和可迁移模式。
+- [cline/cline 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/cline-cline/README.md) - IDE/SDK/CLI 自主编码 Agent。
+- [cline/cline 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/cline-cline/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [cline/cline 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/cline-cline/deep-dive.md) - L2 源码/结构深度研究、关键机制和可迁移模式。
+- [hesreallyhim/awesome-claude-code 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/hesreallyhim-awesome-claude-code/README.md) - Claude Code 生态索引。
+- [hesreallyhim/awesome-claude-code 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/hesreallyhim-awesome-claude-code/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [hesreallyhim/awesome-claude-code 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/hesreallyhim-awesome-claude-code/deep-dive.md) - L2 源码/结构深度研究、关键机制和可迁移模式。
+- [openai/codex 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/openai-codex/README.md) - 官方 coding agent 工具源码。
+- [openai/codex 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/openai-codex/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [openai/codex 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/openai-codex/deep-dive.md) - L2 源码/结构深度研究、关键机制和可迁移模式。
+- [shanraisshan/claude-code-best-practice 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/shanraisshan-claude-code-best-practice/README.md) - Claude Code / Agentic Engineering 最强对标。
+- [shanraisshan/claude-code-best-practice 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/shanraisshan-claude-code-best-practice/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [shanraisshan/claude-code-best-practice 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/shanraisshan-claude-code-best-practice/deep-dive.md) - L2 源码/结构深度研究、关键机制和可迁移模式。
+- [tradecatlabs/vibe-coding-cn 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/tradecatlabs-vibe-coding-cn/README.md) - 中文主线工程化工作流。
+- [tradecatlabs/vibe-coding-cn 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/tradecatlabs-vibe-coding-cn/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [tradecatlabs/vibe-coding-cn 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/tradecatlabs-vibe-coding-cn/deep-dive.md) - L2 源码/结构深度研究、关键机制和可迁移模式。
+- [datawhalechina/easy-vibe 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/datawhalechina-easy-vibe/README.md) - 中文分阶段交互式课程。
+- [datawhalechina/easy-vibe 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/datawhalechina-easy-vibe/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [datawhalechina/easy-vibe 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/datawhalechina-easy-vibe/deep-dive.md) - L2 源码/结构深度研究、关键机制和可迁移模式。
+- [datawhalechina/vibe-vibe 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/datawhalechina-vibe-vibe/README.md) - 中文零基础系统教程。
+- [datawhalechina/vibe-vibe 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/datawhalechina-vibe-vibe/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [datawhalechina/vibe-vibe 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/datawhalechina-vibe-vibe/deep-dive.md) - L2 源码/结构深度研究、关键机制和可迁移模式。
+- [filipecalegario/awesome-vibe-coding 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/filipecalegario-awesome-vibe-coding/README.md) - 国际 Vibe Coding 索引。
+- [filipecalegario/awesome-vibe-coding 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/filipecalegario-awesome-vibe-coding/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [filipecalegario/awesome-vibe-coding 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/filipecalegario-awesome-vibe-coding/deep-dive.md) - L2 源码/结构深度研究、关键机制和可迁移模式。
+- [luzhenqian/ai-coding-lab 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/luzhenqian-ai-coding-lab/README.md) - AI Coding 项目实验室。
+- [luzhenqian/ai-coding-lab 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/luzhenqian-ai-coding-lab/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [luzhenqian/ai-coding-lab 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/luzhenqian-ai-coding-lab/deep-dive.md) - L2 源码/结构深度研究、关键机制和可迁移模式。
+- [ShouZhengAI/CS146S_CN 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/shouzhengai-cs146s-cn/README.md) - 中文课程与 assignments。
+- [ShouZhengAI/CS146S_CN 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/shouzhengai-cs146s-cn/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [ShouZhengAI/CS146S_CN 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/shouzhengai-cs146s-cn/deep-dive.md) - L2 源码/结构深度研究、关键机制和可迁移模式。
+- [ai-for-developers/awesome-vibe-coding 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/ai-for-developers-awesome-vibe-coding/README.md) - 精选 Vibe Coding 资料清单。
+- [ai-for-developers/awesome-vibe-coding 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/ai-for-developers-awesome-vibe-coding/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [ai-for-developers/awesome-vibe-coding 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/ai-for-developers-awesome-vibe-coding/deep-dive.md) - L2 结构深度研究、关键机制、迁移边界和验证任务。
+- [Daotin/ai-coding 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/daotin-ai-coding/README.md) - AI Coding 经验汇总。
+- [Daotin/ai-coding 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/daotin-ai-coding/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [Daotin/ai-coding 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/daotin-ai-coding/deep-dive.md) - L2 结构深度研究、关键机制、迁移边界和验证任务。
+- [earyantLe/vibe-coding-skill 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/earyantle-vibe-coding-skill/README.md) - Vibe Coding Skill / SOP 化。
+- [earyantLe/vibe-coding-skill 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/earyantle-vibe-coding-skill/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [earyantLe/vibe-coding-skill 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/earyantle-vibe-coding-skill/deep-dive.md) - L2 结构深度研究、关键机制、迁移边界和验证任务。
+- [liyupi/ai-guide 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/liyupi-ai-guide/README.md) - AI 资源大全与产品实用路线。
+- [liyupi/ai-guide 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/liyupi-ai-guide/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [liyupi/ai-guide 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/liyupi-ai-guide/deep-dive.md) - L2 结构深度研究、关键机制、迁移边界和验证任务。
+- [RooCodeInc/Roo-Code 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/roocodeinc-roo-code/README.md) - 已归档多 Agent 编辑器工具。
+- [RooCodeInc/Roo-Code 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/roocodeinc-roo-code/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [RooCodeInc/Roo-Code 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/roocodeinc-roo-code/deep-dive.md) - L2 结构深度研究、关键机制、迁移边界和验证任务。
+- [wendy7756/vibe-coding-guide 研究域](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/wendy7756-vibe-coding-guide/README.md) - 非程序员自然语言编程指南。
+- [wendy7756/vibe-coding-guide 研究分析](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/wendy7756-vibe-coding-guide/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
+- [wendy7756/vibe-coding-guide 深度研究](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/wendy7756-vibe-coding-guide/deep-dive.md) - L2 结构深度研究、关键机制、迁移边界和验证任务。
+- [AGENTS](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/research/AGENTS.md) - 研究笔记目录操作规则。
+
+
+<a id="minimal-source-docs-readme-md-workflow"></a>
+##### workflow
+
+- [README](#minimal-source-docs-workflow-readme-md) - 开发流程索引。
+- [开发流程](#minimal-source-docs-workflow-development-process-md) - 默认任务推进顺序、质量门禁和交付闭环。
+- [AGENTS](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/docs/workflow/AGENTS.md) - 开发流程目录操作规则。
+
+</details>
+
+<a id="minimal-source-docs-readme-md-使用方式"></a>
+#### 使用方式
+
+- 只想快速开始：从 [getting-started](#minimal-source-docs-getting-started-readme-md) 进入。
+- 已经有项目问题：先读 [问题求解](#minimal-source-docs-concepts-problem-solving-md)，再读 [质量门禁与常见坑](#minimal-source-docs-references-quality-gates-and-pitfalls-md)。
+- 需要给 AI Agent 上下文：先给它 [AGENTS](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/docs/AGENTS.md)，再给它当前任务对应目录的 README 和具体正文文档。
+- 需要规范执行顺序：读 [开发流程](#minimal-source-docs-workflow-development-process-md)。
+- 新增内容时，先判断它属于教程、概念、哲学、参考还是研究；研究内容进入根目录 `research/`。
+
+<a id="minimal-source-docs-readme-md-正文"></a>
+#### 正文
+
+<a id="minimal-source-docs-readme-md-推荐阅读路径"></a>
+##### 推荐阅读路径
+
+<a id="minimal-source-docs-readme-md-新手路径"></a>
+###### 新手路径
+
+1. [Vibe Coding 经验](#minimal-source-docs-getting-started-vibe-coding-experience-md)
+2. [学习地图](#minimal-source-docs-getting-started-learning-map-md)
+3. [问题求解](#minimal-source-docs-concepts-problem-solving-md)
+4. [拼好码](#minimal-source-docs-concepts-glue-coding-md)
+5. [质量门禁与常见坑](#minimal-source-docs-references-quality-gates-and-pitfalls-md)
+
+<a id="minimal-source-docs-readme-md-开发者路径"></a>
+###### 开发者路径
+
+1. [拼好码](#minimal-source-docs-concepts-glue-coding-md)
+2. [系统构建方法](#minimal-source-docs-concepts-system-building-md)
+3. [技术栈](#minimal-source-docs-references-technology-stack-md)
+4. [项目架构模板](#minimal-source-docs-references-project-architecture-template-md)
+
+<a id="minimal-source-docs-readme-md-思维模型路径"></a>
+###### 思维模型路径
+
+1. [思维模型](#minimal-source-docs-philosophy-thinking-models-md)
+2. [组合描述模型](#minimal-source-docs-philosophy-compositional-description-model-md)
+3. [编程之道](#minimal-source-docs-philosophy-programming-dao-md)
+4. [软件工程的朴素真理](#minimal-source-docs-philosophy-software-engineering-truths-md)
+5. [递归自优化系统](#minimal-source-docs-concepts-recursive-self-optimizing-system-md)
+
+<a id="minimal-source-docs-readme-md-ai-agent-读取路径"></a>
+###### AI Agent 读取路径
+
+1. [根目录 AGENTS](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/AGENTS.md)
+2. [docs 目录 AGENTS](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/docs/AGENTS.md)
+3. [开发流程](#minimal-source-docs-workflow-development-process-md)
+4. [Vibe Coding 经验](#minimal-source-docs-getting-started-vibe-coding-experience-md)
+5. [项目架构模板](#minimal-source-docs-references-project-architecture-template-md)
+6. [质量门禁与常见坑](#minimal-source-docs-references-quality-gates-and-pitfalls-md)
+7. [AI 引用语料](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/assets/ai-citation/README.md)
+
+</details>
+
+
 ### 一、从零开始
+
+<a id="minimal-source-docs-getting-started-readme-md"></a>
+<details>
+<summary><strong>📄 从零开始</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/getting-started/README.md -->
 
@@ -1177,6 +1400,12 @@ gantt
 #### 正文
 
 正文已拆分到上方独立文档；本 README 只保留索引、旧锚点兼容入口和阅读顺序。
+
+</details>
+
+<a id="minimal-source-docs-getting-started-cli-setup-md"></a>
+<details>
+<summary><strong>📄 CLI 配置</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/getting-started/cli-setup.md -->
 
@@ -1719,6 +1948,12 @@ opencode
 
 → [开发环境搭建](#minimal-source-docs-getting-started-development-environment-md) - 回看基础环境
 
+</details>
+
+<a id="minimal-source-docs-getting-started-development-environment-md"></a>
+<details>
+<summary><strong>📄 开发环境搭建</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/getting-started/development-environment.md -->
 
 <a id="development-environment"></a>
@@ -1995,6 +2230,12 @@ alias oc='opencode'
 
 → [CLI 配置](#minimal-source-docs-getting-started-cli-setup-md) - 配置默认 AI CLI
 
+</details>
+
+<a id="minimal-source-docs-getting-started-learning-map-md"></a>
+<details>
+<summary><strong>📄 学习地图</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/getting-started/learning-map.md -->
 
 <a id="learning-map"></a>
@@ -2159,6 +2400,12 @@ alias oc='opencode'
 - 新手：回到 [学习地图](#minimal-source-docs-getting-started-learning-map-md)，从第 0 步开始。
 - 开发者：阅读 [Vibe Coding 经验](#minimal-source-docs-getting-started-vibe-coding-experience-md)，再选择 Skill 或质量门禁路线。
 - 团队：先统一 [AGENTS.md](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/AGENTS.md)、强前置条件和质量门禁。
+
+</details>
+
+<a id="minimal-source-docs-getting-started-network-environment-md"></a>
+<details>
+<summary><strong>📄 网络环境配置</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/getting-started/network-environment.md -->
 
@@ -2327,6 +2574,12 @@ export http_proxy=http://127.0.0.1:7890
 
 网络配置完成后，继续阅读 [开发环境搭建](#minimal-source-docs-getting-started-development-environment-md)。
 
+</details>
+
+<a id="minimal-source-docs-getting-started-vibe-coding-experience-md"></a>
+<details>
+<summary><strong>📄 Vibe Coding 经验</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/getting-started/vibe-coding-experience.md -->
 
 <a id="vibe-coding-experience"></a>
@@ -2437,8 +2690,14 @@ AI 能安装依赖、执行命令、修复报错、提交 Git；你负责确认�
 
 → [CLI 配置](#minimal-source-docs-getting-started-cli-setup-md) - 默认 AI CLI 路线，文末包含 OpenCode 备选方案
 
+</details>
+
 
 ### 二、核心概念
+
+<a id="minimal-source-docs-concepts-readme-md"></a>
+<details>
+<summary><strong>📄 核心概念</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/concepts/README.md -->
 
@@ -2494,6 +2753,12 @@ AI 能安装依赖、执行命令、修复报错、提交 Git；你负责确认�
 
 正文已拆分到上方独立文档；本 README 只保留索引、旧锚点兼容入口和阅读顺序。
 
+</details>
+
+<a id="minimal-source-docs-concepts-development-paradigms-md"></a>
+<details>
+<summary><strong>📄 开发范式演进</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/concepts/development-paradigms.md -->
 
 <a id="concept-development-paradigms"></a>
@@ -2525,6 +2790,12 @@ AI 能安装依赖、执行命令、修复报错、提交 Git；你负责确认�
    在模块化基础上，将系统进一步拆分为可独立开发、部署、扩展和运维的服务单元，并结合云原生理念提升系统的弹性、可扩展性和工程协作效率。
 
 上述内容并不表示软件开发存在固定、统一或严格递进的阶段划分。不同范式和架构思想往往并存，并会根据项目规模、业务复杂度、团队协作方式和技术环境被组合使用。
+
+</details>
+
+<a id="minimal-source-docs-concepts-glue-coding-md"></a>
+<details>
+<summary><strong>📄 拼好码</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/concepts/glue-coding.md -->
 
@@ -3073,6 +3344,12 @@ AI 特别适合生成：
 - [语言层要素](#minimal-source-docs-concepts-language-layers-md) - 看懂代码需要掌握的语言层级
 - [胶水开发提示词（在线提示词库入口）](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/prompts/README.md)
 
+</details>
+
+<a id="minimal-source-docs-concepts-keyword-system-md"></a>
+<details>
+<summary><strong>📄 关键词系统</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/concepts/keyword-system.md -->
 
 <a id="minimal-source-docs-concepts-keyword-system-md-关键词系统"></a>
@@ -3255,6 +3532,12 @@ AI 特别适合生成：
 系统边界
 回潮
 ```
+
+</details>
+
+<a id="minimal-source-docs-concepts-language-layers-md"></a>
+<details>
+<summary><strong>📄 语言层要素</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/concepts/language-layers.md -->
 
@@ -3853,6 +4136,12 @@ async def get_user(user_id: int, db: Session = Depends(get_db)):
 | 能设计 API/架构 | L12 |
 
 > 🎯 **目标不是"学完 12 层"，而是"遇到问题知道卡在哪一层"**
+
+</details>
+
+<a id="minimal-source-docs-concepts-problem-solving-md"></a>
+<details>
+<summary><strong>📄 问题求解</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/concepts/problem-solving.md -->
 
@@ -4481,6 +4770,12 @@ A 和 B 之间的距离、障碍、路线不清楚的地方，就是问题。
 
 任何问题，都是当前状态到目标状态之间的差距；任何能力，都是推进这个差距收敛的能力。
 
+</details>
+
+<a id="minimal-source-docs-concepts-recursive-self-optimizing-system-md"></a>
+<details>
+<summary><strong>📄 递归自优化系统</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/concepts/recursive-self-optimizing-system.md -->
 
 <a id="concept-recursive-self-optimizing-system"></a>
@@ -4687,6 +4982,12 @@ $$
 
 通过这个持续运行的**递归优化循环**，系统在每次迭代中都完成一次**自我超越**，不断逼近我们设定的**理想状态**。
 
+</details>
+
+<a id="minimal-source-docs-concepts-system-building-md"></a>
+<details>
+<summary><strong>📄 系统构建方法</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/concepts/system-building.md -->
 
 <a id="concept-system-building"></a>
@@ -4849,8 +5150,14 @@ $$
 
 所以，这三种方法不是“选一个、排斥另外两个”，而是从不同角度帮助我们管理复杂度、组织代码和构建系统。
 
+</details>
+
 
 ### 三、哲学与思维
+
+<a id="minimal-source-docs-philosophy-readme-md"></a>
+<details>
+<summary><strong>📄 哲学方法论</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/philosophy/README.md -->
 
@@ -4900,6 +5207,12 @@ $$
 #### 正文
 
 正文已拆分到上方独立文档；本 README 只保留索引、旧锚点兼容入口和阅读顺序。
+
+</details>
+
+<a id="minimal-source-docs-philosophy-compositional-description-model-md"></a>
+<details>
+<summary><strong>📄 组合描述模型</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/philosophy/compositional-description-model.md -->
 
@@ -5473,6 +5786,12 @@ UserInput(组合描述模型)
 那么，同一、差异、关系，就是让世界真正可以被理解的条件。
 
 从这个意义上说，这组概念，几乎就是一切系统性思考的基础语法。
+
+</details>
+
+<a id="minimal-source-docs-philosophy-methodology-toolbox-md"></a>
+<details>
+<summary><strong>📄 方法论工具箱</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/philosophy/methodology-toolbox.md -->
 
@@ -6219,6 +6538,12 @@ README.md      # 概念表/错误语义/验收指标
 
 > 先把目标写成可检验状态，再用测试、日志、反馈、约束和迭代，把模型输出从可能性空间中逐步收缩到可验收结果。
 
+</details>
+
+<a id="minimal-source-docs-philosophy-programming-dao-md"></a>
+<details>
+<summary><strong>📄 编程之道</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/philosophy/programming-dao.md -->
 
 <a id="philosophy-programming-dao"></a>
@@ -6590,6 +6915,12 @@ README.md      # 概念表/错误语义/验收指标
 
 愿你在复杂世界中保持清晰，在代码中看到本质
 
+</details>
+
+<a id="minimal-source-docs-philosophy-software-engineering-truths-md"></a>
+<details>
+<summary><strong>📄 软件工程的朴素真理</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/philosophy/software-engineering-truths.md -->
 
 <a id="philosophy-software-engineering-truths"></a>
@@ -6869,6 +7200,12 @@ README.md      # 概念表/错误语义/验收指标
 
 在变化中持续交付可靠价值。
 
+</details>
+
+<a id="minimal-source-docs-philosophy-thinking-models-md"></a>
+<details>
+<summary><strong>📄 思维模型</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/philosophy/thinking-models.md -->
 
 <a id="philosophy-thinking-models"></a>
@@ -7112,8 +7449,14 @@ README.md      # 概念表/错误语义/验收指标
 
 在工程实践中，状态空间思维能防止“一步走死”：重要操作前先建立检查点，优先走可验证、可回滚、可分阶段收敛的路径。
 
+</details>
+
 
 ### 四、工程参考
+
+<a id="minimal-source-docs-references-readme-md"></a>
+<details>
+<summary><strong>📄 参考资料</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/references/README.md -->
 
@@ -7181,6 +7524,12 @@ README.md      # 概念表/错误语义/验收指标
 #### 正文
 
 正文已拆分到上方独立文档；本 README 只保留索引、旧锚点兼容入口和阅读顺序。
+
+</details>
+
+<a id="minimal-source-docs-references-code-organization-md"></a>
+<details>
+<summary><strong>📄 代码组织</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/references/code-organization.md -->
 
@@ -7252,6 +7601,12 @@ README.md      # 概念表/错误语义/验收指标
 - 使用功能强大的 IDE，如 Visual Studio Code、PyCharm 或 IntelliJ，利用其代码自动补全、错误检查和调试功能。
 - 配置 IDE 插件，如 linter（如 ESLint、Pylint）和代码格式化工具。
 
+</details>
+
+<a id="minimal-source-docs-references-common-sense-md"></a>
+<details>
+<summary><strong>📄 常识</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/references/common-sense.md -->
 
 <a id="reference-common-sense"></a>
@@ -7263,6 +7618,12 @@ README.md      # 概念表/错误语义/验收指标
 ##### 核心常识
 
 如果你不会写提示词，不要先纠结格式。直接用自然语言描述你的意图，能写多详细就写多详细；把目标、背景、约束、输入、输出、例子和不想要的结果都说出来，然后让 AI 根据这段描述帮你生成一版可直接使用的提示词。
+
+</details>
+
+<a id="minimal-source-docs-references-dataset-first-data-service-md"></a>
+<details>
+<summary><strong>📄 Dataset First 数据服务结构</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/references/dataset-first-data-service.md -->
 
@@ -7505,6 +7866,12 @@ reserved          # 预留但未启用
 2. 把原项目脚本反向映射为 dataset。
 3. 将 API client、auth、rate limiter、storage client、retry/backoff 抽到 `common/`、`runtime/` 或 `writers/`。
 4. 将 legacy 壳显式隔离，只允许兼容转发，不允许承载新逻辑。
+
+</details>
+
+<a id="minimal-source-docs-references-development-experience-md"></a>
+<details>
+<summary><strong>📄 开发经验</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/references/development-experience.md -->
 
@@ -7802,6 +8169,12 @@ Redis 的作用：
 
 <a id="quality-gates"></a>
 <a id="reference-engineering-practice-4-ai-编程质量门禁与常见坑"></a>
+
+</details>
+
+<a id="minimal-source-docs-references-enterprise-architecture-template-md"></a>
+<details>
+<summary><strong>📄 Enterprise Monorepo / Multi-Repo Reference Architecture Template</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/references/enterprise-architecture-template.md -->
 
@@ -8756,6 +9129,12 @@ shared
 这是一套更接近现代 Platform Engineering、SRE、GitOps、Software Catalog、Data Governance、
 Security Governance 与 IDP 共识的参考模型。实际落地时可以裁剪，但不建议混淆这些边界。
 
+</details>
+
+<a id="minimal-source-docs-references-low-level-program-logic-md"></a>
+<details>
+<summary><strong>📄 底层程序逻辑设计与工程优化项</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/references/low-level-program-logic.md -->
 
 <a id="reference-engineering-practice-5-底层程序逻辑设计与工程优化项"></a>
@@ -9337,6 +9716,12 @@ CPU 成本
 缺少验证
 缺少容量评估
 ```
+
+</details>
+
+<a id="minimal-source-docs-references-modern-enterprise-architecture-template-md"></a>
+<details>
+<summary><strong>📄 现代企业数字化平台架构说明文档</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/references/modern-enterprise-architecture-template.md -->
 
@@ -31403,6 +31788,12 @@ V2.98 补充目标：任意生产 AI 系统都必须完成 AI 系统监管分类
 - Google SRE Workbook: Alerting on SLOs
   <https://sre.google/workbook/alerting-on-slos/>
 
+</details>
+
+<a id="minimal-source-docs-references-project-architecture-template-md"></a>
+<details>
+<summary><strong>📄 工程实践</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/references/project-architecture-template.md -->
 
 <a id="reference-engineering-practice"></a>
@@ -31899,6 +32290,12 @@ temp/
 ###### 14. 一句话结论
 
 项目架构的目标不是把目录做复杂，而是让职责、数据流、依赖和验证路径清楚。普通项目先选通用结构；稳定数据服务优先采用 Dataset First，用 contract、registry、runtime 和质量门禁固定长期演进边界。
+
+</details>
+
+<a id="minimal-source-docs-references-python-project-skeleton-md"></a>
+<details>
+<summary><strong>📄 通用 Python 项目骨架</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/references/python-project-skeleton.md -->
 
@@ -32623,6 +33020,12 @@ __pycache__/
 只属于本地环境，不应进入仓库。
 
 这就是一个比较稳妥、通用、可维护的 Python 项目根目录设计。
+
+</details>
+
+<a id="minimal-source-docs-references-quality-gates-and-pitfalls-md"></a>
+<details>
+<summary><strong>📄 AI 编程质量门禁与常见坑</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/references/quality-gates-and-pitfalls.md -->
 
@@ -34614,6 +35017,12 @@ git stash pop
 
 遇到新坑？欢迎 PR 补充！
 
+</details>
+
+<a id="minimal-source-docs-references-technology-stack-md"></a>
+<details>
+<summary><strong>📄 技术栈</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/references/technology-stack.md -->
 
 <a id="reference-technology-stack"></a>
@@ -36438,8 +36847,14 @@ AI 路线：
 
 真正重要的不是“知道很多技术名词”，而是能用合适的技术栈，把一个项目稳定、清晰、可维护地做出来。
 
+</details>
+
 
 ### 五、工作流程
+
+<a id="minimal-source-docs-workflow-readme-md"></a>
+<details>
+<summary><strong>📄 workflow</strong>（点击展开/收起）</summary>
 
 <!-- 来源：docs/workflow/README.md -->
 
@@ -36481,6 +36896,12 @@ AI 路线：
 
 正文已拆分到上方独立文档；本 README 只保留索引、旧锚点兼容入口和阅读顺序。
 
+</details>
+
+<a id="minimal-source-docs-workflow-development-process-md"></a>
+<details>
+<summary><strong>📄 开发流程</strong>（点击展开/收起）</summary>
+
 <!-- 来源：docs/workflow/development-process.md -->
 
 <a id="workflow-development-process"></a>
@@ -36499,3 +36920,5 @@ AI 路线：
 7. 控制版本：使用语义清晰的 commit 记录阶段性成果。
 8. 推送远端：默认推送当前 `develop` 分支，并观察 GitHub Actions 结果。
 9. 同步文档：目录、命令、配置、流程变化必须同步 README / AGENTS / 对应索引。
+
+</details>
