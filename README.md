@@ -106,7 +106,7 @@ $$
 **定义 2.3（对偶范畴）。** 将范畴中的所有态射方向反转，得到对应的对偶范畴 $\mathcal{C}^{\mathrm{op}}$。其对象保持不变，且：
 
 $$
-\operatorname{Ob}(\mathcal{C}^{\mathrm{op}})=\operatorname{Ob}(\mathcal{C}),\quad \operatorname{Hom}_{\mathcal{C}^{\mathrm{op}}}(A,B)=\operatorname{Hom}_{\mathcal{C}}(B,A)
+\mathrm{Ob}(\mathcal{C}^{\mathrm{op}})=\mathrm{Ob}(\mathcal{C}),\quad \mathrm{Hom}_{\mathcal{C}^{\mathrm{op}}}(A,B)=\mathrm{Hom}_{\mathcal{C}}(B,A)
 $$
 
 本文用对偶组织反向工作：从目标回推条件，从输出追溯输入，从失败结果定位失效态射，从验收标准反推执行路径。对偶只改变描述方向，不声称原态射必然存在逆态射。
@@ -162,10 +162,10 @@ $$
 **定义 2.4（工程态射契约）。** 对工程态射 $f:A\to B$，记其契约为：
 
 $$
-\Gamma_f=(\operatorname{Pre}_f,\operatorname{Post}_f,\operatorname{Fail}_f)
+\Gamma_f=(\mathrm{Pre}_f,\mathrm{Post}_f,\mathrm{Fail}_f)
 $$
 
-其中，$\operatorname{Pre}_f$ 是前置条件，$\operatorname{Post}_f$ 是成功后的后置条件，$\operatorname{Fail}_f$ 是失败时必须保留的结果、错误或证据。只有当前置条件成立且输出满足后置条件时，$f$ 才能作为可靠的工程箭头参与后续复合。
+其中，$\mathrm{Pre}_f$ 是前置条件，$\mathrm{Post}_f$ 是成功后的后置条件，$\mathrm{Fail}_f$ 是失败时必须保留的结果、错误或证据。只有当前置条件成立且输出满足后置条件时，$f$ 才能作为可靠的工程箭头参与后续复合。
 
 若 $f:A\to B$ 与 $g:B\to C$ 需要复合，还必须检查 $f$ 的后置条件能够满足 $g$ 的前置条件。这个检查把“步骤顺序正确”提升为“相邻接口契约兼容”。
 
@@ -380,10 +380,10 @@ $$
 
 部分映射表示某一步可能因信息不足、权限不足、环境错误、执行失败或验证失败而无法完成。它不会把失败隐藏在“完成”标签后面。记 $E\models\Gamma$ 表示证据在给定环境和验证规则下满足契约 $\Gamma$。
 
-记 $\mathsf{Ind}(V_\Gamma;\Gamma,S')$ 表示验证过程满足来源独立性：验证器重新读取原始契约 $\Gamma$，并直接检查结果状态 $S'$ 或其可追溯产物；验证结论必须建立在这些对象上，不能只依赖生成会话的自述。这个谓词描述证据的来源条件，不属于范畴公理，也不等同于“开启了新的会话”。因此，结果的模型内验证标记可写为：
+记 $\mathrm{Ind}(V_\Gamma;\Gamma,S')$ 表示验证过程满足来源独立性：验证器重新读取原始契约 $\Gamma$，并直接检查结果状态 $S'$ 或其可追溯产物；验证结论必须建立在这些对象上，不能只依赖生成会话的自述。这个谓词描述证据的来源条件，不属于范畴公理，也不等同于“开启了新的会话”。因此，结果的模型内验证标记可写为：
 
 $$
-\operatorname{Verified}_\Gamma(S')\Longleftrightarrow\exists E\,[V_\Gamma(S')=E\land E\models\Gamma\land\mathsf{Ind}(V_\Gamma;\Gamma,S')]
+\mathrm{Verified}_\Gamma(S')\Longleftrightarrow\exists E\,[V_\Gamma(S')=E\land E\models\Gamma\land\mathrm{Ind}(V_\Gamma;\Gamma,S')]
 $$
 
 其中，$E\models\Gamma$ 是本文约定的项目验收关系；除非另行给出形式语义，它不表示由范畴论公理自动推出的逻辑蕴涵。
@@ -497,14 +497,14 @@ $$
 **命题。** 在本文工程模型中，固定执行环境 $H$ 和原始契约 $\Gamma$。若候选方案 $C$ 经执行态射得到结果状态 $S'$，验证态射生成证据 $E$，验证过程满足来源独立性，并且：
 
 $$
-T_H(C)=S',\quad V_\Gamma(S')=E,\quad E\models\Gamma,\quad \mathsf{Ind}(V_\Gamma;\Gamma,S')
+T_H(C)=S',\quad V_\Gamma(S')=E,\quad E\models\Gamma,\quad \mathrm{Ind}(V_\Gamma;\Gamma,S')
 $$
 
 则结果可以标记为“在给定契约和环境下已验证”。
 
-本命题中的“独立验证”由 $\mathsf{Ind}$ 约束：验证器必须重新读取原始契约 $\Gamma$ 和实际结果对象或其可追溯产物，结论不能只来自 Model 的自述。新开会话可以帮助隔离生成上下文，但会话切换本身不构成独立性证明。
+本命题中的“独立验证”由 $\mathrm{Ind}$ 约束：验证器必须重新读取原始契约 $\Gamma$ 和实际结果对象或其可追溯产物，结论不能只来自 Model 的自述。新开会话可以帮助隔离生成上下文，但会话切换本身不构成独立性证明。
 
-**证明。** 执行态射提供结果状态，验证态射将结果状态与原始契约映射为证据。条件 $E\models\Gamma$ 表示证据满足给定契约，$\mathsf{Ind}$ 表示该判断具有规定的来源独立性，因此从目标到结果的路径和从结果到证据的验证路径均满足规定条件。该标记的有效范围限定在给定契约、环境和证据内。证毕。
+**证明。** 执行态射提供结果状态，验证态射将结果状态与原始契约映射为证据。条件 $E\models\Gamma$ 表示证据满足给定契约，$\mathrm{Ind}$ 表示该判断具有规定的来源独立性，因此从目标到结果的路径和从结果到证据的验证路径均满足规定条件。该标记的有效范围限定在给定契约、环境和证据内。证毕。
 
 ### 6.3 证明范围
 
@@ -608,7 +608,7 @@ $$
 | $id_A$ | 对象 $A$ 的恒等态射 |
 | $\mathcal{C}^{\mathrm{op}}$ | 范畴 $\mathcal{C}$ 的对偶范畴 |
 | $X,S,C,S',E$ | Vibe Coding 过程中的输入、结构、候选、结果状态和证据 |
-| $\mathsf{Ind}(V_\Gamma;\Gamma,S')$ | 验证过程满足来源独立性的谓词 |
+| $\mathrm{Ind}(V_\Gamma;\Gamma,S')$ | 验证过程满足来源独立性的谓词 |
 
 ### 10.3 附录 B：完整直观解释
 

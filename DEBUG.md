@@ -162,3 +162,12 @@
 - 约束结果：未发现折叠标签、手工锚点、禁用的“不是……而是……”句式或零宽字符。
 - 链接结果：README.md 的本地入口 explain.md 存在。
 - 结论：对偶的形式含义、逆向工作的适用边界和任务/步骤契约层次已明确；剩余未知项仍是 GitHub 网页端实际数学渲染效果。
+
+## Follow-up Debug: GitHub 数学宏兼容性
+
+- RED：GitHub 页面显示 The following macros are not allowed: operatorname，相关数学块降级为原始文本。
+- 根因：README.md 的公式和行内公式使用了 GitHub 渲染器拒绝的 \operatorname 宏。
+- 修复：将 Ob、Hom、Pre、Post、Fail、Verified、Ind 的运算符排版统一为 \mathrm{...}；未改变公式的数学关系。
+- 验证：operatorname 匹配数为 0；32 个数学分隔符和 28 个代码围栏均成对；固定版本 Markdown lint、调试记录校验和差异检查通过。
+- 回归：README.md 保留本地入口 explain.md，折叠标签、手工锚点和零宽字符扫描均无匹配。
+- 结论：源码层已移除截图中触发 GitHub 降级的宏；待 GitHub 页面重新渲染后确认视觉结果。
