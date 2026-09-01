@@ -152,3 +152,13 @@
 - 约束结果：未发现折叠标签、手工锚点、禁用的“不是……而是……”句式或零宽字符。
 - 链接结果：README.md 的本地入口 explain.md 存在。
 - 结论：验证独立性、偏映射适用域和章节口径已获得文档内明确表达；剩余未知项仍是 GitHub 网页端实际数学渲染效果。
+
+## Follow-up Validation: 对偶与契约层次优化
+
+- 基线：46abd06 docs: formalize verification semantics。
+- 变更范围：仅 README.md；补充对偶范畴的对象/同态集合定义，明确对偶不推出逆态射，区分任务级契约 $\Gamma$ 与单步契约 $\Gamma_f$。
+- 静态结果：固定版本 markdownlint-cli@0.48.0 检查 README.md、explain.md、DEBUG.md 通过。
+- 结构结果：git diff --check 通过；代码围栏 28 个且配对；数学块分隔符 32 个且配对。
+- 约束结果：未发现折叠标签、手工锚点、禁用的“不是……而是……”句式或零宽字符。
+- 链接结果：README.md 的本地入口 explain.md 存在。
+- 结论：对偶的形式含义、逆向工作的适用边界和任务/步骤契约层次已明确；剩余未知项仍是 GitHub 网页端实际数学渲染效果。
