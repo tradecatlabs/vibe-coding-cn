@@ -8,7 +8,7 @@
 <a id="ai-five-propositions"></a>
 <a id="ai-three-propositions"></a>
 
-<details open>
+<details>
 <summary><strong>🧠 五条核心命题</strong>（点击展开/收起）</summary>
 
 ## 🧠 五条核心命题
@@ -65,6 +65,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 
 </details>
 
+<a id="overall-runtime-model"></a>
 <details>
 <summary><strong>🌐 总体运行模型</strong>（点击展开/收起）</summary>
 
@@ -91,6 +92,7 @@ Harness：管理上下文、工具、权限、执行和反馈
 
 </details>
 
+<a id="top-level-understanding"></a>
 <details>
 <summary><strong>🧭 顶层认识</strong>（点击展开/收起）</summary>
 
@@ -108,6 +110,7 @@ Harness：管理上下文、工具、权限、执行和反馈
 
 </details>
 
+<a id="complete-repository-entry"></a>
 <details>
 <summary><strong>✅ 总结与完整仓库入口</strong>（点击展开/收起）</summary>
 
