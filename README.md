@@ -7,9 +7,9 @@
 <a id="ai-three-propositions"></a>
 
 <details>
-<summary><strong>🧠 五条核心命题</strong>（点击展开/收起）</summary>
+<summary><strong>🧠 Vibe Coding 的五个基础认识</strong>（点击展开/收起）</summary>
 
-## 🧠 五条核心命题
+## 🧠 Vibe Coding 的五个基础认识
 
 ### 一
 
