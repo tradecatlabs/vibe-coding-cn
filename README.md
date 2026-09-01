@@ -1,4 +1,4 @@
-# vibe-coding-cn：Vibe Coding 的顶层认识
+# Vibe Coding 从入门到精通教程
 
 > 用语言把人的意图带入智能系统，再把智能系统的结果带回现实世界。
 
