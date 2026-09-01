@@ -2,8 +2,6 @@
 
 > 用语言把人的意图带入智能系统，再把智能系统的结果带回现实世界。
 
-## 核心命题
-
 <!-- 以下命题块从完整仓库根 README 原文提取，保持完整。 -->
 <a id="ai-five-propositions"></a>
 <a id="ai-three-propositions"></a>
