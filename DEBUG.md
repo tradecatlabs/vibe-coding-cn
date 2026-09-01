@@ -122,3 +122,13 @@
 ## Reverification Required
 
 - 若后续修改 README、explain 或收到 GitHub/CI 具体错误，必须重新运行 lint、链接检查和对应的最小复现；本轮结论不能覆盖后续变更。
+
+## Follow-up Validation: README 深度优化
+
+- 基线：`c92eaed chore: record minimal README debug audit`。
+- 变更范围：仅 `README.md`；补充工程态射契约、形式边界、`T_H` / `V_\Gamma` 记号和生成域术语边界，清除公式中的零宽字符。
+- 静态结果：固定版本 `markdownlint-cli@0.48.0` 检查 `README.md`、`explain.md`、`DEBUG.md` 通过。
+- 结构结果：`git diff --check` 通过；代码围栏 `28` 个且配对；数学块分隔符 `22` 个且配对。
+- 约束结果：未发现折叠标签、手工锚点或禁用的“不是……而是……”句式。
+- 链接结果：`README.md` 的本地入口 `explain.md` 存在。
+- 结论：当前深度优化没有引入可复现的文档结构缺陷；GitHub 网页端渲染仍属于本轮未直接复现的外部环境项。
