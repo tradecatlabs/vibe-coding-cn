@@ -132,3 +132,13 @@
 - 约束结果：未发现折叠标签、手工锚点或禁用的“不是……而是……”句式。
 - 链接结果：`README.md` 的本地入口 `explain.md` 存在。
 - 结论：当前深度优化没有引入可复现的文档结构缺陷；GitHub 网页端渲染仍属于本轮未直接复现的外部环境项。
+
+## Follow-up Validation: 工程范畴边界优化
+
+- 基线：`f5906e4 docs: formalize engineering category model`。
+- 变更范围：仅 `README.md`；修正“六个核心词”的数量口径，补充工程范畴记号 $\mathcal{E}_{H,\Gamma}$、生成/执行/契约满足三层表，以及独立验证的可执行判据。
+- 静态结果：固定版本 `markdownlint-cli@0.48.0` 检查 `README.md`、`explain.md`、`DEBUG.md` 通过。
+- 结构结果：`git diff --check` 通过；代码围栏 `28` 个且配对；数学块 `28` 个且配对。
+- 约束结果：零宽字符、折叠标签、手工锚点和禁用的“不是……而是……”句式均无匹配。
+- 链接结果：`README.md` 的本地入口 `explain.md` 存在。
+- 结论：本轮边界优化未引入可复现的文档结构或链接缺陷；当前剩余未知项仍是 GitHub 网页端实际数学渲染效果。
