@@ -2,7 +2,6 @@
 
 > 用范畴论描述对象之间的变化，用复合组织行动，用交换图检查一致性，用对偶反向推理。
 
-<a id="abstract"></a>
 ## 摘要
 
 本文将 Vibe Coding 表述为一个以范畴论为根语言的工程模型：把输入、意图、目标、约束、状态、代码、文档、工具、结果和证据视为对象；把理解、生成、执行、适配、审查和验证视为态射；把计划与工作流视为态射复合；用交换图检查多条实现路径的一致性；用对偶从结果反推条件。该模型用于统一概念和组织行动，实际正确性仍由运行环境、权限、测试、审查和人工验收确认。
@@ -10,10 +9,6 @@
 ## 关键词
 
 范畴论；对象；态射；复合；恒等态射；交换图；对偶；Vibe Coding；验证
-
-<a id="introduction"></a>
-<details>
-<summary><strong>1. 引言</strong></summary>
 
 ## 1. 引言
 
@@ -32,12 +27,6 @@ Vibe Coding 会同时涉及自然语言、模型、代码、命令、工具、�
 ### 1.3 阅读路径
 
 先阅读第 2 节的范畴论预备知识，再阅读第 3 节的对象—态射模型；第 4 节解释五个基础认识，第 5 节展示运行路径，第 6 节给出验证要求，第 7 节说明适用边界。
-
-</details>
-
-<a id="category-theory-foundation"></a>
-<details>
-<summary><strong>📚 2. 预备知识</strong></summary>
 
 ## 2. 预备知识
 
@@ -89,12 +78,6 @@ C ──k──→ D
 
 范畴论中的对偶，是把所有态射方向反转后得到的对应结构。本教程用它组织反向工作：从目标回推条件，从输出追溯输入，从失败结果定位失效态射，从验收标准反推执行路径。
 
-</details>
-
-<a id="formal-model"></a>
-<details>
-<summary><strong>3. 对象—态射模型</strong></summary>
-
 ## 3. 对象—态射模型
 
 ### 3.1 对象分类
@@ -127,13 +110,6 @@ C ──k──→ D
 ```
 
 每一步的输出都应成为下一步可识别的输入。缺少起点、终点或验证条件的步骤，无法形成可检查的复合路径。
-
-</details>
-
-<a id="ai-five-propositions"></a>
-<a id="ai-three-propositions"></a>
-<details>
-<summary><strong>🧠 4. Vibe Coding 的五个基础认识</strong></summary>
 
 ## 4. Vibe Coding 的五个基础认识
 
@@ -179,12 +155,6 @@ Prompt 技巧、工作流、Agent 编排、索引、外部记忆、脚手架、�
 
 > **能复用时复合已有能力，能适配时保持边界，必须自研时限定新增职责。**
 
-</details>
-
-<a id="overall-runtime-model"></a>
-<details>
-<summary><strong>🌐 5. 总体运行模型</strong></summary>
-
 ## 5. 总体运行模型
 
 Vibe Coding 是把一个问题逐步变成已验证结果，并根据反馈继续修正的复合路径：
@@ -220,12 +190,6 @@ X ──I──→ S ──M──→ C ──T──→ S' ──V──→ E
 
 Model 负责生成符号和行动意图；Harness 负责把候选意图接入工具、权限和执行循环；证据负责说明结果是否成立。
 
-</details>
-
-<a id="top-level-understanding"></a>
-<details>
-<summary><strong>🧪 6. 验证与工程约束</strong></summary>
-
 ## 6. 验证与工程约束
 
 ### 6.1 每条态射都要有契约
@@ -259,12 +223,6 @@ Model 负责生成符号和行动意图；Harness 负责把候选意图接入工
 5. 用对偶从结果回到条件，从失败回到失效环节。
 6. 用证据确认结果，避免只依据模型的口头保证。
 
-</details>
-
-<a id="discussion-and-limits"></a>
-<details>
-<summary><strong>7. 讨论与适用边界</strong></summary>
-
 ## 7. 讨论与适用边界
 
 ### 7.1 范畴论承担什么职责
@@ -282,12 +240,6 @@ Model 负责生成符号和行动意图；Harness 负责把候选意图接入工
 - 只保留能帮助组合、检查或反向追溯的概念。
 - 发现抽象无法解释实际行为时，回到输入、环境、权限和结果重新检查。
 
-</details>
-
-<a id="complete-repository-entry"></a>
-<details>
-<summary><strong>✅ 8. 结论与完整仓库入口</strong></summary>
-
 ## 8. 结论与完整仓库入口
 
 本教程的核心路径可以压缩为：
@@ -301,5 +253,3 @@ Model 负责生成符号和行动意图；Harness 负责把候选意图接入工
 范畴论负责描述关系和一致性；运行环境、工具、权限、测试和人工验收负责确认结果。两者共同构成可执行、可检查、可回溯的 Vibe Coding 闭环。
 
 极简分支只保留这套根理论及其统一解释。需要完整教程、实践方法、工具配置、Skill、工作流和研究资料时，进入[完整仓库的 develop 分支](https://github.com/tradecatlabs/vibe-coding-cn/tree/develop)。
-
-</details>
