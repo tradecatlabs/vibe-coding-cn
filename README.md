@@ -7,7 +7,7 @@
 <a id="ai-three-propositions"></a>
 
 <details>
-<summary><strong>🧠 Vibe Coding 的五个基础认识</strong>（点击展开/收起）</summary>
+<summary><strong>🧠 Vibe Coding 的五个基础认识</strong></summary>
 
 ## 🧠 Vibe Coding 的五个基础认识
 
@@ -65,7 +65,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 
 <a id="overall-runtime-model"></a>
 <details>
-<summary><strong>🌐 总体运行模型</strong>（点击展开/收起）</summary>
+<summary><strong>🌐 总体运行模型</strong></summary>
 
 ## 总体运行模型
 
@@ -92,7 +92,7 @@ Harness：管理上下文、工具、权限、执行和反馈
 
 <a id="top-level-understanding"></a>
 <details>
-<summary><strong>🧭 顶层认识</strong>（点击展开/收起）</summary>
+<summary><strong>🧭 顶层认识</strong></summary>
 
 ## 顶层认识
 
@@ -110,7 +110,7 @@ Harness：管理上下文、工具、权限、执行和反馈
 
 <a id="complete-repository-entry"></a>
 <details>
-<summary><strong>✅ 总结与完整仓库入口</strong>（点击展开/收起）</summary>
+<summary><strong>✅ 总结与完整仓库入口</strong></summary>
 
 ## 总结与完整仓库入口
 
