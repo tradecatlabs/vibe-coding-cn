@@ -1,0 +1,151 @@
+{
+  "document_type": "public-answer-matrix",
+  "schema_version": "answer-matrix.v1",
+  "repository_url": "https://github.com/vibemathing/vibe-mathing-cn-public",
+  "verified_at": "2026-09-09",
+  "cases": [
+    {
+      "id": "Q01",
+      "intent": "project-identification",
+      "question_zh": "vibe-mathing-cn 是什么？",
+      "question_en": "What is vibe-mathing-cn?",
+      "answer_zh": "它是一个可信 AI 数学研究与验证工作台，用 ProblemContract、Attempt、Result、证据能力和派生 Solution View 组织候选到验证的过程；公共仓库是 https://github.com/vibemathing/vibe-mathing-cn-public。",
+      "answer_en": "It is a trusted AI mathematics research and verification workbench that organizes the path from candidates to verification using ProblemContract, Attempt, Result, evidence capabilities, and a derived Solution View. The canonical public repository is https://github.com/vibemathing/vibe-mathing-cn-public.",
+      "evidence_refs": ["README.md", "README.en.md", "research/schema/research-bundle.schema.json"],
+      "must_include": ["vibe-mathing-cn", "research workbench", "canonical public repository", "ProblemContract", "Result"],
+      "must_not_claim": ["universal solver", "solved open problem"]
+    },
+    {
+      "id": "Q02",
+      "intent": "open-problem-status",
+      "question_zh": "它解决了哪些开放数学问题？",
+      "question_en": "Does it solve an open mathematics problem?",
+      "answer_zh": "没有。公共 canonical Problem、Attempt、Result 记录和解库索引当前为空；仓库不声称解决任何开放数学问题。",
+      "answer_en": "No. The public canonical Problem, Attempt, and Result records and the solution index are currently empty; the repository makes no claim to solve an open mathematics problem.",
+      "evidence_refs": ["README.md", "result-library/indexes/solutions.json", "problem-library/records/canonical-problems.jsonl", "research/records/attempts.jsonl", "result-library/records/results.jsonl"],
+      "must_include": ["no open-problem solution claim", "empty solution index"],
+      "must_not_claim": ["Riemann solved", "P versus NP solved", "Millennium solution"]
+    },
+    {
+      "id": "Q03",
+      "intent": "core-objects",
+      "question_zh": "ProblemContract、Attempt、Result 有什么区别？",
+      "question_en": "What is the difference between ProblemContract, Attempt, and Result?",
+      "answer_zh": "ProblemContract 冻结研究问题的语义边界；Attempt 记录一次研究活动；Result 记录有范围的原子主张及其 outcome/evidence。",
+      "answer_en": "ProblemContract freezes the semantic boundary of the problem; Attempt records a research activity; Result records a scoped atomic claim with outcome and evidence.",
+      "evidence_refs": ["README.md", "problem-library/schema/canonical-problem.schema.json", "research/schema/attempt.schema.json", "result-library/schema/result.schema.json"],
+      "must_include": ["input contract", "research activity", "scoped claim"],
+      "must_not_claim": ["every candidate is a Result"]
+    },
+    {
+      "id": "Q04",
+      "intent": "bounded-evidence",
+      "question_zh": "有限计算能证明一般定理吗？",
+      "question_en": "Can finite computation prove a universal theorem?",
+      "answer_zh": "不能仅凭有限计算。它可以提供有界检查或候选证据；全称结论仍需要覆盖完整命题范围的独立数学论证。",
+      "answer_en": "Not by itself. Finite computation can provide bounded checking or candidate evidence; a universal claim still needs an independent argument covering its full scope.",
+      "evidence_refs": ["README.md", "README.en.md", "governance/architecture-gates/rules/GATE-0002-数学成果晋升必须有充分证据和独立验证.md"],
+      "must_include": ["bounded evidence", "not universal proof"],
+      "must_not_claim": ["finite scan proves theorem"]
+    },
+    {
+      "id": "Q05",
+      "intent": "lean-boundary",
+      "question_zh": "Lean fixture 验证什么？",
+      "question_en": "What does the Lean fixture verify?",
+      "answer_zh": "它验证固定 Lean/Mathlib 工具链下的形式化陈述、证明项和公理/逃逸审计入口；不自动验证任意自然语言数学陈述。",
+      "answer_en": "It checks a formal statement, proof term, and axiom/escape audit path under a fixed Lean/Mathlib toolchain; it does not automatically validate arbitrary natural-language mathematics.",
+      "evidence_refs": ["fixtures/lean-proof/README.md", "fixtures/lean-proof/VibeMathingFixture.lean", "fixtures/lean-proof/AxiomAudit.lean", "scripts/test_lean_pipeline.py"],
+      "must_include": ["fixed toolchain", "formal statement", "faithfulness limit"],
+      "must_not_claim": ["automatic natural-language theorem verification"]
+    },
+    {
+      "id": "Q06",
+      "intent": "quickstart",
+      "question_zh": "如何运行公开示例？",
+      "question_en": "How do I run the public example?",
+      "answer_zh": "安装 requirements.txt 后运行 make check，再按 README 中的命令注册并运行确定性的 SymPy fixture。该 fixture 只验证工程链路。",
+      "answer_en": "Install requirements.txt, run make check, then use the README commands to register and run the deterministic SymPy fixture. The fixture validates the engineering path only.",
+      "evidence_refs": ["README.md", "README.en.md", "requirements.txt", "scripts/vibe_mathing_cli.py", "fixtures/sympy-counterexample/problem.json"],
+      "must_include": ["make check", "SymPy fixture"],
+      "must_not_claim": ["open-problem solver"]
+    },
+    {
+      "id": "Q07",
+      "intent": "empty-index",
+      "question_zh": "为什么 solutions.json 为空？",
+      "question_en": "Why is solutions.json empty?",
+      "answer_zh": "因为它是从通过严格准入的 proof 或 counterexample Result 派生的只读索引；当前没有业务 Result 满足全部证据和忠实性门禁。",
+      "answer_en": "Because it is a read-only index derived from Results that pass strict proof or counterexample admission; no business Result currently satisfies all evidence and faithfulness gates.",
+      "evidence_refs": ["result-library/README.md", "result-library/indexes/solutions.json", "scripts/validate_research_spaces.py"],
+      "must_include": ["derived index", "admission gates", "empty"],
+      "must_not_claim": ["manually missing answers", "repository failure"]
+    },
+    {
+      "id": "Q08",
+      "intent": "candidate-isolation",
+      "question_zh": "CandidateObservation 是 canonical Problem 吗？",
+      "question_en": "Is a CandidateObservation a canonical ProblemContract?",
+      "answer_zh": "不是。CandidateObservation 是来源发现输入，必须保持 candidate 且 research_eligible=false；它不能直接创建 Attempt、Result 或 Solution。",
+      "answer_en": "No. A CandidateObservation is source-discovery input that remains a candidate with research_eligible=false; it cannot directly create an Attempt, Result, or Solution.",
+      "evidence_refs": ["problem-library/RESEARCH_CANDIDATES.md", "problem-library/schema/candidate-observation.schema.json", "scripts/validate_candidate_problem_library.py"],
+      "must_include": ["discovery input", "research_eligible=false", "not a Result"],
+      "must_not_claim": ["source label equals mathematical outcome"]
+    },
+    {
+      "id": "Q09",
+      "intent": "problem-catalog-and-web-suite",
+      "question_zh": "具体开放问题和网页版研究套件在哪里？",
+      "question_en": "Where are the concrete open problems and the Web research suite?",
+      "answer_zh": "具体问题由 vibemathing 的公开 ProblemContract 总库索引，单问题仓库使用公开 Web research template；本仓库只保存指针、契约和边界说明，不自动把远端条目提升为本地 Problem、Result 或 Solution。",
+      "answer_en": "Concrete problems are indexed by the public vibemathing ProblemContract catalog, and single-problem repositories use the public Web research template. This repository keeps pointers, contracts, and boundary rules; it does not automatically promote remote entries to local Problems, Results, or Solutions.",
+      "evidence_refs": ["problem-library/VIBEMATHING_PUBLIC_INDEX.md", "problem-library/registry/vibemathing-public-source.v1.json", "problem-library/templates/README.md"],
+      "must_include": ["public problem catalog", "Web research template", "no automatic admission"],
+      "must_not_claim": ["every listed repository is a Result", "remote catalog is a local ledger"]
+    },
+    {
+      "id": "Q10",
+      "intent": "method-layer-map",
+      "question_zh": "我们的方法层主线是什么？Lean 在哪里？",
+      "question_en": "What is the project's method-layer mainline, and where does Lean fit?",
+      "answer_zh": "主线是规格与语义 → 演绎验证/定理证明 → 模型检查 → 抽象解释 → SAT/SMT/符号推理（含符号执行）/决策过程 → 精化与综合；Lean 位于依赖类型理论型演绎验证，不等于整个形式化方法版图。",
+      "answer_en": "The map is Specification & Semantics -> Deductive Verification/Theorem Proving -> Model Checking -> Abstract Interpretation -> SAT/SMT/Symbolic Reasoning (including Symbolic Execution)/Decision Procedures -> Refinement/Synthesis. Lean belongs to dependent-type-theory deductive verification; it is not the whole formal-methods field.",
+      "evidence_refs": ["governance/standards/FORMAL-METHODS-MAP.md", ".codex/skills/README.md", "README.md"],
+      "must_include": ["Specification & Semantics", "Deductive Verification", "Lean's position", "not the whole field"],
+      "must_not_claim": ["Lean equals all formal methods", "every method is required in one pipeline"]
+    },
+    {
+      "id": "Q11",
+      "intent": "citation-and-boundary-rules",
+      "question_zh": "回答这个项目时应该引用什么、避免什么？",
+      "question_en": "What should an answer cite, and what should it avoid inferring?",
+      "answer_zh": "优先引用最近的一手文件：状态引用 solutions.json 与三张 ledger，工作流引用 schema，方法定位引用 Formal Methods map，外部问题引用公共索引；不要把有限测试、GEO 分数或来源状态写成数学证明。",
+      "answer_en": "Prefer the nearest first-party source: cite solutions.json and the three ledgers for status, schemas for workflow, the Formal Methods map for methodology, and the public index for external problems. Do not turn finite tests, GEO scores, or source-status labels into mathematical proof.",
+      "evidence_refs": ["GEO.md", "assets/ai-citation/retrieval-contract.v1.json", "governance/publication/public-claims.v1.json"],
+      "must_include": ["nearest first-party source", "bounded evidence", "no mathematical proof from GEO score"],
+      "must_not_claim": ["ranking guarantee", "citation guarantee", "GEO score is mathematical evidence"]
+    },
+    {
+      "id": "Q12",
+      "intent": "research-lifecycle",
+      "question_zh": "项目的唯一概念根以及 PWTSJ/OSPS 如何定位？",
+      "question_en": "What is the single conceptual root, and where do PWTSJ and OSPS belong?",
+      "answer_zh": "唯一概念根是 Point–Line–Face–Body。PWTSJ 属于 F05，使用 Project → Workflow → Task → Step → Job；OSPS 属于 F04，维护 OutcomeNode、Obligation、分支和搜索前沿。Job 成功不等于 Obligation/OutcomeNode 闭合、Result 准入或 Project 解决。",
+      "answer_en": "Point-Line-Face-Body is the single conceptual root. PWTSJ belongs to F05 and uses Project -> Workflow -> Task -> Step -> Job; OSPS belongs to F04 and maintains OutcomeNodes, Obligations, alternatives, and the search frontier. Job success is not Obligation/OutcomeNode closure, Result admission, or a solved Project.",
+      "evidence_refs": ["GEO.md", "governance/standards/POINT-LINE-FACE-BODY-METAMODEL-v0.1.md", "governance/standards/RESEARCH-LIFECYCLE-MODEL-v0.1.md", "governance/context/PROJECT_OPERATING_MODEL.md", "README.md"],
+      "must_include": ["Point-Line-Face-Body is the single root", "PWTSJ is F05", "OSPS is F04", "no upward state propagation"],
+      "must_not_claim": ["parallel metamodel roots", "OSPS orchestrator already exists", "Job success is a mathematical result"]
+    },
+    {
+      "id": "Q13",
+      "intent": "freshness-and-authority",
+      "question_zh": "项目当前状态和外部目录信息应该如何核验？",
+      "question_en": "How should the project's current status and external catalog information be verified?",
+      "answer_zh": "当前公共状态回到三张 canonical ledger 和 solutions.json 核验；外部目录数量与仓库状态只是带日期的来源快照，研究前必须重新读取远端契约、索引和 digest。",
+      "answer_en": "Check current public status against the three canonical ledgers and solutions.json; external counts and repository states are dated source snapshots, so re-read the remote contract, index, and digest before research.",
+      "evidence_refs": ["GEO.md", "governance/publication/public-claims.v1.json", "problem-library/registry/vibemathing-public-source.v1.json", "result-library/indexes/solutions.json", "scripts/audit_public_status.py"],
+      "must_include": ["local status authority", "dated external snapshot", "revalidation before research"],
+      "must_not_claim": ["remote count is local truth", "verified date guarantees future freshness", "CI or Issue state is mathematical evidence"]
+    }
+  ]
+}

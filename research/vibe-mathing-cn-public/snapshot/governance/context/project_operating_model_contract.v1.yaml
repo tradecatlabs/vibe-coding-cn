@@ -1,0 +1,28 @@
+version: 1
+id: project_operating_model_contract.v1
+status: current
+owner: engineering
+created: 2026-08-13
+last_reviewed: 2026-08-13
+required_documents:
+  - path: governance/context/PROJECT_OPERATING_MODEL.md
+    owner: auto-governance
+    purpose: human_and_agent_project_entry
+  - path: governance/processes/DOCUMENT_DRIVEN_DEVELOPMENT.md
+    owner: auto-governance
+    purpose: docs_first_change_workflow
+  - path: governance/context/TOOLCHAIN_MODEL.md
+    owner: auto-governance
+    purpose: tool_boundary_and_validation_entry
+  - path: governance/context/CONTEXT-ROUTER.md
+    owner: auto-governance
+    purpose: task_type_to_minimal_context
+closeout_required_fields:
+  - operating_model_update
+  - toolchain_model_update
+  - process_update
+  - source_of_truth_updates
+  - documentation_exemption_reason
+validation:
+  governance_validate: python3 governance/tools/validate_governance_package.py --project-root . --strict
+  context_bundle_docs: python3 governance/tools/governance_context_bundle.py --project-root . --task-type docs

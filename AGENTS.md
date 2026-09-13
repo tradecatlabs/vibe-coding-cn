@@ -167,6 +167,7 @@ git push origin develop
 │   ├── AGENTS.md                # research 目录规则
 │   ├── vibe-cybersecurity-cn/   # 纳入的授权网络安全 Agent 研究项目
 │   ├── vibe-harness-cn/         # 纳入的元 Harness 研究项目
+│   ├── vibe-mathing-cn-public/ # 数学研究与可信验证研究快照
 │   └── harness/                 # Harness Engineering 研究对象
 │
 ├── prompts/                     # 提示词库入口（指向云端表格）
@@ -369,7 +370,7 @@ make test
 2. **Conversion Tool**: 使用 Python + pandas + openpyxl
 3. **Documentation Standard**: 用户文档使用中文；代码/文件名使用英文
 4. **Skills**: 每个技能有独立的 `SKILL.md`
-5. **Quality Gates**: `make test` 执行 Markdown lint、本地相对链接/锚点检查、折叠块结构检查、docs 结构检查、metadata 路径检查、AI 引用一致性检查与现代企业架构 starter kit 检查；纳入的 `research/vibe-cybersecurity-cn/` 与 `research/vibe-harness-cn/` 保留独立项目门禁，仓库级文档检查跳过其内部文件。
+5. **Quality Gates**: `make test` 执行 Markdown lint、本地相对链接/锚点检查、折叠块结构检查、docs 结构检查、metadata 路径检查、AI 引用一致性检查与现代企业架构 starter kit 检查；纳入的 `research/vibe-cybersecurity-cn/` 与 `research/vibe-harness-cn/` 保留独立项目门禁，`research/vibe-mathing-cn-public/snapshot/` 作为已审计源快照，仓库级文档检查跳过这些独立内容。
 
 ## Development Workflow
 

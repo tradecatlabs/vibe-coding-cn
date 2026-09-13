@@ -35,6 +35,12 @@ research/
 │   ├── operators/
 │   ├── skills/
 │   └── governance/
+├── vibe-mathing-cn-public/
+│   ├── README.md
+│   ├── AGENTS.md
+│   ├── domain.yml
+│   ├── raw/
+│   └── snapshot/
 ├── walkinglabs-learn-harness-engineering/
 │   ├── README.md
 │   ├── AGENTS.md
@@ -185,7 +191,7 @@ research/
 
 上方只展开了第一个外部仓库研究域的基础形态；所有外部仓库研究域都必须包含同样的原始事实层；两个内部工程研究项目按各自项目契约维护。
 `analysis.md` 和 `deep-dive.md`。
-`deep-dive.md` 是 L2 产物；当前 35 个外部仓库研究域已经全部补齐，P3 只表示采用优先级低，
+`deep-dive.md` 是 L2 产物；当前 36 个外部仓库研究域已经全部补齐，P3 只表示采用优先级低，
 不再表示研究深度缺口。
 
 ## 修改规则
@@ -196,6 +202,7 @@ research/
 - 外部仓库研究对象采用“一仓库一研究域”，目录名使用 `<owner>-<repo>` 的小写短横线形式。
 - `raw/` 是原始事实层，只保存拉取到本地的一手材料；分析判断写入上一级 `README.md`、`analysis.md` 或 `decisions.md`。
 - `raw/repository/` 是外部仓库快照，只作为本地事实缓存；不提交到主仓、不按本仓 Markdown 风格重写，并从 lint、链接和目录文档门禁中排除。
+- `research/vibe-mathing-cn-public/snapshot/` 是经过过滤和审计的已提交文件快照；它不包含源仓库 `.git`、历史、未跟踪文件或运行产物，并从根仓库 lint、链接、details 和目录文档门禁中排除。
 - `research-value-application-map.md` 是研究体系的转化入口，用于说明研究给用户带来的价值、启示、应用位置和下沉路线。
 - `research-transfer-synthesis.md` 是横向迁移入口，用于把研究对象拆成机制、迁移边界、改良动作和验证指标。
 - GitHub 仓库 raw 层通过 `python3 scripts/fetch-research-raw.py` 刷新；不要手工改写 `*.raw.*` 文件。

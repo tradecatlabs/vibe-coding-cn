@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-14T00:03:32+08:00",
+  "task": {
+    "task_id": "0003",
+    "slug": "production-research-pipeline",
+    "task_dir": "governance/tasks/0003-production-research-pipeline",
+    "detected_phase": "decompose",
+    "overall_status": "In Progress"
+  },
+  "source_refs": {
+    "task_context_packet": null,
+    "task_package_set": "governance/tasks/0003-production-research-pipeline/TASK_PACKAGE_SET.json",
+    "git_delivery_evidence": null,
+    "audit_case_sampling_decision": "governance/tasks/0003-production-research-pipeline/AUDIT_CASE_SAMPLING.md",
+    "reuse_sampling": "governance/tasks/0003-production-research-pipeline/REUSE_SAMPLING.json",
+    "reuse_asset_handoff": null,
+    "verification_plan": null,
+    "verification_results": null,
+    "retrospective_handoff": null
+  },
+  "closeout_gate": {
+    "ready": false,
+    "failures": [
+      "任务目录当前自动识别 phase 为 decompose，尚未达到 closeout 形态",
+      "Overall Status 必须为 Done，当前为 In Progress",
+      "Git 交付证据失败: git delivery evidence is required",
+      "复用采样判定失败: candidate_assets:exemplar:missing_reference",
+      "复用资产交接失败: reuse asset handoff is required",
+      "任务验证门禁失败: verification plan is required",
+      "工程复盘交接失败: required retrospective handoff is missing"
+    ]
+  },
+  "summary": {
+    "leaf_total": 6,
+    "leaf_done": 6,
+    "todo_total": 6,
+    "todo_checked": 6,
+    "blocker_count": 0
+  },
+  "leaves": [
+    {
+      "id": "TP-01",
+      "todo_checked": true,
+      "status": "Done",
+      "ready": false,
+      "recent_evidence": "owner regression validator PASS；trusted evidence 与 attack matrix PASS",
+      "blocker": "-",
+      "unblock_needed": "-"
+    },
+    {
+      "id": "TP-02",
+      "todo_checked": true,
+      "status": "Done",
+      "ready": false,
+      "recent_evidence": "8 进程并发、幂等、冲突拒绝、WAL 故障恢复 PASS",
+      "blocker": "-",
+      "unblock_needed": "-"
+    },
+    {
+      "id": "TP-03",
+      "todo_checked": true,
+      "status": "Done",
+      "ready": false,
+      "recent_evidence": "状态转换、retry、timeout、output budget PASS",
+      "blocker": "-",
+      "unblock_needed": "-"
+    },
+    {
+      "id": "TP-04",
+      "todo_checked": true,
+      "status": "Done",
+      "ready": false,
+      "recent_evidence": "CLI run/resume/verify/status、幂等、失效 E2E PASS",
+      "blocker": "-",
+      "unblock_needed": "-"
+    },
+    {
+      "id": "TP-05",
+      "todo_checked": true,
+      "status": "Done",
+      "ready": false,
+      "recent_evidence": "Lean/Mathlib v4.33.0 build 8707 jobs PASS；零逃逸、零公理依赖",
+      "blocker": "-",
+      "unblock_needed": "-"
+    },
+    {
+      "id": "TP-06",
+      "todo_checked": true,
+      "status": "Done",
+      "ready": false,
+      "recent_evidence": "MATURITY_AUDIT 100/100；make check、governance strict/health、deep review PASS",
+      "blocker": "-",
+      "unblock_needed": "-"
+    }
+  ],
+  "git_delivery": null,
+  "git_delivery_gate": {
+    "required": true,
+    "loaded": false,
+    "ok": false,
+    "issues": [
+      "git delivery evidence is required"
+    ]
+  },
+  "audit_case_sampling": {
+    "ok": true,
+    "file": "governance/tasks/0003-production-research-pipeline/AUDIT_CASE_SAMPLING.md",
+    "summary": {
+      "decision": "no-case",
+      "source": "0003 production research pipeline final review and debug evidence",
+      "case_id": "",
+      "case_path": "",
+      "root_cause_class": "",
+      "has_no_case_reason": true,
+      "has_trigger_signals": false,
+      "has_evidence": true
+    },
+    "issues": [],
+    "required": true,
+    "loaded": true
+  },
+  "reuse_sampling": {
+    "required": true,
+    "requirement_reasons": [
+      "cli:reuse-sampling-required",
+      "task-package:compiled-plan:leaf-count=6",
+      "task-package:compiled-plan:risk=high",
+      "task-package:reuse.closeout_required",
+      "task-package:主要任务 closeout 必须判断是否形成 Completion Exemplar 或 SOP candidate",
+      "task-package:流水线实现包含可跨项目复用的可信证据、原子存储和恢复方法"
+    ],
+    "loaded": true,
+    "ok": false,
+    "summary": {
+      "task_id": "0003-production-research-pipeline",
+      "major_task": true,
+      "decision": "create_exemplar_only",
+      "reason": "形成了可跨项目复用的可信证据、WAL 恢复、状态机与形式验证闭环，但单次成功不足以晋升 SOP",
+      "existing_assets": [],
+      "candidate_assets": [
+        "exemplar"
+      ]
+    },
+    "issues": [
+      "candidate_assets:exemplar:missing_reference"
+    ]
+  },
+  "reuse_asset_handoff": {
+    "required": true,
+    "loaded": false,
+    "ok": false,
+    "issues": [
+      "reuse asset handoff is required"
+    ]
+  },
+  "task_verification": {
+    "required": true,
+    "requirement_reasons": [
+      "task-docs:nontrivial-leaf-count=6",
+      "task-package:nontrivial-leaf-count=6",
+      "task-package:risk=high"
+    ],
+    "loaded": false,
+    "enforced": true,
+    "verification_ready": false,
+    "closeout_ready": false,
+    "checks": [],
+    "failures": [
+      "verification plan is required"
+    ],
+    "warnings": []
+  },
+  "retrospective_handoff": {
+    "required": true,
+    "loaded": false,
+    "ok": false,
+    "requirement_id": "RETREQ-21f31b502c69b8e4",
+    "record_id": null,
+    "issues": [
+      "required retrospective handoff is missing"
+    ]
+  },
+  "recommended_asset_handoff": {
+    "source_refs": [
+      "governance/tasks/0003-production-research-pipeline/TASK_PACKAGE_SET.json",
+      "governance/tasks/0003-production-research-pipeline/AUDIT_CASE_SAMPLING.md",
+      "governance/tasks/0003-production-research-pipeline/REUSE_SAMPLING.json"
+    ],
+    "artifacts": [
+      "task-package-set.json",
+      "audit-case-sampling-decision",
+      "reuse-sampling.json",
+      "task-closeout-packet.json"
+    ]
+  },
+  "upstream_packets": {
+    "task_context_packet_loaded": false,
+    "task_package_set_loaded": true,
+    "git_delivery_evidence_loaded": false,
+    "audit_case_sampling_loaded": true,
+    "reuse_sampling_loaded": true,
+    "reuse_asset_handoff_loaded": false,
+    "verification_plan_loaded": false,
+    "retrospective_handoff_loaded": false
+  }
+}

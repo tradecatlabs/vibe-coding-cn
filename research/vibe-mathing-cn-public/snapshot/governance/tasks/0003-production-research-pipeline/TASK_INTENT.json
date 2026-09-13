@@ -1,0 +1,133 @@
+{
+  "acceptance": [
+    {
+      "evidence": "python3 scripts/test_trusted_evidence.py",
+      "evidence_type": "command",
+      "id": "AC-001",
+      "observable": true,
+      "statement": "伪造、缺失、越界、哈希不符和自我验证证据全部 fail-closed"
+    },
+    {
+      "evidence": "python3 scripts/test_vibe_mathing_pipeline.py",
+      "evidence_type": "command",
+      "id": "AC-002",
+      "observable": true,
+      "statement": "确定性研究流水线端到端通过且重复运行幂等"
+    },
+    {
+      "evidence": "python3 scripts/test_vibe_mathing_runtime.py",
+      "evidence_type": "command",
+      "id": "AC-003",
+      "observable": true,
+      "statement": "运行状态机、恢复、超时、预算和失败路径通过"
+    },
+    {
+      "evidence": "make check",
+      "evidence_type": "command",
+      "id": "AC-004",
+      "observable": true,
+      "statement": "完整项目静态和回归门禁通过"
+    },
+    {
+      "evidence": "python3 scripts/pipeline_maturity_audit.py --strict",
+      "evidence_type": "command",
+      "id": "AC-005",
+      "observable": true,
+      "statement": "生产流水线成熟度由审计器重算为 100/100"
+    }
+  ],
+  "ambiguities": {
+    "critical": [],
+    "non_critical": []
+  },
+  "behavior_contract": {
+    "reason": "任务会改变可观察行为，必须用场景证明。",
+    "scenarios": [
+      {
+        "given": "Result 引用不存在、越界、哈希不符或非受信 verifier 产生的证据产物",
+        "id": "SCN-001",
+        "then": "命令非零退出，Result 不进入 Solution View",
+        "title": "可信证据拒绝伪造",
+        "when": "执行研究空间准入与流水线验证"
+      },
+      {
+        "given": "一个固定的 canonical Problem 和确定性本地 adapter",
+        "id": "SCN-002",
+        "then": "系统原子创建 Attempt、候选产物、Result、可信验证回执并重算 Solution View",
+        "title": "确定性闭环自动完成",
+        "when": "运行统一 vibe-mathing 命令"
+      },
+      {
+        "given": "流水线在候选生成后、验证前被确定性故障注入中断",
+        "id": "SCN-003",
+        "then": "系统从持久 checkpoint 继续，不重复创建 Problem、Attempt、Result 或副作用",
+        "title": "中断后幂等恢复",
+        "when": "使用同一 run 或 Attempt 恢复"
+      },
+      {
+        "given": "adapter 超时、输出超限、步骤或重试预算耗尽",
+        "id": "SCN-004",
+        "then": "运行 fail-closed 进入明确终态，保留可审计错误，不宣称完成",
+        "title": "预算和停止条件生效",
+        "when": "流水线执行该 adapter"
+      },
+      {
+        "given": "生产流水线的 required capabilities 和验证命令",
+        "id": "SCN-005",
+        "then": "分数完全由真实能力和新鲜命令派生；任一 required gate 失败时不得输出 100/100",
+        "title": "成熟度百分比可重算",
+        "when": "运行成熟度审计"
+      }
+    ],
+    "status": "REQUIRED"
+  },
+  "compile_evidence": {
+    "classifier_version": "task-intent-v1",
+    "matched_tokens": [
+      "生产"
+    ],
+    "source_digest": "sha256:289d62977aaf677df86282c50b2f47e8afa4ce7be642c7ee68000173f3bb56f7"
+  },
+  "constraints": [],
+  "intent_id": "INTENT-289d62977aaf",
+  "objective": "实现可恢复、可审计、可信证据驱动的 Vibe-Mathing 自动研究流水线，并由机器成熟度门禁证明生产闭环达到 100/100",
+  "request": "设计推进到 100% 的实现计划，然后按照计划和 tasks 容器实现完整自动化研究流水线",
+  "risk": {
+    "factors": [
+      "production_or_compliance"
+    ],
+    "mandatory_high": true,
+    "matched_rules": [
+      "high:production_or_compliance"
+    ],
+    "override": {
+      "applied": false,
+      "reason": "显式风险与推断风险一致。",
+      "requested": "high"
+    },
+    "tier": "high"
+  },
+  "schema_version": "1.0.0",
+  "scope": {
+    "changed_paths": [
+      "scripts/",
+      "research/",
+      "result-library/",
+      "problem-library/",
+      ".codex/skills/",
+      ".github/workflows/",
+      "governance/"
+    ],
+    "in_scope": [],
+    "out_of_scope": []
+  },
+  "side_effects": [],
+  "status": "READY",
+  "task_types": [
+    "feature",
+    "operations",
+    "reliability",
+    "security",
+    "testing"
+  ]
+}

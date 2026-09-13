@@ -1,0 +1,193 @@
+{
+  "schema_version": "vibemathing-public-source.v1",
+  "source_kind": "public-github-namespace-index",
+  "namespace": {
+    "name": "vibemathing",
+    "url": "https://github.com/vibemathing",
+    "api_url": "https://api.github.com/users/vibemathing/repos?per_page=100&sort=updated",
+    "kind": "public GitHub namespace"
+  },
+  "project_index": {
+    "owner": "vibemathing",
+    "number": 1,
+    "title": "Vibe Mathing · Problem Repository Fleet",
+    "url": "https://github.com/users/vibemathing/projects/1",
+    "visibility": "public",
+    "source_role": "cross-repository operational navigation",
+    "mathematical_status": "Project fields, views, and cards are not Evidence, Result, or Solution",
+    "observed_on": "2026-09-07"
+  },
+  "repositories": [
+    {
+      "role": "problem-library",
+      "full_name": "vibemathing/vibe-mathing-problem-library-public",
+      "url": "https://github.com/vibemathing/vibe-mathing-problem-library-public",
+      "readme_url": "https://github.com/vibemathing/vibe-mathing-problem-library-public/blob/main/README.md",
+      "canonical_index_url": "https://github.com/vibemathing/vibe-mathing-problem-library-public/blob/main/catalog/canonical-index.json",
+      "snapshot_url": "https://github.com/vibemathing/vibe-mathing-problem-library-public/blob/main/LIBRARY_SNAPSHOT.json",
+      "source_role": "problem discovery and ProblemContract catalog",
+      "observed_on": "2026-09-07"
+    },
+    {
+      "role": "web-research-template",
+      "full_name": "vibemathing/vibe-mathing-problem-public-template",
+      "url": "https://github.com/vibemathing/vibe-mathing-problem-public-template",
+      "readme_url": "https://github.com/vibemathing/vibe-mathing-problem-public-template/blob/main/README.md",
+      "bootstrap_url": "https://github.com/vibemathing/vibe-mathing-problem-public-template/blob/main/WEB_BOOTSTRAP.md",
+      "output_contract_url": "https://github.com/vibemathing/vibe-mathing-problem-public-template/blob/main/WEB_OUTPUT_CONTRACT.json",
+      "source_role": "fixed Web research Harness template for one concrete problem",
+      "observed_on": "2026-09-07"
+    }
+  ],
+  "key_problem_repositories": [
+    {
+      "group": "open-millennium-problem",
+      "label": "Riemann hypothesis",
+      "full_name": "vibemathing/problem-millennium-riemann-hypothesis",
+      "url": "https://github.com/vibemathing/problem-millennium-riemann-hypothesis"
+    },
+    {
+      "group": "open-millennium-problem",
+      "label": "P versus NP",
+      "full_name": "vibemathing/problem-millennium-p-vs-np",
+      "url": "https://github.com/vibemathing/problem-millennium-p-vs-np"
+    },
+    {
+      "group": "open-millennium-problem",
+      "label": "Navier-Stokes existence and smoothness",
+      "full_name": "vibemathing/problem-millennium-navier-stokes",
+      "url": "https://github.com/vibemathing/problem-millennium-navier-stokes"
+    },
+    {
+      "group": "open-millennium-problem",
+      "label": "Yang-Mills existence and mass gap",
+      "full_name": "vibemathing/problem-millennium-yang-mills-mass-gap",
+      "url": "https://github.com/vibemathing/problem-millennium-yang-mills-mass-gap"
+    },
+    {
+      "group": "open-millennium-problem",
+      "label": "Hodge conjecture",
+      "full_name": "vibemathing/problem-millennium-hodge-conjecture",
+      "url": "https://github.com/vibemathing/problem-millennium-hodge-conjecture"
+    },
+    {
+      "group": "open-millennium-problem",
+      "label": "Birch and Swinnerton-Dyer conjecture",
+      "full_name": "vibemathing/problem-millennium-birch-swinnerton-dyer",
+      "url": "https://github.com/vibemathing/problem-millennium-birch-swinnerton-dyer"
+    },
+    {
+      "group": "independent-key-problem",
+      "label": "Classical polynomial-time audit of secp256k1 discrete-log inversion",
+      "full_name": "vibemathing/problem-secp256k1-ecdlog-polytime",
+      "url": "https://github.com/vibemathing/problem-secp256k1-ecdlog-polytime"
+    }
+  ],
+  "key_problem_repository_policy": {
+    "pointer_only": true,
+    "auto_import_problem_contracts": false,
+    "auto_clone_repositories": false,
+    "repository_activity_is_mathematical_evidence": false,
+    "repository_presence_is_solved_claim": false,
+    "secp256k1_is_millennium_problem": false,
+    "revalidation": "Re-read repository identity, visibility, default branch, ProblemContract, and current evidence state before use."
+  },
+  "canonical_catalog_snapshot": {
+    "source_repository": "vibemathing/vibe-mathing-problem-library-public",
+    "index_path": "catalog/canonical-index.json",
+    "index_url": "https://github.com/vibemathing/vibe-mathing-problem-library-public/blob/main/catalog/canonical-index.json",
+    "source_snapshot_path": "LIBRARY_SNAPSHOT.json",
+    "source_snapshot_url": "https://github.com/vibemathing/vibe-mathing-problem-library-public/blob/main/LIBRARY_SNAPSHOT.json",
+    "source_built_at": "2026-09-06T11:46:42+08:00",
+    "observed_on": "2026-09-07",
+    "counts": {
+      "canonical_problem_contracts": 10,
+      "draft_problem_contracts": 0,
+      "repository_locators": 10,
+      "source_observations": 0,
+      "source_shards": 0
+    },
+    "status": "source-reported snapshot; revalidate the remote index before starting research"
+  },
+  "concrete_problem_repositories": {
+    "listing_url": "https://github.com/vibemathing?tab=repositories",
+    "canonical_name_patterns": [
+      "problem-opg-*",
+      "problem-erdos-*"
+    ],
+    "candidate_name_patterns": [
+      "problem-um-*"
+    ],
+    "selection_rule": "Select by problem_id from the canonical catalog first; repository names and source labels are locators, not Result outcomes."
+  },
+  "web_research_suite": {
+    "template_repository": "vibemathing/vibe-mathing-problem-public-template",
+    "harness_source": "harness-source:web-research-full",
+    "observed_harness_version": "1.2.4",
+    "required_start_files": [
+      "AGENTS.md",
+      "WEB_BOOTSTRAP.md",
+      "HARNESS_SNAPSHOT.json",
+      "WEB_CONTEXT_BUNDLE.md",
+      "WEB_ACTIVE_SKILLS.json",
+      "WEB_OUTPUT_CONTRACT.json"
+    ],
+    "candidate_write_paths": [
+      "research/artifacts/web-inbox/**",
+      "research/artifacts/candidates/**",
+      "research/artifacts/source-notes/**"
+    ],
+    "admission_boundary": "Issue, branch, commit, pull request, merge, checks, and model output transport candidates; they do not admit Evidence, Result, or Solution."
+  },
+  "integration_policy": {
+    "mode": "pointer-only until separately reviewed",
+    "remote_catalog_is_not_local_canonical": true,
+    "auto_import_problem_contracts": false,
+    "auto_clone_remote_repositories": false,
+    "auto_admit_results": false,
+    "local_canonical_ledger_path": "problem-library/records/canonical-problems.jsonl",
+    "prohibited_imports": [
+      "research/**",
+      "result-library/**",
+      "problem-library/raw/**",
+      "problem-library/derived/**",
+      "runtime logs",
+      "credentials",
+      "private paths"
+    ],
+    "revalidation": "Re-read the public catalog contract, repository identity, lifecycle, digest, and current branch before using any entry."
+  },
+  "bounty_project_index": {
+    "owner": "vibemathing",
+    "number": 2,
+    "title": "Vibe Mathing · Bounty Problems（全部有赏金数学问题）",
+    "url": "https://github.com/users/vibemathing/projects/2",
+    "view": {
+      "number": 3,
+      "name": "赏金（美元降序）",
+      "url": "https://github.com/users/vibemathing/projects/2/views/3",
+      "id": "PVTV_lAHODs3kG84BixHvzgLk8yU",
+      "sort_by": [
+        {
+          "field": "USD Equivalent",
+          "direction": "DESC"
+        },
+        {
+          "field": "Title",
+          "direction": "ASC"
+        }
+      ]
+    },
+    "source_role": "dated bounty and public problem-repository operational navigation",
+    "mathematical_status": "Project fields, views, cards, award records, and repository activity are not Evidence, Result, or Solution",
+    "observed_on": "2026-09-09",
+    "top146_snapshot": {
+      "path": "problem-library/registry/bounty-project-2-top146.v1.json",
+      "human_index_path": "problem-library/BOUNTY_PROJECT_2_TOP146.md",
+      "unique_repositories": 146,
+      "project_award_records": 234,
+      "deduplication_key": "repository_url",
+      "strict_usd_equivalent_greater_than_100_unique_repositories": 141
+    }
+  }
+}

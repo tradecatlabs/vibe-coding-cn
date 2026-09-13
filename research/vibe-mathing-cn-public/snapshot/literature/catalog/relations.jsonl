@@ -1,0 +1,2 @@
+{"relation_id":"relation:math-dictionary-edition-2","subject_id":"work:math-dictionary-wang-yuan","predicate":"has_edition","object_id":"edition:isbn:9787030533364"}
+{"relation_id":"relation:math-dictionary-edition-2-pdf","subject_id":"edition:isbn:9787030533364","predicate":"has_file","object_id":"file:9787030533364:pdf"}

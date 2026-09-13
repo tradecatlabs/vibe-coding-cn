@@ -1,0 +1,451 @@
+{
+  "schema_version": "math-tool-maturity.v1",
+  "as_of": "2026-09-01",
+  "states": [
+    "surveyed",
+    "source_locked",
+    "installed",
+    "smoke_checked",
+    "evidence_capable",
+    "verifier_admitted"
+  ],
+  "tools": [
+    {
+      "tool_id": "T01",
+      "family": "算筹、算盘、对数表、机械计算器",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T01"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T02",
+      "family": "FORTRAN、BLAS/LINPACK 传统",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T02"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T03",
+      "family": "Logic Theorist、resolution、Davis–Putnam",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T03"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T04",
+      "family": "REDUCE、Macsyma/Maxima",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T04"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T05",
+      "family": "Automath、LCF、NQTHM",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T05"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T06",
+      "family": "Mizar、HOL、Isabelle、Coq/Rocq",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T06"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T07",
+      "family": "Maple、Mathematica",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T07"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T08",
+      "family": "PARI/GP、FLINT/Arb",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T08"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T09",
+      "family": "GAP",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T09"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T10",
+      "family": "Singular、Macaulay2",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T10"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T11",
+      "family": "SageMath",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T11"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T12",
+      "family": "SymPy",
+      "maturity": "evidence_capable",
+      "runtime_route": "evidence",
+      "admitted_components": [
+        "SymPy exact-arithmetic vertical slice"
+      ],
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T12",
+        "scripts/test_vibe_mathing_pipeline.py",
+        "fixtures/sympy-counterexample/problem.json"
+      ],
+      "reason": "公开仓的 bounded SymPy vertical slice 生成可重放的符号/精确算术证据；不构成通用证明器。"
+    },
+    {
+      "tool_id": "T13",
+      "family": "mpmath、python-flint",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T13",
+        "scripts/run_math_tool_canaries.py"
+      ],
+      "reason": "公开仓只发布 canary 契约与测试逻辑；未发布运行报告，因此不声称安装或 smoke admission。"
+    },
+    {
+      "tool_id": "T14",
+      "family": "NumPy、SciPy、Julia",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T14"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T15",
+      "family": "Z3、cvc5、SMT-LIB",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T15",
+        "scripts/run_math_tool_canaries.py"
+      ],
+      "reason": "公开仓只发布 canary 契约与测试逻辑；未发布运行报告，因此不声称安装或 smoke admission。"
+    },
+    {
+      "tool_id": "T16",
+      "family": "MiniSat、CaDiCaL",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T16",
+        "scripts/run_math_tool_canaries.py"
+      ],
+      "reason": "公开仓只发布 canary 契约与测试逻辑；未发布运行报告，因此不声称安装或 smoke admission。"
+    },
+    {
+      "tool_id": "T17",
+      "family": "E、Vampire、Prover9、TPTP",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T17"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T18",
+      "family": "Lean 4/Mathlib",
+      "maturity": "verifier_admitted",
+      "runtime_route": "verifier",
+      "admitted_components": [
+        "Lean 4 kernel check with axiom and statement-faithfulness gates"
+      ],
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T18",
+        "scripts/test_lean_pipeline.py",
+        "fixtures/lean-proof/AxiomAudit.lean"
+      ],
+      "reason": "公开仓只准入已测试的 Lean kernel fixture 及其公理、freshness 和陈述忠实性门；Lean build 不自动证明原题忠实。"
+    },
+    {
+      "tool_id": "T19",
+      "family": "HOL Light、Isabelle、Rocq、Metamath、ACL2",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T19"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T20",
+      "family": "polymake、4ti2、TOPCOM",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T20"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T21",
+      "family": "nauty/Traces、NetworkX、igraph",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T21"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T22",
+      "family": "OEIS、LMFDB、DLMF、TPTP",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T22"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T23",
+      "family": "Gappa、区间算术与浮点证书",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T23"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T24",
+      "family": "Alethe/Eunoia、CPC、Carcara、SMTCoq",
+      "maturity": "source_locked",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T24"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。",
+      "components": [
+        "Carcara",
+        "SMTCoq"
+      ]
+    },
+    {
+      "tool_id": "T25",
+      "family": "Isabelle/HOL + LLM prover（Isabellm）",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T25"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T26",
+      "family": "OpenTheory / proof exchange packages",
+      "maturity": "source_locked",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T26"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。",
+      "components": [
+        "OpenTheory"
+      ]
+    },
+    {
+      "tool_id": "T27",
+      "family": "LeanDojo-v2 / TorchLean / ITPEval 生态",
+      "maturity": "source_locked",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T27"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。",
+      "components": [
+        "LeanDojo-v2",
+        "ITPEval"
+      ]
+    },
+    {
+      "tool_id": "T28",
+      "family": "Axiom / FriCAS",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T28"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T29",
+      "family": "Macaulay2 / Singular",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T29"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T30",
+      "family": "GAP / SageMath",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T30"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T31",
+      "family": "ACL2 / TPTP-SZS",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T31"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T32",
+      "family": "FLINT / Arb",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T32"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T33",
+      "family": "OSCAR.jl",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T33"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T34",
+      "family": "Dedukti",
+      "maturity": "source_locked",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T34"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。",
+      "components": [
+        "Dedukti"
+      ]
+    },
+    {
+      "tool_id": "T35",
+      "family": "Agda",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T35"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T36",
+      "family": "LFSC",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T36"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T37",
+      "family": "PVS",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T37"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T38",
+      "family": "Nuprl / MetaPRL",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T38"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T39",
+      "family": "Maude",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T39"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T40",
+      "family": "OpenMath",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T40"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    },
+    {
+      "tool_id": "T41",
+      "family": "SMT-LIB / SMT-LIB-db",
+      "maturity": "surveyed",
+      "runtime_route": "none",
+      "evidence_refs": [
+        "governance/tools/MATH_TOOL_CATALOG.md#T41"
+      ],
+      "reason": "公开工具目录条目；仅表示调研分类，不推断安装、运行或验证器准入。"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/governance/control-plane/plfb-metamodel.schema.json",
+  "title": "VibeMath Point-Line-Face-Body Metamodel Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "metamodel_id",
+    "unique_conceptual_root",
+    "status",
+    "document_refs",
+    "primitives",
+    "point_types",
+    "line_types",
+    "faces",
+    "body_types",
+    "invariants",
+    "capability_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "metamodel_id": {"const": "metamodel:plfb"},
+    "unique_conceptual_root": {"const": true},
+    "status": {"enum": ["draft", "current"]},
+    "document_refs": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^(?:README(?:\\.en)?\\.md|GEO\\.md|governance/standards/[A-Za-z0-9_.-]+\\.md)$"}
+    },
+    "primitives": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "question"],
+        "properties": {
+          "id": {"enum": ["point", "line", "face", "body"]},
+          "name": {"type": "string", "minLength": 1},
+          "question": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "point_types": {
+      "type": "array",
+      "minItems": 61,
+      "maxItems": 61,
+      "items": {"$ref": "#/$defs/pointType"}
+    },
+    "line_types": {
+      "type": "array",
+      "minItems": 58,
+      "maxItems": 58,
+      "items": {"$ref": "#/$defs/lineType"}
+    },
+    "faces": {
+      "type": "array",
+      "minItems": 13,
+      "maxItems": 13,
+      "items": {"$ref": "#/$defs/face"}
+    },
+    "body_types": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {"$ref": "#/$defs/bodyType"}
+    },
+    "invariants": {
+      "type": "array",
+      "minItems": 8,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "capability_claims": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metamodel_schema_implemented",
+        "body_manifest_implemented",
+        "outcome_graph_runtime_implemented",
+        "osps_orchestrator_implemented",
+        "pwtsj_general_scheduler_implemented",
+        "mathematical_truth_changed"
+      ],
+      "properties": {
+        "metamodel_schema_implemented": {"const": true},
+        "body_manifest_implemented": {"const": false},
+        "outcome_graph_runtime_implemented": {"const": false},
+        "osps_orchestrator_implemented": {"const": false},
+        "pwtsj_general_scheduler_implemented": {"const": false},
+        "mathematical_truth_changed": {"const": false}
+      }
+    }
+  },
+  "$defs": {
+    "status": {
+      "enum": ["conceptual", "schema_ready", "partial", "implemented", "operational_partial"]
+    },
+    "pointType": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "primary_face", "role", "implementation_status"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^point\\.[a-z][a-z0-9_]*$"},
+        "primary_face": {"type": "string", "pattern": "^F(0[1-9]|1[0-3])$"},
+        "role": {
+          "enum": ["canonical", "append_only_record", "immutable_artifact", "definition", "execution_instance", "derived_view", "external_projection", "conceptual_only"]
+        },
+        "implementation_status": {"$ref": "#/$defs/status"}
+      }
+    },
+    "lineType": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "category", "implementation_status"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^line\\.[a-z][a-z0-9_]*$"},
+        "category": {"enum": ["identity", "source_semantic", "logic_outcome", "process_method", "evidence_observation", "governance_publication"]},
+        "implementation_status": {"$ref": "#/$defs/status"}
+      }
+    },
+    "face": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "purpose", "point_types", "line_types", "owner_paths", "implementation_status", "known_gaps"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^F(0[1-9]|1[0-3])$"},
+        "name": {"type": "string", "minLength": 1},
+        "model": {"enum": ["OSPS", "PWTSJ"]},
+        "purpose": {"type": "string", "minLength": 1},
+        "point_types": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^point\\."}},
+        "line_types": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^line\\."}},
+        "owner_paths": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "implementation_status": {"$ref": "#/$defs/status"},
+        "known_gaps": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "bodyType": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "required_faces", "implementation_status"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^B[0-4]$"},
+        "name": {"type": "string", "minLength": 1},
+        "required_faces": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^F(0[1-9]|1[0-3])$"}},
+        "implementation_status": {"$ref": "#/$defs/status"}
+      }
+    }
+  }
+}

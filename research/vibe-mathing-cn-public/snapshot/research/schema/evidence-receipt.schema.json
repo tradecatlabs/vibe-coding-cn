@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tradecatlabs.com/vibe-mathing/schema/evidence-receipt.schema.json",
+  "title": "Vibe Mathing Evidence Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "evidence_id", "capability", "verdict", "verifier", "checked_at", "subject", "output", "command"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "evidence_id": {"type": "string", "pattern": "^evidence:[a-z0-9][a-z0-9.-]*$"},
+    "capability": {
+      "enum": [
+        "numeric_check",
+        "symbolic_check",
+        "human_review",
+        "kernel_check",
+        "counterexample_check",
+        "axiom_escape_audit",
+        "statement_faithfulness",
+        "prior_art_review"
+      ]
+    },
+    "verdict": {"enum": ["accept", "reject", "undetermined"]},
+    "verifier": {"type": "string", "minLength": 1},
+    "checked_at": {"type": "string", "format": "date-time"},
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["problem_id", "attempt_id", "result_id"],
+      "properties": {
+        "problem_id": {"type": "string"},
+        "attempt_id": {"type": "string"},
+        "result_id": {"type": "string"}
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["locator", "sha256"],
+      "properties": {
+        "locator": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "command": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "executor",
+        "argv",
+        "exit_code",
+        "timeout_seconds",
+        "resource_budget",
+        "stop_condition",
+        "termination"
+      ],
+      "properties": {
+        "executor": {"enum": ["subprocess", "in_process"]},
+        "argv": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "exit_code": {"type": "integer"},
+        "timeout_seconds": {"type": "integer", "minimum": 1, "maximum": 86400},
+        "resource_budget": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["memory_budget_mb", "threads_max", "max_output_bytes"],
+          "properties": {
+            "memory_budget_mb": {"type": "integer", "minimum": 1, "maximum": 131072},
+            "threads_max": {"type": "integer", "minimum": 1, "maximum": 1024},
+            "max_output_bytes": {"type": "integer", "minimum": 1, "maximum": 128000000}
+          }
+        },
+        "stop_condition": {"type": "string", "minLength": 1},
+        "termination": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "reason"],
+          "properties": {
+            "status": {"enum": ["completed", "failed", "timed_out", "cancelled"]},
+            "reason": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    }
+  }
+}

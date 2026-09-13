@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python3 -m pip install --requirement requirements.txt
+
+      - name: Run portable quality gate
+        run: make check
+
+  production-loop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python dependencies
+        run: python3 -m pip install --requirement requirements.txt
+
+      - name: Install fixed Lean toolchain
+        run: |
+          timeout 300s curl --connect-timeout 15 --max-time 240 --proto '=https' --tlsv1.2 -sSf -o /tmp/elan-init.sh https://raw.githubusercontent.com/leanprover/elan/464c9d28395000a2a0128e07081e4956d50eced2/elan-init.sh
+          echo "a620ff1641616222c8d37c54845492004bb84d6877cdbc944dd65c1aa685bf53  /tmp/elan-init.sh" | sha256sum --check --strict
+          timeout 600s sh /tmp/elan-init.sh -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          timeout 900s "$HOME/.elan/bin/elan" toolchain install leanprover/lean4:v4.33.0
+
+      - name: Restore Mathlib cache
+        working-directory: fixtures/lean-proof
+        run: timeout 900s lake exe cache get
+
+      - name: Audit production loop
+        run: python3 scripts/pipeline_maturity_audit.py --strict

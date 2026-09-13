@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "requirement_id": "RETREQ-21f31b502c69b8e4",
+  "required": true,
+  "risk_level": "high",
+  "trigger_types": [
+    "major_task",
+    "priority",
+    "risk"
+  ],
+  "reasons": [
+    "owner-derived:leaf-count=6",
+    "owner-derived:priority=P0",
+    "owner-derived:risk=high"
+  ],
+  "derived_by": "auto-retro-requirement-v1",
+  "source_digest": "sha256:c2dc16b8604fb576df80c24695f9c8739272444a63ab3ff3ae2156445a10bd4f"
+}

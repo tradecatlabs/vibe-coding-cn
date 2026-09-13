@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tradecatlabs.com/vibe-mathing/schema/problem.schema.json",
+  "title": "Vibe Mathing Problem Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "source",
+    "source_native_id",
+    "source_order",
+    "source_page",
+    "detail_url",
+    "record_scope",
+    "title",
+    "statement_excerpt",
+    "status",
+    "difficulty",
+    "categories",
+    "problem_sets",
+    "related_urls",
+    "source_revision",
+    "retrieved_at",
+    "license"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "enum": [
+        "wikipedia",
+        "unsolvedmath",
+        "erdosproblems"
+      ]
+    },
+    "source_native_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "来源展示的 ID；来源可能复用该值，不能假定全局或来源内唯一。"
+    },
+    "source_order": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "source_page": {
+      "type": "string",
+      "format": "uri"
+    },
+    "detail_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "record_scope": {
+      "enum": [
+        "list_item",
+        "listing_card",
+        "problem_page"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "statement_excerpt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "open",
+        "partially_solved",
+        "solved",
+        "solved_since_1995"
+      ],
+      "description": "wikipedia/unsolvedmath 沿用原词汇；erdosproblems 的 open/solved 对应站点状态 id（工具提示含详情）。"
+    },
+    "difficulty": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1,
+      "maximum": 5
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "problem_sets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "related_urls": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "source_revision": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "url",
+        "attribution"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "attribution": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "prize": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "站点声明的美元奖金（站点无奖金时为空）；目前仅由 erdosproblems 来源使用。"
+    }
+  }
+}

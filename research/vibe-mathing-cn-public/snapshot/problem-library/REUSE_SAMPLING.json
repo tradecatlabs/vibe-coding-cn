@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "problem-library",
+  "major_task": true,
+  "major_reasons": [
+    "cli:major"
+  ],
+  "decision": "create_exemplar_only",
+  "reason": "形成了可跨项目复用的目录抓取方法，但当前仅一次成功，尚不满足 SOP 晋升所需的独立重复执行与外部审查。",
+  "existing_assets": [],
+  "candidate_assets": [
+    "COMPLETION_EXEMPLAR.json"
+  ],
+  "evidence_refs": [
+    "manifest.json",
+    "COMPLETION_EXEMPLAR.md",
+    "RETROSPECTIVE.md",
+    "AUDIT_CASE_SAMPLING.md"
+  ],
+  "decided_at": "2026-08-13T19:36:59+08:00"
+}

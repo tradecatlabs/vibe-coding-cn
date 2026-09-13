@@ -25,6 +25,7 @@ exclude_path = [
   # intentionally excluded from the root repository's first-party scan.
   '^research/vibe-cybersecurity-cn(/|$)',
   '^research/vibe-harness-cn(/|$)',
+  '^research/vibe-mathing-cn-public(/|$)',
   '^tools/prompts-library(/|$)',
   '^skills/claude-official-skills(/|$)',
   '^skills/auto-tmux/assets/(oh-my-tmux|tmux-src)(/|$)',

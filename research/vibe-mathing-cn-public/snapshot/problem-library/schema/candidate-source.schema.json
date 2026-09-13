@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tradecatlabs.com/vibe-mathing/schema/candidate-source.schema.json",
+  "title": "Candidate Problem Source Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "sources"],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "ingestion_role",
+          "record_scope",
+          "parser",
+          "license",
+          "admission_policy",
+          "status_map"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]{1,63}$"
+          },
+          "ingestion_role": {
+            "enum": ["parsed-candidate", "discovery-only", "document-only", "supply-chain-reference"]
+          },
+          "record_scope": {
+            "enum": [
+              "problem_page",
+              "listing_item",
+              "forum_question",
+              "encyclopedia_entry",
+              "benchmark_item",
+              "document",
+              "repository"
+            ]
+          },
+          "parser": {
+            "type": ["string", "null"],
+            "pattern": "^[a-z][a-z0-9_-]+$"
+          },
+          "license": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["review", "allowed_uses", "url", "attribution"],
+            "properties": {
+              "review": {
+                "enum": ["reviewed", "pending", "restricted"]
+              },
+              "allowed_uses": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "enum": ["local-reference", "query", "redistribution", "training", "embedding"]
+                }
+              },
+              "url": {
+                "type": ["string", "null"],
+                "format": "uri"
+              },
+              "attribution": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "admission_policy": {
+            "enum": ["calibration", "source-review-required", "discovery-only", "never-auto-admit"]
+          },
+          "status_map": {
+            "type": "object",
+            "additionalProperties": {
+              "enum": ["open_claimed", "closed_claimed", "under_review", "unknown"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tradecatlabs.com/vibe-mathing/schema/candidate-observation.schema.json",
+  "title": "Candidate Problem Observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observation_id",
+    "collection",
+    "source",
+    "source_native_id",
+    "source_url",
+    "record_scope",
+    "title",
+    "statement_excerpt",
+    "excerpt_truncated",
+    "excerpt_original_chars",
+    "source_status_raw",
+    "source_status_class",
+    "raw_artifact",
+    "parser",
+    "retrieved_at",
+    "license",
+    "categories",
+    "extra",
+    "admission"
+  ],
+  "properties": {
+    "observation_id": {
+      "type": "string",
+      "pattern": "^candidate:[a-f0-9]{64}$"
+    },
+    "collection": {
+      "const": "candidate"
+    },
+    "source": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{1,63}$"
+    },
+    "source_native_id": {
+      "type": ["string", "null"]
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "record_scope": {
+      "enum": [
+        "problem_page",
+        "listing_item",
+        "forum_question",
+        "encyclopedia_entry",
+        "benchmark_item"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "statement_excerpt": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 16000
+    },
+    "excerpt_truncated": {
+      "type": "boolean"
+    },
+    "excerpt_original_chars": {
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "description": "截断前字符数；旧解析器无法可靠恢复时为 null，禁止伪造。"
+    },
+    "source_status_raw": {
+      "type": ["string", "null"]
+    },
+    "source_status_class": {
+      "enum": ["open_claimed", "closed_claimed", "under_review", "unknown"]
+    },
+    "raw_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "locator"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^problem-library/raw/candidates/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "parser": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]+$"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        }
+      }
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["review", "allowed_uses", "url", "attribution"],
+      "properties": {
+        "review": {
+          "enum": ["reviewed", "pending", "restricted"]
+        },
+        "allowed_uses": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": ["local-reference", "query", "redistribution", "training", "embedding"]
+          }
+        },
+        "url": {
+          "type": ["string", "null"],
+          "format": "uri"
+        },
+        "attribution": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "extra": {
+      "type": "object"
+    },
+    "admission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "research_eligible"],
+      "properties": {
+        "state": {
+          "const": "candidate"
+        },
+        "research_eligible": {
+          "const": false
+        }
+      }
+    }
+  }
+}

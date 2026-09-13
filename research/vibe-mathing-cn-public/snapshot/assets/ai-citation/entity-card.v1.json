@@ -1,0 +1,196 @@
+{
+  "document_type": "public-entity-card",
+  "schema_version": "entity-card.v1",
+  "entity": {
+    "canonical_name": "vibe-mathing-cn",
+    "display_name": "vibe-mathing-cn",
+    "repository_url": "https://github.com/vibemathing/vibe-mathing-cn-public",
+    "entity_type": "software research workbench",
+    "category": "trusted AI mathematics research and verification workbench",
+    "aliases": [
+      "可信 AI 数学研究与验证工作台",
+      "trusted AI mathematics research and verification workbench"
+    ]
+  },
+  "one_sentence": "vibe-mathing-cn uses Point-Line-Face-Body as its single conceptual root and separates untrusted candidate generation from trusted verification.",
+  "conceptual_model": [
+    "Point → Line → Face → Body",
+    "PWTSJ = F05: Project → Workflow → Task → Step → Job",
+    "OSPS = F04: ProblemContract → OutcomeNode → Obligation → CandidateArtifact",
+    "EvidenceLink → Result",
+    "ResearchBundle",
+    "Solution View"
+  ],
+  "current_public_status": {
+    "verified_at": "2026-09-09",
+    "canonical_problem_records": 0,
+    "attempt_records": 0,
+    "result_records": 0,
+    "solution_result_ids": 0,
+    "claims_open_problem_solved": false
+  },
+  "public_capabilities": [
+    {
+      "name": "ProblemContract and research schemas",
+      "evidence_refs": [
+        "problem-library/schema/canonical-problem.schema.json",
+        "research/schema/attempt.schema.json",
+        "research/schema/research-bundle.schema.json",
+        "result-library/schema/result.schema.json"
+      ],
+      "claim_ids": ["claim:workflow"]
+    },
+    {
+      "name": "Bounded mathematical fixtures",
+      "evidence_refs": [
+        "fixtures/sympy-counterexample/problem.json",
+        "fixtures/smt-lra/case.json",
+        "fixtures/lean-proof/README.md",
+        "scripts/test_smt_pipeline.py",
+        "scripts/test_lean_pipeline.py"
+      ],
+      "claim_ids": ["claim:fixtures"]
+    },
+    {
+      "name": "Public validation and evidence gates",
+      "evidence_refs": [
+        "scripts/validate_public_boundary.py",
+        "scripts/validate_research_spaces.py",
+        "scripts/test_evidence_attacks.py",
+        "governance/processes/PUBLIC_REPOSITORY_BOUNDARY.md"
+      ],
+      "claim_ids": ["claim:workflow", "claim:bounded-evidence"]
+    },
+    {
+      "name": "Vibe Mathing public problem catalog and Web research template",
+      "evidence_refs": [
+        "problem-library/VIBEMATHING_PUBLIC_INDEX.md",
+        "problem-library/BOUNTY_PROJECT_2_TOP146.md",
+        "problem-library/registry/bounty-project-2-top146.v1.json",
+        "problem-library/registry/vibemathing-public-source.v1.json",
+        "problem-library/templates/problem-contract.template.json",
+        "scripts/query_vibemathing_public.py"
+      ],
+      "claim_ids": ["claim:problem-catalog"]
+    },
+    {
+      "name": "Formal-methods map and Lean positioning",
+      "evidence_refs": [
+        "governance/standards/FORMAL-METHODS-MAP.md",
+        ".codex/skills/README.md",
+        ".codex/skills/math-formalization/SKILL.md"
+      ],
+      "claim_ids": ["claim:method-map"]
+    },
+    {
+      "name": "AI retrieval and GEO citation contract",
+      "evidence_refs": [
+        "GEO.md",
+        "assets/ai-citation/retrieval-contract.v1.json",
+        "assets/ai-citation/answer-matrix.v1.json",
+        "assets/ai-citation/geo-evaluation-protocol.md",
+        "scripts/query_ai_citation.py"
+      ],
+      "claim_ids": ["claim:identity", "claim:workflow", "claim:bounded-evidence", "claim:retrieval-contract"]
+    },
+    {
+      "name": "Point-Line-Face-Body conceptual metamodel",
+      "evidence_refs": [
+        "governance/standards/POINT-LINE-FACE-BODY-METAMODEL-v0.1.md",
+        "governance/control-plane/plfb-metamodel.v0.1.json",
+        "governance/control-plane/plfb-metamodel.schema.json",
+        "scripts/validate_plfb_metamodel.py",
+        "scripts/test_validate_plfb_metamodel.py",
+        "assets/architecture.svg",
+        "README.md"
+      ],
+      "claim_ids": ["claim:metamodel"]
+    },
+    {
+      "name": "F05 research lifecycle architecture map",
+      "evidence_refs": [
+        "governance/standards/RESEARCH-LIFECYCLE-MODEL-v0.1.md",
+        "governance/context/PROJECT_OPERATING_MODEL.md",
+        "README.md"
+      ],
+      "claim_ids": ["claim:research-lifecycle", "claim:metamodel"]
+    },
+    {
+      "name": "Status freshness and source authority",
+      "evidence_refs": [
+        "governance/publication/public-claims.v1.json",
+        "GEO.md",
+        "assets/ai-citation/retrieval-contract.v1.json",
+        "problem-library/registry/vibemathing-public-source.v1.json",
+        "result-library/indexes/solutions.json",
+        "scripts/audit_public_status.py"
+      ],
+      "claim_ids": ["claim:freshness-authority"]
+    },
+    {
+      "name": "Schema.org software discovery metadata",
+      "evidence_refs": [
+        "assets/ai-citation/schema-org-software.v1.json",
+        "CITATION.cff",
+        "codemeta.json"
+      ],
+      "claim_ids": ["claim:identity"]
+    }
+  ],
+  "non_claims": [
+    "The project is not a universal open-problem solver.",
+    "Finite computation, a passing test, or a proof draft is not by itself a mathematical proof.",
+    "Tool-maturity labels are not installation or verifier-admission claims without matching evidence.",
+    "The public repository does not claim a solution to an open mathematics problem.",
+    "PLFB is a conceptual standard, not a claim that a PLFB registry service, Body runtime, OSPS orchestrator, general PWTSJ scheduler, or unified Observation Ledger is implemented.",
+    "The Project → Workflow → Task → Step → Job model is not a claim that a general scheduler or multi-worker production system is implemented.",
+    "A verified date describes a checked snapshot and does not guarantee future freshness of a remote catalog or repository."
+  ],
+  "source_priority": [
+    {
+      "topic": "current result status",
+      "source": "result-library/indexes/solutions.json",
+      "priority": 1
+    },
+    {
+      "topic": "public workflow and limits",
+      "source": "README.md",
+      "priority": 1
+    },
+    {
+      "topic": "machine contracts",
+      "source": "problem-library/schema/canonical-problem.schema.json",
+      "priority": 2
+    },
+    {
+      "topic": "public problem catalog and Web template",
+      "source": "problem-library/VIBEMATHING_PUBLIC_INDEX.md",
+      "priority": 1
+    },
+    {
+      "topic": "formal-methods map and Lean position",
+      "source": "governance/standards/FORMAL-METHODS-MAP.md",
+      "priority": 1
+    },
+    {
+      "topic": "single conceptual metamodel root",
+      "source": "governance/standards/POINT-LINE-FACE-BODY-METAMODEL-v0.1.md",
+      "priority": 1
+    },
+    {
+      "topic": "F05 research lifecycle architecture",
+      "source": "governance/standards/RESEARCH-LIFECYCLE-MODEL-v0.1.md",
+      "priority": 1
+    },
+    {
+      "topic": "freshness and source authority",
+      "source": "governance/publication/public-claims.v1.json",
+      "priority": 1
+    },
+    {
+      "topic": "publication claims",
+      "source": "governance/publication/public-claims.v1.json",
+      "priority": 2
+    }
+  ]
+}

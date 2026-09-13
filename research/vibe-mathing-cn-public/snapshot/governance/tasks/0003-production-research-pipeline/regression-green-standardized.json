@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "phase": "green",
+  "task_type": "bugfix",
+  "captured_at": "2026-08-13T15:56:01.334610+00:00",
+  "repository": {
+    "head": "8bcb1d9897f38236b68de2dc26b5de480e58a111",
+    "tree": "24dea95af9647c6b39116ac3c66f7b76876b068b"
+  },
+  "command": {
+    "argv": [
+      "python3",
+      "scripts/test_trusted_evidence.py"
+    ],
+    "cwd": "."
+  },
+  "inputs": {
+    "subject_files": [
+      {
+        "path": "scripts/validate_research_spaces.py",
+        "sha256": "sha256:4ee045010795435388cd571f12955dbdeb0965ef4b2e3631d33eb4c3e2f23be0"
+      }
+    ],
+    "test_files": [
+      {
+        "path": "scripts/test_trusted_evidence.py",
+        "sha256": "sha256:562b909dcc49188f72d16fb8f2760b62c3d9879480256a42a252adb39818d085"
+      }
+    ],
+    "environment_files": [],
+    "input_files": []
+  },
+  "environment": {
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "executable": "/bin/python3",
+    "digest": "sha256:2760b16c7485890353160dd42a922cfe2b50d8ede40e5cfee098a4f5e53394b2"
+  },
+  "run_policy": {
+    "repeat": 1,
+    "seed": "0",
+    "concurrency": 1,
+    "time_window_seconds": 0,
+    "timeout_seconds": 30
+  },
+  "results": {
+    "runs": 1,
+    "passes": 1,
+    "failures": 0,
+    "failure_rate": 0.0,
+    "failure_fingerprints": [],
+    "attempts": [
+      {
+        "run_index": 1,
+        "exit_code": 0,
+        "timed_out": false,
+        "duration_ms": 158.56,
+        "stdout_tail": "可信证据回归测试通过：伪证据未进入解库。\n",
+        "stderr_tail": ""
+      }
+    ]
+  },
+  "state": {
+    "before_digest": "sha256:b6917fcee5e318fc743fd8c7fb4ca5f3ac8abb4b8c95ac1f937d804b5af9a8c0",
+    "after_digest": "sha256:b6917fcee5e318fc743fd8c7fb4ca5f3ac8abb4b8c95ac1f937d804b5af9a8c0",
+    "unchanged": true
+  },
+  "record_digest": "sha256:c0b2af4c3e0638b5a67270bec3784c08ca9e994404115e1ce14f797528328adc"
+}

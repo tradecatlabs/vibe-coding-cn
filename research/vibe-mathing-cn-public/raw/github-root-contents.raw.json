@@ -1,0 +1,466 @@
+[
+  {
+    "name": ".codex",
+    "path": ".codex",
+    "sha": "66aba64ab998bdc8dedd101820c9783e53321f27",
+    "size": 0,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/.codex?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/.codex",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/66aba64ab998bdc8dedd101820c9783e53321f27",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/.codex?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/66aba64ab998bdc8dedd101820c9783e53321f27",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/.codex"
+    }
+  },
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "edea9683a765d07c9af57164902fac75fc56e866",
+    "size": 0,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/.github?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/.github",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/edea9683a765d07c9af57164902fac75fc56e866",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/.github?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/edea9683a765d07c9af57164902fac75fc56e866",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "fb60aca0a228046494c9c9dd0dfe3cf2bcea5511",
+    "size": 968,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/fb60aca0a228046494c9c9dd0dfe3cf2bcea5511",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/fb60aca0a228046494c9c9dd0dfe3cf2bcea5511",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": "AGENTS.md",
+    "path": "AGENTS.md",
+    "sha": "9b9ae4d7718f3848d1a978bea49d225fc8f208a1",
+    "size": 8200,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/AGENTS.md?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/AGENTS.md",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/9b9ae4d7718f3848d1a978bea49d225fc8f208a1",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/AGENTS.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/AGENTS.md?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/9b9ae4d7718f3848d1a978bea49d225fc8f208a1",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/AGENTS.md"
+    }
+  },
+  {
+    "name": "CHANGELOG.md",
+    "path": "CHANGELOG.md",
+    "sha": "8fd9b2bab79c612c7835b64330fd8bc7278ed847",
+    "size": 8090,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/CHANGELOG.md?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/CHANGELOG.md",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/8fd9b2bab79c612c7835b64330fd8bc7278ed847",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/CHANGELOG.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/CHANGELOG.md?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/8fd9b2bab79c612c7835b64330fd8bc7278ed847",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/CHANGELOG.md"
+    }
+  },
+  {
+    "name": "CITATION.cff",
+    "path": "CITATION.cff",
+    "sha": "9adc3cd737218bc97b95499ed51fb7de52b713f2",
+    "size": 1083,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/CITATION.cff?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/CITATION.cff",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/9adc3cd737218bc97b95499ed51fb7de52b713f2",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/CITATION.cff",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/CITATION.cff?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/9adc3cd737218bc97b95499ed51fb7de52b713f2",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/CITATION.cff"
+    }
+  },
+  {
+    "name": "CONTRIBUTING.md",
+    "path": "CONTRIBUTING.md",
+    "sha": "a996326227f3953612acc358630b7ce17e051d78",
+    "size": 2093,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/CONTRIBUTING.md?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/CONTRIBUTING.md",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/a996326227f3953612acc358630b7ce17e051d78",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/CONTRIBUTING.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/CONTRIBUTING.md?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/a996326227f3953612acc358630b7ce17e051d78",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/CONTRIBUTING.md"
+    }
+  },
+  {
+    "name": "DEBUG.md",
+    "path": "DEBUG.md",
+    "sha": "2b76a680abb3387720fe10bca5d62d7e707d93ad",
+    "size": 8296,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/DEBUG.md?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/DEBUG.md",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/2b76a680abb3387720fe10bca5d62d7e707d93ad",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/DEBUG.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/DEBUG.md?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/2b76a680abb3387720fe10bca5d62d7e707d93ad",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/DEBUG.md"
+    }
+  },
+  {
+    "name": "GEO.md",
+    "path": "GEO.md",
+    "sha": "2fa8e6eca0ce754162638edc081223cc99632d67",
+    "size": 13658,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/GEO.md?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/GEO.md",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/2fa8e6eca0ce754162638edc081223cc99632d67",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/GEO.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/GEO.md?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/2fa8e6eca0ce754162638edc081223cc99632d67",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/GEO.md"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "e1fc852b9ed49a88e8b0b35529d6368a76be86f9",
+    "size": 1070,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/e1fc852b9ed49a88e8b0b35529d6368a76be86f9",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/LICENSE?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/e1fc852b9ed49a88e8b0b35529d6368a76be86f9",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/LICENSE"
+    }
+  },
+  {
+    "name": "Makefile",
+    "path": "Makefile",
+    "sha": "0a515cd8cb7ab06e666b79139bba21aa3e8852ae",
+    "size": 955,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/Makefile?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/Makefile",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/0a515cd8cb7ab06e666b79139bba21aa3e8852ae",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/Makefile",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/Makefile?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/0a515cd8cb7ab06e666b79139bba21aa3e8852ae",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/Makefile"
+    }
+  },
+  {
+    "name": "README.en.md",
+    "path": "README.en.md",
+    "sha": "038b2d9378a1cb8ec930535070e1a0729e3c8951",
+    "size": 51696,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/README.en.md?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/README.en.md",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/038b2d9378a1cb8ec930535070e1a0729e3c8951",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/README.en.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/README.en.md?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/038b2d9378a1cb8ec930535070e1a0729e3c8951",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/README.en.md"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "b30fadf4bec824939ac0d76096febd8ce7480075",
+    "size": 73964,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/README.md?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/b30fadf4bec824939ac0d76096febd8ce7480075",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/b30fadf4bec824939ac0d76096febd8ce7480075",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/README.md"
+    }
+  },
+  {
+    "name": "REVIEW.md",
+    "path": "REVIEW.md",
+    "sha": "66bab061aa8af669d5e159599692e038208c1b11",
+    "size": 2028,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/REVIEW.md?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/REVIEW.md",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/66bab061aa8af669d5e159599692e038208c1b11",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/REVIEW.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/REVIEW.md?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/66bab061aa8af669d5e159599692e038208c1b11",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/REVIEW.md"
+    }
+  },
+  {
+    "name": "SECURITY.md",
+    "path": "SECURITY.md",
+    "sha": "e84b5084a722b79e2ae7fc3dbfba03faa4165990",
+    "size": 1160,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/SECURITY.md?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/SECURITY.md",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/e84b5084a722b79e2ae7fc3dbfba03faa4165990",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/SECURITY.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/SECURITY.md?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/e84b5084a722b79e2ae7fc3dbfba03faa4165990",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/SECURITY.md"
+    }
+  },
+  {
+    "name": "assets",
+    "path": "assets",
+    "sha": "aacf1ff8d3af882b5cdad25eb3bb0a0296cbb571",
+    "size": 0,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/assets?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/assets",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/aacf1ff8d3af882b5cdad25eb3bb0a0296cbb571",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/assets?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/aacf1ff8d3af882b5cdad25eb3bb0a0296cbb571",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/assets"
+    }
+  },
+  {
+    "name": "codemeta.json",
+    "path": "codemeta.json",
+    "sha": "671420f0cd08e7017315380d200efb08f7889fe7",
+    "size": 1781,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/codemeta.json?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/codemeta.json",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/671420f0cd08e7017315380d200efb08f7889fe7",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/codemeta.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/codemeta.json?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/671420f0cd08e7017315380d200efb08f7889fe7",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/codemeta.json"
+    }
+  },
+  {
+    "name": "fixtures",
+    "path": "fixtures",
+    "sha": "8902facfe24f8513518dd8276e5c1bdd10a967b5",
+    "size": 0,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/fixtures?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/fixtures",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/8902facfe24f8513518dd8276e5c1bdd10a967b5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/fixtures?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/8902facfe24f8513518dd8276e5c1bdd10a967b5",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/fixtures"
+    }
+  },
+  {
+    "name": "governance",
+    "path": "governance",
+    "sha": "a8937681623784d0c30ca689c81e2674c321fb24",
+    "size": 0,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/governance?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/governance",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/a8937681623784d0c30ca689c81e2674c321fb24",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/governance?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/a8937681623784d0c30ca689c81e2674c321fb24",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/governance"
+    }
+  },
+  {
+    "name": "literature",
+    "path": "literature",
+    "sha": "a3ce4030ffa6d29e380857e4ff74bf223e16a103",
+    "size": 0,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/literature?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/literature",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/a3ce4030ffa6d29e380857e4ff74bf223e16a103",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/literature?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/a3ce4030ffa6d29e380857e4ff74bf223e16a103",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/literature"
+    }
+  },
+  {
+    "name": "llms.txt",
+    "path": "llms.txt",
+    "sha": "f399d59dcf7141136e78d7b9f4ff76da7e5cad13",
+    "size": 10096,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/llms.txt?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/llms.txt",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/f399d59dcf7141136e78d7b9f4ff76da7e5cad13",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/llms.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/llms.txt?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/f399d59dcf7141136e78d7b9f4ff76da7e5cad13",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/llms.txt"
+    }
+  },
+  {
+    "name": "problem-library",
+    "path": "problem-library",
+    "sha": "3e6cbc4867c18d41d2f89bd9a9004591727e80d2",
+    "size": 0,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/problem-library?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/problem-library",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/3e6cbc4867c18d41d2f89bd9a9004591727e80d2",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/problem-library?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/3e6cbc4867c18d41d2f89bd9a9004591727e80d2",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/problem-library"
+    }
+  },
+  {
+    "name": "requirements-math-tools.txt",
+    "path": "requirements-math-tools.txt",
+    "sha": "0720292beef22fd861183ee8ad414c2a6e7cc811",
+    "size": 178,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/requirements-math-tools.txt?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/requirements-math-tools.txt",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/0720292beef22fd861183ee8ad414c2a6e7cc811",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/requirements-math-tools.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/requirements-math-tools.txt?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/0720292beef22fd861183ee8ad414c2a6e7cc811",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/requirements-math-tools.txt"
+    }
+  },
+  {
+    "name": "requirements-problem-library.txt",
+    "path": "requirements-problem-library.txt",
+    "sha": "00ca56ad6ac2abf2fda086e69827b8b2d6e573d3",
+    "size": 54,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/requirements-problem-library.txt?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/requirements-problem-library.txt",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/00ca56ad6ac2abf2fda086e69827b8b2d6e573d3",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/requirements-problem-library.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/requirements-problem-library.txt?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/00ca56ad6ac2abf2fda086e69827b8b2d6e573d3",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/requirements-problem-library.txt"
+    }
+  },
+  {
+    "name": "requirements.txt",
+    "path": "requirements.txt",
+    "sha": "5a4943032539e60a3fc36752d003260c411a9119",
+    "size": 110,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/requirements.txt?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/requirements.txt",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/5a4943032539e60a3fc36752d003260c411a9119",
+    "download_url": "https://raw.githubusercontent.com/vibemathing/vibe-mathing-cn-public/main/requirements.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/requirements.txt?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/blobs/5a4943032539e60a3fc36752d003260c411a9119",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/requirements.txt"
+    }
+  },
+  {
+    "name": "research",
+    "path": "research",
+    "sha": "f6a2666bb92f94a6d66ffb549c5fb1b6c98dc074",
+    "size": 0,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/research?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/research",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/f6a2666bb92f94a6d66ffb549c5fb1b6c98dc074",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/research?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/f6a2666bb92f94a6d66ffb549c5fb1b6c98dc074",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/research"
+    }
+  },
+  {
+    "name": "result-library",
+    "path": "result-library",
+    "sha": "122bc46c61a119bfa453c3c1942d1a991560b6fb",
+    "size": 0,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/result-library?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/result-library",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/122bc46c61a119bfa453c3c1942d1a991560b6fb",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/result-library?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/122bc46c61a119bfa453c3c1942d1a991560b6fb",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/result-library"
+    }
+  },
+  {
+    "name": "scripts",
+    "path": "scripts",
+    "sha": "fb3ca6772eef6a5c9032e78af96beab92955a56f",
+    "size": 0,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/scripts?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/scripts",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/fb3ca6772eef6a5c9032e78af96beab92955a56f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/scripts?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/fb3ca6772eef6a5c9032e78af96beab92955a56f",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/scripts"
+    }
+  },
+  {
+    "name": "vendor",
+    "path": "vendor",
+    "sha": "67115d966578b839b92e74730d4a3b96c960398f",
+    "size": 0,
+    "url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/vendor?ref=main",
+    "html_url": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/vendor",
+    "git_url": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/67115d966578b839b92e74730d4a3b96c960398f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/contents/vendor?ref=main",
+      "git": "https://api.github.com/repos/vibemathing/vibe-mathing-cn-public/git/trees/67115d966578b839b92e74730d4a3b96c960398f",
+      "html": "https://github.com/vibemathing/vibe-mathing-cn-public/tree/main/vendor"
+    }
+  }
+]

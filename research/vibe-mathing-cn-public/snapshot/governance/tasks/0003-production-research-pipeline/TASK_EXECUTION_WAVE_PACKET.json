@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-13T23:59:18+08:00",
+  "meta": {
+    "task_id": "0003",
+    "slug": "production-research-pipeline",
+    "phase": "EXECUTE_WAVE",
+    "source_task_package_set": "governance/tasks/0003-production-research-pipeline/TASK_PACKAGE_SET.json",
+    "selection": "current"
+  },
+  "overview": {
+    "overall_status": "In Progress",
+    "leaf_total": 6,
+    "ready_leaf_count": 0,
+    "selected_leaf_count": 0,
+    "selected_wave_numbers": []
+  },
+  "ready_leaf_ids": [],
+  "selected_leaf_ids": [],
+  "execution_waves": [
+    {
+      "wave": 1,
+      "leaf_ids": [
+        "TP-01"
+      ]
+    },
+    {
+      "wave": 2,
+      "leaf_ids": [
+        "TP-02"
+      ]
+    },
+    {
+      "wave": 3,
+      "leaf_ids": [
+        "TP-03"
+      ]
+    },
+    {
+      "wave": 4,
+      "leaf_ids": [
+        "TP-04"
+      ]
+    },
+    {
+      "wave": 5,
+      "leaf_ids": [
+        "TP-05"
+      ]
+    },
+    {
+      "wave": 6,
+      "leaf_ids": [
+        "TP-06"
+      ]
+    }
+  ],
+  "execution_batch": [],
+  "blocked_leafs": []
+}

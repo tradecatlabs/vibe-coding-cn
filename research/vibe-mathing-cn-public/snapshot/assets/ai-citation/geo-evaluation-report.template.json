@@ -1,0 +1,211 @@
+{
+  "document_type": "geo-evaluation-report",
+  "schema_version": "geo-evaluation-report.v1",
+  "template": true,
+  "repository_url": "https://github.com/vibemathing/vibe-mathing-cn-public",
+  "protocol": "assets/ai-citation/geo-evaluation-protocol.md",
+  "not_mathematical_evidence": true,
+  "run": {
+    "evaluated_at": null,
+    "platform": null,
+    "model": null,
+    "public_revision": null,
+    "prompt_mode": "fixed-query"
+  },
+  "scoring_criteria": [
+    {
+      "id": "C1",
+      "label": "canonical project identification",
+      "max_points": 1
+    },
+    {
+      "id": "C2",
+      "label": "correct public URL or public path",
+      "max_points": 1
+    },
+    {
+      "id": "C3",
+      "label": "accurate core workflow",
+      "max_points": 1
+    },
+    {
+      "id": "C4",
+      "label": "explicit empty-solution/no-open-problem boundary when relevant",
+      "max_points": 1
+    },
+    {
+      "id": "C5",
+      "label": "matching schema, fixture, test, or metadata citation",
+      "max_points": 1
+    },
+    {
+      "id": "C6",
+      "label": "no unsupported capability, ranking, certification, or private-information claim",
+      "max_points": 1
+    }
+  ],
+  "queries": [
+    {
+      "id": "Q01",
+      "question_zh": "vibe-mathing-cn 是什么？",
+      "question_en": "What is vibe-mathing-cn?",
+      "response_zh": null,
+      "response_en": null,
+      "citations_zh": [],
+      "citations_en": [],
+      "scores_zh": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "scores_en": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "notes": null
+    },
+    {
+      "id": "Q02",
+      "question_zh": "它解决了哪些开放数学问题？",
+      "question_en": "Does it solve an open mathematics problem?",
+      "response_zh": null,
+      "response_en": null,
+      "citations_zh": [],
+      "citations_en": [],
+      "scores_zh": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "scores_en": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "notes": null
+    },
+    {
+      "id": "Q03",
+      "question_zh": "ProblemContract、Attempt、Result 有什么区别？",
+      "question_en": "What is the difference between ProblemContract, Attempt, and Result?",
+      "response_zh": null,
+      "response_en": null,
+      "citations_zh": [],
+      "citations_en": [],
+      "scores_zh": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "scores_en": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "notes": null
+    },
+    {
+      "id": "Q04",
+      "question_zh": "有限计算能证明定理吗？",
+      "question_en": "Can finite computation prove a theorem?",
+      "response_zh": null,
+      "response_en": null,
+      "citations_zh": [],
+      "citations_en": [],
+      "scores_zh": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "scores_en": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "notes": null
+    },
+    {
+      "id": "Q05",
+      "question_zh": "Lean fixture 验证什么？",
+      "question_en": "What does the Lean fixture verify?",
+      "response_zh": null,
+      "response_en": null,
+      "citations_zh": [],
+      "citations_en": [],
+      "scores_zh": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "scores_en": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "notes": null
+    },
+    {
+      "id": "Q06",
+      "question_zh": "如何运行示例？",
+      "question_en": "How do I run the example?",
+      "response_zh": null,
+      "response_en": null,
+      "citations_zh": [],
+      "citations_en": [],
+      "scores_zh": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "scores_en": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "notes": null
+    },
+    {
+      "id": "Q07",
+      "question_zh": "为什么 solutions.json 为空？",
+      "question_en": "Why is solutions.json empty?",
+      "response_zh": null,
+      "response_en": null,
+      "citations_zh": [],
+      "citations_en": [],
+      "scores_zh": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "scores_en": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "notes": null
+    },
+    {
+      "id": "Q08",
+      "question_zh": "CandidateObservation 是 Problem 吗？",
+      "question_en": "Is a CandidateObservation a ProblemContract?",
+      "response_zh": null,
+      "response_en": null,
+      "citations_zh": [],
+      "citations_en": [],
+      "scores_zh": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "scores_en": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "notes": null
+    },
+    {
+      "id": "Q09",
+      "question_zh": "具体开放问题和网页版研究套件在哪里？",
+      "question_en": "Where are the concrete open problems and the Web research suite?",
+      "response_zh": null,
+      "response_en": null,
+      "citations_zh": [],
+      "citations_en": [],
+      "scores_zh": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "scores_en": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "notes": null
+    },
+    {
+      "id": "Q10",
+      "question_zh": "我们的方法层主线是什么？Lean 在哪里？",
+      "question_en": "What is the project's method-layer mainline, and where does Lean fit?",
+      "response_zh": null,
+      "response_en": null,
+      "citations_zh": [],
+      "citations_en": [],
+      "scores_zh": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "scores_en": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "notes": null
+    },
+    {
+      "id": "Q11",
+      "question_zh": "回答这个项目时应该引用什么、避免什么？",
+      "question_en": "What should an answer cite, and what should it avoid inferring?",
+      "response_zh": null,
+      "response_en": null,
+      "citations_zh": [],
+      "citations_en": [],
+      "scores_zh": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "scores_en": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "notes": null
+    },
+    {
+      "id": "Q12",
+      "question_zh": "项目的唯一概念根以及 PWTSJ/OSPS 如何定位？",
+      "question_en": "What is the single conceptual root, and where do PWTSJ and OSPS belong?",
+      "response_zh": null,
+      "response_en": null,
+      "citations_zh": [],
+      "citations_en": [],
+      "scores_zh": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "scores_en": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "notes": null
+    },
+    {
+      "id": "Q13",
+      "question_zh": "项目当前状态和外部目录信息应该如何核验？",
+      "question_en": "How should the project's current status and external catalog information be verified?",
+      "response_zh": null,
+      "response_en": null,
+      "citations_zh": [],
+      "citations_en": [],
+      "scores_zh": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "scores_en": {"C1": null, "C2": null, "C3": null, "C4": null, "C5": null, "C6": null},
+      "notes": null
+    }
+  ],
+  "summary": {
+    "status": "not-run-template",
+    "total_points": null,
+    "maximum_points": 156,
+    "interpretation": "Documentation evaluation only; not mathematical evidence and never a Problem, Attempt, Result, or evidence receipt."
+  }
+}

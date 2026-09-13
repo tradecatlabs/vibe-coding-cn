@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0.0",
+  "statement": "对所有实数 x，若 0 <= x <= 1，则 x <= 0。",
+  "variable": "x",
+  "witness": {"numerator": 1, "denominator": 2},
+  "scope": "QF-LRA + exact rational witness"
+}

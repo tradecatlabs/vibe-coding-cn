@@ -205,6 +205,15 @@ documents:
   - path: research/vibe-harness-cn/README.md
     title: vibe-harness-cn
     role: 治理 Agent Harness 与问题求解算子库的元 Harness 项目
+  - path: research/vibe-mathing-cn-public/README.md
+    title: vibemathing/vibe-mathing-cn-public 研究域
+    role: 数学研究、证据闭环与可信验证工作台
+  - path: research/vibe-mathing-cn-public/analysis.md
+    title: vibemathing/vibe-mathing-cn-public 研究分析
+    role: 数学研究工作流、迁移价值和采用边界的结构化研究
+  - path: research/vibe-mathing-cn-public/deep-dive.md
+    title: vibemathing/vibe-mathing-cn-public 深度研究
+    role: 证据闭环、有界运行时和公共边界的 L2 研究
   - path: research/aider-ai-aider/README.md
     title: Aider-AI/aider 研究域
     role: 终端 AI 结对编程工具

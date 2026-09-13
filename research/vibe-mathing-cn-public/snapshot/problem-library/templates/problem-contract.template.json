@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "problem_id": "problem:example-draft",
+  "title": "Replace with a reviewed problem title",
+  "aliases": [],
+  "statement": {
+    "text": "Replace with the exact mathematical statement, including all domains and quantifier scope.",
+    "language": "en",
+    "version": 1
+  },
+  "domain": {
+    "description": "Replace with the objects and domain over which the statement is interpreted.",
+    "objects": ["Replace with a precisely defined mathematical object"]
+  },
+  "quantifiers": [
+    {
+      "kind": "forall",
+      "variables": ["x"],
+      "domain": "Replace with the exact quantified domain"
+    }
+  ],
+  "definitions": [
+    {
+      "term": "ReplaceTerm",
+      "definition": "Replace with a source-backed definition; do not rely on an unstated convention."
+    }
+  ],
+  "assumptions": [],
+  "allowed_axioms": [],
+  "msc": ["00A00"],
+  "sources": [
+    {
+      "source": "template",
+      "source_record_id": null,
+      "url": "https://example.invalid/problem-source",
+      "retrieved_at": "2026-09-07T00:00:00Z"
+    }
+  ],
+  "acceptance": {
+    "policy": "solution-admission-v1"
+  },
+  "constraints": {
+    "allowed_methods": ["discovery"],
+    "allowed_adapters": [],
+    "max_attempts": 1,
+    "runtime": {
+      "max_transitions": 10,
+      "max_retries": 1,
+      "timeout_seconds": 60,
+      "max_output_bytes": 65536,
+      "memory_budget_mb": 512,
+      "threads_max": 1
+    }
+  },
+  "lifecycle": "draft",
+  "created_at": "2026-09-07T00:00:00Z",
+  "updated_at": "2026-09-07T00:00:00Z"
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "principals": [
+    {
+      "id": "candidate-generator",
+      "role": "generator",
+      "trust_domain": "candidate-generation",
+      "policy": null,
+      "capabilities": []
+    },
+    {
+      "id": "sympy-generator",
+      "role": "generator",
+      "trust_domain": "candidate-generation",
+      "policy": null,
+      "capabilities": []
+    },
+    {
+      "id": "lean-generator",
+      "role": "generator",
+      "trust_domain": "candidate-generation",
+      "policy": null,
+      "capabilities": []
+    },
+    {
+      "id": "smt-generator",
+      "role": "generator",
+      "trust_domain": "candidate-generation",
+      "policy": null,
+      "capabilities": []
+    },
+    {
+      "id": "sympy-counterexample-verifier",
+      "role": "verifier",
+      "trust_domain": "exact-computation",
+      "policy": "sympy-counterexample-fixture-v1",
+      "capabilities": ["counterexample_check"]
+    },
+    {
+      "id": "statement-faithfulness-verifier",
+      "role": "verifier",
+      "trust_domain": "semantic-review",
+      "policy": "sympy-statement-fixture-v1",
+      "capabilities": ["statement_faithfulness"]
+    },
+    {
+      "id": "sympy-smt-verifier",
+      "role": "verifier",
+      "trust_domain": "sympy-sat-qf-lra",
+      "policy": "sympy-smt-counterexample-fixture-v1",
+      "capabilities": ["counterexample_check"]
+    },
+    {
+      "id": "smt-statement-faithfulness-verifier",
+      "role": "verifier",
+      "trust_domain": "semantic-review",
+      "policy": "smt-statement-fixture-v1",
+      "capabilities": ["statement_faithfulness"]
+    },
+    {
+      "id": "lean-kernel",
+      "role": "verifier",
+      "trust_domain": "lean-kernel",
+      "policy": "lean-kernel-fixture-v1",
+      "capabilities": ["kernel_check"]
+    },
+    {
+      "id": "lean-axiom-auditor",
+      "role": "verifier",
+      "trust_domain": "formal-audit",
+      "policy": "lean-axiom-fixture-v1",
+      "capabilities": ["axiom_escape_audit"]
+    },
+    {
+      "id": "lean-faithfulness-reviewer",
+      "role": "verifier",
+      "trust_domain": "semantic-review",
+      "policy": "lean-statement-fixture-v1",
+      "capabilities": ["statement_faithfulness"]
+    }
+  ]
+}

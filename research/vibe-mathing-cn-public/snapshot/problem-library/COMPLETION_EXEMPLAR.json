@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "exemplar_id": "EX-public-math-directory-localization",
+  "project": "vibe-mathing-cn",
+  "source_task": "problem-library",
+  "objective": "把两个公开数学问题目录构建为可追溯、可重建、可离线查询的本地问题库",
+  "scope": [
+    "Wikipedia 未解问题与 1995 年以来已解决问题的直接列表项",
+    "UnsolvedMath 公开目录全部 109 个分页的 5426 个目录行",
+    "原始快照、统一 JSONL、索引、来源许可和完整性证据"
+  ],
+  "non_goals": [
+    "不镜像 UnsolvedMath 详情正文、评论、用户资料或登录后内容",
+    "不声称覆盖世界上全部未解数学问题",
+    "不把单次成功直接晋升为 active SOP"
+  ],
+  "environment": [
+    "Python 3.12.3",
+    "BeautifulSoup 4.12.3",
+    "lxml 6.0.2",
+    "jsonschema 4.10.3"
+  ],
+  "solution": [
+    "先审计许可、来源发现入口、分页总数和代表性 DOM，再冻结字段契约",
+    "保存原始响应并计算摘要，再从缓存规范化为 JSONL 与倒排索引",
+    "从原始快照重算条目数、源 ID 冲突、schema、哈希和索引一致性"
+  ],
+  "decisions": [
+    "Wikipedia 使用官方 MediaWiki API 并绑定 revision 与 CC BY-SA 4.0 归属",
+    "UnsolvedMath 未知许可下只保存目录事实、短摘要和来源链接",
+    "第三方源 ID 只作为展示字段，本地主键使用卡片内容指纹并保留冲突账本"
+  ],
+  "failures": [
+    "Wikipedia 初次解析错误地从 body 直接遍历；修复为定位 .mw-parser-output 并加入原始快照回归",
+    "初版错误假设 UnsolvedMath 源 ID 和 URL 唯一；全量门禁发现冲突后改为内容指纹主键"
+  ],
+  "verification": [
+    "scripts/validate_problem_library.py 校验 6012 条 schema、哈希、计数和索引",
+    "scripts/test_problem_library.py 从原始证据重算 Wikipedia 586 条和 UnsolvedMath 35 组冲突源 ID",
+    "项目供应链、active skills 与数学 smoke 既有门禁全部通过"
+  ],
+  "rollback": [
+    "保留原始缓存时可重新运行抓取器离线重建派生数据",
+    "完全回滚只需移除 problem-library、四个问题库脚本和对应文档入口，不涉及数据库或外部写操作"
+  ],
+  "reuse_candidates": [
+    "公开分页目录到可追溯本地知识库的完成范例"
+  ],
+  "boundaries": [
+    "仅适用于允许合理公开访问且能形成稳定快照的目录型来源",
+    "来源授权、分页协议、DOM、身份模型或规模达到当前 100 倍时必须重新审查",
+    "当前只有一次成功与同主体审查，不能作为 active SOP"
+  ],
+  "evidence_refs": [
+    "problem-library/AUDIT_CASE_SAMPLING.md",
+    "problem-library/COMPLETION_EXEMPLAR.md",
+    "problem-library/README.md",
+    "problem-library/RETROSPECTIVE.md",
+    "problem-library/manifest.json"
+  ],
+  "evidence_manifest": [
+    {
+      "path": "problem-library/AUDIT_CASE_SAMPLING.md",
+      "digest": "sha256:2838b9672cc0ce12df8a4321a39bdb53d329cfa8e520123663137d9fb9af6e36"
+    },
+    {
+      "path": "problem-library/COMPLETION_EXEMPLAR.md",
+      "digest": "sha256:ce98da5ada9d395b693f9524e20fbf717cc9a40350d835b232e96411f3d98ff6"
+    },
+    {
+      "path": "problem-library/README.md",
+      "digest": "sha256:f390b09f12103d593beb377e7d40152430a25a00b9c22c0c427bd1bcef7c141c"
+    },
+    {
+      "path": "problem-library/RETROSPECTIVE.md",
+      "digest": "sha256:3699e0374534a3ceb51ac0b80365e8f9a0622a149aede2228a8c6bb8e50dac55"
+    },
+    {
+      "path": "problem-library/manifest.json",
+      "digest": "sha256:f95b9f87ad6806d3081f194bd8d8c7c6202796183301807aa4639614f8e675a5"
+    }
+  ],
+  "evidence_digest": "sha256:155192e1a9c3bbc6f9e413eb0a114b329c8acfcadef0ba277bfa089d49378ac7",
+  "redaction": {
+    "checked": true,
+    "contains_private_data": false,
+    "method": "allowlist-and-pattern-scan-v1",
+    "findings": [],
+    "notes": "只绑定项目内公开来源数据和可重算验证证据，不包含凭据、客户数据或私有主机。"
+  },
+  "owner": "vibe-mathing-cn-maintainers",
+  "created_at": "2026-08-13T19:45:00+08:00",
+  "review_due_at": "2026-11-13T19:45:00+08:00"
+}

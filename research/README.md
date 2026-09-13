@@ -3,7 +3,7 @@
 ## 字多不看
 
 - 本目录记录新技术、优秀 repo、工程范式和工具趋势的研究对象。
-- 当前包含 35 个外部仓库研究域，另有两个内部工程研究项目、Harness 与 tmux 主题研究对象；外部研究域均保留 raw、analysis 和 deep-dive 证据层。
+- 当前包含 36 个外部仓库研究域，另有两个内部工程研究项目、Harness 与 tmux 主题研究对象；外部研究域均保留 raw、analysis 和 deep-dive 证据层。
 - 新增或重构长期研究对象时，先遵循研究域治理契约，并拉取 raw 原始事实层。
 - 长期研究对象优先使用独立目录，短篇观察可先用单文件承载。
 - 外部仓库研究对象采用“一仓库一研究域”，不再使用聚合目录承载多个仓库。
@@ -21,6 +21,7 @@
 | <a id="research-mindfold-ai-trellis"></a>[mindfold-ai/Trellis 研究域](mindfold-ai-trellis/) | 跨平台 Agent Harness、任务规格与会话记忆系统。 |
 | <a id="research-vibe-cybersecurity-cn"></a>[vibe-cybersecurity-cn](vibe-cybersecurity-cn/) | 授权边界内的 Agent 网络安全自动化研究与工程项目。 |
 | <a id="research-vibe-harness-cn"></a>[vibe-harness-cn](vibe-harness-cn/) | 治理 Agent Harness 与问题求解算子库的元 Harness 项目。 |
+| <a id="research-vibe-mathing-cn-public"></a>[vibemathing/vibe-mathing-cn-public 研究域](vibe-mathing-cn-public/) | 数学研究、证据闭环与可信验证工作台。 |
 | <a id="research-tmux-ai-swarm"></a>[tmux 蜂群协作](tmux-ai-swarm.md) | 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式。 |
 | <a id="research-aider-ai-aider"></a>[Aider-AI/aider 研究域](aider-ai-aider/) | 终端 AI 结对编程工具。 |
 | <a id="research-cline-cline"></a>[cline/cline 研究域](cline-cline/) | IDE/SDK/CLI 自主编码 Agent。 |
@@ -74,6 +75,9 @@
 - [mindfold-ai/Trellis 深度研究](mindfold-ai-trellis/deep-dive.md) - Harness 架构、CLI 和记忆系统的 L2 研究。
 - [vibe-cybersecurity-cn](vibe-cybersecurity-cn/README.md) - 授权边界内的 Agent 网络安全自动化研究与工程项目。
 - [vibe-harness-cn](vibe-harness-cn/README.md) - 治理 Agent Harness 与问题求解算子库的元 Harness 项目。
+- [vibemathing/vibe-mathing-cn-public 研究域](vibe-mathing-cn-public/README.md) - 数学研究、证据闭环与可信验证工作台。
+- [vibemathing/vibe-mathing-cn-public 研究分析](vibe-mathing-cn-public/analysis.md) - 数学研究工作流、迁移价值和采用边界的结构化研究。
+- [vibemathing/vibe-mathing-cn-public 深度研究](vibe-mathing-cn-public/deep-dive.md) - 证据闭环、有界运行时和公共边界的 L2 研究。
 - [tmux 蜂群协作](tmux-ai-swarm.md) - 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式。
 - [Aider-AI/aider 研究域](aider-ai-aider/README.md) - 终端 AI 结对编程工具。
 - [Aider-AI/aider 研究分析](aider-ai-aider/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。

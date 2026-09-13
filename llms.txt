@@ -61,6 +61,9 @@ vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程系统教程，帮�
 - research/mindfold-ai-trellis/README.md
 - research/vibe-cybersecurity-cn/README.md
 - research/vibe-harness-cn/README.md
+- research/vibe-mathing-cn-public/README.md
+- research/vibe-mathing-cn-public/analysis.md
+- research/vibe-mathing-cn-public/deep-dive.md
 - research/openai-codex/README.md
 - research/openai-plugins/README.md
 - research/openai-skills/README.md

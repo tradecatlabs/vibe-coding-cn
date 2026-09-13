@@ -1,0 +1,275 @@
+{
+  "schema_version": "1.0.0",
+  "task": {
+    "objective": "实现可恢复、可审计、可信证据驱动的 Vibe-Mathing 自动研究流水线，并以机器门禁证明生产闭环成熟度达到 100/100",
+    "overall_status": "In Progress",
+    "in_scope": [
+      "可信 artifact root、verifier registry、现场哈希重算与防路径逃逸",
+      "Problem/Attempt/Result 的唯一原子写入器、幂等键与并发锁",
+      "可恢复单 Agent 状态机、预算、超时、重试、取消和结构化 trace",
+      "统一 run/resume/verify/status CLI 与确定性 SymPy 垂直样例",
+      "固定 Lean 4/Mathlib 工具链、无 sorry 样例、公理/逃逸审计和忠实性回执",
+      "端到端、恢复、并发、伪造证据与成熟度攻击性测试及 CI"
+    ],
+    "out_of_scope": [
+      "多 Agent 或分布式 worker 调度",
+      "自研模型、proof kernel、向量数据库或通用工作流平台",
+      "把实现者自签的 reviewer receipt 冒充外部独立审查",
+      "自动解决任意开放数学问题的能力承诺",
+      "提交、推送、部署或外部消息发送"
+    ],
+    "task_level_acceptance": [
+      "所有数学事实写入只经过唯一 owner，重复执行和并发执行不产生重复或半提交记录",
+      "证据产物必须位于可信根、真实存在、现场哈希匹配，并由注册 verifier 生成独立性",
+      "统一 CLI 能完成 run/resume/verify/status，故障注入后可幂等恢复",
+      "确定性 SymPy 和 Lean 两条真实垂直链均生成可重算证据并通过解库准入",
+      "攻击性负例覆盖伪 locator、伪 hash、路径逃逸、symlink、自我验证、超时、预算和状态漂移",
+      "成熟度审计只在全部 required gate 新鲜通过时输出 100/100"
+    ],
+    "validation_plan": [
+      "python3 scripts/test_trusted_evidence.py",
+      "python3 scripts/test_research_store.py",
+      "python3 scripts/test_vibe_mathing_runtime.py",
+      "python3 scripts/test_vibe_mathing_pipeline.py",
+      "python3 scripts/test_lean_pipeline.py",
+      "make check",
+      "python3 scripts/pipeline_maturity_audit.py --strict",
+      "python3 governance/tools/validate_governance_package.py --project-root . --strict"
+    ],
+    "acceptance_standards": [
+      "VIBE-MATHING-SPEC v0.1 的 R1/R2/R3 全部机械执行",
+      "所有完成状态由 owner 从输入、产物和 validator 结果重算，不接受调用者自报",
+      "高风险失败 fail-closed 且返回非零状态，保留可操作错误和恢复入口",
+      "性能保持 O(P+A+R+E) 线性扫描；外部进程有明确 timeout、输出上限和预算",
+      "文档、schema、脚本、CI、ADR/Gate/module context 同步"
+    ],
+    "task_intent": {
+      "path": "governance/tasks/0003-production-research-pipeline/TASK_INTENT.json",
+      "intent_id": "INTENT-289d62977aaf",
+      "digest": "sha256:e67464ba2f84dc1c6e97975c2f924e3f6c2e87f8e94653c9e524c03108d075d9",
+      "risk_level": "high",
+      "task_types": ["feature", "operations", "reliability", "security", "testing"]
+    },
+    "reuse": {
+      "sampling_path": "governance/tasks/0003-production-research-pipeline/REUSE_SAMPLING.json",
+      "major_task": true,
+      "closeout_required": true,
+      "reasons": [
+        "流水线实现包含可跨项目复用的可信证据、原子存储和恢复方法",
+        "主要任务 closeout 必须判断是否形成 Completion Exemplar 或 SOP candidate"
+      ]
+    }
+  },
+  "context_packet": {
+    "requirement_alignment": [
+      "用户要求先设计推进到 100% 的计划，再按 tasks 容器完整实现",
+      "100% 定义为 required capabilities 和攻击性门禁全部通过，不是主观进度",
+      "当前审计基线为 MVP 35%-40%、生产闭环 15%-20%"
+    ],
+    "repo_evidence": [
+      "README 明确 /vibe-mathing 总控仍在建设",
+      "active skills 只有 Markdown 契约，没有可执行 adapter",
+      "canonical Problem、Attempt、Result 三张真相源当前均为空",
+      "现有 validator 可被不存在 artifact、伪 hash 和自报 independent 绕过",
+      "本机初始缺少 lean/elan/lake，CI 只运行 make check"
+    ],
+    "constraints": [
+      "单 Agent 闭环，不使用原生子代理",
+      "不覆盖 0002 与用户已有未提交改动",
+      "自研仅限连接、编排、适配和项目特有准入规则",
+      "外部文本作为不可信数据，不得改变工具或目标",
+      "提交、推送和部署不在本任务授权范围"
+    ],
+    "risks": [
+      "伪造证据污染解库是最高风险，必须在开放自动写入前修复",
+      "JSONL 多文件写入可能半提交或并发覆盖",
+      "运行中断可能造成重复记录或重复副作用",
+      "Lean 工具链下载、版本漂移和 Mathlib 构建可能阻塞",
+      "本地 deterministic PASS 不能冒充外部独立 reviewer provenance"
+    ],
+    "assumptions": [
+      "Python 3.12、fcntl/flock、subprocess 和 JSON Schema 可满足单机 runtime",
+      "生产闭环当前指单机、单 Agent、策略内自治，不包含分布式高可用",
+      "Lean 官方工具链可从公开网络固定版本安装；若网络不可用则 Lean 节点保持 BLOCKED",
+      "人工独立审查通道只实现受信 receipt 导入与 fail-closed，不伪造第三方签名"
+    ],
+    "change_boundary": [
+      "允许新增 scripts/vibe_mathing/ Python 包、CLI、测试、fixtures 和最小 Lean fixture",
+      "允许修改研究 schema、校验器、Makefile、CI、README/AGENTS 和治理资产",
+      "不写入真实开放问题结论；端到端测试使用隔离临时仓库或确定性 fixture"
+    ],
+    "critical_ambiguities": [
+      "无阻塞歧义；100% 的作用域已收敛为本仓库单机生产闭环，不含外部 reviewer 实际签发和任意开放问题求解成功率"
+    ],
+    "blockers": [],
+    "debug_focus": [
+      "若现有伪造证据绕过测试在修复前稳定为 RED，修复后同源 GREEN",
+      "Lean 下载或构建失败需区分网络、工具链、fixture 与项目实现缺陷"
+    ],
+    "debug_mode": "Required"
+  },
+  "plan": {
+    "planning_summary": "先封闭信任根，再建立单一存储和可恢复状态机；随后用确定性 adapter 证明主链，用 Lean 证明形式化链，最后以攻击性测试、CI、成熟度审计和文档审查收口。",
+    "simplest_path": "复用 Python 标准库、JSON Schema、SymPy、官方 Lean/Mathlib 与现有校验器；不引入数据库、队列、Web 服务或多 Agent 框架。",
+    "split_strategy": "按信任与数据依赖串行拆分六个垂直能力包；每个包都有独立命令和 fail-closed gate，后继只消费前驱的已验证契约。",
+    "lifecycle_gates": [
+      "SPEC：TASK_INTENT 和任务树通过 owner validator",
+      "BUILD：每个 TP 只实现其声明的所有权面",
+      "TEST：先保留伪造证据 RED，再取得同源 GREEN；所有状态机和恢复分支有负例",
+      "REVIEW：auto-review 按 agent-harness、security、reliability、completion-verification 审查",
+      "SHIP：maturity audit=100/100 且 task closeout 证据齐全；否则保持 In Progress/Blocked"
+    ],
+    "review_gate": [
+      "任何 caller-supplied independent/PASS/digest 可直接晋升均 BLOCK",
+      "任何 artifact 路径逃逸、hash 未现场重算或 verifier 未注册均 BLOCK",
+      "任何中断恢复造成重复记录、半提交或重复副作用均 BLOCK",
+      "任何 Lean fixture 含 sorry/admit/unsafe、未固定版本或缺 axiom audit 均 BLOCK",
+      "任何 100/100 不是从 required command 现场执行派生均 BLOCK"
+    ],
+    "ship_readiness": [
+      "所有 TP 状态 Done 且 TODO/STATUS/ACCEPTANCE 一致",
+      "make check 与 pipeline_maturity_audit.py --strict 新鲜通过",
+      "governance strict/health 与 git diff --check 通过",
+      "剩余 unknowns 不影响单机生产闭环声明，并明确外部 reviewer provenance 边界"
+    ],
+    "workflow_budget": [
+      "单次 deterministic adapter 默认 30 秒",
+      "单次外部工具输出默认 1 MiB",
+      "单次 run 默认最多 16 个状态转换、2 次可重试失败",
+      "Lean 安装/构建采用独立长超时，失败后不无限重试"
+    ],
+    "workflow_stop_conditions": [
+      "required gate 首次结构性失败且无法在当前范围修复",
+      "Lean 官方工具链无法下载或固定版本不可构建",
+      "需要外部独立 reviewer 实际签发才能继续的状态保持 awaiting_review",
+      "成熟度审计未达 100/100 时禁止完成声明"
+    ],
+    "approval_required_for": [
+      "提交、推送、部署、外部消息或修改权限",
+      "使用凭据或付费模型 API",
+      "破坏性删除、覆盖现有研究事实或修改已发布 Git 历史"
+    ],
+    "steps": [
+      {
+        "key": "trusted_evidence",
+        "title": "可信证据根与不可伪造回执",
+        "objective": "封住伪 locator、伪 hash、自报 independent 和 verifier 身份伪造路径",
+        "priority": "P0",
+        "type": "security-contract",
+        "parallelizable": false,
+        "status": "Not Started",
+        "depends_on": [],
+        "verify": "python3 scripts/test_trusted_evidence.py",
+        "gate": "所有证据 locator 位于可信根、真实存在、现场哈希匹配，独立性由 verifier registry 派生",
+        "inputs": ["VIBE-MATHING-SPEC v0.1", "Result schema", "现有伪造证据 RED"],
+        "outputs": ["trusted evidence module", "verifier registry contract", "攻击性负例"],
+        "acceptance": ["伪 locator/hash/path/symlink/self-review 全部被拒绝", "合法 receipt 可被 Result validator 消费"],
+        "risks": ["过度信任可编辑 registry", "路径规范化遗漏"],
+        "allowed_tools": ["Python stdlib", "jsonschema", "apply_patch", "read-only shell"],
+        "forbidden_actions": ["信任调用者 independent 布尔值", "读取可信根外 artifact"],
+        "evidence_required": ["pre-fix RED", "post-fix GREEN", "counterfactual"],
+        "budget": ["O(E) 校验", "单 artifact 有界读取"],
+        "stop_conditions": ["可信根或 registry owner 无法确定"]
+      },
+      {
+        "key": "atomic_store",
+        "title": "原子研究存储与唯一写入器",
+        "objective": "为 Problem/Attempt/Result 和派生索引建立 schema-first、幂等、并发安全的唯一写入路径",
+        "priority": "P0",
+        "type": "data-reliability",
+        "parallelizable": false,
+        "status": "Not Started",
+        "depends_on": ["trusted_evidence"],
+        "verify": "python3 scripts/test_research_store.py",
+        "gate": "重复/并发写不重复，失败不留下半提交，Solution View 只能由当前有效 Result 重算",
+        "inputs": ["三张 JSONL 真相源", "owner schemas", "trusted evidence module"],
+        "outputs": ["research store module", "file locking", "atomic rewrite", "store tests"],
+        "acceptance": ["唯一 ID 与幂等键稳定", "并发 writer 测试通过", "崩溃前后记录一致"],
+        "risks": ["多文件事务边界", "Windows/Unix 锁差异"],
+        "allowed_tools": ["Python stdlib fcntl/tempfile/os.replace", "jsonschema"],
+        "forbidden_actions": ["直接 append 绕过锁", "引入数据库"],
+        "evidence_required": ["concurrency test", "partial failure test", "idempotency test"]
+      },
+      {
+        "key": "runtime_state_machine",
+        "title": "可恢复运行状态机与统一 CLI",
+        "objective": "实现 run/resume/verify/status、预算、超时、重试、取消、checkpoint 和 trace",
+        "priority": "P0",
+        "type": "agent-runtime",
+        "parallelizable": false,
+        "status": "Not Started",
+        "depends_on": ["atomic_store"],
+        "verify": "python3 scripts/test_vibe_mathing_runtime.py",
+        "gate": "非法状态转换、预算耗尽、超时、取消和恢复漂移全部 fail-closed",
+        "inputs": ["research store", "owner skills routing contract"],
+        "outputs": ["runtime state schema", "CLI", "checkpoint/trace", "runtime tests"],
+        "acceptance": ["run/resume/verify/status 可重跑", "中断后从 checkpoint 恢复", "完成状态从 validator 结果派生"],
+        "risks": ["状态与 Attempt lifecycle 混淆", "无限重试", "输出无界"],
+        "allowed_tools": ["Python stdlib argparse/subprocess", "现有 owner skills"],
+        "forbidden_actions": ["模型自报状态", "宽 execute-anything 工具"],
+        "evidence_required": ["state transition tests", "timeout/output/retry tests", "resume tests"],
+        "budget": ["默认 16 transitions", "默认 2 retries", "默认 1 MiB output"],
+        "stop_conditions": ["状态图不再单调推进且无可恢复错误"]
+      },
+      {
+        "key": "deterministic_vertical",
+        "title": "确定性 SymPy 垂直闭环",
+        "objective": "用无网络、无模型依赖的固定数学问题证明整条生产主链",
+        "priority": "P0",
+        "type": "end-to-end-testing",
+        "parallelizable": false,
+        "status": "Not Started",
+        "depends_on": ["runtime_state_machine"],
+        "verify": "python3 scripts/test_vibe_mathing_pipeline.py",
+        "gate": "单命令完成 Problem→Attempt→artifact→Result→receipt→Solution，重复运行幂等且失效后退出解库",
+        "inputs": ["runtime CLI", "SymPy 1.14", "isolated fixture workspace"],
+        "outputs": ["deterministic adapter", "fixture", "E2E tests"],
+        "acceptance": ["happy path 进入解库", "有限证据不进入", "invalidation 自动移出", "故障恢复不重复"],
+        "risks": ["测试直接调用内部函数绕过 CLI", "fixture 污染真实记录"],
+        "allowed_tools": ["SymPy", "Python subprocess/tempfile"],
+        "forbidden_actions": ["写真实开放问题记录", "网络或模型调用"],
+        "evidence_required": ["CLI-level E2E output", "record/artifact digests", "idempotency proof"]
+      },
+      {
+        "key": "lean_vertical",
+        "title": "固定 Lean/Mathlib 形式化闭环",
+        "objective": "安装固定官方工具链并完成无 sorry 的最小 kernel/axiom/faithfulness 垂直链",
+        "priority": "P0",
+        "type": "formal-verification",
+        "parallelizable": false,
+        "status": "Not Started",
+        "depends_on": ["deterministic_vertical"],
+        "verify": "python3 scripts/test_lean_pipeline.py",
+        "gate": "真实 Lean build 通过、无 sorry/admit/unsafe、#print axioms 可审计、版本固定、statement faithfulness 独立记录",
+        "inputs": ["官方 Lean/elan/lake", "固定 Mathlib project", "runtime/store/trusted receipts"],
+        "outputs": ["Lean fixture", "formalization adapter", "verification receipts", "Lean E2E test"],
+        "acceptance": ["kernel receipt 绑定真实输出", "axiom audit receipt 独立存在", "删除任一证据后不准入"],
+        "risks": ["网络下载失败", "工具链版本漂移", "Mathlib 构建成本"],
+        "allowed_tools": ["官方 elan/Lean/lake", "GitHub public artifacts", "Python subprocess"],
+        "forbidden_actions": ["使用 sorry/admit/unsafe", "伪造 kernel output"],
+        "evidence_required": ["lean --version", "lake build output", "escape scan", "#print axioms output"],
+        "budget": ["安装/构建有界超时", "失败最多一次换官方安装路径"],
+        "stop_conditions": ["官方工具链不可访问或固定版本无法构建"]
+      },
+      {
+        "key": "production_gate",
+        "title": "生产成熟度审计、CI、文档与最终审查",
+        "objective": "把所有 required capability 编译为不可自报的 100/100 门禁并完成项目文档同步",
+        "priority": "P0",
+        "type": "release-gate",
+        "parallelizable": false,
+        "status": "Not Started",
+        "depends_on": ["lean_vertical"],
+        "verify": "make check && python3 scripts/pipeline_maturity_audit.py --strict",
+        "gate": "所有 required commands 新鲜通过、任务状态一致、文档无漂移、攻击性负例和回滚入口齐全",
+        "inputs": ["全部前驱代码与证据", "CI", "governance", "README/AGENTS"],
+        "outputs": ["maturity audit", "CI gate", "review", "docs", "closeout evidence"],
+        "acceptance": ["audit 输出 100/100", "恢复任一旧漏洞后 audit 非零", "make check 与 governance strict/health PASS"],
+        "risks": ["audit 只检查文件存在", "自评冒充独立 review", "证据陈旧"],
+        "allowed_tools": ["项目 validators", "auto-review", "Git diff/status read-only"],
+        "forbidden_actions": ["硬编码 100", "用 REVIEW.md 文本替代命令", "自动提交推送"],
+        "evidence_required": ["fresh command outputs", "maturity JSON/Markdown", "document drift audit", "rollback path"]
+      }
+    ]
+  }
+}

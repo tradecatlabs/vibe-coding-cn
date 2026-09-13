@@ -1,0 +1,13 @@
+name = "vibe_mathing_fixture"
+version = "0.1.0"
+defaultTargets = ["VibeMathingFixture"]
+# Keep each Lean worker single-threaded when the fixture is run under a bounded executor.
+moreLeanArgs = ["-j1"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "db584cd6d46c92f209a44c0f1c829460d327499d"
+
+[[lean_lib]]
+name = "VibeMathingFixture"

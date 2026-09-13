@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tradecatlabs.com/vibe-mathing/schema/result.schema.json",
+  "title": "Vibe Mathing Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_id",
+    "problem_id",
+    "attempt_id",
+    "kind",
+    "claim",
+    "scope",
+    "outcome",
+    "evidence",
+    "created_at"
+  ],
+  "properties": {
+    "result_id": {"type": "string", "pattern": "^result:[a-z0-9][a-z0-9.-]*$"},
+    "problem_id": {"type": "string", "pattern": "^problem:[a-z0-9][a-z0-9.-]*$"},
+    "attempt_id": {"type": "string", "pattern": "^attempt:[a-z0-9][a-z0-9.-]*$"},
+    "kind": {
+      "enum": [
+        "proof",
+        "counterexample",
+        "partial_result",
+        "conditional_result",
+        "numerical_evidence",
+        "symbolic_evidence",
+        "failed_approach"
+      ]
+    },
+    "claim": {"type": "string", "minLength": 1},
+    "scope": {"type": "string", "minLength": 1},
+    "outcome": {
+      "enum": [
+        "undetermined",
+        "supported",
+        "established",
+        "refuted",
+        "inconclusive",
+        "withdrawn"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "evidence_id",
+          "capability",
+          "verdict",
+          "verifier",
+          "independent",
+          "locator",
+          "sha256",
+          "checked_at",
+          "invalidates",
+          "notes"
+        ],
+        "properties": {
+          "evidence_id": {"type": "string", "pattern": "^evidence:[a-z0-9][a-z0-9.-]*$"},
+          "capability": {
+            "enum": [
+              "numeric_check",
+              "symbolic_check",
+              "human_review",
+              "kernel_check",
+              "counterexample_check",
+              "axiom_escape_audit",
+              "statement_faithfulness",
+              "prior_art_review"
+            ]
+          },
+          "verdict": {"enum": ["accept", "reject", "undetermined"]},
+          "verifier": {"type": "string", "minLength": 1},
+          "independent": {"type": "boolean"},
+          "locator": {"type": "string", "minLength": 1},
+          "sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+          "checked_at": {"type": "string", "format": "date-time"},
+          "invalidates": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string", "pattern": "^evidence:[a-z0-9][a-z0-9.-]*$"}
+          },
+          "notes": {"type": "string"}
+        }
+      }
+    },
+    "created_at": {"type": "string", "format": "date-time"}
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tradecatlabs.com/vibe-mathing/schema/canonical-problem.schema.json",
+  "title": "Vibe Mathing Canonical Problem",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "problem_id",
+    "title",
+    "aliases",
+    "statement",
+    "domain",
+    "quantifiers",
+    "definitions",
+    "assumptions",
+    "allowed_axioms",
+    "msc",
+    "sources",
+    "acceptance",
+    "constraints",
+    "lifecycle",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "problem_id": {"type": "string", "pattern": "^problem:[a-z0-9][a-z0-9.-]*$"},
+    "title": {"type": "string", "minLength": 1},
+    "aliases": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "language", "version"],
+      "properties": {
+        "text": {"type": "string", "minLength": 1},
+        "language": {"type": "string", "minLength": 2},
+        "version": {"type": "integer", "minimum": 1}
+      }
+    },
+    "domain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["description", "objects"],
+      "properties": {
+        "description": {"type": "string", "minLength": 1},
+        "objects": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "quantifiers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "variables", "domain"],
+        "properties": {
+          "kind": {
+            "enum": ["forall", "exists", "exists_unique", "find", "optimize", "decide"]
+          },
+          "variables": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "domain": {"type": "string", "minLength": 1}
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "enum": ["forall", "exists", "exists_unique", "find", "optimize"]
+                }
+              }
+            },
+            "then": {
+              "properties": {"variables": {"minItems": 1}}
+            }
+          }
+        ]
+      }
+    },
+    "definitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["term", "definition"],
+        "properties": {
+          "term": {"type": "string", "minLength": 1},
+          "definition": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "allowed_axioms": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "msc": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[0-9]{2}[A-Z-][0-9Xx]{2}$"}
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "source_record_id", "url", "retrieved_at"],
+        "properties": {
+          "source": {"type": "string", "minLength": 1},
+          "source_record_id": {"type": ["string", "null"], "minLength": 1},
+          "url": {"type": "string", "format": "uri"},
+          "retrieved_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    },
+    "acceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy"],
+      "properties": {
+        "policy": {"const": "solution-admission-v1"}
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowed_methods", "allowed_adapters", "max_attempts", "runtime"],
+      "properties": {
+        "allowed_methods": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": ["discovery", "derivation", "computation", "proof", "formalization"]
+          }
+        },
+        "allowed_adapters": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$"}
+        },
+        "max_attempts": {"type": "integer", "minimum": 1},
+        "runtime": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "max_transitions",
+            "max_retries",
+            "timeout_seconds",
+            "max_output_bytes",
+            "memory_budget_mb",
+            "threads_max"
+          ],
+          "properties": {
+            "max_transitions": {"type": "integer", "minimum": 1, "maximum": 10000},
+            "max_retries": {"type": "integer", "minimum": 1, "maximum": 1000},
+            "timeout_seconds": {"type": "integer", "minimum": 1, "maximum": 86400},
+            "max_output_bytes": {"type": "integer", "minimum": 1, "maximum": 128000000},
+            "memory_budget_mb": {"type": "integer", "minimum": 1, "maximum": 131072},
+            "threads_max": {"type": "integer", "minimum": 1, "maximum": 1024}
+          }
+        }
+      }
+    },
+    "lifecycle": {"enum": ["draft", "active", "withdrawn"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"}
+  }
+}

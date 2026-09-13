@@ -14,6 +14,6 @@
 - `check-research-raw.py`：研究域 raw 原始事实层、Git 工作树、来源清单和核心材料文件检查脚本。
 - `fetch-research-raw.py`：按 `research/*/domain.yml` 拉取 GitHub 研究对象的 raw 原始事实层和 `repository/` 工作树。
 
-`research/vibe-cybersecurity-cn/` 与 `research/vibe-harness-cn/` 是纳入的独立工程研究项目，保留各自的文档、供应链和验证契约；仓库级 lint、相对链接、`details` 和目录覆盖检查会跳过这两个项目，项目验证必须按各自 README 执行。
+`research/vibe-cybersecurity-cn/` 与 `research/vibe-harness-cn/` 是纳入的独立工程研究项目，保留各自的文档、供应链和验证契约；`research/vibe-mathing-cn-public/snapshot/` 是已审计的源仓库文件快照。仓库级 lint、相对链接、`details` 和目录覆盖检查会跳过这些独立内容，项目验证必须按各自 README 执行。
 - `check-wiki.py`：GitHub Wiki 独立仓库本地 checkout 的页面覆盖、内链和旧口径检查脚本。
 - `sync-doc-toc.py`：兼容旧线性 README 的细粒度目录生成脚本；当前拆分结构下通常无变更。

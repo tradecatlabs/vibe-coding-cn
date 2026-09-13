@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tradecatlabs.com/vibe-mathing/schema/failed-route.schema.json",
+  "title": "Vibe Mathing Failed Route",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "route_id",
+    "problem_id",
+    "route",
+    "blocker",
+    "conclusion",
+    "evidence",
+    "recorded_at",
+    "recorded_by"
+  ],
+  "properties": {
+    "route_id": {"type": "string", "pattern": "^route:[a-z0-9][a-z0-9.-]*$"},
+    "problem_id": {"type": "string", "pattern": "^problem:[a-z0-9][a-z0-9.-]*$"},
+    "route": {"type": "string", "minLength": 1, "description": "尝试过的攻击路线/方法/方向"},
+    "blocker": {"type": "string", "minLength": 1, "description": "走不通的根因（登记当时能写出的最具体原因）"},
+    "conclusion": {
+      "type": "string",
+      "enum": ["blocked", "exhausted", "refuted", "artifact", "superseded"],
+      "description": "blocked=需新思想/工具；exhausted=预算内穷尽无路；refuted=被验证者判死；artifact=结果被证明是数值伪影；superseded=被更好的路线取代"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "description": "可复核证据路径（脚本/日志/checkpoint/Lean 文件），禁止空引用"
+    },
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "recorded_by": {"type": "string", "minLength": 1, "description": "非敏感的登记者标签"}
+  }
+}

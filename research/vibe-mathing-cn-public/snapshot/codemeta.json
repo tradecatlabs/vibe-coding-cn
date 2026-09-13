@@ -1,0 +1,62 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "vibe-mathing-cn",
+  "url": "https://github.com/vibemathing/vibe-mathing-cn-public",
+  "description": "A Chinese-first trusted AI mathematics research and verification workbench using Point-Line-Face-Body as its single conceptual metamodel root, with PWTSJ in Face F05 and OSPS in Face F04, while separating untrusted candidate generation from trusted verification.",
+  "codeRepository": "https://github.com/vibemathing/vibe-mathing-cn-public",
+  "license": "https://spdx.org/licenses/MIT.html",
+  "issueTracker": "https://github.com/vibemathing/vibe-mathing-cn-public/issues",
+  "runtimePlatform": "Linux, WSL, GitHub Actions",
+  "programmingLanguage": [
+    "Python",
+    "Lean",
+    "Shell",
+    "Markdown",
+    "JSON Schema"
+  ],
+  "applicationCategory": "Mathematics research software",
+  "operatingSystem": [
+    "Linux",
+    "WSL",
+    "macOS"
+  ],
+  "softwareRequirements": [
+    "Python 3.12",
+    "SymPy 1.14",
+    "Lean 4.33.0 / Mathlib fixture",
+    "Git"
+  ],
+  "keywords": [
+    "AI mathematics",
+    "trusted verification",
+    "mathematical research workbench",
+    "ProblemContract",
+    "ResearchBundle",
+    "proof assistant",
+    "Lean 4",
+    "Mathlib",
+    "SymPy",
+    "computer algebra",
+    "symbolic computation",
+    "SMT",
+    "counterexample search",
+    "formal verification",
+    "open problems",
+    "research automation",
+    "LLM agents",
+    "formal methods",
+    "Generative Engine Optimization",
+    "AI citation",
+    "Point-Line-Face-Body",
+    "PLFB",
+    "PWTSJ",
+    "OSPS",
+    "research lifecycle",
+    "workflow orchestration",
+    "source freshness",
+    "JSON Schema",
+    "evidence ledger"
+  ],
+  "isAccessibleForFree": true
+}

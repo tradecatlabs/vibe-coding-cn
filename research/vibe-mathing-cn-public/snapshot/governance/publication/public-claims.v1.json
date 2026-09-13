@@ -1,0 +1,117 @@
+{
+  "document_type": "public-claims",
+  "schema_version": "public-claims.v1",
+  "repository": "vibemathing/vibe-mathing-cn-public",
+  "display_name": "vibe-mathing-cn",
+  "last_verified": "2026-09-09",
+  "claims": [
+    {
+      "claim_id": "claim:identity",
+      "text": "vibe-mathing-cn is a Chinese-first trusted AI mathematics research and verification workbench.",
+      "scope": "public-description",
+      "status": "current",
+      "last_verified": "2026-09-09",
+      "evidence_refs": ["README.md", "README.en.md", "llms.txt", "CITATION.cff", "codemeta.json", "assets/ai-citation/schema-org-software.v1.json"],
+      "allowed_surfaces": ["readme", "readme-en", "llms", "ai-citation", "metadata"]
+    },
+    {
+      "claim_id": "claim:workflow",
+      "text": "The public workflow separates candidate generation from verification admission through ProblemContract, Attempt, Result, evidence capabilities, and derived views.",
+      "scope": "architecture",
+      "status": "current",
+      "last_verified": "2026-09-09",
+      "evidence_refs": ["README.md", "README.en.md", "problem-library/schema/canonical-problem.schema.json", "research/schema/attempt.schema.json", "research/schema/research-bundle.schema.json", "result-library/schema/result.schema.json"],
+      "allowed_surfaces": ["readme", "readme-en", "llms", "ai-citation"]
+    },
+    {
+      "claim_id": "claim:status",
+      "text": "The public canonical Problem, Attempt, and Result ledgers are empty, the solution index has no result IDs, and the repository does not claim to solve an open mathematics problem.",
+      "scope": "current-status",
+      "status": "current",
+      "last_verified": "2026-09-09",
+      "evidence_refs": ["README.md", "README.en.md", "llms.txt", "problem-library/records/canonical-problems.jsonl", "research/records/attempts.jsonl", "result-library/records/results.jsonl", "result-library/indexes/solutions.json"],
+      "allowed_surfaces": ["readme", "readme-en", "llms", "ai-citation", "metadata"]
+    },
+    {
+      "claim_id": "claim:freshness-authority",
+      "text": "Local public status is determined by the canonical ledgers and solution index; external catalog counts and repository states are dated snapshots that require revalidation before research.",
+      "scope": "freshness-and-authority",
+      "status": "current",
+      "last_verified": "2026-09-09",
+      "evidence_refs": ["GEO.md", "llms.txt", "assets/ai-citation/retrieval-contract.v1.json", "problem-library/registry/vibemathing-public-source.v1.json", "result-library/indexes/solutions.json", "scripts/audit_public_status.py"],
+      "allowed_surfaces": ["readme", "readme-en", "llms", "ai-citation", "geo", "metadata"]
+    },
+    {
+      "claim_id": "claim:fixtures",
+      "text": "The public repository contains deterministic SymPy and SMT fixtures plus a fixed Lean/Mathlib fixture for bounded engineering checks.",
+      "scope": "capability",
+      "status": "current",
+      "last_verified": "2026-09-09",
+      "evidence_refs": ["README.md", "fixtures/sympy-counterexample/problem.json", "fixtures/smt-lra/case.json", "fixtures/lean-proof/README.md", "scripts/test_smt_pipeline.py", "scripts/test_lean_pipeline.py"],
+      "allowed_surfaces": ["readme", "readme-en", "llms", "ai-citation"]
+    },
+    {
+      "claim_id": "claim:bounded-evidence",
+      "text": "Finite numerical, symbolic, SMT, or canary checks are bounded evidence or candidate-generation tools and do not by themselves prove a universal mathematical claim.",
+      "scope": "limitation",
+      "status": "current",
+      "last_verified": "2026-09-09",
+      "evidence_refs": ["README.md", "README.en.md", "governance/architecture-gates/rules/GATE-0002-数学成果晋升必须有充分证据和独立验证.md", "scripts/test_evidence_attacks.py"],
+      "allowed_surfaces": ["readme", "readme-en", "llms", "ai-citation"]
+    },
+    {
+      "claim_id": "claim:tool-maturity",
+      "text": "The tool-maturity registry records evidence states and runtime routes; a maturity label is not an installation or verifier-admission claim without matching public evidence.",
+      "scope": "capability-boundary",
+      "status": "current",
+      "last_verified": "2026-09-09",
+      "evidence_refs": ["README.md", "governance/control-plane/math-tool-maturity.v1.json", "governance/control-plane/math-tool-maturity.schema.json", "scripts/validate_math_tool_maturity.py"],
+      "allowed_surfaces": ["readme", "readme-en", "llms", "ai-citation"]
+    },
+    {
+      "claim_id": "claim:problem-catalog",
+      "text": "The public discovery index points to the vibemathing ProblemContract catalog, the dated Project #2 bounty/repository snapshot, concrete problem repositories, and the fixed Web research template; these external entries are not automatically admitted into this repository.",
+      "scope": "public-integration",
+      "status": "current",
+      "last_verified": "2026-09-09",
+      "evidence_refs": ["README.md", "README.en.md", "llms.txt", "problem-library/VIBEMATHING_PUBLIC_INDEX.md", "problem-library/BOUNTY_PROJECT_2_TOP146.md", "problem-library/registry/bounty-project-2-top146.v1.json", "problem-library/registry/vibemathing-public-source.v1.json", "problem-library/templates/README.md"],
+      "allowed_surfaces": ["readme", "readme-en", "llms", "ai-citation"]
+    },
+    {
+      "claim_id": "claim:method-map",
+      "text": "The project uses a two-level formal-methods map: a six-part method landscape with Lean in dependent-type-theory deductive verification, plus a six-layer Lean stack from kernel foundations to applications.",
+      "scope": "methodology",
+      "status": "current",
+      "last_verified": "2026-09-09",
+      "evidence_refs": ["README.md", "README.en.md", "llms.txt", "governance/standards/FORMAL-METHODS-MAP.md", ".codex/skills/README.md", ".codex/skills/math-formalization/SKILL.md"],
+      "allowed_surfaces": ["readme", "readme-en", "llms", "ai-citation"]
+    },
+    {
+      "claim_id": "claim:retrieval-contract",
+      "text": "The public GEO guide and retrieval contract provide intent-specific answers, nearest-first citation targets, and explicit non-inference rules without becoming mathematical evidence.",
+      "scope": "publication",
+      "status": "current",
+      "last_verified": "2026-09-09",
+      "evidence_refs": ["GEO.md", "assets/ai-citation/retrieval-contract.v1.json", "assets/ai-citation/answer-matrix.v1.json", "assets/ai-citation/geo-evaluation-protocol.md", "scripts/query_ai_citation.py", "scripts/test_query_ai_citation.py"],
+      "allowed_surfaces": ["readme", "readme-en", "llms", "ai-citation", "geo"]
+    },
+    {
+      "claim_id": "claim:metamodel",
+      "text": "Point-Line-Face-Body is the single conceptual metamodel root; PWTSJ belongs to Face F05 and OSPS belongs to Face F04. This conceptual standard does not claim that the corresponding runtimes are implemented.",
+      "scope": "architecture",
+      "status": "current",
+      "last_verified": "2026-09-09",
+      "evidence_refs": ["GEO.md", "README.md", "README.en.md", "assets/architecture.svg", "governance/standards/POINT-LINE-FACE-BODY-METAMODEL-v0.1.md", "governance/control-plane/plfb-metamodel.schema.json", "governance/control-plane/plfb-metamodel.v0.1.json", "scripts/validate_plfb_metamodel.py", "scripts/test_validate_plfb_metamodel.py"],
+      "allowed_surfaces": ["readme", "readme-en", "llms", "ai-citation", "geo", "metadata"]
+    },
+    {
+      "claim_id": "claim:research-lifecycle",
+      "text": "Inside Face F05, the public architecture uses Project -> Workflow -> Task -> Step -> Job and keeps execution state separate from F04 Outcome Space, F09 Evidence, and F10 Result state; the lifecycle document does not claim a general scheduler is implemented.",
+      "scope": "architecture",
+      "status": "current",
+      "last_verified": "2026-09-09",
+      "evidence_refs": ["GEO.md", "README.md", "README.en.md", "governance/standards/POINT-LINE-FACE-BODY-METAMODEL-v0.1.md", "governance/standards/RESEARCH-LIFECYCLE-MODEL-v0.1.md", "governance/context/PROJECT_OPERATING_MODEL.md"],
+      "allowed_surfaces": ["readme", "readme-en", "llms", "ai-citation", "geo"]
+    }
+  ]
+}

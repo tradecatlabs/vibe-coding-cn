@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "providers": [
+    {
+      "id": "arxiv",
+      "base_url": "https://export.arxiv.org/api/query",
+      "query_parameter": "search_query",
+      "response_format": "atom",
+      "extra_query": {"start": 0, "max_results": 1},
+      "auth": {"mode": "none", "name": null, "env": null, "required_for_live": false},
+      "contact": {"query_parameter": null, "env": null},
+      "timeout_seconds": 10,
+      "max_retries": 1,
+      "max_response_bytes": 1000000
+    },
+    {
+      "id": "crossref",
+      "base_url": "https://api.crossref.org/works",
+      "query_parameter": "query",
+      "response_format": "json",
+      "extra_query": {"rows": 1},
+      "auth": {"mode": "none", "name": null, "env": null, "required_for_live": false},
+      "contact": {"query_parameter": "mailto", "env": "CROSSREF_MAILTO"},
+      "timeout_seconds": 10,
+      "max_retries": 1,
+      "max_response_bytes": 1000000
+    },
+    {
+      "id": "openalex",
+      "base_url": "https://api.openalex.org/works",
+      "query_parameter": "search",
+      "response_format": "json",
+      "extra_query": {"per-page": 1},
+      "auth": {"mode": "query", "name": "api_key", "env": "OPENALEX_API_KEY", "required_for_live": true},
+      "contact": {"query_parameter": null, "env": null},
+      "timeout_seconds": 10,
+      "max_retries": 1,
+      "max_response_bytes": 1000000
+    },
+    {
+      "id": "semantic-scholar",
+      "base_url": "https://api.semanticscholar.org/graph/v1/paper/search",
+      "query_parameter": "query",
+      "response_format": "json",
+      "extra_query": {"limit": 1, "fields": "paperId,title,year"},
+      "auth": {"mode": "header", "name": "x-api-key", "env": "SEMANTIC_SCHOLAR_API_KEY", "required_for_live": false},
+      "contact": {"query_parameter": null, "env": null},
+      "timeout_seconds": 10,
+      "max_retries": 1,
+      "max_response_bytes": 1000000
+    }
+  ]
+}

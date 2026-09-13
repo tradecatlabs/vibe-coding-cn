@@ -1,0 +1,76 @@
+{
+  "createdAt": "2026-08-13T10:45:09Z",
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "description": "Trusted AI mathematics workbench: ProblemContract to Attempt to verified proof/counterexample bundles with SymPy and Lean evidence gates.",
+  "forkCount": 3,
+  "homepageUrl": "https://t.me/vibe_mathing_cn",
+  "isArchived": false,
+  "isFork": false,
+  "isMirror": false,
+  "latestRelease": null,
+  "licenseInfo": {
+    "key": "mit",
+    "name": "MIT License",
+    "nickname": ""
+  },
+  "nameWithOwner": "vibemathing/vibe-mathing-cn-public",
+  "primaryLanguage": {
+    "name": "Python"
+  },
+  "pushedAt": "2026-09-09T08:49:52Z",
+  "repositoryTopics": [
+    {
+      "name": "ai-mathematics"
+    },
+    {
+      "name": "computer-algebra"
+    },
+    {
+      "name": "formal-verification"
+    },
+    {
+      "name": "json-schema"
+    },
+    {
+      "name": "lean4"
+    },
+    {
+      "name": "llm-agents"
+    },
+    {
+      "name": "mathematical-research"
+    },
+    {
+      "name": "mathlib"
+    },
+    {
+      "name": "open-problems"
+    },
+    {
+      "name": "proof-assistant"
+    },
+    {
+      "name": "research-automation"
+    },
+    {
+      "name": "sympy"
+    },
+    {
+      "name": "vibe-mathing"
+    },
+    {
+      "name": "problem-library"
+    },
+    {
+      "name": "trusted-verification"
+    }
+  ],
+  "stargazerCount": 17,
+  "updatedAt": "2026-09-09T15:35:45Z",
+  "url": "https://github.com/vibemathing/vibe-mathing-cn-public",
+  "watchers": {
+    "totalCount": 0
+  }
+}

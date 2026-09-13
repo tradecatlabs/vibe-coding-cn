@@ -1,0 +1,1134 @@
+{
+  "schema_version": "0.1.0",
+  "metamodel_id": "metamodel:plfb",
+  "unique_conceptual_root": true,
+  "status": "current",
+  "document_refs": [
+    "governance/standards/POINT-LINE-FACE-BODY-METAMODEL-v0.1.md",
+    "governance/standards/RESEARCH-LIFECYCLE-MODEL-v0.1.md",
+    "governance/standards/FORMAL-METHODS-MAP.md",
+    "GEO.md",
+    "README.md",
+    "README.en.md"
+  ],
+  "primitives": [
+    {
+      "id": "point",
+      "name": "点",
+      "question": "这是什么可指认对象？"
+    },
+    {
+      "id": "line",
+      "name": "线",
+      "question": "对象之间是什么有类型关系？"
+    },
+    {
+      "id": "face",
+      "name": "面",
+      "question": "从哪个有边界维度理解和组织？"
+    },
+    {
+      "id": "body",
+      "name": "体",
+      "question": "多个面怎样组成可观察、可更新的整体？"
+    }
+  ],
+  "point_types": [
+    {
+      "id": "point.body",
+      "primary_face": "F01",
+      "role": "conceptual_only",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.snapshot",
+      "primary_face": "F01",
+      "role": "derived_view",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.repository",
+      "primary_face": "F01",
+      "role": "canonical",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.source",
+      "primary_face": "F02",
+      "role": "canonical",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.source_observation",
+      "primary_face": "F02",
+      "role": "append_only_record",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.citation",
+      "primary_face": "F02",
+      "role": "append_only_record",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.literature_work",
+      "primary_face": "F02",
+      "role": "canonical",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.literature_edition",
+      "primary_face": "F02",
+      "role": "canonical",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.definition",
+      "primary_face": "F03",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.statement",
+      "primary_face": "F03",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.assumption",
+      "primary_face": "F03",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.problem_contract",
+      "primary_face": "F03",
+      "role": "canonical",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.acceptance_predicate",
+      "primary_face": "F03",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.outcome_node",
+      "primary_face": "F04",
+      "role": "conceptual_only",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.outcome_frontier",
+      "primary_face": "F04",
+      "role": "derived_view",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.obstruction",
+      "primary_face": "F04",
+      "role": "conceptual_only",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.project",
+      "primary_face": "F05",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.workflow",
+      "primary_face": "F05",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.task",
+      "primary_face": "F05",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.step",
+      "primary_face": "F05",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.job",
+      "primary_face": "F05",
+      "role": "execution_instance",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.checkpoint",
+      "primary_face": "F05",
+      "role": "immutable_artifact",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.method",
+      "primary_face": "F06",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.representation",
+      "primary_face": "F06",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.tool_plan",
+      "primary_face": "F06",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.invariant",
+      "primary_face": "F06",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.attempt",
+      "primary_face": "F07",
+      "role": "append_only_record",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.route",
+      "primary_face": "F07",
+      "role": "append_only_record",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.obligation_graph",
+      "primary_face": "F07",
+      "role": "immutable_artifact",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.obligation",
+      "primary_face": "F07",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.failed_route",
+      "primary_face": "F07",
+      "role": "append_only_record",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.candidate_artifact",
+      "primary_face": "F08",
+      "role": "immutable_artifact",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.program_artifact",
+      "primary_face": "F08",
+      "role": "immutable_artifact",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.dataset_artifact",
+      "primary_face": "F08",
+      "role": "immutable_artifact",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.certificate",
+      "primary_face": "F08",
+      "role": "immutable_artifact",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.verifier",
+      "primary_face": "F09",
+      "role": "canonical",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.evidence_receipt",
+      "primary_face": "F09",
+      "role": "immutable_artifact",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.evidence_link",
+      "primary_face": "F09",
+      "role": "append_only_record",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.semantic_review",
+      "primary_face": "F09",
+      "role": "append_only_record",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.invalidation",
+      "primary_face": "F09",
+      "role": "append_only_record",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.claim",
+      "primary_face": "F10",
+      "role": "canonical",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.result",
+      "primary_face": "F10",
+      "role": "canonical",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.research_bundle",
+      "primary_face": "F10",
+      "role": "derived_view",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.solution_view",
+      "primary_face": "F10",
+      "role": "derived_view",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.observation",
+      "primary_face": "F11",
+      "role": "append_only_record",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.state_delta",
+      "primary_face": "F11",
+      "role": "append_only_record",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.decision",
+      "primary_face": "F11",
+      "role": "append_only_record",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.next_obligation",
+      "primary_face": "F11",
+      "role": "derived_view",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.lesson",
+      "primary_face": "F11",
+      "role": "append_only_record",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.agent",
+      "primary_face": "F12",
+      "role": "canonical",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.tool",
+      "primary_face": "F12",
+      "role": "canonical",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.runtime",
+      "primary_face": "F12",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.budget",
+      "primary_face": "F12",
+      "role": "definition",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.authorization",
+      "primary_face": "F12",
+      "role": "append_only_record",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.policy",
+      "primary_face": "F12",
+      "role": "canonical",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.gate",
+      "primary_face": "F12",
+      "role": "canonical",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.risk",
+      "primary_face": "F12",
+      "role": "append_only_record",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.portfolio_item",
+      "primary_face": "F13",
+      "role": "derived_view",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.project_card",
+      "primary_face": "F13",
+      "role": "external_projection",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.wiki_page",
+      "primary_face": "F13",
+      "role": "external_projection",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "point.public_claim",
+      "primary_face": "F13",
+      "role": "external_projection",
+      "implementation_status": "conceptual"
+    }
+  ],
+  "line_types": [
+    {
+      "id": "line.identifies",
+      "category": "identity",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.scopes",
+      "category": "identity",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.version_of",
+      "category": "identity",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.supersedes",
+      "category": "identity",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.aliases",
+      "category": "identity",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.sourced_from",
+      "category": "source_semantic",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.cites",
+      "category": "source_semantic",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.defines",
+      "category": "source_semantic",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.quantifies",
+      "category": "source_semantic",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.assumes",
+      "category": "source_semantic",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.interprets",
+      "category": "source_semantic",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.depends_on",
+      "category": "logic_outcome",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.implies",
+      "category": "logic_outcome",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.equivalent_to",
+      "category": "logic_outcome",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.contradicts",
+      "category": "logic_outcome",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.refutes",
+      "category": "logic_outcome",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.strengthens",
+      "category": "logic_outcome",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.weakens",
+      "category": "logic_outcome",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.specializes",
+      "category": "logic_outcome",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.generalizes",
+      "category": "logic_outcome",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.subsumes",
+      "category": "logic_outcome",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.branches_to",
+      "category": "logic_outcome",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.blocked_by",
+      "category": "logic_outcome",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.merges_with",
+      "category": "logic_outcome",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.invalidates",
+      "category": "logic_outcome",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.contains",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.decomposes_to",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.precedes",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.schedules",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.instantiates",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.retries",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.resumes_from",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.consumes",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.produces",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.applies",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.transforms",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.approximates",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.reduces_to",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.requires",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.targets",
+      "category": "process_method",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.checks",
+      "category": "evidence_observation",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.verifies",
+      "category": "evidence_observation",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.supports",
+      "category": "evidence_observation",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.rejects",
+      "category": "evidence_observation",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.limits",
+      "category": "evidence_observation",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.admits",
+      "category": "evidence_observation",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.derives",
+      "category": "evidence_observation",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.observes",
+      "category": "evidence_observation",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.explains",
+      "category": "evidence_observation",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.updates",
+      "category": "evidence_observation",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.proposes_next",
+      "category": "evidence_observation",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.authorizes",
+      "category": "governance_publication",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.constrains",
+      "category": "governance_publication",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.owns",
+      "category": "governance_publication",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.trusts",
+      "category": "governance_publication",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.projects",
+      "category": "governance_publication",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.redacts",
+      "category": "governance_publication",
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "line.publishes",
+      "category": "governance_publication",
+      "implementation_status": "conceptual"
+    }
+  ],
+  "faces": [
+    {
+      "id": "F01",
+      "name": "身份与作用域面",
+      "purpose": "固定对象、版本、摘要和知识体作用域。",
+      "point_types": [
+        "point.body",
+        "point.snapshot",
+        "point.repository"
+      ],
+      "line_types": [
+        "line.identifies",
+        "line.scopes",
+        "line.version_of",
+        "line.supersedes",
+        "line.aliases"
+      ],
+      "owner_paths": [
+        "governance/standards/POINT-LINE-FACE-BODY-METAMODEL-v0.1.md",
+        "governance/context/PROJECT-TOPOLOGY.md"
+      ],
+      "implementation_status": "conceptual",
+      "known_gaps": [
+        "Public conceptual registry only; no face-specific runtime is claimed."
+      ]
+    },
+    {
+      "id": "F02",
+      "name": "来源与文献面",
+      "purpose": "保存来源观察、引文和文献身份。",
+      "point_types": [
+        "point.source",
+        "point.source_observation",
+        "point.citation",
+        "point.literature_work",
+        "point.literature_edition"
+      ],
+      "line_types": [
+        "line.sourced_from",
+        "line.cites"
+      ],
+      "owner_paths": [
+        "problem-library",
+        "literature"
+      ],
+      "implementation_status": "conceptual",
+      "known_gaps": [
+        "Public conceptual registry only; no face-specific runtime is claimed."
+      ]
+    },
+    {
+      "id": "F03",
+      "name": "语义与问题面",
+      "purpose": "冻结数学陈述、定义域、量词、假设和准入边界。",
+      "point_types": [
+        "point.definition",
+        "point.statement",
+        "point.assumption",
+        "point.problem_contract",
+        "point.acceptance_predicate"
+      ],
+      "line_types": [
+        "line.defines",
+        "line.quantifies",
+        "line.assumes",
+        "line.interprets"
+      ],
+      "owner_paths": [
+        "problem-library/schema/canonical-problem.schema.json"
+      ],
+      "implementation_status": "conceptual",
+      "known_gaps": [
+        "Public conceptual registry only; no face-specific runtime is claimed."
+      ]
+    },
+    {
+      "id": "F04",
+      "name": "OSPS 结果空间执行面",
+      "model": "OSPS",
+      "purpose": "维护动态数学结果空间和搜索前沿。",
+      "point_types": [
+        "point.outcome_node",
+        "point.outcome_frontier",
+        "point.obstruction"
+      ],
+      "line_types": [
+        "line.implies",
+        "line.equivalent_to",
+        "line.contradicts",
+        "line.refutes",
+        "line.strengthens",
+        "line.weakens",
+        "line.specializes",
+        "line.generalizes",
+        "line.subsumes",
+        "line.branches_to",
+        "line.blocked_by",
+        "line.merges_with",
+        "line.invalidates"
+      ],
+      "owner_paths": [
+        "governance/standards/POINT-LINE-FACE-BODY-METAMODEL-v0.1.md"
+      ],
+      "implementation_status": "conceptual",
+      "known_gaps": [
+        "Public conceptual registry only; no face-specific runtime is claimed."
+      ]
+    },
+    {
+      "id": "F05",
+      "name": "PWTSJ 过程编排面",
+      "model": "PWTSJ",
+      "purpose": "组织目标、任务网络、操作和有界执行。",
+      "point_types": [
+        "point.project",
+        "point.workflow",
+        "point.task",
+        "point.step",
+        "point.job",
+        "point.checkpoint"
+      ],
+      "line_types": [
+        "line.contains",
+        "line.decomposes_to",
+        "line.precedes",
+        "line.schedules",
+        "line.instantiates",
+        "line.retries",
+        "line.resumes_from",
+        "line.consumes",
+        "line.produces"
+      ],
+      "owner_paths": [
+        "governance/standards/RESEARCH-LIFECYCLE-MODEL-v0.1.md"
+      ],
+      "implementation_status": "conceptual",
+      "known_gaps": [
+        "Public conceptual registry only; no face-specific runtime is claimed."
+      ]
+    },
+    {
+      "id": "F06",
+      "name": "方法与表示面",
+      "purpose": "选择数学表示、方法、策略、不变量和工具计划。",
+      "point_types": [
+        "point.method",
+        "point.representation",
+        "point.tool_plan",
+        "point.invariant"
+      ],
+      "line_types": [
+        "line.applies",
+        "line.transforms",
+        "line.approximates",
+        "line.reduces_to",
+        "line.requires"
+      ],
+      "owner_paths": [
+        "governance/standards/FORMAL-METHODS-MAP.md",
+        ".codex/skills"
+      ],
+      "implementation_status": "conceptual",
+      "known_gaps": [
+        "Public conceptual registry only; no face-specific runtime is claimed."
+      ]
+    },
+    {
+      "id": "F07",
+      "name": "研究路线与义务面",
+      "purpose": "保存研究尝试、路线、义务依赖和失败路线。",
+      "point_types": [
+        "point.attempt",
+        "point.route",
+        "point.obligation_graph",
+        "point.obligation",
+        "point.failed_route"
+      ],
+      "line_types": [
+        "line.depends_on",
+        "line.targets",
+        "line.blocked_by"
+      ],
+      "owner_paths": [
+        "research/schema/attempt.schema.json",
+        "research/schema/failed-route.schema.json"
+      ],
+      "implementation_status": "conceptual",
+      "known_gaps": [
+        "Public conceptual registry only; no face-specific runtime is claimed."
+      ]
+    },
+    {
+      "id": "F08",
+      "name": "候选与产物面",
+      "purpose": "保存生成器产生的不可变候选和可检查产物。",
+      "point_types": [
+        "point.candidate_artifact",
+        "point.program_artifact",
+        "point.dataset_artifact",
+        "point.certificate"
+      ],
+      "line_types": [
+        "line.consumes",
+        "line.produces",
+        "line.transforms"
+      ],
+      "owner_paths": [
+        "research/artifacts/README.md"
+      ],
+      "implementation_status": "conceptual",
+      "known_gaps": [
+        "Public conceptual registry only; no face-specific runtime is claimed."
+      ]
+    },
+    {
+      "id": "F09",
+      "name": "证据与验证面",
+      "purpose": "限定验证主体、能力、范围、回执、链接和失效。",
+      "point_types": [
+        "point.verifier",
+        "point.evidence_receipt",
+        "point.evidence_link",
+        "point.semantic_review",
+        "point.invalidation"
+      ],
+      "line_types": [
+        "line.checks",
+        "line.verifies",
+        "line.supports",
+        "line.rejects",
+        "line.limits",
+        "line.invalidates"
+      ],
+      "owner_paths": [
+        "research/verifiers.json",
+        "research/schema/evidence-receipt.schema.json"
+      ],
+      "implementation_status": "conceptual",
+      "known_gaps": [
+        "Public conceptual registry only; no face-specific runtime is claimed."
+      ]
+    },
+    {
+      "id": "F10",
+      "name": "成果与解视图面",
+      "purpose": "记录准入数学结果并派生研究包和完整解视图。",
+      "point_types": [
+        "point.claim",
+        "point.result",
+        "point.research_bundle",
+        "point.solution_view"
+      ],
+      "line_types": [
+        "line.admits",
+        "line.derives",
+        "line.supports",
+        "line.refutes"
+      ],
+      "owner_paths": [
+        "result-library/schema/result.schema.json",
+        "result-library/indexes/solutions.json"
+      ],
+      "implementation_status": "conceptual",
+      "known_gaps": [
+        "Public conceptual registry only; no face-specific runtime is claimed."
+      ]
+    },
+    {
+      "id": "F11",
+      "name": "观察、反馈与学习面",
+      "purpose": "记录外部观察、状态变化、决策、经验和下一义务。",
+      "point_types": [
+        "point.observation",
+        "point.state_delta",
+        "point.decision",
+        "point.next_obligation",
+        "point.lesson"
+      ],
+      "line_types": [
+        "line.observes",
+        "line.explains",
+        "line.updates",
+        "line.proposes_next"
+      ],
+      "owner_paths": [
+        "research/records/README.md",
+        "governance/evidence"
+      ],
+      "implementation_status": "conceptual",
+      "known_gaps": [
+        "Public conceptual registry only; no face-specific runtime is claimed."
+      ]
+    },
+    {
+      "id": "F12",
+      "name": "能力、资源与治理面",
+      "purpose": "约束主体、工具、运行时、预算、授权、政策、门禁和风险。",
+      "point_types": [
+        "point.agent",
+        "point.tool",
+        "point.runtime",
+        "point.budget",
+        "point.authorization",
+        "point.policy",
+        "point.gate",
+        "point.risk"
+      ],
+      "line_types": [
+        "line.authorizes",
+        "line.constrains",
+        "line.owns",
+        "line.trusts",
+        "line.requires"
+      ],
+      "owner_paths": [
+        "governance/control-plane",
+        "governance/architecture-gates",
+        "AGENTS.md"
+      ],
+      "implementation_status": "conceptual",
+      "known_gaps": [
+        "Public conceptual registry only; no face-specific runtime is claimed."
+      ]
+    },
+    {
+      "id": "F13",
+      "name": "Portfolio、发布与公共投影面",
+      "purpose": "组合研究并生成经过隐私、许可和 freshness 门的公共投影。",
+      "point_types": [
+        "point.portfolio_item",
+        "point.project_card",
+        "point.wiki_page",
+        "point.public_claim"
+      ],
+      "line_types": [
+        "line.projects",
+        "line.redacts",
+        "line.publishes",
+        "line.derives"
+      ],
+      "owner_paths": [
+        "governance/publication",
+        "problem-library/VIBEMATHING_PUBLIC_INDEX.md"
+      ],
+      "implementation_status": "conceptual",
+      "known_gaps": [
+        "Public conceptual registry only; no face-specific runtime is claimed."
+      ]
+    }
+  ],
+  "body_types": [
+    {
+      "id": "B0",
+      "name": "VibeMath Ecosystem Body",
+      "required_faces": [
+        "F01",
+        "F03",
+        "F09",
+        "F10",
+        "F12",
+        "F13"
+      ],
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "B1",
+      "name": "Portfolio Body",
+      "required_faces": [
+        "F01",
+        "F03",
+        "F12",
+        "F13"
+      ],
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "B2",
+      "name": "Project Body",
+      "required_faces": [
+        "F01",
+        "F04",
+        "F05",
+        "F07",
+        "F12"
+      ],
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "B3",
+      "name": "Problem Research Body",
+      "required_faces": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08",
+        "F09",
+        "F10",
+        "F11",
+        "F12",
+        "F13"
+      ],
+      "implementation_status": "conceptual"
+    },
+    {
+      "id": "B4",
+      "name": "Snapshot Body",
+      "required_faces": [
+        "F01",
+        "F11",
+        "F12"
+      ],
+      "implementation_status": "conceptual"
+    }
+  ],
+  "invariants": [
+    "PLFB is the unique conceptual metamodel root.",
+    "PWTSJ is F05 and OSPS is F04; neither is a competing root.",
+    "Every point has identity, owner and scope.",
+    "Every line has typed direction, basis and validity.",
+    "No face may close another face by status substitution.",
+    "Job success is not obligation closure or Result admission.",
+    "Derived and public projections never overwrite internal mathematical truth.",
+    "Outcome and evidence remain separate axes.",
+    "Invalidation is append-only and preserves history.",
+    "No hidden chain-of-thought is required or published."
+  ],
+  "capability_claims": {
+    "metamodel_schema_implemented": true,
+    "body_manifest_implemented": false,
+    "outcome_graph_runtime_implemented": false,
+    "osps_orchestrator_implemented": false,
+    "pwtsj_general_scheduler_implemented": false,
+    "mathematical_truth_changed": false
+  }
+}

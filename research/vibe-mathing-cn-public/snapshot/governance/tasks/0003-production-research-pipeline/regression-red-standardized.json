@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "phase": "red",
+  "task_type": "bugfix",
+  "captured_at": "2026-08-13T14:44:17.769294+00:00",
+  "repository": {
+    "head": "8bcb1d9897f38236b68de2dc26b5de480e58a111",
+    "tree": "24dea95af9647c6b39116ac3c66f7b76876b068b"
+  },
+  "command": {
+    "argv": [
+      "python3",
+      "scripts/test_trusted_evidence.py"
+    ],
+    "cwd": "."
+  },
+  "inputs": {
+    "subject_files": [
+      {
+        "path": "scripts/validate_research_spaces.py",
+        "sha256": "sha256:ee2ebb6b1c8ab2aefc8c81491f80447dcd4a976ab5fb604c41f62f332904c8ba"
+      }
+    ],
+    "test_files": [
+      {
+        "path": "scripts/test_trusted_evidence.py",
+        "sha256": "sha256:562b909dcc49188f72d16fb8f2760b62c3d9879480256a42a252adb39818d085"
+      }
+    ],
+    "environment_files": [],
+    "input_files": []
+  },
+  "environment": {
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "executable": "/bin/python3",
+    "digest": "sha256:2760b16c7485890353160dd42a922cfe2b50d8ede40e5cfee098a4f5e53394b2"
+  },
+  "run_policy": {
+    "repeat": 1,
+    "seed": "0",
+    "concurrency": 1,
+    "time_window_seconds": 0,
+    "timeout_seconds": 30
+  },
+  "results": {
+    "runs": 1,
+    "passes": 0,
+    "failures": 1,
+    "failure_rate": 1.0,
+    "failure_fingerprints": [
+      "sha256:91ae59ffabdeb54aad3706785163ccb16d1e7988df318896d1bfd50cad95da94"
+    ],
+    "attempts": [
+      {
+        "run_index": 1,
+        "exit_code": 1,
+        "timed_out": false,
+        "duration_ms": 116.27,
+        "stdout_tail": "",
+        "stderr_tail": "Traceback (most recent call last):\n  File \"<project-root>/scripts/test_trusted_evidence.py\", line 73, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"<project-root>/scripts/test_trusted_evidence.py\", line 65, in main\n    assert not validator.qualifies_as_solution(forged_result, attempts), (\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 安全缺陷：不存在 artifact、伪摘要和自报 independent 仍可让 Result 晋升解库\n",
+        "failure_fingerprint": "sha256:91ae59ffabdeb54aad3706785163ccb16d1e7988df318896d1bfd50cad95da94"
+      }
+    ]
+  },
+  "state": {
+    "before_digest": "sha256:1e9fa048a1aa88fce683954a733b269f56e007c97d44fdc63e66ce6d04ce9a3b",
+    "after_digest": "sha256:1e9fa048a1aa88fce683954a733b269f56e007c97d44fdc63e66ce6d04ce9a3b",
+    "unchanged": true
+  },
+  "record_digest": "sha256:0eb0412a557b77764176fba7cb9fbaaa74de0c326360bc5009689656d1c38a70"
+}

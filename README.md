@@ -571,11 +571,12 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 *   [**scripts 目录说明**](scripts/README.md): 本仓库自动化入口、验证命令和脚本职责索引。
 *   [**研究域治理契约**](research/research-domain-contract.md): 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
 *   [**研究项目第三方许可说明**](research/vibe-cybersecurity-cn/THIRD_PARTY_NOTICES.md): 纳入研究项目的来源、许可证和公开边界。
-*   [**研究价值与应用地图**](research/research-value-application-map.md): 35 个研究域的用户价值、核心启示、应用位置和下沉路线。
+*   [**研究价值与应用地图**](research/research-value-application-map.md): 36 个研究域的用户价值、核心启示、应用位置和下沉路线。
 *   [**研究迁移综合**](research/research-transfer-synthesis.md): 用对标拆解、改良迭代和杂交创新把研究转成可执行路线。
 *   [**Harness 工程解析**](research/harness/harness-engineering.md): Harness Engineering 的工程控制、评估器与反馈闭环解析。
 *   [**vibe-cybersecurity-cn 研究项目**](research/vibe-cybersecurity-cn/README.md): 授权边界内的 Agent 网络安全自动化研究与工程项目。
 *   [**vibe-harness-cn 研究项目**](research/vibe-harness-cn/README.md): 治理 Agent Harness 与问题求解算子库的元 Harness 项目。
+*   [**vibemathing/vibe-mathing-cn-public 研究域**](research/vibe-mathing-cn-public/README.md): 数学研究、证据闭环与可信验证工作台。
 *   [**OpenAI Codex 研究域**](research/openai-codex/README.md): 官方 coding agent 工具源码研究对象。
 *   [**OpenAI Plugins 研究域**](research/openai-plugins/README.md): Codex 插件、marketplace 与 skill-only plugin 分发研究对象。
 *   [**OpenAI Skills 研究域**](research/openai-skills/README.md): 已 deprecated 的 Codex Skills Catalog 与插件迁移参照。
@@ -668,7 +669,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | Skill 严格校验示例 | `skills/auto-skill/scripts/validate-skill.sh skills/auto-skill --strict` | `skills/auto-skill/scripts/validate-skill.sh` |
 
 仓库级文档门禁跳过两个纳入的独立工程研究项目：`research/vibe-cybersecurity-cn/` 和
-`research/vibe-harness-cn/`；请按各项目 README 运行其独立验证。
+`research/vibe-harness-cn/`，以及 `research/vibe-mathing-cn-public/` 内的源仓库快照；请按各项目 README 运行其独立验证。
 
 ### 配置与 CI
 

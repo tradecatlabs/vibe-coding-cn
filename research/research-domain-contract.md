@@ -74,6 +74,7 @@
 ├── AGENTS.md      # 维护层：本研究域边界、更新规则和验证命令
 ├── domain.yml     # 事实层：对象身份、动态快照、来源证据和维护策略
 ├── raw/           # 原始事实层：本地一手材料快照，不写判断
+├── snapshot/      # 可选：经审计的已提交源仓库文件快照，不含 Git 历史
 ├── analysis.md    # 可选：结构化分析、采用评估、风险和替代方案
 ├── deep-dive.md   # 可选：L2 源码/结构深度研究、关键机制和可迁移模式
 ├── experiments/   # 可选：本地实验、验证记录和可复现命令
@@ -197,6 +198,17 @@ python3 scripts/fetch-research-raw.py openai/codex
 
 raw 层拉取成功后，再把稳定事实摘要同步到 `domain.yml`；不要直接从记忆或二手总结更新 `domain.yml`。
 
+### snapshot/
+
+当研究需要把外部仓库的当前文件纳入父仓库审阅时，可以增加经过审计的 `snapshot/`，但它不是 raw 层的替代品，也不是上游开发副本。
+
+- 只从源仓库已提交的固定分支生成，优先使用 `git archive`。
+- 必须记录源提交号、树哈希、文件数、归档哈希和过滤规则。
+- 不得包含源仓库 `.git`、历史、未跟踪文件、缓存、运行产物、私密材料或本机路径。
+- 复制前先写入临时目录，完成路径、软链接、凭据和生成物扫描后再替换目标快照。
+- 如果上游内容有独立 Markdown、链接或执行契约，应在父仓库质量门禁中按目录排除，并在本研究域 `AGENTS.md` 说明独立验证方式。
+- 快照只用于研究和审阅；不能自动安装其中的 skills、依赖或工具。
+
 ### analysis.md
 
 `analysis.md` 是迁移层，不是普通摘要。它必须把事实和判断转成可执行研究结论。
@@ -238,9 +250,10 @@ P1/P2 研究域的 `analysis.md` 必须包含：
 2. 如果是外部仓库，使用 `<owner>-<repo>` 目录名。
 3. 创建 `README.md`、`AGENTS.md`、`domain.yml` 三件套。
 4. 运行 `python3 scripts/fetch-research-raw.py <domain>` 拉取 raw 原始材料。
-5. 把稳定事实摘要放入 `domain.yml`，并写明 `observed_at` 和来源。
-6. 更新 `research/README.md`、`docs/README.md`、`metadata/taxonomy.yml` 和 AI 引用索引。
-7. 运行 `make sync-doc-toc` 和 `make test`。
+5. 如果需要纳入源文件，按 `snapshot/` 规则生成固定提交的安全快照，并完成隐私与供应链审计。
+6. 把稳定事实摘要放入 `domain.yml`，并写明 `observed_at` 和来源。
+7. 更新 `research/README.md`、`docs/README.md`、`metadata/taxonomy.yml` 和 AI 引用索引。
+8. 运行 `make sync-doc-toc` 和 `make test`。
 
 ## 横向比较规则
 
@@ -272,6 +285,7 @@ P1/P2 研究域的 `analysis.md` 必须包含：
 - 是否一个目录只研究一个对象。
 - 是否存在 `README.md`、`AGENTS.md`、`domain.yml` 和 `raw/`。
 - `raw/` 是否存在 `README.md`、`AGENTS.md`、`sources.yml`、`repository/` 和至少一个原始材料文件。
+- 如果存在 `snapshot/`，是否有固定提交、树哈希、过滤规则和隐私/供应链审计记录。
 - 是否区分原始事实、事实摘要、判断、假设和决策。
 - `analysis.md` 是否包含对标拆解、改良迭代、可迁移清单、不可迁移清单和验证动作。
 - 动态事实是否有 `observed_at`、来源、核验方式和本地 raw 依据。

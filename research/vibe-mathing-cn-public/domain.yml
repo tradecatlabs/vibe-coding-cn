@@ -1,0 +1,49 @@
+version: 1
+repo:
+  name: vibemathing/vibe-mathing-cn-public
+  source_name: vibemathing/vibe-mathing-cn-public
+  url: https://github.com/vibemathing/vibe-mathing-cn-public
+research:
+  domain_id: vibe-mathing-cn-public
+  domain_name: vibemathing/vibe-mathing-cn-public 研究域
+  primary_direction: research-infrastructure
+  role: 数学研究、证据闭环与可信验证工作台
+  priority: 1
+  why_study: 研究如何用问题契约、受限运行时、证据回执和形式化工具边界约束 AI 辅助数学研究的过度宣称，并提炼可迁移的 Agent 质量门禁。
+github_observed:
+  observed_at: '2026-09-13'
+  source: gh api repos/vibemathing/vibe-mathing-cn-public
+  stars: 17
+  forks: 3
+  archived: false
+  language: Python
+  license: MIT
+  default_branch: main
+  pushed_at: '2026-09-09T08:49:52Z'
+  updated_at: '2026-09-09T15:35:45Z'
+  latest_release: null
+  homepage: https://t.me/vibe_mathing_cn
+  topics:
+  - ai-mathematics
+  - computer-algebra
+  - formal-verification
+  - json-schema
+  - lean4
+  - llm-agents
+  - mathematical-research
+  - mathlib
+  - open-problems
+  - problem-library
+  - proof-assistant
+  - research-automation
+  - sympy
+  - trusted-verification
+  - vibe-mathing
+source_evidence:
+  file: raw/github-repo.raw.json
+  line: 1
+maintenance:
+  fact_policy: GitHub 动态事实只代表 observed_at 当日快照；更新结论前必须重新核验，并同步 raw 和 domain.yml。
+  snapshot_policy: snapshot/ 只保存源仓库已提交 main 的安全文件，不保存源仓库 Git 历史；同步时记录 source_commit、source_tree 和 archive_sha256。
+  privacy_policy: 源仓库旧历史中的本机路径不进入父仓库；快照更新前必须重新运行隐私和凭据扫描。
+  split_policy: 本目录只研究 vibemathing/vibe-mathing-cn-public；横向比较放到 research/README.md 或研究迁移综合文档。

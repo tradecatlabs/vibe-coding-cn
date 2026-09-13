@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "0003-production-research-pipeline",
+  "major_task": true,
+  "major_reasons": [
+    "approved-plan:nontrivial-scope",
+    "approved-plan:signal=security",
+    "cli:major",
+    "task-package:leaf-count=6",
+    "task-package:risk=high"
+  ],
+  "decision": "create_exemplar_only",
+  "reason": "形成了可跨项目复用的可信证据、WAL 恢复、状态机与形式验证闭环，但单次成功不足以晋升 SOP",
+  "existing_assets": [],
+  "candidate_assets": [
+    "exemplar"
+  ],
+  "evidence_refs": [
+    "MATURITY_AUDIT.json",
+    "STATUS.md",
+    "REVIEW.md"
+  ],
+  "decided_at": "2026-08-13T23:43:49+08:00"
+}

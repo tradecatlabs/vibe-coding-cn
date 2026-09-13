@@ -29,7 +29,7 @@ help:
 
 lint:
 	@echo "Linting markdown files..."
-	@$(MARKDOWNLINT) --config .github/lint_config.json --ignore .history --ignore tools/external --ignore 'research/**/raw/repository/**' --ignore 'research/vibe-cybersecurity-cn/**' --ignore 'research/vibe-harness-cn/**' '**/*.md'
+	@$(MARKDOWNLINT) --config .github/lint_config.json --ignore .history --ignore tools/external --ignore 'research/**/raw/repository/**' --ignore 'research/vibe-cybersecurity-cn/**' --ignore 'research/vibe-harness-cn/**' --ignore 'research/vibe-mathing-cn-public/**' '**/*.md'
 
 check-links:
 	@echo "Checking local markdown links and anchors..."

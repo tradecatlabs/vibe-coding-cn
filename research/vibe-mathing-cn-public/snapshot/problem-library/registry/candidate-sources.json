@@ -1,0 +1,813 @@
+{
+ "schema_version": "1.0.0",
+ "sources": [
+  {
+   "source_id": "openlogicproblems",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "problem_page",
+   "parser": "openlogicproblems-v1",
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "openlogicproblems source; attribution pending source review"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "topp",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "problem_page",
+   "parser": "topp-v1",
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "topp source; attribution pending source review"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "ucsd",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "problem_page",
+   "parser": "ucsd-v1",
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "ucsd source; attribution pending source review"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "pdfs",
+   "ingestion_role": "document-only",
+   "record_scope": "document",
+   "parser": null,
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "pdfs source; attribution pending source review"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "polymath",
+   "ingestion_role": "discovery-only",
+   "record_scope": "listing_item",
+   "parser": null,
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "polymath source; attribution pending source review"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "oeis_wiki",
+   "ingestion_role": "discovery-only",
+   "record_scope": "listing_item",
+   "parser": null,
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query",
+     "redistribution"
+    ],
+    "url": "https://oeis.org/wiki/The_OEIS_End-User_License_Agreement",
+    "attribution": "OEIS Foundation (CC BY-SA 4.0)"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "amr",
+   "ingestion_role": "discovery-only",
+   "record_scope": "listing_item",
+   "parser": null,
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "amr source; attribution pending source review"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "openquantum",
+   "ingestion_role": "discovery-only",
+   "record_scope": "listing_item",
+   "parser": null,
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "openquantum source; attribution pending source review"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "kirby",
+   "ingestion_role": "document-only",
+   "record_scope": "document",
+   "parser": null,
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "kirby source; attribution pending source review"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "mathoverflow",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "forum_question",
+   "parser": "mathoverflow-v1",
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query",
+     "redistribution"
+    ],
+    "url": "https://mathoverflow.net/help/licensing",
+    "attribution": "Stack Exchange Inc. / MathOverflow users (CC BY-SA 4.0)"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "aim",
+   "ingestion_role": "document-only",
+   "record_scope": "document",
+   "parser": null,
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "aim source; attribution pending source review"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "formal_conjectures",
+   "ingestion_role": "supply-chain-reference",
+   "record_scope": "repository",
+   "parser": null,
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query",
+     "redistribution"
+    ],
+    "url": "https://www.apache.org/licenses/LICENSE-2.0",
+    "attribution": "formal_conjectures contributors"
+   },
+   "admission_policy": "never-auto-admit",
+   "status_map": {}
+  },
+  {
+   "source_id": "theoremdb",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "problem_page",
+   "parser": "theoremdb-v1",
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "theoremdb source; attribution pending source review"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "wikipedia_conjectures",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "encyclopedia_entry",
+   "parser": "wikipedia_conjectures-v1",
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "attribution": "Wikipedia contributors"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "mo_conjectures",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "forum_question",
+   "parser": "mo_conjectures-v1",
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query",
+     "redistribution"
+    ],
+    "url": "https://mathoverflow.net/help/licensing",
+    "attribution": "Stack Exchange Inc. / MathOverflow users (CC BY-SA 4.0)"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "fmop",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "benchmark_item",
+   "parser": "fmop-v1",
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query",
+     "redistribution"
+    ],
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Epoch AI (CC BY 4.0)"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "polymath_archive",
+   "ingestion_role": "discovery-only",
+   "record_scope": "listing_item",
+   "parser": null,
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "polymath_archive source; attribution pending source review"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "scottish",
+   "ingestion_role": "document-only",
+   "record_scope": "document",
+   "parser": null,
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "scottish source; attribution pending source review"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "clay",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "problem_page",
+   "parser": "clay-v2",
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "clay source; attribution pending source review"
+   },
+   "admission_policy": "calibration",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "oeis_categories",
+   "ingestion_role": "discovery-only",
+   "record_scope": "listing_item",
+   "parser": null,
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query",
+     "redistribution"
+    ],
+    "url": "https://oeis.org/wiki/The_OEIS_End-User_License_Agreement",
+    "attribution": "OEIS Foundation (CC BY-SA 4.0)"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "wikipedia_more",
+   "ingestion_role": "discovery-only",
+   "record_scope": "listing_item",
+   "parser": null,
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "attribution": "Wikipedia contributors"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "oeis_unsolved",
+   "ingestion_role": "discovery-only",
+   "record_scope": "listing_item",
+   "parser": null,
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query",
+     "redistribution"
+    ],
+    "url": "https://oeis.org/wiki/The_OEIS_End-User_License_Agreement",
+    "attribution": "OEIS Foundation (CC BY-SA 4.0)"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "planetmath",
+   "ingestion_role": "discovery-only",
+   "record_scope": "listing_item",
+   "parser": null,
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "planetmath source; attribution pending source review"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "wikipedia_categories",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "encyclopedia_entry",
+   "parser": "wikipedia_categories-v1",
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "attribution": "Wikipedia contributors"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "zh_conjectures",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "encyclopedia_entry",
+   "parser": "zh_conjectures-v1",
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "attribution": "Wikipedia contributors"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "teorth",
+   "ingestion_role": "supply-chain-reference",
+   "record_scope": "repository",
+   "parser": null,
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query",
+     "redistribution"
+    ],
+    "url": "https://www.apache.org/licenses/LICENSE-2.0",
+    "attribution": "teorth contributors"
+   },
+   "admission_policy": "never-auto-admit",
+   "status_map": {}
+  },
+  {
+   "source_id": "mse",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "forum_question",
+   "parser": "mse-v1",
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query",
+     "redistribution"
+    ],
+    "url": "https://math.stackexchange.com/help/licensing",
+    "attribution": "Stack Exchange Inc. / Mathematics users (CC BY-SA 4.0)"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "multilingual_conjectures",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "encyclopedia_entry",
+   "parser": "multilingual_conjectures-v1",
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "attribution": "Wikipedia contributors"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "awesome_solved_index",
+   "ingestion_role": "discovery-only",
+   "record_scope": "listing_item",
+   "parser": null,
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "awesome_solved_index source; attribution pending source review"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "multilingual_lists",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "encyclopedia_entry",
+   "parser": "multilingual_lists-v1",
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "attribution": "Wikipedia contributors"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "oeis_extra",
+   "ingestion_role": "discovery-only",
+   "record_scope": "listing_item",
+   "parser": null,
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query",
+     "redistribution"
+    ],
+    "url": "https://oeis.org/wiki/The_OEIS_End-User_License_Agreement",
+    "attribution": "OEIS Foundation (CC BY-SA 4.0)"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "primepages",
+   "ingestion_role": "discovery-only",
+   "record_scope": "listing_item",
+   "parser": null,
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "primepages source; attribution pending source review"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "wiki_subsets",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "encyclopedia_entry",
+   "parser": "wiki_subsets-v1",
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "attribution": "Wikipedia contributors"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "wiki_more_lists",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "encyclopedia_entry",
+   "parser": "wiki_more_lists-v1",
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "attribution": "Wikipedia contributors"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "arxiv_index",
+   "ingestion_role": "discovery-only",
+   "record_scope": "listing_item",
+   "parser": null,
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "arxiv_index source; attribution pending source review"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "oeis_articles",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "encyclopedia_entry",
+   "parser": "oeis_articles-v1",
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query",
+     "redistribution"
+    ],
+    "url": "https://oeis.org/wiki/The_OEIS_End-User_License_Agreement",
+    "attribution": "OEIS Foundation (CC BY-SA 4.0)"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "arxiv_unsolved",
+   "ingestion_role": "discovery-only",
+   "record_scope": "listing_item",
+   "parser": null,
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "arxiv_unsolved source; attribution pending source review"
+   },
+   "admission_policy": "discovery-only",
+   "status_map": {}
+  },
+  {
+   "source_id": "unsolvedproblems",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "problem_page",
+   "parser": "unsolvedproblems-v1",
+   "license": {
+    "review": "pending",
+    "allowed_uses": [
+     "local-reference",
+     "query"
+    ],
+    "url": null,
+    "attribution": "unsolvedproblems source; attribution pending source review"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "open": "open_claimed",
+    "answered": "unknown",
+    "resolved": "closed_claimed",
+    "solved": "closed_claimed",
+    "resolution_under_review": "under_review",
+    "": "unknown"
+   }
+  },
+  {
+   "source_id": "vibemathed",
+   "ingestion_role": "parsed-candidate",
+   "record_scope": "benchmark_item",
+   "parser": "vibemathed-v1",
+   "license": {
+    "review": "reviewed",
+    "allowed_uses": [
+     "local-reference",
+     "query",
+     "redistribution"
+    ],
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "vibemathed.com contributors (CC BY 4.0)"
+   },
+   "admission_policy": "source-review-required",
+   "status_map": {
+    "resolved": "closed_claimed",
+    "partial": "closed_claimed",
+    "variant": "closed_claimed",
+    "candidate": "under_review",
+    "retracted": "under_review",
+    "": "unknown"
+   }
+  }
+ ]
+}

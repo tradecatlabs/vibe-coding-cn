@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0.0",
+  "task_meta": {
+    "objective": "实现可恢复、可审计、可信证据驱动的 Vibe-Mathing 自动研究流水线，并以机器门禁证明生产闭环成熟度达到 100/100",
+    "overall_status": "In Progress",
+    "task_dir": "governance/tasks/0003-production-research-pipeline"
+  },
+  "source_plan": {
+    "schema_version": "1.0.0",
+    "plan_path": "governance/tasks/0003-production-research-pipeline/APPROVED_PLAN.json"
+  },
+  "generated_assets": [
+    {
+      "id": "tree-spec",
+      "type": "task-tree-spec",
+      "path": "governance/tasks/0003-production-research-pipeline/TREE_SPEC.json",
+      "description": "approved plan 编译后的递归任务树规格",
+      "source_step_keys": [
+        "trusted_evidence",
+        "atomic_store",
+        "runtime_state_machine",
+        "deterministic_vertical",
+        "lean_vertical",
+        "production_gate"
+      ]
+    },
+    {
+      "id": "asset-bundle",
+      "type": "asset-bundle-manifest",
+      "path": "governance/tasks/0003-production-research-pipeline/ASSET_BUNDLE.json",
+      "description": "编译输出的资产包 manifest",
+      "source_step_keys": [
+        "trusted_evidence",
+        "atomic_store",
+        "runtime_state_machine",
+        "deterministic_vertical",
+        "lean_vertical",
+        "production_gate"
+      ]
+    },
+    {
+      "id": "task-package-set",
+      "type": "task-package-set",
+      "path": "governance/tasks/0003-production-research-pipeline/TASK_PACKAGE_SET.json",
+      "description": "编译输出的结构化任务包集合",
+      "source_step_keys": [
+        "trusted_evidence",
+        "atomic_store",
+        "runtime_state_machine",
+        "deterministic_vertical",
+        "lean_vertical",
+        "production_gate"
+      ]
+    },
+    {
+      "id": "task-doc-set",
+      "type": "task-docs",
+      "description": "README/CONTEXT/ACCEPTANCE/PLAN/TODO/STATUS 任务文档集合",
+      "source_step_keys": [
+        "trusted_evidence",
+        "atomic_store",
+        "runtime_state_machine",
+        "deterministic_vertical",
+        "lean_vertical",
+        "production_gate"
+      ],
+      "path": "governance/tasks/0003-production-research-pipeline"
+    }
+  ],
+  "logical_deliverables": [
+    {
+      "step_key": "trusted_evidence",
+      "step_id": "TP-01",
+      "outputs": [
+        "trusted evidence module",
+        "verifier registry contract",
+        "攻击性负例"
+      ]
+    },
+    {
+      "step_key": "atomic_store",
+      "step_id": "TP-02",
+      "outputs": [
+        "research store module",
+        "file locking",
+        "atomic rewrite",
+        "store tests"
+      ]
+    },
+    {
+      "step_key": "runtime_state_machine",
+      "step_id": "TP-03",
+      "outputs": [
+        "runtime state schema",
+        "CLI",
+        "checkpoint/trace",
+        "runtime tests"
+      ]
+    },
+    {
+      "step_key": "deterministic_vertical",
+      "step_id": "TP-04",
+      "outputs": [
+        "deterministic adapter",
+        "fixture",
+        "E2E tests"
+      ]
+    },
+    {
+      "step_key": "lean_vertical",
+      "step_id": "TP-05",
+      "outputs": [
+        "Lean fixture",
+        "formalization adapter",
+        "verification receipts",
+        "Lean E2E test"
+      ]
+    },
+    {
+      "step_key": "production_gate",
+      "step_id": "TP-06",
+      "outputs": [
+        "maturity audit",
+        "CI gate",
+        "review",
+        "docs",
+        "closeout evidence"
+      ]
+    }
+  ],
+  "execution_snapshot": {
+    "total_nodes": 6,
+    "total_leaf_nodes": 6,
+    "ready_leaf_ids": [
+      "TP-01"
+    ]
+  }
+}

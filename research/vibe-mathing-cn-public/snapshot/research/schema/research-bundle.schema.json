@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tradecatlabs.com/vibe-mathing/schema/research-bundle.schema.json",
+  "title": "Vibe Mathing Research Bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "problem",
+    "attempts",
+    "results",
+    "evidence",
+    "disposition",
+    "solution_view",
+    "unresolved_obligations"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "problem": {
+      "type": "object",
+      "required": ["schema_version", "problem_id", "statement", "acceptance", "constraints", "lifecycle"]
+    },
+    "attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["attempt_id", "problem_id", "generator", "method", "lifecycle"]
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["result_id", "problem_id", "attempt_id", "kind", "outcome", "evidence"]
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["result_id", "receipt"],
+        "properties": {
+          "result_id": {"type": "string", "pattern": "^result:[a-z0-9][a-z0-9.-]*$"},
+          "receipt": {
+            "type": "object",
+            "required": ["evidence_id", "capability", "verdict", "verifier", "locator", "sha256"]
+          }
+        }
+      }
+    },
+    "disposition": {"enum": ["solved", "refuted", "open"]},
+    "solution_view": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^result:[a-z0-9][a-z0-9.-]*$"}
+    },
+    "unresolved_obligations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "result_id", "missing"],
+        "properties": {
+          "code": {"enum": ["no_closing_candidate", "incomplete_closing_candidate"]},
+          "result_id": {
+            "type": ["string", "null"],
+            "pattern": "^result:[a-z0-9][a-z0-9.-]*$"
+          },
+          "missing": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "direct_solution_evidence",
+                "statement_faithfulness",
+                "expected_outcome"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

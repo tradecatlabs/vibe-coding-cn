@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tradecatlabs.com/vibe-mathing/schema/literature-records.schema.json",
+  "title": "Vibe Mathing Literature Catalog Records",
+  "$defs": {
+    "nonEmptyString": {"type": "string", "minLength": 1},
+    "creator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "role"],
+      "properties": {
+        "name": {"$ref": "#/$defs/nonEmptyString"},
+        "role": {"enum": ["author", "editor", "chief_editor", "deputy_chief_editor", "translator", "compiler"]}
+      }
+    },
+    "work": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["work_id", "title", "title_variants", "creators", "resource_type", "primary_msc", "secondary_msc", "subjects", "research_roles", "level", "reading_status", "language", "cataloging_notes"],
+      "properties": {
+        "work_id": {"type": "string", "pattern": "^work:"},
+        "title": {"$ref": "#/$defs/nonEmptyString"},
+        "title_variants": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/nonEmptyString"}},
+        "creators": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/creator"}},
+        "resource_type": {"enum": ["textbook", "research_monograph", "reference", "dictionary", "handbook", "lecture_notes", "proceedings", "problem_book", "thesis"]},
+        "primary_msc": {"type": "string", "pattern": "^[0-9]{2}[A-Z-][0-9Xx]{2}$"},
+        "secondary_msc": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^[0-9]{2}[A-Z-][0-9Xx]{2}$"}},
+        "subjects": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/nonEmptyString"}},
+        "research_roles": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["foundation", "survey", "method", "problem_source", "reference", "terminology_lookup", "historical"]}},
+        "level": {"enum": ["introductory", "undergraduate", "graduate", "research", "reference"]},
+        "reading_status": {"enum": ["inbox", "to_read", "reading", "read", "reference_only", "archived"]},
+        "language": {"$ref": "#/$defs/nonEmptyString"},
+        "cataloging_notes": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "edition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["edition_id", "work_id", "edition_statement", "edition_number", "publisher", "publication_place", "published", "isbn13", "series", "extent_pages", "language", "bibliographic_sources", "rights_status"],
+      "properties": {
+        "edition_id": {"type": "string", "pattern": "^edition:"},
+        "work_id": {"type": "string", "pattern": "^work:"},
+        "edition_statement": {"$ref": "#/$defs/nonEmptyString"},
+        "edition_number": {"type": "integer", "minimum": 1},
+        "publisher": {"$ref": "#/$defs/nonEmptyString"},
+        "publication_place": {"$ref": "#/$defs/nonEmptyString"},
+        "published": {"type": "string", "pattern": "^[0-9]{4}(-[0-9]{2})?$"},
+        "isbn13": {"type": "string", "pattern": "^[0-9]{13}$"},
+        "series": {"$ref": "#/$defs/nonEmptyString"},
+        "extent_pages": {"type": "integer", "minimum": 1},
+        "language": {"$ref": "#/$defs/nonEmptyString"},
+        "bibliographic_sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "locator", "note"],
+            "properties": {
+              "kind": {"enum": ["book_cip", "pdf_metadata", "publisher", "library_catalog", "isbn_registry"]},
+              "locator": {"$ref": "#/$defs/nonEmptyString"},
+              "note": {"$ref": "#/$defs/nonEmptyString"}
+            }
+          }
+        },
+        "rights_status": {"enum": ["owned", "open_access", "public_domain", "restricted", "unknown"]}
+      }
+    },
+    "file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file_id", "edition_id", "path", "filename", "media_type", "format", "size_bytes", "sha256", "pages", "encrypted", "text_layer", "storage", "ingest_method", "original_filename", "verified_at"],
+      "properties": {
+        "file_id": {"type": "string", "pattern": "^file:"},
+        "edition_id": {"type": "string", "pattern": "^edition:"},
+        "path": {"type": "string", "pattern": "^literature/files/"},
+        "filename": {"$ref": "#/$defs/nonEmptyString"},
+        "media_type": {"enum": ["application/pdf", "application/epub+zip"]},
+        "format": {"$ref": "#/$defs/nonEmptyString"},
+        "size_bytes": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "pages": {"type": "integer", "minimum": 1},
+        "encrypted": {"type": "boolean"},
+        "text_layer": {"type": "boolean"},
+        "storage": {"enum": ["project_local_ignored", "zotero_stored", "external_linked"]},
+        "ingest_method": {"$ref": "#/$defs/nonEmptyString"},
+        "original_filename": {"$ref": "#/$defs/nonEmptyString"},
+        "verified_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relation_id", "subject_id", "predicate", "object_id"],
+      "properties": {
+        "relation_id": {"type": "string", "pattern": "^relation:"},
+        "subject_id": {"$ref": "#/$defs/nonEmptyString"},
+        "predicate": {"enum": ["has_edition", "has_file", "background_for", "survey_of", "method_for", "contains_statement_of", "contains_partial_result_for", "historical_source_for"]},
+        "object_id": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+beautifulsoup4==4.12.3
+jsonschema==4.10.3
+lxml==6.0.2
+mpmath==1.3.0
+numpy==1.26.4
+scipy==1.16.3
+sympy==1.14.0

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">vibe-mathing-cn Point-Line-Face-Body architecture</title>
+  <desc id="desc">Point-Line-Face-Body is the single conceptual root. PWTSJ Face F05 contains Project to Workflow to Task to Step to Job. OSPS Face F04 and the evidence path across F07 to F10 contain ProblemContract, OutcomeNode, Obligation, CandidateArtifact, EvidenceLink, Attempt, and Result. Job completion is not mathematical proof.</desc>
+  <style>
+    .bg { fill: #f8fafc; }
+    .title { fill: #0f172a; font: 700 28px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .subtitle { fill: #475569; font: 400 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .lane-title { font: 700 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .box-text { fill: #0f172a; font: 700 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; text-anchor: middle; }
+    .box-subtext { fill: #475569; font: 400 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; text-anchor: middle; }
+    .note { fill: #7c2d12; font: 700 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#7c3aed"/></marker>
+    <marker id="arrow-teal" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#0f766e"/></marker>
+    <marker id="arrow-slate" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="620" rx="20"/>
+  <text class="title" x="48" y="48">vibe-mathing-cn</text>
+  <text class="subtitle" x="48" y="74">Point–Line–Face–Body is the single conceptual metamodel root</text>
+
+  <rect x="48" y="96" width="1104" height="78" rx="16" fill="#eff6ff" stroke="#93c5fd"/>
+  <text class="lane-title" x="76" y="126" fill="#1d4ed8">PLFB ROOT</text>
+  <text class="box-text" x="235" y="144">Point</text>
+  <text class="box-text" x="475" y="144">Line</text>
+  <text class="box-text" x="715" y="144">Face</text>
+  <text class="box-text" x="955" y="144">Body</text>
+  <line x1="290" y1="139" x2="410" y2="139" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-slate)"/>
+  <line x1="530" y1="139" x2="650" y2="139" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-slate)"/>
+  <line x1="770" y1="139" x2="890" y2="139" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-slate)"/>
+
+  <rect x="48" y="196" width="1104" height="142" rx="16" fill="#f5f3ff" stroke="#c4b5fd"/>
+  <text class="lane-title" x="76" y="227" fill="#6d28d9">FACE F05 · PROCESS · PWTSJ</text>
+  <line x1="230" y1="278" x2="300" y2="278" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
+  <line x1="430" y1="278" x2="500" y2="278" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
+  <line x1="630" y1="278" x2="700" y2="278" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
+  <line x1="830" y1="278" x2="900" y2="278" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
+  <rect x="80" y="250" width="150" height="58" rx="10" fill="#fff" stroke="#a78bfa"/><text class="box-text" x="155" y="275">Project</text><text class="box-subtext" x="155" y="294">goal + boundary</text>
+  <rect x="300" y="250" width="130" height="58" rx="10" fill="#fff" stroke="#a78bfa"/><text class="box-text" x="365" y="275">Workflow</text><text class="box-subtext" x="365" y="294">task network</text>
+  <rect x="500" y="250" width="130" height="58" rx="10" fill="#fff" stroke="#a78bfa"/><text class="box-text" x="565" y="275">Task</text><text class="box-subtext" x="565" y="294">work unit</text>
+  <rect x="700" y="250" width="130" height="58" rx="10" fill="#fff" stroke="#a78bfa"/><text class="box-text" x="765" y="275">Step</text><text class="box-subtext" x="765" y="294">operation</text>
+  <rect x="900" y="250" width="150" height="58" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text class="box-text" x="975" y="275">Job</text><text class="box-subtext" x="975" y="294">bounded execution</text>
+
+  <rect x="48" y="360" width="1104" height="142" rx="16" fill="#f0fdfa" stroke="#99f6e4"/>
+  <text class="lane-title" x="76" y="391" fill="#0f766e">F04 OSPS → F07 OBLIGATION → F08 CANDIDATE → F09 EVIDENCE → F10 RESULT</text>
+  <line x1="238" y1="442" x2="278" y2="442" stroke="#0f766e" stroke-width="3" marker-end="url(#arrow-teal)"/>
+  <line x1="418" y1="442" x2="458" y2="442" stroke="#0f766e" stroke-width="3" marker-end="url(#arrow-teal)"/>
+  <line x1="598" y1="442" x2="638" y2="442" stroke="#0f766e" stroke-width="3" marker-end="url(#arrow-teal)"/>
+  <line x1="778" y1="442" x2="818" y2="442" stroke="#0f766e" stroke-width="3" marker-end="url(#arrow-teal)"/>
+  <line x1="958" y1="442" x2="998" y2="442" stroke="#0f766e" stroke-width="3" marker-end="url(#arrow-teal)"/>
+  <rect x="68" y="414" width="170" height="58" rx="10" fill="#fff" stroke="#5eead4"/><text class="box-text" x="153" y="439">ProblemContract</text><text class="box-subtext" x="153" y="458">frozen semantics</text>
+  <rect x="278" y="414" width="140" height="58" rx="10" fill="#fff" stroke="#5eead4"/><text class="box-text" x="348" y="439">OutcomeNode</text><text class="box-subtext" x="348" y="458">scoped outcome</text>
+  <rect x="458" y="414" width="140" height="58" rx="10" fill="#fff" stroke="#5eead4"/><text class="box-text" x="528" y="439">Obligation</text><text class="box-subtext" x="528" y="458">closure predicate</text>
+  <rect x="638" y="414" width="140" height="58" rx="10" fill="#fff" stroke="#5eead4"/><text class="box-text" x="708" y="439">CandidateArtifact</text><text class="box-subtext" x="708" y="458">untrusted output</text>
+  <rect x="818" y="414" width="140" height="58" rx="10" fill="#fff" stroke="#5eead4"/><text class="box-text" x="888" y="439">EvidenceLink</text><text class="box-subtext" x="888" y="458">verifier-scoped</text>
+  <rect x="998" y="414" width="130" height="58" rx="10" fill="#ccfbf1" stroke="#0f766e" stroke-width="2"/><text class="box-text" x="1063" y="439">Result</text><text class="box-subtext" x="1063" y="458">admitted claim</text>
+
+  <line x1="975" y1="308" x2="708" y2="414" stroke="#64748b" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow-slate)"/>
+  <text class="box-subtext" x="823" y="352">Job produces candidate; Attempt records research activity</text>
+  <rect x="190" y="538" width="820" height="42" rx="21" fill="#fff7ed" stroke="#fdba74"/>
+  <text class="note" x="600" y="564">Job completion ≠ Obligation closure ≠ OutcomeNode closure ≠ Result admission ≠ mathematical proof</text>
+</svg>

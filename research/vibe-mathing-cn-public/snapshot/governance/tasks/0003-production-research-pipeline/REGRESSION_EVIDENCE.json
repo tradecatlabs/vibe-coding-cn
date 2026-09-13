@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "task_type": "bugfix",
+  "mode": "executed",
+  "red_result": "regression-red-standardized.json",
+  "green_result": "regression-green-standardized.json",
+  "counterfactual": {
+    "method": "unfixed-tree-replay",
+    "result": "regression-counterfactual-standardized.json"
+  },
+  "flaky_policy": null,
+  "red_exception": null
+}

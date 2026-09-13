@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-01",
+  "sources": [
+    {
+      "id": "rw-research-skill",
+      "kind": "git",
+      "url": "https://github.com/rolandwonglonam/rw-research-skill.git",
+      "branch": "main",
+      "commit": "38c57fd4c766df61026c552e939a30f13f0644b1",
+      "license": "Apache-2.0",
+      "license_path": "LICENSE",
+      "license_sha256": "e700582f749f5069428ccc7ed60989ff4469169f86b68b75a213d2abc955780e",
+      "path": "vendor/upstream/rw-research-skill",
+      "sparse_paths": [
+        "skills/rw-research-question",
+        "skills/rw-literature-discovery",
+        "skills/rw-paper-extractor",
+        "skills/rw-evidence-map",
+        "skills/rw-research-novelty",
+        "skills/rw-search-strategy",
+        "skills/rw-citation-audit",
+        "skills/rw-claim-audit"
+      ],
+      "used_by": [
+        "math-discovery"
+      ]
+    },
+    {
+      "id": "wentor-research-plugins",
+      "kind": "git",
+      "url": "https://github.com/wentorai/research-plugins.git",
+      "branch": "main",
+      "commit": "bf44b3cd617fa94c8a1b254c5d1987142ca3d631",
+      "license": "MIT",
+      "license_path": "LICENSE",
+      "license_sha256": "e2bd618434a583076e20182db9557ce94df9f72975549e5d233d4d4c0ad079a7",
+      "path": "vendor/upstream/research-plugins",
+      "sparse_paths": [
+        "skills/domains/math",
+        "skills/literature/discovery",
+        "skills/literature/search",
+        "skills/literature/fulltext",
+        "skills/literature/metadata"
+      ],
+      "used_by": [
+        "math-discovery",
+        "math-computation",
+        "math-formalization"
+      ]
+    },
+    {
+      "id": "kdense-scientific-skills",
+      "kind": "git",
+      "url": "https://github.com/K-Dense-AI/claude-scientific-skills.git",
+      "branch": "main",
+      "commit": "5ad4aae76bc40257b914367afacc6fd686a282d5",
+      "license": "MIT",
+      "license_path": "LICENSE.md",
+      "license_sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+      "path": "vendor/upstream/claude-scientific-skills",
+      "sparse_paths": [
+        "skills/sympy",
+        "skills/literature-review",
+        "skills/paper-lookup",
+        "skills/citation-management",
+        "skills/scientific-critical-thinking",
+        "skills/hypothesis-generation"
+      ],
+      "used_by": [
+        "math-discovery",
+        "math-computation",
+        "math-proof"
+      ]
+    },
+    {
+      "id": "annals-of-mathematics-skills",
+      "kind": "local-snapshot",
+      "declared_url": "https://github.com/brycewang-stanford/annals-of-mathematics-skills.git",
+      "source_path": "vendor/snapshots/annals-of-mathematics-skills",
+      "source_repository_commit": "5be64e8dcca8d3c65a1328b7d754e6aae408f1b3",
+      "tree_sha256": "0e8238482bf3e5785fdfe7f20ffb81ebfd30bb2f19d835d4a5729b0a0afd8e50",
+      "license": "MIT",
+      "remote_status": "not-found-on-2026-08-13",
+      "files": {
+        "LICENSE": "bad075617318f23249188e9f4561c8f5fa1a3e992d1e6c95a8740750aba98540",
+        "skills/anmath-methods/SKILL.md": "f0aaa73ea09a9943532ae46d43fa3b5735f1b52c9b1da044ca5761378298278a",
+        "skills/anmath-referee-strategy/SKILL.md": "bd26215e286a45e0085a308ec456779ecb11f4a698d8c47aff885954627013a8",
+        "skills/anmath-writing-style/SKILL.md": "a1e128b903981276284009d6ef9a2a33da67fa5e398306c64f8302b5100e5039"
+      },
+      "used_by": [
+        "math-proof"
+      ]
+    },
+    {
+      "id": "leanprover-skills",
+      "kind": "git",
+      "url": "https://github.com/leanprover/skills.git",
+      "branch": "main",
+      "commit": "7d3da0282e7b724b07620e45cf212f2e05e19334",
+      "license": "Apache-2.0",
+      "license_path": "LICENSE",
+      "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "path": "vendor/upstream/leanprover-skills",
+      "sparse_paths": [
+        "skills/lean-proof",
+        "skills/lean-setup",
+        "skills/lean-mwe",
+        "skills/mathlib-build",
+        "skills/mathlib-review",
+        "scripts"
+      ],
+      "used_by": [
+        "math-formalization",
+        "math-proof"
+      ]
+    },
+    {
+      "id": "lean-eval",
+      "kind": "git",
+      "url": "https://github.com/leanprover/lean-eval.git",
+      "branch": "main",
+      "commit": "e90fdbf4246d7d2e9d3a5eefb30685376c52be34",
+      "license": "Apache-2.0",
+      "license_path": "LICENSE",
+      "license_sha256": "f29dae1e11ec0f9c3c6c29a5358c1703c936f3f2a2a16367ea3259ba9d3f71a2",
+      "path": "vendor/upstream/lean-eval",
+      "sparse_paths": [
+        ".github/workflows",
+        "EvalTools",
+        "scripts",
+        "templates",
+        "tests"
+      ],
+      "used_by": [
+        "harness-verification-control-plane"
+      ]
+    },
+    {
+      "id": "mathevidence",
+      "kind": "git",
+      "url": "https://github.com/fraware/MathEvidence.git",
+      "branch": "main",
+      "commit": "d7192f749aa54481bf979e84be1498b29abd2c55",
+      "license": "Apache-2.0",
+      "license_path": "LICENSE",
+      "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "path": "vendor/upstream/mathevidence",
+      "sparse_paths": [
+        "MathEvidence",
+        "adapters",
+        "docs",
+        "schemas",
+        "tests"
+      ],
+      "used_by": [
+        "math-formalization"
+      ]
+    },
+    {
+      "id": "itpeval",
+      "kind": "git",
+      "url": "https://github.com/lean-dojo/ITPEval.git",
+      "branch": "main",
+      "commit": "30dc5fe5f0ec7d6e6fae4b2d7eb3d56c6da7fb2a",
+      "license": "MIT",
+      "license_path": "LICENSE",
+      "license_sha256": "924d2b1c5f0380b2fcced573e47fa28f4dd7cbf91d4316f0318b0e3ad1cccd0f",
+      "path": "vendor/upstream/itpeval",
+      "sparse_paths": [
+        "eval/pipeline",
+        "itpeval"
+      ],
+      "used_by": [
+        "math-formalization"
+      ]
+    },
+    {
+      "id": "proofflow",
+      "kind": "git",
+      "url": "https://github.com/Huawei-AI4Math/ProofFlow.git",
+      "branch": "main",
+      "commit": "97f1b7be82380733fb0380973c164e40645ae9da",
+      "license": "MIT",
+      "license_path": "LICENSE",
+      "license_sha256": "4c4ecb2961b39997b08640e455464040997d92224e59cd2715d8e9f10983e7f4",
+      "path": "vendor/upstream/proofflow",
+      "sparse_paths": [
+        "proofflow",
+        "prompts"
+      ],
+      "used_by": [
+        "math-proof"
+      ]
+    },
+    {
+      "id": "atp-checkers",
+      "kind": "git",
+      "url": "https://github.com/Shashi456/atp-checkers.git",
+      "branch": "main",
+      "commit": "3e7e99d027fece04d9cd96288cdd040c366458e5",
+      "license": "MIT",
+      "license_path": "LICENSE",
+      "license_sha256": "86b648af57b9eff0bd76095b52cd3dcaad484ff436e0ef9ccca13ef0f99b8834",
+      "path": "vendor/upstream/atp-checkers",
+      "sparse_paths": [
+        "datasets/examples",
+        "runner",
+        "runner_tests",
+        "src",
+        "test"
+      ],
+      "used_by": [
+        "math-formalization"
+      ]
+    },
+    {
+      "id": "teorth-erdosproblems",
+      "kind": "git-reference",
+      "url": "https://github.com/teorth/erdosproblems.git",
+      "branch": "main",
+      "commit": "b11dbaab3bf1aefbeeabafed4748fc482a2febbe",
+      "license": "Apache-2.0",
+      "license_path": "LICENSE",
+      "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "path": "vendor/upstream/reference/teorth-erdosproblems",
+      "activation": "reference-only-no-worktree",
+      "source_ledger": "problem-library/RESEARCH_CANDIDATES.md",
+      "used_by": [
+        "candidate-problem-source-audit"
+      ]
+    },
+    {
+      "id": "formal-conjectures",
+      "kind": "git-reference",
+      "url": "https://github.com/google-deepmind/formal-conjectures.git",
+      "branch": "main",
+      "commit": "858d0e73105101fbc9f86c6d6dd86bbc6d4d789e",
+      "license": "Apache-2.0",
+      "license_path": "LICENSE",
+      "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "path": "vendor/upstream/reference/formal-conjectures",
+      "activation": "reference-only-no-worktree",
+      "source_ledger": "problem-library/RESEARCH_CANDIDATES.md",
+      "used_by": [
+        "candidate-problem-source-audit",
+        "math-formalization"
+      ]
+    }
+  ]
+}

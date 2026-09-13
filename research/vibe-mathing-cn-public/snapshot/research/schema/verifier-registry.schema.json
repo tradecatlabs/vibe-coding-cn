@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tradecatlabs.com/vibe-mathing/schema/verifier-registry.schema.json",
+  "title": "Vibe Mathing Verifier Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "principals"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "principals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "role", "trust_domain", "policy", "capabilities"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$"},
+          "role": {"enum": ["generator", "verifier"]},
+          "trust_domain": {"type": "string", "minLength": 1},
+          "policy": {"type": ["string", "null"]},
+          "capabilities": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    }
+  }
+}

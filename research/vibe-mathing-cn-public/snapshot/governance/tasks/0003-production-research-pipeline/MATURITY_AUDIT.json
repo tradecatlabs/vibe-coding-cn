@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "scope": "single-host-single-agent-trusted-research-loop",
+  "audited_at": "2026-08-13T16:44:22Z",
+  "score": 100,
+  "maximum": 100,
+  "readiness": "100/100",
+  "status": "PASS",
+  "capabilities": [
+    {
+      "id": "trusted-evidence",
+      "weight": 10,
+      "status": "PASS",
+      "argv": [
+        "python3",
+        "scripts/test_trusted_evidence.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.09,
+      "output_tail": "可信证据回归测试通过：伪证据未进入解库。\n"
+    },
+    {
+      "id": "evidence-attacks",
+      "weight": 10,
+      "status": "PASS",
+      "argv": [
+        "python3",
+        "scripts/test_evidence_attacks.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.104,
+      "output_tail": "可信证据攻击矩阵通过：路径、摘要、symlink、主体与能力伪造均 fail-closed。\n"
+    },
+    {
+      "id": "research-space",
+      "weight": 10,
+      "status": "PASS",
+      "argv": [
+        "python3",
+        "scripts/test_research_spaces.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.193,
+      "output_tail": "研究空间晋升规则回归测试通过：只有真实、独立、完整且未失效的证据进入解库。\n"
+    },
+    {
+      "id": "atomic-store",
+      "weight": 15,
+      "status": "PASS",
+      "argv": [
+        "python3",
+        "scripts/test_research_store.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.202,
+      "output_tail": "研究存储测试通过：幂等、并发唯一写入与 WAL 崩溃恢复均成立。\n"
+    },
+    {
+      "id": "bounded-runtime",
+      "weight": 15,
+      "status": "PASS",
+      "argv": [
+        "python3",
+        "scripts/test_vibe_mathing_runtime.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 1.141,
+      "output_tail": "运行时测试通过：状态、转换、超时和输出预算均 fail-closed。\n"
+    },
+    {
+      "id": "sympy-e2e",
+      "weight": 15,
+      "status": "PASS",
+      "argv": [
+        "python3",
+        "scripts/test_vibe_mathing_pipeline.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 4.24,
+      "output_tail": "SymPy 垂直闭环测试通过：CLI 恢复、幂等、准入与 append-only 失效均成立。\n"
+    },
+    {
+      "id": "lean-e2e",
+      "weight": 15,
+      "status": "PASS",
+      "argv": [
+        "python3",
+        "scripts/test_lean_pipeline.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 9.538,
+      "output_tail": "{\"result_id\": \"result:lean-fixture\", \"capabilities\": [\"kernel_check\", \"axiom_escape_audit\", \"statement_faithfulness\"]}\n"
+    },
+    {
+      "id": "portable-quality-gate",
+      "weight": 10,
+      "status": "PASS",
+      "argv": [
+        "make",
+        "check"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 7.601,
+      "output_tail": "bash scripts/check.sh\n项目校验通过：6 个 active skills\n{\n  \"status\": \"PASS\",\n  \"sympy\": \"1.14.0\",\n  \"identity\": \"1\",\n  \"gaussian_integral\": \"sqrt(pi)\",\n  \"claim_level\": \"symbolically-checked\",\n  \"kernel_checked\": false\n}\n可移植问题库校验通过：6012 条来源记录。\n可移植文献库校验通过：Work 1；Edition 1；File 1；Relation 2。\n研究空间校验通过：Problem 0；Attempt 0；Result 0；Solution 0。\n可信证据回归测试通过：伪证据未进入解库。\n可信证据攻击矩阵通过：路径、摘要、symlink、主体与能力伪造均 fail-closed。\n研究空间晋升规则回归测试通过：只有真实、独立、完整且未失效的证据进入解库。\n研究存储测试通过：幂等、并发唯一写入与 WAL 崩溃恢复均成立。\n运行时测试通过：状态、转换、超时和输出预算均 fail-closed。\nSymPy 垂直闭环测试通过：CLI 恢复、幂等、准入与 append-only 失效均成立。\n# Governance Package Validation\n\n- `decision`: PASS\n- `root`: <project-root>/governance\n- `issue_count`: 0\n\n## Issues\n- none\n# Governance Health Report\n\n- `decision`: PASS\n- `root`: <project-root>/governance\n- `markdown_count`: 87\n- `placeholder_count`: 0\n- `stale_count`: 0\n- `open_agent_feedback_count`: 0\n- `gate_auto_ready`: 3 / 3\n- `document_driven_operating_model`: enabled / complete\n\n## Record Counts\n\n- `adr`: 1\n- `review`: 0\n- `postmortem`: 0\n- `lesson`: 0\n- `workorder`: 0\n- `debt`: 0\n- `gate`: 3\n- `qa`: 0\n- `agent-feedback`: 0\n- `baseline`: 0\n- `control`: 0\n- `exception`: 0\n- `risk`: 0\n- `conformance`: 0\n- `audit-export`: 0\n- `release`: 0\n\n## Placeholder Examples\n\n- none\n\n## Stale Examples\n\n- none\n\n## Document-Driven Operating Model\n\n- existing:\n  - `context/PROJECT_OPERATING_MODEL.md`\n  - `processes/DOCUMENT_DRIVEN_DEVELOPMENT.md`\n  - `context/TOOLCHAIN_MODEL.md`\n  - `context/project_operating_model_contract.v1.yaml`\n- missing:\n  - none\n\n## Next Actions\n\n- 治理包健康，继续按事件增量维护。\n"
+    }
+  ],
+  "excluded": [
+    "distributed high availability",
+    "external reviewer attestation issuance",
+    "guaranteed solution of arbitrary open problems"
+  ]
+}

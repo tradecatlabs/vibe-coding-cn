@@ -1,0 +1,78 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "@id": "https://github.com/vibemathing/vibe-mathing-cn-public#software",
+  "name": "vibe-mathing-cn",
+  "alternateName": [
+    "可信 AI 数学研究与验证工作台",
+    "trusted AI mathematics research and verification workbench",
+    "Vibe Mathing 中文"
+  ],
+  "description": "A Chinese-first trusted AI mathematics research and verification workbench that separates untrusted candidate generation from trusted verification through ProblemContract, Attempt, Result, evidence capabilities, and derived views.",
+  "url": "https://github.com/vibemathing/vibe-mathing-cn-public",
+  "codeRepository": "https://github.com/vibemathing/vibe-mathing-cn-public",
+  "issueTracker": "https://github.com/vibemathing/vibe-mathing-cn-public/issues",
+  "license": "https://spdx.org/licenses/MIT.html",
+  "isAccessibleForFree": true,
+  "programmingLanguage": ["Python", "Lean", "Shell", "Markdown", "JSON Schema"],
+  "applicationCategory": "Mathematics research software",
+  "inLanguage": ["zh-CN", "en"],
+  "keywords": [
+    "AI mathematics",
+    "trusted verification",
+    "mathematical research workbench",
+    "ProblemContract",
+    "ResearchBundle",
+    "formal methods",
+    "Lean 4",
+    "Point-Line-Face-Body metamodel",
+    "PLFB",
+    "PWTSJ",
+    "OSPS",
+    "research lifecycle",
+    "workflow orchestration",
+    "source freshness and revalidation",
+    "evidence ledger"
+  ],
+  "about": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Point → Line → Face → Body",
+      "description": "The single conceptual metamodel root; PWTSJ belongs to Face F05 and OSPS belongs to Face F04."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Project → Workflow → Task → Step → Job",
+      "description": "The PWTSJ execution architecture language inside Face F05; Job is one bounded execution of a Step."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "ProblemContract → Attempt → Result",
+      "description": "The mathematical fact chain used to define, record, and admit scoped research claims."
+    }
+  ],
+  "subjectOf": [
+    {
+      "@type": "DigitalDocument",
+      "name": "GEO guide",
+      "url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/GEO.md"
+    },
+    {
+      "@type": "DigitalDocument",
+      "name": "Point-Line-Face-Body metamodel",
+      "url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/governance/standards/POINT-LINE-FACE-BODY-METAMODEL-v0.1.md"
+    },
+    {
+      "@type": "DigitalDocument",
+      "name": "Research lifecycle model",
+      "url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/governance/standards/RESEARCH-LIFECYCLE-MODEL-v0.1.md"
+    },
+    {
+      "@type": "DigitalDocument",
+      "name": "AI retrieval contract",
+      "url": "https://github.com/vibemathing/vibe-mathing-cn-public/blob/main/assets/ai-citation/retrieval-contract.v1.json"
+    }
+  ],
+  "dateModified": "2026-09-09",
+  "comment": "Publication metadata for entity identification and citation; not mathematical evidence."
+}

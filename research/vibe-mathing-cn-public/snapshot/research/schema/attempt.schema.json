@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tradecatlabs.com/vibe-mathing/schema/attempt.schema.json",
+  "title": "Vibe Mathing Attempt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "attempt_id",
+    "problem_id",
+    "generator",
+    "objective",
+    "method",
+    "lifecycle",
+    "started_at",
+    "completed_at",
+    "inputs",
+    "claims",
+    "artifacts"
+  ],
+  "properties": {
+    "attempt_id": {"type": "string", "pattern": "^attempt:[a-z0-9][a-z0-9.-]*$"},
+    "problem_id": {"type": "string", "pattern": "^problem:[a-z0-9][a-z0-9.-]*$"},
+    "generator": {"type": "string", "minLength": 1},
+    "objective": {"type": "string", "minLength": 1},
+    "method": {"enum": ["discovery", "derivation", "computation", "proof", "formalization"]},
+    "lifecycle": {"enum": ["planned", "running", "completed", "blocked", "failed"]},
+    "started_at": {"type": "string", "format": "date-time"},
+    "completed_at": {"type": ["string", "null"], "format": "date-time"},
+    "inputs": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "claims": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

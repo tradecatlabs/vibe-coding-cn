@@ -1,0 +1,39 @@
+# 供应链仓库是可重建缓存；版本与来源由 lockfile 固定。
+vendor/upstream/
+
+# 外部问题目录数据是可重建本地缓存；公开 Git 只发布抓取器、schema 与 canonical Problem。
+problem-library/raw/
+problem-library/derived/
+problem-library/staging/
+problem-library/records/problems.jsonl
+problem-library/manifest.json
+problem-library/indexes/
+
+# 电子书二进制馆藏不进入 Git；书目、schema 与关系目录需要版本化。
+literature/files/
+
+# 缺少明确再分发许可的本机 skill 来源只用于本地审计。
+vendor/snapshots/local-research-skills/
+
+# 数学计算与文档构建产物不得进入项目真相源。
+__pycache__/
+*.py[cod]
+.lake/
+research/.store.lock
+research/.store-transaction.json
+research/.store-transaction.json.tmp
+research/runs/
+research/artifacts/outputs/
+research/records/failed-routes.jsonl
+.venv/
+.ipynb_checkpoints/
+build/
+dist/
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.pdf
