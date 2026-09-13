@@ -22,7 +22,7 @@
 
 ## 约束
 
-- 修改 `CODEOWNERS` 会影响 GitHub 的 owner review 触发范围，必须同步检查关键路径是否仍有明确 owner。
+- 修改 `CODEOWNERS` 会影响 GitHub 的 owner review 触发范围，必须同步检查关键路径是否仍有明确 owner；当前维护者为 `@tukuaiai` 和 `@tradecatlabs`。
 - 修改 `workflows/` 前必须确认对应本地命令或验证方式。
 - 修改 Issue / PR 模板时保持字段简洁、可执行、可审查。
 - 修改安全政策时同步公开联系邮箱口径。
@@ -30,7 +30,7 @@
 
 ## 职责边界
 
-- `CODEOWNERS` 是路径级审查入口，不替代分支保护、必需检查和人工维护者判断。
+- `CODEOWNERS` 是路径级审查入口，不替代分支保护、必需检查和人工维护者判断；PR 作者不能用自己的账号完成自审。
 - `lint_config.json` 只定义 Markdown lint 规则，不承载业务文档标准。
 - `workflows/` 只放 GitHub Actions 编排；本地可复现命令应优先放在 `Makefile` 或 `scripts/`。
 - Issue / PR 模板只收集协作上下文，不承载长期项目知识；长期规则应回到 `AGENTS.md`、`docs/` 或治理文档。

@@ -673,7 +673,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 ### 配置与 CI
 
-- 路径级 owner 评审基线：`.github/CODEOWNERS`
+- 路径级 owner 评审基线：`.github/CODEOWNERS`（当前维护者：`@tukuaiai`、`@tradecatlabs`）
 - Markdown lint 配置：`.github/lint_config.json`
 - Markdown lint 版本：`Makefile` 中固定为 `markdownlint-cli@0.48.0`
 - 外部链接检查配置：`.lychee.toml`，统一管理外链检查的超时、重试、并发上限和排除项
