@@ -31,7 +31,7 @@
 <!-- 资源直达：核心认知 -->
 <p>
   <a href="#dao-fa-shu-qi"><img src="https://img.shields.io/badge/☯️_道法术器-底层框架-purple?style=for-the-badge" alt="道法术器"></a>
-  <a href="#ai-five-propositions"><img src="https://img.shields.io/badge/🧠_五条命题-AI底层认知-crimson?style=for-the-badge" alt="五条核心命题"></a>
+  <a href="#ai-six-propositions"><img src="https://img.shields.io/badge/🧠_六条命题-AI底层认知-crimson?style=for-the-badge" alt="六条核心命题"></a>
   <a href="./docs/getting-started/vibe-coding-experience.md"><img src="https://img.shields.io/badge/💡_Vibe_Coding-经验必读-red?style=for-the-badge" alt="Vibe Coding 经验"></a>
   <a href="./docs/concepts/glue-coding.md"><img src="https://img.shields.io/badge/🧩_拼好码-银弹-darkred?style=for-the-badge" alt="拼好码，银弹"></a>
   <a href="./docs/concepts/keyword-system.md"><img src="https://img.shields.io/badge/🔑_关键词-概念入口-gold?style=for-the-badge" alt="关键词系统"></a>
@@ -50,7 +50,7 @@
 </p>
 
 [☯️ 道法术器](#dao-fa-shu-qi)
-[🧠 五条核心命题](#ai-five-propositions)
+[🧠 六条核心命题](#ai-six-propositions)
 [🧩 拼好码](docs/concepts/glue-coding.md)
 [🔑 关键词系统](docs/concepts/keyword-system.md)
 [🔬 研究域](research/README.md)
@@ -69,13 +69,31 @@
 
 </div>
 
+<a id="ai-six-propositions"></a>
 <a id="ai-five-propositions"></a>
 <a id="ai-three-propositions"></a>
 
 <details open>
-<summary><strong>🧠 五条核心命题</strong>（点击展开/收起）</summary>
+<summary><strong>🧠 六条核心命题</strong>（点击展开/收起）</summary>
 
-## 🧠 五条核心命题
+## 🧠 六条核心命题
+
+### 零、目标驱动的可验证状态转移闭环
+
+> **Vibe Coding 是一种目标驱动、受约束、可验证的状态转移闭环：在人定义目标、边界和验收标准的前提下，借助 AI 和工具，把系统从当前状态持续推进到目标状态，并通过证据确认结果，必要时回滚迭代。**
+
+```text
+当前状态 S
+→ 目标状态 G
+→ 状态差距 Δ
+→ 选择行动/工具
+→ 执行
+→ 验证
+→ 固化或回滚
+→ 下一轮状态
+```
+
+零号命题与后续五条命题共同构成六条核心命题；后续五条命题分别解释 AI 在这个闭环中的能力、边界、演化、审查和编排。
 
 ### 一
 
@@ -149,7 +167,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 | [docs](docs/README.md) | 知识库总入口，先从这里选择学习路线 |
 | [getting-started](docs/getting-started/README.md) | 新手启动入口，配置网络、Codex CLI、开发环境和 Git 闭环 |
 | [workflow](docs/workflow/README.md) | 项目执行入口，把需求推进成计划、修改、门禁、提交和复盘 |
-| [concepts](docs/concepts/README.md) | 概念入口，理解问题求解、拼好码、系统构建和关键词系统 |
+| [concepts](docs/concepts/README.md) | 概念入口，理解问题求解、状态转移闭环、拼好码、系统构建和关键词系统 |
 | [references](docs/references/README.md) | 工程实践入口，查技术栈、质量门禁、模板和常见坑 |
 | [philosophy](docs/philosophy/README.md) | 思维入口，补思维模型、编程之道和软件工程常识 |
 | [research](research/README.md) | 研究入口，记录新技术、优秀 repo 和工程趋势判断 |
@@ -284,8 +302,9 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 0. [从零开始完整入门](docs/getting-started/learning-map.md) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
 1. [Vibe Coding 经验](docs/getting-started/vibe-coding-experience.md) - 通用语言能力、人机分工、机器门禁和入门铁律
 2. [问题求解](docs/concepts/problem-solving.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
-3. [拼好码](docs/concepts/glue-coding.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
-4. [工程实践](docs/references/quality-gates-and-pitfalls.md) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
+3. [Vibe Coding 状态转移闭环](docs/concepts/vibe-coding-state-transition.md) - 用目标、约束、行动、证据和版本统一理解 Vibe Coding
+4. [拼好码](docs/concepts/glue-coding.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
+5. [工程实践](docs/references/quality-gates-and-pitfalls.md) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
 
 </details>
 
@@ -553,6 +572,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 *   [**Codex 配置一键安装**](tools/config/.codex/README.md): 安全默认配置、高权限配置、自动备份和一键恢复。
 *   [**开发流程**](docs/workflow/development-process.md): 默认任务推进顺序、质量门禁、版本控制和交付闭环。
 *   [**问题求解**](docs/concepts/problem-solving.md): 用目标、现状、差距、标准、约束、对象和路径定义问题。
+*   [**Vibe Coding 状态转移闭环**](docs/concepts/vibe-coding-state-transition.md): 用目标、约束、行动、证据和版本统一理解 Vibe Coding。
 *   [**拼好码（胶水编程的超集）**](docs/concepts/glue-coding.md): 复用成熟能力，用胶水代码连接、编排、适配业务流程。
 *   [**系统构建方法**](docs/concepts/system-building.md): 自顶向下、自底向上与分而治之的组合使用。
 *   [**开发范式演进**](docs/concepts/development-paradigms.md): 软件工程组织方式与 AI 编程范式的演进。

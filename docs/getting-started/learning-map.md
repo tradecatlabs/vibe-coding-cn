@@ -16,8 +16,8 @@
 
 | 路线 | 适合谁 | 目标 | 首选入口 |
 |:---|:---|:---|:---|
-| 零基础路线 | 不会编程或刚开始 | 跑通从想法到项目的最小闭环 | [问题求解](../concepts/problem-solving.md) |
-| 开发者路线 | 已会写代码 | 建立 AI 结对编程工作流 | [Vibe Coding 经验](vibe-coding-experience.md) |
+| 零基础路线 | 不会编程或刚开始 | 跑通从想法到项目的最小闭环 | [问题求解](../concepts/problem-solving.md) / [状态转移闭环](../concepts/vibe-coding-state-transition.md) |
+| 开发者路线 | 已会写代码 | 建立 AI 结对编程工作流 | [Vibe Coding 经验](vibe-coding-experience.md) / [状态转移闭环](../concepts/vibe-coding-state-transition.md) |
 | Prompt 路线 | 想提升提问质量 | 把需求表达成可执行指令 | [提示词库](../../prompts/README.md) |
 | Skill 路线 | 想沉淀复用能力 | 把高频任务做成可重复调用的技能 | [Skills 技能大全](../../skills/README.md) |
 | 质量门禁路线 | 担心 AI 乱写代码 | 用测试、CI、schema、清单约束 AI 输出 | [工程实践](../references/project-architecture-template.md) |
@@ -29,13 +29,15 @@
 
 1. [问题求解](../concepts/problem-solving.md)
    先学会把问题说清楚：目标、现状、差距、标准、约束、对象、路径。
-2. [网络环境配置](network-environment.md)
+2. [Vibe Coding 状态转移闭环](../concepts/vibe-coding-state-transition.md)
+   再把目标、约束、行动、证据和版本串成一轮可验证、可回滚的状态转移。
+3. [网络环境配置](network-environment.md)
    先解决访问 OpenAI、GitHub、文档和依赖源的问题。
-3. [CLI 配置](cli-setup.md)
+4. [CLI 配置](cli-setup.md)
    配置并登录 Codex CLI，让本地 Agent 能在终端里执行工程动作。
-4. [开发环境搭建](development-environment.md)
+5. [开发环境搭建](development-environment.md)
    优先交给 Codex Agent 主动检查和配置 Git、Node.js、Python、编辑器、项目依赖与测试命令。
-5. [Vibe Coding 经验](vibe-coding-experience.md)
+6. [Vibe Coding 经验](vibe-coding-experience.md)
    学会人机分工、门禁、复盘和用 AI 审 AI。
 
 完成标准：
@@ -50,11 +52,13 @@
 
 目标：把 AI 从“临时助手”变成稳定的工程协作者。
 
-1. [Vibe Coding 经验](vibe-coding-experience.md)
-   先建立人机分工和质量意识。
-2. [拼好码](../concepts/glue-coding.md)
+1. [Vibe Coding 状态转移闭环](../concepts/vibe-coding-state-transition.md)
+   先建立目标、约束、行动、证据和版本组成的总模型。
+2. [Vibe Coding 经验](vibe-coding-experience.md)
+   再建立人机分工和质量意识。
+3. [拼好码](../concepts/glue-coding.md)
    优先复用成熟能力，把自研代码限制在连接、编排、适配和业务逻辑。
-3. [工程实践](../references/project-architecture-template.md)
+4. [工程实践](../references/project-architecture-template.md)
    在任务开始前写清楚目标、边界、禁止项、验收标准和门禁，并用底层程序逻辑检查项约束实现质量。
 
 完成标准：
@@ -133,6 +137,7 @@
 
 ```text
 问题求解
+  -> Vibe Coding 状态转移闭环
   -> 网络环境配置
   -> Codex / ChatGPT 订阅与登录准备
   -> Codex CLI 配置

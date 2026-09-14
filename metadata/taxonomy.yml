@@ -37,6 +37,7 @@ reading_paths:
     - docs/getting-started/vibe-coding-experience.md
     - docs/getting-started/learning-map.md
     - docs/concepts/problem-solving.md
+    - docs/concepts/vibe-coding-state-transition.md
     - docs/concepts/glue-coding.md
     - docs/references/project-architecture-template.md
     - docs/references/quality-gates-and-pitfalls.md
@@ -44,6 +45,7 @@ reading_paths:
     title: 开发者路径
     documents:
     - docs/concepts/glue-coding.md
+    - docs/concepts/vibe-coding-state-transition.md
     - docs/concepts/keyword-system.md
     - docs/concepts/system-building.md
     - docs/references/technology-stack.md
@@ -96,6 +98,9 @@ documents:
   - path: docs/concepts/problem-solving.md
     title: 问题求解
     role: 目标、现状、差距、标准、约束、对象与路径
+  - path: docs/concepts/vibe-coding-state-transition.md
+    title: Vibe Coding 状态转移闭环
+    role: 用目标、约束、行动、证据和版本统一理解 Vibe Coding
   - path: docs/concepts/glue-coding.md
     title: 拼好码
     role: 复用成熟能力、胶水原则、能力编排与业务交付
