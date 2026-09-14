@@ -158,7 +158,7 @@ Vibe Coding 没有一套全行业统一的独立分类。可以使用成熟框�
 - [NASA：Product Realization](https://www.nasa.gov/reference/5-0-product-realization/)
 - [NIST：SP 800-218 Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final)
 - [DORA：Continuous Delivery](https://dora.dev/capabilities/continuous-delivery/)
-- [ASQ：PDCA Cycle](https://asq.org/quality-resources/pdca-cycle)
+- [Deming Institute：PDSA Cycle](https://deming.org/explore/pdsa/)
 
 OpenSSF 对“纯 Vibe Coding”的定义强调：不审查、不理解 AI 生成的代码，只根据结果和后续提示词继续推进。本项目采用的是更严格的工程化定义：人必须负责目标、边界和验收，AI 输出必须经过验证。
 
