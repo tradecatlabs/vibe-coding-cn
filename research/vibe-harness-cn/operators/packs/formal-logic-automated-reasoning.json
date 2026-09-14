@@ -3,12 +3,12 @@
   "kind": "OperatorPack",
   "metadata": {
     "id": "psoa.pack.formal-logic-automated-reasoning",
-    "version": "1.1.0",
+    "version": "1.0.0",
     "domain": "formal-logic-automated-reasoning",
     "title": "形式逻辑与自动推理",
     "summary": "把命题定义、可满足性、证明分解和内核核验转为可追溯推理程序。",
-    "source_entry_count": 8,
-    "derived_entry_count": 2
+    "source_entry_count": 5,
+    "derived_entry_count": 1
   },
   "entries": [
     {
@@ -200,7 +200,7 @@
     },
     {
       "id": "psoa.formal-logic-automated-reasoning.proof-state-subgoal-decomposition",
-      "version": "1.1.0",
+      "version": "1.0.0",
       "kind": "OperatorSpec",
       "origin": "source",
       "source_key": "formal-logic-automated-reasoning.proof-state-subgoal-decomposition",
@@ -208,13 +208,13 @@
       "name_zh": "证明状态子目标分解",
       "domain": "formal-logic-automated-reasoning",
       "status": "experimental",
-      "summary": "把一个证明目标拆成带稳定身份、依赖和状态的义务 DAG，并且只在全部 required 叶子有关闭证据时闭合父目标。",
-      "core_question": "当前目标依赖哪些更小义务，它们的身份、状态和闭合规则是什么？",
-      "operation": "冻结目标 → 分配 obligation ID → 生成依赖 DAG → 标记 imported/provisional/open/closed → 逐叶验证 → 自底向上闭合",
-      "agent_use": "让长推理暴露可恢复的中间义务、依赖和状态，不依赖 Agent 记忆或最终结论自报。",
+      "summary": "把一个证明目标按假设、构造、归纳或重写拆成可分别检查的子目标。",
+      "core_question": "当前目标需要哪些更小的目标和局部假设？",
+      "operation": "读取目标状态 → 选择分解规则 → 生成子目标 → 逐个关闭并保留依赖关系",
+      "agent_use": "让长推理暴露中间义务，而不是只给最终结论。",
       "applicability": {
         "when": [
-          "目标能由合取、蕴涵、量词、结构递归、等式重写或已知依赖分解。"
+          "目标能由合取、蕴涵、量词、结构递归或等式重写分解。"
         ],
         "not_when": [
           "没有明确目标状态或分解会丢失依赖。"
@@ -232,25 +232,22 @@
       },
       "semantics": {
         "preconditions": [
-          "有稳定目标身份、局部上下文、允许的推理规则和闭合判据。"
+          "有目标、局部上下文和允许的推理规则。"
         ],
         "inputs": [
           "goal",
           "context",
-          "decomposition_rules",
-          "dependency_rules",
-          "closure_policy"
+          "decomposition_rules"
         ],
         "procedure": [
-          "冻结初始目标和上下文，为根义务分配稳定 ID",
-          "按结构选择 intro/apply/cases/induction/rewrite 等分解，并为每个子义务分配稳定 ID",
-          "记录父子依赖、来源、剩余假设和 imported/provisional/open/closed 状态",
-          "只处理前置依赖已满足的叶子，并给每次状态变化绑定证据",
-          "只有全部 required 子义务按 closure policy 关闭才自底向上闭合父义务"
+          "记录初始目标和上下文",
+          "按结构选择 intro/apply/cases/induction/rewrite 等分解",
+          "为每个子目标记录来源和剩余假设",
+          "只有所有子目标完成才声明总目标完成"
         ],
         "effect": {
           "state": "proof_subgoals_expanded",
-          "statement": "形成可恢复、可审计且带闭合规则的义务 DAG。"
+          "statement": "形成可追踪的子目标树和依赖上下文。"
         },
         "outcomes": [
           "succeeded",
@@ -259,16 +256,14 @@
           "failed"
         ],
         "evidence_required": [
-          "目标身份、分解规则、稳定 obligation ID、依赖 DAG、状态历史、上下文和关闭证据。"
+          "初始目标、分解规则、子目标树、上下文和关闭证据。"
         ],
         "failure_modes": [
           "分解规则不保持目标等价。",
-          "遗漏一个 required 子义务仍宣布完成。",
-          "义务身份或依赖变化后继续复用旧关闭证据。",
-          "把 provisional/imported 状态误写为已验证 closed。"
+          "遗漏一个子目标仍宣布完成。"
         ],
         "recovery": [
-          "回退到最近有证据的义务状态，失效受影响子图并改用保守分解。"
+          "回退到最近证明状态并改用保守分解。"
         ]
       }
     },
@@ -339,134 +334,6 @@
           "把 tactic 成功输出当成内核证据。",
           "隐藏公理或环境差异。"
         ]
-      }
-    },
-    {
-      "id": "psoa.formal-logic-automated-reasoning.statement-identity-audit",
-      "version": "1.0.0",
-      "kind": "OperatorSpec",
-      "origin": "source",
-      "source_key": "formal-logic-automated-reasoning.statement-identity-audit",
-      "name": "Statement Identity Audit",
-      "name_zh": "陈述身份审计",
-      "domain": "formal-logic-automated-reasoning",
-      "status": "experimental",
-      "summary": "在证明或验证前后比对定义域、量词、假设、目标和规范化摘要，确认候选处理的仍是同一个陈述版本。",
-      "core_question": "被验证的陈述与原始合同在语义身份上是否相同？",
-      "operation": "冻结陈述 → 规范化结构 → 比对域/量词/假设/目标 → 追踪允许改写 → 判定身份相同或漂移",
-      "agent_use": "阻止 Agent 通过改变量词、定义域、假设或目标来让证明变容易。",
-      "applicability": {
-        "when": ["声明会被形式化、重写、迁移到证明助手或跨版本验证。"],
-        "not_when": ["没有稳定原始陈述或没有可比较的候选陈述。"]
-      },
-      "source_refs": ["ref:lean-language-reference", "ref:swebok", "ref:w3c-prov"],
-      "governance": {"risk_level": "medium", "permission_decision": "harness_policy", "outcome_decision": "verifier", "sensitive_values": "reference_only"},
-      "semantics": {
-        "preconditions": ["原始陈述、候选陈述、允许的等价改写和版本身份已固定。"],
-        "inputs": ["source_statement", "candidate_statement", "definitions", "allowed_rewrites", "version_identity"],
-        "procedure": ["分别展开定义域、绑定变量、量词顺序、假设和目标", "生成规范化结构与摘要，但保留不能安全规范化的语义差异", "逐项比对并为每个差异标注等价改写、受控版本变更或未授权漂移", "只有所有差异可解释且版本链完整时判定身份保持"],
-        "effect": {"state": "statement_identity_adjudicated", "statement": "形成陈述身份保持、版本变更或语义漂移的逐项裁决。"},
-        "outcomes": ["identical", "versioned_change", "drifted", "inconclusive", "blocked"],
-        "evidence_required": ["原/候选陈述、规范化表示、域/量词/假设/目标差异、允许改写和版本链。"],
-        "failure_modes": ["只比较文件名或文本哈希而忽略语义结构。", "规范化过程本身删除了关键前提。", "把有意变更当作同一陈述。"],
-        "recovery": ["补齐定义和版本映射，或把候选绑定到新的显式声明版本。"]
-      }
-    },
-    {
-      "id": "psoa.formal-logic-automated-reasoning.exact-strength-audit",
-      "version": "1.0.0",
-      "kind": "OperatorSpec",
-      "origin": "source",
-      "source_key": "formal-logic-automated-reasoning.exact-strength-audit",
-      "name": "Exact Strength Audit",
-      "name_zh": "精确强度审计",
-      "domain": "formal-logic-automated-reasoning",
-      "status": "experimental",
-      "summary": "检查候选结果是否通过增加假设、缩小定义域、改变量词或弱化结论而低于原始证明义务。",
-      "core_question": "候选结论真正证明了原命题的全部强度，还是只证明了更容易的版本？",
-      "operation": "分解证明义务 → 比较前提强弱与结论蕴含 → 检查量词/定义域 → 生成强度差异和缺口",
-      "agent_use": "让 Agent 不能用‘相关定理’、特殊情形或附加条件冒充精确完成。",
-      "applicability": {
-        "when": ["候选定理、实现或实验结果声称满足一个预先冻结的义务。"],
-        "not_when": ["任务明确只要求探索弱化版本，且没有完成原义务的声明。"]
-      },
-      "source_refs": ["ref:lean-language-reference", "ref:lean-tactic-proofs", "ref:swebok"],
-      "governance": {"risk_level": "medium", "permission_decision": "harness_policy", "outcome_decision": "verifier", "sensitive_values": "reference_only"},
-      "semantics": {
-        "preconditions": ["原始义务和候选结论都已形式化到可比较的定义、量词、前提和结论。"],
-        "inputs": ["required_claim", "candidate_claim", "definitions", "implication_checks", "allowed_variance"],
-        "procedure": ["列出原始与候选的定义域、量词、前提和结论", "检查候选是否增加前提、缩小对象范围或减少必须成立的情况", "检查候选结论是否蕴含原始目标；无法机械判定时明确留下人工义务", "输出 exact、stronger、weaker、incomparable 或 inconclusive 及最小差异"],
-        "effect": {"state": "claim_strength_adjudicated", "statement": "形成候选对原始义务的精确强度关系和未满足缺口。"},
-        "outcomes": ["exact", "stronger", "weaker", "incomparable", "inconclusive"],
-        "evidence_required": ["前提/结论对照、量词和定义域差异、蕴含检查、允许偏差及未决义务。"],
-        "failure_modes": ["只因名称相同就假定强度相同。", "忽略候选新增的隐含假设。", "把更强结论在更窄定义域上误判为整体更强。"],
-        "recovery": ["恢复原始定义域和假设，或将弱化结果明确登记为部分结果而非关闭原义务。"]
-      }
-    },
-    {
-      "id": "psoa.formal-logic-automated-reasoning.placeholder-reachability-audit",
-      "version": "1.0.0",
-      "kind": "OperatorSpec",
-      "origin": "source",
-      "source_key": "formal-logic-automated-reasoning.placeholder-reachability-audit",
-      "name": "Placeholder Reachability Audit",
-      "name_zh": "占位符可达性审计",
-      "domain": "formal-logic-automated-reasoning",
-      "status": "experimental",
-      "summary": "定位未完成证明、未声明公理或测试占位符，并沿依赖图判断它们是否从目标声明或正式 artifact 可达。",
-      "core_question": "发现的占位符会不会进入目标结果的真实依赖闭包？",
-      "operation": "扫描占位符 → 分类 artifact 角色 → 构建依赖可达性 → 检查目标闭包 → 分别报告污染与非污染项",
-      "agent_use": "避免看到任意占位符就误拒绝整个仓库，也避免只看总数就漏掉目标路径中的单个占位符。",
-      "applicability": {
-        "when": ["源码、证明、配置或数据中允许夹具/草稿与正式产物共存。"],
-        "not_when": ["目标只有单个不可分 artifact，且任何占位符都按契约直接无效。"]
-      },
-      "source_refs": ["ref:lean-language-reference", "ref:lean-proof-states", "ref:w3c-prov"],
-      "governance": {"risk_level": "medium", "permission_decision": "harness_policy", "outcome_decision": "verifier", "sensitive_values": "reference_only"},
-      "semantics": {
-        "preconditions": ["目标 artifact、正式/夹具/草稿角色和可解析依赖边已声明。"],
-        "inputs": ["target_artifacts", "artifact_roles", "placeholder_patterns", "dependency_graph", "allowlist_policy"],
-        "procedure": ["用语言/格式感知规则定位候选占位符并保存精确位置", "把命中项分类为正式源、依赖、比较器/夹具、测试、注释或未知", "从目标 artifact 沿导入、引用、生成和派生边计算可达闭包", "对可达命中逐项失败或升级，对不可达命中保留说明但不冒充目标污染"],
-        "effect": {"state": "placeholder_reachability_adjudicated", "statement": "形成目标依赖闭包内外的占位符清单和污染裁决。"},
-        "outcomes": ["clean_target_closure", "reachable_placeholder", "inconclusive", "blocked", "not_applicable"],
-        "evidence_required": ["扫描规则、精确命中、artifact 角色、依赖图、目标可达闭包和 allowlist 理由。"],
-        "failure_modes": ["把注释或测试夹具命中直接算作正式结果失败。", "只看全仓数量而不计算目标可达性。", "allowlist 没有角色和依赖证据。"],
-        "recovery": ["补齐依赖解析和 artifact 角色；无法判定可达性时保持 inconclusive。"]
-      }
-    },
-    {
-      "id": "psoa.formal-logic-automated-reasoning.machine-semantic-dual-audit",
-      "version": "1.0.0",
-      "kind": "MethodSpec",
-      "origin": "derived",
-      "name": "Machine Semantic Dual Audit",
-      "name_zh": "机器—语义双审计",
-      "domain": "formal-logic-automated-reasoning",
-      "status": "experimental",
-      "summary": "把机器可核验的陈述、依赖和证明证据，与人类负责的题意、来源和精确强度审查组合为不可互相替代的双通道验收。",
-      "core_question": "形式对象是否机械闭合，并且它是否仍然表达了人类原本要解决的问题？",
-      "operation": "Identity → Strength → Placeholder reachability → Kernel capability → Human semantic review → Capability admission",
-      "agent_use": "防止 kernel 通过被误写为题意正确，也防止人类觉得合理被误写为形式闭合。",
-      "applicability": {
-        "when": ["高价值形式证明、规格或可执行契约同时需要机械正确性与语义忠实性。"],
-        "not_when": ["任务没有形式 artifact，或明确只做未验收探索。"]
-      },
-      "source_refs": ["ref:lean-language-reference", "ref:lean-tactic-proofs", "ref:nist-tevv", "ref:w3c-prov"],
-      "governance": {"risk_level": "medium", "permission_decision": "harness_policy", "outcome_decision": "verifier", "sensitive_values": "reference_only"},
-      "semantics": {
-        "preconditions": ["原始声明、候选 artifact、依赖、机器检查器、语义 reviewer 和 required capability set 已固定。"],
-        "steps": [
-          {"order": 1, "use": "psoa.formal-logic-automated-reasoning.statement-identity-audit"},
-          {"order": 2, "use": "psoa.formal-logic-automated-reasoning.exact-strength-audit"},
-          {"order": 3, "use": "psoa.formal-logic-automated-reasoning.placeholder-reachability-audit"},
-          {"order": 4, "use": "psoa.formal-logic-automated-reasoning.kernel-checked-proof-evidence"},
-          {"order": 5, "instruction": "由合格人类独立检查题意、定义、来源、允许公理和语义未漂移"},
-          {"order": 6, "use": "psoa.problem-solving-methodology.evidence-capability-admission"}
-        ],
-        "stop_conditions": ["任一 required capability 缺失、失败、陈旧或绑定到不同声明/候选。"],
-        "success_conditions": ["机器形式证据和人类语义审查都绑定同一陈述与候选，且所需能力全部被 verifier 接纳。"],
-        "evidence_required": ["身份与强度报告、目标可达闭包、kernel 回执、语义审查记录和能力接纳矩阵。"],
-        "failure_modes": ["机器通过代替人类题意确认。", "人类认可代替机器闭合证据。", "两个通道审查的不是同一版本。"]
       }
     },
     {

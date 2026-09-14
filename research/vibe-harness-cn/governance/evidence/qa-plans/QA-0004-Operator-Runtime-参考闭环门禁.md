@@ -4,7 +4,7 @@ type: record
 status: active
 owner: engineering
 created: 2026-09-04
-last_reviewed: 2026-09-05
+last_reviewed: 2026-09-04
 source: governance/tasks/0019-reference-operator-runtime-proof/ACCEPTANCE.md
 related_gates: [GATE-0000, GATE-0001]
 ---
@@ -20,7 +20,7 @@ related_gates: [GATE-0000, GATE-0001]
 
 - [x] `OperatorBinding`、`OperatorRunRequest`、`OperatorRunRecord` 三类样例通过 Core Schema。
 - [x] 显式 `extensions` 可通过，未知稳定字段和缺失 `binding_id` 被拒绝。
-- [x] Selector 从 477 条目录中确定性选择，记录候选、理由、拒绝摘要和预算。
+- [x] Selector 从 468 条目录中确定性选择，记录候选、理由、拒绝摘要和预算。
 - [x] `OperatorSpec`、`MentalModelSpec`、`MethodSpec` 均可物化，`use/apply_model` 受限展开。
 - [x] Binding owner、效果范围、模型/工具/外部写入和预算不能被请求扩大。
 - [x] 未知引用、循环引用和步骤超限失败关闭。
@@ -44,7 +44,7 @@ python3 scripts/verify_project.py --gate test
 ## 效率与优化检查
 
 Selector 对 `n` 个目录条目单次扫描并排序候选，时间复杂度 `O(n + c log c)`、内存 `O(n + c)`；
-当前 `n=477`，Verifier 为独立性再做一次同阶重算。真实目录达到 10x/100x 且 profile 显示排序或
+当前 `n=468`，Verifier 为独立性再做一次同阶重算。真实目录达到 10x/100x 且 profile 显示排序或
 JSON 加载成为 hot path 后，再引入倒排索引或缓存；当前不引入服务和缓存一致性成本。
 
 ## 剩余风险

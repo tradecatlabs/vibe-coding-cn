@@ -31,7 +31,7 @@ review_cycle: P90D
 - 主要运行形态：当前为 Git 管理的研究、治理和机器候选目录；生产运行时尚未实现。
 - 核心模块：授权策略、任务编排、工具适配、证据账本、验证准入；扫描能力优先复用成熟工具。
 - 数据事实源：领域坐标系位于 `governance/context/CYBERSECURITY_LANDSCAPE.md`；供应链研究位于 `governance/tasks/0001-survey-cybersecurity-supply-chain/`；准入决策位于 `governance/tasks/0002-prepare-supply-chain-admission/`；未来运行数据必须以结构化契约保存。
-- 外部依赖：候选开源工具、规则库、漏洞情报、reference-only 安全/逆向资料和评测靶场；全部需要固定版本、许可审查和隔离执行。
+- 外部依赖：候选开源工具、规则库、漏洞情报和评测靶场；全部需要固定版本、许可审查和隔离执行。
 - 主要验证入口：候选目录校验器与治理 strict/health；生产行为验证尚未启用。
 
 ## 工具链模型
@@ -67,7 +67,6 @@ review_cycle: P90D
 | Web3 工具准入 | `governance/tasks/0005-admit-web3-toolchain/web3-admission-candidates.json` | 5 项核心工具 admitted；主动交互运行权由 ScopeGrant 决定 |
 | 实战就绪度 | `governance/context/COMBAT_READINESS.md` | 授权协议 fork 级审计的评分、差距清单与里程碑；P30D 复查 |
 | 项目级 Skills 供应链 | `skills/SKILLS_MANIFEST.json` | 13 个 vendored skill，固定来源 commit 与许可 |
-| 安全/逆向 reference-only 供应链 | `skills/reference-only/source-registry.yaml` | 7 个固定来源、932 个参考 `SKILL.md`；不属于 active 运行面 |
 
 ## 变更入口
 

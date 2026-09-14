@@ -32,15 +32,13 @@ Harness = Instructions + Context/Memory + Operator Library
 - [`research/MATHEMATICAL_PROBLEM_SOLVING_RESEARCH.md`](research/MATHEMATICAL_PROBLEM_SOLVING_RESEARCH.md)：55 个数学问题求解方法的逐项去重、证据与算子 crosswalk。
 - [`research/upstreams.sources.json`](research/upstreams.sources.json)：同步与 lock 共同消费的官方来源登记。
 - [`research/upstreams.lock.json`](research/upstreams.lock.json)：官方 GitHub Harness 的精确 revision 清单。
-- [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)：上游研究来源与许可边界。
 - [`contracts/harness-manifest.schema.json`](contracts/harness-manifest.schema.json)：
   harness 登记契约的 JSON Schema。
 - [`contracts/problem-solving-operator-pack.schema.json`](contracts/problem-solving-operator-pack.schema.json)：
   思维模型、原子算子和组合方法的宽松 Core JSON Schema。
 - [`contracts/operator-runtime.schema.json`](contracts/operator-runtime.schema.json)：
   `OperatorBinding`、`OperatorRunRequest` 与 `OperatorRunRecord` 的宽松互操作信封。
-- [`operators/`](operators/)：417 个跨学科原始方法条目和 60 个派生组合方法组成的本地参考库；分类视图见 [`operators/taxonomy/`](operators/taxonomy/)。
-- [`skills/solve/`](skills/solve/)：面向 AI 的可移植 Skill 发布包；包含完整算子库快照和按需加载规则，内容真相源仍是 `operators/`。
+- [`operators/`](operators/)：411 个跨学科原始方法条目和 57 个派生组合方法组成的本地参考库；分类视图见 [`operators/taxonomy/`](operators/taxonomy/)。
 - [`examples/reference_harness/`](examples/reference_harness/)：确定性、无模型、无工具副作用的
   `Select → Bind → Materialize → Verify → Trace` 协议证明。
 - [`contracts/examples/minimal-coding-harness.json`](contracts/examples/minimal-coding-harness.json)：
@@ -58,8 +56,6 @@ bash scripts/sync_upstreams.sh
 uv run --locked --script scripts/validate_harness.py --self-test
 uv run --locked --script scripts/validate_harness.py --operator-pack contracts/examples/minimal-operator-pack.json
 uv run --locked --script scripts/validate_harness.py --operator-library operators/catalog.json
-uv run --locked --script scripts/validate_harness.py --operator-library skills/solve/references/catalog.json
-bash <codex-home>/skills/workflow/modules/skill-authoring/scripts/validate-skill.sh skills/solve --strict
 uv run --locked --script scripts/validate_harness.py --operator-runtime \
   contracts/examples/minimal-operator-binding.json \
   contracts/examples/minimal-operator-run-request.json \
@@ -81,13 +77,7 @@ python3 governance/tools/governance_health_report.py --project-root . --strict
 首版只建立控制面契约与静态参考库，不实现具体模型调用、任务调度、Web UI、数据库或多 agent
 编排。15 个上游 checkout 是研究输入，不等于 15 个 runtime adapter；只有实际适配器暴露查询、
 并发、持久化或分发需求后，才用证据决定是否引入服务运行时和存储。PSOA 当前已交付
-宽松 Core Pack Schema、`vibe-harness-cn/reference-library-v1` Profile、417/417 完整性清单、
+宽松 Core Pack Schema、`vibe-harness-cn/reference-library-v1` Profile、411/411 完整性清单、
 本地参考库、Runtime Core 信封和一个无副作用参考 Harness。参考实现已经证明确定性 selector、本地
 Binding、三种算子物化、独立摘要复验和脱敏 trace 可串成闭环；它不是生产 runtime，也不证明算子
 有效。尚未交付第二个独立 Harness Binding、真实 LLM/tool execution、双 Harness 互操作 proof 或生产 eval。
-
-## 主仓库纳入记录
-
-- 原项目 HEAD：`7b3e95c2176affd6999aacbdea9d64f757b32b06`
-- 原项目分支：`main`
-- 当前由上级仓库 `research/` 管理；原项目 `.git` 不纳入上级仓库。

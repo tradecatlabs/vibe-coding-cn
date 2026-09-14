@@ -1,7 +1,0 @@
-[package]
-name = "fixture-crate"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-zeroize = "1"

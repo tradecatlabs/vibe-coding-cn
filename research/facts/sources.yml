@@ -1,0 +1,60 @@
+version: 1
+kind: external-source-facts
+privacy_audit: research/facts/privacy-audit.yml
+policy:
+  mirror_mode: tracked-source-tree
+  source_of_truth: external-repository-fixed-commit
+  history_included: false
+  untracked_included: false
+  generated_included: false
+  tracked_source_artifacts_preserved: true
+  parent_wrapper_in_mirror: false
+  privacy_policy: sanitize-machine-paths-only-and-record-each-change
+  legacy_material_policy: quarantined-in-ignored-internal-archive
+sources:
+  - id: vibe-cybersecurity-cn
+    repository: vibe-cybersecurity-cn
+    source_branch: master
+    source_commit: 63d78a1afb495cec8113ee6626b453d33fcc166e
+    source_tree: 656341e6df760fb99e91eab4a2e509b1b8950454
+    tracked_file_count: 257
+    archive_sha256: 23f6bb170c6bf5d9d6c3ed0d2f3074b4f46872c095dc897ad6e1d771d3166871
+    mirror_path: research/vibe-cybersecurity-cn/
+    mirror_layout: source-root
+    mirror_content_sha256: d1b2c94b947333e51ca971c60da5ef8e2dd8849c9b621be0ae619df6d7a4d7ce
+    privacy_sanitized: false
+    privacy_sanitized_files: []
+    legacy_extra_file_count: 5689
+    legacy_modified_file_count: 20
+    legacy_material_public: false
+  - id: vibe-harness-cn
+    repository: vibe-harness-cn
+    source_branch: main
+    source_commit: 7b3e95c2176affd6999aacbdea9d64f757b32b06
+    source_tree: d52e3441826be1cb2898e93f9a1475337928365e
+    tracked_file_count: 499
+    archive_sha256: f1867dd8ca110e932961e7b571cdb7b9446d49840305076ccb22e074504f81c8
+    mirror_path: research/vibe-harness-cn/
+    mirror_layout: source-root
+    mirror_content_sha256: ed0088ed34946451f860c26f36962aba4fad45e5d54090bfeee47ac37c5a59f7
+    privacy_sanitized: true
+    privacy_sanitized_files:
+      - governance/standards/架构设计原则.md:49
+    legacy_extra_file_count: 95
+    legacy_modified_file_count: 46
+    legacy_material_public: false
+  - id: vibe-mathing-cn-public
+    repository: vibemathing/vibe-mathing-cn-public
+    source_branch: main
+    source_commit: 0a934de9cd445a1bad7218e7def5a2a2879a0465
+    source_tree: 7173d65e3ac12cc8a6b546c08d6445b5845f582f
+    tracked_file_count: 355
+    archive_sha256: 997f585aef59c5ff968d22e14d08374df518d03f039b9e5b74ad0564bb38a7ef
+    mirror_path: research/vibe-mathing-cn-public/
+    mirror_layout: source-root
+    mirror_content_sha256: ef542251dd5c31882fee4def2104188ba79fe785d38442d019acf79f81cb82aa
+    privacy_sanitized: false
+    privacy_sanitized_files: []
+    legacy_extra_file_count: 15
+    legacy_modified_file_count: 0
+    legacy_material_public: false

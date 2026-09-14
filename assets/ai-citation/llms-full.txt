@@ -91,11 +91,9 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - research/mindfold-ai-trellis/README.md：跨平台 Agent Harness、任务规格与会话记忆系统研究对象。
 - research/mindfold-ai-trellis/analysis.md：任务控制面、规格注入和多平台适配的结构化研究。
 - research/mindfold-ai-trellis/deep-dive.md：Harness 架构、CLI 和记忆系统的 L2 研究。
-- research/vibe-cybersecurity-cn/README.md：授权边界内的 Agent 网络安全自动化研究与工程项目。
-- research/vibe-harness-cn/README.md：治理 Agent Harness 与问题求解算子库的元 Harness 项目。
-- research/vibe-mathing-cn-public/README.md：数学研究、证据闭环与可信验证工作台研究对象。
-- research/vibe-mathing-cn-public/analysis.md：数学研究工作流、迁移价值和采用边界的结构化研究。
-- research/vibe-mathing-cn-public/deep-dive.md：证据闭环、有界运行时和公共边界的 L2 研究。
+- research/facts/README.md：三个外部仓库的源事实镜像、提交事实、哈希和隐私边界。
+- research/facts/sources.yml：三个源事实镜像的机器可读来源登记。
+- research/facts/privacy-audit.yml：只记录路径、行号、类别和处置状态的隐私审计登记。
 - research/aider-ai-aider/README.md：终端 AI 结对编程工具研究对象。
 - research/aider-ai-aider/analysis.md：Aider-AI/aider 的结构化研究结论、可借鉴点、风险和下一轮任务。
 - research/aider-ai-aider/deep-dive.md：Aider-AI/aider 的 L2 源码/结构深度研究、关键机制和可迁移模式。

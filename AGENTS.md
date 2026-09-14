@@ -9,7 +9,7 @@
 ### 允许的操作
 - 读取、修改顶层文档：`README.md`、`AGENTS.md`、`CONTRIBUTING.md` 等
 - 读取、修改 `docs/`、`prompts/`、`skills/`、`tools/config/`、`tools/external/` 下的文档与代码
-- 执行 `make lint`、`make check-links`、`make check-details`、`make check-doc-structure`、`make check-directory-docs`、`make check-metadata`、`make check-ai-citation`、`make check-research-raw`、`make check-wiki`、`make fetch-research-raw`、`make sync-doc-toc`、prompts-library 转换工具
+- 执行 `make lint`、`make check-links`、`make check-details`、`make check-doc-structure`、`make check-directory-docs`、`make check-metadata`、`make check-ai-citation`、`make check-research-raw`、`make check-source-facts`、`make check-wiki`、`make fetch-research-raw`、`make sync-doc-toc`、prompts-library 转换工具
 - 新增/修改提示词、技能、文档
 - 提交符合规范的 commit
 
@@ -72,6 +72,7 @@ git push origin develop
 | `make check-ai-citation` | 校验 llms 与 AI 引用语料路径、锚点和规范仓库身份 | Python 3 |
 | `make check-external-resources` | 校验本地外部资源注册表字段、分类统计、ID 与链接形态 | Python 3、PyYAML |
 | `make check-research-raw` | 校验研究域 raw 原始事实层、Git 工作树、来源清单和核心材料文件 | Python 3、Git |
+| `make check-source-facts` | 校验外部源事实镜像、文件数、边界和隐私登记 | Python 3、PyYAML |
 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | 校验 GitHub Wiki 独立仓库本地 checkout 的页面覆盖、内链、旧口径和 Markdown | Python 3、Node.js 22+、本地 Wiki checkout |
 | `make fetch-research-raw` | 拉取 `research/*/domain.yml` 对应 GitHub 研究对象的 raw 原始事实层和 `repository/` 工作树 | Python 3、Git、GitHub CLI 已认证 |
 | `make sync-doc-toc` | 兼容旧线性 README 目录生成；当前拆分结构下通常无变更 | Python 3 |
@@ -162,12 +163,13 @@ git push origin develop
 │   ├── references/              # 清单、约束、常见坑、模板和技术栈参考
 │   └── workflow/                # 开发流程、质量门禁和交付闭环
 │
-├── research/                    # 根级研究域：新技术、优秀 repo 与工程范式研究
+├── research/                    # 研究对象与外部源事实镜像
 │   ├── README.md                # research 总索引
 │   ├── AGENTS.md                # research 目录规则
-│   ├── vibe-cybersecurity-cn/   # 纳入的授权网络安全 Agent 研究项目
-│   ├── vibe-harness-cn/         # 纳入的元 Harness 研究项目
-│   ├── vibe-mathing-cn-public/ # 数学研究与可信验证研究快照
+│   ├── facts/                   # 外部源事实登记与边界
+│   ├── vibe-cybersecurity-cn/   # 外部源事实镜像
+│   ├── vibe-harness-cn/         # 外部源事实镜像
+│   ├── vibe-mathing-cn-public/  # 外部源事实镜像
 │   └── harness/                 # Harness Engineering 研究对象
 │
 ├── prompts/                     # 提示词库入口（指向云端表格）
@@ -248,6 +250,7 @@ git push origin develop
 - `scripts/check-ai-citation.py` - llms 与 AI 引用语料路径、锚点和规范仓库身份检查脚本，供 `make check-ai-citation` 与 CI 使用
 - `scripts/check-external-resources.py` - 本地外部资源注册表检查脚本，供 `make check-external-resources` 与 `make test` 使用
 - `scripts/check-research-raw.py` - 研究域 raw 原始事实层和 Git 工作树检查脚本，供 `make check-research-raw` 与 `make test` 使用
+- `scripts/check-source-facts.py` - 外部源事实镜像、文件数、边界和隐私登记检查脚本，供 `make check-source-facts` 与 `make test` 使用
 - `scripts/fetch-research-raw.py` - GitHub 研究对象 raw 原始事实层和 `repository/` 工作树拉取脚本，供 `make fetch-research-raw` 手动刷新使用，不纳入 CI
 - `scripts/check-wiki.py` - GitHub Wiki 独立仓库本地 checkout 页面覆盖、内链和旧口径检查脚本，供 `make check-wiki` 使用
 - `scripts/sync-doc-toc.py` - docs README 细粒度目录兼容脚本，当前拆分结构下通常无变更，供 `make sync-doc-toc` 使用
@@ -370,7 +373,7 @@ make test
 2. **Conversion Tool**: 使用 Python + pandas + openpyxl
 3. **Documentation Standard**: 用户文档使用中文；代码/文件名使用英文
 4. **Skills**: 每个技能有独立的 `SKILL.md`
-5. **Quality Gates**: `make test` 执行 Markdown lint、本地相对链接/锚点检查、折叠块结构检查、docs 结构检查、metadata 路径检查、AI 引用一致性检查与现代企业架构 starter kit 检查；纳入的 `research/vibe-cybersecurity-cn/` 与 `research/vibe-harness-cn/` 保留独立项目门禁，`research/vibe-mathing-cn-public/snapshot/` 作为已审计源快照，仓库级文档检查跳过这些独立内容。
+5. **Quality Gates**: `make test` 执行 Markdown lint、本地相对链接/锚点检查、折叠块结构检查、docs 结构检查、metadata 路径检查、AI 引用一致性检查、外部源事实镜像检查与现代企业架构 starter kit 检查；三个 `research/vibe-*` 目录按源事实镜像边界维护，仓库级格式检查跳过镜像内容。
 
 ## Development Workflow
 

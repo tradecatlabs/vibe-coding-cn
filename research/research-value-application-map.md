@@ -2,10 +2,10 @@
 
 ## 字多不看
 
-- 当前研究体系已经覆盖 36 个独立外部仓库研究域，36 个均已完成 L2 深度研究。
+- 当前研究体系已经覆盖 35 个独立外部仓库研究域，35 个均已完成 L2 深度研究；三个外部工程项目另按源事实镜像维护。
 - 这些研究不是为了介绍外部项目，而是为了把外部项目拆成可验证事实、核心机制、迁移边界和本仓可执行改进项。
-- 36 个研究域的 `analysis.md` 已统一为对标拆解、改良迭代、可迁移清单、不可迁移清单和验证动作格式。
-- 36 个研究域的 `deep-dive.md` 已补齐 L2 证据层、关键机制、迁移边界和 L3 验证任务。
+- 35 个研究域的 `analysis.md` 已统一为对标拆解、改良迭代、可迁移清单、不可迁移清单和验证动作格式。
+- 35 个研究域的 `deep-dive.md` 已补齐 L2 证据层、关键机制、迁移边界和 L3 验证任务。
 - 用户获得的直接价值是少走弯路、看见范式、拿到可落地路线。
 - 本仓获得的直接价值是形成 `getting-started`、`references`、`workflow`、`skills`、`assets`、`scripts`
   和 `research` 的改进输入。
@@ -182,7 +182,7 @@
 | `continuedev/continue` | 理解只读项目的生命周期和迁移风险 | `research/`、`references/` | 维护状态、替代方案和过期引用检查 |
 | `SWE-agent/mini-SWE-agent` | 理解极简问题修复 Agent 的有界执行 | `workflow/`、`references/` | Bash 工具面、退出码、轨迹和预算检查 |
 | `affaan-m/ECC` | 理解多 coding agent 的 Harness、记忆和质量资产 | `skills/`、`workflow/`、`references/` | Harness 资产、记忆策略、安全和评估清单 |
-| `vibe-mathing-cn-public` | 理解数学研究的候选/结果分层和证据闭环 | `workflow/`、`references/`、未来 skills | 问题契约、失败回执、有界工具运行时和研究快照清单 |
+| `vibe-mathing-cn-public` | 源事实镜像：保留数学验证工程的已提交文件树 | 事实登记与审计，不自动下沉 | 问题契约、失败回执、有界工具运行时由源仓库自身维护 |
 | `aider` | 理解 Git 驱动 AI 修改闭环 | `workflow/`、`references/` | AI 修改到提交的标准流程、文档 map / repo map 机制 |
 | `cline` | 理解多入口 agent 平台 | `metadata/`、`llms.txt`、`skills/` | 人类入口、AI 入口、脚本入口、skill 入口的入口契约 |
 | `awesome-claude-code` | 理解资源治理 | `assets/external-resources/` | 资源 schema、生命周期字段、资源校验脚本 |

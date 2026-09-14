@@ -29,8 +29,7 @@ review_cycle: P90D
 | 构建 | N/A | 当前无服务或发布产物 |
 | 本地运行 | `uv run --locked --script scripts/validate_harness.py <manifest...>` | 可批量校验 manifest |
 | Operator Pack Core 校验 | `uv run --locked --script scripts/validate_harness.py --operator-pack <pack.json>` | 只检查公共字段结构、类型判别与安全 owner |
-| 参考算子库校验 | `uv run --locked --script scripts/validate_harness.py --operator-library operators/catalog.json` | 检查 Profile、417/417 覆盖、60/60 派生 Method 与引用 |
-| solve Skill 校验 | `bash <codex-home>/skills/workflow/modules/skill-authoring/scripts/validate-skill.sh skills/solve --strict`；`uv run --locked --script scripts/validate_harness.py --operator-library skills/solve/references/catalog.json` | 检查 Skill 结构、引用路径和发布快照完整性 |
+| 参考算子库校验 | `uv run --locked --script scripts/validate_harness.py --operator-library operators/catalog.json` | 检查 Profile、411/411 覆盖、57/57 派生 Method 与引用 |
 | Runtime Core 校验 | `uv run --locked --script scripts/validate_harness.py --operator-runtime <json...>` | 校验 Binding、RunRequest 与 RunRecord 稳定信封 |
 | 参考 Harness | `python3 examples/reference_harness/reference_harness.py` | 输出无副作用 instruction packet 和摘要记录 |
 | 参考 Harness 回归 | `python3 -m unittest tests.test_reference_operator_harness` | 覆盖选择、三种 Spec、预算、策略、引用与篡改拒绝 |

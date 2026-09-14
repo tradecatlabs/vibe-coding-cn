@@ -4,7 +4,7 @@
 
 - 研究不是证明“我看过资料”，而是把成熟对象拆成可迁移机制、不可迁移边界和可验证动作。
 - 本轮把 P1 研究对象合成为一条主线：Codex 负责执行控制面，Plugins/Skills 负责能力分发，Agents SDK 负责运行时编排，Cookbook 提供可复现示例，Spec Kit/OpenSpec 负责规格驱动，Gemini CLI/OpenHands/OpenCode/Goose 提供终端、工作区和配置对标，Aider 负责 Git 编辑闭环，Superpowers/Agent Skills/ECC 负责方法论与 Harness 资产化，Cline 负责多入口平台化。
-- 当前 36 个研究域均已补齐 `deep-dive.md`，全量进入 L2 证据层。
+- 当前 35 个研究域均已补齐 `deep-dive.md`，全量进入 L2 证据层；三个外部工程项目按源事实镜像单独维护。
 - 本仓不应该复制任何一个外部项目，而应该杂交成“AI 原生知识库控制面”。
 - 下一步最小试用动作是：补 `scripts` 风险登记、补研究域迁移表、补资源治理 schema、补工作流验证闭环。
 
@@ -71,7 +71,7 @@
 | `shanraisshan-claude-code-best-practice` | agentic-engineering-methodology | 方法论资产化 | `concepts/`、`workflow/`、`skills/` | 建经验分流表 |
 | `hesreallyhim-awesome-claude-code` | ecosystem-index | 资源治理系统 | `assets/external-resources/` | 强化资源 schema |
 | `tradecatlabs-vibe-coding-cn` | workflow-methodology | AI 原生知识库控制面 | 全仓 | 建自我审计和下沉任务 |
-| `vibe-mathing-cn-public` | research-infrastructure | 问题契约、证据闭环和有界工具运行时 | `workflow/`、`references/`、未来 skills | 抽取候选/结果分层、失败回执和工具边界，验证能否跨领域复用 |
+| `vibe-mathing-cn-public` | source-fact-mirror | 已提交源文件树、问题契约和证据边界 | 事实登记，不自动下沉 | 只核验来源、提交和隐私边界，不把源项目改造成父仓库研究格式 |
 | `datawhalechina-easy-vibe` | cn-onboarding | 目标分流课程路径 | `getting-started/` | 重构学习地图分流 |
 | `datawhalechina-vibe-vibe` | cn-onboarding | demo 驱动零基础课程 | `getting-started/`、未来 practice | 给概念补最小练习 |
 | `liyupi-ai-guide` | cn-onboarding | 大众解释和项目实战入口 | `getting-started/`、`assets/` | 抽取低门槛表达和工具候选 |
@@ -98,8 +98,8 @@
 
 | 改动点 | 原模式 | 本仓改良 | 验证指标 |
 |:---|:---|:---|:---|
-| 研究域分析 | 结构观察和可借鉴点 | 对标拆解、迁移边界、试用动作 | 36 个研究域 `analysis.md` 都有可执行动作 |
-| 深度研究 | L2 证据和关键机制 | 保留证据链，另写迁移综合 | 36 个研究域均有 `deep-dive.md` |
+| 研究域分析 | 结构观察和可借鉴点 | 对标拆解、迁移边界、试用动作 | 35 个研究域 `analysis.md` 都有可执行动作 |
+| 深度研究 | L2 证据和关键机制 | 保留证据链，另写迁移综合 | 35 个研究域均有 `deep-dive.md` |
 | 价值地图 | 用户价值说明 | 增加组合方案和验收指标 | 能回答“看完有什么用” |
 
 ### 第二轮：让研究进入仓库控制面

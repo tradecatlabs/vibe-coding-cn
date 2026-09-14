@@ -1,6 +1,6 @@
 # Reference Operator Harness
 
-这是共享 Operator Runtime 契约的最小消费方。它以确定性规则从 477 条目录中选择一个算子，读取
+这是共享 Operator Runtime 契约的最小消费方。它以确定性规则从 468 条目录中选择一个算子，读取
 Harness 本地 Binding，将算子展开为 instruction packet，再由独立验证阶段重算选择、展开结果和摘要。
 
 ```bash

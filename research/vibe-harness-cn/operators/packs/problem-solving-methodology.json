@@ -1,7 +1,7 @@
 {
   "api_version": "vibe-harness-cn.dev/v1alpha1",
   "kind": "OperatorPack",
-  "metadata": {"id": "psoa.pack.problem-solving-methodology", "version": "1.1.0", "domain": "problem-solving-methodology", "title": "通用问题求解方法论", "summary": "把表征、分解、变换、搜索、构造、验证和元认知控制从领域知识中分离出来。", "source_entry_count": 11, "derived_entry_count": 2},
+  "metadata": {"id": "psoa.pack.problem-solving-methodology", "version": "1.0.0", "domain": "problem-solving-methodology", "title": "通用问题求解方法论", "summary": "把表征、分解、变换、搜索、构造、验证和元认知控制从领域知识中分离出来。", "source_entry_count": 8, "derived_entry_count": 1},
   "entries": [
     {
       "id": "psoa.problem-solving-methodology.task-framing", "version": "1.0.0", "kind": "OperatorSpec", "origin": "source", "source_key": "problem-solving-methodology.task-framing", "name": "Task Framing", "name_zh": "任务定框", "domain": "problem-solving-methodology", "status": "experimental", "summary": "把自然语言请求改写成当前状态、目标、未知量、约束和可观察成功条件。", "core_question": "我们到底要把哪个状态变成哪个状态？", "operation": "提取对象与边界 → 区分事实/假设/目标 → 定义成功与停止 → 标出未知和风险", "agent_use": "防止 Agent 在问题未定界时直接生成答案或动作。", "applicability": {"when": ["请求含有多个目标、隐含约束或不明确成功标准。"], "not_when": ["输入已经是可验证的结构化任务契约。"]}, "source_refs": ["ref:schoenfeld-problem-solving", "ref:polya-four-phases", "ref:national-academies-metacognition"], "governance": {"risk_level": "low", "permission_decision": "harness_policy", "outcome_decision": "verifier", "sensitive_values": "reference_only"}, "semantics": {"preconditions": ["有可分析的任务描述和目标线索。"], "inputs": ["task_description", "known_facts", "constraints", "risk_signals"], "procedure": ["列出当前状态、目标状态和未知量", "把约束分成硬约束与可协商条件", "定义最小成功证据、停止条件和需升级事项", "把未证实陈述标为假设"], "effect": {"state": "task_framed", "statement": "形成可继续规划和验证的问题定义。"}, "outcomes": ["succeeded", "inconclusive", "blocked", "not_applicable"], "evidence_required": ["状态/目标/约束表、假设清单、成功和停止条件。"], "failure_modes": ["把愿望当目标。", "遗漏安全、权限或资源约束。"], "recovery": ["请求最小缺口信息，或把结论降级为待定。"]},
@@ -32,123 +32,8 @@
       "extensions": {"vibe-harness-cn": {"functional_class": "verification-falsification", "secondary_classes": ["control-metacognition", "diagnosis-revision"]}}
     },
     {
-      "id": "psoa.problem-solving-methodology.metacognitive-monitoring", "version": "1.1.0", "kind": "OperatorSpec", "origin": "source", "source_key": "problem-solving-methodology.metacognitive-monitoring", "name": "Metacognitive Monitoring", "name_zh": "元认知监控", "domain": "problem-solving-methodology", "status": "experimental", "summary": "持续判断当前策略是否关闭真实义务、减少未知或增强证据，以及何时继续、停止、切换或升级。", "core_question": "现在这条路真的在工作吗？下一步的成本值得吗？", "operation": "定义实质进展 → 观察义务/未知/证据与成本 → 排除活动量代理 → 比较停止阈值 → 继续、切换、回退或升级", "agent_use": "把 strategy selection、预算和停止条件从隐式直觉变成可审计控制，并阻止用文件数、行数或调用次数冒充进展。", "applicability": {"when": ["任务包含多轮策略、有限预算或不确定结果。"], "not_when": ["单次确定性查询且无需选择路径。"]}, "source_refs": ["ref:schoenfeld-problem-solving", "ref:national-academies-metacognition", "ref:newell-simon-problem-space"], "governance": {"risk_level": "medium", "permission_decision": "harness_policy", "outcome_decision": "verifier", "sensitive_values": "reference_only"}, "semantics": {"preconditions": ["存在可观察的实质进展指标、预算和策略切换规则。"], "inputs": ["progress_signals", "activity_signals", "cost_signals", "uncertainty", "strategy", "stop_policy"], "procedure": ["先把义务关闭、未知减少、反例排除或证据能力增加定义为实质进展", "在每个检查点分别记录实质进展、活动量、成本和剩余未知", "只用实质进展比较当前策略与替代策略的预期收益，活动量仅作诊断背景", "达到停止、切换或升级阈值时执行对应控制，并把理由写入 trace"], "effect": {"state": "strategy_controlled", "statement": "形成不依赖活动量代理的继续、停止、切换或升级决定。"}, "outcomes": ["succeeded", "switched", "stopped", "budget_exhausted", "inconclusive"], "evidence_required": ["实质进展定义、活动量对照、阈值、策略比较、预算变化和控制决定。"], "failure_modes": ["把活动量当作进展。", "停止阈值没有和风险/证据绑定。", "只看产出体积而没有关闭任何义务。"], "recovery": ["重新定义实质进展、引入外部审查或回到任务定框。"]},
+      "id": "psoa.problem-solving-methodology.metacognitive-monitoring", "version": "1.0.0", "kind": "OperatorSpec", "origin": "source", "source_key": "problem-solving-methodology.metacognitive-monitoring", "name": "Metacognitive Monitoring", "name_zh": "元认知监控", "domain": "problem-solving-methodology", "status": "experimental", "summary": "持续判断当前策略是否产生进展、证据是否足够，以及何时继续、停止、切换或升级。", "core_question": "现在这条路真的在工作吗？下一步的成本值得吗？", "operation": "设定监控指标 → 观察进展/成本/不确定性 → 与停止阈值比较 → 继续、切换、回退或升级", "agent_use": "把 strategy selection、预算和停止条件从隐式直觉变成可审计控制。", "applicability": {"when": ["任务包含多轮策略、有限预算或不确定结果。"], "not_when": ["单次确定性查询且无需选择路径。"]}, "source_refs": ["ref:schoenfeld-problem-solving", "ref:national-academies-metacognition", "ref:newell-simon-problem-space"], "governance": {"risk_level": "medium", "permission_decision": "harness_policy", "outcome_decision": "verifier", "sensitive_values": "reference_only"}, "semantics": {"preconditions": ["存在可观察进展指标、预算和策略切换规则。"], "inputs": ["progress_signals", "cost_signals", "uncertainty", "strategy", "stop_policy"], "procedure": ["在每个检查点记录进展、成本和剩余未知", "比较当前策略与替代策略的预期收益", "达到停止、切换或升级阈值时执行对应控制", "把控制决定及其理由写入 trace"], "effect": {"state": "strategy_controlled", "statement": "形成可解释的继续、停止、切换或升级决定。"}, "outcomes": ["succeeded", "switched", "stopped", "budget_exhausted", "inconclusive"], "evidence_required": ["监控指标、阈值、策略比较、预算变化和控制决定。"], "failure_modes": ["把活动量当作进展。", "停止阈值没有和风险/证据绑定。"], "recovery": ["重新定义进展指标、引入外部审查或回到任务定框。"]},
       "extensions": {"vibe-harness-cn": {"functional_class": "control-metacognition", "secondary_classes": ["diagnosis-revision", "verification-falsification"]}}
-    },
-    {
-      "id": "psoa.problem-solving-methodology.claim-candidate-result-separation",
-      "version": "1.0.0",
-      "kind": "MentalModelSpec",
-      "origin": "source",
-      "source_key": "problem-solving-methodology.claim-candidate-result-separation",
-      "name": "Claim Candidate Result Separation",
-      "name_zh": "声明、候选与结果分离",
-      "domain": "problem-solving-methodology",
-      "status": "experimental",
-      "summary": "把待解决声明、尚未接纳的候选产物和经验证接纳的结果建模为不同对象，禁止证明过程回写题目或让候选冒充结果。",
-      "core_question": "当前对象是原始声明、待验证候选，还是已满足证据契约的结果？",
-      "operation": "冻结声明身份 → 为候选单独建版本 → 绑定验证回执 → 仅由接纳规则生成结果",
-      "agent_use": "防止 Agent 在执行中偷换问题、覆盖原声明，或把自评候选直接标成完成。",
-      "applicability": {"when": ["任务会产生多个尝试、证明、设计或实现候选，并需要独立验收。"], "not_when": ["输入经过一次确定性无损变换即可得到结果，且不存在候选状态。"]},
-      "source_refs": ["ref:swebok", "ref:w3c-prov", "ref:lean-language-reference"],
-      "governance": {"risk_level": "medium", "permission_decision": "harness_policy", "outcome_decision": "verifier", "sensitive_values": "reference_only"},
-      "semantics": {
-        "questions": ["原始声明的稳定身份和允许变更边界是什么？", "候选由哪个声明派生，当前缺哪些验证能力？", "哪个 verifier 依据什么回执把候选接纳为结果？"],
-        "interpretation_rules": ["声明只能通过显式版本变更产生新声明，候选不得就地修改它", "候选可以有多个且允许失败；结果必须引用声明、候选和接纳证据", "状态名称不能替代 artifact identity、版本和 provenance"],
-        "limitations": ["对象分离只阻止状态混淆，不能替代命题正确性、实现验证或人类语义审查。"]
-      },
-      "extensions": {"vibe-harness-cn": {"functional_class": "representation", "secondary_classes": ["verification-falsification", "control-metacognition"]}}
-    },
-    {
-      "id": "psoa.problem-solving-methodology.evidence-capability-admission",
-      "version": "1.0.0",
-      "kind": "OperatorSpec",
-      "origin": "source",
-      "source_key": "problem-solving-methodology.evidence-capability-admission",
-      "name": "Evidence Capability Admission",
-      "name_zh": "证据能力接纳",
-      "domain": "problem-solving-methodology",
-      "status": "experimental",
-      "summary": "把验收要求写成具名证据能力集合，对每项能力独立核验新鲜回执；不把源码、构建、内核检查和语义审查压成可跳级的单一阶梯。",
-      "core_question": "这个主张要求哪些证据能力，当前真实回执覆盖了哪些？",
-      "operation": "声明 required capabilities → 收集逐项回执 → 校验身份/范围/新鲜度 → 计算缺口 → 接纳或降级",
-      "agent_use": "让 Agent 只能报告证据实际支持的状态，缺一项就暴露一项，不能用较弱证据推断较强结论。",
-      "applicability": {"when": ["完成声明依赖多种相互不可替代的检查、评审或实验。"], "not_when": ["单个确定性检查已经完整定义并覆盖全部成功条件。"]},
-      "source_refs": ["ref:nist-tevv", "ref:w3c-prov", "ref:lean-language-reference"],
-      "governance": {"risk_level": "medium", "permission_decision": "harness_policy", "outcome_decision": "verifier", "sensitive_values": "reference_only"},
-      "semantics": {
-        "preconditions": ["目标主张、required capability set、每项能力的 verifier 和新鲜度规则已声明。"],
-        "inputs": ["claim", "required_capabilities", "evidence_receipts", "identity_rules", "freshness_policy"],
-        "procedure": ["为每个 required capability 定义独立问题、输入范围和可接受 verifier", "逐项校验回执与当前声明/候选的身份、版本、范围和新鲜度", "把 satisfied、missing、failed、stale、not_applicable 分开记录", "只有全部 required capability 被满足才接纳；否则返回精确缺口和最高可支持状态"],
-        "effect": {"state": "evidence_capabilities_adjudicated", "statement": "形成按能力逐项裁决的接纳结果与缺口集合。"},
-        "outcomes": ["admitted", "rejected", "inconclusive", "blocked", "not_applicable"],
-        "evidence_required": ["required capability set、逐项回执、身份/范围/新鲜度检查和缺口矩阵。"],
-        "failure_modes": ["把多维能力错误排成单一等级并允许跳级。", "用旧输入或不同候选的回执接纳当前结果。", "把 capability 名称或自报 PASS 当作真实证据。"],
-        "recovery": ["只重跑缺失、失败或陈旧的能力，并保持已验证且输入未变的能力。"]
-      },
-      "extensions": {"vibe-harness-cn": {"functional_class": "verification-falsification", "secondary_classes": ["control-metacognition"]}}
-    },
-    {
-      "id": "psoa.problem-solving-methodology.failed-route-memory",
-      "version": "1.0.0",
-      "kind": "OperatorSpec",
-      "origin": "source",
-      "source_key": "problem-solving-methodology.failed-route-memory",
-      "name": "Failed Route Memory",
-      "name_zh": "失败路线记忆",
-      "domain": "problem-solving-methodology",
-      "status": "experimental",
-      "summary": "把失败路径、适用输入、首个阻塞点、已排除假设和允许重试的变化条件追加记录为可检索资产。",
-      "core_question": "这条路线在什么条件下失败，哪些变化发生后才值得重试？",
-      "operation": "冻结路线与输入 → 定位首个阻塞点 → 记录排除项和残留未知 → 定义 retry predicate → 追加存档",
-      "agent_use": "防止换 Agent、压缩上下文或恢复会话后重复撞同一条已证伪路线。",
-      "applicability": {"when": ["多轮搜索、证明、调试或设计尝试可能重复，且失败信息有未来价值。"], "not_when": ["失败完全由一次性瞬时外部故障造成且不会复现。"]},
-      "source_refs": ["ref:schoenfeld-problem-solving", "ref:newell-simon-problem-space", "ref:w3c-prov"],
-      "governance": {"risk_level": "low", "permission_decision": "harness_policy", "outcome_decision": "verifier", "sensitive_values": "reference_only"},
-      "semantics": {
-        "preconditions": ["路线、输入版本、观察结果和失败判据可识别。"],
-        "inputs": ["route", "input_identity", "observations", "failure_criterion", "provenance"],
-        "procedure": ["记录路线步骤、分支选择、输入摘要和适用边界", "定位首个未满足义务或与预测不符的观察", "区分已排除假设、仍未知事项和可复用中间产物", "定义只有哪些输入、依赖或证据变化后才允许重试，并追加保存"],
-        "effect": {"state": "failed_route_recorded", "statement": "形成可检索、不可冒充成功且带重试条件的失败路线记录。"},
-        "outcomes": ["recorded", "deduplicated", "inconclusive", "not_applicable"],
-        "evidence_required": ["路线摘要、输入身份、首个阻塞点、观察、排除项、残留未知和 retry predicate。"],
-        "failure_modes": ["只写‘失败了’而没有可复现条件。", "把失败路线当成普遍不可能证明。", "输入未变化却重复开启同一路线。"],
-        "recovery": ["补充最小复现与首个阻塞证据，或把记录降级为未解释失败。"]
-      },
-      "extensions": {"vibe-harness-cn": {"functional_class": "diagnosis-revision", "secondary_classes": ["control-metacognition", "search"]}}
-    },
-    {
-      "id": "psoa.problem-solving-methodology.bounded-obligation-loop",
-      "version": "1.0.0",
-      "kind": "MethodSpec",
-      "origin": "derived",
-      "name": "Bounded Obligation Loop",
-      "name_zh": "有界义务循环",
-      "domain": "problem-solving-methodology",
-      "status": "experimental",
-      "summary": "把稳定问题对象、义务依赖、有限执行、实质进展监控、证据接纳和失败记忆组成可恢复的小步循环。",
-      "core_question": "怎样让长期难题每一轮只推进一个可验收义务，并在失败后可恢复而不重撞？",
-      "operation": "Separate → Map obligations → Execute bounded step → Measure real progress → Admit or record failure → Resume",
-      "agent_use": "用于长期研究、证明或工程任务，把无限运行改成有限小步、checkpoint、证据门和换路。",
-      "applicability": {"when": ["任务有多个依赖义务、昂贵失败和跨轮恢复需求。"], "not_when": ["单个原子动作即可确定完成。"]},
-      "source_refs": ["ref:schoenfeld-problem-solving", "ref:newell-simon-problem-space", "ref:w3c-prov", "ref:nist-tevv"],
-      "governance": {"risk_level": "medium", "permission_decision": "harness_policy", "outcome_decision": "verifier", "sensitive_values": "reference_only"},
-      "semantics": {
-        "preconditions": ["声明身份、义务集合、依赖、预算、检查点和接纳能力已定义。"],
-        "steps": [
-          {"order": 1, "apply_model": "psoa.problem-solving-methodology.claim-candidate-result-separation"},
-          {"order": 2, "use": "psoa.formal-logic-automated-reasoning.proof-state-subgoal-decomposition"},
-          {"order": 3, "instruction": "选择一个前置义务已满足的最小叶子，在固定预算内执行并写 checkpoint"},
-          {"order": 4, "use": "psoa.problem-solving-methodology.metacognitive-monitoring"},
-          {"order": 5, "use": "psoa.problem-solving-methodology.evidence-capability-admission"},
-          {"order": 6, "use": "psoa.problem-solving-methodology.failed-route-memory"}
-        ],
-        "stop_conditions": ["当前义务被接纳、首个 required capability 失败或缺失、预算耗尽、重复无实质进展或触发人工升级。"],
-        "success_conditions": ["至少一个义务按当前证据契约关闭，且声明、候选、回执、检查点和下一义务可追溯。"],
-        "evidence_required": ["稳定对象身份、义务 DAG、预算、checkpoint、实质进展、能力回执和失败路线。"],
-        "failure_modes": ["一次处理多个无关义务导致无法归因。", "用行数、运行时长或调用数冒充义务关闭。", "失败后没有记录 retry predicate。"]
-      },
-      "extensions": {"vibe-harness-cn": {"functional_class": "control-metacognition", "secondary_classes": ["decomposition", "verification-falsification", "diagnosis-revision"]}}
     },
     {
       "id": "psoa.problem-solving-methodology.general-problem-solving-loop", "version": "1.0.0", "kind": "MethodSpec", "origin": "derived", "name": "General Problem-Solving Loop", "name_zh": "通用问题求解循环", "domain": "problem-solving-methodology", "status": "experimental", "summary": "把任务定框、问题空间、目标差异、选择性搜索、构造、回看和元认知控制串成可复用循环。", "core_question": "如何让未知问题从定义到证据形成可回退的循环？", "operation": "Frame → Model → Decompose → Search → Construct → Look Back → Monitor", "agent_use": "作为 Harness 的上位方法模板，具体 selector、权限和执行仍由运行时决定。", "applicability": {"when": ["问题开放、路径不确定且需要多轮证据。"], "not_when": ["已有单步确定性函数足以完成目标。"]}, "source_refs": ["ref:schoenfeld-problem-solving", "ref:polya-four-phases", "ref:newell-simon-problem-space", "ref:national-academies-metacognition"], "governance": {"risk_level": "medium", "permission_decision": "harness_policy", "outcome_decision": "verifier", "sensitive_values": "reference_only"}, "semantics": {"preconditions": ["任务目标、预算、风险和可观察证据已声明。"], "steps": [{"order":1,"use":"psoa.problem-solving-methodology.task-framing"},{"order":2,"apply_model":"psoa.problem-solving-methodology.problem-space-model"},{"order":3,"use":"psoa.problem-solving-methodology.means-ends-analysis"},{"order":4,"use":"psoa.problem-solving-methodology.heuristic-search"},{"order":5,"use":"psoa.problem-solving-methodology.constructive-witness"},{"order":6,"use":"psoa.problem-solving-methodology.look-back-evaluation"},{"order":7,"use":"psoa.problem-solving-methodology.metacognitive-monitoring"}], "stop_conditions": ["成功证据满足目标，或 verifier 判定失败/不可判定。", "达到预算、风险或人工升级阈值。"], "success_conditions": ["问题表示、路径选择、候选产物、回看证据和控制决定均可追溯。"], "evidence_required": ["任务契约、状态/目标模型、搜索 trace、构造物、复核结果和控制记录。"], "failure_modes": ["上位循环被当作具体领域算法。", "缺乏 verifier 时把自报结果当成功。"]},

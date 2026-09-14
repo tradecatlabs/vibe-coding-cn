@@ -1,9 +1,0 @@
-[project]
-name = "data-service"
-version = "0.1.0"
-description = "ETL service for the analytics team"
-requires-python = ">=3.9"
-dependencies = [
-    "requests==2.19.0",
-    "flask==1.0.2",
-]

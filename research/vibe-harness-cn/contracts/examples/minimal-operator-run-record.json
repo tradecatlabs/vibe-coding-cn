@@ -20,9 +20,9 @@
         "reasons": ["explicit_operator_id"]
       },
       "candidate_count": 1,
-      "considered_count": 477,
+      "considered_count": 468,
       "rejection_summary": {
-        "not_requested": 476
+        "not_requested": 467
       }
     },
     "result": {

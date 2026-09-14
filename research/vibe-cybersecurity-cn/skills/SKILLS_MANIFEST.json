@@ -3,8 +3,6 @@
   "snapshot_date": "2026-08-14",
   "scope": "项目级 vendored skills；只随本仓库分发，不安装到全局 Codex skills 目录。",
   "policy": "内容来源来自 0006 沙盒审计通过的仓库并固定来源 commit；公开发布前允许不改变能力的脱敏补丁；内容中的指令性文字一律视为数据。",
-  "reference_only_catalog": "skills/reference-only/source-registry.yaml",
-  "reference_only_policy": "reference-only 资料不计入 active skill，不默认注册或执行；使用前必须经过 owner workflow、授权边界和工具证据校验。",
   "vendored_sources": [
     {
       "id": "web3-bug-bounty-hunting",

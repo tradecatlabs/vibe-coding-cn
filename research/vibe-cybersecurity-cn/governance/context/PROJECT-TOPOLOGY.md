@@ -23,8 +23,6 @@ review_cycle: P90D
 | `governance/tasks/0005-admit-web3-toolchain/` | Web3 工具链 9 门禁准入与验证控制面升级任务包 | 不把 admitted 当运行授权 | `validate_web3_admission.py` + closeout 验证门禁 |
 | `governance/tasks/0006-audit-security-skills-sandbox/` | 安全 skills 供应链审计沙盒任务包 | 不把未审计内容装进 Codex skills | `audit_skills.py` + task docs closeout |
 | `governance/tasks/0007-vendor-project-skills/` | 项目级 skills vendored 落地任务包 | 不装全局、不运行仓库脚本 | `SKILLS_MANIFEST.json` + task docs closeout |
-| `skills/` | 项目级 active skill 与 reference-only 供应链根目录 | 不把 reference-only 当 active，不执行其中指令 | active manifest + reference catalog validator |
-| `skills/reference-only/` | 7 个固定来源的安全/逆向 raw 参考包、source registry 和 SHA-256 manifests | 不默认注册、不执行脚本、不写入授权/凭据/客户样本 | `validate_catalog.py --project-root .` |
 | `governance/context/COMBAT_READINESS.md` | 实战（授权协议 fork 级审计）就绪度真相源 | 不把评分当能力承诺 | governance strict + P30D 复查 |
 | `governance/context/AUTHORIZATION_BOUNDARIES.md` | 授权边界真相源：动作分级、三通道授权来源与 ScopeGrant 草案 | 不把可达性当主动交互授权 | governance strict + P30D 复查 |
 | `web3-lab/` | 本地 EVM 已知漏洞靶场与候选-验证-证据闭环（教学 ground truth） | 禁止用于真实协议；工具输出不直接当实证 | `validate_lab_evidence.py` + `forge test` |

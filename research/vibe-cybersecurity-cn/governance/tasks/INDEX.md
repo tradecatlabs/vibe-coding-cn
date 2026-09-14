@@ -18,5 +18,3 @@
 | 0007 | vendor-project-skills | Done | high | 把审计通过的 Web3/挖漏洞 skills 拉取为项目级 skill 供应链（vendored，不装全局），固定来源与许可 | 0007-vendor-project-skills/ |
 
 | 0008 | combat-readiness-gap | Done | high | 梳理项目现状，量化实战（真实授权协议 fork 级审计）就绪度，产出差距清单与里程碑路径 | 0008-combat-readiness-gap/ |
-
-| 0014 | relocate-security-reference-skills | Done | high | 将安全/逆向 reference-only 来源从 Codex 全局 skill 根迁移到项目 `skills/reference-only/`，保持来源固定、完整性可验证且不进入 active 运行面 | 0014-relocate-security-reference-skills/ |

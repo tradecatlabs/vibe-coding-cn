@@ -1,8 +1,0 @@
-// Clean MIR: no sensitive variable names, no dangerous patterns.
-// All detectors should produce zero findings on this fixture.
-fn process_data() {
-    debug payload => _1;
-    debug counter => _2;
-    drop(_1);
-    return;
-}

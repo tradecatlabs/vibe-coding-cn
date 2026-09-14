@@ -17,8 +17,8 @@ code_path: operators
 ## 模块职责
 
 - 保存 Harness 可装载的供应商中立问题求解内容。
-- 用独立 source inventory 固定当前跨学科清单的 417 个原始条目。
-- 用五十六个 pack 保存 417 个 source 条目和 60 个显式 derived Method，并声明 Reference Library Profile。
+- 用独立 source inventory 固定当前跨学科清单的 411 个原始条目。
+- 用五十六个 pack 保存 411 个 source 条目和 57 个显式 derived Method，并声明 Reference Library Profile。
 - 用 `operators/taxonomy/problem-solving-methodology.json` 分离母领域出处与八类功能映射；该视图不执行算子。
 
 ## 非职责
@@ -55,4 +55,4 @@ code_path: operators
 - 修改条目时同步 inventory、pack metadata、catalog totals 和相关文档。
 - 不用修改 inventory 与 pack 的同一项来掩盖清单缩水；任务验收必须回看用户来源清单。
 - 不把整库默认注入模型上下文；未来 selector 必须先做廉价适用性过滤。
-- 不把本仓库 417+60 内容规则或八类功能映射提升为第三方 pack 的 Core Contract。
+- 不把本仓库 411+57 内容规则或八类功能映射提升为第三方 pack 的 Core Contract。

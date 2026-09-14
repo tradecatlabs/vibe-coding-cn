@@ -29,3 +29,4 @@
 ## 验证
 
 使用 `validate_task_docs.py --phase closeout` 和项目治理 strict/health；候选总数从 0001 JSON 读取核对。
+

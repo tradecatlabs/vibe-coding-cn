@@ -78,3 +78,4 @@
 - 未验证现有 Agent 项目的 runtime guardrail、prompt injection 防护和越权负例。
 
 因此本账本证明“候选事实可回溯，采用判断有明确依据与限制”，不证明候选已经生产可用。
+

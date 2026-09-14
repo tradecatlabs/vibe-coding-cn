@@ -1,8 +1,0 @@
-{
-  "name": "fp-check",
-  "version": "1.0.3",
-  "description": "Systematic false positive verification for security bug analysis with mandatory gate reviews",
-  "author": {
-    "name": "Maciej Domanski"
-  }
-}

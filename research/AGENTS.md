@@ -24,23 +24,14 @@ research/
 │   ├── README.md
 │   ├── harness-engineering.md
 │   └── AGENTS.md
-├── vibe-cybersecurity-cn/
-│   ├── README.md
-│   ├── governance/
-│   ├── skills/
-│   └── web3-lab/
-├── vibe-harness-cn/
-│   ├── README.md
-│   ├── contracts/
-│   ├── operators/
-│   ├── skills/
-│   └── governance/
-├── vibe-mathing-cn-public/
+├── facts/
 │   ├── README.md
 │   ├── AGENTS.md
-│   ├── domain.yml
-│   ├── raw/
-│   └── snapshot/
+│   ├── sources.yml
+│   └── privacy-audit.yml
+├── vibe-cybersecurity-cn/       # 外部源事实镜像，目录内保持源仓库根布局
+├── vibe-harness-cn/             # 外部源事实镜像，目录内保持源仓库根布局
+├── vibe-mathing-cn-public/      # 外部源事实镜像，目录内保持源仓库根布局
 ├── walkinglabs-learn-harness-engineering/
 │   ├── README.md
 │   ├── AGENTS.md
@@ -189,20 +180,21 @@ research/
 └── AGENTS.md  # 本目录操作规则
 ```
 
-上方只展开了第一个外部仓库研究域的基础形态；所有外部仓库研究域都必须包含同样的原始事实层；两个内部工程研究项目按各自项目契约维护。
+上方只展开了第一个外部仓库研究域的基础形态；所有普通外部仓库研究域都必须包含同样的原始事实层；两个内部工程研究项目按各自项目契约维护。
 `analysis.md` 和 `deep-dive.md`。
-`deep-dive.md` 是 L2 产物；当前 36 个外部仓库研究域已经全部补齐，P3 只表示采用优先级低，
+三个源事实镜像不属于普通研究域，事实登记统一位于 `facts/sources.yml`。
+`deep-dive.md` 是 L2 产物；当前 35 个外部仓库研究域已经全部补齐，P3 只表示采用优先级低，
 不再表示研究深度缺口。
 
 ## 修改规则
 
 - 继承 `docs/AGENTS.md` 的 README 结构契约：H1 后直接进入 `## 字多不看`，再按 `快速导航 -> 完整细粒度目录 -> 使用方式 -> 正文` 排列。
-- 长期研究域必须遵循 `research-domain-contract.md`；外部仓库研究域至少包含 `README.md`、`AGENTS.md`、`domain.yml` 和 `raw/`。
+- 长期研究域必须遵循 `research-domain-contract.md`；普通外部仓库研究域至少包含 `README.md`、`AGENTS.md`、`domain.yml` 和 `raw/`。三个源事实镜像遵循 `facts/AGENTS.md` 与 `facts/sources.yml`，不添加研究域包装层。
 - 长期研究对象优先使用独立目录；目录内必须包含 `README.md` 和 `AGENTS.md`。
 - 外部仓库研究对象采用“一仓库一研究域”，目录名使用 `<owner>-<repo>` 的小写短横线形式。
 - `raw/` 是原始事实层，只保存拉取到本地的一手材料；分析判断写入上一级 `README.md`、`analysis.md` 或 `decisions.md`。
 - `raw/repository/` 是外部仓库快照，只作为本地事实缓存；不提交到主仓、不按本仓 Markdown 风格重写，并从 lint、链接和目录文档门禁中排除。
-- `research/vibe-mathing-cn-public/snapshot/` 是经过过滤和审计的已提交文件快照；它不包含源仓库 `.git`、历史、未跟踪文件或运行产物，并从根仓库 lint、链接、details 和目录文档门禁中排除。
+- `research/vibe-cybersecurity-cn/`、`research/vibe-harness-cn/` 和 `research/vibe-mathing-cn-public/` 是源事实镜像；它们不包含源仓库 `.git`、历史、未跟踪文件或运行产物，并从根仓库格式门禁中排除。边界和隐私修复由 `make check-source-facts` 校验。
 - `research-value-application-map.md` 是研究体系的转化入口，用于说明研究给用户带来的价值、启示、应用位置和下沉路线。
 - `research-transfer-synthesis.md` 是横向迁移入口，用于把研究对象拆成机制、迁移边界、改良动作和验证指标。
 - GitHub 仓库 raw 层通过 `python3 scripts/fetch-research-raw.py` 刷新；不要手工改写 `*.raw.*` 文件。

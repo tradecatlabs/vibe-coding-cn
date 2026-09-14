@@ -9,3 +9,4 @@
 - Trigger Signals: framework lifecycle rendered as sequential pipeline
 - Evidence: `governance/context/CYBERSECURITY_LANDSCAPE.md`、`REVIEW.md`
 - No-Case Reason: 问题在首次审查即修正，未复发；通用的文档事实与图示语义一致性已由现有 document/architecture review 覆盖，新增全局案例会重复 owner 规则。
+

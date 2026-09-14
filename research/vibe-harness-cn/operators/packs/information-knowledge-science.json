@@ -3,12 +3,12 @@
   "kind": "OperatorPack",
   "metadata": {
     "id": "psoa.pack.information-knowledge-science",
-    "version": "1.1.0",
+    "version": "1.0.0",
     "domain": "information-knowledge-science",
     "title": "信息与知识组织科学",
     "summary": "把信息需求、检索、相关性评估、元数据、FAIR 和来源血缘转为证据检索程序。",
     "source_entry_count": 5,
-    "derived_entry_count": 2
+    "derived_entry_count": 1
   },
   "entries": [
     {
@@ -152,7 +152,7 @@
     },
     {
       "id": "psoa.information-knowledge-science.source-authority-and-provenance",
-      "version": "1.1.0",
+      "version": "1.0.0",
       "kind": "MethodSpec",
       "origin": "source",
       "source_key": "information-knowledge-science.source-authority-and-provenance",
@@ -160,10 +160,10 @@
       "name_zh": "来源权威与血缘审计",
       "domain": "information-knowledge-science",
       "status": "experimental",
-      "summary": "记录资源标识、发布者、版本、许可、生成活动、派生关系和原创/改编/导入/模型生成角色，按用途评估权威而非只看排名。",
+      "summary": "记录资源标识、发布者、版本、许可、生成活动和派生关系，按用途评估来源权威而非只看排名。",
       "core_question": "这条信息从哪里来、何时改变、由谁发布、经过什么处理？",
-      "operation": "锁定标识 → 标注贡献角色 → 查发布者/版本/许可 → 追生成与派生 → 比较独立来源 → 限定可用结论",
-      "agent_use": "让 Agent 的引用不仅有链接，还有版本、许可、贡献角色、出处和处理链，避免把形式化或汇编成果误写成独立原创。",
+      "operation": "锁定标识 → 查发布者/版本/许可 → 追生成与派生 → 比较独立来源 → 限定可用结论",
+      "agent_use": "让 Agent 的引用不仅有链接，还有版本、出处和处理链。",
       "applicability": {
         "when": [
           "结论需要引用数据、文档、模型或在线资源。"
@@ -185,20 +185,20 @@
       },
       "semantics": {
         "preconditions": [
-          "有待使用的资源、资源标识、检索结果或生成产物。"
+          "有待使用的资源、资源标识或检索结果。"
         ],
         "steps": [
           {
             "order": 1,
-            "instruction": "记录持久标识、标题、作者/机构、发布日期、版本和 artifact 摘要"
+            "instruction": "记录持久标识、标题、作者/机构、发布日期和版本"
           },
           {
             "order": 2,
-            "instruction": "区分 original、adapted、imported、model-generated、reviewed 等贡献角色，并检查许可、访问条件、元数据和原始落地页"
+            "instruction": "检查许可、访问条件、元数据和原始落地页"
           },
           {
             "order": 3,
-            "instruction": "追踪 used/generated/derived-from/attributed-to 等处理、派生和责任关系"
+            "instruction": "追踪 used/generated/derived-from 等处理与派生关系"
           },
           {
             "order": 4,
@@ -209,16 +209,14 @@
           "来源身份、版本、许可或派生链无法确认。"
         ],
         "success_conditions": [
-          "资源、贡献角色、责任主体、版本、许可、血缘和用途边界清楚。"
+          "资源、责任主体、版本、许可、血缘和用途边界清楚。"
         ],
         "evidence_required": [
-          "标识、发布者、贡献角色、版本、许可、元数据、血缘图和访问时间。"
+          "标识、发布者、版本、许可、元数据、血缘图和访问时间。"
         ],
         "failure_modes": [
           "聚合页被当原始来源。",
-          "版本漂移导致旧结论无法复现。",
-          "把改编、导入或模型生成产物误写成独立原创。",
-          "只写总项目作者而无法追踪具体 artifact 的责任与许可。"
+          "版本漂移导致旧结论无法复现。"
         ]
       }
     },
@@ -360,40 +358,6 @@
           "把 FAIR 指导原则误写成自动合规认证。",
           "忽视受限访问和弱势使用者。"
         ]
-      }
-    },
-    {
-      "id": "psoa.information-knowledge-science.route-first-artifact-audit",
-      "version": "1.0.0",
-      "kind": "MethodSpec",
-      "origin": "derived",
-      "name": "Route First Artifact Audit",
-      "name_zh": "路线优先产物审计",
-      "domain": "information-knowledge-science",
-      "status": "experimental",
-      "summary": "先读取权威路线图和依赖图，再沿关键路径抽样正式 artifact；导航材料只用于定位，最终结论回到版本化原始产物和验证回执。",
-      "core_question": "在无法逐行审阅大型产物时，如何沿主路找到最关键、最能改变结论的正式证据？",
-      "operation": "Lock provenance → Read route map → Select critical path → Inspect source artifacts → Admit bounded conclusion",
-      "agent_use": "让 Agent 审查大型代码、证明或文档库时避免随机浏览、只看渲染页面或用体积代替质量。",
-      "applicability": {
-        "when": ["artifact 数量很大、存在依赖图/路线文档，且审计预算不足以逐项完整复核。"],
-        "not_when": ["小型 artifact 可以完整审查，或没有可信路线与依赖信息。"]
-      },
-      "source_refs": ["ref:w3c-prov", "ref:swebok", "ref:google-code-review", "ref:nist-tevv"],
-      "governance": {"risk_level": "medium", "permission_decision": "harness_policy", "outcome_decision": "verifier", "sensitive_values": "reference_only"},
-      "semantics": {
-        "preconditions": ["审计目标、版本、路线/依赖信息、正式 artifact 边界、抽样预算和接纳标准已声明。"],
-        "steps": [
-          {"order": 1, "use": "psoa.information-knowledge-science.source-authority-and-provenance"},
-          {"order": 2, "instruction": "读取路线文件、索引和依赖图，只把它们当导航线索，不当最终证据"},
-          {"order": 3, "instruction": "选择入口、关键依赖、边界、汇合点和高风险节点组成的审计主路，并记录抽样理由"},
-          {"order": 4, "instruction": "回到版本化正式 artifact 核查陈述、实现、依赖和验证证据；渲染页或摘要只做交叉定位"},
-          {"order": 5, "use": "psoa.problem-solving-methodology.evidence-capability-admission"}
-        ],
-        "stop_conditions": ["路线与正式 artifact 无法对应、关键依赖不可访问、样本不能覆盖接纳所需能力或版本发生漂移。"],
-        "success_conditions": ["主路、抽样理由、正式 artifact、来源链、已覆盖/未覆盖范围和证据能力均可追溯。"],
-        "evidence_required": ["路线/依赖图、样本选择、artifact 身份与版本、逐节点发现、能力接纳矩阵和未覆盖声明。"],
-        "failure_modes": ["把路线图、HTML、README 或摘要当正式证据。", "随机抽样漏掉关键依赖。", "把未抽查区域默认为通过。", "用文件数或代码行数当质量指标。"]
       }
     },
     {

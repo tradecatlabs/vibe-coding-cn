@@ -3,7 +3,7 @@
   "kind": "OperatorLibraryCatalog",
   "metadata": {
     "id": "psoa.core-library",
-    "version": "1.11.0",
+    "version": "1.10.0",
     "title": "Vibe Harness CN 问题求解算子库",
     "status": "experimental"
   },
@@ -99,8 +99,8 @@
       {
         "domain": "problem-solving-methodology",
         "path": "packs/problem-solving-methodology.json",
-        "source_entry_count": 11,
-        "derived_entry_count": 2
+        "source_entry_count": 8,
+        "derived_entry_count": 1
       },
       {
         "domain": "statistics",
@@ -207,8 +207,8 @@
       {
         "domain": "formal-logic-automated-reasoning",
         "path": "packs/formal-logic-automated-reasoning.json",
-        "source_entry_count": 8,
-        "derived_entry_count": 2
+        "source_entry_count": 5,
+        "derived_entry_count": 1
       },
       {
         "domain": "philosophy-science-epistemology",
@@ -238,7 +238,7 @@
         "domain": "information-knowledge-science",
         "path": "packs/information-knowledge-science.json",
         "source_entry_count": 5,
-        "derived_entry_count": 2
+        "derived_entry_count": 1
       },
       {
         "domain": "control-theory-cybernetics",
@@ -350,9 +350,9 @@
       }
     ],
     "totals": {
-      "source_entries": 417,
-      "derived_entries": 60,
-      "entries": 477
+      "source_entries": 411,
+      "derived_entries": 57,
+      "entries": 468
     },
     "invariants": {
       "source_coverage": "exact",

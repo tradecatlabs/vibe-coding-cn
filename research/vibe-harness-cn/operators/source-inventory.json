@@ -3,11 +3,11 @@
   "kind": "OperatorSourceInventory",
   "metadata": {
     "id": "psoa.source-inventory",
-    "version": "1.8.0",
+    "version": "1.7.0",
     "title": "用户提供的跨领域思维模型与方法论完整性基线"
   },
   "spec": {
-    "expected_source_entries": 417,
+    "expected_source_entries": 411,
     "domains": [
       {
         "id": "research",
@@ -1038,7 +1038,7 @@
       {
         "id": "problem-solving-methodology",
         "title": "通用问题求解方法论",
-        "expected_count": 11,
+        "expected_count": 8,
         "entries": [
           {"source_key": "problem-solving-methodology.task-framing", "name": "Task Framing", "name_zh": "任务定框", "expected_kind": "OperatorSpec"},
           {"source_key": "problem-solving-methodology.problem-space-model", "name": "Problem Space and Operators", "name_zh": "问题空间与算子", "expected_kind": "MentalModelSpec"},
@@ -1047,10 +1047,7 @@
           {"source_key": "problem-solving-methodology.heuristic-search", "name": "Selective Heuristic Search", "name_zh": "选择性启发式搜索", "expected_kind": "OperatorSpec"},
           {"source_key": "problem-solving-methodology.constructive-witness", "name": "Constructive Witness", "name_zh": "构造性见证", "expected_kind": "OperatorSpec"},
           {"source_key": "problem-solving-methodology.look-back-evaluation", "name": "Look-back Evaluation", "name_zh": "回看评估", "expected_kind": "OperatorSpec"},
-          {"source_key": "problem-solving-methodology.metacognitive-monitoring", "name": "Metacognitive Monitoring", "name_zh": "元认知监控", "expected_kind": "OperatorSpec"},
-          {"source_key": "problem-solving-methodology.claim-candidate-result-separation", "name": "Claim Candidate Result Separation", "name_zh": "声明、候选与结果分离", "expected_kind": "MentalModelSpec"},
-          {"source_key": "problem-solving-methodology.evidence-capability-admission", "name": "Evidence Capability Admission", "name_zh": "证据能力接纳", "expected_kind": "OperatorSpec"},
-          {"source_key": "problem-solving-methodology.failed-route-memory", "name": "Failed Route Memory", "name_zh": "失败路线记忆", "expected_kind": "OperatorSpec"}
+          {"source_key": "problem-solving-methodology.metacognitive-monitoring", "name": "Metacognitive Monitoring", "name_zh": "元认知监控", "expected_kind": "OperatorSpec"}
         ]
       },
       {
@@ -1260,16 +1257,13 @@
       {
         "id": "formal-logic-automated-reasoning",
         "title": "形式逻辑与自动推理",
-        "expected_count": 8,
+        "expected_count": 5,
         "entries": [
           {"source_key": "formal-logic-automated-reasoning.formal-problem-specification", "name": "Formal Problem Specification", "name_zh": "形式问题规约", "expected_kind": "MethodSpec"},
           {"source_key": "formal-logic-automated-reasoning.syntax-semantics-separation", "name": "Syntax Semantics Separation", "name_zh": "语法语义分离", "expected_kind": "MentalModelSpec"},
           {"source_key": "formal-logic-automated-reasoning.satisfiability-countermodel-search", "name": "Satisfiability and Countermodel Search", "name_zh": "可满足性与反模型搜索", "expected_kind": "OperatorSpec"},
           {"source_key": "formal-logic-automated-reasoning.proof-state-subgoal-decomposition", "name": "Proof State Subgoal Decomposition", "name_zh": "证明状态子目标分解", "expected_kind": "OperatorSpec"},
-          {"source_key": "formal-logic-automated-reasoning.kernel-checked-proof-evidence", "name": "Kernel Checked Proof Evidence", "name_zh": "内核核验的证明证据", "expected_kind": "MethodSpec"},
-          {"source_key": "formal-logic-automated-reasoning.statement-identity-audit", "name": "Statement Identity Audit", "name_zh": "陈述身份审计", "expected_kind": "OperatorSpec"},
-          {"source_key": "formal-logic-automated-reasoning.exact-strength-audit", "name": "Exact Strength Audit", "name_zh": "精确强度审计", "expected_kind": "OperatorSpec"},
-          {"source_key": "formal-logic-automated-reasoning.placeholder-reachability-audit", "name": "Placeholder Reachability Audit", "name_zh": "占位符可达性审计", "expected_kind": "OperatorSpec"}
+          {"source_key": "formal-logic-automated-reasoning.kernel-checked-proof-evidence", "name": "Kernel Checked Proof Evidence", "name_zh": "内核核验的证明证据", "expected_kind": "MethodSpec"}
         ]
       },
       {

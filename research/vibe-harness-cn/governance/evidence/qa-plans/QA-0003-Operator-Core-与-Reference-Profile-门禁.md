@@ -4,7 +4,7 @@ type: record
 status: active
 owner: engineering
 created: 2026-09-03
-last_reviewed: 2026-09-05
+last_reviewed: 2026-09-03
 source: docs/OPERATOR_SPEC.md
 related_gates: [GATE-0000, GATE-0001]
 ---
@@ -19,7 +19,7 @@ related_gates: [GATE-0000, GATE-0001]
 ## 用户旅程
 
 第三方作者可提交自定义领域和渐进式 `draft` Pack，只要字段形状正确；本仓库维护者发布参考库时，
-必须额外满足显式 Profile 的 417+60 内容、引用、计数和安全要求；双轴 taxonomy 只做分类审计，不增加 Core 字段要求。
+必须额外满足显式 Profile 的 411+57 内容、引用、计数和安全要求；双轴 taxonomy 只做分类审计，不增加 Core 字段要求。
 
 ## 验收场景
 
@@ -29,7 +29,7 @@ related_gates: [GATE-0000, GATE-0001]
 - [x] 字段格式：错误 SemVer 类型和未知同级字段被拒绝。
 - [x] 类型边界：MentalModel 不得把 `effect` 伪装成动作语义。
 - [x] Reference Profile：缺少成熟内容字段被拒绝。
-- [x] 完整性：417/417 source、60/60 derived、总计 477 继续通过。
+- [x] 完整性：411/411 source、57/57 derived、总计 468 继续通过。
 - [x] 安全：自授权、错误引用类型、Method 循环和路径逃逸继续被拒绝。
 
 ## 验证证据

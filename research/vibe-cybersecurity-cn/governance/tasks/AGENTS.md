@@ -17,8 +17,7 @@ governance/tasks/
 ├── 0005-admit-web3-toolchain/                   # Web3 工具链准入与验证控制面升级
 ├── 0006-audit-security-skills-sandbox/          # 安全 skills 供应链审计沙盒
 ├── 0007-vendor-project-skills/                  # 项目级 skills vendored 落地
-├── 0008-combat-readiness-gap/                   # 实战就绪度评估与差距清单
-└── 0014-relocate-security-reference-skills/     # 安全/逆向 reference-only 包迁移
+└── 0008-combat-readiness-gap/                   # 实战就绪度评估与差距清单
 ```
 
 ## 职责边界

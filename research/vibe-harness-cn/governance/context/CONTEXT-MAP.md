@@ -20,7 +20,6 @@ review_cycle: P90D
 | 上游研究 | `research` | `context/module-contexts/research/CONTEXT.md` | `decisions/adr/ADR-0001-元-Harness-采用契约优先的治理控制面.md` | `bash scripts/sync_upstreams.sh` |
 | Harness 契约 | `contracts` | `context/module-contexts/contracts/CONTEXT.md` | `decisions/adr/ADR-0001-元-Harness-采用契约优先的治理控制面.md` | `uv run --locked --script scripts/validate_harness.py --self-test` |
 | 问题求解算子库 | `operators` | `context/module-contexts/operators/CONTEXT.md` | `decisions/adr/ADR-0003-引入问题求解算子语义层.md`<br>`decisions/adr/ADR-0004-问题求解算子采用宽松核心与可选加严-Profile.md` | `uv run --locked --script scripts/validate_harness.py --operator-library operators/catalog.json` |
-| AI Skill 发布包 | `skills/solve` | `context/module-contexts/skills/CONTEXT.md` | `decisions/adr/ADR-0003-引入问题求解算子语义层.md` | `validate-skill.sh --strict`；包内 operator-library 校验 |
 | 协议参考消费方 | `examples` | `context/module-contexts/examples/CONTEXT.md` | `decisions/adr/ADR-0007-以参考-Harness-验证-Operator-Runtime-互操作契约.md` | `python3 -m unittest tests.test_reference_operator_harness` |
 | 验证脚本 | `scripts` | `context/module-contexts/scripts/CONTEXT.md` | `decisions/adr/ADR-0004-问题求解算子采用宽松核心与可选加严-Profile.md` | `uv run --locked --script scripts/validate_harness.py --self-test` |
 | 领域与需求文档 | `docs` | `context/module-contexts/docs/CONTEXT.md` | `decisions/adr/ADR-0001-元-Harness-采用契约优先的治理控制面.md`<br>`decisions/adr/ADR-0003-引入问题求解算子语义层.md` | `python3 governance/tools/validate_governance_package.py --project-root . --strict` |

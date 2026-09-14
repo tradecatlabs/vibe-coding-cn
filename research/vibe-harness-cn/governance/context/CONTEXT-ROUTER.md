@@ -33,5 +33,4 @@ review_cycle: P90D
 | 上游 Harness 研究 | `module-contexts/research/CONTEXT.md`、`research/UPSTREAMS.md`、revision lock | 领域模型、ADR-0001 | revision 绑定、源码可见性与研究限制 |
 | Harness 契约 | 架构设计原则、非功能性需求标准、`module-contexts/contracts/CONTEXT.md` | ADR-0001、QA-0001、领域模型 | 正反例门禁与版本演进结论 |
 | 问题求解算子库 | `module-contexts/operators/CONTEXT.md`、Operator Spec、PSOA PRD、ADR-0003/0004 | contracts/scripts context、QA 标准 | Core 格式、Profile 完整性、引用和负例证据 |
-| AI Skill 发布包 | `module-contexts/skills/CONTEXT.md`、`skills/solve/SKILL.md`、references/index | operators context、Toolchain Model | Skill frontmatter、按需加载、快照路径和包内完整性 |
 | Operator Runtime 协议 | `module-contexts/contracts/CONTEXT.md`、`module-contexts/examples/CONTEXT.md`、Operator Spec、ADR-0007 | operators/scripts context、QA-0004 | Runtime Core 正反例、参考 Harness 行为与职责边界证据 |

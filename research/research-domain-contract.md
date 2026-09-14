@@ -209,6 +209,20 @@ raw 层拉取成功后，再把稳定事实摘要同步到 `domain.yml`；不要
 - 如果上游内容有独立 Markdown、链接或执行契约，应在父仓库质量门禁中按目录排除，并在本研究域 `AGENTS.md` 说明独立验证方式。
 - 快照只用于研究和审阅；不能自动安装其中的 skills、依赖或工具。
 
+### 外部源事实镜像例外
+
+以下目录不属于普通研究域，不要求 `README.md`、`AGENTS.md`、`domain.yml`、`raw/`、`analysis.md` 或
+`deep-dive.md` 包装层：
+
+- `research/vibe-cybersecurity-cn/`
+- `research/vibe-harness-cn/`
+- `research/vibe-mathing-cn-public/`
+
+它们是外部源仓库的事实镜像：目标目录直接对应源仓库根目录的已提交文件树，不进行父仓库格式化、目录重排或
+研究判断注入。源仓库 `.git`、历史、未跟踪内容、缓存、运行产物和私密材料不进入镜像；源文件若含本机路径，
+只允许做最小的可移植化替换，并在 `research/facts/sources.yml` 记录。提交前运行
+`make check-source-facts`，不要把镜像注册为普通研究域或 active skill。
+
 ### analysis.md
 
 `analysis.md` 是迁移层，不是普通摘要。它必须把事实和判断转成可执行研究结论。

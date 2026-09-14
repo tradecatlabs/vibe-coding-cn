@@ -39,5 +39,3 @@
 | 0018 | deepen-mathematical-problem-solving | In Progress | P0 | 把数学家解决未知问题的八类方法地图逐项映射并沉淀为可审计算子 | 0018-deepen-mathematical-problem-solving/ |
 
 | 0019 | reference-operator-runtime-proof | In Progress | P0 | 建立可移植 Operator Runtime 契约，并以无副作用参考 Harness 验证 Selector、Binding、Execute、Verify、Trace 闭环 | 0019-reference-operator-runtime-proof/ |
-
-| 0020 | integrate-proof-engineering-operators | Planning | P0 | 把 FLT/Prove2Me 案例中的独立问题求解能力去重沉淀为算子与组合方法，刷新 solve Skill 并同步安装到 WSL/Windows Codex | 0020-integrate-proof-engineering-operators/ |

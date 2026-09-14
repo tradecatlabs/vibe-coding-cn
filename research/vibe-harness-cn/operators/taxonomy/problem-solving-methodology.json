@@ -3,7 +3,7 @@
   "kind": "OperatorTaxonomy",
   "metadata": {
     "id": "psoa.taxonomy.problem-solving-methodology",
-    "version": "1.8.0",
+    "version": "1.7.0",
     "title": "问题求解算子双轴分类",
     "status": "experimental",
     "summary": "把母领域来源与算子在问题空间中承担的功能分开管理。"
@@ -250,10 +250,6 @@
       {"entry": "psoa.formal-logic-automated-reasoning.proof-state-subgoal-decomposition", "functional_class": "decomposition"},
       {"entry": "psoa.formal-logic-automated-reasoning.kernel-checked-proof-evidence", "functional_class": "verification-falsification"},
       {"entry": "psoa.formal-logic-automated-reasoning.formal-reasoning-loop", "functional_class": "control-metacognition"},
-      {"entry": "psoa.formal-logic-automated-reasoning.statement-identity-audit", "functional_class": "verification-falsification"},
-      {"entry": "psoa.formal-logic-automated-reasoning.exact-strength-audit", "functional_class": "verification-falsification"},
-      {"entry": "psoa.formal-logic-automated-reasoning.placeholder-reachability-audit", "functional_class": "verification-falsification"},
-      {"entry": "psoa.formal-logic-automated-reasoning.machine-semantic-dual-audit", "functional_class": "verification-falsification"},
       {"entry": "psoa.philosophy-science-epistemology.observation-interpretation-separation", "functional_class": "representation"},
       {"entry": "psoa.philosophy-science-epistemology.inference-to-best-explanation", "functional_class": "search"},
       {"entry": "psoa.philosophy-science-epistemology.auxiliary-assumption-audit", "functional_class": "diagnosis-revision"},
@@ -283,8 +279,7 @@
       {"entry": "psoa.information-knowledge-science.source-authority-and-provenance", "functional_class": "verification-falsification"},
       {"entry": "psoa.information-knowledge-science.relevance-precision-recall-audit", "functional_class": "verification-falsification"},
       {"entry": "psoa.information-knowledge-science.metadata-and-fairness-check", "functional_class": "verification-falsification"},
-      {"entry": "psoa.information-knowledge-science.evidence-retrieval-loop", "functional_class": "control-metacognition"},
-      {"entry": "psoa.information-knowledge-science.route-first-artifact-audit", "functional_class": "verification-falsification"}
+      {"entry": "psoa.information-knowledge-science.evidence-retrieval-loop", "functional_class": "control-metacognition"}
     ],
     "resolution_policy": [
       "先读取条目 extensions.vibe-harness-cn.functional_class；存在 entry_override 时以 taxonomy override 作为审计显式值。",
@@ -294,7 +289,7 @@
     ],
     "coverage_policy": {
       "catalog": "operators/catalog.json",
-      "claim": "当前 catalog 登记的 56 个 domain、417 个 source 和 60 个 derived 条目均可通过显式 override、条目扩展或 domain default 解析到一个主功能类。",
+      "claim": "当前 catalog 登记的 56 个 domain、411 个 source 和 57 个 derived 条目均可通过显式 override 或 domain default 解析到一个主功能类。",
       "validation": "交叉索引与目录计数属于文档/治理检查；运行时 selector、planner、权限和结果裁决不由此文件实现。"
     }
   }

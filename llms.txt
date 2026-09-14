@@ -59,11 +59,12 @@ vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程系统教程，帮�
 - research/harness/harness-engineering.md
 - research/walkinglabs-learn-harness-engineering/README.md
 - research/mindfold-ai-trellis/README.md
-- research/vibe-cybersecurity-cn/README.md
-- research/vibe-harness-cn/README.md
-- research/vibe-mathing-cn-public/README.md
-- research/vibe-mathing-cn-public/analysis.md
-- research/vibe-mathing-cn-public/deep-dive.md
+- research/facts/README.md
+- research/facts/sources.yml
+- research/facts/privacy-audit.yml
+- research/vibe-cybersecurity-cn/
+- research/vibe-harness-cn/
+- research/vibe-mathing-cn-public/
 - research/openai-codex/README.md
 - research/openai-plugins/README.md
 - research/openai-skills/README.md

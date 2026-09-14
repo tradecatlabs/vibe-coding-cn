@@ -7,9 +7,9 @@ operators/
 ├── AGENTS.md                  # 本模块架构与维护规则
 ├── README.md                  # 内容、类型、边界和验证入口
 ├── catalog.json               # Reference Library Profile、pack 注册、声明计数与全库不变量
-├── source-inventory.json      # 用户扩展 417 项的独立验收清单与来源索引
+├── source-inventory.json      # 用户扩展 411 项的独立验收清单与来源索引
 ├── taxonomy/                  # 母领域来源与八类功能的双轴分类视图
-└── packs/                     # 五十六个领域内容包，共 417 个 source + 60 个 derived 条目
+└── packs/                     # 五十六个领域内容包，共 411 个 source + 57 个 derived 条目
 ```
 
 ## 依赖与职责
@@ -19,7 +19,6 @@ operators/
 contracts/problem-solving-operator-pack.schema.json -> packs/*.json
 source-inventory.json + catalog.json + packs/*.json -> validate_operator_library.py
 operators/ -> 未来具体 Harness 的本地 Library/Binding
-operators/ -> skills/solve/references/ 是面向 AI 的可移植发布快照
 ```
 
 - `source-inventory.json` 独立于 pack，防止作者通过同步删除清单和内容来掩盖漏项。
@@ -28,8 +27,7 @@ operators/ -> skills/solve/references/ 是面向 AI 的可移植发布快照
   必须明确标记 `derived`。
 - `taxonomy/` 只保存 source domain 与 functional class 的交叉索引；母领域是方法出处，八类功能是问题空间动作视角，二者不得混成一个分类轴。
 - Core 字段结构由 `contracts/` 拥有；本仓库内容完整性和引用检查属于 Reference Profile，由
-  `scripts/` 执行；本目录不得把五十六个领域或 417+60 计数提升为公共契约。
-- `skills/solve/` 只能消费本目录已校验的内容；Skill 内的 JSON 不得反向成为条目编辑入口。
+  `scripts/` 执行；本目录不得把五十六个领域或 411+57 计数提升为公共契约。
 - 条目不能授权工具、批准自身结果、内联秘密或冒充外部标准的完整实现。
 
 新增、删除或重分类原始条目时，必须同步 inventory、pack、声明计数、文档和负例，并执行：

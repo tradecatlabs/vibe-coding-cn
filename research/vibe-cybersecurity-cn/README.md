@@ -46,8 +46,6 @@ CyberTask
 - [Web3 靶场证据账本](web3-lab/evidence/findings-2026-08-14.json)
 - [Web3 工具链准入表](governance/tasks/0005-admit-web3-toolchain/ADMISSION_TABLE.md)
 - [项目级 Skills 供应链清单](skills/SKILLS_MANIFEST.json)
-- [第三方来源与许可说明](THIRD_PARTY_NOTICES.md)
-- [安全/逆向 reference-only 来源清单](skills/reference-only/source-registry.yaml)
 - [供应链审计：Hacking-Tools 清单 + Blackstorm 研究资料](governance/tasks/0009-supply-chain-yogsec-blackstorm/AUDIT_REPORT.md)
 - [实战就绪度评估（差距与里程碑）](governance/context/COMBAT_READINESS.md)
 
@@ -60,9 +58,3 @@ CyberTask
 - 授权来源三通道：自有资产声明、赏金项目规则、书面授权。
 - 授权、范围、速率、动作等级和停止条件由运行时策略执行，不能依赖模型自律。
 - 工具输出默认只是候选证据；未经独立验证不得晋升为实证漏洞。
-
-## 主仓库纳入记录
-
-- 原项目 HEAD：`63d78a1afb495cec8113ee6626b453d33fcc166e`
-- 原项目分支：`master`
-- 当前由上级仓库 `research/` 管理；原项目 `.git` 不纳入上级仓库。

@@ -199,21 +199,15 @@ documents:
   - path: research/mindfold-ai-trellis/deep-dive.md
     title: mindfold-ai/Trellis 深度研究
     role: Harness 架构、CLI 和记忆系统的 L2 研究
-  - path: research/vibe-cybersecurity-cn/README.md
-    title: vibe-cybersecurity-cn
-    role: 授权边界内的 Agent 网络安全自动化研究与工程项目
-  - path: research/vibe-harness-cn/README.md
-    title: vibe-harness-cn
-    role: 治理 Agent Harness 与问题求解算子库的元 Harness 项目
-  - path: research/vibe-mathing-cn-public/README.md
-    title: vibemathing/vibe-mathing-cn-public 研究域
-    role: 数学研究、证据闭环与可信验证工作台
-  - path: research/vibe-mathing-cn-public/analysis.md
-    title: vibemathing/vibe-mathing-cn-public 研究分析
-    role: 数学研究工作流、迁移价值和采用边界的结构化研究
-  - path: research/vibe-mathing-cn-public/deep-dive.md
-    title: vibemathing/vibe-mathing-cn-public 深度研究
-    role: 证据闭环、有界运行时和公共边界的 L2 研究
+  - path: research/facts/README.md
+    title: 外部源事实层
+    role: 三个外部仓库的已提交源文件树、来源事实、哈希和隐私边界
+  - path: research/facts/sources.yml
+    title: 外部源事实来源登记
+    role: 源提交、树哈希、归档哈希、镜像路径和隐私修复登记
+  - path: research/facts/privacy-audit.yml
+    title: 外部源隐私审计事实
+    role: 只记录路径、行号、类别和处置状态的隐私审计登记
   - path: research/aider-ai-aider/README.md
     title: Aider-AI/aider 研究域
     role: 终端 AI 结对编程工具

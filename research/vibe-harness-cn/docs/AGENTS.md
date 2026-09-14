@@ -32,7 +32,3 @@ Schema，长期项目决策必须落到 `governance/`。
 - 2026-09-04：数学专项将 55 个问题求解方法逐项 crosswalk，复用 20 项并新增 35 个 source 与 1 个 derived；当前参考库为 411 个原始条目、57 个派生 Method，公共 Core 与运行时边界不变。
 - 2026-09-04：新增宽松 Operator Runtime Core 与无副作用参考 Harness，证明 Selector、Binding、
   三类 Spec 物化、独立摘要验证和最小披露 Trace；真实执行、第二 Binding 和生产 eval 仍未实现。
-- 2026-09-04：新增 `skills/solve/` 可移植 Skill 发布包；Skill 作为 Harness 的内容分发载体，
-  `operators/` 仍是唯一内容真相源，包内只复制已校验的参考快照。
-- 2026-09-05：从形式证明工程案例加入 6 个 source、3 个 derived Method；当前参考库为 417 source、
-  60 derived、477 total，证据采用 capability set，不把 source/build/kernel/semantic 压成可跳级阶梯。

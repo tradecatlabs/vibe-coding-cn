@@ -37,7 +37,6 @@ review_cycle: P90D
 | 验证门禁（architecture） | `bash governance/tools/verify_architecture.sh` | 治理 strict + health |
 | 治理校验 | `python3 governance/tools/validate_governance_package.py --project-root . --strict` | 校验治理结构、frontmatter 和内部链接 |
 | 治理健康 | `python3 governance/tools/governance_health_report.py --project-root . --strict` | 检查占位、过期与待处理项 |
-| 安全/逆向来源完整性 | `python3 <CODEX_SKILLS>/project/modules/security-catalog/scripts/validate_catalog.py --project-root .` | 校验 7 个固定来源、许可证元数据和逐文件 SHA-256；reference-only，不执行内容 |
 | 类型检查 | 不适用 | 尚无业务代码 |
 | 构建 | `cd web3-lab && forge build` | Foundry 仅用于本地靶场 |
 | 本地运行 | `cd web3-lab && forge test` | 仅本地链与本地合约；只读 fork 需单独声明 RPC |

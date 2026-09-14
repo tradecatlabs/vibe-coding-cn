@@ -180,7 +180,7 @@ def gate_contract() -> list[str]:
     )
     return [
         "Harness 正例通过",
-        "Operator Library 417/417 + 60/60",
+        "Operator Library 411/411 + 57/57",
         "Operator Runtime 三类 Core 对象通过",
         "结构/策略/引用负例被拒绝",
     ]

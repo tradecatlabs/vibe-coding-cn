@@ -23,7 +23,7 @@ Operator Pack
 - Evaluation 回答“方法是否真的有效”。
 - Runtime Policy 回答“这次是否允许执行”。
 
-四层不得互相冒充。尤其不能因为当前参考库有五十六个领域、417 个来源条目和固定写法，就把这些
+四层不得互相冒充。尤其不能因为当前参考库有五十六个领域、411 个来源条目和固定写法，就把这些
 本地事实写成所有 Harness 必须遵守的公共标准。
 
 ## 2. Core Contract
@@ -144,8 +144,8 @@ Core 只校验已出现字段的类型和结构，不强制：
 本仓库 `operators/catalog.json` 声明
 `vibe-harness-cn/reference-library-v1` Profile。它在 Core 之上额外要求：
 
-- 五十六个 pack 对独立 inventory 精确覆盖 417 个 source 条目；
-- 60 个 derived 条目全部为 `MethodSpec`；
+- 五十六个 pack 对独立 inventory 精确覆盖 411 个 source 条目；
+- 57 个 derived 条目全部为 `MethodSpec`；
 - pack、domain、来源、名称、计数和 ID 与 inventory/catalog 一致；
 - entry ID、source key、来源引用全局唯一或可解析；
 - Method 步骤连续、引用类型正确且图无环；

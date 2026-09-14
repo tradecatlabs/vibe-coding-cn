@@ -16,7 +16,6 @@ ROOT = Path(__file__).resolve().parents[1]
 MODULE_PATH = ROOT / "examples" / "reference_harness" / "reference_harness.py"
 REQUEST_PATH = ROOT / "examples" / "reference_harness" / "requests" / "definition-first.json"
 BINDING_PATH = ROOT / "examples" / "reference_harness" / "bindings" / "instruction-packet.json"
-CATALOG_PATH = ROOT / "operators" / "catalog.json"
 
 
 def load_reference_harness():
@@ -49,12 +48,7 @@ class ReferenceOperatorHarnessTest(unittest.TestCase):
         self.assertEqual("completed", record["metadata"]["status"])
         self.assertEqual("accepted", record["spec"]["result"]["verification_verdict"])
         self.assertEqual("instruction_materialization_only", record["spec"]["result"]["claim_scope"])
-        catalog = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
-        expected_count = sum(
-            pack["source_entry_count"] + pack["derived_entry_count"]
-            for pack in catalog["spec"]["packs"]
-        )
-        self.assertEqual(expected_count, record["spec"]["selection"]["considered_count"])
+        self.assertEqual(468, record["spec"]["selection"]["considered_count"])
         self.assertEqual(4, len(packet["spec"]["instructions"]))
         self.assertEqual(
             self.harness.canonical_digest(packet),

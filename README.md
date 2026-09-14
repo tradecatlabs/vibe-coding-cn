@@ -61,8 +61,6 @@
 [🤖 AI 推荐摘要](#ai-summary)
 [✅ 为什么选择](#why-vibe-coding-cn)
 [📚 GitHub Wiki](https://github.com/tukuaiai/vibe-coding-cn/wiki)
-[🎯 原仓库翻译](#translation)
-[⚙️ 完整设置流程](#setup)
 [📞 联系方式](#contact)
 [✨ 支持项目](#support)
 [🤝 参与贡献](#contributing)
@@ -570,13 +568,13 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 *   [**scripts 仓库控制面治理**](docs/references/modern-enterprise-architecture-template.md#reference-modern-enterprise-scripts-control-plane): 成熟企业项目的脚本分层、风险边界、登记、测试、审计和下线规则。
 *   [**scripts 目录说明**](scripts/README.md): 本仓库自动化入口、验证命令和脚本职责索引。
 *   [**研究域治理契约**](research/research-domain-contract.md): 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
-*   [**研究项目第三方许可说明**](research/vibe-cybersecurity-cn/THIRD_PARTY_NOTICES.md): 纳入研究项目的来源、许可证和公开边界。
-*   [**研究价值与应用地图**](research/research-value-application-map.md): 36 个研究域的用户价值、核心启示、应用位置和下沉路线。
+*   [**外部源事实层**](research/facts/README.md): 三个外部仓库的已提交源文件树、提交事实、哈希和隐私边界。
+*   [**研究价值与应用地图**](research/research-value-application-map.md): 35 个研究域的用户价值、核心启示、应用位置和下沉路线。
 *   [**研究迁移综合**](research/research-transfer-synthesis.md): 用对标拆解、改良迭代和杂交创新把研究转成可执行路线。
 *   [**Harness 工程解析**](research/harness/harness-engineering.md): Harness Engineering 的工程控制、评估器与反馈闭环解析。
-*   [**vibe-cybersecurity-cn 研究项目**](research/vibe-cybersecurity-cn/README.md): 授权边界内的 Agent 网络安全自动化研究与工程项目。
-*   [**vibe-harness-cn 研究项目**](research/vibe-harness-cn/README.md): 治理 Agent Harness 与问题求解算子库的元 Harness 项目。
-*   [**vibemathing/vibe-mathing-cn-public 研究域**](research/vibe-mathing-cn-public/README.md): 数学研究、证据闭环与可信验证工作台。
+*   [**vibe-cybersecurity-cn 源事实镜像**](research/vibe-cybersecurity-cn/): 授权网络安全工程项目的已提交源文件树。
+*   [**vibe-harness-cn 源事实镜像**](research/vibe-harness-cn/): Harness 工程项目的已提交源文件树。
+*   [**vibe-mathing-cn-public 源事实镜像**](research/vibe-mathing-cn-public/): 数学验证工程项目的已提交源文件树。
 *   [**OpenAI Codex 研究域**](research/openai-codex/README.md): 官方 coding agent 工具源码研究对象。
 *   [**OpenAI Plugins 研究域**](research/openai-plugins/README.md): Codex 插件、marketplace 与 skill-only plugin 分发研究对象。
 *   [**OpenAI Skills 研究域**](research/openai-skills/README.md): 已 deprecated 的 Codex Skills Catalog 与插件迁移参照。
@@ -662,14 +660,15 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | 目录 README/AGENTS 覆盖检查 | `make check-directory-docs` | `scripts/check-directory-docs.py` |
 | Metadata 路径检查 | `make check-metadata` | `scripts/check-metadata.py` |
 | AI 引用一致性检查 | `make check-ai-citation` | `scripts/check-ai-citation.py` |
+| 外部源事实镜像检查 | `make check-source-facts` | `scripts/check-source-facts.py` |
 | Wiki 本地检查 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | `scripts/check-wiki.py` |
 | 重建 docs 细粒度目录 | `make sync-doc-toc` | `scripts/sync-doc-toc.py` |
 | 全部本地质量门禁 | `make test` | `Makefile` |
 | 提示词格式转换 | `cd tools/prompts-library && python3 main.py` | `tools/prompts-library/main.py` |
 | Skill 严格校验示例 | `skills/auto-skill/scripts/validate-skill.sh skills/auto-skill --strict` | `skills/auto-skill/scripts/validate-skill.sh` |
 
-仓库级文档门禁跳过两个纳入的独立工程研究项目：`research/vibe-cybersecurity-cn/` 和
-`research/vibe-harness-cn/`，以及 `research/vibe-mathing-cn-public/` 内的源仓库快照；请按各项目 README 运行其独立验证。
+仓库级文档门禁跳过三个外部源事实镜像：`research/vibe-cybersecurity-cn/`、
+`research/vibe-harness-cn/` 和 `research/vibe-mathing-cn-public/`；边界由 `make check-source-facts` 验证。
 
 ### 配置与 CI
 
@@ -876,185 +875,6 @@ gantt
 ---
 
 </details>
-
-<a id="translation"></a>
-
-<details>
-<summary><strong>🎯 原仓库翻译</strong>（点击展开/收起）</summary>
-
-## 🎯 原仓库翻译
-
-> 以下内容翻译自原仓库 [EnzeD/vibe-coding](https://github.com/EnzeD/vibe-coding)
-
-要开始 Vibe Coding，你只需要以下两种工具之一：
-- **Claude Opus 4.7**，在 Claude Code 中使用
-- **gpt-5.5 (xhigh)**，在 Codex CLI 中使用
-
-本指南同时适用于 CLI 终端版本和 VSCode 扩展版本（Codex 和 Claude Code 都有扩展，且界面更新）。
-
-*(注：本指南早期版本使用的是 **Grok 3**，后来切换到 **Gemini 3.1 Pro**，现在我们使用的是 **Claude Opus 4.7**（或 **gpt-5.5 (xhigh)**）)*
-
-*(注2：如果你想使用 Cursor，请查看本指南的 [1.1 版本](https://github.com/EnzeD/vibe-coding/tree/1.1.1)，但我们认为它目前不如 Codex CLI 或 Claude Code 强大)*
-
----
-
-<a id="setup"></a>
-
-## ⚙️ 完整设置流程
-
-<details>
-<summary><strong>1. 游戏设计文档（Game Design Document）</strong>（点击展开/收起）</summary>
-
-- 把你的游戏创意交给 **gpt-5.5** 或 **Claude Opus 4.7**，让它生成一份简洁的 **游戏设计文档**，格式为 Markdown，文件名为 `game-design-document.md`。
-- 自己审阅并完善，确保与你的愿景一致。初期可以很简陋，目标是给 AI 提供游戏结构和意图的上下文。不要过度设计，后续会迭代。
-</details>
-
-<details>
-<summary><strong>2. 技术栈与 Agent 规则（<code>AGENTS.md</code> / 自定义 rules）</strong>（点击展开/收起）</summary>
-
-- 让 **gpt-5.5** 或 **Claude Opus 4.7** 为你的游戏推荐最合适的技术栈（例如：多人3D游戏用 ThreeJS + WebSocket），保存为 `tech-stack.md`。
-  - 要求它提出 **最简单但最健壮** 的技术栈。
-- 在终端中打开 **Claude Code** 或 **Codex CLI**，使用 `/init` 命令，它会读取你已创建的两个 .md 文件，生成一套规则来正确引导大模型。
-- **关键：一定要审查生成的规则。** 确保规则强调 **模块化**（多文件）和禁止 **单体巨文件**（monolith）。可能需要手动修改或补充规则。
-  - **极其重要：** 某些规则必须设为 **"Always"**（始终应用），确保 AI 在生成任何代码前都强制阅读。例如添加以下规则并标记为 "Always"：
-    > ```
-    > # 重要提示：
-    > # 写任何代码前必须完整阅读 memory-bank/@architecture.md（包含完整数据库结构）
-    > # 写任何代码前必须完整阅读 memory-bank/@game-design-document.md
-    > # 每完成一个重大功能或里程碑后，必须更新 memory-bank/@architecture.md
-    > ```
-  - 其他（非 Always）规则要引导 AI 遵循你技术栈的最佳实践（如网络、状态管理等）。
-  - *如果想要代码最干净、项目最优化，这一整套规则设置是强制性的。*
-</details>
-
-<details>
-<summary><strong>3. 实施计划（Implementation Plan）</strong>（点击展开/收起）</summary>
-
-- 将以下内容提供给 **gpt-5.5** 或 **Claude Opus 4.7**：
-  - 游戏设计文档（`game-design-document.md`）
-  - 技术栈推荐（`tech-stack.md`）
-- 让它生成一份详细的 **实施计划**（Markdown 格式），包含一系列给 AI 开发者的分步指令。
-  - 每一步要小而具体。
-  - 每一步都必须包含验证正确性的测试。
-  - 严禁包含代码——只写清晰、具体的指令。
-  - 先聚焦于 **基础游戏**，完整功能后面再加。
-</details>
-
-<details>
-<summary><strong>4. 记忆库（Memory Bank）</strong>（点击展开/收起）</summary>
-
-- 新建项目文件夹，并在 VSCode 中打开。
-- 在项目根目录下创建子文件夹 `memory-bank`。
-- 将以下文件放入 `memory-bank`：
-  - `game-design-document.md`
-  - `tech-stack.md`
-  - `implementation-plan.md`
-  - `progress.md`（新建一个空文件，用于记录已完成步骤）
-  - `architecture.md`（新建一个空文件，用于记录每个文件的作用）
-</details>
-
-## 🎮 Vibe Coding 开发基础游戏
-
-现在进入最爽的阶段！
-
-<details>
-<summary><strong>确保一切清晰</strong>（点击展开/收起）</summary>
-
-- 在 VSCode 扩展中打开 **Codex** 或 **Claude Code**，或者在项目终端启动 Claude Code / Codex CLI。
-- 提示词：阅读 `/memory-bank` 里所有文档，`implementation-plan.md` 是否完全清晰？你有哪些问题需要我澄清，让它对你来说 100% 明确？
-- 它通常会问 9-10 个问题。全部回答完后，让它根据你的回答修改 `implementation-plan.md`，让计划更完善。
-</details>
-
-<details>
-<summary><strong>你的第一个实施提示词</strong>（点击展开/收起）</summary>
-
-- 打开 **Codex** 或 **Claude Code**（扩展或终端）。
-- 提示词：阅读 `/memory-bank` 所有文档，然后执行实施计划的第 1 步。我会负责跑测试。在我验证测试通过前，不要开始第 2 步。验证通过后，打开 `progress.md` 记录你做了什么供后续开发者参考，再把新的架构洞察添加到 `architecture.md` 中解释每个文件的作用。
-- **永远** 先用 "Ask" 模式或 "Plan Mode"（Claude Code 中按 `shift+tab`），确认满意后再让 AI 执行该步骤。
-- **极致 Vibe：** 安装 [Superwhisper](https://superwhisper.com)，用语音随便跟 Claude 或 gpt-5.5 聊天，不用打字。
-</details>
-
-<details>
-<summary><strong>工作流</strong>（点击展开/收起）</summary>
-
-- 完成第 1 步后：
-  - 把改动提交到 Git（不会用就问 AI）。
-  - 新建聊天（`/new` 或 `/clear`）。
-  - 提示词：阅读 memory-bank 所有文件，阅读 progress.md 了解之前的工作进度，然后继续实施计划第 2 步。在我验证测试前不要开始第 3 步。
-- 重复此流程，直到整个 `implementation-plan.md` 全部完成。
-</details>
-
-## ✨ 添加细节功能
-
-恭喜！你已经做出了基础游戏！可能还很粗糙、缺少功能，但现在可以尽情实验和打磨了。
-- 想要雾效、后期处理、特效、音效？更好的飞机/汽车/城堡？绝美天空？
-- 每增加一个主要功能，就新建一个 `feature-implementation.md`，写短步骤+测试。
-- 继续增量式实现和测试。
-
-## 🐞 修复 Bug 与卡壳情况
-
-<details>
-<summary><strong>常规修复</strong>（点击展开/收起）</summary>
-
-- 如果某个提示词失败或搞崩了项目：
-  - Claude Code 用 `/rewind` 回退；用 gpt-5.5 的话多提交 git，需要时 reset。
-- 报错处理：
-  - **JavaScript 错误：** 打开浏览器控制台（F12），复制错误，贴给 AI；视觉问题截图发给它。
-  - **懒人方案：** 安装 [BrowserTools](https://browsertools.agentdesk.ai/installation)，自动复制错误和截图。
-</details>
-
-<details>
-<summary><strong>疑难杂症</strong>（点击展开/收起）</summary>
-
-- 实在卡住：
-  - 回退到上一个 git commit（`git reset`），换新提示词重试。
-- 极度卡壳：
-  - 用 [RepoPrompt](https://repoprompt.com/) 或 [uithub](https://uithub.com/) 把整个代码库合成一个文件，然后丢给 **gpt-5.5 或 Claude** 求救。
-</details>
-
-## 💡 技巧与窍门
-
-<details>
-<summary><strong>Claude Code & Codex 使用技巧</strong>（点击展开/收起）</summary>
-
-- **终端版 Claude Code / Codex CLI：** 在 VSCode 终端里运行，能直接看 diff、喂上下文，不用离开工作区。
-- **Claude Code 的 `/rewind`：** 迭代跑偏时一键回滚到之前状态。
-- **自定义命令：** 创建像 `/explain $参数` 这样的快捷命令，触发提示词：“深入分析代码，彻底理解 $参数 是怎么工作的。理解完告诉我，我再给你任务。” 让模型先拉满上下文再改代码。
-- **清理上下文：** 经常用 `/clear` 或 `/compact`（保留历史对话）。
-- **省时大法（风险自负）：** 用 `claude --dangerously-skip-permissions` 或 `codex --yolo`，彻底关闭确认弹窗。
-</details>
-
-<details>
-<summary><strong>其他实用技巧</strong>（点击展开/收起）</summary>
-
-- **小修改：** 用 gpt-5.5 (medium)
-- **写顶级营销文案：** 用 Opus 4.7
-- **生成优秀 2D 精灵图：** 用 ChatGPT + Nano Banana
-- **生成音乐：** 用 Suno
-- **生成音效：** 用 ElevenLabs
-- **生成视频：** 用 Sora 2
-- **提升提示词效果：**
-  - 加一句：“慢慢想，不着急，重要的是严格按我说的做，执行完美。如果我表达不够精确请提问。”
-  - 在 Claude Code 中触发深度思考的关键词强度：`think` < `think hard` < `think harder` < `ultrathink`。
-</details>
-
-## ❓ 常见问题解答 (FAQ)
-
-- **Q: 我在做应用不是游戏，这个流程一样吗？**
-  - **A:** 基本完全一样！把 GDD 换成 PRD（产品需求文档）即可。你也可以先用 v0、Lovable、Bolt.new 快速原型，再把代码搬到 GitHub，然后克隆到本地用本指南继续开发。
-
-- **Q: 你那个空战游戏的飞机模型太牛了，但我一个提示词做不出来！**
-  - **A:** 那不是一个提示词，是 ~30 个提示词 + 专门的 `plane-implementation.md` 文件引导的。用精准指令如“在机翼上为副翼切出空间”，而不是“做一个飞机”这种模糊指令。
-
-- **Q: 为什么现在 Claude Code 或 Codex CLI 比 Cursor 更强？**
-  - **A:** 完全看个人喜好。我们强调的是：Claude Code 能更好发挥 Claude Opus 4.7 的实力，Codex CLI 能更好发挥 gpt-5.5 的实力，而 Cursor 对这两者的利用都不如原生终端版。终端版还能在任意 IDE、使用 SSH 远程服务器等场景工作，自定义命令、子代理、钩子等功能也能长期大幅提升开发质量和速度。最后，即使你只是低配 Claude 或 ChatGPT 订阅，也完全够用。
-
-- **Q: 我不会搭建多人游戏的服务器怎么办？**
-  - **A:** 问你的 AI。
-
-</details>
-
----
 
 <a id="contact"></a>
 

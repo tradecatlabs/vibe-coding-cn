@@ -1,9 +1,0 @@
-{
-  "name": "c-review",
-  "version": "1.3.0",
-  "description": "Comprehensive C/C++ security code review with specialized bug-finding agents covering memory safety, type safety, concurrency, and Linux/Windows userspace-specific issues",
-  "author": {
-    "name": "Paweł Płatek"
-  },
-  "keywords": ["c", "cpp", "security", "code-review", "static-analysis", "vulnerabilities", "linux", "macos", "posix", "windows"]
-}

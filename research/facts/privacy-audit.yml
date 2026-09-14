@@ -1,0 +1,55 @@
+version: 1
+kind: privacy-audit-fact
+scope:
+  public_worktree: parent-repository-working-tree
+  audited_at: '2026-09-14T20:42:55+08:00'
+  output_policy: paths-lines-categories-only
+current_worktree:
+  known_private_paths: 0
+  private_key_headers: 0
+  account_email_matches: 0
+  live_token_candidates: 0
+  token_pattern_matches_reviewed: 7
+  credential_assignment_pattern_matches_reviewed: 163
+  pattern_match_disposition: placeholders-examples-tests-or-api-parameters; no live credential confirmed
+  symlinks_or_special_files: 0
+source_mirrors:
+  - id: vibe-cybersecurity-cn
+    private_path_findings: 0
+    private_key_findings: 0
+    token_findings: 0
+    notes: tracked source evidence logs remain only because they are part of the pinned source tree; no local cache was imported
+  - id: vibe-harness-cn
+    private_path_findings: 1
+    private_key_findings: 0
+    token_findings: 0
+    sanitized:
+      - path: governance/standards/架构设计原则.md
+        line: 49
+        category: local_machine_path
+        replacement: portable_codex_home_placeholder
+  - id: vibe-mathing-cn-public
+    private_path_findings: 0
+    private_key_findings: 0
+    token_findings: 0
+parent_git_history:
+  known_private_path_records: 130
+  private_key_pattern_matches: 5
+  token_pattern_matches: 6
+  url_credential_pattern_matches: 16
+  non_noreply_commit_email_records: 195
+  disposition: historical-only; no history rewrite performed
+historical_sources_not_in_public_mirror:
+  - source: vibe-cybersecurity-cn
+    category: historical_private_path_records
+    records: 46
+  - source: vibe-harness-cn
+    category: historical_private_path_records
+    records: 4
+  - source: vibemathing/vibe-mathing-cn-public
+    category: historical_private_path_records
+    records: 5
+quarantine:
+  legacy_import_material: ignored_internal_archive
+  public_material_included: false
+  execution_allowed: false

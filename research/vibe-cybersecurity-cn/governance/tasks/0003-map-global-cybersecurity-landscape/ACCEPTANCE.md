@@ -43,3 +43,4 @@ python3 governance/tools/governance_health_report.py --project-root . --strict
 - 不修改 0001/0002 机器真相源。
 - 不虚构工具运行、框架版本或验证结果。
 - 不为填满景观而新增工具、依赖、运行时模块或供应链状态。
+

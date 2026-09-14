@@ -9,7 +9,6 @@
 .
 ├── .gitignore                        # 忽略 Python 缓存与任务运行期证据
 ├── README.md                         # 人类入口、当前能力与验证命令
-├── THIRD_PARTY_NOTICES.md            # 上游研究来源与许可边界
 ├── AGENTS.md                         # 目录职责、依赖方向与维护约束
 ├── contracts/                        # 机器可读的 harness 登记契约和样例
 │   ├── AGENTS.md
@@ -31,10 +30,7 @@
 │   ├── catalog.json
 │   ├── source-inventory.json
 │   ├── taxonomy/                     # 母领域来源与八类功能的双轴分类视图
-│   └── packs/                        # 417 个 source + 60 个 derived 条目，五十六个领域 pack
-├── skills/                           # 面向 AI 的可移植 Skill 发布包
-│   ├── AGENTS.md
-│   └── solve/                        # 自包含问题求解算子 Skill
+│   └── packs/                        # 411 个 source + 57 个 derived 条目，五十六个领域 pack
 ├── docs/                             # 领域模型、组件需求与目标架构
 │   ├── AGENTS.md
 │   ├── HARNESS_MODEL.md
@@ -70,7 +66,6 @@
 研究 ──输入──> docs 与 ADR ──定义──> contracts
 PSOA PRD ──约束──> operator/method contracts、Harness libraries 与未来 bindings
 source-inventory.json ──完整性基线──> operators/packs/*.json
-operators/ ──发布快照──> skills/solve/references/
 contracts ──约束──> operators ──被校验──> scripts/validate_operator_library.py
 research/upstreams.sources.json ──驱动──> scripts/sync_upstreams.sh
 GitHub 上游 ──同步/锁定──> research/upstreams.lock.json
@@ -83,7 +78,6 @@ governance ──约束──> 全部项目变更
 
 - `contracts/` 是 Harness manifest、Operator Pack 与 Operator Runtime Core 结构的单一真相源；Core 只约束互操作字段和安全边界。
 - `operators/` 是当前 Reference Library Profile、参考内容和精确来源清单的单一真相源，不拥有运行态选择、权限或结果。
-- `skills/solve/` 是面向 AI 的可安装发布快照；它自包含 catalog、taxonomy、schema 和 packs，但不成为第二个内容真相源。
 - `docs/PROBLEM_SOLVING_OPERATOR_ARCHITECTURE_PRD.md` 是 PSOA 需求真相源；Operator Library 属于
   Harness，跨 Harness 的字段级规范仍独立落入 `contracts/`，manifest 只登记支持版本与库存摘要。
 - `scripts/` 可以消费契约和测试输入，但不得反向定义领域语义。
@@ -119,7 +113,3 @@ governance ──约束──> 全部项目变更
 - 2026-09-04：新增宽松 Operator Runtime Core 和无副作用参考 Harness，以确定性 `O(n)` 选择、
   本地 Binding、受预算物化、独立摘要复验和脱敏 provenance 证明运行协议；第二个独立 Harness
   与真实模型/工具执行仍留在后续互操作阶段。
-- 2026-09-04：新增短名称为 `solve` 的自包含 Skill 发布包；`SKILL.md` 只承载触发、边界和最小调用契约，
-  完整 56 个 pack 置于 `skills/solve/references/`，源库仍以 `operators/` 为唯一真相源。
-- 2026-09-05：从 FLT/Prove2Me 证明工程案例去重沉淀 6 个 source、3 个 derived Method，并强化义务 DAG、
-  来源角色和实质进展语义；参考库扩展为 417 source、60 derived、477 total，`solve` 升级为 0.3.0。

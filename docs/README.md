@@ -83,11 +83,7 @@
 - [Harness 工程解析](../research/harness/harness-engineering.md) - Harness Engineering 的工程控制、评估器与反馈闭环解析。
 - [walkinglabs/learn-harness-engineering 研究域](../research/walkinglabs-learn-harness-engineering/README.md) - Harness Engineering 课程、模板、Skill 与审计工具。
 - [mindfold-ai/Trellis 研究域](../research/mindfold-ai-trellis/README.md) - 跨平台 Agent Harness、任务规格与会话记忆系统。
-- [vibe-cybersecurity-cn](../research/vibe-cybersecurity-cn/README.md) - 授权边界内的 Agent 网络安全自动化研究与工程项目。
-- [vibe-harness-cn](../research/vibe-harness-cn/README.md) - 治理 Agent Harness 与问题求解算子库的元 Harness 项目。
-- [vibemathing/vibe-mathing-cn-public 研究域](../research/vibe-mathing-cn-public/README.md) - 数学研究、证据闭环与可信验证工作台。
-- [vibemathing/vibe-mathing-cn-public 研究分析](../research/vibe-mathing-cn-public/analysis.md) - 数学研究工作流、迁移价值和采用边界的结构化研究。
-- [vibemathing/vibe-mathing-cn-public 深度研究](../research/vibe-mathing-cn-public/deep-dive.md) - 证据闭环、有界运行时和公共边界的 L2 研究。
+- [外部源事实层](../research/facts/README.md) - 三个外部仓库的已提交源文件树、提交事实、哈希和隐私边界。
 - [tmux 蜂群协作](../research/tmux-ai-swarm.md) - 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式。
 - [Aider-AI/aider 研究域](../research/aider-ai-aider/README.md) - 终端 AI 结对编程工具。
 - [Aider-AI/aider 研究分析](../research/aider-ai-aider/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。

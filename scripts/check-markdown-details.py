@@ -16,6 +16,7 @@ SKIP_PREFIXES = [
     Path("research/vibe-cybersecurity-cn"),
     Path("research/vibe-harness-cn"),
     Path("research/vibe-mathing-cn-public"),
+    Path("research/facts"),
 ]
 TAG_PATTERN = re.compile(r"<details\b[^>]*>|</details>|<summary>.*?</summary>")
 

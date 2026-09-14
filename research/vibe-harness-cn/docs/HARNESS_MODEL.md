@@ -159,16 +159,14 @@ Architecture（PSOA），详细需求见
 - 库内区分 `MentalModelSpec`（怎么看）、`OperatorSpec`（做一次什么）和 `MethodSpec`（按什么顺序做）；
   纯概念不能伪装成带成功条件的可执行动作。
 - Binding 可以使用 prompt、skill、模型调用、tool 或 workflow，但不能改写共享方法语义。
-- `skills/solve/` 是本项目提供的一个可移植 Binding 载体：它把已校验的 Operator Library 作为自包含
-  references 快照交给 AI 按需读取；`operators/` 仍是内容真相源，Skill 不拥有 selector、权限、执行或结果。
 - Verifier 在职责上独立裁决 Evidence 是否足以支持 outcome；它可以部署在 Harness 内或外部，
   但不能接受执行者无 provenance 的自评作为通过依据。
 - 状态效果区分现实、认知和治理三类，避免把“未发现反例”误写成“命题已证明”。
 - 现有 Harness manifest 未来只登记支持的规范版本、本地库存摘要和 Binding capability，不复制全部定义。
 
 当前已实现静态契约和首个运行协议证明：Operator Pack 宽松 Core Schema 只约束稳定字段、类型判别、显式扩展和安全 owner；
-本仓库 `vibe-harness-cn/reference-library-v1` Profile 再用独立 source inventory 固定 417 个跨学科
-原始条目，五十六个 JSON pack 保存这些条目和 60 个显式派生 Method。离线 validator 检查 Core
+本仓库 `vibe-harness-cn/reference-library-v1` Profile 再用独立 source inventory 固定 411 个跨学科
+原始条目，五十六个 JSON pack 保存这些条目和 57 个显式派生 Method。离线 validator 检查 Core
 格式，以及 Profile 的精确覆盖、唯一 ID、计数、来源、Method 引用、路径与治理不变量。
 `contracts/operator-runtime.schema.json` 进一步定义 `OperatorBinding`、`OperatorRunRequest` 与
 `OperatorRunRecord` 的宽松交换信封；`examples/reference_harness/` 作为具体 Harness 的参考消费方，
@@ -178,10 +176,6 @@ Architecture（PSOA），详细需求见
 `experimental`；尚未实现真实 LLM/tool execution、第二个独立 Binding 或生产 eval。核心互操作 proof 仍是同一
 Operator 被两个不同 Harness 装入各自本地库，通过不同 Binding 执行并产生可比较证据；若第二个
 实现必须改写核心语义才能接入，则应修改抽象，而不是增加兼容层。
-
-形式证明等多门任务还必须把声明、候选和结果分开，并把 source、build、kernel、semantic/reviewer
-等要求建模为不可互相替代的证据能力集合；较弱回执不能自动升级为较强结论，测试夹具中的占位符也必须
-先做目标可达性判断。
 
 ### 3.5 跨学科算子扩展
 
@@ -204,8 +198,6 @@ Operator 被两个不同 Harness 装入各自本地库，通过不同 Binding �
 详细证据、来源链接和抽取边界见 [`research/HEURISTIC_METACOGNITIVE_RESEARCH.md`](../research/HEURISTIC_METACOGNITIVE_RESEARCH.md)，
 三十六个新增母领域的证据缺口见 [`research/DOMAIN_EVIDENCE_MATRIX.md`](../research/DOMAIN_EVIDENCE_MATRIX.md)，
 机器分类视图见 [`operators/taxonomy/problem-solving-methodology.json`](../operators/taxonomy/problem-solving-methodology.json)。
-面向 AI 的短名称 Skill 发布包见 [`skills/solve/`](../skills/solve/)；它只承载使用说明和参考快照，不能把
-参考内容误认为生产验证或运行时权限。
 第四波加入控制论、数值分析、离散组合数学、热力学/统计物理、有机化学反应设计、分析化学与计量学；第五波加入随机过程、微分方程与动力系统、经典力学与变分方法、流体与连续介质、化学动力学、电化学与传质；第六波再加入线性代数谱方法、拓扑几何、电磁场方法、量子算子方法、溶液热力学相平衡和光谱结构解析，补足结构空间、连续变形、源场边界、算子相容性、多相约束和多谱证据汇合。功能映射是项目推断，不是母学科官方分类；它不实现 selector、planner、权限或结果裁决。
 
 数学专项不新增母领域，而是把 55 个问题求解方法按定义与表征、特化与实验、模式与猜想、变换与归约、构造与搜索、证明与界定、反例与压力检查、元认知控制与复盘逐项审计。20 项复用既有跨领域语义，35 项补入 mathematics pack，并增加一个数学发现与证明组合循环；详细 crosswalk 见 [`research/MATHEMATICAL_PROBLEM_SOLVING_RESEARCH.md`](../research/MATHEMATICAL_PROBLEM_SOLVING_RESEARCH.md)。

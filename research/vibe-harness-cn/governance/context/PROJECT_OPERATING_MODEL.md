@@ -30,10 +30,9 @@ Vibe Harness CN 是治理其他 agent harness 的元 harness：统一其声明�
 
 - 主要运行形态：当前为契约优先的离线控制面；在线 registry/API 必须由真实规模需求触发。
 - 核心模块：`research/` 固定上游输入、`docs/` 维护领域模型、`contracts/` 声明契约、`operators/`
-  保存静态参考内容、`skills/solve/` 发布面向 AI 的可移植 Skill 快照、`examples/` 提供非生产协议消费证明、
-  `scripts/` 提供薄验证入口、`governance/` 管理项目工程记忆。
+  保存静态参考内容、`examples/` 提供非生产协议消费证明、`scripts/` 提供薄验证入口、`governance/` 管理项目工程记忆。
 - 数据事实源：manifest 与 Operator Pack Core Schema 位于 `contracts/`；Core/可选 Profile 规范位于
-  `docs/OPERATOR_SPEC.md`；417 项跨学科完整清单位于 `operators/source-inventory.json`，双轴分类位于 `operators/taxonomy/`；Runtime Core 位于 `contracts/operator-runtime.schema.json`，运行事实由具体 Harness 按该信封上报。
+  `docs/OPERATOR_SPEC.md`；411 项跨学科完整清单位于 `operators/source-inventory.json`，双轴分类位于 `operators/taxonomy/`；Runtime Core 位于 `contracts/operator-runtime.schema.json`，运行事实由具体 Harness 按该信封上报。
 - 外部依赖：验证脚本通过 `uv` 使用锁定版本 `jsonschema`；未来协议优先复用 MCP 与 OpenTelemetry。
 - 主要验证入口：`uv run --locked --script scripts/validate_harness.py --self-test`。
 - 上游同步入口：`bash scripts/sync_upstreams.sh`；checkout 仅是被忽略的研究缓存。
@@ -71,10 +70,9 @@ Vibe Harness CN 是治理其他 agent harness 的元 harness：统一其声明�
 | Operator 规范 | `docs/OPERATOR_SPEC.md` | Core Contract、Profile、扩展和安全分层 |
 | Operator Pack 契约 | `contracts/problem-solving-operator-pack.schema.json` | 思维模型、原子算子与组合方法的宽松 Core 结构真相源 |
 | Operator Runtime 契约 | `contracts/operator-runtime.schema.json` | Binding、RunRequest 与 RunRecord 的宽松互操作信封 |
-| Operator 来源清单 | `operators/source-inventory.json` | 当前跨学科 417 项的独立完整性基线 |
-| Operator 参考库 | `operators/catalog.json` 与 `operators/packs/` | Reference Profile；417 个 source + 60 个 derived 条目 |
+| Operator 来源清单 | `operators/source-inventory.json` | 当前跨学科 411 项的独立完整性基线 |
+| Operator 参考库 | `operators/catalog.json` 与 `operators/packs/` | Reference Profile；411 个 source + 57 个 derived 条目 |
 | Operator 双轴分类 | `operators/taxonomy/problem-solving-methodology.json` | 母领域出处与八类功能的审计映射 |
-| solve Skill 发布包 | `skills/solve/SKILL.md` 与 `skills/solve/references/` | 面向 AI 的自包含使用说明和 477 条目快照；内容真相源仍为 `operators/` |
 | Harness 与 Operator 本地准入 | `scripts/validate_harness.py` | Schema、策略、完整覆盖与跨文件引用检查 |
 | Operator Runtime 参考消费方 | `examples/reference_harness/` | 无副作用 Select/Bind/Materialize/Verify/Trace 协议证明 |
 | 项目验证策略 | `governance/control-plane/verification-policy.v1.yaml` | 风险 profile 与 fail-closed 模式 |
@@ -100,9 +98,9 @@ python3 governance/tools/governance_health_report.py --project-root . --strict
 
 ## 最近一次 review
 
-- 日期：2026-09-05
+- 日期：2026-09-04
 - 结论：Operator Library 是 Harness 的内部能力组件；公共 Pack/Runtime Core 只约束稳定信封与安全 owner，
-  `vibe-harness-cn/reference-library-v1` Profile 精确覆盖 417 个原始条目和 60 个派生 Method；一个
+  `vibe-harness-cn/reference-library-v1` Profile 精确覆盖 411 个原始条目和 57 个派生 Method；一个
   无副作用参考 Harness 已证明本地 Selector/Binding/物化/验证/Trace，元 Harness 未创建外部统一 Runtime。
 - 后续动作：由第二个独立 Harness 使用不同 Binding 跑同一 conformance corpus，再补真实
   Observation/Evidence 和生产 eval。

@@ -462,11 +462,11 @@ digest、信任状态和可用性。一次运行必须绑定不可变库存快�
 
 当前交付覆盖静态内容、conformance 与首个无副作用运行协议证明，不等于完整 MVP：
 
-- `operators/source-inventory.json` 独立固定当前跨学科清单的 417 个原始条目；每个 domain 的精确数量与条目身份直接保存在该 inventory，文档不复制第二份长计数序列。
-- 五十六个 `operators/packs/*.json` 精确覆盖 417/417，并额外提供 60 个明确标记为 `derived` 的领域组合
-  Method，总计 477 个条目；在前一阶段补齐通用问题求解、统计、决策科学、运筹学、设计方法和工程学后，
+- `operators/source-inventory.json` 独立固定当前跨学科清单的 411 个原始条目；每个 domain 的精确数量与条目身份直接保存在该 inventory，文档不复制第二份长计数序列。
+- 五十六个 `operators/packs/*.json` 精确覆盖 411/411，并额外提供 57 个明确标记为 `derived` 的领域组合
+  Method，总计 468 个条目；在前一阶段补齐通用问题求解、统计、决策科学、运筹学、设计方法和工程学后，
   本阶段再加入因果推断、经济学/博弈论、生态/生物学、认知科学、人因可靠性、医学决策、法律推理、伦理与公共政策、教育与学习科学、语言学、历史推理、社会科学方法、形式逻辑与自动推理、哲学与科学认识论、地球科学、天文学与天体物理、材料科学、信息与知识科学，并用双轴 taxonomy
-  分开母领域与功能类；第四阶段加入控制论、数值分析、离散组合数学、热力学/统计物理、有机化学反应设计和分析化学与计量学；第五阶段加入随机过程、微分方程与动力系统、经典力学与变分方法、流体与连续介质、化学动力学、电化学与传质；第六阶段加入线性代数谱方法、拓扑几何、电磁场方法、量子算子方法、溶液热力学相平衡和光谱结构解析；数学专项再对 55 个求解方法完成 20 reuse/35 add crosswalk，并补充 1 个 derived 发现与证明循环；证明工程专项增加 6 个 source 和 3 个 derived，明确声明/候选/结果分离、义务 DAG、失败路线和非线性证据能力接纳。
+  分开母领域与功能类；第四阶段加入控制论、数值分析、离散组合数学、热力学/统计物理、有机化学反应设计和分析化学与计量学；第五阶段加入随机过程、微分方程与动力系统、经典力学与变分方法、流体与连续介质、化学动力学、电化学与传质；第六阶段加入线性代数谱方法、拓扑几何、电磁场方法、量子算子方法、溶液热力学相平衡和光谱结构解析；数学专项再对 55 个求解方法完成 20 reuse/35 add crosswalk，并补充 1 个 derived 发现与证明循环。
 - `contracts/problem-solving-operator-pack.schema.json` 以宽松 Core 区分 `MentalModelSpec`、
   `OperatorSpec` 和 `MethodSpec`；只强制稳定字段形状、类型判别和安全 owner，不保存 Binding。
 - `operators/catalog.json` 显式声明 `vibe-harness-cn/reference-library-v1`，当前为 56 个 pack；
@@ -641,7 +641,7 @@ lifecycle 治理。
 ## 19. 演进路线
 
 1. **Requirements**：冻结本 PRD、术语、边界、proof point 与 falsifier。
-2. **Semantic Prototype**：已用完整 417 项内容和 60 个组合 Method 验证类型、outcome、evidence 与本地库存结构。
+2. **Semantic Prototype**：已用完整 411 项内容和 57 个组合 Method 验证类型、outcome、evidence 与本地库存结构。
 3. **Contract v0**：已发布 Operator Pack 与 Runtime Core JSON Schema、精确覆盖和离线 conformance；
    通用 Problem/Plan/Evidence 仍待补齐。
 4. **Composition**：参考 Harness 已证明 Method 受预算递归物化；Plan、失败恢复和局部重规划仍待实现。

@@ -60,3 +60,4 @@
 - Process：没有改变项目级研发流程；检索方法保留在任务资产。
 - README/AGENTS/Topology：因创建项目/任务目录与职责而同步更新。
 - Contract/catalog/schema/ADR/Gate：候选 JSON 是任务级机器目录；尚未形成需单独 ADR/Gate 的已实施行为。
+

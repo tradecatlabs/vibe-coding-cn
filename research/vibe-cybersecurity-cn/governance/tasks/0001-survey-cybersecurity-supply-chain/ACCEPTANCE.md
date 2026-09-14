@@ -45,3 +45,4 @@
 - 不扫描目标，不测试凭据，不生成利用 payload。
 - 不把 GitHub 星标、README 营销和模型自评当作能力验证。
 - 不建立新扫描框架、数据库、Kubernetes 平台或多 Agent runtime。
+

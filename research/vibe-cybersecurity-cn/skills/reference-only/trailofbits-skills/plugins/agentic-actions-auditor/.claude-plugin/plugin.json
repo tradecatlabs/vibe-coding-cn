@@ -1,8 +1,0 @@
-{
-  "name": "agentic-actions-auditor",
-  "description": "Audits GitHub Actions workflows for security vulnerabilities in AI agent integrations (Claude Code Action, Gemini CLI, OpenAI Codex, GitHub AI Inference)",
-  "version": "1.2.1",
-  "author": {
-    "name": "Emilio López & Will Vandevanter"
-  }
-}

@@ -1,6 +1,6 @@
 # Makefile for Vibe Coding Guide
 
-.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-external-resources check-research-raw check-wiki fetch-research-raw sync-doc-toc build test clean clean-deps
+.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-external-resources check-research-raw check-source-facts check-wiki fetch-research-raw sync-doc-toc build test clean clean-deps
 
 MARKDOWNLINT = npx --yes markdownlint-cli@0.48.0
 
@@ -18,6 +18,7 @@ help:
 	@echo "  check-ai-citation - Check AI citation paths, anchors, and repository identity"
 	@echo "  check-external-resources - Check local external resources registry"
 	@echo "  check-research-raw - Check research raw fact snapshots and repository clones"
+	@echo "  check-source-facts - Check external source-fact mirrors and provenance"
 	@echo "  check-wiki - Check local GitHub Wiki checkout when present"
 	@echo "  fetch-research-raw - Fetch raw GitHub facts and repository clones for research domains"
 	@echo "  sync-doc-toc - Regenerate docs fine-grained TOC blocks"
@@ -29,7 +30,7 @@ help:
 
 lint:
 	@echo "Linting markdown files..."
-	@$(MARKDOWNLINT) --config .github/lint_config.json --ignore .history --ignore tools/external --ignore 'research/**/raw/repository/**' --ignore 'research/vibe-cybersecurity-cn/**' --ignore 'research/vibe-harness-cn/**' --ignore 'research/vibe-mathing-cn-public/**' '**/*.md'
+	@$(MARKDOWNLINT) --config .github/lint_config.json --ignore .history --ignore tools/external --ignore 'research/**/raw/repository/**' --ignore 'research/facts/**' --ignore 'research/vibe-cybersecurity-cn/**' --ignore 'research/vibe-harness-cn/**' --ignore 'research/vibe-mathing-cn-public/**' '**/*.md'
 
 check-links:
 	@echo "Checking local markdown links and anchors..."
@@ -63,6 +64,10 @@ check-research-raw:
 	@echo "Checking research raw fact snapshots and repository clones..."
 	@python3 scripts/check-research-raw.py
 
+check-source-facts:
+	@echo "Checking external source-fact mirrors and provenance..."
+	@python3 scripts/check-source-facts.py
+
 check-wiki:
 	@echo "Checking local GitHub Wiki checkout..."
 	@python3 scripts/check-wiki.py --wiki-dir "$${WIKI_DIR:-/tmp/vibe-coding-cn.wiki}"
@@ -79,7 +84,7 @@ sync-doc-toc:
 build:
 	@echo "No build step: this repository is a documentation and knowledge-base project."
 
-test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-external-resources check-research-raw
+test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-external-resources check-research-raw check-source-facts
 	@echo "Quality gates complete."
 
 clean: clean-deps
