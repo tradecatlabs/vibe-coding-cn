@@ -949,17 +949,27 @@ gantt
 
 <a id="contributing"></a>
 
+<details>
+<summary><strong>🤝 参与贡献</strong>（点击展开/收起）</summary>
+
 ## 🤝 参与贡献
 
 我们热烈欢迎各种形式的贡献。如果您对本项目有任何想法或建议，请随时开启一个 [Issue](https://github.com/tukuaiai/vibe-coding-cn/issues) 或提交一个 [Pull Request](https://github.com/tukuaiai/vibe-coding-cn/pulls)。
 
 在您开始之前，请花时间阅读我们的 [**贡献指南 (CONTRIBUTING.md)**](CONTRIBUTING.md) 和 [**行为准则 (CODE_OF_CONDUCT.md)**](CODE_OF_CONDUCT.md)。
 
+</details>
+
 ---
+
+<details>
+<summary><strong>📜 许可证</strong>（点击展开/收起）</summary>
 
 ## 📜 许可证
 
 本项目采用 [MIT](LICENSE) 许可证。
+
+</details>
 
 ---
 
