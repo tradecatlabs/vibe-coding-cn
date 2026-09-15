@@ -16,8 +16,6 @@
 
 **从想法到产品的 AI 结对编程工作流标准：Prompt + Skill + Context + Quality Gate + 工程闭环**
 
----
-
 <!--
   徽章区域 (BADGES)
 -->
@@ -617,8 +615,6 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 *   [**系统提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): AI 开发的系统提示词，含多版本开发规范（云端表格）。
 *   [**外部资源本地注册表**](./assets/external-resources/README.md): 外部资源的本地真相源，按类型分类维护。
 
----
-
 </details>
 
 <details>
@@ -629,8 +625,6 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 建议只选择苹果模型处理复杂任务，以确保最佳效果与效率。
 
 *   **苹果**: [gpt-5.5-xhigh](https://chatgpt.com/codex)
-
----
 
 </details>
 
@@ -844,8 +838,6 @@ graph TB
   end
 ```
 
----
-
 </details>
 
 <details>
@@ -863,8 +855,6 @@ graph TB
 | 例程覆盖 | 是否有最小可运行示例/测试 | 建议每个示例项目保留 README+测试用例 |
 
 </details>
-
----
 
 ## 🗺️ 路线图
 
@@ -884,8 +874,6 @@ gantt
     多模型对比与评估基线: 2026-04, 30d
 ```
 
----
-
 </details>
 
 <a id="contact"></a>
@@ -902,8 +890,6 @@ gantt
 
 </details>
 
----
-
 <a id="support"></a>
 
 <details>
@@ -918,8 +904,6 @@ gantt
 -   **Bitcoin**: `bc1plslluj3zq3snpnnczplu7ywf37h89dyudqua04pz4txwh8z5z5vsre7nlm`
 
 </details>
-
----
 
 <details>
 <summary><strong>✨ 贡献者</strong>（点击展开/收起）</summary>
@@ -945,8 +929,6 @@ gantt
 
 </details>
 
----
-
 <a id="contributing"></a>
 
 <details>
@@ -960,8 +942,6 @@ gantt
 
 </details>
 
----
-
 <details>
 <summary><strong>📜 许可证</strong>（点击展开/收起）</summary>
 
@@ -970,8 +950,6 @@ gantt
 本项目采用 [MIT](LICENSE) 许可证。
 
 </details>
-
----
 
 <div align="center">
 
@@ -986,8 +964,6 @@ gantt
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=tukuaiai/vibe-coding-cn&type=date&legend=top-left" />
  </picture>
 </a>
-
----
 
 **由 [tukuaiai](https://github.com/tukuaiai), [Nicolas Zullo](https://x.com/NicolasZu), 和 [123olp](https://x.com/123olp) 倾力打造**
 
