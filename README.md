@@ -890,6 +890,9 @@ gantt
 
 <a id="contact"></a>
 
+<details>
+<summary><strong>📞 研究交流</strong>（点击展开/收起）</summary>
+
 ## 📞 研究交流
 
 -   **Twitter / X**: [123olp](https://x.com/123olp)
@@ -897,9 +900,14 @@ gantt
 -   **Telegram 频道**: [tradecat_ai_channel](https://t.me/tradecat_ai_channel)
 -   **邮箱**: tukuai.ai@gmail.com
 
+</details>
+
 ---
 
 <a id="support"></a>
+
+<details>
+<summary><strong>✨ 支持项目</strong>（点击展开/收起）</summary>
 
 ## ✨ 支持项目
 
@@ -909,9 +917,14 @@ gantt
 -   **Ethereum (ERC20)**: `0xa396923a71ee7D9480b346a17dDeEb2c0C287BBC`
 -   **Bitcoin**: `bc1plslluj3zq3snpnnczplu7ywf37h89dyudqua04pz4txwh8z5z5vsre7nlm`
 
+</details>
+
 ---
 
-### ✨ 贡献者
+<details>
+<summary><strong>✨ 贡献者</strong>（点击展开/收起）</summary>
+
+## ✨ 贡献者
 
 感谢所有为本项目做出贡献的开发者！
 
@@ -929,6 +942,8 @@ gantt
 <a href="https://x.com/BiteyeCN">@BiteyeCN</a> |
 <a href="https://x.com/CryptoJHK">@CryptoJHK</a>
 </p>
+
+</details>
 
 ---
 
