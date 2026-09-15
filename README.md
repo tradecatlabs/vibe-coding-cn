@@ -916,7 +916,6 @@ gantt
 感谢所有为本项目做出贡献的开发者！
 
 <a href="https://github.com/tradecatlabs/vibe-coding-cn/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=tukuaiai/vibe-coding-cn" />
   <img src="https://contrib.rocks/image?repo=EnzeD/vibe-coding" />
 </a>
 
