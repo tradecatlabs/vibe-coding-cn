@@ -39,6 +39,8 @@
    优先交给 Codex Agent 主动检查和配置 Git、Node.js、Python、编辑器、项目依赖与测试命令。
 6. [Vibe Coding 经验](vibe-coding-experience.md)
    学会人机分工、门禁、复盘和用 AI 审 AI。
+7. [第一个项目](first-project.md)
+   用本地待办清单走通需求、实现、运行、验收和 Git 保存。
 
 完成标准：
 
@@ -46,7 +48,8 @@
 - [ ] 能让 AI 生成初版 PRD 或任务清单
 - [ ] 能在本地打开项目目录
 - [ ] 能用 AI CLI 执行一次修改
-- [ ] 能用 Git 保存一次变更
+- [ ] 能按验收清单验证功能和边界
+- [ ] 能用 Git 保存一次变更并记录提交号
 
 ### 路线二：开发者路线
 
@@ -143,6 +146,7 @@
   -> Codex CLI 配置
   -> 让 Codex Agent 主动配置开发环境
   -> Vibe Coding 经验
+  -> 第一个项目
   -> 拼好码
   -> 工程实践
   -> Skills 技能大全
@@ -151,6 +155,6 @@
 
 ### 下一步
 
-- 新手：回到 [学习地图](learning-map.md)，从第 0 步开始。
+- 新手：回到 [学习地图](learning-map.md)，从第 0 步开始；环境就绪后完成 [第一个项目](first-project.md)。
 - 开发者：阅读 [Vibe Coding 经验](vibe-coding-experience.md)，再选择 Skill 或质量门禁路线。
 - 团队：先统一 [AGENTS.md](../../AGENTS.md)、强前置条件和质量门禁。

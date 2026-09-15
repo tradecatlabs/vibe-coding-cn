@@ -23,9 +23,10 @@
 新手优先看：
 
 1. `docs/getting-started/README.md`
-2. `docs/concepts/problem-solving.md`
-3. `docs/concepts/glue-coding.md`
-4. `docs/references/project-architecture-template.md`
+2. `docs/getting-started/first-project.md`
+3. `docs/concepts/problem-solving.md`
+4. `docs/concepts/glue-coding.md`
+5. `docs/references/project-architecture-template.md`
 
 进阶用户优先看：
 

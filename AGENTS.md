@@ -157,7 +157,7 @@ git push origin develop
 │
 ├── docs/                        # 核心知识库
 │   ├── README.md                # docs 总索引
-│   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
+│   ├── getting-started/         # 从零开始、学习地图、环境、AI CLI 与第一个项目闭环
 │   ├── concepts/                # 核心概念、方法论与工程思想
 │   ├── philosophy/              # 哲学方法论、思维模型与底层认知模型
 │   ├── references/              # 清单、约束、常见坑、模板和技术栈参考
@@ -255,7 +255,8 @@ git push origin develop
 - `scripts/check-wiki.py` - GitHub Wiki 独立仓库本地 checkout 页面覆盖、内链和旧口径检查脚本，供 `make check-wiki` 使用
 - `scripts/sync-doc-toc.py` - docs README 细粒度目录兼容脚本，当前拆分结构下通常无变更，供 `make sync-doc-toc` 使用
 - `tools/prompts-library/main.py` - 提示词转换工具入口
-- `docs/getting-started/README.md` - 从零开始索引入口，正文拆分到学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建
+- `docs/getting-started/README.md` - 从零开始索引入口，正文拆分到学习地图、Vibe Coding 经验、网络配置、CLI 配置、开发环境搭建与第一个项目闭环
+- `docs/getting-started/first-project.md` - 用本地待办清单完成第一次可验证的需求、实现、验收与 Git 闭环
 - `docs/concepts/problem-solving.md` - 问题定义与求解路径底层模型
 - `docs/references/project-architecture-template.md` - 常见项目结构、架构设计原则、最低门禁和检查清单
 - `docs/references/technology-stack.md` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径

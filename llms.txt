@@ -10,7 +10,7 @@ vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程系统教程，帮�
 核心内容：
 - Quick Start：1 分钟开始 Vibe Coding
 - 六条核心命题：以目标驱动的可验证状态转移闭环为总纲，涵盖 AI 生成域、模型吞噬、隔离审查和能力编排等底层命题
-- Getting Started：从零开始的环境、网络、Codex CLI 与开发环境配置
+- Getting Started：从零开始的环境、网络、Codex CLI、开发环境配置与第一个项目闭环
 - Prompt Library：提示词库
 - Skills：技能库
 - 工程闭环：从问题定义、任务拆解、AI 执行到质量门禁的完整流程
@@ -30,6 +30,7 @@ vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程系统教程，帮�
 - docs/getting-started/cli-setup.md
 - tools/config/.codex/README.md
 - docs/getting-started/development-environment.md
+- docs/getting-started/first-project.md
 - docs/concepts/problem-solving.md
 - docs/concepts/vibe-coding-state-transition.md
 - docs/concepts/glue-coding.md

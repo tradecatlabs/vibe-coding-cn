@@ -153,7 +153,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 ## 📌 字多不看
 
 - `vibe-coding-cn` 是中文 Vibe Coding 从入门到精通教程，目标是把想法稳定变成可运行产品。
-- 新手先走 [从零开始完整入门](docs/getting-started/learning-map.md)：网络环境、CLI 配置、开发环境、Git 闭环。
+- 新手先走 [从零开始完整入门](docs/getting-started/learning-map.md)：网络环境、CLI 配置、开发环境、第一个项目和 Git 闭环。
 - 核心框架是 [道法术器](#dao-fa-shu-qi)：先固定人与 AI 的协作关系，再用方法、流程、门禁和工具落地。
 - 工程主线是 Prompt、Skill、Context、Quality Gate 和 Git，用测试、CI、脚本、类型、schema、清单约束 AI 输出。
 - 需要直接使用资源时，进入 [提示词](prompts/README.md#在线提示词库)、[Skills](skills/README.md#当前保留) 和 [外部资源](assets/README.md#外部资源本地注册表)。
@@ -163,7 +163,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 | 入口 | 你该怎么理解 |
 |:---|:---|
 | [docs](docs/README.md) | 知识库总入口，先从这里选择学习路线 |
-| [getting-started](docs/getting-started/README.md) | 新手启动入口，配置网络、Codex CLI、开发环境和 Git 闭环 |
+| [getting-started](docs/getting-started/README.md) | 新手启动入口，配置网络、Codex CLI、开发环境，完成第一个项目和 Git 闭环 |
 | [workflow](docs/workflow/README.md) | 项目执行入口，把需求推进成计划、修改、门禁、提交和复盘 |
 | [concepts](docs/concepts/README.md) | 概念入口，理解问题求解、状态转移闭环、拼好码、系统构建和关键词系统 |
 | [references](docs/references/README.md) | 工程实践入口，查技术栈、质量门禁、模板和常见坑 |
@@ -291,10 +291,11 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 
 0. [从零开始完整入门](docs/getting-started/learning-map.md) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
 1. [Vibe Coding 经验](docs/getting-started/vibe-coding-experience.md) - 通用语言能力、人机分工、机器门禁和入门铁律
-2. [问题求解](docs/concepts/problem-solving.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
-3. [Vibe Coding 状态转移闭环](docs/concepts/vibe-coding-state-transition.md) - 用目标、约束、行动、证据和版本统一理解 Vibe Coding
-4. [拼好码](docs/concepts/glue-coding.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
-5. [工程实践](docs/references/quality-gates-and-pitfalls.md) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
+2. [第一个项目](docs/getting-started/first-project.md) - 用本地待办清单走通需求、实现、验收和 Git 保存
+3. [问题求解](docs/concepts/problem-solving.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
+4. [Vibe Coding 状态转移闭环](docs/concepts/vibe-coding-state-transition.md) - 用目标、约束、行动、证据和版本统一理解 Vibe Coding
+5. [拼好码](docs/concepts/glue-coding.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
+6. [工程实践](docs/references/quality-gates-and-pitfalls.md) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
 
 </details>
 
@@ -558,6 +559,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 *   [**知识库总索引**](docs/README.md): 从入门、概念、哲学、参考、研究和工作流进入完整文档体系。
 *   [**从零开始完整入门**](docs/getting-started/learning-map.md): 新手从网络环境、CLI 配置、开发环境和 Git 闭环开始。
 *   [**Vibe Coding 经验**](docs/getting-started/vibe-coding-experience.md): 通用语言能力、人机分工、机器门禁和入门铁律。
+*   [**第一个项目**](docs/getting-started/first-project.md): 用本地待办清单走通需求、实现、运行、验收和 Git 保存。
 *   [**CLI 配置**](docs/getting-started/cli-setup.md): Codex CLI 默认路线与 OpenCode 备选路线。
 *   [**Codex 配置一键安装**](tools/config/.codex/README.md): 安全默认配置、高权限配置、自动备份和一键恢复。
 *   [**开发流程**](docs/workflow/development-process.md): 默认任务推进顺序、质量门禁、版本控制和交付闭环。

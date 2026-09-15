@@ -1,7 +1,7 @@
 sections:
   getting-started:
     path: docs/getting-started
-    purpose: 从零开始学习路径、学习地图、环境配置与 AI CLI 配置
+    purpose: 从零开始学习路径、学习地图、环境配置、AI CLI 配置与第一个项目闭环
     entry: docs/getting-started/README.md
     agent_guide: docs/getting-started/AGENTS.md
   concepts:
@@ -36,6 +36,7 @@ reading_paths:
     - docs/getting-started/README.md
     - docs/getting-started/vibe-coding-experience.md
     - docs/getting-started/learning-map.md
+    - docs/getting-started/first-project.md
     - docs/concepts/problem-solving.md
     - docs/concepts/vibe-coding-state-transition.md
     - docs/concepts/glue-coding.md
@@ -67,6 +68,7 @@ reading_paths:
     - docs/workflow/development-process.md
     - docs/getting-started/README.md
     - docs/getting-started/vibe-coding-experience.md
+    - docs/getting-started/first-project.md
     - docs/references/project-architecture-template.md
     - docs/references/quality-gates-and-pitfalls.md
     - assets/ai-citation/README.md
@@ -94,6 +96,9 @@ documents:
   - path: docs/getting-started/development-environment.md
     title: 开发环境搭建
     role: Agent 主动配置开发依赖、编辑器建议和测试命令
+  - path: docs/getting-started/first-project.md
+    title: 第一个项目
+    role: 用本地待办清单走通需求、实现、运行、验收和 Git 保存
   concepts:
   - path: docs/concepts/problem-solving.md
     title: 问题求解

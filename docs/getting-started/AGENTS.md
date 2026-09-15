@@ -20,6 +20,7 @@ getting-started/
 ├── network-environment.md
 ├── cli-setup.md
 ├── development-environment.md
+├── first-project.md
 └── AGENTS.md   # 本目录操作规则
 ```
 
@@ -29,7 +30,7 @@ getting-started/
 - `README.md` 只做索引入口；正文写入同目录独立主题文档。
 - 新增步骤时，必须说明适用系统、前置条件、执行命令和成功判断。
 - 命令必须可复制执行；涉及平台差异时分别写明 Windows、WSL、Linux 或 macOS。
-- 默认路线优先是：网络环境和订阅准备 -> Codex CLI -> 让 Agent 配置后续环境。
+- 默认路线优先是：网络环境和订阅准备 -> Codex CLI -> 让 Agent 配置后续环境 -> 完成第一个项目闭环。
 - 不把抽象方法论堆进本目录；方法论应链接到 `docs/concepts/` 或 `docs/references/`。
 - 不在 README 正文中写 `和其他目录的边界` 或 `维护规则`；维护者规则只写本文件。
 

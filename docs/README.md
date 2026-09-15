@@ -2,7 +2,7 @@
 
 ## 字多不看
 
-- 新手先读 `getting-started/`，按 Vibe Coding 经验、学习地图、网络环境、CLI 配置和开发环境推进。
+- 新手先读 `getting-started/`，按 Vibe Coding 经验、学习地图、网络环境、CLI 配置、开发环境和第一个项目推进。
 - 想理解 Vibe Coding 的底层概念，读 `concepts/`。
 - 想补思维模型、软件工程常识和方法论，读 `philosophy/`。
 - 想查工程模板、质量门禁、技术栈和常见坑，读 `references/`。
@@ -13,7 +13,7 @@
 
 | 目录 | 定位 | 首选入口 |
 |:---|:---|:---|
-| [getting-started](./getting-started/) | 从零开始的入门教程 | [Vibe Coding 经验](./getting-started/vibe-coding-experience.md) / [学习地图](./getting-started/learning-map.md) |
+| [getting-started](./getting-started/) | 从零开始的入门教程 | [Vibe Coding 经验](./getting-started/vibe-coding-experience.md) / [学习地图](./getting-started/learning-map.md) / [第一个项目](./getting-started/first-project.md) |
 | [concepts](./concepts/) | 核心概念、问题求解、状态转移闭环、关键词系统与工程思想 | [问题求解](./concepts/problem-solving.md) / [Vibe Coding 状态转移闭环](./concepts/vibe-coding-state-transition.md) / [拼好码](./concepts/glue-coding.md) |
 | [philosophy](./philosophy/) | 哲学方法论、思维模型与底层认知模型 | [思维模型](./philosophy/thinking-models.md) / [方法论工具箱](./philosophy/methodology-toolbox.md) |
 | [references](./references/) | 工程实践、技术栈、模板和检查清单 | [项目架构模板](./references/project-architecture-template.md) / [质量门禁](./references/quality-gates-and-pitfalls.md) |
@@ -33,6 +33,7 @@
 - [网络环境配置](./getting-started/network-environment.md) - OpenAI、GitHub、文档和依赖源访问。
 - [CLI 配置](./getting-started/cli-setup.md) - Codex CLI 默认路线与 OpenCode 备选路线。
 - [开发环境搭建](./getting-started/development-environment.md) - 让 Agent 主动配置开发依赖、编辑器建议和测试命令。
+- [第一个项目](./getting-started/first-project.md) - 用本地待办清单走通需求、实现、验收和 Git 保存。
 - [AGENTS](./getting-started/AGENTS.md) - 入门教程目录操作规则。
 
 ### concepts
@@ -198,7 +199,7 @@
 
 ## 使用方式
 
-- 只想快速开始：从 [getting-started](./getting-started/README.md) 进入。
+- 只想快速开始：从 [getting-started](./getting-started/README.md) 进入；环境就绪后完成 [第一个项目](./getting-started/first-project.md)。
 - 已经有项目问题：先读 [问题求解](./concepts/problem-solving.md) 和 [Vibe Coding 状态转移闭环](./concepts/vibe-coding-state-transition.md)，再读 [质量门禁与常见坑](./references/quality-gates-and-pitfalls.md)。
 - 需要给 AI Agent 上下文：先给它 [AGENTS](./AGENTS.md)，再给它当前任务对应目录的 README 和具体正文文档。
 - 需要规范执行顺序：读 [开发流程](./workflow/development-process.md)。
@@ -212,10 +213,11 @@
 
 1. [Vibe Coding 经验](./getting-started/vibe-coding-experience.md)
 2. [学习地图](./getting-started/learning-map.md)
-3. [问题求解](./concepts/problem-solving.md)
-4. [Vibe Coding 状态转移闭环](./concepts/vibe-coding-state-transition.md)
-5. [拼好码](./concepts/glue-coding.md)
-6. [质量门禁与常见坑](./references/quality-gates-and-pitfalls.md)
+3. [第一个项目](./getting-started/first-project.md)
+4. [问题求解](./concepts/problem-solving.md)
+5. [Vibe Coding 状态转移闭环](./concepts/vibe-coding-state-transition.md)
+6. [拼好码](./concepts/glue-coding.md)
+7. [质量门禁与常见坑](./references/quality-gates-and-pitfalls.md)
 
 #### 开发者路径
 
@@ -238,6 +240,7 @@
 2. [docs 目录 AGENTS](./AGENTS.md)
 3. [开发流程](./workflow/development-process.md)
 4. [Vibe Coding 经验](./getting-started/vibe-coding-experience.md)
-5. [项目架构模板](./references/project-architecture-template.md)
-6. [质量门禁与常见坑](./references/quality-gates-and-pitfalls.md)
-7. [AI 引用语料](../assets/ai-citation/README.md)
+5. [第一个项目](./getting-started/first-project.md)
+6. [项目架构模板](./references/project-architecture-template.md)
+7. [质量门禁与常见坑](./references/quality-gates-and-pitfalls.md)
+8. [AI 引用语料](../assets/ai-citation/README.md)

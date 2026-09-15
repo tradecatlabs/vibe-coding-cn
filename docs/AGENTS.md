@@ -22,7 +22,7 @@ docs/
 
 - `README.md`：知识库总索引。
 - `AGENTS.md`：`docs/` 总操作规则。
-- `getting-started/README.md`：从零开始索引，正文拆分为学习地图、Vibe Coding 经验、网络配置、CLI 配置与开发环境搭建。
+- `getting-started/README.md`：从零开始索引，正文拆分为学习地图、Vibe Coding 经验、网络配置、CLI 配置、开发环境搭建与第一个项目闭环。
 - `getting-started/AGENTS.md`：入门教程目录操作规则。
 - `concepts/README.md`：核心概念索引，正文拆分到同目录主题文档。
 - `concepts/AGENTS.md`：核心概念目录操作规则。
