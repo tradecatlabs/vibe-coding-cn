@@ -106,8 +106,6 @@ def main() -> int:
                     errors.append(f"{rel}:{line}: duplicate <summary> in same <details> block")
                     continue
                 stack[-1]["summary"] = True
-                if "点击展开/收起" not in tag:
-                    errors.append(f"{rel}:{line}: <summary> missing 点击展开/收起 hint")
 
         for block in stack:
             errors.append(f"{rel}:{block['line']}: opening <details> without closing </details>")

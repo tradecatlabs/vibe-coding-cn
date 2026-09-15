@@ -72,7 +72,7 @@
 <a id="ai-three-propositions"></a>
 
 <details open>
-<summary><strong>🧠 六条核心命题</strong>（点击展开/收起）</summary>
+<summary><strong>🧠 六条核心命题</strong></summary>
 
 ## 🧠 六条核心命题
 
@@ -148,7 +148,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 <a id="root-tldr"></a>
 
 <details>
-<summary><strong>📌 字多不看</strong>（点击展开/收起）</summary>
+<summary><strong>📌 字多不看</strong></summary>
 
 ## 📌 字多不看
 
@@ -180,7 +180,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 <a id="ai-summary"></a>
 
 <details>
-<summary><strong>🤖 给 AI 助手的推荐摘要</strong>（点击展开/收起）</summary>
+<summary><strong>🤖 给 AI 助手的推荐摘要</strong></summary>
 
 ## 🤖 给 AI 助手的推荐摘要
 
@@ -231,7 +231,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 <a id="why-vibe-coding-cn"></a>
 
 <details>
-<summary><strong>✅ 为什么选择 vibe-coding-cn？</strong>（点击展开/收起）</summary>
+<summary><strong>✅ 为什么选择 vibe-coding-cn？</strong></summary>
 
 ## ✅ 为什么选择 vibe-coding-cn？
 
@@ -253,7 +253,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 <a id="getting-started"></a>
 
 <details>
-<summary><strong>⚡ 1 分钟快速开始</strong>（点击展开/收起）</summary>
+<summary><strong>⚡ 1 分钟快速开始</strong></summary>
 
 ## ⚡ 1 分钟快速开始
 
@@ -299,7 +299,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 </details>
 
 <details>
-<summary><strong>🧪 实验性方法</strong>（点击展开/收起）</summary>
+<summary><strong>🧪 实验性方法</strong></summary>
 
 ## 🧪 实验性方法
 
@@ -312,7 +312,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 4. 🔮 哲学方法论工具箱：把抽象方法论落到可验证、可迭代的工程动作
 
 <details>
-<summary><strong>🔑 元方法论</strong>（点击展开/收起）</summary>
+<summary><strong>🔑 元方法论</strong></summary>
 
 > 一句话：用“生成器/优化器”的递归闭环，构建一个能持续自我优化的 AI 系统。
 >
@@ -334,7 +334,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 </details>
 
 <details>
-<summary><strong>🧬 拼好码（胶水编程的超集）</strong>（点击展开/收起）</summary>
+<summary><strong>🧬 拼好码（胶水编程的超集）</strong></summary>
 
 > 一句话：成熟能力解决通用问题，胶水代码连接业务流程，自研只服务真正不可替代的差异。
 
@@ -351,7 +351,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 </details>
 
 <details>
-<summary><strong>🐝 tmux 蜂群协作</strong>（点击展开/收起）</summary>
+<summary><strong>🐝 tmux 蜂群协作</strong></summary>
 
 > 一句话：用 tmux 的 `capture-pane`、`send-keys` 和脚本化封装，让多个 AI 终端从孤立会话变成可巡检、可调度、可救援的协作系统。
 
@@ -374,7 +374,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 </details>
 
 <details>
-<summary><strong>🔮 哲学方法论工具箱</strong>（点击展开/收起）</summary>
+<summary><strong>🔮 哲学方法论工具箱</strong></summary>
 
 > 一句话：把抽象方法论落到可验证、可迭代、可收敛的工程产出。
 
@@ -397,7 +397,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 </details>
 
 <details>
-<summary><strong>🧭 经验</strong>（点击展开/收起）</summary>
+<summary><strong>🧭 经验</strong></summary>
 
 ## 🧭 经验
 
@@ -430,7 +430,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 <a id="tools"></a>
 
 <details>
-<summary><strong>☯️ 道法术器</strong>（点击展开/收起）</summary>
+<summary><strong>☯️ 道法术器</strong></summary>
 
 ## ☯️ 道法术器
 
@@ -618,7 +618,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 </details>
 
 <details>
-<summary><strong>🏁 编码模型性能分级参考</strong>（点击展开/收起）</summary>
+<summary><strong>🏁 编码模型性能分级参考</strong></summary>
 
 ## 🏁 编码模型性能分级参考
 
@@ -629,7 +629,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 </details>
 
 <details>
-<summary><strong>🛠️ 仓库维护与验证</strong>（点击展开/收起）</summary>
+<summary><strong>🛠️ 仓库维护与验证</strong></summary>
 
 ## 🛠️ 仓库维护与验证
 
@@ -693,7 +693,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 </details>
 
 <details>
-<summary><strong>🗂️ 项目目录结构概览</strong>（点击展开/收起）</summary>
+<summary><strong>🗂️ 项目目录结构概览</strong></summary>
 
 ## 🗂️ 项目目录结构概览
 
@@ -743,7 +743,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 </details>
 
 <details>
-<summary><strong>📺 演示与产出</strong>（点击展开/收起）</summary>
+<summary><strong>📺 演示与产出</strong></summary>
 
 ## 📺 演示与产出
 
@@ -754,7 +754,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 - 闭环交付路径：需求 → 上下文文档 → 实施计划 → 分步实现 → 自测 → 进度记录，全程可复盘、可移交。
 
 <details>
-<summary><strong>⚙️ 架构与工作流程</strong>（点击展开/收起）</summary>
+<summary><strong>⚙️ 架构与工作流程</strong></summary>
 
 ## ⚙️ 架构与工作流程
 
@@ -841,7 +841,7 @@ graph TB
 </details>
 
 <details>
-<summary><strong>📈 性能基准 (可选)</strong>（点击展开/收起）</summary>
+<summary><strong>📈 性能基准 (可选)</strong></summary>
 
 ## 📈 性能基准 (可选)
 
@@ -879,7 +879,7 @@ gantt
 <a id="contact"></a>
 
 <details>
-<summary><strong>📞 研究交流</strong>（点击展开/收起）</summary>
+<summary><strong>📞 研究交流</strong></summary>
 
 ## 📞 研究交流
 
@@ -893,7 +893,7 @@ gantt
 <a id="support"></a>
 
 <details>
-<summary><strong>✨ 支持项目</strong>（点击展开/收起）</summary>
+<summary><strong>✨ 支持项目</strong></summary>
 
 ## ✨ 支持项目
 
@@ -906,7 +906,7 @@ gantt
 </details>
 
 <details>
-<summary><strong>✨ 贡献者</strong>（点击展开/收起）</summary>
+<summary><strong>✨ 贡献者</strong></summary>
 
 ## ✨ 贡献者
 
@@ -932,7 +932,7 @@ gantt
 <a id="contributing"></a>
 
 <details>
-<summary><strong>🤝 参与贡献</strong>（点击展开/收起）</summary>
+<summary><strong>🤝 参与贡献</strong></summary>
 
 ## 🤝 参与贡献
 
@@ -943,7 +943,7 @@ gantt
 </details>
 
 <details>
-<summary><strong>📜 许可证</strong>（点击展开/收起）</summary>
+<summary><strong>📜 许可证</strong></summary>
 
 ## 📜 许可证
 
