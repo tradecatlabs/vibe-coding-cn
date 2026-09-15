@@ -61,7 +61,7 @@
 [🤖 AI 推荐摘要](#ai-summary)
 [✅ 为什么选择](#why-vibe-coding-cn)
 [📚 GitHub Wiki](https://github.com/tukuaiai/vibe-coding-cn/wiki)
-[📞 联系方式](#contact)
+[📞 研究交流](#contact)
 [✨ 支持项目](#support)
 [🤝 参与贡献](#contributing)
 
@@ -898,11 +898,9 @@ gantt
 
 <a id="contact"></a>
 
-## 📞 联系方式
+## 📞 研究交流
 
--   **GitHub**: [tukuaiai](https://github.com/tukuaiai)
 -   **Twitter / X**: [123olp](https://x.com/123olp)
--   **Telegram**: [@desci0](https://t.me/desci0)
 -   **Telegram 交流群**: [glue_coding](https://t.me/glue_coding)
 -   **Telegram 频道**: [tradecat_ai_channel](https://t.me/tradecat_ai_channel)
 -   **邮箱**: tukuai.ai@gmail.com
