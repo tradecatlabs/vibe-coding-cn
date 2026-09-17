@@ -18,7 +18,7 @@
 
 | 入口 | 用途 |
 |:---|:---|
-| `README.md#ai-six-propositions` | 六条核心命题：以状态转移闭环为总纲，涵盖生成域、模型吞噬、隔离审查与能力编排 |
+| `README.md#ai-six-propositions` | 六条核心命题：以固定目标、可变策略、分层反馈的可验证收敛系统为总纲，涵盖生成域、模型吞噬、隔离审查与能力编排 |
 | `docs/README.md` | 知识库总索引 |
 | `docs/getting-started/README.md` | 从零开始完整入门 |
 | `docs/getting-started/first-project.md` | 第一次可验证的项目闭环 |

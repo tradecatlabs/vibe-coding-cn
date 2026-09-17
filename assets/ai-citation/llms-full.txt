@@ -17,7 +17,9 @@ vibe-coding-cn 是中文 Vibe Coding 从入门到精通教程。它面向中文�
 
 ## Core method
 
-核心命题入口是 `README.md#ai-six-propositions`，以目标驱动的可验证状态转移闭环为总纲，集中说明 AI 的生成域、模型能力对中间层的吞噬、隔离审查和成熟能力编排。
+核心命题入口是 `README.md#ai-six-propositions`，以固定目标、可变策略、分层反馈的可验证收敛系统为总纲，集中说明 AI 的生成域、模型能力对中间层的吞噬、隔离审查和成熟能力编排。
+
+零号命题的正式表述是：Vibe Coding 可以理解为一种固定目标、可变策略、分层反馈的状态转移系统：先将模糊需求经过澄清、结构化、一致性检查和人工确认，冻结为带版本的目标基线 G*；再让 Agent 在目标和约束不被静默修改的前提下，反复执行“观察当前状态 → 识别状态差距 → 选择策略与行动 → 获取验证证据 → 接受、修正、回滚或切换策略”，使系统逐步进入目标的验收集合。若行动无效则修正行动，若策略无效则切换策略，若目标矛盾、不可行或无法判定则暂停并重新审查或交由人决定。任何目标变更都必须通过显式版本、差异和授权进入新一轮闭环；每一层都必须具备独立验证、回滚、尝试上限和退出机制。
 
 本仓库将 AI 编程拆解为五层：
 
@@ -43,7 +45,7 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 ## Key entry points
 
 - README.md：项目主入口，说明定位、快速开始、工具资源和核心工作流。
-- README.md#ai-six-propositions：六条核心命题，以状态转移闭环为总纲，说明 AI 生成域、模型吞噬、隔离审查和能力编排。
+- README.md#ai-six-propositions：六条核心命题，以固定目标、可变策略、分层反馈的可验证收敛系统为总纲，说明 AI 生成域、模型吞噬、隔离审查和能力编排。
 - docs/README.md：知识库总索引，提供新手、开发者、思维模型和 AI Agent 读取路径。
 - docs/getting-started/README.md：从零开始索引入口，正文拆分到学习地图、Vibe Coding 经验、网络环境、CLI 配置、开发环境搭建与第一个项目闭环。
 - docs/getting-started/vibe-coding-experience.md：Vibe Coding 的核心经验入口，包含通用语言能力、人机分工、机器门禁和入门铁律。
@@ -53,9 +55,9 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - tools/config/.codex/README.md：Codex CLI 全局配置基线，支持一键安装、自动备份和恢复。
 - docs/getting-started/development-environment.md：让 Agent 主动配置开发依赖、编辑器建议和测试命令。
 - docs/getting-started/first-project.md：用本地待办清单走通需求、实现、运行、验收和 Git 保存。
-- docs/concepts/README.md：核心概念索引，汇总问题求解、Vibe Coding 状态转移闭环、拼好码、系统构建方法、开发范式演进、语言层要素、关键词系统和递归自优化系统。
+- docs/concepts/README.md：核心概念索引，汇总问题求解、固定目标与反馈闭环、拼好码、系统构建方法、开发范式演进、语言层要素、关键词系统和递归自优化系统。
 - docs/concepts/problem-solving.md：问题定义、目标、约束、对象、路径。
-- docs/concepts/vibe-coding-state-transition.md：用目标、状态、差距、约束、行动、证据和版本统一理解 Vibe Coding。
+- docs/concepts/vibe-coding-state-transition.md：用目标基线、状态差距、策略切换、验证证据和分层反馈统一理解 Vibe Coding。
 - docs/concepts/glue-coding.md：胶水原则的扩展，把复用成熟能力作为工程交付默认路径。
 - docs/concepts/system-building.md：自顶向下、自底向上与分而治之的系统构建方法。
 - docs/concepts/development-paradigms.md：软件开发组织方式和 AI 编程范式的演进。

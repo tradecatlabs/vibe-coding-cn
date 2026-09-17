@@ -14,7 +14,7 @@
 | 目录 | 定位 | 首选入口 |
 |:---|:---|:---|
 | [getting-started](./getting-started/) | 从零开始的入门教程 | [Vibe Coding 经验](./getting-started/vibe-coding-experience.md) / [学习地图](./getting-started/learning-map.md) / [第一个项目](./getting-started/first-project.md) |
-| [concepts](./concepts/) | 核心概念、问题求解、状态转移闭环、关键词系统与工程思想 | [问题求解](./concepts/problem-solving.md) / [Vibe Coding 状态转移闭环](./concepts/vibe-coding-state-transition.md) / [拼好码](./concepts/glue-coding.md) |
+| [concepts](./concepts/) | 核心概念、问题求解、固定目标、反馈闭环与工程思想 | [问题求解](./concepts/problem-solving.md) / [Vibe Coding 状态转移闭环](./concepts/vibe-coding-state-transition.md) / [拼好码](./concepts/glue-coding.md) |
 | [philosophy](./philosophy/) | 哲学方法论、思维模型与底层认知模型 | [思维模型](./philosophy/thinking-models.md) / [方法论工具箱](./philosophy/methodology-toolbox.md) |
 | [references](./references/) | 工程实践、技术栈、模板和检查清单 | [项目架构模板](./references/project-architecture-template.md) / [质量门禁](./references/quality-gates-and-pitfalls.md) |
 | [research](../research/) | 根级研究域：新技术、优秀 repo 与工程范式研究 | [研究域治理契约](../research/research-domain-contract.md) / [研究迁移综合](../research/research-transfer-synthesis.md) |
@@ -40,7 +40,7 @@
 
 - [README](./concepts/README.md) - 核心概念索引。
 - [问题求解](./concepts/problem-solving.md) - 用目标、现状、差距、标准、约束、对象和路径定义问题。
-- [Vibe Coding 状态转移闭环](./concepts/vibe-coding-state-transition.md) - 用目标、约束、行动、证据和版本统一理解 Vibe Coding。
+- [Vibe Coding 状态转移闭环](./concepts/vibe-coding-state-transition.md) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding。
 - [拼好码](./concepts/glue-coding.md) - 复用成熟能力，用胶水代码连接、编排、适配业务流程。
 - [系统构建方法](./concepts/system-building.md) - 自顶向下、自底向上与分而治之的组合使用。
 - [开发范式演进](./concepts/development-paradigms.md) - 软件工程组织方式的演进。

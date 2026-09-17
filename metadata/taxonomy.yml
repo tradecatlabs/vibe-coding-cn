@@ -105,7 +105,7 @@ documents:
     role: 目标、现状、差距、标准、约束、对象与路径
   - path: docs/concepts/vibe-coding-state-transition.md
     title: Vibe Coding 状态转移闭环
-    role: 用目标、约束、行动、证据和版本统一理解 Vibe Coding
+    role: 用固定目标、可变策略、分层反馈和验收集合统一理解 Vibe Coding
   - path: docs/concepts/glue-coding.md
     title: 拼好码
     role: 复用成熟能力、胶水原则、能力编排与业务交付

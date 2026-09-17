@@ -76,22 +76,24 @@
 
 ## 🧠 六条核心命题
 
-### 零、目标驱动的可验证状态转移闭环
+### 零、固定目标、分层反馈的可验证收敛系统
 
-> **Vibe Coding 可以理解为一种目标驱动、受约束、可验证的状态转移闭环：在人定义目标、边界和验收标准的前提下，借助 AI 和工具，把系统从当前状态持续推进到目标状态，并通过证据确认结果，必要时回滚迭代。**
+> **Vibe Coding 可以理解为一种目标驱动、受约束、可验证的状态转移闭环；从控制结构看，它是一种固定目标、可变策略、分层反馈的系统：先将模糊需求经过澄清、结构化、一致性检查和人工确认，冻结为带版本的目标基线 \(G^*\)；再让 Agent 在目标基线和约束不被静默修改的前提下，反复执行“观察当前状态 \(S_t\) → 识别状态差距 \(\Delta_t\) → 选择策略与行动 → 获取验证证据 \(E_t\) → 接受、修正、回滚或切换策略”，使系统逐步进入目标的验收集合。若单次行动无效，则修正行动；若当前策略无效，则切换策略；若目标存在矛盾、不可行或无法判定，则暂停执行，重新审查目标或交由人决定。任何目标变更都必须通过显式版本、差异和授权进入新一轮闭环；每一层都必须具备独立验证、回滚、尝试上限和退出机制。**
 
 ```text
-当前状态 S
-→ 目标状态 G
-→ 状态差距 Δ
-→ 选择行动/工具
+原始需求 R
+→ 澄清、结构化、一致性检查
+→ 版本化目标基线 G*
+→ 观察当前状态 S_t
+→ 识别状态差距 Δ_t
+→ 选择策略 π_t 与行动 O_t
 → 执行
-→ 验证
-→ 固化或回滚
-→ 下一轮状态
+→ 采集验证证据 E_t
+→ 接受 / 修正 / 回滚 / 切换策略
+→ 下一轮状态 S_{t+1}
 ```
 
-零号命题与后续五条命题共同构成六条核心命题；后续五条命题分别解释 AI 在这个闭环中的能力、边界、演化、审查和编排。
+这里的“固定目标”不是目标永远不能变化，而是未经授权不能被执行者静默改变；合法变化必须创建新的目标版本。这里的“收敛”也不是保证每一步都成功，而是在验证、回滚、尝试上限和退出机制约束下，使系统进入并保持在目标验收集合中。零号命题与后续五条命题共同构成六条核心命题；后续五条命题分别解释 AI 在这个闭环中的能力、边界、演化、审查和编排。
 
 ### 一
 
@@ -165,7 +167,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 | [docs](docs/README.md) | 知识库总入口，先从这里选择学习路线 |
 | [getting-started](docs/getting-started/README.md) | 新手启动入口，配置网络、Codex CLI、开发环境，完成第一个项目和 Git 闭环 |
 | [workflow](docs/workflow/README.md) | 项目执行入口，把需求推进成计划、修改、门禁、提交和复盘 |
-| [concepts](docs/concepts/README.md) | 概念入口，理解问题求解、状态转移闭环、拼好码、系统构建和关键词系统 |
+| [concepts](docs/concepts/README.md) | 概念入口，理解问题求解、固定目标、反馈闭环、拼好码和系统构建 |
 | [references](docs/references/README.md) | 工程实践入口，查技术栈、质量门禁、模板和常见坑 |
 | [philosophy](docs/philosophy/README.md) | 思维入口，补思维模型、编程之道和软件工程常识 |
 | [research](research/README.md) | 研究入口，记录新技术、优秀 repo 和工程趋势判断 |
@@ -293,7 +295,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 1. [Vibe Coding 经验](docs/getting-started/vibe-coding-experience.md) - 通用语言能力、人机分工、机器门禁和入门铁律
 2. [第一个项目](docs/getting-started/first-project.md) - 用本地待办清单走通需求、实现、验收和 Git 保存
 3. [问题求解](docs/concepts/problem-solving.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
-4. [Vibe Coding 状态转移闭环](docs/concepts/vibe-coding-state-transition.md) - 用目标、约束、行动、证据和版本统一理解 Vibe Coding
+4. [Vibe Coding 状态转移闭环](docs/concepts/vibe-coding-state-transition.md) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding
 5. [拼好码](docs/concepts/glue-coding.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
 6. [工程实践](docs/references/quality-gates-and-pitfalls.md) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
 
@@ -564,7 +566,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 *   [**Codex 配置一键安装**](tools/config/.codex/README.md): 安全默认配置、高权限配置、自动备份和一键恢复。
 *   [**开发流程**](docs/workflow/development-process.md): 默认任务推进顺序、质量门禁、版本控制和交付闭环。
 *   [**问题求解**](docs/concepts/problem-solving.md): 用目标、现状、差距、标准、约束、对象和路径定义问题。
-*   [**Vibe Coding 状态转移闭环**](docs/concepts/vibe-coding-state-transition.md): 用目标、约束、行动、证据和版本统一理解 Vibe Coding。
+*   [**Vibe Coding 状态转移闭环**](docs/concepts/vibe-coding-state-transition.md): 用固定目标、可变策略和分层反馈统一理解 Vibe Coding。
 *   [**拼好码（胶水编程的超集）**](docs/concepts/glue-coding.md): 复用成熟能力，用胶水代码连接、编排、适配业务流程。
 *   [**系统构建方法**](docs/concepts/system-building.md): 自顶向下、自底向上与分而治之的组合使用。
 *   [**开发范式演进**](docs/concepts/development-paradigms.md): 软件工程组织方式与 AI 编程范式的演进。
