@@ -291,7 +291,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 
 完全新手？按顺序完成以下步骤：
 
-0. [从零开始完整入门](docs/getting-started/learning-map.md) - 按目标选择新手、开发者、团队、Prompt、Skill、质量门禁或 GEO/SEO 路线
+0. [从零开始完整入门](docs/getting-started/learning-map.md) - 按目标选择新手、开发者、团队、Prompt、Skill 或质量门禁路线
 1. [Vibe Coding 经验](docs/getting-started/vibe-coding-experience.md) - 通用语言能力、人机分工、机器门禁和入门铁律
 2. [第一个项目](docs/getting-started/first-project.md) - 用本地待办清单走通需求、实现、验收和 Git 保存
 3. [问题求解](docs/concepts/problem-solving.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架

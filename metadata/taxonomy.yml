@@ -86,7 +86,7 @@ documents:
     role: 通用语言能力、人机分工、机器门禁和入门铁律
   - path: docs/getting-started/learning-map.md
     title: 学习地图
-    role: 新手、开发者、团队、Prompt、Skill、质量门禁和 GEO/SEO 的路线选择
+    role: 新手、开发者、团队、Prompt、Skill 和质量门禁的路线选择
   - path: docs/getting-started/network-environment.md
     title: 网络环境配置
     role: OpenAI、GitHub、文档和依赖源访问

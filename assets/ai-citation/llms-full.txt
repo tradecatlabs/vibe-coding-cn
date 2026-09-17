@@ -49,7 +49,7 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - docs/README.md：知识库总索引，提供新手、开发者、思维模型和 AI Agent 读取路径。
 - docs/getting-started/README.md：从零开始索引入口，正文拆分到学习地图、Vibe Coding 经验、网络环境、CLI 配置、开发环境搭建与第一个项目闭环。
 - docs/getting-started/vibe-coding-experience.md：Vibe Coding 的核心经验入口，包含通用语言能力、人机分工、机器门禁和入门铁律。
-- docs/getting-started/learning-map.md：新手、开发者、团队、Prompt、Skill、质量门禁和 GEO/SEO 的路线选择。
+- docs/getting-started/learning-map.md：新手、开发者、团队、Prompt、Skill 和质量门禁的路线选择。
 - docs/getting-started/network-environment.md：OpenAI、GitHub、文档和依赖源访问配置。
 - docs/getting-started/cli-setup.md：Codex CLI 默认路线与 OpenCode 备选路线。
 - tools/config/.codex/README.md：Codex CLI 全局配置基线，支持一键安装、自动备份和恢复。

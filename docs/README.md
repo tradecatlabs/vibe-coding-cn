@@ -29,7 +29,7 @@
 
 - [README](./getting-started/README.md) - 从零开始索引。
 - [Vibe Coding 经验](./getting-started/vibe-coding-experience.md) - 通用语言能力、人机分工、机器门禁和入门铁律。
-- [学习地图](./getting-started/learning-map.md) - 新手、开发者、团队、Prompt、Skill、质量门禁和 GEO/SEO 的路线选择。
+- [学习地图](./getting-started/learning-map.md) - 新手、开发者、团队、Prompt、Skill 和质量门禁的路线选择。
 - [网络环境配置](./getting-started/network-environment.md) - OpenAI、GitHub、文档和依赖源访问。
 - [CLI 配置](./getting-started/cli-setup.md) - Codex CLI 默认路线与 OpenCode 备选路线。
 - [开发环境搭建](./getting-started/development-environment.md) - 让 Agent 主动配置开发依赖、编辑器建议和测试命令。

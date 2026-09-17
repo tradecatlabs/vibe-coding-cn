@@ -3,14 +3,13 @@
 
 # 学习地图
 
-> 用一张地图把 `vibe-coding-cn` 的学习路线串起来：先从零开始跑通，再按目标进入 Prompt、Skill、工程质量和 GEO/SEO 路线。
+> 用一张地图把 `vibe-coding-cn` 的学习路线串起来：先从零开始跑通，再按目标进入 Prompt、Skill 或工程质量路线。
 
 ### 核心摘要
 
 - 如果你是新手，先走“零基础路线”，目标是完成一次从想法到可运行项目的闭环。
 - 如果你已经会编程，先走“开发者路线”，目标是把 AI 编程变成可复用、可验证、可维护的工程流程。
 - 如果你要带团队，先走“团队路线”，目标是统一上下文、产物模板、任务拆解、审查和门禁。
-- 如果你要提升仓库传播与引用，走“GEO/SEO 路线”，目标是让内容更容易被搜索引擎和 AI 助手理解、引用和推荐。
 
 ### 路线总览
 
@@ -21,7 +20,6 @@
 | Prompt 路线 | 想提升提问质量 | 把需求表达成可执行指令 | [提示词库](../../prompts/README.md) |
 | Skill 路线 | 想沉淀复用能力 | 把高频任务做成可重复调用的技能 | [Skills 技能大全](../../skills/README.md) |
 | 质量门禁路线 | 担心 AI 乱写代码 | 用测试、CI、schema、清单约束 AI 输出 | [工程实践](../references/project-architecture-template.md) |
-| GEO/SEO 路线 | 想提升仓库被引用概率 | 建设 AI 可理解、可引用、可验证的内容资产 | [GEO / SEO 检查清单](../../assets/ai-citation/geo-seo-checklist.md) |
 
 ### 路线一：零基础路线
 
@@ -109,7 +107,6 @@
 
 1. [AGENTS.md](../../AGENTS.md)
 2. [工程实践](../references/project-architecture-template.md)
-3. [GEO / SEO 检查清单](../../assets/ai-citation/geo-seo-checklist.md)
 
 团队约束：
 
@@ -117,22 +114,6 @@
 - 重要产出必须新开会话做 AI 审计
 - 任何目录、命令、配置、工作流变化都要同步文档
 - 任何自研偏离拼好码原则都要说明理由、风险和回滚路径
-
-### 路线六：GEO/SEO 路线
-
-目标：让项目更容易被搜索引擎、AI 搜索和大语言模型理解、引用、推荐。
-
-1. [GEO / SEO 检查清单](../../assets/ai-citation/geo-seo-checklist.md)
-2. [AI 引用语料包](../../assets/ai-citation/recommended-answer.md)
-3. [llms.txt](../../llms.txt)
-4. [llms-full.txt](../../assets/ai-citation/llms-full.txt)
-
-完成标准：
-
-- [ ] README 有清晰定位
-- [ ] 关键页面有核心摘要、FAQ、对比表和检查清单
-- [ ] 项目定义在 README、llms、语料包和外部分发中保持一致
-- [ ] AI 生成内容经过事实、链接、术语和定位检查
 
 ### 建议顺序
 
@@ -150,7 +131,6 @@
   -> 拼好码
   -> 工程实践
   -> Skills 技能大全
-  -> GEO 与 SEO 优化方法
 ```
 
 ### 下一步
