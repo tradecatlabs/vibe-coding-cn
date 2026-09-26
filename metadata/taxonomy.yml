@@ -6,7 +6,7 @@ sections:
     agent_guide: docs/getting-started/AGENTS.md
   concepts:
     path: docs/concepts
-    purpose: 核心概念、问题求解、Vibe Coding 修仙映射 V1、关键词系统与工程思想
+    purpose: 核心概念、问题求解、修仙解释图层、关键词系统与工程思想
     entry: docs/concepts/README.md
     agent_guide: docs/concepts/AGENTS.md
   philosophy:
@@ -108,8 +108,8 @@ documents:
     title: Vibe Coding 状态转移闭环
     role: 用固定目标、可变策略、分层反馈和验收集合统一理解 Vibe Coding
   - path: docs/concepts/vibe-coding-cultivation-model.md
-    title: Vibe Coding 修仙映射
-    role: 用修仙比喻说明 User/Operator、跨工具全部 AI 会话、单个会话及 Session ID、模型能力、计算资源、功法和法器
+    title: 修仙解释图层
+    role: 用修仙比喻说明七个基础对象及其关系；万魂幡是跨工具全部 AI 会话的集合，魂魄是以 Session ID 标识的单个会话，修为属于模型
   - path: docs/concepts/glue-coding.md
     title: 拼好码
     role: 复用成熟能力、胶水原则、能力编排与业务交付
