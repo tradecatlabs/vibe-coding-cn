@@ -23,6 +23,7 @@
 | `docs/getting-started/README.md` | 从零开始完整入门 |
 | `docs/getting-started/first-project.md` | 第一次可验证的项目闭环 |
 | `docs/concepts/README.md` | 核心概念索引 |
+| `docs/concepts/vibe-coding-cultivation-model.md` | Vibe Coding 修仙映射 V1：七个基础对象与人、魂、力、术器四层结构 |
 | `docs/philosophy/thinking-models.md` | 哲学方法论与思维模型 |
 | `docs/references/README.md` | 工程实践与技术栈参考 |
 | `research/README.md` | 新技术、优秀 repo 与工程范式研究 |

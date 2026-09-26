@@ -16,6 +16,7 @@
 concepts/
 ├── README.md  # 索引入口：核心概念导航
 ├── problem-solving.md
+├── vibe-coding-cultivation-model.md  # Vibe Coding 修仙映射 V1：七个基础对象
 ├── glue-coding.md
 ├── system-building.md
 ├── development-paradigms.md
