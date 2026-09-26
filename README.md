@@ -429,6 +429,38 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 
 </details>
 
+<details>
+<summary><strong>🧠 Vibe Coding 修仙映射模型 V1</strong></summary>
+
+## 🧠 Vibe Coding 修仙映射模型 V1
+
+V1 用修仙世界观描述 Vibe Coding 的基础对象，只回答“有什么”。
+
+| 修仙对象 | AI 对象 |
+|---|---|
+| 人类修士 | User / Operator |
+| 万魂幡 | Pi、Claude Code、Codex 等工具中的全部 AI 会话集合 |
+| 魂魄 | 一个 Conversation / Session，以 Session ID 标识 |
+| 修为 | Model Capability / Intelligence |
+| 灵力 | Token / Compute / Reasoning Budget |
+| 功法 | Harness / Rules / Skills / Workflow |
+| 法器 | Tools / MCP / Browser / Shell / API |
+
+万魂幡是全部会话的集合，魂魄是其中一个会话；两者都不指 Memory。
+
+| 层次 | 修仙对象 |
+|---|---|
+| 人 | 人类修士 |
+| 魂 | 万魂幡、魂魄 |
+| 力 | 修为、灵力 |
+| 术与器 | 功法、法器 |
+
+> 人类修士执掌万魂幡，幡中藏有无数魂魄；魂有修为，运行需要灵力，并可借助功法与法器发挥能力。
+
+完整说明：[Vibe Coding 修仙映射模型 V1](docs/concepts/vibe-coding-cultivation-model.md)
+
+</details>
+
 <a id="dao-fa-shu-qi"></a>
 <a id="tools"></a>
 
