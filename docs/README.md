@@ -41,7 +41,7 @@
 - [README](./concepts/README.md) - 核心概念索引。
 - [问题求解](./concepts/problem-solving.md) - 用目标、现状、差距、标准、约束、对象和路径定义问题。
 - [Vibe Coding 状态转移闭环](./concepts/vibe-coding-state-transition.md) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding。
-- [Vibe Coding 修仙映射模型 V1](./concepts/vibe-coding-cultivation-model.md) - 用修仙比喻说明 Vibe Coding 的七个基础对象和四层结构。
+- [Vibe Coding 修仙映射](./concepts/vibe-coding-cultivation-model.md) - 用修仙比喻说明 Vibe Coding 的七个基础对象和四层结构。
 - [拼好码](./concepts/glue-coding.md) - 复用成熟能力，用胶水代码连接、编排、适配业务流程。
 - [系统构建方法](./concepts/system-building.md) - 自顶向下、自底向上与分而治之的组合使用。
 - [开发范式演进](./concepts/development-paradigms.md) - 软件工程组织方式的演进。

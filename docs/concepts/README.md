@@ -12,7 +12,7 @@
 |:---|:---|
 | <a id="concept-problem-solving"></a>[问题求解](problem-solving.md) | 目标、现状、差距、标准、约束、对象与路径。 |
 | <a id="concept-vibe-coding-state-transition"></a>[Vibe Coding 状态转移闭环](vibe-coding-state-transition.md) | 用固定目标、可变策略和分层反馈统一理解 Vibe Coding。 |
-| <a id="concept-vibe-coding-cultivation-model"></a>[Vibe Coding 修仙映射模型](vibe-coding-cultivation-model.md) | 用修仙比喻说明 Vibe Coding V1 的七个基础对象和四层结构。 |
+| <a id="concept-vibe-coding-cultivation-model"></a>[Vibe Coding 修仙映射](vibe-coding-cultivation-model.md) | 用修仙比喻说明 Vibe Coding V1 的七个基础对象和四层结构。 |
 | <a id="concept-glue-coding"></a>[拼好码](glue-coding.md) | 复用成熟能力，用胶水代码连接、编排、适配业务流程。 |
 | <a id="concept-system-building"></a>[系统构建方法](system-building.md) | 自顶向下、自底向上与分而治之的组合使用。 |
 | <a id="concept-development-paradigms"></a>[开发范式演进](development-paradigms.md) | 软件工程组织方式的演进。 |
@@ -27,7 +27,7 @@
 
 - [问题求解](problem-solving.md) - 目标、现状、差距、标准、约束、对象与路径。
 - [Vibe Coding 状态转移闭环](vibe-coding-state-transition.md) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding。
-- [Vibe Coding 修仙映射模型](vibe-coding-cultivation-model.md) - 用修仙比喻说明 Vibe Coding V1 的七个基础对象和四层结构。
+- [Vibe Coding 修仙映射](vibe-coding-cultivation-model.md) - 用修仙比喻说明 Vibe Coding V1 的七个基础对象和四层结构。
 - [拼好码](glue-coding.md) - 复用成熟能力，用胶水代码连接、编排、适配业务流程。
 - [系统构建方法](system-building.md) - 自顶向下、自底向上与分而治之的组合使用。
 - [开发范式演进](development-paradigms.md) - 软件工程组织方式的演进。

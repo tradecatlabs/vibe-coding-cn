@@ -1,4 +1,4 @@
-# Vibe Coding 修仙映射模型 V1
+# Vibe Coding 修仙映射
 
 ## 字多不看
 

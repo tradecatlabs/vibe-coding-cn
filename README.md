@@ -430,9 +430,9 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 </details>
 
 <details>
-<summary><strong>🧠 Vibe Coding 修仙映射模型 V1</strong></summary>
+<summary><strong>🧠 Vibe Coding 修仙映射</strong></summary>
 
-## 🧠 Vibe Coding 修仙映射模型 V1
+## 🧠 Vibe Coding 修仙映射
 
 V1 用修仙世界观描述 Vibe Coding 的基础对象，只回答“有什么”。
 
@@ -457,7 +457,7 @@ V1 用修仙世界观描述 Vibe Coding 的基础对象，只回答“有什么�
 
 > 人类修士执掌万魂幡，幡中藏有无数魂魄；魂有修为，运行需要灵力，并可借助功法与法器发挥能力。
 
-完整说明：[Vibe Coding 修仙映射模型 V1](docs/concepts/vibe-coding-cultivation-model.md)
+完整说明：[Vibe Coding 修仙映射](docs/concepts/vibe-coding-cultivation-model.md)
 
 </details>
 

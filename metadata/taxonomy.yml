@@ -108,7 +108,7 @@ documents:
     title: Vibe Coding 状态转移闭环
     role: 用固定目标、可变策略、分层反馈和验收集合统一理解 Vibe Coding
   - path: docs/concepts/vibe-coding-cultivation-model.md
-    title: Vibe Coding 修仙映射模型
+    title: Vibe Coding 修仙映射
     role: 用修仙比喻说明 User/Operator、跨工具全部 AI 会话、单个会话及 Session ID、模型能力、计算资源、功法和法器
   - path: docs/concepts/glue-coding.md
     title: 拼好码
