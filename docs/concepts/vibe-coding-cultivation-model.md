@@ -25,7 +25,7 @@ V1 只说明七个基础对象是什么、彼此有哪些静态关系。它暂�
 | 万魂幡 | 全部 AI 会话的集合 | Pi、Claude Code、Codex 等工具中的全部 AI 会话。 |
 | 魂魄 | 单个 Conversation / Session | 一个具体会话，以该会话的 Session ID 标识。 |
 | 修为 | Model Capability / Intelligence | 模型本身在理解、推理、规划、生成和代码编写等方面的能力水平。 |
-| 灵力 | Token / Compute / Reasoning Budget | AI 运行过程中可以投入的计算资源。 |
+| 灵力 | Token / Compute / Reasoning Budget | AI 使用时可投入的资源与预算，不是模型本身的能力。 |
 | 功法 | Harness / Rules / Skills / Workflow | 模型之外规定 AI 如何运行、如何思考和如何完成任务的方法体系。 |
 | 法器 | Tools / MCP / Browser / Shell / API | AI 可以借助的外部工具及调用入口。 |
 
@@ -61,13 +61,13 @@ V1 只说明七个基础对象是什么、彼此有哪些静态关系。它暂�
 
 ### 灵力
 
-灵力对应 Token、Compute 和 Reasoning Budget，代表 AI 运行过程中可以消耗的计算资源。
+灵力对应 Token、Compute 和 Reasoning Budget，概括 AI 使用时可投入的资源与预算。Token 是用量单位，Compute 指计算资源，Reasoning Budget 指推理预算；它们不是同一种可互换的额度。
 
 灵力描述的是：
 
-> 能够投入多少计算资源。
+> 能够使用多少资源和预算。
 
-因此，修为和灵力是两个不同维度：修为决定能力水平，灵力决定可以投入多少计算。
+因此，修为和灵力是两个不同维度：增加可用预算可能影响一次使用的表现，却不会直接改变模型本身的能力。
 
 ### 功法
 
@@ -87,7 +87,7 @@ Tools 是工具总称，Browser 和 Shell 是具体工具，API 是调用接口�
 
 ## V1 的四层结构
 
-这七个基础对象可以进一步理解为四个层次：
+这七个基础对象可以归为四层；这里的“层”是阅读时的分类，不是从人到法器依次执行的流水线，也不表示上层拥有下层。
 
 | 层次 | 修仙对象 | 对应内容 |
 |---|---|---|
