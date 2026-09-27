@@ -16,7 +16,7 @@
 concepts/
 ├── README.md  # 索引入口：核心概念导航
 ├── problem-solving.md
-├── vibe-coding-cultivation-model.md  # 修仙解释图层：七个基础对象及其关系
+├── vibe-coding-cultivation-model.md  # 修仙解释图层：七对象、四层分类与战力评估边界
 ├── glue-coding.md
 ├── system-building.md
 ├── development-paradigms.md

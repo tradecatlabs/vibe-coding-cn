@@ -41,7 +41,7 @@
 - [README](./concepts/README.md) - 核心概念索引。
 - [问题求解](./concepts/problem-solving.md) - 用目标、现状、差距、标准、约束、对象和路径定义问题。
 - [Vibe Coding 状态转移闭环](./concepts/vibe-coding-state-transition.md) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding。
-- [修仙解释图层](./concepts/vibe-coding-cultivation-model.md) - 用修仙比喻说明七个基础对象、四层静态分类及其关系。
+- [修仙解释图层](./concepts/vibe-coding-cultivation-model.md) - 七个基础对象、四层静态分类，以及效果优先的战力评估。
 - [拼好码](./concepts/glue-coding.md) - 复用成熟能力，用胶水代码连接、编排、适配业务流程。
 - [系统构建方法](./concepts/system-building.md) - 自顶向下、自底向上与分而治之的组合使用。
 - [开发范式演进](./concepts/development-paradigms.md) - 软件工程组织方式的演进。
@@ -202,7 +202,7 @@
 
 - 只想快速开始：从 [getting-started](./getting-started/README.md) 进入；环境就绪后完成 [第一个项目](./getting-started/first-project.md)。
 - 已经有项目问题：先读 [问题求解](./concepts/problem-solving.md) 和 [Vibe Coding 状态转移闭环](./concepts/vibe-coding-state-transition.md)，再读 [质量门禁与常见坑](./references/quality-gates-and-pitfalls.md)。
-- 想了解七个基础对象和四层静态分类：读 [修仙解释图层](./concepts/vibe-coding-cultivation-model.md)。
+- 想了解七个基础对象、四层静态分类与战力评价口径：读 [修仙解释图层](./concepts/vibe-coding-cultivation-model.md)。
 - 需要给 AI Agent 上下文：先给它 [AGENTS](./AGENTS.md)，再给它当前任务对应目录的 README 和具体正文文档。
 - 需要规范执行顺序：读 [开发流程](./workflow/development-process.md)。
 - 新增内容时，先判断它属于教程、概念、哲学、参考还是研究；研究内容进入根目录 `research/`。

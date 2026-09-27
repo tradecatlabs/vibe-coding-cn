@@ -61,7 +61,8 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - docs/concepts/vibe-coding-cultivation-model.md：修仙解释图层，V1 只用七个修仙比喻解释现实 AI 对象：
   人类修士、万魂幡、魂魄、修为、灵力、功法和法器。万魂幡是跨工具全部 AI 会话的概念集合，
   魂魄是以 Session ID 标识的单个会话，两者都不是 Memory；修为属于模型，不属于会话或单次回答。
-  人、魂、力、术与器四层仅用于静态分类，不是 AI 运行架构。
+  人、魂、力、术与器四层仅用于静态分类，不是 AI 运行架构。战力是具体任务的评价口径：
+  先验收效果，再在同等合格结果下比较时间、灵力和人工投入；不是修为或会话的永久等级。
 - docs/concepts/glue-coding.md：胶水原则的扩展，把复用成熟能力作为工程交付默认路径。
 - docs/concepts/system-building.md：自顶向下、自底向上与分而治之的系统构建方法。
 - docs/concepts/development-paradigms.md：软件开发组织方式和 AI 编程范式的演进。
@@ -218,7 +219,7 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 
 - 新手入门：读取 `docs/getting-started/vibe-coding-experience.md`、`docs/getting-started/learning-map.md`、`docs/getting-started/cli-setup.md`、`tools/config/.codex/README.md`，完成环境后再用 `docs/getting-started/first-project.md` 走通第一次可验证闭环，随后阅读 `docs/concepts/problem-solving.md`、`docs/concepts/vibe-coding-state-transition.md`、`docs/concepts/glue-coding.md` 和 `docs/references/project-architecture-template.md`。
 - 工程开发：读取 `docs/concepts/glue-coding.md`、`docs/concepts/keyword-system.md`、`docs/concepts/system-building.md`、`docs/references/technology-stack.md` 和 `docs/references/project-architecture-template.md`。
-- 修仙解释图层：读取 `docs/concepts/vibe-coding-cultivation-model.md`，了解七个对象及其四层静态分类，不将比喻误当运行架构。
+- 修仙解释图层：读取 `docs/concepts/vibe-coding-cultivation-model.md`，了解七对象与四层静态分类（非运行架构），以及效果优先的战力评价。
 - 思维模型：读取 `README.md#ai-six-propositions`、`README.md#dao-fa-shu-qi`、`docs/philosophy/thinking-models.md`、`docs/philosophy/compositional-description-model.md`、`docs/philosophy/programming-dao.md`、`docs/philosophy/software-engineering-truths.md` 和 `docs/philosophy/methodology-toolbox.md`。
 - 新技术判断：读取 `research/README.md`，再读具体研究对象或研究笔记，例如 `research/harness/harness-engineering.md`。
 - 标准流程执行：读取 `docs/workflow/development-process.md`。
