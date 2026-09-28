@@ -17,6 +17,7 @@ concepts/
 ├── README.md  # 索引入口：核心概念导航
 ├── problem-solving.md
 ├── vibe-coding-cultivation-model.md  # 修仙解释图层：七对象、四层分类与战力评估边界
+├── cultivation-ontology-taxonomy.md  # 修仙领域内知识条目本体与分类草案
 ├── glue-coding.md
 ├── system-building.md
 ├── development-paradigms.md
@@ -32,6 +33,7 @@ concepts/
 - 新增概念内容时，优先写入对应独立主题文档，并同步更新 `README.md` 索引。
 - 新增同级主题 `.md` 文件前，必须确认它是稳定概念，并同步更新全仓链接、`metadata/taxonomy.yml` 和必要的 `redirects.yml`。
 - 概念文档应优先使用稳定术语，避免同一概念多种叫法并存。
+- 修仙领域草案的候选分类只在该领域内讨论；不得以其改义 V1 七对象，或扩展全仓类型表。
 - 不把一次性操作步骤放入本目录；操作型内容应放入 `docs/getting-started/` 或 `docs/references/`。
 - 不在 README 正文中写 `和其他目录的边界` 或 `维护规则`；维护者规则只写本文件。
 
