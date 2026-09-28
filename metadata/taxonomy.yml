@@ -112,7 +112,7 @@ documents:
     role: 七对象与四层静态分类；万魂幡是跨工具全部 AI 会话集合、魂魄以 Session ID 标识、修为属模型；战力按具体任务的效果与效率评估
   - path: docs/concepts/cultivation-ontology-taxonomy.md
     title: 修仙领域本体与分类设计（草案）
-    role: 仅修仙领域的知识条目分类与关系候选，不替代 V1 映射或全仓标准
+    role: 仅修仙领域的知识条目分类、拟议语义契约和世界观表达规则；不替代 V1 映射或全仓标准
   - path: docs/concepts/glue-coding.md
     title: 拼好码
     role: 复用成熟能力、胶水原则、能力编排与业务交付

@@ -17,7 +17,7 @@ concepts/
 ├── README.md  # 索引入口：核心概念导航
 ├── problem-solving.md
 ├── vibe-coding-cultivation-model.md  # 修仙解释图层：七对象、四层分类与战力评估边界
-├── cultivation-ontology-taxonomy.md  # 修仙领域内知识条目本体与分类草案
+├── cultivation-ontology-taxonomy.md  # 修仙领域内分类、拟议契约与世界观规则
 ├── glue-coding.md
 ├── system-building.md
 ├── development-paradigms.md
