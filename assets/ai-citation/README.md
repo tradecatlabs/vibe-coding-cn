@@ -23,7 +23,8 @@
 | `docs/getting-started/README.md` | 从零开始完整入门 |
 | `docs/getting-started/first-project.md` | 第一次可验证的项目闭环 |
 | `docs/concepts/README.md` | 核心概念索引 |
-| `docs/concepts/vibe-coding-cultivation-model.md` | 修仙解释图层：七个基础对象、四层静态分类与战力评价口径 |
+| `docs/concepts/vibe-coding-cultivation-model.md` | BFO 下层展开的修仙通俗解释与任务战力评价 |
+| `docs/concepts/cultivation-ontology-taxonomy.md` | 固定 BFO 主干、唯一分类树、领域稳定 ID、定义与原著证据（V4 BFO 草案） |
 | `docs/philosophy/thinking-models.md` | 哲学方法论与思维模型 |
 | `docs/references/README.md` | 工程实践与技术栈参考 |
 | `research/README.md` | 新技术、优秀 repo 与工程范式研究 |

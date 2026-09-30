@@ -434,38 +434,19 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 
 ## 🧠 修仙解释图层
 
-这是一层叠在现实 AI 工程对象上的修仙比喻，不是 AI 运行架构，也不是说 AI 真的有魂魄。V1 只解释七个对象及其关系。
+这是一层帮助理解现实 AI 工程对象的修仙比喻，不是运行架构，也不说明 AI 真的有魂魄。
+当前采用 **BFO 2020 主干的统一本体 V4 草案**：修仙领域类只在持续体与发生体下展开，不替换顶层或另建分类树。
+原生 BFO 类保留 ID 与继承；领域类有稳定标识、定义和判据，用途及模型归属不再混作平行主类。这仍不是已形式化验证的 OWL 本体。
 
-| 修仙对象 | AI 对象 |
-|---|---|
-| 人类修士 | User / Operator |
-| 万魂幡 | Pi、Claude Code、Codex 等工具中的全部 AI 会话集合 |
-| 魂魄 | 一个 Conversation / Session，以 Session ID 标识 |
-| 修为 | Model Capability / Intelligence |
-| 灵力 | Token / Compute / Reasoning Budget |
-| 功法 | Harness / Rules / Skills / Workflow |
-| 法器 | Tools / MCP / Browser / Shell / API |
+魂魄是以来源命名空间与 Session ID 指认的完整 AI 会话过程；万魂幡仍是全部会话的概念集合，以同一会话类的外延表达，不是仓库或文档。
+修为归属模型，BFO 直接能力承载与版本归属分开；灵力口径不能互换，境界须有量表，战力先效果后效率。
 
-万魂幡是跨 Pi、Claude Code、Codex 等工具的全部 AI 会话集合；魂魄是其中一个会话，Session ID 是它的标识。两者都不指 Memory；万魂幡也不是一个真实汇集所有会话的仓库。
+方法规范与一次运行分开，MCP 协议与可调用实现分开；不再硬套“心法＝认知模型、阵法＝Workflow”。
+小说研究以《逆天邪神》最高权重，只对实际读取的材料负责；分类不授予权限，也不定义执行顺序。
 
-| 层次 | 修仙对象 |
-|---|---|
-| 人 | 人类修士 |
-| 魂 | 万魂幡、魂魄 |
-| 力 | 修为、灵力 |
-| 术与器 | 功法、法器 |
-
-四层只是对象分类，不是执行顺序；Token、Compute、Reasoning Budget 也不是可互换的额度。
-
-修为属于模型，不固定属于魂魄，也不能用单次回答给模型定级；同一模型可用于不同会话，同一会话也可更换模型。功法是方法体系，法器包括外部工具及调用入口；MCP 是接入协议，不是具体工具。
-
-> 人类修士执掌万魂幡，幡中藏有无数魂魄；修为属于模型，运行需要灵力，并可借助功法与法器发挥能力。
-
-“执掌”只是比喻，不表示能读取全部 AI 会话；跨工具区分单个会话时，应同时看来源和 Session ID。
-
-**战力**是具体任务的最终评价，不是第八个基础对象或模型修为：先看结果是否达标，再比较同等合格结果所需的时间、灵力和人类投入；不贴永久等级。
-
-完整说明：[修仙解释图层](docs/concepts/vibe-coding-cultivation-model.md)
+通俗说明：[修仙解释图层](docs/concepts/vibe-coding-cultivation-model.md)；
+完整树与调研依据：[统一本体与分类设计](docs/concepts/cultivation-ontology-taxonomy.md#唯一分类树)
+节点含义与身份：[领域类定义与稳定标识](docs/concepts/cultivation-ontology-taxonomy.md#领域类定义与稳定标识)
 
 </details>
 

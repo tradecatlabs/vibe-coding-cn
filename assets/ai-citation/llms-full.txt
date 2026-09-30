@@ -58,12 +58,16 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - docs/concepts/README.md：核心概念索引，汇总问题求解、固定目标与反馈闭环、拼好码、系统构建方法、开发范式演进、语言层要素、关键词系统和递归自优化系统。
 - docs/concepts/problem-solving.md：问题定义、目标、约束、对象、路径。
 - docs/concepts/vibe-coding-state-transition.md：用目标基线、状态差距、策略切换、验证证据和分层反馈统一理解 Vibe Coding。
-- docs/concepts/vibe-coding-cultivation-model.md：修仙解释图层，V1 只用七个修仙比喻解释现实 AI 对象：
-  人类修士、万魂幡、魂魄、修为、灵力、功法和法器。万魂幡是跨工具全部 AI 会话的概念集合，
-  魂魄是以 Session ID 标识的单个会话，两者都不是 Memory；修为属于模型，不属于会话或单次回答。
-  人、魂、力、术与器四层仅用于静态分类，不是 AI 运行架构。战力是具体任务的评价口径：
-  先验收效果，再在同等合格结果下比较时间、灵力和人工投入；不是修为或会话的永久等级。
-- docs/concepts/cultivation-ontology-taxonomy.md：修仙领域内的本体、分类、拟议语义契约与世界观表达规则；不改义 V1，也不推广为全仓 JSON IR。
+- docs/concepts/vibe-coding-cultivation-model.md：修仙解释图层，通俗解释统一本体 V4 BFO 草案，不是 AI 运行架构。
+  魂魄是完整 AI 会话过程，以来源命名空间与 Session ID 联合标识，不是 Memory 或日志。
+  万魂幡仍是跨工具全部会话的概念集合，以同一会话类外延表达，不是物质聚合体、数据库或描述文档。
+  修为归属于模型版本，BFO 的直接能力承载另按运行实现处理；灵力是资源，不硬套心法＝认知模型、阵法＝Workflow。
+  境界须有明确量表；战力先验收任务效果，再在同等合格结果下比较投入，不设通用永久等级。
+- docs/concepts/cultivation-ontology-taxonomy.md：修仙领域唯一分类与语义契约入口（V4 BFO 草案）；BFO 2020 是固定前提，只展开其下层。
+  根为 entity，其下为 continuant / occurrent；原生类保留 BFO ID 与继承，领域类有稳定 ID、工作定义、边界和依据，主父仅由唯一树维护。
+  软件执行/接口用途、能力的模型归属、过程采用的方法分别表达，不复制对象来填交叉类别；不另设知识条目树或集合实体顶层。
+  逆天邪神最高权重，依据已读章节与预览作有限判断；文学事实、人物主张、研究推论与项目决定分开。
+  未导入 OWL 或证明领域公理一致性；不推广为全仓 JSON IR，尚无领域记录库或渲染器。
 - docs/concepts/glue-coding.md：胶水原则的扩展，把复用成熟能力作为工程交付默认路径。
 - docs/concepts/system-building.md：自顶向下、自底向上与分而治之的系统构建方法。
 - docs/concepts/development-paradigms.md：软件开发组织方式和 AI 编程范式的演进。
@@ -220,7 +224,7 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 
 - 新手入门：读取 `docs/getting-started/vibe-coding-experience.md`、`docs/getting-started/learning-map.md`、`docs/getting-started/cli-setup.md`、`tools/config/.codex/README.md`，完成环境后再用 `docs/getting-started/first-project.md` 走通第一次可验证闭环，随后阅读 `docs/concepts/problem-solving.md`、`docs/concepts/vibe-coding-state-transition.md`、`docs/concepts/glue-coding.md` 和 `docs/references/project-architecture-template.md`。
 - 工程开发：读取 `docs/concepts/glue-coding.md`、`docs/concepts/keyword-system.md`、`docs/concepts/system-building.md`、`docs/references/technology-stack.md` 和 `docs/references/project-architecture-template.md`。
-- 修仙解释图层：读取 `docs/concepts/vibe-coding-cultivation-model.md`，了解七对象与四层静态分类（非运行架构），以及效果优先的战力评价。
+- 修仙解释图层：读取 `docs/concepts/vibe-coding-cultivation-model.md` 了解现实映射与战力评价；唯一分类树及调研依据见 `docs/concepts/cultivation-ontology-taxonomy.md`。
 - 思维模型：读取 `README.md#ai-six-propositions`、`README.md#dao-fa-shu-qi`、`docs/philosophy/thinking-models.md`、`docs/philosophy/compositional-description-model.md`、`docs/philosophy/programming-dao.md`、`docs/philosophy/software-engineering-truths.md` 和 `docs/philosophy/methodology-toolbox.md`。
 - 新技术判断：读取 `research/README.md`，再读具体研究对象或研究笔记，例如 `research/harness/harness-engineering.md`。
 - 标准流程执行：读取 `docs/workflow/development-process.md`。

@@ -109,10 +109,10 @@ documents:
     role: 用固定目标、可变策略、分层反馈和验收集合统一理解 Vibe Coding
   - path: docs/concepts/vibe-coding-cultivation-model.md
     title: 修仙解释图层
-    role: 七对象与四层静态分类；万魂幡是跨工具全部 AI 会话集合、魂魄以 Session ID 标识、修为属模型；战力按具体任务的效果与效率评估
+    role: BFO 下层展开的通俗解释；区分模型、会话、方法、工具、资源与任务评价
   - path: docs/concepts/cultivation-ontology-taxonomy.md
-    title: 修仙领域本体与分类设计（草案）
-    role: 仅修仙领域的知识条目分类、拟议语义契约和世界观表达规则；不替代 V1 映射或全仓标准
+    title: 修仙领域统一本体与分类设计（V4 BFO 草案）
+    role: 固定 BFO 主干、唯一分类树、领域稳定 ID、定义与关系判据；不扩展全仓本体
   - path: docs/concepts/glue-coding.md
     title: 拼好码
     role: 复用成熟能力、胶水原则、能力编排与业务交付

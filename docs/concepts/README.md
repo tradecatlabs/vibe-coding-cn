@@ -12,8 +12,8 @@
 |:---|:---|
 | <a id="concept-problem-solving"></a>[问题求解](problem-solving.md) | 目标、现状、差距、标准、约束、对象与路径。 |
 | <a id="concept-vibe-coding-state-transition"></a>[Vibe Coding 状态转移闭环](vibe-coding-state-transition.md) | 用固定目标、可变策略和分层反馈统一理解 Vibe Coding。 |
-| <a id="concept-vibe-coding-cultivation-model"></a>[修仙解释图层](vibe-coding-cultivation-model.md) | 七个基础对象、四层静态分类，以及效果优先的战力评估。 |
-| <a id="concept-cultivation-ontology-taxonomy"></a>[修仙领域本体与分类设计（草案）](cultivation-ontology-taxonomy.md) | 领域内分类、拟议契约与世界观规则，不改义 V1。 |
+| <a id="concept-vibe-coding-cultivation-model"></a>[修仙解释图层](vibe-coding-cultivation-model.md) | 单树本体的通俗解释与任务战力评价。 |
+| <a id="concept-cultivation-ontology-taxonomy"></a>[修仙领域统一本体与分类设计（V4 BFO 草案）](cultivation-ontology-taxonomy.md) | 固定 BFO 主干、唯一分类树、领域稳定 ID、定义与原著证据。 |
 | <a id="concept-glue-coding"></a>[拼好码](glue-coding.md) | 复用成熟能力，用胶水代码连接、编排、适配业务流程。 |
 | <a id="concept-system-building"></a>[系统构建方法](system-building.md) | 自顶向下、自底向上与分而治之的组合使用。 |
 | <a id="concept-development-paradigms"></a>[开发范式演进](development-paradigms.md) | 软件工程组织方式的演进。 |
@@ -28,8 +28,8 @@
 
 - [问题求解](problem-solving.md) - 目标、现状、差距、标准、约束、对象与路径。
 - [Vibe Coding 状态转移闭环](vibe-coding-state-transition.md) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding。
-- [修仙解释图层](vibe-coding-cultivation-model.md) - 七个基础对象、四层静态分类，以及效果优先的战力评估。
-- [修仙领域本体与分类设计（草案）](cultivation-ontology-taxonomy.md) - 区分现实对象与知识条目，限定分类、语义契约和叙事边界。
+- [修仙解释图层](vibe-coding-cultivation-model.md) - 用同一分类理解模型、会话、方法、资源与任务评价。
+- [修仙领域统一本体与分类设计（V4 BFO 草案）](cultivation-ontology-taxonomy.md) - BFO 原生继承、领域定义与稳定标识、会话类外延与能力承载边界。
 - [拼好码](glue-coding.md) - 复用成熟能力，用胶水代码连接、编排、适配业务流程。
 - [系统构建方法](system-building.md) - 自顶向下、自底向上与分而治之的组合使用。
 - [开发范式演进](development-paradigms.md) - 软件工程组织方式的演进。
@@ -42,8 +42,8 @@
 ## 使用方式
 
 - 遇到模糊需求，先读问题求解，再读 [Vibe Coding 状态转移闭环](vibe-coding-state-transition.md) 建立目标基线、反馈和回退模型。
-- 想了解七个基础对象、四层静态分类与战力评价口径，可读 [修仙解释图层](vibe-coding-cultivation-model.md)。
-- 想评议修仙领域的分类、契约与世界观边界，可读 [本体与分类设计草案](cultivation-ontology-taxonomy.md)。
+- 想了解修仙比喻与任务战力，可读 [修仙解释图层](vibe-coding-cultivation-model.md)。
+- 想查看 BFO 下层展开和原著证据，可读 [统一本体设计草案](cultivation-ontology-taxonomy.md)；按词归类时查[领域定义与稳定标识](cultivation-ontology-taxonomy.md#领域类定义与稳定标识)。
 - 准备技术实现，先读拼好码，确认是否已有成熟方案可复用。
 - 需要统一提示词和工程词汇，读关键词系统。
 - 需要提升长期工程判断，再读系统构建、开发范式和语言层要素。
