@@ -259,7 +259,7 @@ git push origin develop
 - `docs/getting-started/first-project.md` - 用本地待办清单完成第一次可验证的需求、实现、验收与 Git 闭环
 - `docs/concepts/problem-solving.md` - 问题定义与求解路径底层模型
 - `docs/concepts/vibe-coding-cultivation-model.md` - 统一修仙本体的通俗解释；战力按具体任务先验收效果、再比较效率
-- `docs/concepts/cultivation-ontology-taxonomy.md` - 修仙领域 BFO 主干与下层展开（V4 BFO 草案）；含领域稳定 ID、定义与关系判据，保留原生 ID/继承，不另设知识条目树或推广为全仓本体
+- `docs/concepts/cultivation-ontology-taxonomy.md` - 修仙领域 BFO 主干与下层展开（V4 BFO 草案）；含领域稳定 ID、定义、关系及身份/转化判据；保留原生 ID/继承，核对作品 ID 与读取范围，不另设知识条目树或推广为全仓本体
 - `docs/references/project-architecture-template.md` - 常见项目结构、架构设计原则、最低门禁和检查清单
 - `docs/references/technology-stack.md` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
 - `skills/auto-skill/` - Skills 生成、重构与校验的元技能

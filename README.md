@@ -448,6 +448,8 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 完整树与调研依据：[统一本体与分类设计](docs/concepts/cultivation-ontology-taxonomy.md#唯一分类树)
 节点含义与身份：[领域类定义与稳定标识](docs/concepts/cultivation-ontology-taxonomy.md#领域类定义与稳定标识)
 
+变化如何归类：[器灵、化形与材料转化](docs/concepts/cultivation-ontology-taxonomy.md#器灵化形与材料转化)，区分意向、实际结果与身份连续性；预览不补作完整机制。
+
 </details>
 
 <a id="dao-fa-shu-qi"></a>

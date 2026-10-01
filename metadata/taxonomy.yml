@@ -112,7 +112,7 @@ documents:
     role: BFO 下层展开的通俗解释；区分模型、会话、方法、工具、资源与任务评价
   - path: docs/concepts/cultivation-ontology-taxonomy.md
     title: 修仙领域统一本体与分类设计（V4 BFO 草案）
-    role: 固定 BFO 主干、唯一分类树、领域稳定 ID、定义与关系判据；不扩展全仓本体
+    role: 固定 BFO 主干、唯一分类树、领域稳定 ID、定义、关系及身份/转化判据；不扩展全仓本体
   - path: docs/concepts/glue-coding.md
     title: 拼好码
     role: 复用成熟能力、胶水原则、能力编排与业务交付
