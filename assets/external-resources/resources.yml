@@ -50,7 +50,7 @@ categories:
 - id: docs-courses
   name: 文档与课程
   file: docs-courses.yml
-  count: 21
+  count: 22
   description: 用于收录官方文档、教程、课程、学习资料
 - id: books
   name: 书单
@@ -58,7 +58,7 @@ categories:
   count: 75
   description: 用于收录相关书籍
 stats:
-  total_resources: 287
+  total_resources: 288
   missing_link_resources: 5
   non_url_locator_resources: 2
   duplicate_url_count: 6
