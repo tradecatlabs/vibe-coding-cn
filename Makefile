@@ -1,6 +1,8 @@
 # Makefile for Vibe Coding Guide
 
-.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-external-resources check-research-raw check-source-facts check-wiki fetch-research-raw sync-doc-toc build test clean clean-deps
+.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-gongfa test-gongfa check-ai-citation check-external-resources check-research-raw check-source-facts check-wiki fetch-research-raw sync-doc-toc build test clean clean-deps
+
+.PHONY: sync-gongfa-catalog check-gongfa-catalog test-gongfa-catalog
 
 MARKDOWNLINT = npx --yes markdownlint-cli@0.48.0
 
@@ -15,6 +17,11 @@ help:
 	@echo "  check-doc-structure - Check docs README anchors, order and duplicate anchors"
 	@echo "  check-directory-docs - Check required README/AGENTS pairs"
 	@echo "  check-metadata - Check metadata paths and anchors"
+	@echo "  check-gongfa - 校验功法JSON、冻结来源与评级协议"
+	@echo "  test-gongfa - 执行功法JSON的隔离CLI集成测试并保留工件"
+	@echo "  sync-gongfa-catalog - 从当前登记与仓内候选快照重建唯一总表"
+	@echo "  check-gongfa-catalog - 只读校验总表覆盖、源摘要与Markdown/Excel一致性"
+	@echo "  test-gongfa-catalog - 验证总表维护行为并保留隔离工件"
 	@echo "  check-ai-citation - Check AI citation paths, anchors, and repository identity"
 	@echo "  check-external-resources - Check local external resources registry"
 	@echo "  check-research-raw - Check research raw fact snapshots and repository clones"
@@ -52,6 +59,23 @@ check-metadata:
 	@echo "Checking metadata paths and anchors..."
 	@python3 scripts/check-metadata.py
 
+check-gongfa:
+	@echo "校验功法JSON、冻结来源与评级引用..."
+	@python3 scripts/check-gongfa.py
+
+test-gongfa:
+	@echo "执行功法JSON CLI集成测试..."
+	@python3 scripts/test-gongfa.py
+
+sync-gongfa-catalog:
+	@python3 scripts/sync-gongfa-catalog.py --write
+
+check-gongfa-catalog:
+	@python3 scripts/sync-gongfa-catalog.py --check
+
+test-gongfa-catalog:
+	@python3 scripts/test-gongfa-catalog.py
+
 check-ai-citation:
 	@echo "Checking AI citation paths, anchors, and repository identity..."
 	@python3 scripts/check-ai-citation.py
@@ -84,7 +108,7 @@ sync-doc-toc:
 build:
 	@echo "No build step: this repository is a documentation and knowledge-base project."
 
-test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-ai-citation check-external-resources check-research-raw check-source-facts
+test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-gongfa test-gongfa check-gongfa-catalog test-gongfa-catalog check-ai-citation check-external-resources check-research-raw check-source-facts
 	@echo "Quality gates complete."
 
 clean: clean-deps

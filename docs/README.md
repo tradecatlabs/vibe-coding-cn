@@ -42,7 +42,7 @@
 - [问题求解](./concepts/problem-solving.md) - 用目标、现状、差距、标准、约束、对象和路径定义问题。
 - [Vibe Coding 状态转移闭环](./concepts/vibe-coding-state-transition.md) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding。
 - [修仙解释图层](./concepts/vibe-coding-cultivation-model.md) - 单树本体的通俗解释与任务战力评价。
-- [修仙领域统一本体与分类设计（V4 BFO 草案）](./concepts/cultivation-ontology-taxonomy.md) - 固定 BFO 主干、领域稳定 ID、定义、身份/转化边界与原著证据。
+- [修仙领域统一本体与分类设计（V4 BFO 草案）](./concepts/cultivation-ontology-taxonomy.md) - 固定 BFO 主干、领域稳定 ID、实体/品质与规约/方法/过程细分类、制备、观测及再生证据链、身份与组成边界；功法条目/版本及四阶十二级接入JSON核心，内容与来源可追溯，已有人工分类/初评，规约未校准、无正式效果评级；收录范围与数量见JSON核心入口。
 - [拼好码](./concepts/glue-coding.md) - 复用成熟能力，用胶水代码连接、编排、适配业务流程。
 - [系统构建方法](./concepts/system-building.md) - 自顶向下、自底向上与分而治之的组合使用。
 - [开发范式演进](./concepts/development-paradigms.md) - 软件工程组织方式的演进。

@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "功法品级、内容版本、冻结来源与评级记录",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "registry_id", "vocabulary", "policies", "sources", "gongfa", "assessments", "grade_proposals"],
+  "properties": {
+    "schema_version": {"const": "1.1.0"},
+    "registry_id": {"const": "vibe-coding-gongfa"},
+    "vocabulary": {
+      "type": "object", "additionalProperties": false, "required": ["id", "tiers"],
+      "properties": {
+        "id": {"const": "gongfa-grade-vocabulary-v1"},
+        "tiers": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["id", "name", "levels"],
+            "properties": {
+              "id": {"enum": ["huang", "xuan", "di", "tian"]},
+              "name": {"enum": ["黄阶", "玄阶", "地阶", "天阶"]},
+              "levels": {
+                "type": "array", "minItems": 3, "maxItems": 3,
+                "items": {
+                  "type": "object", "additionalProperties": false, "required": ["id", "name"],
+                  "properties": {
+                    "id": {"$ref": "#/$defs/gradeId"},
+                    "name": {"enum": ["初级", "中级", "高级"]}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "policies": {"type": "array", "minItems": 1, "maxItems": 100, "items": {"$ref": "#/$defs/policy"}},
+    "sources": {"type": "array", "minItems": 1, "maxItems": 1000, "items": {"$ref": "#/$defs/source"}},
+    "gongfa": {"type": "array", "minItems": 1, "maxItems": 5000, "items": {"$ref": "#/$defs/gongfa"}},
+    "assessments": {"type": "array", "maxItems": 10000, "items": {"$ref": "#/$defs/assessment"}},
+    "grade_proposals": {"type": "array", "maxItems": 1000, "items": {"$ref": "#/$defs/gradeProposalBatch"}}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1, "maxLength": 131072, "pattern": "\\S"},
+    "id": {"type": "string", "maxLength": 128, "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"},
+    "version": {"type": "string", "minLength": 1, "maxLength": 64, "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]*$"},
+    "digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "gradeId": {"enum": ["huang-initial", "huang-intermediate", "huang-advanced", "xuan-initial", "xuan-intermediate", "xuan-advanced", "di-initial", "di-intermediate", "di-advanced", "tian-initial", "tian-intermediate", "tian-advanced"]},
+    "texts": {"type": "array", "maxItems": 100, "items": {"$ref": "#/$defs/text"}},
+    "classifiedType": {"enum": ["dao-content", "explanatory-content", "normative-allocation-content", "method-specification"]},
+    "gradeProposalItem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["gongfa_id", "content_version", "content_sha256", "ontology_type", "grade_id", "task_family", "classification_reason", "reason", "confidence", "falsifier"],
+      "properties": {
+        "gongfa_id": {"$ref": "#/$defs/id"}, "content_version": {"$ref": "#/$defs/version"},
+        "content_sha256": {"$ref": "#/$defs/digest"}, "ontology_type": {"$ref": "#/$defs/classifiedType"},
+        "grade_id": {"$ref": "#/$defs/gradeId"}, "task_family": {"$ref": "#/$defs/text"},
+        "classification_reason": {"$ref": "#/$defs/text"}, "reason": {"$ref": "#/$defs/text"},
+        "confidence": {"enum": ["low", "medium", "high"]}, "falsifier": {"$ref": "#/$defs/text"}
+      }
+    },
+    "gradeProposalBatch": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "vocabulary_id", "policy_id", "policy_version", "status", "basis", "assessor", "assessed_at", "application_context", "baseline_assumption", "limits", "supersedes", "items"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "vocabulary_id": {"const": "gongfa-grade-vocabulary-v1"},
+        "policy_id": {"$ref": "#/$defs/id"}, "policy_version": {"$ref": "#/$defs/version"},
+        "status": {"const": "provisional"}, "basis": {"const": "expert_judgment"},
+        "assessor": {"$ref": "#/$defs/text"}, "assessed_at": {"type": "string", "format": "date-time"},
+        "application_context": {"$ref": "#/$defs/text"}, "baseline_assumption": {"$ref": "#/$defs/text"},
+        "limits": {"allOf": [{"$ref": "#/$defs/texts"}, {"minItems": 1}]},
+        "supersedes": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/id"}]},
+        "items": {"type": "array", "minItems": 1, "maxItems": 5000, "items": {"$ref": "#/$defs/gradeProposalItem"}}
+      }
+    },
+    "artifactRef": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/digest"}}
+    },
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["task_set_ref", "baseline_ref", "conditions_ref"],
+      "properties": {
+        "task_set_ref": {"$ref": "#/$defs/artifactRef"},
+        "baseline_ref": {"$ref": "#/$defs/artifactRef"},
+        "conditions_ref": {"$ref": "#/$defs/artifactRef"}
+      }
+    },
+    "contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["task_set_ref", "baseline_ref", "conditions_ref", "criteria_ref"],
+      "properties": {
+        "task_set_ref": {"$ref": "#/$defs/artifactRef"},
+        "baseline_ref": {"$ref": "#/$defs/artifactRef"},
+        "conditions_ref": {"$ref": "#/$defs/artifactRef"},
+        "criteria_ref": {"$ref": "#/$defs/artifactRef"}
+      }
+    },
+    "policy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "version", "vocabulary_id", "status", "basis", "ordering", "rules", "evaluation_contract", "unresolved"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "version": {"$ref": "#/$defs/version"},
+        "vocabulary_id": {"const": "gongfa-grade-vocabulary-v1"},
+        "status": {"enum": ["draft", "defined"]},
+        "basis": {"const": "project_design_proposal"},
+        "ordering": {"const": ["correctness", "effect", "reliability", "efficiency"]},
+        "rules": {
+          "type": "array", "minItems": 12, "maxItems": 12,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["grade_id", "criteria", "evidence_requirements"],
+            "properties": {
+              "grade_id": {"$ref": "#/$defs/gradeId"},
+              "criteria": {"allOf": [{"$ref": "#/$defs/texts"}, {"minItems": 1}]},
+              "evidence_requirements": {"allOf": [{"$ref": "#/$defs/texts"}, {"minItems": 1}]}
+            }
+          }
+        },
+        "evaluation_contract": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/contract"}]},
+        "unresolved": {"$ref": "#/$defs/texts"}
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "captured_at", "snapshot_path", "snapshot_sha256", "text_normalization", "included_anchors"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "kind": {"enum": ["repository_document", "project_internal_publication"]},
+        "path": {"$ref": "#/$defs/text"}, "git_revision": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+        "url": {"type": "string", "format": "uri"}, "resolved_url": {"type": "string", "format": "uri"},
+        "captured_at": {"type": "string", "format": "date-time"},
+        "snapshot_path": {"$ref": "#/$defs/text"}, "snapshot_sha256": {"$ref": "#/$defs/digest"},
+        "text_normalization": {"enum": ["html-text-whitespace-v1", "markdown-section-trim-v1"]},
+        "included_anchors": {"type": "array", "minItems": 1, "maxItems": 1000, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}}
+      },
+      "oneOf": [
+        {"properties": {"kind": {"const": "repository_document"}, "text_normalization": {"const": "markdown-section-trim-v1"}}, "required": ["path", "git_revision"], "not": {"anyOf": [{"required": ["url"]}, {"required": ["resolved_url"]}]}},
+        {"properties": {"kind": {"const": "project_internal_publication"}, "text_normalization": {"const": "html-text-whitespace-v1"}}, "required": ["url", "resolved_url"], "not": {"anyOf": [{"required": ["path"]}, {"required": ["git_revision"]}]}}
+      ]
+    },
+    "profile": {
+      "type": "object", "additionalProperties": false,
+      "required": ["provenance", "summary", "problem", "mechanism", "conditions", "limitations", "expected_outcomes", "questions", "missing_fields"],
+      "properties": {
+        "provenance": {"const": "editorial_summary"}, "summary": {"$ref": "#/$defs/text"},
+        "problem": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/text"}]},
+        "mechanism": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/text"}]},
+        "conditions": {"$ref": "#/$defs/texts"}, "limitations": {"$ref": "#/$defs/texts"},
+        "expected_outcomes": {"$ref": "#/$defs/texts"}, "questions": {"$ref": "#/$defs/texts"},
+        "missing_fields": {"type": "array", "uniqueItems": true, "items": {"enum": ["problem", "mechanism", "conditions", "limitations", "expected_outcomes", "questions"]}}
+      }
+    },
+    "gongfa": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "name", "aliases", "content_version", "predecessor_version", "entry_status", "ontology_type", "content", "source_ref"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "name": {"$ref": "#/$defs/text"}, "aliases": {"$ref": "#/$defs/texts"},
+        "content_version": {"$ref": "#/$defs/version"},
+        "predecessor_version": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/version"}]},
+        "entry_status": {"enum": ["candidate", "registered"]},
+        "ontology_type": {
+          "$comment": "只引用已有基础内容类；主类由人工内容判断，候选可暂为null，等级不作主类。",
+          "oneOf": [{"type": "null"}, {"$ref": "#/$defs/classifiedType"}]
+        },
+        "content": {
+          "type": "object", "additionalProperties": false,
+          "required": ["original_text", "text_sha256", "claim_status", "selection_note", "profile"],
+          "properties": {
+            "original_text": {"$ref": "#/$defs/text"}, "text_sha256": {"$ref": "#/$defs/digest"},
+            "claim_status": {"const": "source_statement"}, "selection_note": {"$ref": "#/$defs/text"},
+            "profile": {"$ref": "#/$defs/profile"}
+          }
+        },
+        "source_ref": {
+          "type": "object", "additionalProperties": false, "required": ["source_id", "heading_id", "selection", "stop_before"],
+          "properties": {
+            "source_id": {"$ref": "#/$defs/id"}, "heading_id": {"$ref": "#/$defs/text"},
+            "selection": {"enum": ["html-paragraph", "markdown-section", "markdown-first-paragraph", "markdown-prefix"]},
+            "stop_before": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/text"}]}
+          }
+        }
+      },
+      "allOf": [{
+        "if": {"properties": {"entry_status": {"const": "registered"}}},
+        "then": {"properties": {"ontology_type": {"$ref": "#/$defs/classifiedType"}}}
+      }]
+    },
+    "assessment": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "gongfa_id", "content_version", "vocabulary_id", "policy_id", "policy_version", "status", "grade_id", "scope", "evidence_refs", "reason", "assessor", "assessed_at", "supersedes"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "gongfa_id": {"$ref": "#/$defs/id"},
+        "content_version": {"$ref": "#/$defs/version"}, "vocabulary_id": {"const": "gongfa-grade-vocabulary-v1"},
+        "policy_id": {"$ref": "#/$defs/id"}, "policy_version": {"$ref": "#/$defs/version"},
+        "status": {"enum": ["unrated", "undetermined", "rated"]},
+        "grade_id": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/gradeId"}]},
+        "scope": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/scope"}]},
+        "evidence_refs": {"type": "array", "maxItems": 100, "items": {"$ref": "#/$defs/artifactRef"}},
+        "reason": {"$ref": "#/$defs/text"}, "assessor": {"$ref": "#/$defs/text"},
+        "assessed_at": {"type": "string", "format": "date-time"},
+        "supersedes": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/id"}]}
+      },
+      "allOf": [{
+        "if": {"properties": {"status": {"const": "rated"}}},
+        "then": {"properties": {"grade_id": {"$ref": "#/$defs/gradeId"}, "scope": {"$ref": "#/$defs/scope"}, "evidence_refs": {"minItems": 1}}},
+        "else": {"properties": {"grade_id": {"type": "null"}}}
+      }]
+    }
+  }
+}

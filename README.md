@@ -447,8 +447,17 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 通俗说明：[修仙解释图层](docs/concepts/vibe-coding-cultivation-model.md)；
 完整树与调研依据：[统一本体与分类设计](docs/concepts/cultivation-ontology-taxonomy.md#唯一分类树)
 节点含义与身份：[领域类定义与稳定标识](docs/concepts/cultivation-ontology-taxonomy.md#领域类定义与稳定标识)
+进一步细分：[内容与过程](docs/concepts/cultivation-ontology-taxonomy.md#下层展开的判定边界)区分修炼与施技、准入与量表、授权与预算、研习与测评；
+[实体分支](docs/concepts/cultivation-ontology-taxonomy.md#实体分支的判定边界)区分生物机体、器物设计、物质组群与内部场所，不把组成、库存或临时用途当类型；
+[制备与施用链](docs/concepts/cultivation-ontology-taxonomy.md#从原料到制备与施用)区分原料角色、配方、加工、制品与服用，失败制作不当未发生，效果还需条件与证据。
+[性质与观测链](docs/concepts/cultivation-ontology-taxonomy.md#从性质到读数与评价)区分形状/尺度、颜色、结构状态与数值/评价，局部修复或记录变更不证明整体改善。
 
 变化如何归类：[器灵、化形与材料转化](docs/concepts/cultivation-ontology-taxonomy.md#器灵化形与材料转化)，区分意向、实际结果与身份连续性；预览不补作完整机制。
+[发育与再生](docs/concepts/cultivation-ontology-taxonomy.md#从旧结构到新结构)进一步区分整体、部分、角色及状态；部件新生不等于主体重新出生，前提满足不等于效果已实现。
+[功法本体与品级](docs/concepts/cultivation-ontology-taxonomy.md#功法本体与品级)分开记录内容类型、条目/版本、来源与等级。
+[功法JSON核心](metadata/gongfa/README.md)持续整理登记内容与来源事实；全部已分类内容查看同一[功法总表](metadata/gongfa/catalog.md)／[Excel完整视图](metadata/gongfa/catalog.xlsx)。
+总表由当前登记和仓内候选历史快照生成，不依赖临时目录；数量、状态、原文和旧意见不混为“全部已登记”。
+仓内续收不覆盖旧内容或旧初评，新增意见按对象范围分批保存。采用四阶十二级，暂定品级与正式效果评级分开，规则仍待校准。
 
 </details>
 
@@ -692,6 +701,11 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | docs 线性目录结构检查 | `make check-doc-structure` | 校验标准块顺序、主章节顺序、锚点和目录入口 |
 | 目录 README/AGENTS 覆盖检查 | `make check-directory-docs` | `scripts/check-directory-docs.py` |
 | Metadata 路径检查 | `make check-metadata` | `scripts/check-metadata.py` |
+| 功法JSON/来源/初评检查 | `make check-gongfa` | `scripts/check-gongfa.py`；Python3.10+及独立依赖 |
+| 功法CLI集成测试 | `make test-gongfa` | `scripts/test-gongfa.py`；保留JSON/JUnit测试工件 |
+| 更新项目内功法总表 | `make sync-gongfa-catalog` | 同一总表的Markdown/Excel生成，不改原文或评级 |
+| 功法总表一致性检查 | `make check-gongfa-catalog` | 只读校验来源SHA、覆盖和生成视图 |
+| 功法总表行为测试 | `make test-gongfa-catalog` | 隔离输入、命令/日志与结果工件 |
 | AI 引用一致性检查 | `make check-ai-citation` | `scripts/check-ai-citation.py` |
 | 外部源事实镜像检查 | `make check-source-facts` | `scripts/check-source-facts.py` |
 | Wiki 本地检查 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | `scripts/check-wiki.py` |
@@ -699,6 +713,11 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | 全部本地质量门禁 | `make test` | `Makefile` |
 | 提示词格式转换 | `cd tools/prompts-library && python3 main.py` | `tools/prompts-library/main.py` |
 | Skill 严格校验示例 | `skills/auto-skill/scripts/validate-skill.sh skills/auto-skill --strict` | `skills/auto-skill/scripts/validate-skill.sh` |
+
+功法检查在现有Python虚拟环境中安装独立依赖：`python3 -m pip install -r scripts/requirements-gongfa.txt`。
+用`make sync-gongfa-catalog`更新[全部功法总表](metadata/gongfa/catalog.md)，再用`make check-gongfa-catalog`检查。
+历史登记批次回查仍用`check-gongfa.py --render-catalog --proposal-batch <批次ID>`；这不是全部总表，不以最新时间裁决。
+登记/总表检查和相关测试纳入本地`make test`；GitHub Actions选定目标未改，不宣称新增远端覆盖。
 
 仓库级文档门禁跳过三个外部源事实镜像：`research/vibe-cybersecurity-cn/`、
 `research/vibe-harness-cn/` 和 `research/vibe-mathing-cn-public/`；边界由 `make check-source-facts` 验证。
@@ -751,7 +770,8 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │   └── claude-official-skills/  # Claude 官方 skills 软链接入口
 ├── tools/                       # 辅助工具、外部仓库与工具配置
 ├── scripts/                     # 自动化脚本
-├── metadata/                    # 机器可读索引
+├── metadata/                    # 机器可读索引与限定子域数据
+│   └── gongfa/                   # 功法登记、来源快照与单一总表（Markdown/Excel）
 ├── assets/                      # 静态资产、外部资源注册表与 AI 引用资产
 │
 ├── .github/                     # GitHub 配置

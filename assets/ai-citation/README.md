@@ -24,7 +24,8 @@
 | `docs/getting-started/first-project.md` | 第一次可验证的项目闭环 |
 | `docs/concepts/README.md` | 核心概念索引 |
 | `docs/concepts/vibe-coding-cultivation-model.md` | BFO 下层展开的修仙通俗解释与任务战力评价 |
-| `docs/concepts/cultivation-ontology-taxonomy.md` | 固定 BFO 主干、领域稳定 ID、定义、身份/转化边界与原著证据（V4 BFO 草案） |
+| `metadata/gongfa/README.md` | 功法JSON核心：限定内容、四阶十二级、未校准规则草案、冻结来源、人工分类/初评与正式评级历史；当前范围和数量见子域入口，不证明方法有效 |
+| `docs/concepts/cultivation-ontology-taxonomy.md` | 固定 BFO 主干、领域稳定 ID、实体/品质与规约/方法/过程细分类、制备/施用、观测及再生证据链、分层身份/组成边界，功法JSON收录/内容版本与四阶十二级，已有人工分类/初评、无正式效果评级，收录范围见JSON核心（V4 BFO 草案） |
 | `docs/philosophy/thinking-models.md` | 哲学方法论与思维模型 |
 | `docs/references/README.md` | 工程实践与技术栈参考 |
 | `research/README.md` | 新技术、优秀 repo 与工程范式研究 |

@@ -64,6 +64,18 @@ tools/external/
 - 不允许：软链接到本机绝对路径、复制大型上游源码、提交构建产物/生成物、提交二进制运行时。
 - 需要本地改造第三方工具时：优先 fork 后以 submodule 指向 fork；不要在主仓库直接魔改一份不可升级的源码快照。
 
+## 功法检查的包依赖
+
+依赖通过Python包管理器安装，不复制源码或新增submodule；独立清单是`scripts/requirements-gongfa.txt`。
+
+| 包 | 固定版本 | 来源 | 许可证 | 用途 |
+|---|---|---|---|---|
+| jsonschema | 4.26.0 | [PyPI](https://pypi.org/project/jsonschema/4.26.0/) | MIT | JSON Schema Draft 2020-12校验 |
+| beautifulsoup4 | 4.12.3 | [PyPI](https://pypi.org/project/beautifulsoup4/4.12.3/) | MIT | 冻结HTML的方法段落提取 |
+
+此检查需Python3.10+；运行`python3 -m pip install -r scripts/requirements-gongfa.txt`。
+本轮使用环境中已有包，未安装依赖或修改CI；最低能力、输入与边界见[功法JSON核心](../../metadata/gongfa/README.md)。
+
 ## 新增外部工具（最小清单）
 
 1. 优先新增 submodule：`git submodule add <url> tools/external/<tool-name>`。
