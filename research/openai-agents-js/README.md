@@ -56,4 +56,4 @@ openai/openai-agents-js 是 OpenAI 官方的 JavaScript/TypeScript Agents SDK，
 
 - sandbox agent 是否形成稳定的文件系统、命令执行和权限边界。
 - guardrail、session 和 tracing 是否能提供跨轮次的可审计证据。
-- 哪些运行时概念可以下沉为本仓 workflow/skills 的轻量契约。
+- 哪些运行时概念可以沉淀为本仓 `docs/gongfa/` 的通用方法或 `skills/` 的执行契约。

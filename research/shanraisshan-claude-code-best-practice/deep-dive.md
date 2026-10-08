@@ -66,15 +66,12 @@ settings 和项目级上下文共同构成真实工作系统。
 
 ## 对本仓的影响
 
-本仓已经有 concepts、references、workflow、skills、research 和 governance 风格的资产雏形。
-下一步应让这些层级更明确：
+本仓已将可复用正文统一到功法，承接上游机制时按当前职责分工，不复制其目录外壳：
 
-- principles 和 concepts 放底层认知。
-- references 放可复用模板、清单和结构。
-- workflow 放执行过程和门禁。
-- skills 放 Agent 可执行能力。
-- research 放未稳定的研究对象。
-- reports 或 analysis 放研究判断和阶段复盘。
+- `docs/gongfa/` 维护底层认知、模板、清单、流程与门禁方法正文。
+- `docs/getting-started/` 承接学习路线和可验收的实例练习。
+- `skills/` 维护 Agent 可执行能力，`tools/config/` 维护工具配置，`scripts/` 执行检查。
+- `research/` 保留具体研究对象、观察、来源与阶段复盘证据。
 
 ## 风险和待验证项
 
@@ -84,7 +81,7 @@ settings 和项目级上下文共同构成真实工作系统。
 
 ## 下一步 L3 验证任务
 
-- 在本仓补一份“方法论如何下沉到 concepts/references/workflow/skills”的分流规则。
+- 在本仓核清“功法正文、入门实例、Skill 执行与研究证据”的职责分流及其真实入口。
 - 对已有经验短句建立对应的可执行示例、检查项或技能入口。
 - 把复杂研究任务的 agent teams 模式整理成本仓自己的任务编排契约。
 - 将 Harness 相关结论与 `research/harness/` 做交叉审计。

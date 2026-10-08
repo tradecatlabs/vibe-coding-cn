@@ -56,4 +56,4 @@ github/spec-kit 把 AI 编程从“描述需求后直接写代码”改成“原
 
 ## 沉淀判断
 
-“规格是代码和 Agent 之间的共享真相”可以下沉到 docs/getting-started、workflow 和 references；Spec Kit 的 CLI 细节继续保留在研究域。
+“规格是代码和 Agent 之间的共享真相”对应的通用方法与模板正文可沉淀到 `docs/gongfa/`，实例由 `docs/getting-started/` 承接；Spec Kit 的 CLI 细节继续保留在研究域。

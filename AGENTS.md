@@ -268,6 +268,9 @@ git push origin develop
 - `docs/getting-started/README.md` - 从零开始索引入口，正文拆分到学习地图、网络配置、CLI 配置、开发环境搭建与第一个项目闭环；通用人机经验链接到功法
 - `docs/getting-started/first-project.md` - 用本地待办清单完成第一次可验证的需求、实现、验收与 Git 闭环
 - `docs/gongfa/README.md` - 方法论、哲学、思维模型、工程准则和流程的统一正文入口；完整文集按任务导航，文集数不是独立功法数
+- 首页只保留统一功法主入口，不恢复经验、实验性方法、道法术器、核心命题或哲学的独立栏目/方法徽章；历史外部锚点只定位同一功法段，新引用直接指功法文集。
+- 首页入口收口、文集归并与逐条身份登记分别验收；无来源绑定不自动等于未登记功法，模板、术语、工具和本体说明不机械注册或赋级。
+- 研究回填矩阵、模板和AI摘要也按现行职责定位：方法/流程/清单正文归 `docs/gongfa/`，实例练习归 `docs/getting-started/`，具体事实留 `research/`；执行契约、工具配置和脚本分别归 `skills/`、`tools/config/`、`scripts/`，不把旧分类词当目录或批量改写上游结构。
 - `docs/gongfa/AGENTS.md` - 功法正文、历史来源、登记与生成视图的唯一职责规则；不恢复旧目录或并行可编辑副本
 - `docs/gongfa/problem-solving.md` - 问题定义与求解路径底层模型
 - `docs/gongfa/vibe-coding-cultivation-model.md` - 统一修仙本体的通俗解释；战力按具体任务先验收效果、再比较效率

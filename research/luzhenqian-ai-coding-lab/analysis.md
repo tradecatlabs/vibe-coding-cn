@@ -32,8 +32,8 @@ vibe-coding 等目录组织实践项目，适合研究如何把 AI Coding 从概
 
 | 改良目标 | 原模式 | 本仓版本 | 验证指标 |
 |:---|:---|:---|:---|
-| 实践矩阵 | 多方向项目目录 | workflow/practice 中按目标组织项目 | 每个项目有目标、运行命令、验收命令 |
-| 概念验收 | 项目承接学习 | concepts 后接最小实践 | 概念能被运行或检查 |
+| 实践矩阵 | 多方向项目目录 | `docs/getting-started/` 中按目标组织最小练习，通用项目模板归 `docs/gongfa/` | 每个项目有目标、运行命令、验收命令 |
+| 概念验收 | 项目承接学习 | `docs/gongfa/` 的概念正文由 `docs/getting-started/` 的最小实践验收 | 概念能被运行或检查 |
 | Skill 实验 | `skills/` 目录 | 本仓 skill 有评测和示例 | skill 不只停在说明 |
 
 ## 可迁移清单
@@ -59,5 +59,5 @@ vibe-coding 等目录组织实践项目，适合研究如何把 AI Coding 从概
 
 ## 沉淀判断
 
-- 稳定结论进入 `docs/gongfa/`，后续可引出独立 practice/examples 层。
+- 稳定方法与模板正文进入 `docs/gongfa/`，最小实践由 `docs/getting-started/` 承接，不提前新增 practice/examples 目录。
 - 本研究域保持 P2 实践项目对标对象。

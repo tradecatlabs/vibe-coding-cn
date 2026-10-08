@@ -6,8 +6,8 @@
 变成文件系统、配置、workflow、reports 和 agent teams。它说明经验如果不能落到文件、流程、
 示例或检查项，就只是口号。
 
-本仓最应该迁移的是方法论资产化：把经验短句分流到 concepts、references、workflow、skills、
-research 或 reports，而不是长期堆在一个经验清单里。
+本仓最应该迁移的是方法论资产化：可复用认知、模板和流程正文归 `docs/gongfa/`，实例练习归
+`docs/getting-started/`，执行能力归 `skills/`，具体观察与复盘证据留在 `research/`，而不是长期堆在一个经验清单里。
 
 ## 本地证据
 
@@ -34,9 +34,9 @@ research 或 reports，而不是长期堆在一个经验清单里。
 
 | 改良目标 | 原模式 | 本仓版本 | 验证指标 |
 |:---|:---|:---|:---|
-| 方法论分流 | best-practice / implementation / workflow / reports 分层 | concepts / references / workflow / skills / research 分层 | 每条经验能找到落点 |
+| 方法论分流 | best-practice / implementation / workflow / reports 分层 | `docs/gongfa/` 正文、`docs/getting-started/` 实例、`skills/` 执行与 `research/` 证据分工 | 每条经验能找到落点 |
 | 复杂任务编排 | agent teams 和 orchestration workflow | 本仓任务树、子 Agent、tmux 协作和验收标准 | 多 Agent 任务有职责、输入、输出、依赖、验收 |
-| 报告层沉淀 | reports 承载复盘和比较 | 本仓 research 和 references 承载阶段判断 | 重要结论不只留在对话里 |
+| 报告层沉淀 | reports 承载复盘和比较 | 具体阶段判断留 `research/`，可复用复盘方法与清单归 `docs/gongfa/` | 重要结论不只留在对话里 |
 
 ## 可迁移清单
 

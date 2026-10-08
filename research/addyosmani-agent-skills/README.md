@@ -41,7 +41,7 @@ addyosmani/agent-skills 是面向 AI coding agent 的生产级工程技能集合
 
 ### 当前判断
 
-它与本仓的 workflow/skills 结构高度相关，价值在于提供一套短命令到完整工程生命周期的映射。对本仓最值得借鉴的是“质量门禁跟随开发阶段”，而不是盲目增加更多 skill。
+它与本仓的[功法体系](../../docs/gongfa/README.md)和[Skills 执行能力](../../skills/README.md)职责高度相关，价值在于提供一套短命令到完整工程生命周期的映射。对本仓最值得借鉴的是“质量门禁跟随开发阶段”，而不是盲目增加更多 skill。
 
 ### 观察字段
 

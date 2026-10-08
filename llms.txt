@@ -22,7 +22,6 @@ vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程系统教程，帮�
 
 首选入口：
 - README.md
-- README.md#ai-six-propositions
 - docs/README.md
 - docs/getting-started/README.md
 - docs/gongfa/vibe-coding-experience.md
