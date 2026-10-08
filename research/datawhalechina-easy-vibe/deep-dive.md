@@ -67,8 +67,8 @@ assets 中的 IDE、RAG、terminal、diffusion 等视觉材料说明，零基础
 本仓当前优势是治理、研究域、资源和质量门禁；Easy Vibe 的优势是课程产品化和新手体验。
 两者结合后，本仓可形成两层入口：
 
-- `getting-started/`：面向新手的目标导向学习路径。
-- `references/`、`workflow/`、`research/`：面向进阶用户和维护者的工程治理层。
+- `docs/getting-started/`：面向新手的目标导向学习路径与实例练习。
+- `docs/gongfa/`：面向进阶用户和维护者的工程方法、流程与清单；具体观察和验证证据仍归 `research/`。
 
 关键取舍是：吸收学习路径和 AI 入口设计，不复制完整多语言站点复杂度。
 

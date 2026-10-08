@@ -27,7 +27,7 @@
 | 真正带来结果的动作 | 把文档知识库工程化，让 AI 和人类都能稳定读取、验证和交付 |
 | 可迁移做法 | 自我研究、索引门禁、AI 引用入口、raw 事实层、资源治理 |
 | 不可迁移条件 | 不因外部平台化项目而过早变成应用仓库或工具平台 |
-| 下一步试用动作 | 用研究迁移综合驱动 scripts、resources、workflow、skills 的下沉任务 |
+| 下一步试用动作 | 用研究迁移综合驱动 `scripts/`、`assets/`、`docs/gongfa/`、`skills/` 各自职责内的下沉任务 |
 
 ## 改良迭代
 
@@ -40,10 +40,10 @@
 ## 可迁移清单
 
 - 将 Codex 的执行控制面迁移到 scripts 治理。
-- 将 Aider 的 Git 闭环迁移到 workflow。
+- 将 Aider 的 Git 闭环方法沉淀到 `docs/gongfa/`，实际执行由既有 Git 工具与脚本负责。
 - 将 Cline 的多入口契约迁移到 README/AGENTS/llms/metadata。
 - 将 awesome-claude-code 的资源治理迁移到 assets。
-- 将 Claude Code Best Practice 的方法论资产化迁移到 concepts/workflow/skills。
+- 将 Claude Code Best Practice 的方法论正文沉淀到 `docs/gongfa/`，可执行能力按契约进入 `skills/`。
 
 ## 不可迁移清单
 

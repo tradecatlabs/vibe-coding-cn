@@ -86,6 +86,6 @@ week5 和 week7 的 FastAPI、SQLite、pytest、pre-commit、ruff、black、PATC
 ## 下一步 L3 验证任务
 
 - 选择 week1 prompting 作业作为最小验证对象，检查测试和运行路径。
-- 将周次主题映射到本仓 getting-started / concepts / workflow。
+- 将周次练习映射到本仓 `docs/getting-started/`，通用概念、方法与流程正文归 `docs/gongfa/`。
 - 设计本仓自己的最小 assignments：prompt、tool calling、RAG、MCP、agent workflow。
-- 将设计文档模板和 agent from scratch 练习转成 references 候选材料。
+- 将设计文档模板转为 `docs/gongfa/` 的配套候选材料，agent from scratch 练习由 `docs/getting-started/` 承接。

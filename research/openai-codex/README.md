@@ -32,7 +32,7 @@
 - 先读本 README 的判断，再读 `analysis.md` 和 `deep-dive.md` 的研究结论，最后读 `domain.yml`。
 - 需要引用 stars、forks、release、归档状态时，先重新核验 GitHub。
 - CLI 安装、认证、IDE、Skills 和 Plugins 的现行用法，以 [OpenAI Codex 文档](https://developers.openai.com/codex) 为准。
-- 如果形成稳定方法论，再迁入 concepts、references、workflow 或 skills。
+- 可复用方法、流程和模板正文归 `docs/gongfa/`，实例练习归 `docs/getting-started/`，执行能力按契约归 `skills/`；具体事实与验证证据仍留在本研究域。
 
 ## 正文
 
@@ -58,5 +58,5 @@
 
 - 官方 CLI、Skills、Plugins 和 IDE 入口是否继续保持清晰分层。
 - 沙箱、执行策略、MCP、命令入口和可复用工作流是否继续保持稳定。
-- 是否能反哺本仓库的 concepts、references、workflow 或 skills。
+- 是否能反哺本仓库的[统一功法](../../docs/gongfa/README.md)、[入门练习](../../docs/getting-started/README.md)或[Skills 执行能力](../../skills/README.md)；具体观察仍留在本研究域。
 - 是否存在许可证、归档状态、维护活跃度或生态迁移风险。

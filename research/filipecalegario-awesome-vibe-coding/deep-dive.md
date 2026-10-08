@@ -63,7 +63,7 @@ Task Management for AI Coding 分类说明，当 agent 能写代码后，下一�
 
 - 发现新对象：进入 `assets/external-resources/` 或 `research/`。
 - 验证对象：拉 raw，建研究域，写 analysis/deep-dive。
-- 稳定对象：下沉到 concepts、references、workflow 或 skills。
+- 稳定且可复用的方法正文：沉淀到 `docs/gongfa/`；实例练习与执行能力分别由 `docs/getting-started/`、`skills/` 承接，具体对象事实仍留在研究域。
 
 这个三段流比直接复制 awesome list 更适合长期维护。
 

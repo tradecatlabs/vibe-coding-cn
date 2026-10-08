@@ -7,8 +7,8 @@
 - 35 个研究域的 `analysis.md` 已统一为对标拆解、改良迭代、可迁移清单、不可迁移清单和验证动作格式。
 - 35 个研究域的 `deep-dive.md` 已补齐 L2 证据层、关键机制、迁移边界和 L3 验证任务。
 - 用户获得的直接价值是少走弯路、看见范式、拿到可落地路线。
-- 本仓获得的直接价值是形成 `getting-started`、`references`、`workflow`、`skills`、`assets`、`scripts`
-  和 `research` 的改进输入。
+- 本仓获得的直接价值是形成 `docs/gongfa/` 的通用正文、`docs/getting-started/` 的实例练习，以及
+  `skills/`、`assets/`、`scripts/` 和 `research/` 各自职责内的改进输入。
 - 新增的 [研究迁移综合](research-transfer-synthesis.md) 专门回答“这些研究怎么变成可执行动作”。
 - 研究结论稳定后必须下沉，不应长期停在 research。
 
@@ -16,8 +16,8 @@
 
 | 层级 | 数量 | 状态 | 说明 |
 |:---|---:|:---|:---|
-| 研究域 | 36 | 已建立 | 每个外部仓库一个独立研究域，均有 raw 原始事实层、`analysis.md` 和 `deep-dive.md` |
-| L2 深度研究 | 36 | 已完成 | 覆盖 coding agent、Agent runtime、插件、规格驱动开发、技能框架、课程、资源索引、项目实践、数学研究基础设施和归档工具样本 |
+| 外部仓库研究域 | 35 | 已建立 | 每个对象一个独立研究域，均有 raw 原始事实层、`analysis.md` 和 `deep-dive.md` |
+| L2 深度研究 | 35 | 已完成 | 覆盖 coding agent、Agent runtime、插件、规格驱动开发、技能框架、课程、资源索引、项目实践和归档工具样本；三个工程源事实镜像另按边界维护 |
 | L1 观察研究 | 0 | 已清空 | P3 仍是低采用优先级，不再代表研究深度缺口 |
 
 ## 用户能获得什么
@@ -121,11 +121,10 @@
 
 可迁移结论：
 
-- concepts 负责解释概念。
-- workflow 负责执行过程。
-- references 负责模板和清单。
-- practice 或 examples 负责可运行验证。
-- research 负责未稳定的外部对象。
+- `docs/gongfa/` 统一维护概念解释、方法、流程、模板和清单正文。
+- `docs/getting-started/` 用最小实例与练习验证学习结果，不复制通用方法正文。
+- `skills/`、`tools/`、`scripts/` 分别维护执行契约、工具配置与实际检查入口。
+- `research/` 保留具体外部对象的事实、观察和验证证据。
 
 ### 五、Agent 工程会走向任务系统
 
@@ -165,38 +164,38 @@
 
 | 研究来源 | 用户价值 | 本仓应用位置 | 可执行产物 |
 |:---|:---|:---|:---|
-| `openai/codex` | 理解 coding agent 控制面 | `scripts/`、`skills/`、`references/` | 脚本风险分级、沙箱/审批清单、Agent 控制面模板 |
+| `openai/codex` | 理解 coding agent 控制面 | `scripts/`、`skills/`、`docs/gongfa/` | 脚本风险分级、沙箱/审批清单、Agent 控制面模板 |
 | `openai/plugins` | 理解 Codex 能力包和插件分发 | `skills/`、`assets/`、`metadata/` | 插件 manifest、来源审查、安装/回滚清单 |
 | `openai/skills` | 理解技能目录从 catalog 到 plugin 的迁移 | `skills/`、`docs/gongfa/` | Skill 生命周期、触发契约和弃用迁移规则 |
-| `openai/openai-agents-python` | 理解 Agent、工具、护栏和追踪运行时 | `workflow/`、`references/` | 任务 Agent、工具契约、护栏和证据记录模板 |
-| `openai/openai-agents-js` | 理解 TypeScript Agent 运行时和状态所有权 | `workflow/`、`skills/` | runner、工具审批、session、sandbox 和 tracing 契约 |
-| `openai/openai-cookbook` | 理解官方示例如何变成可复现方法 | `getting-started/`、`references/` | 示例索引、复现前置条件和验证结果模板 |
-| `github/spec-kit` | 理解规格驱动开发的阶段化流程 | `workflow/`、`references/` | 规格、计划、任务、实现和测试的阶段契约 |
-| `Fission-AI/OpenSpec` | 理解变更提案、稳定规格和归档边界 | `workflow/`、`references/` | 变更目录、规格目录、验证和归档清单 |
-| `google-gemini/gemini-cli` | 理解终端 Agent 的上下文、MCP 和负例评估 | `getting-started/`、`workflow/` | 非交互入口、上下文层级和安全评估样本 |
-| `OpenHands/OpenHands` | 理解 Agent Canvas、工作区和后端适配 | `workflow/`、`references/` | Agent/工作区/后端边界和可恢复任务状态表 |
-| `anomalyco/opencode` | 理解模型无关配置、权限和插件生命周期 | `getting-started/`、`references/` | plan/build、配置备份、权限和插件回滚清单 |
-| `obra/superpowers` | 理解可组合 Skill 如何承载开发方法论 | `skills/`、`workflow/` | Skill 触发、TDD、审查和分支收尾清单 |
-| `addyosmani/agent-skills` | 理解生命周期命令、上下文层级和技能评估 | `skills/`、`workflow/` | `/spec`、`/plan`、`/test`、`/review` 到 `/ship` 的入口契约 |
-| `aaif-goose/goose` | 理解跨模型 Agent 的 provider、MCP 和工作区边界 | `workflow/`、`references/` | provider、工具、上下文和评估的边界表 |
-| `continuedev/continue` | 理解只读项目的生命周期和迁移风险 | `research/`、`references/` | 维护状态、替代方案和过期引用检查 |
-| `SWE-agent/mini-SWE-agent` | 理解极简问题修复 Agent 的有界执行 | `workflow/`、`references/` | Bash 工具面、退出码、轨迹和预算检查 |
-| `affaan-m/ECC` | 理解多 coding agent 的 Harness、记忆和质量资产 | `skills/`、`workflow/`、`references/` | Harness 资产、记忆策略、安全和评估清单 |
+| `openai/openai-agents-python` | 理解 Agent、工具、护栏和追踪运行时 | `docs/gongfa/`、`skills/` | 任务 Agent、工具契约、护栏和证据记录模板 |
+| `openai/openai-agents-js` | 理解 TypeScript Agent 运行时和状态所有权 | `docs/gongfa/`、`skills/` | runner、工具审批、session、sandbox 和 tracing 契约 |
+| `openai/openai-cookbook` | 理解官方示例如何变成可复现方法 | `docs/getting-started/`、`docs/gongfa/` | 示例索引、复现前置条件和验证结果模板 |
+| `github/spec-kit` | 理解规格驱动开发的阶段化流程 | `docs/gongfa/` | 规格、计划、任务、实现和测试的阶段契约 |
+| `Fission-AI/OpenSpec` | 理解变更提案、稳定规格和归档边界 | `docs/gongfa/` | 变更目录、规格目录、验证和归档清单 |
+| `google-gemini/gemini-cli` | 理解终端 Agent 的上下文、MCP 和负例评估 | `docs/getting-started/`、`docs/gongfa/` | 非交互入口、上下文层级和安全评估样本 |
+| `OpenHands/OpenHands` | 理解 Agent Canvas、工作区和后端适配 | `docs/gongfa/` | Agent/工作区/后端边界和可恢复任务状态表 |
+| `anomalyco/opencode` | 理解模型无关配置、权限和插件生命周期 | `docs/getting-started/`、`tools/config/`、`docs/gongfa/` | plan/build、配置备份、权限和插件回滚清单 |
+| `obra/superpowers` | 理解可组合 Skill 如何承载开发方法论 | `skills/`、`docs/gongfa/` | Skill 触发、TDD、审查和分支收尾清单 |
+| `addyosmani/agent-skills` | 理解生命周期命令、上下文层级和技能评估 | `skills/`、`docs/gongfa/` | `/spec`、`/plan`、`/test`、`/review` 到 `/ship` 的入口契约 |
+| `aaif-goose/goose` | 理解跨模型 Agent 的 provider、MCP 和工作区边界 | `docs/gongfa/` | provider、工具、上下文和评估的边界表 |
+| `continuedev/continue` | 理解只读项目的生命周期和迁移风险 | `research/`、`docs/gongfa/` | 维护状态、替代方案和过期引用检查 |
+| `SWE-agent/mini-SWE-agent` | 理解极简问题修复 Agent 的有界执行 | `scripts/`、`docs/gongfa/` | Bash 工具面、退出码、轨迹和预算检查 |
+| `affaan-m/ECC` | 理解多 coding agent 的 Harness、记忆和质量资产 | `skills/`、`docs/gongfa/` | Harness 资产、记忆策略、安全和评估清单 |
 | `vibe-mathing-cn-public` | 源事实镜像：保留数学验证工程的已提交文件树 | 事实登记与审计，不自动下沉 | 问题契约、失败回执、有界工具运行时由源仓库自身维护 |
-| `aider` | 理解 Git 驱动 AI 修改闭环 | `workflow/`、`references/` | AI 修改到提交的标准流程、文档 map / repo map 机制 |
+| `aider` | 理解 Git 驱动 AI 修改闭环 | `docs/gongfa/` | AI 修改到提交的标准流程、文档 map / repo map 机制 |
 | `cline` | 理解多入口 agent 平台 | `metadata/`、`llms.txt`、`skills/` | 人类入口、AI 入口、脚本入口、skill 入口的入口契约 |
 | `awesome-claude-code` | 理解资源治理 | `assets/external-resources/` | 资源 schema、生命周期字段、资源校验脚本 |
-| `claude-code-best-practice` | 理解方法论资产化 | `concepts/`、`workflow/`、`skills/` | 方法论分流规则、agent teams 任务编排契约 |
-| `easy-vibe` | 理解课程产品化 | `getting-started/` | 按用户目标组织的新手学习路径 |
-| `vibe-vibe` | 理解零基础路线 | `getting-started/`、`workflow/` | 基础/进阶/实践/持续追踪四层路径 |
+| `claude-code-best-practice` | 理解方法论资产化 | `docs/gongfa/`、`skills/` | 方法论分流规则、agent teams 任务编排契约 |
+| `easy-vibe` | 理解课程产品化 | `docs/getting-started/` | 按用户目标组织的新手学习路径 |
+| `vibe-vibe` | 理解零基础路线 | `docs/getting-started/`、`docs/gongfa/` | 基础/进阶/实践/持续追踪四层路径 |
 | `awesome-vibe-coding` | 发现国际生态 | `assets/`、`research/`、`metadata/` | 候选资源雷达、关键词候选、P1/P2 研究候选 |
-| `ai-coding-lab` | 理解项目矩阵 | `workflow/`、`references/`、`skills/` | 实践项目模板、Skill 打包和评测模式 |
-| `CS146S_CN` | 理解 assignments 验证 | `getting-started/`、`workflow/` | prompt、tool calling、RAG、MCP、agent workflow 练习 |
+| `ai-coding-lab` | 理解项目矩阵 | `docs/getting-started/`、`docs/gongfa/`、`skills/` | 实践项目模板、Skill 打包和评测模式 |
+| `CS146S_CN` | 理解 assignments 验证 | `docs/getting-started/` | prompt、tool calling、RAG、MCP、agent workflow 练习 |
 | `ai-for-developers-awesome-vibe-coding` | 发现 Vibe Coding 工具族 | `assets/external-resources/`、`research/` | 工具分类词、候选资源和 P1/P2 研究候选 |
 | `daotin-ai-coding` | 观察中文 AI Coding 主题 | `docs/gongfa/`、`assets/external-resources/` | 高频关键词、资源候选和经验分流项 |
 | `earyantle-vibe-coding-skill` | 理解最小 Skill 产品化骨架 | `skills/` | Skill 触发、输入输出、引用和发布检查清单 |
 | `liyupi-ai-guide` | 降低中文大众用户的学习门槛 | `docs/getting-started/`、`assets/external-resources/` | 大众化解释、项目实战和工具候选筛选表 |
-| `luzhenqian-ai-coding-lab` | 用项目矩阵承接概念实践 | `docs/gongfa/`、未来实践层 | 最小实践项目模板和概念到项目映射 |
+| `luzhenqian-ai-coding-lab` | 用项目矩阵承接概念实践 | `docs/getting-started/`、`docs/gongfa/` | 最小实践项目模板和概念到项目映射 |
 | `roocodeinc-roo-code` | 研究归档工具的模式和生命周期 | `research/`、`assets/external-resources/` | archived 标记、替代路径和模式/schema 观察记录 |
 | `wendy7756-vibe-coding-guide` | 理解非程序员的入门障碍 | `docs/getting-started/`、`prompts/` | 人、AI、提示词、工具和环境的低门槛入口说明 |
 
@@ -243,7 +242,7 @@
 
 ### P2：实践项目和 assignments
 
-目标位置：`docs/gongfa/` 或未来独立实践层。
+目标位置：通用模板正文在 `docs/gongfa/`，具体练习在 `docs/getting-started/`；不提前新增独立实践目录。
 
 应落地产物：
 
@@ -270,7 +269,7 @@
 | 开发者 | 先读 Codex、Aider、Cline 深度研究 | 建立 AI 修改、测试、提交、回滚闭环 |
 | 仓库维护者 | 先读资源治理和本仓自研研究 | 建立资源表、metadata、AI 引用入口和门禁 |
 | Agent 高阶用户 | 先读 control plane、skills、workflow、HITL 相关研究 | 设计自己的 Agent 工作流和任务系统 |
-| 内容贡献者 | 先读研究域治理契约和本地图 | 知道资料应该进入 research、references 还是 workflow |
+| 内容贡献者 | 先读研究域治理契约和本地图 | 分清研究事实、功法正文、入门实例与执行资产的承接位置 |
 
 ## 不应该怎么用
 

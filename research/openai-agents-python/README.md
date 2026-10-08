@@ -55,4 +55,4 @@
 
 - handoff 与多 Agent 编排是否能在复杂任务中降低上下文负担。
 - guardrail、session 和 tracing 是否能形成可审计的行为证据。
-- 哪些抽象能下沉为本仓 workflow/skills 的轻量契约，哪些只适合运行时产品。
+- 哪些抽象能沉淀为本仓 `docs/gongfa/` 的通用方法或 `skills/` 的执行契约，哪些只适合运行时产品。

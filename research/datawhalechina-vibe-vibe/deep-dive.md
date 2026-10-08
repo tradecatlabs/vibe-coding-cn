@@ -81,6 +81,6 @@ README 和 `docs/deployment/index.md` 都强调私有化部署和本地运行。
 ## 下一步 L3 验证任务
 
 - 选取 `demos/demo-01-todo/` 作为最小 demo，验证是否可运行。
-- 将 Vibe Vibe 的四层课程结构映射到本仓 `getting-started`、`workflow` 和 `references`。
+- 将 Vibe Vibe 的课程路径和练习映射到本仓 `docs/getting-started/`，可复用流程与模板正文归 `docs/gongfa/`。
 - 为本仓补“学习产出表”：每个阶段读者能做出什么。
 - 评估是否需要将部署上线前移到入门路径。

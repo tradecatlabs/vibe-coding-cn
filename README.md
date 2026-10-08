@@ -26,14 +26,10 @@
   <a href="https://t.me/glue_coding"><img src="https://img.shields.io/badge/聊天-Telegram-blue?style=for-the-badge&logo=telegram" alt="交流群"></a>
 </p>
 
-<!-- 资源直达：核心认知 -->
+<!-- 方法正文统一进入功法，研究保留具体事实与证据。 -->
 <p>
-  <a href="#dao-fa-shu-qi"><img src="https://img.shields.io/badge/☯️_道法术器-底层框架-purple?style=for-the-badge" alt="道法术器"></a>
-  <a href="#ai-six-propositions"><img src="https://img.shields.io/badge/🧠_六条命题-AI底层认知-crimson?style=for-the-badge" alt="六条核心命题"></a>
-  <a href="./docs/gongfa/vibe-coding-experience.md"><img src="https://img.shields.io/badge/💡_Vibe_Coding-经验必读-red?style=for-the-badge" alt="Vibe Coding 经验"></a>
-  <a href="./docs/gongfa/glue-coding.md"><img src="https://img.shields.io/badge/🧩_拼好码-银弹-darkred?style=for-the-badge" alt="拼好码，银弹"></a>
-  <a href="./docs/gongfa/keyword-system.md"><img src="https://img.shields.io/badge/🔑_关键词-概念入口-gold?style=for-the-badge" alt="关键词系统"></a>
-  <a href="./research/README.md"><img src="https://img.shields.io/badge/🔬_研究域-新概念解析-teal?style=for-the-badge" alt="研究域，新概念解析"></a>
+  <a href="./docs/gongfa/README.md">功法体系：思想、准则、方法与流程</a>
+  <a href="./research/README.md">研究事实与证据</a>
 </p>
 
 <!-- 资源直达：实践入口 -->
@@ -42,18 +38,14 @@
   <a href="./tools/config/.codex/README.md"><img src="https://img.shields.io/badge/⚙️_Codex配置-一键安装-blue?style=for-the-badge" alt="Codex 配置一键安装"></a>
   <a href="./skills/README.md#当前保留"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
   <a href="./prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
-  <a href="./docs/gongfa/modern-enterprise-architecture-template.md"><img src="https://img.shields.io/badge/🏗️_单机企业级架构-完整模板-slateblue?style=for-the-badge" alt="现代企业架构模板"></a>
   <a href="./assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/📡_外部资源-本地注册表-teal?style=for-the-badge" alt="外部资源本地注册表"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/📚_Wiki-导航入口-slateblue?style=for-the-badge" alt="Wiki 导航入口"></a>
 </p>
 
-[☯️ 道法术器](#dao-fa-shu-qi)
-[🧠 六条核心命题](#ai-six-propositions)
-[📖 功法体系](docs/gongfa/README.md)
-[🧩 拼好码](docs/gongfa/glue-coding.md)
-[🔑 关键词系统](docs/gongfa/keyword-system.md)
+[功法体系](docs/gongfa/README.md)
+[功法总表](metadata/gongfa/catalog.md)
+[Excel 完整视图](metadata/gongfa/catalog.xlsx)
 [🔬 研究域](research/README.md)
-[🏗️ 企业架构](docs/gongfa/modern-enterprise-architecture-template.md)
 [📌 字多不看](#root-tldr)
 [⚡ 1 分钟快速开始](#getting-started)
 [🚀 从零开始完整入门](docs/getting-started/learning-map.md)
@@ -68,20 +60,26 @@
 
 </div>
 
+<a id="gongfa"></a>
+<!-- 历史外部链接只定位这一统一入口，不保留同名旧栏目。 -->
 <a id="ai-six-propositions"></a>
 <a id="ai-five-propositions"></a>
 <a id="ai-three-propositions"></a>
+<a id="dao-fa-shu-qi"></a>
+<a id="tools"></a>
+<a id="六条核心命题"></a>
+<a id="经验"></a>
+<a id="实验性方法"></a>
+<a id="道法术器"></a>
+<a id="修仙解释图层"></a>
 
-<details open>
-<summary><strong>🧠 六条核心命题</strong></summary>
+## 功法体系
 
-## 🧠 六条核心命题
+思想、准则、思维模型、方法与工程流程统一从[功法体系](docs/gongfa/README.md)按当前问题选用。
+原来的经验、道法术器、实验性方法、哲学和核心命题都在体系内维护，不再作为首页独立栏目或分库入口。
 
-[完整六命题正文](docs/gongfa/ai-core-propositions.md)：目标闭环、生成域、模型演化、隔离审查与能力编排。
-
-从[功法体系](docs/gongfa/README.md)按当前问题选用；这里仅保留项目摘要，不独立维护命题正文。
-
-</details>
+逐条身份、内容版本、冻结来源与已有意见查看[功法登记](metadata/gongfa/README.md)及上方总表。
+文集归并不等于全部内容已经逐条登记；已有初评也不等于正式效果验证。
 
 <a id="root-tldr"></a>
 
@@ -92,7 +90,7 @@
 
 - `vibe-coding-cn` 是中文 Vibe Coding 从入门到精通教程，目标是把想法稳定变成可运行产品。
 - 新手先走 [从零开始完整入门](docs/getting-started/learning-map.md)：网络环境、CLI 配置、开发环境、第一个项目和 Git 闭环。
-- 核心框架是 [道法术器](#dao-fa-shu-qi)：先固定人与 AI 的协作关系，再用方法、流程、门禁和工具落地。
+- 方法正文统一在 [功法体系](docs/gongfa/README.md)：按问题选择思想、准则、模型与工程方法，不按旧栏目分库。
 - 工程主线是 Prompt、Skill、Context、Quality Gate 和 Git，用测试、CI、脚本、类型、schema、清单约束 AI 输出。
 - 需要直接使用资源时，进入 [提示词](prompts/README.md#在线提示词库)、[Skills](skills/README.md#当前保留) 和 [外部资源](assets/README.md#外部资源本地注册表)。
 
@@ -231,70 +229,6 @@
 4. [Vibe Coding 状态转移闭环](docs/gongfa/vibe-coding-state-transition.md) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding
 5. [拼好码](docs/gongfa/glue-coding.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
 6. [工程实践](docs/gongfa/quality-gates-and-pitfalls.md) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
-
-</details>
-
-<details>
-<summary><strong>🧪 实验性方法</strong></summary>
-
-## 🧪 实验性方法
-
-原始方法、提示词与风险边界统一见[AI 编程经验准则](docs/gongfa/experience-principles.md#实验性方法)；本页不维护第二份方法正文。
-
-</details>
-
-<details>
-<summary><strong>🧭 经验</strong></summary>
-
-## 🧭 经验
-
-[AI 编程经验准则](docs/gongfa/experience-principles.md)保留原首页的完整经验；[Vibe Coding 经验](docs/gongfa/vibe-coding-experience.md)展开人机分工和入门边界。正文在功法文集维护，不在首页平行更新。
-
-</details>
-
-<details>
-<summary><strong>🧠 修仙解释图层</strong></summary>
-
-## 🧠 修仙解释图层
-
-这是一层帮助理解现实 AI 工程对象的修仙比喻，不是运行架构，也不说明 AI 真的有魂魄。
-当前采用 **BFO 2020 主干的统一本体 V4 草案**：修仙领域类只在持续体与发生体下展开，不替换顶层或另建分类树。
-原生 BFO 类保留 ID 与继承；领域类有稳定标识、定义和判据，用途及模型归属不再混作平行主类。这仍不是已形式化验证的 OWL 本体。
-
-魂魄是以来源命名空间与 Session ID 指认的完整 AI 会话过程；万魂幡仍是全部会话的概念集合，以同一会话类的外延表达，不是仓库或文档。
-修为归属模型，BFO 直接能力承载与版本归属分开；灵力口径不能互换，境界须有量表，战力先效果后效率。
-
-方法规范与一次运行分开，MCP 协议与可调用实现分开；不再硬套“心法＝认知模型、阵法＝Workflow”。
-小说研究以《逆天邪神》最高权重，只对实际读取的材料负责；分类不授予权限，也不定义执行顺序。
-
-通俗说明：[修仙解释图层](docs/gongfa/vibe-coding-cultivation-model.md)；
-完整树与调研依据：[统一本体与分类设计](docs/gongfa/cultivation-ontology-taxonomy.md#唯一分类树)
-节点含义与身份：[领域类定义与稳定标识](docs/gongfa/cultivation-ontology-taxonomy.md#领域类定义与稳定标识)
-进一步细分：[内容与过程](docs/gongfa/cultivation-ontology-taxonomy.md#下层展开的判定边界)区分修炼与施技、准入与量表、授权与预算、研习与测评；
-[实体分支](docs/gongfa/cultivation-ontology-taxonomy.md#实体分支的判定边界)区分生物机体、器物设计、物质组群与内部场所，不把组成、库存或临时用途当类型；
-[制备与施用链](docs/gongfa/cultivation-ontology-taxonomy.md#从原料到制备与施用)区分原料角色、配方、加工、制品与服用，失败制作不当未发生，效果还需条件与证据。
-[性质与观测链](docs/gongfa/cultivation-ontology-taxonomy.md#从性质到读数与评价)区分形状/尺度、颜色、结构状态与数值/评价，局部修复或记录变更不证明整体改善。
-
-变化如何归类：[器灵、化形与材料转化](docs/gongfa/cultivation-ontology-taxonomy.md#器灵化形与材料转化)，区分意向、实际结果与身份连续性；预览不补作完整机制。
-[发育与再生](docs/gongfa/cultivation-ontology-taxonomy.md#从旧结构到新结构)进一步区分整体、部分、角色及状态；部件新生不等于主体重新出生，前提满足不等于效果已实现。
-[功法本体与品级](docs/gongfa/cultivation-ontology-taxonomy.md#功法本体与品级)分开记录内容类型、条目/版本、来源与等级。
-[功法JSON核心](metadata/gongfa/README.md)持续整理登记内容与来源事实；全部已分类内容查看同一[功法总表](metadata/gongfa/catalog.md)／[Excel完整视图](metadata/gongfa/catalog.xlsx)。
-总表由当前登记和仓内候选历史快照生成，不依赖临时目录；数量、状态、原文和旧意见不混为“全部已登记”。
-仓内续收不覆盖旧内容或旧初评，新增意见按对象范围分批保存。采用四阶十二级，暂定品级与正式效果评级分开，规则仍待校准。
-
-</details>
-
-<a id="dao-fa-shu-qi"></a>
-<a id="tools"></a>
-
-<details>
-<summary><strong>☯️ 道法术器</strong></summary>
-
-## ☯️ 道法术器
-
-[完整道法术器文集](docs/gongfa/dao-fa-shu-qi.md)维护人机协作、抽象方法、工程流程与工具承载的完整说明。
-
-思想、准则、方法与模型统一从[功法体系](docs/gongfa/README.md)进入；这里保留导航，不再维护独立框架正文。
 
 </details>
 

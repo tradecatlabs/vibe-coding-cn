@@ -123,7 +123,7 @@
 *   [**虚拟卡**](https://www.bybit.com/cards/?ref=YDGAVPN&source=applet_invite): 可用于注册云服务等需要国际支付的场景。
 *   [**Telegram 交流群**](https://t.me/glue_coding): Vibe Coding 中文交流群。
 *   [**Telegram 频道**](https://t.me/tradecat_ai_channel): 项目更新与资讯。
-*   [**知识库总索引**](../README.md): 从入门、概念、哲学、参考、研究和工作流进入完整文档体系。
+*   [**知识库总索引**](../README.md): 从入门教程、统一功法与研究证据进入完整文档体系。
 *   [**从零开始完整入门**](../getting-started/learning-map.md): 新手从网络环境、CLI 配置、开发环境和 Git 闭环开始。
 *   [**Vibe Coding 经验**](vibe-coding-experience.md): 通用语言能力、人机分工、机器门禁和入门铁律。
 *   [**第一个项目**](../getting-started/first-project.md): 用本地待办清单走通需求、实现、运行、验收和 Git 保存。

@@ -55,40 +55,40 @@
 
 | 研究域 | 类型 | 最有价值机制 | 本仓迁移位置 | 下一步动作 |
 |:---|:---|:---|:---|:---|
-| `openai-codex` | coding-agent-tooling | 执行控制面 | `scripts/`、`workflow/`、`references/` | 建脚本风险登记表 |
+| `openai-codex` | coding-agent-tooling | 执行控制面 | `scripts/`、`docs/gongfa/` | 建脚本风险登记表 |
 | `openai-plugins` | coding-agent-tooling | 插件 manifest、marketplace 和 skill-only plugin 分发 | `skills/`、`assets/`、`metadata/` | 建插件来源、权限和回滚检查清单 |
 | `openai-skills` | coding-agent-tooling | Skills Catalog 到 Plugins 的迁移边界 | `skills/`、`docs/gongfa/` | 为现有 Skill 标记生命周期和弃用路径 |
-| `openai-agents-python` | agent-runtime | Agent、Tools、Handoffs、Guardrails、Sessions 和 Tracing | `workflow/`、`references/` | 建计划、工具、副作用和验证的生命周期表 |
-| `openai-agents-js` | agent-runtime | TypeScript runner、工具审批和状态追踪 | `workflow/`、`skills/` | 建工具意图到证据的生命周期表 |
-| `openai-cookbook` | agent-development-guides | 可复现 API、Codex、Agent 和评估示例 | `getting-started/`、`references/` | 建示例复现记录模板 |
-| `github-spec-kit` | spec-driven-development | 规格到实现的阶段化流程 | `workflow/`、`references/` | 建规格/计划/任务/验收模板 |
-| `fission-ai-openspec` | spec-driven-development | 变更、规格、schema 和归档分层 | `workflow/`、`references/` | 建临时变更与稳定知识分流表 |
-| `google-gemini-gemini-cli` | coding-agent-tooling | 终端上下文、MCP、扩展、checkpoint 和安全评估 | `getting-started/`、`workflow/` | 建非交互入口和安全负例检查 |
-| `openhands-openhands` | agent-runtime | Agent 控制中心、工作区和后端适配 | `workflow/`、`references/` | 建 Agent、工作区、后端和恢复状态边界表 |
-| `anomalyco-opencode` | coding-agent-tooling | provider、model、permission、plugin 和 reload 生命周期 | `getting-started/`、`references/` | 建配置 dry-run、备份、验证和回滚检查 |
-| `aider-ai-aider` | coding-agent-tooling | Git 驱动编辑闭环 | `workflow/` | 建 AI 修改到提交的证据模板 |
+| `openai-agents-python` | agent-runtime | Agent、Tools、Handoffs、Guardrails、Sessions 和 Tracing | `docs/gongfa/`、`skills/` | 建计划、工具、副作用和验证的生命周期表 |
+| `openai-agents-js` | agent-runtime | TypeScript runner、工具审批和状态追踪 | `docs/gongfa/`、`skills/` | 建工具意图到证据的生命周期表 |
+| `openai-cookbook` | agent-development-guides | 可复现 API、Codex、Agent 和评估示例 | `docs/getting-started/`、`docs/gongfa/` | 建示例复现记录模板 |
+| `github-spec-kit` | spec-driven-development | 规格到实现的阶段化流程 | `docs/gongfa/` | 建规格/计划/任务/验收模板 |
+| `fission-ai-openspec` | spec-driven-development | 变更、规格、schema 和归档分层 | `docs/gongfa/` | 建临时变更与稳定知识分流表 |
+| `google-gemini-gemini-cli` | coding-agent-tooling | 终端上下文、MCP、扩展、checkpoint 和安全评估 | `docs/getting-started/`、`docs/gongfa/` | 建非交互入口和安全负例检查 |
+| `openhands-openhands` | agent-runtime | Agent 控制中心、工作区和后端适配 | `docs/gongfa/` | 建 Agent、工作区、后端和恢复状态边界表 |
+| `anomalyco-opencode` | coding-agent-tooling | provider、model、permission、plugin 和 reload 生命周期 | `docs/getting-started/`、`tools/config/`、`docs/gongfa/` | 建配置 dry-run、备份、验证和回滚检查 |
+| `aider-ai-aider` | coding-agent-tooling | Git 驱动编辑闭环 | `docs/gongfa/` | 建 AI 修改到提交的证据模板 |
 | `cline-cline` | coding-agent-tooling | 多入口 agent 平台 | `metadata/`、`llms.txt`、`skills/` | 建入口矩阵 |
-| `shanraisshan-claude-code-best-practice` | agentic-engineering-methodology | 方法论资产化 | `concepts/`、`workflow/`、`skills/` | 建经验分流表 |
+| `shanraisshan-claude-code-best-practice` | agentic-engineering-methodology | 方法论资产化 | `docs/gongfa/`、`skills/` | 建经验分流表 |
 | `hesreallyhim-awesome-claude-code` | ecosystem-index | 资源治理系统 | `assets/external-resources/` | 强化资源 schema |
 | `tradecatlabs-vibe-coding-cn` | workflow-methodology | AI 原生知识库控制面 | 全仓 | 建自我审计和下沉任务 |
 | `vibe-mathing-cn-public` | source-fact-mirror | 已提交源文件树、问题契约和证据边界 | 事实登记，不自动下沉 | 只核验来源、提交和隐私边界，不把源项目改造成父仓库研究格式 |
-| `datawhalechina-easy-vibe` | cn-onboarding | 目标分流课程路径 | `getting-started/` | 重构学习地图分流 |
-| `datawhalechina-vibe-vibe` | cn-onboarding | demo 驱动零基础课程 | `getting-started/`、未来 practice | 给概念补最小练习 |
-| `liyupi-ai-guide` | cn-onboarding | 大众解释和项目实战入口 | `getting-started/`、`assets/` | 抽取低门槛表达和工具候选 |
-| `wendy7756-vibe-coding-guide` | cn-onboarding | 非程序员视角 | `getting-started/`、`prompts/` | 增加非程序员入口说明 |
-| `luzhenqian-ai-coding-lab` | project-practice | 项目实验室矩阵 | `workflow/`、未来 practice | 建最小实践项目模板 |
-| `shouzhengai-cs146s-cn` | project-practice | assignments 验证层 | `getting-started/`、`workflow/` | 建练习任务模板 |
-| `filipecalegario-awesome-vibe-coding` | ecosystem-index | 国际工具族和术语雷达 | `assets/`、`concepts/keyword-system.md` | 抽取工具族和术语对照 |
+| `datawhalechina-easy-vibe` | cn-onboarding | 目标分流课程路径 | `docs/getting-started/` | 重构学习地图分流 |
+| `datawhalechina-vibe-vibe` | cn-onboarding | demo 驱动零基础课程 | `docs/getting-started/` | 给概念补最小练习 |
+| `liyupi-ai-guide` | cn-onboarding | 大众解释和项目实战入口 | `docs/getting-started/`、`assets/` | 抽取低门槛表达和工具候选 |
+| `wendy7756-vibe-coding-guide` | cn-onboarding | 非程序员视角 | `docs/getting-started/`、`prompts/` | 增加非程序员入口说明 |
+| `luzhenqian-ai-coding-lab` | project-practice | 项目实验室矩阵 | `docs/getting-started/`、`docs/gongfa/` | 建最小实践项目模板 |
+| `shouzhengai-cs146s-cn` | project-practice | assignments 验证层 | `docs/getting-started/` | 建练习任务模板 |
+| `filipecalegario-awesome-vibe-coding` | ecosystem-index | 国际工具族和术语雷达 | `assets/`、`docs/gongfa/keyword-system.md` | 抽取工具族和术语对照 |
 | `ai-for-developers-awesome-vibe-coding` | ecosystem-index | 轻量工具分类雷达 | `assets/external-resources/` | 对照资源分类缺口 |
-| `daotin-ai-coding` | workflow-methodology | 中文 AI Coding 主题雷达 | `concepts/keyword-system.md`、`assets/` | 抽取中文高频主题 |
+| `daotin-ai-coding` | workflow-methodology | 中文 AI Coding 主题雷达 | `docs/gongfa/keyword-system.md`、`assets/` | 抽取中文高频主题 |
 | `earyantle-vibe-coding-skill` | workflow-methodology | 最小 Skill 骨架 | `skills/` | 建 Skill 发布检查清单 |
 | `roocodeinc-roo-code` | coding-agent-tooling | 归档工具生命周期样本 | `research/`、`assets/` | 明确 archived 降级规则 |
-| `obra-superpowers` | agent-workflow-methodology | 可组合 Skill 与 TDD/审查阶段门禁 | `skills/`、`workflow/` | 建 Skill 触发和完成前验证清单 |
-| `addyosmani-agent-skills` | skill-governance | 生命周期命令与独立 eval | `skills/`、`workflow/` | 建入口到 owner skill 的路由表 |
-| `aaif-goose-goose` | coding-agent-tooling | provider、MCP、上下文和工作区分层 | `workflow/`、`references/` | 建外部能力边界表 |
-| `continuedev-continue` | lifecycle-reference | 只读项目的维护状态和迁移风险 | `research/`、`references/` | 建历史项目降级规则 |
-| `swe-agent-mini-swe-agent` | issue-solving-agent | 极简工具面和有界轨迹 | `workflow/`、`references/` | 建命令、预算和退出码检查 |
-| `affaan-m-ecc` | harness-engineering | Harness、记忆、安全和评估资产 | `skills/`、`workflow/` | 建 Harness 来源与权限审查清单 |
+| `obra-superpowers` | agent-workflow-methodology | 可组合 Skill 与 TDD/审查阶段门禁 | `skills/`、`docs/gongfa/` | 建 Skill 触发和完成前验证清单 |
+| `addyosmani-agent-skills` | skill-governance | 生命周期命令与独立 eval | `skills/`、`docs/gongfa/` | 建入口到 owner skill 的路由表 |
+| `aaif-goose-goose` | coding-agent-tooling | provider、MCP、上下文和工作区分层 | `docs/gongfa/` | 建外部能力边界表 |
+| `continuedev-continue` | lifecycle-reference | 只读项目的维护状态和迁移风险 | `research/`、`docs/gongfa/` | 建历史项目降级规则 |
+| `swe-agent-mini-swe-agent` | issue-solving-agent | 极简工具面和有界轨迹 | `scripts/`、`docs/gongfa/` | 建命令、预算和退出码检查 |
+| `affaan-m-ecc` | harness-engineering | Harness、记忆、安全和评估资产 | `skills/`、`docs/gongfa/` | 建 Harness 来源与权限审查清单 |
 
 ## 改良迭代
 
@@ -104,14 +104,14 @@
 
 ### 第二轮：让研究进入仓库控制面
 
-目标结果：研究结论不再停在 research，而是进入 `scripts`、`workflow`、`assets`、`skills` 和 `references`。
+目标结果：可复用方法与模板正文进入 `docs/gongfa/`，实例练习进入 `docs/getting-started/`，执行和资源产物按职责进入 `scripts/`、`skills/`、`assets/`；具体观察、来源与验证证据仍留在 `research/`。
 
 | 迁移方向 | 来源机制 | 本仓目标产物 | 验证指标 |
 |:---|:---|:---|:---|
 | `scripts` 控制面 | Codex exec policy / sandbox | 脚本登记表、风险等级、dry-run 和审批边界 | 每个脚本有 owner、风险、输入输出和 CI 状态 |
 | Git 编辑闭环 | Aider repo editing loop | AI 修改工作流和提交前证据模板 | 每次提交说明验证命令和 diff 范围 |
 | 多入口契约 | Cline IDE / CLI / SDK / rules | 人类入口、AI 入口、脚本入口、skill 入口矩阵 | 每个入口有输入、输出、更新策略 |
-| 方法论分流 | Claude best practice | 经验到 concepts/references/workflow/skills 的分流规则 | 经验短句不再孤立堆放 |
+| 方法论分流 | Claude best practice | 功法正文、入门实例、Skill 执行与研究证据的职责分流 | 经验短句不再孤立堆放 |
 | 资源治理 | awesome-claude-code CSV | 资源 schema、状态字段、过期检查 | 资源表能被脚本校验 |
 
 ### 第三轮：让研究可以被证伪
@@ -135,9 +135,10 @@ AI 原生知识库控制面
 ├── assets/     # 治理外部资源和引用材料
 ├── metadata/   # 提供机器可读索引
 ├── scripts/    # 执行质量门禁和同步任务
-├── workflow/   # 约束 AI 修改、验证和交付过程
-├── skills/     # 沉淀可复用 Agent 能力
-└── docs/       # 面向人类的稳定知识层
+├── skills/     # 沉淀可复用 Agent 执行能力
+└── docs/
+    ├── gongfa/          # 统一认知、方法、流程与配套清单正文
+    └── getting-started/ # 学习路径和可验收实例练习
 ```
 
 组合逻辑：
@@ -156,7 +157,7 @@ AI 原生知识库控制面
 | P0 | 更新 P1 研究域 `analysis.md` | `research/*/analysis.md` | 每个样板有对标拆解、改良迭代和试用动作 |
 | P0 | 升级研究域治理契约 | `research/research-domain-contract.md` | L2/L3 明确要求迁移动作和验证指标 |
 | P1 | 建立 scripts 控制面 | `scripts/` | manifest、风险等级、自动/人工边界 |
-| P1 | 建立入口矩阵 | `docs/gongfa/` 或 `docs/gongfa/` | 人类、AI、脚本、skill、资源入口边界清楚 |
+| P1 | 建立入口矩阵 | `docs/gongfa/` | 人类、AI、脚本、skill、资源入口边界清楚 |
 | P1 | 建立资源 schema | `assets/external-resources/` | 字段、生命周期、过期检查和去重规则 |
 | P2 | 建立经验分流规则 | `docs/getting-started/`、`docs/gongfa/`、`skills/` | 经验短句能下沉成可执行产物 |
 
