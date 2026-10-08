@@ -72,7 +72,7 @@ README 中每个项目都有难度和“你将做出什么”。这比只列目�
 - research 保留研究。
 - 新增或强化 practice/examples 层承载可运行项目。
 
-如果暂不新增目录，也可以先在 `docs/workflow/` 或 `docs/getting-started/` 中增加实践索引。
+如果暂不新增目录，也可以先在 `docs/gongfa/` 或 `docs/getting-started/` 中增加实践索引。
 
 ## 风险和待验证项
 
@@ -85,4 +85,4 @@ README 中每个项目都有难度和“你将做出什么”。这比只列目�
 - 优先验证 `skills/` 和 `agent/repo-analyzer/` 两个项目，因为它们最贴近本仓方向。
 - 建立本仓实践项目准入清单：能运行、能解释、能验收、能维护。
 - 从 `skills/` 抽取 Skill 打包和评测模式，回补本仓 `skills/` 治理。
-- 将项目矩阵结构沉淀为 `docs/references/` 中的实践项目模板。
+- 将项目矩阵结构沉淀为 `docs/gongfa/` 中的实践项目模板。

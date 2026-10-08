@@ -26,7 +26,7 @@ analysis、deep-dive 和门禁流程二次验证。
 | 真正带来结果的动作 | 快速暴露中文社区高频关注点 |
 | 可迁移做法 | 关键词候选、资源候选、MCP/AGENTS/Codex/Claude Code 主题雷达 |
 | 不可迁移条件 | 不把资料聚合当作验证结论，不复制为本仓标准 |
-| 下一步试用动作 | 抽取高频主题并映射到 `docs/concepts/keyword-system.md` |
+| 下一步试用动作 | 抽取高频主题并映射到 `docs/gongfa/keyword-system.md` |
 
 ## 改良迭代
 
@@ -41,7 +41,7 @@ analysis、deep-dive 和门禁流程二次验证。
 - 抽取中文 AI Coding 高频词。
 - 观察 MCP、AGENTS.md、Codex、Claude Code 相关资源热度。
 - 将高价值资源进入 `assets/external-resources/`。
-- 将稳定经验候选进入 `docs/getting-started/` 或 `docs/workflow/`。
+- 将稳定经验候选纳入 `docs/gongfa/`；`docs/getting-started/` 只消费入门摘要和实例。
 
 ## 不可迁移清单
 

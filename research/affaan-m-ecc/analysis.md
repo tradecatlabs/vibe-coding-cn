@@ -56,4 +56,4 @@ ECC 是一个面向 Claude Code、Codex、OpenCode、Cursor 等工具的 Harness
 
 ## 沉淀判断
 
-“Harness 资产必须按规则、上下文、技能、hook、插件和记忆分层，并绑定权限与回滚”适合下沉到 tools/config、skills 和 docs/references。
+“Harness 资产必须按规则、上下文、技能、hook、插件和记忆分层，并绑定权限与回滚”适合下沉到 tools/config、skills 和 docs/gongfa。

@@ -51,7 +51,7 @@ owner、风险等级、输入输出、dry-run、CI 状态和审计边界。
 - 对所有写仓库、网络访问、高风险发布或迁移脚本标注风险等级。
 - 对脚本补齐输入、输出、幂等性、dry-run、失败恢复和审计说明。
 - 把 Agent 可自动执行与必须人工确认的边界写进 `scripts/AGENTS.md`。
-- 把命令执行策略沉淀到 `docs/references/` 或 `docs/workflow/`。
+- 把命令执行策略正文沉淀到 `docs/gongfa/`。
 - 将 Codex CLI 配置基线的安装、备份、恢复和权限审查与研究结论保持对照，但不把研究仓库源码当作用户配置文件。
 
 ## 不可迁移清单
@@ -70,5 +70,5 @@ owner、风险等级、输入输出、dry-run、CI 状态和审计边界。
 
 ## 沉淀判断
 
-- 稳定结论应下沉到 `scripts/`、`docs/workflow/` 和 `docs/references/`。
+- 稳定结论正文下沉到 `docs/gongfa/`，执行性产物进入 `scripts/`。
 - `deep-dive.md` 保留源码证据；本文件负责把证据转成迁移动作。

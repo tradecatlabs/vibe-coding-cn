@@ -30,9 +30,9 @@
 <p>
   <a href="#dao-fa-shu-qi"><img src="https://img.shields.io/badge/☯️_道法术器-底层框架-purple?style=for-the-badge" alt="道法术器"></a>
   <a href="#ai-six-propositions"><img src="https://img.shields.io/badge/🧠_六条命题-AI底层认知-crimson?style=for-the-badge" alt="六条核心命题"></a>
-  <a href="./docs/getting-started/vibe-coding-experience.md"><img src="https://img.shields.io/badge/💡_Vibe_Coding-经验必读-red?style=for-the-badge" alt="Vibe Coding 经验"></a>
-  <a href="./docs/concepts/glue-coding.md"><img src="https://img.shields.io/badge/🧩_拼好码-银弹-darkred?style=for-the-badge" alt="拼好码，银弹"></a>
-  <a href="./docs/concepts/keyword-system.md"><img src="https://img.shields.io/badge/🔑_关键词-概念入口-gold?style=for-the-badge" alt="关键词系统"></a>
+  <a href="./docs/gongfa/vibe-coding-experience.md"><img src="https://img.shields.io/badge/💡_Vibe_Coding-经验必读-red?style=for-the-badge" alt="Vibe Coding 经验"></a>
+  <a href="./docs/gongfa/glue-coding.md"><img src="https://img.shields.io/badge/🧩_拼好码-银弹-darkred?style=for-the-badge" alt="拼好码，银弹"></a>
+  <a href="./docs/gongfa/keyword-system.md"><img src="https://img.shields.io/badge/🔑_关键词-概念入口-gold?style=for-the-badge" alt="关键词系统"></a>
   <a href="./research/README.md"><img src="https://img.shields.io/badge/🔬_研究域-新概念解析-teal?style=for-the-badge" alt="研究域，新概念解析"></a>
 </p>
 
@@ -42,17 +42,18 @@
   <a href="./tools/config/.codex/README.md"><img src="https://img.shields.io/badge/⚙️_Codex配置-一键安装-blue?style=for-the-badge" alt="Codex 配置一键安装"></a>
   <a href="./skills/README.md#当前保留"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
   <a href="./prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
-  <a href="./docs/references/modern-enterprise-architecture-template.md"><img src="https://img.shields.io/badge/🏗️_单机企业级架构-完整模板-slateblue?style=for-the-badge" alt="现代企业架构模板"></a>
+  <a href="./docs/gongfa/modern-enterprise-architecture-template.md"><img src="https://img.shields.io/badge/🏗️_单机企业级架构-完整模板-slateblue?style=for-the-badge" alt="现代企业架构模板"></a>
   <a href="./assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/📡_外部资源-本地注册表-teal?style=for-the-badge" alt="外部资源本地注册表"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/📚_Wiki-导航入口-slateblue?style=for-the-badge" alt="Wiki 导航入口"></a>
 </p>
 
 [☯️ 道法术器](#dao-fa-shu-qi)
 [🧠 六条核心命题](#ai-six-propositions)
-[🧩 拼好码](docs/concepts/glue-coding.md)
-[🔑 关键词系统](docs/concepts/keyword-system.md)
+[📖 功法体系](docs/gongfa/README.md)
+[🧩 拼好码](docs/gongfa/glue-coding.md)
+[🔑 关键词系统](docs/gongfa/keyword-system.md)
 [🔬 研究域](research/README.md)
-[🏗️ 企业架构](docs/references/modern-enterprise-architecture-template.md)
+[🏗️ 企业架构](docs/gongfa/modern-enterprise-architecture-template.md)
 [📌 字多不看](#root-tldr)
 [⚡ 1 分钟快速开始](#getting-started)
 [🚀 从零开始完整入门](docs/getting-started/learning-map.md)
@@ -76,74 +77,9 @@
 
 ## 🧠 六条核心命题
 
-### 零、固定目标、分层反馈的可验证收敛系统
+[完整六命题正文](docs/gongfa/ai-core-propositions.md)：目标闭环、生成域、模型演化、隔离审查与能力编排。
 
-> **Vibe Coding 可以理解为一种目标驱动、受约束、可验证的状态转移闭环；从控制结构看，它是一种固定目标、可变策略、分层反馈的系统：先将模糊需求经过澄清、结构化、一致性检查和人工确认，冻结为带版本的目标基线 `G*`；再让 Agent 在目标基线和约束不被静默修改的前提下，反复执行“观察当前状态 `S_t` → 识别状态差距 `Δ_t` → 选择策略与行动 → 获取验证证据 `E_t` → 接受、修正、回滚或切换策略”，使系统逐步进入目标的验收集合。若单次行动无效，则修正行动；若当前策略无效，则切换策略；若目标存在矛盾、不可行或无法判定，则暂停执行，重新审查目标或交由人决定。任何目标变更都必须通过显式版本、差异和授权进入新一轮闭环；每一层都必须具备独立验证、回滚、尝试上限和退出机制。**
-
-```text
-原始需求 R
-→ 澄清、结构化、一致性检查
-→ 版本化目标基线 G*
-→ 观察当前状态 S_t
-→ 识别状态差距 Δ_t
-→ 选择策略 π_t 与行动 O_t
-→ 执行
-→ 采集验证证据 E_t
-→ 接受 / 修正 / 回滚 / 切换策略
-→ 下一轮状态 S_{t+1}
-```
-
-这里的“固定目标”不是目标永远不能变化，而是未经授权不能被执行者静默改变；合法变化必须创建新的目标版本。这里的“收敛”也不是保证每一步都成功，而是在验证、回滚、尝试上限和退出机制约束下，使系统进入并保持在目标验收集合中。零号命题与后续五条命题共同构成六条核心命题；后续五条命题分别解释 AI 在这个闭环中的能力、边界、演化、审查和编排。
-
-### 一
-
-> **Demis Hassabis：“首先解决人工智能问题，然后再用人工智能解决其他所有问题”**
-
-### 二、生成域
-
-> **大语言模型的能力边界，是其生成物能够直接或间接实现、驱动、约束、修改、验证或影响的范围。**
-
-> **当前，AI 正在接管部分人的一切作用；未来，AI 将接管所有人的一切作用？**
-
-大语言模型的直接产物是 token 序列；token 解码为文本后，可以承载自然语言、形式语言和机器可解析协议等可文本化的符号结构。凡是能被文本稳定表达，并能被人、程序或工具解释、执行、约束、修改或验证的结构，都属于大语言模型的生成域，例如：用户提示词、系统提示词、自然语言、代码、命令、配置、流程、计划、测试、文档、schema、API 调用、工具指令和数据处理逻辑。
-
-> **生成物可达，即模型能力可达。**
-
-### 三、模型吞噬
-
-> **模型能力会持续吞噬一切可被吞噬且为弥补模型不足而产生的中间层。**
-
-很多今天看起来很重要的东西，本质上只是因为模型还不够强：Prompt 技巧、工作流、Agent 编排、索引系统、外部记忆、工程脚手架、工具封装、人工流程和当前经验体系。
-
-当模型能力继续提升，这些中间层会被模型原生能力吸收、压缩、替代，甚至失去独立存在的意义。凡是因模型能力不足而存在、且可被吞噬的工程补丁，都会被更强模型吞噬。
-
-### 四、隔离审查
-
-> **AI 生成结果只是候选解，不是已验证事实；长期应默认其可能错误、非最优，并必须保留审查、验证与优化空间。**
-
-成熟 AI 工程的重要治理原则，不是让同一个上下文自我确认，而是把生成、审查和验证拆开。NIST 强调独立审查可以降低偏见和利益冲突；OpenAI 与 Microsoft 都把外部测试、红队和独立评估作为发现盲点的重要机制；LLM-as-a-judge 研究也指出，模型评价自身输出时可能存在自偏好。
-
-因此，长期使用 AI 时，重要产出必须新开隔离会话，明确告知审查 AI：上一轮结果不可信，不能沿用结论，必须重新阅读原始资料、业务代码、目标、约束和验证结果，用事实、测试和可追溯证据判断其是否成立。
-
-AI 负责生成候选解，隔离上下文负责审查和优化候选解，事实与验证负责裁决候选解。
-
-### 五、能力编排
-
-> **AI 编程的高阶形态不是从零生成更多代码，而是根据需求反向搜索成熟工具链与成熟仓库，把已有能力编排成可验证的业务系统。**
-
-拼好码要求从“实现者心态”转向“整合者心态”：不是看到需求就让 AI 直接自研，而是先识别已有成熟能力、评估成熟度、设计适配边界，再用最少自研完成业务闭环。成熟生态承担通用复杂度，胶水代码连接业务流程，自研只服务不可替代的业务差异。
-
-简单实践流程：
-
-1. 写清需求：目标、输入、输出、约束和验收标准。
-2. 反向搜索：让 AI 根据需求拆出能力领域，搜索官方能力、事实标准、工具链、成熟仓库、主流 SDK 和平台服务。
-3. 评估候选：检查维护状态、许可证、文档质量、生产案例、生态兼容、替换风险和接入成本。
-4. 选择组合：确定采用的工具链与仓库组合，并说明为什么不用其他方案、为什么不自研。
-5. 设计边界：固定输入输出、数据模型、接口契约、错误处理、依赖隔离和回滚路径。
-6. 生成胶水：让 AI 只写连接、适配、编排、配置、业务规则和测试，不重写成熟能力。
-7. 验证交付：用测试、类型、schema、CI、脚本和检查清单验证结果，留下证据、替换方案和回滚路径。
-
-> **能复用时不重造，能编排时不发明。**
+从[功法体系](docs/gongfa/README.md)按当前问题选用；这里仅保留项目摘要，不独立维护命题正文。
 
 </details>
 
@@ -166,10 +102,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 |:---|:---|
 | [docs](docs/README.md) | 知识库总入口，先从这里选择学习路线 |
 | [getting-started](docs/getting-started/README.md) | 新手启动入口，配置网络、Codex CLI、开发环境，完成第一个项目和 Git 闭环 |
-| [workflow](docs/workflow/README.md) | 项目执行入口，把需求推进成计划、修改、门禁、提交和复盘 |
-| [concepts](docs/concepts/README.md) | 概念入口，理解问题求解、固定目标、反馈闭环、拼好码和系统构建 |
-| [references](docs/references/README.md) | 工程实践入口，查技术栈、质量门禁、模板和常见坑 |
-| [philosophy](docs/philosophy/README.md) | 思维入口，补思维模型、编程之道和软件工程常识 |
+| [gongfa](docs/gongfa/README.md) | 思想、准则、模型、方法与工程流程的唯一正文入口 |
 | [research](research/README.md) | 研究入口，记录新技术、优秀 repo 和工程趋势判断 |
 | [prompts](prompts/README.md) | 提示词入口，复用和管理提示词资产 |
 | [skills](skills/README.md) | 技能入口，复用可执行的 AI 能力模块 |
@@ -292,12 +225,12 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 完全新手？按顺序完成以下步骤：
 
 0. [从零开始完整入门](docs/getting-started/learning-map.md) - 按目标选择新手、开发者、团队、Prompt、Skill 或质量门禁路线
-1. [Vibe Coding 经验](docs/getting-started/vibe-coding-experience.md) - 通用语言能力、人机分工、机器门禁和入门铁律
+1. [Vibe Coding 经验](docs/gongfa/vibe-coding-experience.md) - 通用语言能力、人机分工、机器门禁和入门铁律
 2. [第一个项目](docs/getting-started/first-project.md) - 用本地待办清单走通需求、实现、验收和 Git 保存
-3. [问题求解](docs/concepts/problem-solving.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
-4. [Vibe Coding 状态转移闭环](docs/concepts/vibe-coding-state-transition.md) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding
-5. [拼好码](docs/concepts/glue-coding.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
-6. [工程实践](docs/references/quality-gates-and-pitfalls.md) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
+3. [问题求解](docs/gongfa/problem-solving.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
+4. [Vibe Coding 状态转移闭环](docs/gongfa/vibe-coding-state-transition.md) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding
+5. [拼好码](docs/gongfa/glue-coding.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
+6. [工程实践](docs/gongfa/quality-gates-and-pitfalls.md) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
 
 </details>
 
@@ -306,96 +239,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 
 ## 🧪 实验性方法
 
-> 下面是一些“可能随时推翻重写”的实验性方法与范式：先看一眼，觉得对你有用再深入。
-
-**建议阅读顺序（从抽象到落地）**
-1. 🔑 元方法论：用“生成器/优化器”的递归闭环让系统自我进化
-2. 🧬 拼好码：复用成熟能力，用胶水代码连接、编排、适配业务流程
-3. 🐝 tmux 蜂群协作：用 tmux 让多个 AI 终端可感知、可调度、可救援
-4. 🔮 哲学方法论工具箱：把抽象方法论落到可验证、可迭代的工程动作
-
-<details>
-<summary><strong>🔑 元方法论</strong></summary>
-
-> 一句话：用“生成器/优化器”的递归闭环，构建一个能持续自我优化的 AI 系统。
->
-> 延伸阅读：[递归自优化系统](docs/concepts/recursive-self-optimizing-system.md)
-
-### 核心角色
-- **α-提示词（生成器）**：一个“母体”提示词，其唯一职责是生成其他提示词或技能。
-- **Ω-提示词（优化器）**：另一个“母体”提示词，其唯一职责是优化其他提示词或技能。
-
-### 递归生命周期（最小闭环）
-1. **创生（Bootstrap）**：使用 AI 生成 `α-提示词` 与 `Ω-提示词` 的初始版本（v1）。
-2. **自省与进化（Self-Correction & Evolution）**：用 `Ω-提示词（v1）` 优化 `α-提示词（v1）`，得到更强的 `α-提示词（v2）`。
-3. **创造（Generation）**：使用进化后的 `α-提示词（v2）` 生成目标提示词与技能。
-4. **循环与飞跃（Recursive Loop）**：将新产物（甚至包括新版本的 `Ω-提示词`）回灌系统，再次用于优化 `α-提示词`，启动持续进化。
-
-### 终极目标
-- 通过持续的递归优化循环，让系统在每次迭代中实现自我超越，逼近预设的预期状态。
-
-</details>
-
-<details>
-<summary><strong>🧬 拼好码（胶水编程的超集）</strong></summary>
-
-> 一句话：成熟能力解决通用问题，胶水代码连接业务流程，自研只服务真正不可替代的差异。
-
-拼好码是 Vibe Coding 的工程交付形态：优先复用官方能力、平台能力、成熟库、稳定工具、开源仓库和事实标准，只写必要的连接、编排、适配、隔离与业务代码。
-
-| 问题 | 解法 |
-|:---|:---|
-| 🎭 AI 顺手造轮子 | ✅ 先找成熟方案，偏离必须说明 |
-| 🧩 复杂性爆炸 | ✅ 通用复杂度交给成熟生态 |
-| 🎓 交付不稳定 | ✅ 胶水代码只负责连接、编排、适配和业务规则 |
-
-👉 [深入了解拼好码](docs/concepts/glue-coding.md)
-
-</details>
-
-<details>
-<summary><strong>🐝 tmux 蜂群协作</strong></summary>
-
-> 一句话：用 tmux 的 `capture-pane`、`send-keys` 和脚本化封装，让多个 AI 终端从孤立会话变成可巡检、可调度、可救援的协作系统。
-
-传统模式里，人要分别盯住多个 AI 会话；蜂群模式里，人主要定义目标、边界和验收，commander 负责分发与巡检，worker 负责执行单一任务。
-
-| 能力 | 当前入口 | 用途 |
-|:---|:---|:---|
-| 感知 | `auto-tmux.sh capture` / `scan` | 读取单个或多个 pane 输出 |
-| 控制 | `auto-tmux.sh send` | 向明确 target 发送任务或按键 |
-| 救援 | `auto-tmux.sh rescue` | 对等待确认、卡住任务做最小干预 |
-| 记录 | `auto-tmux.sh record` | 为长任务保留审计日志 |
-| 调度 | `auto-tmux.sh hub` | 创建 commander + worker 工作台 |
-
-**使用边界**：这是实验性方法，不是无人值守生产系统。敏感凭证、生产数据库、危险命令和不可逆操作必须人工确认。
-
-👉 [研究判断](research/tmux-ai-swarm.md)
-👉 [完整技术文档](skills/auto-tmux/references/ai-swarm-collaboration.md)
-👉 [可执行技能入口](skills/auto-tmux/SKILL.md)
-
-</details>
-
-<details>
-<summary><strong>🔮 哲学方法论工具箱</strong></summary>
-
-> 一句话：把抽象方法论落到可验证、可迭代、可收敛的工程产出。
-
-23 种哲学方法论 + Python 工具 + 可复制提示词，覆盖：
-
-| 方法 | 用途 |
-|:---|:---|
-| 现象学还原 | 需求含糊时，清零脑补，回到可观察事实 |
-| 正反合 | 快速可用 → 反例打脸 → 收敛为工程版本 |
-| 可证伪主义 | 用测试逼出失败模式 |
-| 奥卡姆剃刀 | 删除不必要的复杂度 |
-| 贝叶斯更新 | 根据新证据动态调整信念 |
-
-**核心理念**：哲学不是空谈，是可落地的工程方法。
-
-👉 [深入了解哲学方法论工具箱](docs/philosophy/methodology-toolbox.md)
-
-</details>
+原始方法、提示词与风险边界统一见[AI 编程经验准则](docs/gongfa/experience-principles.md#实验性方法)；本页不维护第二份方法正文。
 
 </details>
 
@@ -404,28 +248,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 
 ## 🧭 经验
 
-* **概念是入口；不理解概念，就无法看见、触达对象**
-* **只用最强模型**
-* **结果主导**
-* **拼好码：先找成熟实现，只写胶水代码**
-* **边界清楚：写明对象、约束和可改范围**
-* **消费生产职能划分模型**
-* **理解领域关键词**
-* **上下文：垃圾进，垃圾出**
-* **系统建模：从实体、关系、功能和目的开始**
-* **状态建模：用状态、数据、函数和变换描述系统**
-* **先结构后代码：先定架构、模块和接口**
-* **职责拆分：一个模块只承担一个清晰职责**
-* **接口先行：先定契约，再补实现**
-* **关键优先：抓住最重要的 20%**
-* **逆向推进：从最终结果倒推实现路径**
-* **多轮迭代：重复尝试，逐步收敛**
-* **AI 上手：人定目标，AI 拆解执行**
-* **一切问 AI：先让 AI 给路径和反例**
-* **交叉审查：重要产出新会话用 AI 审 AI 的工作**
-* **Debug 最小化：只给预期、实际和最小复现**
-* **测试分工：AI 写测试**
-* **经验沉淀：把 AI 错误整理成可检索知识**
+[AI 编程经验准则](docs/gongfa/experience-principles.md)保留原首页的完整经验；[Vibe Coding 经验](docs/gongfa/vibe-coding-experience.md)展开人机分工和入门边界。正文在功法文集维护，不在首页平行更新。
 
 </details>
 
@@ -444,11 +267,20 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 方法规范与一次运行分开，MCP 协议与可调用实现分开；不再硬套“心法＝认知模型、阵法＝Workflow”。
 小说研究以《逆天邪神》最高权重，只对实际读取的材料负责；分类不授予权限，也不定义执行顺序。
 
-通俗说明：[修仙解释图层](docs/concepts/vibe-coding-cultivation-model.md)；
-完整树与调研依据：[统一本体与分类设计](docs/concepts/cultivation-ontology-taxonomy.md#唯一分类树)
-节点含义与身份：[领域类定义与稳定标识](docs/concepts/cultivation-ontology-taxonomy.md#领域类定义与稳定标识)
+通俗说明：[修仙解释图层](docs/gongfa/vibe-coding-cultivation-model.md)；
+完整树与调研依据：[统一本体与分类设计](docs/gongfa/cultivation-ontology-taxonomy.md#唯一分类树)
+节点含义与身份：[领域类定义与稳定标识](docs/gongfa/cultivation-ontology-taxonomy.md#领域类定义与稳定标识)
+进一步细分：[内容与过程](docs/gongfa/cultivation-ontology-taxonomy.md#下层展开的判定边界)区分修炼与施技、准入与量表、授权与预算、研习与测评；
+[实体分支](docs/gongfa/cultivation-ontology-taxonomy.md#实体分支的判定边界)区分生物机体、器物设计、物质组群与内部场所，不把组成、库存或临时用途当类型；
+[制备与施用链](docs/gongfa/cultivation-ontology-taxonomy.md#从原料到制备与施用)区分原料角色、配方、加工、制品与服用，失败制作不当未发生，效果还需条件与证据。
+[性质与观测链](docs/gongfa/cultivation-ontology-taxonomy.md#从性质到读数与评价)区分形状/尺度、颜色、结构状态与数值/评价，局部修复或记录变更不证明整体改善。
 
-变化如何归类：[器灵、化形与材料转化](docs/concepts/cultivation-ontology-taxonomy.md#器灵化形与材料转化)，区分意向、实际结果与身份连续性；预览不补作完整机制。
+变化如何归类：[器灵、化形与材料转化](docs/gongfa/cultivation-ontology-taxonomy.md#器灵化形与材料转化)，区分意向、实际结果与身份连续性；预览不补作完整机制。
+[发育与再生](docs/gongfa/cultivation-ontology-taxonomy.md#从旧结构到新结构)进一步区分整体、部分、角色及状态；部件新生不等于主体重新出生，前提满足不等于效果已实现。
+[功法本体与品级](docs/gongfa/cultivation-ontology-taxonomy.md#功法本体与品级)分开记录内容类型、条目/版本、来源与等级。
+[功法JSON核心](metadata/gongfa/README.md)持续整理登记内容与来源事实；全部已分类内容查看同一[功法总表](metadata/gongfa/catalog.md)／[Excel完整视图](metadata/gongfa/catalog.xlsx)。
+总表由当前登记和仓内候选历史快照生成，不依赖临时目录；数量、状态、原文和旧意见不混为“全部已登记”。
+仓内续收不覆盖旧内容或旧初评，新增意见按对象范围分批保存。采用四阶十二级，暂定品级与正式效果评级分开，规则仍待校准。
 
 </details>
 
@@ -460,187 +292,9 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 
 ## ☯️ 道法术器
 
-> 先解决人工智能协作问题，再用人工智能解决其他可表达、可拆解、可约束、可验证的问题。
+[完整道法术器文集](docs/gongfa/dao-fa-shu-qi.md)维护人机协作、抽象方法、工程流程与工具承载的完整说明。
 
-- **道**：确定人与 AI 的协作关系、责任边界和可靠性来源。
-- **法**：把问题抽象成目标、对象、约束、路径和验证标准。
-- **术**：把抽象方法落成流程、文档、门禁和迭代动作。
-- **器**：用工具承载读写文件、执行命令、运行测试、提交版本和交付结果。
-
-### ☯️ 道
-
-> Demis Hassabis：“首先解决人工智能问题，然后再用人工智能解决其他所有问题”
-
-大语言模型的底层能力是**通用语言能力**：理解、改写、分类、推理、规划、翻译、归纳、生成和校验语言结构。所以遇到任何任务，第一步是判断这个任务能否被语言表达、拆解、约束和验证；它能否通过语言能力直接完成，或间接转化为工具调用、文件修改、流程编排、数据处理与代码实现。代码能力是最直观的例子：编程本质上可以理解为把人的意图翻译成计算机可执行的指令。Vibe Coding 的关键，就是把“模糊想法”逐步压缩成“明确语言”，再把明确语言转成可运行、可测试、可回滚的工程产物。人负责目标、价值、边界、取舍和最终验收；AI 负责理解上下文、生成计划、调用工具、修改文件、整理证据和放大执行；可靠性来自测试、脚本、类型、schema、CI、检查清单和可审查 diff。先把 AI 协作方式固定下来，才能稳定地用 AI 解决编程、写作、分析、研究、自动化和系统构建问题。
-
-### 🧭 法
-
-> 法层面描述抽象层广泛适用方法。
-
-- 问题求解：目标、现状、差距、标准、约束、对象、路径。
-- 思维模型：第一性原理、奥卡姆剃刀、逆向思维、多阶思维、状态空间。
-- 抽象方法：把复杂对象拆成状态、关系、过程、变换和不变量。
-- 提示词构造：先用“目标、对象、约束”构造提示词和思考框架；目标说明要达成什么，对象说明要处理什么，约束限定可行空间。
-
-### 🛠️ 术
-
-> 术层面回答“具体怎么做”，把抽象方法落成流程、文档、门禁和 Git 迭代，让人与 AI 可以按同一套工程闭环协作。
-
-- 流程：从需求表达、计划拆解、执行修改、运行验证到交付复盘。
-- 文档：把环境、命令、配置、接口、约束和验收标准写清楚。
-- 门禁：把验收标准转成测试、lint、类型、schema、脚本、CI 和检查清单。
-- Git：用 commit、branch、diff、tag 和 push 固定每次可回滚的工程进展。
-- 方法：提示词、任务清单、调试流程、审查流程、复盘流程和技术栈选择。
-
-### 🧰 器
-
-> 器层面回答“用什么工具承载方法和流程”，重点是把 AI 协作落到可读写文件、可执行命令、可验证结果和可回滚版本的真实环境中，器不是核心，但器决定效率和可执行边界。没有器，道、法、术只能停留在语言里；有了器，AI 才能从聊天框进入真实文件、命令、测试和版本控制。
-
-#### 操作系统与运行底座
-
-*   [**WSL2**](https://learn.microsoft.com/windows/wsl/): Windows 用户推荐优先启用 WSL2，把 Linux 开发环境放进 Windows 内部，兼顾本地桌面软件和类 Linux 命令行生态。
-*   [**Ubuntu**](https://ubuntu.com/): 新手和通用开发场景优先推荐 Ubuntu，软件包、教程、社区资料和服务器环境最完整，适合作为 WSL2、服务器和本地 Linux 的默认发行版。
-*   [**Windows 11 + WSL2 + Ubuntu**](https://learn.microsoft.com/windows/wsl/install): 新电脑最推荐组合；Windows 负责桌面、浏览器、IDE 和日常软件，Ubuntu 负责 Git、Node.js、Python、脚本、数据库客户端和 AI CLI。
-*   [**macOS**](https://www.apple.com/macos/): 适合移动开发、前端开发和日常独立开发，配合 Homebrew、终端、Git、Node.js、Python 和 AI CLI 可以形成稳定工作站。
-*   [**Linux Server**](https://ubuntu.com/server): 适合长期运行、部署、自动化任务、数据库、爬虫、后台服务和远程开发；优先选择 Ubuntu Server LTS。
-*   **不推荐裸 Windows 命令行作为主开发环境**: 可以使用 Windows 桌面工具，但复杂开发、脚本、依赖安装和 AI CLI 执行优先放在 WSL2/Ubuntu 中完成。
-
-#### AI CLI 与模型服务
-
-*   [**Codex CLI**](docs/getting-started/cli-setup.md): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
-*   [**Codex CLI 配置基线**](tools/config/.codex/README.md): 可通过一条命令安装到 `~/.codex/`，安装前自动备份，支持恢复。
-*   [**Claude Opus 4.7**](https://claude.ai/new): 性能强大的 AI 模型，通过 Claude Code 等平台提供服务，并支持 CLI 和 IDE 插件。
-*   [**gpt-5.5 (xhigh)**](https://chatgpt.com/codex/): 适用于处理大型项目和复杂逻辑的 AI 模型，可通过 Codex CLI 等平台使用。
-*   [**Droid**](https://factory.ai/news/terminal-bench): 提供对 Claude Opus 4.7 等多种模型的 CLI 访问。
-*   [**Kiro**](https://kiro.dev/): 目前提供免费的 Claude Opus 4.7 模型访问，并提供客户端及 CLI 工具。
-*   [**Gemini CLI**](https://geminicli.com/): 提供对 Gemini 模型的免费访问，适合执行脚本、整理文档和探索思路。
-*   [**antigravity**](https://antigravity.google/): 目前由 Google 提供的免费 AI 服务，支持使用 Claude Opus 4.7 和 Gemini 3.1 Pro。
-*   [**AI Studio**](https://aistudio.google.com/prompts/new_chat): Google 提供的免费服务，支持使用 Gemini 3.1 Pro 和 Nano Banana。
-*   [**Gemini Enterprise**](https://cloud.google.com/gemini-enterprise): 面向企业用户的 Google AI 服务，目前可以免费使用。
-*   [**GitHub Copilot**](https://github.com/copilot): 由 GitHub 和 OpenAI 联合开发的 AI 代码补全工具。
-*   [**Kimi K2.5**](https://www.kimi.com/): 一款国产 AI 模型，适用于多种常规任务。
-*   [**GLM**](https://bigmodel.cn/): 由智谱 AI 开发的国产大语言模型。
-*   [**Qwen**](https://qwenlm.github.io/qwen-code-docs/): 由阿里巴巴开发的 AI 模型，其 CLI 工具提供免费使用额度。
-*   [**Ollama**](https://ollama.com/): 本地大模型管理工具，可通过命令行方便地拉取和运行开源模型。
-
-#### 编辑与开发环境
-
-*   [**Visual Studio Code**](https://code.visualstudio.com/): 一款功能强大的集成开发环境，适合代码阅读与手动修改。其 `Local History` 插件对项目版本管理尤为便捷。
-*   [**Cursor**](https://cursor.com/): 已经占领用户心智高地，人尽皆知。
-*   [**Warp**](https://www.warp.dev/): 集成 AI 功能的现代化终端，能有效提升命令行操作和错误排查的效率。
-*   [**Neovim (nvim)**](https://github.com/neovim/neovim): 一款高性能的现代化 Vim 编辑器，拥有丰富的插件生态，是键盘流开发者的首选。
-*   [**LazyVim**](https://github.com/LazyVim/LazyVim): 基于 Neovim 的配置框架，预置了 LSP、代码补全、调试等全套功能，实现了开箱即用与深度定制的平衡。
-*   **虚拟环境 (.venv)**: 强烈推荐使用，可实现项目环境的一键配置与隔离，特别适用于 Python 开发。
-*   [**tmux**](https://github.com/tmux/tmux): 强大的终端复用工具，支持会话保持、分屏和后台任务，是服务器与多项目开发的理想选择。
-
-#### 版本控制与协作
-
-*   [**Git**](https://git-scm.com/): 分布式版本控制工具，用于记录代码变更、分支实验、回滚历史与协作交付。
-*   [**GitHub**](https://github.com/): 代码托管与协作平台，用于远端仓库、Issue、Pull Request、Actions 与项目发布。
-
-#### 数据与存储工具
-
-*   [**DBeaver**](https://dbeaver.io/): 通用数据库管理客户端，支持 PostgreSQL、MySQL、SQLite、MariaDB、Oracle、SQL Server 等多种数据库。
-*   **PostgreSQL / MySQL / SQLite**: 常见关系型数据库，用于持久化业务数据、验证数据模型和支撑本地开发。
-*   **Redis**: 常见缓存与键值存储工具，用于会话、队列、缓存、速率限制和临时状态。
-*   **对象存储与备份工具**: 用于文件、图片、日志、数据导出和恢复演练。
-*   **数据库迁移工具**: 用于把 schema 变化固定成可审查、可回滚、可重复执行的版本化变更。
-
-#### 工程质量工具
-
-*   **测试框架**: 单元测试、集成测试、端到端测试，用于把验收标准变成可执行断言。
-*   **lint / formatter / type checker**: 用于格式、静态规则、类型约束和可维护性检查。
-*   **schema 校验与契约测试**: 用于固定输入输出结构，降低 AI 改错字段、路径和接口的概率。
-*   **pre-commit / CI / 覆盖率 / 链接检查**: 用于把质量规则前置到提交、推送和合并阶段。
-
-#### 自动化与运行环境
-
-*   **Makefile / 脚本**: 用统一命令封装 lint、test、build、sync、deploy 等重复动作。
-*   **Docker / Compose**: 用于封装运行环境、数据库依赖和本地集成测试环境。
-*   **任务调度 / 部署平台 / 日志 / 监控 / 告警**: 用于让系统从本地脚本进入长期运行和生产反馈闭环。
-
-#### 资料、模板与知识工具
-
-*   [**提示词库 (在线表格)**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 一个包含大量可直接复制使用的各类提示词的在线表格。
-*   [**AI 引用语料包**](./assets/ai-citation/recommended-answer.md): 给 AI 助手引用的项目摘要、FAQ、对比和推荐回答。
-*   [**第三方系统提示词学习库**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools): 用于学习和参考其他 AI 工具的系统提示词。
-*   [**中文系统提示词学习库**](https://github.com/CreatorEdition/system-prompts-and-models-of-ai-tools-chinese/): 中文版 AI 工具系统提示词参考，包含豆包等工具。
-*   [**Skills 制作器**](https://github.com/yusufkaraaslan/Skill_Seekers): 可根据需求生成定制化 Skills 的工具。
-*   [**元提示词**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 用于生成提示词的高级提示词。
-*   [**元技能：Auto Skill**](./skills/auto-skill/SKILL.md): 用于生成、重构与校验 Skills 的元技能。
-*   [**auto-tmux**](./skills/auto-tmux/SKILL.md): tmux 自动化操控、脚本化 pane 巡检、按键注入、日志录制与多终端协作技能。
-*   [**Mermaid Chart**](https://www.mermaidchart.com/): 用于将文本描述转换为架构图、序列图等可视化图表。
-*   [**NotebookLM**](https://notebooklm.google.com/): 一款用于 AI 解读资料、音频和生成思维导图的工具。
-*   [**Zread**](https://zread.ai/): AI 驱动的 GitHub 仓库阅读工具，有助于快速理解项目代码。
-*   [**Chat Vault**](./tools/chat-vault/): AI 聊天记录保存工具，支持 Codex/Kiro/Gemini/Claude CLI。
-*   [**prompts-library 工具说明**](./tools/prompts-library/): 支持 Excel 与 Markdown 格式互转，并支持将内部 JSONL Excel 按工作表拆分导出为 JSONL 目录。
-
-#### 外部教程、社区与项目内部入口
-
-*   [**二哥的Java进阶之路**](https://javabetter.cn/): 包含多种开发工具的详细配置教程。
-*   [**虚拟卡**](https://www.bybit.com/cards/?ref=YDGAVPN&source=applet_invite): 可用于注册云服务等需要国际支付的场景。
-*   [**Telegram 交流群**](https://t.me/glue_coding): Vibe Coding 中文交流群。
-*   [**Telegram 频道**](https://t.me/tradecat_ai_channel): 项目更新与资讯。
-*   [**知识库总索引**](docs/README.md): 从入门、概念、哲学、参考、研究和工作流进入完整文档体系。
-*   [**从零开始完整入门**](docs/getting-started/learning-map.md): 新手从网络环境、CLI 配置、开发环境和 Git 闭环开始。
-*   [**Vibe Coding 经验**](docs/getting-started/vibe-coding-experience.md): 通用语言能力、人机分工、机器门禁和入门铁律。
-*   [**第一个项目**](docs/getting-started/first-project.md): 用本地待办清单走通需求、实现、运行、验收和 Git 保存。
-*   [**CLI 配置**](docs/getting-started/cli-setup.md): Codex CLI 默认路线与 OpenCode 备选路线。
-*   [**Codex 配置一键安装**](tools/config/.codex/README.md): 安全默认配置、高权限配置、自动备份和一键恢复。
-*   [**开发流程**](docs/workflow/development-process.md): 默认任务推进顺序、质量门禁、版本控制和交付闭环。
-*   [**问题求解**](docs/concepts/problem-solving.md): 用目标、现状、差距、标准、约束、对象和路径定义问题。
-*   [**Vibe Coding 状态转移闭环**](docs/concepts/vibe-coding-state-transition.md): 用固定目标、可变策略和分层反馈统一理解 Vibe Coding。
-*   [**拼好码（胶水编程的超集）**](docs/concepts/glue-coding.md): 复用成熟能力，用胶水代码连接、编排、适配业务流程。
-*   [**系统构建方法**](docs/concepts/system-building.md): 自顶向下、自底向上与分而治之的组合使用。
-*   [**开发范式演进**](docs/concepts/development-paradigms.md): 软件工程组织方式与 AI 编程范式的演进。
-*   [**语言层要素**](docs/concepts/language-layers.md): 理解代码所需的语言层级、执行模型、类型系统和工程语义。
-*   [**关键词系统**](docs/concepts/keyword-system.md): Vibe Coding 与工程协作中的高频关键词。
-*   [**思维模型**](docs/philosophy/thinking-models.md): 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。
-*   [**组合描述模型**](docs/philosophy/compositional-description-model.md): 用对象、状态、快照、序列、过程、变换、同一/差异与关系描述复杂系统。
-*   [**编程之道**](docs/philosophy/programming-dao.md): 编程哲学、结构、状态、复杂度与工程判断。
-*   [**软件工程的朴素真理**](docs/philosophy/software-engineering-truths.md): 代码、复杂度、需求、维护、质量、架构和团队的工程常识。
-*   [**工程实践**](docs/references/quality-gates-and-pitfalls.md): 项目架构、代码组织、开发经验、AI 编程质量门禁与常见坑的统一入口。
-*   [**技术栈**](docs/references/technology-stack.md#reference-technology-stack-十四如何选择技术栈): 常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
-*   [**现代企业数字化平台架构**](docs/references/modern-enterprise-architecture-template.md): 企业级领域、平台、数据、AI、治理、可靠性和审计架构参考模型。
-*   [**scripts 仓库控制面治理**](docs/references/modern-enterprise-architecture-template.md#reference-modern-enterprise-scripts-control-plane): 成熟企业项目的脚本分层、风险边界、登记、测试、审计和下线规则。
-*   [**scripts 目录说明**](scripts/README.md): 本仓库自动化入口、验证命令和脚本职责索引。
-*   [**研究域治理契约**](research/research-domain-contract.md): 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
-*   [**外部源事实层**](research/facts/README.md): 三个外部仓库的已提交源文件树、提交事实、哈希和隐私边界。
-*   [**研究价值与应用地图**](research/research-value-application-map.md): 35 个研究域的用户价值、核心启示、应用位置和下沉路线。
-*   [**研究迁移综合**](research/research-transfer-synthesis.md): 用对标拆解、改良迭代和杂交创新把研究转成可执行路线。
-*   [**Harness 工程解析**](research/harness/harness-engineering.md): Harness Engineering 的工程控制、评估器与反馈闭环解析。
-*   [**vibe-cybersecurity-cn 源事实镜像**](research/vibe-cybersecurity-cn/): 授权网络安全工程项目的已提交源文件树。
-*   [**vibe-harness-cn 源事实镜像**](research/vibe-harness-cn/): Harness 工程项目的已提交源文件树。
-*   [**vibe-mathing-cn-public 源事实镜像**](research/vibe-mathing-cn-public/): 数学验证工程项目的已提交源文件树。
-*   [**OpenAI Codex 研究域**](research/openai-codex/README.md): 官方 coding agent 工具源码研究对象。
-*   [**OpenAI Plugins 研究域**](research/openai-plugins/README.md): Codex 插件、marketplace 与 skill-only plugin 分发研究对象。
-*   [**OpenAI Skills 研究域**](research/openai-skills/README.md): 已 deprecated 的 Codex Skills Catalog 与插件迁移参照。
-*   [**OpenAI Agents SDK 研究域**](research/openai-agents-python/README.md): Agent、工具、护栏、handoff 与 tracing 运行时研究对象。
-*   [**OpenAI Agents JS 研究域**](research/openai-agents-js/README.md): 官方 TypeScript/JavaScript Agent 运行时研究对象。
-*   [**OpenAI Cookbook 研究域**](research/openai-cookbook/README.md): OpenAI API、Codex、Agent、评估与安全示例库研究对象。
-*   [**GitHub Spec Kit 研究域**](research/github-spec-kit/README.md): GitHub 官方规格驱动开发工具包研究对象。
-*   [**OpenSpec 研究域**](research/fission-ai-openspec/README.md): 面向 AI coding assistant 的规格驱动开发工具研究对象。
-*   [**OpenCode 研究域**](research/anomalyco-opencode/README.md): 模型无关的终端与编辑器 coding agent 研究对象。
-*   [**Gemini CLI 研究域**](research/google-gemini-gemini-cli/README.md): 终端 coding agent、MCP、扩展与安全评估研究对象。
-*   [**OpenHands 研究域**](research/openhands-openhands/README.md): Agent Canvas、工作区、后端与自动化控制中心研究对象。
-*   [**Superpowers 研究域**](research/obra-superpowers/README.md): 跨 coding agent 的技能框架与开发方法论研究对象。
-*   [**Addy Agent Skills 研究域**](research/addyosmani-agent-skills/README.md): 面向 coding agent 的生命周期技能与质量门禁研究对象。
-*   [**Goose 研究域**](research/aaif-goose-goose/README.md): 跨模型、跨平台的开源 AI Agent 研究对象。
-*   [**Continue 研究域**](research/continuedev-continue/README.md): 已停止主动维护的 IDE/CLI Agent 历史对标对象。
-*   [**mini-SWE-agent 研究域**](research/swe-agent-mini-swe-agent/README.md): 面向 issue 和命令行任务的极简软件工程 Agent 研究对象。
-*   [**ECC 研究域**](research/affaan-m-ecc/README.md): 多种 coding agent 的 Harness、技能与质量实践集合研究对象。
-*   [**Claude Code Best Practice 研究域**](research/shanraisshan-claude-code-best-practice/README.md): Agentic Engineering 方法论对标研究对象。
-*   [**Cline 研究域**](research/cline-cline/README.md): IDE/SDK/CLI 自主编码 Agent 研究对象。
-*   [**Aider 研究域**](research/aider-ai-aider/README.md): 终端 AI 结对编程工具研究对象。
-*   [**Skills 技能库**](skills/README.md#当前保留): 当前保留的可复用技能入口。
-*   [**提示词入口**](prompts/README.md#在线提示词库): 在线提示词库入口。
-*   [**外部资源入口**](assets/README.md#外部资源本地注册表): 外部资源本地注册表入口。
-*   [**AI Agent 操作规则**](AGENTS.md): AI Agent 执行任务时必须遵守的项目操作手册。
-*   [**llms.txt**](llms.txt): 面向 AI 助手的短上下文入口。
-*   [**llms-full.txt**](assets/ai-citation/llms-full.txt): 面向 AI 助手的完整上下文入口。
-*   [**编程提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 适用于 Vibe Coding 流程的专用提示词（云端表格）。
-*   [**系统提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): AI 开发的系统提示词，含多版本开发规范（云端表格）。
-*   [**外部资源本地注册表**](./assets/external-resources/README.md): 外部资源的本地真相源，按类型分类维护。
+思想、准则、方法与模型统一从[功法体系](docs/gongfa/README.md)进入；这里保留导航，不再维护独立框架正文。
 
 </details>
 
@@ -692,6 +346,11 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | docs 线性目录结构检查 | `make check-doc-structure` | 校验标准块顺序、主章节顺序、锚点和目录入口 |
 | 目录 README/AGENTS 覆盖检查 | `make check-directory-docs` | `scripts/check-directory-docs.py` |
 | Metadata 路径检查 | `make check-metadata` | `scripts/check-metadata.py` |
+| 功法JSON/来源/初评检查 | `make check-gongfa` | `scripts/check-gongfa.py`；Python3.10+及独立依赖 |
+| 功法CLI集成测试 | `make test-gongfa` | `scripts/test-gongfa.py`；保留JSON/JUnit测试工件 |
+| 更新项目内功法总表 | `make sync-gongfa-catalog` | 同一总表的Markdown/Excel生成，不改原文或评级 |
+| 功法总表一致性检查 | `make check-gongfa-catalog` | 只读校验来源SHA、覆盖和生成视图 |
+| 功法总表行为测试 | `make test-gongfa-catalog` | 隔离输入、命令/日志与结果工件 |
 | AI 引用一致性检查 | `make check-ai-citation` | `scripts/check-ai-citation.py` |
 | 外部源事实镜像检查 | `make check-source-facts` | `scripts/check-source-facts.py` |
 | Wiki 本地检查 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | `scripts/check-wiki.py` |
@@ -699,6 +358,11 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 | 全部本地质量门禁 | `make test` | `Makefile` |
 | 提示词格式转换 | `cd tools/prompts-library && python3 main.py` | `tools/prompts-library/main.py` |
 | Skill 严格校验示例 | `skills/auto-skill/scripts/validate-skill.sh skills/auto-skill --strict` | `skills/auto-skill/scripts/validate-skill.sh` |
+
+功法检查在现有Python虚拟环境中安装独立依赖：`python3 -m pip install -r scripts/requirements-gongfa.txt`。
+用`make sync-gongfa-catalog`更新[全部功法总表](metadata/gongfa/catalog.md)，再用`make check-gongfa-catalog`检查。
+历史登记批次回查仍用`check-gongfa.py --render-catalog --proposal-batch <批次ID>`；这不是全部总表，不以最新时间裁决。
+登记/总表检查和相关测试纳入本地`make test`；GitHub Actions选定目标未改，不宣称新增远端覆盖。
 
 仓库级文档门禁跳过三个外部源事实镜像：`research/vibe-cybersecurity-cn/`、
 `research/vibe-harness-cn/` 和 `research/vibe-mathing-cn-public/`；边界由 `make check-source-facts` 验证。
@@ -739,10 +403,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │
 ├── docs/                        # 核心知识库
 │   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
-│   ├── concepts/                # 核心概念、方法论与底层模型
-│   ├── philosophy/              # 哲学方法论与底层认知模型
-│   ├── references/              # 清单、约束、常见坑、模板和技术栈参考
-│   └── workflow/                # 开发流程、质量门禁和交付闭环
+│   └── gongfa/                  # 思想、准则、模型、方法、流程及配套文集的唯一正文
 ├── research/                    # 根级研究域：新技术、优秀 repo 与工程范式研究
 ├── prompts/                     # 提示词库入口（指向云端表格）
 ├── skills/                      # 技能库入口
@@ -751,7 +412,8 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │   └── claude-official-skills/  # Claude 官方 skills 软链接入口
 ├── tools/                       # 辅助工具、外部仓库与工具配置
 ├── scripts/                     # 自动化脚本
-├── metadata/                    # 机器可读索引
+├── metadata/                    # 机器可读索引与限定子域数据
+│   └── gongfa/                   # 功法登记、来源快照与单一总表（Markdown/Excel）
 ├── assets/                      # 静态资产、外部资源注册表与 AI 引用资产
 │
 ├── .github/                     # GitHub 配置
@@ -792,7 +454,8 @@ prompts/
 skills/
   README.md  # skills 总览与索引
 docs/
-  getting-started/*, concepts/*, references/* 等知识库
+  getting-started/*  # 配置与实例练习
+  gongfa/*           # 统一方法正文与配套文集
 research/
   README.md  # 研究总索引、治理契约、迁移综合与研究对象入口
 assets/

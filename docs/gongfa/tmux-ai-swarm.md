@@ -10,9 +10,9 @@ tmux 蜂群协作是把多个 AI CLI 会话放进同一个 tmux 工作台，通�
 
 在当前仓库中，tmux 蜂群协作的可执行能力收敛到 `skills/auto-tmux/`：
 
-- 可执行入口：[auto-tmux skill](../skills/auto-tmux/SKILL.md)
-- 脚本入口：[auto-tmux.sh](../skills/auto-tmux/scripts/auto-tmux.sh)
-- 完整文档：[AI 蜂群协作](../skills/auto-tmux/references/ai-swarm-collaboration.md)
+- 可执行入口：[auto-tmux skill](../../skills/auto-tmux/SKILL.md)
+- 脚本入口：[auto-tmux.sh](../../skills/auto-tmux/scripts/auto-tmux.sh)
+- 完整文档：[AI 蜂群协作](../../skills/auto-tmux/references/ai-swarm-collaboration.md)
 
 ### 解决什么问题
 

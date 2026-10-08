@@ -4,87 +4,66 @@ sections:
     purpose: 从零开始学习路径、学习地图、环境配置、AI CLI 配置与第一个项目闭环
     entry: docs/getting-started/README.md
     agent_guide: docs/getting-started/AGENTS.md
-  concepts:
-    path: docs/concepts
-    purpose: 核心概念、问题求解、修仙解释图层、关键词系统与工程思想
-    entry: docs/concepts/README.md
-    agent_guide: docs/concepts/AGENTS.md
-  philosophy:
-    path: docs/philosophy
-    purpose: 哲学方法论、思维模型、编程哲学与底层认知模型
-    entry: docs/philosophy/README.md
-    agent_guide: docs/philosophy/AGENTS.md
+  gongfa:
+    path: docs/gongfa
+    purpose: 方法论、哲学、思维模型、准则、流程及配套文集的唯一正文源
+    entry: docs/gongfa/README.md
+    agent_guide: docs/gongfa/AGENTS.md
   research:
     path: research
     purpose: 新技术、技术栈、优秀 repo、工程范式和工具趋势的短篇研究
     entry: research/README.md
     agent_guide: research/AGENTS.md
-  workflow:
-    path: docs/workflow
-    purpose: 开发流程、质量门禁、版本控制和文档同步的执行顺序
-    entry: docs/workflow/README.md
-    agent_guide: docs/workflow/AGENTS.md
-  references:
-    path: docs/references
-    purpose: 清单、模板、强约束与常见坑
-    entry: docs/references/README.md
-    agent_guide: docs/references/AGENTS.md
 reading_paths:
   beginner:
     title: 新手路径
     documents:
     - docs/getting-started/README.md
-    - docs/getting-started/vibe-coding-experience.md
+    - docs/gongfa/vibe-coding-experience.md
     - docs/getting-started/learning-map.md
     - docs/getting-started/first-project.md
-    - docs/concepts/problem-solving.md
-    - docs/concepts/vibe-coding-state-transition.md
-    - docs/concepts/glue-coding.md
-    - docs/references/project-architecture-template.md
-    - docs/references/quality-gates-and-pitfalls.md
+    - docs/gongfa/problem-solving.md
+    - docs/gongfa/vibe-coding-state-transition.md
+    - docs/gongfa/glue-coding.md
+    - docs/gongfa/project-architecture-template.md
+    - docs/gongfa/quality-gates-and-pitfalls.md
   developer:
     title: 开发者路径
     documents:
-    - docs/concepts/glue-coding.md
-    - docs/concepts/vibe-coding-state-transition.md
-    - docs/concepts/vibe-coding-cultivation-model.md
-    - docs/concepts/keyword-system.md
-    - docs/concepts/system-building.md
-    - docs/references/technology-stack.md
-    - docs/references/project-architecture-template.md
-    - docs/references/quality-gates-and-pitfalls.md
+    - docs/gongfa/glue-coding.md
+    - docs/gongfa/vibe-coding-state-transition.md
+    - docs/gongfa/vibe-coding-cultivation-model.md
+    - docs/gongfa/keyword-system.md
+    - docs/gongfa/system-building.md
+    - docs/gongfa/technology-stack.md
+    - docs/gongfa/project-architecture-template.md
+    - docs/gongfa/quality-gates-and-pitfalls.md
   thinking:
     title: 思维模型路径
     documents:
-    - docs/philosophy/thinking-models.md
-    - docs/philosophy/compositional-description-model.md
-    - docs/philosophy/programming-dao.md
-    - docs/philosophy/software-engineering-truths.md
-    - docs/concepts/recursive-self-optimizing-system.md
+    - docs/gongfa/thinking-models.md
+    - docs/gongfa/compositional-description-model.md
+    - docs/gongfa/programming-dao.md
+    - docs/gongfa/software-engineering-truths.md
+    - docs/gongfa/recursive-self-optimizing-system.md
   agent:
     title: AI Agent 读取路径
     documents:
     - AGENTS.md
     - docs/AGENTS.md
-    - docs/workflow/development-process.md
+    - docs/gongfa/development-process.md
     - docs/getting-started/README.md
-    - docs/getting-started/vibe-coding-experience.md
+    - docs/gongfa/vibe-coding-experience.md
     - docs/getting-started/first-project.md
-    - docs/references/project-architecture-template.md
-    - docs/references/quality-gates-and-pitfalls.md
+    - docs/gongfa/project-architecture-template.md
+    - docs/gongfa/quality-gates-and-pitfalls.md
     - assets/ai-citation/README.md
 selection_rules:
-  concepts: 需要理解核心概念、术语、问题求解、系统构建或复用优先原则时读取。
-  philosophy: 需要思维模型、底层认知框架、编程哲学或复杂系统描述方法时读取。
-  references: 需要工程模板、质量门禁、技术栈、常见坑和可执行检查清单时读取。
-  research: 需要新技术、新 repo、工程趋势和采用前判断时读取。
-  workflow: 需要标准开发顺序、质量门禁、版本控制和文档同步流程时读取。
-  getting-started: 需要从零开始配置网络、Codex CLI、开发环境并完成最小闭环时读取。
+  gongfa: 需要认知模型、问题求解、工程准则、架构模板、方法、流程、门禁或研究转化时统一读取；文集与独立功法记录分开。
+  research: 需要具体对象的原始事实、观察、风险和验证记录时读取，不另建方法正文副本。
+  getting-started: 需要配置网络、AI CLI、开发环境并完成最小实例闭环时读取；通用经验链接到功法。
 documents:
   getting-started:
-  - path: docs/getting-started/vibe-coding-experience.md
-    title: Vibe Coding 经验
-    role: 通用语言能力、人机分工、机器门禁和入门铁律
   - path: docs/getting-started/learning-map.md
     title: 学习地图
     role: 新手、开发者、团队、Prompt、Skill 和质量门禁的路线选择
@@ -100,104 +79,123 @@ documents:
   - path: docs/getting-started/first-project.md
     title: 第一个项目
     role: 用本地待办清单走通需求、实现、运行、验收和 Git 保存
-  concepts:
-  - path: docs/concepts/problem-solving.md
+  gongfa:
+  - path: docs/gongfa/problem-solving.md
     title: 问题求解
     role: 目标、现状、差距、标准、约束、对象与路径
-  - path: docs/concepts/vibe-coding-state-transition.md
+  - path: docs/gongfa/vibe-coding-state-transition.md
     title: Vibe Coding 状态转移闭环
     role: 用固定目标、可变策略、分层反馈和验收集合统一理解 Vibe Coding
-  - path: docs/concepts/vibe-coding-cultivation-model.md
+  - path: docs/gongfa/vibe-coding-cultivation-model.md
     title: 修仙解释图层
     role: BFO 下层展开的通俗解释；区分模型、会话、方法、工具、资源与任务评价
-  - path: docs/concepts/cultivation-ontology-taxonomy.md
+  - path: docs/gongfa/cultivation-ontology-taxonomy.md
     title: 修仙领域统一本体与分类设计（V4 BFO 草案）
-    role: 固定 BFO 主干、唯一分类树、领域稳定 ID、定义、关系及身份/转化判据；不扩展全仓本体
-  - path: docs/concepts/glue-coding.md
+    role: 固定 BFO 主干、唯一分类树、领域稳定 ID、实体/品质及规约/方法/过程细分类、制备、观测及再生证据链、分层身份与组成判据；功法收录/内容版本及四阶十二级接入JSON核心，限定内容可追溯、已有人工分类/初评、规约未校准且无正式效果评级，当前收录范围见子域入口；不扩展全仓本体
+  - path: docs/gongfa/glue-coding.md
     title: 拼好码
     role: 复用成熟能力、胶水原则、能力编排与业务交付
-  - path: docs/concepts/system-building.md
+  - path: docs/gongfa/system-building.md
     title: 系统构建方法
     role: 自顶向下、自底向上与分而治之
-  - path: docs/concepts/development-paradigms.md
+  - path: docs/gongfa/development-paradigms.md
     title: 开发范式演进
     role: 软件工程组织方式演进
-  - path: docs/concepts/language-layers.md
+  - path: docs/gongfa/language-layers.md
     title: 语言层要素
     role: 代码理解所需语言层级
-  - path: docs/concepts/keyword-system.md
+  - path: docs/gongfa/keyword-system.md
     title: 关键词系统
     role: Vibe Coding 与工程协作中的高频关键词
-  - path: docs/concepts/recursive-self-optimizing-system.md
+  - path: docs/gongfa/recursive-self-optimizing-system.md
     title: 递归自优化系统
     role: 递归自优化生成系统的形式化模型
-  philosophy:
-  - path: docs/philosophy/thinking-models.md
+  - path: docs/gongfa/thinking-models.md
     title: 思维模型
     role: 第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具
-  - path: docs/philosophy/compositional-description-model.md
+  - path: docs/gongfa/compositional-description-model.md
     title: 组合描述模型
     role: 对象、状态、快照、序列、过程、变换、同一/差异与关系
-  - path: docs/philosophy/programming-dao.md
+  - path: docs/gongfa/programming-dao.md
     title: 编程之道
     role: 编程哲学、结构、状态、复杂度与工程判断
-  - path: docs/philosophy/software-engineering-truths.md
+  - path: docs/gongfa/software-engineering-truths.md
     title: 软件工程的朴素真理
     role: 代码、复杂度、需求、维护、质量、架构和团队的工程常识
-  - path: docs/philosophy/methodology-toolbox.md
+  - path: docs/gongfa/methodology-toolbox.md
     title: 方法论工具箱
     role: 现象学还原、正反合、可证伪主义、形式化方法等提效工具
-  references:
-  - path: docs/references/project-architecture-template.md
+  - path: docs/gongfa/project-architecture-template.md
     title: 项目架构模板
     role: 常见项目结构、架构设计原则、最低门禁和检查清单
-  - path: docs/references/python-project-skeleton.md
+  - path: docs/gongfa/python-project-skeleton.md
     title: 通用 Python 项目骨架
     role: Python 应用、服务、脚本工具和库项目的通用骨架
-  - path: docs/references/enterprise-architecture-template.md
+  - path: docs/gongfa/enterprise-architecture-template.md
     title: 企业级 Monorepo / Multi-repo 架构模板
     role: 中大型工程组织、平台工程和多产品线参考模型
-  - path: docs/references/modern-enterprise-architecture-template.md
+  - path: docs/gongfa/modern-enterprise-architecture-template.md
     title: 现代企业数字化平台架构
     role: 面向领域产品网络、微服务容器 GitOps 边界、AI 原生能力、微调治理、AI 事件响应、内部平台、数据产品、供应链安全、FinOps 成本治理、版本治理、版本控制面、基线版本策略、发布通道、兼容性与冻结控制总账、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与
       RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、外部标准版本锁定、可执行标准、执行控制面、门禁决策、RACI 决策权、可靠性分级、仓库拓扑、迁移弃用、审计证据、联邦治理和行业对标矩阵的完整说明文档
-  - path: docs/references/common-sense.md
+  - path: docs/gongfa/common-sense.md
     title: 常识
     role: AI 编程和工程交付前的最低判断线
-  - path: docs/references/dataset-first-data-service.md
+  - path: docs/gongfa/dataset-first-data-service.md
     title: Dataset First 数据服务结构
     role: dataset、contract、registry、runtime 为核心的数据服务模板
-  - path: docs/references/code-organization.md
+  - path: docs/gongfa/code-organization.md
     title: 代码组织
     role: 模块化、命名、注释、格式化、文档和工具
-  - path: docs/references/development-experience.md
+  - path: docs/gongfa/development-experience.md
     title: 开发经验
     role: 变量名、文件结构、编码规范、架构原则和常见基础设施经验
-  - path: docs/references/quality-gates-and-pitfalls.md
+  - path: docs/gongfa/quality-gates-and-pitfalls.md
     title: AI 编程质量门禁与常见坑
     role: 系统提示词、强前置条件、常见坑和硬门禁
-  - path: docs/references/low-level-program-logic.md
+  - path: docs/gongfa/low-level-program-logic.md
     title: 底层程序逻辑设计与工程优化项
     role: 运行模型、并发模型、数据模型、性能模型和工程交付检查清单
-  - path: docs/references/technology-stack.md
+  - path: docs/gongfa/technology-stack.md
     title: 技术栈
     role: 技术栈选型、组合案例与学习路径
+  - path: docs/gongfa/development-process.md
+    title: 开发流程
+    role: 默认任务推进顺序、质量门禁和交付闭环
+  - path: docs/gongfa/vibe-coding-experience.md
+    title: Vibe Coding 经验
+    role: 通用语言能力、人机分工、机器门禁和入门铁律
+  - path: docs/gongfa/research-transfer-synthesis.md
+    title: 研究迁移综合
+    role: 对标拆解、改良迭代、杂交创新与可验证行动
+  - path: docs/gongfa/research-value-application-map.md
+    title: 研究价值与应用地图
+    role: 研究价值、核心启示、应用与转化路线
+  - path: docs/gongfa/harness-engineering.md
+    title: Harness 工程解析
+    role: 工程控制、评估器、反馈闭环与可靠性判断
+  - path: docs/gongfa/tmux-ai-swarm.md
+    title: tmux 蜂群协作
+    role: 实验性多终端协作范式；不是当前执行授权
+  - path: docs/gongfa/geo-seo-checklist.md
+    title: GEO / SEO 检查清单
+    role: 可信知识、结构化内容、审核与引用质量
+  - path: docs/gongfa/ai-core-propositions.md
+    title: AI 协作的六条核心命题
+    role: 目标闭环、生成域、模型演化、隔离审查与能力编排
+  - path: docs/gongfa/dao-fa-shu-qi.md
+    title: 道法术器
+    role: 人机协作、抽象方法、工程流程与工具承载
+  - path: docs/gongfa/experience-principles.md
+    title: AI 编程经验准则
+    role: 原首页经验的完整正文
   research:
   - path: research/research-domain-contract.md
     title: 研究域治理契约
     role: 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则
-  - path: research/research-value-application-map.md
-    title: 研究价值与应用地图
-    role: 研究体系给用户带来的价值、核心启示、应用位置和下沉路线
-  - path: research/research-transfer-synthesis.md
-    title: 研究迁移综合
-    role: 将对标拆解、改良迭代和杂交创新转成可执行研究路线
   - path: research/harness/README.md
     title: Harness 研究对象
     role: 工程控制、评估器、反馈闭环与 AI 生成系统可靠性研究对象
-  - path: research/harness/harness-engineering.md
-    title: Harness 工程解析
-    role: 工程控制、评估器、反馈闭环与 AI 生成系统可靠性
   - path: research/walkinglabs-learn-harness-engineering/README.md
     title: walkinglabs/learn-harness-engineering 研究域
     role: Harness Engineering 课程、模板、Skill 与审计工具
@@ -522,13 +520,6 @@ documents:
   - path: research/wendy7756-vibe-coding-guide/deep-dive.md
     title: wendy7756/vibe-coding-guide 深度研究
     role: L2 结构深度研究、关键机制、迁移边界和验证任务
-  - path: research/tmux-ai-swarm.md
-    title: tmux 蜂群协作
-    role: 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式
-  workflow:
-  - path: docs/workflow/development-process.md
-    title: 开发流程
-    role: 默认任务推进顺序、质量门禁和交付闭环
 top_level:
   skills:
     path: skills

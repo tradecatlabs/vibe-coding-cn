@@ -56,4 +56,4 @@ aaif-goose/goose 是一个跨模型、跨平台的 AI Agent，提供桌面、CLI
 
 ## 沉淀判断
 
-“工具扩展是有权限和生命周期的外部能力，不是普通配置项”适合下沉到 docs/references 和 tools/AGENTS.md。
+“工具扩展是有权限和生命周期的外部能力，不是普通配置项”适合下沉到 docs/gongfa 和 tools/AGENTS.md。

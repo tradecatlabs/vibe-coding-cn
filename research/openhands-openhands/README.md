@@ -31,7 +31,7 @@
 
 - 先读本 README 的当前判断，再读 `analysis.md` 和 `deep-dive.md`。
 - 将它作为“完整开发环境 + Agent 执行循环”的对标对象，不把平台级能力等同于本仓教程必须提供的功能。
-- 稳定结论优先下沉到本仓 `docs/workflow/`、`docs/references/` 或 `skills/`。
+- 稳定结论优先下沉到本仓 `docs/gongfa/` 或 `skills/`。
 
 ## 正文
 

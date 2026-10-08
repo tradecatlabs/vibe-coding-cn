@@ -1,0 +1,5 @@
+# 功法JSON离线检查依赖；Python 3.10+，不影响其他脚本依赖。
+jsonschema==4.26.0
+beautifulsoup4==4.12.3
+# 已有openpyxl运行版本；用于总表Excel生成/读回，不自研文件格式。
+openpyxl==3.1.2

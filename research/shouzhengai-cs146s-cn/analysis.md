@@ -59,5 +59,5 @@ agent 模式、现代终端、测试安全、软件支持和 UI 自动化放进�
 
 ## 沉淀判断
 
-- 稳定结论进入 `docs/getting-started/` 和 `docs/workflow/`。
+- 通用方法正文进入 `docs/gongfa/`，实例练习进入 `docs/getting-started/`。
 - 本研究域保持 P2 课程 assignments 对标对象。

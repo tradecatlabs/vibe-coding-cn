@@ -9,7 +9,7 @@
 ### 允许的操作
 - 读取、修改顶层文档：`README.md`、`AGENTS.md`、`CONTRIBUTING.md` 等
 - 读取、修改 `docs/`、`prompts/`、`skills/`、`tools/config/`、`tools/external/` 下的文档与代码
-- 执行 `make lint`、`make check-links`、`make check-details`、`make check-doc-structure`、`make check-directory-docs`、`make check-metadata`、`make check-ai-citation`、`make check-research-raw`、`make check-source-facts`、`make check-wiki`、`make fetch-research-raw`、`make sync-doc-toc`、prompts-library 转换工具
+- 执行 `make lint`、`make check-links`、`make check-details`、`make check-doc-structure`、`make check-directory-docs`、`make check-metadata`、`make check-gongfa`、`make test-gongfa`、`make sync-gongfa-catalog`、`make check-gongfa-catalog`、`make test-gongfa-catalog`、`make check-ai-citation`、`make check-research-raw`、`make check-source-facts`、`make check-wiki`、`make fetch-research-raw`、`make sync-doc-toc`、prompts-library 转换工具
 - 新增/修改提示词、技能、文档
 - 提交符合规范的 commit
 
@@ -69,6 +69,11 @@ git push origin develop
 | `make check-doc-structure` | 校验 docs README 标准块顺序、目录入口和重复锚点 | Python 3 |
 | `make check-directory-docs` | 校验仓库自有目录 README/AGENTS 覆盖 | Python 3 |
 | `make check-metadata` | 校验 metadata 路径与锚点 | Python 3 |
+| `make check-gongfa` | 校验功法JSON、十二级、冻结来源、人工初评和正式评级引用 | Python3.10+、scripts/requirements-gongfa.txt |
+| `make test-gongfa` | 功法协议隔离CLI集成测试与保留工件 | 同上；不进行实际评级 |
+| `make sync-gongfa-catalog` | 从当前登记与仓内候选历史快照重建同一总表 | Python3.10+、scripts/requirements-gongfa.txt |
+| `make check-gongfa-catalog` | 只读校验总表来源SHA、覆盖及Markdown/Excel一致性 | 同上；不写原文或评级 |
+| `make test-gongfa-catalog` | 验证总表维护行为并保存隔离工件 | 同上；不证明功法效果 |
 | `make check-ai-citation` | 校验 llms 与 AI 引用语料路径、锚点和规范仓库身份 | Python 3 |
 | `make check-external-resources` | 校验本地外部资源注册表字段、分类统计、ID 与链接形态 | Python 3、PyYAML |
 | `make check-research-raw` | 校验研究域 raw 原始事实层、Git 工作树、来源清单和核心材料文件 | Python 3、Git |
@@ -81,6 +86,7 @@ git push origin develop
 | `cd tools/prompts-library && python3 main.py` | 提示词格式转换 | `pip install -r tools/prompts-library/requirements.txt` |
 
 ### Python 依赖来源
+- 功法检查独立依赖：`scripts/requirements-gongfa.txt`；在现有虚拟环境安装，其他脚本最低版本不变。
 - prompts-library 主入口依赖：`tools/prompts-library/requirements.txt`
 - prompts-library Google API / JSONL 辅助脚本依赖：`tools/prompts-library/scripts/requirements.txt`
 
@@ -158,10 +164,7 @@ git push origin develop
 ├── docs/                        # 核心知识库
 │   ├── README.md                # docs 总索引
 │   ├── getting-started/         # 从零开始、学习地图、环境、AI CLI 与第一个项目闭环
-│   ├── concepts/                # 核心概念、方法论与工程思想
-│   ├── philosophy/              # 哲学方法论、思维模型与底层认知模型
-│   ├── references/              # 清单、约束、常见坑、模板和技术栈参考
-│   └── workflow/                # 开发流程、质量门禁和交付闭环
+│   └── gongfa/                  # 思想、准则、模型、方法及配套文集的唯一正文源
 │
 ├── research/                    # 研究对象与外部源事实镜像
 │   ├── README.md                # research 总索引
@@ -216,7 +219,8 @@ git push origin develop
 │   ├── AGENTS.md                # metadata 目录规则
 │   ├── taxonomy.yml             # 分类体系
 │   ├── glossary.yml             # 术语表
-│   └── redirects.yml            # 重命名/迁移映射
+│   ├── redirects.yml            # 重命名/迁移映射
+│   └── gongfa/                   # 功法登记、冻结来源、评级历史与单一总表（Markdown/Excel）
 │
 ├── .github/                     # GitHub 配置
 │   ├── CODEOWNERS               # 路径级 owner 评审基线
@@ -247,6 +251,12 @@ git push origin develop
 - `scripts/check-doc-structure.py` - docs README 标准块顺序、目录入口和重复锚点检查脚本，供 `make check-doc-structure` 与 CI 使用
 - `scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
 - `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
+- `metadata/gongfa/registry.json` - 活跃功法登记、等级、规则、来源、内容版本、人工初评及正式评级历史的唯一可编辑数据源；类型语义仍归本体主文；新范围追加批次
+- `metadata/gongfa/catalog.md` / `catalog.xlsx` - 同一全部功法总表的两种生成视图，聚合当前登记与已分类候选历史材料；不手改、不自动注册/去重/评级
+- `metadata/gongfa/catalog-sources.json` - 仅索引仓内不可变候选快照的路径/SHA/范围；历史材料不是第二可编辑登记，不依赖个人目录或临时工件
+- `scripts/sync-gongfa-catalog.py` / `test-gongfa-catalog.py` - 离线总表生成、检查及行为契约；复用原登记校验与openpyxl，保留真实命令/结果
+- `scripts/check-gongfa.py` - 功法JSON、来源、ID/版本、词表、人工初评与正式评级的离线校验；不联网、不执行原文、不计算品级；多批次用`--proposal-batch`显式选范围，表格标明批次，不把本批缺项报作全局未评
+- `scripts/test-gongfa.py` - 独立字面量与冻结输入驱动的CLI集成测试，保留输入、退出码、JSON/JUnit产物；不等于方法效果证明
 - `scripts/check-ai-citation.py` - llms 与 AI 引用语料路径、锚点和规范仓库身份检查脚本，供 `make check-ai-citation` 与 CI 使用
 - `scripts/check-external-resources.py` - 本地外部资源注册表检查脚本，供 `make check-external-resources` 与 `make test` 使用
 - `scripts/check-research-raw.py` - 研究域 raw 原始事实层和 Git 工作树检查脚本，供 `make check-research-raw` 与 `make test` 使用
@@ -255,13 +265,15 @@ git push origin develop
 - `scripts/check-wiki.py` - GitHub Wiki 独立仓库本地 checkout 页面覆盖、内链和旧口径检查脚本，供 `make check-wiki` 使用
 - `scripts/sync-doc-toc.py` - docs README 细粒度目录兼容脚本，当前拆分结构下通常无变更，供 `make sync-doc-toc` 使用
 - `tools/prompts-library/main.py` - 提示词转换工具入口
-- `docs/getting-started/README.md` - 从零开始索引入口，正文拆分到学习地图、Vibe Coding 经验、网络配置、CLI 配置、开发环境搭建与第一个项目闭环
+- `docs/getting-started/README.md` - 从零开始索引入口，正文拆分到学习地图、网络配置、CLI 配置、开发环境搭建与第一个项目闭环；通用人机经验链接到功法
 - `docs/getting-started/first-project.md` - 用本地待办清单完成第一次可验证的需求、实现、验收与 Git 闭环
-- `docs/concepts/problem-solving.md` - 问题定义与求解路径底层模型
-- `docs/concepts/vibe-coding-cultivation-model.md` - 统一修仙本体的通俗解释；战力按具体任务先验收效果、再比较效率
-- `docs/concepts/cultivation-ontology-taxonomy.md` - 修仙领域 BFO 主干与下层展开（V4 BFO 草案）；含领域稳定 ID、定义、关系及身份/转化判据；保留原生 ID/继承，核对作品 ID 与读取范围，不另设知识条目树或推广为全仓本体
-- `docs/references/project-architecture-template.md` - 常见项目结构、架构设计原则、最低门禁和检查清单
-- `docs/references/technology-stack.md` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
+- `docs/gongfa/README.md` - 方法论、哲学、思维模型、工程准则和流程的统一正文入口；完整文集按任务导航，文集数不是独立功法数
+- `docs/gongfa/AGENTS.md` - 功法正文、历史来源、登记与生成视图的唯一职责规则；不恢复旧目录或并行可编辑副本
+- `docs/gongfa/problem-solving.md` - 问题定义与求解路径底层模型
+- `docs/gongfa/vibe-coding-cultivation-model.md` - 统一修仙本体的通俗解释；战力按具体任务先验收效果、再比较效率
+- `docs/gongfa/cultivation-ontology-taxonomy.md` - 修仙领域 BFO 主干与下层展开（V4 BFO 草案）；保留原生及领域 ID、继承、定义和判据；功法内容、载体、版本、施行与效果分开，已有初评、规约未校准、正式效果记录仍为零
+- `docs/gongfa/project-architecture-template.md` - 常见项目结构、架构设计原则、最低门禁和检查清单
+- `docs/gongfa/technology-stack.md` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
 - `skills/auto-skill/` - Skills 生成、重构与校验的元技能
 - `skills/auto-tmux/` - tmux 自动化操控、脚本化 pane 巡检、按键注入、日志录制与多终端协作技能
 
@@ -365,7 +377,7 @@ make test
 ### Core Directories
 - **`prompts/`**: 提示词库入口（指向云端表格）
 - **`skills/`**: 扁平化技能库（详见 skills/README.md）
-- **`docs/`**: 知识库（getting-started、concepts、philosophy、references）
+- **`docs/`**: 入门教程（getting-started）与统一功法正文（gongfa）；旧目录路由已退役
 - **`assets/`**: 静态资产、外部资源注册表与 AI 引用资产
 - **`assets/ai-citation/`**: AI 引用语料包与 `llms-full.txt`
 - **`tools/prompts-library/`**: Excel ↔ Markdown 转换工具
@@ -377,6 +389,7 @@ make test
 3. **Documentation Standard**: 用户文档使用中文；代码/文件名使用英文
 4. **Skills**: 每个技能有独立的 `SKILL.md`
 5. **Quality Gates**: `make test` 执行 Markdown lint、本地相对链接/锚点检查、折叠块结构检查、docs 结构检查、metadata 路径检查、AI 引用一致性检查、外部源事实镜像检查与现代企业架构 starter kit 检查；三个 `research/vibe-*` 目录按源事实镜像边界维护，仓库级格式检查跳过镜像内容。
+   功法登记/总表检查和相关测试纳入本地`make test`；GitHub Actions选定目标未改，不冒称新增远端覆盖。
 
 ## Development Workflow
 

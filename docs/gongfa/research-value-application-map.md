@@ -167,7 +167,7 @@
 |:---|:---|:---|:---|
 | `openai/codex` | 理解 coding agent 控制面 | `scripts/`、`skills/`、`references/` | 脚本风险分级、沙箱/审批清单、Agent 控制面模板 |
 | `openai/plugins` | 理解 Codex 能力包和插件分发 | `skills/`、`assets/`、`metadata/` | 插件 manifest、来源审查、安装/回滚清单 |
-| `openai/skills` | 理解技能目录从 catalog 到 plugin 的迁移 | `skills/`、`docs/workflow/` | Skill 生命周期、触发契约和弃用迁移规则 |
+| `openai/skills` | 理解技能目录从 catalog 到 plugin 的迁移 | `skills/`、`docs/gongfa/` | Skill 生命周期、触发契约和弃用迁移规则 |
 | `openai/openai-agents-python` | 理解 Agent、工具、护栏和追踪运行时 | `workflow/`、`references/` | 任务 Agent、工具契约、护栏和证据记录模板 |
 | `openai/openai-agents-js` | 理解 TypeScript Agent 运行时和状态所有权 | `workflow/`、`skills/` | runner、工具审批、session、sandbox 和 tracing 契约 |
 | `openai/openai-cookbook` | 理解官方示例如何变成可复现方法 | `getting-started/`、`references/` | 示例索引、复现前置条件和验证结果模板 |
@@ -193,10 +193,10 @@
 | `ai-coding-lab` | 理解项目矩阵 | `workflow/`、`references/`、`skills/` | 实践项目模板、Skill 打包和评测模式 |
 | `CS146S_CN` | 理解 assignments 验证 | `getting-started/`、`workflow/` | prompt、tool calling、RAG、MCP、agent workflow 练习 |
 | `ai-for-developers-awesome-vibe-coding` | 发现 Vibe Coding 工具族 | `assets/external-resources/`、`research/` | 工具分类词、候选资源和 P1/P2 研究候选 |
-| `daotin-ai-coding` | 观察中文 AI Coding 主题 | `docs/concepts/`、`assets/external-resources/` | 高频关键词、资源候选和经验分流项 |
+| `daotin-ai-coding` | 观察中文 AI Coding 主题 | `docs/gongfa/`、`assets/external-resources/` | 高频关键词、资源候选和经验分流项 |
 | `earyantle-vibe-coding-skill` | 理解最小 Skill 产品化骨架 | `skills/` | Skill 触发、输入输出、引用和发布检查清单 |
 | `liyupi-ai-guide` | 降低中文大众用户的学习门槛 | `docs/getting-started/`、`assets/external-resources/` | 大众化解释、项目实战和工具候选筛选表 |
-| `luzhenqian-ai-coding-lab` | 用项目矩阵承接概念实践 | `docs/workflow/`、未来实践层 | 最小实践项目模板和概念到项目映射 |
+| `luzhenqian-ai-coding-lab` | 用项目矩阵承接概念实践 | `docs/gongfa/`、未来实践层 | 最小实践项目模板和概念到项目映射 |
 | `roocodeinc-roo-code` | 研究归档工具的模式和生命周期 | `research/`、`assets/external-resources/` | archived 标记、替代路径和模式/schema 观察记录 |
 | `wendy7756-vibe-coding-guide` | 理解非程序员的入门障碍 | `docs/getting-started/`、`prompts/` | 人、AI、提示词、工具和环境的低门槛入口说明 |
 
@@ -243,7 +243,7 @@
 
 ### P2：实践项目和 assignments
 
-目标位置：`docs/workflow/` 或未来独立实践层。
+目标位置：`docs/gongfa/` 或未来独立实践层。
 
 应落地产物：
 

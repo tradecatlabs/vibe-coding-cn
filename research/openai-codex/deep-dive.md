@@ -97,4 +97,4 @@ exec policy 和配置作为显式层，而不是把风险控制埋进一段提�
 - 把本仓 `scripts/` 的风险分级和可执行入口整理成 `manifest.yml` 或等价登记表。
 - 为高风险脚本补齐 dry-run、输入输出、owner、CI 状态和审计说明。
 - 从 Codex 的 `exec policy` 和 `sandbox` 文档中抽象本仓可用的脚本治理检查清单。
-- 在 `docs/references/` 沉淀“coding agent 控制面”模板，避免研究结论长期滞留在 research。
+- 在 `docs/gongfa/` 沉淀“coding agent 控制面”模板，避免研究结论长期滞留在 research。

@@ -57,4 +57,4 @@ github/spec-kit 是 GitHub 官方的 Spec-Driven Development 工具包，为 AI 
 
 - constitution、specify、plan、tasks、implement 和 converge 的产物边界是否稳定。
 - extensions、presets、bundles 和多 Agent 集成如何控制扩展复杂度。
-- 哪些规格产物适合下沉到本仓 docs/references 或 workflow。
+- 哪些规格产物适合下沉到本仓 docs/gongfa 的规格与流程文集。

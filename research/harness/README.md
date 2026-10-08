@@ -3,16 +3,16 @@
 ## 字多不看
 
 - 本目录把 Harness 作为独立研究对象维护。
-- 稳定正文入口是 [Harness 工程解析](harness-engineering.md)。
+- 统一功法正文入口是 [Harness 工程解析](../../docs/gongfa/harness-engineering.md)。
 - Lilian Weng 原文抓取进入 [raw](raw/lilian-weng-harness-engineering-for-self-improvement.md)，中文摘记进入 [notes](notes/lilian-weng-harness-rsi-outline.md)。
 - 研究重点是工程控制、评估器、反馈闭环、上下文注入、架构约束和长期治理。
-- 成熟结论可晋升到 `docs/concepts/`、`docs/references/`、`docs/workflow/` 或 `skills/`。
+- 可复用解释、准则和方法正文统一进入 `docs/gongfa/`；可执行能力进入 `skills/`。
 
 ## 快速导航
 
 | 文档 | 定位 |
 |:---|:---|
-| [Harness 工程解析](harness-engineering.md) | 工程控制、评估器、反馈闭环与 AI 生成系统可靠性。 |
+| [Harness 工程解析](../../docs/gongfa/harness-engineering.md) | 功法文集：工程控制、评估器、反馈闭环与 AI 生成系统可靠性。 |
 | [Lilian Weng 原文抓取](raw/lilian-weng-harness-engineering-for-self-improvement.md) | Harness Engineering for Self-Improvement 的 raw 事实层。 |
 | [Lilian Weng 提纲摘记](notes/lilian-weng-harness-rsi-outline.md) | 面向 RSI 与 Harness 设计模式的中文摘记。 |
 | [Lilian Weng 短摘](notes/lilian-weng-harness-rsi-short-note.md) | Harness 与 RSI 关系的短摘。 |
@@ -23,7 +23,7 @@
 
 ### 细粒度目录
 
-- [Harness 工程解析](harness-engineering.md) - 工程控制、评估器、反馈闭环与 AI 生成系统可靠性。
+- [Harness 工程解析](../../docs/gongfa/harness-engineering.md) - 功法文集：工程控制、评估器、反馈闭环与 AI 生成系统可靠性。
 - [Lilian Weng 原文抓取](raw/lilian-weng-harness-engineering-for-self-improvement.md) - Harness Engineering for Self-Improvement 的 raw 事实层。
 - [Lilian Weng 提纲摘记](notes/lilian-weng-harness-rsi-outline.md) - 面向 RSI 与 Harness 设计模式的中文摘记。
 - [Lilian Weng 短摘](notes/lilian-weng-harness-rsi-short-note.md) - Harness 与 RSI 关系的短摘。

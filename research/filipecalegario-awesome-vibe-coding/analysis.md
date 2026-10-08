@@ -60,5 +60,5 @@
 
 ## 沉淀判断
 
-- 稳定结果进入 `assets/external-resources/`、`docs/concepts/keyword-system.md` 和资源治理文档。
+- 稳定结果进入 `assets/external-resources/`、`docs/gongfa/keyword-system.md` 和资源治理文档。
 - 本研究域保持 P2 国际雷达，只有具体工具被验证后才升级为独立研究域。

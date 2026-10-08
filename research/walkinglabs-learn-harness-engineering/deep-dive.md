@@ -93,7 +93,7 @@ Lecture 10 的关键判断是：只跑单元测试会遗漏组件边界问题，
 这说明成熟研究对象应该至少有一条“从文章到工具”的路径。对本仓来说，Harness 研究成熟后应沉淀到：
 
 - `research/harness/`：概念、机制、对标与判断。
-- `docs/workflow/`：日常执行流程和质量门禁。
+- `docs/gongfa/`：可复用概念、方法、日常流程和质量门禁正文。
 - `scripts/`：可自动检查的规则。
 - `skills/`：可复用的 Agent 操作能力。
 
@@ -115,7 +115,7 @@ Lecture 10 的关键判断是：只跑单元测试会遗漏组件边界问题，
 
 - `research/harness/` 继续承载 Harness Engineering 概念与外部论文/文章对齐。
 - `research/walkinglabs-learn-harness-engineering/` 承载该课程仓库的一手研究。
-- `docs/workflow/` 承载本仓实际如何使用 Harness 控制 AI 协作。
+- `docs/gongfa/` 承载本仓实际如何使用 Harness 控制 AI 协作的通用方法正文。
 - `scripts/` 或 `skills/` 只在检查逻辑稳定后再接管自动化。
 
 关键取舍是：吸收控制面和验证闭环，不复制其课程站点和多语言工程复杂度。

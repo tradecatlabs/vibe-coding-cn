@@ -71,6 +71,6 @@ Engineering 拆成可复制的仓库控制面：入口指令、状态文件、�
 
 ## 沉淀判断
 
-- 稳定概念进入 `research/harness/` 和 `docs/workflow/`。
+- 可复用概念正文进入 `docs/gongfa/`，相关研究观察留在 `research/harness/`。
 - 可执行检查表成熟后，可进入 `scripts/` 或 `skills/`。
 - 本研究域保持 P2，对齐 Harness Engineering 课程和工具化对标对象。

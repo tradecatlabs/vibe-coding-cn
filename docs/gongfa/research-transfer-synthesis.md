@@ -57,7 +57,7 @@
 |:---|:---|:---|:---|:---|
 | `openai-codex` | coding-agent-tooling | 执行控制面 | `scripts/`、`workflow/`、`references/` | 建脚本风险登记表 |
 | `openai-plugins` | coding-agent-tooling | 插件 manifest、marketplace 和 skill-only plugin 分发 | `skills/`、`assets/`、`metadata/` | 建插件来源、权限和回滚检查清单 |
-| `openai-skills` | coding-agent-tooling | Skills Catalog 到 Plugins 的迁移边界 | `skills/`、`docs/workflow/` | 为现有 Skill 标记生命周期和弃用路径 |
+| `openai-skills` | coding-agent-tooling | Skills Catalog 到 Plugins 的迁移边界 | `skills/`、`docs/gongfa/` | 为现有 Skill 标记生命周期和弃用路径 |
 | `openai-agents-python` | agent-runtime | Agent、Tools、Handoffs、Guardrails、Sessions 和 Tracing | `workflow/`、`references/` | 建计划、工具、副作用和验证的生命周期表 |
 | `openai-agents-js` | agent-runtime | TypeScript runner、工具审批和状态追踪 | `workflow/`、`skills/` | 建工具意图到证据的生命周期表 |
 | `openai-cookbook` | agent-development-guides | 可复现 API、Codex、Agent 和评估示例 | `getting-started/`、`references/` | 建示例复现记录模板 |
@@ -156,9 +156,9 @@ AI 原生知识库控制面
 | P0 | 更新 P1 研究域 `analysis.md` | `research/*/analysis.md` | 每个样板有对标拆解、改良迭代和试用动作 |
 | P0 | 升级研究域治理契约 | `research/research-domain-contract.md` | L2/L3 明确要求迁移动作和验证指标 |
 | P1 | 建立 scripts 控制面 | `scripts/` | manifest、风险等级、自动/人工边界 |
-| P1 | 建立入口矩阵 | `docs/references/` 或 `docs/workflow/` | 人类、AI、脚本、skill、资源入口边界清楚 |
+| P1 | 建立入口矩阵 | `docs/gongfa/` 或 `docs/gongfa/` | 人类、AI、脚本、skill、资源入口边界清楚 |
 | P1 | 建立资源 schema | `assets/external-resources/` | 字段、生命周期、过期检查和去重规则 |
-| P2 | 建立经验分流规则 | `docs/getting-started/`、`docs/workflow/`、`skills/` | 经验短句能下沉成可执行产物 |
+| P2 | 建立经验分流规则 | `docs/getting-started/`、`docs/gongfa/`、`skills/` | 经验短句能下沉成可执行产物 |
 
 ## 验收标准
 

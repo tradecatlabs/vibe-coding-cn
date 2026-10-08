@@ -84,5 +84,5 @@ Aider 把 Git 状态放在核心位置。它不是让 AI 随意改文件，而�
 
 - 为本仓建立“文档地图/研究地图”的生成或校验机制，降低长文档索引漂移。
 - 把 Git dirty state、门禁命令和验证证据纳入研究域 closeout 模板。
-- 在 `docs/workflow/` 沉淀“AI 修改 -> diff 审查 -> 门禁 -> 提交”的最小闭环。
+- 在 `docs/gongfa/` 沉淀“AI 修改 -> diff 审查 -> 门禁 -> 提交”的最小闭环。
 - 对本仓常见 Markdown 修改任务设计小型 benchmark，比较全文件编辑和局部 patch 的稳定性。

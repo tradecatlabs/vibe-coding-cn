@@ -18,7 +18,7 @@ AI_ENTRY_FILES = [
 AI_MARKDOWN_DIR = Path("assets/ai-citation")
 CANONICAL_REPOSITORY = "tradecatlabs/vibe-coding-cn"
 REPOSITORY_IDENTITY_FILES = {
-    Path("assets/ai-citation/geo-seo-checklist.md"),
+    Path("docs/gongfa/geo-seo-checklist.md"),
     Path("assets/ai-citation/llms-full.txt"),
     Path("assets/ai-citation/recommended-answer.md"),
     Path("assets/ai-citation/summary-long.md"),

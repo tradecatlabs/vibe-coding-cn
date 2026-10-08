@@ -15,19 +15,19 @@
 
 | 路线 | 适合谁 | 目标 | 首选入口 |
 |:---|:---|:---|:---|
-| 零基础路线 | 不会编程或刚开始 | 跑通从想法到项目的最小闭环 | [问题求解](../concepts/problem-solving.md) / [状态转移闭环](../concepts/vibe-coding-state-transition.md) |
-| 开发者路线 | 已会写代码 | 建立 AI 结对编程工作流 | [Vibe Coding 经验](vibe-coding-experience.md) / [状态转移闭环](../concepts/vibe-coding-state-transition.md) |
+| 零基础路线 | 不会编程或刚开始 | 跑通从想法到项目的最小闭环 | [问题求解](../gongfa/problem-solving.md) / [状态转移闭环](../gongfa/vibe-coding-state-transition.md) |
+| 开发者路线 | 已会写代码 | 建立 AI 结对编程工作流 | [Vibe Coding 经验](../gongfa/vibe-coding-experience.md) / [状态转移闭环](../gongfa/vibe-coding-state-transition.md) |
 | Prompt 路线 | 想提升提问质量 | 把需求表达成可执行指令 | [提示词库](../../prompts/README.md) |
 | Skill 路线 | 想沉淀复用能力 | 把高频任务做成可重复调用的技能 | [Skills 技能大全](../../skills/README.md) |
-| 质量门禁路线 | 担心 AI 乱写代码 | 用测试、CI、schema、清单约束 AI 输出 | [工程实践](../references/project-architecture-template.md) |
+| 质量门禁路线 | 担心 AI 乱写代码 | 用测试、CI、schema、清单约束 AI 输出 | [工程实践](../gongfa/project-architecture-template.md) |
 
 ### 路线一：零基础路线
 
 目标：完成一次“想法 -> 需求 -> 方案 -> 任务 -> AI 编码 -> 验证 -> Git 保存”的最小闭环。
 
-1. [问题求解](../concepts/problem-solving.md)
+1. [问题求解](../gongfa/problem-solving.md)
    先学会把问题说清楚：目标、现状、差距、标准、约束、对象、路径。
-2. [Vibe Coding 状态转移闭环](../concepts/vibe-coding-state-transition.md)
+2. [Vibe Coding 状态转移闭环](../gongfa/vibe-coding-state-transition.md)
    再把目标、约束、行动、证据和版本串成一轮可验证、可回滚的状态转移。
 3. [网络环境配置](network-environment.md)
    先解决访问 OpenAI、GitHub、文档和依赖源的问题。
@@ -35,7 +35,7 @@
    配置并登录 Codex CLI，让本地 Agent 能在终端里执行工程动作。
 5. [开发环境搭建](development-environment.md)
    优先交给 Codex Agent 主动检查和配置 Git、Node.js、Python、编辑器、项目依赖与测试命令。
-6. [Vibe Coding 经验](vibe-coding-experience.md)
+6. [Vibe Coding 经验](../gongfa/vibe-coding-experience.md)
    学会人机分工、门禁、复盘和用 AI 审 AI。
 7. [第一个项目](first-project.md)
    用本地待办清单走通需求、实现、运行、验收和 Git 保存。
@@ -53,13 +53,13 @@
 
 目标：把 AI 从“临时助手”变成稳定的工程协作者。
 
-1. [Vibe Coding 状态转移闭环](../concepts/vibe-coding-state-transition.md)
+1. [Vibe Coding 状态转移闭环](../gongfa/vibe-coding-state-transition.md)
    先建立目标、约束、行动、证据和版本组成的总模型。
-2. [Vibe Coding 经验](vibe-coding-experience.md)
+2. [Vibe Coding 经验](../gongfa/vibe-coding-experience.md)
    再建立人机分工和质量意识。
-3. [拼好码](../concepts/glue-coding.md)
+3. [拼好码](../gongfa/glue-coding.md)
    优先复用成熟能力，把自研代码限制在连接、编排、适配和业务逻辑。
-4. [工程实践](../references/project-architecture-template.md)
+4. [工程实践](../gongfa/project-architecture-template.md)
    在任务开始前写清楚目标、边界、禁止项、验收标准和门禁，并用底层程序逻辑检查项约束实现质量。
 
 完成标准：
@@ -74,9 +74,9 @@
 目标：把自然语言需求写成可执行、可检查、可复用的指令。
 
 1. [提示词库入口](../../prompts/README.md)
-2. [工程实践](../references/project-architecture-template.md)
-3. [语言层要素](../concepts/language-layers.md)
-4. [问题求解](../concepts/problem-solving.md)
+2. [工程实践](../gongfa/project-architecture-template.md)
+3. [语言层要素](../gongfa/language-layers.md)
+4. [问题求解](../gongfa/problem-solving.md)
 
 练习方式：
 
@@ -106,7 +106,7 @@
 优先阅读：
 
 1. [AGENTS.md](../../AGENTS.md)
-2. [工程实践](../references/project-architecture-template.md)
+2. [工程实践](../gongfa/project-architecture-template.md)
 
 团队约束：
 
@@ -136,5 +136,5 @@
 ### 下一步
 
 - 新手：回到 [学习地图](learning-map.md)，从第 0 步开始；环境就绪后完成 [第一个项目](first-project.md)。
-- 开发者：阅读 [Vibe Coding 经验](vibe-coding-experience.md)，再选择 Skill 或质量门禁路线。
+- 开发者：阅读 [Vibe Coding 经验](../gongfa/vibe-coding-experience.md)，再选择 Skill 或质量门禁路线。
 - 团队：先统一 [AGENTS.md](../../AGENTS.md)、强前置条件和质量门禁。

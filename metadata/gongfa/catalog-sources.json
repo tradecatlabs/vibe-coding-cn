@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "kind": "catalog_candidate_source_index_not_registry",
+  "snapshot": {
+    "path": "source-classified-candidates-20261007.json",
+    "sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5"
+  },
+  "candidate_counts": {
+    "html211": 211,
+    "solve24": 24,
+    "html96": 96
+  }
+}

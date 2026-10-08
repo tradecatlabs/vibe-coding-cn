@@ -276,7 +276,7 @@ P1/P2 研究域的 `analysis.md` 必须包含：
 - `research/README.md` 的索引判断中。
 - 新增的独立对比文档中。
 - `research-transfer-synthesis.md` 这样的迁移综合文档中。
-- 成熟后迁入 `docs/references/` 或 `docs/concepts/`。
+- 可复用解释、准则与方法正文迁入 `docs/gongfa/`；保留来源及未验证状态，迁移不等于效果验证。
 
 禁止为了比较方便把多个研究对象塞回同一个目录。
 
@@ -284,9 +284,8 @@ P1/P2 研究域的 `analysis.md` 必须包含：
 
 研究结论稳定后必须下沉，而不是长期停在 research：
 
-- 概念和方法论进入 `docs/concepts/`。
-- 工程模板、清单和技术栈判断进入 `docs/references/`。
-- 开发流程和门禁进入 `docs/workflow/`。
+- 概念、哲学、模型、方法论、工程准则、模板、清单与流程正文统一进入 `docs/gongfa/`。
+- 研究域保留具体对象、原始事实、观察和验证记录，不再独立维护通用方法正文。
 - 可复用 Agent 能力进入 `skills/`。
 - 只剩历史价值的观察进入本研究域 `archive/`，或在 `domain.yml.maintenance` 中说明归档原因。
 

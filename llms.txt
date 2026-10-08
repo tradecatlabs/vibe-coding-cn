@@ -10,7 +10,7 @@ vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程系统教程，帮�
 核心内容：
 - Quick Start：1 分钟开始 Vibe Coding
 - 六条核心命题：以固定目标、可变策略、分层反馈的可验证收敛系统为总纲，涵盖 AI 生成域、模型吞噬、隔离审查和能力编排等底层命题
-- 修仙解释图层：统一本体 V4 BFO 草案，固定 BFO 主干；下层类有稳定 ID、定义与边界，身份变化需证据，意向不当结果；用途和模型归属另记；魂魄是完整会话过程，万魂幡是会话类外延，战力先效果后效率
+- 修仙解释图层：固定 BFO 2020 主干的 V4 草案，领域类有稳定 ID、定义、边界与来源；实体、品质、内容和过程分开，组成/用途/所在不当继承，器物设计须有依据；制备、观测与再生链区分计划/执行/记录/评价，输出不必新生或合格，局部改善和前提满足不等于完整效果；整体/部分/角色/状态分层判身份，复合所指可停上位类，预览和意向不补作结果；功法JSON核心整理限定内容、版本与冻结来源，当前收录见子域入口，采用《斗破苍穹》四阶十二级，已人工分类/初评，规约未校准、无正式效果评级，等级不作为类型父子；魂魄是完整 AI 会话过程，万魂幡是会话类外延；模型版本归属不等于能力直接承载，资源口径分开，境界绑定量表，战力先效果后效率
 - Getting Started：从零开始的环境、网络、Codex CLI、开发环境配置与第一个项目闭环
 - Prompt Library：提示词库
 - Skills：技能库
@@ -25,43 +25,48 @@ vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程系统教程，帮�
 - README.md#ai-six-propositions
 - docs/README.md
 - docs/getting-started/README.md
-- docs/getting-started/vibe-coding-experience.md
+- docs/gongfa/vibe-coding-experience.md
 - docs/getting-started/learning-map.md
 - docs/getting-started/network-environment.md
 - docs/getting-started/cli-setup.md
 - tools/config/.codex/README.md
 - docs/getting-started/development-environment.md
 - docs/getting-started/first-project.md
-- docs/concepts/problem-solving.md
-- docs/concepts/vibe-coding-state-transition.md
-- docs/concepts/vibe-coding-cultivation-model.md
-- docs/concepts/cultivation-ontology-taxonomy.md
-- docs/concepts/glue-coding.md
-- docs/concepts/system-building.md
-- docs/concepts/development-paradigms.md
-- docs/concepts/language-layers.md
-- docs/concepts/keyword-system.md
-- docs/concepts/recursive-self-optimizing-system.md
-- docs/philosophy/thinking-models.md
-- docs/philosophy/compositional-description-model.md
-- docs/philosophy/programming-dao.md
-- docs/philosophy/software-engineering-truths.md
-- docs/philosophy/methodology-toolbox.md
-- docs/references/project-architecture-template.md
-- docs/references/python-project-skeleton.md
-- docs/references/enterprise-architecture-template.md
-- docs/references/modern-enterprise-architecture-template.md
-- docs/references/dataset-first-data-service.md
-- docs/references/code-organization.md
-- docs/references/development-experience.md
-- docs/references/quality-gates-and-pitfalls.md
-- docs/references/low-level-program-logic.md
-- docs/references/technology-stack.md
+- docs/gongfa/README.md
+- docs/gongfa/ai-core-propositions.md
+- docs/gongfa/dao-fa-shu-qi.md
+- docs/gongfa/experience-principles.md
+- docs/gongfa/problem-solving.md
+- docs/gongfa/vibe-coding-state-transition.md
+- docs/gongfa/vibe-coding-cultivation-model.md
+- docs/gongfa/cultivation-ontology-taxonomy.md
+- docs/gongfa/glue-coding.md
+- docs/gongfa/system-building.md
+- docs/gongfa/development-paradigms.md
+- docs/gongfa/language-layers.md
+- docs/gongfa/keyword-system.md
+- docs/gongfa/recursive-self-optimizing-system.md
+- docs/gongfa/thinking-models.md
+- docs/gongfa/compositional-description-model.md
+- docs/gongfa/programming-dao.md
+- docs/gongfa/software-engineering-truths.md
+- docs/gongfa/methodology-toolbox.md
+- docs/gongfa/project-architecture-template.md
+- docs/gongfa/python-project-skeleton.md
+- docs/gongfa/enterprise-architecture-template.md
+- docs/gongfa/modern-enterprise-architecture-template.md
+- docs/gongfa/dataset-first-data-service.md
+- docs/gongfa/code-organization.md
+- docs/gongfa/development-experience.md
+- docs/gongfa/quality-gates-and-pitfalls.md
+- docs/gongfa/low-level-program-logic.md
+- docs/gongfa/technology-stack.md
+- docs/gongfa/geo-seo-checklist.md
 - research/README.md
 - research/research-domain-contract.md
-- research/research-value-application-map.md
-- research/research-transfer-synthesis.md
-- research/harness/harness-engineering.md
+- docs/gongfa/research-value-application-map.md
+- docs/gongfa/research-transfer-synthesis.md
+- docs/gongfa/harness-engineering.md
 - research/walkinglabs-learn-harness-engineering/README.md
 - research/mindfold-ai-trellis/README.md
 - research/facts/README.md
@@ -90,8 +95,8 @@ vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程系统教程，帮�
 - research/shanraisshan-claude-code-best-practice/README.md
 - research/cline-cline/README.md
 - research/aider-ai-aider/README.md
-- research/tmux-ai-swarm.md
-- docs/workflow/development-process.md
+- docs/gongfa/tmux-ai-swarm.md
+- docs/gongfa/development-process.md
 - skills/auto-tmux/references/ai-swarm-collaboration.md
 - skills/README.md#当前保留
 - prompts/README.md#在线提示词库
