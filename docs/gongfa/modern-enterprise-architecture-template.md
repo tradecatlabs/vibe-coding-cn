@@ -73,7 +73,7 @@
 3. 决策记录：重大变更必须链接 ADR 或评审记录。
 4. 版本清单：同步更新 `本地私有版本清单`，并让 CI 校验版本、状态、pair 数量、控制项数量和索引提及。
 5. 控制覆盖：同步更新 `本地私有控制项覆盖清单`，并让 CI 校验控制项到 schema、example 和 checker 证据链。
-6. 索引同步：同步更新 `docs/README.md`、`docs/references/README.md`、`metadata/taxonomy.yml` 和 AI 引用语料入口。
+6. 索引同步：同步更新 `docs/README.md`、`docs/gongfa/README.md`、`metadata/taxonomy.yml` 和 AI 引用语料入口。
 7. 链接校验：仓库内 Markdown 链接和锚点必须通过检查。
 8. 格式校验：Markdown lint 和文档结构检查必须通过。
 9. 回滚入口：保留上一版本引用、Git commit 或变更记录，保证可以回退到上一基线。
@@ -5762,7 +5762,7 @@ baselineArtifactInventory:
     privacyRightsConsentLedger: governance/evidence/baselines/baseline-privacy-rights-consent-ledger.yaml
     recordsRetentionLegalHoldLedger: governance/evidence/baselines/baseline-records-retention-legal-hold-ledger.yaml
   artifacts:
-    - path: docs/references/modern-enterprise-architecture-template.md
+    - path: docs/gongfa/modern-enterprise-architecture-template.md
       type: document
       required: true
       owner: architecture-governance-board
@@ -6159,7 +6159,7 @@ baselineArtifactInventory:
       digest: sha256:<audit-export-json-digest>
       generatedBy: internal-command://architecture/export-modern-architecture-audit
       sourceArtifacts:
-        - docs/references/modern-enterprise-architecture-template.md
+        - docs/gongfa/modern-enterprise-architecture-template.md
         - governance/control-plane/version-governance.yaml
   externalReferences:
     - name: SLSA v1.2
@@ -12071,9 +12071,9 @@ baselinePublishTransaction:
     commitSigned: true
     author: architecture-document-owner
     committedFiles:
-      - docs/references/modern-enterprise-architecture-template.md
+      - docs/gongfa/modern-enterprise-architecture-template.md
       - docs/README.md
-      - docs/references/README.md
+      - docs/gongfa/README.md
   tag:
     name: architecture/v2.53-candidate
     targetCommit: <git-sha-of-baseline-commit>
@@ -12992,7 +12992,7 @@ auditExportExclusionManifest:
     requireBoundaryRefForLocalPrivateArtifact: true
     excludeRawLocalPrivateArtifactsFromSignaturePayload: true
   rawAllowlist:
-    - path: docs/references/modern-enterprise-architecture-template.md
+    - path: docs/gongfa/modern-enterprise-architecture-template.md
       reason: public-source-document
       digest: sha256:<document-digest>
       includedIn:

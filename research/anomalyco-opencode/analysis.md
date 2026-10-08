@@ -58,4 +58,4 @@
 
 ## 沉淀判断
 
-稳定结论可下沉到 `docs/getting-started/cli-setup.md` 和 `docs/references/` 的配置/权限部分；v2 spec 的未定设计继续保留在研究域，不能写成教程硬规则。
+稳定结论可下沉到 `docs/getting-started/cli-setup.md` 和 `docs/gongfa/` 的配置/权限部分；v2 spec 的未定设计继续保留在研究域，不能写成教程硬规则。

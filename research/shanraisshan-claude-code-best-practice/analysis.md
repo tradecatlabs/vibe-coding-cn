@@ -61,5 +61,5 @@ research 或 reports，而不是长期堆在一个经验清单里。
 
 ## 沉淀判断
 
-- 稳定结论应下沉到 `docs/getting-started/`、`docs/workflow/`、`docs/references/` 和 `skills/`。
+- 稳定结论正文下沉到 `docs/gongfa/`；入门教程消费实例与摘要，可执行能力进入 `skills/`。
 - `deep-dive.md` 保留证据；本文件负责把证据转成迁移动作。

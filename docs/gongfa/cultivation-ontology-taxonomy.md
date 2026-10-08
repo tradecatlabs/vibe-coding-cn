@@ -491,12 +491,12 @@ JSON已登记12条定性规则建议，但任务、基线、环境预算和结�
 
 | 登记ID | 功法与来源 | 内容版本 | 已有主类 | 核心与所指范围 | 品级 |
 |---|---|---|---|---|---|
-| `gongfa-compositional-description` | [组合描述模型](../philosophy/compositional-description-model.md#philosophy-compositional-description-model) | `r1` | `explanatory-content` | 开篇对象、状态、过程、同一/差异与关系的解释框架；不收录全文所有操作步骤，也不拿其内部概念替换BFO。 | 未评级 |
-| `gongfa-network-effects` | [网络效应](../philosophy/thinking-models.md#philosophy-thinking-models-网络效应) | `r1` | `explanatory-content` | 节点/连接增加与网络价值上升的核心解释关系；不包含同节选型步骤，关系是否在具体场景成立另验。 | 未评级 |
-| `gongfa-occams-razor` | [奥卡姆剃刀](../philosophy/thinking-models.md#philosophy-thinking-models-奥卡姆剃刀) | `r1` | `normative-allocation-content` | 相同解释/验收及关键约束下优先更少假设和结构的准则；不是无条件删功能或防护。 | 未评级 |
+| `gongfa-compositional-description` | [组合描述模型](compositional-description-model.md#philosophy-compositional-description-model) | `r1` | `explanatory-content` | 开篇对象、状态、过程、同一/差异与关系的解释框架；不收录全文所有操作步骤，也不拿其内部概念替换BFO。 | 未评级 |
+| `gongfa-network-effects` | [网络效应](thinking-models.md#philosophy-thinking-models-网络效应) | `r1` | `explanatory-content` | 节点/连接增加与网络价值上升的核心解释关系；不包含同节选型步骤，关系是否在具体场景成立另验。 | 未评级 |
+| `gongfa-occams-razor` | [奥卡姆剃刀](thinking-models.md#philosophy-thinking-models-奥卡姆剃刀) | `r1` | `normative-allocation-content` | 相同解释/验收及关键约束下优先更少假设和结构的准则；不是无条件删功能或防护。 | 未评级 |
 | `gongfa-glue-principle` | [胶水原则](glue-coding.md#concept-glue-coding-胶水原则) | `r1` | `normative-allocation-content` | 成熟能力能满足关键约束时优先复用的准则及例外；不收整篇交付流程，不等于盲目依赖。 | 未评级 |
-| `gongfa-first-principles` | [第一性原理](../philosophy/thinking-models.md#philosophy-thinking-models-第一性原理) | `r1` | `method-specification` | 审查结论前提、区分事实/假设/偏好/惯例，再从事实约束推导路径的五步操作版。 | 未评级 |
-| `gongfa-abductive-debugging` | [溯因排错法（仓内操作版）](../philosophy/methodology-toolbox.md#philosophy-methodology-toolbox-12-溯因推理abduction最佳解释) | `r1` | `method-specification` | 列候选原因、设计低成本区分实验、用证据淘汰的排错方法；不声称等于全部溯因逻辑。 | 未评级 |
+| `gongfa-first-principles` | [第一性原理](thinking-models.md#philosophy-thinking-models-第一性原理) | `r1` | `method-specification` | 审查结论前提、区分事实/假设/偏好/惯例，再从事实约束推导路径的五步操作版。 | 未评级 |
+| `gongfa-abductive-debugging` | [溯因排错法（仓内操作版）](methodology-toolbox.md#philosophy-methodology-toolbox-12-溯因推理abduction最佳解释) | `r1` | `method-specification` | 列候选原因、设计低成本区分实验、用证据淘汰的排错方法；不声称等于全部溯因逻辑。 | 未评级 |
 
 上述条目未绑定固定法器。溯因排错需要取得区分性证据，日志、追踪或基准工具只是随环境选择的实现候选，不是从条目登记中自动获得的能力。
 第一版先落清楚所指、来源和关系，不为对称补八个方法叶类，也不批量迁移全库文章或把所有内容打包成 Skill。

@@ -18,11 +18,8 @@
 research/
 ├── README.md  # 索引入口：研究对象与研究笔记导航
 ├── research-domain-contract.md  # 研究域治理契约：结构、分层、成熟度、证据和归档规则
-├── research-value-application-map.md  # 研究价值与应用地图：用户价值、核心启示和下沉路线
-├── research-transfer-synthesis.md  # 研究迁移综合：对标拆解、改良迭代、杂交创新和验证动作
 ├── harness/
 │   ├── README.md
-│   ├── harness-engineering.md
 │   └── AGENTS.md
 ├── facts/
 │   ├── README.md
@@ -176,7 +173,6 @@ research/
 │   ├── README.md
 │   ├── domain.yml
 │   └── AGENTS.md
-├── tmux-ai-swarm.md
 └── AGENTS.md  # 本目录操作规则
 ```
 
@@ -195,12 +191,13 @@ research/
 - `raw/` 是原始事实层，只保存拉取到本地的一手材料；分析判断写入上一级 `README.md`、`analysis.md` 或 `decisions.md`。
 - `raw/repository/` 是外部仓库快照，只作为本地事实缓存；不提交到主仓、不按本仓 Markdown 风格重写，并从 lint、链接和目录文档门禁中排除。
 - `research/vibe-cybersecurity-cn/`、`research/vibe-harness-cn/` 和 `research/vibe-mathing-cn-public/` 是源事实镜像；它们不包含源仓库 `.git`、历史、未跟踪文件或运行产物，并从根仓库格式门禁中排除。边界和隐私修复由 `make check-source-facts` 校验。
-- `research-value-application-map.md` 是研究体系的转化入口，用于说明研究给用户带来的价值、启示、应用位置和下沉路线。
-- `research-transfer-synthesis.md` 是横向迁移入口，用于把研究对象拆成机制、迁移边界、改良动作和验证指标。
+- `docs/gongfa/research-value-application-map.md` 与 `research-transfer-synthesis.md` 是研究转化与横向迁移的统一功法正文，本目录仅提供导航。
+- 具体研究对象的 `analysis.md`、`deep-dive.md` 保留观察、来源、风险和试用记录，不在研究域另起通用方法正文库。
 - GitHub 仓库 raw 层通过 `python3 scripts/fetch-research-raw.py` 刷新；不要手工改写 `*.raw.*` 文件。
 - 单次短篇观察可以先写成独立 `.md` 文档；如果对象会持续演化，应迁入对象目录。
 - 新增研究对象目录或研究 `.md` 文件时，必须同步更新 `README.md`、`metadata/taxonomy.yml` 和必要的 `redirects.yml`。
-- 研究内容稳定后，放入 `docs/concepts/`、`docs/references/` 或 `docs/philosophy/` 的对应章节。
+- 可复用的解释、准则、方法、哲学或模型正文统一纳入 `docs/gongfa/`；保留其来源、假设和未验证状态，不因移动声称成熟或有效。
+- 不恢复旧方法目录或可编辑副本；原始事实、具体对象的观察/证据仍由研究域维护。
 - 外部项目、模型、工具、版本和事实状态可能变化，涉及最新信息时必须核验来源。
 - 不在 README 正文中写 `和其他目录的边界` 或 `维护规则`；维护者规则只写本文件。
 

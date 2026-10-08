@@ -238,7 +238,7 @@
     {
       "id": "repo-thinking-models-81fc7ae",
       "kind": "repository_document",
-      "path": "docs/philosophy/thinking-models.md",
+      "path": "docs/gongfa/thinking-models.md",
       "git_revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",
       "captured_at": "2026-10-07T04:29:18.396921Z",
       "snapshot_path": "metadata/gongfa/source-thinking-models-81fc7ae.txt",
@@ -257,7 +257,7 @@
     {
       "id": "repo-methodology-toolbox-81fc7ae",
       "kind": "repository_document",
-      "path": "docs/philosophy/methodology-toolbox.md",
+      "path": "docs/gongfa/methodology-toolbox.md",
       "git_revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",
       "captured_at": "2026-10-07T04:29:18.396921Z",
       "snapshot_path": "metadata/gongfa/source-methodology-toolbox-81fc7ae.txt",
@@ -294,7 +294,7 @@
     {
       "id": "repo-compositional-description-81fc7ae",
       "kind": "repository_document",
-      "path": "docs/philosophy/compositional-description-model.md",
+      "path": "docs/gongfa/compositional-description-model.md",
       "git_revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",
       "captured_at": "2026-10-07T04:29:18.396921Z",
       "snapshot_path": "metadata/gongfa/source-compositional-description-81fc7ae.txt",
@@ -307,7 +307,7 @@
     {
       "id": "repo-glue-coding-81fc7ae",
       "kind": "repository_document",
-      "path": "docs/concepts/glue-coding.md",
+      "path": "docs/gongfa/glue-coding.md",
       "git_revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",
       "captured_at": "2026-10-07T04:29:18.396921Z",
       "snapshot_path": "metadata/gongfa/source-glue-coding-81fc7ae.txt",
@@ -349,7 +349,7 @@
     {
       "id": "repo-system-building-81fc7ae",
       "kind": "repository_document",
-      "path": "docs/concepts/system-building.md",
+      "path": "docs/gongfa/system-building.md",
       "git_revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",
       "captured_at": "2026-10-07T06:03:59.363591Z",
       "snapshot_path": "metadata/gongfa/source-system-building-81fc7ae.txt",
@@ -364,7 +364,7 @@
     {
       "id": "repo-problem-solving-81fc7ae",
       "kind": "repository_document",
-      "path": "docs/concepts/problem-solving.md",
+      "path": "docs/gongfa/problem-solving.md",
       "git_revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",
       "captured_at": "2026-10-07T06:03:59.365887Z",
       "snapshot_path": "metadata/gongfa/source-problem-solving-81fc7ae.txt",
@@ -377,7 +377,7 @@
     {
       "id": "repo-recursive-self-optimizing-system-81fc7ae",
       "kind": "repository_document",
-      "path": "docs/concepts/recursive-self-optimizing-system.md",
+      "path": "docs/gongfa/recursive-self-optimizing-system.md",
       "git_revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",
       "captured_at": "2026-10-07T06:03:59.367982Z",
       "snapshot_path": "metadata/gongfa/source-recursive-self-optimizing-system-81fc7ae.txt",
@@ -390,7 +390,7 @@
     {
       "id": "repo-programming-dao-81fc7ae",
       "kind": "repository_document",
-      "path": "docs/philosophy/programming-dao.md",
+      "path": "docs/gongfa/programming-dao.md",
       "git_revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",
       "captured_at": "2026-10-07T06:03:59.370173Z",
       "snapshot_path": "metadata/gongfa/source-programming-dao-81fc7ae.txt",
@@ -411,7 +411,7 @@
     {
       "id": "repo-software-engineering-truths-81fc7ae",
       "kind": "repository_document",
-      "path": "docs/philosophy/software-engineering-truths.md",
+      "path": "docs/gongfa/software-engineering-truths.md",
       "git_revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",
       "captured_at": "2026-10-07T09:20:36.243253Z",
       "snapshot_path": "metadata/gongfa/source-software-engineering-truths-81fc7ae.txt",
@@ -428,7 +428,7 @@
     {
       "id": "repo-dataset-first-data-service-81fc7ae",
       "kind": "repository_document",
-      "path": "docs/references/dataset-first-data-service.md",
+      "path": "docs/gongfa/dataset-first-data-service.md",
       "git_revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",
       "captured_at": "2026-10-07T09:20:36.245521Z",
       "snapshot_path": "metadata/gongfa/source-dataset-first-data-service-81fc7ae.txt",
@@ -443,7 +443,7 @@
     {
       "id": "repo-development-experience-81fc7ae",
       "kind": "repository_document",
-      "path": "docs/references/development-experience.md",
+      "path": "docs/gongfa/development-experience.md",
       "git_revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",
       "captured_at": "2026-10-07T09:20:36.247888Z",
       "snapshot_path": "metadata/gongfa/source-development-experience-81fc7ae.txt",
@@ -459,7 +459,7 @@
     {
       "id": "repo-quality-gates-and-pitfalls-81fc7ae",
       "kind": "repository_document",
-      "path": "docs/references/quality-gates-and-pitfalls.md",
+      "path": "docs/gongfa/quality-gates-and-pitfalls.md",
       "git_revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",
       "captured_at": "2026-10-07T09:20:36.250898Z",
       "snapshot_path": "metadata/gongfa/source-quality-gates-and-pitfalls-81fc7ae.txt",

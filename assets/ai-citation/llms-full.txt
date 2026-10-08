@@ -17,9 +17,9 @@ vibe-coding-cn 是中文 Vibe Coding 从入门到精通教程。它面向中文�
 
 ## Core method
 
-核心命题入口是 `README.md#ai-six-propositions`，以固定目标、可变策略、分层反馈的可验证收敛系统为总纲，集中说明 AI 的生成域、模型能力对中间层的吞噬、隔离审查和成熟能力编排。
+本文件只维护项目摘要与导航；方法论、哲学、模型、准则和流程的完整正文唯一维护于 `docs/gongfa/`。核心命题见 `docs/gongfa/ai-core-propositions.md`：固定目标基线，允许策略变化，以有界尝试、验证和显式授权控制闭环。摘要不保证自动收敛或效果。
 
-零号命题的正式表述是：Vibe Coding 可以理解为一种固定目标、可变策略、分层反馈的状态转移系统：先将模糊需求经过澄清、结构化、一致性检查和人工确认，冻结为带版本的目标基线 G*；再让 Agent 在目标和约束不被静默修改的前提下，反复执行“观察当前状态 → 识别状态差距 → 选择策略与行动 → 获取验证证据 → 接受、修正、回滚或切换策略”，使系统逐步进入目标的验收集合。若行动无效则修正行动，若策略无效则切换策略，若目标矛盾、不可行或无法判定则暂停并重新审查或交由人决定。任何目标变更都必须通过显式版本、差异和授权进入新一轮闭环；每一层都必须具备独立验证、回滚、尝试上限和退出机制。
+36 篇是文集正文，不是36门已登记、已验证或已评级功法。身份、内容版本、来源与意见的唯一维护源是 `metadata/gongfa/registry.json`；总表保留410条记录，其中79登记、331候选，408初评、2条不可判，正式评级为0。移动不改变内容版本、冻结来源与旧意见。
 
 本仓库将 AI 编程拆解为五层：
 
@@ -48,22 +48,25 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - README.md#ai-six-propositions：六条核心命题，以固定目标、可变策略、分层反馈的可验证收敛系统为总纲，说明 AI 生成域、模型吞噬、隔离审查和能力编排。
 - docs/README.md：知识库总索引，提供新手、开发者、思维模型和 AI Agent 读取路径。
 - docs/getting-started/README.md：从零开始索引入口，正文拆分到学习地图、Vibe Coding 经验、网络环境、CLI 配置、开发环境搭建与第一个项目闭环。
-- docs/getting-started/vibe-coding-experience.md：Vibe Coding 的核心经验入口，包含通用语言能力、人机分工、机器门禁和入门铁律。
+- docs/gongfa/vibe-coding-experience.md：Vibe Coding 的核心经验入口，包含通用语言能力、人机分工、机器门禁和入门铁律。
 - docs/getting-started/learning-map.md：新手、开发者、团队、Prompt、Skill 和质量门禁的路线选择。
 - docs/getting-started/network-environment.md：OpenAI、GitHub、文档和依赖源访问配置。
 - docs/getting-started/cli-setup.md：Codex CLI 默认路线与 OpenCode 备选路线。
 - tools/config/.codex/README.md：Codex CLI 全局配置基线，支持一键安装、自动备份和恢复。
 - docs/getting-started/development-environment.md：让 Agent 主动配置开发依赖、编辑器建议和测试命令。
 - docs/getting-started/first-project.md：用本地待办清单走通需求、实现、运行、验收和 Git 保存。
-- docs/concepts/README.md：核心概念索引，汇总问题求解、固定目标与反馈闭环、拼好码、系统构建方法、开发范式演进、语言层要素、关键词系统和递归自优化系统。
-- docs/concepts/problem-solving.md：问题定义、目标、约束、对象、路径。
-- docs/concepts/vibe-coding-state-transition.md：用目标基线、状态差距、策略切换、验证证据和分层反馈统一理解 Vibe Coding。
-- docs/concepts/vibe-coding-cultivation-model.md：修仙解释图层，通俗解释统一本体 V4 BFO 草案，不是 AI 运行架构。
+- docs/gongfa/README.md：按理解、求解、设计、实现、验证、转化和内容身份导航的统一功法文集。
+- docs/gongfa/ai-core-propositions.md：AI 协作的完整核心命题。
+- docs/gongfa/dao-fa-shu-qi.md：人机协作、抽象方法、工程流程与工具承载。
+- docs/gongfa/experience-principles.md：原首页完整经验及实验性方法；不是执行授权。
+- docs/gongfa/problem-solving.md：问题定义、目标、约束、对象、路径。
+- docs/gongfa/vibe-coding-state-transition.md：用目标基线、状态差距、策略切换、验证证据和分层反馈统一理解 Vibe Coding。
+- docs/gongfa/vibe-coding-cultivation-model.md：修仙解释图层，通俗解释统一本体 V4 BFO 草案，不是 AI 运行架构。
   魂魄是完整 AI 会话过程，以来源命名空间与 Session ID 联合标识，不是 Memory 或日志。
   万魂幡仍是跨工具全部会话的概念集合，以同一会话类外延表达，不是物质聚合体、数据库或描述文档。
   修为归属于模型版本，BFO 的直接能力承载另按运行实现处理；灵力是资源，不硬套心法＝认知模型、阵法＝Workflow。
   境界须有明确量表；战力先验收任务效果，再在同等合格结果下比较投入，不设通用永久等级。
-- docs/concepts/cultivation-ontology-taxonomy.md：修仙领域唯一分类与语义契约入口（V4 BFO 草案）；BFO 2020 是固定前提，只展开其下层。
+- docs/gongfa/cultivation-ontology-taxonomy.md：修仙领域唯一分类与语义契约入口（V4 BFO 草案）；BFO 2020 是固定前提，只展开其下层。
   根为 entity，其下为 continuant / occurrent；原生类保留 BFO ID 与继承，领域类有稳定 ID、工作定义、边界和依据，主父仅由唯一树维护。
   规约、方法和过程已进一步细分：判定标准不当结果，养成安排不等于施技要领，研习不证明已掌握；复合所指可留可靠上位类，预览不冒充完整规范。
   实体区分生物机体、制成器物、兵器构造、收纳容器、器物组群和围护内部场所；设计种类不随临时用途改变，组成、物体成员、所在及库存信息分别表达。
@@ -82,37 +85,35 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
   逆天邪神最高权重，核对作者、作品 ID 与读取范围；文学事实、人物主张、研究推论与项目决定分开，叙事明确的胡诌不能当真实机制。
   器灵、形态及材料转化先核对身份和实际变化；意向与章名不证明转化完成，未核验结果也不等于确认没有发生。
   未导入 OWL 或证明领域公理一致性；不推广为全仓 JSON IR。功法JSON的CLI只读输出词表与分类初评表，未建设独立数据库或网页应用。
-- docs/concepts/glue-coding.md：胶水原则的扩展，把复用成熟能力作为工程交付默认路径。
-- docs/concepts/system-building.md：自顶向下、自底向上与分而治之的系统构建方法。
-- docs/concepts/development-paradigms.md：软件开发组织方式和 AI 编程范式的演进。
-- docs/concepts/language-layers.md：理解代码所需的语言层级、执行模型、类型系统和工程语义。
-- docs/concepts/keyword-system.md：Vibe Coding 与工程协作中的高频关键词。
-- docs/concepts/recursive-self-optimizing-system.md：递归自优化生成系统的形式化模型。
+- docs/gongfa/glue-coding.md：胶水原则的扩展，把复用成熟能力作为工程交付默认路径。
+- docs/gongfa/system-building.md：自顶向下、自底向上与分而治之的系统构建方法。
+- docs/gongfa/development-paradigms.md：软件开发组织方式和 AI 编程范式的演进。
+- docs/gongfa/language-layers.md：理解代码所需的语言层级、执行模型、类型系统和工程语义。
+- docs/gongfa/keyword-system.md：Vibe Coding 与工程协作中的高频关键词。
+- docs/gongfa/recursive-self-optimizing-system.md：递归自优化生成系统的形式化模型。
 - README.md#dao-fa-shu-qi：用道、法、术、器拆解 AI 协作的问题观、方法论、流程和工具，并合并工具与资源入口。
-- docs/philosophy/README.md：哲学方法论、思维模型、编程哲学与底层认知模型入口。
-- docs/philosophy/thinking-models.md：第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。
-- docs/philosophy/compositional-description-model.md：对象、状态、快照、序列、过程、变换、同一/差异与关系。
-- docs/philosophy/programming-dao.md：编程哲学、结构、状态、复杂度与工程判断。
-- docs/philosophy/software-engineering-truths.md：代码、复杂度、需求、维护、质量、架构和团队的工程常识。
-- docs/philosophy/methodology-toolbox.md：现象学还原、正反合、可证伪主义、形式化方法等提效工具。
-- docs/references/README.md：工程实践、技术栈、模板、清单和质量门禁参考索引。
-- docs/references/project-architecture-template.md：常见项目结构、架构设计原则、最低门禁和检查清单。
-- docs/references/python-project-skeleton.md：Python 应用、服务、脚本工具和库项目的通用骨架。
-- docs/references/enterprise-architecture-template.md：中大型工程组织、平台工程和多产品线参考模型。
-- docs/references/modern-enterprise-architecture-template.md：面向领域产品网络、微服务容器 GitOps 边界、AI 原生能力、微调治理、AI 事件响应、内部平台、数据产品、供应链安全、FinOps 成本治理、版本治理、版本控制面、基线版本策略、发布通道、兼容性与冻结控制总账、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、外部标准版本锁定、可执行标准、执行控制面、门禁决策、RACI 决策权、可靠性分级、仓库拓扑、迁移弃用、审计证据、联邦治理和行业对标矩阵的完整说明文档。
-- docs/references/common-sense.md：AI 编程和工程交付前的最低判断线。
-- docs/references/dataset-first-data-service.md：以 dataset、contract、registry、runtime 为核心的数据服务模板。
-- docs/references/code-organization.md：模块化、命名、注释、格式化、文档和工具。
-- docs/references/development-experience.md：变量名、文件结构、编码规范、架构原则和常见基础设施经验。
-- docs/references/quality-gates-and-pitfalls.md：系统提示词、强前置条件、常见坑和硬门禁。
-- docs/references/low-level-program-logic.md：运行模型、并发模型、数据模型、性能模型和工程交付检查清单。
-- docs/references/technology-stack.md：常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
+- docs/gongfa/thinking-models.md：第一性原理、奥卡姆剃刀、多阶思维、状态空间等认知工具。
+- docs/gongfa/compositional-description-model.md：对象、状态、快照、序列、过程、变换、同一/差异与关系。
+- docs/gongfa/programming-dao.md：编程哲学、结构、状态、复杂度与工程判断。
+- docs/gongfa/software-engineering-truths.md：代码、复杂度、需求、维护、质量、架构和团队的工程常识。
+- docs/gongfa/methodology-toolbox.md：现象学还原、正反合、可证伪主义、形式化方法等提效工具。
+- docs/gongfa/project-architecture-template.md：常见项目结构、架构设计原则、最低门禁和检查清单。
+- docs/gongfa/python-project-skeleton.md：Python 应用、服务、脚本工具和库项目的通用骨架。
+- docs/gongfa/enterprise-architecture-template.md：中大型工程组织、平台工程和多产品线参考模型。
+- docs/gongfa/modern-enterprise-architecture-template.md：面向领域产品网络、微服务容器 GitOps 边界、AI 原生能力、微调治理、AI 事件响应、内部平台、数据产品、供应链安全、FinOps 成本治理、版本治理、版本控制面、基线版本策略、发布通道、兼容性与冻结控制总账、基线生产变更、发布编排、变更冲突与失败恢复总账、基线事故、问题、纠正行动与复发防止总账、基线数据产品质量、契约违约、运行血缘与可观测性总账、基线工程质量、测试证据、缺陷与发布验证总账、基线人员能力、培训、职责履职与职责分离总账、基线业务结果、价值实现与组合收益总账、基线价值流、关键旅程与端到端流程总账、基线架构视图、运行拓扑与依赖影响总账、基线质量属性、架构驱动与权衡决策总账、基线架构原则、约束、反模式与例外执行总账、基线安全配置、加固姿态与配置漂移修复总账、基线漏洞、暴露面与修复验证总账、基线威胁建模、攻击面与安全风险总账、基线容量、性能、弹性伸缩与成本效率总账、基线服务可靠性、SLO、错误预算与可观测性总账、基线备份、恢复、灾备与可恢复性验证总账、基线密码材料、密钥、证书与秘密生命周期总账、基线资产关键性、数据分类与风险分级总账、基线身份权限、特权访问与工作负载身份总账、基线处理活动、个人数据清单与 RoPA 覆盖总账、基线隐私权利请求、同意偏好与合法基础执行总账、基线记录留存、法律保全与可防御删除总账、基线监管与合规义务可追溯总账、外部标准版本锁定、可执行标准、执行控制面、门禁决策、RACI 决策权、可靠性分级、仓库拓扑、迁移弃用、审计证据、联邦治理和行业对标矩阵的完整说明文档。
+- docs/gongfa/common-sense.md：AI 编程和工程交付前的最低判断线。
+- docs/gongfa/dataset-first-data-service.md：以 dataset、contract、registry、runtime 为核心的数据服务模板。
+- docs/gongfa/code-organization.md：模块化、命名、注释、格式化、文档和工具。
+- docs/gongfa/development-experience.md：变量名、文件结构、编码规范、架构原则和常见基础设施经验。
+- docs/gongfa/quality-gates-and-pitfalls.md：系统提示词、强前置条件、常见坑和硬门禁。
+- docs/gongfa/low-level-program-logic.md：运行模型、并发模型、数据模型、性能模型和工程交付检查清单。
+- docs/gongfa/technology-stack.md：常见软件系统技术栈、选型维度、组合案例与初学者学习路径。
 - research/README.md：新技术、技术栈、优秀 repo、工程范式和工具趋势研究入口。
 - research/research-domain-contract.md：研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
-- research/research-value-application-map.md：研究体系给用户带来的价值、核心启示、应用位置和下沉路线。
-- research/research-transfer-synthesis.md：将对标拆解、改良迭代和杂交创新转成可执行研究路线。
+- docs/gongfa/research-value-application-map.md：研究体系给用户带来的价值、核心启示、应用位置和下沉路线。
+- docs/gongfa/research-transfer-synthesis.md：将对标拆解、改良迭代和杂交创新转成可执行研究路线。
 - research/harness/README.md：Harness Engineering 的工程控制、评估器与反馈闭环研究对象。
-- research/harness/harness-engineering.md：Harness Engineering 的工程控制、评估器与反馈闭环解析。
+- docs/gongfa/harness-engineering.md：Harness Engineering 的工程控制、评估器与反馈闭环解析。
 - research/walkinglabs-learn-harness-engineering/README.md：Harness Engineering 课程、模板、Skill 与审计工具研究对象。
 - research/walkinglabs-learn-harness-engineering/analysis.md：Harness 课程、控制面和验证闭环的结构化研究。
 - research/walkinglabs-learn-harness-engineering/deep-dive.md：Harness 结构、工具链和可迁移机制的 L2 研究。
@@ -221,11 +222,10 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - research/wendy7756-vibe-coding-guide/README.md：非程序员自然语言编程指南研究对象。
 - research/wendy7756-vibe-coding-guide/analysis.md：wendy7756/vibe-coding-guide 的结构化研究结论、可借鉴点、风险和下一轮任务。
 - research/wendy7756-vibe-coding-guide/deep-dive.md：wendy7756/vibe-coding-guide 的 L2 结构深度研究、关键机制、迁移边界和验证任务。
-- research/tmux-ai-swarm.md：tmux 蜂群协作的实验性协作范式判断。
+- docs/gongfa/tmux-ai-swarm.md：tmux 蜂群协作的实验性协作范式判断。
 - skills/auto-tmux/references/ai-swarm-collaboration.md：tmux 蜂群协作完整技术文档、架构模式、协议、案例和风险限制。
-- docs/workflow/README.md：开发流程、质量门禁、版本控制和文档同步入口。
-- docs/workflow/development-process.md：默认任务推进顺序、质量门禁和交付闭环。
-- assets/ai-citation/geo-seo-checklist.md：GEO / SEO 内容工程检查清单。
+- docs/gongfa/development-process.md：默认任务推进顺序、质量门禁和交付闭环。
+- docs/gongfa/geo-seo-checklist.md：GEO / SEO 内容工程检查清单。
 - skills/README.md#当前保留：技能库当前保留入口。
 - prompts/README.md#在线提示词库：提示词在线表格入口。
 - assets/README.md#外部资源本地注册表：外部资源本地注册表入口。
@@ -236,13 +236,13 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 
 当用户不知道从哪里开始时，优先推荐 `docs/README.md`。更具体的路由如下：
 
-- 新手入门：读取 `docs/getting-started/vibe-coding-experience.md`、`docs/getting-started/learning-map.md`、`docs/getting-started/cli-setup.md`、`tools/config/.codex/README.md`，完成环境后再用 `docs/getting-started/first-project.md` 走通第一次可验证闭环，随后阅读 `docs/concepts/problem-solving.md`、`docs/concepts/vibe-coding-state-transition.md`、`docs/concepts/glue-coding.md` 和 `docs/references/project-architecture-template.md`。
-- 工程开发：读取 `docs/concepts/glue-coding.md`、`docs/concepts/keyword-system.md`、`docs/concepts/system-building.md`、`docs/references/technology-stack.md` 和 `docs/references/project-architecture-template.md`。
-- 修仙解释图层：读取 `docs/concepts/vibe-coding-cultivation-model.md` 了解现实映射与战力评价；唯一分类树及调研依据见 `docs/concepts/cultivation-ontology-taxonomy.md`。
-- 思维模型：读取 `README.md#ai-six-propositions`、`README.md#dao-fa-shu-qi`、`docs/philosophy/thinking-models.md`、`docs/philosophy/compositional-description-model.md`、`docs/philosophy/programming-dao.md`、`docs/philosophy/software-engineering-truths.md` 和 `docs/philosophy/methodology-toolbox.md`。
-- 新技术判断：读取 `research/README.md`，再读具体研究对象或研究笔记，例如 `research/harness/harness-engineering.md`。
-- 标准流程执行：读取 `docs/workflow/development-process.md`。
-- AI Agent 执行：先读 `AGENTS.md` 与 `docs/AGENTS.md`，再读 `docs/workflow/development-process.md`，然后按任务类型读取 getting-started、concepts、references 或 research。
+- 新手入门：配置与实例用 `docs/getting-started/README.md`；通用经验正文用 `docs/gongfa/vibe-coding-experience.md`。
+- 求解与设计：按 `docs/gongfa/README.md` 的任务功能导航选择内容，不按旧目录分库。
+- 修仙解释：用 `docs/gongfa/vibe-coding-cultivation-model.md` 了解现实映射；语义契约用 `docs/gongfa/cultivation-ontology-taxonomy.md`。
+- 身份与初评：用 `metadata/gongfa/README.md`；正文、条目、内容版本、候选与意见不可混称。
+- 新技术判断：用 `research/README.md` 读取具体对象及其事实；通用 Harness 方法用 `docs/gongfa/harness-engineering.md`。
+- 标准流程：读 `docs/gongfa/development-process.md`。
+- AI Agent 执行：先读 `AGENTS.md` 与 `docs/AGENTS.md`；方法正文统一读功法，配置/工具/技能/研究证据各守原边界。
 
 目录边界：
 

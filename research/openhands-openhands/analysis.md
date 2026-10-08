@@ -57,4 +57,4 @@
 
 ## 沉淀判断
 
-“模型/Agent、Harness、工作区和自动化是不同层”适合下沉到 `docs/concepts/`；OpenHands 的平台部署、ACP 和商业服务细节继续保留在研究域。
+“模型/Agent、Harness、工作区和自动化是不同层”适合下沉到 `docs/gongfa/`；OpenHands 的平台部署、ACP 和商业服务细节继续保留在研究域。

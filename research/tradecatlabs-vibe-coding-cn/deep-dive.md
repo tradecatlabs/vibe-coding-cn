@@ -93,7 +93,7 @@ raw 事实、质量门禁、AI 引用入口和脚本控制面共同约束内容�
 ## 下一步 L3 验证任务
 
 - 建立研究域成熟度看板：L0 raw、L1 analysis、L2 deep-dive、L3 下沉、L4 archive。
-- 将 P1 研究对象的稳定结论迁入 `docs/references/` 或 `docs/workflow/`。
+- 将 P1 研究对象的稳定结论迁入 `docs/gongfa/`。
 - 为 `scripts/` 增加 manifest 和风险等级治理。
 - 为 `assets/external-resources/` 增加资源 schema、检查时间和生命周期状态。
 - 对本仓自我结论执行一次跨模型或新会话审计，避免同一上下文自我确认。

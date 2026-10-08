@@ -62,5 +62,5 @@
 
 ## 沉淀判断
 
-- 稳定结论进入 `research/research-transfer-synthesis.md`、`docs/workflow/`、`scripts/` 和 `assets/`。
+- 稳定结论正文进入 `docs/gongfa/research-transfer-synthesis.md` 和功法文集；执行性及资源产物进入 `scripts/` 和 `assets/`。
 - 本研究域保持 P1 自我校准对象。

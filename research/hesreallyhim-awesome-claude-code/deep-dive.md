@@ -75,4 +75,4 @@
 - 对 `assets/external-resources/` 建立资源 schema 和字段必填校验。
 - 增加资源生命周期字段：active、stale、archived、removed、last_checked。
 - 设计从本地主表生成 README 或索引的流程。
-- 把资源治理经验沉淀到 `docs/references/` 或 `assets/AGENTS.md`。
+- 把资源治理经验沉淀到 `docs/gongfa/` 或 `assets/AGENTS.md`。

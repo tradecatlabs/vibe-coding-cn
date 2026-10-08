@@ -59,5 +59,5 @@ vibe-coding 等目录组织实践项目，适合研究如何把 AI Coding 从概
 
 ## 沉淀判断
 
-- 稳定结论进入 `docs/workflow/`，后续可引出独立 practice/examples 层。
+- 稳定结论进入 `docs/gongfa/`，后续可引出独立 practice/examples 层。
 - 本研究域保持 P2 实践项目对标对象。

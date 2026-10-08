@@ -48,7 +48,7 @@ UI 原型等高频实践问题。这些主题可以反哺本仓的关键词系�
 ## 可迁移模式
 
 - 将 BACKUP 文章视为中文 AI Coding 关键词候选池。
-- 把高频主题映射到 `docs/concepts/keyword-system.md`、`docs/workflow/` 和 `skills/`。
+- 把高频主题映射到 `docs/gongfa/keyword-system.md`、功法文集和 `skills/`。
 - 对 MCP、AGENTS.md、Skills、Codex、Claude Code 等主题建立“问题 -> 概念 -> 操作模板”链路。
 - 将用户常见模糊需求整理为面试式 SPEC 生成流程。
 - 将“告诉 AI 如何验证”类经验转成验证检查清单。

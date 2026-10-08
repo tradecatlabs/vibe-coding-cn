@@ -24,17 +24,17 @@
 
 1. `docs/getting-started/README.md`
 2. `docs/getting-started/first-project.md`
-3. `docs/concepts/problem-solving.md`
-4. `docs/concepts/glue-coding.md`
-5. `docs/references/project-architecture-template.md`
+3. `docs/gongfa/problem-solving.md`
+4. `docs/gongfa/glue-coding.md`
+5. `docs/gongfa/project-architecture-template.md`
 
 进阶用户优先看：
 
-1. `docs/concepts/glue-coding.md`
-2. `docs/references/project-architecture-template.md`
+1. `docs/gongfa/glue-coding.md`
+2. `docs/gongfa/project-architecture-template.md`
 3. `skills/README.md`
-4. `docs/references/project-architecture-template.md`
+4. `docs/gongfa/project-architecture-template.md`
 
 ## docs 目录如何组织？
 
-`docs/README.md` 是知识库总索引；`docs/getting-started/` 负责从零开始；`docs/concepts/` 负责核心概念；`docs/philosophy/` 负责思维模型和底层认知模型；`docs/references/` 负责工程实践和技术栈参考；根级 `research/` 负责新技术、优秀 repo 和工程范式研究。
+`docs/README.md` 是知识库总索引；`docs/getting-started/` 负责启动教程与实例练习；`docs/gongfa/` 统一维护方法论、哲学、思维模型、工程准则与流程正文；根级 `research/` 保留具体对象、原始事实和研究观察。功法登记与既有初评见 `metadata/gongfa/README.md`。

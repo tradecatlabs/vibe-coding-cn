@@ -6,9 +6,9 @@
 
 ## 来源材料
 
-- [Lilian Weng 原文抓取](raw/lilian-weng-harness-engineering-for-self-improvement.md) - 《Harness Engineering for Self-Improvement》的 raw 事实层。
-- [Lilian Weng 提纲摘记](notes/lilian-weng-harness-rsi-outline.md) - Harness 与 RSI 关系、设计模式和目录结构摘记。
-- [Lilian Weng 短摘](notes/lilian-weng-harness-rsi-short-note.md) - Harness 与 RSI 关系的短摘。
+- [Lilian Weng 原文抓取](../../research/harness/raw/lilian-weng-harness-engineering-for-self-improvement.md) - 《Harness Engineering for Self-Improvement》的 raw 事实层。
+- [Lilian Weng 提纲摘记](../../research/harness/notes/lilian-weng-harness-rsi-outline.md) - Harness 与 RSI 关系、设计模式和目录结构摘记。
+- [Lilian Weng 短摘](../../research/harness/notes/lilian-weng-harness-rsi-short-note.md) - Harness 与 RSI 关系的短摘。
 
 ## 核心判断
 

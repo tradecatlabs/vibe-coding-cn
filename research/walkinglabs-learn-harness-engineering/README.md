@@ -33,7 +33,7 @@
 - 先读本 README 的判断，再读 `analysis.md` 和 `deep-dive.md` 的研究结论，最后读 `domain.yml`。
 - 需要引用 stars、forks、release、归档状态、主页或主题标签时，先重新核验 GitHub。
 - 需要更新原始事实时，运行 `python3 scripts/fetch-research-raw.py walkinglabs-learn-harness-engineering`。
-- 如果形成稳定方法论，再下沉到 `research/harness/`、`docs/workflow/` 或 `skills/`。
+- 方法论正文统一下沉到 `docs/gongfa/`；具体研究观察留在研究域，可执行能力进入 `skills/`。
 
 ## 正文
 

@@ -58,4 +58,4 @@
 
 ## 沉淀判断
 
-“Agent 应用 = 模型 + 运行循环 + 工具 + 状态 + 护栏 + 证据”可下沉到 `docs/concepts/` 或 `docs/workflow/`；SDK 的具体 Python API 留在本研究域，不扩散为本仓安装前置。
+“Agent 应用 = 模型 + 运行循环 + 工具 + 状态 + 护栏 + 证据”可下沉到 `docs/gongfa/`；SDK 的具体 Python API 留在本研究域，不扩散为本仓安装前置。

@@ -1,99 +1,91 @@
 redirects:
-  # Legacy directory moves.
+  # 历史目录迁移；这里只记录路径映射，不提供旧正文副本。
   - from: docs/guides/getting-started/
     to: docs/getting-started/
   - from: docs/principles/fundamentals/
     to: docs/README.md
   - from: docs/principles/philosophy/
-    to: docs/philosophy/
+    to: docs/gongfa/
   - from: docs/concepts/philosophy/
-    to: docs/philosophy/
+    to: docs/gongfa/
   - from: docs/research/
     to: research/
   - from: Workflow/
-    to: docs/workflow/
+    to: docs/gongfa/
 
-  # Merged concept documents.
+  # 历史中文、合并和拆分文件名，直接指向现有正文。
   - from: docs/concepts/思维模型.md
-    to: docs/philosophy/thinking-models.md
+    to: docs/gongfa/thinking-models.md
   - from: docs/concepts/编程之道.md
-    to: docs/philosophy/programming-dao.md
+    to: docs/gongfa/programming-dao.md
   - from: docs/concepts/A Formalization of Recursive Self-Optimizing Generative Systems.md
-    to: docs/concepts/recursive-self-optimizing-system.md
+    to: docs/gongfa/recursive-self-optimizing-system.md
   - from: docs/concepts/软件开发范式演进.md
-    to: docs/concepts/development-paradigms.md
+    to: docs/gongfa/development-paradigms.md
   - from: docs/concepts/递归自优化生成系统形式化.md
-    to: docs/concepts/recursive-self-optimizing-system.md
+    to: docs/gongfa/recursive-self-optimizing-system.md
   - from: docs/concepts/问题分析与系统构建方法.md
-    to: docs/concepts/system-building.md
+    to: docs/gongfa/system-building.md
   - from: docs/concepts/问题求解能力.md
-    to: docs/concepts/problem-solving.md
+    to: docs/gongfa/problem-solving.md
   - from: docs/concepts/Harness Engineering 的本质拆解.md
-    to: research/harness/harness-engineering.md
+    to: docs/gongfa/harness-engineering.md
   - from: docs/research/Harness Engineering 的本质拆解.md
-    to: research/harness/harness-engineering.md
+    to: docs/gongfa/harness-engineering.md
   - from: docs/research/harness-engineering.md
-    to: research/harness/harness-engineering.md
+    to: docs/gongfa/harness-engineering.md
   - from: docs/philosophy/现象学还原.md
-    to: docs/philosophy/methodology-toolbox.md
+    to: docs/gongfa/methodology-toolbox.md
   - from: docs/philosophy/辩证法.md
-    to: docs/philosophy/methodology-toolbox.md
+    to: docs/gongfa/methodology-toolbox.md
   - from: docs/philosophy/控制论与科学方法论.md
-    to: docs/philosophy/methodology-toolbox.md
+    to: docs/gongfa/methodology-toolbox.md
   - from: docs/philosophy/理解世界、描述变化、整理知识的一套较小框架.md
-    to: docs/philosophy/compositional-description-model.md
-
-  # Removed playbook directories and documents.
+    to: docs/gongfa/compositional-description-model.md
   - from: docs/guides/playbook/
     to: docs/README.md
   - from: docs/playbooks/
     to: docs/README.md
   - from: docs/playbooks/GEO与SEO优化方法.md
-    to: assets/ai-citation/geo-seo-checklist.md
+    to: docs/gongfa/geo-seo-checklist.md
   - from: docs/playbooks/GEMINI-HEADLESS.md
     to: docs/README.md
   - from: docs/playbooks/ProxyCast配置文档.md
     to: docs/README.md
   - from: docs/playbooks/tradecat-sheets-api-usage.md
     to: docs/README.md
-
-  # Merged getting-started documents.
   - from: docs/getting-started/Codex-CLI配置.md
     to: docs/getting-started/cli-setup.md
   - from: docs/getting-started/学习地图.md
     to: docs/getting-started/learning-map.md
   - from: docs/getting-started/Vibe Coding 经验.md
-    to: docs/getting-started/vibe-coding-experience.md
+    to: docs/gongfa/vibe-coding-experience.md
   - from: docs/getting-started/网络环境配置.md
     to: docs/getting-started/network-environment.md
   - from: docs/getting-started/CLI配置.md
     to: docs/getting-started/cli-setup.md
   - from: docs/getting-started/开发环境搭建.md
     to: docs/getting-started/development-environment.md
-
-  # Split reference documents.
   - from: docs/references/通用项目架构模板.md
-    to: docs/references/project-architecture-template.md
+    to: docs/gongfa/project-architecture-template.md
   - from: docs/references/数据集导向数据服务模板.md
-    to: docs/references/dataset-first-data-service.md
+    to: docs/gongfa/dataset-first-data-service.md
   - from: docs/references/系统提示词构建原则.md
-    to: docs/references/quality-gates-and-pitfalls.md
+    to: docs/gongfa/quality-gates-and-pitfalls.md
   - from: docs/references/强前置条件约束.md
-    to: docs/references/quality-gates-and-pitfalls.md
+    to: docs/gongfa/quality-gates-and-pitfalls.md
   - from: docs/references/常见坑汇总.md
-    to: docs/references/quality-gates-and-pitfalls.md
+    to: docs/gongfa/quality-gates-and-pitfalls.md
   - from: docs/references/项目架构模板.md
-    to: docs/references/project-architecture-template.md
+    to: docs/gongfa/project-architecture-template.md
   - from: docs/references/AI编程质量门禁与常见坑.md
-    to: docs/references/quality-gates-and-pitfalls.md
+    to: docs/gongfa/quality-gates-and-pitfalls.md
   - from: docs/references/代码组织.md
-    to: docs/references/code-organization.md
+    to: docs/gongfa/code-organization.md
   - from: docs/references/开发经验.md
-    to: docs/references/development-experience.md
+    to: docs/gongfa/development-experience.md
   - from: docs/references/底层程序逻辑设计与工程优化项.md
-    to: docs/references/low-level-program-logic.md
-
-  # Moved top-level resource directories.
+    to: docs/gongfa/low-level-program-logic.md
   - from: assets/documents/
     to: docs/
   - from: assets/skills/
@@ -104,31 +96,121 @@ redirects:
     to: tools/external/
   - from: assets/config/
     to: tools/config/
-
-  # Stable legacy per-topic entry points.
   - from: docs/concepts/问题求解.md
-    to: docs/concepts/problem-solving.md
+    to: docs/gongfa/problem-solving.md
   - from: docs/concepts/拼好码.md
-    to: docs/concepts/glue-coding.md
+    to: docs/gongfa/glue-coding.md
   - from: docs/concepts/系统构建方法.md
-    to: docs/concepts/system-building.md
+    to: docs/gongfa/system-building.md
   - from: docs/concepts/开发范式演进.md
-    to: docs/concepts/development-paradigms.md
+    to: docs/gongfa/development-paradigms.md
   - from: docs/concepts/语言层要素.md
-    to: docs/concepts/language-layers.md
+    to: docs/gongfa/language-layers.md
   - from: docs/concepts/递归自优化系统.md
-    to: docs/concepts/recursive-self-optimizing-system.md
+    to: docs/gongfa/recursive-self-optimizing-system.md
   - from: docs/philosophy/思维模型.md
-    to: docs/philosophy/thinking-models.md
+    to: docs/gongfa/thinking-models.md
   - from: docs/philosophy/道法术器.md
-    to: README.md#dao-fa-shu-qi
+    to: docs/gongfa/dao-fa-shu-qi.md
   - from: docs/philosophy/组合描述模型.md
-    to: docs/philosophy/compositional-description-model.md
+    to: docs/gongfa/compositional-description-model.md
   - from: docs/philosophy/编程之道.md
-    to: docs/philosophy/programming-dao.md
+    to: docs/gongfa/programming-dao.md
   - from: docs/references/工程实践.md
-    to: docs/references/project-architecture-template.md
+    to: docs/gongfa/project-architecture-template.md
   - from: docs/references/技术栈.md
-    to: docs/references/technology-stack.md
+    to: docs/gongfa/technology-stack.md
   - from: docs/research/Harness工程解析.md
-    to: research/harness/harness-engineering.md
+    to: docs/gongfa/harness-engineering.md
+
+  # 功法统一正文迁移：旧正文、导航文件与目录均已退役。
+  - from: docs/concepts/cultivation-ontology-taxonomy.md
+    to: docs/gongfa/cultivation-ontology-taxonomy.md
+  - from: docs/concepts/development-paradigms.md
+    to: docs/gongfa/development-paradigms.md
+  - from: docs/concepts/glue-coding.md
+    to: docs/gongfa/glue-coding.md
+  - from: docs/concepts/keyword-system.md
+    to: docs/gongfa/keyword-system.md
+  - from: docs/concepts/language-layers.md
+    to: docs/gongfa/language-layers.md
+  - from: docs/concepts/problem-solving.md
+    to: docs/gongfa/problem-solving.md
+  - from: docs/concepts/recursive-self-optimizing-system.md
+    to: docs/gongfa/recursive-self-optimizing-system.md
+  - from: docs/concepts/system-building.md
+    to: docs/gongfa/system-building.md
+  - from: docs/concepts/vibe-coding-cultivation-model.md
+    to: docs/gongfa/vibe-coding-cultivation-model.md
+  - from: docs/concepts/vibe-coding-state-transition.md
+    to: docs/gongfa/vibe-coding-state-transition.md
+  - from: docs/philosophy/compositional-description-model.md
+    to: docs/gongfa/compositional-description-model.md
+  - from: docs/philosophy/methodology-toolbox.md
+    to: docs/gongfa/methodology-toolbox.md
+  - from: docs/philosophy/programming-dao.md
+    to: docs/gongfa/programming-dao.md
+  - from: docs/philosophy/software-engineering-truths.md
+    to: docs/gongfa/software-engineering-truths.md
+  - from: docs/philosophy/thinking-models.md
+    to: docs/gongfa/thinking-models.md
+  - from: docs/references/code-organization.md
+    to: docs/gongfa/code-organization.md
+  - from: docs/references/common-sense.md
+    to: docs/gongfa/common-sense.md
+  - from: docs/references/dataset-first-data-service.md
+    to: docs/gongfa/dataset-first-data-service.md
+  - from: docs/references/development-experience.md
+    to: docs/gongfa/development-experience.md
+  - from: docs/references/enterprise-architecture-template.md
+    to: docs/gongfa/enterprise-architecture-template.md
+  - from: docs/references/low-level-program-logic.md
+    to: docs/gongfa/low-level-program-logic.md
+  - from: docs/references/modern-enterprise-architecture-template.md
+    to: docs/gongfa/modern-enterprise-architecture-template.md
+  - from: docs/references/project-architecture-template.md
+    to: docs/gongfa/project-architecture-template.md
+  - from: docs/references/python-project-skeleton.md
+    to: docs/gongfa/python-project-skeleton.md
+  - from: docs/references/quality-gates-and-pitfalls.md
+    to: docs/gongfa/quality-gates-and-pitfalls.md
+  - from: docs/references/technology-stack.md
+    to: docs/gongfa/technology-stack.md
+  - from: docs/workflow/development-process.md
+    to: docs/gongfa/development-process.md
+  - from: docs/getting-started/vibe-coding-experience.md
+    to: docs/gongfa/vibe-coding-experience.md
+  - from: research/research-transfer-synthesis.md
+    to: docs/gongfa/research-transfer-synthesis.md
+  - from: research/research-value-application-map.md
+    to: docs/gongfa/research-value-application-map.md
+  - from: research/harness/harness-engineering.md
+    to: docs/gongfa/harness-engineering.md
+  - from: research/tmux-ai-swarm.md
+    to: docs/gongfa/tmux-ai-swarm.md
+  - from: assets/ai-citation/geo-seo-checklist.md
+    to: docs/gongfa/geo-seo-checklist.md
+  - from: docs/concepts/README.md
+    to: docs/gongfa/README.md
+  - from: docs/concepts/AGENTS.md
+    to: docs/gongfa/AGENTS.md
+  - from: docs/concepts/
+    to: docs/gongfa/
+  - from: docs/philosophy/README.md
+    to: docs/gongfa/README.md
+  - from: docs/philosophy/AGENTS.md
+    to: docs/gongfa/AGENTS.md
+  - from: docs/philosophy/
+    to: docs/gongfa/
+  - from: docs/references/README.md
+    to: docs/gongfa/README.md
+  - from: docs/references/AGENTS.md
+    to: docs/gongfa/AGENTS.md
+  - from: docs/references/
+    to: docs/gongfa/
+  - from: docs/workflow/README.md
+    to: docs/gongfa/README.md
+  - from: docs/workflow/AGENTS.md
+    to: docs/gongfa/AGENTS.md
+  - from: docs/workflow/
+    to: docs/gongfa/

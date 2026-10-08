@@ -27,7 +27,7 @@ repo map、命令执行、lint/test 和提交协作放进同一条循环，让 A
 | 真正带来结果的动作 | 把 AI 输出变成 Git 工作流里的可审查补丁，而不是孤立文本 |
 | 可迁移做法 | dirty state 检查、diff 审查、门禁命令、验证证据和提交叙事 |
 | 不可迁移条件 | 不复制完整终端产品、多模型配置和 Python 编辑器实现 |
-| 下一步试用动作 | 在 `docs/workflow/` 沉淀“AI 修改 -> diff 审查 -> make test -> commit”闭环 |
+| 下一步试用动作 | 在 `docs/gongfa/` 沉淀“AI 修改 -> diff 审查 -> make test -> commit”闭环 |
 
 ## 改良迭代
 
@@ -60,5 +60,5 @@ repo map、命令执行、lint/test 和提交协作放进同一条循环，让 A
 
 ## 沉淀判断
 
-- 稳定结论应下沉到 `docs/workflow/` 的 AI 修改闭环。
+- 稳定结论应下沉到 `docs/gongfa/` 的 AI 修改闭环。
 - `deep-dive.md` 保留源码证据；本文件负责把证据转成迁移动作。

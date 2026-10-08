@@ -75,7 +75,7 @@
 
 ## 沉淀判断
 
-- 稳定概念进入 `research/harness/` 和 `docs/workflow/`。
-- 可执行任务 artifact 契约成熟后，可进入 `docs/references/` 或 `scripts/`。
+- 可复用概念正文进入 `docs/gongfa/`，相关研究观察留在 `research/harness/`。
+- 任务 artifact 契约正文进入功法，成熟执行性产物进入 `scripts/`。
 - 与 Skill、Agent、workflow 相关的可复用能力成熟后，再考虑进入 `skills/`。
 - 本研究域保持 P1，对齐 Agent Harness、任务控制面和多平台 AI 编程运行时。

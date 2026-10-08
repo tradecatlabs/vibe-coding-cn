@@ -14,13 +14,13 @@
 | 文档 | 定位 |
 |:---|:---|
 | <a id="research-domain-contract"></a>[研究域治理契约](research-domain-contract.md) | 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。 |
-| <a id="research-value-application-map"></a>[研究价值与应用地图](research-value-application-map.md) | 研究体系给用户带来的价值、核心启示、应用位置和下沉路线。 |
-| <a id="research-transfer-synthesis"></a>[研究迁移综合](research-transfer-synthesis.md) | 将对标拆解、改良迭代和杂交创新转成可执行研究路线。 |
+| <a id="research-value-application-map"></a>[研究价值与应用地图](../docs/gongfa/research-value-application-map.md) | 功法正文：研究价值、核心启示与下沉路线。 |
+| <a id="research-transfer-synthesis"></a>[研究迁移综合](../docs/gongfa/research-transfer-synthesis.md) | 功法正文：对标拆解、改良、组合与验证路线。 |
 | <a id="research-harness-engineering"></a>[Harness 研究对象](harness/) | 工程控制、评估器、反馈闭环与 AI 生成系统可靠性。 |
 | <a id="research-walkinglabs-learn-harness-engineering"></a>[walkinglabs/learn-harness-engineering 研究域](walkinglabs-learn-harness-engineering/) | Harness Engineering 课程、模板、Skill 与审计工具。 |
 | <a id="research-mindfold-ai-trellis"></a>[mindfold-ai/Trellis 研究域](mindfold-ai-trellis/) | 跨平台 Agent Harness、任务规格与会话记忆系统。 |
 | <a id="research-source-facts"></a>[外部源事实镜像](facts/) | 三个外部仓库的已提交源文件树与可核验来源事实，不是研究域。 |
-| <a id="research-tmux-ai-swarm"></a>[tmux 蜂群协作](tmux-ai-swarm.md) | 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式。 |
+| <a id="research-tmux-ai-swarm"></a>[tmux 蜂群协作](../docs/gongfa/tmux-ai-swarm.md) | 功法文集：实验性多终端协作范式。 |
 | <a id="research-aider-ai-aider"></a>[Aider-AI/aider 研究域](aider-ai-aider/) | 终端 AI 结对编程工具。 |
 | <a id="research-cline-cline"></a>[cline/cline 研究域](cline-cline/) | IDE/SDK/CLI 自主编码 Agent。 |
 | <a id="research-hesreallyhim-awesome-claude-code"></a>[hesreallyhim/awesome-claude-code 研究域](hesreallyhim-awesome-claude-code/) | Claude Code 生态索引。 |
@@ -61,10 +61,10 @@
 ### 细粒度目录
 
 - [研究域治理契约](research-domain-contract.md) - 研究域的结构、raw 原始事实层、成熟度、证据、沉淀和归档规则。
-- [研究价值与应用地图](research-value-application-map.md) - 研究体系给用户带来的价值、核心启示、应用位置和下沉路线。
-- [研究迁移综合](research-transfer-synthesis.md) - 将对标拆解、改良迭代和杂交创新转成可执行研究路线。
+- [研究价值与应用地图](../docs/gongfa/research-value-application-map.md) - 功法文集：研究价值、核心启示、应用与下沉路线。
+- [研究迁移综合](../docs/gongfa/research-transfer-synthesis.md) - 功法文集：对标、改良、组合与可验证行动。
 - [Harness 研究对象](harness/README.md) - 工程控制、评估器、反馈闭环与 AI 生成系统可靠性。
-- [Harness 工程解析](harness/harness-engineering.md) - Harness Engineering 的工程控制、评估器与反馈闭环解析。
+- [Harness 工程解析](../docs/gongfa/harness-engineering.md) - 功法文集：工程控制、评估器与反馈闭环。
 - [walkinglabs/learn-harness-engineering 研究域](walkinglabs-learn-harness-engineering/README.md) - Harness Engineering 课程、模板、Skill 与审计工具。
 - [walkinglabs/learn-harness-engineering 研究分析](walkinglabs-learn-harness-engineering/analysis.md) - Harness 课程、控制面和验证闭环的结构化研究。
 - [walkinglabs/learn-harness-engineering 深度研究](walkinglabs-learn-harness-engineering/deep-dive.md) - Harness 结构、工具链和可迁移机制的 L2 研究。
@@ -72,7 +72,7 @@
 - [mindfold-ai/Trellis 研究分析](mindfold-ai-trellis/analysis.md) - 任务控制面、规格注入和多平台适配的结构化研究。
 - [mindfold-ai/Trellis 深度研究](mindfold-ai-trellis/deep-dive.md) - Harness 架构、CLI 和记忆系统的 L2 研究。
 - [外部源事实镜像](facts/README.md) - 三个外部仓库的源文件树、提交事实、哈希和隐私边界。
-- [tmux 蜂群协作](tmux-ai-swarm.md) - 用 tmux 让多个 AI 终端可感知、可调度、可救援的实验性协作范式。
+- [tmux 蜂群协作](../docs/gongfa/tmux-ai-swarm.md) - 功法文集：实验性多终端协作范式。
 - [Aider-AI/aider 研究域](aider-ai-aider/README.md) - 终端 AI 结对编程工具。
 - [Aider-AI/aider 研究分析](aider-ai-aider/analysis.md) - 结构化研究结论、可借鉴点、风险和下一轮任务。
 - [Aider-AI/aider 深度研究](aider-ai-aider/deep-dive.md) - L2 源码/结构深度研究、关键机制和可迁移模式。

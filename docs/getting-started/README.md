@@ -11,7 +11,7 @@
 
 | 文档 | 定位 |
 |:---|:---|
-| <a id="vibe-coding-experience"></a>[Vibe Coding 经验](vibe-coding-experience.md) | 通用语言能力、人机分工、机器门禁和入门铁律。 |
+| <a id="vibe-coding-experience"></a>[Vibe Coding 经验](../gongfa/vibe-coding-experience.md) | 功法文集：通用语言能力、人机分工、机器门禁和入门铁律。 |
 | <a id="learning-map"></a>[学习地图](learning-map.md) | 新手、开发者、团队、Prompt、Skill 和质量门禁的路线选择。 |
 | <a id="network-environment"></a>[网络环境配置](network-environment.md) | OpenAI、GitHub、文档和依赖源访问。 |
 | <a id="cli-setup"></a>[CLI 配置](cli-setup.md) | Codex CLI 默认路线与 OpenCode 备选路线。 |
@@ -23,7 +23,7 @@
 
 ### 细粒度目录
 
-- [Vibe Coding 经验](vibe-coding-experience.md) - 通用语言能力、人机分工、机器门禁和入门铁律。
+- [Vibe Coding 经验](../gongfa/vibe-coding-experience.md) - 功法文集：通用语言能力、人机分工、机器门禁和入门铁律。
 - [学习地图](learning-map.md) - 新手、开发者、团队、Prompt、Skill 和质量门禁的路线选择。
 - [网络环境配置](network-environment.md) - OpenAI、GitHub、文档和依赖源访问。
 - [CLI 配置](cli-setup.md) - Codex CLI 默认路线与 OpenCode 备选路线。

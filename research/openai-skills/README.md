@@ -31,7 +31,7 @@
 
 - 先读本 README 的当前判断，再读 `analysis.md` 和 `deep-dive.md`。
 - 需要判断技能是否可复用时，再核验 `raw/` 的原始仓库材料和 `domain.yml` 的观测日期。
-- 稳定结论下沉到本仓 `skills/`、`docs/workflow/` 或 `docs/references/`，不要长期停在研究域。
+- 稳定结论下沉到本仓 `skills/` 或 `docs/gongfa/`，不要长期停在研究域。
 
 ## 正文
 

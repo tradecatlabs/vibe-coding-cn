@@ -9,7 +9,7 @@
 - 同一总表的[Excel完整视图](catalog.xlsx)含限定原文/源条目、来源选区、边界、理由、反证和置信。
 - 活跃登记来自[registry.json](registry.json)，历史候选来自[仓内快照索引](catalog-sources.json)；维护边界见[README](README.md)。
 
-输入绑定：`31c4f0e89cc2c0c1fd68caeb79af18da66ebb1a0f624dafca9e7efd62870a7a7`。
+输入绑定：`f78e799ed13956b958831310efb201cfd7b2339d6863e40b02139211bba7faf2`。
 
 ## 全部记录
 

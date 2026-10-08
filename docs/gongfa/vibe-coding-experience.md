@@ -96,4 +96,4 @@ AI 能安装依赖、执行命令、修复报错、提交 Git；你负责确认�
 
 ### 下一步
 
-→ [CLI 配置](cli-setup.md) - 默认 AI CLI 路线，文末包含 OpenCode 备选方案
+→ [CLI 配置](../getting-started/cli-setup.md) - 默认 AI CLI 路线，文末包含 OpenCode 备选方案
