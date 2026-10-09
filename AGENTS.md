@@ -258,9 +258,9 @@ git push origin develop
 - `scripts/check-doc-structure.py` - docs README 标准块顺序、目录入口和重复锚点检查脚本，供 `make check-doc-structure` 与 CI 使用
 - `scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
 - `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
-- `metadata/faqi.json` / `faqi.schema.json` - 法器来源限定初审与字段契约，引用已有类型；不承接资源原事实、第二本体树、账户/部署/运行或品级。
-- `tools/faqi-catalog.md` - 从初审JSON与原资源YAML生成的只读清单；源码初审不等于完整包语义、独立审查、许可或效果证明。
-- `scripts/sync-faqi-catalog.py` / `test-faqi-catalog.py` - 离线校验来源、入口、覆盖与视图，保留隔离工件；不执行被审程序或联网补证。
+- `metadata/faqi.json` / `faqi.schema.json` - 法器来源限定初审与字段契约，引用已有类型；不承接资源原事实、第二本体树、账户/部署/运行或品级；范围排除单列证据，不作为纳入对象。
+- `tools/faqi-catalog.md` - 从初审JSON与原资源YAML生成的只读清单，分列纳入对象及范围排除；源码初审不等于完整包语义、独立审查、许可或效果证明。
+- `scripts/sync-faqi-catalog.py` / `test-faqi-catalog.py` - 离线校验来源、入口、覆盖、排除边界与视图，保留隔离工件；不执行被审程序或联网补证。
 - `metadata/gongfa/registry.json` - 活跃功法登记、等级、规则、来源、内容版本、人工初评及正式评级历史的唯一可编辑数据源；类型语义仍归本体主文；新范围追加批次
 - `metadata/gongfa/catalog.md` / `catalog.xlsx` - 同一全部功法总表的两种生成视图，聚合当前登记与已分类候选历史材料；不手改、不自动注册/去重/评级
 - `metadata/gongfa/catalog-sources.json` - 仅索引仓内不可变候选快照的路径/SHA/范围；历史材料不是第二可编辑登记，不依赖个人目录或临时工件

@@ -41,8 +41,8 @@ class FaqiCatalogTest(unittest.TestCase):
         result = self.invoke("current", "--check")
         self.assertEqual(0, result.returncode, result.stderr.decode())
         report = json.loads(result.stdout)
-        self.assertEqual((19, 13, 158), (
-            report["objects"], report["local_entries"], report["external_resources"]))
+        self.assertEqual((16, 13, 3, 158), (
+            report["objects"], report["local_entries"], report["local_exclusions"], report["external_resources"]))
         self.assertFalse(report["independent_review"])
         self.assertFalse(report["runtime_verified"])
         data = json.loads((ROOT / "metadata/faqi.json").read_text(encoding="utf-8"))
@@ -53,8 +53,23 @@ class FaqiCatalogTest(unittest.TestCase):
         purposes = {s["id"]: s.get("purpose") for s in data["sources"]}
         # 用途来自实际读过的实现/说明选区，而非由对象引用反推。
         self.assertEqual("support", purposes["S01"])
-        for sid in ("S02", "S04", "S06", "S08", "S09", "S10", "S12", "S16", "S18", "S21", "S23", "S25", "S26", "S27", "S28", "S29", "S32", "S34", "S36"):
+        for sid in ("S02", "S06", "S08", "S09", "S10", "S12", "S16", "S18", "S21", "S23", "S25", "S26", "S27", "S28", "S29", "S32"):
             self.assertEqual("implementation", purposes[sid])
+        for sid in ("S04", "S34", "S36"):
+            self.assertEqual("exclusion_evidence", purposes[sid])
+        exclusions = {item["path"]: item for item in data["local_exclusions"]}
+        expected_excluded = {
+            "tools/chat-vault": "私人对话数据",
+            "tools/external/MCPlayerTransfer": "LevelDB",
+            "tools/external/XHS-image-to-PDF-conversion": "原ZIP",
+        }
+        self.assertEqual(set(expected_excluded), set(exclusions))
+        for path, evidence in expected_excluded.items():
+            self.assertIn(evidence, exclusions[path]["rationale"])
+            entry = next(item for item in data["local_entries"] if item["path"] == path)
+            self.assertEqual([], entry["objects"])
+        for excluded_id in ("faqi-chat-vault", "faqi-mc-player-transfer", "faqi-xhs-zip-pdf"):
+            self.assertNotIn(excluded_id, objects)
         # 期望来自实现选区与本体：可执行配置不是CLI本体，技能说明不是脚本。
         for name in ("faqi-tmux", "faqi-oh-my-tmux", "faqi-my-nvim-lua",
                      "faqi-codex-config-installer", "faqi-auto-tmux"):
@@ -99,6 +114,16 @@ class FaqiCatalogTest(unittest.TestCase):
         cases.append(("wrong-entry-identity", changed))
         changed = copy.deepcopy(original); changed["sources"][1]["purpose"] = "support"
         cases.append(("unsupported-source-purpose", changed))
+        changed = copy.deepcopy(original); changed["local_exclusions"] = []
+        cases.append(("unrecorded-empty-entry", changed))
+        changed = copy.deepcopy(original)
+        excluded_source = next(i for i, source in enumerate(changed["sources"]) if source["id"] == "S04")
+        changed["sources"][excluded_source]["purpose"] = "implementation"
+        resurrected = {"id": "faqi-chat-vault-reintroduced", "name": "Chat Vault同步与查询程序", "type_id": "software-artifact", "implementation": "S04", "support": ["S03"], "boundary": "反事实复入测试，不作新批准", "declared_version": None}
+        changed["objects"].append(resurrected)
+        entry = next(item for item in changed["local_entries"] if item["path"] == "tools/chat-vault")
+        entry["objects"] = [resurrected["id"]]
+        cases.append(("excluded-source-reclassified-as-implementation", changed))
         changed = copy.deepcopy(original); changed["sources"][1]["selection_sha256"] = "0" * 64
         cases.append(("selection-drift", changed))
         changed = copy.deepcopy(original); changed["objects"][0]["name"] = "程序\n```\n<script>"
@@ -181,6 +206,7 @@ class FaqiCatalogTest(unittest.TestCase):
             raw = json.dumps({"defaults": {"verification_status": "imported-unverified"}, "resources": rows}, ensure_ascii=False).encode()
             self.assertLess(len(raw), 2 * 1024 * 1024)
             (root / source["path"]).write_bytes(raw); source["sha256"] = hashlib.sha256(raw).hexdigest()
+        data["local_exclusions"] = []
         data["external_reviews"] = [{"decision": "software_candidate", "rationale": "隔离资源宽表夹具，不作语义初审", "resource_ids": ids}]
         data["resource_notes"] = {}; data["local_resource_links"] = {}; data["references"] = []; data["relations"] = []
         view = ARTIFACTS / "budget-view.md"

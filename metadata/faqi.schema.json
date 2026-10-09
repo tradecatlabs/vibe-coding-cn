@@ -4,7 +4,7 @@
   "description": "只引用唯一BFO树。记录程序内容而非运行/效果/许可批准；外部条目ID引用原YAML，不复制资源事实。",
   "type": "object",
   "additionalProperties": false,
-  "required": ["format_version", "kind", "reviewed_at", "source_revision", "ontology", "limits", "sources", "objects", "local_entries", "external_sources", "external_reviews", "resource_notes", "local_resource_links", "relations", "references"],
+  "required": ["format_version", "kind", "reviewed_at", "source_revision", "ontology", "limits", "sources", "objects", "local_entries", "local_exclusions", "external_sources", "external_reviews", "resource_notes", "local_resource_links", "relations", "references"],
   "properties": {
     "format_version": {"const": 1},
     "kind": {"const": "faqi-initial-source-review"},
@@ -22,6 +22,7 @@
     "sources": {"type": "array", "minItems": 1, "maxItems": 128, "items": {"$ref": "#/$defs/source"}},
     "objects": {"type": "array", "minItems": 1, "maxItems": 512, "items": {"$ref": "#/$defs/tool"}},
     "local_entries": {"type": "array", "minItems": 1, "maxItems": 128, "items": {"$ref": "#/$defs/local"}},
+    "local_exclusions": {"type": "array", "maxItems": 128, "items": {"$ref": "#/$defs/local_exclusion"}},
     "external_sources": {
       "type": "array", "minItems": 3, "maxItems": 3,
       "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {
@@ -65,7 +66,7 @@
       "type": "object", "additionalProperties": false, "required": ["id", "purpose", "path", "repository", "revision", "sha256", "lines", "selection_sha256"],
       "properties": {
         "id": {"$ref": "#/$defs/id"},
-        "purpose": {"enum": ["implementation", "support"], "description": "选区的人工初审用途，不凭后缀推断程序。支持来源未自动获准充当主实现。"},
+        "purpose": {"enum": ["implementation", "support", "exclusion_evidence"], "description": "选区的人工初审用途，不凭后缀推断程序；排除证据不可作为纳入对象的实现来源。"},
         "path": {"$ref": "#/$defs/path"},
         "repository": {"enum": [".", "tools/external/tmux", "tools/external/.tmux", "tools/external/Skill_Seekers-development", "tools/external/claude-official-skills"]},
         "revision": {"$ref": "#/$defs/revision"}, "sha256": {"$ref": "#/$defs/sha256"},
@@ -86,6 +87,16 @@
       "properties": {
         "path": {"$ref": "#/$defs/path"}, "objects": {"$ref": "#/$defs/ids"}, "sources": {"$ref": "#/$defs/ids"},
         "boundary": {"$ref": "#/$defs/text"}, "pending": {"type": "array", "maxItems": 32, "items": {"$ref": "#/$defs/text"}}
+      }
+    },
+    "local_exclusion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "name", "decision", "source", "support_sources", "rationale", "reopen_condition"],
+      "properties": {
+        "path": {"$ref": "#/$defs/path"}, "name": {"$ref": "#/$defs/text"},
+        "decision": {"const": "excluded_from_faqi_scope"},
+        "source": {"$ref": "#/$defs/id"}, "support_sources": {"$ref": "#/$defs/ids"},
+        "rationale": {"$ref": "#/$defs/text"}, "reopen_condition": {"$ref": "#/$defs/text"}
       }
     }
   }

@@ -19,6 +19,7 @@
 功法检查需要Python3.10+及`python3 -m pip install -r scripts/requirements-gongfa.txt`。
 法器维护需要Python3.10+、Git与`scripts/requirements-faqi.txt`；submodule须按父仓库固定指针初始化。
 更新法器来源或实现内容须核身份/版本，保留旧Git修订及旧记录，不把同名、副本、声明版本或源码变化自动当能力升级。
+本轮16项纳入，Chat Vault、MC Player Transfer、XHS ZIP→PDF 3项保留为明确范围排除和源码证据，不作为faqi对象；复入前须满足各自隔离数据/副作用复核条件。
 独立语义、运行、效果和许可批准不在此初审格式内；未经相应证据，不修改声明边界。
 
 修改目录、锚点、阅读路径或关键入口后，必须同步更新本目录，并运行：

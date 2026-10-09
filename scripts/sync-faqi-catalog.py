@@ -184,6 +184,23 @@ def validate(root, input_path):
             require(sources[objects[oid]["implementation"]]["path"].startswith(entry["path"] + "/"), "实现与本地入口所指错配")
         covered.update(entry["objects"])
     require(covered == objects.keys(), "法器实现未被本地入口覆盖")
+    exclusions = indexed(data["local_exclusions"], "path", "本地范围排除入口")
+    empty_entries = {path for path, entry in local.items() if not entry["objects"]}
+    require(empty_entries == exclusions.keys(), "空纳入入口须有且仅有一条显式范围排除记录")
+    excluded_implementation_sources = set()
+    for path, exclusion in exclusions.items():
+        require(path in local and safe_path(root, path).is_dir(), "排除记录不属于现存本地入口")
+        source_id = exclusion["source"]
+        require(source_id in sources and sources[source_id]["purpose"] == "exclusion_evidence", "排除证据来源用途错误")
+        evidence = sources[source_id]
+        require(evidence["path"].startswith(path + "/") and source_id in local[path]["sources"], "排除证据来源与入口错配")
+        require(set(exclusion["support_sources"]) <= sources.keys(), "排除佐证引用未知来源")
+        require(set(exclusion["support_sources"]) <= set(local[path]["sources"]), "排除佐证与入口错配")
+        require(all(sources[sid]["purpose"] == "support" for sid in exclusion["support_sources"]), "排除佐证来源用途错误")
+        require(not any(obj["implementation"] == source_id for obj in objects.values()), "排除实现来源不能同时纳入法器对象")
+        excluded_implementation_sources.add(source_id)
+    require(not any(s["purpose"] == "exclusion_evidence" and sid not in excluded_implementation_sources for sid, s in sources.items()),
+            "排除证据来源未绑定显式排除记录")
     resources = {}
     external_sources = indexed(data["external_sources"], "path", "外部来源")
     for value in external_sources.values():
@@ -267,7 +284,7 @@ def render(data, sources, objects, resources, decisions):
            "来源限定的静态初审，不是效果、可用性、许可证或独立语义批准。仅修改[法器初审数据](../metadata/faqi.json)，不手改此视图。",
            "类型与关系复用[唯一本体](../docs/gongfa/cultivation-ontology-taxonomy.md#唯一分类树)，不维护第二主树，不套功法四阶十二级。", "",
            "## 总体概览", "", f"初审时间：{data['reviewed_at']}；父仓库来源修订：`{data['source_revision']}`。",
-           f"本地入口 {len(data['local_entries'])} 个，来源限定法器实现初审 {len(objects)} 条，外部资源逐行分流 {len(resources)} 条；不是按目录或资源行计算独立产品数。",
+           f"本地入口 {len(data['local_entries'])} 个，来源限定法器实现初审 {len(objects)} 条，另有 {len(data['local_exclusions'])} 条明确范围排除；外部资源逐行分流 {len(resources)} 条。不是按目录或资源行计算独立产品数。",
            "程序源码修订和下表声明版本不等于已核发布版、已安装版本或已部署入口；同内容副本、多入口不重复登记。", "",
            table([[DECISIONS[r['decision']], len(r['resource_ids'])] for r in data['external_reviews']], ["外部分流状态", "资源行数"]),
            "## 本地来源限定法器", "",
@@ -277,9 +294,14 @@ def render(data, sources, objects, resources, decisions):
         source = sources[obj['implementation']]
         out += [f"### {obj['id']}", "", f"{text(obj['name'])}：{text(obj['boundary'])}",
                 f"实现来源 `{source['id']}`，佐证来源 `{', '.join(obj['support'])}`；声明版本：{text(obj['declared_version'] or '未核/无明确发布版本声明')}。", ""]
+    out += ["## 按本次范围排除的本地程序所指", "",
+            "下列源码确有程序实现所指，但应用户要求不作为本清单纳入对象；不代表它们不是软件。保留排除证据，重新纳入须满足各自复核条件。", ""]
+    for exclusion in data["local_exclusions"]:
+        out += [f"### {text(exclusion['name'])}", "", f"入口：`{exclusion['path']}`；证据选区 `{exclusion['source']}`；佐证选区 `{', '.join(exclusion['support_sources'])}`。",
+                text(exclusion["rationale"]), "", f"重新纳入前：{text(exclusion['reopen_condition'])}", ""]
     out += [f"## {len(data['local_entries'])}个本地入口的分离结果", ""]
     for entry in data['local_entries']:
-        out += [f"### {text(entry['path'])}", "", f"纳入实现：`{', '.join(entry['objects']) or '无'}`。{text(entry['boundary'])}",
+        out += [f"### {text(entry['path'])}", "", f"本次纳入对象：`{', '.join(entry['objects']) or '无（见范围排除记录）'}`。{text(entry['boundary'])}",
                 f"佐证来源：`{', '.join(entry['sources'])}`。"]
         out += [f"- 待核：{text(p)}" for p in entry['pending']]
         out += [""]
@@ -370,7 +392,8 @@ def main():
             require(before == rendered, "法器视图缺失/陈旧或手改；运行make sync-faqi-catalog")
         unchanged(bindings, root, data)
         print(json.dumps({"status": "valid-initial-source-review", "objects": len(objects), "local_entries": len(data['local_entries']),
-                          "external_resources": len(resources), "view_sha256": digest(rendered), **data['limits']}, ensure_ascii=False))
+                          "local_exclusions": len(data['local_exclusions']), "external_resources": len(resources),
+                          "view_sha256": digest(rendered), **data['limits']}, ensure_ascii=False))
         return 0
     except (ContractError, OSError, ValueError, KeyError, TypeError, RecursionError, subprocess.TimeoutExpired, yaml.YAMLError, jsonschema.exceptions.SchemaError) as error:
         # 不回显输入对象或Git异常中的潜在敏感值；错误只定位契约位置。
