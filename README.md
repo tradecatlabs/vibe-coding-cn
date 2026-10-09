@@ -31,20 +31,8 @@
   <a href="./prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/提示词-表格-blue?style=flat" alt="提示词在线表格"></a>
   <a href="./assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/资源-索引-teal?style=flat" alt="外部资源本地注册表"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/Wiki-导航-slateblue?style=flat" alt="Wiki 导航入口"></a>
-  <a href="#ai-six-propositions"><img src="https://img.shields.io/badge/命题-六条核心-slateblue?style=flat" alt="🧠 六条核心命题"></a>
-  <a href="docs/gongfa/README.md"><img src="https://img.shields.io/badge/功法-体系-slateblue?style=flat" alt="功法体系"></a>
   <a href="metadata/gongfa/catalog.md"><img src="https://img.shields.io/badge/功法-总表-purple?style=flat" alt="功法总表"></a>
   <a href="metadata/gongfa/catalog.xlsx"><img src="https://img.shields.io/badge/Excel-完整视图-forestgreen?style=flat" alt="Excel 完整视图"></a>
-  <a href="research/README.md"><img src="https://img.shields.io/badge/研究-目录-teal?style=flat" alt="🔬 研究域"></a>
-  <a href="#root-tldr"><img src="https://img.shields.io/badge/速读-摘要-grey?style=flat" alt="📌 字多不看"></a>
-  <a href="#getting-started"><img src="https://img.shields.io/badge/快速-开始-blue?style=flat" alt="⚡ 1 分钟快速开始"></a>
-  <a href="docs/getting-started/learning-map.md"><img src="https://img.shields.io/badge/入门-完整教程-red?style=flat" alt="🚀 从零开始完整入门"></a>
-  <a href="#ai-summary"><img src="https://img.shields.io/badge/AI-推荐摘要-slateblue?style=flat" alt="🤖 AI 推荐摘要"></a>
-  <a href="#why-vibe-coding-cn"><img src="https://img.shields.io/badge/项目-选择理由-forestgreen?style=flat" alt="✅ 为什么选择"></a>
-  <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/Wiki-导航-slateblue?style=flat" alt="📚 GitHub Wiki"></a>
-  <a href="#contact"><img src="https://img.shields.io/badge/研究-交流-teal?style=flat" alt="📞 研究交流"></a>
-  <a href="#support"><img src="https://img.shields.io/badge/项目-支持-orange?style=flat" alt="✨ 支持项目"></a>
-  <a href="#contributing"><img src="https://img.shields.io/badge/贡献-指南-blue?style=flat" alt="🤝 参与贡献"></a>
   <a href="https://zread.ai/tukuaiai/vibe-coding-cn/1-overview"><img src="https://img.shields.io/badge/Zread-AI解读-blue?style=flat" alt="zread.ai/tukuaiai/vibe-coding-cn"></a>
 </p>
 
