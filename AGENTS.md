@@ -9,7 +9,7 @@
 ### 允许的操作
 - 读取、修改顶层文档：`README.md`、`AGENTS.md`、`CONTRIBUTING.md` 等
 - 读取、修改 `docs/`、`prompts/`、`skills/`、`tools/config/`、`tools/external/` 下的文档与代码
-- 执行 `make lint`、`make check-links`、`make check-details`、`make check-doc-structure`、`make check-directory-docs`、`make check-metadata`、`make check-gongfa`、`make test-gongfa`、`make sync-gongfa-catalog`、`make check-gongfa-catalog`、`make test-gongfa-catalog`、`make check-ai-citation`、`make check-research-raw`、`make check-source-facts`、`make check-wiki`、`make fetch-research-raw`、`make sync-doc-toc`、prompts-library 转换工具
+- 执行 `make lint`、`make check-links`、`make check-details`、`make check-doc-structure`、`make check-directory-docs`、`make check-metadata`、`make check-gongfa`、`make test-gongfa`、`make sync-gongfa-catalog`、`make check-gongfa-catalog`、`make test-gongfa-catalog`、`make sync-faqi-catalog`、`make check-faqi-catalog`、`make test-faqi-catalog`、`make check-ai-citation`、`make check-research-raw`、`make check-source-facts`、`make check-wiki`、`make fetch-research-raw`、`make sync-doc-toc`、prompts-library 转换工具
 - 新增/修改提示词、技能、文档
 - 提交符合规范的 commit
 
@@ -74,6 +74,9 @@ git push origin develop
 | `make sync-gongfa-catalog` | 从当前登记与仓内候选历史快照重建同一总表 | Python3.10+、scripts/requirements-gongfa.txt |
 | `make check-gongfa-catalog` | 只读校验总表来源SHA、覆盖及Markdown/Excel一致性 | 同上；不写原文或评级 |
 | `make test-gongfa-catalog` | 验证总表维护行为并保存隔离工件 | 同上；不证明功法效果 |
+| `make sync-faqi-catalog` | 重建法器来源初审与资源分流的只读清单 | Python3.10+、Git、scripts/requirements-faqi.txt、固定submodule |
+| `make check-faqi-catalog` | 只读校验法器JSON、来源Git/SHA、覆盖与清单一致性 | 同上；不执行工具或批准效果 |
+| `make test-faqi-catalog` | 验证法器维护消费与拒绝行为，保留隔离工件 | 同上；不证明身份语义、许可或能力 |
 | `make check-ai-citation` | 校验 llms 与 AI 引用语料路径、锚点和规范仓库身份 | Python 3 |
 | `make check-external-resources` | 校验本地外部资源注册表字段、分类统计、ID 与链接形态 | Python 3、PyYAML |
 | `make check-research-raw` | 校验研究域 raw 原始事实层、Git 工作树、来源清单和核心材料文件 | Python 3、Git |
@@ -86,7 +89,8 @@ git push origin develop
 | `cd tools/prompts-library && python3 main.py` | 提示词格式转换 | `pip install -r tools/prompts-library/requirements.txt` |
 
 ### Python 依赖来源
-- 功法检查独立依赖：`scripts/requirements-gongfa.txt`；在现有虚拟环境安装，其他脚本最低版本不变。
+- 功法检查独立依赖：`scripts/requirements-gongfa.txt`；在现有虚拟环境安装。
+- 法器维护独立依赖：`scripts/requirements-faqi.txt`；Python3.10+，复用jsonschema、PyYAML、tabulate及测试用markdown-it-py；其他脚本最低版本不变。
 - prompts-library 主入口依赖：`tools/prompts-library/requirements.txt`
 - prompts-library Google API / JSONL 辅助脚本依赖：`tools/prompts-library/scripts/requirements.txt`
 
@@ -203,6 +207,7 @@ git push origin develop
 ├── tools/                       # 工具、本地配置与外部仓库
 │   ├── README.md                # tools 目录说明
 │   ├── AGENTS.md                # tools 目录规则
+│   ├── faqi-catalog.md           # 法器初审的只读生成消费者
 │   ├── config/                  # 工具与开发配置（含 Codex CLI）
 │   ├── prompts-library/         # Excel ↔ Markdown 互转工具
 │   ├── chat-vault/              # AI 聊天记录保存工具
@@ -220,6 +225,8 @@ git push origin develop
 │   ├── taxonomy.yml             # 分类体系
 │   ├── glossary.yml             # 术语表
 │   ├── redirects.yml            # 重命名/迁移映射
+│   ├── faqi.json                # 来源限定初审与资源逐ID分流
+│   ├── faqi.schema.json         # 初审声明边界，不复制类型树
 │   └── gongfa/                   # 功法登记、冻结来源、评级历史与单一总表（Markdown/Excel）
 │
 ├── .github/                     # GitHub 配置
@@ -251,6 +258,9 @@ git push origin develop
 - `scripts/check-doc-structure.py` - docs README 标准块顺序、目录入口和重复锚点检查脚本，供 `make check-doc-structure` 与 CI 使用
 - `scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
 - `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
+- `metadata/faqi.json` / `faqi.schema.json` - 法器来源限定初审与字段契约，引用已有类型；不承接资源原事实、第二本体树、账户/部署/运行或品级。
+- `tools/faqi-catalog.md` - 从初审JSON与原资源YAML生成的只读清单；源码初审不等于完整包语义、独立审查、许可或效果证明。
+- `scripts/sync-faqi-catalog.py` / `test-faqi-catalog.py` - 离线校验来源、入口、覆盖与视图，保留隔离工件；不执行被审程序或联网补证。
 - `metadata/gongfa/registry.json` - 活跃功法登记、等级、规则、来源、内容版本、人工初评及正式评级历史的唯一可编辑数据源；类型语义仍归本体主文；新范围追加批次
 - `metadata/gongfa/catalog.md` / `catalog.xlsx` - 同一全部功法总表的两种生成视图，聚合当前登记与已分类候选历史材料；不手改、不自动注册/去重/评级
 - `metadata/gongfa/catalog-sources.json` - 仅索引仓内不可变候选快照的路径/SHA/范围；历史材料不是第二可编辑登记，不依赖个人目录或临时工件
@@ -399,7 +409,7 @@ make test
 3. **Documentation Standard**: 用户文档使用中文；代码/文件名使用英文
 4. **Skills**: 每个技能有独立的 `SKILL.md`
 5. **Quality Gates**: `make test` 执行 Markdown lint、本地相对链接/锚点检查、折叠块结构检查、docs 结构检查、metadata 路径检查、AI 引用一致性检查、外部源事实镜像检查与现代企业架构 starter kit 检查；三个 `research/vibe-*` 目录按源事实镜像边界维护，仓库级格式检查跳过镜像内容。
-   功法登记/总表检查和相关测试纳入本地`make test`；GitHub Actions选定目标未改，不冒称新增远端覆盖。
+   功法登记/总表与法器初审检查、相关测试纳入本地`make test`；GitHub Actions选定目标未改，不冒称新增远端覆盖。
 
 ## Development Workflow
 

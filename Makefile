@@ -3,6 +3,7 @@
 .PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-gongfa test-gongfa check-ai-citation check-external-resources check-research-raw check-source-facts check-wiki fetch-research-raw sync-doc-toc build test clean clean-deps
 
 .PHONY: sync-gongfa-catalog check-gongfa-catalog test-gongfa-catalog
+.PHONY: sync-faqi-catalog check-faqi-catalog test-faqi-catalog
 
 MARKDOWNLINT = npx --yes markdownlint-cli@0.48.0
 
@@ -22,6 +23,9 @@ help:
 	@echo "  sync-gongfa-catalog - 从当前登记与仓内候选快照重建唯一总表"
 	@echo "  check-gongfa-catalog - 只读校验总表覆盖、源摘要与Markdown/Excel一致性"
 	@echo "  test-gongfa-catalog - 验证总表维护行为并保留隔离工件"
+	@echo "  sync-faqi-catalog - 重建法器来源初审与资源分流的只读清单"
+	@echo "  check-faqi-catalog - 校验法器JSON、Git/SHA、覆盖与只读清单"
+	@echo "  test-faqi-catalog - 验证法器清单维护并保留隔离工件"
 	@echo "  check-ai-citation - Check AI citation paths, anchors, and repository identity"
 	@echo "  check-external-resources - Check local external resources registry"
 	@echo "  check-research-raw - Check research raw fact snapshots and repository clones"
@@ -76,6 +80,15 @@ check-gongfa-catalog:
 test-gongfa-catalog:
 	@python3 scripts/test-gongfa-catalog.py
 
+sync-faqi-catalog:
+	@python3 scripts/sync-faqi-catalog.py --write
+
+check-faqi-catalog:
+	@python3 scripts/sync-faqi-catalog.py --check
+
+test-faqi-catalog:
+	@python3 scripts/test-faqi-catalog.py
+
 check-ai-citation:
 	@echo "Checking AI citation paths, anchors, and repository identity..."
 	@python3 scripts/check-ai-citation.py
@@ -108,7 +121,7 @@ sync-doc-toc:
 build:
 	@echo "No build step: this repository is a documentation and knowledge-base project."
 
-test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-gongfa test-gongfa check-gongfa-catalog test-gongfa-catalog check-ai-citation check-external-resources check-research-raw check-source-facts
+test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-gongfa test-gongfa check-gongfa-catalog test-gongfa-catalog check-faqi-catalog test-faqi-catalog check-ai-citation check-external-resources check-research-raw check-source-facts
 	@echo "Quality gates complete."
 
 clean: clean-deps
