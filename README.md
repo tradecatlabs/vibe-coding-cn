@@ -22,7 +22,7 @@
 <!-- 单一徽章行：紧凑标签，原链接与完整说明保留在href/alt。 -->
 <p>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/tukuaiai/vibe-coding-cn?label=%E8%AE%B8%E5%8F%AF%E8%AF%81&style=flat" alt="许可证"></a>
-  <a href="https://t.me/glue_coding"><img src="https://img.shields.io/badge/聊天-Telegram-blue?style=flat&logo=telegram" alt="交流群"></a>
+  <a href="https://t.me/glue_coding"><img src="https://img.shields.io/badge/交流-Telegram-blue?style=flat&logo=telegram" alt="交流群"></a>
   <a href="./docs/gongfa/README.md"><img src="https://img.shields.io/badge/功法-体系-slateblue?style=flat" alt="功法体系：思想、准则、方法与流程"></a>
   <a href="./research/README.md"><img src="https://img.shields.io/badge/研究-证据-teal?style=flat" alt="研究事实与证据"></a>
   <a href="./docs/getting-started/learning-map.md"><img src="https://img.shields.io/badge/入门-教程-red?style=flat" alt="从零开始完整入门"></a>
