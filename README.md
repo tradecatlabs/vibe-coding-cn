@@ -58,6 +58,7 @@
 
 逐条身份、内容版本、冻结来源与已有意见查看[功法登记](metadata/gongfa/README.md)及上方总表。
 文集归并不等于全部内容已经逐条登记；已有初评也不等于正式效果验证。
+程序内容及外部资源所指的初审见[法器清单](tools/faqi-catalog.md)；源码核定不等于运行、许可或效果验证。
 
 </details>
 
@@ -406,8 +407,11 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │   ├── auto-tmux/               # tmux 自动化脚本、pane 巡检、救援与多终端协作
 │   └── claude-official-skills/  # Claude 官方 skills 软链接入口
 ├── tools/                       # 辅助工具、外部仓库与工具配置
+│   └── faqi-catalog.md           # 法器来源初审与外部资源分流的只读视图
 ├── scripts/                     # 自动化脚本
 ├── metadata/                    # 机器可读索引与限定子域数据
+│   ├── faqi.json                # 法器来源限定初审，不含品级或运行批准
+│   ├── faqi.schema.json         # 初审字段契约，复用唯一BFO树
 │   └── gongfa/                   # 功法登记、来源快照与单一总表（Markdown/Excel）
 ├── assets/                      # 静态资产、外部资源注册表与 AI 引用资产
 │

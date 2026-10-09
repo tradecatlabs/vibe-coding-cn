@@ -23,10 +23,21 @@
 - 候选来源保留旧编者意见并明确未登记；不同限定内容和同名条目不自动合并或继承品级。
 - 更新后运行`make sync-gongfa-catalog`、`make check-gongfa-catalog`及`make test-gongfa-catalog`，不手改生成视图。
 
+## 法器来源初审
+
+- `faqi.json`唯一拥有来源限定实现初审、选区用途与资源逐ID分流；字段契约为`faqi.schema.json`，不是正式身份/效果或运行登记。
+- 类型只引用唯一本体；原资源ID、名称、地址、状态、验证状态和风险仍归`assets/external-resources/`分类YAML，不复制为第二登记。
+- 程序内容与Skill规约、配置、模型、载体、副本、地址、账号、部署及一次运行按真实所指区分，不按目录/后缀、同名、多入口机械合并或新增身份。
+- 来源用途是人工初审标注，Schema/后缀/SHA不能证明语义正确；独立审查、运行、效果、许可与品级声明固定未批准。
+- 固定来源修订、原字节SHA与一基半开选区；新内容/版本重新核身份，不继承旧能力，不覆盖旧Git来源事实。
+- `tools/faqi-catalog.md`只读生成；运行`make sync-faqi-catalog`、`make check-faqi-catalog`、`make test-faqi-catalog`，保留真实工件。
+
 ## 验证
 
 ```bash
 make check-metadata
+make check-faqi-catalog
+make test-faqi-catalog
 make check-gongfa
 make test-gongfa
 make test
