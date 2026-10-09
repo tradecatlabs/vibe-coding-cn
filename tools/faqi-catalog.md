@@ -6,8 +6,8 @@
 
 ## 总体概览
 
-初审时间：2026-10-09T07:15:02.009544+00:00；父仓库来源修订：`0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2`。
-本地入口 13 个，来源限定法器实现初审 19 条，外部资源逐行分流 158 条；不是按目录或资源行计算独立产品数。
+初审时间：2026-10-09T14:12:00+00:00；父仓库来源修订：`0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2`。
+本地入口 13 个，来源限定法器实现初审 16 条，另有 3 条明确范围排除；外部资源逐行分流 158 条。不是按目录或资源行计算独立产品数。
 程序源码修订和下表声明版本不等于已核发布版、已安装版本或已部署入口；同内容副本、多入口不重复登记。
 
 ```text
@@ -33,7 +33,6 @@
 | 实现ID                      | 名称                              | 已有类型ID        | 实现来源ID   |
 |-----------------------------+-----------------------------------+-------------------+--------------|
 | faqi-prompt-converter       | 提示词格式转换程序                | software-artifact | S02          |
-| faqi-chat-vault             | Chat Vault同步与查询程序          | software-artifact | S04          |
 | faqi-codex-config-installer | Codex配置安装与恢复脚本           | software-artifact | S06          |
 | faqi-auto-skill-create      | auto-skill模板生成脚本            | software-artifact | S08          |
 | faqi-auto-skill-validate    | auto-skill结构校验脚本            | software-artifact | S09          |
@@ -49,8 +48,6 @@
 | faqi-html-xhs-card          | 小红书内容卡片PNG导出网页程序     | software-artifact | S28          |
 | faqi-html-markdown-sync-png | Markdown同步预览与PNG导出网页程序 | software-artifact | S29          |
 | faqi-my-nvim-lua            | my-nvim的LazyVim引导配置程序      | software-artifact | S32          |
-| faqi-mc-player-transfer     | Minecraft基岩版角色迁移程序       | software-artifact | S34          |
-| faqi-xhs-zip-pdf            | 小红书图片ZIP转PDF程序            | software-artifact | S36          |
 +-----------------------------+-----------------------------------+-------------------+--------------+
 ```
 
@@ -58,11 +55,6 @@
 
 提示词格式转换程序：指main.py及其转换实现所表达的程序内容；Excel、Markdown和JSONL是输入/输出，不随转换模式复制工具身份。未验证转换正确性。
 实现来源 `S02`，佐证来源 `S01`；声明版本：未核/无明确发布版本声明。
-
-### faqi-chat-vault
-
-Chat Vault同步与查询程序：所指为同步/查询/导出程序，不是数据库、会话、消息或一次同步；模块顶层会ensure_venv，import和--help也不能视为无副作用，未启动或读取聊天数据。
-实现来源 `S04`，佐证来源 `S03`；声明版本：未核/无明确发布版本声明。
 
 ### faqi-codex-config-installer
 
@@ -139,95 +131,111 @@ Markdown同步预览与PNG导出网页程序：文件名带1.0，但实际title�
 my-nvim的LazyVim引导配置程序：Lua含git clone、异常分支、setup等可执行指令，不是纯参数表；是Neovim/LazyVim配置程序，不是Neovim实现。README v0.11.5指宿主Neovim，不作为配置版本。
 实现来源 `S32`，佐证来源 `S30, S31`；声明版本：未核/无明确发布版本声明。
 
-### faqi-mc-player-transfer
+## 按本次范围排除的本地程序所指
 
-Minecraft基岩版角色迁移程序：extract/import是同一程序的两种任务；存档、角色数据和一次迁移不是程序。涉及读写存档，未运行，不把备份提示当恢复成功证据。
-实现来源 `S34`，佐证来源 `S33`；声明版本：未核/无明确发布版本声明。
+下列源码确有程序实现所指，但应用户要求不作为本清单纳入对象；不代表它们不是软件。保留排除证据，重新纳入须满足各自复核条件。
 
-### faqi-xhs-zip-pdf
+### Chat Vault同步与查询程序
 
-小红书图片ZIP转PDF程序：纳入排序、合并与PDF写出程序；源码会extractall、清理固定temp_extract目录并在成功路径删除原ZIP。属于数据损失/路径处理风险，未执行或证明安全。
-实现来源 `S36`，佐证来源 `S35`；声明版本：未核/无明确发布版本声明。
+入口：`tools/chat-vault`；证据选区 `S04`；佐证选区 `S03`。
+按用户指定从当前法器清单排除。源码会自动探测Codex/Kiro/Gemini/Claude会话目录，将消息/cwd写入SQLite，并提供搜索、导出、watch和prune；入口在参数解析前会创建虚拟环境并安装依赖。属于私人对话数据、运行安装及持久副作用边界；未读取数据或执行，排除不等于否认其程序实现。
+
+重新纳入前：只有明确需要纳入时，再以合成会话和隔离临时目录验证数据最小化、路径授权、日志/数据库访问控制、导出/删除语义、依赖安装副作用及恢复；不得用真实用户会话做验证。
+
+### Minecraft基岩版角色迁移程序
+
+入口：`tools/external/MCPlayerTransfer`；证据选区 `S34`；佐证选区 `S33`。
+按用户指定从当前法器清单排除。源码对.mcworld调用ZIP extractall，读取~local_player LevelDB记录；导入会写入LevelDB并以w模式创建目标归档。未验证不可信归档路径、目标文件覆盖、存档一致性和部分失败恢复；未处理真实存档，排除不等于否认其程序实现。
+
+重新纳入前：如明确需要纳入，先在合成存档副本中验证归档路径/资源上限、无覆盖的临时输出、LevelDB读写一致性、失败清理与可恢复性；禁止用唯一真实存档作为测试输入。
+
+### 小红书图片ZIP转PDF程序
+
+入口：`tools/external/XHS-image-to-PDF-conversion`；证据选区 `S36`；佐证选区 `S35`。
+按用户指定从当前法器清单排除。源码把外部ZIP解到输入旁固定temp_extract，运行前会递归删除同名目录；保存PDF后会删除原ZIP，异常时也会清理临时目录。缺少路径安全、覆盖保护、备份和失败恢复证据，未处理真实文件；排除不等于否认其程序实现。
+
+重新纳入前：如明确需要纳入，先在隔离副本验证ZIP成员路径和展开上限、唯一随机临时目录、输入/PDF不覆盖、原ZIP保留、原子输出和所有失败路径恢复；不得使用真实业务ZIP测试。
 
 ## 13个本地入口的分离结果
 
 ### tools/prompts-library
 
-纳入实现：`faqi-prompt-converter`。纳入程序，不把提示词资产或生成目录当工具实现。
+本次纳入对象：`faqi-prompt-converter`。纳入程序，不把提示词资产或生成目录当工具实现。
 佐证来源：`S01, S02`。
 
 ### tools/chat-vault
 
-纳入实现：`faqi-chat-vault`。程序与SQLite记录、日志、会话实体及存储载体分开。
+本次纳入对象：`无（见范围排除记录）`。代码确有会话同步/查询程序所指，但按本轮用户范围排除，不作为当前法器对象。
 佐证来源：`S03, S04`。
-- 待核：运行效果、隐私边界与真正同步权限未核；README“只读”声明不证明数据安全。
+- 待核：会话文件自动探测、SQLite持久化、搜索/导出及启动时环境创建/安装涉及私人数据和副作用；未运行，也未读取用户数据。
 
 ### tools/config/.codex
 
-纳入实现：`faqi-codex-config-installer`。配置与AGENTS文本不等于CLI；脚本本身有独立程序所指。
+本次纳入对象：`faqi-codex-config-installer`。配置与AGENTS文本不等于CLI；脚本本身有独立程序所指。
 佐证来源：`S05, S06`。
 - 待核：Codex实际程序、已安装版本、权限及账户不由本目录证明。
 
 ### skills/auto-skill
 
-纳入实现：`faqi-auto-skill-create, faqi-auto-skill-validate, faqi-skill-seekers-adapter`。Skill说明/规约与三个独立入口脚本分离，不把整Skill包登记成一件软件。
+本次纳入对象：`faqi-auto-skill-create, faqi-auto-skill-validate, faqi-skill-seekers-adapter`。Skill说明/规约与三个独立入口脚本分离，不把整Skill包登记成一件软件。
 佐证来源：`S07, S08, S09, S10`。
 - 待核：其他辅助模块未逐模块登记，不能将本次选区称为全包能力审查。
 
 ### skills/auto-tmux
 
-纳入实现：`faqi-auto-tmux`。Skill方法/规约、执行脚本、被依赖程序及运行入口分别指认。
+本次纳入对象：`faqi-auto-tmux`。Skill方法/规约、执行脚本、被依赖程序及运行入口分别指认。
 佐证来源：`S11, S12, S13`。
 - 待核：两个assets引用实际上是零字节普通占位文件，不是README声称的软链接；本次记录缺口，不冒称已修复或上游源码可经此引用到达。
 - 待核：蜂群附属脚本不逐一登记，不启动蜂群，也不将蜂群状态/日志算软件。
 
 ### tools/external/Skill_Seekers-development
 
-纳入实现：`faqi-skill-seekers`。源码内容与仓库载体、接口规范、抓取过程、输入资料和生成Skill分开。
+本次纳入对象：`faqi-skill-seekers`。源码内容与仓库载体、接口规范、抓取过程、输入资料和生成Skill分开。
 佐证来源：`S14, S15, S16`。
 - 待核：CLI与MCP各实现的完整对应关系、许可/可用性与外部I/O权限未作完整审查。
 
 ### tools/external/.tmux
 
-纳入实现：`faqi-oh-my-tmux`。配置数据与嵌入程序按实际所指区分；本条纳入可执行配置程序，未安装或source配置。
+本次纳入对象：`faqi-oh-my-tmux`。配置数据与嵌入程序按实际所指区分；本条纳入可执行配置程序，未安装或source配置。
 佐证来源：`S17, S18, S19`。
 - 待核：源码含条件性kill-server；纳入不等于可安全对当前会话执行。
 
 ### tools/external/tmux
 
-纳入实现：`faqi-tmux`。tmux程序与配置、操控封装、终端会话和显示记录分开。
+本次纳入对象：`faqi-tmux`。tmux程序与配置、操控封装、终端会话和显示记录分开。
 佐证来源：`S20, S21`。
 
 ### tools/external/claude-official-skills
 
-纳入实现：`faqi-claude-skill-init`。集合入口不等于法器身份；指令内容与脚本实现分别判断。
+本次纳入对象：`faqi-claude-skill-init`。集合入口不等于法器身份；指令内容与脚本实现分别判断。
 佐证来源：`S22, S23`。
 - 待核：README明确部分文档Skill仅source-available，不能把整个集合称为同一开源许可证；本次不批准再分发/商用许可。
 - 待核：其余辅助脚本未逐模块展开。
 
 ### tools/external/html-tools-main
 
-纳入实现：`faqi-html-epub-css, faqi-html-markdown-text, faqi-html-task-card, faqi-html-xhs-card, faqi-html-markdown-sync-png`。五个页面确有不同JavaScript实现，登记来源限定内容记录，不按HTML目录或README宣传登记一件全能工具。
+本次纳入对象：`faqi-html-epub-css, faqi-html-markdown-text, faqi-html-task-card, faqi-html-xhs-card, faqi-html-markdown-sync-png`。五个页面确有不同JavaScript实现，登记来源限定内容记录，不按HTML目录或README宣传登记一件全能工具。
 佐证来源：`S24, S25, S26, S27, S28, S29`。
 - 待核：两个Markdown相关实现以及文件名“1.0”的产品同一/版本演化仍待核，不自动合并或填predecessor。
 - 待核：README的index.html/tools/示意与当前目录实际平铺不同；“无需额外依赖”不等于无需网络/CDN脚本。
 
 ### tools/external/my-nvim
 
-纳入实现：`faqi-my-nvim-lua`。配置程序、宿主Neovim、LazyVim依赖与说明宣传各有自己的所指。
+本次纳入对象：`faqi-my-nvim-lua`。配置程序、宿主Neovim、LazyVim依赖与说明宣传各有自己的所指。
 佐证来源：`S30, S31, S32`。
 - 待核：配置会尝试克隆插件并启用更新检查；未运行，未核实际依赖锁定或README“全面测试”主张。
 
 ### tools/external/MCPlayerTransfer
 
-纳入实现：`faqi-mc-player-transfer`。纳入迁移程序，角色数据与存档载体排除于程序身份。
+本次纳入对象：`无（见范围排除记录）`。代码确有存档角色提取/导入程序所指，但按本轮用户范围排除，不作为当前法器对象。
 佐证来源：`S33, S34`。
+- 待核：对压缩包extractall、LevelDB角色写入及目标归档直接写入的路径安全、覆盖、完整性和失败恢复未测试。
 
 ### tools/external/XHS-image-to-PDF-conversion
 
-纳入实现：`faqi-xhs-zip-pdf`。ZIP/PDF为输入/输出制品，原ZIP删除不是工具身份或效果证明。
+本次纳入对象：`无（见范围排除记录）`。代码确有ZIP图片转PDF程序所指，但按本轮用户范围排除，不作为当前法器对象。
 佐证来源：`S35, S36`。
-- 待核：不可逆删除、解压路径与部分失败恢复须先隔离验证，不能直接用真实资料运行。
+- 待核：源码固定temp_extract并先递归删除同名目录，解压外部ZIP、写PDF且成功后删除原ZIP；未运行或验证恢复。
 
 ## 静态依赖与引用入口
 
@@ -692,7 +700,7 @@ Minecraft基岩版角色迁移程序：extract/import是同一程序的两种任
 ### S04
 
 [来源文件](../tools/chat-vault/services/chat-vault/src/main.py)：`tools/chat-vault/services/chat-vault/src/main.py`。
-- 初审用途：`implementation`（人工标注，不是自动语义批准）。
+- 初审用途：`exclusion_evidence`（人工标注，不是自动语义批准）。
 - 仓库：`.`；Git修订：`0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2`。
 - 完整文件SHA-256：`561c611909714d358f9968c45078f037bd46cdb037969d598cfed27d94affd72`。
 - 选区：`[65,107)`；SHA-256：`43279c5004b34ef3de79da4dd5c103e741f0a9ed47683e7c262a79bd35f8b551`。
@@ -932,7 +940,7 @@ Minecraft基岩版角色迁移程序：extract/import是同一程序的两种任
 ### S34
 
 [来源文件](../tools/external/MCPlayerTransfer/main.py)：`tools/external/MCPlayerTransfer/main.py`。
-- 初审用途：`implementation`（人工标注，不是自动语义批准）。
+- 初审用途：`exclusion_evidence`（人工标注，不是自动语义批准）。
 - 仓库：`.`；Git修订：`0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2`。
 - 完整文件SHA-256：`11bfdb47774247c32ad8cd0de441d56a13a17e9c12bcb3e2d9e81895958e1450`。
 - 选区：`[1,51)`；SHA-256：`11bfdb47774247c32ad8cd0de441d56a13a17e9c12bcb3e2d9e81895958e1450`。
@@ -948,7 +956,7 @@ Minecraft基岩版角色迁移程序：extract/import是同一程序的两种任
 ### S36
 
 [来源文件](../tools/external/XHS-image-to-PDF-conversion/pdf.py)：`tools/external/XHS-image-to-PDF-conversion/pdf.py`。
-- 初审用途：`implementation`（人工标注，不是自动语义批准）。
+- 初审用途：`exclusion_evidence`（人工标注，不是自动语义批准）。
 - 仓库：`.`；Git修订：`0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2`。
 - 完整文件SHA-256：`ee045272a0ba361676c1ee908758e7316e96438774716c79472fb05cc5055539`。
 - 选区：`[17,120)`；SHA-256：`4b4eb47d3545b5bcba80384c1aa81cee4d973d006736ea7a664f69ef9b759e70`。
