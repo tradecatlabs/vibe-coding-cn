@@ -19,27 +19,19 @@
 <!--
   徽章区域 (BADGES)
 -->
-<!-- 项目状态徽章 -->
+<!-- 单一徽章行：紧凑标签，原链接与完整说明保留在href/alt。 -->
 <p>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/tukuaiai/vibe-coding-cn?label=%E8%AE%B8%E5%8F%AF%E8%AF%81&style=for-the-badge" alt="许可证"></a>
-  <a href="https://x.com/123olp"><img src="https://img.shields.io/badge/X-123olp-black?style=for-the-badge&logo=x" alt="X"></a>
-  <a href="https://t.me/glue_coding"><img src="https://img.shields.io/badge/聊天-Telegram-blue?style=for-the-badge&logo=telegram" alt="交流群"></a>
-</p>
-
-<!-- 资源直达：功法与研究，沿用周围标签块语法。 -->
-<p>
-  <a href="./docs/gongfa/README.md"><img src="https://img.shields.io/badge/📚_功法体系-思想准则方法流程-slateblue?style=for-the-badge" alt="功法体系：思想、准则、方法与流程"></a>
-  <a href="./research/README.md"><img src="https://img.shields.io/badge/🔬_研究-事实与证据-teal?style=for-the-badge" alt="研究事实与证据"></a>
-</p>
-
-<!-- 资源直达：实践入口 -->
-<p>
-  <a href="./docs/getting-started/learning-map.md"><img src="https://img.shields.io/badge/🚀_从零开始-完整入门-red?style=for-the-badge" alt="从零开始完整入门"></a>
-  <a href="./tools/config/.codex/README.md"><img src="https://img.shields.io/badge/⚙️_Codex配置-一键安装-blue?style=for-the-badge" alt="Codex 配置一键安装"></a>
-  <a href="./skills/README.md#当前保留"><img src="https://img.shields.io/badge/⚡_Skills-技能大全-forestgreen?style=for-the-badge" alt="skills技能大全"></a>
-  <a href="./prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/📋_提示词-在线表格-blue?style=for-the-badge" alt="提示词在线表格"></a>
-  <a href="./assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/📡_外部资源-本地注册表-teal?style=for-the-badge" alt="外部资源本地注册表"></a>
-  <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/📚_Wiki-导航入口-slateblue?style=for-the-badge" alt="Wiki 导航入口"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/tukuaiai/vibe-coding-cn?label=%E8%AE%B8%E5%8F%AF%E8%AF%81&style=flat" alt="许可证"></a>
+  <a href="https://x.com/123olp"><img src="https://img.shields.io/badge/X-123olp-black?style=flat&logo=x" alt="X"></a>
+  <a href="https://t.me/glue_coding"><img src="https://img.shields.io/badge/聊天-Telegram-blue?style=flat&logo=telegram" alt="交流群"></a>
+  <a href="./docs/gongfa/README.md"><img src="https://img.shields.io/badge/功法-体系-slateblue?style=flat" alt="功法体系：思想、准则、方法与流程"></a>
+  <a href="./research/README.md"><img src="https://img.shields.io/badge/研究-证据-teal?style=flat" alt="研究事实与证据"></a>
+  <a href="./docs/getting-started/learning-map.md"><img src="https://img.shields.io/badge/入门-教程-red?style=flat" alt="从零开始完整入门"></a>
+  <a href="./tools/config/.codex/README.md"><img src="https://img.shields.io/badge/Codex-配置-blue?style=flat" alt="Codex 配置一键安装"></a>
+  <a href="./skills/README.md#当前保留"><img src="https://img.shields.io/badge/Skills-技能-forestgreen?style=flat" alt="skills技能大全"></a>
+  <a href="./prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/提示词-表格-blue?style=flat" alt="提示词在线表格"></a>
+  <a href="./assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/资源-索引-teal?style=flat" alt="外部资源本地注册表"></a>
+  <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/Wiki-导航-slateblue?style=flat" alt="Wiki 导航入口"></a>
 </p>
 
 [🧠 六条核心命题](#ai-six-propositions)
