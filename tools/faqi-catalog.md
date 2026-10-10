@@ -6,8 +6,8 @@
 
 ## 总体概览
 
-初审时间：2026-10-09T14:12:00+00:00；父仓库来源修订：`0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2`。
-本地入口 13 个，来源限定法器实现初审 16 条，另有 3 条明确范围排除；外部资源逐行分流 158 条。不是按目录或资源行计算独立产品数。
+初审时间：2026-10-10T04:30:59+00:00；父仓库来源修订：`0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2`。
+本地入口 13 个，来源限定法器实现初审 10 条，另有 9 条明确范围排除；外部资源逐行分流 158 条。不是按目录或资源行计算独立产品数。
 程序源码修订和下表声明版本不等于已核发布版、已安装版本或已部署入口；同内容副本、多入口不重复登记。
 
 ```text
@@ -29,26 +29,20 @@
 以下记录只指选定来源的程序指令内容；不同内容实现是否属于同一产品/派生版本，仍须另有演化证据。用途不作为主父。
 
 ```text
-+-----------------------------+-----------------------------------+-------------------+--------------+
-| 实现ID                      | 名称                              | 已有类型ID        | 实现来源ID   |
-|-----------------------------+-----------------------------------+-------------------+--------------|
-| faqi-prompt-converter       | 提示词格式转换程序                | software-artifact | S02          |
-| faqi-codex-config-installer | Codex配置安装与恢复脚本           | software-artifact | S06          |
-| faqi-auto-skill-create      | auto-skill模板生成脚本            | software-artifact | S08          |
-| faqi-auto-skill-validate    | auto-skill结构校验脚本            | software-artifact | S09          |
-| faqi-skill-seekers-adapter  | Skill Seekers本地运行适配脚本     | software-artifact | S10          |
-| faqi-auto-tmux              | auto-tmux命令封装程序             | software-artifact | S12          |
-| faqi-skill-seekers          | Skill Seekers程序                 | software-artifact | S16          |
-| faqi-oh-my-tmux             | oh-my-tmux可执行配置程序          | software-artifact | S18          |
-| faqi-tmux                   | tmux终端复用程序                  | software-artifact | S21          |
-| faqi-claude-skill-init      | 官方Skill初始化脚本               | software-artifact | S23          |
-| faqi-html-epub-css          | EPUB CSS清理网页程序              | software-artifact | S25          |
-| faqi-html-markdown-text     | Markdown预览与文本导出网页程序    | software-artifact | S26          |
-| faqi-html-task-card         | 任务卡片PNG导出网页程序           | software-artifact | S27          |
-| faqi-html-xhs-card          | 小红书内容卡片PNG导出网页程序     | software-artifact | S28          |
-| faqi-html-markdown-sync-png | Markdown同步预览与PNG导出网页程序 | software-artifact | S29          |
-| faqi-my-nvim-lua            | my-nvim的LazyVim引导配置程序      | software-artifact | S32          |
-+-----------------------------+-----------------------------------+-------------------+--------------+
++-----------------------------+-------------------------------+-------------------+--------------+
+| 实现ID                      | 名称                          | 已有类型ID        | 实现来源ID   |
+|-----------------------------+-------------------------------+-------------------+--------------|
+| faqi-prompt-converter       | 提示词格式转换程序            | software-artifact | S02          |
+| faqi-codex-config-installer | Codex配置安装与恢复脚本       | software-artifact | S06          |
+| faqi-auto-skill-create      | auto-skill模板生成脚本        | software-artifact | S08          |
+| faqi-auto-skill-validate    | auto-skill结构校验脚本        | software-artifact | S09          |
+| faqi-skill-seekers-adapter  | Skill Seekers本地运行适配脚本 | software-artifact | S10          |
+| faqi-auto-tmux              | auto-tmux命令封装程序         | software-artifact | S12          |
+| faqi-skill-seekers          | Skill Seekers程序             | software-artifact | S16          |
+| faqi-oh-my-tmux             | oh-my-tmux可执行配置程序      | software-artifact | S18          |
+| faqi-tmux                   | tmux终端复用程序              | software-artifact | S21          |
+| faqi-claude-skill-init      | 官方Skill初始化脚本           | software-artifact | S23          |
++-----------------------------+-------------------------------+-------------------+--------------+
 ```
 
 ### faqi-prompt-converter
@@ -101,36 +95,6 @@ tmux终端复用程序：指固定源码修订的程序内容，不是物理终�
 官方Skill初始化脚本：只纳入skill-creator下生成目录/模板的独立Python程序，不把官方Skill集合、自然语言方法、模板或其他全部辅助脚本称作同一程序。
 实现来源 `S23`，佐证来源 `S22`；声明版本：未核/无明确发布版本声明。
 
-### faqi-html-epub-css
-
-EPUB CSS清理网页程序：HTML内JavaScript负责读取、改写CSS和重新打包；是浏览器程序内容，不是纯文章。需JSZip等外部脚本，未启动浏览器或处理书籍。
-实现来源 `S25`，佐证来源 `S24`；声明版本：未核/无明确发布版本声明。
-
-### faqi-html-markdown-text
-
-Markdown预览与文本导出网页程序：指marked驱动的预览/复制/文本导出实现；源码sanitize:false且innerHTML，不能把预览声明当安全处理不可信Markdown的证据。
-实现来源 `S26`，佐证来源 `S24`；声明版本：未核/无明确发布版本声明。
-
-### faqi-html-task-card
-
-任务卡片PNG导出网页程序：指html2canvas驱动的任务卡片导出实现；卡片内容、导出图片和一次生成过程不等于程序。
-实现来源 `S27`，佐证来源 `S24`；声明版本：未核/无明确发布版本声明。
-
-### faqi-html-xhs-card
-
-小红书内容卡片PNG导出网页程序：指可编辑内容卡片的PNG导出实现；不是图文资料或抓取客户端，未核依赖/CDN可用性。
-实现来源 `S28`，佐证来源 `S24`；声明版本：未核/无明确发布版本声明。
-
-### faqi-html-markdown-sync-png
-
-Markdown同步预览与PNG导出网页程序：文件名带1.0，但实际title与指令所指为Markdown同步预览/调整宽度/PNG导出；不凭文件名当小红书产品版本。与其他页面内容不同，产品同一/前驱关系未批准。
-实现来源 `S29`，佐证来源 `S24`；声明版本：未核/无明确发布版本声明。
-
-### faqi-my-nvim-lua
-
-my-nvim的LazyVim引导配置程序：Lua含git clone、异常分支、setup等可执行指令，不是纯参数表；是Neovim/LazyVim配置程序，不是Neovim实现。README v0.11.5指宿主Neovim，不作为配置版本。
-实现来源 `S32`，佐证来源 `S30, S31`；声明版本：未核/无明确发布版本声明。
-
 ## 按本次范围排除的本地程序所指
 
 下列源码确有程序实现所指，但应用户要求不作为本清单纳入对象；不代表它们不是软件。保留排除证据，重新纳入须满足各自复核条件。
@@ -155,6 +119,48 @@ my-nvim的LazyVim引导配置程序：Lua含git clone、异常分支、setup等�
 按用户指定从当前法器清单排除。源码把外部ZIP解到输入旁固定temp_extract，运行前会递归删除同名目录；保存PDF后会删除原ZIP，异常时也会清理临时目录。缺少路径安全、覆盖保护、备份和失败恢复证据，未处理真实文件；排除不等于否认其程序实现。
 
 重新纳入前：如明确需要纳入，先在隔离副本验证ZIP成员路径和展开上限、唯一随机临时目录、输入/PDF不覆盖、原ZIP保留、原子输出和所有失败路径恢复；不得使用真实业务ZIP测试。
+
+### EPUB CSS清理网页程序
+
+入口：`tools/external/html-tools-main`；证据选区 `S25`；佐证选区 `S24`。
+按用户指定从当前法器清单移除。固定来源选区仅保留为该网页实现的排除证据；未运行，不据此批准身份、依赖可用性、效果或许可。
+
+重新纳入前：如需重新纳入，重新核定固定来源、身份、依赖和许可，并在隔离副本中验证文件读写及失败恢复；不得把源码存在当作运行证明。
+
+### Markdown预览与文本导出网页程序
+
+入口：`tools/external/html-tools-main`；证据选区 `S26`；佐证选区 `S24`。
+按用户指定从当前法器清单移除。固定来源选区仅保留为该Markdown预览/导出实现的排除证据；未运行，不据此批准身份、依赖可用性、效果或许可。
+
+重新纳入前：如需重新纳入，重新核定固定来源、身份、版本、依赖和许可，并在隔离输入下复核预览与导出行为；不得将源码声明当作安全或效果验证。
+
+### 任务卡片PNG导出网页程序
+
+入口：`tools/external/html-tools-main`；证据选区 `S27`；佐证选区 `S24`。
+按用户指定从当前法器清单移除。固定来源选区仅保留为该卡片导出实现的排除证据；未运行，不据此批准身份、依赖可用性、效果或许可。
+
+重新纳入前：如需重新纳入，重新核定固定来源、身份、依赖和许可，并用合成内容验证导出结果；不使用私人或业务资料。
+
+### 小红书内容卡片PNG导出网页程序
+
+入口：`tools/external/html-tools-main`；证据选区 `S28`；佐证选区 `S24`。
+按用户指定从当前法器清单移除。固定来源选区仅保留为该内容卡片导出实现的排除证据；未运行，不据此批准身份、依赖可用性、效果或许可。
+
+重新纳入前：如需重新纳入，重新核定固定来源、身份、依赖和许可，并用合成内容验证导出行为及外部脚本边界；不使用私人或业务资料。
+
+### Markdown同步预览与PNG导出网页程序
+
+入口：`tools/external/html-tools-main`；证据选区 `S29`；佐证选区 `S24`。
+按用户指定从当前法器清单移除。固定来源选区仅保留为该Markdown同步预览/导出实现的排除证据；未运行，不据此批准身份、版本、依赖、效果或许可。
+
+重新纳入前：如需重新纳入，重新核定固定来源、与其他页面的产品关系、版本、依赖和许可，并以隔离输入复核同步及导出行为。
+
+### my-nvim的LazyVim引导配置程序
+
+入口：`tools/external/my-nvim`；证据选区 `S32`；佐证选区 `S30, S31`。
+按用户指定从当前法器清单移除。Lua配置程序来源仅保留为排除证据；未运行，不据此批准身份、插件依赖、效果或许可。
+
+重新纳入前：如需重新纳入，重新核定固定来源、身份、版本、依赖和许可，并在临时HOME/隔离环境验证克隆及更新副作用；不得使用真实用户Neovim配置验证。
 
 ## 13个本地入口的分离结果
 
@@ -214,16 +220,16 @@ my-nvim的LazyVim引导配置程序：Lua含git clone、异常分支、setup等�
 
 ### tools/external/html-tools-main
 
-本次纳入对象：`faqi-html-epub-css, faqi-html-markdown-text, faqi-html-task-card, faqi-html-xhs-card, faqi-html-markdown-sync-png`。五个页面确有不同JavaScript实现，登记来源限定内容记录，不按HTML目录或README宣传登记一件全能工具。
+本次纳入对象：`无（见范围排除记录）`。五个不同页面实现均按用户指定从当前法器清单排除；排除不否认其程序实现。
 佐证来源：`S24, S25, S26, S27, S28, S29`。
+- 待核：如需重新纳入，须逐项复核来源内容、身份、版本、依赖及许可；未进行运行或效果验证。
 - 待核：两个Markdown相关实现以及文件名“1.0”的产品同一/版本演化仍待核，不自动合并或填predecessor。
-- 待核：README的index.html/tools/示意与当前目录实际平铺不同；“无需额外依赖”不等于无需网络/CDN脚本。
 
 ### tools/external/my-nvim
 
-本次纳入对象：`faqi-my-nvim-lua`。配置程序、宿主Neovim、LazyVim依赖与说明宣传各有自己的所指。
+本次纳入对象：`无（见范围排除记录）`。配置程序按用户指定从当前法器清单排除；不代表宿主Neovim、LazyVim依赖或整个仓库内容一并纳入/排除。
 佐证来源：`S30, S31, S32`。
-- 待核：配置会尝试克隆插件并启用更新检查；未运行，未核实际依赖锁定或README“全面测试”主张。
+- 待核：如需重新纳入，须复核固定来源、身份、版本、依赖及许可；配置可能克隆插件并检查更新，未运行或验证效果。
 
 ### tools/external/MCPlayerTransfer
 
@@ -248,14 +254,12 @@ my-nvim的LazyVim引导配置程序：Lua含git clone、异常分支、setup等�
 | faqi-auto-tmux             | requires | tmux程序（运行版本未知）           | faqi-tmux          | S13      |
 | faqi-oh-my-tmux            | requires | tmux>=2.6及awk/perl/grep/sed       | faqi-tmux          | S17      |
 | faqi-skill-seekers-adapter | requires | 链接源码中的skill_seekers.cli.main | faqi-skill-seekers | S10      |
-| faqi-my-nvim-lua           | requires | Neovim运行环境、lazy.nvim和LazyVim | 未知               | S32      |
 +----------------------------+----------+------------------------------------+--------------------+----------+
 ```
 
 - `faqi-auto-tmux`：脚本调用PATH中的tmux；本地上游源码仅作相关参照，不证明实际安装二进制来自该修订。
 - `faqi-oh-my-tmux`：README声明版本下限，不将配置修订误写成tmux版本，也不保证当前环境满足依赖。
 - `faqi-skill-seekers-adapter`：源码路径确由软链接指到选定submodule；这是静态加载意图，venv实际依赖、Python解析和运行结果未核。
-- `faqi-my-nvim-lua`：不把配置包当Neovim；源码可联网克隆/更新插件，实际宿主与依赖版本未绑定。
 
 - `skills/auto-skill/scripts/Skill_Seekers-development`：`symlink`；目标 `../../../tools/external/Skill_Seekers-development`。同一仓库源码的引用入口，不新增法器副本；封装脚本另有指令内容。
 - `skills/claude-official-skills`：`symlink`；目标 `../tools/external/claude-official-skills`。指向Skill集合而非一件软件，不能再因引用入口登记整集合。
@@ -868,7 +872,7 @@ my-nvim的LazyVim引导配置程序：Lua含git clone、异常分支、setup等�
 ### S25
 
 [来源文件](../tools/external/html-tools-main/clean_epub_css.html)：`tools/external/html-tools-main/clean_epub_css.html`。
-- 初审用途：`implementation`（人工标注，不是自动语义批准）。
+- 初审用途：`exclusion_evidence`（人工标注，不是自动语义批准）。
 - 仓库：`.`；Git修订：`0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2`。
 - 完整文件SHA-256：`1716a7ea5f4bf4837bc044c9c164e58b3dbb04d492f677b7766b506edd1c0d2a`。
 - 选区：`[317,405)`；SHA-256：`4d07dac2850cbf4860f628b5c26d52976aea9cc8dd981851da5141dc7b18a7cb`。
@@ -876,7 +880,7 @@ my-nvim的LazyVim引导配置程序：Lua含git clone、异常分支、setup等�
 ### S26
 
 [来源文件](../tools/external/html-tools-main/markdown-bianjiqi.html)：`tools/external/html-tools-main/markdown-bianjiqi.html`。
-- 初审用途：`implementation`（人工标注，不是自动语义批准）。
+- 初审用途：`exclusion_evidence`（人工标注，不是自动语义批准）。
 - 仓库：`.`；Git修订：`0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2`。
 - 完整文件SHA-256：`e4c76015749bf42e898412ec7b8e1229c847575ef740bcf6900311d7212dc61e`。
 - 选区：`[181,260)`；SHA-256：`cbc5a64c27eefb0801c95a87cbf4ed0a149e25000a41e53e3387eb274ca40894`。
@@ -884,7 +888,7 @@ my-nvim的LazyVim引导配置程序：Lua含git clone、异常分支、setup等�
 ### S27
 
 [来源文件](../tools/external/html-tools-main/task%20card%20generator.html)：`tools/external/html-tools-main/task card generator.html`。
-- 初审用途：`implementation`（人工标注，不是自动语义批准）。
+- 初审用途：`exclusion_evidence`（人工标注，不是自动语义批准）。
 - 仓库：`.`；Git修订：`0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2`。
 - 完整文件SHA-256：`0eba89d2f674bb0bc26690c4e406f99b7a2bcd40ecd838c1c19e1f970f7b5670`。
 - 选区：`[217,284)`；SHA-256：`8b710f5b6f6b1c1f0fcaafead15e6f63e5800684a1c8ae49dad6a7681659eb19`。
@@ -892,7 +896,7 @@ my-nvim的LazyVim引导配置程序：Lua含git clone、异常分支、setup等�
 ### S28
 
 [来源文件](../tools/external/html-tools-main/xhs%20graphic%20production.html)：`tools/external/html-tools-main/xhs graphic production.html`。
-- 初审用途：`implementation`（人工标注，不是自动语义批准）。
+- 初审用途：`exclusion_evidence`（人工标注，不是自动语义批准）。
 - 仓库：`.`；Git修订：`0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2`。
 - 完整文件SHA-256：`1835e29563d4cf7f01cb9cf837d3f57d1b2e48304cc202e1061240bccf6e7e0e`。
 - 选区：`[96,147)`；SHA-256：`52b9c7a45cd3d5c8409ee1cde59c31296b608e35c0d668c2833bd7b35639a0f8`。
@@ -900,7 +904,7 @@ my-nvim的LazyVim引导配置程序：Lua含git clone、异常分支、setup等�
 ### S29
 
 [来源文件](../tools/external/html-tools-main/xhs%20graphic%20production%20-%201.0.html)：`tools/external/html-tools-main/xhs graphic production - 1.0.html`。
-- 初审用途：`implementation`（人工标注，不是自动语义批准）。
+- 初审用途：`exclusion_evidence`（人工标注，不是自动语义批准）。
 - 仓库：`.`；Git修订：`0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2`。
 - 完整文件SHA-256：`14a60fa5cc9fa3b7a8beac146277c1ef15729eb5e18cd7889fbcf498d5d1411a`。
 - 选区：`[177,312)`；SHA-256：`abe37a7bfbc4b1035be0ff037decbc49b6f336a59e8b8e5501e810d721f45ab9`。
@@ -924,7 +928,7 @@ my-nvim的LazyVim引导配置程序：Lua含git clone、异常分支、setup等�
 ### S32
 
 [来源文件](../tools/external/my-nvim/nvim-config/lua/config/lazy.lua)：`tools/external/my-nvim/nvim-config/lua/config/lazy.lua`。
-- 初审用途：`implementation`（人工标注，不是自动语义批准）。
+- 初审用途：`exclusion_evidence`（人工标注，不是自动语义批准）。
 - 仓库：`.`；Git修订：`0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2`。
 - 完整文件SHA-256：`5fd03a47dc423a46b7c141149d35ba20cbbd96eb2c90f48f74dbff94c202802e`。
 - 选区：`[1,56)`；SHA-256：`5fd03a47dc423a46b7c141149d35ba20cbbd96eb2c90f48f74dbff94c202802e`。
