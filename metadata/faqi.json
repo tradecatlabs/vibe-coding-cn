@@ -1,7 +1,7 @@
 {
   "format_version": 1,
   "kind": "faqi-initial-source-review",
-  "reviewed_at": "2026-10-09T14:12:00+00:00",
+  "reviewed_at": "2026-10-10T04:30:59+00:00",
   "source_revision": "0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2",
   "ontology": {
     "path": "docs/gongfa/cultivation-ontology-taxonomy.md",
@@ -329,7 +329,7 @@
     },
     {
       "id": "S25",
-      "purpose": "implementation",
+      "purpose": "exclusion_evidence",
       "path": "tools/external/html-tools-main/clean_epub_css.html",
       "repository": ".",
       "revision": "0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2",
@@ -342,7 +342,7 @@
     },
     {
       "id": "S26",
-      "purpose": "implementation",
+      "purpose": "exclusion_evidence",
       "path": "tools/external/html-tools-main/markdown-bianjiqi.html",
       "repository": ".",
       "revision": "0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2",
@@ -355,7 +355,7 @@
     },
     {
       "id": "S27",
-      "purpose": "implementation",
+      "purpose": "exclusion_evidence",
       "path": "tools/external/html-tools-main/task card generator.html",
       "repository": ".",
       "revision": "0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2",
@@ -368,7 +368,7 @@
     },
     {
       "id": "S28",
-      "purpose": "implementation",
+      "purpose": "exclusion_evidence",
       "path": "tools/external/html-tools-main/xhs graphic production.html",
       "repository": ".",
       "revision": "0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2",
@@ -381,7 +381,7 @@
     },
     {
       "id": "S29",
-      "purpose": "implementation",
+      "purpose": "exclusion_evidence",
       "path": "tools/external/html-tools-main/xhs graphic production - 1.0.html",
       "repository": ".",
       "revision": "0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2",
@@ -420,7 +420,7 @@
     },
     {
       "id": "S32",
-      "purpose": "implementation",
+      "purpose": "exclusion_evidence",
       "path": "tools/external/my-nvim/nvim-config/lua/config/lazy.lua",
       "repository": ".",
       "revision": "0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2",
@@ -596,73 +596,6 @@
       ],
       "boundary": "只纳入skill-creator下生成目录/模板的独立Python程序，不把官方Skill集合、自然语言方法、模板或其他全部辅助脚本称作同一程序。",
       "declared_version": null
-    },
-    {
-      "id": "faqi-html-epub-css",
-      "name": "EPUB CSS清理网页程序",
-      "type_id": "software-artifact",
-      "implementation": "S25",
-      "support": [
-        "S24"
-      ],
-      "boundary": "HTML内JavaScript负责读取、改写CSS和重新打包；是浏览器程序内容，不是纯文章。需JSZip等外部脚本，未启动浏览器或处理书籍。",
-      "declared_version": null
-    },
-    {
-      "id": "faqi-html-markdown-text",
-      "name": "Markdown预览与文本导出网页程序",
-      "type_id": "software-artifact",
-      "implementation": "S26",
-      "support": [
-        "S24"
-      ],
-      "boundary": "指marked驱动的预览/复制/文本导出实现；源码sanitize:false且innerHTML，不能把预览声明当安全处理不可信Markdown的证据。",
-      "declared_version": null
-    },
-    {
-      "id": "faqi-html-task-card",
-      "name": "任务卡片PNG导出网页程序",
-      "type_id": "software-artifact",
-      "implementation": "S27",
-      "support": [
-        "S24"
-      ],
-      "boundary": "指html2canvas驱动的任务卡片导出实现；卡片内容、导出图片和一次生成过程不等于程序。",
-      "declared_version": null
-    },
-    {
-      "id": "faqi-html-xhs-card",
-      "name": "小红书内容卡片PNG导出网页程序",
-      "type_id": "software-artifact",
-      "implementation": "S28",
-      "support": [
-        "S24"
-      ],
-      "boundary": "指可编辑内容卡片的PNG导出实现；不是图文资料或抓取客户端，未核依赖/CDN可用性。",
-      "declared_version": null
-    },
-    {
-      "id": "faqi-html-markdown-sync-png",
-      "name": "Markdown同步预览与PNG导出网页程序",
-      "type_id": "software-artifact",
-      "implementation": "S29",
-      "support": [
-        "S24"
-      ],
-      "boundary": "文件名带1.0，但实际title与指令所指为Markdown同步预览/调整宽度/PNG导出；不凭文件名当小红书产品版本。与其他页面内容不同，产品同一/前驱关系未批准。",
-      "declared_version": null
-    },
-    {
-      "id": "faqi-my-nvim-lua",
-      "name": "my-nvim的LazyVim引导配置程序",
-      "type_id": "software-artifact",
-      "implementation": "S32",
-      "support": [
-        "S30",
-        "S31"
-      ],
-      "boundary": "Lua含git clone、异常分支、setup等可执行指令，不是纯参数表；是Neovim/LazyVim配置程序，不是Neovim实现。README v0.11.5指宿主Neovim，不作为配置版本。",
-      "declared_version": null
     }
   ],
   "local_entries": [
@@ -797,13 +730,7 @@
     },
     {
       "path": "tools/external/html-tools-main",
-      "objects": [
-        "faqi-html-epub-css",
-        "faqi-html-markdown-text",
-        "faqi-html-task-card",
-        "faqi-html-xhs-card",
-        "faqi-html-markdown-sync-png"
-      ],
+      "objects": [],
       "sources": [
         "S24",
         "S25",
@@ -812,25 +739,23 @@
         "S28",
         "S29"
       ],
-      "boundary": "五个页面确有不同JavaScript实现，登记来源限定内容记录，不按HTML目录或README宣传登记一件全能工具。",
+      "boundary": "五个不同页面实现均按用户指定从当前法器清单排除；排除不否认其程序实现。",
       "pending": [
-        "两个Markdown相关实现以及文件名“1.0”的产品同一/版本演化仍待核，不自动合并或填predecessor。",
-        "README的index.html/tools/示意与当前目录实际平铺不同；“无需额外依赖”不等于无需网络/CDN脚本。"
+        "如需重新纳入，须逐项复核来源内容、身份、版本、依赖及许可；未进行运行或效果验证。",
+        "两个Markdown相关实现以及文件名“1.0”的产品同一/版本演化仍待核，不自动合并或填predecessor。"
       ]
     },
     {
       "path": "tools/external/my-nvim",
-      "objects": [
-        "faqi-my-nvim-lua"
-      ],
+      "objects": [],
       "sources": [
         "S30",
         "S31",
         "S32"
       ],
-      "boundary": "配置程序、宿主Neovim、LazyVim依赖与说明宣传各有自己的所指。",
+      "boundary": "配置程序按用户指定从当前法器清单排除；不代表宿主Neovim、LazyVim依赖或整个仓库内容一并纳入/排除。",
       "pending": [
-        "配置会尝试克隆插件并启用更新检查；未运行，未核实际依赖锁定或README“全面测试”主张。"
+        "如需重新纳入，须复核固定来源、身份、版本、依赖及许可；配置可能克隆插件并检查更新，未运行或验证效果。"
       ]
     },
     {
@@ -885,6 +810,60 @@
       "support_sources": ["S35"],
       "rationale": "按用户指定从当前法器清单排除。源码把外部ZIP解到输入旁固定temp_extract，运行前会递归删除同名目录；保存PDF后会删除原ZIP，异常时也会清理临时目录。缺少路径安全、覆盖保护、备份和失败恢复证据，未处理真实文件；排除不等于否认其程序实现。",
       "reopen_condition": "如明确需要纳入，先在隔离副本验证ZIP成员路径和展开上限、唯一随机临时目录、输入/PDF不覆盖、原ZIP保留、原子输出和所有失败路径恢复；不得使用真实业务ZIP测试。"
+    },
+    {
+      "path": "tools/external/html-tools-main",
+      "name": "EPUB CSS清理网页程序",
+      "decision": "excluded_from_faqi_scope",
+      "source": "S25",
+      "support_sources": ["S24"],
+      "rationale": "按用户指定从当前法器清单移除。固定来源选区仅保留为该网页实现的排除证据；未运行，不据此批准身份、依赖可用性、效果或许可。",
+      "reopen_condition": "如需重新纳入，重新核定固定来源、身份、依赖和许可，并在隔离副本中验证文件读写及失败恢复；不得把源码存在当作运行证明。"
+    },
+    {
+      "path": "tools/external/html-tools-main",
+      "name": "Markdown预览与文本导出网页程序",
+      "decision": "excluded_from_faqi_scope",
+      "source": "S26",
+      "support_sources": ["S24"],
+      "rationale": "按用户指定从当前法器清单移除。固定来源选区仅保留为该Markdown预览/导出实现的排除证据；未运行，不据此批准身份、依赖可用性、效果或许可。",
+      "reopen_condition": "如需重新纳入，重新核定固定来源、身份、版本、依赖和许可，并在隔离输入下复核预览与导出行为；不得将源码声明当作安全或效果验证。"
+    },
+    {
+      "path": "tools/external/html-tools-main",
+      "name": "任务卡片PNG导出网页程序",
+      "decision": "excluded_from_faqi_scope",
+      "source": "S27",
+      "support_sources": ["S24"],
+      "rationale": "按用户指定从当前法器清单移除。固定来源选区仅保留为该卡片导出实现的排除证据；未运行，不据此批准身份、依赖可用性、效果或许可。",
+      "reopen_condition": "如需重新纳入，重新核定固定来源、身份、依赖和许可，并用合成内容验证导出结果；不使用私人或业务资料。"
+    },
+    {
+      "path": "tools/external/html-tools-main",
+      "name": "小红书内容卡片PNG导出网页程序",
+      "decision": "excluded_from_faqi_scope",
+      "source": "S28",
+      "support_sources": ["S24"],
+      "rationale": "按用户指定从当前法器清单移除。固定来源选区仅保留为该内容卡片导出实现的排除证据；未运行，不据此批准身份、依赖可用性、效果或许可。",
+      "reopen_condition": "如需重新纳入，重新核定固定来源、身份、依赖和许可，并用合成内容验证导出行为及外部脚本边界；不使用私人或业务资料。"
+    },
+    {
+      "path": "tools/external/html-tools-main",
+      "name": "Markdown同步预览与PNG导出网页程序",
+      "decision": "excluded_from_faqi_scope",
+      "source": "S29",
+      "support_sources": ["S24"],
+      "rationale": "按用户指定从当前法器清单移除。固定来源选区仅保留为该Markdown同步预览/导出实现的排除证据；未运行，不据此批准身份、版本、依赖、效果或许可。",
+      "reopen_condition": "如需重新纳入，重新核定固定来源、与其他页面的产品关系、版本、依赖和许可，并以隔离输入复核同步及导出行为。"
+    },
+    {
+      "path": "tools/external/my-nvim",
+      "name": "my-nvim的LazyVim引导配置程序",
+      "decision": "excluded_from_faqi_scope",
+      "source": "S32",
+      "support_sources": ["S30", "S31"],
+      "rationale": "按用户指定从当前法器清单移除。Lua配置程序来源仅保留为排除证据；未运行，不据此批准身份、插件依赖、效果或许可。",
+      "reopen_condition": "如需重新纳入，重新核定固定来源、身份、版本、依赖和许可，并在临时HOME/隔离环境验证克隆及更新副作用；不得使用真实用户Neovim配置验证。"
     }
   ],
   "external_sources": [
@@ -1168,14 +1147,6 @@
       "related_object_id": "faqi-skill-seekers",
       "evidence": "S10",
       "boundary": "源码路径确由软链接指到选定submodule；这是静态加载意图，venv实际依赖、Python解析和运行结果未核。"
-    },
-    {
-      "subject": "faqi-my-nvim-lua",
-      "predicate": "requires",
-      "target_label": "Neovim运行环境、lazy.nvim和LazyVim",
-      "related_object_id": null,
-      "evidence": "S32",
-      "boundary": "不把配置包当Neovim；源码可联网克隆/更新插件，实际宿主与依赖版本未绑定。"
     }
   ],
   "references": [

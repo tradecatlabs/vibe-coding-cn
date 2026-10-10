@@ -41,7 +41,7 @@ class FaqiCatalogTest(unittest.TestCase):
         result = self.invoke("current", "--check")
         self.assertEqual(0, result.returncode, result.stderr.decode())
         report = json.loads(result.stdout)
-        self.assertEqual((16, 13, 3, 158), (
+        self.assertEqual((10, 13, 9, 158), (
             report["objects"], report["local_entries"], report["local_exclusions"], report["external_resources"]))
         self.assertFalse(report["independent_review"])
         self.assertFalse(report["runtime_verified"])
@@ -53,26 +53,37 @@ class FaqiCatalogTest(unittest.TestCase):
         purposes = {s["id"]: s.get("purpose") for s in data["sources"]}
         # 用途来自实际读过的实现/说明选区，而非由对象引用反推。
         self.assertEqual("support", purposes["S01"])
-        for sid in ("S02", "S06", "S08", "S09", "S10", "S12", "S16", "S18", "S21", "S23", "S25", "S26", "S27", "S28", "S29", "S32"):
+        for sid in ("S02", "S06", "S08", "S09", "S10", "S12", "S16", "S18", "S21", "S23"):
             self.assertEqual("implementation", purposes[sid])
-        for sid in ("S04", "S34", "S36"):
+        expected_exclusion_sources = {"S04", "S25", "S26", "S27", "S28", "S29", "S32", "S34", "S36"}
+        for sid in expected_exclusion_sources:
             self.assertEqual("exclusion_evidence", purposes[sid])
-        exclusions = {item["path"]: item for item in data["local_exclusions"]}
+        exclusions = {(item["path"], item["name"]): item for item in data["local_exclusions"]}
         expected_excluded = {
-            "tools/chat-vault": "私人对话数据",
-            "tools/external/MCPlayerTransfer": "LevelDB",
-            "tools/external/XHS-image-to-PDF-conversion": "原ZIP",
+            ("tools/chat-vault", "Chat Vault同步与查询程序"): "私人对话数据",
+            ("tools/external/MCPlayerTransfer", "Minecraft基岩版角色迁移程序"): "LevelDB",
+            ("tools/external/XHS-image-to-PDF-conversion", "小红书图片ZIP转PDF程序"): "原ZIP",
+            ("tools/external/html-tools-main", "EPUB CSS清理网页程序"): "按用户指定",
+            ("tools/external/html-tools-main", "Markdown预览与文本导出网页程序"): "按用户指定",
+            ("tools/external/html-tools-main", "任务卡片PNG导出网页程序"): "按用户指定",
+            ("tools/external/html-tools-main", "小红书内容卡片PNG导出网页程序"): "按用户指定",
+            ("tools/external/html-tools-main", "Markdown同步预览与PNG导出网页程序"): "按用户指定",
+            ("tools/external/my-nvim", "my-nvim的LazyVim引导配置程序"): "按用户指定",
         }
         self.assertEqual(set(expected_excluded), set(exclusions))
-        for path, evidence in expected_excluded.items():
-            self.assertIn(evidence, exclusions[path]["rationale"])
-            entry = next(item for item in data["local_entries"] if item["path"] == path)
-            self.assertEqual([], entry["objects"])
-        for excluded_id in ("faqi-chat-vault", "faqi-mc-player-transfer", "faqi-xhs-zip-pdf"):
+        self.assertEqual(expected_exclusion_sources, {item["source"] for item in data["local_exclusions"]})
+        for key, evidence in expected_excluded.items():
+            self.assertIn(evidence, exclusions[key]["rationale"])
+        empty_paths = {entry["path"] for entry in data["local_entries"] if not entry["objects"]}
+        self.assertEqual({key[0] for key in expected_excluded}, empty_paths)
+        for excluded_id in (
+            "faqi-chat-vault", "faqi-mc-player-transfer", "faqi-xhs-zip-pdf",
+            "faqi-html-epub-css", "faqi-html-markdown-text", "faqi-html-task-card",
+            "faqi-html-xhs-card", "faqi-html-markdown-sync-png", "faqi-my-nvim-lua",
+        ):
             self.assertNotIn(excluded_id, objects)
         # 期望来自实现选区与本体：可执行配置不是CLI本体，技能说明不是脚本。
-        for name in ("faqi-tmux", "faqi-oh-my-tmux", "faqi-my-nvim-lua",
-                     "faqi-codex-config-installer", "faqi-auto-tmux"):
+        for name in ("faqi-tmux", "faqi-oh-my-tmux", "faqi-codex-config-installer", "faqi-auto-tmux"):
             self.assertEqual("software-artifact", objects[name]["type_id"])
         self.assertNotIn("faqi-codex-cli", objects)
         decisions = {rid: r["decision"] for r in data["external_reviews"] for rid in r["resource_ids"]}
@@ -117,13 +128,21 @@ class FaqiCatalogTest(unittest.TestCase):
         changed = copy.deepcopy(original); changed["local_exclusions"] = []
         cases.append(("unrecorded-empty-entry", changed))
         changed = copy.deepcopy(original)
-        excluded_source = next(i for i, source in enumerate(changed["sources"]) if source["id"] == "S04")
-        changed["sources"][excluded_source]["purpose"] = "implementation"
-        resurrected = {"id": "faqi-chat-vault-reintroduced", "name": "Chat Vault同步与查询程序", "type_id": "software-artifact", "implementation": "S04", "support": ["S03"], "boundary": "反事实复入测试，不作新批准", "declared_version": None}
-        changed["objects"].append(resurrected)
-        entry = next(item for item in changed["local_entries"] if item["path"] == "tools/chat-vault")
-        entry["objects"] = [resurrected["id"]]
-        cases.append(("excluded-source-reclassified-as-implementation", changed))
+        changed["local_exclusions"].append(copy.deepcopy(next(item for item in changed["local_exclusions"] if item["source"] == "S04")))
+        cases.append(("duplicate-exclusion-record", changed))
+        for source_id, path, name, support in (
+            ("S04", "tools/chat-vault", "Chat Vault同步与查询程序", ["S03"]),
+            ("S25", "tools/external/html-tools-main", "EPUB CSS清理网页程序", ["S24"]),
+            ("S32", "tools/external/my-nvim", "my-nvim的LazyVim引导配置程序", ["S30", "S31"]),
+        ):
+            changed = copy.deepcopy(original)
+            excluded_source = next(i for i, source in enumerate(changed["sources"]) if source["id"] == source_id)
+            changed["sources"][excluded_source]["purpose"] = "implementation"
+            resurrected = {"id": f"faqi-{source_id.lower()}-reintroduced", "name": name, "type_id": "software-artifact", "implementation": source_id, "support": support, "boundary": "反事实复入测试，不作新批准", "declared_version": None}
+            changed["objects"].append(resurrected)
+            entry = next(item for item in changed["local_entries"] if item["path"] == path)
+            entry["objects"].append(resurrected["id"])
+            cases.append((f"excluded-source-{source_id}-reclassified-as-implementation", changed))
         changed = copy.deepcopy(original); changed["sources"][1]["selection_sha256"] = "0" * 64
         cases.append(("selection-drift", changed))
         changed = copy.deepcopy(original); changed["objects"][0]["name"] = "程序\n```\n<script>"

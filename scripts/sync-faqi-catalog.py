@@ -184,13 +184,18 @@ def validate(root, input_path):
             require(sources[objects[oid]["implementation"]]["path"].startswith(entry["path"] + "/"), "实现与本地入口所指错配")
         covered.update(entry["objects"])
     require(covered == objects.keys(), "法器实现未被本地入口覆盖")
-    exclusions = indexed(data["local_exclusions"], "path", "本地范围排除入口")
-    empty_entries = {path for path, entry in local.items() if not entry["objects"]}
-    require(empty_entries == exclusions.keys(), "空纳入入口须有且仅有一条显式范围排除记录")
+    exclusions_by_path = {}
+    exclusion_keys = set()
     excluded_implementation_sources = set()
-    for path, exclusion in exclusions.items():
+    for exclusion in data["local_exclusions"]:
+        path = exclusion["path"]
+        key = (path, exclusion["name"])
+        require(key not in exclusion_keys, "同一入口的范围排除对象重复")
+        exclusion_keys.add(key)
+        exclusions_by_path.setdefault(path, []).append(exclusion)
         require(path in local and safe_path(root, path).is_dir(), "排除记录不属于现存本地入口")
         source_id = exclusion["source"]
+        require(source_id not in excluded_implementation_sources, "排除证据来源不能重复绑定")
         require(source_id in sources and sources[source_id]["purpose"] == "exclusion_evidence", "排除证据来源用途错误")
         evidence = sources[source_id]
         require(evidence["path"].startswith(path + "/") and source_id in local[path]["sources"], "排除证据来源与入口错配")
@@ -199,6 +204,8 @@ def validate(root, input_path):
         require(all(sources[sid]["purpose"] == "support" for sid in exclusion["support_sources"]), "排除佐证来源用途错误")
         require(not any(obj["implementation"] == source_id for obj in objects.values()), "排除实现来源不能同时纳入法器对象")
         excluded_implementation_sources.add(source_id)
+    empty_entries = {path for path, entry in local.items() if not entry["objects"]}
+    require(empty_entries <= set(exclusions_by_path), "空纳入入口须有显式范围排除记录")
     require(not any(s["purpose"] == "exclusion_evidence" and sid not in excluded_implementation_sources for sid, s in sources.items()),
             "排除证据来源未绑定显式排除记录")
     resources = {}
