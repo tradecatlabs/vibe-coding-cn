@@ -39,7 +39,7 @@
 </div>
 
 <a id="gongfa"></a>
-<!-- 其他方法历史定位收口到功法；六命题旧锚点保留并统一指向正文入口。 -->
+<!-- 其他方法历史定位收口到功法；六命题旧锚点仅作兼容，正文入口在功法体系。 -->
 <a id="dao-fa-shu-qi"></a>
 <a id="tools"></a>
 <a id="经验"></a>
@@ -81,8 +81,6 @@
 <a id="ai-five-propositions"></a>
 <a id="ai-three-propositions"></a>
 <a id="六条核心命题"></a>
-
-**🧠 六条核心命题：**[阅读正文](docs/gongfa/ai-core-propositions.md)
 
 <a id="root-tldr"></a>
 
