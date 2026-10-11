@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""校验来源限定的法器初审，生成单一只读视图；不推断类别或执行被审工具。"""
+"""校验法器总分类登记与依赖图观察，生成只读视图；不执行被审工具或推断等级。"""
 import argparse
 import configparser
 import datetime
@@ -29,6 +29,13 @@ DECISIONS = {
     "pending_identity": "待核：对象身份",
     "related_local_source": "关联已审本地来源",
     "restricted_service_pending": "待核：受限服务所指",
+}
+GRADE_TIERS = (("tian", "天阶"), ("di", "地阶"), ("xuan", "玄阶"), ("huang", "黄阶"))
+GRADE_LEVELS = (("initial", "初级"), ("intermediate", "中级"), ("advanced", "高级"))
+GRADE_LABELS = {
+    f"faqi-{tier}-{level}": f"{tier_label}{level_label}"
+    for tier, tier_label in (("tian", "天阶"), ("di", "地阶"), ("xuan", "玄阶"), ("huang", "黄阶"))
+    for level, level_label in GRADE_LEVELS
 }
 
 
@@ -140,6 +147,15 @@ def validate(root, input_path):
     bindings[ontology_path] = digest(ontology_raw)
     ontology = ontology_raw.decode("utf-8")
     type_ids = set(re.findall(r"^\| `([^`]+)` \|", ontology, re.MULTILINE))
+    graph = data["dependency_graph"]
+    graph_path = safe_path(root, graph["source_path"])
+    graph_raw = bounded_read(graph_path)
+    require(digest(graph_raw) == graph["source_sha256"], "依赖图来源SHA漂移，需重新核实对象映射")
+    graph_text = graph_raw.decode("utf-8")
+    require(f'<a id="{graph["source_anchor"]}"></a>' in graph_text, "依赖图锚点不存在")
+    graph_time = datetime.datetime.fromisoformat(graph["observed_at"].replace("Z", "+00:00"))
+    require(graph_time.tzinfo is not None, "依赖图观测时间须含时区")
+    bindings[graph_path] = digest(graph_raw)
     sources = indexed(data["sources"], "id", "来源ID")
     objects = indexed(data["objects"], "id", "法器实现ID")
     footprints = set()
@@ -231,6 +247,23 @@ def validate(root, input_path):
     require(set(data["resource_notes"]) <= resources.keys(), "附注引用未知资源")
     related = {rid for rid, review in decisions.items() if review["decision"] == "related_local_source"}
     require(data["local_resource_links"].keys() == related, "本地来源关联缺失或范围扩大")
+    graph_objects = indexed(data["dependency_graph"]["objects"], "id", "依赖图对象ID")
+    require(not (graph_objects.keys() & objects.keys()), "依赖图对象与本地来源对象ID冲突；不得复制同一身份")
+    for obj in graph_objects.values():
+        require(obj["type_id"] in type_ids, "依赖图对象引用了不存在的本体类")
+        require(obj["related_object_id"] is None or obj["related_object_id"] in objects, "依赖图运行实例关联未知本地对象")
+        require(set(obj["resource_ids"]) <= resources.keys(), "依赖图对象引用未知外部资源ID")
+        require(obj["grade_id"] is None and obj["grade_status"] == "pending", "草案量表未校准，不得登记法器等级")
+    graph_links = indexed(data["dependency_graph"]["local_links"], "object_id", "依赖图本地关联对象")
+    require(graph_links.keys() <= objects.keys(), "依赖图关联引用未知本地来源对象")
+    graph_categories = indexed(data["dependency_graph"]["dependency_categories"], "node", "依赖图类别")
+    require(all(item["disposition"] == "user_confirmed_in_scope" for item in graph_categories.values()),
+            "用户已确认纳入的依赖类别不得降级为范围外或遗漏")
+    category_ids = {item["id"] for item in graph_categories.values()}
+    grade_assignments = indexed(data["provisional_grade_assignments"], "subject_id", "暂定品级记录")
+    expected_grade_subjects = set(objects) | set(graph_objects) | category_ids
+    require(grade_assignments.keys() == expected_grade_subjects, "暂定品级记录必须完整覆盖本次纳入对象，不能遗漏或增加条目")
+    require(all(item["grade_id"] in GRADE_LABELS for item in grade_assignments.values()), "暂定品级ID不在法器四阶十二级词表中")
     modules_path = safe_path(root, ".gitmodules")
     module_bytes = bounded_read(modules_path)
     require(module_bytes == git_blob(root, data["source_revision"], ".gitmodules"), "submodule注册文件漂移")
@@ -287,20 +320,76 @@ def table(rows, headers):
 
 
 def render(data, sources, objects, resources, decisions):
-    out = [MARKER, "# 法器清单与资源初审", "",
-           "来源限定的静态初审，不是效果、可用性、许可证或独立语义批准。仅修改[法器初审数据](../metadata/faqi.json)，不手改此视图。",
-           "类型与关系复用[唯一本体](../docs/gongfa/cultivation-ontology-taxonomy.md#唯一分类树)，不维护第二主树，不套功法四阶十二级。", "",
-           "## 总体概览", "", f"初审时间：{data['reviewed_at']}；父仓库来源修订：`{data['source_revision']}`。",
-           f"本地入口 {len(data['local_entries'])} 个，来源限定法器实现初审 {len(objects)} 条，另有 {len(data['local_exclusions'])} 条明确范围排除；外部资源逐行分流 {len(resources)} 条。不是按目录或资源行计算独立产品数。",
-           "程序源码修订和下表声明版本不等于已核发布版、已安装版本或已部署入口；同内容副本、多入口不重复登记。", "",
-           table([[DECISIONS[r['decision']], len(r['resource_ids'])] for r in data['external_reviews']], ["外部分流状态", "资源行数"]),
-           "## 本地来源限定法器", "",
-           "以下记录只指选定来源的程序指令内容；不同内容实现是否属于同一产品/派生版本，仍须另有演化证据。用途不作为主父。", "",
-           table([[o['id'], o['name'], o['type_id'], o['implementation']] for o in objects.values()], ["实现ID", "名称", "已有类型ID", "实现来源ID"])]
+    graph = data["dependency_graph"]
+    graph_links = {item["object_id"]: item for item in graph["local_links"]}
+    assignments = {item["subject_id"]: item for item in data["provisional_grade_assignments"]}
+    grade_order = {grade: index for index, grade in enumerate(
+        [f"faqi-{tier}-{level}" for tier, _ in GRADE_TIERS for level in ("advanced", "intermediate", "initial")])}
+    grade_counts = {grade: sum(item["grade_id"] == grade for item in assignments.values()) for grade in grade_order}
+    importance_levels = (("advanced", "高级"), ("intermediate", "中级"), ("initial", "初级"))
+    distribution = []
+    for tier, tier_label in GRADE_TIERS:
+        tier_levels = [(label, grade_counts[f"faqi-{tier}-{level}"]) for level, label in importance_levels]
+        total = sum(count for _, count in tier_levels)
+        levels = "、".join(f"{label}{count}" for label, count in tier_levels if count)
+        distribution.append(f"{tier_label}{total}条（{levels}）")
+    distribution = "；".join(distribution)
+    subject_details = {
+        **{oid: {"name": obj["name"], "type": obj["type_id"]} for oid, obj in objects.items()},
+        **{obj["id"]: {"name": obj["name"], "type": obj["type_id"]} for obj in graph["objects"]},
+        **{item["id"]: {"name": item["node"], "type": "依赖类别"} for item in graph["dependency_categories"]},
+
+    }
+
+    def grade_display(subject_id):
+        assignment = assignments[subject_id]
+        status = "任务级暂定" if assignment["assignment_status"] == "task_scoped_provisional" else "用户指定重要性暂定"
+        return f"{GRADE_LABELS[assignment['grade_id']]}（{status}）"
+
+    out = [MARKER, "# Vibe Coding法器总分类与重要性分级表", "",
+           "本视图由[法器总分类登记](../metadata/faqi.json)与外部资源原表生成；仅修改登记数据，不手改此文件。",
+           "类型复用[唯一本体](../docs/gongfa/cultivation-ontology-taxonomy.md#唯一分类树)。对象身份、依赖角色与重要性分级分开；品级表示Vibe Coding重要性，不表示实现质量或任务效能。", "",
+           "## 总体概览", "", f"登记版本：{data['format_version']}；更新：{data['reviewed_at']}；依赖图观测：{graph['observed_at']}。",
+           f"本地来源实现 {len(objects)} 条，依赖图具名对象/实例 {len(graph['objects'])} 条，仓内实现关联到图节点 {len(graph['local_links'])} 条，用户确认纳入的依赖类别 {len(graph['dependency_categories'])} 条，重要性分级记录 {len(assignments)} 条，外部资源逐行分流 {len(resources)} 条。",
+           "外部资源行是来源候选或入口，不等同独立法器对象；依赖图深度、节点数量、版本新旧均不推出重要性。", "",
+           "## 重要性分级口径", "",
+           "按用户指令，以Vibe Coding核心闭环重要性、对模型/Agent/工具执行/代码验证的作用及可替代性分层。天阶为定义性AI模型与Agent协作核心；地阶为代码变更、命令执行与运行基础；玄阶为上下文、质量、复用和产品交付增强；黄阶为可替代的专用或便利性支路。各阶高级、中级、初级表示该阶内重要性由高到低。",
+           f"当前分布：{distribution}。这是用户指定的重要性分类，不代表功能质量、实际效果、具体身份已核或正式效能评级；正式效能规约仍为draft且阈值未校准。", "",
+           "## 按天地玄黄品级主键汇总", "",
+           "依赖角色和重要性决定暂定分组；任务烟测、版本观测及来源审查仅作独立事实，不直接决定品级。", "",
+           ]
+    for tier, tier_label in GRADE_TIERS:
+        tier_rows = []
+        for assignment in sorted((item for item in assignments.values() if item["grade_id"].split("-")[1] == tier),
+                                 key=lambda item: (grade_order[item["grade_id"]], item["subject_id"])):
+            detail = subject_details[assignment["subject_id"]]
+            status = "任务级暂定" if assignment["assignment_status"] == "task_scoped_provisional" else "用户指定重要性暂定"
+            tier_rows.append([assignment["grade_id"], assignment["subject_id"], detail["name"], detail["type"], status, assignment["scope"], assignment["basis"]])
+        if not tier_rows:
+            tier_rows = [["—", "—", "暂无记录", "—", "—", "—", "—"]]
+        out += [f"### {tier_label}", "", table(tier_rows, ["品级ID", "对象ID", "对象", "本体类型", "赋级状态", "评定范围", "依据与限制"]), ""]
+    out += ["## Vibe Coding依赖图中的现实对象", "",
+           f"依赖图来源：[技术栈第十六节](../{quote(graph['source_path'], safe='/.-_')}#{quote(graph['source_anchor'], safe='-')})；SHA-256 `{graph['source_sha256']}`。运行时版本观测只绑定本次命令与PATH实例，不证明依赖源码或会话服务端版本。", "",
+           table([[o['id'], o['name'], o['graph_node'], o['type_id'], '运行观测' if o['identity_status'] == 'runtime_observed' else '具名候选', o['version'] or '版本待核', grade_display(o['id'])] for o in graph['objects']], ["对象ID", "对象", "依赖图位置", "本体类型", "身份状态", "版本", "品级"])]
+    for obj in graph["objects"]:
+        resources_text = f"；外部资源：{', '.join(obj['resource_ids'])}" if obj["resource_ids"] else ""
+        link_text = f"；相似本地来源参照：{obj['related_object_id']}（身份关联未证明）" if obj["related_object_id"] else ""
+        out += [f"- `{obj['id']}`：{text(obj['evidence'])}{resources_text}{link_text}；品级分组：{grade_display(obj['id'])}；正式效能仍未验证。{text(obj['grade_reason'])}"]
+    out += ["", "### 用户确认纳入的依赖类别", "",
+            f"用户于 {graph['user_confirmation']['reviewed_at']} 确认此前列出的依赖类别均已核查并要求全部纳入。具体实现身份和版本仍按登记所据分别记录；品级按Vibe Coding重要性暂定，不等于效能验证。",
+            "目标/验收合同、人类授权与取舍、Agent循环、构建/验证/交付过程及反馈仍按角色、内容、过程或关系分类，不因列入依赖范围自动成为软件法器。", "",
+            table([[item['node'], '用户确认纳入', item['reason'], grade_display(item['id'])] for item in graph['dependency_categories']], ["依赖图类别", "纳入状态", "分类边界", "品级分组"]),
+            "", "### 依赖图对应的仓内来源实现", "",
+            "这些行指向已固定来源的本地程序内容；与上方实际运行实例分开，关联不意味着运行版相同。", "",
+            table([[item['object_id'], objects[item['object_id']]['name'], item['graph_node'], item['relationship'], grade_display(item['object_id'])] for item in graph['local_links']], ["本地对象ID", "名称", "依赖图位置", "关系边界", "品级分组"]),
+           "", "## 本地来源限定法器", "",
+           "以下记录只指选定来源的程序指令内容；不同内容实现是否属于同一产品/派生版本，仍须另有演化证据。未出现在依赖图具体工具节点中的仓内工具仍保留在总表。", "",
+           table([[o['id'], o['name'], o['type_id'], o['implementation'], graph_links.get(o['id'], {}).get('graph_node', '图中未具名'), grade_display(o['id'])] for o in objects.values()], ["实现ID", "名称", "本体类型", "实现来源ID", "依赖图位置", "品级分组"])]
     for obj in objects.values():
         source = sources[obj['implementation']]
         out += [f"### {obj['id']}", "", f"{text(obj['name'])}：{text(obj['boundary'])}",
-                f"实现来源 `{source['id']}`，佐证来源 `{', '.join(obj['support'])}`；声明版本：{text(obj['declared_version'] or '未核/无明确发布版本声明')}。", ""]
+                f"实现来源 `{source['id']}`，佐证来源 `{', '.join(obj['support'])}`；声明版本：{text(obj['declared_version'] or '未核/无明确发布版本声明')}。",
+                f"暂定品级分组：{grade_display(obj['id'])}。", ""]
     out += ["## 按本次范围排除的本地程序所指", "",
             "下列源码确有程序实现所指，但应用户要求不作为本清单纳入对象；不代表它们不是软件。保留排除证据，重新纳入须满足各自复核条件。", ""]
     for exclusion in data["local_exclusions"]:
@@ -348,8 +437,8 @@ def render(data, sources, objects, resources, decisions):
                 f"- 完整文件SHA-256：`{source['sha256']}`。",
                 f"- 选区：`[{source['lines'][0]},{source['lines'][1]})`；SHA-256：`{source['selection_sha256']}`。", ""]
     out += ["## 维护与未完成事项", "", "```bash", "make sync-faqi-catalog", "make check-faqi-catalog", "make test-faqi-catalog", "```", "",
-            "检查复用jsonschema/PyYAML，表格复用tabulate；来源、ID、选区、范围或只读视图漂移均失败，不联网补证或静默升级。",
-            "此初审不维护等级、账户、设备、部署或运行证据。独立语义审查、运行/效果/许可核验、产品同一/版本演化及未逐模块展开的复合包仍待核。", ""]
+            "检查复用jsonschema/PyYAML，表格复用tabulate；依赖图、来源、ID、选区、范围或只读视图漂移均失败，不联网补证或静默升级。",
+            "本表未批准独立审查、完整运行/效果、许可、部署、账户或硬件身份。重要性分级与正式效能评价分轴；任务合同、阈值校准、运行版与源码身份桥接及通用图节点的落地实例仍待核。", ""]
     return "\n".join(out).encode("utf-8")
 
 
@@ -368,7 +457,7 @@ def unchanged(bindings, root, data):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="法器初审来源校验与只读视图维护，不执行被审程序")
+    parser = argparse.ArgumentParser(description="法器总分类登记校验与依赖图只读视图维护，不执行被审程序")
     parser.add_argument("--root", type=Path, default=ROOT)
     parser.add_argument("--input", type=Path)
     parser.add_argument("--view", type=Path)
@@ -398,8 +487,11 @@ def main():
         else:
             require(before == rendered, "法器视图缺失/陈旧或手改；运行make sync-faqi-catalog")
         unchanged(bindings, root, data)
-        print(json.dumps({"status": "valid-initial-source-review", "objects": len(objects), "local_entries": len(data['local_entries']),
+        print(json.dumps({"status": "valid-master-classification-register", "objects": len(objects), "local_entries": len(data['local_entries']),
                           "local_exclusions": len(data['local_exclusions']), "external_resources": len(resources),
+                          "dependency_objects": len(data['dependency_graph']['objects']),
+                          "dependency_categories": len(data['dependency_graph']['dependency_categories']),
+                          "provisional_grade_assignments": len(data['provisional_grade_assignments']),
                           "view_sha256": digest(rendered), **data['limits']}, ensure_ascii=False))
         return 0
     except (ContractError, OSError, ValueError, KeyError, TypeError, RecursionError, subprocess.TimeoutExpired, yaml.YAMLError, jsonschema.exceptions.SchemaError) as error:

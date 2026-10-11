@@ -7,6 +7,7 @@
 - 阅读正文用下方文集；逐条身份、来源和已有初评查看[功法总表](../../metadata/gongfa/catalog.md)或[Excel](../../metadata/gongfa/catalog.xlsx)。
 - 文集可以包含多条功法和配套解释，不等于一门独立功法；迁移或篇幅不产生新身份与品级。
 - 内容分解释型、准则型、方法型；不可分复合保留上位类型。已有初评不是正式效果评级。
+- 法器体系是配套的工具与依赖分类参考，不是功法或效能榜；重要性分级见[法器体系说明](faqi-system.md)。
 - [本体与品级](cultivation-ontology-taxonomy.md#功法本体与品级)解释类型、内容版本和天地玄黄四阶十二级。
 
 ## 快速导航
@@ -19,7 +20,8 @@
 | 要设计、组合或维护软件系统 | [拼好码](glue-coding.md) / [系统构建](system-building.md) / [项目架构](project-architecture-template.md) |
 | 要控制质量、复杂度或运行风险 | [质量门禁](quality-gates-and-pitfalls.md) / [朴素真理](software-engineering-truths.md) / [底层程序逻辑](low-level-program-logic.md) |
 | 要从研究提炼可验证改进 | [研究迁移综合](research-transfer-synthesis.md) / [研究应用地图](research-value-application-map.md) / [Harness 解析](harness-engineering.md) |
-| 要核对身份、类型、来源和品级 | [修仙解释](vibe-coding-cultivation-model.md) / [本体](cultivation-ontology-taxonomy.md) / [登记协议](../../metadata/gongfa/README.md) |
+| 要理解法器分类、重要性及正式效能边界 | [法器体系说明](faqi-system.md) / [法器总表](../../tools/faqi-catalog.md) / [本体规约](cultivation-ontology-taxonomy.md#法器品级规约) |
+| 要核对功法身份、类型、来源和初评 | [修仙解释](vibe-coding-cultivation-model.md) / [本体](cultivation-ontology-taxonomy.md) / [登记协议](../../metadata/gongfa/README.md) |
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
@@ -73,6 +75,7 @@
 - [研究价值与应用地图](research-value-application-map.md)：研究到学习、工程和采用决策的转化。
 - [Harness 工程解析](harness-engineering.md)：控制面、评估器、反馈与可靠性判断。
 - [修仙解释图层](vibe-coding-cultivation-model.md)：领域本体的通俗解释，不是运行架构。
+- [法器体系说明](faqi-system.md)：工具/依赖边界、Vibe Coding重要性分级与正式效能评级边界。
 - [统一本体与分类设计](cultivation-ontology-taxonomy.md)：唯一类型树、身份、版本、来源及品级契约。
 - [AGENTS](AGENTS.md)：功法体系的正文维护与消费规则。
 

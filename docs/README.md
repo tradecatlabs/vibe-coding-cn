@@ -4,6 +4,7 @@
 
 - 新手从 [学习地图](getting-started/learning-map.md) 进入，配置环境并完成 [第一个项目](getting-started/first-project.md)。
 - 所有方法论、哲学、思维模型、工程准则与流程统一进入 [功法体系](gongfa/README.md)。
+- Vibe Coding 工具和依赖的分类边界、重要性排序及效能说明见[法器体系](gongfa/faqi-system.md)与[法器总表](../tools/faqi-catalog.md)。
 - 文集帮助理解和选用；逐条内容、来源与已有初评查看 [功法总表](../metadata/gongfa/catalog.md)。
 - 具体外部对象、原始材料和研究观察进入 [研究域](../research/README.md)，不与功法正文并行维护。
 - 可执行能力、工具与配置分别进入 [Skills](../skills/README.md) 和 [tools](../tools/README.md)。
@@ -14,6 +15,7 @@
 |:---|:---|:---|
 | [getting-started](getting-started/README.md) | 环境、学习路线与第一次可验证实践 | [学习地图](getting-started/learning-map.md) / [第一个项目](getting-started/first-project.md) |
 | [gongfa](gongfa/README.md) | 思想、准则、模型和方法的统一组织与选用 | [问题求解](gongfa/problem-solving.md) / [思维模型](gongfa/thinking-models.md) / [质量门禁](gongfa/quality-gates-and-pitfalls.md) |
+| [法器体系](gongfa/faqi-system.md) | 工具、依赖类别、重要性分级及正式效能边界 | [体系说明](gongfa/faqi-system.md) / [重要性总表](../tools/faqi-catalog.md) |
 | [research](../research/README.md) | 外部对象的事实、机制、风险和验证观察 | [研究域契约](../research/research-domain-contract.md) / [研究转化](gongfa/research-transfer-synthesis.md) |
 
 <details>
@@ -43,7 +45,7 @@
 - [编程之道](gongfa/programming-dao.md) / [朴素真理](gongfa/software-engineering-truths.md) / [常识](gongfa/common-sense.md) / [开发经验](gongfa/development-experience.md)。
 - [质量门禁](gongfa/quality-gates-and-pitfalls.md) / [底层程序逻辑](gongfa/low-level-program-logic.md) / [GEO 检查](gongfa/geo-seo-checklist.md)。
 - [研究迁移综合](gongfa/research-transfer-synthesis.md) / [研究应用地图](gongfa/research-value-application-map.md) / [Harness](gongfa/harness-engineering.md) / [tmux 实验协作](gongfa/tmux-ai-swarm.md)。
-- [修仙解释](gongfa/vibe-coding-cultivation-model.md) / [统一本体](gongfa/cultivation-ontology-taxonomy.md)。
+- [修仙解释](gongfa/vibe-coding-cultivation-model.md) / [法器体系说明](gongfa/faqi-system.md) / [统一本体](gongfa/cultivation-ontology-taxonomy.md)。
 - [AGENTS](gongfa/AGENTS.md)：唯一正文、历史、版本和验证规则。
 
 ### 研究与数据
@@ -52,6 +54,7 @@
 - [研究域契约](../research/research-domain-contract.md)：事实层、证据、成熟度和归档。
 - [源事实登记](../research/facts/README.md)：外部镜像、提交事实和隐私边界。
 - [功法登记](../metadata/gongfa/README.md) / [Markdown 总表](../metadata/gongfa/catalog.md) / [Excel](../metadata/gongfa/catalog.xlsx)：身份、来源与意见历史。
+- [法器登记与总表](../metadata/faqi.json) / [生成视图](../tools/faqi-catalog.md)：法器身份、依赖范围和重要性分级；正式效能评级仍未完成。
 - [docs AGENTS](AGENTS.md)：知识库目录总规则。
 
 </details>

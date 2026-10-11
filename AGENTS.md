@@ -74,9 +74,9 @@ git push origin develop
 | `make sync-gongfa-catalog` | 从当前登记与仓内候选历史快照重建同一总表 | Python3.10+、scripts/requirements-gongfa.txt |
 | `make check-gongfa-catalog` | 只读校验总表来源SHA、覆盖及Markdown/Excel一致性 | 同上；不写原文或评级 |
 | `make test-gongfa-catalog` | 验证总表维护行为并保存隔离工件 | 同上；不证明功法效果 |
-| `make sync-faqi-catalog` | 重建法器来源初审与资源分流的只读清单 | Python3.10+、Git、scripts/requirements-faqi.txt、固定submodule |
-| `make check-faqi-catalog` | 只读校验法器JSON、来源Git/SHA、覆盖与清单一致性 | 同上；不执行工具或批准效果 |
-| `make test-faqi-catalog` | 验证法器维护消费与拒绝行为，保留隔离工件 | 同上；不证明身份语义、许可或能力 |
+| `make sync-faqi-catalog` | 重建法器总分类、重要性分级、依赖图对象与外部资源分流视图 | Python3.10+、Git、scripts/requirements-faqi.txt、固定submodule |
+| `make check-faqi-catalog` | 只读校验总登记、依赖图SHA/对象映射、来源Git/SHA与生成视图 | 同上；不执行工具或批准效果 |
+| `make test-faqi-catalog` | 验证总表维护消费与拒绝行为，保留隔离工件 | 同上；不证明身份语义、许可或能力 |
 | `make check-ai-citation` | 校验 llms 与 AI 引用语料路径、锚点和规范仓库身份 | Python 3 |
 | `make check-external-resources` | 校验本地外部资源注册表字段、分类统计、ID 与链接形态 | Python 3、PyYAML |
 | `make check-research-raw` | 校验研究域 raw 原始事实层、Git 工作树、来源清单和核心材料文件 | Python 3、Git |
@@ -168,7 +168,7 @@ git push origin develop
 ├── docs/                        # 核心知识库
 │   ├── README.md                # docs 总索引
 │   ├── getting-started/         # 从零开始、学习地图、环境、AI CLI 与第一个项目闭环
-│   └── gongfa/                  # 思想、准则、模型、方法及配套文集的唯一正文源
+│   └── gongfa/                  # 思想、准则、模型、方法及身份/法器配套说明的正文源
 │
 ├── research/                    # 研究对象与外部源事实镜像
 │   ├── README.md                # research 总索引
@@ -207,7 +207,7 @@ git push origin develop
 ├── tools/                       # 工具、本地配置与外部仓库
 │   ├── README.md                # tools 目录说明
 │   ├── AGENTS.md                # tools 目录规则
-│   ├── faqi-catalog.md           # 法器初审的只读生成消费者
+│   ├── faqi-catalog.md           # 法器总分类、重要性分级与依赖图对象的只读生成视图
 │   ├── config/                  # 工具与开发配置（含 Codex CLI）
 │   ├── prompts-library/         # Excel ↔ Markdown 互转工具
 │   ├── chat-vault/              # AI 聊天记录保存工具
@@ -225,8 +225,8 @@ git push origin develop
 │   ├── taxonomy.yml             # 分类体系
 │   ├── glossary.yml             # 术语表
 │   ├── redirects.yml            # 重命名/迁移映射
-│   ├── faqi.json                # 来源限定初审与资源逐ID分流
-│   ├── faqi.schema.json         # 初审声明边界，不复制类型树
+│   ├── faqi.json                # 法器总分类登记、重要性分级、依赖图对象与资源逐ID分流
+│   ├── faqi.schema.json         # 总登记声明边界，复用唯一本体类型树
 │   └── gongfa/                   # 功法登记、冻结来源、评级历史与单一总表（Markdown/Excel）
 │
 ├── .github/                     # GitHub 配置
@@ -258,9 +258,9 @@ git push origin develop
 - `scripts/check-doc-structure.py` - docs README 标准块顺序、目录入口和重复锚点检查脚本，供 `make check-doc-structure` 与 CI 使用
 - `scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
 - `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
-- `metadata/faqi.json` / `faqi.schema.json` - 法器来源限定初审与字段契约，引用已有类型；不承接资源原事实、第二本体树、账户/部署/运行或品级；范围排除单列证据，不作为纳入对象。
-- `tools/faqi-catalog.md` - 从初审JSON与原资源YAML生成的只读清单，分列纳入对象及范围排除；源码初审不等于完整包语义、独立审查、许可或效果证明。
-- `scripts/sync-faqi-catalog.py` / `test-faqi-catalog.py` - 离线校验来源、入口、覆盖、排除边界与视图，保留隔离工件；不执行被审程序或联网补证。
+- `metadata/faqi.json` / `faqi.schema.json` - 法器总分类登记及字段契约；复用本体类型、固定来源审查、依赖图对象和用户确认纳入的依赖类别，原资源事实仍归资源YAML；当前暂定品级按Vibe Coding重要性分组，正式效能评级仍须独立效果证据。
+- `tools/faqi-catalog.md` - 从总登记与原资源YAML生成的只读视图，包含固定来源实现、依赖图具名对象、用户确认纳入的依赖类别、外部分流及品级状态；来源审查不等于许可或效果证明。
+- `scripts/sync-faqi-catalog.py` / `test-faqi-catalog.py` - 离线总表生成、检查及行为契约；核来源、图SHA、对象映射和品级边界，保留真实命令/结果；不执行被审程序或联网补证。
 - `metadata/gongfa/registry.json` - 活跃功法登记、等级、规则、来源、内容版本、人工初评及正式评级历史的唯一可编辑数据源；类型语义仍归本体主文；新范围追加批次
 - `metadata/gongfa/catalog.md` / `catalog.xlsx` - 同一全部功法总表的两种生成视图，聚合当前登记与已分类候选历史材料；不手改、不自动注册/去重/评级
 - `metadata/gongfa/catalog-sources.json` - 仅索引仓内不可变候选快照的路径/SHA/范围；历史材料不是第二可编辑登记，不依赖个人目录或临时工件
@@ -278,7 +278,9 @@ git push origin develop
 - `docs/getting-started/README.md` - 从零开始索引入口，正文拆分到学习地图、网络配置、CLI 配置、开发环境搭建与第一个项目闭环；通用人机经验链接到功法
 - `docs/getting-started/first-project.md` - 用本地待办清单完成第一次可验证的需求、实现、验收与 Git 闭环
 - `docs/gongfa/README.md` - 方法论、哲学、思维模型、工程准则和流程的统一正文入口；完整文集按任务导航，文集数不是独立功法数
+- `docs/gongfa/faqi-system.md` - 法器分类边界、重要性分级、选用方式与登记入口；重要性不代表正式效能
 - 根 README 完整保留六条核心命题的只读展示，与功法体系分别使用同级原生 `<details>/<summary><strong>` 展开/收起；六命题正文维护源仍为 `docs/gongfa/ai-core-propositions.md`，同步展示不创建第二登记或内容版本。
+- 根 README 的“法器体系”块与功法块同级，使用不带`open`属性的`<details>`默认折叠；只放概要和链接，正文归`docs/gongfa/faqi-system.md`，登记归`metadata/faqi.json`，逐条生成视图归`tools/faqi-catalog.md`。
 - 首页其他方法只通过功法体系统一入口选择，不恢复经验、实验性方法、道法术器或哲学的独立栏目/分库；六命题历史锚点定位根页六命题展示，其他方法历史锚点定位功法块。首页徽章区仅保留独立目的地入口，统一使用 `<a><img>` 与紧凑 `style=flat`，保留其原href、顺序及完整alt；仅跳根README章节的目录徽章不放顶部，同一目标不重复展示（相对路径的 `./` 写法差异不算不同目标）。删除徽章不删除正文、折叠标题或历史锚点，不恢复旧快捷导航徽章组；单一段落不等于已验证所有视口视觉单行。
 - 首页入口收口、文集归并与逐条身份登记分别验收；无来源绑定不自动等于未登记功法，模板、术语、工具和本体说明不机械注册或赋级。
 - 研究回填矩阵、模板和AI摘要也按现行职责定位：方法/流程/清单正文归 `docs/gongfa/`，实例练习归 `docs/getting-started/`，具体事实留 `research/`；执行契约、工具配置和脚本分别归 `skills/`、`tools/config/`、`scripts/`，不把旧分类词当目录或批量改写上游结构。
@@ -409,7 +411,7 @@ make test
 3. **Documentation Standard**: 用户文档使用中文；代码/文件名使用英文
 4. **Skills**: 每个技能有独立的 `SKILL.md`
 5. **Quality Gates**: `make test` 执行 Markdown lint、本地相对链接/锚点检查、折叠块结构检查、docs 结构检查、metadata 路径检查、AI 引用一致性检查、外部源事实镜像检查与现代企业架构 starter kit 检查；三个 `research/vibe-*` 目录按源事实镜像边界维护，仓库级格式检查跳过镜像内容。
-   功法登记/总表与法器初审检查、相关测试纳入本地`make test`；GitHub Actions选定目标未改，不冒称新增远端覆盖。
+   功法登记/总表与法器总分类登记检查、相关测试纳入本地`make test`；GitHub Actions选定目标未改，不冒称新增远端覆盖。
 
 ## Development Workflow
 

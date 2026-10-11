@@ -58,7 +58,23 @@
 
 逐条身份、内容版本、冻结来源与已有意见查看[功法登记](metadata/gongfa/README.md)及上方总表。
 文集归并不等于全部内容已经逐条登记；已有初评也不等于正式效果验证。
-程序内容及外部资源所指的初审见[法器清单](tools/faqi-catalog.md)；清单区分纳入对象与按范围明确排除的程序证据，排除不代表其不是软件；源码核定不等于运行、许可或效果验证。
+
+</details>
+
+<a id="faqi"></a>
+<details>
+<summary><strong>🧰 法器体系</strong></summary>
+
+## 法器体系
+
+法器总表整理 Vibe Coding 流程中使用或依赖的工具、可调用入口和依赖类别；固定来源实现、当前运行实例、候选对象与抽象类别分别记录。
+
+- [法器体系说明](docs/gongfa/faqi-system.md)：分类边界、重要性分级和选用方式。
+- [法器重要性总表](tools/faqi-catalog.md)：31 项的品级、名称、说明与记录状态。
+- [法器登记源](metadata/faqi.json)：唯一可编辑数据源；生成总表不可手改。
+- [法器类型与正式效能规约](docs/gongfa/cultivation-ontology-taxonomy.md#法器品级规约)：正式任务效果量表仍为草案。
+
+当前 31 项按 Vibe Coding 重要性暂分天阶 5 项、地阶 12 项、玄阶 9 项、黄阶 5 项。重要性不代表实现质量、运行可用性或效能验证；正式效能评级尚未完成。
 
 </details>
 
@@ -399,7 +415,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │
 ├── docs/                        # 核心知识库
 │   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
-│   └── gongfa/                  # 思想、准则、模型、方法、流程及配套文集的唯一正文
+│   └── gongfa/                  # 方法、流程、身份语义与法器分类说明的正文
 ├── research/                    # 根级研究域：新技术、优秀 repo 与工程范式研究
 ├── prompts/                     # 提示词库入口（指向云端表格）
 ├── skills/                      # 技能库入口
@@ -407,11 +423,11 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 │   ├── auto-tmux/               # tmux 自动化脚本、pane 巡检、救援与多终端协作
 │   └── claude-official-skills/  # Claude 官方 skills 软链接入口
 ├── tools/                       # 辅助工具、外部仓库与工具配置
-│   └── faqi-catalog.md           # 法器来源初审与外部资源分流的只读视图
+│   └── faqi-catalog.md           # 法器总分类、重要性分级与依赖图对象的只读视图
 ├── scripts/                     # 自动化脚本
 ├── metadata/                    # 机器可读索引与限定子域数据
-│   ├── faqi.json                # 法器来源限定初审，不含品级或运行批准
-│   ├── faqi.schema.json         # 初审字段契约，复用唯一BFO树
+│   ├── faqi.json                # 法器总分类登记、依赖图对象与重要性分级
+│   ├── faqi.schema.json         # 总登记字段契约，复用唯一BFO树
 │   └── gongfa/                   # 功法登记、来源快照与单一总表（Markdown/Excel）
 ├── assets/                      # 静态资产、外部资源注册表与 AI 引用资产
 │

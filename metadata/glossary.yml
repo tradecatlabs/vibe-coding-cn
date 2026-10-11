@@ -17,6 +17,9 @@ terms:
   quality-gate:
     zh: 质量门禁
     description: 测试、CI、脚本、类型、schema 或检查清单等可强制验证的约束。
+  faqi:
+    zh: 法器
+    description: Vibe Coding 中被选作任务能力载体的工具、可调用入口或依赖类别；具体身份、角色与效果需分别核实。
   pinhaoma:
     zh: 拼好码
     description: 胶水编程的超集，强调优先复用成熟方案，用自研代码连接、编排、适配和表达业务逻辑。

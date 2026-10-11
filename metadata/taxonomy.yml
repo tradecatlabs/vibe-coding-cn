@@ -6,7 +6,7 @@ sections:
     agent_guide: docs/getting-started/AGENTS.md
   gongfa:
     path: docs/gongfa
-    purpose: 方法论、哲学、思维模型、准则、流程及配套文集的唯一正文源
+    purpose: 方法论、哲学、思维模型、准则、流程及本体/法器配套说明的唯一正文源
     entry: docs/gongfa/README.md
     agent_guide: docs/gongfa/AGENTS.md
   research:
@@ -58,7 +58,13 @@ reading_paths:
     - docs/gongfa/project-architecture-template.md
     - docs/gongfa/quality-gates-and-pitfalls.md
     - assets/ai-citation/README.md
+  faqi:
+    title: 法器体系阅读路径
+    documents:
+    - docs/gongfa/faqi-system.md
+    - docs/gongfa/cultivation-ontology-taxonomy.md
 selection_rules:
+  faqi: 需要理解 Vibe Coding 工具/依赖分类、重要性分级或效能边界时，读法器体系说明，再核生成总表与登记事实。
   gongfa: 需要认知模型、问题求解、工程准则、架构模板、方法、流程、门禁或研究转化时统一读取；文集与独立功法记录分开。
   research: 需要具体对象的原始事实、观察、风险和验证记录时读取，不另建方法正文副本。
   getting-started: 需要配置网络、AI CLI、开发环境并完成最小实例闭环时读取；通用经验链接到功法。
@@ -89,6 +95,9 @@ documents:
   - path: docs/gongfa/vibe-coding-cultivation-model.md
     title: 修仙解释图层
     role: BFO 下层展开的通俗解释；区分模型、会话、方法、工具、资源与任务评价
+  - path: docs/gongfa/faqi-system.md
+    title: 法器体系说明
+    role: 工具与依赖分类边界、Vibe Coding重要性分级、选用方式及正式效能评级边界
   - path: docs/gongfa/cultivation-ontology-taxonomy.md
     title: 修仙领域统一本体与分类设计（V4 BFO 草案）
     role: 固定 BFO 主干、唯一分类树、领域稳定 ID、实体/品质及规约/方法/过程细分类、制备、观测及再生证据链、分层身份与组成判据；功法收录/内容版本及四阶十二级接入JSON核心，限定内容可追溯、已有人工分类/初评、规约未校准且无正式效果评级，当前收录范围见子域入口；不扩展全仓本体

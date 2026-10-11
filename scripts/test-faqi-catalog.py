@@ -2,6 +2,7 @@
 """以真实离线CLI消费首批法器清单；保留输入、输出和JUnit，不执行被审工具。"""
 import argparse
 import copy
+from collections import Counter
 import hashlib
 import json
 import os
@@ -41,11 +42,45 @@ class FaqiCatalogTest(unittest.TestCase):
         result = self.invoke("current", "--check")
         self.assertEqual(0, result.returncode, result.stderr.decode())
         report = json.loads(result.stdout)
-        self.assertEqual((10, 13, 9, 158), (
-            report["objects"], report["local_entries"], report["local_exclusions"], report["external_resources"]))
+        self.assertEqual((10, 13, 9, 158, 13, 8), (
+            report["objects"], report["local_entries"], report["local_exclusions"], report["external_resources"],
+            report["dependency_objects"], report["dependency_categories"]))
         self.assertFalse(report["independent_review"])
         self.assertFalse(report["runtime_verified"])
+        self.assertTrue(report["grades_assigned"])
         data = json.loads((ROOT / "metadata/faqi.json").read_text(encoding="utf-8"))
+        self.assertEqual("faqi-master-classification-register", data["kind"])
+        dependency_objects = {o["id"]: o for o in data["dependency_graph"]["objects"]}
+        self.assertEqual("1.1.0", dependency_objects["dep-pi-cli"]["version"])
+        self.assertEqual("software-artifact", dependency_objects["dep-pi-cli"]["type_id"])
+        self.assertIn("8类", data["dependency_graph"]["user_confirmation"]["statement"])
+        self.assertEqual(8, len(data["dependency_graph"]["dependency_categories"]))
+        self.assertTrue(all(item["disposition"] == "user_confirmed_in_scope" for item in data["dependency_graph"]["dependency_categories"]))
+        self.assertTrue(all(o["grade_id"] is None and o["grade_status"] == "pending" for o in dependency_objects.values()))
+        assignments = data["provisional_grade_assignments"]
+        expected_subjects = ({o["id"] for o in data["objects"]} | set(dependency_objects) |
+                             {node["id"] for node in data["dependency_graph"]["dependency_categories"]})
+        self.assertEqual(expected_subjects, {item["subject_id"] for item in assignments})
+        self.assertTrue(all(item["assignment_status"] == "user_directed_provisional" for item in assignments))
+        self.assertEqual({
+            "faqi-tian-advanced": 2, "faqi-tian-intermediate": 3,
+            "faqi-di-advanced": 3, "faqi-di-intermediate": 5, "faqi-di-initial": 4,
+            "faqi-xuan-advanced": 2, "faqi-xuan-intermediate": 4, "faqi-xuan-initial": 3,
+            "faqi-huang-advanced": 3, "faqi-huang-intermediate": 1, "faqi-huang-initial": 1,
+        }, Counter(item["grade_id"] for item in assignments))
+        self.assertEqual(31, len(assignments))
+        self.assertTrue(all(link["object_id"] in {o["id"] for o in data["objects"]} for link in data["dependency_graph"]["local_links"]))
+        catalog = (ROOT / "tools/faqi-catalog.md").read_text(encoding="utf-8")
+        self.assertIn("## Vibe Coding依赖图中的现实对象", catalog)
+        self.assertIn("### 用户确认纳入的依赖类别", catalog)
+        self.assertIn("### 黄阶", catalog)
+        self.assertIn("### 天阶", catalog)
+        self.assertIn("### 地阶", catalog)
+        self.assertIn("### 玄阶", catalog)
+        self.assertIn("按Vibe Coding重要性", catalog)
+        self.assertIn("黄阶初级（用户指定重要性暂定）", catalog)
+        self.assertIn("dep-wsl2-kernel", catalog)
+        self.assertIn("Codex CLI", catalog)
         # 首批父仓库来源必须在已发布主线可达，不能依赖仅本地存在的提交。
         published = subprocess.run(["git", "merge-base", "--is-ancestor", data["source_revision"], "refs/remotes/origin/develop"], cwd=ROOT, capture_output=True, timeout=20)
         self.assertEqual(0, published.returncode, "父仓库来源不在已发布主线历史可达")
@@ -118,6 +153,14 @@ class FaqiCatalogTest(unittest.TestCase):
         cases.append(("missing-resource", changed))
         changed = copy.deepcopy(original); changed["objects"][0]["grade"] = "天阶高级"
         cases.append(("grade-injection", changed))
+        changed = copy.deepcopy(original); changed["provisional_grade_assignments"][0]["grade_id"] = "invented-grade"
+        cases.append(("unsupported-provisional-grade", changed))
+        changed = copy.deepcopy(original); changed["provisional_grade_assignments"].pop()
+        cases.append(("missing-provisional-grade", changed))
+        changed = copy.deepcopy(original); changed["dependency_graph"]["objects"][0]["type_id"] = "invented-platform"
+        cases.append(("unknown-dependency-type", changed))
+        changed = copy.deepcopy(original); changed["dependency_graph"]["source_sha256"] = "0" * 64
+        cases.append(("dependency-graph-source-drift", changed))
         changed = copy.deepcopy(original); changed["objects"][0]["implementation"] = changed["sources"][0]["id"]
         cases.append(("description-as-implementation", changed))
         changed = copy.deepcopy(original)
@@ -195,7 +238,7 @@ class FaqiCatalogTest(unittest.TestCase):
         (root / "metadata").mkdir(); (root / "tools/fixture").mkdir(parents=True)
         (root / "docs/gongfa").mkdir(parents=True)
         (root / "assets/external-resources").mkdir(parents=True)
-        for path in ("metadata/faqi.schema.json", "docs/gongfa/cultivation-ontology-taxonomy.md"):
+        for path in ("metadata/faqi.schema.json", "docs/gongfa/cultivation-ontology-taxonomy.md", "docs/gongfa/technology-stack.md"):
             (root / path).write_bytes((ROOT / path).read_bytes())
         body = b"def identity(value):\n    return value\n"
         (root / "tools/fixture/main.py").write_bytes(body)
@@ -214,6 +257,13 @@ class FaqiCatalogTest(unittest.TestCase):
         source = {"id": "S01", "purpose": "implementation", "path": "tools/fixture/main.py", "repository": ".", "revision": revision, "sha256": hashlib.sha256(body).hexdigest(), "lines": [1, 3], "selection_sha256": hashlib.sha256(body).hexdigest()}
         data["sources"] = [source]
         data["objects"] = [{**data["objects"][0], "id": "faqi-fixture", "implementation": "S01", "support": []}]
+        data["dependency_graph"]["local_links"] = [{"object_id": "faqi-fixture", "graph_node": "fixture node", "relationship": "仅用于隔离表格预算测试。"}]
+        allowed_grade_subjects = {"faqi-fixture"} | {item["id"] for item in data["dependency_graph"]["objects"]} | {item["id"] for item in data["dependency_graph"]["dependency_categories"]}
+        data["provisional_grade_assignments"] = [item for item in data["provisional_grade_assignments"] if item["subject_id"] in allowed_grade_subjects]
+        data["provisional_grade_assignments"].append({"subject_id": "faqi-fixture", "grade_id": "faqi-huang-initial", "assignment_status": "user_directed_provisional", "scope": "宽表隔离夹具", "basis": "仅验证表格预算，不作效果判断。"})
+        for dependency_object in data["dependency_graph"]["objects"]:
+            dependency_object["resource_ids"] = []
+            dependency_object["related_object_id"] = None
         data["local_entries"] = [{"path": "tools/fixture", "objects": ["faqi-fixture"], "sources": ["S01"], "boundary": "隔离来源形态夹具，不证明工具能力", "pending": []}]
         ids = []
         for file_index, source in enumerate(data["external_sources"]):
@@ -234,13 +284,24 @@ class FaqiCatalogTest(unittest.TestCase):
         self.assertIn("FAQI_CATALOG_ERRORS", result.stderr.decode())
         self.assertFalse(view.exists())
 
+    def test_dependency_graph_table_and_grade_assignments_are_complete(self):
+        data = json.loads((ROOT / "metadata/faqi.json").read_text(encoding="utf-8"))
+        graph = data["dependency_graph"]
+        self.assertEqual("docs/gongfa/technology-stack.md", graph["source_path"])
+        self.assertGreaterEqual(len(graph["objects"]), 12)
+        self.assertGreaterEqual(len(graph["dependency_categories"]), 7)
+        self.assertEqual(9, len(graph["local_links"]))
+        self.assertTrue(data["limits"]["grades_assigned"])
+        result = self.invoke("dependency-graph-table", "--check")
+        self.assertEqual(0, result.returncode, result.stderr.decode())
+
     def test_strict_json(self):
         original = (ROOT / "metadata/faqi.json").read_text(encoding="utf-8")
         for label, text in (
             ("duplicate-json-key", original.replace('{', '{"format_version": 1,', 1)),
-            ("non-json-number", original.replace('"format_version": 1', '"format_version": NaN', 1)),
+            ("non-json-number", original.replace('"format_version": 2', '"format_version": NaN', 1)),
             ("oversized-json", original + " " * (2 * 1024 * 1024 + 1)),
-            ("non-json-infinity", original.replace('"format_version": 1', '"format_version": Infinity', 1)),
+            ("non-json-infinity", original.replace('"format_version": 2', '"format_version": Infinity', 1)),
         ):
             with self.subTest(label=label):
                 path = ARTIFACTS / (label + "-input.json"); path.write_text(text, encoding="utf-8")

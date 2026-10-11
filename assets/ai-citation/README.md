@@ -24,6 +24,8 @@
 | `docs/getting-started/first-project.md` | 第一次可验证的项目闭环 |
 | `docs/gongfa/README.md` | 方法论、哲学、思维模型、准则与流程的统一功法入口 |
 | `docs/gongfa/vibe-coding-cultivation-model.md` | BFO 下层展开的修仙通俗解释与任务战力评价 |
+| `docs/gongfa/faqi-system.md` | Vibe Coding工具与依赖分类、重要性分级和正式效能边界 |
+| `tools/faqi-catalog.md` / `metadata/faqi.json` | 法器重要性分级生成视图与唯一登记源；重要性不代表效能验证 |
 | `metadata/gongfa/README.md` | 功法JSON核心：限定内容、四阶十二级、未校准规则草案、冻结来源、人工分类/初评与正式评级历史；当前范围和数量见子域入口，不证明方法有效 |
 | `docs/gongfa/cultivation-ontology-taxonomy.md` | 固定 BFO 主干、身份、类型、内容版本与四阶十二级；已有初评、无正式效果评级 |
 | `docs/gongfa/thinking-models.md` | 哲学方法论与思维模型文集 |

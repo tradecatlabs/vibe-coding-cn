@@ -1,24 +1,26 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "法器来源限定初审与资源分流",
-  "description": "只引用唯一BFO树。记录程序内容而非运行/效果/许可批准；外部条目ID引用原YAML，不复制资源事实。",
+  "title": "Vibe Coding法器总分类与重要性分级登记",
+  "description": "复用唯一BFO树，汇总来源限定实现、依赖图对象、用户确认纳入类别及按Vibe Coding重要性排序的用户授权暂定品级。重要性分级不代表效能验证或正式效能评级；外部资源ID引用原YAML。",
   "type": "object",
   "additionalProperties": false,
-  "required": ["format_version", "kind", "reviewed_at", "source_revision", "ontology", "limits", "sources", "objects", "local_entries", "local_exclusions", "external_sources", "external_reviews", "resource_notes", "local_resource_links", "relations", "references"],
+  "required": ["format_version", "kind", "reviewed_at", "source_revision", "ontology", "dependency_graph", "limits", "provisional_grade_assignments", "sources", "objects", "local_entries", "local_exclusions", "external_sources", "external_reviews", "resource_notes", "local_resource_links", "relations", "references"],
   "properties": {
-    "format_version": {"const": 1},
-    "kind": {"const": "faqi-initial-source-review"},
+    "format_version": {"const": 2},
+    "kind": {"const": "faqi-master-classification-register"},
     "reviewed_at": {"type": "string", "maxLength": 40},
     "source_revision": {"$ref": "#/$defs/revision"},
     "ontology": {
       "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
       "properties": {"path": {"const": "docs/gongfa/cultivation-ontology-taxonomy.md"}, "sha256": {"$ref": "#/$defs/sha256"}}
     },
+    "dependency_graph": {"$ref": "#/$defs/dependency_graph"},
     "limits": {
       "type": "object", "additionalProperties": false,
       "required": ["independent_review", "runtime_verified", "effectiveness_verified", "license_approved", "grades_assigned"],
-      "properties": {"independent_review": {"const": false}, "runtime_verified": {"const": false}, "effectiveness_verified": {"const": false}, "license_approved": {"const": false}, "grades_assigned": {"const": false}}
+      "properties": {"independent_review": {"const": false}, "runtime_verified": {"const": false}, "effectiveness_verified": {"const": false}, "license_approved": {"const": false}, "grades_assigned": {"const": true, "description": "有用户授权的Vibe Coding重要性暂定分级；不代表正式效能评级。"}}
     },
+    "provisional_grade_assignments": {"type": "array", "minItems": 1, "maxItems": 1024, "items": {"$ref": "#/$defs/provisional_grade_assignment"}},
     "sources": {"type": "array", "minItems": 1, "maxItems": 128, "items": {"$ref": "#/$defs/source"}},
     "objects": {"type": "array", "minItems": 1, "maxItems": 512, "items": {"$ref": "#/$defs/tool"}},
     "local_entries": {"type": "array", "minItems": 1, "maxItems": 128, "items": {"$ref": "#/$defs/local"}},
@@ -72,6 +74,67 @@
         "revision": {"$ref": "#/$defs/revision"}, "sha256": {"$ref": "#/$defs/sha256"},
         "lines": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1, "maximum": 100000}},
         "selection_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "dependency_graph": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_path", "source_sha256", "source_anchor", "observed_at", "user_confirmation", "objects", "local_links", "dependency_categories"],
+      "properties": {
+        "source_path": {"const": "docs/gongfa/technology-stack.md"},
+        "source_sha256": {"$ref": "#/$defs/sha256"},
+        "source_anchor": {"const": "reference-technology-stack-十六技术栈的层级结构"},
+        "observed_at": {"type": "string", "maxLength": 40, "pattern": "^\\d{4}-\\d{2}-\\d{2}T[^\\u0000-\\u001f]+Z$"},
+        "user_confirmation": {
+          "type": "object", "additionalProperties": false, "required": ["reviewed_at", "statement", "scope"],
+          "properties": {
+            "reviewed_at": {"type": "string", "maxLength": 40, "pattern": "^\\d{4}-\\d{2}-\\d{2}T[^\\u0000-\\u001f]+Z$"},
+            "statement": {"$ref": "#/$defs/text"}, "scope": {"$ref": "#/$defs/text"}
+          }
+        },
+        "objects": {"type": "array", "minItems": 12, "maxItems": 64, "items": {"$ref": "#/$defs/dependency_object"}},
+        "local_links": {"type": "array", "minItems": 1, "maxItems": 64, "items": {"$ref": "#/$defs/graph_local_link"}},
+        "dependency_categories": {"type": "array", "minItems": 1, "maxItems": 64, "items": {"$ref": "#/$defs/graph_dependency_category"}}
+      }
+    },
+    "dependency_object": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "name", "type_id", "graph_node", "identity_status", "version", "evidence", "resource_ids", "related_object_id", "grade_id", "grade_status", "grade_reason"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "name": {"$ref": "#/$defs/text"},
+        "type_id": {"type": "string", "pattern": "^[a-z][a-z0-9-]{0,63}$"},
+        "graph_node": {"$ref": "#/$defs/text"},
+        "identity_status": {"enum": ["runtime_observed", "named_candidate"]},
+        "version": {"type": ["string", "null"], "maxLength": 120},
+        "evidence": {"$ref": "#/$defs/text"}, "resource_ids": {"type": "array", "maxItems": 8, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "related_object_id": {"type": ["string", "null"]},
+        "grade_id": {"const": null}, "grade_status": {"const": "pending"},
+        "grade_reason": {"$ref": "#/$defs/text"}
+      }
+    },
+    "graph_local_link": {
+      "type": "object", "additionalProperties": false,
+      "required": ["object_id", "graph_node", "relationship"],
+      "properties": {"object_id": {"$ref": "#/$defs/id"}, "graph_node": {"$ref": "#/$defs/text"}, "relationship": {"$ref": "#/$defs/text"}}
+    },
+    "graph_dependency_category": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "node", "disposition", "reason"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "node": {"$ref": "#/$defs/text"},
+        "disposition": {"enum": ["pending_identity", "unselected_optional", "user_confirmed_in_scope", "not_faqi"]},
+        "reason": {"$ref": "#/$defs/text"}
+      }
+    },
+    "provisional_grade_assignment": {
+      "type": "object", "additionalProperties": false,
+      "required": ["subject_id", "grade_id", "assignment_status", "scope", "basis"],
+      "properties": {
+        "subject_id": {"$ref": "#/$defs/id"},
+        "grade_id": {"type": "string", "pattern": "^faqi-(huang|xuan|di|tian)-[a-z0-9-]+$", "description": "本清单按用户指定的Vibe Coding重要性顺序暂定分级，不是效能等级。"},
+        "assignment_status": {"enum": ["task_scoped_provisional", "user_directed_provisional"]},
+        "scope": {"$ref": "#/$defs/text"},
+        "basis": {"$ref": "#/$defs/text"}
       }
     },
     "tool": {
