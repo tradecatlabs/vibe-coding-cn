@@ -21,25 +21,19 @@
 
 ### 天阶
 
-```text
-+------------------------+--------------------------------+---------------------------------------+-------------------+--------------------+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | 品级ID                 | 对象ID                         | 对象                                  | 本体类型          | 赋级状态           | 评定范围                                       | 依据与限制                                                                                                      |
-|------------------------+--------------------------------+---------------------------------------+-------------------+--------------------+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------|
+|:-----------------------|:-------------------------------|:--------------------------------------|:------------------|:-------------------|:-----------------------------------------------|:----------------------------------------------------------------------------------------------------------------|
 | faqi-tian-advanced     | dep-category-cloud-model-api   | 2.2 云端模型服务/API与固定模型版本    | 依赖类别          | 用户指定重要性暂定 | Vibe Coding重要性：核心模型推理与代码生成      | 提供理解需求、推理和生成代码的核心智能能力；没有模型推理路径即失去Vibe Coding的定义性特征，供应商与模型可替换。 |
 | faqi-tian-advanced     | dep-pi-cli                     | Pi Agent CLI（当前 PATH 实例）        | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：当前核心Agent运行与工具编排 | 直接承接需求、上下文、模型调用和工具执行循环；当前环境的核心交互入口，缺失会改变Vibe Coding核心形态。           |
 | faqi-tian-intermediate | dep-category-local-model-stack | 2.2 本地模型权重、Tokenizer与推理引擎 | 依赖类别          | 用户指定重要性暂定 | Vibe Coding重要性：本地/离线模型推理路径       | 可提供核心模型推理并支持本地化、隐私或离线需求；在通用工作流中可由云端推理替代，故低于定义性核心路径。          |
 | faqi-tian-intermediate | dep-claude-code                | Claude Code（依赖图替代项）           | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：替代Agent运行时             | 若选用可承担AI代码协作与工具编排核心；当前仅具名候选且可与其他运行时替换，低于已用核心路径。                    |
 | faqi-tian-intermediate | dep-codex-cli                  | Codex CLI（依赖图替代项）             | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：替代Agent运行时             | 若选用可承担AI代码协作与工具编排核心；当前仅具名候选且可与其他运行时替换，低于已用核心路径。                    |
-+------------------------+--------------------------------+---------------------------------------+-------------------+--------------------+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-```
 
 
 ### 地阶
 
-```text
-+----------------------+------------------------------+---------------------------------------------+-------------------+--------------------+------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | 品级ID               | 对象ID                       | 对象                                        | 本体类型          | 赋级状态           | 评定范围                                       | 依据与限制                                                                                                   |
-|----------------------+------------------------------+---------------------------------------------+-------------------+--------------------+------------------------------------------------+--------------------------------------------------------------------------------------------------------------|
+|:---------------------|:-----------------------------|:--------------------------------------------|:------------------|:-------------------|:-----------------------------------------------|:-------------------------------------------------------------------------------------------------------------|
 | faqi-di-advanced     | dep-bash                     | GNU Bash                                    | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：Agent命令执行与脚本交互     | 直接承接终端命令、开发脚本和验证操作，是当前Agent落地代码动作的高重要性接口；Shell实现可替代但该角色不可缺。 |
 | faqi-di-advanced     | dep-category-terminal-pty    | 3.2 Terminal Emulator / PTY                 | 依赖类别          | 用户指定重要性暂定 | Vibe Coding重要性：Agent调用工具与执行开发命令 | 把Agent计划转成真实文件、构建和测试操作的关键执行边界；没有等价工具执行通道，代码闭环无法完成。              |
 | faqi-di-advanced     | dep-git-client               | Git 本地客户端                              | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：代码变更追踪、比较与恢复    | 支撑审查AI改动、保留版本历史和安全回退，是可维护代码生成闭环的高重要性基础；版本控制实现可替代。             |
@@ -52,16 +46,12 @@
 | faqi-di-initial      | dep-ubuntu-userland          | Ubuntu 用户空间发行版                       | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：当前Linux用户空间           | 承载当前工具链和本地命令，但同类操作系统环境可以替代，重要性来自运行基座而非该发行版身份。                   |
 | faqi-di-initial      | dep-wsl2-kernel              | WSL2 Linux 内核                             | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：当前运行环境内核            | 提供当前WSL用户空间的执行底座，但存在其他内核和宿主替代，不属于AI编程核心能力。                              |
 | faqi-di-initial      | dep-wsl2-platform            | WSL 2 承载平台                              | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：当前宿主环境实现            | 为当前工具链提供运行宿主，但Linux、macOS或原生Windows等环境可替代，不是Vibe Coding定义性能力。               |
-+----------------------+------------------------------+---------------------------------------------+-------------------+--------------------+------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-```
 
 
 ### 玄阶
 
-```text
-+------------------------+-------------------------------+-----------------------------------------------------------+-------------------+--------------------+-----------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | 品级ID                 | 对象ID                        | 对象                                                      | 本体类型          | 赋级状态           | 评定范围                                      | 依据与限制                                                                                               |
-|------------------------+-------------------------------+-----------------------------------------------------------+-------------------+--------------------+-----------------------------------------------+----------------------------------------------------------------------------------------------------------|
+|:-----------------------|:------------------------------|:----------------------------------------------------------|:------------------|:-------------------|:----------------------------------------------|:---------------------------------------------------------------------------------------------------------|
 | faqi-xuan-advanced     | dep-category-ci-platform      | 7.1 Git托管、CI Runner与CI/CD平台                         | 依赖类别          | 用户指定重要性暂定 | Vibe Coding重要性：自动化验证、协作与持续交付 | 把代码生成接入可重复测试、审查和协作交付，显著扩展可靠使用范围；本地闭环可运行但难以替代团队级持续验证。 |
 | faqi-xuan-advanced     | dep-category-retrieval-memory | 2.3 检索/索引/记忆与向量库                                | 依赖类别          | 用户指定重要性暂定 | Vibe Coding重要性：长程上下文、知识检索与记忆 | 支撑跨文件和长任务上下文保持、历史知识复用，提升复杂任务可处理范围；短任务仍可不依赖，且实现可替换。     |
 | faqi-xuan-intermediate | dep-category-deployment-data  | 7.2-7.3 制品注册表、部署目标、产品运行时、数据库与外部API | 依赖类别          | 用户指定重要性暂定 | Vibe Coding重要性：从代码到产品运行与外部集成 | 支撑部署、数据库和API集成，使代码进入真实产品场景；并非每次编码必需，故属于重要交付扩展而非核心生成。    |
@@ -71,33 +61,25 @@
 | faqi-xuan-initial      | faqi-claude-skill-init        | 官方Skill初始化脚本                                       | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：特定Skill模板初始化        | 降低Claude Skill结构初始化成本，作用范围绑定特定生态，可手工完成且不影响其他Agent的基础闭环。            |
 | faqi-xuan-initial      | faqi-codex-config-installer   | Codex配置安装与恢复脚本                                   | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：特定Agent接入配置          | 降低特定Agent初始配置成本，但只服务候选运行时且可手工替代；不属于核心模型推理或执行闭环。                |
 | faqi-xuan-initial      | faqi-skill-seekers-adapter    | Skill Seekers本地运行适配脚本                             | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：Skill Seekers本地适配入口  | 便于调用特定知识转技能工具；范围受上游工具限制，可直接调用或人工替代。                                   |
-+------------------------+-------------------------------+-----------------------------------------------------------+-------------------+--------------------+-----------------------------------------------+----------------------------------------------------------------------------------------------------------+
-```
 
 
 ### 黄阶
 
-```text
-+-------------------------+-----------------------+--------------------------+-------------------+--------------------+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | 品级ID                  | 对象ID                | 对象                     | 本体类型          | 赋级状态           | 评定范围                                        | 依据与限制                                                                                                      |
-|-------------------------+-----------------------+--------------------------+-------------------+--------------------+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------|
+|:------------------------|:----------------------|:-------------------------|:------------------|:-------------------|:------------------------------------------------|:----------------------------------------------------------------------------------------------------------------|
 | faqi-huang-advanced     | dep-tmux-runtime      | tmux 当前运行实例        | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：长任务与多会话终端复用       | 可持久化和并行组织终端工作，复杂协作时有价值；普通单会话开发可替代，不属于核心生成链。                          |
 | faqi-huang-advanced     | faqi-auto-tmux        | auto-tmux命令封装程序    | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：多会话终端协作自动化         | 能管理多会话和worker工作流，复杂并行时有用；基础单Agent编码不依赖，且当前doctor烟测失败，重要性不等于实现质量。 |
 | faqi-huang-advanced     | faqi-tmux             | tmux终端复用程序         | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：可选的多会话终端复用         | 支持持久终端与多窗口工作流，复杂长任务可受益；普通编码闭环有替代方案，不属定义性核心。                          |
 | faqi-huang-intermediate | faqi-oh-my-tmux       | oh-my-tmux可执行配置程序 | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：终端复用器体验配置           | 改善tmux使用便利性，但不提供模型推理或核心代码执行能力，可由其他终端配置替代。                                  |
 | faqi-huang-initial      | faqi-prompt-converter | 提示词格式转换程序       | software-artifact | 用户指定重要性暂定 | Vibe Coding重要性：提示词资产格式迁移的辅助支路 | 只负责格式转换，能维护和复用提示词资产但不参与模型推理或代码执行；替代方式多，属低重要性辅助。                  |
-+-------------------------+-----------------------+--------------------------+-------------------+--------------------+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-```
 
 
 ## Vibe Coding依赖图中的现实对象
 
 依赖图来源：[技术栈第十六节](../docs/gongfa/technology-stack.md#reference-technology-stack-%E5%8D%81%E5%85%AD%E6%8A%80%E6%9C%AF%E6%A0%88%E7%9A%84%E5%B1%82%E7%BA%A7%E7%BB%93%E6%9E%84)；SHA-256 `88ff3494095c2a794acf130d5d2ccc4eb4b67ccdc8c174e7ef09f35c11a450a2`。运行时版本观测只绑定本次命令与PATH实例，不证明依赖源码或会话服务端版本。
 
-```text
-+---------------------+--------------------------------+----------------------------------------+-------------------+------------+----------------------------------+--------------------------------+
 | 对象ID              | 对象                           | 依赖图位置                             | 本体类型          | 身份状态   | 版本                             | 品级                           |
-|---------------------+--------------------------------+----------------------------------------+-------------------+------------+----------------------------------+--------------------------------|
+|:--------------------|:-------------------------------|:---------------------------------------|:------------------|:-----------|:---------------------------------|:-------------------------------|
 | dep-pi-cli          | Pi Agent CLI（当前 PATH 实例） | 2.1 Agent运行时 / Pi Agent             | software-artifact | 运行观测   | 1.1.0                            | 天阶高级（用户指定重要性暂定） |
 | dep-codex-cli       | Codex CLI（依赖图替代项）      | 2.1 Agent运行时 / Codex替代项          | software-artifact | 具名候选   | 版本待核                         | 天阶中级（用户指定重要性暂定） |
 | dep-claude-code     | Claude Code（依赖图替代项）    | 2.1 Agent运行时 / Claude Code替代项    | software-artifact | 具名候选   | 版本待核                         | 天阶中级（用户指定重要性暂定） |
@@ -111,8 +93,6 @@
 | dep-git-client      | Git 本地客户端                 | 3.2 文件与代码 / Git本地客户端与工作树 | software-artifact | 运行观测   | 2.43.0                           | 地阶高级（用户指定重要性暂定） |
 | dep-gnu-make        | GNU Make                       | 4.3 构建系统                           | software-artifact | 运行观测   | 4.3                              | 地阶初级（用户指定重要性暂定） |
 | dep-tmux-runtime    | tmux 当前运行实例              | 3.2 命令/终端 / tmux复用支路           | software-artifact | 运行观测   | 3.4                              | 黄阶高级（用户指定重要性暂定） |
-+---------------------+--------------------------------+----------------------------------------+-------------------+------------+----------------------------------+--------------------------------+
-```
 
 - `dep-pi-cli`：pi --version 输出 1.1.0；type -a 显示多个同名入口，本记录只绑定当前 shell 选中的入口；先前环境记录为 1.0.4，宿主/路径差异待核，不将此版本绑定到会话服务端。；品级分组：天阶高级（用户指定重要性暂定）；正式效能仍未验证。分级量表仍为 draft，初/中/高结果带阈值未校准；本条未建立任务族效果合同。
 - `dep-codex-cli`：依赖图及外部资源行指向 Codex CLI 候选；当前安装身份、可执行入口、版本与来源未核。；外部资源：tools-platforms-codex-cli-362bc20a；品级分组：天阶中级（用户指定重要性暂定）；正式效能仍未验证。精确实现/版本、任务合同及分级量表阈值待核。
@@ -133,10 +113,8 @@
 用户于 2026-10-10T14:28:10Z 确认此前列出的依赖类别均已核查并要求全部纳入。具体实现身份和版本仍按登记所据分别记录；品级按Vibe Coding重要性暂定，不等于效能验证。
 目标/验收合同、人类授权与取舍、Agent循环、构建/验证/交付过程及反馈仍按角色、内容、过程或关系分类，不因列入依赖范围自动成为软件法器。
 
-```text
-+-----------------------------------------------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+
 | 依赖图类别                                                | 纳入状态     | 分类边界                                                                                                                                         | 品级分组                       |
-|-----------------------------------------------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------|
+|:----------------------------------------------------------|:-------------|:-------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------|
 | 2.2 云端模型服务/API与固定模型版本                        | 用户确认纳入 | 用户确认此依赖类别已核并要求纳入；服务/API与模型制品仍分开登记；本次品级按Vibe Coding重要性分组，正式效能评级另行判断。                          | 天阶高级（用户指定重要性暂定） |
 | 2.2 本地模型权重、Tokenizer与推理引擎                     | 用户确认纳入 | 用户确认此依赖类别已核并要求纳入；模型制品、Tokenizer与推理程序分别判断；本次品级按Vibe Coding重要性分组，正式效能评级另行判断。                 | 天阶中级（用户指定重要性暂定） |
 | 3.2 Terminal Emulator / PTY                               | 用户确认纳入 | 用户确认此依赖类别已核并要求纳入；终端模拟器与PTY系统接口分开分类；本次品级按Vibe Coding重要性分组，正式效能评级另行判断。                       | 地阶高级（用户指定重要性暂定） |
@@ -145,18 +123,14 @@
 | 7.2-7.3 制品注册表、部署目标、产品运行时、数据库与外部API | 用户确认纳入 | 用户确认此可选依赖类别已核并要求纳入；注册表、部署环境、运行时、数据库与外部API分别分类；本次品级按Vibe Coding重要性分组，正式效能评级另行判断。 | 玄阶中级（用户指定重要性暂定） |
 | 8 CPU/GPU、内存、存储、网络、电力与数据中心               | 用户确认纳入 | 用户确认此资源类别已核并要求纳入；物理设备、基础设施与供给服务按所指分别分类；本次品级按Vibe Coding重要性分组，正式效能评级另行判断。            | 地阶中级（用户指定重要性暂定） |
 | 2.3 检索/索引/记忆与向量库                                | 用户确认纳入 | 用户确认此可选依赖类别已核并要求纳入；检索过程、索引、记忆内容与向量存储分别分类；本次品级按Vibe Coding重要性分组，正式效能评级另行判断。        | 玄阶高级（用户指定重要性暂定） |
-+-----------------------------------------------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+
-```
 
 
 ### 依赖图对应的仓内来源实现
 
 这些行指向已固定来源的本地程序内容；与上方实际运行实例分开，关联不意味着运行版相同。
 
-```text
-+-----------------------------+-------------------------------+---------------------------------------------+--------------------------------------------------------------+--------------------------------+
 | 本地对象ID                  | 名称                          | 依赖图位置                                  | 关系边界                                                     | 品级分组                       |
-|-----------------------------+-------------------------------+---------------------------------------------+--------------------------------------------------------------+--------------------------------|
+|:----------------------------|:------------------------------|:--------------------------------------------|:-------------------------------------------------------------|:-------------------------------|
 | faqi-codex-config-installer | Codex配置安装与恢复脚本       | 2.1 Agent运行时 / Codex替代项               | 本地配置辅助脚本；不是Codex CLI实现。                        | 玄阶初级（用户指定重要性暂定） |
 | faqi-auto-skill-create      | auto-skill模板生成脚本        | 2.3 Harness与上下文 / 可选Skill制作支路     | 实现仓内Skill骨架生成入口。                                  | 玄阶中级（用户指定重要性暂定） |
 | faqi-auto-skill-validate    | auto-skill结构校验脚本        | 2.3 Harness与上下文 / 可选Skill制作支路     | 实现仓内Skill结构检查入口。                                  | 玄阶中级（用户指定重要性暂定） |
@@ -166,18 +140,14 @@
 | faqi-auto-tmux              | auto-tmux命令封装程序         | 3.2 命令/终端 / auto-tmux封装               | 依赖PATH中的tmux CLI及Shell。                                | 黄阶高级（用户指定重要性暂定） |
 | faqi-oh-my-tmux             | oh-my-tmux可执行配置程序      | 3.2 命令/终端 / oh-my-tmux配置              | 依赖tmux与Shell的可执行配置，不是tmux本体。                  | 黄阶中级（用户指定重要性暂定） |
 | faqi-tmux                   | tmux终端复用程序              | 3.2 命令/终端 / tmux CLI、Server、Socket    | 固定源码内容；本地运行实例来源桥接待核。                     | 黄阶高级（用户指定重要性暂定） |
-+-----------------------------+-------------------------------+---------------------------------------------+--------------------------------------------------------------+--------------------------------+
-```
 
 
 ## 本地来源限定法器
 
 以下记录只指选定来源的程序指令内容；不同内容实现是否属于同一产品/派生版本，仍须另有演化证据。未出现在依赖图具体工具节点中的仓内工具仍保留在总表。
 
-```text
-+-----------------------------+-------------------------------+-------------------+--------------+---------------------------------------------+--------------------------------+
 | 实现ID                      | 名称                          | 本体类型          | 实现来源ID   | 依赖图位置                                  | 品级分组                       |
-|-----------------------------+-------------------------------+-------------------+--------------+---------------------------------------------+--------------------------------|
+|:----------------------------|:------------------------------|:------------------|:-------------|:--------------------------------------------|:-------------------------------|
 | faqi-prompt-converter       | 提示词格式转换程序            | software-artifact | S02          | 图中未具名                                  | 黄阶初级（用户指定重要性暂定） |
 | faqi-codex-config-installer | Codex配置安装与恢复脚本       | software-artifact | S06          | 2.1 Agent运行时 / Codex替代项               | 玄阶初级（用户指定重要性暂定） |
 | faqi-auto-skill-create      | auto-skill模板生成脚本        | software-artifact | S08          | 2.3 Harness与上下文 / 可选Skill制作支路     | 玄阶中级（用户指定重要性暂定） |
@@ -188,8 +158,6 @@
 | faqi-oh-my-tmux             | oh-my-tmux可执行配置程序      | software-artifact | S18          | 3.2 命令/终端 / oh-my-tmux配置              | 黄阶中级（用户指定重要性暂定） |
 | faqi-tmux                   | tmux终端复用程序              | software-artifact | S21          | 3.2 命令/终端 / tmux CLI、Server、Socket    | 黄阶高级（用户指定重要性暂定） |
 | faqi-claude-skill-init      | 官方Skill初始化脚本           | software-artifact | S23          | 2.3 Harness与上下文 / 可选Skill制作支路     | 玄阶初级（用户指定重要性暂定） |
-+-----------------------------+-------------------------------+-------------------+--------------+---------------------------------------------+--------------------------------+
-```
 
 ### faqi-prompt-converter
 
@@ -403,15 +371,11 @@ tmux终端复用程序：指固定源码修订的程序内容，不是物理终�
 
 `requires`只记录源码/说明声明的依赖；相关本地实现ID是源码参照，不证明运行时加载了该版本，更不证明实际使用、符合协议或已获权限。
 
-```text
-+----------------------------+----------+------------------------------------+--------------------+----------+
-| 主体实现                   | 谓词     | 依赖所指                           | 相关来源实现       | 证据ID   |
-|----------------------------+----------+------------------------------------+--------------------+----------|
-| faqi-auto-tmux             | requires | tmux程序（运行版本未知）           | faqi-tmux          | S13      |
-| faqi-oh-my-tmux            | requires | tmux>=2.6及awk/perl/grep/sed       | faqi-tmux          | S17      |
-| faqi-skill-seekers-adapter | requires | 链接源码中的skill_seekers.cli.main | faqi-skill-seekers | S10      |
-+----------------------------+----------+------------------------------------+--------------------+----------+
-```
+| 主体实现                   | 谓词     | 依赖所指                               | 相关来源实现       | 证据ID   |
+|:---------------------------|:---------|:---------------------------------------|:-------------------|:---------|
+| faqi-auto-tmux             | requires | tmux程序（运行版本未知）               | faqi-tmux          | S13      |
+| faqi-oh-my-tmux            | requires | tmux&gt;=2.6及awk/perl/grep/sed        | faqi-tmux          | S17      |
+| faqi-skill-seekers-adapter | requires | 链接源码中的skill&#95;seekers.cli.main | faqi-skill-seekers | S10      |
 
 - `faqi-auto-tmux`：脚本调用PATH中的tmux；本地上游源码仅作相关参照，不证明实际安装二进制来自该修订。
 - `faqi-oh-my-tmux`：README声明版本下限，不将配置修订误写成tmux版本，也不保证当前环境满足依赖。
@@ -432,10 +396,8 @@ tmux终端复用程序：指固定源码修订的程序内容，不是物理终�
 
 原行明确描述程序、编辑器、CLI、插件、库或生成工具，保留软件实现候选；只有名称/介绍地址，未核具体实现、版本、许可证或能力，不直接赋型/登记。
 
-```text
-+-----------------------------------------------------+-----------------------+--------------+---------------------+--------------+
 | 原资源ID                                            | 名称                  | 原状态       | 原验证状态          | 原风险标记   |
-|-----------------------------------------------------+-----------------------+--------------+---------------------+--------------|
+|:----------------------------------------------------|:----------------------|:-------------|:--------------------|:-------------|
 | tools-platforms-codex-cli-362bc20a                  | Codex CLI             | active       | imported-unverified | 无           |
 | tools-platforms-droid-1b66f6e0                      | Droid                 | active       | imported-unverified | 无           |
 | tools-platforms-docusaurus-09c54423                 | Docusaurus            | active       | imported-unverified | 无           |
@@ -503,8 +465,6 @@ tmux终端复用程序：指固定源码修订的程序内容，不是物理终�
 | repo-rules-scaffolds-codex-e3c8be51                 | openai/codex          | active       | imported-unverified | 无           |
 | repo-rules-scaffolds-roo-code-36e77dcc              | RooCodeInc/Roo-Code   | needs-review | imported-unverified | 无           |
 | network-payment-services-flclash-a974428b           | FlClash               | active       | imported-unverified | 无           |
-+-----------------------------------------------------+-----------------------+--------------+---------------------+--------------+
-```
 
 - `tools-platforms-codex-cli-362bc20a`：[原始资源行](../assets/external-resources/tools-platforms.yml) `/resources/0`。描述混有“最强模型”、CLI、配置与旧地址；只保留CLI候选，不使用宣传赋级，本地Codex安装脚本不等于CLI。
 - `tools-platforms-droid-1b66f6e0`：[原始资源行](../assets/external-resources/tools-platforms.yml) `/resources/5`。
@@ -578,10 +538,8 @@ tmux终端复用程序：指固定源码修订的程序内容，不是物理终�
 
 按原行服务功能与网址保留托管入口候选；网址不是实现、部署或设备证据，平台/模型/账号/实际调用仍需分离，未访问账户或核部署版本。
 
-```text
-+----------------------------------------------+----------------+----------+---------------------+--------------+
 | 原资源ID                                     | 名称           | 原状态   | 原验证状态          | 原风险标记   |
-|----------------------------------------------+----------------+----------+---------------------+--------------|
+|:---------------------------------------------|:---------------|:---------|:--------------------|:-------------|
 | tools-platforms-apps-script-e6b8bbbb         | Apps Script    | active   | imported-unverified | 无           |
 | tools-platforms-google-sheets-32b827b0       | Google Sheets  | active   | imported-unverified | 无           |
 | tools-platforms-mintlify-0f0b6833            | Mintlify       | active   | imported-unverified | 无           |
@@ -604,8 +562,6 @@ tmux终端复用程序：指固定源码修订的程序内容，不是物理终�
 | tools-platforms-v0-by-vercel-fe818ef0        | v0 by Vercel   | active   | imported-unverified | 无           |
 | repo-rules-scaffolds-github-e755441d         | GitHub         | active   | imported-unverified | 无           |
 | repo-rules-scaffolds-github-copilot-102fb5f8 | GitHub Copilot | active   | imported-unverified | 无           |
-+----------------------------------------------+----------------+----------+---------------------+--------------+
-```
 
 - `tools-platforms-apps-script-e6b8bbbb`：[原始资源行](../assets/external-resources/tools-platforms.yml) `/resources/2`。
 - `tools-platforms-google-sheets-32b827b0`：[原始资源行](../assets/external-resources/tools-platforms.yml) `/resources/8`。
@@ -634,11 +590,9 @@ tmux终端复用程序：指固定源码修订的程序内容，不是物理终�
 
 当前条目所指为知识、教程、索引、规则、提示词或模板内容，不作为法器程序登记；不删除原资源，也不断言整个仓库没有程序，其内具体实现须另选来源。
 
-```text
-+---------------------------------------------------------------------+----------------------------------------+--------------+---------------------+------------------------+
 | 原资源ID                                                            | 名称                                   | 原状态       | 原验证状态          | 原风险标记             |
-|---------------------------------------------------------------------+----------------------------------------+--------------+---------------------+------------------------|
-| tools-platforms-prompt-jsonl-8e9b2066                               | prompt_jsonl                           | needs-review | imported-unverified | non-url-locator        |
+|:--------------------------------------------------------------------|:---------------------------------------|:-------------|:--------------------|:-----------------------|
+| tools-platforms-prompt-jsonl-8e9b2066                               | prompt&#95;jsonl                       | needs-review | imported-unverified | non-url-locator        |
 | tools-platforms-bilibili-23287176                                   | Bilibili                               | active       | imported-unverified | 无                     |
 | tools-platforms-z-library-31b0d982                                  | Z-Library                              | active       | imported-unverified | access-legality-review |
 | repo-rules-scaffolds-vibe-coding-e16848e0                           | Vibe Coding 指南                       | active       | imported-unverified | 无                     |
@@ -676,8 +630,6 @@ tmux终端复用程序：指固定源码修订的程序内容，不是物理终�
 | repo-rules-scaffolds-awesome-vibe-coding-e3ea2b5b                   | ai-for-developers/awesome-vibe-coding  | active       | imported-unverified | 无                     |
 | repo-rules-scaffolds-claude-code-best-practice-01224898             | shanraisshan/claude-code-best-practice | active       | imported-unverified | 无                     |
 | repo-rules-scaffolds-awesome-claude-code-5e3406a1                   | hesreallyhim/awesome-claude-code       | active       | imported-unverified | 无                     |
-+---------------------------------------------------------------------+----------------------------------------+--------------+---------------------+------------------------+
-```
 
 - `tools-platforms-prompt-jsonl-8e9b2066`：[原始资源行](../assets/external-resources/tools-platforms.yml) `/resources/1`。
 - `tools-platforms-bilibili-23287176`：[原始资源行](../assets/external-resources/tools-platforms.yml) `/resources/3`。
@@ -722,16 +674,12 @@ tmux终端复用程序：指固定源码修订的程序内容，不是物理终�
 
 当前名义所指是模型名称/版本，不当作法器程序；未取得参数/结构版本证据，不批准model-artifact实例，所附平台URL不证明模型与服务同一。
 
-```text
-+------------------------------------------+-----------------+--------------+---------------------+--------------+
 | 原资源ID                                 | 名称            | 原状态       | 原验证状态          | 原风险标记   |
-|------------------------------------------+-----------------+--------------+---------------------+--------------|
+|:-----------------------------------------|:----------------|:-------------|:--------------------|:-------------|
 | tools-platforms-claude-opus-4-6-f751380c | Claude Opus 4.6 | active       | imported-unverified | 无           |
 | tools-platforms-gpt-5-1-codex-1ad522a5   | GPT-5.1 Codex   | needs-review | imported-unverified | missing-link |
 | tools-platforms-gemini-2-5-pro-0661c69f  | Gemini 2.5 Pro  | needs-review | imported-unverified | missing-link |
 | tools-platforms-dall-e-3-26dc583b        | DALL-E 3        | active       | imported-unverified | 无           |
-+------------------------------------------+-----------------+--------------+---------------------+--------------+
-```
 
 - `tools-platforms-claude-opus-4-6-f751380c`：[原始资源行](../assets/external-resources/tools-platforms.yml) `/resources/4`。claude.ai平台不是Opus参数内容或具体模型版本的验证证据。
 - `tools-platforms-gpt-5-1-codex-1ad522a5`：[原始资源行](../assets/external-resources/tools-platforms.yml) `/resources/6`。
@@ -742,34 +690,30 @@ tmux终端复用程序：指固定源码修订的程序内容，不是物理终�
 
 信息不足、对象名/目标不一致或复合包未展开，保留待核；不凭品牌、后缀、Skill/仓库包装复制软件身份，先明确具体模块、入口及版本。
 
-```text
-+----------------------------------------------------+--------------------------+--------------+---------------------+--------------+
-| 原资源ID                                           | 名称                     | 原状态       | 原验证状态          | 原风险标记   |
-|----------------------------------------------------+--------------------------+--------------+---------------------+--------------|
-| tools-platforms-local-history-2b05b2c1             | Local History            | needs-review | imported-unverified | missing-link |
-| tools-platforms-partial-diff-4787875c              | Partial Diff             | needs-review | imported-unverified | missing-link |
-| tools-platforms-zsh-d6d24951                       | zsh                      | active       | imported-unverified | 无           |
-| tools-platforms-tabnine-0b2c09aa                   | Tabnine                  | active       | imported-unverified | 无           |
-| tools-platforms-elevenlabs-5a58d635                | ElevenLabs               | active       | imported-unverified | 无           |
-| tools-platforms-ideogram-efb6a3b8                  | Ideogram                 | active       | imported-unverified | 无           |
-| tools-platforms-kling-253d44f3                     | Kling                    | active       | imported-unverified | 无           |
-| tools-platforms-leonardo-ai-26816634               | Leonardo AI              | active       | imported-unverified | 无           |
-| tools-platforms-meshy-549051bc                     | Meshy                    | active       | imported-unverified | 无           |
-| tools-platforms-midjourney-976ad67d                | Midjourney               | active       | imported-unverified | 无           |
-| tools-platforms-runway-6c8ab136                    | Runway                   | active       | imported-unverified | 无           |
-| tools-platforms-sora-3b1d49f7                      | Sora                     | active       | imported-unverified | 无           |
-| tools-platforms-suno-fb9344c5                      | Suno                     | active       | imported-unverified | 无           |
-| tools-platforms-udio-0d39f909                      | Udio                     | active       | imported-unverified | 无           |
-| tools-platforms-kiro-47d2b0fc                      | Kiro                     | active       | imported-unverified | 无           |
-| tools-platforms-windsurf-fdd489a7                  | Windsurf                 | active       | imported-unverified | 无           |
-| repo-rules-scaffolds-scientific-skills-0f3f6b96    | scientific-skills        | active       | imported-unverified | 无           |
-| repo-rules-scaffolds-mcp-servers-5d60dee4          | mcp-servers              | active       | imported-unverified | 无           |
-| repo-rules-scaffolds-ai-for-grant-writing-0a634380 | ai-for-grant-writing     | active       | imported-unverified | 无           |
-| repo-rules-scaffolds-fastapi-template-c97cc061     | fastapi-template         | active       | imported-unverified | 无           |
-| repo-rules-scaffolds-ai-coding-lab-6dc927c2        | luzhenqian/ai-coding-lab | active       | imported-unverified | 无           |
-| repo-rules-scaffolds-cs146s-cn-eaea3651            | ShouZhengAI/CS146S_CN    | active       | imported-unverified | 无           |
-+----------------------------------------------------+--------------------------+--------------+---------------------+--------------+
-```
+| 原资源ID                                           | 名称                      | 原状态       | 原验证状态          | 原风险标记   |
+|:---------------------------------------------------|:--------------------------|:-------------|:--------------------|:-------------|
+| tools-platforms-local-history-2b05b2c1             | Local History             | needs-review | imported-unverified | missing-link |
+| tools-platforms-partial-diff-4787875c              | Partial Diff              | needs-review | imported-unverified | missing-link |
+| tools-platforms-zsh-d6d24951                       | zsh                       | active       | imported-unverified | 无           |
+| tools-platforms-tabnine-0b2c09aa                   | Tabnine                   | active       | imported-unverified | 无           |
+| tools-platforms-elevenlabs-5a58d635                | ElevenLabs                | active       | imported-unverified | 无           |
+| tools-platforms-ideogram-efb6a3b8                  | Ideogram                  | active       | imported-unverified | 无           |
+| tools-platforms-kling-253d44f3                     | Kling                     | active       | imported-unverified | 无           |
+| tools-platforms-leonardo-ai-26816634               | Leonardo AI               | active       | imported-unverified | 无           |
+| tools-platforms-meshy-549051bc                     | Meshy                     | active       | imported-unverified | 无           |
+| tools-platforms-midjourney-976ad67d                | Midjourney                | active       | imported-unverified | 无           |
+| tools-platforms-runway-6c8ab136                    | Runway                    | active       | imported-unverified | 无           |
+| tools-platforms-sora-3b1d49f7                      | Sora                      | active       | imported-unverified | 无           |
+| tools-platforms-suno-fb9344c5                      | Suno                      | active       | imported-unverified | 无           |
+| tools-platforms-udio-0d39f909                      | Udio                      | active       | imported-unverified | 无           |
+| tools-platforms-kiro-47d2b0fc                      | Kiro                      | active       | imported-unverified | 无           |
+| tools-platforms-windsurf-fdd489a7                  | Windsurf                  | active       | imported-unverified | 无           |
+| repo-rules-scaffolds-scientific-skills-0f3f6b96    | scientific-skills         | active       | imported-unverified | 无           |
+| repo-rules-scaffolds-mcp-servers-5d60dee4          | mcp-servers               | active       | imported-unverified | 无           |
+| repo-rules-scaffolds-ai-for-grant-writing-0a634380 | ai-for-grant-writing      | active       | imported-unverified | 无           |
+| repo-rules-scaffolds-fastapi-template-c97cc061     | fastapi-template          | active       | imported-unverified | 无           |
+| repo-rules-scaffolds-ai-coding-lab-6dc927c2        | luzhenqian/ai-coding-lab  | active       | imported-unverified | 无           |
+| repo-rules-scaffolds-cs146s-cn-eaea3651            | ShouZhengAI/CS146S&#95;CN | active       | imported-unverified | 无           |
 
 - `tools-platforms-local-history-2b05b2c1`：[原始资源行](../assets/external-resources/tools-platforms.yml) `/resources/9`。缺链接；同名插件可能有多个实现，需厂商/仓库和版本。
 - `tools-platforms-partial-diff-4787875c`：[原始资源行](../assets/external-resources/tools-platforms.yml) `/resources/11`。缺链接；需补具体插件来源，保留missing-link与needs-review。
@@ -798,14 +742,10 @@ tmux终端复用程序：指固定源码修订的程序内容，不是物理终�
 
 原仓库网址与已审本地submodule来源对应，仅建立来源参照，不新增重复法器；不把未版本化仓库入口等同本次固定源码版本。
 
-```text
-+--------------------------------------+---------------+----------+---------------------+--------------+
 | 原资源ID                             | 名称          | 原状态   | 原验证状态          | 原风险标记   |
-|--------------------------------------+---------------+----------+---------------------+--------------|
+|:-------------------------------------|:--------------|:---------|:--------------------|:-------------|
 | repo-rules-scaffolds-skills-cd973130 | Skills 制作器 | active   | imported-unverified | 无           |
 | repo-rules-scaffolds-tmux-9f36981a   | tmux          | active   | imported-unverified | 无           |
-+--------------------------------------+---------------+----------+---------------------+--------------+
-```
 
 - `repo-rules-scaffolds-skills-cd973130`：[原始资源行](../assets/external-resources/repo-rules-scaffolds.yml) `/resources/62`。 对应本地来源参照 faqi-skill-seekers；不把未版本化的仓库URL等同该固定源码版本。
 - `repo-rules-scaffolds-tmux-9f36981a`：[原始资源行](../assets/external-resources/repo-rules-scaffolds.yml) `/resources/70`。 对应本地来源参照 faqi-tmux；不把未版本化的仓库URL等同该固定源码版本。
@@ -814,15 +754,11 @@ tmux终端复用程序：指固定源码修订的程序内容，不是物理终�
 
 网络/金融服务品牌、推广入口或账号产品所指待核；保留全部风险与原状态，不批准交易、注册、权限、设备或运行实例。
 
-```text
-+-----------------------------------------------------+--------------+----------+---------------------+-----------------------------------------------------+
 | 原资源ID                                            | 名称         | 原状态   | 原验证状态          | 原风险标记                                          |
-|-----------------------------------------------------+--------------+----------+---------------------+-----------------------------------------------------|
+|:----------------------------------------------------|:-------------|:---------|:--------------------|:----------------------------------------------------|
 | network-payment-services-www-bsmkweb-com-0960fe59   | 币安支付     | active   | imported-unverified | referral-or-tracking-link, financial-service-review |
 | network-payment-services-xn-9kqz23b19z-com-a271e5a7 | 网络服务     | active   | imported-unverified | referral-or-tracking-link                           |
 | network-payment-services-bybit-81d32c91             | Bybit 虚拟卡 | active   | imported-unverified | referral-or-tracking-link, financial-service-review |
-+-----------------------------------------------------+--------------+----------+---------------------+-----------------------------------------------------+
-```
 
 - `network-payment-services-www-bsmkweb-com-0960fe59`：[原始资源行](../assets/external-resources/network-payment-services.yml) `/resources/0`。资源自称“币安支付”，网址为bsmkweb.com并带ref；品牌/网址所指一致性未核，不据名称认定官方服务。
 - `network-payment-services-xn-9kqz23b19z-com-a271e5a7`：[原始资源行](../assets/external-resources/network-payment-services.yml) `/resources/2`。注册推广入口只有泛化云服务说明，实际服务、提供方与合规边界待核。
@@ -1129,5 +1065,5 @@ make check-faqi-catalog
 make test-faqi-catalog
 ```
 
-检查复用jsonschema/PyYAML，表格复用tabulate；依赖图、来源、ID、选区、范围或只读视图漂移均失败，不联网补证或静默升级。
+检查复用jsonschema/PyYAML；表格由tabulate生成原生Markdown语法，并转义单元格内容；依赖图、来源、ID、选区、范围或只读视图漂移均失败，不联网补证或静默升级。
 本表未批准独立审查、完整运行/效果、许可、部署、账户或硬件身份。重要性分级与正式效能评价分轴；任务合同、阈值校准、运行版与源码身份桥接及通用图节点的落地实例仍待核。

@@ -305,18 +305,32 @@ def text(value):
     return escaped.replace("`", "&#96;").replace("[", "&#91;").replace("]", "&#93;").replace("|", "&#124;")
 
 
+def table_cell(value):
+    value = str(value).replace("\r\n", "\n").replace("\r", "\n")
+    escaped = html.escape(value, quote=False)
+    for char, entity in (("\\", "&#92;"), ("`", "&#96;"), ("*", "&#42;"), ("_", "&#95;"),
+                         ("~", "&#126;"), ("[", "&#91;"), ("]", "&#93;"), ("|", "&#124;")):
+        escaped = escaped.replace(char, entity)
+    return escaped.replace("\n", "<br>")
+
+
 def table(rows, headers):
-    # 固定宽度表会把一个长名称扩散到每行；先用UTF-8字节做保守预算，避免格式化后才发现膨胀。
-    widths = [len(str(h).encode("utf-8")) for h in headers]
+    # 固定宽度表会把一个长名称扩散到每行；先用转义后UTF-8字节做保守预算。
+    escaped_headers = [table_cell(header) for header in headers]
+    widths = [len(header.encode("utf-8")) for header in escaped_headers]
+    escaped_rows = []
     height = 5
     for row in rows:
-        height += max([1, *[len(str(value).splitlines()) for value in row]])
-        for index, value in enumerate(row):
-            widths[index] = max(widths[index], len(str(value).encode("utf-8")))
+        require(len(row) == len(headers), "生成表格的行列数不一致")
+        values = [str(value) for value in row]
+        escaped_row = [table_cell(value) for value in values]
+        escaped_rows.append(escaped_row)
+        height += max([1, *[len(value.splitlines()) for value in values]])
+        for index, value in enumerate(escaped_row):
+            widths[index] = max(widths[index], len(value.encode("utf-8")))
     require((sum(widths) + 3 * len(headers) + 1) * height + 20 <= MAX_BYTES,
-            "代码表列宽与行数超过2 MiB预算，不能静默截断")
-    # 原生代码表会隔离HTML/Markdown；在这里转义会把 >= 等原文字面改坏。
-    return "```text\n" + tabulate(rows, headers=headers, tablefmt="psql", disable_numparse=True) + "\n```\n"
+            "Markdown表格列宽与行数超过2 MiB预算，不能静默截断")
+    return tabulate(escaped_rows, headers=escaped_headers, tablefmt="pipe", disable_numparse=True) + "\n"
 
 
 def render(data, sources, objects, resources, decisions):
@@ -437,7 +451,7 @@ def render(data, sources, objects, resources, decisions):
                 f"- 完整文件SHA-256：`{source['sha256']}`。",
                 f"- 选区：`[{source['lines'][0]},{source['lines'][1]})`；SHA-256：`{source['selection_sha256']}`。", ""]
     out += ["## 维护与未完成事项", "", "```bash", "make sync-faqi-catalog", "make check-faqi-catalog", "make test-faqi-catalog", "```", "",
-            "检查复用jsonschema/PyYAML，表格复用tabulate；依赖图、来源、ID、选区、范围或只读视图漂移均失败，不联网补证或静默升级。",
+            "检查复用jsonschema/PyYAML；表格由tabulate生成原生Markdown语法，并转义单元格内容；依赖图、来源、ID、选区、范围或只读视图漂移均失败，不联网补证或静默升级。",
             "本表未批准独立审查、完整运行/效果、许可、部署、账户或硬件身份。重要性分级与正式效能评价分轴；任务合同、阈值校准、运行版与源码身份桥接及通用图节点的落地实例仍待核。", ""]
     return "\n".join(out).encode("utf-8")
 

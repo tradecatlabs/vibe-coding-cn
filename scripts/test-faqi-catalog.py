@@ -207,14 +207,32 @@ class FaqiCatalogTest(unittest.TestCase):
         view = ARTIFACTS / "safe-view.md"
         self.assertEqual(0, self.invoke("write-first", "--input", input_path, "--view", view, "--write").returncode)
         first = view.read_bytes()
-        parser = MarkdownIt("commonmark")
+        parser = MarkdownIt("default")
+        tokens = parser.parse(first.decode())
         markup = parser.render(first.decode())
         self.assertNotIn("<script>", markup)
         self.assertNotIn('href="javascript:', markup)
-        tables = "\n".join(t.content for t in parser.parse(first.decode()) if t.type == "fence")
-        # psql代码表是原样文本：HTML转义不能把依赖版本和原名称改成字面实体。
-        self.assertIn("tmux>=2.6及awk/perl/grep/sed", tables)
-        self.assertIn(data["objects"][0]["name"], tables)
+        table_column_counts = []
+        for index, token in enumerate(tokens):
+            if token.type != "table_open":
+                continue
+            row_counts = []
+            current_count = 0
+            for nested in tokens[index + 1:]:
+                if nested.type == "table_close":
+                    break
+                if nested.type == "tr_open":
+                    current_count = 0
+                elif nested.type in {"th_open", "td_open"}:
+                    current_count += 1
+                elif nested.type == "tr_close":
+                    row_counts.append(current_count)
+            self.assertTrue(row_counts)
+            self.assertEqual(1, len(set(row_counts)), "表格单元格中的管道符不能拆出额外列")
+            table_column_counts.append(row_counts[0])
+        self.assertTrue(table_column_counts, "生成视图应包含可解析的Markdown表格")
+        self.assertIn("tmux&gt;=2.6及awk/perl/grep/sed", markup)
+        self.assertIn("&lt;script&gt;unexpected&lt;/script&gt;", markup)
         self.assertEqual(0, self.invoke("write-repeat", "--input", input_path, "--view", view, "--write").returncode)
         self.assertEqual(first, view.read_bytes())
         self.assertEqual(0, self.invoke("check-repeat", "--input", input_path, "--view", view, "--check").returncode)

@@ -2,5 +2,5 @@
 jsonschema==4.26.0
 PyYAML==6.0.3
 tabulate==0.9.0
-# 测试复用真实Markdown解析器，验证代码表保真与注入隔离。
+# 测试复用真实Markdown解析器，验证表格语法、单元格转义与注入隔离。
 markdown-it-py==3.0.0

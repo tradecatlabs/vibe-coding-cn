@@ -259,7 +259,7 @@ git push origin develop
 - `scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
 - `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
 - `metadata/faqi.json` / `faqi.schema.json` - 法器总分类登记及字段契约；复用本体类型、固定来源审查、依赖图对象和用户确认纳入的依赖类别，原资源事实仍归资源YAML；当前暂定品级按Vibe Coding重要性分组，正式效能评级仍须独立效果证据。
-- `tools/faqi-catalog.md` - 从总登记与原资源YAML生成的只读视图，包含固定来源实现、依赖图具名对象、用户确认纳入的依赖类别、外部分流及品级状态；来源审查不等于许可或效果证明。
+- `tools/faqi-catalog.md` - 从总登记与原资源YAML生成的原生Markdown表格只读视图，包含固定来源实现、依赖图具名对象、用户确认纳入的依赖类别、外部分流及品级状态；来源审查不等于许可或效果证明。
 - `scripts/sync-faqi-catalog.py` / `test-faqi-catalog.py` - 离线总表生成、检查及行为契约；核来源、图SHA、对象映射和品级边界，保留真实命令/结果；不执行被审程序或联网补证。
 - `metadata/gongfa/registry.json` - 活跃功法登记、等级、规则、来源、内容版本、人工初评及正式评级历史的唯一可编辑数据源；类型语义仍归本体主文；新范围追加批次
 - `metadata/gongfa/catalog.md` / `catalog.xlsx` - 同一全部功法总表的两种生成视图，聚合当前登记与已分类候选历史材料；不手改、不自动注册/去重/评级
@@ -279,9 +279,9 @@ git push origin develop
 - `docs/getting-started/first-project.md` - 用本地待办清单完成第一次可验证的需求、实现、验收与 Git 闭环
 - `docs/gongfa/README.md` - 方法论、哲学、思维模型、工程准则和流程的统一正文入口；完整文集按任务导航，文集数不是独立功法数
 - `docs/gongfa/faqi-system.md` - 法器分类边界、重要性分级、选用方式与登记入口；重要性不代表正式效能
-- 根 README 完整保留六条核心命题的只读展示，与功法体系分别使用同级原生 `<details>/<summary><strong>` 展开/收起；六命题正文维护源仍为 `docs/gongfa/ai-core-propositions.md`，同步展示不创建第二登记或内容版本。
+- 根 README 不复制六条核心命题全文，仅保留简短正文入口与兼容历史锚点；正文唯一维护源为 `docs/gongfa/ai-core-propositions.md`，不维护首页展示副本或第二内容版本。
 - 根 README 的“法器体系”块与功法块同级，使用不带`open`属性的`<details>`默认折叠；只放概要和链接，正文归`docs/gongfa/faqi-system.md`，登记归`metadata/faqi.json`，逐条生成视图归`tools/faqi-catalog.md`。
-- 首页其他方法只通过功法体系统一入口选择，不恢复经验、实验性方法、道法术器或哲学的独立栏目/分库；六命题历史锚点定位根页六命题展示，其他方法历史锚点定位功法块。首页徽章区仅保留独立目的地入口，统一使用 `<a><img>` 与紧凑 `style=flat`，保留其原href、顺序及完整alt；仅跳根README章节的目录徽章不放顶部，同一目标不重复展示（相对路径的 `./` 写法差异不算不同目标）。删除徽章不删除正文、折叠标题或历史锚点，不恢复旧快捷导航徽章组；单一段落不等于已验证所有视口视觉单行。
+- 首页其他方法只通过功法体系统一入口选择，不恢复经验、实验性方法、道法术器或哲学的独立栏目/分库；六命题历史锚点定位根页简短正文入口，完整正文唯一维护于 `docs/gongfa/ai-core-propositions.md`，其他方法历史锚点定位功法块。首页徽章区仅保留独立目的地入口，统一使用 `<a><img>` 与紧凑 `style=flat`，保留其原href、顺序及完整alt；仅跳根README章节的目录徽章不放顶部，同一目标不重复展示（相对路径的 `./` 写法差异不算不同目标）。删除徽章不自动删除其目标正文或历史锚点，不恢复旧快捷导航徽章组；单一段落不等于已验证所有视口视觉单行。
 - 首页入口收口、文集归并与逐条身份登记分别验收；无来源绑定不自动等于未登记功法，模板、术语、工具和本体说明不机械注册或赋级。
 - 研究回填矩阵、模板和AI摘要也按现行职责定位：方法/流程/清单正文归 `docs/gongfa/`，实例练习归 `docs/getting-started/`，具体事实留 `research/`；执行契约、工具配置和脚本分别归 `skills/`、`tools/config/`、`scripts/`，不把旧分类词当目录或批量改写上游结构。
 - `docs/gongfa/AGENTS.md` - 功法正文、历史来源、登记与生成视图的唯一职责规则；不恢复旧目录或并行可编辑副本

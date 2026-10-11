@@ -8,7 +8,7 @@
 - `tools/prompts-library/`：提示词 Excel、Markdown、JSONL 转换工具。
 - `tools/chat-vault/`：AI 聊天记录保存工具。
 - `tools/external/`：第三方工具、外部仓库和 Git submodule。
-- `faqi-catalog.md`：法器来源限定初审与资源分流的只读生成清单；数据归`metadata/faqi.json`，重要性与边界说明见`docs/gongfa/faqi-system.md`，资源原事实与类型仍归各自唯一所有者。
+- `faqi-catalog.md`：法器来源限定初审与资源分流的只读生成清单，以原生Markdown表格展示；数据归`metadata/faqi.json`，重要性与边界说明见`docs/gongfa/faqi-system.md`，资源原事实与类型仍归各自唯一所有者。
 
 ## 约束
 
