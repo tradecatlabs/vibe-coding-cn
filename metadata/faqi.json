@@ -1,11 +1,11 @@
 {
   "format_version": 2,
   "kind": "faqi-master-classification-register",
-  "reviewed_at": "2026-10-11T06:19:20+00:00",
+  "reviewed_at": "2026-10-11T15:45:18+00:00",
   "source_revision": "0a7fdf4ca54d2bb327dcdfc13e816da57ee9c4c2",
   "ontology": {
     "path": "docs/gongfa/cultivation-ontology-taxonomy.md",
-    "sha256": "4965b8389e546eaa5ea8eb9103d252e1d1f8113959eeadc83f5edda5ba97df75"
+    "sha256": "3db64bba65f599cefac868a8ea7f3149fd09cd40012b3e7641d67fb9be5b814d"
   },
   "dependency_graph": {
     "source_path": "docs/gongfa/technology-stack.md",
@@ -41,20 +41,6 @@
         "version": null,
         "evidence": "依赖图及外部资源行指向 Codex CLI 候选；当前安装身份、可执行入口、版本与来源未核。",
         "resource_ids": ["tools-platforms-codex-cli-362bc20a"],
-        "related_object_id": null,
-        "grade_id": null,
-        "grade_status": "pending",
-        "grade_reason": "精确实现/版本、任务合同及分级量表阈值待核。"
-      },
-      {
-        "id": "dep-claude-code",
-        "name": "Claude Code（依赖图替代项）",
-        "type_id": "software-artifact",
-        "graph_node": "2.1 Agent运行时 / Claude Code替代项",
-        "identity_status": "named_candidate",
-        "version": null,
-        "evidence": "依赖图及外部资源行指向 Claude Code 候选；当前安装身份、可执行入口、版本与来源未核。",
-        "resource_ids": ["tools-platforms-claude-code-11b1e88d"],
         "related_object_id": null,
         "grade_id": null,
         "grade_status": "pending",
@@ -243,7 +229,6 @@
     {"subject_id": "faqi-claude-skill-init", "grade_id": "faqi-xuan-initial", "assignment_status": "user_directed_provisional", "scope": "Vibe Coding重要性：特定Skill模板初始化", "basis": "降低Claude Skill结构初始化成本，作用范围绑定特定生态，可手工完成且不影响其他Agent的基础闭环。"},
     {"subject_id": "dep-pi-cli", "grade_id": "faqi-tian-advanced", "assignment_status": "user_directed_provisional", "scope": "Vibe Coding重要性：当前核心Agent运行与工具编排", "basis": "直接承接需求、上下文、模型调用和工具执行循环；当前环境的核心交互入口，缺失会改变Vibe Coding核心形态。"},
     {"subject_id": "dep-codex-cli", "grade_id": "faqi-tian-intermediate", "assignment_status": "user_directed_provisional", "scope": "Vibe Coding重要性：替代Agent运行时", "basis": "若选用可承担AI代码协作与工具编排核心；当前仅具名候选且可与其他运行时替换，低于已用核心路径。"},
-    {"subject_id": "dep-claude-code", "grade_id": "faqi-tian-intermediate", "assignment_status": "user_directed_provisional", "scope": "Vibe Coding重要性：替代Agent运行时", "basis": "若选用可承担AI代码协作与工具编排核心；当前仅具名候选且可与其他运行时替换，低于已用核心路径。"},
     {"subject_id": "dep-wsl2-platform", "grade_id": "faqi-di-initial", "assignment_status": "user_directed_provisional", "scope": "Vibe Coding重要性：当前宿主环境实现", "basis": "为当前工具链提供运行宿主，但Linux、macOS或原生Windows等环境可替代，不是Vibe Coding定义性能力。"},
     {"subject_id": "dep-ubuntu-userland", "grade_id": "faqi-di-initial", "assignment_status": "user_directed_provisional", "scope": "Vibe Coding重要性：当前Linux用户空间", "basis": "承载当前工具链和本地命令，但同类操作系统环境可以替代，重要性来自运行基座而非该发行版身份。"},
     {"subject_id": "dep-wsl2-kernel", "grade_id": "faqi-di-initial", "assignment_status": "user_directed_provisional", "scope": "Vibe Coding重要性：当前运行环境内核", "basis": "提供当前WSL用户空间的执行底座，但存在其他内核和宿主替代，不属于AI编程核心能力。"},

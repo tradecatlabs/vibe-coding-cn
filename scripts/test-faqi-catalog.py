@@ -42,7 +42,7 @@ class FaqiCatalogTest(unittest.TestCase):
         result = self.invoke("current", "--check")
         self.assertEqual(0, result.returncode, result.stderr.decode())
         report = json.loads(result.stdout)
-        self.assertEqual((10, 13, 9, 158, 13, 8), (
+        self.assertEqual((10, 13, 9, 158, 12, 8), (
             report["objects"], report["local_entries"], report["local_exclusions"], report["external_resources"],
             report["dependency_objects"], report["dependency_categories"]))
         self.assertFalse(report["independent_review"])
@@ -51,6 +51,7 @@ class FaqiCatalogTest(unittest.TestCase):
         data = json.loads((ROOT / "metadata/faqi.json").read_text(encoding="utf-8"))
         self.assertEqual("faqi-master-classification-register", data["kind"])
         dependency_objects = {o["id"]: o for o in data["dependency_graph"]["objects"]}
+        self.assertNotIn("dep-claude-code", dependency_objects)
         self.assertEqual("1.1.0", dependency_objects["dep-pi-cli"]["version"])
         self.assertEqual("software-artifact", dependency_objects["dep-pi-cli"]["type_id"])
         self.assertIn("8类", data["dependency_graph"]["user_confirmation"]["statement"])
@@ -63,14 +64,16 @@ class FaqiCatalogTest(unittest.TestCase):
         self.assertEqual(expected_subjects, {item["subject_id"] for item in assignments})
         self.assertTrue(all(item["assignment_status"] == "user_directed_provisional" for item in assignments))
         self.assertEqual({
-            "faqi-tian-advanced": 2, "faqi-tian-intermediate": 3,
+            "faqi-tian-advanced": 2, "faqi-tian-intermediate": 2,
             "faqi-di-advanced": 3, "faqi-di-intermediate": 5, "faqi-di-initial": 4,
             "faqi-xuan-advanced": 2, "faqi-xuan-intermediate": 4, "faqi-xuan-initial": 3,
             "faqi-huang-advanced": 3, "faqi-huang-intermediate": 1, "faqi-huang-initial": 1,
         }, Counter(item["grade_id"] for item in assignments))
-        self.assertEqual(31, len(assignments))
+        self.assertEqual(30, len(assignments))
         self.assertTrue(all(link["object_id"] in {o["id"] for o in data["objects"]} for link in data["dependency_graph"]["local_links"]))
         catalog = (ROOT / "tools/faqi-catalog.md").read_text(encoding="utf-8")
+        self.assertNotIn("dep-claude-code", catalog)
+        self.assertNotIn("Claude Code（依赖图替代项）", catalog)
         self.assertIn("## Vibe Coding依赖图中的现实对象", catalog)
         self.assertIn("### 用户确认纳入的依赖类别", catalog)
         self.assertIn("### 黄阶", catalog)
