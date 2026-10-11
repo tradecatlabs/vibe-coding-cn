@@ -9,22 +9,22 @@
 - 同一总表的[Excel完整视图](catalog.xlsx)含限定原文/源条目、来源选区、边界、理由、反证和置信。
 - 活跃登记来自[registry.json](registry.json)，历史候选来自[仓内快照索引](catalog-sources.json)；维护边界见[README](README.md)。
 
-输入绑定：`f78e799ed13956b958831310efb201cfd7b2339d6863e40b02139211bba7faf2`。
+输入绑定：`07ed857bb608571059c2a4b90695d99143bb657b5e9971a6351a97b548ba9a66`。
 
 ## 全部记录
 
 | 序号 | 暂定品级 | 功法名称 | 本体类别 | 登记状态 | 来源批次 | 用途/任务族 | 原始ID / 版本 |
 |---|---|---|---|---|---|---|---|
-| 1 | 地高 | 第一性原理 | 方法型 | 已登记 | 原登记库 | 错误前提下的问题重构与方案重推 | gongfa-first-principles / r1 |
-| 2 | 地高 | 形式化方法（轻量形式化） | 方法型 | 已登记 | 原登记库 | 协议、不变量与边界条件检查 | gongfa-lightweight-formal-methods / r1 |
-| 3 | 地高 | 方法论工具箱总体作业流 | 方法型 | 已登记 | 原登记库 | 从需求澄清到交付验证的整体作业 | gongfa-methodology-delivery-loop / r1 |
-| 4 | 地中 | 胶水原则 | 准则型 | 已登记 | 原登记库 | 技术选型与成熟能力复用 | gongfa-glue-principle / r1 |
-| 5 | 地中 | 反事实推理（Counterfactuals） | 方法型 | 已登记 | 原登记库 | 因果解释与验证器的反事实检查 | gongfa-counterfactual-testing / r1 |
-| 6 | 地中 | 溯因排错法（仓内操作版） | 方法型 | 已登记 | 原登记库 | 多候选原因的故障诊断 | gongfa-abductive-debugging / r1 |
-| 7 | 地中 | 错误认识论（Error epistemology） | 方法型 | 已登记 | 原登记库 | 高风险方案的失败模式与防护分析 | gongfa-failure-mode-analysis / r1 |
-| 8 | 地中 | 实验哲学（x-phi） | 方法型 | 已登记 | 原登记库 | 可区分假设的工程实验设计 | gongfa-experimental-design / r1 |
-| 9 | 地中 | 固定点收敛系统 | 方法型 | 已登记 | 原登记库 | 自治任务执行的分层验证与升级 | gongfa-fixed-point-convergence / r1 |
-| 10 | 地中 | 拼好码 | 复合（保留上位） | 已登记 | 原登记库 | 复用主导的软件系统组装与演化 | gongfa-glue-coding / r1 |
+| 1 | 天高 | 拼好码 | 复合（保留上位） | 已登记 | 原登记库 | 复用主导的软件系统组装与演化 | gongfa-glue-coding / r1 |
+| 2 | 地高 | 第一性原理 | 方法型 | 已登记 | 原登记库 | 错误前提下的问题重构与方案重推 | gongfa-first-principles / r1 |
+| 3 | 地高 | 形式化方法（轻量形式化） | 方法型 | 已登记 | 原登记库 | 协议、不变量与边界条件检查 | gongfa-lightweight-formal-methods / r1 |
+| 4 | 地高 | 方法论工具箱总体作业流 | 方法型 | 已登记 | 原登记库 | 从需求澄清到交付验证的整体作业 | gongfa-methodology-delivery-loop / r1 |
+| 5 | 地中 | 胶水原则 | 准则型 | 已登记 | 原登记库 | 技术选型与成熟能力复用 | gongfa-glue-principle / r1 |
+| 6 | 地中 | 反事实推理（Counterfactuals） | 方法型 | 已登记 | 原登记库 | 因果解释与验证器的反事实检查 | gongfa-counterfactual-testing / r1 |
+| 7 | 地中 | 溯因排错法（仓内操作版） | 方法型 | 已登记 | 原登记库 | 多候选原因的故障诊断 | gongfa-abductive-debugging / r1 |
+| 8 | 地中 | 错误认识论（Error epistemology） | 方法型 | 已登记 | 原登记库 | 高风险方案的失败模式与防护分析 | gongfa-failure-mode-analysis / r1 |
+| 9 | 地中 | 实验哲学（x-phi） | 方法型 | 已登记 | 原登记库 | 可区分假设的工程实验设计 | gongfa-experimental-design / r1 |
+| 10 | 地中 | 固定点收敛系统 | 方法型 | 已登记 | 原登记库 | 自治任务执行的分层验证与升级 | gongfa-fixed-point-convergence / r1 |
 | 11 | 地中 | 最小先验条件下的代理增强型任务求解 | 方法型 | 已登记 | 原登记库 | 陌生领域的受控代理增强交付 | gongfa-minimal-prior-agent-assisted-solving / r1 |
 | 12 | 地中 | 问题界定与求解闭环（仓内体系版） | 方法型 | 已登记 | 原登记库 | 复杂需求的问题界定与求解闭环 | gongfa-problem-definition-framework / r1 |
 | 13 | 地中 | 6.2 契约式设计 | 方法型 | 未入登记库 | 此前四HTML | 跨模块责任与不变式约束 | A088 / 冻结选区；未设登记版本 |
