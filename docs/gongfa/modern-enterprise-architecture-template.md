@@ -21630,12 +21630,12 @@ V2.98 补充目标：任意生产 AI 系统都必须完成 AI 系统监管分类
   <https://csrc.nist.gov/projects/security-content-automation-protocol>
 - Kubernetes Documentation: Pod Security Standards
   <https://kubernetes.io/docs/concepts/security/pod-security-standards/>
-- CISA: Kubernetes Hardening Guidance
-  <https://www.cisa.gov/resources-tools/resources/kubernetes-hardening-guidance>
+- CISA: Updated Kubernetes Hardening Guide (NSA/CISA)
+  <https://content.govdelivery.com/accounts/USDHSCISA/bulletins/30ef592>
 - OWASP Secrets Management Cheat Sheet
   <https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html>
-- European Commission: International data transfers
-  <https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/international-data-transfers_en>
+- European Commission: Rules on international data transfers
+  <https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/rules-international-data-transfers_en>
 - European Data Protection Board: Recommendations 01/2020 on supplementary measures
   <https://www.edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en>
 - Cloud Security Alliance: Cloud Controls Matrix
@@ -21664,8 +21664,8 @@ V2.98 补充目标：任意生产 AI 系统都必须完成 AI 系统监管分类
   <https://pages.nist.gov/OSCAL-Reference/models/v1.1.3/assessment-results/>
 - NIST OSCAL Component Definition Model
   <https://pages.nist.gov/OSCAL-Reference/models/v1.1.3/component-definition/>
-- FedRAMP: Who is responsible for the cloud security controls?
-  <https://help.fedramp.gov/hc/en-us/articles/27700955089563-Who-is-responsible-for-the-cloud-security-controls>
+- FedRAMP: Using a FedRAMP Certified Cloud Service
+  <https://www.fedramp.gov/2026/agencies/use/>
 - CISA: Secure by Design
   <https://www.cisa.gov/securebydesign>
 - CISA: ICT Supply Chain Risk Management

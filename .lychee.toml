@@ -15,10 +15,6 @@ exclude_path = [
   '^\.github/wiki(/|$)',
   '^node_modules(/|$)',
   '^docs/references/sources(/|$)',
-  # This architecture blueprint contains many official external references
-  # whose CDNs can timeout from GitHub-hosted runners. Internal links and
-  # executable artifacts remain covered by scripts/check-local-links.py.
-  '^docs/references/modern-enterprise-architecture-template\.md$',
   '^tools/external(/|$)',
   '^tools/chat-vault(/|$)',
   # These research projects have independent link-checking contracts and are
@@ -33,6 +29,16 @@ exclude_path = [
 ]
 
 exclude = [
+  # ISO's official catalogue returns 403 to GitHub Actions; retain the canonical
+  # citations while excluding only these exact URLs from automated HTTP checks.
+  '^https://www\.iso\.org/standard/27001$',
+  '^https://www\.iso\.org/standard/70636\.html$',
+  '^https://www\.iso\.org/standard/74393\.html$',
+  '^https://www\.iso\.org/standard/75106\.html$',
+  '^https://www\.iso\.org/standard/78176\.html$',
+  '^https://www\.iso\.org/standard/81230\.html$',
+  '^https://www\.iso\.org/standard/81291\.html$',
+  '^https://www\.iso\.org/standard/81684\.html$',
   '^https://chatgpt\.com.*',
   '^https://claude\.ai.*',
   '^https://app\.augmentcode\.com.*',
