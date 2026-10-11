@@ -74,16 +74,21 @@ class FaqiCatalogTest(unittest.TestCase):
         catalog = (ROOT / "tools/faqi-catalog.md").read_text(encoding="utf-8")
         self.assertNotIn("dep-claude-code", catalog)
         self.assertNotIn("Claude Code（依赖图替代项）", catalog)
-        self.assertIn("## Vibe Coding依赖图中的现实对象", catalog)
-        self.assertIn("### 用户确认纳入的依赖类别", catalog)
-        self.assertIn("### 黄阶", catalog)
-        self.assertIn("### 天阶", catalog)
-        self.assertIn("### 地阶", catalog)
-        self.assertIn("### 玄阶", catalog)
-        self.assertIn("按Vibe Coding重要性", catalog)
-        self.assertIn("黄阶初级（用户指定重要性暂定）", catalog)
-        self.assertIn("dep-wsl2-kernel", catalog)
+        self.assertIn("Vibe Coding 重要性暂定", catalog)
+        self.assertIn("天阶高级", catalog)
         self.assertIn("Codex CLI", catalog)
+        self.assertNotIn("对象ID", catalog)
+        self.assertNotIn("依赖图位置", catalog)
+        tokens = MarkdownIt("default").parse(catalog)
+        table_indexes = [index for index, token in enumerate(tokens) if token.type == "table_open"]
+        self.assertEqual(1, len(table_indexes), "简表只保留一张表")
+        table_index = table_indexes[0]
+        thead_start = next(index for index in range(table_index + 1, len(tokens)) if tokens[index].type == "thead_open")
+        thead_end = next(index for index in range(thead_start + 1, len(tokens)) if tokens[index].type == "thead_close")
+        self.assertEqual(["品级", "名称", "解释"], [token.content for token in tokens[thead_start:thead_end] if token.type == "inline"])
+        tbody_start = next(index for index in range(thead_end + 1, len(tokens)) if tokens[index].type == "tbody_open")
+        tbody_end = next(index for index in range(tbody_start + 1, len(tokens)) if tokens[index].type == "tbody_close")
+        self.assertEqual(len(assignments), sum(token.type == "tr_open" for token in tokens[tbody_start:tbody_end]))
         # 首批父仓库来源必须在已发布主线可达，不能依赖仅本地存在的提交。
         published = subprocess.run(["git", "merge-base", "--is-ancestor", data["source_revision"], "refs/remotes/origin/develop"], cwd=ROOT, capture_output=True, timeout=20)
         self.assertEqual(0, published.returncode, "父仓库来源不在已发布主线历史可达")
@@ -233,8 +238,7 @@ class FaqiCatalogTest(unittest.TestCase):
             self.assertTrue(row_counts)
             self.assertEqual(1, len(set(row_counts)), "表格单元格中的管道符不能拆出额外列")
             table_column_counts.append(row_counts[0])
-        self.assertTrue(table_column_counts, "生成视图应包含可解析的Markdown表格")
-        self.assertIn("tmux&gt;=2.6及awk/perl/grep/sed", markup)
+        self.assertEqual([3], table_column_counts, "视图仅展示品级、名称、解释三列")
         self.assertIn("&lt;script&gt;unexpected&lt;/script&gt;", markup)
         self.assertEqual(0, self.invoke("write-repeat", "--input", input_path, "--view", view, "--write").returncode)
         self.assertEqual(first, view.read_bytes())
@@ -253,8 +257,8 @@ class FaqiCatalogTest(unittest.TestCase):
         self.assertNotEqual(0, result.returncode)
         self.assertFalse(forbidden.exists())
 
-    def test_wide_resource_table_fails_within_budget_without_writing(self):
-        # 真实隔离Git/YAML输入；一条长名称使列宽×行数放大，不能先耗尽内存再检查输出。
+    def test_wide_external_resources_do_not_expand_compact_view(self):
+        # 真实隔离Git/YAML输入；宽外部资源原表不进入三列简表。
         root = ARTIFACTS / "wide-table-fixture"; root.mkdir()
         (root / "metadata").mkdir(); (root / "tools/fixture").mkdir(parents=True)
         (root / "docs/gongfa").mkdir(parents=True)
@@ -300,10 +304,14 @@ class FaqiCatalogTest(unittest.TestCase):
         data["external_reviews"] = [{"decision": "software_candidate", "rationale": "隔离资源宽表夹具，不作语义初审", "resource_ids": ids}]
         data["resource_notes"] = {}; data["local_resource_links"] = {}; data["references"] = []; data["relations"] = []
         view = ARTIFACTS / "budget-view.md"
-        result = self.invoke("wide-table-budget", "--root", root, "--input", self.input_copy("wide-table", data), "--view", view, "--write", memory_limit=192 * 1024 * 1024)
-        self.assertNotEqual(0, result.returncode)
-        self.assertIn("FAQI_CATALOG_ERRORS", result.stderr.decode())
-        self.assertFalse(view.exists())
+        result = self.invoke("wide-resource-compact-view", "--root", root, "--input", self.input_copy("wide-table", data), "--view", view, "--write", memory_limit=192 * 1024 * 1024)
+        self.assertEqual(0, result.returncode, result.stderr.decode())
+        rendered = view.read_bytes()
+        self.assertLess(len(rendered), 64 * 1024)
+        self.assertNotIn(b"x" * 4096, rendered)
+        tokens = MarkdownIt("default").parse(rendered.decode("utf-8"))
+        table_indexes = [index for index, token in enumerate(tokens) if token.type == "table_open"]
+        self.assertEqual(1, len(table_indexes))
 
     def test_dependency_graph_table_and_grade_assignments_are_complete(self):
         data = json.loads((ROOT / "metadata/faqi.json").read_text(encoding="utf-8"))
