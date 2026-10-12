@@ -71,10 +71,11 @@ class CatalogMaintenanceTest(unittest.TestCase):
         table_rows = [line for line in section.splitlines() if line.startswith('|')]
         cells = [[value.strip() for value in next(csv.reader([line], delimiter='|', escapechar='\\'))[1:-1]]
                  for line in table_rows]
-        self.assertEqual(['品级', '功法名称'], cells[0])
+        self.assertEqual(['品级', '功法名称', '解释'], cells[0])
         self.assertEqual(len(rows) + 2, len(cells))
-        self.assertTrue(all(len(row) == 2 for row in cells), 'Markdown浏览表只保留品级和名称')
+        self.assertTrue(all(len(row) == 3 for row in cells), 'Markdown浏览表只保留品级、名称和解释')
         self.assertEqual([row['name'] for row in rows], [row[1] for row in cells[2:]])
+        self.assertEqual([row['task_family'] for row in rows], [row[2] for row in cells[2:]])
 
     def test_registry_updates_follow_explicit_correction_and_never_inherit_a_new_version(self):
         documents = deepcopy(self.documents)

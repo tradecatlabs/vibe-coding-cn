@@ -8,7 +8,7 @@
 - `tools/prompts-library/`：提示词 Excel、Markdown、JSONL 转换工具。
 - `tools/chat-vault/`：AI 聊天记录保存工具。
 - `tools/external/`：第三方工具、外部仓库和 Git submodule。
-- `faqi-catalog.md`：法器重要性只读浏览表，仅含“品级、名称”两列；详细登记归`metadata/faqi.json`，原资源字段仍归资源YAML。
+- `faqi-catalog.md`：法器重要性只读浏览表，仅含“品级、名称、解释”三列；详细登记归`metadata/faqi.json`，原资源字段仍归资源YAML。
 
 ## 约束
 
