@@ -85,7 +85,7 @@ class FaqiCatalogTest(unittest.TestCase):
         table_index = table_indexes[0]
         thead_start = next(index for index in range(table_index + 1, len(tokens)) if tokens[index].type == "thead_open")
         thead_end = next(index for index in range(thead_start + 1, len(tokens)) if tokens[index].type == "thead_close")
-        self.assertEqual(["品级", "名称", "解释"], [token.content for token in tokens[thead_start:thead_end] if token.type == "inline"])
+        self.assertEqual(["品级", "名称"], [token.content for token in tokens[thead_start:thead_end] if token.type == "inline"])
         tbody_start = next(index for index in range(thead_end + 1, len(tokens)) if tokens[index].type == "tbody_open")
         tbody_end = next(index for index in range(tbody_start + 1, len(tokens)) if tokens[index].type == "tbody_close")
         self.assertEqual(len(assignments), sum(token.type == "tr_open" for token in tokens[tbody_start:tbody_end]))
@@ -238,7 +238,7 @@ class FaqiCatalogTest(unittest.TestCase):
             self.assertTrue(row_counts)
             self.assertEqual(1, len(set(row_counts)), "表格单元格中的管道符不能拆出额外列")
             table_column_counts.append(row_counts[0])
-        self.assertEqual([3], table_column_counts, "视图仅展示品级、名称、解释三列")
+        self.assertEqual([2], table_column_counts, "Markdown浏览表只展示品级和名称")
         self.assertIn("&lt;script&gt;unexpected&lt;/script&gt;", markup)
         self.assertEqual(0, self.invoke("write-repeat", "--input", input_path, "--view", view, "--write").returncode)
         self.assertEqual(first, view.read_bytes())
@@ -258,7 +258,7 @@ class FaqiCatalogTest(unittest.TestCase):
         self.assertFalse(forbidden.exists())
 
     def test_wide_external_resources_do_not_expand_compact_view(self):
-        # 真实隔离Git/YAML输入；宽外部资源原表不进入三列简表。
+        # 真实隔离Git/YAML输入；宽外部资源原表不进入两列浏览表。
         root = ARTIFACTS / "wide-table-fixture"; root.mkdir()
         (root / "metadata").mkdir(); (root / "tools/fixture").mkdir(parents=True)
         (root / "docs/gongfa").mkdir(parents=True)

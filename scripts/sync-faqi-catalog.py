@@ -334,16 +334,16 @@ def render(data, objects):
         **{item["id"]: item["node"] for item in graph["dependency_categories"]},
     }
     rows = [
-        [GRADE_LABELS[item["grade_id"]], names[item["subject_id"]], item["basis"]]
+        [GRADE_LABELS[item["grade_id"]], names[item["subject_id"]]]
         for item in sorted(assignments, key=lambda item: (grade_order[item["grade_id"]], item["subject_id"]))
     ]
     out = [
         MARKER,
         "# Vibe Coding法器重要性总表",
         "",
-        "品级仅表示 Vibe Coding 重要性暂定，不代表效能验证；完整登记见[metadata/faqi.json](../metadata/faqi.json)。",
+        "品级仅表示 Vibe Coding 重要性暂定，不代表效能验证；本页仅供浏览，完整登记见[metadata/faqi.json](../metadata/faqi.json)。",
         "",
-        table(rows, ["品级", "名称", "解释"]),
+        table(rows, ["品级", "名称"]),
     ]
     return "\n".join(out).encode("utf-8")
 

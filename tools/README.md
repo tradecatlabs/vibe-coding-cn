@@ -8,7 +8,7 @@
 - `tools/chat-vault/`：AI 聊天记录保存工具。
 - `tools/external/`：外部仓库、第三方工具与 submodule。
 - `tools/config/`：Codex 等工具配置。
-- [faqi-catalog.md](faqi-catalog.md)：法器重要性只读简表，仅展示“品级、名称、解释”三列；详细登记与判定归[metadata/faqi.json](../metadata/faqi.json)，原资源字段仍归资源YAML。
+- [faqi-catalog.md](faqi-catalog.md)：法器重要性只读浏览表，仅展示“品级、名称”两列；详细登记与判定归[metadata/faqi.json](../metadata/faqi.json)，原资源字段仍归资源YAML。
 
 ## 法器总表维护
 

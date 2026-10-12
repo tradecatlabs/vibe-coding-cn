@@ -226,14 +226,13 @@ def render_markdown(rows, binding):
     lines = ['# 功法总表', '', MARKER, '', '## 字多不看', '',
              f"- 共**{len(rows)}条内容记录**；已登记{counts['已登记']}条，未入登记库的来源候选{counts['未入登记库']}条。不是独立功法去重后的总数。",
              f'- 原前瞻初评{provisional}条，暂不可判{undetermined}条；不是正式效果评级，亦不把缺测默认补成黄阶。',
+             '- Markdown仅作浏览，表格只列品级和名称；登记详情见JSON，Excel保留完整视图。',
              '- 同一总表的[Excel完整视图](catalog.xlsx)含限定原文/源条目、来源选区、边界、理由、反证和置信。',
              '- 活跃登记来自[registry.json](registry.json)，历史候选来自[仓内快照索引](catalog-sources.json)；维护边界见[README](README.md)。', '',
              '输入绑定：`' + digest(binding['registry_sha256'] + binding['candidate_sha256']) + '`。', '',
-             '## 全部记录', '', '| 序号 | 暂定品级 | 功法名称 | 本体类别 | 登记状态 | 来源批次 | 用途/任务族 | 原始ID / 版本 |',
-             '|---|---|---|---|---|---|---|---|']
-    for number, row in enumerate(rows, 1):
-        values = [number, grade_label(row), row['name'], TYPE_LABELS[row['ontology_type']], row['entry_status'],
-                  BATCH_LABELS[row['namespace']], row['task_family'], row['original_id'] + ' / ' + row['content_version']]
+             '## 全部记录', '', '| 品级 | 功法名称 |', '|---|---|']
+    for row in rows:
+        values = [grade_label(row), row['name']]
         lines.append('| ' + ' | '.join(cell(value) for value in values) + ' |')
     lines += ['', '## 更新与核对', '', '```bash', 'make sync-gongfa-catalog', 'make check-gongfa-catalog', 'make test-gongfa-catalog', '```', '',
               '不要手改两份生成视图；候选来源变更另建快照并更新索引，登记内容变更遵守既有版本/初评协议。',

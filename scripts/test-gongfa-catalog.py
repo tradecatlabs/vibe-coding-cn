@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """总表维护的相关行为契约；离线保存隔离工件，不验证功法效果。"""
 import argparse
+import csv
 from collections import Counter
 from copy import deepcopy
 from hashlib import sha256
@@ -65,6 +66,15 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertIn('失去50%容量时剩余单位需要承担2倍总流量。', by_id['html211', 'E001']['original_text'])
         self.assertEqual(sum(r['entry_status'] == '已登记' for r in rows), 79)
         self.assertEqual(self.documents['registry']['assessments'], [])
+        markdown = catalog.render_markdown(rows, self.binding)
+        section = markdown.split('## 全部记录\n\n', 1)[1].split('\n\n## 更新与核对', 1)[0]
+        table_rows = [line for line in section.splitlines() if line.startswith('|')]
+        cells = [[value.strip() for value in next(csv.reader([line], delimiter='|', escapechar='\\'))[1:-1]]
+                 for line in table_rows]
+        self.assertEqual(['品级', '功法名称'], cells[0])
+        self.assertEqual(len(rows) + 2, len(cells))
+        self.assertTrue(all(len(row) == 2 for row in cells), 'Markdown浏览表只保留品级和名称')
+        self.assertEqual([row['name'] for row in rows], [row[1] for row in cells[2:]])
 
     def test_registry_updates_follow_explicit_correction_and_never_inherit_a_new_version(self):
         documents = deepcopy(self.documents)
