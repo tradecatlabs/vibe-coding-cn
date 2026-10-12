@@ -234,17 +234,6 @@
 </details>
 
 <details>
-<summary><strong>🏁 编码模型性能分级参考</strong></summary>
-
-## 🏁 编码模型性能分级参考
-
-建议只选择苹果模型处理复杂任务，以确保最佳效果与效率。
-
-*   **苹果**: [gpt-5.5-xhigh](https://chatgpt.com/codex)
-
-</details>
-
-<details>
 <summary><strong>🛠️ 仓库维护与验证</strong></summary>
 
 ## 🛠️ 仓库维护与验证
