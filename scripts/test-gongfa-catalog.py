@@ -118,6 +118,10 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertEqual(len(rows) + 2, len(cells))
         self.assertTrue(all(len(row) == 3 for row in cells), 'Markdown浏览表只保留品级、名称和解释')
         self.assertEqual([row['name'] for row in rows], [row[1] for row in cells[2:]])
+        self.assertEqual('天阶高级', cells[2][0])
+        self.assertIn(('地阶高级', '第一性原理'), [(row[0], row[1]) for row in cells[2:]])
+        self.assertNotIn('天高', markdown)
+        self.assertNotIn('地高', markdown)
         expected_explanations = [row['explanation'].replace('\r', ' ').replace('\n', ' ') for row in rows]
         self.assertEqual(expected_explanations, [unescape(row[2]) for row in cells[2:]])
 
@@ -186,6 +190,7 @@ class CatalogMaintenanceTest(unittest.TestCase):
         sheet = book['功法总表']
         self.assertEqual(sheet.freeze_panes, 'G5')
         self.assertEqual(sheet.auto_filter.ref, 'A4:R414')
+        self.assertEqual('天阶高级', sheet['B5'].value)
         self.assertIn('=2+2', [sheet.cell(i, 3).value for i in range(5, 415)])
         for row in sheet.iter_rows():
             for cell in row:

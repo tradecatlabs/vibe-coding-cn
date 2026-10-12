@@ -30,8 +30,9 @@ MARKER = '<!-- generated: sync-gongfa-catalog.py -->'
 CREATOR = 'vibe-coding-cn:sync-gongfa-catalog.py'
 GRADES = [f'{tier}-{level}' for tier in ('huang', 'xuan', 'di', 'tian')
           for level in ('initial', 'intermediate', 'advanced')]
-GRADE_LABELS = {f'{tier}-{level}': a + b for tier, a in [('huang', '黄'), ('xuan', '玄'), ('di', '地'), ('tian', '天')]
-                for level, b in [('initial', '初'), ('intermediate', '中'), ('advanced', '高')]}
+GRADE_LABELS = {f'{tier}-{level}': tier_label + level_label
+                for tier, tier_label in [('huang', '黄阶'), ('xuan', '玄阶'), ('di', '地阶'), ('tian', '天阶')]
+                for level, level_label in [('initial', '初级'), ('intermediate', '中级'), ('advanced', '高级')]}
 TYPE_LABELS = {'explanatory-content': '解释型', 'normative-allocation-content': '准则型',
                'method-specification': '方法型', 'dao-content': '复合（保留上位）', None: '待分类'}
 BATCH_LABELS = {'registry': '原登记库', 'html211': '此前四HTML', 'solve24': 'Solve已审首24', 'html96': 'HTML续提'}
