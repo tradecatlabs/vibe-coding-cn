@@ -126,13 +126,16 @@ def merge_rows(documents):
                            'baseline_assumption': b['baseline_assumption'], 'assessed_at': b['assessed_at'], 'item': g} for g, b in proposals])
         reference = item['source_ref']
         boundary = '选区说明：' + content['selection_note']
+        profile = content['profile']
+        explanation = profile['summary'] + ' 机制：' + profile['mechanism']
         for field, label in [('conditions', '条件'), ('limitations', '限制')]:
             if content['profile'][field]:
                 boundary += '\n' + label + '：' + as_text(content['profile'][field])
         rows.append({'namespace': 'registry', 'original_id': item['id'], 'name': item['name'], 'ontology_type': item['ontology_type'],
                      'grade_id': grade.get('grade_id'), 'grading_status': status,
                      'entry_status': '已登记' if item['entry_status'] == 'registered' else '登记库候选',
-                     'task_family': grade.get('task_family', ''), 'original_text': content['original_text'], 'boundary': boundary,
+                     'task_family': grade.get('task_family', ''), 'explanation': explanation,
+                     'original_text': content['original_text'], 'boundary': boundary,
                      'reason': grade.get('reason', detail if proposals else '当前内容版本未初评；不继承旧版本意见。'),
                      'falsifier': grade.get('falsifier', ''), 'confidence': grade.get('confidence', ''), 'content_version': item['content_version'],
                      'source': as_text({'source': sources[reference['source_id']], 'selection': reference, 'original_proposal_context': detail}),
@@ -153,7 +156,8 @@ def merge_rows(documents):
             relations = item.get('related_existing_or_candidates') if namespace == 'html96' else item['related_existing']
             rows.append({'namespace': namespace, 'original_id': item['candidate_id'], 'name': item['name'], 'ontology_type': item['ontology_type'],
                          'grade_id': grade['provisional_grade_id'], 'grading_status': grade['grading_status'], 'entry_status': '未入登记库',
-                         'task_family': grade['task_family'], 'original_text': item['original_text'],
+                         'task_family': grade['task_family'], 'explanation': grade['task_family'] + '；' + grade['reason'],
+                         'original_text': item['original_text'],
                          'boundary': boundary or '此前本选区未单独完善编者边界；不借邻条补写。',
                          'reason': grade['reason'], 'falsifier': grade['falsifier'], 'confidence': grade['confidence'],
                          'content_version': '冻结选区；未设登记版本',
@@ -169,7 +173,8 @@ def merge_rows(documents):
         text = as_text(raw['original_entry'])
         rows.append({'namespace': 'solve24', 'original_id': item['source_id'], 'name': raw['name'], 'ontology_type': grade['ontology_type'],
                      'grade_id': grade['grade_id'], 'grading_status': 'provisional', 'entry_status': '未入登记库',
-                     'task_family': grade['task_family'], 'original_text': text,
+                     'task_family': grade['task_family'], 'explanation': grade['task_family'] + '；' + grade['mechanism'],
+                     'original_text': text,
                      'boundary': as_text({'when': item['source_when'], 'not_when': item['source_not_when'], 'preconditions': item['source_preconditions'],
                                           'editorial_caveat': grade['editorial_caveat'], 'registration_recommendation': grade['registration_recommendation']}),
                      'reason': grade['reason'], 'falsifier': grade['falsifier'], 'confidence': grade['confidence'], 'content_version': item['source_version'],
@@ -226,13 +231,13 @@ def render_markdown(rows, binding):
     lines = ['# 功法总表', '', MARKER, '', '## 字多不看', '',
              f"- 共**{len(rows)}条内容记录**；已登记{counts['已登记']}条，未入登记库的来源候选{counts['未入登记库']}条。不是独立功法去重后的总数。",
              f'- 原前瞻初评{provisional}条，暂不可判{undetermined}条；不是正式效果评级，亦不把缺测默认补成黄阶。',
-             '- Markdown仅作浏览，表格只列品级、名称和简要解释；详细字段见JSON，Excel保留完整视图。',
+             '- Markdown仅作浏览；解释列组合源JSON已有摘要、机制、用途/任务族和初评理由，详细原文、边界和来源仍以JSON为准。',
              '- 同一总表的[Excel完整视图](catalog.xlsx)含限定原文/源条目、来源选区、边界、理由、反证和置信。',
              '- 活跃登记来自[registry.json](registry.json)，历史候选来自[仓内快照索引](catalog-sources.json)；维护边界见[README](README.md)。', '',
              '输入绑定：`' + digest(binding['registry_sha256'] + binding['candidate_sha256']) + '`。', '',
              '## 全部记录', '', '| 品级 | 功法名称 | 解释 |', '|---|---|---|']
     for row in rows:
-        values = [grade_label(row), row['name'], row['task_family']]
+        values = [grade_label(row), row['name'], row['explanation']]
         lines.append('| ' + ' | '.join(cell(value) for value in values) + ' |')
     lines += ['', '## 更新与核对', '', '```bash', 'make sync-gongfa-catalog', 'make check-gongfa-catalog', 'make test-gongfa-catalog', '```', '',
               '不要手改两份生成视图；候选来源变更另建快照并更新索引，登记内容变更遵守既有版本/初评协议。',

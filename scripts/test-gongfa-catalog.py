@@ -3,6 +3,7 @@
 import argparse
 import csv
 from collections import Counter
+from html import unescape
 from copy import deepcopy
 from hashlib import sha256
 import importlib.util
@@ -66,6 +67,15 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertIn('失去50%容量时剩余单位需要承担2倍总流量。', by_id['html211', 'E001']['original_text'])
         self.assertEqual(sum(r['entry_status'] == '已登记' for r in rows), 79)
         self.assertEqual(self.documents['registry']['assessments'], [])
+        registry_item = next(item for item in self.documents['registry']['gongfa'] if item['id'] == 'gongfa-first-principles')
+        profile = registry_item['content']['profile']
+        self.assertEqual(profile['summary'] + ' 机制：' + profile['mechanism'],
+                         by_id['registry', 'gongfa-first-principles']['explanation'])
+        html_grade = next(item for item in self.documents['html211_grades']['items'] if item['candidate_id'] == 'E001')
+        self.assertEqual(html_grade['task_family'] + '；' + html_grade['reason'], by_id['html211', 'E001']['explanation'])
+        solve_grade = self.documents['solve24_analysis']['items'][0]['editorial_analysis']
+        solve_row = by_id['solve24', solve_grade['source_id']]
+        self.assertEqual(solve_grade['task_family'] + '；' + solve_grade['mechanism'], solve_row['explanation'])
         markdown = catalog.render_markdown(rows, self.binding)
         section = markdown.split('## 全部记录\n\n', 1)[1].split('\n\n## 更新与核对', 1)[0]
         table_rows = [line for line in section.splitlines() if line.startswith('|')]
@@ -75,7 +85,8 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertEqual(len(rows) + 2, len(cells))
         self.assertTrue(all(len(row) == 3 for row in cells), 'Markdown浏览表只保留品级、名称和解释')
         self.assertEqual([row['name'] for row in rows], [row[1] for row in cells[2:]])
-        self.assertEqual([row['task_family'] for row in rows], [row[2] for row in cells[2:]])
+        expected_explanations = [row['explanation'].replace('\r', ' ').replace('\n', ' ') for row in rows]
+        self.assertEqual(expected_explanations, [unescape(row[2]) for row in cells[2:]])
 
     def test_registry_updates_follow_explicit_correction_and_never_inherit_a_new_version(self):
         documents = deepcopy(self.documents)
