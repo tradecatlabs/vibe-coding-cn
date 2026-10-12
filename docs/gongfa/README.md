@@ -33,7 +33,7 @@
 - [问题求解](problem-solving.md)：目标、现状、差距、标准、约束、对象与路径。
 - [语言层要素](language-layers.md)：语言层级、类型、执行模型及工程语义。
 - [关键词系统](keyword-system.md)：理解问题领域的配套术语入口。
-- [方法论工具箱](methodology-toolbox.md)：按任务选择、组合和验证方法。
+- [方法论工具箱](methodology-toolbox.md)：按任务选择、组合和验证方法，并含待评审的候选方法整理稿。
 
 ### 人机协作与目标推进
 
