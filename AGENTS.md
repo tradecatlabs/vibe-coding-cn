@@ -207,7 +207,7 @@ git push origin develop
 ├── tools/                       # 工具、本地配置与外部仓库
 │   ├── README.md                # tools 目录说明
 │   ├── AGENTS.md                # tools 目录规则
-│   ├── faqi-catalog.md           # 法器品级、名称与解释的三列只读浏览表
+│   ├── faqi-catalog.md           # 法器品级、名称与详细解释的三列只读浏览表
 │   ├── config/                  # 工具与开发配置（含 Codex CLI）
 │   ├── prompts-library/         # Excel ↔ Markdown 互转工具
 │   ├── chat-vault/              # AI 聊天记录保存工具
@@ -259,7 +259,7 @@ git push origin develop
 - `scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
 - `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
 - `metadata/faqi.json` / `faqi.schema.json` - 法器总分类登记及字段契约；复用本体类型、固定来源审查、依赖图对象和用户确认纳入的依赖类别，原资源事实仍归资源YAML；当前暂定品级按Vibe Coding重要性分组，正式效能评级仍须独立效果证据。
-- `tools/faqi-catalog.md` - 法器品级、名称与解释的三列只读浏览表；完整登记与分组依据归`metadata/faqi.json`，资源原事实仍归资源YAML。
+- `tools/faqi-catalog.md` - 法器品级、名称与详细解释的三列只读浏览表；解释合并重要性范围和分级依据，完整登记仍归`metadata/faqi.json`，资源原事实归资源YAML。
 - `scripts/sync-faqi-catalog.py` / `test-faqi-catalog.py` - 离线总表生成、检查及行为契约；核来源、图SHA、对象映射和品级边界，保留真实命令/结果；不执行被审程序或联网补证。
 - `metadata/gongfa/registry.json` - 活跃功法登记、等级、规则、来源、内容版本、人工初评及正式评级历史的唯一可编辑数据源；类型语义仍归本体主文；新范围追加批次
 - `metadata/gongfa/catalog.md` / `catalog.xlsx` - 功法总表的生成视图；Markdown列品级、名称与详细解释：登记摘要/问题/机制及条件/限制/预期结果，候选原文/用途/理由，Solve机制/适用范围/前提/边界；完整原始数据仍归JSON；Excel保留完整字段；不手改、不自动注册/去重/评级

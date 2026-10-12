@@ -334,7 +334,7 @@ def render(data, objects):
         **{item["id"]: item["node"] for item in graph["dependency_categories"]},
     }
     rows = [
-        [GRADE_LABELS[item["grade_id"]], names[item["subject_id"]], item["basis"]]
+        [GRADE_LABELS[item["grade_id"]], names[item["subject_id"]], item["scope"] + "；" + item["basis"]]
         for item in sorted(assignments, key=lambda item: (grade_order[item["grade_id"]], item["subject_id"]))
     ]
     out = [

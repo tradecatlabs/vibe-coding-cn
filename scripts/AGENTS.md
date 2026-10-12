@@ -34,7 +34,7 @@
 
 ## 法器总分类维护
 
-- `sync-faqi-catalog.py`复用jsonschema/PyYAML/tabulate，读取总分类JSON、固定来源与外部资源YAML，校验依赖图SHA及对象映射，只维护`tools/faqi-catalog.md`；生成仅含“品级、名称、解释”三列的浏览表并转义单元格，不联网、执行工具或写回被审源码。
+- `sync-faqi-catalog.py`复用jsonschema/PyYAML/tabulate，读取总分类JSON、固定来源与外部资源YAML，校验依赖图SHA及对象映射，只维护`tools/faqi-catalog.md`；生成仅含“品级、名称、解释”三列的浏览表，解释由重要性范围与分级依据组成并转义单元格；不联网、执行工具或写回被审源码。
 - 字段、来源用途、入口/身份与输出边界变化先补真实行为测试；源审、运行实例观测与效果评级分开。未校准时不得写正式等级；仅在审计记录的显式用户授权下，`provisional_grade_assignments`可写可撤销暂定分组，并须声明不代表效能验证。
 - 用户范围排除保留独立证据与重审条件，不进入`objects`；同一入口可对应多条以名称区分的排除记录，各自绑定唯一`exclusion_evidence`来源；空入口不能清空排除后静默复入。
 - 固定Git/submodule修订、完整字节SHA与一基半开选区；来源/输入/输出软链接、未知字段、漏/重资源、越界/超限与并行漂移非零失败。

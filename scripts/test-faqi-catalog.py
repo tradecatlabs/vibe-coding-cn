@@ -90,7 +90,7 @@ class FaqiCatalogTest(unittest.TestCase):
         tbody_start = next(index for index in range(thead_end + 1, len(tokens)) if tokens[index].type == "tbody_open")
         tbody_end = next(index for index in range(tbody_start + 1, len(tokens)) if tokens[index].type == "tbody_close")
         self.assertEqual(len(assignments), sum(token.type == "tr_open" for token in tokens[tbody_start:tbody_end]))
-        self.assertIn(assignments[0]["basis"], catalog)
+        self.assertIn(assignments[0]["scope"] + "；" + assignments[0]["basis"], catalog)
         # 首批父仓库来源必须在已发布主线可达，不能依赖仅本地存在的提交。
         published = subprocess.run(["git", "merge-base", "--is-ancestor", data["source_revision"], "refs/remotes/origin/develop"], cwd=ROOT, capture_output=True, timeout=20)
         self.assertEqual(0, published.returncode, "父仓库来源不在已发布主线历史可达")
