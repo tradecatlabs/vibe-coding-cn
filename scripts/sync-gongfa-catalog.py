@@ -127,7 +127,11 @@ def merge_rows(documents):
         reference = item['source_ref']
         boundary = '选区说明：' + content['selection_note']
         profile = content['profile']
-        explanation = profile['summary'] + ' 机制：' + profile['mechanism']
+        explanation_parts = [profile['summary'], '问题：' + profile['problem'], '机制：' + profile['mechanism']]
+        for field, label in [('conditions', '条件'), ('limitations', '限制'), ('expected_outcomes', '预期结果')]:
+            if profile[field]:
+                explanation_parts.append(label + '：' + '；'.join(profile[field]))
+        explanation = ' '.join(explanation_parts)
         for field, label in [('conditions', '条件'), ('limitations', '限制')]:
             if content['profile'][field]:
                 boundary += '\n' + label + '：' + as_text(content['profile'][field])
@@ -154,9 +158,11 @@ def merge_rows(documents):
                     and (grade['provisional_grade_id'] is None) == (grade['grading_status'] == 'undetermined'), '空品级状态不符')
             boundary = grade.get('boundary') or item.get('editorial_boundary') or as_text(item.get('editorial_analysis'))
             relations = item.get('related_existing_or_candidates') if namespace == 'html96' else item['related_existing']
+            explanation = (item['original_text'] + ' 用途/任务族：' + grade['task_family'] +
+                           ' 初评说明：' + grade['reason'])
             rows.append({'namespace': namespace, 'original_id': item['candidate_id'], 'name': item['name'], 'ontology_type': item['ontology_type'],
                          'grade_id': grade['provisional_grade_id'], 'grading_status': grade['grading_status'], 'entry_status': '未入登记库',
-                         'task_family': grade['task_family'], 'explanation': grade['task_family'] + '；' + grade['reason'],
+                         'task_family': grade['task_family'], 'explanation': explanation,
                          'original_text': item['original_text'],
                          'boundary': boundary or '此前本选区未单独完善编者边界；不借邻条补写。',
                          'reason': grade['reason'], 'falsifier': grade['falsifier'], 'confidence': grade['confidence'],
@@ -171,9 +177,21 @@ def merge_rows(documents):
         require(raw['source_version'] == item['source_version'] and raw['source_selection'] == item['source_selection']
                 and grade['source_id'] == item['source_id'], 'Solve版本、选区或意见外键不符')
         text = as_text(raw['original_entry'])
+        explanation_parts = [
+            '用途/任务族：' + grade['task_family'],
+            '机制：' + grade['mechanism'],
+            *[label + '：' + '；'.join(values) for label, values in (
+                ('适用', item['source_when']),
+                ('不适用', item['source_not_when']),
+                ('前提', item['source_preconditions']),
+            ) if values],
+        ]
+        if grade['editorial_caveat']:
+            explanation_parts.append('边界：' + grade['editorial_caveat'])
+        explanation = '；'.join(explanation_parts)
         rows.append({'namespace': 'solve24', 'original_id': item['source_id'], 'name': raw['name'], 'ontology_type': grade['ontology_type'],
                      'grade_id': grade['grade_id'], 'grading_status': 'provisional', 'entry_status': '未入登记库',
-                     'task_family': grade['task_family'], 'explanation': grade['task_family'] + '；' + grade['mechanism'],
+                     'task_family': grade['task_family'], 'explanation': explanation,
                      'original_text': text,
                      'boundary': as_text({'when': item['source_when'], 'not_when': item['source_not_when'], 'preconditions': item['source_preconditions'],
                                           'editorial_caveat': grade['editorial_caveat'], 'registration_recommendation': grade['registration_recommendation']}),
@@ -224,14 +242,15 @@ def notes(rows, binding):
 
 def render_markdown(rows, binding):
     def cell(value):
-        return escape(str(value), quote=False).replace('|', '\\|').replace('\r', ' ').replace('\n', ' ')
+        return (escape(str(value), quote=False).replace('[', '&#91;').replace(']', '&#93;')
+                .replace('|', '\\|').replace('\r', ' ').replace('\n', ' '))
     counts = Counter(row['entry_status'] for row in rows)
     provisional = sum(row['grading_status'] == 'provisional' for row in rows)
     undetermined = sum(row['grading_status'] == 'undetermined' for row in rows)
     lines = ['# 功法总表', '', MARKER, '', '## 字多不看', '',
              f"- 共**{len(rows)}条内容记录**；已登记{counts['已登记']}条，未入登记库的来源候选{counts['未入登记库']}条。不是独立功法去重后的总数。",
              f'- 原前瞻初评{provisional}条，暂不可判{undetermined}条；不是正式效果评级，亦不把缺测默认补成黄阶。',
-             '- Markdown仅作浏览；解释列组合源JSON已有摘要、机制、用途/任务族和初评理由，详细原文、边界和来源仍以JSON为准。',
+             '- Markdown仅作浏览；解释列展开登记摘要/问题/机制及条件/限制/预期结果、候选原文与用途/理由、Solve适用边界；不新增主张，详情仍以JSON为准。',
              '- 同一总表的[Excel完整视图](catalog.xlsx)含限定原文/源条目、来源选区、边界、理由、反证和置信。',
              '- 活跃登记来自[registry.json](registry.json)，历史候选来自[仓内快照索引](catalog-sources.json)；维护边界见[README](README.md)。', '',
              '输入绑定：`' + digest(binding['registry_sha256'] + binding['candidate_sha256']) + '`。', '',

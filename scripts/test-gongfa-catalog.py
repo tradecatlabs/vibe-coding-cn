@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """总表维护的相关行为契约；离线保存隔离工件，不验证功法效果。"""
 import argparse
-import csv
 from collections import Counter
-from html import unescape
 from copy import deepcopy
 from hashlib import sha256
+from html import unescape
 import importlib.util
 import json
 from pathlib import Path
@@ -26,6 +25,25 @@ catalog = None
 def save(path, value):
     with path.open('x', encoding='utf-8') as stream:
         json.dump(value, stream, ensure_ascii=False, indent=2, allow_nan=False)
+
+
+def parse_pipe_row(line):
+    cells = []
+    current = []
+    index = 1
+    while index < len(line) - 1:
+        if line[index:index + 2] == r'\|':
+            current.append('|')
+            index += 2
+        elif line[index] == '|':
+            cells.append(''.join(current).strip())
+            current = []
+            index += 1
+        else:
+            current.append(line[index])
+            index += 1
+    cells.append(''.join(current).strip())
+    return cells
 
 
 class CatalogMaintenanceTest(unittest.TestCase):
@@ -69,18 +87,33 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertEqual(self.documents['registry']['assessments'], [])
         registry_item = next(item for item in self.documents['registry']['gongfa'] if item['id'] == 'gongfa-first-principles')
         profile = registry_item['content']['profile']
-        self.assertEqual(profile['summary'] + ' 机制：' + profile['mechanism'],
-                         by_id['registry', 'gongfa-first-principles']['explanation'])
+        profile_parts = [profile['summary'], '问题：' + profile['problem'], '机制：' + profile['mechanism']]
+        for key, label in (('conditions', '条件'), ('limitations', '限制'), ('expected_outcomes', '预期结果')):
+            if profile[key]:
+                profile_parts.append(label + '：' + '；'.join(profile[key]))
+        self.assertEqual(' '.join(profile_parts), by_id['registry', 'gongfa-first-principles']['explanation'])
         html_grade = next(item for item in self.documents['html211_grades']['items'] if item['candidate_id'] == 'E001')
-        self.assertEqual(html_grade['task_family'] + '；' + html_grade['reason'], by_id['html211', 'E001']['explanation'])
-        solve_grade = self.documents['solve24_analysis']['items'][0]['editorial_analysis']
+        html_candidate = next(item for item in self.documents['html211_candidates']['candidates'] if item['candidate_id'] == 'E001')
+        expected_html_explanation = (html_candidate['original_text'] + ' 用途/任务族：' + html_grade['task_family'] +
+                                     ' 初评说明：' + html_grade['reason'])
+        self.assertEqual(expected_html_explanation, by_id['html211', 'E001']['explanation'])
+        solve_item = self.documents['solve24_analysis']['items'][0]
+        solve_grade = solve_item['editorial_analysis']
         solve_row = by_id['solve24', solve_grade['source_id']]
-        self.assertEqual(solve_grade['task_family'] + '；' + solve_grade['mechanism'], solve_row['explanation'])
+        expected_solve_explanation = '；'.join((
+            '用途/任务族：' + solve_grade['task_family'],
+            '机制：' + solve_grade['mechanism'],
+            '适用：' + '；'.join(solve_item['source_when']),
+            '不适用：' + '；'.join(solve_item['source_not_when']),
+            '前提：' + '；'.join(solve_item['source_preconditions']),
+            '边界：' + solve_grade['editorial_caveat'],
+        ))
+        self.assertEqual(expected_solve_explanation, solve_row['explanation'])
         markdown = catalog.render_markdown(rows, self.binding)
+        self.assertNotIn('[控制论与科学方法论](#控制论与科学方法论)', markdown)
         section = markdown.split('## 全部记录\n\n', 1)[1].split('\n\n## 更新与核对', 1)[0]
         table_rows = [line for line in section.splitlines() if line.startswith('|')]
-        cells = [[value.strip() for value in next(csv.reader([line], delimiter='|', escapechar='\\'))[1:-1]]
-                 for line in table_rows]
+        cells = [parse_pipe_row(line) for line in table_rows]
         self.assertEqual(['品级', '功法名称', '解释'], cells[0])
         self.assertEqual(len(rows) + 2, len(cells))
         self.assertTrue(all(len(row) == 3 for row in cells), 'Markdown浏览表只保留品级、名称和解释')
