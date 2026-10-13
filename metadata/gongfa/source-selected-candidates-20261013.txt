@@ -1,0 +1,519 @@
+# 2026-10-13 功法候选来源冻结摘录
+
+> 本文件冻结本轮选区，不是第二份正文、完整来源库、效果验证或评级依据。备忘录选区逐字摘自仓内候选整理稿；Solve条目保留明示字段的原值投影。来源文件路径及SHA-256绑定到本次本地快照；当前Solve安装目录含未提交改动，不声称对应干净发布版本。
+
+## 快照清单
+
+- 捕获时间：`2026-10-13T08:25:59Z`
+- 备忘录文档：`docs/gongfa/methodology-toolbox.md`；SHA-256：`9fbc79bec81c2cf3c42ab21353f93df28c1017e529011763d017d0b1874e7ec6`。
+- Solve技能版本文件：`0.5.0`。
+- Solve目录版本：`1.12.0`；来源清单版本：`1.9.0`。
+- Solve来源边界：以下记录来自本地参考包快照；所列记录不代表完整包语义、正式发布状态、外部来源核实或方法效果。
+- Solve字段选择：保留`id/version/kind/origin/source_key/name_zh/domain/status/summary/core_question/operation/agent_use/applicability`及`semantics`中的`preconditions/steps/procedure/stop_conditions/success_conditions/effect/evidence_required/failure_modes/recovery/limitations/outputs`（仅输出原记录实际存在的字段）。
+- 文件状态与摘要：
+  - `skills/workflow/modules/solve/VERSION`（工作树：`M`）：`a0ad50640139a524f86591157145bf1d4674ea9c065bfea21558f0f7b04430c8`
+  - `skills/workflow/modules/solve/references/catalog.json`（工作树：`M`）：`3da86a365fba610feef00dab0a4774242c9ff07209fc9e5941882775b51b3d58`
+  - `skills/workflow/modules/solve/references/source-inventory.json`（工作树：`M`）：`5315782f2ee45cf9b401322d393fb8b065aab1c98b38d6d2fa0ef4098e95a06a`
+  - `skills/workflow/modules/solve/references/packs/analytical-chemistry-metrology.json`（工作树：`clean`）：`c88702b7b37fa1d6ad4ac293eece66bd1fe54cba6db8f913a2a7b8917591b35f`
+  - `skills/workflow/modules/solve/references/packs/information-knowledge-science.json`（工作树：`clean`）：`4f6aadfa67ba2bf37e01f84d9334ccd83cbfe785e282ab233d16bcd5419e6db1`
+  - `skills/workflow/modules/solve/references/packs/mathematics.json`（工作树：`clean`）：`4e3cfbb7c52154f0466679aed9c598fb2352aeed6382a7c8f78443e892fda7a9`
+  - `skills/workflow/modules/solve/references/packs/numerical-analysis-scientific-computing.json`（工作树：`clean`）：`62aef4d7ac2ba3daa2d6c0e2555e2f6dea7f0a68a75cddbd2acfb2a1326e3bcd`
+  - `skills/workflow/modules/solve/references/packs/physics.json`（工作树：`clean`）：`7b51961e83692f3ac514459d38ab343341be1456ec9a8041929a802156ba4b32`
+  - `skills/workflow/modules/solve/references/packs/research.json`（工作树：`M`）：`50b785cfb1a9cd659b060aad16a3db7a45041a02087472c2b08b9239fd9843f5`
+
+## 候选选区
+
+<a id="philosophy-methodology-toolbox-candidate-minimal-argument"></a>
+## 候选：最小论证结构
+
+**用途**：检查一项判断是否有支撑，而不把结论、证据和推理过程混为一谈。
+
+**落地动作**：
+
+1. 写出待判断的结论。
+2. 列出支撑结论的依据，并标明依据是观察、数据、规则还是假设。
+3. 写出“依据如何推出结论”的连接规则。
+4. 补充适用条件、限制和可能推翻结论的反例。
+
+**产物**：结论、依据、连接规则、条件与反例清单。
+
+**边界**：结构完整不等于依据真实，也不保证推理规则正确；需要分别核对来源、逻辑和适用范围。
+
+<a id="philosophy-methodology-toolbox-candidate-library-api-capability-ladder"></a>
+## 候选：库、包与 API 能力阶梯
+
+**用途**：规划从调用现成组件到能安全组合、排错和维护组件的学习与工程能力。
+
+1. **调用**：按接口使用组件，理解输入、输出和错误。
+2. **选择**：按需求、许可证、维护状态、兼容范围和运行约束比较方案。
+3. **组合**：处理接口契约、依赖关系、配置和版本边界。
+4. **调试与测量**：定位失败原因及性能瓶颈，区分组件问题与集成问题。
+5. **修改或适配**：在可维护边界内封装、替换或扩展组件。
+6. **设计或构建**：仅在成熟方案不满足关键约束时，才承担自建和长期维护成本。
+
+**检查问题**：接口承诺是什么？调用前提是什么？失败如何表达？依赖如何锁定？许可证和维护状态是否可接受？升级与回滚如何处理？
+
+**边界**：阶梯表示能力范围，不是功法品级或个人评价；高级别不天然优于复用成熟组件。
+
+<a id="philosophy-methodology-toolbox-candidate-minimal-model-transfer-boundaries"></a>
+## 候选：最小模型—迁移—边界回填
+
+**用途**：为复杂问题建立足够简单的模型，并谨慎借用相似结构提出待验证方案。
+
+**落地动作**：
+
+1. 明确目标、对象、关键变量及已知约束。
+2. 暂时删去与当前问题无关的细节，保留关键关系，得到最小模型。
+3. 搜索结构相似的案例或模型，逐项写明对应关系，不只比较名称或外观。
+4. 列出类比不成立的条件，以及简化时暂时忽略的变量。
+5. 把现实中的限制、失败模式和边界条件加回模型，用反例或低成本实验检查。
+
+**产物**：最小模型、对应关系、遗漏变量、迁移边界和验证项。
+
+**边界**：模型简化和类比只能生成假设，不证明两域机制相同；无法说明映射关系时不迁移结论。
+
+<a id="philosophy-methodology-toolbox-candidate-error-uncertainty-budget"></a>
+## 候选：误差预算与不确定性传播（Solve来源记录）
+
+```json
+[
+  {
+    "id": "psoa.mathematics.error-bound",
+    "version": "1.0.0",
+    "kind": "OperatorSpec",
+    "origin": "source",
+    "source_key": "mathematics.error-bound",
+    "name_zh": "误差界",
+    "domain": "mathematics",
+    "status": "experimental",
+    "summary": "为近似、数值、测量或模型差异建立可解释的上界/下界，而不是只给点估计。",
+    "core_question": "结论最坏可能偏离多少？",
+    "operation": "定义误差度量 → 分解误差来源 → 推导或估计界 → 检查紧致性 → 与决策容忍度比较",
+    "agent_use": "让 Agent 明确哪些结论只在误差范围内成立。",
+    "applicability": {
+      "when": [
+        "输出存在近似、测量、截断或估计误差。"
+      ],
+      "not_when": [
+        "结果由精确有限运算且无输入不确定性。"
+      ]
+    },
+    "semantics": {
+      "preconditions": [
+        "目标量、误差度量和输入误差来源已定义。"
+      ],
+      "procedure": [
+        "定义绝对/相对/概率误差",
+        "分解截断、测量、模型和数值来源",
+        "推导或估计保守界",
+        "检查界在边界和决策阈值处是否足够"
+      ],
+      "effect": {
+        "state": "error_bound_known",
+        "statement": "形成可比较的误差范围和主导误差来源。"
+      },
+      "evidence_required": [
+        "误差定义、来源、推导/样本、界、假设和容忍度比较。"
+      ],
+      "failure_modes": [
+        "把经验标准差当最坏界。",
+        "遗漏相关误差或系统偏差。"
+      ],
+      "recovery": [
+        "扩大界、补充校准/重复或将结论降级。"
+      ]
+    }
+  },
+  {
+    "id": "psoa.physics.uncertainty-propagation",
+    "version": "1.0.0",
+    "kind": "MethodSpec",
+    "origin": "source",
+    "source_key": "physics.uncertainty-propagation",
+    "name_zh": "不确定度传播",
+    "domain": "physics",
+    "status": "experimental",
+    "summary": "把输入量的不确定度通过测量模型传播到输出，并报告相关性和覆盖区间。",
+    "core_question": "输入误差会把结论的不确定度放大到什么程度？",
+    "operation": "定义 measurand → 列输入分布/相关性 → 解析或 Monte Carlo 传播 → 报告区间和主导来源",
+    "agent_use": "让 Agent 的数字、阈值和置信声明与实际不确定性匹配。",
+    "applicability": {
+      "when": [
+        "输出由多个有误差输入计算得到。"
+      ],
+      "not_when": [
+        "没有测量模型或输入不确定性无法描述。"
+      ]
+    },
+    "semantics": {
+      "preconditions": [
+        "输出量、测量模型、输入不确定度和相关性已定义。"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "instruction": "定义 measurand 和输入量"
+        },
+        {
+          "order": 2,
+          "instruction": "记录输入分布、校准、相关性和误差来源"
+        },
+        {
+          "order": 3,
+          "instruction": "用线性化或 Monte Carlo 传播到输出"
+        },
+        {
+          "order": 4,
+          "instruction": "报告覆盖区间、敏感输入和假设"
+        }
+      ],
+      "stop_conditions": [
+        "输出区间和主导不确定度来源可解释。",
+        "模型非线性或相关性超出方法适用范围。"
+      ],
+      "success_conditions": [
+        "不确定度报告能支持当前决策精度，不把点估计冒充真值。"
+      ],
+      "evidence_required": [
+        "测量模型、输入分布/相关性、传播方法、随机种子、区间和敏感性。"
+      ],
+      "failure_modes": [
+        "遗漏系统误差或相关性。",
+        "区间方法与分布/非线性不匹配。"
+      ]
+    }
+  },
+  {
+    "id": "psoa.numerical-analysis-scientific-computing.conditioning-vs-algorithm-stability",
+    "version": "1.0.0",
+    "kind": "MethodSpec",
+    "origin": "source",
+    "source_key": "numerical-analysis-scientific-computing.conditioning-vs-algorithm-stability",
+    "name_zh": "问题条件性与算法稳定性区分",
+    "domain": "numerical-analysis-scientific-computing",
+    "status": "experimental",
+    "summary": "把问题本身对输入扰动的敏感性与算法额外引入的误差分开。",
+    "core_question": "结果不可靠是问题先天敏感，还是算法放大了误差？",
+    "operation": "扰动输入 → 估计问题敏感度 → 检查算法误差传播 → 区分条件性与稳定性",
+    "agent_use": "避免 Agent 把所有数值偏差都归因于实现错误。",
+    "applicability": {
+      "when": [
+        "结果受舍入、输入误差、离散化或算法选择影响。"
+      ],
+      "not_when": [
+        "只处理精确符号推导且没有数值近似。"
+      ]
+    },
+    "semantics": {
+      "preconditions": [
+        "有输入、算法、输出指标和误差尺度。"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "instruction": "定义输入扰动与输出误差度量"
+        },
+        {
+          "order": 2,
+          "instruction": "估计问题条件性或局部敏感度"
+        },
+        {
+          "order": 3,
+          "instruction": "检查舍入、消去、迭代和离散化误差传播"
+        },
+        {
+          "order": 4,
+          "instruction": "分别报告问题敏感性和算法稳定性"
+        }
+      ],
+      "stop_conditions": [
+        "误差尺度、输入扰动或算法实现不可辨识。"
+      ],
+      "success_conditions": [
+        "结论明确区分问题条件数、算法稳定性和可改进方向。"
+      ],
+      "evidence_required": [
+        "扰动实验、误差度量、条件性估计、算法误差链和结论边界。"
+      ],
+      "failure_modes": [
+        "将病态问题误判为实现缺陷。",
+        "将稳定算法误写成高精度保证。"
+      ]
+    }
+  },
+  {
+    "id": "psoa.numerical-analysis-scientific-computing.adaptive-error-control",
+    "version": "1.0.0",
+    "kind": "OperatorSpec",
+    "origin": "source",
+    "source_key": "numerical-analysis-scientific-computing.adaptive-error-control",
+    "name_zh": "自适应误差控制",
+    "domain": "numerical-analysis-scientific-computing",
+    "status": "experimental",
+    "summary": "依据局部误差估计动态细分区间或调整步长，并保留误差与停止证据。",
+    "core_question": "哪里需要更多计算，哪里可以少算？",
+    "operation": "设定绝对/相对容差 → 估计局部误差 → 细分或调整步长 → 达标后停止",
+    "agent_use": "让 Agent 把 token、工具调用或数值资源投向误差最大的区域。",
+    "applicability": {
+      "when": [
+        "误差在状态空间中分布不均且可取得局部估计。"
+      ],
+      "not_when": [
+        "无法估计误差或所有区域成本相同。"
+      ]
+    },
+    "semantics": {
+      "preconditions": [
+        "有输出误差指标、容差、最大细分/迭代预算。"
+      ],
+      "procedure": [
+        "声明 absolute 和 relative tolerance",
+        "定位误差估计最大的区间或状态",
+        "细分区间、缩短步长或增加局部计算",
+        "达到容差、预算上限或异常条件时停止"
+      ],
+      "effect": {
+        "state": "error_budget_allocated",
+        "statement": "形成按误差分配计算资源的结果、估计误差和停止原因。"
+      },
+      "evidence_required": [
+        "容差、误差估计序列、资源分配、停止条件和异常区域。"
+      ],
+      "failure_modes": [
+        "误差估计器被异常点欺骗。",
+        "只报告结果不报告估计误差。"
+      ],
+      "recovery": [
+        "拆分异常区域、改变估计器或降低结论强度。"
+      ]
+    }
+  },
+  {
+    "id": "psoa.numerical-analysis-scientific-computing.residual-backward-error-audit",
+    "version": "1.0.0",
+    "kind": "OperatorSpec",
+    "origin": "source",
+    "source_key": "numerical-analysis-scientific-computing.residual-backward-error-audit",
+    "name_zh": "残差与后向误差审计",
+    "domain": "numerical-analysis-scientific-computing",
+    "status": "experimental",
+    "summary": "检查候选解对原方程的残差，并问它是否精确解决了一个邻近问题。",
+    "core_question": "候选解离原问题有多远，还是只对一个相邻问题精确？",
+    "operation": "代回原方程 → 计算残差 → 估计后向误差 → 结合条件性解释前向误差",
+    "agent_use": "让 Agent 用可计算残差约束“看起来合理”的结果。",
+    "applicability": {
+      "when": [
+        "有方程、约束或可复核的计算关系。"
+      ],
+      "not_when": [
+        "结果只有主观质量且没有可计算关系。"
+      ]
+    },
+    "semantics": {
+      "preconditions": [
+        "原问题、候选解、残差尺度和误差阈值已定义。"
+      ],
+      "procedure": [
+        "把候选解代回原方程或约束",
+        "计算残差与相对残差",
+        "估计使候选解精确成立所需的最小问题扰动",
+        "结合条件性说明前向误差能否由残差代表"
+      ],
+      "effect": {
+        "state": "numerical_residual_bounded",
+        "statement": "形成残差、后向误差和前向误差解释，避免把残差零当成真实准确。"
+      },
+      "evidence_required": [
+        "原方程、候选解、残差、后向误差、条件性和阈值。"
+      ],
+      "failure_modes": [
+        "只看残差不看条件性。",
+        "单位或尺度不一致造成假小残差。"
+      ],
+      "recovery": [
+        "重新缩放、提高精度或使用迭代精化。"
+      ]
+    }
+  },
+  {
+    "id": "psoa.analytical-chemistry-metrology.measurement-uncertainty-budget",
+    "version": "1.0.0",
+    "kind": "MethodSpec",
+    "origin": "source",
+    "source_key": "analytical-chemistry-metrology.measurement-uncertainty-budget",
+    "name_zh": "测量不确定度预算",
+    "domain": "analytical-chemistry-metrology",
+    "status": "experimental",
+    "summary": "列出输入量、传播模型、重复性、校准、取样和相关性，合成最终测量不确定度。",
+    "core_question": "最终数值的不确定性由哪些来源贡献，报告精度是否诚实？",
+    "operation": "定义 measurand → 列输入量 → 估计标准不确定度 → 传播/合成 → 报告覆盖范围",
+    "agent_use": "让 Agent 给出数值时同时给出误差来源和可比较边界。",
+    "applicability": {
+      "when": [
+        "测量值需要比较、决策或发布。"
+      ],
+      "not_when": [
+        "只做定性观察且无需数值置信边界。"
+      ]
+    },
+    "semantics": {
+      "preconditions": [
+        "被测量、测量模型、输入量和报告规则已定义。"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "instruction": "写出被测量与输入量的函数关系"
+        },
+        {
+          "order": 2,
+          "instruction": "估计重复性、校准、取样、环境和模型不确定度"
+        },
+        {
+          "order": 3,
+          "instruction": "记录相关性并合成标准/扩展不确定度"
+        },
+        {
+          "order": 4,
+          "instruction": "检查预算主导项和报告有效数字"
+        }
+      ],
+      "stop_conditions": [
+        "关键输入量、相关性或覆盖因子缺失。"
+      ],
+      "success_conditions": [
+        "预算可追溯、主导来源明确，报告值与不确定度匹配。"
+      ],
+      "evidence_required": [
+        "测量模型、输入量、分量、相关性、合成规则、覆盖因子和报告。"
+      ],
+      "failure_modes": [
+        "漏掉取样/前处理不确定度。",
+        "把仪器分辨率当完整不确定度。"
+      ]
+    }
+  }
+]
+```
+
+<a id="philosophy-methodology-toolbox-candidate-literature-synthesis-evidence-gaps"></a>
+## 候选：文献综合与证据缺口图谱（Solve来源记录）
+
+```json
+[
+  {
+    "id": "psoa.research.literature-synthesis",
+    "version": "1.0.0",
+    "kind": "MethodSpec",
+    "origin": "source",
+    "source_key": "research.literature-synthesis",
+    "name_zh": "文献综合",
+    "domain": "research",
+    "status": "experimental",
+    "summary": "按问题、来源质量和证据关系组织文献，形成支持、冲突和空白图谱。",
+    "core_question": "已有研究到底支持什么、冲突什么、还缺什么？",
+    "operation": "定义问题 → 检索并分层来源 → 提取主张/方法/结果 → 比较异质性 → 综合结论和空白",
+    "agent_use": "避免把搜索结果堆成没有证据关系的摘要。",
+    "applicability": {
+      "when": [
+        "问题需要跨多份资料建立可追溯结论。"
+      ],
+      "not_when": [
+        "只有一个稳定的一手来源足以回答问题。"
+      ]
+    },
+    "semantics": {
+      "preconditions": [
+        "研究问题、纳入范围和来源访问方式已定义。"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "instruction": "定义问题、时间范围和纳入/排除标准"
+        },
+        {
+          "order": 2,
+          "instruction": "按权威性、方法和相关性分层来源"
+        },
+        {
+          "order": 3,
+          "instruction": "提取主张、数据、方法、限制和证据关系"
+        },
+        {
+          "order": 4,
+          "instruction": "比较冲突、综合结论并列出研究空白"
+        }
+      ],
+      "stop_conditions": [
+        "主要主张有来源且冲突/空白可见。",
+        "检索边际收益低或范围预算耗尽。"
+      ],
+      "success_conditions": [
+        "形成可回指来源的支持/冲突/空白图谱。"
+      ],
+      "evidence_required": [
+        "检索式、来源分层、主张表、冲突解释和空白列表。"
+      ],
+      "failure_modes": [
+        "来源选择偏差或把相关性当共识。",
+        "未区分原始研究与二手转述。"
+      ]
+    }
+  }
+]
+```
+
+<a id="philosophy-methodology-toolbox-candidate-retrieval-quality-evidence-coverage"></a>
+## 候选：检索质量与证据覆盖审计（Solve来源记录）
+
+```json
+[
+  {
+    "id": "psoa.information-knowledge-science.relevance-precision-recall-audit",
+    "version": "1.0.0",
+    "kind": "OperatorSpec",
+    "origin": "source",
+    "source_key": "information-knowledge-science.relevance-precision-recall-audit",
+    "name_zh": "相关性、精确率与召回审计",
+    "domain": "information-knowledge-science",
+    "status": "experimental",
+    "summary": "用明确主题、相关性判断和评估集检查检索结果的精确率、召回率、排序质量和漏检。",
+    "core_question": "结果够相关吗，重要文档漏了多少，排名是否把可用证据放前面？",
+    "operation": "定义相关性 → 建判断集 → 标注结果 → 计算 precision/recall/ranking → 分析漏检和偏差",
+    "agent_use": "防止 Agent 把“搜到很多”当成“搜全且相关”。",
+    "applicability": {
+      "when": [
+        "需要评价检索、RAG 或证据收集质量。"
+      ],
+      "not_when": [
+        "没有相关性标准或只做一次开放式浏览。"
+      ]
+    },
+    "semantics": {
+      "preconditions": [
+        "信息需求、结果集、相关性标准和可用判断集已定义。"
+      ],
+      "procedure": [
+        "写出主题相关、证据相关和用途相关的判断规则",
+        "抽样并标注相关/不相关/部分相关与权威等级",
+        "计算 precision、recall、排序质量及分层差异",
+        "检查漏检、重复、来源偏置和评估集泄漏"
+      ],
+      "effect": {
+        "state": "retrieval_quality_profiled",
+        "statement": "形成结果质量、漏检、排序和判断不确定性报告。"
+      },
+      "evidence_required": [
+        "查询、判断规则、标注样本、指标、漏检案例和评估集版本。"
+      ],
+      "failure_modes": [
+        "相关性判断不一致。",
+        "只评前几条而忽视漏检。"
+      ],
+      "recovery": [
+        "增加独立判断、补充评估集或按用途重新定义相关性。"
+      ]
+    }
+  }
+]
+```
