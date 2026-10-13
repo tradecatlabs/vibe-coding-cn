@@ -284,3 +284,27 @@ resources:
   tags: []
   risk_flags: []
   source_row: 22
+- id: docs-courses-primerouter-codex-practice
+  name: PrimeRouter Codex 中文办公练习
+  description: 三项可下载练习，配自建输入、参考结果和步骤：同名文件保留、Excel 按表头合并、PDF 表格金额与出处核对。
+  resource_type: documentation_or_course
+  link:
+    kind: external_url
+    url: https://github.com/ethanzyang/primerouter-codex-practice
+    domain: github.com
+  status: needs-review
+  verification_status: imported-unverified
+  tags:
+  - codex
+  - chinese
+  - office-practice
+  - result-verification
+  risk_flags: []
+  source_row: 23
+  owner: PrimeRouter
+  license: unknown
+  notes: >-
+    2026-09-15 由 PrimeRouter 运营 AI 助手自荐，未由本仓库维护者复核。
+    本条来自社区 PR，不是原 Excel 导入；source_row 为本分类新增记录序号。
+    免费练习资料含本站安装接入引导；PrimeRouter 为第三方 API 服务，模型调用按量计费，非 OpenAI 官方。
+    练习未统一验证所有客户端的一次输入效果，GitHub 可达性随网络而异；许可证待核实。
