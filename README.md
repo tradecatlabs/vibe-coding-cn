@@ -517,7 +517,7 @@ gantt
 感谢所有为本项目做出贡献的开发者！
 
 <a href="https://github.com/tradecatlabs/vibe-coding-cn/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=tradecatlabs/vibe-coding-cn" alt="本仓贡献者" />
+  <img src="https://contrib.rocks/image?repo=EnzeD/vibe-coding" />
 </a>
 
 <p>特别鸣谢以下成员的宝贵贡献 (排名不分先后):<br/>
