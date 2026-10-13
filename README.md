@@ -516,8 +516,31 @@ gantt
 
 感谢所有为本项目做出贡献的开发者！
 
-<a href="https://github.com/tradecatlabs/vibe-coding-cn/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=EnzeD/vibe-coding" />
+<p>
+  <a href="https://github.com/tukuaiai">
+    <img src="https://avatars.githubusercontent.com/u/244259119?v=4"
+      width="64" height="64" alt="tukuaiai" title="tukuaiai" />
+  </a>
+  <a href="https://github.com/tradecatlabs">
+    <img src="https://avatars.githubusercontent.com/u/288998340?v=4"
+      width="64" height="64" alt="tradecatlabs" title="tradecatlabs" />
+  </a>
+  <a href="https://github.com/apps/factory-droid">
+    <img src="https://avatars.githubusercontent.com/in/358017?v=4"
+      width="64" height="64" alt="factory-droid[bot]" title="factory-droid[bot]" />
+  </a>
+  <a href="https://github.com/Scuner">
+    <img src="https://avatars.githubusercontent.com/u/99040545?v=4"
+      width="64" height="64" alt="Scuner" title="Scuner" />
+  </a>
+</p>
+
+[查看本仓贡献记录](https://github.com/tradecatlabs/vibe-coding-cn/graphs/contributors)。
+
+保留的参考头像图，来源：[EnzeD/vibe-coding](https://github.com/EnzeD/vibe-coding)。
+
+<a href="https://github.com/EnzeD/vibe-coding/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=EnzeD/vibe-coding" alt="EnzeD/vibe-coding 贡献者" />
 </a>
 
 <p>特别鸣谢以下成员的宝贵贡献 (排名不分先后):<br/>
