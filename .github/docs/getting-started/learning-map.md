@@ -105,7 +105,7 @@
 
 优先阅读：
 
-1. [AGENTS.md](../../AGENTS.md)
+1. [AGENTS.md](../../../AGENTS.md)
 2. [工程实践](../gongfa/project-architecture-template.md)
 
 团队约束：
@@ -137,4 +137,4 @@
 
 - 新手：回到 [学习地图](learning-map.md)，从第 0 步开始；环境就绪后完成 [第一个项目](first-project.md)。
 - 开发者：阅读 [Vibe Coding 经验](../gongfa/vibe-coding-experience.md)，再选择 Skill 或质量门禁路线。
-- 团队：先统一 [AGENTS.md](../../AGENTS.md)、强前置条件和质量门禁。
+- 团队：先统一 [AGENTS.md](../../../AGENTS.md)、强前置条件和质量门禁。

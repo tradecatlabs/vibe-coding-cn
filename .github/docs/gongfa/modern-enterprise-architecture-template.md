@@ -21599,7 +21599,7 @@ V2.98 补充目标：任意生产 AI 系统都必须完成 AI 系统监管分类
 - OWASP Software Assurance Maturity Model
   <https://owasp.org/www-project-samm/>
 - LINDDUN Privacy Threat Modeling
-  <https://www.linddun.org/>
+  <https://linddun.org/>
 - NIST Privacy Framework
   <https://www.nist.gov/privacy-framework>
 - NIST FIPS 199: Standards for Security Categorization of Federal Information and Information Systems

@@ -177,7 +177,7 @@
 *   [**Skills 技能库**](../../skills/README.md#当前保留): 当前保留的可复用技能入口。
 *   [**提示词入口**](../../prompts/README.md#在线提示词库): 在线提示词库入口。
 *   [**外部资源入口**](../../assets/README.md#外部资源本地注册表): 外部资源本地注册表入口。
-*   [**AI Agent 操作规则**](../../AGENTS.md): AI Agent 执行任务时必须遵守的项目操作手册。
+*   [**AI Agent 操作规则**](../../../AGENTS.md): AI Agent 执行任务时必须遵守的项目操作手册。
 *   [**llms.txt**](../../../llms.txt): 面向 AI 助手的短上下文入口。
 *   [**llms-full.txt**](../../assets/ai-citation/llms-full.txt): 面向 AI 助手的完整上下文入口。
 *   [**编程提示词集合**](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203): 适用于 Vibe Coding 流程的专用提示词（云端表格）。
