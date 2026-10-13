@@ -3,11 +3,6 @@
   项目头部区域 (HEADER)
 -------------------------------------------------------------------------------
 -->
-<p align="center">
-  <!-- 建议尺寸: 1280x640px。可以使用 Canva, Figma 或 https://banners.beyondco.de/ 等工具制作 -->
-  <img src="https://github.com/tukuaiai.png" alt="Vibe Coding 指南" width="50px">
-</p>
-
 <div align="center">
 
 <a id="vibe-coding-指南"></a>
