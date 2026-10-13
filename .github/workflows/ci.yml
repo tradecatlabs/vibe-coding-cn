@@ -6,9 +6,9 @@ name: CI
 on:
   workflow_dispatch:
   push:
-    branches: [ develop ]
+    branches: [ main, develop, master ]
   pull_request:
-    branches: [ develop ]
+    branches: [ main, develop, master ]
 
 jobs:
   markdown-lint:
