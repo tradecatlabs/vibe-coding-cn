@@ -249,11 +249,11 @@ def render_markdown(rows, binding):
     provisional = sum(row['grading_status'] == 'provisional' for row in rows)
     undetermined = sum(row['grading_status'] == 'undetermined' for row in rows)
     lines = ['# 功法总表', '', MARKER, '', '## 字多不看', '',
-             f"- 共**{len(rows)}条内容记录**；已登记{counts['已登记']}条，未入登记库的来源候选{counts['未入登记库']}条。不是独立功法去重后的总数。",
+             f"- 共**{len(rows)}条内容记录**；已登记{counts['已登记']}条，登记库候选{counts['登记库候选']}条，未入登记库的来源候选{counts['未入登记库']}条。不是独立功法去重后的总数。",
              f'- 原前瞻初评{provisional}条，暂不可判{undetermined}条；不是正式效果评级，亦不把缺测默认补成黄阶。',
              '- Markdown仅作浏览；解释列展开登记摘要/问题/机制及条件/限制/预期结果、候选原文与用途/理由、Solve适用边界；不新增主张，详情仍以JSON为准。',
              '- 同一总表的[Excel完整视图](catalog.xlsx)含限定原文/源条目、来源选区、边界、理由、反证和置信。',
-             '- 活跃登记来自[registry.json](registry.json)，历史候选来自[仓内快照索引](catalog-sources.json)；维护边界见[README](README.md)。', '',
+             '- 已登记条目与登记库候选来自[registry.json](registry.json)，历史来源候选来自[仓内快照索引](catalog-sources.json)；维护边界见[README](README.md)。', '',
              '输入绑定：`' + digest(binding['registry_sha256'] + binding['candidate_sha256']) + '`。', '',
              '## 全部记录', '', '| 品级 | 功法名称 | 解释 |', '|---|---|---|']
     for row in rows:

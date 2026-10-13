@@ -84,6 +84,7 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertIn('一个分布式系统最多只能保证一致性、可用性和分区容错性中的两项。', by_id['html96', 'VC029']['original_text'])
         self.assertIn('失去50%容量时剩余单位需要承担2倍总流量。', by_id['html211', 'E001']['original_text'])
         self.assertEqual(sum(r['entry_status'] == '已登记' for r in rows), 79)
+        self.assertEqual(sum(r['entry_status'] == '登记库候选' for r in rows), 0)
         self.assertEqual(self.documents['registry']['assessments'], [])
         registry_item = next(item for item in self.documents['registry']['gongfa'] if item['id'] == 'gongfa-first-principles')
         profile = registry_item['content']['profile']
@@ -110,6 +111,7 @@ class CatalogMaintenanceTest(unittest.TestCase):
         ))
         self.assertEqual(expected_solve_explanation, solve_row['explanation'])
         markdown = catalog.render_markdown(rows, self.binding)
+        self.assertIn('- 共**410条内容记录**；已登记79条，登记库候选0条，未入登记库的来源候选331条。', markdown)
         self.assertNotIn('[控制论与科学方法论](#控制论与科学方法论)', markdown)
         section = markdown.split('## 全部记录\n\n', 1)[1].split('\n\n## 更新与核对', 1)[0]
         table_rows = [line for line in section.splitlines() if line.startswith('|')]
@@ -124,6 +126,20 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertNotIn('地高', markdown)
         expected_explanations = [row['explanation'].replace('\r', ' ').replace('\n', ' ') for row in rows]
         self.assertEqual(expected_explanations, [unescape(row[2]) for row in cells[2:]])
+
+    def test_registry_candidate_count_is_separate_from_historical_sources(self):
+        documents = deepcopy(self.documents)
+        candidate = deepcopy(next(item for item in documents['registry']['gongfa']
+                                  if item['id'] == 'gongfa-first-principles'))
+        candidate['id'] = 'gongfa-isolated-candidate-count'
+        candidate['name'] = '隔离候选计数'
+        candidate['entry_status'] = 'candidate'
+        candidate['ontology_type'] = None
+        documents['registry']['gongfa'].append(candidate)
+        rows = catalog.merge_rows(documents)
+        self.assertEqual(sum(row['entry_status'] == '登记库候选' for row in rows), 1)
+        markdown = catalog.render_markdown(rows, self.binding)
+        self.assertIn('- 共**411条内容记录**；已登记79条，登记库候选1条，未入登记库的来源候选331条。', markdown)
 
     def test_registry_updates_follow_explicit_correction_and_never_inherit_a_new_version(self):
         documents = deepcopy(self.documents)
