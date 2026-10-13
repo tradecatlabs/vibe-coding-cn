@@ -909,3 +909,21 @@ resources:
   risk_flags: []
   source_row: 166
   notes: Imported from ChatGPT-中文Vibe Coding仓库 (2).md.
+- id: tools-platforms-orcareplay-61cecbde
+  name: OrcaReplay
+  description: 在 AI Agent 与模型服务之间的 HTTP 边界录下整次运行，再离线重放：不调用模型、不需要 API key，Agent 自己的代码与工具调用照常执行。只阻断模型侧出网，录下的工具调用仍会真的再跑一次，不是沙箱；重放成功只说明录下的那次能复现，不代表重新跑一次结果相同。
+  resource_type: tool_or_platform
+  link:
+    kind: external_url
+    url: https://github.com/Continuum-AI-Corp/OrcaReplay
+    domain: github.com
+  status: needs-review
+  verification_status: imported-unverified
+  tags:
+  - cli
+  - record-replay
+  - debugging
+  risk_flags: []
+  source_row: 167
+  license: Apache-2.0
+  notes: 社区 PR 提交，提交者为该项目维护者；尚未经本仓库人工复核。
