@@ -96,7 +96,7 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - docs/gongfa/compositional-description-model.md：对象、状态、快照、序列、过程、变换、同一/差异与关系。
 - docs/gongfa/programming-dao.md：编程哲学、结构、状态、复杂度与工程判断。
 - docs/gongfa/software-engineering-truths.md：代码、复杂度、需求、维护、质量、架构和团队的工程常识。
-- docs/gongfa/methodology-toolbox.md：现象学还原、正反合、可证伪主义、形式化方法等提效工具；附11项备忘录草稿与3项来源候选，标明待评审状态及现有功法合并边界。
+- docs/gongfa/methodology-toolbox.md：现象学还原、正反合、可证伪主义、形式化方法等提效工具；附11项备忘录草稿、3项跨域来源候选及P01–P32/Solve A–G主题级对照。26个精确标题命中中24个是已冻结同ID条目，另2个不按标题自动去重；6项优先项仍待评审、拟议ID未分配，C01–C20无独立冻结清单，556个Solve来源条目未与410条逐项语义比较。
 - docs/gongfa/project-architecture-template.md：常见项目结构、架构设计原则、最低门禁和检查清单。
 - docs/gongfa/python-project-skeleton.md：Python 应用、服务、脚本工具和库项目的通用骨架。
 - docs/gongfa/enterprise-architecture-template.md：中大型工程组织、平台工程和多产品线参考模型。

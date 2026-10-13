@@ -709,7 +709,7 @@ README.md      # 概念表/错误语义/验收指标
 <a id="philosophy-methodology-toolbox-候选方法整理稿"></a>
 ### 候选方法整理稿（待评审）
 
-> 本节把若干可独立描述的框架和操作方法整理成候选稿。它们尚未进入机器登记、未赋品级，也不构成效果验证。按当前整理要求，不列外部真实来源、作者或机构归属；不确定的归属和未经定义的主张不写成事实。
+> 本节把若干可独立描述的框架和操作方法整理成候选稿。交叉核对后，建议优先评审“最小论证结构”“库、包与 API 能力阶梯”“最小模型—迁移—边界回填”及3项跨域来源候选；6项目前仅在文稿和冻结来源选区中，尚未写入`registry.json`或生成总表，身份、类型、品级与是否登记仍待评审。其余备忘录候选按下方结果合并或暂缓。按当前整理要求，不列外部真实来源、作者或机构归属；不确定的归属和未经定义的主张不写成事实。
 
 #### 候选：分类判准形成链
 
@@ -923,6 +923,65 @@ README.md      # 概念表/错误语义/验收指标
 **产物**：检索质量、重要漏检、排序表现、覆盖范围和判断分歧报告。
 
 **边界**：没有相关性标准就不能解释指标；没有判断集不得报告 precision/recall；排名、链接数和引用数不等于证据充分；“未检索到”不证明证据不存在。
+
+#### 候选交叉核对与本轮取舍（2026-10-13）
+
+> 对照基线总表为410条（79条登记、331条历史来源候选）。下表把工具集候选P01–P32、已归一化的11项备忘录草稿和Solve A–G主题映射到现有登记及历史候选详情；P编号与11项草稿是同一批素材的不同整理视图，不重复计数。表中拟议ID不是已分配身份。Solve的556个ID已完成来源级导出，但未逐条与410条做完整语义比较；本轮仅对A–C候选核过完整操作和边界。对话中的C01–C20未找到独立冻结定义清单，不声称已逐项裁决。候选状态不代表正式登记、类型确认、品级或效果。
+
+| 工具集候选 | 对照与处理 |
+|---|---|
+| P01 分类形成链 | 与`gongfa-concept-engineering`、`gongfa-state-classification`对齐；现有内容覆盖主要分类与概念边界，判准链未显示足够独立增量。 |
+| P02 论证最小结构 | 建议继续评审；拟议ID `gongfa-minimal-argument-structure`尚未分配。与`gongfa-steelmanning`（重建最强观点）和`gongfa-evidence-triangulation`（比较证据渠道）相邻但问题、操作不同。 |
+| P03 输入—处理—输出模型 | 对齐`gongfa-compositional-description`、`gongfa-input-state-transform-separation`和`gongfa-stable-interface-contract`；作为最小表征素材，不再建立平行模型。 |
+| P04 目标—指标—反馈优化 | 合并到`gongfa-methodology-delivery-loop`、`gongfa-performance-by-measurement`及实验/信念更新相关内容；目标、指标和更新不能脱离具体验收独立成通用闭环。 |
+| P05 误差反馈迭代闭环 | 对齐`gongfa-problem-definition-framework`、`gongfa-methodology-delivery-loop`、`gongfa-abductive-debugging`和`gongfa-counterfactual-testing`；不重复登记总流程。 |
+| P06 当前状态—目标状态—差距 | 对齐`gongfa-purpose-directed-action`、`gongfa-solution-space`和`gongfa-problem-definition-framework`。 |
+| P07 工作系统层级分解 | 由`gongfa-top-down-system-design`、`gongfa-bottom-up-system-building`和`gongfa-divide-and-conquer`覆盖；层级词表不独立成方法。 |
+| P08 编程思考四步 | 合并到问题定义和`gongfa-methodology-delivery-loop`；未显示优于现有闭环的独立交接规则。 |
+| P09 “是什么—为什么—怎么做” | 作为`gongfa-problem-definition-framework`的提问入口，不另立功法。 |
+| P10 多结构信息表示选择 | 暂缓；`gongfa-state-space-thinking`、`gongfa-solution-space`、`gongfa-representation-flattening`和`gongfa-projection-representation`覆盖相邻对象，但候选仍缺可判定的表示选择条件。 |
+| P11 问题求解认知流程 | 对齐`gongfa-problem-definition-framework`和`gongfa-methodology-delivery-loop`；阶段次序及停止条件没有独立增量。 |
+| P12 古文抽象求解流程 | 合并到问题求解、失败预演和架构权衡；巨型流水线会与现有流程并行且难验证各阶段边界。 |
+| P13 任务完成六阶段 | 合并到求解闭环、胶水原则、验证和复盘；不建第二条总工作流。 |
+| P14 解决方案复用决策 | 与`gongfa-glue-principle`、`gongfa-glue-coding`实质重叠，不新增。 |
+| P15 库/包/API能力阶梯 | 建议继续评审；拟议ID `gongfa-library-api-capability-ladder`尚未分配。与胶水原则、拼好码、API承诺和第三方API选型相邻，但新增从调用到集成、排错、适配的学习路线。 |
+| P16 对照式分析 | 暂缓；当前是可选分析轴清单，不是有选轴规则和反例的独立操作方法。 |
+| P17 表征变换与关系操作 | 分别并入`gongfa-compositional-description`、`gongfa-evidence-triangulation`及溯因/迁移等具体操作；不把动作名词表批量登记。 |
+| P18 数学三层工作流 | 暂缓为学科专用候选；`gongfa-lightweight-formal-methods`只覆盖形式化的一部分，未证明整条数学流程适用于通用编码任务。 |
+| P19 最小模型—迁移—边界回填 | 建议继续评审；拟议ID `gongfa-minimal-model-transfer-boundaries`尚未分配。与第一性原理、思想实验、拍扁及研究迁移相邻但不等同。移除未经核验的Shannon归属，采用中性名称。 |
+| P20 古文次序与渐进准则 | 对齐增量开发、规格先行与总体作业流；格言依赖情境，不单独立项。 |
+| P21 根因、机制与系统效应 | 对齐`gongfa-systems-boundary-feedback`、`gongfa-mechanistic-explanation`、`gongfa-proximate-causal-mechanism`及事故复盘；故事本身不证明工程规律。 |
+| P22 证据、认知与反偏差 | 对齐来源批判、证据三角测量、可证伪主义和错误认识论；典故作为反例素材。 |
+| P23 策略、资源与利害取舍 | 对齐可逆决策、架构权衡及机会成本；古代策略故事不直接外推为编码方法。 |
+| P24 迁移、学习与实践 | 作为学习、胶水复用和类比迁移的素材；逐项缺少独立操作及来源时不批量立项。 |
+| P25 渐进执行顺序模板 | 合并到增量开发、迭代和复盘；不把格言次序写成所有任务的固定线性阶段。 |
+| P26 主张/现实、角色/主体等区分 | 对齐组合描述与本体主文；概念边界不是独立施行方法。 |
+| P27 完整工作系统描述模型 | 对齐组合描述、系统边界、状态分类和依赖图；避免第二套系统字段表。 |
+| P28 动态系统闭环模型 | 对齐系统边界与反馈、固定点收敛和受约束状态变换，不新增同义系统模型。 |
+| P29 学习方法候选簇 | 暂缓；各项仍需分别核对权威来源、操作步骤、适用条件和验收，不按机构或方法名称批量登记。 |
+| P30 性能评估/优化流程 | 合并到性能测量、统计工具箱、风险驱动测试和持续性能工程；区分方法、指标、报告与工具。 |
+| P31 工具组合/能力编排 | 对齐胶水原则、拼好码、稳定接口和显式依赖；不另造组合框架。 |
+| P32 实践复盘闭环 | 对齐问题求解、`gongfa-methodology-delivery-loop`和事故复盘；事故归因与一般复盘仍按证据边界区分。 |
+
+| Solve主题 | 对照与处理 |
+|---|---|
+| A 误差预算与不确定性传播 | 建议继续评审；拟议ID `gongfa-error-uncertainty-budget`尚未分配，由6个来源条目编辑合并。与性能统计置信区间、门槛抽样和校准估计相邻，但它处理误差来源向结论的传播及容忍度比较。 |
+| B 文献综合与证据缺口图谱 | 建议继续评审；拟议ID `gongfa-literature-synthesis-evidence-gaps`尚未分配。与单来源批判、独立交叉验证互补，不把多篇摘要拼接当共识。 |
+| C 检索质量与证据覆盖审计 | 建议继续评审；拟议ID `gongfa-retrieval-quality-evidence-coverage`尚未分配。与Skill路由精确率/召回及代码RAG相邻但范围更广；只取原子评估操作，不把派生检索循环另立新项。 |
+| D 摊销成本分析 | 暂缓；算法专用方法，待明确是否收录学科专用功法及相应复核范围。 |
+| E 内核核验的形式证明 | 暂缓；属于证明助手/形式验证专用方法，不因与轻量形式化、状态不变量相邻就泛化为通用功法。 |
+| F 因果识别假设与敏感性审计 | 暂缓；因果研究专用，需确认领域范围；近端机制和反事实推理不等同于混杂识别/敏感性分析。 |
+| G 分布外/漂移适用域审计 | 不单独新增；与拍扁、受约束状态变换、有效知识子集的外推边界及既有评估记录相邻。漂移分数不证明性能正确，专用阈值/触发规则待单独需求时再审。 |
+
+##### 26个精确标题匹配的进一步核对
+
+> 24项可由既有冻结选区复核；另外2项仅由本轮本地全量导出定位，未纳入本次冻结选区，不据此建立新条目。
+
+- 其中24项与`source-classified-candidates-20261007.json`的冻结Solve24选区具有相同`source_id`、相同原始pack SHA及相同完整JSON条目；它们已作为历史来源候选存在，不是新增功法或需要更新的第二版本。分组为：研究（来源批判、重复研究、预注册、代理指标—真实目标对齐审计）；计算机科学（不变量检查、接口契约、依赖图）；软件工程（架构权衡、增量开发、影响分析、风险驱动测试、事故复盘）；编程（二分调试、最小复现、模糊测试、性质测试、差分测试）；问题求解（手段—目的分析、选择性启发式搜索、构造性见证、元认知监控）；决策科学（信息价值、后悔与鲁棒决策）；工程（失败预演）。保留旧快照与意见，不因本轮全量索引而重建或提升状态。
+- `psoa.cognitive-science.metacognitive-monitoring`与既有`psoa.problem-solving-methodology.metacognitive-monitoring`标题相同，核心操作均为监控策略、进展和停止/切换条件；学科语境略有差别，但未显示独立机制，映射到既有条目，不另立身份。
+- `psoa.programming-principles-101.information-hiding`与历史`html96:VC004`虽同名，却不完全同义：VC004表达重要设计知识由单一模块拥有、减少跨模块依赖；Solve条目描述收窄公开承诺、隐藏易变实现并验证替换能力。属于相邻而非已证同一，暂缓独立候选，需先确认范围并冻结该条目的具体来源；不因标题相同而合并或新增。
+
+以上是候选主题级去重结果，不宣称556个来源ID与既有410条逐项语义去重完成；来源提取、候选主题映射、登记状态和效能证据分别计数。
 
 #### 与现有方法合并，不另建平行流程
 
