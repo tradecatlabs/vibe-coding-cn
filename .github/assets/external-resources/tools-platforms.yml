@@ -13,7 +13,7 @@ defaults:
 resources:
 - id: tools-platforms-codex-cli-362bc20a
   name: Codex CLI
-  description: 唯一推荐的苹果级工具，世界最强最强大模型（编码任务瞬秒其他全部的安卓级工具，.codex配置文件和系统提示词 https://github.com/tukuaiai/vibe-coding-cn/tree/develop/config/.codex）
+  description: 唯一推荐的苹果级工具，世界最强最强大模型（编码任务瞬秒其他全部的安卓级工具，.codex配置文件和系统提示词 https://github.com/tukuaiai/vibe-coding-cn/tree/main/.github/tools/config/.codex）
   resource_type: tool_or_platform
   link:
     kind: external_url

@@ -1103,7 +1103,7 @@
   "external_sources": [
     {
       "path": ".github/assets/external-resources/tools-platforms.yml",
-      "sha256": "f4a12f460be4c8c502ec7dad311e962125bd3e3efbe95824b210fa4712d00cdb"
+      "sha256": "07d51650bb219a071dd95c7e70bd30c6e8e247c660c457ddb268f0a0fedac351"
     },
     {
       "path": ".github/assets/external-resources/repo-rules-scaffolds.yml",

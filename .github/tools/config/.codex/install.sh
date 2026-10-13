@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-RAW_BASE_DEFAULT="https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/develop/.github/tools/config/.codex"
+RAW_BASE_DEFAULT="https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/main/.github/tools/config/.codex"
 RAW_BASE="${VIBE_CODING_CODEX_RAW_BASE:-$RAW_BASE_DEFAULT}"
 CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
 PROFILE="safe"
@@ -24,8 +24,8 @@ Environment:
   VIBE_CODING_CODEX_RAW_BASE     Source base URL or local directory for assets.
 
 Examples:
-  curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/develop/.github/tools/config/.codex/install.sh | bash
-  curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/develop/.github/tools/config/.codex/install.sh | bash -s -- --profile power
+  curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/main/.github/tools/config/.codex/install.sh | bash
+  curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/main/.github/tools/config/.codex/install.sh | bash -s -- --profile power
   bash ~/.codex/backups/vibe-coding-cn/LATEST/restore.sh
 USAGE
 }

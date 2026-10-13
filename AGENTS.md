@@ -29,7 +29,9 @@
 
 ```bash
 # 1. 拉取最新代码
-git pull --rebase origin develop
+git fetch origin main
+# 原有工作树保持原状；从远端主线创建隔离任务工作树
+# git worktree add -b <task-branch> <task-worktree> origin/main
 
 # 2. 初始化外部仓库指针
 git submodule update --init --recursive
@@ -44,9 +46,10 @@ make lint
 make lint
 
 # 6. 提交变更
-git add -A
+git add -- <task-files>
 git commit -m "feat|fix|docs|chore: scope - summary"
-git push origin develop
+git push origin HEAD
+# 创建以 main 为目标的 PR，核对精确 HEAD 与实际 CI 后合并
 ```
 
 ---
@@ -195,7 +198,7 @@ git push origin develop
 - `.github/AGENTS.md` - GitHub 平台配置目录规则；根 `.github/` 不保留 `README.md`，避免 GitHub 首页误展示目录说明
 - `.github/CODEOWNERS` - 路径级 owner 评审基线，当前维护者为 `@tukuaiai` 和 `@tradecatlabs`，用于让关键目录变更自动请求维护者审查
 - `.github/lint_config.json` - markdownlint 规则，供 `make lint` 与 CI 共用
-- `.github/workflows/ci.yml` - GitHub Actions：develop 分支 markdown-lint + link-checker
+- `.github/workflows/ci.yml` - GitHub Actions：main 分支 markdown-lint + link-checker
 - `.github/scripts/check-local-links.py` - 仓库内 Markdown 相对链接与锚点检查脚本，供 `make check-links` 与 CI 使用
 - `.github/scripts/check-markdown-details.py` - 仓库内 Markdown 折叠块结构检查脚本，供 `make check-details` 与 CI 使用
 - `.github/scripts/check-doc-structure.py` - docs README 标准块顺序、目录入口和重复锚点检查脚本，供 `make check-doc-structure` 与 CI 使用
@@ -260,6 +263,14 @@ git push origin develop
 
 ## 8. PR / Commit Rules（提交与 CI 规则）
 
+### 分支职责
+
+- `main` 是默认主线，开发更新和贡献 PR 统一以 `main` 为目标；远端长期保留 `main`、`minimal`。
+- `minimal` 保留现有内容，不作为贡献集成分支；`main` 保留签名、CODEOWNER、最后推送审批和必需 CI 保护。
+- 按用户授权收敛远端分支前，先迁移开放 PR 的目标、保存全部精确 SHA 与已验证恢复 bundle，并用 ref lease 防止误删并行更新。
+- 远端清理不删除本地分支或 worktree；尚未整合的历史只备份，不自动合入主线。临时任务分支在交付后按同一规则清理。
+- 不将 squash 后的非祖先 HEAD 自动判为未整合；须核对已合并 PR 的精确 HEAD 与主线中的 merge commit。
+
 ### 本仓自动交付约定
 
 - 用户已明确要求：本仓修改完成并完成必要验证后，自动提交、推送并合并，不再停在“本地未推送”，不重复询问发布许可；用户后续暂停、仅本地或先看方案等明确要求优先。
@@ -283,8 +294,8 @@ feat|fix|docs|chore|refactor|test: scope - summary
 - 测试与验证步骤
 
 ### CI 触发条件
-- `push` 到 `develop` 分支
-- `pull_request` 到 `develop` 分支
+- `push` 到 `main` 分支
+- `pull_request` 到 `main` 分支
 - 手动触发 `workflow_dispatch`
 
 ### CI 检查项

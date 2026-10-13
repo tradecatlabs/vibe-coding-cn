@@ -274,7 +274,7 @@ $env:OPENAI_API_KEY | codex login --with-api-key
 推荐使用安全默认版。脚本会先备份你已有的 `~/.codex/config.toml` 和 `~/.codex/AGENTS.md`，再安装新配置：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/develop/.github/tools/config/.codex/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/main/.github/tools/config/.codex/install.sh | bash
 ```
 
 如果已经 clone 本仓库，也可以在仓库根目录执行：
@@ -286,7 +286,7 @@ bash .github/tools/config/.codex/install.sh
 需要完全可信本地环境下的高权限配置时，显式安装 `power` profile：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/develop/.github/tools/config/.codex/install.sh | bash -s -- --profile power
+curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/main/.github/tools/config/.codex/install.sh | bash -s -- --profile power
 ```
 
 恢复最近一次安装前的配置：

@@ -15,19 +15,19 @@
 安全默认版：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/develop/.github/tools/config/.codex/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/main/.github/tools/config/.codex/install.sh | bash
 ```
 
 高权限版：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/develop/.github/tools/config/.codex/install.sh | bash -s -- --profile power
+curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/main/.github/tools/config/.codex/install.sh | bash -s -- --profile power
 ```
 
 指定 Codex Home：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/develop/.github/tools/config/.codex/install.sh | CODEX_HOME="$HOME/.codex" bash
+curl -fsSL https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/main/.github/tools/config/.codex/install.sh | CODEX_HOME="$HOME/.codex" bash
 ```
 
 ## 恢复

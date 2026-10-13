@@ -49,7 +49,7 @@ REQUIRED_PAGES = {
 
 STALE_PATTERNS = {
     "libs/external": "旧工具路径，当前工具在 .github/tools/ 下",
-    "main 分支": "当前贡献主线是 develop",
+    "develop 分支": "当前贡献主线是 main",
     "GPT-5.1": "固定旧模型版本口径",
     "GPT-5.2": "固定旧模型版本口径",
     "Claude Opus 4.5": "固定旧模型版本口径",

@@ -92,7 +92,7 @@ class FaqiCatalogTest(unittest.TestCase):
         self.assertEqual(len(assignments), sum(token.type == "tr_open" for token in tokens[tbody_start:tbody_end]))
         self.assertIn(assignments[0]["scope"] + "；" + assignments[0]["basis"], catalog)
         # 首批父仓库来源必须在已发布主线可达，不能依赖仅本地存在的提交。
-        published = subprocess.run(["git", "merge-base", "--is-ancestor", data["source_revision"], "refs/remotes/origin/develop"], cwd=ROOT, capture_output=True, timeout=20)
+        published = subprocess.run(["git", "merge-base", "--is-ancestor", data["source_revision"], "refs/remotes/origin/main"], cwd=ROOT, capture_output=True, timeout=20)
         self.assertEqual(0, published.returncode, "父仓库来源不在已发布主线历史可达")
         objects = {o["id"]: o for o in data["objects"]}
         purposes = {s["id"]: s.get("purpose") for s in data["sources"]}
@@ -262,17 +262,18 @@ class FaqiCatalogTest(unittest.TestCase):
     def test_wide_external_resources_do_not_expand_compact_view(self):
         # 真实隔离Git/YAML输入；宽外部资源原表不进入三列浏览表。
         root = ARTIFACTS / "wide-table-fixture"; root.mkdir()
-        (root / ".github/metadata").mkdir(parents=True); (root / ".github/tools/fixture").mkdir(parents=True)
+        (root / ".github/metadata").mkdir(parents=True); (root / ".github/tools/config/.codex").mkdir(parents=True)
         (root / ".github/docs/gongfa").mkdir(parents=True)
         (root / ".github/assets/external-resources").mkdir(parents=True)
         for path in (".github/metadata/faqi.schema.json", ".github/docs/gongfa/cultivation-ontology-taxonomy.md", ".github/docs/gongfa/technology-stack.md"):
             (root / path).write_bytes((ROOT / path).read_bytes())
-        body = b"def identity(value):\n    return value\n"
-        (root / ".github/tools/fixture/main.py").write_bytes(body)
+        body = b'RAW_BASE="https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/develop/.github/tools/config/.codex"\nprintf "fixture only\\n"\n'
+        program = root / ".github/tools/config/.codex/install.sh"
+        program.write_bytes(body)
         (root / ".gitmodules").write_bytes(b"")
         for index, command in enumerate((
             ["git", "init", "--quiet", str(root)],
-            ["git", "-C", str(root), "add", ".gitmodules", ".github/tools/fixture/main.py"],
+            ["git", "-C", str(root), "add", ".gitmodules", ".github/tools/config/.codex/install.sh"],
             ["git", "-C", str(root), "-c", "user.name=tradecatlabs", "-c", "user.email=288998340+tradecatlabs@users.noreply.github.com", "commit", "--quiet", "--no-gpg-sign", "-m", "test: isolated source fixture"],
         )):
             result = subprocess.run(command, capture_output=True, timeout=20, env={**os.environ, "GIT_AUTHOR_DATE": "2026-10-09T00:00:00+00:00", "GIT_COMMITTER_DATE": "2026-10-09T00:00:00+00:00"})
@@ -281,7 +282,7 @@ class FaqiCatalogTest(unittest.TestCase):
         revision = subprocess.check_output(["git", "-C", str(root), "rev-parse", "HEAD"], timeout=20).decode().strip()
         data = json.loads((ROOT / ".github/metadata/faqi.json").read_text(encoding="utf-8"))
         data["source_revision"] = revision
-        source = {"id": "S01", "purpose": "implementation", "path": ".github/tools/fixture/main.py", "repository": ".", "revision": revision, "sha256": hashlib.sha256(body).hexdigest(), "lines": [1, 3], "selection_sha256": hashlib.sha256(body).hexdigest()}
+        source = {"id": "S01", "purpose": "implementation", "path": ".github/tools/config/.codex/install.sh", "repository": ".", "revision": revision, "sha256": hashlib.sha256(body).hexdigest(), "lines": [1, 3], "selection_sha256": hashlib.sha256(body).hexdigest()}
         data["sources"] = [source]
         data["objects"] = [{**data["objects"][0], "id": "faqi-fixture", "implementation": "S01", "support": []}]
         data["dependency_graph"]["local_links"] = [{"object_id": "faqi-fixture", "graph_node": "fixture node", "relationship": "仅用于隔离表格预算测试。"}]
@@ -291,7 +292,7 @@ class FaqiCatalogTest(unittest.TestCase):
         for dependency_object in data["dependency_graph"]["objects"]:
             dependency_object["resource_ids"] = []
             dependency_object["related_object_id"] = None
-        data["local_entries"] = [{"path": ".github/tools/fixture", "objects": ["faqi-fixture"], "sources": ["S01"], "boundary": "隔离来源形态夹具，不证明工具能力", "pending": []}]
+        data["local_entries"] = [{"path": ".github/tools/config/.codex", "objects": ["faqi-fixture"], "sources": ["S01"], "boundary": "隔离来源形态夹具，不证明工具能力", "pending": []}]
         ids = []
         for file_index, source in enumerate(data["external_sources"]):
             rows = []
@@ -314,6 +315,37 @@ class FaqiCatalogTest(unittest.TestCase):
         tokens = MarkdownIt("default").parse(rendered.decode("utf-8"))
         table_indexes = [index for index, token in enumerate(tokens) if token.type == "table_open"]
         self.assertEqual(1, len(table_indexes))
+        # 只允许已批准的同仓默认分支地址迁移，来源原 SHA 与指令仍固定。
+        input_path = self.input_copy("branch-migration", data)
+        main_body = b'RAW_BASE="https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/main/.github/tools/config/.codex"\nprintf "fixture only\\n"\n'
+        program.write_bytes(main_body)
+        result = self.invoke("approved-main-source", "--root", root, "--input", input_path, "--view", view, "--write")
+        self.assertEqual(0, result.returncode, result.stderr.decode())
+        for label, candidate in (
+            ("wrong-source-owner", main_body.replace(b"/tukuaiai/", b"/other-owner/")),
+            ("wrong-source-branch", main_body.replace(b"/main/", b"/unreviewed/")),
+            ("changed-program", main_body + b'printf "changed behavior\\n"\n'),
+        ):
+            with self.subTest(label=label):
+                program.write_bytes(candidate)
+                forbidden = ARTIFACTS / (label + "-view.md")
+                result = self.invoke(label, "--root", root, "--input", input_path, "--view", forbidden, "--write")
+                self.assertNotEqual(0, result.returncode)
+                self.assertIn("来源文件/SHA漂移", result.stderr.decode())
+                self.assertFalse(forbidden.exists())
+        # 后续真正冻结 main 版本时，不应被历史地址适配反向改坏。
+        program.write_bytes(main_body)
+        for command in (
+            ["git", "-C", str(root), "add", ".github/tools/config/.codex/install.sh"],
+            ["git", "-C", str(root), "-c", "user.name=tradecatlabs", "-c", "user.email=288998340+tradecatlabs@users.noreply.github.com", "commit", "--quiet", "--no-gpg-sign", "-m", "test: freeze main source"],
+        ):
+            result = subprocess.run(command, capture_output=True, timeout=20, env={**os.environ, "GIT_AUTHOR_DATE": "2026-10-13T00:00:00+00:00", "GIT_COMMITTER_DATE": "2026-10-13T00:00:00+00:00"})
+            self.assertEqual(0, result.returncode, result.stderr.decode())
+        revision = subprocess.check_output(["git", "-C", str(root), "rev-parse", "HEAD"], timeout=20).decode().strip()
+        data["source_revision"] = revision
+        data["sources"][0].update(revision=revision, sha256=hashlib.sha256(main_body).hexdigest(), selection_sha256=hashlib.sha256(main_body).hexdigest())
+        result = self.invoke("frozen-main-source", "--root", root, "--input", self.input_copy("frozen-main", data), "--view", view, "--write")
+        self.assertEqual(0, result.returncode, result.stderr.decode())
 
     def test_dependency_graph_table_and_grade_assignments_are_complete(self):
         data = json.loads((ROOT / ".github/metadata/faqi.json").read_text(encoding="utf-8"))

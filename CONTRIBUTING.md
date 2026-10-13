@@ -15,4 +15,6 @@
 3.  进行您的修改。
 4.  提交您的更改 (`git commit -m 'feat: Add some AmazingFeature'`)。
 5.  将分支推送到您的 Fork (`git push origin feature/YourAmazingFeature`)。
-6.  创建一个新的 Pull Request。
+6.  创建一个以 `main` 为目标的新 Pull Request。
+
+`main` 是默认主线；远端长期保留 `main`、`minimal`，新贡献统一提交到 `main`。`minimal` 保留现有内容，不作为贡献集成分支。

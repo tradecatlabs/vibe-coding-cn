@@ -191,6 +191,17 @@ def validate(root, input_path):
             body = git_blob(root, source["revision"], historical_path)
             current = bounded_read(path)
             comparable = normalize_migrated_paths(current) if historical_path != source["path"] else current
+            # 已批准的默认分支迁移只改安装源地址；原修订、SHA、指令仍逐字核对。
+            if (
+                source["path"] in {
+                    ".github/tools/config/.codex/install.sh", ".github/tools/config/.codex/README.md",
+                }
+                and b"https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/develop/" in body
+            ):
+                comparable = comparable.replace(
+                    b"https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/main/",
+                    b"https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/develop/",
+                )
             require(comparable == body and digest(body) == source["sha256"], f"来源文件/SHA漂移：{source['id']}")
         else:
             historical_repository = path_at_revision(root, data["source_revision"], source["repository"])

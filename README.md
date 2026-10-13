@@ -288,11 +288,13 @@ pip install -r .github/tools/prompts-library/scripts/requirements.txt
 
 ### 配置与 CI
 
+- 默认分支：`main`，开发更新和贡献 PR 统一以 `main` 为目标。
+- 远端长期保留 `main`、`minimal`；`minimal` 保留现有内容，不作为贡献集成分支。主线保留签名、审批与必需 CI 保护。
 - 路径级 owner 评审基线：`.github/CODEOWNERS`（当前维护者：`@tukuaiai`、`@tradecatlabs`）
 - Markdown lint 配置：`.github/lint_config.json`
 - Markdown lint 版本：`Makefile` 中固定为 `markdownlint-cli@0.48.0`
 - 外部链接检查配置：`.lychee.toml`，统一管理外链检查的超时、重试、并发上限和排除项
-- CI 配置：`.github/workflows/ci.yml`，在 `develop` 分支的 push / pull_request 上运行 markdown-lint、本地链接检查、docs 结构检查与 link-checker
+- CI 配置：`.github/workflows/ci.yml`，在 `main` 分支的 push / pull_request 上运行 markdown-lint、本地链接检查、docs 结构检查与 link-checker
 - Codex 配置基线：`.github/tools/config/.codex/README.md`，支持一键安装、自动备份和恢复。
 - Submodule 来源：`.gitmodules`
 
