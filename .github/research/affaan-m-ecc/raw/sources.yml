@@ -1,0 +1,39 @@
+version: 1
+domain_id: affaan-m-ecc
+object:
+  type: github_repository
+  name: affaan-m/ECC
+  url: https://github.com/affaan-m/ECC
+pulled_at: '2026-09-08T11:21:11+00:00'
+puller: .github/scripts/fetch-research-raw.py
+files:
+  - path: repository/
+    kind: git-working-tree
+    status: ok
+    source: 'git -C research/affaan-m-ecc/raw/repository pull --ff-only'
+    message: 'Already up to date.'
+  - path: github-repo.raw.json
+    kind: repository-metadata
+    status: ok
+    source: 'gh repo view affaan-m/ECC --json nameWithOwner,url,description,homepageUrl,isArchived,isFork,isMirror,defaultBranchRef,licenseInfo,primaryLanguage,repositoryTopics,stargazerCount,forkCount,watchers,createdAt,updatedAt,pushedAt,latestRelease --jq .'
+  - path: github-readme.raw.md.txt
+    kind: readme
+    status: ok
+    source: 'gh api repos/affaan-m/ECC/readme -H Accept: application/vnd.github.raw'
+  - path: github-license.raw.txt
+    kind: license
+    status: missing_or_error
+    source: 'gh api repos/affaan-m/ECC/license -H Accept: application/vnd.github.raw'
+    message: 'Get "https://api.github.com/repos/affaan-m/ECC/license": EOF'
+  - path: github-root-contents.raw.json
+    kind: root-contents
+    status: ok
+    source: 'gh api repos/affaan-m/ECC/contents'
+  - path: github-languages.raw.json
+    kind: languages
+    status: ok
+    source: 'gh api repos/affaan-m/ECC/languages'
+  - path: github-latest-release.raw.json
+    kind: latest-release
+    status: ok
+    source: 'gh api repos/affaan-m/ECC/releases/latest'

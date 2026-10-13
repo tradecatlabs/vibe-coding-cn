@@ -1,0 +1,37 @@
+version: 1
+domain_id: continuedev-continue
+object:
+  type: github_repository
+  name: continuedev/continue
+  url: https://github.com/continuedev/continue
+pulled_at: '2026-09-08T11:14:14+00:00'
+puller: .github/scripts/fetch-research-raw.py
+files:
+  - path: repository/
+    kind: git-working-tree
+    status: ok
+    source: 'git clone --depth=1 --single-branch --no-tags https://github.com/continuedev/continue.git research/continuedev-continue/raw/repository'
+  - path: github-repo.raw.json
+    kind: repository-metadata
+    status: ok
+    source: 'gh repo view continuedev/continue --json nameWithOwner,url,description,homepageUrl,isArchived,isFork,isMirror,defaultBranchRef,licenseInfo,primaryLanguage,repositoryTopics,stargazerCount,forkCount,watchers,createdAt,updatedAt,pushedAt,latestRelease --jq .'
+  - path: github-readme.raw.md.txt
+    kind: readme
+    status: ok
+    source: 'gh api repos/continuedev/continue/readme -H Accept: application/vnd.github.raw'
+  - path: github-license.raw.txt
+    kind: license
+    status: ok
+    source: 'gh api repos/continuedev/continue/license -H Accept: application/vnd.github.raw'
+  - path: github-root-contents.raw.json
+    kind: root-contents
+    status: ok
+    source: 'gh api repos/continuedev/continue/contents'
+  - path: github-languages.raw.json
+    kind: languages
+    status: ok
+    source: 'gh api repos/continuedev/continue/languages'
+  - path: github-latest-release.raw.json
+    kind: latest-release
+    status: ok
+    source: 'gh api repos/continuedev/continue/releases/latest'

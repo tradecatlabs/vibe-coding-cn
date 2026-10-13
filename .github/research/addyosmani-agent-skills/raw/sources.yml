@@ -1,0 +1,38 @@
+version: 1
+domain_id: addyosmani-agent-skills
+object:
+  type: github_repository
+  name: addyosmani/agent-skills
+  url: https://github.com/addyosmani/agent-skills
+pulled_at: '2026-09-08T11:18:50+00:00'
+puller: .github/scripts/fetch-research-raw.py
+files:
+  - path: repository/
+    kind: git-working-tree
+    status: ok
+    source: 'git -C research/addyosmani-agent-skills/raw/repository pull --ff-only'
+    message: 'Already up to date.'
+  - path: github-repo.raw.json
+    kind: repository-metadata
+    status: ok
+    source: 'gh repo view addyosmani/agent-skills --json nameWithOwner,url,description,homepageUrl,isArchived,isFork,isMirror,defaultBranchRef,licenseInfo,primaryLanguage,repositoryTopics,stargazerCount,forkCount,watchers,createdAt,updatedAt,pushedAt,latestRelease --jq .'
+  - path: github-readme.raw.md.txt
+    kind: readme
+    status: ok
+    source: 'gh api repos/addyosmani/agent-skills/readme -H Accept: application/vnd.github.raw'
+  - path: github-license.raw.txt
+    kind: license
+    status: ok
+    source: 'gh api repos/addyosmani/agent-skills/license -H Accept: application/vnd.github.raw'
+  - path: github-root-contents.raw.json
+    kind: root-contents
+    status: ok
+    source: 'gh api repos/addyosmani/agent-skills/contents'
+  - path: github-languages.raw.json
+    kind: languages
+    status: ok
+    source: 'gh api repos/addyosmani/agent-skills/languages'
+  - path: github-latest-release.raw.json
+    kind: latest-release
+    status: ok
+    source: 'gh api repos/addyosmani/agent-skills/releases/latest'

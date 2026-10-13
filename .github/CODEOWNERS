@@ -13,16 +13,16 @@
 /CONTRIBUTING.md @tukuaiai @tradecatlabs
 
 # 文档、提示词、技能和机器可读索引。
-/docs/ @tukuaiai @tradecatlabs
-/research/ @tukuaiai @tradecatlabs
-/prompts/ @tukuaiai @tradecatlabs
-/skills/ @tukuaiai @tradecatlabs
-/assets/ @tukuaiai @tradecatlabs
-/metadata/ @tukuaiai @tradecatlabs
+/.github/docs/ @tukuaiai @tradecatlabs
+/.github/research/ @tukuaiai @tradecatlabs
+/.github/prompts/ @tukuaiai @tradecatlabs
+/.github/skills/ @tukuaiai @tradecatlabs
+/.github/assets/ @tukuaiai @tradecatlabs
+/.github/metadata/ @tukuaiai @tradecatlabs
 
 # 工具、脚本和外部集成指针。
-/scripts/ @tukuaiai @tradecatlabs
-/tools/ @tukuaiai @tradecatlabs
+/.github/scripts/ @tukuaiai @tradecatlabs
+/.github/tools/ @tukuaiai @tradecatlabs
 /Makefile @tukuaiai @tradecatlabs
 /.gitattributes @tukuaiai @tradecatlabs
 /.gitignore @tukuaiai @tradecatlabs

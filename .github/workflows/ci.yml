@@ -25,17 +25,17 @@ jobs:
     - name: Run markdownlint
       run: make lint
     - name: Check local markdown links and anchors
-      run: python3 scripts/check-local-links.py
+      run: python3 .github/scripts/check-local-links.py
     - name: Check markdown details and summaries
-      run: python3 scripts/check-markdown-details.py
+      run: python3 .github/scripts/check-markdown-details.py
     - name: Check docs README structure
-      run: python3 scripts/check-doc-structure.py
+      run: python3 .github/scripts/check-doc-structure.py
     - name: Check required directory README and AGENTS files
-      run: python3 scripts/check-directory-docs.py
+      run: python3 .github/scripts/check-directory-docs.py
     - name: Check metadata paths and anchors
-      run: python3 scripts/check-metadata.py
+      run: python3 .github/scripts/check-metadata.py
     - name: Check llms and AI citation paths and anchors
-      run: python3 scripts/check-ai-citation.py
+      run: python3 .github/scripts/check-ai-citation.py
   link-checker:
     runs-on: ubuntu-latest
     steps:
@@ -45,4 +45,4 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v2.8.0
         with:
-          args: --verbose --no-progress --config .lychee.toml './**/*.md'
+          args: --verbose --no-progress --config .lychee.toml './**/*.md' './.github/assets/**/*.md' './.github/docs/**/*.md' './.github/metadata/**/*.md' './.github/prompts/**/*.md' './.github/research/**/*.md' './.github/scripts/**/*.md' './.github/skills/**/*.md' './.github/tools/**/*.md'

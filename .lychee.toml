@@ -1,6 +1,6 @@
 # Lychee link checker configuration for GitHub Actions.
 #
-# The repository checks first-party Markdown links with scripts/check-local-links.py.
+# The repository checks first-party Markdown links with .github/scripts/check-local-links.py.
 # Lychee is reserved for public external links and first-party Markdown that should
 # be visible to readers. Generated tools, external snapshots and login-only pages
 # are excluded here instead of being repeated in workflow YAML.
@@ -14,18 +14,18 @@ exclude_path = [
   '^\.history(/|$)',
   '^\.github/wiki(/|$)',
   '^node_modules(/|$)',
-  '^docs/references/sources(/|$)',
-  '^tools/external(/|$)',
-  '^tools/chat-vault(/|$)',
+  '^\.github/docs/references/sources(/|$)',
+  '^\.github/tools/external(/|$)',
+  '^\.github/tools/chat-vault(/|$)',
   # These research projects have independent link-checking contracts and are
   # intentionally excluded from the root repository's first-party scan.
-  '^research/vibe-cybersecurity-cn(/|$)',
-  '^research/vibe-harness-cn(/|$)',
-  '^research/vibe-mathing-cn-public(/|$)',
-  '^tools/prompts-library(/|$)',
-  '^skills/claude-official-skills(/|$)',
-  '^skills/auto-tmux/assets/(oh-my-tmux|tmux-src)(/|$)',
-  '^skills/auto-skill/scripts/(Skill_Seekers-development|skill-seekers-src|skill-seekers-configs)(/|$)',
+  '^\.github/research/vibe-cybersecurity-cn(/|$)',
+  '^\.github/research/vibe-harness-cn(/|$)',
+  '^\.github/research/vibe-mathing-cn-public(/|$)',
+  '^\.github/tools/prompts-library(/|$)',
+  '^\.github/skills/claude-official-skills(/|$)',
+  '^\.github/skills/auto-tmux/assets/(oh-my-tmux|tmux-src)(/|$)',
+  '^\.github/skills/auto-skill/scripts/(Skill_Seekers-development|skill-seekers-src|skill-seekers-configs)(/|$)',
 ]
 
 exclude = [

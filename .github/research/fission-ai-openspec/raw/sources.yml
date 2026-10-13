@@ -1,0 +1,37 @@
+version: 1
+domain_id: fission-ai-openspec
+object:
+  type: github_repository
+  name: Fission-AI/OpenSpec
+  url: https://github.com/Fission-AI/OpenSpec
+pulled_at: '2026-09-08T11:18:50+00:00'
+puller: .github/scripts/fetch-research-raw.py
+files:
+  - path: repository/
+    kind: git-working-tree
+    status: ok
+    source: 'git clone --depth=1 --single-branch --no-tags https://github.com/Fission-AI/OpenSpec.git research/fission-ai-openspec/raw/repository'
+  - path: github-repo.raw.json
+    kind: repository-metadata
+    status: ok
+    source: 'gh repo view Fission-AI/OpenSpec --json nameWithOwner,url,description,homepageUrl,isArchived,isFork,isMirror,defaultBranchRef,licenseInfo,primaryLanguage,repositoryTopics,stargazerCount,forkCount,watchers,createdAt,updatedAt,pushedAt,latestRelease --jq .'
+  - path: github-readme.raw.md.txt
+    kind: readme
+    status: ok
+    source: 'gh api repos/Fission-AI/OpenSpec/readme -H Accept: application/vnd.github.raw'
+  - path: github-license.raw.txt
+    kind: license
+    status: ok
+    source: 'gh api repos/Fission-AI/OpenSpec/license -H Accept: application/vnd.github.raw'
+  - path: github-root-contents.raw.json
+    kind: root-contents
+    status: ok
+    source: 'gh api repos/Fission-AI/OpenSpec/contents'
+  - path: github-languages.raw.json
+    kind: languages
+    status: ok
+    source: 'gh api repos/Fission-AI/OpenSpec/languages'
+  - path: github-latest-release.raw.json
+    kind: latest-release
+    status: ok
+    source: 'gh api repos/Fission-AI/OpenSpec/releases/latest'

@@ -23,16 +23,16 @@
 <p>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/tukuaiai/vibe-coding-cn?label=%E8%AE%B8%E5%8F%AF%E8%AF%81&style=flat" alt="许可证"></a>
   <a href="https://t.me/glue_coding"><img src="https://img.shields.io/badge/交流-Telegram-blue?style=flat&logo=telegram" alt="交流群"></a>
-  <a href="./docs/gongfa/README.md"><img src="https://img.shields.io/badge/功法-体系-slateblue?style=flat" alt="功法体系：思想、准则、方法与流程"></a>
-  <a href="./research/README.md"><img src="https://img.shields.io/badge/研究-证据-teal?style=flat" alt="研究事实与证据"></a>
-  <a href="./docs/getting-started/learning-map.md"><img src="https://img.shields.io/badge/入门-教程-red?style=flat" alt="从零开始完整入门"></a>
-  <a href="./tools/config/.codex/README.md"><img src="https://img.shields.io/badge/Codex-配置-blue?style=flat" alt="Codex 配置一键安装"></a>
-  <a href="./skills/README.md#当前保留"><img src="https://img.shields.io/badge/Skills-技能-forestgreen?style=flat" alt="skills技能大全"></a>
-  <a href="./prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/提示词-表格-blue?style=flat" alt="提示词在线表格"></a>
-  <a href="./assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/资源-索引-teal?style=flat" alt="外部资源本地注册表"></a>
+  <a href=".github/docs/gongfa/README.md"><img src="https://img.shields.io/badge/功法-体系-slateblue?style=flat" alt="功法体系：思想、准则、方法与流程"></a>
+  <a href=".github/research/README.md"><img src="https://img.shields.io/badge/研究-证据-teal?style=flat" alt="研究事实与证据"></a>
+  <a href=".github/docs/getting-started/learning-map.md"><img src="https://img.shields.io/badge/入门-教程-red?style=flat" alt="从零开始完整入门"></a>
+  <a href=".github/tools/config/.codex/README.md"><img src="https://img.shields.io/badge/Codex-配置-blue?style=flat" alt="Codex 配置一键安装"></a>
+  <a href=".github/skills/README.md#当前保留"><img src="https://img.shields.io/badge/Skills-技能-forestgreen?style=flat" alt="skills技能大全"></a>
+  <a href=".github/prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/提示词-表格-blue?style=flat" alt="提示词在线表格"></a>
+  <a href=".github/assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/资源-索引-teal?style=flat" alt="外部资源本地注册表"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/Wiki-导航-slateblue?style=flat" alt="Wiki 导航入口"></a>
-  <a href="metadata/gongfa/catalog.md"><img src="https://img.shields.io/badge/功法-总表-purple?style=flat" alt="功法总表"></a>
-  <a href="metadata/gongfa/catalog.xlsx"><img src="https://img.shields.io/badge/Excel-完整视图-forestgreen?style=flat" alt="Excel 完整视图"></a>
+  <a href=".github/metadata/gongfa/catalog.md"><img src="https://img.shields.io/badge/功法-总表-purple?style=flat" alt="功法总表"></a>
+  <a href=".github/metadata/gongfa/catalog.xlsx"><img src="https://img.shields.io/badge/Excel-完整视图-forestgreen?style=flat" alt="Excel 完整视图"></a>
   <a href="https://zread.ai/tukuaiai/vibe-coding-cn/1-overview"><img src="https://img.shields.io/badge/Zread-AI解读-blue?style=flat" alt="zread.ai/tukuaiai/vibe-coding-cn"></a>
 </p>
 
@@ -52,10 +52,10 @@
 
 ## 功法体系
 
-思想、准则、思维模型、方法与工程流程统一从[功法体系](docs/gongfa/README.md)按当前问题选用。
+思想、准则、思维模型、方法与工程流程统一从[功法体系](.github/docs/gongfa/README.md)按当前问题选用。
 原来的经验、道法术器、实验性方法和哲学都在体系内维护，不再作为首页独立栏目或分库入口。
 
-逐条身份、内容版本、冻结来源与已有意见查看[功法登记](metadata/gongfa/README.md)及上方总表。
+逐条身份、内容版本、冻结来源与已有意见查看[功法登记](.github/metadata/gongfa/README.md)及上方总表。
 文集归并不等于全部内容已经逐条登记；已有初评也不等于正式效果验证。
 
 </details>
@@ -68,10 +68,10 @@
 
 法器总表整理 Vibe Coding 流程中使用或依赖的工具、可调用入口和依赖类别；固定来源实现、当前运行实例、候选对象与抽象类别分别记录。
 
-- [法器体系说明](docs/gongfa/faqi-system.md)：分类边界、重要性分级和选用方式。
-- [法器重要性总表](tools/faqi-catalog.md)：30 项的品级、名称、说明与记录状态。
-- [法器登记源](metadata/faqi.json)：唯一可编辑数据源；生成总表不可手改。
-- [法器类型与正式效能规约](docs/gongfa/cultivation-ontology-taxonomy.md#法器品级规约)：正式任务效果量表仍为草案。
+- [法器体系说明](.github/docs/gongfa/faqi-system.md)：分类边界、重要性分级和选用方式。
+- [法器重要性总表](.github/tools/faqi-catalog.md)：30 项的品级、名称、说明与记录状态。
+- [法器登记源](.github/metadata/faqi.json)：唯一可编辑数据源；生成总表不可手改。
+- [法器类型与正式效能规约](.github/docs/gongfa/cultivation-ontology-taxonomy.md#法器品级规约)：正式任务效果量表仍为草案。
 
 当前 30 项按 Vibe Coding 重要性暂分天阶 4 项、地阶 12 项、玄阶 9 项、黄阶 5 项。重要性不代表实现质量、运行可用性或效能验证；正式效能评级尚未完成。
 
@@ -90,23 +90,23 @@
 ## 📌 字多不看
 
 - `vibe-coding-cn` 是中文 Vibe Coding 从入门到精通教程，目标是把想法稳定变成可运行产品。
-- 新手先走 [从零开始完整入门](docs/getting-started/learning-map.md)：网络环境、CLI 配置、开发环境、第一个项目和 Git 闭环。
-- 方法正文统一在 [功法体系](docs/gongfa/README.md)：按问题选择思想、准则、模型与工程方法，不按旧栏目分库。
+- 新手先走 [从零开始完整入门](.github/docs/getting-started/learning-map.md)：网络环境、CLI 配置、开发环境、第一个项目和 Git 闭环。
+- 方法正文统一在 [功法体系](.github/docs/gongfa/README.md)：按问题选择思想、准则、模型与工程方法，不按旧栏目分库。
 - 工程主线是 Prompt、Skill、Context、Quality Gate 和 Git，用测试、CI、脚本、类型、schema、清单约束 AI 输出。
-- 需要直接使用资源时，进入 [提示词](prompts/README.md#在线提示词库)、[Skills](skills/README.md#当前保留) 和 [外部资源](assets/README.md#外部资源本地注册表)。
+- 需要直接使用资源时，进入 [提示词](.github/prompts/README.md#在线提示词库)、[Skills](.github/skills/README.md#当前保留) 和 [外部资源](.github/assets/README.md#外部资源本地注册表)。
 
 ### 入口关系
 
 | 入口 | 你该怎么理解 |
 |:---|:---|
-| [docs](docs/README.md) | 知识库总入口，先从这里选择学习路线 |
-| [getting-started](docs/getting-started/README.md) | 新手启动入口，配置网络、Codex CLI、开发环境，完成第一个项目和 Git 闭环 |
-| [gongfa](docs/gongfa/README.md) | 思想、准则、模型、方法与工程流程的唯一正文入口 |
-| [research](research/README.md) | 研究入口，记录新技术、优秀 repo 和工程趋势判断 |
-| [prompts](prompts/README.md) | 提示词入口，复用和管理提示词资产 |
-| [skills](skills/README.md) | 技能入口，复用可执行的 AI 能力模块 |
-| [tools](tools/README.md) | 工具入口，使用 Codex 配置、转换工具和外部工具 |
-| [assets](assets/README.md) | 资源入口，查看外部资源、AI 引用语料和静态资产 |
+| [docs](.github/docs/README.md) | 知识库总入口，先从这里选择学习路线 |
+| [getting-started](.github/docs/getting-started/README.md) | 新手启动入口，配置网络、Codex CLI、开发环境，完成第一个项目和 Git 闭环 |
+| [gongfa](.github/docs/gongfa/README.md) | 思想、准则、模型、方法与工程流程的唯一正文入口 |
+| [research](.github/research/README.md) | 研究入口，记录新技术、优秀 repo 和工程趋势判断 |
+| [prompts](.github/prompts/README.md) | 提示词入口，复用和管理提示词资产 |
+| [skills](.github/skills/README.md) | 技能入口，复用可执行的 AI 能力模块 |
+| [tools](.github/tools/README.md) | 工具入口，使用 Codex 配置、转换工具和外部工具 |
+| [assets](.github/assets/README.md) | 资源入口，查看外部资源、AI 引用语料和静态资产 |
 | [Wiki](https://github.com/tukuaiai/vibe-coding-cn/wiki) | 导航入口，用摘要页串联主仓 docs、tools、prompts、skills 和 GEO 资产 |
 
 </details>
@@ -150,7 +150,7 @@
 1. **知识库先行**：先沉淀真实、可验证、可维护的项目定义、方法论、模板、案例和 FAQ
 2. **答案块优先**：关键页面必须有一句话定义、核心摘要、适合人群、操作步骤、检查清单
 3. **结构化表达**：优先使用标题层级、列表、表格、FAQ、对比区和固定引用锚点
-4. **机器可读入口**：维护 `llms.txt` 和 `assets/ai-citation/`
+4. **机器可读入口**：维护 `llms.txt` 和 `.github/assets/ai-citation/`
 5. **审核后发布**：AI 生成的 GEO 内容必须经过事实、链接、术语、定位和门禁检查
 
 本仓库的差异化优势：
@@ -223,13 +223,13 @@
 
 完全新手？按顺序完成以下步骤：
 
-0. [从零开始完整入门](docs/getting-started/learning-map.md) - 按目标选择新手、开发者、团队、Prompt、Skill 或质量门禁路线
-1. [Vibe Coding 经验](docs/gongfa/vibe-coding-experience.md) - 通用语言能力、人机分工、机器门禁和入门铁律
-2. [第一个项目](docs/getting-started/first-project.md) - 用本地待办清单走通需求、实现、验收和 Git 保存
-3. [问题求解](docs/gongfa/problem-solving.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
-4. [Vibe Coding 状态转移闭环](docs/gongfa/vibe-coding-state-transition.md) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding
-5. [拼好码](docs/gongfa/glue-coding.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
-6. [工程实践](docs/gongfa/quality-gates-and-pitfalls.md) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
+0. [从零开始完整入门](.github/docs/getting-started/learning-map.md) - 按目标选择新手、开发者、团队、Prompt、Skill 或质量门禁路线
+1. [Vibe Coding 经验](.github/docs/gongfa/vibe-coding-experience.md) - 通用语言能力、人机分工、机器门禁和入门铁律
+2. [第一个项目](.github/docs/getting-started/first-project.md) - 用本地待办清单走通需求、实现、验收和 Git 保存
+3. [问题求解](.github/docs/gongfa/problem-solving.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
+4. [Vibe Coding 状态转移闭环](.github/docs/gongfa/vibe-coding-state-transition.md) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding
+5. [拼好码](.github/docs/gongfa/glue-coding.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
+6. [工程实践](.github/docs/gongfa/quality-gates-and-pitfalls.md) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
 
 </details>
 
@@ -238,7 +238,7 @@
 
 ## 🛠️ 仓库维护与验证
 
-本仓库是文档与资源型项目，不提供可验证的 dev server、Docker/K8s 部署入口或固定服务端口。当前可验证的自动化入口来自 `Makefile`、`.github/workflows/ci.yml`、`scripts/check-local-links.py` 与 `tools/prompts-library/`。
+本仓库是文档与资源型项目，不提供可验证的 dev server、Docker/K8s 部署入口或固定服务端口。当前可验证的自动化入口来自 `Makefile`、`.github/workflows/ci.yml`、`.github/scripts/check-local-links.py` 与 `.github/tools/prompts-library/`。
 
 ### 环境要求
 
@@ -250,13 +250,13 @@
 
 ```bash
 git submodule update --init --recursive
-pip install -r tools/prompts-library/requirements.txt
+pip install -r .github/tools/prompts-library/requirements.txt
 ```
 
 如需运行 prompts-library 的 Google API / JSONL 辅助脚本，再安装脚本依赖：
 
 ```bash
-pip install -r tools/prompts-library/scripts/requirements.txt
+pip install -r .github/tools/prompts-library/scripts/requirements.txt
 ```
 
 ### 常用命令
@@ -265,31 +265,31 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 |:---|:---|:---|
 | 查看 Make 任务 | `make help` | `Makefile` |
 | 全仓 Markdown lint | `make lint` | `Makefile` + `.github/lint_config.json` |
-| 本地相对链接检查 | `make check-links` | `scripts/check-local-links.py` |
-| 折叠块结构检查 | `make check-details` | `scripts/check-markdown-details.py` |
+| 本地相对链接检查 | `make check-links` | `.github/scripts/check-local-links.py` |
+| 折叠块结构检查 | `make check-details` | `.github/scripts/check-markdown-details.py` |
 | docs 线性目录结构检查 | `make check-doc-structure` | 校验标准块顺序、主章节顺序、锚点和目录入口 |
-| 目录 README/AGENTS 覆盖检查 | `make check-directory-docs` | `scripts/check-directory-docs.py` |
-| Metadata 路径检查 | `make check-metadata` | `scripts/check-metadata.py` |
-| 功法JSON/来源/初评检查 | `make check-gongfa` | `scripts/check-gongfa.py`；Python3.10+及独立依赖 |
-| 功法CLI集成测试 | `make test-gongfa` | `scripts/test-gongfa.py`；保留JSON/JUnit测试工件 |
+| 目录 README/AGENTS 覆盖检查 | `make check-directory-docs` | `.github/scripts/check-directory-docs.py` |
+| Metadata 路径检查 | `make check-metadata` | `.github/scripts/check-metadata.py` |
+| 功法JSON/来源/初评检查 | `make check-gongfa` | `.github/scripts/check-gongfa.py`；Python3.10+及独立依赖 |
+| 功法CLI集成测试 | `make test-gongfa` | `.github/scripts/test-gongfa.py`；保留JSON/JUnit测试工件 |
 | 更新项目内功法总表 | `make sync-gongfa-catalog` | 同一总表的Markdown/Excel生成，不改原文或评级 |
 | 功法总表一致性检查 | `make check-gongfa-catalog` | 只读校验来源SHA、覆盖和生成视图 |
 | 功法总表行为测试 | `make test-gongfa-catalog` | 隔离输入、命令/日志与结果工件 |
-| AI 引用一致性检查 | `make check-ai-citation` | `scripts/check-ai-citation.py` |
-| 外部源事实镜像检查 | `make check-source-facts` | `scripts/check-source-facts.py` |
-| Wiki 本地检查 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | `scripts/check-wiki.py` |
-| 重建 docs 细粒度目录 | `make sync-doc-toc` | `scripts/sync-doc-toc.py` |
+| AI 引用一致性检查 | `make check-ai-citation` | `.github/scripts/check-ai-citation.py` |
+| 外部源事实镜像检查 | `make check-source-facts` | `.github/scripts/check-source-facts.py` |
+| Wiki 本地检查 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | `.github/scripts/check-wiki.py` |
+| 重建 docs 细粒度目录 | `make sync-doc-toc` | `.github/scripts/sync-doc-toc.py` |
 | 全部本地质量门禁 | `make test` | `Makefile` |
-| 提示词格式转换 | `cd tools/prompts-library && python3 main.py` | `tools/prompts-library/main.py` |
-| Skill 严格校验示例 | `skills/auto-skill/scripts/validate-skill.sh skills/auto-skill --strict` | `skills/auto-skill/scripts/validate-skill.sh` |
+| 提示词格式转换 | `cd .github/tools/prompts-library && python3 main.py` | `.github/tools/prompts-library/main.py` |
+| Skill 严格校验示例 | `.github/skills/auto-skill/scripts/validate-skill.sh .github/skills/auto-skill --strict` | `.github/skills/auto-skill/scripts/validate-skill.sh` |
 
-功法检查在现有Python虚拟环境中安装独立依赖：`python3 -m pip install -r scripts/requirements-gongfa.txt`。
-用`make sync-gongfa-catalog`更新[全部功法总表](metadata/gongfa/catalog.md)，再用`make check-gongfa-catalog`检查。
+功法检查在现有Python虚拟环境中安装独立依赖：`python3 -m pip install -r .github/scripts/requirements-gongfa.txt`。
+用`make sync-gongfa-catalog`更新[全部功法总表](.github/metadata/gongfa/catalog.md)，再用`make check-gongfa-catalog`检查。
 历史登记批次回查仍用`check-gongfa.py --render-catalog --proposal-batch <批次ID>`；这不是全部总表，不以最新时间裁决。
 登记/总表检查和相关测试纳入本地`make test`；GitHub Actions选定目标未改，不宣称新增远端覆盖。
 
-仓库级文档门禁跳过三个外部源事实镜像：`research/vibe-cybersecurity-cn/`、
-`research/vibe-harness-cn/` 和 `research/vibe-mathing-cn-public/`；边界由 `make check-source-facts` 验证。
+仓库级文档门禁跳过三个外部源事实镜像：`.github/research/vibe-cybersecurity-cn/`、
+`.github/research/vibe-harness-cn/` 和 `.github/research/vibe-mathing-cn-public/`；边界由 `make check-source-facts` 验证。
 
 ### 配置与 CI
 
@@ -298,7 +298,7 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 - Markdown lint 版本：`Makefile` 中固定为 `markdownlint-cli@0.48.0`
 - 外部链接检查配置：`.lychee.toml`，统一管理外链检查的超时、重试、并发上限和排除项
 - CI 配置：`.github/workflows/ci.yml`，在 `develop` 分支的 push / pull_request 上运行 markdown-lint、本地链接检查、docs 结构检查与 link-checker
-- Codex 配置基线：`tools/config/.codex/README.md`，支持一键安装、自动备份和恢复。
+- Codex 配置基线：`.github/tools/config/.codex/README.md`，支持一键安装、自动备份和恢复。
 - Submodule 来源：`.gitmodules`
 
 ### 部署
@@ -318,42 +318,32 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 .
 ├── README.md                    # 项目主文档
 ├── AGENTS.md                    # AI Agent 行为准则
+├── llms.txt                     # 面向 AI 助手的短上下文入口
 ├── Makefile                     # 自动化脚本
 ├── LICENSE                      # MIT 许可证
 ├── CODE_OF_CONDUCT.md           # 行为准则
 ├── CONTRIBUTING.md              # 贡献指南
 ├── .gitattributes               # GitHub Linguist 语言统计规则
 ├── .gitignore                   # Git 忽略规则
-│
-├── docs/                        # 核心知识库
-│   ├── getting-started/         # 从零开始、学习地图、环境与 AI CLI 配置
-│   └── gongfa/                  # 方法、流程、身份语义与法器分类说明的正文
-├── research/                    # 根级研究域：新技术、优秀 repo 与工程范式研究
-├── prompts/                     # 提示词库入口（指向云端表格）
-├── skills/                      # 技能库入口
-│   ├── auto-skill/              # 元技能核心
-│   ├── auto-tmux/               # tmux 自动化脚本、pane 巡检、救援与多终端协作
-│   └── claude-official-skills/  # Claude 官方 skills 软链接入口
-├── tools/                       # 辅助工具、外部仓库与工具配置
-│   └── faqi-catalog.md           # 法器总分类、重要性分级与依赖图对象的只读视图
-├── scripts/                     # 自动化脚本
-├── metadata/                    # 机器可读索引与限定子域数据
-│   ├── faqi.json                # 法器总分类登记、依赖图对象与重要性分级
-│   ├── faqi.schema.json         # 总登记字段契约，复用唯一BFO树
-│   └── gongfa/                   # 功法登记、来源快照与单一总表（Markdown/Excel）
-├── assets/                      # 静态资产、外部资源注册表与 AI 引用资产
-│
-├── .github/                     # GitHub 配置
-│   ├── CODEOWNERS               # 路径级 owner 评审基线
-│   ├── workflows/               # CI/CD 工作流
-│   │   ├── ci.yml               # Markdown lint + link checker
-│   │   ├── labeler.yml          # 自动标签
-│   │   └── welcome.yml          # 欢迎新贡献者
-│   ├── ISSUE_TEMPLATE/          # Issue 模板
-│   ├── PULL_REQUEST_TEMPLATE.md # PR 模板
-│   ├── SECURITY.md              # 安全政策
-│   ├── FUNDING.yml              # 赞助配置
-│   └── WIKI.md                  # GitHub Wiki 独立仓库说明
+├── .lychee.toml                 # 外部链接检查配置
+└── .github/                     # GitHub 配置与仓库内容
+    ├── AGENTS.md                # 本目录规则和平台边界
+    ├── assets/                  # 静态资产、外部资源与 AI 引用语料
+    ├── docs/                    # 入门教程与功法正文
+    ├── metadata/                # 机器可读登记与生成目录
+    ├── prompts/                 # 提示词库入口
+    ├── research/                # 研究对象、来源事实和冻结材料
+    ├── scripts/                 # 检查、生成和维护脚本
+    ├── skills/                  # 可复用技能库
+    ├── tools/                   # 工具、配置与外部依赖
+    ├── CODEOWNERS               # 路径级 owner 评审基线
+    ├── ISSUE_TEMPLATE/          # Issue 模板
+    ├── PULL_REQUEST_TEMPLATE.md # PR 模板
+    ├── SECURITY.md              # 安全政策
+    ├── FUNDING.yml              # 赞助配置
+    ├── WIKI.md                  # GitHub Wiki 独立仓库说明
+    ├── labeler.yml              # PR 标签规则
+    └── workflows/               # GitHub Actions 工作流
 ```
 
 </details>
@@ -376,19 +366,19 @@ pip install -r tools/prompts-library/scripts/requirements.txt
 
 核心资产映射：
 ```
-prompts/
+.github/prompts/
   README.md  # 云端表格入口（元/系统/编程/用户提示词）
-skills/
+.github/skills/
   README.md  # skills 总览与索引
-docs/
+.github/docs/
   getting-started/*  # 配置与实例练习
   gongfa/*           # 统一方法正文与配套文集
-research/
+.github/research/
   README.md  # 研究总索引、治理契约、迁移综合与研究对象入口
-assets/
+.github/assets/
   README.md  # 静态资产与外部资源入口
   external-resources/  # 本地外部资源注册表
-scripts/
+.github/scripts/
   README.md  # 自动化入口、验证命令与脚本职责索引
   check-local-links.py  # Markdown 相对链接检查脚本
 ```
@@ -410,8 +400,8 @@ graph TB
   subgraph ingest_layer[数据接入与采集层]
     excel_raw[prompt_excel/*.xlsx]
     md_raw[prompt_docs/外部MD输入]
-    excel_to_docs[tools/prompts-library/scripts/excel_to_docs.py]
-    docs_to_excel[tools/prompts-library/scripts/docs_to_excel.py]
+    excel_to_docs[.github/tools/prompts-library/scripts/excel_to_docs.py]
+    docs_to_excel[.github/tools/prompts-library/scripts/docs_to_excel.py]
     ingest_bus[标准化数据帧]
     ext_sheet --> excel_raw
     ext_md --> md_raw
@@ -426,7 +416,7 @@ graph TB
     validate --> transform[格式映射转换]
     transform --> artifacts_md[prompt_docs/规范MD]
     transform --> artifacts_xlsx[prompt_excel/导出XLSX]
-    orchestrator[main.py · scripts/start_convert.py] --> validate
+    orchestrator[main.py · .github/tools/prompts-library/scripts/start_convert.py] --> validate
     orchestrator --> transform
   end
 
@@ -435,7 +425,7 @@ graph TB
     artifacts_md --> catalog_system[prompts(在线)/系统提示词]
     artifacts_md --> catalog_meta[prompts(在线)/元提示词]
     artifacts_md --> catalog_user[prompts(在线)/用户提示词]
-    artifacts_md --> docs_repo[docs/*]
+    artifacts_md --> docs_repo[.github/docs/*]
     artifacts_md --> new_consumer[预留：其他下游渠道]
     catalog_coding --> ai_flow[AI 结对编程流程]
     ai_flow --> deliverables[项目上下文 / 计划 / 代码产出]
@@ -449,8 +439,8 @@ graph TB
 
   subgraph infra_layer[基础设施与横切能力层]
     git[Git 版本控制] --> orchestrator
-    deps[tools/prompts-library/requirements.txt · tools/prompts-library/scripts/requirements.txt] --> orchestrator
-    config[tools/prompts-library/scripts/config.yaml] --> orchestrator
+    deps[.github/tools/prompts-library/requirements.txt · .github/tools/prompts-library/scripts/requirements.txt] --> orchestrator
+    config[.github/tools/prompts-library/scripts/config.yaml] --> orchestrator
     monitor[预留：日志与监控] --> orchestrator
   end
 ```

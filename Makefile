@@ -41,82 +41,82 @@ help:
 
 lint:
 	@echo "Linting markdown files..."
-	@$(MARKDOWNLINT) --config .github/lint_config.json --ignore .history --ignore tools/external --ignore 'research/**/raw/repository/**' --ignore 'research/facts/**' --ignore 'research/vibe-cybersecurity-cn/**' --ignore 'research/vibe-harness-cn/**' --ignore 'research/vibe-mathing-cn-public/**' '**/*.md'
+	@$(MARKDOWNLINT) --config .github/lint_config.json --ignore .history --ignore .github/tools/external --ignore '.github/research/**/raw/repository/**' --ignore '.github/research/facts/**' --ignore '.github/research/vibe-cybersecurity-cn/**' --ignore '.github/research/vibe-harness-cn/**' --ignore '.github/research/vibe-mathing-cn-public/**' '**/*.md' '.github/assets/**/*.md' '.github/docs/**/*.md' '.github/metadata/**/*.md' '.github/prompts/**/*.md' '.github/research/**/*.md' '.github/scripts/**/*.md' '.github/skills/**/*.md' '.github/tools/**/*.md'
 
 check-links:
 	@echo "Checking local markdown links and anchors..."
-	@python3 scripts/check-local-links.py
+	@python3 .github/scripts/check-local-links.py
 
 check-details:
 	@echo "Checking markdown details/summary blocks..."
-	@python3 scripts/check-markdown-details.py
+	@python3 .github/scripts/check-markdown-details.py
 
 check-doc-structure:
 	@echo "Checking docs README structure..."
-	@python3 scripts/check-doc-structure.py
+	@python3 .github/scripts/check-doc-structure.py
 
 check-directory-docs:
 	@echo "Checking required directory README/AGENTS pairs..."
-	@python3 scripts/check-directory-docs.py
+	@python3 .github/scripts/check-directory-docs.py
 
 check-metadata:
 	@echo "Checking metadata paths and anchors..."
-	@python3 scripts/check-metadata.py
+	@python3 .github/scripts/check-metadata.py
 
 check-gongfa:
 	@echo "校验功法JSON、冻结来源与评级引用..."
-	@python3 scripts/check-gongfa.py
+	@python3 .github/scripts/check-gongfa.py
 
 test-gongfa:
 	@echo "执行功法JSON CLI集成测试..."
-	@python3 scripts/test-gongfa.py
+	@python3 .github/scripts/test-gongfa.py
 
 sync-gongfa-catalog:
-	@python3 scripts/sync-gongfa-catalog.py --write
+	@python3 .github/scripts/sync-gongfa-catalog.py --write
 
 check-gongfa-catalog:
-	@python3 scripts/sync-gongfa-catalog.py --check
+	@python3 .github/scripts/sync-gongfa-catalog.py --check
 
 test-gongfa-catalog:
-	@python3 scripts/test-gongfa-catalog.py
+	@python3 .github/scripts/test-gongfa-catalog.py
 
 sync-faqi-catalog:
-	@python3 scripts/sync-faqi-catalog.py --write
+	@python3 .github/scripts/sync-faqi-catalog.py --write
 
 check-faqi-catalog:
-	@python3 scripts/sync-faqi-catalog.py --check
+	@python3 .github/scripts/sync-faqi-catalog.py --check
 
 test-faqi-catalog:
-	@python3 scripts/test-faqi-catalog.py
+	@python3 .github/scripts/test-faqi-catalog.py
 
 check-ai-citation:
 	@echo "Checking AI citation paths, anchors, and repository identity..."
-	@python3 scripts/check-ai-citation.py
+	@python3 .github/scripts/check-ai-citation.py
 
 check-external-resources:
 	@echo "Checking local external resources registry..."
-	@python3 scripts/check-external-resources.py
+	@python3 .github/scripts/check-external-resources.py
 
 check-research-raw:
 	@echo "Checking research raw fact snapshots and repository clones..."
-	@python3 scripts/check-research-raw.py
+	@python3 .github/scripts/check-research-raw.py
 
 check-source-facts:
 	@echo "Checking external source-fact mirrors and provenance..."
-	@python3 scripts/check-source-facts.py
+	@python3 .github/scripts/check-source-facts.py
 
 check-wiki:
 	@echo "Checking local GitHub Wiki checkout..."
-	@python3 scripts/check-wiki.py --wiki-dir "$${WIKI_DIR:-/tmp/vibe-coding-cn.wiki}"
+	@python3 .github/scripts/check-wiki.py --wiki-dir "$${WIKI_DIR:-/tmp/vibe-coding-cn.wiki}"
 	@$(MARKDOWNLINT) --config .github/lint_config.json "$${WIKI_DIR:-/tmp/vibe-coding-cn.wiki}"/*.md
 
 fetch-research-raw:
 	@echo "Fetching raw GitHub facts and repository clones for research domains..."
-	@python3 scripts/fetch-research-raw.py
+	@python3 .github/scripts/fetch-research-raw.py
 
 sync-doc-toc:
 	@echo "Regenerating docs fine-grained TOC blocks..."
-	@python3 scripts/sync-doc-toc.py
+	@python3 .github/scripts/sync-doc-toc.py
 
 build:
 	@echo "No build step: this repository is a documentation and knowledge-base project."
@@ -127,7 +127,7 @@ test: lint check-links check-details check-doc-structure check-directory-docs ch
 clean: clean-deps
 	@echo "Cleaning ignored generated caches..."
 	@find . -type d -name '__pycache__' -prune -exec rm -rf {} +
-	@rm -rf tools/prompts-library/prompt_jsonl
+	@rm -rf .github/tools/prompts-library/prompt_jsonl
 	@echo "Cleanup complete."
 
 clean-deps:

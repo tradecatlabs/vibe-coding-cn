@@ -12,9 +12,9 @@ eggs/
 .eggs/
 lib/
 lib64/
-!scripts/lib/
-!scripts/lib/**
-scripts/lib/__pycache__/
+!.github/scripts/lib/
+!.github/scripts/lib/**
+.github/scripts/lib/__pycache__/
 parts/
 sdist/
 var/
@@ -54,20 +54,20 @@ ENV/
 logs/
 
 # Local task workspaces
-assets/tasks/
+.github/assets/tasks/
 
 # Research raw repository snapshots are local evidence caches.
-research/**/raw/repository/
+.github/research/**/raw/repository/
 
 # Skill Seekers (linked tool output)
 output/
-skills/auto-skill/scripts/.venv-skill-seekers/
+.github/skills/auto-skill/scripts/.venv-skill-seekers/
 
 # prompts-library generated exports
-tools/prompts-library/prompt_jsonl/
-tools/external/my-nvim/nvim-config/nvim
-tools/chat-vault/libs/external/btop-main/
-tools/chat-vault/monitoring/grafana/monitor-tui/
+.github/tools/prompts-library/prompt_jsonl/
+.github/tools/external/my-nvim/nvim-config/nvim
+.github/tools/chat-vault/libs/external/btop-main/
+.github/tools/chat-vault/monitoring/grafana/monitor-tui/
 
 libs/external/tmux
 libs/external/.tmux
@@ -99,4 +99,4 @@ backups/gz/
 .github/wiki/
 
 # Local-only enterprise architecture evidence kit
-assets/templates/modern-enterprise-architecture-private/
+.github/assets/templates/modern-enterprise-architecture-private/

@@ -1,0 +1,40 @@
+version: 1
+domain_id: openai-agents-python
+object:
+  type: github_repository
+  name: openai/openai-agents-python
+  url: https://github.com/openai/openai-agents-python
+pulled_at: '2026-09-08T10:46:58+00:00'
+puller: .github/scripts/fetch-research-raw.py
+files:
+  - path: repository/
+    kind: git-working-tree
+    status: ok
+    source: 'git -C research/openai-agents-python/raw/repository pull --ff-only'
+    message: 'Already up to date.'
+  - path: github-repo.raw.json
+    kind: repository-metadata
+    status: missing_or_error
+    source: 'gh repo view openai/openai-agents-python --json nameWithOwner,url,description,homepageUrl,isArchived,isFork,isMirror,defaultBranchRef,licenseInfo,primaryLanguage,repositoryTopics,stargazerCount,forkCount,watchers,createdAt,updatedAt,pushedAt,latestRelease --jq .'
+    message: 'Post "https://api.github.com/graphql": EOF'
+  - path: github-readme.raw.md.txt
+    kind: readme
+    status: missing_or_error
+    source: 'gh api repos/openai/openai-agents-python/readme -H Accept: application/vnd.github.raw'
+    message: 'Get "https://api.github.com/repos/openai/openai-agents-python/readme": EOF'
+  - path: github-license.raw.txt
+    kind: license
+    status: ok
+    source: 'gh api repos/openai/openai-agents-python/license -H Accept: application/vnd.github.raw'
+  - path: github-root-contents.raw.json
+    kind: root-contents
+    status: ok
+    source: 'gh api repos/openai/openai-agents-python/contents'
+  - path: github-languages.raw.json
+    kind: languages
+    status: ok
+    source: 'gh api repos/openai/openai-agents-python/languages'
+  - path: github-latest-release.raw.json
+    kind: latest-release
+    status: ok
+    source: 'gh api repos/openai/openai-agents-python/releases/latest'

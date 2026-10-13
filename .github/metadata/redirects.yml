@@ -1,0 +1,216 @@
+redirects:
+  # 历史目录迁移；这里只记录路径映射，不提供旧正文副本。
+  - from: docs/guides/getting-started/
+    to: .github/docs/getting-started/
+  - from: docs/principles/fundamentals/
+    to: .github/docs/README.md
+  - from: docs/principles/philosophy/
+    to: .github/docs/gongfa/
+  - from: docs/concepts/philosophy/
+    to: .github/docs/gongfa/
+  - from: docs/research/
+    to: .github/research/
+  - from: Workflow/
+    to: .github/docs/gongfa/
+
+  # 历史中文、合并和拆分文件名，直接指向现有正文。
+  - from: docs/concepts/思维模型.md
+    to: .github/docs/gongfa/thinking-models.md
+  - from: docs/concepts/编程之道.md
+    to: .github/docs/gongfa/programming-dao.md
+  - from: docs/concepts/A Formalization of Recursive Self-Optimizing Generative Systems.md
+    to: .github/docs/gongfa/recursive-self-optimizing-system.md
+  - from: docs/concepts/软件开发范式演进.md
+    to: .github/docs/gongfa/development-paradigms.md
+  - from: docs/concepts/递归自优化生成系统形式化.md
+    to: .github/docs/gongfa/recursive-self-optimizing-system.md
+  - from: docs/concepts/问题分析与系统构建方法.md
+    to: .github/docs/gongfa/system-building.md
+  - from: docs/concepts/问题求解能力.md
+    to: .github/docs/gongfa/problem-solving.md
+  - from: docs/concepts/Harness Engineering 的本质拆解.md
+    to: .github/docs/gongfa/harness-engineering.md
+  - from: docs/research/Harness Engineering 的本质拆解.md
+    to: .github/docs/gongfa/harness-engineering.md
+  - from: docs/research/harness-engineering.md
+    to: .github/docs/gongfa/harness-engineering.md
+  - from: docs/philosophy/现象学还原.md
+    to: .github/docs/gongfa/methodology-toolbox.md
+  - from: docs/philosophy/辩证法.md
+    to: .github/docs/gongfa/methodology-toolbox.md
+  - from: docs/philosophy/控制论与科学方法论.md
+    to: .github/docs/gongfa/methodology-toolbox.md
+  - from: docs/philosophy/理解世界、描述变化、整理知识的一套较小框架.md
+    to: .github/docs/gongfa/compositional-description-model.md
+  - from: docs/guides/playbook/
+    to: .github/docs/README.md
+  - from: docs/playbooks/
+    to: .github/docs/README.md
+  - from: docs/playbooks/GEO与SEO优化方法.md
+    to: .github/docs/gongfa/geo-seo-checklist.md
+  - from: docs/playbooks/GEMINI-HEADLESS.md
+    to: .github/docs/README.md
+  - from: docs/playbooks/ProxyCast配置文档.md
+    to: .github/docs/README.md
+  - from: docs/playbooks/tradecat-sheets-api-usage.md
+    to: .github/docs/README.md
+  - from: docs/getting-started/Codex-CLI配置.md
+    to: .github/docs/getting-started/cli-setup.md
+  - from: docs/getting-started/学习地图.md
+    to: .github/docs/getting-started/learning-map.md
+  - from: docs/getting-started/Vibe Coding 经验.md
+    to: .github/docs/gongfa/vibe-coding-experience.md
+  - from: docs/getting-started/网络环境配置.md
+    to: .github/docs/getting-started/network-environment.md
+  - from: docs/getting-started/CLI配置.md
+    to: .github/docs/getting-started/cli-setup.md
+  - from: docs/getting-started/开发环境搭建.md
+    to: .github/docs/getting-started/development-environment.md
+  - from: docs/references/通用项目架构模板.md
+    to: .github/docs/gongfa/project-architecture-template.md
+  - from: docs/references/数据集导向数据服务模板.md
+    to: .github/docs/gongfa/dataset-first-data-service.md
+  - from: docs/references/系统提示词构建原则.md
+    to: .github/docs/gongfa/quality-gates-and-pitfalls.md
+  - from: docs/references/强前置条件约束.md
+    to: .github/docs/gongfa/quality-gates-and-pitfalls.md
+  - from: docs/references/常见坑汇总.md
+    to: .github/docs/gongfa/quality-gates-and-pitfalls.md
+  - from: docs/references/项目架构模板.md
+    to: .github/docs/gongfa/project-architecture-template.md
+  - from: docs/references/AI编程质量门禁与常见坑.md
+    to: .github/docs/gongfa/quality-gates-and-pitfalls.md
+  - from: docs/references/代码组织.md
+    to: .github/docs/gongfa/code-organization.md
+  - from: docs/references/开发经验.md
+    to: .github/docs/gongfa/development-experience.md
+  - from: docs/references/底层程序逻辑设计与工程优化项.md
+    to: .github/docs/gongfa/low-level-program-logic.md
+  - from: assets/documents/
+    to: .github/docs/
+  - from: assets/skills/
+    to: .github/skills/
+  - from: assets/prompt/
+    to: .github/prompts/
+  - from: assets/repos/
+    to: .github/tools/external/
+  - from: assets/config/
+    to: .github/tools/config/
+  - from: docs/concepts/问题求解.md
+    to: .github/docs/gongfa/problem-solving.md
+  - from: docs/concepts/拼好码.md
+    to: .github/docs/gongfa/glue-coding.md
+  - from: docs/concepts/系统构建方法.md
+    to: .github/docs/gongfa/system-building.md
+  - from: docs/concepts/开发范式演进.md
+    to: .github/docs/gongfa/development-paradigms.md
+  - from: docs/concepts/语言层要素.md
+    to: .github/docs/gongfa/language-layers.md
+  - from: docs/concepts/递归自优化系统.md
+    to: .github/docs/gongfa/recursive-self-optimizing-system.md
+  - from: docs/philosophy/思维模型.md
+    to: .github/docs/gongfa/thinking-models.md
+  - from: docs/philosophy/道法术器.md
+    to: .github/docs/gongfa/dao-fa-shu-qi.md
+  - from: docs/philosophy/组合描述模型.md
+    to: .github/docs/gongfa/compositional-description-model.md
+  - from: docs/philosophy/编程之道.md
+    to: .github/docs/gongfa/programming-dao.md
+  - from: docs/references/工程实践.md
+    to: .github/docs/gongfa/project-architecture-template.md
+  - from: docs/references/技术栈.md
+    to: .github/docs/gongfa/technology-stack.md
+  - from: docs/research/Harness工程解析.md
+    to: .github/docs/gongfa/harness-engineering.md
+
+  # 功法统一正文迁移：旧正文、导航文件与目录均已退役。
+  - from: docs/concepts/cultivation-ontology-taxonomy.md
+    to: .github/docs/gongfa/cultivation-ontology-taxonomy.md
+  - from: docs/concepts/development-paradigms.md
+    to: .github/docs/gongfa/development-paradigms.md
+  - from: docs/concepts/glue-coding.md
+    to: .github/docs/gongfa/glue-coding.md
+  - from: docs/concepts/keyword-system.md
+    to: .github/docs/gongfa/keyword-system.md
+  - from: docs/concepts/language-layers.md
+    to: .github/docs/gongfa/language-layers.md
+  - from: docs/concepts/problem-solving.md
+    to: .github/docs/gongfa/problem-solving.md
+  - from: docs/concepts/recursive-self-optimizing-system.md
+    to: .github/docs/gongfa/recursive-self-optimizing-system.md
+  - from: docs/concepts/system-building.md
+    to: .github/docs/gongfa/system-building.md
+  - from: docs/concepts/vibe-coding-cultivation-model.md
+    to: .github/docs/gongfa/vibe-coding-cultivation-model.md
+  - from: docs/concepts/vibe-coding-state-transition.md
+    to: .github/docs/gongfa/vibe-coding-state-transition.md
+  - from: docs/philosophy/compositional-description-model.md
+    to: .github/docs/gongfa/compositional-description-model.md
+  - from: docs/philosophy/methodology-toolbox.md
+    to: .github/docs/gongfa/methodology-toolbox.md
+  - from: docs/philosophy/programming-dao.md
+    to: .github/docs/gongfa/programming-dao.md
+  - from: docs/philosophy/software-engineering-truths.md
+    to: .github/docs/gongfa/software-engineering-truths.md
+  - from: docs/philosophy/thinking-models.md
+    to: .github/docs/gongfa/thinking-models.md
+  - from: docs/references/code-organization.md
+    to: .github/docs/gongfa/code-organization.md
+  - from: docs/references/common-sense.md
+    to: .github/docs/gongfa/common-sense.md
+  - from: docs/references/dataset-first-data-service.md
+    to: .github/docs/gongfa/dataset-first-data-service.md
+  - from: docs/references/development-experience.md
+    to: .github/docs/gongfa/development-experience.md
+  - from: docs/references/enterprise-architecture-template.md
+    to: .github/docs/gongfa/enterprise-architecture-template.md
+  - from: docs/references/low-level-program-logic.md
+    to: .github/docs/gongfa/low-level-program-logic.md
+  - from: docs/references/modern-enterprise-architecture-template.md
+    to: .github/docs/gongfa/modern-enterprise-architecture-template.md
+  - from: docs/references/project-architecture-template.md
+    to: .github/docs/gongfa/project-architecture-template.md
+  - from: docs/references/python-project-skeleton.md
+    to: .github/docs/gongfa/python-project-skeleton.md
+  - from: docs/references/quality-gates-and-pitfalls.md
+    to: .github/docs/gongfa/quality-gates-and-pitfalls.md
+  - from: docs/references/technology-stack.md
+    to: .github/docs/gongfa/technology-stack.md
+  - from: docs/workflow/development-process.md
+    to: .github/docs/gongfa/development-process.md
+  - from: docs/getting-started/vibe-coding-experience.md
+    to: .github/docs/gongfa/vibe-coding-experience.md
+  - from: research/research-transfer-synthesis.md
+    to: .github/docs/gongfa/research-transfer-synthesis.md
+  - from: research/research-value-application-map.md
+    to: .github/docs/gongfa/research-value-application-map.md
+  - from: research/harness/harness-engineering.md
+    to: .github/docs/gongfa/harness-engineering.md
+  - from: research/tmux-ai-swarm.md
+    to: .github/docs/gongfa/tmux-ai-swarm.md
+  - from: assets/ai-citation/geo-seo-checklist.md
+    to: .github/docs/gongfa/geo-seo-checklist.md
+  - from: docs/concepts/README.md
+    to: .github/docs/gongfa/README.md
+  - from: docs/concepts/AGENTS.md
+    to: .github/docs/gongfa/AGENTS.md
+  - from: docs/concepts/
+    to: .github/docs/gongfa/
+  - from: docs/philosophy/README.md
+    to: .github/docs/gongfa/README.md
+  - from: docs/philosophy/AGENTS.md
+    to: .github/docs/gongfa/AGENTS.md
+  - from: docs/philosophy/
+    to: .github/docs/gongfa/
+  - from: docs/references/README.md
+    to: .github/docs/gongfa/README.md
+  - from: docs/references/AGENTS.md
+    to: .github/docs/gongfa/AGENTS.md
+  - from: docs/references/
+    to: .github/docs/gongfa/
+  - from: docs/workflow/README.md
+    to: .github/docs/gongfa/README.md
+  - from: docs/workflow/AGENTS.md
+    to: .github/docs/gongfa/AGENTS.md
+  - from: docs/workflow/
+    to: .github/docs/gongfa/

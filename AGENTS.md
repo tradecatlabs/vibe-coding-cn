@@ -8,7 +8,7 @@
 
 ### 允许的操作
 - 读取、修改顶层文档：`README.md`、`AGENTS.md`、`CONTRIBUTING.md` 等
-- 读取、修改 `docs/`、`prompts/`、`skills/`、`tools/config/`、`tools/external/` 下的文档与代码
+- 读取、修改 `.github/docs/`、`.github/prompts/`、`.github/skills/`、`.github/tools/config/`、`.github/tools/external/` 下的文档与代码
 - 执行 `make lint`、`make check-links`、`make check-details`、`make check-doc-structure`、`make check-directory-docs`、`make check-metadata`、`make check-gongfa`、`make test-gongfa`、`make sync-gongfa-catalog`、`make check-gongfa-catalog`、`make test-gongfa-catalog`、`make sync-faqi-catalog`、`make check-faqi-catalog`、`make test-faqi-catalog`、`make check-ai-citation`、`make check-research-raw`、`make check-source-facts`、`make check-wiki`、`make fetch-research-raw`、`make sync-doc-toc`、prompts-library 转换工具
 - 新增/修改提示词、技能、文档
 - 提交符合规范的 commit
@@ -69,12 +69,12 @@ git push origin develop
 | `make check-doc-structure` | 校验 docs README 标准块顺序、目录入口和重复锚点 | Python 3 |
 | `make check-directory-docs` | 校验仓库自有目录 README/AGENTS 覆盖 | Python 3 |
 | `make check-metadata` | 校验 metadata 路径与锚点 | Python 3 |
-| `make check-gongfa` | 校验功法JSON、十二级、冻结来源、人工初评和正式评级引用 | Python3.10+、scripts/requirements-gongfa.txt |
+| `make check-gongfa` | 校验功法JSON、十二级、冻结来源、人工初评和正式评级引用 | Python3.10+、.github/scripts/requirements-gongfa.txt |
 | `make test-gongfa` | 功法协议隔离CLI集成测试与保留工件 | 同上；不进行实际评级 |
-| `make sync-gongfa-catalog` | 从当前登记与仓内候选历史快照重建同一总表 | Python3.10+、scripts/requirements-gongfa.txt |
+| `make sync-gongfa-catalog` | 从当前登记与仓内候选历史快照重建同一总表 | Python3.10+、.github/scripts/requirements-gongfa.txt |
 | `make check-gongfa-catalog` | 只读校验总表来源SHA、覆盖及Markdown/Excel一致性 | 同上；不写原文或评级 |
 | `make test-gongfa-catalog` | 验证总表维护行为并保存隔离工件 | 同上；不证明功法效果 |
-| `make sync-faqi-catalog` | 重建法器总分类、重要性分级、依赖图对象与外部资源分流视图 | Python3.10+、Git、scripts/requirements-faqi.txt、固定submodule |
+| `make sync-faqi-catalog` | 重建法器总分类、重要性分级、依赖图对象与外部资源分流视图 | Python3.10+、Git、.github/scripts/requirements-faqi.txt、固定submodule |
 | `make check-faqi-catalog` | 只读校验总登记、依赖图SHA/对象映射、来源Git/SHA与生成视图 | 同上；不执行工具或批准效果 |
 | `make test-faqi-catalog` | 验证总表维护消费与拒绝行为，保留隔离工件 | 同上；不证明身份语义、许可或能力 |
 | `make check-ai-citation` | 校验 llms 与 AI 引用语料路径、锚点和规范仓库身份 | Python 3 |
@@ -82,17 +82,17 @@ git push origin develop
 | `make check-research-raw` | 校验研究域 raw 原始事实层、Git 工作树、来源清单和核心材料文件 | Python 3、Git |
 | `make check-source-facts` | 校验外部源事实镜像、文件数、边界和隐私登记 | Python 3、PyYAML |
 | `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | 校验 GitHub Wiki 独立仓库本地 checkout 的页面覆盖、内链、旧口径和 Markdown | Python 3、Node.js 22+、本地 Wiki checkout |
-| `make fetch-research-raw` | 拉取 `research/*/domain.yml` 对应 GitHub 研究对象的 raw 原始事实层和 `repository/` 工作树 | Python 3、Git、GitHub CLI 已认证 |
+| `make fetch-research-raw` | 拉取 `.github/research/*/domain.yml` 对应 GitHub 研究对象的 raw 原始事实层和 `repository/` 工作树 | Python 3、Git、GitHub CLI 已认证 |
 | `make sync-doc-toc` | 兼容旧线性 README 目录生成；当前拆分结构下通常无变更 | Python 3 |
 | `make test` | 执行本地质量门禁 | Node.js 22+、Python 3 |
 | `git submodule update --init --recursive` | 初始化外部 Git 仓库指针 | Git |
-| `cd tools/prompts-library && python3 main.py` | 提示词格式转换 | `pip install -r tools/prompts-library/requirements.txt` |
+| `cd .github/tools/prompts-library && python3 main.py` | 提示词格式转换 | `pip install -r .github/tools/prompts-library/requirements.txt` |
 
 ### Python 依赖来源
-- 功法检查独立依赖：`scripts/requirements-gongfa.txt`；在现有虚拟环境安装。
-- 法器维护独立依赖：`scripts/requirements-faqi.txt`；Python3.10+，复用jsonschema、PyYAML、tabulate及测试用markdown-it-py；其他脚本最低版本不变。
-- prompts-library 主入口依赖：`tools/prompts-library/requirements.txt`
-- prompts-library Google API / JSONL 辅助脚本依赖：`tools/prompts-library/scripts/requirements.txt`
+- 功法检查独立依赖：`.github/scripts/requirements-gongfa.txt`；在现有虚拟环境安装。
+- 法器维护独立依赖：`.github/scripts/requirements-faqi.txt`；Python3.10+，复用jsonschema、PyYAML、tabulate及测试用markdown-it-py；其他脚本最低版本不变。
+- prompts-library 主入口依赖：`.github/tools/prompts-library/requirements.txt`
+- prompts-library Google API / JSONL 辅助脚本依赖：`.github/tools/prompts-library/scripts/requirements.txt`
 
 ### prompts-library 支持的转换模式
 1. Excel → Docs：将 Excel 工作簿转换为 Markdown 文档目录
@@ -107,19 +107,19 @@ git push origin develop
 
 ### 架构原则
 - 保持根目录扁平，避免巨石文件
-- 三层内容架构：`docs/` (知识) → `prompts/` (指令) → `skills/` (能力)
+- 三层内容架构：`.github/docs/` (知识) → `.github/prompts/` (指令) → `.github/skills/` (能力)
 
 ### 模块边界
-- `docs/` - 中文知识库（方法论/入门/实战/资源）
-- `prompts/` - 提示词入口与云端索引
-- `skills/` - 可复用技能库（每个子目录一个 Skill）
-- `assets/external-resources/` - 本地外部资源注册表
-- `tools/config/` - 工具与开发配置（例如 Codex CLI）
-- `tools/external/` - 外部工具与依赖（含 Git submodule）
+- `.github/docs/` - 中文知识库（方法论/入门/实战/资源）
+- `.github/prompts/` - 提示词入口与云端索引
+- `.github/skills/` - 可复用技能库（每个子目录一个 Skill）
+- `.github/assets/external-resources/` - 本地外部资源注册表
+- `.github/tools/config/` - 工具与开发配置（例如 Codex CLI）
+- `.github/tools/external/` - 外部工具与依赖（含 Git submodule）
 
 ### 依赖添加规则
 - 新增工具或库时记录安装方式、最小版本与来源
-- 外部依赖来源记录在 `tools/external/` 目录下
+- 外部依赖来源记录在 `.github/tools/external/` 目录下
 - 引入第三方脚本需标明许可证与来源
 
 ### 禁止行为
@@ -165,137 +165,80 @@ git push origin develop
 ├── .gitignore                   # Git 忽略规则
 ├── .lychee.toml                 # GitHub Actions 外部链接检查配置
 │
-├── docs/                        # 核心知识库
-│   ├── README.md                # docs 总索引
-│   ├── getting-started/         # 从零开始、学习地图、环境、AI CLI 与第一个项目闭环
-│   └── gongfa/                  # 思想、准则、模型、方法及身份/法器配套说明的正文源
-│
-├── research/                    # 研究对象与外部源事实镜像
-│   ├── README.md                # research 总索引
-│   ├── AGENTS.md                # research 目录规则
-│   ├── facts/                   # 外部源事实登记与边界
-│   ├── vibe-cybersecurity-cn/   # 外部源事实镜像
-│   ├── vibe-harness-cn/         # 外部源事实镜像
-│   ├── vibe-mathing-cn-public/  # 外部源事实镜像
-│   └── harness/                 # Harness Engineering 研究对象
-│
-├── prompts/                     # 提示词库入口（指向云端表格）
-│   ├── README.md                # 在线表格链接
-│   └── AGENTS.md                # prompts/ 目录规则
-│
-├── skills/                      # 技能库（每个子目录一个 Skill）
-│   ├── README.md                # skills 总览与索引
-│   ├── AGENTS.md                # skills/ 目录规则
-│   ├── auto-skill/              # 元技能核心
-│   ├── auto-tmux/               # tmux 自动化脚本、pane 巡检、救援与多终端协作
-│   └── claude-official-skills/  # Claude 官方 skills 软链接入口
-│
-├── assets/                      # 静态资产与外部资源入口
-│   ├── README.md                # 静态资产与外部资源入口
-│   ├── AGENTS.md                # assets/ 目录规则
-│   ├── external-resources/      # 本地外部资源注册表
-│   ├── ai-citation/             # AI 引用语料包与 llms-full
-│   ├── images/                  # 图片资产
-│   ├── templates/               # 模板附件
-│   └── datasets/                # 示例数据或数据说明
-│
-├── scripts/                     # 自动化脚本
-│   ├── README.md                # scripts 目录说明
-│   ├── AGENTS.md                # scripts 目录规则
-│   └── check-local-links.py     # Markdown 相对链接检查
-│
-├── tools/                       # 工具、本地配置与外部仓库
-│   ├── README.md                # tools 目录说明
-│   ├── AGENTS.md                # tools 目录规则
-│   ├── faqi-catalog.md           # 法器品级、名称与详细解释的三列只读浏览表
-│   ├── config/                  # 工具与开发配置（含 Codex CLI）
-│   ├── prompts-library/         # Excel ↔ Markdown 互转工具
-│   ├── chat-vault/              # AI 聊天记录保存工具
-│   └── external/                # 外部工具与 Git submodule
-│       ├── AGENTS.md            # external 目录规则
-│       ├── README.md            # 外部工具索引
-│       ├── Skill_Seekers-development/ # Skills 制作器 (submodule)
-│       ├── .tmux/               # oh-my-tmux (submodule)
-│       ├── tmux/                # tmux 源码 (submodule)
-│       └── claude-official-skills/ # Claude 官方 skills (submodule)
-│
-├── metadata/                    # 机器可读索引
-│   ├── README.md                # metadata 目录说明
-│   ├── AGENTS.md                # metadata 目录规则
-│   ├── taxonomy.yml             # 分类体系
-│   ├── glossary.yml             # 术语表
-│   ├── redirects.yml            # 重命名/迁移映射
-│   ├── faqi.json                # 法器总分类登记、重要性分级、依赖图对象与资源逐ID分流
-│   ├── faqi.schema.json         # 总登记声明边界，复用唯一本体类型树
-│   └── gongfa/                   # 功法登记、冻结来源、评级历史与单一总表（Markdown/Excel）
-│
-├── .github/                     # GitHub 配置
-│   ├── CODEOWNERS               # 路径级 owner 评审基线
-│   ├── workflows/               # CI/CD 工作流
-│   │   ├── ci.yml               # Markdown lint + link checker
-│   │   ├── labeler.yml          # 自动标签
-│   │   └── welcome.yml          # 欢迎新贡献者
-│   ├── ISSUE_TEMPLATE/          # Issue 模板
-│   ├── PULL_REQUEST_TEMPLATE.md # PR 模板
-│   ├── SECURITY.md              # 安全政策
-│   ├── FUNDING.yml              # 赞助配置
-│   └── WIKI.md                  # GitHub Wiki 独立仓库说明
+└── .github/                     # GitHub 平台配置与仓库内容
+    ├── AGENTS.md                # 目录共同规则和平台边界
+    ├── assets/                  # 静态资产、外部资源与 AI 引用语料
+    ├── docs/                    # 入门教程与功法正文
+    ├── metadata/                # 机器可读登记、分类和生成目录
+    ├── prompts/                 # 提示词库入口
+    ├── research/                # 研究对象、源事实和冻结材料
+    ├── scripts/                 # 检查、生成和维护脚本
+    ├── skills/                  # 可复用技能库
+    ├── tools/                   # 工具、配置与外部依赖
+    ├── CODEOWNERS               # 路径级 owner 评审基线
+    ├── ISSUE_TEMPLATE/          # Issue 模板和配置
+    ├── PULL_REQUEST_TEMPLATE.md # PR 模板
+    ├── SECURITY.md              # 安全漏洞报告策略
+    ├── FUNDING.yml              # 赞助配置
+    ├── WIKI.md                  # GitHub Wiki 独立仓库说明
+    ├── labeler.yml              # PR 标签规则
+    └── workflows/               # GitHub Actions 工作流
 ```
 
 ### 关键入口文件
 - `README.md` - 项目主文档，面向人类开发者
 - `AGENTS.md` - AI Agent 操作手册（本文件）
 - `llms.txt` - 面向 AI 助手的短上下文入口，用于让 LLM 快速理解项目定位
-- `assets/ai-citation/llms-full.txt` - 面向 AI 助手的完整上下文入口，用于 GEO / AI 推荐与引用
-- `assets/ai-citation/` - AI 引用语料包，包含摘要、FAQ、对比、推荐回答与 GEO/SEO 检查清单
-- `.gitattributes` - GitHub Linguist 语言统计规则，当前将 `tools/external/**` 标记为 vendored
+- `.github/assets/ai-citation/llms-full.txt` - 面向 AI 助手的完整上下文入口，用于 GEO / AI 推荐与引用
+- `.github/assets/ai-citation/` - AI 引用语料包，包含摘要、FAQ、对比、推荐回答与 GEO/SEO 检查清单
+- `.gitattributes` - GitHub Linguist 语言统计规则，当前将 `.github/tools/external/**` 标记为 vendored
 - `.github/AGENTS.md` - GitHub 平台配置目录规则；根 `.github/` 不保留 `README.md`，避免 GitHub 首页误展示目录说明
 - `.github/CODEOWNERS` - 路径级 owner 评审基线，当前维护者为 `@tukuaiai` 和 `@tradecatlabs`，用于让关键目录变更自动请求维护者审查
 - `.github/lint_config.json` - markdownlint 规则，供 `make lint` 与 CI 共用
 - `.github/workflows/ci.yml` - GitHub Actions：develop 分支 markdown-lint + link-checker
-- `scripts/check-local-links.py` - 仓库内 Markdown 相对链接与锚点检查脚本，供 `make check-links` 与 CI 使用
-- `scripts/check-markdown-details.py` - 仓库内 Markdown 折叠块结构检查脚本，供 `make check-details` 与 CI 使用
-- `scripts/check-doc-structure.py` - docs README 标准块顺序、目录入口和重复锚点检查脚本，供 `make check-doc-structure` 与 CI 使用
-- `scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
-- `scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
-- `metadata/faqi.json` / `faqi.schema.json` - 法器总分类登记及字段契约；复用本体类型、固定来源审查、依赖图对象和用户确认纳入的依赖类别，原资源事实仍归资源YAML；当前暂定品级按Vibe Coding重要性分组，正式效能评级仍须独立效果证据。
-- `tools/faqi-catalog.md` - 法器品级、名称与详细解释的三列只读浏览表；解释合并重要性范围和分级依据，完整登记仍归`metadata/faqi.json`，资源原事实归资源YAML。
-- `scripts/sync-faqi-catalog.py` / `test-faqi-catalog.py` - 离线总表生成、检查及行为契约；核来源、图SHA、对象映射和品级边界，保留真实命令/结果；不执行被审程序或联网补证。
-- `metadata/gongfa/registry.json` - 活跃功法登记、等级、规则、来源、内容版本、人工初评及正式评级历史的唯一可编辑数据源；类型语义仍归本体主文；新范围追加批次
-- `metadata/gongfa/catalog.md` / `catalog.xlsx` - 功法总表的生成视图；Markdown列品级、名称与详细解释；品级使用“天阶高级”等完整名称，不缩写。登记摘要/问题/机制及条件/限制/预期结果，候选原文/用途/理由，Solve机制/适用范围/前提/边界；完整原始数据仍归JSON；Excel保留完整字段；不手改、不自动注册/去重/评级
-- `metadata/gongfa/catalog-sources.json` - 仅索引仓内不可变候选快照的路径/SHA/范围；历史材料不是第二可编辑登记，不依赖个人目录或临时工件
-- `scripts/sync-gongfa-catalog.py` / `test-gongfa-catalog.py` - 离线总表生成、检查及行为契约；复用原登记校验与openpyxl，保留真实命令/结果
-- `scripts/check-gongfa.py` - 功法JSON、来源、ID/版本、词表、人工初评与正式评级的离线校验；不联网、不执行原文、不计算品级；多批次用`--proposal-batch`显式选范围，表格标明批次，不把本批缺项报作全局未评
-- `scripts/test-gongfa.py` - 独立字面量与冻结输入驱动的CLI集成测试，保留输入、退出码、JSON/JUnit产物；不等于方法效果证明
-- `scripts/check-ai-citation.py` - llms 与 AI 引用语料路径、锚点和规范仓库身份检查脚本，供 `make check-ai-citation` 与 CI 使用
-- `scripts/check-external-resources.py` - 本地外部资源注册表检查脚本，供 `make check-external-resources` 与 `make test` 使用
-- `scripts/check-research-raw.py` - 研究域 raw 原始事实层和 Git 工作树检查脚本，供 `make check-research-raw` 与 `make test` 使用
-- `scripts/check-source-facts.py` - 外部源事实镜像、文件数、边界和隐私登记检查脚本，供 `make check-source-facts` 与 `make test` 使用
-- `scripts/fetch-research-raw.py` - GitHub 研究对象 raw 原始事实层和 `repository/` 工作树拉取脚本，供 `make fetch-research-raw` 手动刷新使用，不纳入 CI
-- `scripts/check-wiki.py` - GitHub Wiki 独立仓库本地 checkout 页面覆盖、内链和旧口径检查脚本，供 `make check-wiki` 使用
-- `scripts/sync-doc-toc.py` - docs README 细粒度目录兼容脚本，当前拆分结构下通常无变更，供 `make sync-doc-toc` 使用
-- `tools/prompts-library/main.py` - 提示词转换工具入口
-- `docs/getting-started/README.md` - 从零开始索引入口，正文拆分到学习地图、网络配置、CLI 配置、开发环境搭建与第一个项目闭环；通用人机经验链接到功法
-- `docs/getting-started/first-project.md` - 用本地待办清单完成第一次可验证的需求、实现、验收与 Git 闭环
-- `docs/gongfa/README.md` - 方法论、哲学、思维模型、工程准则和流程的统一正文入口；完整文集按任务导航，文集数不是独立功法数
-- `docs/gongfa/faqi-system.md` - 法器分类边界、重要性分级、选用方式与登记入口；重要性不代表正式效能
-- 根 README 不展示六条核心命题内容或导航入口，仅保留兼容历史锚点；正文唯一维护源为 `docs/gongfa/ai-core-propositions.md`，用户从功法体系进入正文，不维护首页副本或第二内容版本。
-- 根 README 的“法器体系”块与功法块同级，使用不带`open`属性的`<details>`默认折叠；只放概要和链接，正文归`docs/gongfa/faqi-system.md`，登记归`metadata/faqi.json`，逐条生成视图归`tools/faqi-catalog.md`。
-- 首页其他方法只通过功法体系统一入口选择，不恢复经验、实验性方法、道法术器或哲学的独立栏目/分库；六命题旧锚点仅作兼容，正文入口在功法体系的 `docs/gongfa/ai-core-propositions.md`，其他方法历史锚点定位功法块。首页徽章区仅保留独立目的地入口，统一使用 `<a><img>` 与紧凑 `style=flat`，保留其原href、顺序及完整alt；仅跳根README章节的目录徽章不放顶部，同一目标不重复展示（相对路径的 `./` 写法差异不算不同目标）。删除徽章不自动删除其目标正文或历史锚点，不恢复旧快捷导航徽章组；单一段落不等于已验证所有视口视觉单行。
+- `.github/scripts/check-local-links.py` - 仓库内 Markdown 相对链接与锚点检查脚本，供 `make check-links` 与 CI 使用
+- `.github/scripts/check-markdown-details.py` - 仓库内 Markdown 折叠块结构检查脚本，供 `make check-details` 与 CI 使用
+- `.github/scripts/check-doc-structure.py` - docs README 标准块顺序、目录入口和重复锚点检查脚本，供 `make check-doc-structure` 与 CI 使用
+- `.github/scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
+- `.github/scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
+- `.github/metadata/faqi.json` / `faqi.schema.json` - 法器总分类登记及字段契约；复用本体类型、固定来源审查、依赖图对象和用户确认纳入的依赖类别，原资源事实仍归资源YAML；当前暂定品级按Vibe Coding重要性分组，正式效能评级仍须独立效果证据。
+- `.github/tools/faqi-catalog.md` - 法器品级、名称与详细解释的三列只读浏览表；解释合并重要性范围和分级依据，完整登记仍归`.github/metadata/faqi.json`，资源原事实归资源YAML。
+- `.github/scripts/sync-faqi-catalog.py` / `test-faqi-catalog.py` - 离线总表生成、检查及行为契约；核来源、图SHA、对象映射和品级边界，保留真实命令/结果；不执行被审程序或联网补证。
+- `.github/metadata/gongfa/registry.json` - 活跃功法登记、等级、规则、来源、内容版本、人工初评及正式评级历史的唯一可编辑数据源；类型语义仍归本体主文；新范围追加批次
+- `.github/metadata/gongfa/catalog.md` / `catalog.xlsx` - 功法总表的生成视图；Markdown列品级、名称与详细解释；品级使用“天阶高级”等完整名称，不缩写。登记摘要/问题/机制及条件/限制/预期结果，候选原文/用途/理由，Solve机制/适用范围/前提/边界；完整原始数据仍归JSON；Excel保留完整字段；不手改、不自动注册/去重/评级
+- `.github/metadata/gongfa/catalog-sources.json` - 仅索引仓内不可变候选快照的路径/SHA/范围；历史材料不是第二可编辑登记，不依赖个人目录或临时工件
+- `.github/scripts/sync-gongfa-catalog.py` / `test-gongfa-catalog.py` - 离线总表生成、检查及行为契约；复用原登记校验与openpyxl，保留真实命令/结果
+- `.github/scripts/check-gongfa.py` - 功法JSON、来源、ID/版本、词表、人工初评与正式评级的离线校验；不联网、不执行原文、不计算品级；多批次用`--proposal-batch`显式选范围，表格标明批次，不把本批缺项报作全局未评
+- `.github/scripts/test-gongfa.py` - 独立字面量与冻结输入驱动的CLI集成测试，保留输入、退出码、JSON/JUnit产物；不等于方法效果证明
+- `.github/scripts/check-ai-citation.py` - llms 与 AI 引用语料路径、锚点和规范仓库身份检查脚本，供 `make check-ai-citation` 与 CI 使用
+- `.github/scripts/check-external-resources.py` - 本地外部资源注册表检查脚本，供 `make check-external-resources` 与 `make test` 使用
+- `.github/scripts/check-research-raw.py` - 研究域 raw 原始事实层和 Git 工作树检查脚本，供 `make check-research-raw` 与 `make test` 使用
+- `.github/scripts/check-source-facts.py` - 外部源事实镜像、文件数、边界和隐私登记检查脚本，供 `make check-source-facts` 与 `make test` 使用
+- `.github/scripts/fetch-research-raw.py` - GitHub 研究对象 raw 原始事实层和 `repository/` 工作树拉取脚本，供 `make fetch-research-raw` 手动刷新使用，不纳入 CI
+- `.github/scripts/check-wiki.py` - GitHub Wiki 独立仓库本地 checkout 页面覆盖、内链和旧口径检查脚本，供 `make check-wiki` 使用
+- `.github/scripts/sync-doc-toc.py` - docs README 细粒度目录兼容脚本，当前拆分结构下通常无变更，供 `make sync-doc-toc` 使用
+- `.github/tools/prompts-library/main.py` - 提示词转换工具入口
+- `.github/docs/getting-started/README.md` - 从零开始索引入口，正文拆分到学习地图、网络配置、CLI 配置、开发环境搭建与第一个项目闭环；通用人机经验链接到功法
+- `.github/docs/getting-started/first-project.md` - 用本地待办清单完成第一次可验证的需求、实现、验收与 Git 闭环
+- `.github/docs/gongfa/README.md` - 方法论、哲学、思维模型、工程准则和流程的统一正文入口；完整文集按任务导航，文集数不是独立功法数
+- `.github/docs/gongfa/faqi-system.md` - 法器分类边界、重要性分级、选用方式与登记入口；重要性不代表正式效能
+- 根 README 不展示六条核心命题内容或导航入口，仅保留兼容历史锚点；正文唯一维护源为 `.github/docs/gongfa/ai-core-propositions.md`，用户从功法体系进入正文，不维护首页副本或第二内容版本。
+- 根 README 的“法器体系”块与功法块同级，使用不带`open`属性的`<details>`默认折叠；只放概要和链接，正文归`.github/docs/gongfa/faqi-system.md`，登记归`.github/metadata/faqi.json`，逐条生成视图归`.github/tools/faqi-catalog.md`。
+- 首页其他方法只通过功法体系统一入口选择，不恢复经验、实验性方法、道法术器或哲学的独立栏目/分库；六命题旧锚点仅作兼容，正文入口在功法体系的 `.github/docs/gongfa/ai-core-propositions.md`，其他方法历史锚点定位功法块。首页徽章区仅保留独立目的地入口，统一使用 `<a><img>` 与紧凑 `style=flat`，保留其原href、顺序及完整alt；仅跳根README章节的目录徽章不放顶部，同一目标不重复展示（相对路径的 `./` 写法差异不算不同目标）。删除徽章不自动删除其目标正文或历史锚点，不恢复旧快捷导航徽章组；单一段落不等于已验证所有视口视觉单行。
 - 首页入口收口、文集归并与逐条身份登记分别验收；无来源绑定不自动等于未登记功法，模板、术语、工具和本体说明不机械注册或赋级。
-- 研究回填矩阵、模板和AI摘要也按现行职责定位：方法/流程/清单正文归 `docs/gongfa/`，实例练习归 `docs/getting-started/`，具体事实留 `research/`；执行契约、工具配置和脚本分别归 `skills/`、`tools/config/`、`scripts/`，不把旧分类词当目录或批量改写上游结构。
-- `docs/gongfa/AGENTS.md` - 功法正文、历史来源、登记与生成视图的唯一职责规则；不恢复旧目录或并行可编辑副本
-- `docs/gongfa/problem-solving.md` - 问题定义与求解路径底层模型
-- `docs/gongfa/vibe-coding-cultivation-model.md` - 统一修仙本体的通俗解释；战力按具体任务先验收效果、再比较效率
-- `docs/gongfa/cultivation-ontology-taxonomy.md` - 修仙领域 BFO 主干与下层展开（V4 BFO 草案）；保留原生及领域 ID、继承、定义和判据；功法内容、载体、版本、施行与效果分开，已有初评、规约未校准、正式效果记录仍为零
-- `docs/gongfa/project-architecture-template.md` - 常见项目结构、架构设计原则、最低门禁和检查清单
-- `docs/gongfa/technology-stack.md` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
-- `skills/auto-skill/` - Skills 生成、重构与校验的元技能
-- `skills/auto-tmux/` - tmux 自动化操控、脚本化 pane 巡检、按键注入、日志录制与多终端协作技能
+- 研究回填矩阵、模板和AI摘要也按现行职责定位：方法/流程/清单正文归 `.github/docs/gongfa/`，实例练习归 `.github/docs/getting-started/`，具体事实留 `.github/research/`；执行契约、工具配置和脚本分别归 `.github/skills/`、`.github/tools/config/`、`.github/scripts/`，不把旧分类词当目录或批量改写上游结构。
+- `.github/docs/gongfa/AGENTS.md` - 功法正文、历史来源、登记与生成视图的唯一职责规则；不恢复旧目录或并行可编辑副本
+- `.github/docs/gongfa/problem-solving.md` - 问题定义与求解路径底层模型
+- `.github/docs/gongfa/vibe-coding-cultivation-model.md` - 统一修仙本体的通俗解释；战力按具体任务先验收效果、再比较效率
+- `.github/docs/gongfa/cultivation-ontology-taxonomy.md` - 修仙领域 BFO 主干与下层展开（V4 BFO 草案）；保留原生及领域 ID、继承、定义和判据；功法内容、载体、版本、施行与效果分开，已有初评、规约未校准、正式效果记录仍为零
+- `.github/docs/gongfa/project-architecture-template.md` - 常见项目结构、架构设计原则、最低门禁和检查清单
+- `.github/docs/gongfa/technology-stack.md` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
+- `.github/skills/auto-skill/` - Skills 生成、重构与校验的元技能
+- `.github/skills/auto-tmux/` - tmux 自动化操控、脚本化 pane 巡检、按键注入、日志录制与多终端协作技能
 
 ### docs README 结构契约
 
-- `docs/**/README.md` 面向人类读者；维护者规则、目录边界和同步要求写入对应 `AGENTS.md`。
+- `.github/docs/**/README.md` 面向人类读者；维护者规则、目录边界和同步要求写入对应 `AGENTS.md`。
 - 标准块顺序固定为：顶部标题块 -> `## 字多不看` -> `## 快速导航` -> 完整细粒度目录 -> `## 使用方式` -> `## 正文`。
 - H1 后必须直接进入 `## 字多不看`，禁止在两者之间插入引用块、说明段或其他夹层内容。
 - README 中禁止出现 `和其他目录的边界` 与 `维护规则` 标题。
@@ -308,8 +251,8 @@ git push origin develop
 | 问题 | 原因 | 修复 |
 |:---|:---|:---|
 | `make lint` 失败 | Node.js 不可用、npx 无法拉取 markdownlint-cli 或 Markdown 规则违规 | 先确认 `node -v` 为 22+，再运行 `make lint` |
-| prompts-library 报错 | 缺少 Python 依赖 | `pip install -r tools/prompts-library/requirements.txt` |
-| prompts-library 辅助脚本报 Google API 依赖错误 | 未安装脚本专用依赖 | `pip install -r tools/prompts-library/scripts/requirements.txt` |
+| prompts-library 报错 | 缺少 Python 依赖 | `pip install -r .github/tools/prompts-library/requirements.txt` |
+| prompts-library 辅助脚本报 Google API 依赖错误 | 未安装脚本专用依赖 | `pip install -r .github/tools/prompts-library/scripts/requirements.txt` |
 | CI markdown-lint 失败 | Markdown 规则违规或本地未按 `.github/lint_config.json` 校验 | 运行 `make lint`，按输出修复对应 Markdown |
 | CI link-checker 失败 | 文档中存在失效链接，或官方外链在 GitHub runner 上网络/TLS 不稳定 | 先本地验证链接；真实失效则修复 Markdown，runner 不稳定则优先调整 `.lychee.toml` 的重试、超时、并发或精确排除项 |
 
@@ -384,7 +327,7 @@ feat|fix|docs|chore|refactor|test: scope - summary
 
 ```bash
 # 提示词库转换
-cd tools/prompts-library && python3 main.py
+cd .github/tools/prompts-library && python3 main.py
 
 # Lint 所有 Markdown 文件
 make lint
@@ -397,20 +340,20 @@ make test
 ## Architecture & Structure
 
 ### Core Directories
-- **`prompts/`**: 提示词库入口（指向云端表格）
-- **`skills/`**: 扁平化技能库（详见 skills/README.md）
-- **`docs/`**: 入门教程（getting-started）与统一功法正文（gongfa）；旧目录路由已退役
-- **`assets/`**: 静态资产、外部资源注册表与 AI 引用资产
-- **`assets/ai-citation/`**: AI 引用语料包与 `llms-full.txt`
-- **`tools/prompts-library/`**: Excel ↔ Markdown 转换工具
-- **`tools/chat-vault/`**: AI 聊天记录保存工具
+- **`.github/prompts/`**: 提示词库入口（指向云端表格）
+- **`.github/skills/`**: 扁平化技能库（详见 .github/skills/README.md）
+- **`.github/docs/`**: 入门教程（getting-started）与统一功法正文（gongfa）；旧目录路由已退役
+- **`.github/assets/`**: 静态资产、外部资源注册表与 AI 引用资产
+- **`.github/assets/ai-citation/`**: AI 引用语料包与 `llms-full.txt`
+- **`.github/tools/prompts-library/`**: Excel ↔ Markdown 转换工具
+- **`.github/tools/chat-vault/`**: AI 聊天记录保存工具
 
 ### Key Technical Details
 1. **Prompt Organization**: 提示词使用 `(row,col)_` 前缀进行分类
 2. **Conversion Tool**: 使用 Python + pandas + openpyxl
 3. **Documentation Standard**: 用户文档使用中文；代码/文件名使用英文
 4. **Skills**: 每个技能有独立的 `SKILL.md`
-5. **Quality Gates**: `make test` 执行 Markdown lint、本地相对链接/锚点检查、折叠块结构检查、docs 结构检查、metadata 路径检查、AI 引用一致性检查、外部源事实镜像检查与现代企业架构 starter kit 检查；三个 `research/vibe-*` 目录按源事实镜像边界维护，仓库级格式检查跳过镜像内容。
+5. **Quality Gates**: `make test` 执行 Markdown lint、本地相对链接/锚点检查、折叠块结构检查、docs 结构检查、metadata 路径检查、AI 引用一致性检查、外部源事实镜像检查与现代企业架构 starter kit 检查；三个 `.github/research/vibe-*` 目录按源事实镜像边界维护，仓库级格式检查跳过镜像内容。
    功法登记/总表与法器总分类登记检查、相关测试纳入本地`make test`；GitHub Actions选定目标未改，不冒称新增远端覆盖。
 
 ## Development Workflow
@@ -431,7 +374,7 @@ make test
 ## 技术栈
 
 - **核心形态:** Markdown 知识库 + Python 工具脚本
-- **提示词转换工具:** `tools/prompts-library/`
+- **提示词转换工具:** `.github/tools/prompts-library/`
 - **数据处理:** `pandas`, `openpyxl`（prompts-library）
 - **配置管理:** `PyYAML`（prompts-library）
 - **文档规范:** `Makefile` 固定调用的 `markdownlint-cli@0.48.0`
