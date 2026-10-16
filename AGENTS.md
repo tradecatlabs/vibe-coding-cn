@@ -199,6 +199,9 @@ git push origin HEAD
 - `.github/CODEOWNERS` - 路径级 owner 评审基线，当前维护者为 `@tukuaiai` 和 `@tradecatlabs`，用于让关键目录变更自动请求维护者审查
 - `.github/lint_config.json` - markdownlint 规则，供 `make lint` 与 CI 共用
 - `.github/workflows/ci.yml` - GitHub Actions：main 分支 markdown-lint + link-checker
+- `.github/workflows/welcome.yml` - Issue / PR 首次贡献者欢迎；当前 `actions/first-interaction@v3` 使用
+  `repo_token`、`issue_message`、`pr_message`，以实际 Action 元数据和源码为准，不照抄过时的横线参数示例。
+  保留平台 secret 注入、既有权限与事件边界，不 checkout 外部 PR；工作流变更后须核对真实新执行。
 - `.github/scripts/check-local-links.py` - 仓库内 Markdown 相对链接与锚点检查脚本，供 `make check-links` 与 CI 使用
 - `.github/scripts/check-markdown-details.py` - 仓库内 Markdown 折叠块结构检查脚本，供 `make check-details` 与 CI 使用
 - `.github/scripts/check-doc-structure.py` - docs README 标准块顺序、目录入口和重复锚点检查脚本，供 `make check-doc-structure` 与 CI 使用

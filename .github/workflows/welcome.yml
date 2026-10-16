@@ -20,11 +20,11 @@ jobs:
       - name: Welcome new contributor
         uses: actions/first-interaction@v3
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: |
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          issue_message: |
             👋 你好，@${{ github.actor }}！感谢你第一次向 vibe-coding-cn 提交 Issue！
             我们会尽快查看。欢迎你加入我们的社区！
 
-          pr-message: |
+          pr_message: |
             👋 你好，@${{ github.actor }}！感谢你第一次向 vibe-coding-cn 提交 Pull Request！
             我们将仔细评审你的贡献。感谢你让这个项目变得更好！

@@ -191,7 +191,7 @@
     ├── FUNDING.yml              # 赞助配置
     ├── WIKI.md                  # GitHub Wiki 独立仓库说明
     ├── labeler.yml              # PR 标签规则
-    └── workflows/               # GitHub Actions 工作流
+    └── workflows/               # GitHub Actions 工作流（含新贡献者欢迎）
 ```
 
 </details>
