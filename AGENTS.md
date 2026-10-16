@@ -227,7 +227,8 @@ git push origin HEAD
 - `.github/docs/getting-started/README.md` - 从零开始索引入口，正文拆分到学习地图、网络配置、CLI 配置、开发环境搭建与第一个项目闭环；通用人机经验链接到功法
 - `.github/docs/getting-started/first-project.md` - 用本地待办清单完成第一次可验证的需求、实现、验收与 Git 闭环
 - `.github/docs/gongfa/README.md` - 方法论、哲学、思维模型、工程准则和流程的统一正文入口；完整文集按任务导航，文集数不是独立功法数
-- `.github/docs/gongfa/faqi-system.md` - 法器分类边界、重要性分级、选用方式与登记入口；重要性不代表正式效能
+- `.github/docs/gongfa/faqi-system.md` - 法器分类、重要性、选用与固定MCP源码副作用边界；S66–S73只增支持来源，不增程序身份、运行或正式效能结论
+- `.github/docs/gongfa/methodology-toolbox.md` - 候选方法与有限来源复核；机器学习18条只提供分批审阅位置，不等于独立功法数或全量语义去重
 - 根 README 不展示六条核心命题内容或导航入口，仅保留兼容历史锚点；正文唯一维护源为 `.github/docs/gongfa/ai-core-propositions.md`，用户从功法体系进入正文，不维护首页副本或第二内容版本。
 - 根 README 的“法器体系”块与功法块同级，使用不带`open`属性的`<details>`默认折叠；只放概要和链接，正文归`.github/docs/gongfa/faqi-system.md`，登记归`.github/metadata/faqi.json`，逐条生成视图归`.github/tools/faqi-catalog.md`。
 - 首页“演示与产出”内 Mermaid 节点标签含括号等语法字符时须加双引号；修改图表后须真实渲染验证，不能只依赖 Markdown 检查。

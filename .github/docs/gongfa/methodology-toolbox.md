@@ -981,6 +981,7 @@ README.md      # 概念表/错误语义/验收指标
 
 | K Solve机器学习pack entries[0..4] | 官方文档支持传统估计器的测试集隔离、k-fold验证和按训练样本数绘制学习曲线；但将hidden eval、task folds和reasoning/context/tool-call资源曲线移植到Agent仍是待验证类比。“最终测试只评一次”是防自适应泄漏的评测策略；预算不自动等同正则化。偏差—方差只支持窄诊断，不直接决定Agent增容或约束。与`gongfa-experimental-design`、`gongfa-performance-by-measurement`、`gongfa-pragmatic-optimization`等相邻但不等同；不新增登记、候选ID或评级，也不自动合并。有限快照见[机器学习entries[0..4]复核](../../metadata/gongfa/source-selected-machine-learning-entries-0-to-4-20261015.txt)，只覆盖五条，不代表556→410全量语义去重。 |
 | L Solve机器学习pack entries[5..8] | 官方文档分别支持传统模型的数据泄漏边界、参数组合搜索/嵌套交叉验证、分类概率校准及单特征置换敏感度；hidden eval隔离、Agent配置搜索、Agent confidence/escalation与context/document/tool-output扰动仍是未验证迁移。置换分数变化不是因果效应；校准也不自动定义动作阈值。与实验设计、指标优化、置信度升级及因果特征消融相邻但不等同；不新增登记、候选ID或评级。有限快照见[机器学习entries[5..8]复核](../../metadata/gongfa/source-selected-machine-learning-entries-5-to-8-20261015.txt)，仅覆盖四条，不代表556→410全量语义去重。 |
+| M Solve机器学习pack entries[9..11]与[17] | scikit-learn 1.7模块页分别支持标签置换检验、传统分类器投票、refit选择与简单规则基线；不证明任意打乱Agent上下文有效、成员误差独立或Pareto最优。派生泛化循环只有会话引用，固定箭头顺序不证明数据使用前已防泄漏，概率校准也不能泛用于所有输出。与实验设计、指标优化及多来源证据评估相邻，不自动合并或新增登记/品级。见[四条完整冻结与审阅位置索引](../../metadata/gongfa/source-selected-machine-learning-entries-9-to-11-and-17-20261016.txt)；该18条pack均可定位到有限审阅记录，但深度不一，不等于18件独立功法或556→410全量语义去重。 |
 
 ##### 26个精确标题匹配的进一步核对
 

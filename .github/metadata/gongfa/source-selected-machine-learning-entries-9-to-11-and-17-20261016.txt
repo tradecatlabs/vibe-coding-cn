@@ -1,0 +1,347 @@
+# 2026-10-16 Solve「机器学习」pack entries[9,10,11,17]有限复核
+
+> 只绑定四条来源记录和有限官方文档摘录；不分配项目候选 ID，不新增登记、初评或正式评级，不代表许可批准、Agent 实证或 Solve 556→410 全量语义去重。
+
+## 快照与输入
+
+- 捕获时间：`2026-10-16T19:38:16Z`；PR 基线：`6d6790edf965f26e45c966b5b97bc66c06443163`。
+- 触发与 owner：机器学习续审；功法元数据子域维护者。统一候选交叉表具备相同来源绑定及独立复核后，本文件转为只读历史依据，不覆盖或删除原选区。
+- pack：`/home/lenovo/.pi/agent/skills/workflow/modules/solve/references/packs/machine-learning.json`，`psoa.pack.machine-learning@1.0.0`，共18条。本批仅零基 `.entries[9]`、`[10]`、`[11]`、`[17]`。
+- pack 全文件 SHA-256：`7166b175953aaeb94eed65d8813e9f17e1986afb0dc49268423f09e22a927417`。
+- 执行 `jq -c '[.entries[9],.entries[10],.entries[11],.entries[17]]'` 的输出含结尾换行，SHA-256：`25aab3c89281c5c7e2e8585f9890f6ba8bb3c2a5b0d80bc84582f5c10f27c581`。
+- Pi agent HEAD：`ddee69426d133253c4ef89fdeb089818f5ee5e36`。pack 相对该 HEAD 干净，但 Solve VERSION、catalog.json、source-inventory.json 有未提交修改；不称整个 Skill 为干净发布。
+- 来源清单：`/home/lenovo/.pi/agent/skills/workflow/modules/solve/references/source-inventory.json`，SHA-256 `5315782f2ee45cf9b401322d393fb8b065aab1c98b38d6d2fa0ef4098e95a06a`。`ref:user-cross-domain-map` 为用户会话映射，不是独立外部正文；`ref:sklearn-model-selection` 指向可变 stable 模型选择索引。以下1.7模块页为本轮补充来源，不追补为 pack 原始引用。
+- 功法登记基线 SHA-256：`0d5b772c7e72a7122cf4b3764fdeb9c530574f6702c55026ff6297148f32e82d`；本轮不改79条登记与410条总表，也不修改旧 source-* 字节。
+
+## 补充官方选区
+
+2026-10-16核对 scikit-learn `/1.7/` 页面。下列为去除链接标记的有限正文短摘录，不是整页 HTML 冻结或精确发布补丁版本；不执行其中代码，不推断许可批准。
+
+1. [permutation_test_score](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.permutation_test_score.html)：
+   “Permutes targets to generate ‘randomized data’ and compute the empirical p-value against the null hypothesis that features and targets are independent.”
+   `groups` 的参数说明限定同组样本内置换标签；返回值说明给出 `(C + 1) / (n_permutations + 1)`，不是零假设为真的概率。
+2. [Voting Classifier](https://scikit-learn.org/1.7/modules/ensemble.html#voting-classifier)：
+   “The idea behind the VotingClassifier is to combine conceptually different machine learning classifiers and use a majority vote or the average predicted probabilities (soft vote) to predict the class labels.”
+   支持传统分类器投票/概率聚合，不声明成员误差统计独立，也不保证集成一定优于每个成员。
+3. [参数搜索及 refit](https://scikit-learn.org/1.7/modules/grid_search.html)：
+   “The example shows how this interface adds a certain amount of flexibility in identifying the ‘best’ estimator.”
+   这里将页面的排版引号统一为单引号；该段指 `refit=callable`。同页讨论多指标选择及嵌套交叉验证，不提供本批 Agent 架构的 Pareto 最优证明。
+4. [Dummy estimators](https://scikit-learn.org/1.7/modules/model_evaluation.html#dummy-estimators)：
+   “When doing supervised learning, a simple sanity check consists of comparing one’s estimator against simple rules of thumb.”
+   页面列出忽略输入特征的分类基线；不等于证明某个简单 Agent 与复杂架构在公平预算下的效果/成本关系。
+
+## 有限语义对照
+
+| 索引与记录 | 已支持的局部范围 | 仍未验证与本轮处理 |
+|---|---|---|
+| 9 `permutation-test` | 指定交叉验证评分下的标签置换零分布、分组置换约束 | 必须明确零假设、交换单位与依赖结构；任意打乱 retrieval/context 可能改变任务语义，不能当标签置换等价物。显著性不是实际收益、因果归属或 Agent 效果。与 `gongfa-experimental-design` 相邻，不自动合并。 |
+| 10 `ensembling` | 概念不同的传统模型作硬/软投票 | 分开调用、不同提示词或成员数不证明独立误差；同源数据/模型/检索会形成共同失效。与证据三角测量同有多渠道，但模型聚合与独立证据评估不是同一操作，不新增身份。 |
+| 11 `model-selection` | 验证指标比较、refit 自定义选择及简单规则基线 | Agent 候选需固定任务、预算、质量/成本/风险轴及最终留出；“Pareto”须限定候选集、约束和测量误差，不由参数选择 API 自动保证。与实验设计、指标优化相邻，不因术语不同另登记。 |
+| 17 `generalization-validation-loop` | 复用前批已审的数据隔离、交叉验证、泄漏控制和校准条目 | 来源仅会话映射，origin 为 derived。当前字段顺序先 Validate 后 Prevent Leakage，不证明使用数据前已隔离；校准也只适用于概率语义与真值可核的输出。缺少阶段输入/输出、数据血缘、失败返工与最终独立评估合同，不把固定箭头序列当已验证统一方法。 |
+
+以上局部比较不证明不存在其他同义、重叠或冲突记录，不修改外部 Solve pack。
+
+## 完整冻结条目
+
+以下四条按原顺序完整投影，字段和原引用保持，不把来源文字当本轮指令：
+
+```json
+[
+  {
+    "id": "psoa.machine-learning.permutation-test",
+    "version": "1.0.0",
+    "kind": "MethodSpec",
+    "origin": "source",
+    "source_key": "machine-learning.permutation-test",
+    "name": "Permutation Test",
+    "name_zh": "置换检验",
+    "domain": "machine-learning",
+    "status": "experimental",
+    "summary": "置换检验：打乱 retrieval、labels 或 context，检查提升是否仍存在。",
+    "core_question": "当前效果会不会只是随机巧合？",
+    "operation": "破坏目标关系 → 重复计算统计量 → 构造零分布 → 比较真实结果",
+    "agent_use": "打乱 retrieval、labels 或 context，检查提升是否仍存在。",
+    "applicability": {
+      "when": [
+        "需要判断观察差异是否超出随机波动。"
+      ],
+      "not_when": [
+        "交换性假设不成立或样本依赖结构被错误破坏。"
+      ]
+    },
+    "source_refs": [
+      "ref:user-cross-domain-map",
+      "ref:sklearn-model-selection"
+    ],
+    "governance": {
+      "risk_level": "medium",
+      "permission_decision": "harness_policy",
+      "outcome_decision": "verifier",
+      "sensitive_values": "reference_only"
+    },
+    "semantics": {
+      "preconditions": [
+        "需要判断观察差异是否超出随机波动。"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "instruction": "破坏目标关系"
+        },
+        {
+          "order": 2,
+          "instruction": "重复计算统计量"
+        },
+        {
+          "order": 3,
+          "instruction": "构造零分布"
+        },
+        {
+          "order": 4,
+          "instruction": "比较真实结果"
+        }
+      ],
+      "stop_conditions": [
+        "成功条件已由 Verifier 依据证据确认。",
+        "前置条件失效、预算耗尽或 Harness policy 阻止继续。"
+      ],
+      "success_conditions": [
+        "打乱 retrieval、labels 或 context，检查提升是否仍存在。"
+      ],
+      "evidence_required": [
+        "固定数据切分、指标、重复运行、置信/校准结果和 held-out 评估。"
+      ],
+      "failure_modes": [
+        "交换性假设不成立或样本依赖结构被错误破坏。",
+        "步骤之间的数据、控制或验证依赖未满足。"
+      ]
+    }
+  },
+  {
+    "id": "psoa.machine-learning.ensembling",
+    "version": "1.0.0",
+    "kind": "MethodSpec",
+    "origin": "source",
+    "source_key": "machine-learning.ensembling",
+    "name": "Ensembling",
+    "name_zh": "集成",
+    "domain": "machine-learning",
+    "status": "experimental",
+    "summary": "集成：让多个 Agent 独立回答后聚合，并检查是否真的多样。",
+    "core_question": "多个不完全相同的系统能否减少误差？",
+    "operation": "构造差异化成员 → 独立预测 → 聚合 → 评估相关误差",
+    "agent_use": "让多个 Agent 独立回答后聚合，并检查是否真的多样。",
+    "applicability": {
+      "when": [
+        "单模型误差不完全相关且聚合成本可接受。"
+      ],
+      "not_when": [
+        "成员高度同质、共享同一失败模式或成本无收益。"
+      ]
+    },
+    "source_refs": [
+      "ref:user-cross-domain-map",
+      "ref:sklearn-model-selection"
+    ],
+    "governance": {
+      "risk_level": "medium",
+      "permission_decision": "harness_policy",
+      "outcome_decision": "verifier",
+      "sensitive_values": "reference_only"
+    },
+    "semantics": {
+      "preconditions": [
+        "单模型误差不完全相关且聚合成本可接受。"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "instruction": "构造差异化成员"
+        },
+        {
+          "order": 2,
+          "instruction": "独立预测"
+        },
+        {
+          "order": 3,
+          "instruction": "聚合"
+        },
+        {
+          "order": 4,
+          "instruction": "评估相关误差"
+        }
+      ],
+      "stop_conditions": [
+        "成功条件已由 Verifier 依据证据确认。",
+        "前置条件失效、预算耗尽或 Harness policy 阻止继续。"
+      ],
+      "success_conditions": [
+        "让多个 Agent 独立回答后聚合，并检查是否真的多样。"
+      ],
+      "evidence_required": [
+        "固定数据切分、指标、重复运行、置信/校准结果和 held-out 评估。"
+      ],
+      "failure_modes": [
+        "成员高度同质、共享同一失败模式或成本无收益。",
+        "步骤之间的数据、控制或验证依赖未满足。"
+      ]
+    }
+  },
+  {
+    "id": "psoa.machine-learning.model-selection",
+    "version": "1.0.0",
+    "kind": "MethodSpec",
+    "origin": "source",
+    "source_key": "machine-learning.model-selection",
+    "name": "Model Selection",
+    "name_zh": "模型选择",
+    "domain": "machine-learning",
+    "status": "experimental",
+    "summary": "模型选择：每个 Agent 架构都与 simpler baseline 比较。",
+    "core_question": "更复杂候选是否在留出目标上真的值得？",
+    "operation": "定义候选与目标 → 在验证数据比较 → 选择 Pareto 候选 → 最终留出复验",
+    "agent_use": "每个 Agent 架构都与 simpler baseline 比较。",
+    "applicability": {
+      "when": [
+        "存在多个能力、成本或复杂度不同的候选。"
+      ],
+      "not_when": [
+        "比较使用了测试集或候选预算不公平。"
+      ]
+    },
+    "source_refs": [
+      "ref:user-cross-domain-map",
+      "ref:sklearn-model-selection"
+    ],
+    "governance": {
+      "risk_level": "medium",
+      "permission_decision": "harness_policy",
+      "outcome_decision": "verifier",
+      "sensitive_values": "reference_only"
+    },
+    "semantics": {
+      "preconditions": [
+        "存在多个能力、成本或复杂度不同的候选。"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "instruction": "定义候选与目标"
+        },
+        {
+          "order": 2,
+          "instruction": "在验证数据比较"
+        },
+        {
+          "order": 3,
+          "instruction": "选择 Pareto 候选"
+        },
+        {
+          "order": 4,
+          "instruction": "最终留出复验"
+        }
+      ],
+      "stop_conditions": [
+        "成功条件已由 Verifier 依据证据确认。",
+        "前置条件失效、预算耗尽或 Harness policy 阻止继续。"
+      ],
+      "success_conditions": [
+        "每个 Agent 架构都与 simpler baseline 比较。"
+      ],
+      "evidence_required": [
+        "固定数据切分、指标、重复运行、置信/校准结果和 held-out 评估。"
+      ],
+      "failure_modes": [
+        "比较使用了测试集或候选预算不公平。",
+        "步骤之间的数据、控制或验证依赖未满足。"
+      ]
+    }
+  },
+  {
+    "id": "psoa.machine-learning.generalization-validation-loop",
+    "version": "1.0.0",
+    "kind": "MethodSpec",
+    "origin": "derived",
+    "name": "Generalization Validation Loop",
+    "name_zh": "泛化验证循环",
+    "domain": "machine-learning",
+    "status": "experimental",
+    "summary": "用隔离数据和重复验证判断改进是否泛化，而不是只对开发样本有效。",
+    "core_question": "怎样把机器学习中的关键方法组合成可重复的问题求解闭环？",
+    "operation": "Split → Validate → Prevent Leakage → Calibrate → Select",
+    "agent_use": "用隔离数据和重复验证判断改进是否泛化，而不是只对开发样本有效。",
+    "applicability": {
+      "when": [
+        "问题主要需要机器学习的方法形成多步闭环。"
+      ],
+      "not_when": [
+        "单一原子操作已经足够，继续组合只会增加成本。"
+      ]
+    },
+    "source_refs": [
+      "ref:user-cross-domain-map"
+    ],
+    "governance": {
+      "risk_level": "medium",
+      "permission_decision": "harness_policy",
+      "outcome_decision": "verifier",
+      "sensitive_values": "reference_only"
+    },
+    "semantics": {
+      "preconditions": [
+        "所引用条目均已装载且其前置条件可在运行时检查。"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "use": "psoa.machine-learning.train-validation-test-separation"
+        },
+        {
+          "order": 2,
+          "use": "psoa.machine-learning.cross-validation"
+        },
+        {
+          "order": 3,
+          "use": "psoa.machine-learning.data-leakage-control"
+        },
+        {
+          "order": 4,
+          "use": "psoa.machine-learning.calibration"
+        },
+        {
+          "order": 5,
+          "use": "psoa.machine-learning.model-selection"
+        }
+      ],
+      "stop_conditions": [
+        "目标得到足够证据支持。",
+        "预算耗尽、关键前提失效或 Harness policy 阻止继续。"
+      ],
+      "success_conditions": [
+        "用隔离数据和重复验证判断改进是否泛化，而不是只对开发样本有效。"
+      ],
+      "evidence_required": [
+        "固定数据切分、指标、重复运行、置信/校准结果和 held-out 评估。"
+      ],
+      "failure_modes": [
+        "任一引用缺失、输入输出不能衔接或验证依赖不满足。"
+      ]
+    }
+  }
+]
+```
+
+## 18条记录的既有审阅位置
+
+以下只说明各索引可到何处追溯；批次深度与外部支持并不相同，不等于18件独立功法或完成556→410去重。
+
+- `[0..4]`：source-selected-machine-learning-entries-0-to-4-20261015.txt。
+- `[5..8]`：source-selected-machine-learning-entries-5-to-8-20261015.txt。
+- `[9..11]`、`[17]`：本文件。
+- `[12] active-learning`：source-selected-candidate-active-learning-20261014.txt。
+- `[13] drift-detection`、`[14] out-of-distribution-check`、`[16] confidence-escalation`：source-selected-candidates-20261014.txt，三条均有自己的 OperatorSpec，不并成一个操作。
+- `[15] causal-feature-ablation`：source-selected-candidate-causal-feature-ablation-20261014.txt。
+
+## 处理结果
+
+四条仍是 Solve 包内 experimental 来源记录；不升级为项目候选接受、登记、品级或正式效果。传统 ML 局部依据不证明 Agent 跨域迁移。后续须固定任务、独立标签/数据、成本与安全约束，使用可复核的负例和留出结果；派生循环还须明确数据角色先于使用成立的约束，而不是补一个新的总功法名称。

@@ -63,7 +63,7 @@
 
 法器总表整理 Vibe Coding 流程中使用或依赖的工具、可调用入口和依赖类别；固定来源实现、当前运行实例、候选对象与抽象类别分别记录。文件级许可线索仅作支持证据，不等于许可批准或再分发授权。
 
-- [法器体系说明](.github/docs/gongfa/faqi-system.md)：分类边界、重要性分级和选用方式。
+- [法器体系说明](.github/docs/gongfa/faqi-system.md)：分类边界、重要性分级、选用方式与固定 MCP 源码的副作用边界。
 - [法器重要性总表](.github/tools/faqi-catalog.md)：30 项的品级、名称、说明与记录状态。
 - [法器登记源](.github/metadata/faqi.json)：唯一可编辑数据源；生成总表不可手改。
 - [法器类型与正式效能规约](.github/docs/gongfa/cultivation-ontology-taxonomy.md#法器品级规约)：正式任务效果量表仍为草案。
