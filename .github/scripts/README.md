@@ -5,7 +5,9 @@
 当前已有：
 
 - `check-local-links.py`：仓库内 Markdown 相对链接与锚点检查脚本。
-- `check-markdown-details.py`：仓库内 Markdown `<details>/<summary>` 折叠块结构检查脚本。
+- `check-markdown-details.py`：仓库内 Markdown `<details>/<summary>` 折叠块结构检查脚本；代码围栏按字符、长度和尾随空白识别。
+- `test-markdown-details.py`：用真实 CLI 验证长围栏、嵌套示例和正文错误拒绝，标准库依赖；`make test-details` 纳入本地 `make test`。
+  默认保留 `/tmp/markdown-details-test-*` 的输入、脚本副本、日志、退出码及 `result.json`；不宣称新增远端 CI 目标。
 - `check-doc-structure.py`：`.github/docs/` README 的标准块顺序、目录入口、重复锚点与细粒度目录入口检查脚本。
 - `check-directory-docs.py`：仓库自有目录 `README.md` / `AGENTS.md` 覆盖检查脚本；根 `.github/` 仅要求 `AGENTS.md`，避免 GitHub 首页误展示平台配置说明。
 - `check-metadata.py`：`.github/metadata/taxonomy.yml` 与 `.github/metadata/redirects.yml` 路径和锚点检查脚本。

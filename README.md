@@ -229,6 +229,7 @@
 .github/scripts/
   README.md  # 自动化入口、验证命令与脚本职责索引
   check-local-links.py  # Markdown 相对链接检查脚本
+  test-markdown-details.py  # 代码围栏隔离与折叠块错误的 CLI 回归
 ```
 
 ```mermaid

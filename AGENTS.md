@@ -69,6 +69,7 @@ git push origin HEAD
 | `make lint` | 校验全仓库 Markdown | Node.js 22+；通过 `npx --yes markdownlint-cli@0.48.0` 执行 |
 | `make check-links` | 校验仓库内 Markdown 相对链接 | Python 3 |
 | `make check-details` | 校验 Markdown 折叠块 `<details>/<summary>` 结构 | Python 3 |
+| `make test-details` | 验证代码围栏隔离与真实折叠错误拒绝，保留 CLI 工件 | Python 3 标准库 |
 | `make check-doc-structure` | 校验 docs README 标准块顺序、目录入口和重复锚点 | Python 3 |
 | `make check-directory-docs` | 校验仓库自有目录 README/AGENTS 覆盖 | Python 3 |
 | `make check-metadata` | 校验 metadata 路径与锚点 | Python 3 |
@@ -203,7 +204,8 @@ git push origin HEAD
   `repo_token`、`issue_message`、`pr_message`，以实际 Action 元数据和源码为准，不照抄过时的横线参数示例。
   保留平台 secret 注入、既有权限与事件边界，不 checkout 外部 PR；工作流变更后须核对真实新执行。
 - `.github/scripts/check-local-links.py` - 仓库内 Markdown 相对链接与锚点检查脚本，供 `make check-links` 与 CI 使用
-- `.github/scripts/check-markdown-details.py` - 仓库内 Markdown 折叠块结构检查脚本，供 `make check-details` 与 CI 使用
+- `.github/scripts/check-markdown-details.py` - 仓库内 Markdown 折叠块结构检查；围栏闭合须同字符、长度不少于开启且尾部仅空格/制表符
+- `.github/scripts/test-markdown-details.py` - 标准库 CLI 回归，覆盖长围栏与正文真实错误；`make test-details` 纳入本地总测试，不新增 CI 目标
 - `.github/scripts/check-doc-structure.py` - docs README 标准块顺序、目录入口和重复锚点检查脚本，供 `make check-doc-structure` 与 CI 使用
 - `.github/scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
 - `.github/scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用

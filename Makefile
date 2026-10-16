@@ -3,7 +3,7 @@
 .PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-gongfa test-gongfa check-ai-citation check-external-resources check-research-raw check-source-facts check-wiki fetch-research-raw sync-doc-toc build test clean clean-deps
 
 .PHONY: sync-gongfa-catalog check-gongfa-catalog test-gongfa-catalog
-.PHONY: sync-faqi-catalog check-faqi-catalog test-faqi-catalog
+.PHONY: sync-faqi-catalog check-faqi-catalog test-faqi-catalog test-details
 
 MARKDOWNLINT = npx --yes markdownlint-cli@0.48.0
 
@@ -15,6 +15,7 @@ help:
 	@echo "  lint     - Lint all markdown files"
 	@echo "  check-links - Check local markdown links and anchors"
 	@echo "  check-details - Check markdown details/summary blocks"
+	@echo "  test-details - 验证代码围栏隔离与真实折叠错误拒绝行为"
 	@echo "  check-doc-structure - Check docs README anchors, order and duplicate anchors"
 	@echo "  check-directory-docs - Check required README/AGENTS pairs"
 	@echo "  check-metadata - Check metadata paths and anchors"
@@ -50,6 +51,10 @@ check-links:
 check-details:
 	@echo "Checking markdown details/summary blocks..."
 	@python3 .github/scripts/check-markdown-details.py
+
+test-details:
+	@echo "执行 Markdown 代码围栏与折叠块 CLI 回归..."
+	@python3 .github/scripts/test-markdown-details.py
 
 check-doc-structure:
 	@echo "Checking docs README structure..."
@@ -121,7 +126,7 @@ sync-doc-toc:
 build:
 	@echo "No build step: this repository is a documentation and knowledge-base project."
 
-test: lint check-links check-details check-doc-structure check-directory-docs check-metadata check-gongfa test-gongfa check-gongfa-catalog test-gongfa-catalog check-faqi-catalog test-faqi-catalog check-ai-citation check-external-resources check-research-raw check-source-facts
+test: lint check-links check-details test-details check-doc-structure check-directory-docs check-metadata check-gongfa test-gongfa check-gongfa-catalog test-gongfa-catalog check-faqi-catalog test-faqi-catalog check-ai-citation check-external-resources check-research-raw check-source-facts
 	@echo "Quality gates complete."
 
 clean: clean-deps

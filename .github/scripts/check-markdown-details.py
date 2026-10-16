@@ -28,12 +28,17 @@ def strip_fenced_code(text: str) -> str:
 
     for line in text.splitlines():
         stripped = line.lstrip()
-        if stripped.startswith(("```", "~~~")):
-            marker = stripped[:3]
+        match = re.match(r"(`{3,}|~{3,})(.*)$", stripped)
+        if match:
+            marker, suffix = match.groups()
             if not in_fence:
                 in_fence = True
                 fence_marker = marker
-            elif marker == fence_marker:
+            elif (
+                marker[0] == fence_marker[0]
+                and len(marker) >= len(fence_marker)
+                and not suffix.strip(" \t")
+            ):
                 in_fence = False
                 fence_marker = ""
             lines.append("")
