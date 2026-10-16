@@ -290,8 +290,11 @@ pip install -r .github/tools/prompts-library/scripts/requirements.txt
 
 - 默认分支：`main`，开发更新和贡献 PR 统一以 `main` 为目标。
 - 远端长期保留 `main`、`minimal`；`minimal` 保留现有内容，不作为贡献集成分支。主线保留签名与必需 CI 保护。
-- 不要求审批：Ruleset 与经典分支保护的审批数量均为 0，Code Owner、最近推送及额外审批均关闭。
-- 自愿审查入口：`.github/CODEOWNERS`（当前维护者：`@tukuaiai`、`@tradecatlabs`），不作为合并前置条件。
+- 审批规则单独管理：普通贡献者合入 PR 需至少 1 个有效批准；仅 `tradecatlabs` 可在合并 PR 时豁免审批。
+- 豁免只用于 `tradecatlabs` 自己发起的 PR；合并他人的 PR 仍须先获得批准。GitHub 原生豁免按合并账号判断，
+  不会自动按 PR 作者区分，因此该账号也具备绕过他人 PR 审批的能力，不得将其当作他人免审的日常流程。
+- 审批豁免不覆盖 CI、签名或其他保护；Code Owner、最近推送及额外审批要求保持关闭，不叠加审批门槛。
+- 路径级审查入口：`.github/CODEOWNERS`（当前维护者：`@tukuaiai`、`@tradecatlabs`），不强制指定审批人。
 - Markdown lint 配置：`.github/lint_config.json`
 - Markdown lint 版本：`Makefile` 中固定为 `markdownlint-cli@0.48.0`
 - 外部链接检查配置：`.lychee.toml`，统一管理外链检查的超时、重试、并发上限和排除项
