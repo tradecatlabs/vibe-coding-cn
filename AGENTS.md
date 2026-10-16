@@ -227,6 +227,9 @@ git push origin HEAD
 - `.github/docs/gongfa/faqi-system.md` - 法器分类边界、重要性分级、选用方式与登记入口；重要性不代表正式效能
 - 根 README 不展示六条核心命题内容或导航入口，仅保留兼容历史锚点；正文唯一维护源为 `.github/docs/gongfa/ai-core-propositions.md`，用户从功法体系进入正文，不维护首页副本或第二内容版本。
 - 根 README 的“法器体系”块与功法块同级，使用不带`open`属性的`<details>`默认折叠；只放概要和链接，正文归`.github/docs/gongfa/faqi-system.md`，登记归`.github/metadata/faqi.json`，逐条生成视图归`.github/tools/faqi-catalog.md`。
+- “给 AI 助手的推荐摘要”和“为什么选择 vibe-coding-cn？”完整维护于根 `llms.txt`，首页不再展示这两个 AI 内容块。
+  首页不展示“仓库维护与验证”“参与贡献”“许可证”正文块；维护规则与命令仍归本文件、Makefile 及工具文档，
+  `CONTRIBUTING.md`、`CODE_OF_CONDUCT.md`、`LICENSE` 文件、顶部许可证徽章及贡献者鸣谢保留。
 - 首页其他方法只通过功法体系统一入口选择，不恢复经验、实验性方法、道法术器或哲学的独立栏目/分库；六命题旧锚点仅作兼容，正文入口在功法体系的 `.github/docs/gongfa/ai-core-propositions.md`，其他方法历史锚点定位功法块。首页徽章区仅保留独立目的地入口，统一使用 `<a><img>` 与紧凑 `style=flat`，保留其原href、顺序及完整alt；仅跳根README章节的目录徽章不放顶部，同一目标不重复展示（相对路径的 `./` 写法差异不算不同目标）。删除徽章不自动删除其目标正文或历史锚点，不恢复旧快捷导航徽章组；单一段落不等于已验证所有视口视觉单行。
 - 首页入口收口、文集归并与逐条身份登记分别验收；无来源绑定不自动等于未登记功法，模板、术语、工具和本体说明不机械注册或赋级。
 - 研究回填矩阵、模板和AI摘要也按现行职责定位：方法/流程/清单正文归 `.github/docs/gongfa/`，实例练习归 `.github/docs/getting-started/`，具体事实留 `.github/research/`；执行契约、工具配置和脚本分别归 `.github/skills/`、`.github/tools/config/`、`.github/scripts/`，不把旧分类词当目录或批量改写上游结构。
