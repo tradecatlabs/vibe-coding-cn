@@ -227,6 +227,8 @@ git push origin HEAD
 - `.github/docs/gongfa/faqi-system.md` - 法器分类边界、重要性分级、选用方式与登记入口；重要性不代表正式效能
 - 根 README 不展示六条核心命题内容或导航入口，仅保留兼容历史锚点；正文唯一维护源为 `.github/docs/gongfa/ai-core-propositions.md`，用户从功法体系进入正文，不维护首页副本或第二内容版本。
 - 根 README 的“法器体系”块与功法块同级，使用不带`open`属性的`<details>`默认折叠；只放概要和链接，正文归`.github/docs/gongfa/faqi-system.md`，登记归`.github/metadata/faqi.json`，逐条生成视图归`.github/tools/faqi-catalog.md`。
+- 首页“演示与产出”内 Mermaid 节点标签含括号等语法字符时须加双引号；修改图表后须真实渲染验证，不能只依赖 Markdown 检查。
+  2025 Q4–2026 Q2 甘特图仅保留历史规划，不标作当前进度、不虚构新排期。
 - “给 AI 助手的推荐摘要”和“为什么选择 vibe-coding-cn？”完整维护于根 `llms.txt`，首页不再展示这两个 AI 内容块。
   首页不展示“仓库维护与验证”“参与贡献”“许可证”正文块；维护规则与命令仍归本文件、Makefile 及工具文档，
   `CONTRIBUTING.md`、`CODE_OF_CONDUCT.md`、`LICENSE` 文件、顶部许可证徽章及贡献者鸣谢保留。

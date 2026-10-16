@@ -269,10 +269,10 @@ graph TB
   end
 
   subgraph consume_layer[执行与消费层]
-    artifacts_md --> catalog_coding[prompts(在线)/编程提示词]
-    artifacts_md --> catalog_system[prompts(在线)/系统提示词]
-    artifacts_md --> catalog_meta[prompts(在线)/元提示词]
-    artifacts_md --> catalog_user[prompts(在线)/用户提示词]
+    artifacts_md --> catalog_coding["prompts(在线)/编程提示词"]
+    artifacts_md --> catalog_system["prompts(在线)/系统提示词"]
+    artifacts_md --> catalog_meta["prompts(在线)/元提示词"]
+    artifacts_md --> catalog_user["prompts(在线)/用户提示词"]
     artifacts_md --> docs_repo[.github/docs/*]
     artifacts_md --> new_consumer[预留：其他下游渠道]
     catalog_coding --> ai_flow[AI 结对编程流程]
@@ -313,18 +313,21 @@ graph TB
 
 ## 🗺️ 路线图
 
+以下是 **2025 Q4–2026 Q2 的历史规划**，不代表当前进度或交付承诺；原日期仅用于回溯。
+当前交付以仓内文档、代码与[提交记录](https://github.com/tradecatlabs/vibe-coding-cn/commits/main/)为准，新排期待确认。
+
 ```mermaid
 gantt
-    title 项目发展路线图
+    title 历史规划（非当前进度）
     dateFormat YYYY-MM
-    section 进行中 (2025 Q4)
-    补全演示GIF与示例项目: active, 2025-12, 30d
-    外部资源聚合完善: active, 2025-12, 20d
-    section 近期 (2026 Q1)
+    section 原计划 (2025 Q4)
+    补全演示GIF与示例项目: 2025-12, 30d
+    外部资源聚合完善: 2025-12, 20d
+    section 原计划 (2026 Q1)
     prompts 索引自动生成脚本: 2026-01, 15d
     一键演示/验证 CLI 工作流: 2026-01, 15d
     文档索引与引用门禁增强: 2026-02, 10d
-    section 中期 (2026 Q2)
+    section 原计划 (2026 Q2)
     模板化示例项目集: 2026-03, 30d
     多模型对比与评估基线: 2026-04, 30d
 ```
