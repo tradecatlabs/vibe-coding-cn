@@ -1,35 +1,16 @@
-# Troubleshooting & Edge Cases
+# tmux原生操作故障定位
 
-格式：症状 → 可能原因 → 诊断 → 修复
+诊断先只读，修复可能写入时先核对目标、权限和后果；不使用已退役封装。
 
-- `no such session` / `no current client`  
-  → 会话名写错或未 attach  
-  → `tmux list-sessions` 校验；需要时 `tmux new -s <name>`  
-  → 重试带绝对目标：`-t <s:w.p>`
+| 症状 | 先检查 | 处理边界 |
+|---|---|---|
+| 没有tmux程序 | `command -v tmux` | 如实报告；不自动安装 |
+| 找不到server/session/pane | 重新列出授权server和目标 | 不换到未知server，不猜第一个pane，不默认新建 |
+| 发送后无预期输出 | capture并核对当前程序、路径和pane_id | 可能是输入未被shell解释；不重复发送有副作用命令 |
+| 处在copy-mode | `tmux display-message -p -t "$target" '#{pane_in_mode}'` | 退出会改变状态；另确认，不盲发Escape |
+| 看见确认或密码提示 | capture最小必要范围并脱敏 | 不自动回答，不采集或记录凭据 |
+| 疑似同步广播未关闭 | 只读检查窗口选项 | 关闭前确认授权窗口；不对所有窗口批量写入 |
+| 状态栏或前缀异常 | 查阅固定配置与本机版本 | 不覆盖或自动重载用户主配置 |
+| 想找旧报告/锁/自动救援命令 | 查阅历史材料状态 | 原实现已退役，不承诺当前存在或重建替代程序 |
 
-- 发送无效、卡在 copy-mode  
-  → pane 处于 copy-mode  
-  → `tmux display-message -pt <t> '#{pane_in_mode}'`  
-  → 先 `tmux send-keys -t <t> Escape` 再发命令
-
-- 状态栏符号混乱、重复一行  
-  → 终端宽字符/字体问题或重复加载配置  
-  → `tmux -f /dev/null -L test` 检查；确认 `LC_CTYPE` 使用 UTF-8；清理多重 source  
-  → 使用仓库版 `.tmux.conf.local` 默认字体设置
-
-- 广播误伤其他 pane  
-  → `synchronize-panes` 未关闭  
-  → `tmux show-window-options | grep synchronize`  
-  → `tmux set-window-option synchronize-panes off`
-
-- Powerline 符号缺失  
-  → 字体未带 Powerline codepoints  
-  → 切换到带符号字体或安装 `PowerlineSymbols.otf`，再重载 `tmux source-file ~/.tmux.conf.local`
-
-- `prefix` 无反应  
-  → 其他程序占用或配置被覆盖  
-  → `grep prefix ~/.tmux.conf.local` 确认；可改为 `C-b` 并加 `#!important`
-
-- 长任务输出缺失  
-  → 未开启 pipe-pane / buffer 溢出  
-  → 提前 `pipe-pane` 到文件；或 `capture-pane -S -100000` 抓历史
+诊断结果绑定实际时间、server、pane和观察范围；发送成功、发现成功都不是任务效果证明。

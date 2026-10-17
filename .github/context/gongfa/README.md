@@ -13478,10 +13478,9 @@ $$
 
 tmux 蜂群协作是把多个 AI CLI 会话放进同一个 tmux 工作台，通过 `capture-pane` 读取输出、`send-keys` 发送按键、共享状态文件同步进度，再用脚本封装形成 commander + worker 的多终端协作系统。
 
-在当前仓库中，tmux 蜂群协作的可执行能力收敛到 `.github/skills/auto-tmux/`：
+原方案曾通过自研封装提供蜂群协作；这些实现已按用户要求退役。下文保留历史设计，不作为当前执行手册。当前Skill仅提供原生tmux的观察与授权操作，不再提供原任务锁、报告或自动救援：
 
 - 可执行入口：[auto-tmux skill](../../skills/auto-tmux/SKILL.md)
-- 脚本入口：[auto-tmux.sh](../../extensions/auto-tmux/auto-tmux.sh)
 - 完整文档：[AI 蜂群协作](../../skills/auto-tmux/references/ai-swarm-collaboration.md)
 
 <a id="doc-tmux-ai-swarm-解决什么问题"></a>

@@ -1,5 +1,7 @@
 # Swarm Prompt Templates
 
+> 历史材料：原自研封装已经退役，本文旧脚本、蜂群状态与报告命令不可执行，不代表当前能力或自动防护；操作以[当前Skill](../SKILL.md)为准。权限、凭据和用户数据保护边界仍适用。
+
 `.github/extensions/auto-tmux/render-swarm-prompt.sh` 用于渲染 tmux 蜂群协作的 commander、worker、reviewer，以及单 worker Codex Pilot Mode 的 `codex-worker` 提示词。它把常用协作协议固化成可复制模板，避免每次手写时遗漏边界、状态、锁和验收要求。
 
 ## 子命令

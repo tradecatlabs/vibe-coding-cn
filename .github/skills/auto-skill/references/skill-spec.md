@@ -104,8 +104,6 @@ Each Skill SHOULD include a `## Maintenance` section with:
 
 ## 8. Quality Gate
 
-Before shipping, run the checklist in `quality-checklist.md` and (if available) the validator:
-
-```bash
-./.github/extensions/validate-skill.sh .github/skills/<skill-name> --strict
-```
+交付前按`quality-checklist.md`核对内容、权限与引用，再用当前平台的原生发现检查入口。
+原本地结构校验封装已经退役，不再提供对应命令；结构通过不代表模型行为或任务效果已验证。
+最终项目验证使用根目录的`make test`，不新增另一套校验运行器。

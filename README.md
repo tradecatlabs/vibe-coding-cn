@@ -171,7 +171,7 @@ pi --skill .github/skills
     │   ├── metadata/            # 原分类、术语与重定向
     │   └── assets/              # 原图片、数据与模板
     ├── skills/                  # 仅保留auto-skill、auto-tmux两个自有入口
-    ├── extensions/              # 原程序、脚本、小工具和适配
+    ├── extensions/              # 原程序与公共维护工具；自有Skill封装已退役
     ├── CODEOWNERS               # 路径级 owner 评审基线
     ├── ISSUE_TEMPLATE/          # Issue 模板
     ├── PULL_REQUEST_TEMPLATE.md # PR 模板

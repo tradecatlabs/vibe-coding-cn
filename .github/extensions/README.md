@@ -9,8 +9,7 @@
 
 | 既有对象 | 入口与用途 |
 |---|---|
-| [auto-tmux](auto-tmux/README.md) | 原终端自动化脚本；指令见[同名Skill](../skills/auto-tmux/SKILL.md) |
-| [Skill Seekers](Skill_Seekers-development/README.md) | 固定上游源码；本地适配入口为`skill-seekers.sh`及其bootstrap/import/update脚本 |
+| [Skill Seekers](Skill_Seekers-development/README.md) | 固定上游源码；原本地适配脚本已退役，按上游说明与具体授权选择使用 |
 | [Claude官方Skills源](claude-official-skills/README.md) | 保留单一固定源码及独立初始化脚本；Skills域的16个官方入口已移除 |
 | [tmux](tmux/README)、[oh-my-tmux](oh-my-tmux/README.md) | 原固定源码与配置仓库；不是自动安装或启用 |
 | [提示词转换](prompts-library/README.md) | 原Excel、Markdown、JSONL转换程序 |
@@ -20,7 +19,8 @@
 | [HTML工具原说明](html-tools-main.md) | `clean_epub_css.html`、`markdown-bianjiqi.html`、`task card generator.html`、`xhs graphic production - 1.0.html`、`xhs graphic production.html` |
 | [原GitHub Actions定义](github-actions.md) | `github-actions-ci.yml`、`github-actions-labeler.yml`、`github-actions-welcome.yml`；已停用，仅保全原定义 |
 
-现有独立脚本还包括`create-skill.sh`、`validate-skill.sh`和引用原上游的`init_skill.py`；没有复制第二份实现。
+来自两个自有Skill的33个封装脚本已退役，不保留兼容壳；两个Skill改用原生工具与指令检查。
+引用原上游的`init_skill.py`独立入口继续保留；固定上游、公共检查/生成/测试脚本及共享库不在本批删除范围。
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>

@@ -1,5 +1,7 @@
 # Swarm State and Lock Protocol
 
+> 历史材料：原自研封装已经退役，本文旧脚本、蜂群状态与报告命令不可执行，不代表当前能力或自动防护；操作以[当前Skill](../SKILL.md)为准。权限、凭据和用户数据保护边界仍适用。
+
 `.github/extensions/auto-tmux/swarm-state.sh` 是 `auto-tmux` 的最小蜂群状态管理脚本，用于在 tmux 多 AI 协作时记录状态、分配任务、声明锁和汇总报告。
 
 它不依赖数据库、`jq` 或后台服务，默认把状态写入 `/tmp/ai_swarm`。需要隔离不同项目时，用 `--dir DIR` 或环境变量 `AUTO_TMUX_SWARM_DIR` 指定目录。

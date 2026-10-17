@@ -1,5 +1,7 @@
 # auto-tmux JSONL Schema Notes
 
+> 历史材料：原自研封装已经退役，本文旧脚本、蜂群状态与报告命令不可执行，不代表当前能力或自动防护；操作以[当前Skill](../SKILL.md)为准。权限、凭据和用户数据保护边界仍适用。
+
 本文件记录 `auto-tmux` 机器可读输出的字段约定。当前脚本优先保持零依赖，因此 `.github/extensions/auto-tmux/check-jsonl.sh` 只做轻量字段门禁，不替代完整 JSON Schema 校验器。
 
 ## swarm-result

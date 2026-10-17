@@ -12,7 +12,7 @@
 | 路径 | 唯一职责 |
 |---|---|
 | `.github/context/` | 既有规则、知识、文档、数据、研究和参考资料；详见本域AGENTS |
-| `.github/skills/` | 仅保留auto-skill、auto-tmux两个自有Skill；代码引用Extensions |
+| `.github/skills/` | 仅保留auto-skill、auto-tmux两个自有指令入口，使用原生工具；原专属封装已退役 |
 | `.github/extensions/` | 原程序、小工具、检查/生成/测试脚本与适配；不是全部可由Pi的`-e`加载 |
 | `.github/ISSUE_TEMPLATE/`及固定配置 | 现有GitHub协作入口；本次仅退役workflows，不扩改其他平台配置 |
 | `Makefile` | 本地可重复命令入口 |
@@ -36,7 +36,8 @@ Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-ad
 ## Skills与Pi
 
 - 集合根不放`SKILL.md`；README/AGENTS不声明Skill frontmatter，避免误注册或停止子目录发现。
-- Skills只发现auto-skill、auto-tmux两个自有入口；官方16个入口已删除。Extensions的单一锁定官方源码和`init_skill.py`独立引用保留，不计为当前集合Skill。
+- Skills只发现auto-skill、auto-tmux两个自有入口；官方16个入口已删除，原33个自有封装脚本也已退役。两个入口只指导原生工具与规范，不继续承诺已删除的蜂群、报告或自动安全检查功能。
+- Extensions的单一锁定官方源码和`init_skill.py`独立引用保留，不计为当前集合Skill；历史材料、原审意见与当前可用性分别表达。
 - Pi从仓库根显式加载`pi --skill .github/skills`；不自动加载Context研究里的嵌套Skill，不把整个Extensions作为原生扩展加载。
 - 加载不等于执行、安装、兼容或效果证明；上下文文本和模型输出不构成授权。Windows原生符号链接与发现须单独验证。
 

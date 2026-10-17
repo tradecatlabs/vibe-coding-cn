@@ -1,20 +1,21 @@
 # auto-skill
 
-`auto-skill` 是本仓库保留的 Skills 元技能，用于生成、升级、重构和校验 Claude/Codex 风格的 Skill。
+整理和维护Skill指令、模板、边界、示例与参考资料；当前不依赖仓内自研生成、校验或导入封装。
 
 ## 入口
 
-- `SKILL.md`：技能说明与执行规则。
-- `AGENTS.md`：本目录维护规则。
-- `references/`：技能设计、校验和迁移参考资料。
-- `../../extensions/`：原技能校验、生成及Skill Seekers适配脚本的单一实现；本Skill不再保留旧scripts目录。
-- `assets/`：技能内部可复用资产。
+- [SKILL.md](SKILL.md)：当前触发、步骤、边界与示例。
+- [AGENTS.md](AGENTS.md)：维护规则。
+- [references/](references/)：结构规范、质量清单与资料来源。
+- [assets/](assets/)：现有最小/完整模板，按真实任务填写。
 
-## 使用
+## 当前执行方式
 
-修改本技能后先运行相关校验；完整`make test`仅在任务最终版本执行：
+使用普通文件操作、现有模板与平台原生发现。原6个辅助脚本已退役，不保留兼容命令或复制实现。
+Skill Seekers固定源码及独立初始化器仍在Extensions；它们是可单独选择的工具，不是维护本Skill的硬前提。
+安装、抓取、模型增强、上传和写外部目录均须具体授权，不能为了补验收自动执行。
 
-```bash
-.github/extensions/validate-skill.sh .github/skills/auto-skill --strict
-make test
-```
+## 验证
+
+核对frontmatter、触发、权限、示例及引用，再用当前平台原生发现检查入口。项目最终版本运行`make test`并保存真实工件。
+结构与发现通过不等于实际模型行为、任务效果、许可或所有平台兼容已验证。

@@ -1,25 +1,31 @@
-# auto-tmux Reference Index
+# auto-tmux参考索引
 
-## Quick Links
+## 当前原生CLI资料
 
-- `getting_started.md`：术语、最小安装、前缀说明
-- `api.md`：tmux/oh-my-tmux 常用命令、同步广播、安全写法
-- `codex-pilot-mode.md`：主 Codex 控制一个持久化交互式 worker Codex 的激活提示词和操作协议
-- `prompt-templates.md`：commander/worker/reviewer/codex-worker 提示词模板和下发方式
-- `examples.md`：蜂群巡检脚本、自动救援脚本、Skill Seeker 抓取示例
-- `troubleshooting.md`：常见报错与修复路径
-- [automation.md](automation.md)：现有脚本调用与自动化
-- [safety-policy.md](safety-policy.md)：发送、广播及敏感信息边界
-- [session-safety.md](session-safety.md)：本地与远程会话的只读/写入边界
-- [jsonl-schema.md](jsonl-schema.md)：现有报告JSONL约定
-- [report-pack-review.md](report-pack-review.md)：报告包审查与完整性
-- [reading-paths.md](reading-paths.md)：不同角色的阅读选择
-- [incident-runbook.md](incident-runbook.md)：误发送、误广播的恢复路径
-- [script-cheatsheet.md](script-cheatsheet.md)：现有命令速查
-- [iteration-closeout.md](iteration-closeout.md)：迭代核对与收尾
+- [README.md](README.md)：当前/历史材料边界。
+- [AGENTS.md](AGENTS.md)：参考目录维护规则。
 
-## Notes
+- [当前操作合同](../SKILL.md)：触发、目标、权限及三个示例。
+- [api.md](api.md)：原生命令与副作用区分。
+- [getting_started.md](getting_started.md)：只读入门与术语。
+- [troubleshooting.md](troubleshooting.md)：按证据定位故障。
 
-- 长文档、脚本细节放这里，`SKILL.md` 只保留可立即执行的片段。
-- 配置来源：仓库内 `.github/extensions/oh-my-tmux`（gpakosz/oh-my-tmux）。
-- 大规模文档抓取/刷新可用 `.github/extensions/Skill_Seekers-development`，示例见 `examples.md`。
+## 历史材料：封装已退役，旧命令不可执行
+
+- [automation.md](automation.md)：原脚本接口和自动化设计。
+- [codex-pilot-mode.md](codex-pilot-mode.md)：原worker控制协议；不默认激活。
+- [examples.md](examples.md)：原巡检、救援与抓取示例。
+- [safety-policy.md](safety-policy.md)：原防护设计，权限和数据边界仍适用。
+- [session-safety.md](session-safety.md)：会话与远程权限经验。
+- [jsonl-schema.md](jsonl-schema.md)：原报告格式。
+- [report-pack-review.md](report-pack-review.md)：原报告包核对。
+- [reading-paths.md](reading-paths.md)：原角色阅读路线。
+- [incident-runbook.md](incident-runbook.md)：原事故处理经验。
+- [script-cheatsheet.md](script-cheatsheet.md)：原封装速查，不是当前命令清单。
+- [swarm-state.md](swarm-state.md)：原任务、锁和状态协议。
+- [prompt-templates.md](prompt-templates.md)：原协作提示词。
+- [ai-swarm-collaboration.md](ai-swarm-collaboration.md)：原协作方案和边界。
+- [iteration-roadmap.md](iteration-roadmap.md)：原迭代计划，不冒充当前进度。
+- [iteration-closeout.md](iteration-closeout.md)：原验证记录，不作为当前成功证据。
+
+只保留资料，不恢复自研脚本、自动化运行器或源码副本。

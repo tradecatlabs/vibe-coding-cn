@@ -4,9 +4,7 @@ import base64
 import hashlib
 import importlib.util
 import json
-import os
 from pathlib import Path
-import subprocess
 import sys
 import tempfile
 import unittest
@@ -119,34 +117,6 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertIn('](#doc-example-目标)', toc)
         self.assertIn('](#doc-other-目标)', toc)
         self.assertNotIn('代码不是目录', toc)
-
-    def test_existing_script_consumers_keep_template_resolution_and_fixed_source_guard(self):
-        code_root = Path(__file__).resolve().parents[2] / '.github/extensions'
-        canary = self.root / 'canary-bin'; canary.mkdir()
-        marker = self.root / 'unexpected-external-call'
-        for name in ['curl', 'tar', 'rsync', 'mktemp']:
-            stub = canary / name
-            stub.write_text('#!/bin/sh\nprintf unexpected > "$MIGRATION_CANARY"\nexit 83\n')
-            stub.chmod(0o755)
-        env = {'PATH': os.defpath, 'HOME': str(self.root), 'TMPDIR': str(self.root)}
-        guarded_env = dict(env, PATH=str(canary) + os.pathsep + os.defpath, MIGRATION_CANARY=str(marker))
-        def run(name, *args):
-            command = ['bash', str(code_root / name), *map(str, args)]
-            selected_env = guarded_env if name == 'skill-seekers-update.sh' else env
-            completed = subprocess.run(command, env=selected_env, capture_output=True, timeout=15)
-            (self.root / (name + '.stdout')).write_bytes(completed.stdout)
-            (self.root / (name + '.stderr')).write_bytes(completed.stderr)
-            return completed
-        generated = run('create-skill.sh', 'migration-contract', '--minimal', '--output', self.root / 'output')
-        self.assertEqual(generated.returncode, 0, generated.stderr.decode())
-        skill = self.root / 'output/migration-contract'
-        self.assertIn('name: migration-contract', (skill / 'SKILL.md').read_text())
-        checked = run('validate-skill.sh', skill)
-        self.assertEqual(checked.returncode, 0, checked.stderr.decode())
-        guarded = run('skill-seekers-update.sh')
-        self.assertNotEqual(guarded.returncode, 0)
-        self.assertIn('固定来源', guarded.stderr.decode())
-        self.assertFalse(marker.exists(), '固定源码保护必须在联网、解压或替换前拒绝')
 
     def test_independent_raw_input_remains_readable(self):
         raw_root = self.root / 'standalone-input'

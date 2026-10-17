@@ -8,10 +8,12 @@ This directory contains long-form documentation that supports the `auto-skill` m
 
 ## Local Reference Docs (This Repo)
 
+- [AGENTS.md](AGENTS.md)：参考目录维护规则。
+
 - [`skill-spec.md`](skill-spec.md): normative spec (MUST/SHOULD/NEVER) for a production-grade Skill in this repo
 - [`quality-checklist.md`](quality-checklist.md): quality gate checklist + scoring rubric
 - [`anti-patterns.md`](anti-patterns.md): common failure modes and how to fix them
-- [`skill-seekers.md`](skill-seekers.md): linked Skill Seekers tool integration (workflow + commands)
+- [`skill-seekers.md`](skill-seekers.md): 可选固定上游的使用边界；原本地适配封装已退役
 
 ## Upstream / Official Reference
 

@@ -1,18 +1,11 @@
-# .github/skills/auto-tmux/references Agent 指南
+# auto-tmux参考资料维护规则
 
-本目录保存 auto-tmux 的参考资料、示例和排障说明。
+本目录区分当前原生CLI资料与已退役封装的历史材料，当前执行合同以父级SKILL.md为准。
 
-## 规则
-
-- 参考资料只能引用仓库相对路径，不写个人机器绝对路径。
-- 上游来源统一写为 `.github/extensions/oh-my-tmux`、`.github/extensions/tmux` 或 `.github/extensions/Skill_Seekers-development`。
-- 示例命令必须优先使用可复制的占位符或 `git rev-parse --show-toplevel` 动态定位仓库根目录。
-- 脚本类说明优先引用 `.github/extensions/auto-tmux/auto-tmux.sh`，再给原生命令兜底。
-- SSH/远程 session 规则写入 `session-safety.md`；远程默认只读，不把只读采集扩展成控制入口。
-- 机器可读输出字段约定写入 `jsonl-schema.md`；新增 JSONL/manifest 输出必须同步维护。
-- report pack 审查路径写入 `report-pack-review.md`；新增报告文件时同步更新阅读顺序和通过标准。
-- 角色化阅读路线写入 `reading-paths.md`；新增关键 reference 时同步判断是否进入某个角色路径。
-- 操作事故处理流程写入 `incident-runbook.md`；新增控制类脚本时同步补事故处理路径。
-- 脚本场景速查写入 `script-cheatsheet.md`；新增脚本时必须放入对应场景分组。
-- 多轮迭代收尾写入 `iteration-closeout.md`；后续新增能力时同步更新能力层和维护边界。
-- 不确定的 tmux 行为必须给出验证命令，不编造。
+- `api.md`、`getting_started.md`、`troubleshooting.md`维护原生观察、授权操作与诊断说明。
+- 其余原蜂群、报告、脚本API及迭代材料只保留历史；必须有退役声明，不能将其中旧命令当当前可执行功能。
+- 原材料中的权限、凭据、敏感输出及用户数据边界仍须遵守，不能因实现退役而删掉这些保护原则。
+- 不恢复封装、自动确认、任务锁、安全扫描或多Agent运行器；不把历史记录当当前测试结果。
+- 上游仅查阅固定tmux、oh-my-tmux、Skill Seekers源，不自动安装、运行或更新。
+- 只在明确授权的稳定pane目标操作；先capture再发送，远程、录制、广播、关闭会话和配置写入须单独授权。
+- 修改后维护当前/历史导航与内链，验证原生命令时使用独占测试socket，不接触用户已有会话。

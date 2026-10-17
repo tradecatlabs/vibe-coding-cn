@@ -15,7 +15,7 @@ REQUIRED_DIRS = list(map(Path, (
     '.github/context/assets/datasets', '.github/context/assets/images', '.github/context/assets/templates',
     '.github/context/getting-started', '.github/context/gongfa', '.github/context/faqi',
     '.github/context/research', '.github/context/metadata', '.github/context/prompts',
-    '.github/extensions', '.github/extensions/lib', '.github/extensions/auto-tmux',
+    '.github/extensions', '.github/extensions/lib',
     '.github/skills', '.github/skills/auto-skill', '.github/skills/auto-skill/assets',
     '.github/skills/auto-skill/references', '.github/skills/auto-tmux',
     '.github/extensions/chat-vault', '.github/extensions/codex-config', '.github/extensions/codex-config/.codex',

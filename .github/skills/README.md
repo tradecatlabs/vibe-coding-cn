@@ -12,7 +12,7 @@
 | 来源 | 既有Skill | 职责 |
 |---|---|---|
 | 自有 | [auto-skill](auto-skill/SKILL.md) | 将资料整理为可复用Skill，维护结构与质量 |
-| 自有 | [auto-tmux](auto-tmux/SKILL.md) | tmux操控、巡检、救援与录制流程 |
+| 自有 | [auto-tmux](auto-tmux/SKILL.md) | 原生tmux定位、读取及明确授权后的输入 |
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
@@ -40,10 +40,10 @@ pi --skill .github/skills
 ### 来源与单一实现
 
 本集合不再提供官方Skill引用入口。原锁定上游源码和独立初始化脚本保留在Extensions，不属于当前Skills发现集合。
-删除的是16个入口软引用，没有删除、复制或改写上游源码，也没有移除自有Skill使用的程序。
+此前官方入口清理只删除16个软引用，没有删除、复制或改写上游源码；本次自有封装的退役范围见下文。
 
-自有Skill保留原有assets与references；执行脚本分别在Extensions域根和`../extensions/auto-tmux/`。
-创建和校验仍使用原`create-skill.sh`、`validate-skill.sh`，没有增加资源加载器或管理框架。
+自有Skill保留assets与参考资料，当前入口只采用原生工具和规范指令；原33个专属生成、校验、适配及终端封装脚本已退役。
+历史封装参考不再是执行手册；没有把实现复制回Skills，也没有新增包装程序、资源加载器或管理框架。
 
 ### 发现与信任边界
 

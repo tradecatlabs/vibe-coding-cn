@@ -1,39 +1,18 @@
-# Skill Seekers（链接工具）使用说明
+# Skill Seekers：可选固定上游
 
-原Skill Seekers源码只保留在`.github/extensions/Skill_Seekers-development`固定Gitlink；本Skill描述其文档/GitHub/PDF转Skill的现有工作流，不再保留旧scripts别名。下文命令从仓库根运行；抓取、依赖安装与生成仍须具体任务授权。
+[原源码](../../../extensions/Skill_Seekers-development/README.md)仍保留为锁定Gitlink；原本地bootstrap、运行、导入和更新适配器已退役，没有兼容命令。
 
-## 目录约定
+## 何时考虑
 
-- 唯一工具源码：`.github/extensions/Skill_Seekers-development`。
-- 运行入口：`.github/extensions/skill-seekers.sh`
-- 依赖初始化：`.github/extensions/skill-seekers-bootstrap.sh`
-- 导入到本仓库：`.github/extensions/skill-seekers-import.sh`
-- 更新源码：作为明确的Gitlink变更单独评审；`skill-seekers-update.sh`拒绝非预览覆盖，不因目标已是实际Git目录而解除保护。其`--dry-run`仍下载并解压临时归档，不是离线或零I/O。
+维护既有文件或少量资料时，直接使用文件读取与编辑工具，不强制安装、抓取或生成初稿。
+只有批量网站、仓库、PDF等来源确有抽取收益时，才在具体授权及预算内评估上游工具。
 
-## 推荐工作流（强约束）
+## 使用边界
 
-1. 用 Skill Seekers 生成初稿到 `output/<name>/`
-2. 导入到 `.github/skills/<name>/`
-3. 用 `validate-skill.sh --strict` 做质量闸门
-4. 回到 `auto-skill` 的规范对 `SKILL.md` 做“可激活性”与“边界”修订
+1. 先核对当前锁定源码的README、CLI入口及依赖；历史版本号或过去的可运行记录不证明当前环境可用。
+2. 安装、联网、模型增强、上传与外部目录写入分别确认副作用；不自动bootstrap或从未知文件搜寻凭据。
+3. 工具生成的是候选材料，不是已批准Skill。回到本Skill核对来源、边界、示例、权限和可观察结果。
+4. 需要导入时，先比较目标目录及并行改动，再用正常文件操作选择性整理；不恢复扁平覆盖导入器。
+5. 更新固定源码必须作为独立、显式授权的Gitlink变更；不提供绕过固定修订的更新脚本。
 
-## 最小可执行示例
-
-```bash
-# 1) 初始化（只需一次）
-./.github/extensions/skill-seekers-bootstrap.sh
-
-# 2) 生成（示例：抓 docs 配置）
-./.github/extensions/skill-seekers.sh -- scrape --config ./.github/extensions/Skill_Seekers-development/configs/react.json
-
-# 3) 导入到 .github/skills/
-./.github/extensions/skill-seekers-import.sh react
-
-# 4) 严格校验
-./.github/extensions/validate-skill.sh .github/skills/react --strict
-```
-
-## 设计原则
-
-- `.github/skills/auto-skill/` 负责：规范、模板、闸门、可激活性；不直接承载领域知识。
-- Skill Seekers 负责：抓取与初稿生成；最终交付仍以本仓库的 `validate-skill.sh --strict` 为准。
+本次只退役本地适配器，没有运行、升级、安装或批准上游，也没有改变其原法器初审、排除及许可边界。

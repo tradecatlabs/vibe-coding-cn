@@ -1,5 +1,7 @@
 # auto-tmux Script Automation
 
+> 历史材料：原自研封装已经退役，本文旧脚本、蜂群状态与报告命令不可执行，不代表当前能力或自动防护；操作以[当前Skill](../SKILL.md)为准。权限、凭据和用户数据保护边界仍适用。
+
 `.github/extensions/auto-tmux/auto-tmux.sh` 是 `auto-tmux` 的安全执行层：把高频 tmux 操作封装为可审计命令，减少手写 `capture-pane` / `send-keys` 时的误控风险。
 
 ## 设计目标
