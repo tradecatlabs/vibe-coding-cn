@@ -1,0 +1,32 @@
+{
+  "adapter": "generic-command",
+  "artifacts": [],
+  "baseline": {
+    "evidence": "",
+    "status": "NOT_CHECKED"
+  },
+  "capability": "coverage",
+  "command": "bash web3-lab/verify_coverage.sh",
+  "duration_ms": 565,
+  "exit_code": 0,
+  "input_digest": "sha256:78faec2171e6ab88c300c505b278e69a1500777e7986734b42a76e3f628010d1",
+  "metrics": {},
+  "policy_digest": "sha256:730f618af8f83b09cc3166723feac4647c626ba31a609febda0423b915a888d9",
+  "reason": "Command passed and all declared artifacts exist.",
+  "remediation": [],
+  "result_id": "VR-ac3a66bd9fc00a9a",
+  "schema_version": "1.0.0",
+  "scope": [
+    "governance/tasks/0004-web3-vertical-proof",
+    "web3-lab"
+  ],
+  "stderr_tail": "Warning: optimizer settings and `viaIR` have been disabled for accurate coverage reports.\nIf you encounter \"stack too deep\" errors, consider using `--ir-minimum` which enables `viaIR` with minimum optimization resolving most of the errors.\nSee more: https://book.getfoundry.sh/guides/best-practices/stack-too-deep\n",
+  "stdout_tail": "entrancyDrainsVault() (gas: 735321)\nSuite result: ok. 1 passed; 0 failed; 0 skipped; finished in 890.86µs (470.70µs CPU time)\n\nRan 4 test suites in 5.77ms (3.05ms CPU time): 4 tests passed, 0 failed, 0 skipped (4 total tests)\n\n╭---------------------------------+----------------+----------------+---------------+----------------╮\n| File                            | % Lines        | % Statements   | % Branches    | % Funcs        |\n+====================================================================================================+\n| src/AccessControlVault.sol      | 100.00% (8/8)  | 100.00% (6/6)  | 50.00% (1/2)  | 100.00% (3/3)  |\n|---------------------------------+----------------+----------------+---------------+----------------|\n| src/ArithmeticOverflow.sol      | 100.00% (4/4)  | 100.00% (3/3)  | 100.00% (0/0) | 100.00% (2/2)  |\n|---------------------------------+----------------+----------------+---------------+----------------|\n| src/PriceOracleManipulation.sol | 84.62% (11/13) | 91.67% (11/12) | 50.00% (3/6)  | 75.00% (3/4)   |\n|---------------------------------+----------------+----------------+---------------+----------------|\n| src/ReentrancyVault.sol         | 100.00% (8/8)  | 100.00% (7/7)  | 50.00% (2/4)  | 100.00% (2/2)  |\n|---------------------------------+----------------+----------------+---------------+----------------|\n| test/EXP-01-Reentrancy.t.sol    | 100.00% (9/9)  | 100.00% (8/8)  | 100.00% (1/1) | 100.00% (3/3)  |\n|---------------------------------+----------------+----------------+---------------+----------------|\n| test/OverflowEchidna.t.sol      | 0.00% (0/9)    | 0.00% (0/9)    | 0.00% (0/1)   | 0.00% (0/3)    |\n|---------------------------------+----------------+----------------+---------------+----------------|\n| Total                           | 78.43% (40/51) | 77.78% (35/45) | 50.00% (7/14) | 76.47% (13/17) |\n╰---------------------------------+----------------+----------------+---------------+----------------╯\nVERIFY_COVERAGE: PASS\n",
+  "thresholds": {},
+  "tool": {
+    "name": "bash",
+    "version": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)"
+  },
+  "verdict": "PASS",
+  "waiver": null
+}

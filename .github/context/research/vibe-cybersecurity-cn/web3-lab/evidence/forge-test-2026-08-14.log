@@ -1,0 +1,21 @@
+Compiling 26 files with Solc 0.8.35
+Solc 0.8.35 finished in 459.02ms
+Compiler run successful!
+
+Ran 1 test for test/EXP-02-Overflow.t.sol:OverflowTest
+[PASS] test_UncheckedOverflowWraps() (gas: 125561)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 358.10µs (81.73µs CPU time)
+
+Ran 1 test for test/EXP-04-PriceOracle.t.sol:PriceOracleTest
+[PASS] test_ManipulatedPriceEnablesArbitrage() (gas: 526016)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 390.42µs (121.26µs CPU time)
+
+Ran 1 test for test/EXP-03-AccessControl.t.sol:AccessControlTest
+[PASS] test_AnyoneCanEmergencyWithdraw() (gas: 316814)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 419.30µs (55.54µs CPU time)
+
+Ran 1 test for test/EXP-01-Reentrancy.t.sol:ReentrancyTest
+[PASS] test_ReentrancyDrainsVault() (gas: 735321)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 505.11µs (222.63µs CPU time)
+
+Ran 4 test suites in 4.85ms (1.67ms CPU time): 4 tests passed, 0 failed, 0 skipped (4 total tests)

@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0.0",
+  "plan_id": "VPLAN-71e46b2b7582c2e5",
+  "status": "READY",
+  "task_intent": {
+    "path": "tasks/0004-web3-vertical-proof/TASK_INTENT.json",
+    "digest": "sha256:77fc07a6ab513207012312a3b8585d7ea0bdacf0e22a4b1165f8a02dbeb14b6a",
+    "intent_id": "INTENT-152ab360ed8f"
+  },
+  "policy": {
+    "path": "control-plane/verification-policy.v1.json",
+    "digest": "sha256:730f618af8f83b09cc3166723feac4647c626ba31a609febda0423b915a888d9",
+    "policy_id": "project-verification-policy",
+    "mode": "shadow"
+  },
+  "capability_registry": {
+    "path": "control-plane/verification-capabilities.v1.json",
+    "digest": "sha256:e6dbb213c3db0b323139e5067a1c19ad200246cd4ec9fe3e05ebfb735a6e19d0",
+    "registry_id": "project-verification-capabilities"
+  },
+  "risk": {
+    "level": "high",
+    "score": 90,
+    "reasons": [
+      "authorization_or_secret"
+    ]
+  },
+  "conditions": {
+    "always": true,
+    "behavior_required": false,
+    "code_changed": true,
+    "contract_changed": false,
+    "data_changed": true,
+    "performance_changed": false,
+    "security_changed": true,
+    "external_side_effect": true,
+    "audit_required": false,
+    "rollback_required": true
+  },
+  "gates": [
+    {
+      "capability": "architecture",
+      "kind": "architecture",
+      "requirement": "required",
+      "status": "REQUIRED",
+      "reason": "high risk profile requires this capability",
+      "adapter": "generic-command",
+      "command": "bash governance/tools/verify_architecture.sh",
+      "timeout_seconds": 900,
+      "artifacts": [],
+      "owner": "architecture",
+      "scope": [
+        "governance/tasks/0004-web3-vertical-proof",
+        "web3-lab"
+      ],
+      "waiver": null
+    },
+    {
+      "capability": "behavior",
+      "kind": "behavior",
+      "requirement": "not_applicable",
+      "status": "NOT_APPLICABLE",
+      "reason": "condition not matched: behavior_required",
+      "adapter": "generic-command",
+      "command": "bash web3-lab/verify_tests.sh",
+      "timeout_seconds": 900,
+      "artifacts": [],
+      "owner": "product-engineering",
+      "scope": [
+        "governance/tasks/0004-web3-vertical-proof",
+        "web3-lab"
+      ],
+      "waiver": null
+    },
+    {
+      "capability": "coverage",
+      "kind": "coverage",
+      "requirement": "required",
+      "status": "REQUIRED",
+      "reason": "high risk profile requires this capability",
+      "adapter": "generic-command",
+      "command": "bash web3-lab/verify_coverage.sh",
+      "timeout_seconds": 900,
+      "artifacts": [],
+      "owner": "engineering",
+      "scope": [
+        "governance/tasks/0004-web3-vertical-proof",
+        "web3-lab"
+      ],
+      "waiver": null
+    },
+    {
+      "capability": "test",
+      "kind": "test",
+      "requirement": "required",
+      "status": "REQUIRED",
+      "reason": "high risk profile requires this capability",
+      "adapter": "generic-command",
+      "command": "bash web3-lab/verify_tests.sh",
+      "timeout_seconds": 900,
+      "artifacts": [],
+      "owner": "engineering",
+      "scope": [
+        "governance/tasks/0004-web3-vertical-proof",
+        "web3-lab"
+      ],
+      "waiver": null
+    }
+  ],
+  "evidence_contract": {
+    "result_schema": "skills/auto-review/assets/schemas/verification-result.schema.json",
+    "freshness_source": "owner-derived-repository-input-v1",
+    "required_digests": [
+      "input_digest",
+      "policy_digest"
+    ],
+    "accepted_verdict": "PASS",
+    "strict_validation": "reexecute-required-gates"
+  },
+  "closeout_contract": {
+    "fail_closed": false,
+    "all_required_gates_pass": true,
+    "fresh_evidence_required": true,
+    "waiver_must_be_active": true
+  },
+  "blockers": []
+}

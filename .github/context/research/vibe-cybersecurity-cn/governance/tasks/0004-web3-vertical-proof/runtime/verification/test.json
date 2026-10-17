@@ -1,0 +1,32 @@
+{
+  "adapter": "generic-command",
+  "artifacts": [],
+  "baseline": {
+    "evidence": "",
+    "status": "NOT_CHECKED"
+  },
+  "capability": "test",
+  "command": "bash web3-lab/verify_tests.sh",
+  "duration_ms": 1017,
+  "exit_code": 0,
+  "input_digest": "sha256:78faec2171e6ab88c300c505b278e69a1500777e7986734b42a76e3f628010d1",
+  "metrics": {},
+  "policy_digest": "sha256:730f618af8f83b09cc3166723feac4647c626ba31a609febda0423b915a888d9",
+  "reason": "Command passed and all declared artifacts exist.",
+  "remediation": [],
+  "result_id": "VR-569c5ce549f8520d",
+  "schema_version": "1.0.0",
+  "scope": [
+    "governance/tasks/0004-web3-vertical-proof",
+    "web3-lab"
+  ],
+  "stderr_tail": "",
+  "stdout_tail": "PASS: 20 candidates validated; rebuilt WEB3_CANDIDATE_TABLE.md\nPASS: ground truth 4 == findings 全部 confirmed，artifacts 存在\nCompiling 26 files with Solc 0.8.35\nSolc 0.8.35 finished in 861.17ms\nCompiler run successful!\n\nRan 1 test for test/EXP-02-Overflow.t.sol:OverflowTest\n[PASS] test_UncheckedOverflowWraps() (gas: 125561)\nSuite result: ok. 1 passed; 0 failed; 0 skipped; finished in 492.49µs (125.18µs CPU time)\n\nRan 1 test for test/EXP-03-AccessControl.t.sol:AccessControlTest\n[PASS] test_AnyoneCanEmergencyWithdraw() (gas: 316814)\nSuite result: ok. 1 passed; 0 failed; 0 skipped; finished in 520.25µs (157.03µs CPU time)\n\nRan 1 test for test/EXP-04-PriceOracle.t.sol:PriceOracleTest\n[PASS] test_ManipulatedPriceEnablesArbitrage() (gas: 526016)\nSuite result: ok. 1 passed; 0 failed; 0 skipped; finished in 531.35µs (167.33µs CPU time)\n\nRan 1 test for test/EXP-01-Reentrancy.t.sol:ReentrancyTest\n[PASS] test_ReentrancyDrainsVault() (gas: 735321)\nSuite result: ok. 1 passed; 0 failed; 0 skipped; finished in 616.82µs (251.90µs CPU time)\n\nRan 4 test suites in 5.82ms (2.16ms CPU time): 4 tests passed, 0 failed, 0 skipped (4 total tests)\nVERIFY_TESTS: PASS\n",
+  "thresholds": {},
+  "tool": {
+    "name": "bash",
+    "version": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)"
+  },
+  "verdict": "PASS",
+  "waiver": null
+}

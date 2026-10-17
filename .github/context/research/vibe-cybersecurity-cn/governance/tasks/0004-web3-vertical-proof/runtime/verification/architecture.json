@@ -1,0 +1,32 @@
+{
+  "adapter": "generic-command",
+  "artifacts": [],
+  "baseline": {
+    "evidence": "",
+    "status": "NOT_CHECKED"
+  },
+  "capability": "architecture",
+  "command": "bash governance/tools/verify_architecture.sh",
+  "duration_ms": 164,
+  "exit_code": 0,
+  "input_digest": "sha256:78faec2171e6ab88c300c505b278e69a1500777e7986734b42a76e3f628010d1",
+  "metrics": {},
+  "policy_digest": "sha256:730f618af8f83b09cc3166723feac4647c626ba31a609febda0423b915a888d9",
+  "reason": "Command passed and all declared artifacts exist.",
+  "remediation": [],
+  "result_id": "VR-11fa9655a9588da1",
+  "schema_version": "1.0.0",
+  "scope": [
+    "governance/tasks/0004-web3-vertical-proof",
+    "web3-lab"
+  ],
+  "stderr_tail": "",
+  "stdout_tail": "# Governance Package Validation\n\n- `decision`: PASS\n- `root`: governance\n- `issue_count`: 0\n\n## Issues\n- none\n# Governance Health Report\n\n- `decision`: PASS\n- `root`: governance\n- `markdown_count`: 100\n- `placeholder_count`: 0\n- `stale_count`: 0\n- `open_agent_feedback_count`: 0\n- `gate_auto_ready`: 2 / 2\n- `document_driven_operating_model`: enabled / complete\n\n## Record Counts\n\n- `adr`: 1\n- `review`: 0\n- `postmortem`: 0\n- `lesson`: 0\n- `workorder`: 0\n- `debt`: 0\n- `gate`: 2\n- `qa`: 0\n- `agent-feedback`: 0\n- `baseline`: 0\n- `control`: 0\n- `exception`: 0\n- `risk`: 0\n- `conformance`: 0\n- `audit-export`: 0\n- `release`: 0\n\n## Placeholder Examples\n\n- none\n\n## Stale Examples\n\n- none\n\n## Document-Driven Operating Model\n\n- existing:\n  - `context/PROJECT_OPERATING_MODEL.md`\n  - `processes/DOCUMENT_DRIVEN_DEVELOPMENT.md`\n  - `context/TOOLCHAIN_MODEL.md`\n  - `context/project_operating_model_contract.v1.yaml`\n- missing:\n  - none\n\n## Next Actions\n\n- 治理包健康，继续按事件增量维护。\nVERIFY_ARCHITECTURE: PASS\n",
+  "thresholds": {},
+  "tool": {
+    "name": "bash",
+    "version": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)"
+  },
+  "verdict": "PASS",
+  "waiver": null
+}
