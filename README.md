@@ -46,7 +46,7 @@
 **统一说明约定**：每次选用工具，问清问题是什么、为何这样设计、怎样实现、代价是什么；再比较替代方案、可复用共性和生效前提。
 这不是新增工具注册表，也不把资料行、运行实例、抽象依赖类别和程序源码混成一种身份。
 
-**组合方式**：借鉴Lambda演算，用`f: Input → Result`表达接口，只有前一步结果满足后一步输入条件时才组合`λx. g(f(x))`。
+**组合方式**：借鉴[Lambda演算](.github/context/gongfa/README.md#doc-lambda-calculus)，用`f: Input → Result`表达接口，只有前一步结果满足后一步输入条件时才组合`λx. g(f(x))`。
 真实程序的错误、环境、权限及副作用另列；这个记号不证明纯函数、确定性、正确性或终止，不在仓内实现解释器。
 
 主体执行复用Pi的原生工具与模型选择，使用已授权的OpenAI GPT；没有新建Agent、模型HTTP客户端或Pi内置扩展副本。
@@ -150,7 +150,8 @@ pi --skill .github/skills
 3. [问题求解](.github/context/gongfa/README.md#doc-problem-solving) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
 4. [Vibe Coding 状态转移闭环](.github/context/gongfa/README.md#doc-vibe-coding-state-transition) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding
 5. [拼好码](.github/context/gongfa/README.md#doc-glue-coding) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
-6. [工程实践](.github/context/gongfa/README.md#doc-quality-gates-and-pitfalls) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
+6. [Lambda演算](.github/context/gongfa/README.md#doc-lambda-calculus) - 天级上品；理解函数抽象、作用域、归约与组合边界
+7. [工程实践](.github/context/gongfa/README.md#doc-quality-gates-and-pitfalls) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
 
 </details>
 

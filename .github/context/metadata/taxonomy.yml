@@ -122,6 +122,9 @@ documents:
   - path: .github/context/gongfa/README.md#doc-glue-coding
     title: 拼好码
     role: 复用成熟能力、胶水原则、能力编排与业务交付
+  - path: .github/context/gongfa/README.md#doc-lambda-calculus
+    title: Lambda 演算
+    role: 天级上品；变量绑定、函数抽象、归约与组合及工程语义边界
   - path: .github/context/gongfa/README.md#doc-system-building
     title: 系统构建方法
     role: 自顶向下、自底向上与分而治之

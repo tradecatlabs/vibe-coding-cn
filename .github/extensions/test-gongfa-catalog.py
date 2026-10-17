@@ -70,9 +70,9 @@ class CatalogMaintenanceTest(unittest.TestCase):
 
     def test_current_all_classified_content_and_two_bad_summaries_keep_original_opinions(self):
         rows = catalog.merge_rows(deepcopy(self.documents))
-        self.assertEqual(Counter(row['namespace'] for row in rows), {'registry': 79, 'html211': 211, 'solve24': 24, 'html96': 96})
-        self.assertEqual(len(rows), 410)
-        self.assertEqual(len({(r['namespace'], r['original_id'], r['content_version']) for r in rows}), 410)
+        self.assertEqual(Counter(row['namespace'] for row in rows), {'registry': 80, 'html211': 211, 'solve24': 24, 'html96': 96})
+        self.assertEqual(len(rows), 411)
+        self.assertEqual(len({(r['namespace'], r['original_id'], r['content_version']) for r in rows}), 411)
         undetermined = {(r['namespace'], r['original_id']) for r in rows if r['grading_status'] == 'undetermined'}
         self.assertEqual(undetermined, {('html211', 'E001'), ('html96', 'VC029')})
         by_id = {(r['namespace'], r['original_id']): r for r in rows}
@@ -80,7 +80,14 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertEqual(by_id['solve24', 'psoa.programming.minimal-reproduction']['grade_id'], 'di-initial')
         self.assertIn('一个分布式系统最多只能保证一致性、可用性和分区容错性中的两项。', by_id['html96', 'VC029']['original_text'])
         self.assertIn('失去50%容量时剩余单位需要承担2倍总流量。', by_id['html211', 'E001']['original_text'])
-        self.assertEqual(sum(r['entry_status'] == '已登记' for r in rows), 79)
+        self.assertEqual(sum(r['entry_status'] == '已登记' for r in rows), 80)
+        glue_index = next(index for index, row in enumerate(rows) if row['original_id'] == 'gongfa-glue-coding')
+        self.assertEqual(rows[glue_index + 1]['name'], 'Lambda 演算')
+        self.assertEqual(rows[glue_index + 1]['grade_id'], 'tian-advanced')
+        self.assertIn('天级上品', rows[glue_index + 1]['reason'])
+        rendered = catalog.book_views.render_sources(ROOT, 'gongfa')
+        chapters = [line for line in rendered.splitlines() if line.startswith('## ')]
+        self.assertEqual(chapters[chapters.index('## 拼好码') + 1], '## Lambda 演算')
         self.assertEqual(sum(r['entry_status'] == '登记库候选' for r in rows), 0)
         self.assertEqual(self.documents['registry']['assessments'], [])
         registry_item = next(item for item in self.documents['registry']['gongfa'] if item['id'] == 'gongfa-first-principles')
@@ -108,7 +115,7 @@ class CatalogMaintenanceTest(unittest.TestCase):
         ))
         self.assertEqual(expected_solve_explanation, solve_row['explanation'])
         markdown = catalog.render_markdown(rows, self.binding)
-        self.assertIn('- 共**410条内容记录**；已登记79条，登记库候选0条，未入登记库的来源候选331条。', markdown)
+        self.assertIn('- 共**411条内容记录**；已登记80条，登记库候选0条，未入登记库的来源候选331条。', markdown)
         self.assertNotIn('[控制论与科学方法论](#控制论与科学方法论)', markdown)
         self.assertFalse('catalog.xlsx' in markdown, '活动阅读视图只有Markdown，历史Excel仅作原始载荷保存')
         section = markdown.split('## 全部记录\n\n', 1)[1].split('\n\n## 更新与核对', 1)[0]
@@ -137,7 +144,7 @@ class CatalogMaintenanceTest(unittest.TestCase):
         rows = catalog.merge_rows(documents)
         self.assertEqual(sum(row['entry_status'] == '登记库候选' for row in rows), 1)
         markdown = catalog.render_markdown(rows, self.binding)
-        self.assertIn('- 共**411条内容记录**；已登记79条，登记库候选1条，未入登记库的来源候选331条。', markdown)
+        self.assertIn('- 共**412条内容记录**；已登记80条，登记库候选1条，未入登记库的来源候选331条。', markdown)
 
     def test_registry_updates_follow_explicit_correction_and_never_inherit_a_new_version(self):
         documents = deepcopy(self.documents)

@@ -21,6 +21,7 @@
 
 Context的9个既有集合是`gongfa`、`faqi`、`getting-started`、`prompts`、`research`、`external-resources`、`ai-citation`、`metadata`、`assets`。
 全部18个Skill和现有Extensions清单分别在其README，不另建工具注册层。
+Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-advanced`），总表、文集及首页学习入口均紧随拼好码；不新增解释器或执行器。
 
 ## 原始数据与来源
 
