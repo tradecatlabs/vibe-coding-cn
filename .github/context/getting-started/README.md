@@ -2,7 +2,7 @@
 
 ## 字多不看
 
-- 本目录保留既有入门资料；工具箱主体入口为[Pi Agent与OpenAI GPT](../../../README.md#工具箱怎么用)，原Codex/OpenCode教程按具体工具选择使用。
+- 本目录保留既有入门资料；工具箱主体入口为[Pi Agent与OpenAI GPT](../../../README.md#vibe-coding-指南)，原Codex/OpenCode教程按具体工具选择使用。
 - 新手先读 Vibe Coding 经验，再按学习地图选择路线。
 - 配置完成后，用“第一个项目”走通一次从想法到 Git 检查点的最小闭环。
 - 新电脑优先配置网络环境和 CLI，再让 Agent 接管后续开发环境。
