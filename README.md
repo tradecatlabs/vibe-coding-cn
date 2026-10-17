@@ -170,7 +170,7 @@ pi --skill .github/skills
     │   ├── ai-citation/         # 原AI引用语料
     │   ├── metadata/            # 原分类、术语与重定向
     │   └── assets/              # 原图片、数据与模板
-    ├── skills/                  # 2个自有 + 16个既有官方入口
+    ├── skills/                  # 仅保留auto-skill、auto-tmux两个自有入口
     ├── extensions/              # 原程序、脚本、小工具和适配
     ├── CODEOWNERS               # 路径级 owner 评审基线
     ├── ISSUE_TEMPLATE/          # Issue 模板

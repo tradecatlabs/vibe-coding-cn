@@ -11,7 +11,7 @@
 |---|---|
 | [auto-tmux](auto-tmux/README.md) | 原终端自动化脚本；指令见[同名Skill](../skills/auto-tmux/SKILL.md) |
 | [Skill Seekers](Skill_Seekers-development/README.md) | 固定上游源码；本地适配入口为`skill-seekers.sh`及其bootstrap/import/update脚本 |
-| [Claude官方Skills源](claude-official-skills/README.md) | 单一固定上游树；16个既有Skill由Skills域引用 |
+| [Claude官方Skills源](claude-official-skills/README.md) | 保留单一固定源码及独立初始化脚本；Skills域的16个官方入口已移除 |
 | [tmux](tmux/README)、[oh-my-tmux](oh-my-tmux/README.md) | 原固定源码与配置仓库；不是自动安装或启用 |
 | [提示词转换](prompts-library/README.md) | 原Excel、Markdown、JSONL转换程序 |
 | [Codex配置](codex-config/README.md) | 原配置与安装/恢复脚本；使用前核对副作用与凭据边界 |

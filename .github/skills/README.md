@@ -2,20 +2,17 @@
 
 ## 字多不看
 
-现有18个Skill统一放在这里：2个自有Skill和16个官方既有Skill；本次没有新增业务Skill。
+当前只保留2个自有Skill：`auto-skill`和`auto-tmux`。16个官方引用入口已按用户要求移除，没有新增业务Skill。
 指令属于Skills，程序实现属于[Extensions](../extensions/README.md)，规则和知识参考属于[Context](../context/README.md)。
 
 <a id="当前保留"></a>
 
 ## 快速导航
 
-| 来源 | 既有Skill |
-|---|---|
-| 自有 | [auto-skill](auto-skill/SKILL.md)、[auto-tmux](auto-tmux/SKILL.md) |
-| 官方 | [algorithmic-art](algorithmic-art/SKILL.md)、[brand-guidelines](brand-guidelines/SKILL.md)、[canvas-design](canvas-design/SKILL.md)、[doc-coauthoring](doc-coauthoring/SKILL.md) |
-| 官方 | [docx](docx/SKILL.md)、[frontend-design](frontend-design/SKILL.md)、[internal-comms](internal-comms/SKILL.md)、[mcp-builder](mcp-builder/SKILL.md) |
-| 官方 | [pdf](pdf/SKILL.md)、[pptx](pptx/SKILL.md)、[skill-creator](skill-creator/SKILL.md)、[slack-gif-creator](slack-gif-creator/SKILL.md) |
-| 官方 | [theme-factory](theme-factory/SKILL.md)、[web-artifacts-builder](web-artifacts-builder/SKILL.md)、[webapp-testing](webapp-testing/SKILL.md)、[xlsx](xlsx/SKILL.md) |
+| 来源 | 既有Skill | 职责 |
+|---|---|---|
+| 自有 | [auto-skill](auto-skill/SKILL.md) | 将资料整理为可复用Skill，维护结构与质量 |
+| 自有 | [auto-tmux](auto-tmux/SKILL.md) | tmux操控、巡检、救援与录制流程 |
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
@@ -42,8 +39,8 @@ pi --skill .github/skills
 
 ### 来源与单一实现
 
-16个官方入口指向同一个固定[上游树](../extensions/claude-official-skills/README.md)，不复制或修改官方源。
-`theme-factory`仍是原内容设计Skill，不是新增Pi界面主题。现有官方初始化脚本入口在`../extensions/init_skill.py`，也是对原上游的引用。
+本集合不再提供官方Skill引用入口。原锁定上游源码和独立初始化脚本保留在Extensions，不属于当前Skills发现集合。
+删除的是16个入口软引用，没有删除、复制或改写上游源码，也没有移除自有Skill使用的程序。
 
 自有Skill保留原有assets与references；执行脚本分别在Extensions域根和`../extensions/auto-tmux/`。
 创建和校验仍使用原`create-skill.sh`、`validate-skill.sh`，没有增加资源加载器或管理框架。

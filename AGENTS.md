@@ -12,7 +12,7 @@
 | 路径 | 唯一职责 |
 |---|---|
 | `.github/context/` | 既有规则、知识、文档、数据、研究和参考资料；详见本域AGENTS |
-| `.github/skills/` | 2个自有与16个既有官方Skill指令，统一治理；代码引用Extensions |
+| `.github/skills/` | 仅保留auto-skill、auto-tmux两个自有Skill；代码引用Extensions |
 | `.github/extensions/` | 原程序、小工具、检查/生成/测试脚本与适配；不是全部可由Pi的`-e`加载 |
 | `.github/ISSUE_TEMPLATE/`及固定配置 | 现有GitHub协作入口；本次仅退役workflows，不扩改其他平台配置 |
 | `Makefile` | 本地可重复命令入口 |
@@ -20,7 +20,7 @@
 | `.github/context/ai-citation/` | 当前AI引用语料与llms-full |
 
 Context的9个既有集合是`gongfa`、`faqi`、`getting-started`、`prompts`、`research`、`external-resources`、`ai-citation`、`metadata`、`assets`。
-全部18个Skill和现有Extensions清单分别在其README，不另建工具注册层。
+当前2个自有Skill和现有Extensions清单分别在其README，不另建工具注册层；16个官方引用入口已按用户要求移除。
 Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-advanced`），总表、文集及首页学习入口均紧随拼好码；不新增解释器或执行器。
 
 ## 原始数据与来源
@@ -36,7 +36,7 @@ Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-ad
 ## Skills与Pi
 
 - 集合根不放`SKILL.md`；README/AGENTS不声明Skill frontmatter，避免误注册或停止子目录发现。
-- 官方16个入口引用单一`.github/extensions/claude-official-skills/skills/<name>`；`init_skill.py`也只是原上游引用。
+- Skills只发现auto-skill、auto-tmux两个自有入口；官方16个入口已删除。Extensions的单一锁定官方源码和`init_skill.py`独立引用保留，不计为当前集合Skill。
 - Pi从仓库根显式加载`pi --skill .github/skills`；不自动加载Context研究里的嵌套Skill，不把整个Extensions作为原生扩展加载。
 - 加载不等于执行、安装、兼容或效果证明；上下文文本和模型输出不构成授权。Windows原生符号链接与发现须单独验证。
 
