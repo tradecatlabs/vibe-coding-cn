@@ -35,3 +35,16 @@ supports_websockets = false
 hide_gpt5_1_migration_prompt = true
 "hide_gpt-5.1-codex-max_migration_prompt" = true
 hide_rate_limit_model_nudge = true
+[model_providers.minimax-global]
+name = "MiniMax"
+base_url = "https://api.minimax.io/v1"
+wire_api = "responses"
+requires_openai_auth = true
+supports_websockets = false
+
+[model_providers.minimax-cn]
+name = "MiniMax"
+base_url = "https://api.minimaxi.com/v1"
+wire_api = "responses"
+requires_openai_auth = true
+supports_websockets = false

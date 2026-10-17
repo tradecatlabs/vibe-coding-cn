@@ -45,3 +45,16 @@ hide_rate_limit_model_nudge = true
 # 本地可信项目示例：
 # [projects."/absolute/path/to/your/project"]
 # trust_level = "trusted"
+[model_providers.minimax-global]
+name = "MiniMax"
+base_url = "https://api.minimax.io/v1"
+wire_api = "responses"
+requires_openai_auth = true
+supports_websockets = false
+
+[model_providers.minimax-cn]
+name = "MiniMax"
+base_url = "https://api.minimaxi.com/v1"
+wire_api = "responses"
+requires_openai_auth = true
+supports_websockets = false
