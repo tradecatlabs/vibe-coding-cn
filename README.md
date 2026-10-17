@@ -160,6 +160,7 @@ pi --skill .github/skills
 ## 🗂️ 项目目录结构概览
 
 资源只有三个域；下面列出域边界与Context的全部9个集合，不展开各原生包内部源码。完整对象分别在三个域的README中导航。
+原Actions定义已移入Extensions保全，自动CI、打标签及欢迎流程已停用；本地`make test`保留。
 
 ```
 .
@@ -195,8 +196,7 @@ pi --skill .github/skills
     ├── SECURITY.md              # 安全政策
     ├── FUNDING.yml              # 赞助配置
     ├── WIKI.md                  # GitHub Wiki 独立仓库说明
-    ├── labeler.yml              # PR 标签规则
-    └── workflows/               # GitHub Actions 工作流（含新贡献者欢迎）
+    └── labeler.yml              # 原PR标签规则（自动流程已停用）
 ```
 
 </details>

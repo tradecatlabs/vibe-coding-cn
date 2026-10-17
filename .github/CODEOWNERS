@@ -7,7 +7,6 @@
 
 # 仓库治理和自动化配置。
 /.github/ @tukuaiai @tradecatlabs
-/.github/workflows/ @tukuaiai @tradecatlabs
 /AGENTS.md @tukuaiai @tradecatlabs
 /README.md @tukuaiai @tradecatlabs
 /CONTRIBUTING.md @tukuaiai @tradecatlabs

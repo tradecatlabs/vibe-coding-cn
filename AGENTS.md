@@ -14,7 +14,7 @@
 | `.github/context/` | 既有规则、知识、文档、数据、研究和参考资料；详见本域AGENTS |
 | `.github/skills/` | 2个自有与16个既有官方Skill指令，统一治理；代码引用Extensions |
 | `.github/extensions/` | 原程序、小工具、检查/生成/测试脚本与适配；不是全部可由Pi的`-e`加载 |
-| `.github/workflows/`、`ISSUE_TEMPLATE/`及固定配置 | GitHub原生平台入口，保留规定位置，不构成第四个资源域 |
+| `.github/ISSUE_TEMPLATE/`及固定配置 | 现有GitHub协作入口；本次仅退役workflows，不扩改其他平台配置 |
 | `Makefile` | 本地可重复命令入口 |
 | `.github/context/metadata/` | 导航、术语及历史路径映射；不重复登记或定义另一套本体 |
 | `.github/context/ai-citation/` | 当前AI引用语料与llms-full |
@@ -46,7 +46,8 @@ Context的9个既有集合是`gongfa`、`faqi`、`getting-started`、`prompts`�
 - 不修改`LICENSE`、`CODE_OF_CONDUCT.md`或`.env*`；不内联真实密钥、Token、cookie、私钥或账号配置。
 - 凭据仅从受信来源运行时注入，禁止从会话/日志/未知文件搜寻；所有输出先脱敏，不输出值、长度、摘要或前后缀。
 - 架构、命令与路径变化同步README、AGENTS、Makefile、活动调用方与索引；不把冻结来源中的旧路径误改成当前路径。
-- 工作流只在任务明确要求时修改；迁移只改必要调用路径，不改事件、权限、检查范围、签名或分支保护。
+- `.github/workflows/`已按用户要求退役，不得重建空目录、符号链接或兼容壳。原3份定义平铺为Extensions中的`github-actions-*.yml`，不是活动工作流。
+- 自动CI、Labeler和Welcome均停用；本地Makefile及检查范围不变。重新启用须显式授权，并同时核对原生目录和对应保护检查。
 - 注释、文档及新日志使用中文；代码标识英文。避免无价值封装、重复源码、猜测API和范围外重构。
 
 ## 验证
@@ -69,7 +70,7 @@ Context的9个既有集合是`gongfa`、`faqi`、`getting-started`、`prompts`�
 - 三域入口、入门README及两本文集维持标题→字多不看→快速导航→完整细粒度目录→使用方式→正文；维护规则留AGENTS。
 - 功法/法器生成视图的目录由其生成器维护；`sync-doc-toc.py`不能二次编辑生成文件。文档结构与来源SHA检查仍保留。
 - 改Mermaid须真实渲染。首页2025Q4–2026Q2甘特图是历史规划，不冒充当前进度或新承诺。
-- 本地总测试不等于远端CI：GitHub Actions仍选原lint/导航/结构/索引/引用和外链检查，不冒称新增全部协议测试覆盖。
+- 本地总测试不等于远端CI；当前GitHub Actions已停用，不得把本地成功或空检查列表称为远端CI通过。
 - `clean`、`clean-deps`有删除副作用，不作为测试执行。安装器和被排除程序也不为补证而运行。
 
 ## 首页与文档约定
@@ -84,13 +85,14 @@ Context的9个既有集合是`gongfa`、`faqi`、`getting-started`、`prompts`�
 - `main`是当前默认和贡献主线；`minimal`保留现有内容。旧`develop`及其他本地历史不自动合并、切换、重置或删除。
 - 用户已授权本仓修改验证后自动提交、推送、以精确PR/HEAD合并；后续暂停或仅本地指令优先，不重复询问发布许可。
 - 提交格式：`feat|fix|docs|chore|refactor|test: scope - summary`，签名提交；PR说明范围、动机、验证与未验证项。
-- 主Ruleset17185792无豁免：必需CI、签名、线性历史及禁止强推/删除保持不变。
+- 主Ruleset17185792无豁免：签名、线性历史、PR及禁止强推/删除保持不变。仅已停用的`markdown-lint`、`link-checker`从主Ruleset和main经典保护的必需检查中退役，避免等待不存在的生产者。
 - 审批Ruleset25244224默认1个有效批准；仅`tradecatlabs`（User288998340）有pull_request模式豁免，项目只允许它用于自己发起的PR。
 - 豁免按操作账号而非作者自动判断；合并他人PR仍核对有效批准，不伪造批准、成功checks或独立审核。
 - CODEOWNERS维护者仍为`@tukuaiai`、`@tradecatlabs`；它是路径审查入口，不替代保护。Code Owner/最近推送/额外审批不另加重复门槛。
-- 不为交付弱化保护或扩大豁免；流程例外按授权留痕。合并前核对精确HEAD、实际CI与签名，合并后读回主线及远端事实。
+- 不为交付临时弱化保护或扩大豁免；本次用户明确退役Actions及其对应检查单独留痕，其余保护不变。合并前核对精确HEAD、本地验证、签名及真实检查状态，合并后读回主线事实。
 - 不清理或删除工作树、引用与历史；若未来明确授权清理，先保全精确SHA、开放PR及恢复证据。
 
 ## 变更记录
 
 三域重构将原资料、指令与程序重新归位；合并原入口的重复治理，保留原始资料与来源；不新增业务Skill、模型调用或已验证效果声明。
+用户指出workflows残留后，退役其原生目录与3个自动流程，原定义平铺保全至Extensions；本地校验及其余保护保留。

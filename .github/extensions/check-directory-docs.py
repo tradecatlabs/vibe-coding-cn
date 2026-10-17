@@ -10,7 +10,7 @@ from lib import SOURCE_PREFIXES, VENDOR_SUBTREES, is_research_repository_snapsho
 
 ROOT = Path(__file__).resolve().parents[2]
 REQUIRED_DIRS = list(map(Path, (
-    '.github', '.github/ISSUE_TEMPLATE', '.github/workflows',
+    '.github', '.github/ISSUE_TEMPLATE',
     '.github/context', '.github/context/assets', '.github/context/ai-citation',
     '.github/context/assets/datasets', '.github/context/assets/images', '.github/context/assets/templates',
     '.github/context/getting-started', '.github/context/gongfa', '.github/context/faqi',
@@ -23,6 +23,7 @@ REQUIRED_DIRS = list(map(Path, (
     '.github/extensions/prompts-library/scripts',
 )))
 COLLECTION_DIRS = {Path('.github/context/gongfa'), Path('.github/context/faqi')}
+RETIRED_DIRS = (Path('.github/workflows'),)
 README_OPTIONAL_DIRS = {
     # GitHub repository pages can surface `.github/README.md` as an overview file.
     # Keep the root project README authoritative and use `.github/AGENTS.md` only.
@@ -62,6 +63,11 @@ def repository_owned_dirs() -> list[Path]:
 
 def main() -> int:
     errors: list[str] = []
+
+    for rel_dir in RETIRED_DIRS:
+        directory = ROOT / rel_dir
+        if directory.exists() or directory.is_symlink():
+            errors.append(f'{rel_dir}: 已退役目录不得重新创建')
 
     for rel_dir in repository_owned_dirs():
         directory = ROOT / rel_dir

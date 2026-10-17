@@ -18,6 +18,7 @@
 | [chat-vault](chat-vault/README.md) | 原聊天保存程序；不得随仓保存真实会话和数据库 |
 | [my-nvim](my-nvim/README.md)、[MCPlayerTransfer](MCPlayerTransfer/README.md)、[图片转PDF](XHS-image-to-PDF-conversion/README.md) | 保留原程序；文件归类不解除法器原有范围排除 |
 | [HTML工具原说明](html-tools-main.md) | `clean_epub_css.html`、`markdown-bianjiqi.html`、`task card generator.html`、`xhs graphic production - 1.0.html`、`xhs graphic production.html` |
+| [原GitHub Actions定义](github-actions.md) | `github-actions-ci.yml`、`github-actions-labeler.yml`、`github-actions-welcome.yml`；已停用，仅保全原定义 |
 
 现有独立脚本还包括`create-skill.sh`、`validate-skill.sh`和引用原上游的`init_skill.py`；没有复制第二份实现。
 
