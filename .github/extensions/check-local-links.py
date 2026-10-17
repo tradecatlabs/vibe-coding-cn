@@ -14,7 +14,8 @@ ROOT = Path(__file__).resolve().parents[2]
 SKIP_PARTS = {".git", ".history", "node_modules"}
 SKIP_PREFIXES = SOURCE_PREFIXES
 LINK_PATTERNS = [
-    re.compile(r"!??\[[^\]]*\]\(([^)]+)\)"),
+    # 现有条目标签含一层方括号，如entries[0..4]；不把它截成未闭合标签。
+    re.compile(r"!?\[(?:[^\[\]]|\[[^\[\]]*\])*\]\(([^)]+)\)"),
     re.compile(r"\b(?:href|src)=[\"']([^\"']+)[\"']"),
 ]
 EXTERNAL_PREFIXES = (

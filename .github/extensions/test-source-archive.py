@@ -96,7 +96,7 @@ class SourceArchiveTest(unittest.TestCase):
 
     def test_book_view_namespaces_headings_links_and_preserves_code(self):
         from lib import book_views
-        text = '# 示例\n\n<a id="目标"></a>\n## 目标\n\n[另一篇](other.md#目标)\n\n[other.md](other.md)\n\n````text\n### 代码不是目录\n```\n````\n'
+        text = '# 示例\n\n<a id="目标"></a>\n## 目标\n\n[另一篇](other.md#目标)\n\n[other.md](other.md)\n\n[other[0..4]复核](other.md)\n\n````text\n### 代码不是目录\n```\n````\n'
         self.data['documents'] = {
             '.github/docs/gongfa/example.md': document(text.encode()),
             '.github/docs/gongfa/other.md': document('# 另一篇\n\n## 目标\n'.encode())}
@@ -109,6 +109,7 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertIn('id="doc-example-目标"', rendered)
         self.assertIn('#doc-other-目标', rendered)
         self.assertIn('[other.md](#doc-other)', rendered)
+        self.assertIn('[other[0..4]复核](#doc-other)', rendered)
         self.assertIn('### 代码不是目录', rendered)
         self.assertNotIn('id="doc-example-代码不是目录"', rendered)
         self.assertEqual(rendered.count('id="doc-example-目标"'), 1)
