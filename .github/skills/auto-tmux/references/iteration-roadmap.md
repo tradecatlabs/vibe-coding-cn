@@ -66,8 +66,8 @@
 ## 每轮验收清单
 
 ```bash
-.github/skills/auto-tmux/scripts/validate-auto-tmux.sh
-.github/skills/auto-skill/scripts/validate-skill.sh .github/skills/auto-tmux --strict
+.github/extensions/auto-tmux/validate-auto-tmux.sh
+.github/extensions/validate-skill.sh .github/skills/auto-tmux --strict
 git diff --check
 make test
 ```

@@ -4,7 +4,7 @@
 
 本文从历史文档 `AI蜂群协作-tmux多Agent协作系统.md` 整理而来，并按当前仓库结构升级为
 `auto-tmux` skill 的长期参考资料。当前推荐优先使用
-`.github/skills/auto-tmux/scripts/auto-tmux.sh`，直接 tmux 命令作为兜底。
+`.github/extensions/auto-tmux/auto-tmux.sh`，直接 tmux 命令作为兜底。
 
 ## 1. 核心思想
 
@@ -56,7 +56,7 @@ session
 不要假设 pane 一定是 `.0`。不同 tmux 配置可能让 pane index 从 1 开始。正确做法是先查询拓扑：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh topology --session ai-hub
+.github/extensions/auto-tmux/auto-tmux.sh topology --session ai-hub
 ```
 
 或用原生命令取真实 target：
@@ -70,33 +70,33 @@ target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
 创建一个 commander + 3 个 worker 的工作台：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh hub --session ai-hub --workers 3 --cmd "codex"
+.github/extensions/auto-tmux/auto-tmux.sh hub --session ai-hub --workers 3 --cmd "codex"
 ```
 
 查看拓扑：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh topology --session ai-hub
+.github/extensions/auto-tmux/auto-tmux.sh topology --session ai-hub
 ```
 
 读取某个 worker：
 
 ```bash
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
-.github/skills/auto-tmux/scripts/auto-tmux.sh inspect -t "$target" -n 40
-.github/skills/auto-tmux/scripts/auto-tmux.sh capture -t "$target" -n 120
+.github/extensions/auto-tmux/auto-tmux.sh inspect -t "$target" -n 40
+.github/extensions/auto-tmux/auto-tmux.sh capture -t "$target" -n 120
 ```
 
 发送任务：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh send -t "$target" --text "请运行 make test 并汇报失败原因" --enter
+.github/extensions/auto-tmux/auto-tmux.sh send -t "$target" --text "请运行 make test 并汇报失败原因" --enter
 ```
 
 等待完成信号：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh wait -t "$target" --pattern "done|完成|Tests passed" --timeout 300
+.github/extensions/auto-tmux/auto-tmux.sh wait -t "$target" --pattern "done|完成|Tests passed" --timeout 300
 ```
 
 ## 4. 协作协议
@@ -111,10 +111,10 @@ target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
 
 ### 4.2 状态目录
 
-推荐使用 `scripts/swarm-state.sh` 初始化共享状态目录：
+推荐使用 `.github/extensions/auto-tmux/swarm-state.sh` 初始化共享状态目录：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
+.github/extensions/auto-tmux/swarm-state.sh init --dir /tmp/ai_swarm
 ```
 
 默认共享状态目录：
@@ -162,40 +162,40 @@ target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
 添加任务：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
+.github/extensions/auto-tmux/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
 ```
 
 worker 认领任务：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-claim --id task-001 --owner "ai-hub:2.1"
-.github/skills/auto-tmux/scripts/swarm-state.sh task-next --owner "ai-hub:2.1"
+.github/extensions/auto-tmux/swarm-state.sh task-claim --id task-001 --owner "ai-hub:2.1"
+.github/extensions/auto-tmux/swarm-state.sh task-next --owner "ai-hub:2.1"
 ```
 
 修改文件前获取锁：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh lock-acquire --name README.md --owner "ai-hub:2.1"
+.github/extensions/auto-tmux/swarm-state.sh lock-acquire --name README.md --owner "ai-hub:2.1"
 ```
 
 完成后释放锁并记录结果：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh lock-release --name README.md --owner "ai-hub:2.1"
-.github/skills/auto-tmux/scripts/swarm-state.sh task-done --id task-001 --owner "ai-hub:2.1" --result "make test passed"
+.github/extensions/auto-tmux/swarm-state.sh lock-release --name README.md --owner "ai-hub:2.1"
+.github/extensions/auto-tmux/swarm-state.sh task-done --id task-001 --owner "ai-hub:2.1" --result "make test passed"
 ```
 
 阻塞或失败时显式记录：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-block --id task-001 --owner "ai-hub:2.1" --reason "等待用户确认"
-.github/skills/auto-tmux/scripts/swarm-state.sh task-fail --id task-001 --owner "ai-hub:2.1" --reason "make test failed"
+.github/extensions/auto-tmux/swarm-state.sh task-block --id task-001 --owner "ai-hub:2.1" --reason "等待用户确认"
+.github/extensions/auto-tmux/swarm-state.sh task-fail --id task-001 --owner "ai-hub:2.1" --reason "make test failed"
 ```
 
 生成交接报告：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-brief.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/auto-tmux-brief
+.github/extensions/auto-tmux/swarm-brief.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/auto-tmux-brief
 ```
 
 ## 5. 架构模式
@@ -265,13 +265,13 @@ worker3    telegram-service
 巡检：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub -n 100 --save-dir /tmp/auto-tmux-scan
+.github/extensions/auto-tmux/auto-tmux.sh scan --session ai-hub -n 100 --save-dir /tmp/auto-tmux-scan
 ```
 
 发现错误：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub --pattern "ERROR|Traceback|failed"
+.github/extensions/auto-tmux/auto-tmux.sh scan --session ai-hub --pattern "ERROR|Traceback|failed"
 ```
 
 ### 6.2 代码审计 + 自动修复
@@ -298,13 +298,13 @@ commander: 验收 diff、测试和风险
 
 ```bash
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
-.github/skills/auto-tmux/scripts/auto-tmux.sh rescue -t "$target" --pattern "(y/n)" --reply y --dry-run
+.github/extensions/auto-tmux/auto-tmux.sh rescue -t "$target" --pattern "(y/n)" --reply y --dry-run
 ```
 
 确认后再执行：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh rescue -t "$target" --pattern "(y/n)" --reply y
+.github/extensions/auto-tmux/auto-tmux.sh rescue -t "$target" --pattern "(y/n)" --reply y
 ```
 
 ## 7. 提示词模板
@@ -314,7 +314,7 @@ target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
 推荐直接渲染：
 
 ```bash
-.github/skills/auto-tmux/scripts/render-swarm-prompt.sh worker --target <target> --task "只处理指定子任务"
+.github/extensions/auto-tmux/render-swarm-prompt.sh worker --target <target> --task "只处理指定子任务"
 ```
 
 ```markdown
@@ -333,7 +333,7 @@ target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
 推荐直接渲染：
 
 ```bash
-.github/skills/auto-tmux/scripts/render-swarm-prompt.sh commander --session ai-hub --task "拆分并推进任务"
+.github/extensions/auto-tmux/render-swarm-prompt.sh commander --session ai-hub --task "拆分并推进任务"
 ```
 
 ```markdown
@@ -421,22 +421,22 @@ window:
 
 ```bash
 # 查看拓扑
-.github/skills/auto-tmux/scripts/auto-tmux.sh topology --session ai-hub
+.github/extensions/auto-tmux/auto-tmux.sh topology --session ai-hub
 
 # 扫描状态
-.github/skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub -n 80
+.github/extensions/auto-tmux/auto-tmux.sh scan --session ai-hub -n 80
 
 # 捕获输出
-.github/skills/auto-tmux/scripts/auto-tmux.sh capture -t <target> -n 120
+.github/extensions/auto-tmux/auto-tmux.sh capture -t <target> -n 120
 
 # 发送任务
-.github/skills/auto-tmux/scripts/auto-tmux.sh send -t <target> --text "任务内容" --enter
+.github/extensions/auto-tmux/auto-tmux.sh send -t <target> --text "任务内容" --enter
 
 # 救援等待确认
-.github/skills/auto-tmux/scripts/auto-tmux.sh rescue -t <target> --pattern "(y/n)" --reply y --dry-run
-.github/skills/auto-tmux/scripts/auto-tmux.sh rescue -t <target> --pattern "(y/n)" --reply y
+.github/extensions/auto-tmux/auto-tmux.sh rescue -t <target> --pattern "(y/n)" --reply y --dry-run
+.github/extensions/auto-tmux/auto-tmux.sh rescue -t <target> --pattern "(y/n)" --reply y
 
 # 记录日志
-.github/skills/auto-tmux/scripts/auto-tmux.sh record start -t <target> --dir /tmp/auto-tmux-records
-.github/skills/auto-tmux/scripts/auto-tmux.sh record stop -t <target>
+.github/extensions/auto-tmux/auto-tmux.sh record start -t <target> --dir /tmp/auto-tmux-records
+.github/extensions/auto-tmux/auto-tmux.sh record stop -t <target>
 ```

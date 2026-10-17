@@ -1,10 +1,10 @@
 # auto-tmux JSONL Schema Notes
 
-本文件记录 `auto-tmux` 机器可读输出的字段约定。当前脚本优先保持零依赖，因此 `scripts/check-jsonl.sh` 只做轻量字段门禁，不替代完整 JSON Schema 校验器。
+本文件记录 `auto-tmux` 机器可读输出的字段约定。当前脚本优先保持零依赖，因此 `.github/extensions/auto-tmux/check-jsonl.sh` 只做轻量字段门禁，不替代完整 JSON Schema 校验器。
 
 ## swarm-result
 
-来源：`scripts/swarm-results.sh --jsonl`
+来源：`.github/extensions/auto-tmux/swarm-results.sh --jsonl`
 
 | 字段 | 含义 |
 |:---|:---|
@@ -20,7 +20,7 @@
 最小门禁：
 
 ```bash
-.github/skills/auto-tmux/scripts/check-jsonl.sh /tmp/ai-swarm-results.jsonl \
+.github/extensions/auto-tmux/check-jsonl.sh /tmp/ai-swarm-results.jsonl \
   --require-key type \
   --require-key id \
   --require-key status
@@ -28,7 +28,7 @@
 
 ## remote-readonly
 
-来源：`scripts/remote-readonly.sh`
+来源：`.github/extensions/auto-tmux/remote-readonly.sh`
 
 | 字段 | 含义 |
 |:---|:---|
@@ -47,7 +47,7 @@
 最小门禁：
 
 ```bash
-.github/skills/auto-tmux/scripts/check-jsonl.sh /tmp/auto-tmux-remote/metadata.jsonl \
+.github/extensions/auto-tmux/check-jsonl.sh /tmp/auto-tmux-remote/metadata.jsonl \
   --require-key type \
   --require-key evidence_file \
   --require-key read_only \
@@ -56,7 +56,7 @@
 
 ## auto-tmux-swarm-report-pack
 
-来源：`scripts/swarm-report-pack.sh`
+来源：`.github/extensions/auto-tmux/swarm-report-pack.sh`
 
 `manifest.json` 是单个 JSON 对象，不是 JSONL。当前由 `validate-auto-tmux.sh` 直接检查关键字段。
 

@@ -39,7 +39,7 @@ Your output MUST include:
 
 ### Built-in Tool (Mandatory): Skill Seekers (Linked)
 
-This meta-skill exposes the `.github/tools/external/Skill_Seekers-development` submodule through a relative symlink so you can generate a first-draft Skill from:
+本仓执行实现统一在Extensions；下文仓内命令从仓库根运行。固定`.github/extensions/Skill_Seekers-development`源码只保留一份，可用于生成既有工作流中的Skill初稿：
 - Documentation websites
 - GitHub repositories
 - PDFs
@@ -47,28 +47,28 @@ This meta-skill exposes the `.github/tools/external/Skill_Seekers-development` s
 Bootstrap dependencies (once):
 
 ```bash
-./.github/skills/auto-skill/scripts/skill-seekers-bootstrap.sh
+./.github/extensions/skill-seekers-bootstrap.sh
 ```
 
 Run Skill Seekers (from linked source):
 
 ```bash
-./.github/skills/auto-skill/scripts/skill-seekers.sh -- --version
-./.github/skills/auto-skill/scripts/skill-seekers.sh -- scrape --config ./.github/skills/auto-skill/scripts/Skill_Seekers-development/configs/react.json
-./.github/skills/auto-skill/scripts/skill-seekers.sh -- github --repo facebook/react --name react
+./.github/extensions/skill-seekers.sh -- --version
+./.github/extensions/skill-seekers.sh -- scrape --config ./.github/extensions/Skill_Seekers-development/configs/react.json
+./.github/extensions/skill-seekers.sh -- github --repo facebook/react --name react
 ```
 
 Import the generated skill into this repo's canonical `.github/skills/` tree:
 
 ```bash
-./.github/skills/auto-skill/scripts/skill-seekers-import.sh react
-./.github/skills/auto-skill/scripts/skill-seekers-import.sh react --force
+./.github/extensions/skill-seekers-import.sh react
+./.github/extensions/skill-seekers-import.sh react --force
 ```
 
-Update the linked source by moving the `.github/tools/external/Skill_Seekers-development` submodule pointer directly. The update helper is guarded to avoid overwriting the linked repository.
+Update the linked source by moving the `.github/extensions/Skill_Seekers-development` submodule pointer directly. The update helper is guarded to avoid overwriting the linked repository.
 
 ```bash
-./.github/skills/auto-skill/scripts/skill-seekers-update.sh --dry-run
+./.github/extensions/skill-seekers-update.sh --dry-run
 ```
 
 ### Recommended Layout (Minimal -> Full)
@@ -193,16 +193,16 @@ Validate locally:
 
 ```bash
 # From repo root (basic validation)
-./.github/skills/auto-skill/scripts/validate-skill.sh .github/skills/<skill-name>
+./.github/extensions/validate-skill.sh .github/skills/<skill-name>
 
 # From repo root (strict validation)
-./.github/skills/auto-skill/scripts/validate-skill.sh .github/skills/<skill-name> --strict
+./.github/extensions/validate-skill.sh .github/skills/<skill-name> --strict
 
 # From .github/skills/auto-skill/ (basic validation)
-./scripts/validate-skill.sh ../<skill-name>
+../../extensions/validate-skill.sh ../<skill-name>
 
 # From .github/skills/auto-skill/ (strict validation)
-./scripts/validate-skill.sh ../<skill-name> --strict
+../../extensions/validate-skill.sh ../<skill-name> --strict
 ```
 
 ### Tools & Templates
@@ -211,13 +211,13 @@ Generate a new Skill skeleton:
 
 ```bash
 # From repo root (generate into ./.github/skills/)
-./.github/skills/auto-skill/scripts/create-skill.sh my-skill --full --output .github/skills
+./.github/extensions/create-skill.sh my-skill --full --output .github/skills
 
 # From auto-skill/ (generate into ../ i.e. ./.github/skills/)
-./scripts/create-skill.sh my-skill --full --output ..
+../../extensions/create-skill.sh my-skill --full --output ..
 
 # Minimal skeleton
-./.github/skills/auto-skill/scripts/create-skill.sh my-skill --minimal --output .github/skills
+./.github/extensions/create-skill.sh my-skill --minimal --output .github/skills
 ```
 
 Templates:

@@ -1,57 +1,24 @@
-# .github/skills/auto-skill
+# auto-skill维护规则
 
-This directory is a **meta-skill**: it turns arbitrary domain material (docs/APIs/code/specs) into a reusable Skill (`SKILL.md` + `references/` + `scripts/` + `assets/`), and ships an executable quality gate + scaffolding.
+本Skill保留既有元技能：将文档、API、代码或规格整理为可复用Skill，并校验激活条件、边界、示例和质量。领域资料不是本Skill自身的新能力。
 
-## Layout
+## 文件职责
 
-```text
-auto-skill/
-|-- AGENTS.md
-|-- SKILL.md
-|-- assets/
-|   |-- template-minimal.md
-|   `-- template-complete.md
-|-- scripts/
-|   |-- Skill_Seekers-development -> ../../../tools/external/Skill_Seekers-development
-|   |-- create-skill.sh
-|   |-- skill-seekers-bootstrap.sh
-|   |-- skill-seekers-configs -> Skill_Seekers-development/configs
-|   |-- skill-seekers-import.sh
-|   |-- skill-seekers.sh
-|   |-- skill-seekers-src -> Skill_Seekers-development/src
-|   |-- skill-seekers-update.sh
-|   `-- validate-skill.sh
-`-- references/
-    |-- index.md
-    |-- README.md
-    |-- anti-patterns.md
-    |-- skill-seekers.md
-    |-- quality-checklist.md
-    `-- skill-spec.md
-```
+- `SKILL.md`：原触发、交付、工作流和质量门禁。
+- `assets/template-minimal.md`、`assets/template-complete.md`：原通用模板；不改写官方Skill标准或把模板样例当已实现工具。
+- `references/index.md`、`references/README.md`：本Skill导航和原参考说明。
+- `references/skill-spec.md`、`quality-checklist.md`、`anti-patterns.md`：原规格、检查清单和常见反模式。
+- `references/skill-seekers.md`：现有Skill Seekers工作流与副作用边界。
 
-## File Responsibilities
+本目录不再放执行脚本或重复源码别名。单一实现位于`.github/extensions/`：
+`create-skill.sh`、`validate-skill.sh`、`skill-seekers.sh`、`skill-seekers-bootstrap.sh`、
+`skill-seekers-import.sh`、`skill-seekers-update.sh`；固定源码在同域`Skill_Seekers-development/`。
 
-- `.github/skills/auto-skill/SKILL.md`: entrypoint (triggers, deliverables, workflow, quality gate, tooling).
-- `.github/skills/auto-skill/assets/template-minimal.md`: minimal template (small domains / quick bootstrap).
-- `.github/skills/auto-skill/assets/template-complete.md`: full template (production-grade / complex domains).
-- `.github/skills/auto-skill/scripts/create-skill.sh`: scaffold generator (minimal/full, output dir, overwrite).
-- `.github/skills/auto-skill/scripts/Skill_Seekers-development`: relative symlink to the `.github/tools/external/Skill_Seekers-development` submodule.
-- `.github/skills/auto-skill/scripts/skill-seekers-bootstrap.sh`: create a local venv and install deps for the linked Skill Seekers tool.
-- `.github/skills/auto-skill/scripts/skill-seekers.sh`: run Skill Seekers from the linked source (docs/github/pdf -> output/<name>/).
-- `.github/skills/auto-skill/scripts/skill-seekers-import.sh`: import output/<name>/ into the canonical .github/skills/<name>/ tree.
-- `.github/skills/auto-skill/scripts/skill-seekers-update.sh`: guarded update helper; do not use it to overwrite the linked source.
-- `.github/skills/auto-skill/scripts/validate-skill.sh`: spec validator (supports `--strict`).
-- `.github/skills/auto-skill/references/index.md`: navigation for this meta-skill's reference docs.
-- `.github/skills/auto-skill/references/README.md`: upstream official reference (lightly adjusted to keep links working in this repo).
-- `.github/skills/auto-skill/references/skill-spec.md`: the local Skill spec (MUST/SHOULD/NEVER).
-- `.github/skills/auto-skill/references/quality-checklist.md`: quality gate checklist + scoring.
-- `.github/skills/auto-skill/references/anti-patterns.md`: common failure modes and how to fix them.
-- `.github/skills/auto-skill/references/skill-seekers.md`: how to use the linked tool as a mandatory first-draft generator.
+## 契约
 
-## Dependencies & Boundaries
-
-- `scripts/*.sh`: depend on `bash` + common POSIX tooling; some scripts require extra tooling:
-  - `skill-seekers-bootstrap.sh`: requires `python3` + `pip` (network required for PyPI).
-  - `skill-seekers-update.sh`: guarded helper; do not use it to overwrite the linked `.github/tools/external/` source.
-- This directory is about "how to build Skills", not about any specific domain; domain knowledge belongs in `.github/skills/<domain>/`.
+- 保留可判定触发、MUST/SHOULD/NEVER边界、简短Quick Reference、可复验示例及references导航。
+- 不编造资料外的事实；不确定时说明缺口与查证路径。具体领域知识归相应Skill或Context，不塞进本元技能。
+- 新Skill遵循原name/description规范；通用模板可有可选scripts样例，本仓实际执行实现仍遵循统一Extensions归属。
+- bootstrap会安装依赖，抓取/增强/上传可能联网；需要具体任务授权，不为本次迁移自动执行。
+- update适配器禁止覆盖固定来源，`--dry-run`仍下载和解压，不是零副作用。Gitlink更新单独核对修订、来源和旧记录。
+- 修改后先运行对应`validate-skill.sh --strict`及真实调用相关测试；最终完整`make test`按根AGENTS时机执行。

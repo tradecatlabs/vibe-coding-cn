@@ -16,16 +16,16 @@
 发送文本、粘贴文件或分发 prompt 前，先做三件事：
 
 1. `inspect` 目标 pane，确认它是预期 session/window/pane。
-2. 对 payload 运行 `scripts/safety-check.sh`。
+2. 对 payload 运行 `.github/extensions/auto-tmux/safety-check.sh`。
 3. 对批量发送、长 prompt 或跨 worker 下发先使用 `--dry-run`。
 
 示例：
 
 ```bash
 target="ai-hub:2.1"
-.github/skills/auto-tmux/scripts/auto-tmux.sh inspect -t "$target" -n 40
-.github/skills/auto-tmux/scripts/safety-check.sh --file /tmp/prompt.md --strict
-.github/skills/auto-tmux/scripts/auto-tmux.sh paste -t "$target" --file /tmp/prompt.md --enter --dry-run
+.github/extensions/auto-tmux/auto-tmux.sh inspect -t "$target" -n 40
+.github/extensions/auto-tmux/safety-check.sh --file /tmp/prompt.md --strict
+.github/extensions/auto-tmux/auto-tmux.sh paste -t "$target" --file /tmp/prompt.md --enter --dry-run
 ```
 
 ## 敏感信息策略

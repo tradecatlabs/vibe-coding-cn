@@ -1,0 +1,5 @@
+# 功法原有协议及单一Markdown阅读视图；Python3.10+。
+jsonschema==4.26.0
+beautifulsoup4==4.12.3
+# 复用法器测试已使用的成熟解析器；历史Excel只保留字节，不生成/解析第二份活动视图。
+markdown-it-py==3.0.0

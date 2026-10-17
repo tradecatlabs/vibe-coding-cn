@@ -107,5 +107,5 @@ Each Skill SHOULD include a `## Maintenance` section with:
 Before shipping, run the checklist in `quality-checklist.md` and (if available) the validator:
 
 ```bash
-./.github/skills/auto-skill/scripts/validate-skill.sh .github/skills/<skill-name> --strict
+./.github/extensions/validate-skill.sh .github/skills/<skill-name> --strict
 ```

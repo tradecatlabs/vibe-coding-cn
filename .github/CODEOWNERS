@@ -12,17 +12,10 @@
 /README.md @tukuaiai @tradecatlabs
 /CONTRIBUTING.md @tukuaiai @tradecatlabs
 
-# 文档、提示词、技能和机器可读索引。
-/.github/docs/ @tukuaiai @tradecatlabs
-/.github/research/ @tukuaiai @tradecatlabs
-/.github/prompts/ @tukuaiai @tradecatlabs
+# 三域资源；只迁移路径，不改变维护者或审查基线。
+/.github/context/ @tukuaiai @tradecatlabs
 /.github/skills/ @tukuaiai @tradecatlabs
-/.github/assets/ @tukuaiai @tradecatlabs
-/.github/metadata/ @tukuaiai @tradecatlabs
-
-# 工具、脚本和外部集成指针。
-/.github/scripts/ @tukuaiai @tradecatlabs
-/.github/tools/ @tukuaiai @tradecatlabs
+/.github/extensions/ @tukuaiai @tradecatlabs
 /Makefile @tukuaiai @tradecatlabs
 /.gitattributes @tukuaiai @tradecatlabs
 /.gitignore @tukuaiai @tradecatlabs

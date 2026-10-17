@@ -7,9 +7,9 @@
 
 <a id="vibe-coding-指南"></a>
 
-# vibe-coding-cn：中文 Vibe Coding 从入门到精通教程
+# vibe-coding-cn：Vibe Coding工具箱
 
-**从想法到产品的 AI 结对编程工作流标准：Prompt + Skill + Context + Quality Gate + 工程闭环**
+**以Pi Agent与OpenAI GPT为主体底座，将既有Context、Skills和Extensions组合成可验证的工作流。**
 
 <!--
   徽章区域 (BADGES)
@@ -18,20 +18,39 @@
 <p>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/tukuaiai/vibe-coding-cn?label=%E8%AE%B8%E5%8F%AF%E8%AF%81&style=flat" alt="许可证"></a>
   <a href="https://t.me/glue_coding"><img src="https://img.shields.io/badge/交流-Telegram-blue?style=flat&logo=telegram" alt="交流群"></a>
-  <a href=".github/docs/gongfa/README.md"><img src="https://img.shields.io/badge/功法-体系-slateblue?style=flat" alt="功法体系：思想、准则、方法与流程"></a>
-  <a href=".github/research/README.md"><img src="https://img.shields.io/badge/研究-证据-teal?style=flat" alt="研究事实与证据"></a>
-  <a href=".github/docs/getting-started/learning-map.md"><img src="https://img.shields.io/badge/入门-教程-red?style=flat" alt="从零开始完整入门"></a>
-  <a href=".github/tools/config/.codex/README.md"><img src="https://img.shields.io/badge/Codex-配置-blue?style=flat" alt="Codex 配置一键安装"></a>
+  <a href=".github/context/gongfa/README.md#原文文集"><img src="https://img.shields.io/badge/功法-体系-slateblue?style=flat" alt="功法体系：思想、准则、方法与流程"></a>
+  <a href=".github/context/research/README.md"><img src="https://img.shields.io/badge/研究-证据-teal?style=flat" alt="研究事实与证据"></a>
+  <a href=".github/context/getting-started/learning-map.md"><img src="https://img.shields.io/badge/入门-教程-red?style=flat" alt="从零开始完整入门"></a>
+  <a href=".github/extensions/codex-config/.codex/README.md"><img src="https://img.shields.io/badge/Codex-配置-blue?style=flat" alt="Codex 配置一键安装"></a>
   <a href=".github/skills/README.md#当前保留"><img src="https://img.shields.io/badge/Skills-技能-forestgreen?style=flat" alt="skills技能大全"></a>
-  <a href=".github/prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/提示词-表格-blue?style=flat" alt="提示词在线表格"></a>
-  <a href=".github/assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/资源-索引-teal?style=flat" alt="外部资源本地注册表"></a>
+  <a href=".github/context/prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/提示词-表格-blue?style=flat" alt="提示词在线表格"></a>
+  <a href=".github/context/assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/资源-索引-teal?style=flat" alt="外部资源本地注册表"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/Wiki-导航-slateblue?style=flat" alt="Wiki 导航入口"></a>
-  <a href=".github/metadata/gongfa/catalog.md"><img src="https://img.shields.io/badge/功法-总表-purple?style=flat" alt="功法总表"></a>
-  <a href=".github/metadata/gongfa/catalog.xlsx"><img src="https://img.shields.io/badge/Excel-完整视图-forestgreen?style=flat" alt="Excel 完整视图"></a>
+  <a href=".github/context/gongfa/README.md#全部记录"><img src="https://img.shields.io/badge/功法-总表-purple?style=flat" alt="功法总表"></a>
+  <a href=".github/context/gongfa/data.json"><img src="https://img.shields.io/badge/JSON-原始资料-forestgreen?style=flat" alt="功法JSON原始资料；历史Excel保留为载荷，不是活动视图"></a>
   <a href="https://zread.ai/tukuaiai/vibe-coding-cn/1-overview"><img src="https://img.shields.io/badge/Zread-AI解读-blue?style=flat" alt="zread.ai/tukuaiai/vibe-coding-cn"></a>
 </p>
 
 </div>
+
+## 工具箱怎么用
+
+先说明要解决的问题、输入、验收和权限，再从三个资源域挑已有对象，不先造新工具：
+
+| 资源域 | 输入与输出 | 既有内容与代价 |
+|---|---|---|
+| [Context](.github/context/README.md) | 问题与来源→可核对的参考材料 | 功法、法器、入门、研究、提示词与资源；需付出检索、上下文和来源核对成本 |
+| [Skills](.github/skills/README.md) | 任务与参考→可遵循的指令/流程 | 2个自有及16个既有官方Skill；适用范围、依赖和错误判断仍须核实 |
+| [Extensions](.github/extensions/README.md) | 显式参数/文件→产物、退出码或外部副作用 | 原程序、脚本、转换器与适配；运行有环境、资源、权限和恢复代价 |
+
+**统一说明约定**：每次选用工具，问清问题是什么、为何这样设计、怎样实现、代价是什么；再比较替代方案、可复用共性和生效前提。
+这不是新增工具注册表，也不把资料行、运行实例、抽象依赖类别和程序源码混成一种身份。
+
+**组合方式**：借鉴Lambda演算，用`f: Input → Result`表达接口，只有前一步结果满足后一步输入条件时才组合`λx. g(f(x))`。
+真实程序的错误、环境、权限及副作用另列；这个记号不证明纯函数、确定性、正确性或终止，不在仓内实现解释器。
+
+主体执行复用Pi的原生工具与模型选择，使用已授权的OpenAI GPT；没有新建Agent、模型HTTP客户端或Pi内置扩展副本。
+资料与官方Skill可读取不代表已运行、已获许可或有效果证明。
 
 <a id="gongfa"></a>
 <!-- 其他方法历史定位收口到功法；六命题旧锚点仅作兼容，正文入口在功法体系。 -->
@@ -47,10 +66,10 @@
 
 ## 功法体系
 
-思想、准则、思维模型、方法与工程流程统一从[功法体系](.github/docs/gongfa/README.md)按当前问题选用。
-原来的经验、道法术器、实验性方法和哲学都在体系内维护，不再作为首页独立栏目或分库入口。
+思想、准则、思维模型、方法与工程流程统一从[功法体系](.github/context/gongfa/README.md)按当前问题选用。
+原来的经验、道法术器、实验性方法和哲学保留为同一集合中的原始文集，不再作为首页独立栏目或分库入口。
 
-逐条身份、内容版本、冻结来源与已有意见查看[功法登记](.github/metadata/gongfa/README.md)及上方总表。
+逐条身份、内容版本、冻结来源与已有意见查看[功法原始资料](.github/context/gongfa/data.json)及[生成总表](.github/context/gongfa/README.md#全部记录)。
 文集归并不等于全部内容已经逐条登记；已有初评也不等于正式效果验证。
 
 </details>
@@ -63,10 +82,10 @@
 
 法器总表整理 Vibe Coding 流程中使用或依赖的工具、可调用入口和依赖类别；固定来源实现、当前运行实例、候选对象与抽象类别分别记录。文件级许可线索仅作支持证据，不等于许可批准或再分发授权。
 
-- [法器体系说明](.github/docs/gongfa/faqi-system.md)：分类边界、重要性分级、选用方式与固定 MCP 源码的副作用边界。
-- [法器重要性总表](.github/tools/faqi-catalog.md)：30 项的品级、名称、说明与记录状态。
-- [法器登记源](.github/metadata/faqi.json)：唯一可编辑数据源；生成总表不可手改。
-- [法器类型与正式效能规约](.github/docs/gongfa/cultivation-ontology-taxonomy.md#法器品级规约)：正式任务效果量表仍为草案。
+- [法器体系说明](.github/context/faqi/README.md#doc-faqi-system)：分类边界、重要性分级、选用方式与固定 MCP 源码的副作用边界。
+- [法器重要性总表](.github/context/faqi/README.md#法器总表)：30 项的品级、名称、说明与记录状态。
+- [法器登记源](.github/context/faqi/data.json)：唯一可编辑数据源；生成总表不可手改。
+- [法器类型与正式效能规约](.github/context/gongfa/README.md#doc-cultivation-ontology-taxonomy-法器品级规约)：正式任务效果量表仍为草案。
 
 当前 30 项按 Vibe Coding 重要性暂分天阶 4 项、地阶 12 项、玄阶 9 项、黄阶 5 项。重要性不代表实现质量、运行可用性或效能验证；正式效能评级尚未完成。
 
@@ -84,25 +103,20 @@
 
 ## 📌 字多不看
 
-- `vibe-coding-cn` 是中文 Vibe Coding 从入门到精通教程，目标是把想法稳定变成可运行产品。
-- 新手先走 [从零开始完整入门](.github/docs/getting-started/learning-map.md)：网络环境、CLI 配置、开发环境、第一个项目和 Git 闭环。
-- 方法正文统一在 [功法体系](.github/docs/gongfa/README.md)：按问题选择思想、准则、模型与工程方法，不按旧栏目分库。
-- 工程主线是 Prompt、Skill、Context、Quality Gate 和 Git，用测试、CI、脚本、类型、schema、清单约束 AI 输出。
-- 需要直接使用资源时，进入 [提示词](.github/prompts/README.md#在线提示词库)、[Skills](.github/skills/README.md#当前保留) 和 [外部资源](.github/assets/README.md#外部资源本地注册表)。
+- `vibe-coding-cn` 是Vibe Coding工具箱，主体底座为Pi Agent与OpenAI GPT；本次只整理已有资产，不增加业务Skill。
+- 新手先走 [从零开始完整入门](.github/context/getting-started/learning-map.md)：网络环境、CLI 配置、开发环境、第一个项目和 Git 闭环。
+- 方法正文统一在 [功法体系](.github/context/gongfa/README.md)：按问题选择思想、准则、模型与工程方法，不按旧栏目分库。
+- 资源统一为Context、Skills、Extensions；用现有测试、CI、脚本、类型、Schema与Git核对具体结果，不把分类当作运行或效果证明。
+- 需要直接使用资源时，进入 [提示词](.github/context/prompts/README.md#在线提示词库)、[Skills](.github/skills/README.md#当前保留) 和 [外部资源](.github/context/assets/README.md#外部资源本地注册表)。
 
 ### 入口关系
 
 | 入口 | 你该怎么理解 |
 |:---|:---|
-| [docs](.github/docs/README.md) | 知识库总入口，先从这里选择学习路线 |
-| [getting-started](.github/docs/getting-started/README.md) | 新手启动入口，配置网络、Codex CLI、开发环境，完成第一个项目和 Git 闭环 |
-| [gongfa](.github/docs/gongfa/README.md) | 思想、准则、模型、方法与工程流程的唯一正文入口 |
-| [research](.github/research/README.md) | 研究入口，记录新技术、优秀 repo 和工程趋势判断 |
-| [prompts](.github/prompts/README.md) | 提示词入口，复用和管理提示词资产 |
-| [skills](.github/skills/README.md) | 技能入口，复用可执行的 AI 能力模块 |
-| [tools](.github/tools/README.md) | 工具入口，使用 Codex 配置、转换工具和外部工具 |
-| [assets](.github/assets/README.md) | 资源入口，查看外部资源、AI 引用语料和静态资产 |
-| [Wiki](https://github.com/tukuaiai/vibe-coding-cn/wiki) | 导航入口，用摘要页串联主仓 docs、tools、prompts、skills 和 GEO 资产 |
+| [Context](.github/context/README.md) | 既有资料按需读取；功法、法器、入门、研究、提示词、资源、引用、索引及附件 |
+| [Skills](.github/skills/README.md) | 所有既有Skill平铺治理；指令引用单一程序源，不自动执行 |
+| [Extensions](.github/extensions/README.md) | 所有既有程序、小工具、检查器与适配；不是Pi原生扩展盲扫目录 |
+| [Wiki](https://github.com/tukuaiai/vibe-coding-cn/wiki) | 独立导航仓库，不作为第四种资源或第二份正文源 |
 
 </details>
 
@@ -113,45 +127,30 @@
 
 ## ⚡ 1 分钟快速开始
 
-> 新电脑也可以开始：先用网页 AI 这个零依赖入口，生成适合你系统的网络环境、Codex CLI 和本地 Agent 安装步骤。
+1. 准备当前系统可用的Pi Agent及已授权OpenAI GPT模型，通过Pi原生模型选择配置；不把ChatGPT订阅自动等同于API权限，也不在仓内保存凭据。
+2. 获取本仓并按锁定修订初始化既有来源：`git submodule update --init --recursive`。
+3. 阅读根`AGENTS.md`和当前任务所需Context；需要既有Skill时，从仓库根显式加载：
 
-**第 1 步**：复制下面的提示词，粘贴到 [ChatGPT](https://chatgpt.com/) / Claude / Gemini 网页版
-
-```
-你是一个专业的 AI 编程环境配置助手。我要从新电脑开始学习 Vibe Coding。
-
-请先问我：
-1. 我的操作系统是什么？Windows 11 / WSL / Linux / macOS？
-2. 我是否已经能访问 OpenAI、GitHub、Node.js/npm 和系统包管理器？
-3. 我是否已有可用的 Codex / ChatGPT 订阅？
-
-然后帮我：
-1. 先判断网络环境和订阅是否满足 Codex CLI 前置条件。
-2. 按我的系统生成从 0 到 1 安装 Codex CLI 的步骤。
-3. 每条需要在终端执行的命令都单独放在代码块里。
-4. Codex CLI 登录成功后，告诉我如何让本地 Agent 继续配置 Git、Node.js、Python、编辑器、项目依赖、测试命令和 Git 工作流。
-5. 如果我贴报错，请逐条解释原因并给出下一条最小修复命令。
-
-要求：不要跳步；每一步只做一件事；每一步都说明如何判断成功。
+```bash
+pi --skill .github/skills
 ```
 
-**第 2 步**：按网页 AI 生成的步骤先装好 Codex CLI。
+4. 用Pi原生`/model`选择已授权的OpenAI模型。先明确任务和验收，再让Agent按需读取资料、使用相应Skill并显式调用现有程序。
 
-**第 3 步**：Codex CLI 跑通后，让本地 Agent 读取本仓库文档并主动配置剩余环境。
-
-**核心口径**：网页 AI 是零依赖启动器，Codex CLI 是默认本地执行入口。更多内容（新手从零开始）请继续阅读 👇
+加载不是执行许可，也不是运行或效果测试。不要把`.github/extensions/`整体传给`-e`。
+既有[Codex配置](.github/extensions/codex-config/.codex/README.md)和[从零开始](.github/context/getting-started/README.md)仍保留，按其中具体工具选择使用，不是新造第二套主体运行时。
 
 ### 🚀 从零开始
 
 完全新手？按顺序完成以下步骤：
 
-0. [从零开始完整入门](.github/docs/getting-started/learning-map.md) - 按目标选择新手、开发者、团队、Prompt、Skill 或质量门禁路线
-1. [Vibe Coding 经验](.github/docs/gongfa/vibe-coding-experience.md) - 通用语言能力、人机分工、机器门禁和入门铁律
-2. [第一个项目](.github/docs/getting-started/first-project.md) - 用本地待办清单走通需求、实现、验收和 Git 保存
-3. [问题求解](.github/docs/gongfa/problem-solving.md) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
-4. [Vibe Coding 状态转移闭环](.github/docs/gongfa/vibe-coding-state-transition.md) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding
-5. [拼好码](.github/docs/gongfa/glue-coding.md) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
-6. [工程实践](.github/docs/gongfa/quality-gates-and-pitfalls.md) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
+0. [从零开始完整入门](.github/context/getting-started/learning-map.md) - 按目标选择新手、开发者、团队、Prompt、Skill 或质量门禁路线
+1. [Vibe Coding 经验](.github/context/gongfa/README.md#doc-vibe-coding-experience) - 通用语言能力、人机分工、机器门禁和入门铁律
+2. [第一个项目](.github/context/getting-started/first-project.md) - 用本地待办清单走通需求、实现、验收和 Git 保存
+3. [问题求解](.github/context/gongfa/README.md#doc-problem-solving) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
+4. [Vibe Coding 状态转移闭环](.github/context/gongfa/README.md#doc-vibe-coding-state-transition) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding
+5. [拼好码](.github/context/gongfa/README.md#doc-glue-coding) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
+6. [工程实践](.github/context/gongfa/README.md#doc-quality-gates-and-pitfalls) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
 
 </details>
 
@@ -160,7 +159,7 @@
 
 ## 🗂️ 项目目录结构概览
 
-本项目 `vibe-coding-cn` 的核心结构主要围绕知识管理、AI 提示词的组织与自动化展开。以下是经过整理和简化的目录树及各部分说明：
+资源只有三个域；下面列出域边界与Context的全部9个集合，不展开各原生包内部源码。完整对象分别在三个域的README中导航。
 
 ```
 .
@@ -176,14 +175,20 @@
 ├── .lychee.toml                 # 外部链接检查配置
 └── .github/                     # GitHub 配置与仓库内容
     ├── AGENTS.md                # 本目录规则和平台边界
-    ├── assets/                  # 静态资产、外部资源与 AI 引用语料
-    ├── docs/                    # 入门教程与功法正文
-    ├── metadata/                # 机器可读登记与生成目录
-    ├── prompts/                 # 提示词库入口
-    ├── research/                # 研究对象、来源事实和冻结材料
-    ├── scripts/                 # 检查、生成和维护脚本
-    ├── skills/                  # 可复用技能库
-    ├── tools/                   # 工具、配置与外部依赖
+    ├── context/                 # 按需读取的既有资料
+    │   ├── README.md            # 资料导航
+    │   ├── AGENTS.md            # 原始数据、来源与信任规则
+    │   ├── gongfa/              # data.json + 生成README.md
+    │   ├── faqi/                # data.json + 生成README.md
+    │   ├── getting-started/     # 原入门与实例
+    │   ├── prompts/             # 原云端提示词入口
+    │   ├── research/            # 原研究、事实镜像和缓存
+    │   ├── external-resources/  # 原外部资源登记
+    │   ├── ai-citation/         # 原AI引用语料
+    │   ├── metadata/            # 原分类、术语与重定向
+    │   └── assets/              # 原图片、数据与模板
+    ├── skills/                  # 2个自有 + 16个既有官方入口
+    ├── extensions/              # 原程序、脚本、小工具和适配
     ├── CODEOWNERS               # 路径级 owner 评审基线
     ├── ISSUE_TEMPLATE/          # Issue 模板
     ├── PULL_REQUEST_TEMPLATE.md # PR 模板
@@ -212,25 +217,9 @@
 
 ## ⚙️ 架构与工作流程
 
-核心资产映射：
-```
-.github/prompts/
-  README.md  # 云端表格入口（元/系统/编程/用户提示词）
-.github/skills/
-  README.md  # skills 总览与索引
-.github/docs/
-  getting-started/*  # 配置与实例练习
-  gongfa/*           # 统一方法正文与配套文集
-.github/research/
-  README.md  # 研究总索引、治理契约、迁移综合与研究对象入口
-.github/assets/
-  README.md  # 静态资产与外部资源入口
-  external-resources/  # 本地外部资源注册表
-.github/scripts/
-  README.md  # 自动化入口、验证命令与脚本职责索引
-  check-local-links.py  # Markdown 相对链接检查脚本
-  test-markdown-details.py  # 代码围栏隔离与折叠块错误的 CLI 回归
-```
+核心资产映射是`context/`的资料、`skills/`的指令和`extensions/`的现有实现。相邻步骤按输入输出合同连接，失败和外部副作用不能隐去。
+
+下面保留既有提示词转换程序的架构示意；图中的历史预留节点不是本次新增能力，也不代表整个工具箱均采用该转换流程。
 
 ```mermaid
 graph TB
@@ -249,8 +238,8 @@ graph TB
   subgraph ingest_layer[数据接入与采集层]
     excel_raw[prompt_excel/*.xlsx]
     md_raw[prompt_docs/外部MD输入]
-    excel_to_docs[.github/tools/prompts-library/scripts/excel_to_docs.py]
-    docs_to_excel[.github/tools/prompts-library/scripts/docs_to_excel.py]
+    excel_to_docs[.github/extensions/prompts-library/scripts/excel_to_docs.py]
+    docs_to_excel[.github/extensions/prompts-library/scripts/docs_to_excel.py]
     ingest_bus[标准化数据帧]
     ext_sheet --> excel_raw
     ext_md --> md_raw
@@ -265,7 +254,7 @@ graph TB
     validate --> transform[格式映射转换]
     transform --> artifacts_md[prompt_docs/规范MD]
     transform --> artifacts_xlsx[prompt_excel/导出XLSX]
-    orchestrator[main.py · .github/tools/prompts-library/scripts/start_convert.py] --> validate
+    orchestrator[main.py · .github/extensions/prompts-library/scripts/start_convert.py] --> validate
     orchestrator --> transform
   end
 
@@ -274,7 +263,7 @@ graph TB
     artifacts_md --> catalog_system["prompts(在线)/系统提示词"]
     artifacts_md --> catalog_meta["prompts(在线)/元提示词"]
     artifacts_md --> catalog_user["prompts(在线)/用户提示词"]
-    artifacts_md --> docs_repo[.github/docs/*]
+    artifacts_md --> docs_repo[.github/context/*]
     artifacts_md --> new_consumer[预留：其他下游渠道]
     catalog_coding --> ai_flow[AI 结对编程流程]
     ai_flow --> deliverables[项目上下文 / 计划 / 代码产出]
@@ -288,8 +277,8 @@ graph TB
 
   subgraph infra_layer[基础设施与横切能力层]
     git[Git 版本控制] --> orchestrator
-    deps[.github/tools/prompts-library/requirements.txt · .github/tools/prompts-library/scripts/requirements.txt] --> orchestrator
-    config[.github/tools/prompts-library/scripts/config.yaml] --> orchestrator
+    deps[.github/extensions/prompts-library/requirements.txt · .github/extensions/prompts-library/scripts/requirements.txt] --> orchestrator
+    config[.github/extensions/prompts-library/scripts/config.yaml] --> orchestrator
     monitor[预留：日志与监控] --> orchestrator
   end
 ```
@@ -301,7 +290,7 @@ graph TB
 
 ## 📈 性能基准 (可选)
 
-本仓库定位为「流程与提示词」而非性能型代码库，建议跟踪下列可观测指标（当前主要依赖人工记录，可在 `progress.md` 中打分/留痕）：
+本仓库是既有资源工具箱，不对模型或程序效果作统一性能保证；可在具体任务中跟踪下列可观测指标（当前主要依赖人工记录，可在 `progress.md` 中打分/留痕）：
 
 | 指标 | 含义 | 当前状态/建议 |
 |:---|:---|:---|

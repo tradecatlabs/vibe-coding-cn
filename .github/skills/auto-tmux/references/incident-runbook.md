@@ -8,19 +8,19 @@
 2. 捕获错误目标 pane 输出：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh capture -t <wrong-target> -n 120
+.github/extensions/auto-tmux/auto-tmux.sh capture -t <wrong-target> -n 120
 ```
 
 3. 捕获原本目标 pane 输出：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh capture -t <expected-target> -n 120
+.github/extensions/auto-tmux/auto-tmux.sh capture -t <expected-target> -n 120
 ```
 
 4. 在 swarm state 中标记阻塞或失败：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-block --id <task-id> --owner <owner> --reason "mis-sent to wrong pane" --dir /tmp/ai_swarm
+.github/extensions/auto-tmux/swarm-state.sh task-block --id <task-id> --owner <owner> --reason "mis-sent to wrong pane" --dir /tmp/ai_swarm
 ```
 
 ## 误广播
@@ -34,13 +34,13 @@ tmux set-window-option synchronize-panes off
 2. 生成全局快照：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh snapshot --session ai-hub --dir /tmp/auto-tmux-incident-snapshot
+.github/extensions/auto-tmux/auto-tmux.sh snapshot --session ai-hub --dir /tmp/auto-tmux-incident-snapshot
 ```
 
 3. 生成阻塞报告：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-blockers.sh --dir /tmp/ai_swarm --out /tmp/auto-tmux-incident-blockers.md
+.github/extensions/auto-tmux/swarm-blockers.sh --dir /tmp/ai_swarm --out /tmp/auto-tmux-incident-blockers.md
 ```
 
 ## 远程采集失败
@@ -48,7 +48,7 @@ tmux set-window-option synchronize-panes off
 1. 先 dry-run 确认 SSH 命令形态：
 
 ```bash
-.github/skills/auto-tmux/scripts/remote-readonly.sh --host user@example.com --session ai-hub --dry-run
+.github/extensions/auto-tmux/remote-readonly.sh --host user@example.com --session ai-hub --dry-run
 ```
 
 2. 确认远端是否安装 tmux、session 是否存在。

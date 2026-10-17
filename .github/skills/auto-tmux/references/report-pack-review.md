@@ -5,7 +5,7 @@
 ## 最短验收命令
 
 ```bash
-.github/skills/auto-tmux/scripts/verify-report-pack.sh --pack /tmp/ai-swarm-report-pack
+.github/extensions/auto-tmux/verify-report-pack.sh --pack /tmp/ai-swarm-report-pack
 ```
 
 该命令会检查：

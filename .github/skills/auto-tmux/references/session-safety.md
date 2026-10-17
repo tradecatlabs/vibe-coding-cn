@@ -14,7 +14,7 @@
 
 ## 远程只读规则
 
-`scripts/remote-readonly.sh` 只用于采集远端 tmux 证据。它的远端动作必须限定为：
+`.github/extensions/auto-tmux/remote-readonly.sh` 只用于采集远端 tmux 证据。它的远端动作必须限定为：
 
 - `tmux has-session`
 - `tmux list-sessions`
@@ -36,7 +36,7 @@
 
 1. target 使用 `<session>:<window>.<pane>` 绝对定位。
 2. 先通过 `inspect` 或 `capture` 查看最近输出。
-3. 对长文本、文件和 prompt 运行 `scripts/safety-check.sh`。
+3. 对长文本、文件和 prompt 运行 `.github/extensions/auto-tmux/safety-check.sh`。
 4. 批量发送先 `--dry-run`，确认目标集合后再执行。
 5. 发送后立刻 capture 保存结果，不能只相信命令返回值。
 
@@ -44,10 +44,10 @@
 
 ```bash
 target="ai-hub:1.0"
-.github/skills/auto-tmux/scripts/auto-tmux.sh inspect -t "$target" -n 40
-.github/skills/auto-tmux/scripts/safety-check.sh --text "make test"
-.github/skills/auto-tmux/scripts/auto-tmux.sh send -t "$target" --text "make test" --enter
-.github/skills/auto-tmux/scripts/auto-tmux.sh capture -t "$target" -n 80
+.github/extensions/auto-tmux/auto-tmux.sh inspect -t "$target" -n 40
+.github/extensions/auto-tmux/safety-check.sh --text "make test"
+.github/extensions/auto-tmux/auto-tmux.sh send -t "$target" --text "make test" --enter
+.github/extensions/auto-tmux/auto-tmux.sh capture -t "$target" -n 80
 ```
 
 ## 敏感信息处理
@@ -81,7 +81,7 @@ target="ai-hub:1.0"
 ## 验收
 
 ```bash
-.github/skills/auto-tmux/scripts/remote-readonly.sh --host example.com --session ai-hub --dry-run
-.github/skills/auto-tmux/scripts/safety-check.sh --text "make test"
-.github/skills/auto-tmux/scripts/validate-auto-tmux.sh
+.github/extensions/auto-tmux/remote-readonly.sh --host example.com --session ai-hub --dry-run
+.github/extensions/auto-tmux/safety-check.sh --text "make test"
+.github/extensions/auto-tmux/validate-auto-tmux.sh
 ```

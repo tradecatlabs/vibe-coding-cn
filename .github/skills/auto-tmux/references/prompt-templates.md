@@ -1,6 +1,6 @@
 # Swarm Prompt Templates
 
-`scripts/render-swarm-prompt.sh` 用于渲染 tmux 蜂群协作的 commander、worker、reviewer，以及单 worker Codex Pilot Mode 的 `codex-worker` 提示词。它把常用协作协议固化成可复制模板，避免每次手写时遗漏边界、状态、锁和验收要求。
+`.github/extensions/auto-tmux/render-swarm-prompt.sh` 用于渲染 tmux 蜂群协作的 commander、worker、reviewer，以及单 worker Codex Pilot Mode 的 `codex-worker` 提示词。它把常用协作协议固化成可复制模板，避免每次手写时遗漏边界、状态、锁和验收要求。
 
 ## 子命令
 
@@ -14,7 +14,7 @@
 ## Commander Prompt
 
 ```bash
-bash .github/skills/auto-tmux/scripts/render-swarm-prompt.sh commander \
+bash .github/extensions/auto-tmux/render-swarm-prompt.sh commander \
   --session ai-hub \
   --swarm-dir /tmp/ai_swarm \
   --task "重构 README 实验性方法入口"
@@ -37,11 +37,11 @@ target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
 渲染 worker 提示词：
 
 ```bash
-bash .github/skills/auto-tmux/scripts/render-swarm-prompt.sh worker \
+bash .github/extensions/auto-tmux/render-swarm-prompt.sh worker \
   --session ai-hub \
   --target "$target" \
   --swarm-dir /tmp/ai_swarm \
-  --task "只检查 .github/research/README.md 的链接和锚点"
+  --task "只检查 .github/context/research/README.md 的链接和锚点"
 ```
 
 适用场景：
@@ -53,7 +53,7 @@ bash .github/skills/auto-tmux/scripts/render-swarm-prompt.sh worker \
 ## Reviewer Prompt
 
 ```bash
-bash .github/skills/auto-tmux/scripts/render-swarm-prompt.sh reviewer \
+bash .github/extensions/auto-tmux/render-swarm-prompt.sh reviewer \
   --session ai-hub \
   --swarm-dir /tmp/ai_swarm \
   --task "审查本轮 auto-tmux 脚本和文档改动"
@@ -70,7 +70,7 @@ bash .github/skills/auto-tmux/scripts/render-swarm-prompt.sh reviewer \
 `codex-worker` 用于单 worker 的 Codex Pilot Mode：主 Codex 控制一个持久化、交互式、对人类可见的 worker Codex pane。
 
 ```bash
-bash .github/skills/auto-tmux/scripts/render-swarm-prompt.sh codex-worker \
+bash .github/extensions/auto-tmux/render-swarm-prompt.sh codex-worker \
   --session codex-pilot \
   --target codex-pilot:worker.0 \
   --task "进入持久 worker 待命状态，等待主 Codex 后续分派任务"
@@ -87,7 +87,7 @@ bash .github/skills/auto-tmux/scripts/render-swarm-prompt.sh codex-worker \
 优先使用封装脚本渲染并预演：
 
 ```bash
-bash .github/skills/auto-tmux/scripts/swarm-dispatch.sh \
+bash .github/extensions/auto-tmux/swarm-dispatch.sh \
   --role worker \
   --target "$target" \
   --task "运行 make test 并分析失败" \
@@ -98,7 +98,7 @@ bash .github/skills/auto-tmux/scripts/swarm-dispatch.sh \
 Codex Pilot Mode 下发示例：
 
 ```bash
-bash .github/skills/auto-tmux/scripts/swarm-dispatch.sh \
+bash .github/extensions/auto-tmux/swarm-dispatch.sh \
   --role codex-worker \
   --target codex-pilot:worker.0 \
   --session codex-pilot \
@@ -110,7 +110,7 @@ bash .github/skills/auto-tmux/scripts/swarm-dispatch.sh \
 渲染到临时文件：
 
 ```bash
-bash .github/skills/auto-tmux/scripts/render-swarm-prompt.sh worker \
+bash .github/extensions/auto-tmux/render-swarm-prompt.sh worker \
   --target "$target" \
   --task "运行 make test 并分析失败" \
   > /tmp/worker-prompt.md
@@ -119,7 +119,7 @@ bash .github/skills/auto-tmux/scripts/render-swarm-prompt.sh worker \
 发送到 worker：
 
 ```bash
-bash .github/skills/auto-tmux/scripts/auto-tmux.sh send \
+bash .github/extensions/auto-tmux/auto-tmux.sh send \
   -t "$target" \
   --text "$(cat /tmp/worker-prompt.md)" \
   --enter
@@ -128,7 +128,7 @@ bash .github/skills/auto-tmux/scripts/auto-tmux.sh send \
 长 prompt 可以用 tmux buffer 粘贴：
 
 ```bash
-bash .github/skills/auto-tmux/scripts/auto-tmux.sh paste \
+bash .github/extensions/auto-tmux/auto-tmux.sh paste \
   -t "$target" \
   --file /tmp/worker-prompt.md \
   --enter \

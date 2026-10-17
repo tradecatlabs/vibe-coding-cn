@@ -1,6 +1,6 @@
 # Swarm State and Lock Protocol
 
-`scripts/swarm-state.sh` 是 `auto-tmux` 的最小蜂群状态管理脚本，用于在 tmux 多 AI 协作时记录状态、分配任务、声明锁和汇总报告。
+`.github/extensions/auto-tmux/swarm-state.sh` 是 `auto-tmux` 的最小蜂群状态管理脚本，用于在 tmux 多 AI 协作时记录状态、分配任务、声明锁和汇总报告。
 
 它不依赖数据库、`jq` 或后台服务，默认把状态写入 `/tmp/ai_swarm`。需要隔离不同项目时，用 `--dir DIR` 或环境变量 `AUTO_TMUX_SWARM_DIR` 指定目录。
 
@@ -21,13 +21,13 @@
 ## 初始化
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh init
+.github/extensions/auto-tmux/swarm-state.sh init
 ```
 
 指定目录：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/my-ai-swarm
+.github/extensions/auto-tmux/swarm-state.sh init --dir /tmp/my-ai-swarm
 ```
 
 ## 状态日志
@@ -35,7 +35,7 @@
 写入状态：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh log \
+.github/extensions/auto-tmux/swarm-state.sh log \
   --target "ai-hub:2.1" \
   --status START \
   --message "开始执行 make test"
@@ -44,7 +44,7 @@
 查看最近状态：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh status -n 20
+.github/extensions/auto-tmux/swarm-state.sh status -n 20
 ```
 
 状态建议：
@@ -67,7 +67,7 @@
 新增任务：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
+.github/extensions/auto-tmux/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
 ```
 
 从文本文件批量导入任务：
@@ -79,7 +79,7 @@ cat > /tmp/tasks.txt <<'EOF'
 - 汇总风险和下一步
 EOF
 
-.github/skills/auto-tmux/scripts/swarm-state.sh task-import --file /tmp/tasks.txt --prefix batch
+.github/extensions/auto-tmux/swarm-state.sh task-import --file /tmp/tasks.txt --prefix batch
 ```
 
 `task-import` 会跳过空行和 `#` 注释行，自动去掉行首 `- ` 或 `* `，并生成 `batch-001` 这类任务 ID。
@@ -87,8 +87,8 @@ EOF
 声明任务依赖：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-depend --id batch-002 --blocked-by batch-001
-.github/skills/auto-tmux/scripts/swarm-state.sh task-ready
+.github/extensions/auto-tmux/swarm-state.sh task-depend --id batch-002 --blocked-by batch-001
+.github/extensions/auto-tmux/swarm-state.sh task-ready
 ```
 
 `task-ready` 只列出状态为 `TODO` 且所有依赖都已经 `DONE` 的任务，适合 commander 给空闲 worker 分配下一步。
@@ -96,13 +96,13 @@ EOF
 认领任务：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-claim --id task-001 --owner "ai-hub:2.1"
+.github/extensions/auto-tmux/swarm-state.sh task-claim --id task-001 --owner "ai-hub:2.1"
 ```
 
 领取下一条 `TODO` 任务：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-next --owner "ai-hub:2.1"
+.github/extensions/auto-tmux/swarm-state.sh task-next --owner "ai-hub:2.1"
 ```
 
 `task-next` 会跳过依赖尚未完成的 `TODO` 任务；它与 `task-ready` 使用同一套 blocked-by 判断。
@@ -110,7 +110,7 @@ EOF
 完成任务：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-done \
+.github/extensions/auto-tmux/swarm-state.sh task-done \
   --id task-001 \
   --owner "ai-hub:2.1" \
   --result "make test passed"
@@ -119,7 +119,7 @@ EOF
 标记阻塞：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-block \
+.github/extensions/auto-tmux/swarm-state.sh task-block \
   --id task-001 \
   --owner "ai-hub:2.1" \
   --reason "等待用户确认 API key 配置"
@@ -128,7 +128,7 @@ EOF
 标记失败：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-fail \
+.github/extensions/auto-tmux/swarm-state.sh task-fail \
   --id task-001 \
   --owner "ai-hub:2.1" \
   --reason "make test failed"
@@ -137,15 +137,15 @@ EOF
 查看任务：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-list
-.github/skills/auto-tmux/scripts/swarm-state.sh task-list --status FAIL
-.github/skills/auto-tmux/scripts/swarm-state.sh task-list --owner "ai-hub:2.1"
+.github/extensions/auto-tmux/swarm-state.sh task-list
+.github/extensions/auto-tmux/swarm-state.sh task-list --status FAIL
+.github/extensions/auto-tmux/swarm-state.sh task-list --owner "ai-hub:2.1"
 ```
 
 重开失败或阻塞任务：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-reopen \
+.github/extensions/auto-tmux/swarm-state.sh task-reopen \
   --id task-001 \
   --owner "ai-hub:2.1" \
   --reason "修复依赖后重新执行"
@@ -156,9 +156,9 @@ EOF
 校验状态一致性：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh metrics
-.github/skills/auto-tmux/scripts/swarm-state.sh validate
-.github/skills/auto-tmux/scripts/swarm-board.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-board.md
+.github/extensions/auto-tmux/swarm-state.sh metrics
+.github/extensions/auto-tmux/swarm-state.sh validate
+.github/extensions/auto-tmux/swarm-board.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-board.md
 ```
 
 `metrics` 会按任务状态、owner 和当前锁数量输出摘要，适合 commander 快速判断蜂群是否堵塞。
@@ -174,7 +174,7 @@ EOF
 获取锁：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh lock-acquire \
+.github/extensions/auto-tmux/swarm-state.sh lock-acquire \
   --name "README.md" \
   --owner "ai-hub:2.1"
 ```
@@ -182,7 +182,7 @@ EOF
 释放锁：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh lock-release \
+.github/extensions/auto-tmux/swarm-state.sh lock-release \
   --name "README.md" \
   --owner "ai-hub:2.1"
 ```
@@ -190,14 +190,14 @@ EOF
 查看锁：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh lock-list
+.github/extensions/auto-tmux/swarm-state.sh lock-list
 ```
 
 清理过期锁前先演练：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh lock-prune --older-than 3600 --dry-run
-.github/skills/auto-tmux/scripts/swarm-state.sh lock-prune --older-than 3600
+.github/extensions/auto-tmux/swarm-state.sh lock-prune --older-than 3600 --dry-run
+.github/extensions/auto-tmux/swarm-state.sh lock-prune --older-than 3600
 ```
 
 锁使用 `mkdir` 创建目录，具备基本原子性。若锁归属不匹配，默认拒绝释放；确需人工回收时才使用 `--force`。
@@ -208,7 +208,7 @@ EOF
 生成汇总报告：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh report
+.github/extensions/auto-tmux/swarm-state.sh report
 ```
 
 报告包含：

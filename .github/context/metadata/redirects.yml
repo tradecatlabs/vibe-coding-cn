@@ -1,0 +1,216 @@
+redirects:
+  # 历史目录迁移；这里只记录路径映射，不提供旧正文副本。
+  - from: docs/guides/getting-started/
+    to: .github/context/getting-started/
+  - from: docs/principles/fundamentals/
+    to: .github/context/README.md
+  - from: docs/principles/philosophy/
+    to: .github/context/gongfa/README.md#原文文集
+  - from: docs/concepts/philosophy/
+    to: .github/context/gongfa/README.md#原文文集
+  - from: docs/research/
+    to: .github/context/research/
+  - from: Workflow/
+    to: .github/context/gongfa/README.md#原文文集
+
+  # 历史中文、合并和拆分文件名，直接指向现有正文。
+  - from: docs/concepts/思维模型.md
+    to: .github/context/gongfa/README.md#doc-thinking-models
+  - from: docs/concepts/编程之道.md
+    to: .github/context/gongfa/README.md#doc-programming-dao
+  - from: docs/concepts/A Formalization of Recursive Self-Optimizing Generative Systems.md
+    to: .github/context/gongfa/README.md#doc-recursive-self-optimizing-system
+  - from: docs/concepts/软件开发范式演进.md
+    to: .github/context/gongfa/README.md#doc-development-paradigms
+  - from: docs/concepts/递归自优化生成系统形式化.md
+    to: .github/context/gongfa/README.md#doc-recursive-self-optimizing-system
+  - from: docs/concepts/问题分析与系统构建方法.md
+    to: .github/context/gongfa/README.md#doc-system-building
+  - from: docs/concepts/问题求解能力.md
+    to: .github/context/gongfa/README.md#doc-problem-solving
+  - from: docs/concepts/Harness Engineering 的本质拆解.md
+    to: .github/context/gongfa/README.md#doc-harness-engineering
+  - from: docs/research/Harness Engineering 的本质拆解.md
+    to: .github/context/gongfa/README.md#doc-harness-engineering
+  - from: docs/research/harness-engineering.md
+    to: .github/context/gongfa/README.md#doc-harness-engineering
+  - from: docs/philosophy/现象学还原.md
+    to: .github/context/gongfa/README.md#doc-methodology-toolbox
+  - from: docs/philosophy/辩证法.md
+    to: .github/context/gongfa/README.md#doc-methodology-toolbox
+  - from: docs/philosophy/控制论与科学方法论.md
+    to: .github/context/gongfa/README.md#doc-methodology-toolbox
+  - from: docs/philosophy/理解世界、描述变化、整理知识的一套较小框架.md
+    to: .github/context/gongfa/README.md#doc-compositional-description-model
+  - from: docs/guides/playbook/
+    to: .github/context/README.md
+  - from: docs/playbooks/
+    to: .github/context/README.md
+  - from: docs/playbooks/GEO与SEO优化方法.md
+    to: .github/context/gongfa/README.md#doc-geo-seo-checklist
+  - from: docs/playbooks/GEMINI-HEADLESS.md
+    to: .github/context/README.md
+  - from: docs/playbooks/ProxyCast配置文档.md
+    to: .github/context/README.md
+  - from: docs/playbooks/tradecat-sheets-api-usage.md
+    to: .github/context/README.md
+  - from: docs/getting-started/Codex-CLI配置.md
+    to: .github/context/getting-started/cli-setup.md
+  - from: docs/getting-started/学习地图.md
+    to: .github/context/getting-started/learning-map.md
+  - from: docs/getting-started/Vibe Coding 经验.md
+    to: .github/context/gongfa/README.md#doc-vibe-coding-experience
+  - from: docs/getting-started/网络环境配置.md
+    to: .github/context/getting-started/network-environment.md
+  - from: docs/getting-started/CLI配置.md
+    to: .github/context/getting-started/cli-setup.md
+  - from: docs/getting-started/开发环境搭建.md
+    to: .github/context/getting-started/development-environment.md
+  - from: docs/references/通用项目架构模板.md
+    to: .github/context/gongfa/README.md#doc-project-architecture-template
+  - from: docs/references/数据集导向数据服务模板.md
+    to: .github/context/gongfa/README.md#doc-dataset-first-data-service
+  - from: docs/references/系统提示词构建原则.md
+    to: .github/context/gongfa/README.md#doc-quality-gates-and-pitfalls
+  - from: docs/references/强前置条件约束.md
+    to: .github/context/gongfa/README.md#doc-quality-gates-and-pitfalls
+  - from: docs/references/常见坑汇总.md
+    to: .github/context/gongfa/README.md#doc-quality-gates-and-pitfalls
+  - from: docs/references/项目架构模板.md
+    to: .github/context/gongfa/README.md#doc-project-architecture-template
+  - from: docs/references/AI编程质量门禁与常见坑.md
+    to: .github/context/gongfa/README.md#doc-quality-gates-and-pitfalls
+  - from: docs/references/代码组织.md
+    to: .github/context/gongfa/README.md#doc-code-organization
+  - from: docs/references/开发经验.md
+    to: .github/context/gongfa/README.md#doc-development-experience
+  - from: docs/references/底层程序逻辑设计与工程优化项.md
+    to: .github/context/gongfa/README.md#doc-low-level-program-logic
+  - from: assets/documents/
+    to: .github/context/
+  - from: assets/skills/
+    to: .github/skills/
+  - from: assets/prompt/
+    to: .github/context/prompts/
+  - from: assets/repos/
+    to: .github/extensions/
+  - from: assets/config/
+    to: .github/extensions/codex-config/
+  - from: docs/concepts/问题求解.md
+    to: .github/context/gongfa/README.md#doc-problem-solving
+  - from: docs/concepts/拼好码.md
+    to: .github/context/gongfa/README.md#doc-glue-coding
+  - from: docs/concepts/系统构建方法.md
+    to: .github/context/gongfa/README.md#doc-system-building
+  - from: docs/concepts/开发范式演进.md
+    to: .github/context/gongfa/README.md#doc-development-paradigms
+  - from: docs/concepts/语言层要素.md
+    to: .github/context/gongfa/README.md#doc-language-layers
+  - from: docs/concepts/递归自优化系统.md
+    to: .github/context/gongfa/README.md#doc-recursive-self-optimizing-system
+  - from: docs/philosophy/思维模型.md
+    to: .github/context/gongfa/README.md#doc-thinking-models
+  - from: docs/philosophy/道法术器.md
+    to: .github/context/gongfa/README.md#doc-dao-fa-shu-qi
+  - from: docs/philosophy/组合描述模型.md
+    to: .github/context/gongfa/README.md#doc-compositional-description-model
+  - from: docs/philosophy/编程之道.md
+    to: .github/context/gongfa/README.md#doc-programming-dao
+  - from: docs/references/工程实践.md
+    to: .github/context/gongfa/README.md#doc-project-architecture-template
+  - from: docs/references/技术栈.md
+    to: .github/context/gongfa/README.md#doc-technology-stack
+  - from: docs/research/Harness工程解析.md
+    to: .github/context/gongfa/README.md#doc-harness-engineering
+
+  # 功法统一正文迁移：旧正文、导航文件与目录均已退役。
+  - from: docs/concepts/cultivation-ontology-taxonomy.md
+    to: .github/context/gongfa/README.md#doc-cultivation-ontology-taxonomy
+  - from: docs/concepts/development-paradigms.md
+    to: .github/context/gongfa/README.md#doc-development-paradigms
+  - from: docs/concepts/glue-coding.md
+    to: .github/context/gongfa/README.md#doc-glue-coding
+  - from: docs/concepts/keyword-system.md
+    to: .github/context/gongfa/README.md#doc-keyword-system
+  - from: docs/concepts/language-layers.md
+    to: .github/context/gongfa/README.md#doc-language-layers
+  - from: docs/concepts/problem-solving.md
+    to: .github/context/gongfa/README.md#doc-problem-solving
+  - from: docs/concepts/recursive-self-optimizing-system.md
+    to: .github/context/gongfa/README.md#doc-recursive-self-optimizing-system
+  - from: docs/concepts/system-building.md
+    to: .github/context/gongfa/README.md#doc-system-building
+  - from: docs/concepts/vibe-coding-cultivation-model.md
+    to: .github/context/gongfa/README.md#doc-vibe-coding-cultivation-model
+  - from: docs/concepts/vibe-coding-state-transition.md
+    to: .github/context/gongfa/README.md#doc-vibe-coding-state-transition
+  - from: docs/philosophy/compositional-description-model.md
+    to: .github/context/gongfa/README.md#doc-compositional-description-model
+  - from: docs/philosophy/methodology-toolbox.md
+    to: .github/context/gongfa/README.md#doc-methodology-toolbox
+  - from: docs/philosophy/programming-dao.md
+    to: .github/context/gongfa/README.md#doc-programming-dao
+  - from: docs/philosophy/software-engineering-truths.md
+    to: .github/context/gongfa/README.md#doc-software-engineering-truths
+  - from: docs/philosophy/thinking-models.md
+    to: .github/context/gongfa/README.md#doc-thinking-models
+  - from: docs/references/code-organization.md
+    to: .github/context/gongfa/README.md#doc-code-organization
+  - from: docs/references/common-sense.md
+    to: .github/context/gongfa/README.md#doc-common-sense
+  - from: docs/references/dataset-first-data-service.md
+    to: .github/context/gongfa/README.md#doc-dataset-first-data-service
+  - from: docs/references/development-experience.md
+    to: .github/context/gongfa/README.md#doc-development-experience
+  - from: docs/references/enterprise-architecture-template.md
+    to: .github/context/gongfa/README.md#doc-enterprise-architecture-template
+  - from: docs/references/low-level-program-logic.md
+    to: .github/context/gongfa/README.md#doc-low-level-program-logic
+  - from: docs/references/modern-enterprise-architecture-template.md
+    to: .github/context/gongfa/README.md#doc-modern-enterprise-architecture-template
+  - from: docs/references/project-architecture-template.md
+    to: .github/context/gongfa/README.md#doc-project-architecture-template
+  - from: docs/references/python-project-skeleton.md
+    to: .github/context/gongfa/README.md#doc-python-project-skeleton
+  - from: docs/references/quality-gates-and-pitfalls.md
+    to: .github/context/gongfa/README.md#doc-quality-gates-and-pitfalls
+  - from: docs/references/technology-stack.md
+    to: .github/context/gongfa/README.md#doc-technology-stack
+  - from: docs/workflow/development-process.md
+    to: .github/context/gongfa/README.md#doc-development-process
+  - from: docs/getting-started/vibe-coding-experience.md
+    to: .github/context/gongfa/README.md#doc-vibe-coding-experience
+  - from: research/research-transfer-synthesis.md
+    to: .github/context/gongfa/README.md#doc-research-transfer-synthesis
+  - from: research/research-value-application-map.md
+    to: .github/context/gongfa/README.md#doc-research-value-application-map
+  - from: research/harness/harness-engineering.md
+    to: .github/context/gongfa/README.md#doc-harness-engineering
+  - from: research/tmux-ai-swarm.md
+    to: .github/context/gongfa/README.md#doc-tmux-ai-swarm
+  - from: assets/ai-citation/geo-seo-checklist.md
+    to: .github/context/gongfa/README.md#doc-geo-seo-checklist
+  - from: docs/concepts/README.md
+    to: .github/context/gongfa/README.md
+  - from: docs/concepts/AGENTS.md
+    to: .github/context/gongfa/README.md
+  - from: docs/concepts/
+    to: .github/context/gongfa/README.md#原文文集
+  - from: docs/philosophy/README.md
+    to: .github/context/gongfa/README.md
+  - from: docs/philosophy/AGENTS.md
+    to: .github/context/gongfa/README.md
+  - from: docs/philosophy/
+    to: .github/context/gongfa/README.md#原文文集
+  - from: docs/references/README.md
+    to: .github/context/gongfa/README.md
+  - from: docs/references/AGENTS.md
+    to: .github/context/gongfa/README.md
+  - from: docs/references/
+    to: .github/context/gongfa/README.md#原文文集
+  - from: docs/workflow/README.md
+    to: .github/context/gongfa/README.md
+  - from: docs/workflow/AGENTS.md
+    to: .github/context/gongfa/README.md
+  - from: docs/workflow/
+    to: .github/context/gongfa/README.md#原文文集

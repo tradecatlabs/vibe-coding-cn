@@ -1,56 +1,55 @@
-# AI Skills 技能库
+# Skills：既有指令与流程
 
-`.github/skills/` 目录只保留当前仓库仍需要维护和展示的 Skill 入口。清理原则是：主仓库只维护元技能与必要入口，领域型/工具型大包优先移出主仓库，避免文档噪音、体积膨胀和重复维护。
+## 字多不看
 
-## 当前保留
+现有18个Skill统一放在这里：2个自有Skill和16个官方既有Skill；本次没有新增业务Skill。
+指令属于Skills，程序实现属于[Extensions](../extensions/README.md)，规则和知识参考属于[Context](../context/README.md)。
 
-| 技能 | 说明 |
-|:---|:---|
-| [auto-skill](./auto-skill/SKILL.md) | 生成、重构与校验 Skills 的元技能 |
-| [auto-tmux](./auto-tmux/SKILL.md) | tmux 自动化操控、脚本化 pane 巡检、按键注入、日志录制、蜂群协作和 oh-my-tmux 参考入口 |
-| [claude-official-skills](./claude-official-skills/) | Claude 官方 skills 仓库的软链接入口，事实来源在 `.github/tools/external/claude-official-skills/` |
+<a id="当前保留"></a>
 
-## 维护口径
+## 快速导航
 
-- `auto-skill/` 是本仓库的 Skill 生产与升级入口，继续保留。
-- `auto-tmux/` 是 tmux 自动化与多 AI 终端协作入口，包含 `scripts/auto-tmux.sh` 执行层，并通过软链接复用 `.github/tools/external/.tmux` 与 `.github/tools/external/tmux`。
-- `claude-official-skills/` 是外部官方仓库展示入口，通过 submodule 管理事实来源。
-- 领域型/工具型 Skill 如交易、数据库、代理、Telegram、EPUB 等不在主仓库维护；如需引入，优先使用独立仓库、submodule 或重新生成的方式。
+| 来源 | 既有Skill |
+|---|---|
+| 自有 | [auto-skill](auto-skill/SKILL.md)、[auto-tmux](auto-tmux/SKILL.md) |
+| 官方 | [algorithmic-art](algorithmic-art/SKILL.md)、[brand-guidelines](brand-guidelines/SKILL.md)、[canvas-design](canvas-design/SKILL.md)、[doc-coauthoring](doc-coauthoring/SKILL.md) |
+| 官方 | [docx](docx/SKILL.md)、[frontend-design](frontend-design/SKILL.md)、[internal-comms](internal-comms/SKILL.md)、[mcp-builder](mcp-builder/SKILL.md) |
+| 官方 | [pdf](pdf/SKILL.md)、[pptx](pptx/SKILL.md)、[skill-creator](skill-creator/SKILL.md)、[slack-gif-creator](slack-gif-creator/SKILL.md) |
+| 官方 | [theme-factory](theme-factory/SKILL.md)、[web-artifacts-builder](web-artifacts-builder/SKILL.md)、[webapp-testing](webapp-testing/SKILL.md)、[xlsx](xlsx/SKILL.md) |
 
-## 外部技能仓库
+<details>
+<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
 
-- 初始化/更新方式：`git submodule update --init --recursive`
-- Skills 大全网站：`https://skills.sh/`
+- [使用方式](#使用方式)
+- [正文](#正文)
+- [来源与单一实现](#来源与单一实现)
+- [发现与信任边界](#发现与信任边界)
 
-## Repo 软链接入口
+</details>
 
-- `.github/skills/claude-official-skills/`：指向 `.github/tools/external/claude-official-skills/`。
-- `.github/skills/auto-skill/scripts/Skill_Seekers-development`：指向 `.github/tools/external/Skill_Seekers-development` submodule，作为 Skill Seekers 工具来源。
+## 使用方式
 
-## 快速使用
+Pi默认不会发现`.github/skills/`。从仓库根使用原生显式资源加载：
 
 ```bash
-# 查看元技能
-cat .github/skills/auto-skill/SKILL.md
-
-# 查看 tmux 自动化技能
-cat .github/skills/auto-tmux/SKILL.md
-
-# 初始化外部 skills 仓库
-git submodule update --init --recursive
+pi --skill .github/skills
 ```
 
-## 创建自定义 Skill
+加载前检查当前Pi版本、项目信任、技能来源、依赖、许可及适用范围；模型通过Pi原生选择使用已授权的OpenAI GPT，不随仓保存授权配置。
+显式加载是让原生加载器发现Skill，不等于安装依赖、执行其中命令或验证任务效果。
 
-使用元技能生成：
+## 正文
 
-1. 准备领域资料（文档、代码、规范）。
-2. 将资料和 `auto-skill/SKILL.md` 一起提供给 AI。
-3. AI 会生成针对该领域的专用 Skill。
+### 来源与单一实现
 
-## 相关资源
+16个官方入口指向同一个固定[上游树](../extensions/claude-official-skills/README.md)，不复制或修改官方源。
+`theme-factory`仍是原内容设计Skill，不是新增Pi界面主题。现有官方初始化脚本入口在`../extensions/init_skill.py`，也是对原上游的引用。
 
-- [元技能文件](./auto-skill/SKILL.md) - 生成、重构与校验 Skills
-- [auto-tmux](./auto-tmux/SKILL.md) - tmux 自动化操控、脚本化巡检与多终端协作
-- [提示词库](../prompts/) - 更细粒度的提示词集合
-- [文档库](../docs/) - 方法论与开发经验
+自有Skill保留原有assets与references；执行脚本分别在Extensions域根和`../extensions/auto-tmux/`。
+创建和校验仍使用原`create-skill.sh`、`validate-skill.sh`，没有增加资源加载器或管理框架。
+
+### 发现与信任边界
+
+集合根不放`SKILL.md`，README和AGENTS不含Skill frontmatter；否则Pi可能停止向下发现或把治理文档当Skill。
+不要递归加载Context研究材料里的嵌套Skill，也不要把整个Extensions交给`-e`。
+WSL/Linux引用经当前环境核对；原生Windows链接权限与发现行为须单独验证，不能从UNC可访问推断兼容。

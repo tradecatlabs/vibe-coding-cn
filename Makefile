@@ -1,141 +1,106 @@
-# Makefile for Vibe Coding Guide
-
-.PHONY: help lint check-links check-details check-doc-structure check-directory-docs check-metadata check-gongfa test-gongfa check-ai-citation check-external-resources check-research-raw check-source-facts check-wiki fetch-research-raw sync-doc-toc build test clean clean-deps
-
-.PHONY: sync-gongfa-catalog check-gongfa-catalog test-gongfa-catalog
-.PHONY: sync-faqi-catalog check-faqi-catalog test-faqi-catalog test-details
+# Vibe Coding工具箱：保留现有质量入口，路径统一为三域。
+.PHONY: help lint check-links check-details test-details check-doc-structure check-directory-docs check-metadata check-gongfa test-gongfa sync-gongfa-catalog check-gongfa-catalog test-gongfa-catalog sync-faqi-catalog check-faqi-catalog test-faqi-catalog test-source-archive check-ai-citation check-external-resources check-research-raw check-source-facts check-wiki fetch-research-raw sync-doc-toc build test clean clean-deps
 
 MARKDOWNLINT = npx --yes markdownlint-cli@0.48.0
+EXT = .github/extensions
+# 原tools/external各来源分别平铺；不能忽略整个Extensions，否则会漏掉自有工具。
+SOURCE_IGNORES = --ignore .history --ignore '$(EXT)/Skill_Seekers-development/**' --ignore '$(EXT)/claude-official-skills/**' --ignore '$(EXT)/tmux/**' --ignore '$(EXT)/oh-my-tmux/**' --ignore '$(EXT)/MCPlayerTransfer/**' --ignore '$(EXT)/XHS-image-to-PDF-conversion/**' --ignore '$(EXT)/my-nvim/**' --ignore '$(EXT)/html-tools-main.md' --ignore '.github/context/research/**/raw/repository/**' --ignore '.github/context/research/facts/**' --ignore '.github/context/research/vibe-cybersecurity-cn/**' --ignore '.github/context/research/vibe-harness-cn/**' --ignore '.github/context/research/vibe-mathing-cn-public/**'
 
 help:
-	@echo "Makefile for Vibe Coding Guide"
-	@echo ""
-	@echo "Available commands:"
-	@echo "  help     - Show this help message"
-	@echo "  lint     - Lint all markdown files"
-	@echo "  check-links - Check local markdown links and anchors"
-	@echo "  check-details - Check markdown details/summary blocks"
-	@echo "  test-details - 验证代码围栏隔离与真实折叠错误拒绝行为"
-	@echo "  check-doc-structure - Check docs README anchors, order and duplicate anchors"
-	@echo "  check-directory-docs - Check required README/AGENTS pairs"
-	@echo "  check-metadata - Check metadata paths and anchors"
-	@echo "  check-gongfa - 校验功法JSON、冻结来源与评级协议"
-	@echo "  test-gongfa - 执行功法JSON的隔离CLI集成测试并保留工件"
-	@echo "  sync-gongfa-catalog - 从当前登记与仓内候选快照重建唯一总表"
-	@echo "  check-gongfa-catalog - 只读校验总表覆盖、源摘要与Markdown/Excel一致性"
-	@echo "  test-gongfa-catalog - 验证总表维护行为并保留隔离工件"
-	@echo "  sync-faqi-catalog - 重建法器总分类、依赖图对象与外部资源视图"
-	@echo "  check-faqi-catalog - 校验总登记、依赖图SHA、来源与只读视图"
-	@echo "  test-faqi-catalog - 验证总表维护并保留隔离工件"
-	@echo "  check-ai-citation - Check AI citation paths, anchors, and repository identity"
-	@echo "  check-external-resources - Check local external resources registry"
-	@echo "  check-research-raw - Check research raw fact snapshots and repository clones"
-	@echo "  check-source-facts - Check external source-fact mirrors and provenance"
-	@echo "  check-wiki - Check local GitHub Wiki checkout when present"
-	@echo "  fetch-research-raw - Fetch raw GitHub facts and repository clones for research domains"
-	@echo "  sync-doc-toc - Regenerate docs fine-grained TOC blocks"
-	@echo "  build    - Verify knowledge base has no build step"
-	@echo "  test     - Run repository quality gates"
-	@echo "  clean    - Remove ignored generated caches"
-	@echo "  clean-deps - Remove local dependency caches"
-	@echo ""
+	@echo "Vibe Coding工具箱"
+	@echo "lint / check-links / check-details / test-details：Markdown格式、内链、折叠与回归"
+	@echo "check-doc-structure / check-directory-docs / check-metadata：阅读结构、目录职责与机器索引"
+	@echo "check-gongfa / test-gongfa：功法来源与既有评级协议"
+	@echo "sync-gongfa-catalog / check-gongfa-catalog / test-gongfa-catalog：功法单一Markdown视图"
+	@echo "sync-faqi-catalog / check-faqi-catalog / test-faqi-catalog：法器来源与单一Markdown视图"
+	@echo "test-source-archive：原始字节、摘要、来源边界和文集导航契约"
+	@echo "check-ai-citation / check-external-resources：AI引用与资源登记"
+	@echo "check-research-raw / check-source-facts：研究事实及来源镜像"
+	@echo "check-wiki WIKI_DIR=<本地目录>：独立Wiki检查"
+	@echo "fetch-research-raw：显式联网刷新研究原始事实，不属于日常测试"
+	@echo "sync-doc-toc：同步自有文档目录；生成文集由各自sync目标维护"
+	@echo "build：说明本仓无需构建；test：运行本地质量检查"
+	@echo "clean / clean-deps：现有清理入口，有删除副作用；不作为验证命令执行"
 
 lint:
-	@echo "Linting markdown files..."
-	@$(MARKDOWNLINT) --config .github/lint_config.json --ignore .history --ignore .github/tools/external --ignore '.github/research/**/raw/repository/**' --ignore '.github/research/facts/**' --ignore '.github/research/vibe-cybersecurity-cn/**' --ignore '.github/research/vibe-harness-cn/**' --ignore '.github/research/vibe-mathing-cn-public/**' '**/*.md' '.github/assets/**/*.md' '.github/docs/**/*.md' '.github/metadata/**/*.md' '.github/prompts/**/*.md' '.github/research/**/*.md' '.github/scripts/**/*.md' '.github/skills/**/*.md' '.github/tools/**/*.md'
+	@$(MARKDOWNLINT) --config .github/lint_config.json $(SOURCE_IGNORES) '**/*.md' '.github/context/**/*.md' '.github/skills/**/*.md' '.github/extensions/**/*.md'
 
 check-links:
-	@echo "Checking local markdown links and anchors..."
-	@python3 .github/scripts/check-local-links.py
+	@python3 $(EXT)/check-local-links.py
 
 check-details:
-	@echo "Checking markdown details/summary blocks..."
-	@python3 .github/scripts/check-markdown-details.py
+	@python3 $(EXT)/check-markdown-details.py
 
 test-details:
-	@echo "执行 Markdown 代码围栏与折叠块 CLI 回归..."
-	@python3 .github/scripts/test-markdown-details.py
+	@python3 $(EXT)/test-markdown-details.py
 
 check-doc-structure:
-	@echo "Checking docs README structure..."
-	@python3 .github/scripts/check-doc-structure.py
+	@python3 $(EXT)/check-doc-structure.py
 
 check-directory-docs:
-	@echo "Checking required directory README/AGENTS pairs..."
-	@python3 .github/scripts/check-directory-docs.py
+	@python3 $(EXT)/check-directory-docs.py
 
 check-metadata:
-	@echo "Checking metadata paths and anchors..."
-	@python3 .github/scripts/check-metadata.py
+	@python3 $(EXT)/check-metadata.py
 
 check-gongfa:
-	@echo "校验功法JSON、冻结来源与评级引用..."
-	@python3 .github/scripts/check-gongfa.py
+	@python3 $(EXT)/check-gongfa.py
 
 test-gongfa:
-	@echo "执行功法JSON CLI集成测试..."
-	@python3 .github/scripts/test-gongfa.py
+	@python3 $(EXT)/test-gongfa.py
 
 sync-gongfa-catalog:
-	@python3 .github/scripts/sync-gongfa-catalog.py --write
+	@python3 $(EXT)/sync-gongfa-catalog.py --write
 
 check-gongfa-catalog:
-	@python3 .github/scripts/sync-gongfa-catalog.py --check
+	@python3 $(EXT)/sync-gongfa-catalog.py --check
 
 test-gongfa-catalog:
-	@python3 .github/scripts/test-gongfa-catalog.py
+	@python3 $(EXT)/test-gongfa-catalog.py
 
 sync-faqi-catalog:
-	@python3 .github/scripts/sync-faqi-catalog.py --write
+	@python3 $(EXT)/sync-faqi-catalog.py --write
 
 check-faqi-catalog:
-	@python3 .github/scripts/sync-faqi-catalog.py --check
+	@python3 $(EXT)/sync-faqi-catalog.py --check
 
 test-faqi-catalog:
-	@python3 .github/scripts/test-faqi-catalog.py
+	@python3 $(EXT)/test-faqi-catalog.py
+
+test-source-archive:
+	@python3 $(EXT)/test-source-archive.py
 
 check-ai-citation:
-	@echo "Checking AI citation paths, anchors, and repository identity..."
-	@python3 .github/scripts/check-ai-citation.py
+	@python3 $(EXT)/check-ai-citation.py
 
 check-external-resources:
-	@echo "Checking local external resources registry..."
-	@python3 .github/scripts/check-external-resources.py
+	@python3 $(EXT)/check-external-resources.py
 
 check-research-raw:
-	@echo "Checking research raw fact snapshots and repository clones..."
-	@python3 .github/scripts/check-research-raw.py
+	@python3 $(EXT)/check-research-raw.py
 
 check-source-facts:
-	@echo "Checking external source-fact mirrors and provenance..."
-	@python3 .github/scripts/check-source-facts.py
+	@python3 $(EXT)/check-source-facts.py
 
 check-wiki:
-	@echo "Checking local GitHub Wiki checkout..."
-	@python3 .github/scripts/check-wiki.py --wiki-dir "$${WIKI_DIR:-/tmp/vibe-coding-cn.wiki}"
+	@python3 $(EXT)/check-wiki.py --wiki-dir "$${WIKI_DIR:-/tmp/vibe-coding-cn.wiki}"
 	@$(MARKDOWNLINT) --config .github/lint_config.json "$${WIKI_DIR:-/tmp/vibe-coding-cn.wiki}"/*.md
 
 fetch-research-raw:
-	@echo "Fetching raw GitHub facts and repository clones for research domains..."
-	@python3 .github/scripts/fetch-research-raw.py
+	@python3 $(EXT)/fetch-research-raw.py
 
 sync-doc-toc:
-	@echo "Regenerating docs fine-grained TOC blocks..."
-	@python3 .github/scripts/sync-doc-toc.py
+	@python3 $(EXT)/sync-doc-toc.py
 
 build:
-	@echo "No build step: this repository is a documentation and knowledge-base project."
+	@echo "无需构建；本仓是文档、既有Skills和小工具的资源集合。"
 
-test: lint check-links check-details test-details check-doc-structure check-directory-docs check-metadata check-gongfa test-gongfa check-gongfa-catalog test-gongfa-catalog check-faqi-catalog test-faqi-catalog check-ai-citation check-external-resources check-research-raw check-source-facts
-	@echo "Quality gates complete."
+test: lint check-links check-details test-details check-doc-structure check-directory-docs check-metadata check-gongfa test-gongfa check-gongfa-catalog test-gongfa-catalog check-faqi-catalog test-faqi-catalog test-source-archive check-ai-citation check-external-resources check-research-raw check-source-facts
+	@echo "本地质量检查完成；不代表工具效果、运行可用性或许可批准。"
 
 clean: clean-deps
-	@echo "Cleaning ignored generated caches..."
 	@find . -type d -name '__pycache__' -prune -exec rm -rf {} +
-	@rm -rf .github/tools/prompts-library/prompt_jsonl
-	@echo "Cleanup complete."
+	@rm -rf .github/extensions/prompts-library/prompt_jsonl
 
 clean-deps:
-	@echo "Cleaning local dependency caches..."
 	@rm -rf node_modules
-	@echo "Dependency cleanup complete."

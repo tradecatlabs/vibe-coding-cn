@@ -1,6 +1,6 @@
 # auto-tmux Script Automation
 
-`scripts/auto-tmux.sh` 是 `auto-tmux` 的安全执行层：把高频 tmux 操作封装为可审计命令，减少手写 `capture-pane` / `send-keys` 时的误控风险。
+`.github/extensions/auto-tmux/auto-tmux.sh` 是 `auto-tmux` 的安全执行层：把高频 tmux 操作封装为可审计命令，减少手写 `capture-pane` / `send-keys` 时的误控风险。
 
 ## 设计目标
 
@@ -57,153 +57,153 @@
 ### 0. 诊断环境
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh doctor --session ai-hub
+.github/extensions/auto-tmux/auto-tmux.sh doctor --session ai-hub
 ```
 
 ### 1. 建立 AI 工作台
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh hub --session ai-hub --workers 3 --cmd "codex"
+.github/extensions/auto-tmux/auto-tmux.sh hub --session ai-hub --workers 3 --cmd "codex"
 ```
 
 验收：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh topology --session ai-hub
-.github/skills/auto-tmux/scripts/auto-tmux.sh cleanup --session ai-hub --dry-run
+.github/extensions/auto-tmux/auto-tmux.sh topology --session ai-hub
+.github/extensions/auto-tmux/auto-tmux.sh cleanup --session ai-hub --dry-run
 ```
 
 ### 2. 巡检全部 worker
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub -n 100
+.github/extensions/auto-tmux/auto-tmux.sh scan --session ai-hub -n 100
 ```
 
 只看错误：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub --pattern "ERROR|Traceback|failed"
+.github/extensions/auto-tmux/auto-tmux.sh scan --session ai-hub --pattern "ERROR|Traceback|failed"
 ```
 
 保存巡检日志：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh scan --session ai-hub --save-dir /tmp/auto-tmux-scan
+.github/extensions/auto-tmux/auto-tmux.sh scan --session ai-hub --save-dir /tmp/auto-tmux-scan
 ```
 
 受控广播前先预览：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh broadcast --session ai-hub --text "pwd" --enter --dry-run
+.github/extensions/auto-tmux/auto-tmux.sh broadcast --session ai-hub --text "pwd" --enter --dry-run
 ```
 
 生成完整证据快照：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh snapshot --session ai-hub --dir /tmp/auto-tmux-snapshot -n 120
+.github/extensions/auto-tmux/auto-tmux.sh snapshot --session ai-hub --dir /tmp/auto-tmux-snapshot -n 120
 ```
 
 生成可交接的蜂群报告：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-brief.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/auto-tmux-brief -n 80
+.github/extensions/auto-tmux/swarm-brief.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/auto-tmux-brief -n 80
 ```
 
 采集连续巡检证据：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-watch.sh --session ai-hub --swarm-dir /tmp/ai_swarm --iterations 3 --interval 10 -n 80
-.github/skills/auto-tmux/scripts/swarm-archive.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/ai-hub-handoff.tar.gz
-.github/skills/auto-tmux/scripts/swarm-board.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-board.md
-.github/skills/auto-tmux/scripts/swarm-deps-graph.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-deps.md
-.github/skills/auto-tmux/scripts/swarm-export.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-export
-.github/skills/auto-tmux/scripts/swarm-timeline.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-timeline.md
-.github/skills/auto-tmux/scripts/swarm-blockers.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-blockers.md
-.github/skills/auto-tmux/scripts/swarm-results.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-results.md
-.github/skills/auto-tmux/scripts/swarm-results.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-results.md --jsonl /tmp/ai-swarm-results.jsonl
-.github/skills/auto-tmux/scripts/swarm-report-pack.sh --dir /tmp/ai_swarm --session ai-hub --out /tmp/ai-swarm-report-pack
-.github/skills/auto-tmux/scripts/swarm-report-pack.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-report-pack --attach /tmp/auto-tmux-remote
-.github/skills/auto-tmux/scripts/swarm-report-pack.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-report-pack --tar
-.github/skills/auto-tmux/scripts/swarm-assign.sh --swarm-dir /tmp/ai_swarm --session ai-hub --out /tmp/ai-swarm-assign.md
-.github/skills/auto-tmux/scripts/swarm-health.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/auto-tmux-health
-.github/skills/auto-tmux/scripts/remote-readonly.sh --host user@example.com --session ai-hub --out /tmp/auto-tmux-remote --dry-run
+.github/extensions/auto-tmux/swarm-watch.sh --session ai-hub --swarm-dir /tmp/ai_swarm --iterations 3 --interval 10 -n 80
+.github/extensions/auto-tmux/swarm-archive.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/ai-hub-handoff.tar.gz
+.github/extensions/auto-tmux/swarm-board.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-board.md
+.github/extensions/auto-tmux/swarm-deps-graph.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-deps.md
+.github/extensions/auto-tmux/swarm-export.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-export
+.github/extensions/auto-tmux/swarm-timeline.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-timeline.md
+.github/extensions/auto-tmux/swarm-blockers.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-blockers.md
+.github/extensions/auto-tmux/swarm-results.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-results.md
+.github/extensions/auto-tmux/swarm-results.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-results.md --jsonl /tmp/ai-swarm-results.jsonl
+.github/extensions/auto-tmux/swarm-report-pack.sh --dir /tmp/ai_swarm --session ai-hub --out /tmp/ai-swarm-report-pack
+.github/extensions/auto-tmux/swarm-report-pack.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-report-pack --attach /tmp/auto-tmux-remote
+.github/extensions/auto-tmux/swarm-report-pack.sh --dir /tmp/ai_swarm --out /tmp/ai-swarm-report-pack --tar
+.github/extensions/auto-tmux/swarm-assign.sh --swarm-dir /tmp/ai_swarm --session ai-hub --out /tmp/ai-swarm-assign.md
+.github/extensions/auto-tmux/swarm-health.sh --session ai-hub --swarm-dir /tmp/ai_swarm --out /tmp/auto-tmux-health
+.github/extensions/auto-tmux/remote-readonly.sh --host user@example.com --session ai-hub --out /tmp/auto-tmux-remote --dry-run
 ```
 
 发送前对 payload 做安全预检：
 
 ```bash
-.github/skills/auto-tmux/scripts/safety-check.sh --text "make test"
-.github/skills/auto-tmux/scripts/safety-check.sh --file /tmp/prompt.md --strict
+.github/extensions/auto-tmux/safety-check.sh --text "make test"
+.github/extensions/auto-tmux/safety-check.sh --file /tmp/prompt.md --strict
 ```
 
 执行 auto-tmux 专属质量门禁：
 
 ```bash
-.github/skills/auto-tmux/scripts/validate-auto-tmux.sh
-.github/skills/auto-tmux/scripts/validate-auto-tmux.sh --no-smoke
+.github/extensions/auto-tmux/validate-auto-tmux.sh
+.github/extensions/auto-tmux/validate-auto-tmux.sh --no-smoke
 ```
 
 渲染并预演下发 worker prompt：
 
 ```bash
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
-.github/skills/auto-tmux/scripts/swarm-dispatch.sh --role worker --target "$target" --task "只运行 make test" --send --dry-run
+.github/extensions/auto-tmux/swarm-dispatch.sh --role worker --target "$target" --task "只运行 make test" --send --dry-run
 ```
 
 ### 3. 安全发送命令
 
 ```bash
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
-.github/skills/auto-tmux/scripts/auto-tmux.sh inspect -t "$target" -n 40
-.github/skills/auto-tmux/scripts/auto-tmux.sh send -t "$target" --text "make test" --enter
-.github/skills/auto-tmux/scripts/auto-tmux.sh paste -t "$target" --file /tmp/prompt.md --enter --dry-run
+.github/extensions/auto-tmux/auto-tmux.sh inspect -t "$target" -n 40
+.github/extensions/auto-tmux/auto-tmux.sh send -t "$target" --text "make test" --enter
+.github/extensions/auto-tmux/auto-tmux.sh paste -t "$target" --file /tmp/prompt.md --enter --dry-run
 ```
 
 如果要清空当前输入行后发送：
 
 ```bash
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
-.github/skills/auto-tmux/scripts/auto-tmux.sh send -t "$target" --clear --text "make lint" --enter
+.github/extensions/auto-tmux/auto-tmux.sh send -t "$target" --clear --text "make lint" --enter
 ```
 
 ### 4. 自动救援等待确认的 pane
 
 ```bash
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
-.github/skills/auto-tmux/scripts/auto-tmux.sh rescue -t "$target" --pattern "(y/n)" --reply y
+.github/extensions/auto-tmux/auto-tmux.sh rescue -t "$target" --pattern "(y/n)" --reply y
 ```
 
 先演练不发送：
 
 ```bash
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
-.github/skills/auto-tmux/scripts/auto-tmux.sh rescue -t "$target" --pattern "(y/n)" --reply y --dry-run
+.github/extensions/auto-tmux/auto-tmux.sh rescue -t "$target" --pattern "(y/n)" --reply y --dry-run
 ```
 
 ### 5. 等待任务完成信号
 
 ```bash
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
-.github/skills/auto-tmux/scripts/auto-tmux.sh wait -t "$target" --pattern "BUILD SUCCESS|Tests passed" --timeout 300
+.github/extensions/auto-tmux/auto-tmux.sh wait -t "$target" --pattern "BUILD SUCCESS|Tests passed" --timeout 300
 ```
 
 ### 6. 开启审计日志
 
 ```bash
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
-.github/skills/auto-tmux/scripts/auto-tmux.sh record start -t "$target" --dir /tmp/auto-tmux-records
+.github/extensions/auto-tmux/auto-tmux.sh record start -t "$target" --dir /tmp/auto-tmux-records
 ```
 
 停止：
 
 ```bash
 target="$(tmux list-panes -t ai-hub:worker1 -F '#S:#I.#P' | head -n 1)"
-.github/skills/auto-tmux/scripts/auto-tmux.sh record stop -t "$target"
-.github/skills/auto-tmux/scripts/record-summary.sh --dir /tmp/auto-tmux-records --out /tmp/auto-tmux-record-summary.md
-.github/skills/auto-tmux/scripts/check-jsonl.sh /tmp/ai-swarm-results.jsonl --require-key type --require-key id --require-key status
-.github/skills/auto-tmux/scripts/review-checklist.sh --pack /tmp/ai-swarm-report-pack --out /tmp/ai-swarm-report-pack/review-checklist.md
-.github/skills/auto-tmux/scripts/review-checklist.sh --pack /tmp/ai-swarm-report-pack --strict
-.github/skills/auto-tmux/scripts/verify-report-pack.sh --pack /tmp/ai-swarm-report-pack
+.github/extensions/auto-tmux/auto-tmux.sh record stop -t "$target"
+.github/extensions/auto-tmux/record-summary.sh --dir /tmp/auto-tmux-records --out /tmp/auto-tmux-record-summary.md
+.github/extensions/auto-tmux/check-jsonl.sh /tmp/ai-swarm-results.jsonl --require-key type --require-key id --require-key status
+.github/extensions/auto-tmux/review-checklist.sh --pack /tmp/ai-swarm-report-pack --out /tmp/ai-swarm-report-pack/review-checklist.md
+.github/extensions/auto-tmux/review-checklist.sh --pack /tmp/ai-swarm-report-pack --strict
+.github/extensions/auto-tmux/verify-report-pack.sh --pack /tmp/ai-swarm-report-pack
 ```
 
 ## AI 蜂群协作建议
@@ -232,82 +232,82 @@ ai-hub
 初始化状态目录：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh init --dir /tmp/ai_swarm
+.github/extensions/auto-tmux/swarm-state.sh init --dir /tmp/ai_swarm
 ```
 
 添加并认领任务：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
-.github/skills/auto-tmux/scripts/swarm-state.sh task-import --file /tmp/tasks.txt --prefix batch
-.github/skills/auto-tmux/scripts/swarm-state.sh task-depend --id batch-002 --blocked-by batch-001
-.github/skills/auto-tmux/scripts/swarm-state.sh task-ready
-.github/skills/auto-tmux/scripts/swarm-state.sh task-claim --id task-001 --owner "ai-hub:2.1"
-.github/skills/auto-tmux/scripts/swarm-state.sh task-next --owner "ai-hub:2.1"
+.github/extensions/auto-tmux/swarm-state.sh task-add --id task-001 --text "检查 README 链接"
+.github/extensions/auto-tmux/swarm-state.sh task-import --file /tmp/tasks.txt --prefix batch
+.github/extensions/auto-tmux/swarm-state.sh task-depend --id batch-002 --blocked-by batch-001
+.github/extensions/auto-tmux/swarm-state.sh task-ready
+.github/extensions/auto-tmux/swarm-state.sh task-claim --id task-001 --owner "ai-hub:2.1"
+.github/extensions/auto-tmux/swarm-state.sh task-next --owner "ai-hub:2.1"
 ```
 
 标记阻塞或失败：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-block --id task-001 --owner "ai-hub:2.1" --reason "等待用户确认"
-.github/skills/auto-tmux/scripts/swarm-state.sh task-fail --id task-001 --owner "ai-hub:2.1" --reason "make test failed"
-.github/skills/auto-tmux/scripts/swarm-state.sh task-list --status FAIL
-.github/skills/auto-tmux/scripts/swarm-state.sh task-reopen --id task-001 --owner "ai-hub:2.1" --reason "修复后重试"
+.github/extensions/auto-tmux/swarm-state.sh task-block --id task-001 --owner "ai-hub:2.1" --reason "等待用户确认"
+.github/extensions/auto-tmux/swarm-state.sh task-fail --id task-001 --owner "ai-hub:2.1" --reason "make test failed"
+.github/extensions/auto-tmux/swarm-state.sh task-list --status FAIL
+.github/extensions/auto-tmux/swarm-state.sh task-reopen --id task-001 --owner "ai-hub:2.1" --reason "修复后重试"
 ```
 
 获取文件锁：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh lock-acquire --name README.md --owner "ai-hub:2.1"
+.github/extensions/auto-tmux/swarm-state.sh lock-acquire --name README.md --owner "ai-hub:2.1"
 ```
 
 回收过期锁前先 dry-run：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh lock-prune --older-than 3600 --dry-run
+.github/extensions/auto-tmux/swarm-state.sh lock-prune --older-than 3600 --dry-run
 ```
 
 完成任务并生成报告：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-done --id task-001 --owner "ai-hub:2.1" --result "make test passed"
-.github/skills/auto-tmux/scripts/swarm-state.sh metrics
-.github/skills/auto-tmux/scripts/swarm-state.sh validate
-.github/skills/auto-tmux/scripts/swarm-state.sh report
+.github/extensions/auto-tmux/swarm-state.sh task-done --id task-001 --owner "ai-hub:2.1" --result "make test passed"
+.github/extensions/auto-tmux/swarm-state.sh metrics
+.github/extensions/auto-tmux/swarm-state.sh validate
+.github/extensions/auto-tmux/swarm-state.sh report
 ```
 
 ## 验证命令
 
 ```bash
-bash -n .github/skills/auto-tmux/scripts/auto-tmux.sh
-bash -n .github/skills/auto-tmux/scripts/swarm-state.sh
-bash -n .github/skills/auto-tmux/scripts/swarm-brief.sh
-bash -n .github/skills/auto-tmux/scripts/swarm-watch.sh
-bash -n .github/skills/auto-tmux/scripts/swarm-archive.sh
-bash -n .github/skills/auto-tmux/scripts/swarm-board.sh
-bash -n .github/skills/auto-tmux/scripts/swarm-deps-graph.sh
-bash -n .github/skills/auto-tmux/scripts/swarm-export.sh
-bash -n .github/skills/auto-tmux/scripts/swarm-timeline.sh
-bash -n .github/skills/auto-tmux/scripts/swarm-blockers.sh
-bash -n .github/skills/auto-tmux/scripts/swarm-results.sh
-bash -n .github/skills/auto-tmux/scripts/swarm-report-pack.sh
-bash -n .github/skills/auto-tmux/scripts/swarm-assign.sh
-bash -n .github/skills/auto-tmux/scripts/swarm-health.sh
-bash -n .github/skills/auto-tmux/scripts/remote-readonly.sh
-bash -n .github/skills/auto-tmux/scripts/record-summary.sh
-bash -n .github/skills/auto-tmux/scripts/check-jsonl.sh
-bash -n .github/skills/auto-tmux/scripts/review-checklist.sh
-bash -n .github/skills/auto-tmux/scripts/verify-report-pack.sh
-bash -n .github/skills/auto-tmux/scripts/completion.bash
-bash -n .github/skills/auto-tmux/scripts/safety-check.sh
-bash -n .github/skills/auto-tmux/scripts/render-swarm-prompt.sh
-bash -n .github/skills/auto-tmux/scripts/swarm-dispatch.sh
-bash -n .github/skills/auto-tmux/scripts/validate-auto-tmux.sh
-.github/skills/auto-tmux/scripts/auto-tmux.sh help
-.github/skills/auto-tmux/scripts/swarm-state.sh help
-.github/skills/auto-tmux/scripts/swarm-brief.sh --help
-.github/skills/auto-tmux/scripts/validate-auto-tmux.sh --no-smoke
-.github/skills/auto-tmux/scripts/render-swarm-prompt.sh commander --session ai-hub --task "smoke"
-.github/skills/auto-tmux/scripts/auto-tmux-smoke-test.sh
-.github/skills/auto-skill/scripts/validate-skill.sh .github/skills/auto-tmux --strict
+bash -n .github/extensions/auto-tmux/auto-tmux.sh
+bash -n .github/extensions/auto-tmux/swarm-state.sh
+bash -n .github/extensions/auto-tmux/swarm-brief.sh
+bash -n .github/extensions/auto-tmux/swarm-watch.sh
+bash -n .github/extensions/auto-tmux/swarm-archive.sh
+bash -n .github/extensions/auto-tmux/swarm-board.sh
+bash -n .github/extensions/auto-tmux/swarm-deps-graph.sh
+bash -n .github/extensions/auto-tmux/swarm-export.sh
+bash -n .github/extensions/auto-tmux/swarm-timeline.sh
+bash -n .github/extensions/auto-tmux/swarm-blockers.sh
+bash -n .github/extensions/auto-tmux/swarm-results.sh
+bash -n .github/extensions/auto-tmux/swarm-report-pack.sh
+bash -n .github/extensions/auto-tmux/swarm-assign.sh
+bash -n .github/extensions/auto-tmux/swarm-health.sh
+bash -n .github/extensions/auto-tmux/remote-readonly.sh
+bash -n .github/extensions/auto-tmux/record-summary.sh
+bash -n .github/extensions/auto-tmux/check-jsonl.sh
+bash -n .github/extensions/auto-tmux/review-checklist.sh
+bash -n .github/extensions/auto-tmux/verify-report-pack.sh
+bash -n .github/extensions/auto-tmux/completion.bash
+bash -n .github/extensions/auto-tmux/safety-check.sh
+bash -n .github/extensions/auto-tmux/render-swarm-prompt.sh
+bash -n .github/extensions/auto-tmux/swarm-dispatch.sh
+bash -n .github/extensions/auto-tmux/validate-auto-tmux.sh
+.github/extensions/auto-tmux/auto-tmux.sh help
+.github/extensions/auto-tmux/swarm-state.sh help
+.github/extensions/auto-tmux/swarm-brief.sh --help
+.github/extensions/auto-tmux/validate-auto-tmux.sh --no-smoke
+.github/extensions/auto-tmux/render-swarm-prompt.sh commander --session ai-hub --task "smoke"
+.github/extensions/auto-tmux/auto-tmux-smoke-test.sh
+.github/extensions/validate-skill.sh .github/skills/auto-tmux --strict
 ```

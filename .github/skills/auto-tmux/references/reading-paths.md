@@ -17,9 +17,9 @@
 关键命令：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-ready --dir /tmp/ai_swarm
-.github/skills/auto-tmux/scripts/swarm-report-pack.sh --dir /tmp/ai_swarm --session ai-hub --out /tmp/ai-swarm-report-pack --tar
-.github/skills/auto-tmux/scripts/verify-report-pack.sh --pack /tmp/ai-swarm-report-pack
+.github/extensions/auto-tmux/swarm-state.sh task-ready --dir /tmp/ai_swarm
+.github/extensions/auto-tmux/swarm-report-pack.sh --dir /tmp/ai_swarm --session ai-hub --out /tmp/ai-swarm-report-pack --tar
+.github/extensions/auto-tmux/verify-report-pack.sh --pack /tmp/ai-swarm-report-pack
 ```
 
 ## Worker
@@ -36,8 +36,8 @@
 关键命令：
 
 ```bash
-.github/skills/auto-tmux/scripts/swarm-state.sh task-next --owner ai-hub:1.0 --dir /tmp/ai_swarm
-.github/skills/auto-tmux/scripts/swarm-state.sh task-done --id task-001 --owner ai-hub:1.0 --result "make test passed" --dir /tmp/ai_swarm
+.github/extensions/auto-tmux/swarm-state.sh task-next --owner ai-hub:1.0 --dir /tmp/ai_swarm
+.github/extensions/auto-tmux/swarm-state.sh task-done --id task-001 --owner ai-hub:1.0 --result "make test passed" --dir /tmp/ai_swarm
 ```
 
 ## Reviewer
@@ -54,8 +54,8 @@
 关键命令：
 
 ```bash
-.github/skills/auto-tmux/scripts/verify-report-pack.sh --pack /tmp/ai-swarm-report-pack
-.github/skills/auto-tmux/scripts/check-jsonl.sh /tmp/ai-swarm-report-pack/results.jsonl --require-key type --require-key id --require-key status
+.github/extensions/auto-tmux/verify-report-pack.sh --pack /tmp/ai-swarm-report-pack
+.github/extensions/auto-tmux/check-jsonl.sh /tmp/ai-swarm-report-pack/results.jsonl --require-key type --require-key id --require-key status
 ```
 
 ## Operator
@@ -73,7 +73,7 @@
 关键命令：
 
 ```bash
-.github/skills/auto-tmux/scripts/auto-tmux.sh topology --session ai-hub
-.github/skills/auto-tmux/scripts/auto-tmux.sh inspect -t ai-hub:1.0 -n 80
-.github/skills/auto-tmux/scripts/remote-readonly.sh --host user@example.com --session ai-hub --out /tmp/auto-tmux-remote --dry-run
+.github/extensions/auto-tmux/auto-tmux.sh topology --session ai-hub
+.github/extensions/auto-tmux/auto-tmux.sh inspect -t ai-hub:1.0 -n 80
+.github/extensions/auto-tmux/remote-readonly.sh --host user@example.com --session ai-hub --out /tmp/auto-tmux-remote --dry-run
 ```

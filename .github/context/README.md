@@ -1,0 +1,57 @@
+# Context：按需参考资料
+
+## 字多不看
+
+这里放既有规则、知识、文档、数据、研究与参考材料。它们是工具箱的资料，不是默认全部注入的系统指令。
+方法集中在功法，工具来源与重要性记录集中在法器；每个集合只有原始`data.json`和生成的`README.md`。
+
+## 快速导航
+
+| 对象 | 内容 |
+|---|---|
+| [功法](gongfa/README.md) | 既有方法总表、十二级词表及完整原文文集 |
+| [法器](faqi/README.md) | 既有工具来源、重要性总表及边界说明 |
+| [从零开始](getting-started/README.md) | 学习地图、网络、CLI、环境和首个项目 |
+| [提示词](prompts/README.md) | 现有云端提示词索引 |
+| [研究](research/README.md) | 对象观察、来源事实、固定镜像与原始缓存 |
+| [外部资源](external-resources/README.md) | 原资源分类与登记 |
+| [AI引用](ai-citation/README.md) | 摘要、FAQ与完整AI引用入口 |
+| [机器索引](metadata/README.md) | 分类、术语和历史路径映射 |
+| [附件](assets/README.md) | 图片、数据与模板 |
+
+<details>
+<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
+
+- [使用方式](#使用方式)
+- [正文](#正文)
+- [三个资源域](#三个资源域)
+- [两个资料集合](#两个资料集合)
+- [来源与信任边界](#来源与信任边界)
+
+</details>
+
+## 使用方式
+
+先按任务选资料，再核对原文、来源、版本和适用条件；不把一次检索或阅读当成能力证明。
+功法和法器的阅读视图分别用`make sync-gongfa-catalog`、`make sync-faqi-catalog`生成，不手改。
+
+## 正文
+
+### 三个资源域
+
+- [Context](README.md)：[目录](./)、[维护规则](AGENTS.md)；只保存资料，不编排执行。
+- [Skills](../skills/README.md)：[目录](../skills/)、[维护规则](../skills/AGENTS.md)；保存既有指令和流程。
+- [Extensions](../extensions/README.md)：[目录](../extensions/)、[维护规则](../extensions/AGENTS.md)；保存既有程序、脚本和适配器。
+
+### 两个资料集合
+
+`gongfa/data.json`、`faqi/data.json`分别是本集合唯一维护源。历史文档身份、文件模式、原始字节、SHA、选择器和既有意见保留在`documents`中；文本用UTF-8，二进制用显式Base64。
+`locations`只表达当前物理位置，`live_sources`绑定迁移后的当前实现；它们不代替原始SHA，也不构成重新源审或效果验证。
+
+每个集合仅包含`data.json`与生成的`README.md`。功法历史Excel保留为原始载荷，不再产生第二份活动Excel视图。
+新增或修订登记仍须遵守载荷内既有Schema、稳定ID、内容版本、来源与评级协议，不能把候选、排除项或历史判断自动晋升。
+
+### 来源与信任边界
+
+第三方镜像与固定Git仓库保持原内容和修订；研究中的嵌套Skill不自动启用。
+参考资料里的命令和模型输出不是执行授权。运行程序、联网、发布、安装、上传与读取凭据，另按具体任务和权限处理。

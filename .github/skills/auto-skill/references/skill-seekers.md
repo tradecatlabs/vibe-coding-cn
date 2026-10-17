@@ -1,14 +1,14 @@
 # Skill Seekers（链接工具）使用说明
 
-本目录通过相对软链接暴露 `.github/tools/external/Skill_Seekers-development` submodule，用于把「文档 / GitHub 仓库 / PDF」快速转成一个可落地的 Skill 初稿。`.github/tools/external/` 是源码单一来源，`auto-skill/scripts/` 只保留工具入口。
+原Skill Seekers源码只保留在`.github/extensions/Skill_Seekers-development`固定Gitlink；本Skill描述其文档/GitHub/PDF转Skill的现有工作流，不再保留旧scripts别名。下文命令从仓库根运行；抓取、依赖安装与生成仍须具体任务授权。
 
 ## 目录约定
 
-- 工具源码入口：`.github/skills/auto-skill/scripts/Skill_Seekers-development -> ../../../tools/external/Skill_Seekers-development`
-- 运行入口：`.github/skills/auto-skill/scripts/skill-seekers.sh`
-- 依赖初始化：`.github/skills/auto-skill/scripts/skill-seekers-bootstrap.sh`
-- 导入到本仓库：`.github/skills/auto-skill/scripts/skill-seekers-import.sh`
-- 更新源码：直接更新 `.github/tools/external/Skill_Seekers-development` submodule 指针；`skill-seekers-update.sh` 是受保护的辅助入口，不能覆盖链接源码。
+- 唯一工具源码：`.github/extensions/Skill_Seekers-development`。
+- 运行入口：`.github/extensions/skill-seekers.sh`
+- 依赖初始化：`.github/extensions/skill-seekers-bootstrap.sh`
+- 导入到本仓库：`.github/extensions/skill-seekers-import.sh`
+- 更新源码：作为明确的Gitlink变更单独评审；`skill-seekers-update.sh`拒绝非预览覆盖，不因目标已是实际Git目录而解除保护。其`--dry-run`仍下载并解压临时归档，不是离线或零I/O。
 
 ## 推荐工作流（强约束）
 
@@ -21,16 +21,16 @@
 
 ```bash
 # 1) 初始化（只需一次）
-./.github/skills/auto-skill/scripts/skill-seekers-bootstrap.sh
+./.github/extensions/skill-seekers-bootstrap.sh
 
 # 2) 生成（示例：抓 docs 配置）
-./.github/skills/auto-skill/scripts/skill-seekers.sh -- scrape --config ./.github/skills/auto-skill/scripts/Skill_Seekers-development/configs/react.json
+./.github/extensions/skill-seekers.sh -- scrape --config ./.github/extensions/Skill_Seekers-development/configs/react.json
 
 # 3) 导入到 .github/skills/
-./.github/skills/auto-skill/scripts/skill-seekers-import.sh react
+./.github/extensions/skill-seekers-import.sh react
 
 # 4) 严格校验
-./.github/skills/auto-skill/scripts/validate-skill.sh .github/skills/react --strict
+./.github/extensions/validate-skill.sh .github/skills/react --strict
 ```
 
 ## 设计原则

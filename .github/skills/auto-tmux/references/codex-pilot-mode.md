@@ -75,26 +75,26 @@ Codex Pilot Mode 是一个显式触发的单 worker 协作模式：当前对话�
 先看拓扑：
 
 ```bash
-bash .github/skills/auto-tmux/scripts/auto-tmux.sh topology
+bash .github/extensions/auto-tmux/auto-tmux.sh topology
 ```
 
 创建单 worker session 示例：
 
 ```bash
 tmux new-session -d -s codex-pilot -n worker 'codex'
-bash .github/skills/auto-tmux/scripts/auto-tmux.sh topology --session codex-pilot
+bash .github/extensions/auto-tmux/auto-tmux.sh topology --session codex-pilot
 ```
 
 读取 worker pane：
 
 ```bash
-bash .github/skills/auto-tmux/scripts/auto-tmux.sh capture -t codex-pilot:worker.0 -n 120
+bash .github/extensions/auto-tmux/auto-tmux.sh capture -t codex-pilot:worker.0 -n 120
 ```
 
 给 worker 渲染持久化交互协议：
 
 ```bash
-bash .github/skills/auto-tmux/scripts/render-swarm-prompt.sh codex-worker \
+bash .github/extensions/auto-tmux/render-swarm-prompt.sh codex-worker \
   --session codex-pilot \
   --target codex-pilot:worker.0 \
   --task "进入持久 worker 待命状态，等待主 Codex 后续分派任务"
@@ -103,7 +103,7 @@ bash .github/skills/auto-tmux/scripts/render-swarm-prompt.sh codex-worker \
 下发前 dry-run：
 
 ```bash
-bash .github/skills/auto-tmux/scripts/swarm-dispatch.sh \
+bash .github/extensions/auto-tmux/swarm-dispatch.sh \
   --role codex-worker \
   --target codex-pilot:worker.0 \
   --session codex-pilot \

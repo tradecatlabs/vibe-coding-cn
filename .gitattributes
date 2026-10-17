@@ -1,10 +1,17 @@
-# GitHub Linguist classification
-#
-# .github/tools/external/ stores third-party tools and external snapshots. Keep them
-# visible in the repository, but do not let their implementation languages
-# dominate the main repository language statistics.
-.github/tools/external/** linguist-vendored
+# 保留原外部源码的GitHub Linguist归属；不把整个Extensions视为第三方。
+.github/extensions/Skill_Seekers-development/** linguist-vendored
+.github/extensions/claude-official-skills/** linguist-vendored
+.github/extensions/tmux/** linguist-vendored
+.github/extensions/oh-my-tmux/** linguist-vendored
+.github/extensions/MCPlayerTransfer/** linguist-vendored
+.github/extensions/XHS-image-to-PDF-conversion/** linguist-vendored
+.github/extensions/my-nvim/** linguist-vendored
+.github/extensions/html-tools-main.md linguist-vendored
+.github/extensions/clean_epub_css.html linguist-vendored
+.github/extensions/markdown-bianjiqi.html linguist-vendored
+".github/extensions/task card generator.html" linguist-vendored
+".github/extensions/xhs graphic production - 1.0.html" linguist-vendored
+".github/extensions/xhs graphic production.html" linguist-vendored
 
-# Research raw snapshots preserve external source text; do not normalize
-# upstream whitespace in these captured artifacts.
-.github/research/**/raw/*.raw.* -whitespace
+# 原始捕获不规范化上游空白。
+.github/context/research/**/raw/*.raw.* -whitespace

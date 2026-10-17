@@ -20,8 +20,8 @@
 每次修改 `.github/skills/auto-tmux` 后，至少运行：
 
 ```bash
-.github/skills/auto-tmux/scripts/validate-auto-tmux.sh
-.github/skills/auto-skill/scripts/validate-skill.sh .github/skills/auto-tmux --strict
+.github/extensions/auto-tmux/validate-auto-tmux.sh
+.github/extensions/validate-skill.sh .github/skills/auto-tmux --strict
 git diff --check
 make test
 ```
@@ -40,7 +40,7 @@ make test
 - 默认只读优先：观察、取证、健康检查、报告包和远程采集不得升级为隐式控制。
 - 控制动作必须显式目标：send、paste、broadcast、rescue 和 dispatch 必须明确 session/window/pane 或明确 dry-run。
 - 远程默认只读：`remote-readonly.sh` 不允许出现 `send-keys`、`kill-*`、配置写入或状态修改。
-- 新增脚本必须同步更新 `SKILL.md`、`scripts/README.md`、`scripts/AGENTS.md`、`validate-auto-tmux.sh` 和 `script-cheatsheet.md`。
+- 新增脚本必须同步更新 `SKILL.md`、`.github/extensions/auto-tmux/README.md`、`.github/extensions/auto-tmux/AGENTS.md`、`validate-auto-tmux.sh` 和 `script-cheatsheet.md`。
 - 新增 reference 必须同步更新 `references/README.md`、`references/index.md` 和 `SKILL.md`。
 - 新增机器可读输出必须同步更新 `jsonl-schema.md`，并接入 `check-jsonl.sh` 或等价门禁。
 

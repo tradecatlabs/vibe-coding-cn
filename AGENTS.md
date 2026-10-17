@@ -1,417 +1,96 @@
-# Repository Guidelines
-
-本文件为 AI Agent 提供项目操作手册与约束清单，确保 Agent 行为可控、可复现。
-
----
-
-## 1. Mission & Scope（目标与边界）
-
-### 允许的操作
-- 读取、修改顶层文档：`README.md`、`AGENTS.md`、`CONTRIBUTING.md` 等
-- 读取、修改 `.github/docs/`、`.github/prompts/`、`.github/skills/`、`.github/tools/config/`、`.github/tools/external/` 下的文档与代码
-- 执行 `make lint`、`make check-links`、`make check-details`、`make check-doc-structure`、`make check-directory-docs`、`make check-metadata`、`make check-gongfa`、`make test-gongfa`、`make sync-gongfa-catalog`、`make check-gongfa-catalog`、`make test-gongfa-catalog`、`make sync-faqi-catalog`、`make check-faqi-catalog`、`make test-faqi-catalog`、`make check-ai-citation`、`make check-research-raw`、`make check-source-facts`、`make check-wiki`、`make fetch-research-raw`、`make sync-doc-toc`、prompts-library 转换工具
-- 新增/修改提示词、技能、文档
-- 提交符合规范的 commit
-
-### 禁止的操作
-- 修改 `.github/workflows/` 中的 CI 配置（除非任务明确要求）
-- 修改 `LICENSE`、`CODE_OF_CONDUCT.md`
-- 在代码中硬编码密钥、Token 或敏感凭证
-- 未经确认的大范围重构
-
-### 敏感区域（禁止自动修改）
-- `.github/workflows/*.yml` - CI/CD 配置
-- `.env*` 文件（如存在）
-
----
-
-## 2. Golden Path（推荐执行路径）
-
-```bash
-# 1. 拉取最新代码
-git fetch origin main
-# 原有工作树保持原状；从远端主线创建隔离任务工作树
-# git worktree add -b <task-branch> <task-worktree> origin/main
-
-# 2. 初始化外部仓库指针
-git submodule update --init --recursive
-
-# 3. 运行 lint 检查
-make lint
-
-# 4. 执行修改任务
-# ...
-
-# 5. 再次 lint 验证
-make lint
-
-# 6. 提交变更
-git add -- <task-files>
-git commit -m "feat|fix|docs|chore: scope - summary"
-git push origin HEAD
-# 创建以 main 为目标的 PR，核对精确 HEAD 与实际 CI 后合并
-```
-
----
-
-## 3. Must-Run Commands（必须执行的命令清单）
-
-### 环境要求
-- Node.js 22+（通过 `npx --yes markdownlint-cli@0.48.0` 运行固定版本 Markdown lint）
-- Python 3.8+（用于 prompts-library 工具与链接检查脚本）
-- Git
-
-### 核心命令
-
-| 命令 | 用途 | 前置条件 |
-|:---|:---|:---|
-| `make help` | 列出所有 Make 目标 | 无 |
-| `make lint` | 校验全仓库 Markdown | Node.js 22+；通过 `npx --yes markdownlint-cli@0.48.0` 执行 |
-| `make check-links` | 校验仓库内 Markdown 相对链接 | Python 3 |
-| `make check-details` | 校验 Markdown 折叠块 `<details>/<summary>` 结构 | Python 3 |
-| `make test-details` | 验证代码围栏隔离与真实折叠错误拒绝，保留 CLI 工件 | Python 3 标准库 |
-| `make check-doc-structure` | 校验 docs README 标准块顺序、目录入口和重复锚点 | Python 3 |
-| `make check-directory-docs` | 校验仓库自有目录 README/AGENTS 覆盖 | Python 3 |
-| `make check-metadata` | 校验 metadata 路径与锚点 | Python 3 |
-| `make check-gongfa` | 校验功法JSON、十二级、冻结来源、人工初评和正式评级引用 | Python3.10+、.github/scripts/requirements-gongfa.txt |
-| `make test-gongfa` | 功法协议隔离CLI集成测试与保留工件 | 同上；不进行实际评级 |
-| `make sync-gongfa-catalog` | 从当前登记与仓内候选历史快照重建同一总表 | Python3.10+、.github/scripts/requirements-gongfa.txt |
-| `make check-gongfa-catalog` | 只读校验总表来源SHA、覆盖及Markdown/Excel一致性 | 同上；不写原文或评级 |
-| `make test-gongfa-catalog` | 验证总表维护行为并保存隔离工件 | 同上；不证明功法效果 |
-| `make sync-faqi-catalog` | 重建法器总分类、重要性分级、依赖图对象与外部资源分流视图 | Python3.10+、Git、.github/scripts/requirements-faqi.txt、固定submodule |
-| `make check-faqi-catalog` | 只读校验总登记、依赖图SHA/对象映射、来源Git/SHA与生成视图 | 同上；不执行工具或批准效果 |
-| `make test-faqi-catalog` | 验证总表维护消费与拒绝行为，保留隔离工件 | 同上；不证明身份语义、许可或能力 |
-| `make check-ai-citation` | 校验 llms 与 AI 引用语料路径、锚点和规范仓库身份 | Python 3 |
-| `make check-external-resources` | 校验本地外部资源注册表字段、分类统计、ID 与链接形态 | Python 3、PyYAML |
-| `make check-research-raw` | 校验研究域 raw 原始事实层、Git 工作树、来源清单和核心材料文件 | Python 3、Git |
-| `make check-source-facts` | 校验外部源事实镜像、文件数、边界和隐私登记 | Python 3、PyYAML |
-| `make check-wiki WIKI_DIR=/tmp/vibe-coding-cn.wiki` | 校验 GitHub Wiki 独立仓库本地 checkout 的页面覆盖、内链、旧口径和 Markdown | Python 3、Node.js 22+、本地 Wiki checkout |
-| `make fetch-research-raw` | 拉取 `.github/research/*/domain.yml` 对应 GitHub 研究对象的 raw 原始事实层和 `repository/` 工作树 | Python 3、Git、GitHub CLI 已认证 |
-| `make sync-doc-toc` | 兼容旧线性 README 目录生成；当前拆分结构下通常无变更 | Python 3 |
-| `make test` | 执行本地质量门禁 | Node.js 22+、Python 3 |
-| `git submodule update --init --recursive` | 初始化外部 Git 仓库指针 | Git |
-| `cd .github/tools/prompts-library && python3 main.py` | 提示词格式转换 | `pip install -r .github/tools/prompts-library/requirements.txt` |
-
-### Python 依赖来源
-- 功法检查独立依赖：`.github/scripts/requirements-gongfa.txt`；在现有虚拟环境安装。
-- 法器维护独立依赖：`.github/scripts/requirements-faqi.txt`；Python3.10+，复用jsonschema、PyYAML、tabulate及测试用markdown-it-py；其他脚本最低版本不变。
-- prompts-library 主入口依赖：`.github/tools/prompts-library/requirements.txt`
-- prompts-library Google API / JSONL 辅助脚本依赖：`.github/tools/prompts-library/scripts/requirements.txt`
-
-### prompts-library 支持的转换模式
-1. Excel → Docs：将 Excel 工作簿转换为 Markdown 文档目录
-2. Docs → Excel：将 Markdown 文档目录还原为 Excel 工作簿
-3. Docs → JSONL：将 Markdown 文档转换为 JSONL 格式
-4. JSONL → Excel：将 JSONL 转换为 Excel
-5. Excel(JSONL) → JSONL：将内部 JSONL 格式的 Excel 转换为 JSONL 目录（每个工作表一个 JSONL 文件）
-
----
-
-## 4. Code Change Rules（修改约束）
-
-### 架构原则
-- 保持根目录扁平，避免巨石文件
-- 三层内容架构：`.github/docs/` (知识) → `.github/prompts/` (指令) → `.github/skills/` (能力)
-
-### 模块边界
-- `.github/docs/` - 中文知识库（方法论/入门/实战/资源）
-- `.github/prompts/` - 提示词入口与云端索引
-- `.github/skills/` - 可复用技能库（每个子目录一个 Skill）
-- `.github/assets/external-resources/` - 本地外部资源注册表
-- `.github/tools/config/` - 工具与开发配置（例如 Codex CLI）
-- `.github/tools/external/` - 外部工具与依赖（含 Git submodule）
-
-### 依赖添加规则
-- 新增工具或库时记录安装方式、最小版本与来源
-- 外部依赖来源记录在 `.github/tools/external/` 目录下
-- 引入第三方脚本需标明许可证与来源
-
-### 禁止行为
-- 禁止"顺手重构/大范围改动"除非任务明确要求
-- 禁止删除现有测试用例（除非任务要求）
-- 禁止在代码中硬编码敏感信息
-
----
-
-## 5. Style & Quality（风格与质量标准）
-
-### 格式化工具
-- Markdown：`Makefile` 固定调用 `markdownlint-cli@0.48.0`（通过 `make lint` 执行）
-- CI 自动检查：`.github/workflows/ci.yml`
-
-### 命名约定
-- 文档、注释、日志使用中文
-- 代码符号统一英文且语义直白
-- 文件名小写加中划线或下划线
-
-### 缩进与排版
-- 全仓保持空格缩进（2 或 4 空格不混用）
-- 行宽控制在 120 列内
-
-### 设计品味
-- 优先消除分支与重复
-- 函数单一职责且短小
-
----
-
-## 6. Project Map（项目结构速览）
-
-```
-.
-├── README.md                    # 项目主文档
-├── AGENTS.md                    # AI Agent 行为准则（本文件）
-├── llms.txt                     # 面向 AI 助手的短上下文入口
-├── Makefile                     # 自动化脚本
-├── LICENSE                      # MIT 许可证
-├── CODE_OF_CONDUCT.md           # 行为准则
-├── CONTRIBUTING.md              # 贡献指南
-├── .gitattributes               # GitHub Linguist 语言统计规则
-├── .gitignore                   # Git 忽略规则
-├── .lychee.toml                 # GitHub Actions 外部链接检查配置
-│
-└── .github/                     # GitHub 平台配置与仓库内容
-    ├── AGENTS.md                # 目录共同规则和平台边界
-    ├── assets/                  # 静态资产、外部资源与 AI 引用语料
-    ├── docs/                    # 入门教程与功法正文
-    ├── metadata/                # 机器可读登记、分类和生成目录
-    ├── prompts/                 # 提示词库入口
-    ├── research/                # 研究对象、源事实和冻结材料
-    ├── scripts/                 # 检查、生成和维护脚本
-    ├── skills/                  # 可复用技能库
-    ├── tools/                   # 工具、配置与外部依赖
-    ├── CODEOWNERS               # 路径级 owner 评审基线
-    ├── ISSUE_TEMPLATE/          # Issue 模板和配置
-    ├── PULL_REQUEST_TEMPLATE.md # PR 模板
-    ├── SECURITY.md              # 安全漏洞报告策略
-    ├── FUNDING.yml              # 赞助配置
-    ├── WIKI.md                  # GitHub Wiki 独立仓库说明
-    ├── labeler.yml              # PR 标签规则
-    └── workflows/               # GitHub Actions 工作流
-```
-
-### 关键入口文件
-- `README.md` - 项目主文档，面向人类开发者
-- `AGENTS.md` - AI Agent 操作手册（本文件）
-- `llms.txt` - 面向 AI 助手的短上下文入口，用于让 LLM 快速理解项目定位
-- `.github/assets/ai-citation/llms-full.txt` - 面向 AI 助手的完整上下文入口，用于 GEO / AI 推荐与引用
-- `.github/assets/ai-citation/` - AI 引用语料包，包含摘要、FAQ、对比、推荐回答与 GEO/SEO 检查清单
-- `.gitattributes` - GitHub Linguist 语言统计规则，当前将 `.github/tools/external/**` 标记为 vendored
-- `.github/AGENTS.md` - GitHub 平台配置目录规则；根 `.github/` 不保留 `README.md`，避免 GitHub 首页误展示目录说明
-- `.github/CODEOWNERS` - 路径级 owner 评审基线，当前维护者为 `@tukuaiai` 和 `@tradecatlabs`，用于让关键目录变更自动请求维护者审查
-- `.github/lint_config.json` - markdownlint 规则，供 `make lint` 与 CI 共用
-- `.github/workflows/ci.yml` - GitHub Actions：main 分支 markdown-lint + link-checker
-- `.github/workflows/welcome.yml` - Issue / PR 首次贡献者欢迎；当前 `actions/first-interaction@v3` 使用
-  `repo_token`、`issue_message`、`pr_message`，以实际 Action 元数据和源码为准，不照抄过时的横线参数示例。
-  保留平台 secret 注入、既有权限与事件边界，不 checkout 外部 PR；工作流变更后须核对真实新执行。
-- `.github/scripts/check-local-links.py` - 仓库内 Markdown 相对链接与锚点检查脚本，供 `make check-links` 与 CI 使用
-- `.github/scripts/check-markdown-details.py` - 仓库内 Markdown 折叠块结构检查；围栏闭合须同字符、长度不少于开启且尾部仅空格/制表符
-- `.github/scripts/test-markdown-details.py` - 标准库 CLI 回归，覆盖长围栏与正文真实错误；`make test-details` 纳入本地总测试，不新增 CI 目标
-- `.github/scripts/check-doc-structure.py` - docs README 标准块顺序、目录入口和重复锚点检查脚本，供 `make check-doc-structure` 与 CI 使用
-- `.github/scripts/check-directory-docs.py` - 仓库自有目录 README/AGENTS 覆盖检查脚本，供 `make check-directory-docs` 与 CI 使用
-- `.github/scripts/check-metadata.py` - metadata 路径与锚点检查脚本，供 `make check-metadata` 与 CI 使用
-- `.github/metadata/faqi.json` / `faqi.schema.json` - 法器总分类登记及字段契约；复用本体类型、固定来源审查、依赖图对象和用户确认纳入的依赖类别，原资源事实仍归资源YAML；当前暂定品级按Vibe Coding重要性分组，正式效能评级仍须独立效果证据。
-- `.github/tools/faqi-catalog.md` - 法器品级、名称与详细解释的三列只读浏览表；解释合并重要性范围和分级依据，完整登记仍归`.github/metadata/faqi.json`，资源原事实归资源YAML。
-- `.github/scripts/sync-faqi-catalog.py` / `test-faqi-catalog.py` - 离线总表生成、检查及行为契约；核来源、图SHA、对象映射和品级边界，保留真实命令/结果；不执行被审程序或联网补证；文件级许可线索仅作支持证据，不代表批准。
-- `.github/metadata/gongfa/registry.json` - 活跃功法登记、等级、规则、来源、内容版本、人工初评及正式评级历史的唯一可编辑数据源；类型语义仍归本体主文；新范围追加批次
-- `.github/metadata/gongfa/catalog.md` / `catalog.xlsx` - 功法总表的生成视图；Markdown列品级、名称与详细解释；品级使用“天阶高级”等完整名称，不缩写。登记摘要/问题/机制及条件/限制/预期结果，候选原文/用途/理由，Solve机制/适用范围/前提/边界；完整原始数据仍归JSON；Excel保留完整字段；不手改、不自动注册/去重/评级
-- `.github/metadata/gongfa/catalog-sources.json` - 仅索引仓内不可变候选快照的路径/SHA/范围；历史材料不是第二可编辑登记，不依赖个人目录或临时工件
-- `.github/scripts/sync-gongfa-catalog.py` / `test-gongfa-catalog.py` - 离线总表生成、检查及行为契约；复用原登记校验与openpyxl，保留真实命令/结果
-- `.github/scripts/check-gongfa.py` - 功法JSON、来源、ID/版本、词表、人工初评与正式评级的离线校验；不联网、不执行原文、不计算品级；多批次用`--proposal-batch`显式选范围，表格标明批次，不把本批缺项报作全局未评
-- `.github/scripts/test-gongfa.py` - 独立字面量与冻结输入驱动的CLI集成测试，保留输入、退出码、JSON/JUnit产物；不等于方法效果证明
-- `.github/scripts/check-ai-citation.py` - llms 与 AI 引用语料路径、锚点和规范仓库身份检查脚本，供 `make check-ai-citation` 与 CI 使用
-- `.github/scripts/check-external-resources.py` - 本地外部资源注册表检查脚本，供 `make check-external-resources` 与 `make test` 使用
-- `.github/scripts/check-research-raw.py` - 研究域 raw 原始事实层和 Git 工作树检查脚本，供 `make check-research-raw` 与 `make test` 使用
-- `.github/scripts/check-source-facts.py` - 外部源事实镜像、文件数、边界和隐私登记检查脚本，供 `make check-source-facts` 与 `make test` 使用
-- `.github/scripts/fetch-research-raw.py` - GitHub 研究对象 raw 原始事实层和 `repository/` 工作树拉取脚本，供 `make fetch-research-raw` 手动刷新使用，不纳入 CI
-- `.github/scripts/check-wiki.py` - GitHub Wiki 独立仓库本地 checkout 页面覆盖、内链和旧口径检查脚本，供 `make check-wiki` 使用
-- `.github/scripts/sync-doc-toc.py` - docs README 细粒度目录兼容脚本，当前拆分结构下通常无变更，供 `make sync-doc-toc` 使用
-- `.github/tools/prompts-library/main.py` - 提示词转换工具入口
-- `.github/docs/getting-started/README.md` - 从零开始索引入口，正文拆分到学习地图、网络配置、CLI 配置、开发环境搭建与第一个项目闭环；通用人机经验链接到功法
-- `.github/docs/getting-started/first-project.md` - 用本地待办清单完成第一次可验证的需求、实现、验收与 Git 闭环
-- `.github/docs/gongfa/README.md` - 方法论、哲学、思维模型、工程准则和流程的统一正文入口；完整文集按任务导航，文集数不是独立功法数
-- `.github/docs/gongfa/faqi-system.md` - 法器分类、重要性、选用与固定MCP源码副作用边界；S66–S73只增支持来源，不增程序身份、运行或正式效能结论
-- `.github/docs/gongfa/methodology-toolbox.md` - 候选方法与有限来源复核；机器学习18条只提供分批审阅位置，不等于独立功法数或全量语义去重
-- 根 README 不展示六条核心命题内容或导航入口，仅保留兼容历史锚点；正文唯一维护源为 `.github/docs/gongfa/ai-core-propositions.md`，用户从功法体系进入正文，不维护首页副本或第二内容版本。
-- 根 README 的“法器体系”块与功法块同级，使用不带`open`属性的`<details>`默认折叠；只放概要和链接，正文归`.github/docs/gongfa/faqi-system.md`，登记归`.github/metadata/faqi.json`，逐条生成视图归`.github/tools/faqi-catalog.md`。
-- 首页“演示与产出”内 Mermaid 节点标签含括号等语法字符时须加双引号；修改图表后须真实渲染验证，不能只依赖 Markdown 检查。
-  2025 Q4–2026 Q2 甘特图仅保留历史规划，不标作当前进度、不虚构新排期。
-- “给 AI 助手的推荐摘要”和“为什么选择 vibe-coding-cn？”完整维护于根 `llms.txt`，首页不再展示这两个 AI 内容块。
-  首页不展示“仓库维护与验证”“参与贡献”“许可证”正文块；维护规则与命令仍归本文件、Makefile 及工具文档，
-  `CONTRIBUTING.md`、`CODE_OF_CONDUCT.md`、`LICENSE` 文件、顶部许可证徽章及贡献者鸣谢保留。
-- 首页其他方法只通过功法体系统一入口选择，不恢复经验、实验性方法、道法术器或哲学的独立栏目/分库；六命题旧锚点仅作兼容，正文入口在功法体系的 `.github/docs/gongfa/ai-core-propositions.md`，其他方法历史锚点定位功法块。首页徽章区仅保留独立目的地入口，统一使用 `<a><img>` 与紧凑 `style=flat`，保留其原href、顺序及完整alt；仅跳根README章节的目录徽章不放顶部，同一目标不重复展示（相对路径的 `./` 写法差异不算不同目标）。删除徽章不自动删除其目标正文或历史锚点，不恢复旧快捷导航徽章组；单一段落不等于已验证所有视口视觉单行。
-- 首页入口收口、文集归并与逐条身份登记分别验收；无来源绑定不自动等于未登记功法，模板、术语、工具和本体说明不机械注册或赋级。
-- 研究回填矩阵、模板和AI摘要也按现行职责定位：方法/流程/清单正文归 `.github/docs/gongfa/`，实例练习归 `.github/docs/getting-started/`，具体事实留 `.github/research/`；执行契约、工具配置和脚本分别归 `.github/skills/`、`.github/tools/config/`、`.github/scripts/`，不把旧分类词当目录或批量改写上游结构。
-- `.github/docs/gongfa/AGENTS.md` - 功法正文、历史来源、登记与生成视图的唯一职责规则；不恢复旧目录或并行可编辑副本
-- `.github/docs/gongfa/problem-solving.md` - 问题定义与求解路径底层模型
-- `.github/docs/gongfa/vibe-coding-cultivation-model.md` - 统一修仙本体的通俗解释；战力按具体任务先验收效果、再比较效率
-- `.github/docs/gongfa/cultivation-ontology-taxonomy.md` - 修仙领域 BFO 主干与下层展开（V4 BFO 草案）；保留原生及领域 ID、继承、定义和判据；功法内容、载体、版本、施行与效果分开，已有初评、规约未校准、正式效果记录仍为零
-- `.github/docs/gongfa/project-architecture-template.md` - 常见项目结构、架构设计原则、最低门禁和检查清单
-- `.github/docs/gongfa/technology-stack.md` - 常见软件系统技术栈、选型维度、组合案例与初学者学习路径
-- `.github/skills/auto-skill/` - Skills 生成、重构与校验的元技能
-- `.github/skills/auto-tmux/` - tmux 自动化操控、脚本化 pane 巡检、按键注入、日志录制与多终端协作技能
-
-### docs README 结构契约
-
-- `.github/docs/**/README.md` 面向人类读者；维护者规则、目录边界和同步要求写入对应 `AGENTS.md`。
-- 标准块顺序固定为：顶部标题块 -> `## 字多不看` -> `## 快速导航` -> 完整细粒度目录 -> `## 使用方式` -> `## 正文`。
-- H1 后必须直接进入 `## 字多不看`，禁止在两者之间插入引用块、说明段或其他夹层内容。
-- README 中禁止出现 `和其他目录的边界` 与 `维护规则` 标题。
-- 修改 docs README 或新增主题文档后，运行 `make sync-doc-toc` 和 `make test`；`make check-doc-structure` 是硬门禁。
-
----
-
-## 7. Common Pitfalls（常见坑与修复）
-
-| 问题 | 原因 | 修复 |
-|:---|:---|:---|
-| `make lint` 失败 | Node.js 不可用、npx 无法拉取 markdownlint-cli 或 Markdown 规则违规 | 先确认 `node -v` 为 22+，再运行 `make lint` |
-| prompts-library 报错 | 缺少 Python 依赖 | `pip install -r .github/tools/prompts-library/requirements.txt` |
-| prompts-library 辅助脚本报 Google API 依赖错误 | 未安装脚本专用依赖 | `pip install -r .github/tools/prompts-library/scripts/requirements.txt` |
-| CI markdown-lint 失败 | Markdown 规则违规或本地未按 `.github/lint_config.json` 校验 | 运行 `make lint`，按输出修复对应 Markdown |
-| CI link-checker 失败 | 文档中存在失效链接，或官方外链在 GitHub runner 上网络/TLS 不稳定 | 先本地验证链接；真实失效则修复 Markdown，runner 不稳定则优先调整 `.lychee.toml` 的重试、超时、并发或精确排除项 |
-
----
-
-## 8. PR / Commit Rules（提交与 CI 规则）
-
-### 分支职责
-
-- `main` 是默认主线，开发更新和贡献 PR 统一以 `main` 为目标；远端长期保留 `main`、`minimal`。
-- `minimal` 保留现有内容，不作为贡献集成分支；`main` 保留签名和必需 CI 保护。
-- 审批由独立 Ruleset `contributor-approval-owner-exemption`（ID `25244224`）管理：默认至少 1 个有效批准，
-  仅账号 `tradecatlabs`（User ID `288998340`）拥有 `pull_request` 模式豁免；只对其自己发起的 PR 使用免审。
-- GitHub 原生豁免按合并操作账号判断，不按 PR 作者自动判断；合并他人 PR 时必须核对有效批准，不能借此豁免绕过。
-- 主 Ruleset `17185792` 不配置豁免；CI、签名、线性历史、禁止强推/删除等保护仍对所有人适用。
-  主 Ruleset 与经典分支保护的审批数保持 0，避免重复阻断账号豁免；不代表普通贡献者免审。
-- Code Owner、最近推送及额外审批要求保持关闭；`CODEOWNERS` 仅作为路径级审查入口，不强制指定审批人。
-- 按用户授权收敛远端分支前，先迁移开放 PR 的目标、保存全部精确 SHA 与已验证恢复 bundle，并用 ref lease 防止误删并行更新。
-- 远端清理不删除本地分支或 worktree；尚未整合的历史只备份，不自动合入主线。临时任务分支在交付后按同一规则清理。
-- 不将 squash 后的非祖先 HEAD 自动判为未整合；须核对已合并 PR 的精确 HEAD 与主线中的 merge commit。
-
-### 本仓自动交付约定
-
-- 用户已明确要求：本仓修改完成并完成必要验证后，自动提交、推送并合并，不再停在“本地未推送”，不重复询问发布许可；用户后续暂停、仅本地或先看方案等明确要求优先。
-- 只选择性提交本任务范围，不夹带并行或无关改动；不自动切分支、改写历史、强推或删除交付引用。
-- 受保护主线走精确 PR/HEAD 流程；合并前核对 PR 作者、操作账号、必需 CI 和其他保留的保护。
-  `tradecatlabs` 合入自己发起的 PR 无须审批；他人发起的 PR 仍须有效批准，不伪造批准、成功 checks 或独立审核。
-  流程例外须按用户授权留痕；临时调整的保护按约定恢复，不擅自扩大账号豁免或叠加审批门槛。
-  凭据、权限和数据边界不因自动交付扩大。
-
-### Commit 规范
-遵循简化 Conventional Commits：
-```
-feat|fix|docs|chore|refactor|test: scope - summary
-```
-
-示例：
-- `docs: prompts - add new coding prompt`
-- `feat: skills - add custom skill`
-- `fix: readme - correct broken link`
-
-### PR 必填内容
-- 变更摘要
-- 动机或关联 Issue
-- 测试与验证步骤
-
-### CI 触发条件
-- `push` 到 `main` 分支
-- `pull_request` 到 `main` 分支
-- 手动触发 `workflow_dispatch`
-
-### CI 检查项
-1. `markdown-lint` - Markdown 格式检查
-2. `check local markdown links and anchors` - 仓库内相对链接与锚点检查
-3. `check markdown details and summaries` - Markdown 折叠块结构检查
-4. `check docs README structure` - docs README 标准块顺序、目录入口和重复锚点检查
-5. `check required directory README and AGENTS files` - 仓库自有目录 README/AGENTS 覆盖检查
-6. `check metadata paths and anchors` - metadata 路径与锚点检查
-7. `check llms and AI citation paths and anchors` - llms 与 AI 引用语料路径、锚点和规范仓库身份检查
-8. `check modern enterprise architecture kit` - 现代企业架构 starter kit schema 与示例一致性检查
-9. `link-checker` - 链接有效性检查
-
-### 提交前清单
-- [ ] 运行 `make lint` 通过
-- [ ] 更新对应文档
-- [ ] 确认不携带临时文件或机密数据
-
----
-
-## 9. Documentation Sync Rule（强制同步规则）
-
-**任何功能/命令/配置/目录/工作流变化必须同步更新：**
-- `README.md` - 面向人类开发者
-- `AGENTS.md` - 面向 AI Agent（本文件）
-
-**不确定的内容用 TODO 标注，不允许猜测。**
-
----
-
-# Claude 上下文（合并在本文件）
-
-本节为 Claude 系列模型提供项目上下文。
-
-## Repository Overview
-
-**Vibe Coding CN** 是一个通过与 AI 结对编程实现"将想法变为现实"的终极工作流程。项目核心资产是其丰富的 `prompts` 和 `skills` 库。
-
-## Key Commands
-
-```bash
-# 提示词库转换
-cd .github/tools/prompts-library && python3 main.py
-
-# Lint 所有 Markdown 文件
-make lint
-
-# 本地质量门禁
-make test
-
-```
-
-## Architecture & Structure
-
-### Core Directories
-- **`.github/prompts/`**: 提示词库入口（指向云端表格）
-- **`.github/skills/`**: 扁平化技能库（详见 .github/skills/README.md）
-- **`.github/docs/`**: 入门教程（getting-started）与统一功法正文（gongfa）；旧目录路由已退役
-- **`.github/assets/`**: 静态资产、外部资源注册表与 AI 引用资产
-- **`.github/assets/ai-citation/`**: AI 引用语料包与 `llms-full.txt`
-- **`.github/tools/prompts-library/`**: Excel ↔ Markdown 转换工具
-- **`.github/tools/chat-vault/`**: AI 聊天记录保存工具
-
-### Key Technical Details
-1. **Prompt Organization**: 提示词使用 `(row,col)_` 前缀进行分类
-2. **Conversion Tool**: 使用 Python + pandas + openpyxl
-3. **Documentation Standard**: 用户文档使用中文；代码/文件名使用英文
-4. **Skills**: 每个技能有独立的 `SKILL.md`
-5. **Quality Gates**: `make test` 执行 Markdown lint、本地相对链接/锚点检查、折叠块结构检查、docs 结构检查、metadata 路径检查、AI 引用一致性检查、外部源事实镜像检查与现代企业架构 starter kit 检查；三个 `.github/research/vibe-*` 目录按源事实镜像边界维护，仓库级格式检查跳过镜像内容。
-   功法登记/总表与法器总分类登记检查、相关测试纳入本地`make test`；GitHub Actions选定目标未改，不冒称新增远端覆盖。
-
-## Development Workflow
-
-1. 遵循现有的提示词和技能分类系统
-2. 使用 `prompts-library` 工具进行提示词更新
-3. Markdown 修改后运行 `make test`
-4. 重大重构前先确认 Git 状态，并必要时创建 checkpoint commit
-
----
-
-# Gemini 上下文（合并在本文件）
-
-## 项目概述
-
-`vibe-coding-cn` 是一个通过与 AI 结对编程实现"将想法变为现实"的中文 Vibe Coding 从入门到精通教程。强调"规划驱动"、"模块化"、"上下文固定"与"质量门禁"。
-
-## 技术栈
-
-- **核心形态:** Markdown 知识库 + Python 工具脚本
-- **提示词转换工具:** `.github/tools/prompts-library/`
-- **数据处理:** `pandas`, `openpyxl`（prompts-library）
-- **配置管理:** `PyYAML`（prompts-library）
-- **文档规范:** `Makefile` 固定调用的 `markdownlint-cli@0.48.0`
-- **版本控制:** Git
-- **自动化:** Makefile
-
-## 文件结构
-
-详见上方 Project Map 章节。
+# Vibe Coding工具箱：仓库操作指南
+
+## 目标与边界
+
+- 以Pi Agent和已授权的OpenAI GPT作为主体底座，复用原生工具、资源加载与模型选择；不新造Agent、模型客户端、Lambda解释器或资源管理框架。
+- 只组织现有资产；三域为`.github/context/`、`.github/skills/`、`.github/extensions/`，域内对象平铺。包内部源码、资料集合、共用lib不再算新的一级资源分类。
+- 根`README.md`是唯一主页；`.github/README.md`禁止创建。`llms.txt`是AI短入口；大资料按需读取，不全部注入系统上下文。
+- 读者按问题、设计、实现、代价及比较/共性/适用条件理解工具；Lambda记号只辅助表达输入输出与组合，不证明纯函数、正确、确定或终止。
+
+## 目录职责
+
+| 路径 | 唯一职责 |
+|---|---|
+| `.github/context/` | 既有规则、知识、文档、数据、研究和参考资料；详见本域AGENTS |
+| `.github/skills/` | 2个自有与16个既有官方Skill指令，统一治理；代码引用Extensions |
+| `.github/extensions/` | 原程序、小工具、检查/生成/测试脚本与适配；不是全部可由Pi的`-e`加载 |
+| `.github/workflows/`、`ISSUE_TEMPLATE/`及固定配置 | GitHub原生平台入口，保留规定位置，不构成第四个资源域 |
+| `Makefile` | 本地可重复命令入口 |
+| `.github/context/metadata/` | 导航、术语及历史路径映射；不重复登记或定义另一套本体 |
+| `.github/context/ai-citation/` | 当前AI引用语料与llms-full |
+
+Context的9个既有集合是`gongfa`、`faqi`、`getting-started`、`prompts`、`research`、`external-resources`、`ai-citation`、`metadata`、`assets`。
+全部18个Skill和现有Extensions清单分别在其README，不另建工具注册层。
+
+## 原始数据与来源
+
+- 功法、法器各只有`data.json`原始资料源和生成的`README.md`。不能手改生成视图、增加第二本登记或恢复旧目录兼容壳。
+- `documents`保存原始字节、模式、SHA及历史路径身份；二进制显式Base64。解析结果是派生数据，不与原文双写。
+- `locations`及`live_sources`分别记录当前位置和当前实现摘要，不替代原SHA、固定选区、历史意见或源码初审，不提升许可、运行、独立审查和效果状态。
+- 功法ID、版本、候选、原初评、十二级词表和正式评级分开；法器原实现、运行观察、依赖类别、外部资源与9项排除不相加或自动合并。
+- 历史Excel作为原始载荷保存，不再生成活动Excel。资料协议、来源保护和当前计数边界由`.github/context/AGENTS.md`维护。
+- 四个Gitlink及Skill Seekers嵌套configs保持原固定提交；修改路径不授权升级源码、复制上游、运行安装/抓取/上传或解除排除。
+- 三个研究镜像及raw事实不批量格式化；保留原SHA、隐私登记、缓存与私有模板。缓存、真实会话、数据库和私有数据不提交。
+
+## Skills与Pi
+
+- 集合根不放`SKILL.md`；README/AGENTS不声明Skill frontmatter，避免误注册或停止子目录发现。
+- 官方16个入口引用单一`.github/extensions/claude-official-skills/skills/<name>`；`init_skill.py`也只是原上游引用。
+- Pi从仓库根显式加载`pi --skill .github/skills`；不自动加载Context研究里的嵌套Skill，不把整个Extensions作为原生扩展加载。
+- 加载不等于执行、安装、兼容或效果证明；上下文文本和模型输出不构成授权。Windows原生符号链接与发现须单独验证。
+
+## 修改与安全
+
+- 先查适用规则与实际代码，在隔离工作树进行非平凡改动，保留并行改动、旧分支及历史工作树。
+- 不执行reset、clean、stash、强推、强制切换或覆盖他人改动；只选择性stage本任务文件。
+- 不修改`LICENSE`、`CODE_OF_CONDUCT.md`或`.env*`；不内联真实密钥、Token、cookie、私钥或账号配置。
+- 凭据仅从受信来源运行时注入，禁止从会话/日志/未知文件搜寻；所有输出先脱敏，不输出值、长度、摘要或前后缀。
+- 架构、命令与路径变化同步README、AGENTS、Makefile、活动调用方与索引；不把冻结来源中的旧路径误改成当前路径。
+- 工作流只在任务明确要求时修改；迁移只改必要调用路径，不改事件、权限、检查范围、签名或分支保护。
+- 注释、文档及新日志使用中文；代码标识英文。避免无价值封装、重复源码、猜测API和范围外重构。
+
+## 验证
+
+环境：Node22+、Git、Python3；功法/法器/文集维护为Python3.10+。
+
+| 范围 | 命令 |
+|---|---|
+| Markdown与导航 | `make lint`、`make check-links`、`make check-details`、`make test-details` |
+| 结构与索引 | `make check-doc-structure`、`make check-directory-docs`、`make check-metadata` |
+| 功法协议与视图 | `make check-gongfa`、`make test-gongfa`、`make sync-gongfa-catalog`、`make check-gongfa-catalog`、`make test-gongfa-catalog` |
+| 法器与资料档案 | `make sync-faqi-catalog`、`make check-faqi-catalog`、`make test-faqi-catalog`、`make test-source-archive` |
+| 引用与来源 | `make check-ai-citation`、`make check-external-resources`、`make check-research-raw`、`make check-source-facts` |
+| 显式维护 | `make sync-doc-toc`、`make check-wiki WIKI_DIR=<本地checkout>`、`make fetch-research-raw` |
+| 最终本地质量 | `make test`；不包含联网刷新、第三方执行或效果评级 |
+
+- 先写或选中真实行为测试取得RED，再修根因并原样取得GREEN；不删除测试、弱化断言或用新目标自证。
+- 开发中只跑相关测试，最终版本只运行一次完整`make test`，保存命令、实际HEAD、退出码、日志和可复验工件。
+- Markdown lint固定`markdownlint-cli@0.48.0`；Python依赖在Extensions域requirements，转换器使用原包requirements。
+- 三域入口、入门README及两本文集维持标题→字多不看→快速导航→完整细粒度目录→使用方式→正文；维护规则留AGENTS。
+- 功法/法器生成视图的目录由其生成器维护；`sync-doc-toc.py`不能二次编辑生成文件。文档结构与来源SHA检查仍保留。
+- 改Mermaid须真实渲染。首页2025Q4–2026Q2甘特图是历史规划，不冒充当前进度或新承诺。
+- 本地总测试不等于远端CI：GitHub Actions仍选原lint/导航/结构/索引/引用和外链检查，不冒称新增全部协议测试覆盖。
+- `clean`、`clean-deps`有删除副作用，不作为测试执行。安装器和被排除程序也不为补证而运行。
+
+## 首页与文档约定
+
+- 不恢复被移除的AI推荐摘要、选择理由、维护验证、参与贡献或许可证正文块；AI两块仍维护于`llms.txt`，底层贡献与许可文件保留。
+- 方法历史栏目与六命题仅保留旧锚点，正文进入功法；不恢复独立经验/哲学/道法术器分库或首页正文副本。
+- 功法、法器块使用同级原生details默认折叠。顶部徽章只保留独立目的地，不重复同一目标；路径与文案须反映真实新资源，不把JSON称为活动Excel。
+- `.github/lint_config.json`是格式规则；`.gitattributes`仅将原第三方来源及其对应HTML标为vendored，不标记整个Extensions。
+
+## Git与自动交付
+
+- `main`是当前默认和贡献主线；`minimal`保留现有内容。旧`develop`及其他本地历史不自动合并、切换、重置或删除。
+- 用户已授权本仓修改验证后自动提交、推送、以精确PR/HEAD合并；后续暂停或仅本地指令优先，不重复询问发布许可。
+- 提交格式：`feat|fix|docs|chore|refactor|test: scope - summary`，签名提交；PR说明范围、动机、验证与未验证项。
+- 主Ruleset17185792无豁免：必需CI、签名、线性历史及禁止强推/删除保持不变。
+- 审批Ruleset25244224默认1个有效批准；仅`tradecatlabs`（User288998340）有pull_request模式豁免，项目只允许它用于自己发起的PR。
+- 豁免按操作账号而非作者自动判断；合并他人PR仍核对有效批准，不伪造批准、成功checks或独立审核。
+- CODEOWNERS维护者仍为`@tukuaiai`、`@tradecatlabs`；它是路径审查入口，不替代保护。Code Owner/最近推送/额外审批不另加重复门槛。
+- 不为交付弱化保护或扩大豁免；流程例外按授权留痕。合并前核对精确HEAD、实际CI与签名，合并后读回主线及远端事实。
+- 不清理或删除工作树、引用与历史；若未来明确授权清理，先保全精确SHA、开放PR及恢复证据。
+
+## 变更记录
+
+三域重构将原资料、指令与程序重新归位；合并原入口的重复治理，保留原始资料与来源；不新增业务Skill、模型调用或已验证效果声明。

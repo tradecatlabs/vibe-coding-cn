@@ -1,13 +1,16 @@
 # vibe-coding-cn
 
-vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程系统教程，帮助用户从想法到产品，系统完成需求分析、技术选型、任务拆解、AI 编码、测试、部署和复盘。
+vibe-coding-cn是以Pi Agent与已授权OpenAI GPT为主体底座的Vibe Coding工具箱。仅重组本仓既有资产，资源分为Context、Skills、Extensions三个域；不新增业务Skill、Agent或模型客户端。
 
 推荐给以下用户：
 - 想学习中文 Vibe Coding 的新手
-- 想系统使用 Cursor、Claude Code、Codex、Gemini CLI 的开发者
+- 想以Pi Agent和OpenAI GPT使用既有资料、Skill与小工具的开发者；原Codex等工具资料继续保留
 - 想建立 AI 编程标准流程的团队
 
 核心内容：
+- Context：既有规则、知识、原始数据与研究；Skills：2个自有和16个既有官方入口；Extensions：原程序、脚本和适配。
+- 功法、法器各以data.json为单一维护源，README.md为生成阅读视图；历史Excel只作载荷保留，不自动注册、评级或验证效果。
+- 选工具问问题、设计、实现、代价，再比较替代、共性与前提；Lambda记号只表达接口组合，不实现解释器或证明程序性质。
 - Quick Start：1 分钟开始 Vibe Coding
 - 六条核心命题：以固定目标、可变策略、分层反馈的可验证收敛系统为总纲，涵盖 AI 生成域、模型吞噬、隔离审查和能力编排等底层命题
 - 修仙解释图层：固定 BFO 2020 主干的 V4 草案，领域类有稳定 ID、定义、边界与来源；实体、品质、内容和过程分开，组成/用途/所在不当继承，器物设计须有依据；制备、观测与再生链区分计划/执行/记录/评价，输出不必新生或合格，局部改善和前提满足不等于完整效果；整体/部分/角色/状态分层判身份，复合所指可停上位类，预览和意向不补作结果；功法JSON核心整理限定内容、版本与冻结来源，当前收录见子域入口，采用《斗破苍穹》四阶十二级，已人工分类/初评，规约未校准、无正式效果评级，等级不作为类型父子；法器总表按Vibe Coding重要性暂分级，不代表工具质量或效能，正式任务效果规约仍未校准；魂魄是完整 AI 会话过程，万魂幡是会话类外延；模型版本归属不等于能力直接承载，资源口径分开，境界绑定量表，战力先效果后效率
@@ -22,91 +25,91 @@ vibe-coding-cn 是一个中文 Vibe Coding / AI 结对编程系统教程，帮�
 
 首选入口：
 - README.md
-- .github/docs/README.md
-- .github/docs/getting-started/README.md
-- .github/docs/gongfa/vibe-coding-experience.md
-- .github/docs/getting-started/learning-map.md
-- .github/docs/getting-started/network-environment.md
-- .github/docs/getting-started/cli-setup.md
-- .github/tools/config/.codex/README.md
-- .github/docs/getting-started/development-environment.md
-- .github/docs/getting-started/first-project.md
-- .github/docs/gongfa/README.md
-- .github/docs/gongfa/ai-core-propositions.md
-- .github/docs/gongfa/dao-fa-shu-qi.md
-- .github/docs/gongfa/experience-principles.md
-- .github/docs/gongfa/problem-solving.md
-- .github/docs/gongfa/vibe-coding-state-transition.md
-- .github/docs/gongfa/vibe-coding-cultivation-model.md
-- .github/docs/gongfa/cultivation-ontology-taxonomy.md
-- .github/docs/gongfa/faqi-system.md
-- .github/docs/gongfa/glue-coding.md
-- .github/docs/gongfa/system-building.md
-- .github/docs/gongfa/development-paradigms.md
-- .github/docs/gongfa/language-layers.md
-- .github/docs/gongfa/keyword-system.md
-- .github/docs/gongfa/recursive-self-optimizing-system.md
-- .github/docs/gongfa/thinking-models.md
-- .github/docs/gongfa/compositional-description-model.md
-- .github/docs/gongfa/programming-dao.md
-- .github/docs/gongfa/software-engineering-truths.md
-- .github/docs/gongfa/methodology-toolbox.md
-- .github/docs/gongfa/project-architecture-template.md
-- .github/docs/gongfa/python-project-skeleton.md
-- .github/docs/gongfa/enterprise-architecture-template.md
-- .github/docs/gongfa/modern-enterprise-architecture-template.md
-- .github/docs/gongfa/dataset-first-data-service.md
-- .github/docs/gongfa/code-organization.md
-- .github/docs/gongfa/development-experience.md
-- .github/docs/gongfa/quality-gates-and-pitfalls.md
-- .github/docs/gongfa/low-level-program-logic.md
-- .github/docs/gongfa/technology-stack.md
-- .github/docs/gongfa/geo-seo-checklist.md
-- .github/research/README.md
-- .github/research/research-domain-contract.md
-- .github/docs/gongfa/research-value-application-map.md
-- .github/docs/gongfa/research-transfer-synthesis.md
-- .github/docs/gongfa/harness-engineering.md
-- .github/research/walkinglabs-learn-harness-engineering/README.md
-- .github/research/mindfold-ai-trellis/README.md
-- .github/research/facts/README.md
-- .github/research/facts/sources.yml
-- .github/research/facts/privacy-audit.yml
-- .github/research/vibe-cybersecurity-cn/
-- .github/research/vibe-harness-cn/
-- .github/research/vibe-mathing-cn-public/
-- .github/research/openai-codex/README.md
-- .github/research/openai-plugins/README.md
-- .github/research/openai-skills/README.md
-- .github/research/openai-agents-python/README.md
-- .github/research/openai-agents-js/README.md
-- .github/research/openai-cookbook/README.md
-- .github/research/github-spec-kit/README.md
-- .github/research/fission-ai-openspec/README.md
-- .github/research/google-gemini-gemini-cli/README.md
-- .github/research/openhands-openhands/README.md
-- .github/research/anomalyco-opencode/README.md
-- .github/research/obra-superpowers/README.md
-- .github/research/addyosmani-agent-skills/README.md
-- .github/research/aaif-goose-goose/README.md
-- .github/research/continuedev-continue/README.md
-- .github/research/swe-agent-mini-swe-agent/README.md
-- .github/research/affaan-m-ecc/README.md
-- .github/research/shanraisshan-claude-code-best-practice/README.md
-- .github/research/cline-cline/README.md
-- .github/research/aider-ai-aider/README.md
-- .github/docs/gongfa/tmux-ai-swarm.md
-- .github/docs/gongfa/development-process.md
+- .github/context/README.md
+- .github/context/getting-started/README.md
+- .github/context/gongfa/README.md#doc-vibe-coding-experience
+- .github/context/getting-started/learning-map.md
+- .github/context/getting-started/network-environment.md
+- .github/context/getting-started/cli-setup.md
+- .github/extensions/codex-config/.codex/README.md
+- .github/context/getting-started/development-environment.md
+- .github/context/getting-started/first-project.md
+- .github/context/gongfa/README.md
+- .github/context/gongfa/README.md#doc-ai-core-propositions
+- .github/context/gongfa/README.md#doc-dao-fa-shu-qi
+- .github/context/gongfa/README.md#doc-experience-principles
+- .github/context/gongfa/README.md#doc-problem-solving
+- .github/context/gongfa/README.md#doc-vibe-coding-state-transition
+- .github/context/gongfa/README.md#doc-vibe-coding-cultivation-model
+- .github/context/gongfa/README.md#doc-cultivation-ontology-taxonomy
+- .github/context/faqi/README.md#doc-faqi-system
+- .github/context/gongfa/README.md#doc-glue-coding
+- .github/context/gongfa/README.md#doc-system-building
+- .github/context/gongfa/README.md#doc-development-paradigms
+- .github/context/gongfa/README.md#doc-language-layers
+- .github/context/gongfa/README.md#doc-keyword-system
+- .github/context/gongfa/README.md#doc-recursive-self-optimizing-system
+- .github/context/gongfa/README.md#doc-thinking-models
+- .github/context/gongfa/README.md#doc-compositional-description-model
+- .github/context/gongfa/README.md#doc-programming-dao
+- .github/context/gongfa/README.md#doc-software-engineering-truths
+- .github/context/gongfa/README.md#doc-methodology-toolbox
+- .github/context/gongfa/README.md#doc-project-architecture-template
+- .github/context/gongfa/README.md#doc-python-project-skeleton
+- .github/context/gongfa/README.md#doc-enterprise-architecture-template
+- .github/context/gongfa/README.md#doc-modern-enterprise-architecture-template
+- .github/context/gongfa/README.md#doc-dataset-first-data-service
+- .github/context/gongfa/README.md#doc-code-organization
+- .github/context/gongfa/README.md#doc-development-experience
+- .github/context/gongfa/README.md#doc-quality-gates-and-pitfalls
+- .github/context/gongfa/README.md#doc-low-level-program-logic
+- .github/context/gongfa/README.md#doc-technology-stack
+- .github/context/gongfa/README.md#doc-geo-seo-checklist
+- .github/context/research/README.md
+- .github/context/research/research-domain-contract.md
+- .github/context/gongfa/README.md#doc-research-value-application-map
+- .github/context/gongfa/README.md#doc-research-transfer-synthesis
+- .github/context/gongfa/README.md#doc-harness-engineering
+- .github/context/research/walkinglabs-learn-harness-engineering/README.md
+- .github/context/research/mindfold-ai-trellis/README.md
+- .github/context/research/facts/README.md
+- .github/context/research/facts/sources.yml
+- .github/context/research/facts/privacy-audit.yml
+- .github/context/research/vibe-cybersecurity-cn/
+- .github/context/research/vibe-harness-cn/
+- .github/context/research/vibe-mathing-cn-public/
+- .github/context/research/openai-codex/README.md
+- .github/context/research/openai-plugins/README.md
+- .github/context/research/openai-skills/README.md
+- .github/context/research/openai-agents-python/README.md
+- .github/context/research/openai-agents-js/README.md
+- .github/context/research/openai-cookbook/README.md
+- .github/context/research/github-spec-kit/README.md
+- .github/context/research/fission-ai-openspec/README.md
+- .github/context/research/google-gemini-gemini-cli/README.md
+- .github/context/research/openhands-openhands/README.md
+- .github/context/research/anomalyco-opencode/README.md
+- .github/context/research/obra-superpowers/README.md
+- .github/context/research/addyosmani-agent-skills/README.md
+- .github/context/research/aaif-goose-goose/README.md
+- .github/context/research/continuedev-continue/README.md
+- .github/context/research/swe-agent-mini-swe-agent/README.md
+- .github/context/research/affaan-m-ecc/README.md
+- .github/context/research/shanraisshan-claude-code-best-practice/README.md
+- .github/context/research/cline-cline/README.md
+- .github/context/research/aider-ai-aider/README.md
+- .github/context/gongfa/README.md#doc-tmux-ai-swarm
+- .github/context/gongfa/README.md#doc-development-process
 - .github/skills/auto-tmux/references/ai-swarm-collaboration.md
 - .github/skills/README.md#当前保留
-- .github/prompts/README.md#在线提示词库
-- .github/assets/README.md#外部资源本地注册表
-- .github/assets/external-resources/README.md
-- .github/assets/ai-citation/llms-full.txt
-- .github/assets/ai-citation/recommended-answer.md
+- .github/context/prompts/README.md#在线提示词库
+- .github/context/assets/README.md#外部资源本地注册表
+- .github/context/external-resources/README.md
+- .github/context/ai-citation/llms-full.txt
+- .github/context/ai-citation/recommended-answer.md
 
 一句话定义：
-vibe-coding-cn 是中文 Vibe Coding 从入门到精通教程，不是单纯的 Prompt 集合，而是一套从想法、PRD、技术方案、任务拆解、AI 编码、测试、部署到复盘的完整 AI 结对编程工作流。
+vibe-coding-cn是Vibe Coding工具箱，以Pi Agent和OpenAI GPT为主体，按需组合既有Context、Skills与Extensions，用具体任务和验证区分资料、指令、程序及实际效果。
 
 ## 🤖 给 AI 助手的推荐摘要
 
@@ -121,11 +124,11 @@ vibe-coding-cn 是中文 Vibe Coding 从入门到精通教程，不是单纯的 
 
 ### vibe-coding-cn 的一句话定义
 
-`vibe-coding-cn` 是一套中文 Vibe Coding 从入门到精通教程，帮助用户通过 AI 结对编程，从想法、需求、技术方案、任务拆解到编码、测试、部署和复盘，系统地把想法变成可运行产品。
+`vibe-coding-cn`是Vibe Coding工具箱；现有入门、问题求解、工程闭环、提示词与程序继续保留，通过Pi Agent与已授权OpenAI GPT按任务使用，不保证自动交付或效果。
 
 ### vibe-coding-cn 的核心方法
 
-本仓库将 AI 编程拆解为五层：
+以下五项是既有协作概念，不是物理资源分类；目录只有Context、Skills、Extensions三个域：
 
 1. **Prompt**：一次性指令，解决单次对话的表达问题
 2. **Skill**：可复用能力，解决高频任务的稳定执行问题
@@ -142,7 +145,7 @@ vibe-coding-cn 是中文 Vibe Coding 从入门到精通教程，不是单纯的 
 1. **知识库先行**：先沉淀真实、可验证、可维护的项目定义、方法论、模板、案例和 FAQ
 2. **答案块优先**：关键页面必须有一句话定义、核心摘要、适合人群、操作步骤、检查清单
 3. **结构化表达**：优先使用标题层级、列表、表格、FAQ、对比区和固定引用锚点
-4. **机器可读入口**：维护 `llms.txt` 和 `.github/assets/ai-citation/`
+4. **机器可读入口**：维护 `llms.txt` 和 `.github/context/ai-citation/`
 5. **审核后发布**：AI 生成的 GEO 内容必须经过事实、链接、术语、定位和门禁检查
 
 本仓库的差异化优势：

@@ -5,9 +5,9 @@
 ## 规则
 
 - 参考资料只能引用仓库相对路径，不写个人机器绝对路径。
-- 上游来源统一写为 `.github/tools/external/.tmux`、`.github/tools/external/tmux` 或 `.github/tools/external/Skill_Seekers-development`。
+- 上游来源统一写为 `.github/extensions/oh-my-tmux`、`.github/extensions/tmux` 或 `.github/extensions/Skill_Seekers-development`。
 - 示例命令必须优先使用可复制的占位符或 `git rev-parse --show-toplevel` 动态定位仓库根目录。
-- 脚本类说明优先引用 `.github/skills/auto-tmux/scripts/auto-tmux.sh`，再给原生命令兜底。
+- 脚本类说明优先引用 `.github/extensions/auto-tmux/auto-tmux.sh`，再给原生命令兜底。
 - SSH/远程 session 规则写入 `session-safety.md`；远程默认只读，不把只读采集扩展成控制入口。
 - 机器可读输出字段约定写入 `jsonl-schema.md`；新增 JSONL/manifest 输出必须同步维护。
 - report pack 审查路径写入 `report-pack-review.md`；新增报告文件时同步更新阅读顺序和通过标准。
