@@ -7,9 +7,9 @@
 
 <a id="vibe-coding-指南"></a>
 
-# vibe-coding-cn：Vibe Coding工具箱
+# vibe-coding-cn：非严肃开发的 Vibe Coding 工具箱
 
-**以Pi Agent与OpenAI GPT为主体底座，将既有Context、Skills和Extensions组合成可验证的工作流。**
+**以Pi Agent与OpenAI GPT为实现基座，将既有可见层Context、Skills和Extensions组件合成为高可用系统。**
 
 <!--
   徽章区域 (BADGES)
