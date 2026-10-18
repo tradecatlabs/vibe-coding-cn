@@ -9,7 +9,7 @@
 
 # vibe-coding-cn：非严肃开发的 Vibe Coding 工具箱
 
-**以Pi Agent与OpenAI GPT为实现基座，将既有可见层Context、Skills和Extensions组件合成为高可用系统。**
+**以 Pi Agent 与 OpenAI GPT 为实现基座，整合并编排可见层中既有的 Context、Skills 与 Extensions 组件，构建高可用系统。**
 
 <!--
   徽章区域 (BADGES)
