@@ -1,3 +1,0 @@
-python-dotenv>=1.0.0
-watchdog>=3.0.0
-tiktoken>=0.5.0

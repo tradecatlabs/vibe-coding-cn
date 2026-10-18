@@ -65,9 +65,6 @@ output/
 
 # prompts-library generated exports
 .github/extensions/prompts-library/prompt_jsonl/
-.github/extensions/my-nvim/nvim-config/nvim
-.github/extensions/chat-vault/libs/external/btop-main/
-.github/extensions/chat-vault/monitoring/grafana/monitor-tui/
 
 libs/external/tmux
 libs/external/.tmux

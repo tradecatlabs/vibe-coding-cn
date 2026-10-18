@@ -21,7 +21,6 @@
   <a href=".github/context/gongfa/README.md#原文文集"><img src="https://img.shields.io/badge/功法-体系-slateblue?style=flat" alt="功法体系：思想、准则、方法与流程"></a>
   <a href=".github/context/research/README.md"><img src="https://img.shields.io/badge/研究-证据-teal?style=flat" alt="研究事实与证据"></a>
   <a href=".github/context/getting-started/learning-map.md"><img src="https://img.shields.io/badge/入门-教程-red?style=flat" alt="从零开始完整入门"></a>
-  <a href=".github/extensions/codex-config/.codex/README.md"><img src="https://img.shields.io/badge/Codex-配置-blue?style=flat" alt="Codex 配置一键安装"></a>
   <a href=".github/skills/README.md#当前保留"><img src="https://img.shields.io/badge/Skills-技能-forestgreen?style=flat" alt="skills技能大全"></a>
   <a href=".github/context/prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/提示词-表格-blue?style=flat" alt="提示词在线表格"></a>
   <a href=".github/context/assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/资源-索引-teal?style=flat" alt="外部资源本地注册表"></a>
@@ -119,7 +118,7 @@ pi --skill .github/skills
 4. 用Pi原生`/model`选择已授权的OpenAI模型。先明确任务和验收，再让Agent按需读取资料、使用相应Skill并显式调用现有程序。
 
 加载不是执行许可，也不是运行或效果测试。不要把`.github/extensions/`整体传给`-e`。
-既有[Codex配置](.github/extensions/codex-config/.codex/README.md)和[从零开始](.github/context/getting-started/README.md)仍保留，按其中具体工具选择使用，不是新造第二套主体运行时。
+[从零开始](.github/context/getting-started/README.md)保留具体CLI的入门资料；原Codex配置基线及安装脚本已移除，不再提供一键安装入口。
 
 ### 🚀 从零开始
 
@@ -142,6 +141,7 @@ pi --skill .github/skills
 ## 🗂️ 项目目录结构概览
 
 资源只有三个域；下面列出域边界与Context的全部9个集合，不展开各原生包内部源码。完整对象分别在三个域的README中导航。
+Extensions当前保留17个一级对象；用户点名的8项程序/配置/图文文件已移除，历史资料不代表当前可用入口。
 原Actions定义已移入Extensions保全，自动CI、打标签及欢迎流程已停用；本地`make test`保留。
 
 ```

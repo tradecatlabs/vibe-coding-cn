@@ -11,8 +11,7 @@ from lib import SOURCE_PREFIXES, is_research_repository_snapshot
 
 ROOT = Path(__file__).resolve().parents[1]
 SKIP_PARTS = {".git", ".history", "node_modules"}
-# 保留原折叠块检查对chat-vault的覆盖。
-SKIP_PREFIXES = tuple(path for path in SOURCE_PREFIXES if path != Path('.github/extensions/chat-vault'))
+SKIP_PREFIXES = SOURCE_PREFIXES
 TAG_PATTERN = re.compile(r"<details\b[^>]*>|</details>|<summary>.*?</summary>")
 
 

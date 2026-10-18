@@ -53,7 +53,7 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - .github/context/getting-started/learning-map.md：新手、开发者、团队、Prompt、Skill 和质量门禁的路线选择。
 - .github/context/getting-started/network-environment.md：OpenAI、GitHub、文档和依赖源访问配置。
 - .github/context/getting-started/cli-setup.md：保留的Codex/OpenCode具体配置资料；不替代工具箱当前Pi+GPT主体入口。
-- .github/extensions/codex-config/.codex/README.md：Codex CLI 全局配置基线，支持一键安装、自动备份和恢复。
+- 原Codex全局配置基线及安装/恢复脚本已按用户要求移除；CLI入门资料保留退役说明，不再承诺一键安装。
 - .github/context/getting-started/development-environment.md：让 Agent 主动配置开发依赖、编辑器建议和测试命令。
 - .github/context/getting-started/first-project.md：用本地待办清单走通需求、实现、运行、验收和 Git 保存。
 - .github/context/gongfa/README.md：按理解、求解、设计、实现、验证、转化和内容身份导航的统一功法文集。

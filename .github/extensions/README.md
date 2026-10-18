@@ -2,7 +2,7 @@
 
 ## 字多不看
 
-这里统一放原有程序、脚本、检查器及适配代码；每个既有程序或独立脚本在本域平铺，程序内部源码结构不拆散。
+这里保存现存程序、资料维护脚本与固定上游；当前17个一级对象在本域平铺，程序内部源码结构不拆散。
 这里的Extensions不是Pi原生扩展的同义词；不能把整个目录交给Pi的`-e`加载。
 
 ## 快速导航
@@ -13,14 +13,14 @@
 | [Claude官方Skills源](claude-official-skills/README.md) | 保留单一固定源码及独立初始化脚本；Skills域的16个官方入口已移除 |
 | [tmux](tmux/README)、[oh-my-tmux](oh-my-tmux/README.md) | 原固定源码与配置仓库；不是自动安装或启用 |
 | [提示词转换](prompts-library/README.md) | 原Excel、Markdown、JSONL转换程序 |
-| [Codex配置](codex-config/README.md) | 原配置与安装/恢复脚本；使用前核对副作用与凭据边界 |
-| [chat-vault](chat-vault/README.md) | 原聊天保存程序；不得随仓保存真实会话和数据库 |
-| [my-nvim](my-nvim/README.md)、[MCPlayerTransfer](MCPlayerTransfer/README.md)、[图片转PDF](XHS-image-to-PDF-conversion/README.md) | 保留原程序；文件归类不解除法器原有范围排除 |
-| [HTML工具原说明](html-tools-main.md) | `clean_epub_css.html`、`markdown-bianjiqi.html`、`task card generator.html`、`xhs graphic production - 1.0.html`、`xhs graphic production.html` |
+| [EPUB CSS清理](clean_epub_css.html) | 保留的HTML工具文件 |
+| [Markdown编辑](markdown-bianjiqi.html) | 保留的HTML工具文件 |
+| [任务卡生成](task%20card%20generator.html) | 保留的HTML工具文件 |
 | [原GitHub Actions定义](github-actions.md) | `github-actions-ci.yml`、`github-actions-labeler.yml`、`github-actions-welcome.yml`；已停用，仅保全原定义 |
 
 来自两个自有Skill的33个封装脚本已退役，不保留兼容壳；两个Skill改用原生工具与指令检查。
-引用原上游的`init_skill.py`独立入口继续保留；固定上游、公共检查/生成/测试脚本及共享库不在本批删除范围。
+引用原上游的`init_skill.py`独立入口继续保留。用户点名的chat-vault、my-nvim、codex-config、MCPlayerTransfer、XHS-image-to-PDF-conversion、两个xhs图文HTML及html-tools-main说明共8项已移除。
+当前引用与安装入口已清理；原文件在本地私有工件保全，固定来源初审仍保留历史意见。4个Gitlink、提示词转换器、3个其他HTML、4个资料维护入口和4份Actions历史文件均未移除。
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>

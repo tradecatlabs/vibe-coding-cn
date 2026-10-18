@@ -3,15 +3,9 @@
 .github/extensions/claude-official-skills/** linguist-vendored
 .github/extensions/tmux/** linguist-vendored
 .github/extensions/oh-my-tmux/** linguist-vendored
-.github/extensions/MCPlayerTransfer/** linguist-vendored
-.github/extensions/XHS-image-to-PDF-conversion/** linguist-vendored
-.github/extensions/my-nvim/** linguist-vendored
-.github/extensions/html-tools-main.md linguist-vendored
 .github/extensions/clean_epub_css.html linguist-vendored
 .github/extensions/markdown-bianjiqi.html linguist-vendored
 ".github/extensions/task card generator.html" linguist-vendored
-".github/extensions/xhs graphic production - 1.0.html" linguist-vendored
-".github/extensions/xhs graphic production.html" linguist-vendored
 
 # 原始捕获不规范化上游空白。
 .github/context/research/**/raw/*.raw.* -whitespace

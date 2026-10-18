@@ -6,10 +6,6 @@ VENDOR_SUBTREES = tuple(map(Path, (
     '.github/extensions/claude-official-skills',
     '.github/extensions/tmux',
     '.github/extensions/oh-my-tmux',
-    '.github/extensions/chat-vault',
-    '.github/extensions/MCPlayerTransfer',
-    '.github/extensions/XHS-image-to-PDF-conversion',
-    '.github/extensions/my-nvim',
 )))
 SOURCE_PREFIXES = VENDOR_SUBTREES + tuple(map(Path, (
     '.github/wiki',
@@ -17,7 +13,6 @@ SOURCE_PREFIXES = VENDOR_SUBTREES + tuple(map(Path, (
     '.github/context/research/vibe-harness-cn',
     '.github/context/research/vibe-mathing-cn-public',
     '.github/context/research/facts',
-    '.github/extensions/html-tools-main.md',
 )))
 
 

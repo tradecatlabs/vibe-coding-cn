@@ -263,39 +263,10 @@ $env:OPENAI_API_KEY | codex login --with-api-key
 
 ### 使用仓库配置基线
 
-本仓库已经提供可回滚的 Codex CLI 配置基线：
+原Codex配置基线及安装/恢复脚本已按用户要求从仓库移除，不再提供一键安装或高权限profile安装入口。
+本节保留原锚点用于说明退役状态；不要从旧正文或历史快照复制安装命令执行。
 
-- `.github/extensions/codex-config/.codex/config.toml`
-- `.github/extensions/codex-config/.codex/config.power.toml`
-- `.github/extensions/codex-config/.codex/AGENTS.safe.md`
-- `.github/extensions/codex-config/.codex/AGENTS.md`
-- `.github/extensions/codex-config/.codex/install.sh`
-
-推荐使用安全默认版。脚本会先备份你已有的 `~/.codex/config.toml` 和 `~/.codex/AGENTS.md`，再安装新配置：
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/tradecatlabs/vibe-coding-cn/main/.github/extensions/codex-config/.codex/install.sh | bash
-```
-
-如果已经 clone 本仓库，也可以在仓库根目录执行：
-
-```bash
-bash .github/extensions/codex-config/.codex/install.sh
-```
-
-需要完全可信本地环境下的高权限配置时，显式安装 `power` profile：
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/tradecatlabs/vibe-coding-cn/main/.github/extensions/codex-config/.codex/install.sh | bash -s -- --profile power
-```
-
-恢复最近一次安装前的配置：
-
-```bash
-bash ~/.codex/backups/vibe-coding-cn/LATEST/restore.sh
-```
-
-详细说明见：[Codex 配置基线](../../extensions/codex-config/.codex/README.md)。
+本次清理不会修改用户机器上已经安装的Codex配置或已有备份；需要调整或恢复时，应核对自己的配置与安装时保存的备份。
 
 ### 推荐启动方式
 

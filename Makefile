@@ -5,7 +5,7 @@ MARKDOWNLINT = npx --yes markdownlint-cli@0.48.0
 MAINT = .github
 EXT = $(MAINT)/extensions
 # 原tools/external各来源分别平铺；不能忽略整个Extensions，否则会漏掉自有工具。
-SOURCE_IGNORES = --ignore .history --ignore '$(EXT)/Skill_Seekers-development/**' --ignore '$(EXT)/claude-official-skills/**' --ignore '$(EXT)/tmux/**' --ignore '$(EXT)/oh-my-tmux/**' --ignore '$(EXT)/MCPlayerTransfer/**' --ignore '$(EXT)/XHS-image-to-PDF-conversion/**' --ignore '$(EXT)/my-nvim/**' --ignore '$(EXT)/html-tools-main.md' --ignore '.github/context/research/**/raw/repository/**' --ignore '.github/context/research/facts/**' --ignore '.github/context/research/vibe-cybersecurity-cn/**' --ignore '.github/context/research/vibe-harness-cn/**' --ignore '.github/context/research/vibe-mathing-cn-public/**'
+SOURCE_IGNORES = --ignore .history --ignore '$(EXT)/Skill_Seekers-development/**' --ignore '$(EXT)/claude-official-skills/**' --ignore '$(EXT)/tmux/**' --ignore '$(EXT)/oh-my-tmux/**' --ignore '.github/context/research/**/raw/repository/**' --ignore '.github/context/research/facts/**' --ignore '.github/context/research/vibe-cybersecurity-cn/**' --ignore '.github/context/research/vibe-harness-cn/**' --ignore '.github/context/research/vibe-mathing-cn-public/**'
 
 help:
 	@echo "Vibe Coding工具箱"

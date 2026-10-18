@@ -18,7 +18,6 @@ REQUIRED_DIRS = list(map(Path, (
     '.github/extensions', '.github/lib',
     '.github/skills', '.github/skills/auto-skill', '.github/skills/auto-skill/assets',
     '.github/skills/auto-skill/references', '.github/skills/auto-tmux',
-    '.github/extensions/chat-vault', '.github/extensions/codex-config', '.github/extensions/codex-config/.codex',
     '.github/extensions/prompts-library', '.github/extensions/prompts-library/docs',
     '.github/extensions/prompts-library/scripts',
 )))

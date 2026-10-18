@@ -13,8 +13,7 @@ from lib import SOURCE_PREFIXES, is_research_repository_snapshot
 
 ROOT = Path(__file__).resolve().parents[1]
 SKIP_PARTS = {".git", ".history", "node_modules"}
-# 原结构检查仍覆盖chat-vault文档，不因合并公共布局而扩大排除范围。
-SKIP_PREFIXES = tuple(path for path in SOURCE_PREFIXES if path != Path('.github/extensions/chat-vault'))
+SKIP_PREFIXES = SOURCE_PREFIXES
 ANCHOR_PATTERN = re.compile(r"<a\s+id=[\"']([^\"']+)[\"']")
 HEADING_PATTERN = re.compile(r"^(#{1,6})\s+(.+?)\s*#*\s*$")
 SUMMARY_LINE = "<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>"

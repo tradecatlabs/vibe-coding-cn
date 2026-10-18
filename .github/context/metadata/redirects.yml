@@ -95,7 +95,7 @@ redirects:
   - from: assets/repos/
     to: .github/extensions/
   - from: assets/config/
-    to: .github/extensions/codex-config/
+    to: .github/context/getting-started/cli-setup.md#使用仓库配置基线
   - from: docs/concepts/问题求解.md
     to: .github/context/gongfa/README.md#doc-problem-solving
   - from: docs/concepts/拼好码.md

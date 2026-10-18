@@ -1,2 +1,0 @@
-python pdf.py
-pause

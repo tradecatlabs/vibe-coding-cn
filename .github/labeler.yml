@@ -13,7 +13,6 @@ documentation:
       - '.github/**/*.md'
       - '.github/context/assets/README.md'
       - '.github/context/assets/AGENTS.md'
-      - '.github/extensions/codex-config/**/*.md'
       - '.github/context/**/*.md'
       - '.github/context/prompts/**/*.md'
       - '.github/skills/**/*.md'

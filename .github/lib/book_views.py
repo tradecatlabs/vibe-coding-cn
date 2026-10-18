@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 import posixpath
 import re
-from urllib.parse import unquote, urlsplit
+from urllib.parse import quote, unquote, urlsplit
 
 from markdown_it import MarkdownIt
 
@@ -86,7 +86,20 @@ def relocated(path, fragment=''):
     }
     for old, new in sorted(prefixes.items(), key=lambda item: len(item[0]), reverse=True):
         if path == old or path.startswith(old + '/'):
-            return new + path[len(old):], fragment
+            path = new + path[len(old):]
+            break
+    retired = (
+        '.github/extensions/chat-vault', '.github/extensions/my-nvim',
+        '.github/extensions/codex-config', '.github/extensions/MCPlayerTransfer',
+        '.github/extensions/XHS-image-to-PDF-conversion',
+        '.github/extensions/xhs graphic production - 1.0.html',
+        '.github/extensions/xhs graphic production.html', '.github/extensions/html-tools-main.md',
+    )
+    if any(path == prefix or path.startswith(prefix + '/') for prefix in retired):
+        # 原正文保持冻结字节；退役实现只链接到最后仍存在的已发布修订，不能冒充当前入口。
+        route = 'tree' if path in retired[:5] else 'blob'
+        return ('https://github.com/tradecatlabs/vibe-coding-cn/' + route
+                + '/44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58/' + quote(path, safe='/')), fragment
     return path, fragment
 
 
@@ -99,6 +112,8 @@ def reference(value, original_path, output_path):
     path, marker, fragment = unquote(value).partition('#')
     original = posixpath.normpath(posixpath.join(posixpath.dirname(original_path), path))
     target, anchor = relocated(original, fragment)
+    if urlsplit(target).scheme:
+        return target + ('#' + anchor if anchor else '')
     relative = os.path.relpath(target, posixpath.dirname(output_path)).replace(os.sep, '/')
     if target == output_path:
         relative = '' if anchor else Path(output_path).name
@@ -141,7 +156,8 @@ def source_keys(root, kind):
 
 def render_sources(root, kind):
     output = f'.github/context/{kind}/README.md'
-    sections = []
+    sections = ['> 文集保留历史正文；已退役实现的相关链接指向已发布的固定Git修订，'
+                '不是当前安装或运行入口。现存程序以Extensions清单为准。']
     for key in source_keys(root, kind):
         text = source_archive.read_text(Path(root) / key)
         tokens = MarkdownIt('commonmark').parse(text)

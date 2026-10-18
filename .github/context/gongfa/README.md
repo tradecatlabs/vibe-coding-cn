@@ -2361,6 +2361,8 @@ make test-gongfa-catalog
 
 ## 原文文集
 
+> 文集保留历史正文；已退役实现的相关链接指向已发布的固定Git修订，不是当前安装或运行入口。现存程序以Extensions清单为准。
+
 <a id="doc-cultivation-ontology-taxonomy"></a>
 ## 修仙领域统一本体与分类设计（V4 BFO 草案）
 
@@ -5057,7 +5059,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 **AI CLI 与模型服务**
 
 *   [**Codex CLI**](../getting-started/cli-setup.md): 本教程默认 AI CLI 路线，用于需求拆解、代码修改、命令执行、测试验证与 Git 迭代。
-*   [**Codex CLI 配置基线**](../../extensions/codex-config/.codex/README.md): 可通过一条命令安装到 `~/.codex/`，安装前自动备份，支持恢复。
+*   [**Codex CLI 配置基线**](https://github.com/tradecatlabs/vibe-coding-cn/blob/44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58/.github/extensions/codex-config/.codex/README.md): 可通过一条命令安装到 `~/.codex/`，安装前自动备份，支持恢复。
 *   [**Claude Opus 4.7**](https://claude.ai/new): 性能强大的 AI 模型，通过 Claude Code 等平台提供服务，并支持 CLI 和 IDE 插件。
 *   [**gpt-5.5 (xhigh)**](https://chatgpt.com/codex/): 适用于处理大型项目和复杂逻辑的 AI 模型，可通过 Codex CLI 等平台使用。
 *   [**Droid**](https://factory.ai/news/terminal-bench): 提供对 Claude Opus 4.7 等多种模型的 CLI 访问。
@@ -5127,7 +5129,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 *   [**Mermaid Chart**](https://www.mermaidchart.com/): 用于将文本描述转换为架构图、序列图等可视化图表。
 *   [**NotebookLM**](https://notebooklm.google.com/): 一款用于 AI 解读资料、音频和生成思维导图的工具。
 *   [**Zread**](https://zread.ai/): AI 驱动的 GitHub 仓库阅读工具，有助于快速理解项目代码。
-*   [**Chat Vault**](../../extensions/chat-vault): AI 聊天记录保存工具，支持 Codex/Kiro/Gemini/Claude CLI。
+*   [**Chat Vault**](https://github.com/tradecatlabs/vibe-coding-cn/tree/44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58/.github/extensions/chat-vault): AI 聊天记录保存工具，支持 Codex/Kiro/Gemini/Claude CLI。
 *   [**prompts-library 工具说明**](../../extensions/prompts-library): 支持 Excel 与 Markdown 格式互转，并支持将内部 JSONL Excel 按工作表拆分导出为 JSONL 目录。
 
 <a id="doc-dao-fa-shu-qi-外部教程社区与项目内部入口"></a>
@@ -5142,7 +5144,7 @@ AI 负责生成候选解，隔离上下文负责审查和优化候选解，事�
 *   [**Vibe Coding 经验**](#doc-vibe-coding-experience): 通用语言能力、人机分工、机器门禁和入门铁律。
 *   [**第一个项目**](../getting-started/first-project.md): 用本地待办清单走通需求、实现、运行、验收和 Git 保存。
 *   [**CLI 配置**](../getting-started/cli-setup.md): Codex CLI 默认路线与 OpenCode 备选路线。
-*   [**Codex 配置一键安装**](../../extensions/codex-config/.codex/README.md): 安全默认配置、高权限配置、自动备份和一键恢复。
+*   [**Codex 配置一键安装**](https://github.com/tradecatlabs/vibe-coding-cn/blob/44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58/.github/extensions/codex-config/.codex/README.md): 安全默认配置、高权限配置、自动备份和一键恢复。
 *   [**开发流程**](#doc-development-process): 默认任务推进顺序、质量门禁、版本控制和交付闭环。
 *   [**问题求解**](#doc-problem-solving): 用目标、现状、差距、标准、约束、对象和路径定义问题。
 *   [**Vibe Coding 状态转移闭环**](#doc-vibe-coding-state-transition): 用固定目标、可变策略和分层反馈统一理解 Vibe Coding。

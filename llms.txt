@@ -31,7 +31,6 @@ vibe-coding-cn是以Pi Agent与已授权OpenAI GPT为主体底座的Vibe Coding�
 - .github/context/getting-started/learning-map.md
 - .github/context/getting-started/network-environment.md
 - .github/context/getting-started/cli-setup.md
-- .github/extensions/codex-config/.codex/README.md
 - .github/context/getting-started/development-environment.md
 - .github/context/getting-started/first-project.md
 - .github/context/gongfa/README.md

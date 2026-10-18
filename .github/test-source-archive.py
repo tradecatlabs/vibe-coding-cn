@@ -99,6 +99,18 @@ class SourceArchiveTest(unittest.TestCase):
                  '\n[测试](../../extensions/test-source-archive.py)\n'
                  '\n[依赖](../../scripts/requirements-gongfa.txt)\n'
                  '\n[共享库](../../scripts/lib/README.md)\n')
+        retired_links = {
+            '../../tools/chat-vault/README.md': 'chat-vault/README.md',
+            '../../tools/external/my-nvim/README.md': 'my-nvim/README.md',
+            '../../tools/config/.codex/README.md': 'codex-config/.codex/README.md',
+            '../../tools/external/MCPlayerTransfer/README.md': 'MCPlayerTransfer/README.md',
+            '../../tools/external/XHS-image-to-PDF-conversion/README.md': 'XHS-image-to-PDF-conversion/README.md',
+            '../../tools/external/html-tools-main/xhs%20graphic%20production%20-%201.0.html': 'xhs%20graphic%20production%20-%201.0.html',
+            '../../tools/external/html-tools-main/xhs%20graphic%20production.html': 'xhs%20graphic%20production.html',
+            '../../tools/external/html-tools-main/README.md': 'html-tools-main.md',
+        }
+        for index, link in enumerate(retired_links):
+            text += f'\n[历史{index}]({link})\n'
         self.data['documents'] = {
             '.github/docs/gongfa/example.md': document(text.encode()),
             '.github/docs/gongfa/other.md': document('# 另一篇\n\n## 目标\n'.encode())}
@@ -116,6 +128,10 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertIn('[测试](../../test-source-archive.py)', rendered)
         self.assertIn('[依赖](../../requirements-gongfa.txt)', rendered)
         self.assertIn('[共享库](../../lib/README.md)', rendered)
+        for index, target in enumerate(retired_links.values()):
+            expected = ('https://github.com/tradecatlabs/vibe-coding-cn/blob/'
+                        '44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58/.github/extensions/' + target)
+            self.assertIn(f'[历史{index}]({expected})', rendered)
         self.assertIn('### 代码不是目录', rendered)
         self.assertNotIn('id="doc-example-代码不是目录"', rendered)
         self.assertEqual(rendered.count('id="doc-example-目标"'), 1)

@@ -73,6 +73,8 @@
 
 ## 原始说明
 
+> 文集保留历史正文；已退役实现的相关链接指向已发布的固定Git修订，不是当前安装或运行入口。现存程序以Extensions清单为准。
+
 <a id="doc-faqi-system"></a>
 ## Vibe Coding 法器体系说明
 
@@ -91,6 +93,7 @@
 <a id="doc-faqi-system-字多不看"></a>
 **字多不看**
 
+- 当前实现退役补充：用户点名的chat-vault、my-nvim、codex-config、MCPlayerTransfer、XHS-image-to-PDF-conversion、两个xhs图文HTML及html-tools-main说明共8项已移除。对应当前路径和实现绑定已清理；原来源、选区、初审、排除与重要性保留为历史，不表示Codex安装器或这些旧工具仍可使用。
 - 当前实现退役：原auto-skill模板生成/结构校验、Skill Seekers本地适配和auto-tmux命令封装已经从Extensions移除。原30项重要性及固定来源初审保留为历史，不表示这些旧程序当前可执行；两个Skill改用原生工具与规范指令，独立初始化器和锁定上游继续保留。
 - 方法和能力要求归功法；工具、软件入口及依赖类别按其真实所指另行整理，不因出现在同一依赖图就变成同一种对象。
 - 当前 30 项按重要性分为天阶 4 项、地阶 12 项、玄阶 9 项、黄阶 5 项；品级、名称、重要性范围与分级依据见[法器浏览表](#法器总表)，完整登记见[法器登记源](data.json)。
