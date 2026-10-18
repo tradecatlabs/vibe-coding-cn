@@ -1,6 +1,6 @@
 # `.github/`目录规则
 
-根`README.md`是唯一主页，本目录禁止新增`README.md`。
+根`README.md`是唯一主页，本目录禁止新增`README.md`。原首页贡献者名单与鸣谢集中保存在`.github/CONTRIBUTORS.md`，不在根README重复维护。
 
 ## 三个资源域
 

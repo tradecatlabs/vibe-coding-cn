@@ -32,6 +32,65 @@
 
 </div>
 
+<a id="ai-six-propositions"></a>
+<a id="ai-five-propositions"></a>
+<a id="ai-three-propositions"></a>
+<a id="六条核心命题"></a>
+
+<a id="root-tldr"></a>
+
+<details>
+<summary><strong>📌 字多不看</strong></summary>
+
+## 📌 字多不看
+
+- `vibe-coding-cn` 是Vibe Coding工具箱，主体底座为Pi Agent与OpenAI GPT；本次只整理已有资产，不增加业务Skill。
+- 新手先走 [从零开始完整入门](.github/context/getting-started/learning-map.md)：网络环境、CLI 配置、开发环境、第一个项目和 Git 闭环。
+- 方法正文统一在 [功法体系](.github/context/gongfa/README.md)：按问题选择思想、准则、模型与工程方法，不按旧栏目分库。
+- 资源统一为Context、Skills、Extensions；用现有测试、CI、脚本、类型、Schema与Git核对具体结果，不把分类当作运行或效果证明。
+- 需要直接使用资源时，进入 [提示词](.github/context/prompts/README.md#在线提示词库)、[Skills](.github/skills/README.md#当前保留) 和 [外部资源](.github/context/assets/README.md#外部资源本地注册表)。
+
+### 入口关系
+
+| 入口 | 你该怎么理解 |
+|:---|:---|
+| [Context](.github/context/README.md) | 既有资料按需读取；功法、法器、入门、研究、提示词、资源、引用、索引及附件 |
+| [Skills](.github/skills/README.md) | 所有既有Skill平铺治理；指令引用单一程序源，不自动执行 |
+| [Extensions](.github/extensions/README.md) | 所有既有程序、小工具、检查器与适配；不是Pi原生扩展盲扫目录 |
+| [Wiki](https://github.com/tukuaiai/vibe-coding-cn/wiki) | 独立导航仓库，不作为第四种资源或第二份正文源 |
+
+<a id="getting-started"></a>
+
+### ⚡ 1 分钟快速开始
+
+1. 准备当前系统可用的Pi Agent及已授权OpenAI GPT模型，通过Pi原生模型选择配置；不把ChatGPT订阅自动等同于API权限，也不在仓内保存凭据。
+2. 获取本仓并按锁定修订初始化既有来源：`git submodule update --init --recursive`。
+3. 阅读根`AGENTS.md`和当前任务所需Context；需要既有Skill时，从仓库根显式加载：
+
+```bash
+pi --skill .github/skills
+```
+
+4. 用Pi原生`/model`选择已授权的OpenAI模型。先明确任务和验收，再让Agent按需读取资料、使用相应Skill并显式调用现有程序。
+
+加载不是执行许可，也不是运行或效果测试。不要把`.github/extensions/`整体传给`-e`。
+[从零开始](.github/context/getting-started/README.md)保留具体CLI的入门资料；原Codex配置基线及安装脚本已移除，不再提供一键安装入口。
+
+### 🚀 从零开始
+
+完全新手？按顺序完成以下步骤：
+
+0. [从零开始完整入门](.github/context/getting-started/learning-map.md) - 按目标选择新手、开发者、团队、Prompt、Skill 或质量门禁路线
+1. [Vibe Coding 经验](.github/context/gongfa/README.md#doc-vibe-coding-experience) - 通用语言能力、人机分工、机器门禁和入门铁律
+2. [第一个项目](.github/context/getting-started/first-project.md) - 用本地待办清单走通需求、实现、验收和 Git 保存
+3. [问题求解](.github/context/gongfa/README.md#doc-problem-solving) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
+4. [Vibe Coding 状态转移闭环](.github/context/gongfa/README.md#doc-vibe-coding-state-transition) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding
+5. [拼好码](.github/context/gongfa/README.md#doc-glue-coding) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
+6. [Lambda演算](.github/context/gongfa/README.md#doc-lambda-calculus) - 天级上品；理解函数抽象、作用域、归约与组合边界
+7. [工程实践](.github/context/gongfa/README.md#doc-quality-gates-and-pitfalls) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
+
+</details>
+
 <a id="gongfa"></a>
 <!-- 其他方法历史定位收口到功法；六命题旧锚点仅作兼容，正文入口在功法体系。 -->
 <a id="dao-fa-shu-qi"></a>
@@ -71,74 +130,21 @@
 
 </details>
 
-<a id="ai-six-propositions"></a>
-<a id="ai-five-propositions"></a>
-<a id="ai-three-propositions"></a>
-<a id="六条核心命题"></a>
-
-<a id="root-tldr"></a>
-
 <details>
-<summary><strong>📌 字多不看</strong></summary>
+<summary><strong>📺 演示与产出</strong></summary>
 
-## 📌 字多不看
+## 📺 演示与产出
 
-- `vibe-coding-cn` 是Vibe Coding工具箱，主体底座为Pi Agent与OpenAI GPT；本次只整理已有资产，不增加业务Skill。
-- 新手先走 [从零开始完整入门](.github/context/getting-started/learning-map.md)：网络环境、CLI 配置、开发环境、第一个项目和 Git 闭环。
-- 方法正文统一在 [功法体系](.github/context/gongfa/README.md)：按问题选择思想、准则、模型与工程方法，不按旧栏目分库。
-- 资源统一为Context、Skills、Extensions；用现有测试、CI、脚本、类型、Schema与Git核对具体结果，不把分类当作运行或效果证明。
-- 需要直接使用资源时，进入 [提示词](.github/context/prompts/README.md#在线提示词库)、[Skills](.github/skills/README.md#当前保留) 和 [外部资源](.github/context/assets/README.md#外部资源本地注册表)。
+一句话：Vibe Coding = **规划驱动 + 上下文固定 + AI 结对执行**，让「从想法到可维护代码」变成一条可审计的流水线，而不是一团无法迭代的巨石文件。
 
-### 入口关系
-
-| 入口 | 你该怎么理解 |
-|:---|:---|
-| [Context](.github/context/README.md) | 既有资料按需读取；功法、法器、入门、研究、提示词、资源、引用、索引及附件 |
-| [Skills](.github/skills/README.md) | 所有既有Skill平铺治理；指令引用单一程序源，不自动执行 |
-| [Extensions](.github/extensions/README.md) | 所有既有程序、小工具、检查器与适配；不是Pi原生扩展盲扫目录 |
-| [Wiki](https://github.com/tukuaiai/vibe-coding-cn/wiki) | 独立导航仓库，不作为第四种资源或第二份正文源 |
-
-</details>
-
-<a id="getting-started"></a>
-
-<details>
-<summary><strong>⚡ 1 分钟快速开始</strong></summary>
-
-## ⚡ 1 分钟快速开始
-
-1. 准备当前系统可用的Pi Agent及已授权OpenAI GPT模型，通过Pi原生模型选择配置；不把ChatGPT订阅自动等同于API权限，也不在仓内保存凭据。
-2. 获取本仓并按锁定修订初始化既有来源：`git submodule update --init --recursive`。
-3. 阅读根`AGENTS.md`和当前任务所需Context；需要既有Skill时，从仓库根显式加载：
-
-```bash
-pi --skill .github/skills
-```
-
-4. 用Pi原生`/model`选择已授权的OpenAI模型。先明确任务和验收，再让Agent按需读取资料、使用相应Skill并显式调用现有程序。
-
-加载不是执行许可，也不是运行或效果测试。不要把`.github/extensions/`整体传给`-e`。
-[从零开始](.github/context/getting-started/README.md)保留具体CLI的入门资料；原Codex配置基线及安装脚本已移除，不再提供一键安装入口。
-
-### 🚀 从零开始
-
-完全新手？按顺序完成以下步骤：
-
-0. [从零开始完整入门](.github/context/getting-started/learning-map.md) - 按目标选择新手、开发者、团队、Prompt、Skill 或质量门禁路线
-1. [Vibe Coding 经验](.github/context/gongfa/README.md#doc-vibe-coding-experience) - 通用语言能力、人机分工、机器门禁和入门铁律
-2. [第一个项目](.github/context/getting-started/first-project.md) - 用本地待办清单走通需求、实现、验收和 Git 保存
-3. [问题求解](.github/context/gongfa/README.md#doc-problem-solving) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
-4. [Vibe Coding 状态转移闭环](.github/context/gongfa/README.md#doc-vibe-coding-state-transition) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding
-5. [拼好码](.github/context/gongfa/README.md#doc-glue-coding) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
-6. [Lambda演算](.github/context/gongfa/README.md#doc-lambda-calculus) - 天级上品；理解函数抽象、作用域、归约与组合边界
-7. [工程实践](.github/context/gongfa/README.md#doc-quality-gates-and-pitfalls) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
-
-</details>
+**你能得到**
+- 成体系的提示词工具链：[云端表格](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203) 提供系统提示词约束 AI 行为边界，编程提示词提供需求澄清、计划、执行的全链路脚本。
+- 闭环交付路径：需求 → 上下文文档 → 实施计划 → 分步实现 → 自测 → 进度记录，全程可复盘、可移交。
 
 <details>
 <summary><strong>🗂️ 项目目录结构概览</strong></summary>
 
-## 🗂️ 项目目录结构概览
+### 🗂️ 项目目录结构概览
 
 资源只有三个域；下面列出域边界与Context的全部9个集合，不展开各原生包内部源码。完整对象分别在三个域的README中导航。
 法器与功法的[工具解释模板v0](.github/context/assets/templates/tool-explanation-template-v0.md)已登记：两份原模板按序拼接，保留15项，不自行合并或新增栏目。
@@ -159,6 +165,7 @@ Extensions当前保留17个一级对象；用户点名的8项程序/配置/图�
 ├── .lychee.toml                 # 外部链接检查配置
 └── .github/                     # GitHub 配置与仓库内容
     ├── AGENTS.md                # 本目录规则、维护入口和平台边界
+    ├── CONTRIBUTORS.md          # 独立的项目贡献者名单与鸣谢
     ├── check-ai-citation.py     # AI引用校验
     ├── check-directory-docs.py  # 目录文档校验
     ├── check-doc-structure.py   # 文档结构校验
@@ -205,17 +212,6 @@ Extensions当前保留17个一级对象；用户点名的8项程序/配置/图�
 ```
 
 </details>
-
-<details>
-<summary><strong>📺 演示与产出</strong></summary>
-
-## 📺 演示与产出
-
-一句话：Vibe Coding = **规划驱动 + 上下文固定 + AI 结对执行**，让「从想法到可维护代码」变成一条可审计的流水线，而不是一团无法迭代的巨石文件。
-
-**你能得到**
-- 成体系的提示词工具链：[云端表格](https://docs.google.com/spreadsheets/d/1Ifk_dLF25ULSxcfGem1hXzJsi7_RBUNAki8SBCuvkJA/edit?gid=1254297203#gid=1254297203) 提供系统提示词约束 AI 行为边界，编程提示词提供需求澄清、计划、执行的全链路脚本。
-- 闭环交付路径：需求 → 上下文文档 → 实施计划 → 分步实现 → 自测 → 进度记录，全程可复盘、可移交。
 
 <details>
 <summary><strong>⚙️ 架构与工作流程</strong></summary>
@@ -340,49 +336,6 @@ gantt
 -   **Telegram 交流群**: [glue_coding](https://t.me/glue_coding)
 -   **Telegram 频道**: [tradecat_ai_channel](https://t.me/tradecat_ai_channel)
 -   **邮箱**: tukuai.ai@gmail.com
-
-</details>
-
-<a id="support"></a>
-
-<details>
-<summary><strong>✨ 支持项目</strong></summary>
-
-## ✨ 支持项目
-
-救救孩子，好人一生平安🙏🙏🙏
-
--   **Tron (TRC20)**: `TQtBXCSTwLFHjBqTS4rNUp7ufiGx51BRey`
--   **Ethereum (ERC20)**: `0xa396923a71ee7D9480b346a17dDeEb2c0C287BBC`
--   **Bitcoin**: `bc1plslluj3zq3snpnnczplu7ywf37h89dyudqua04pz4txwh8z5z5vsre7nlm`
-
-</details>
-
-<details>
-<summary><strong>✨ 贡献者</strong></summary>
-
-## ✨ 贡献者
-
-感谢所有为本项目做出贡献的开发者！
-
-<a href="https://github.com/tradecatlabs/vibe-coding-cn/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=EnzeD/vibe-coding" />
-</a>
-
-<p>特别鸣谢以下成员的宝贵贡献 (排名不分先后):<br/>
-<a href="https://x.com/shao__meng">@shao__meng</a> |
-<a href="https://x.com/0XBard_thomas">@0XBard_thomas</a> |
-<a href="https://x.com/Pluvio9yte">@Pluvio9yte</a> |
-<a href="https://x.com/xDinoDeer">@xDinoDeer</a> |
-<a href="https://x.com/geekbb">@geekbb</a> |
-<a href="https://x.com/GitHub_Daily">@GitHub_Daily</a> |
-<a href="https://x.com/BiteyeCN">@BiteyeCN</a> |
-<a href="https://x.com/CryptoJHK">@CryptoJHK</a> |
-<a href="https://github.com/tukuaiai">@tukuaiai</a> |
-<a href="https://github.com/tradecatlabs">@tradecatlabs</a> |
-<a href="https://github.com/apps/factory-droid">@factory-droid[bot]</a> |
-<a href="https://github.com/Scuner">@Scuner</a>
-</p>
 
 </details>
 

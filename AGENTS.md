@@ -16,6 +16,7 @@
 | `.github/skills/` | 仅保留auto-skill、auto-tmux两个自有指令入口，使用原生工具；原专属封装已退役 |
 | `.github/extensions/` | 当前17个一级对象：现存程序、资料维护入口、固定源码与历史定义；不是全部可由Pi的`-e`加载 |
 | `.github/ISSUE_TEMPLATE/`及固定配置 | 现有GitHub协作入口；本次仅退役workflows，不扩改其他平台配置 |
+| `.github/CONTRIBUTORS.md` | 根README迁出的贡献者名单与鸣谢；只维护独立文档 |
 | `.github/check-*.py`、`test-*.py`、4个平铺共享模块及requirements | 仓库维护层：11个校验、5个测试及唯一配套实现；不保留lib目录，不是用户侧Extensions工具 |
 | `Makefile` | 本地可重复命令入口 |
 | `.github/context/metadata/` | 导航、术语及历史路径映射；不重复登记或定义另一套本体 |
@@ -81,7 +82,8 @@ Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-ad
 
 ## 首页与文档约定
 
-- 不恢复被移除的AI推荐摘要、选择理由、维护验证、参与贡献或许可证正文块；AI两块仍维护于`llms.txt`，底层贡献与许可文件保留。
+- 根README不恢复AI推荐摘要、选择理由、维护验证、参与贡献或许可证正文块；AI两块仍维护于`llms.txt`，贡献者名单与鸣谢迁至`.github/CONTRIBUTORS.md`，许可文件保留。
+- 首页将“⚡ 1 分钟快速开始”并入“📌 字多不看”，其后依次展示“📚 功法体系”和“🧰 法器体系”；“🗂️ 项目目录结构概览”归入“📺 演示与产出”，“✨ 支持项目”区块不再保留。
 - 方法历史栏目与六命题仅保留旧锚点，正文进入功法；不恢复独立经验/哲学/道法术器分库或首页正文副本。
 - 功法、法器块使用同级原生details默认折叠。顶部徽章只保留独立目的地，不重复同一目标；路径与文案须反映真实新资源，不把JSON称为活动Excel。
 - `.github/lint_config.json`是格式规则；`.gitattributes`仅将原第三方来源及其对应HTML标为vendored，不标记整个Extensions。
