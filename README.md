@@ -325,25 +325,9 @@ gantt
 
 </details>
 
-<a id="contact"></a>
-
-<details>
-<summary><strong>📞 研究交流</strong></summary>
-
-## 📞 研究交流
-
--   **Twitter / X**: [123olp](https://x.com/123olp)
--   **Telegram 交流群**: [glue_coding](https://t.me/glue_coding)
--   **Telegram 频道**: [tradecat_ai_channel](https://t.me/tradecat_ai_channel)
--   **邮箱**: tukuai.ai@gmail.com
-
-</details>
-
 <div align="center">
 
 ---
-
-**如果这个项目对您有帮助，请考虑为其点亮一颗 Star ⭐！**
 
 ## Star History
 
@@ -356,4 +340,6 @@ gantt
 </a>
 
 [⬆ 返回顶部](#vibe-coding-指南)
+
+**如果这个项目对您有帮助，请考虑为其点亮一颗 Star ⭐！**
 </div>
