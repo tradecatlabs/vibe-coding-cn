@@ -61,7 +61,10 @@
 
 <a id="getting-started"></a>
 
-### ⚡ 1 分钟快速开始
+<details>
+<summary><strong>⚡ 1 分钟快速开始</strong></summary>
+
+## ⚡ 1 分钟快速开始
 
 1. 准备当前系统可用的Pi Agent及已授权OpenAI GPT模型，通过Pi原生模型选择配置；不把ChatGPT订阅自动等同于API权限，也不在仓内保存凭据。
 2. 获取本仓并按锁定修订初始化既有来源：`git submodule update --init --recursive`。
@@ -88,45 +91,6 @@ pi --skill .github/skills
 5. [拼好码](.github/context/gongfa/README.md#doc-glue-coding) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
 6. [Lambda演算](.github/context/gongfa/README.md#doc-lambda-calculus) - 天级上品；理解函数抽象、作用域、归约与组合边界
 7. [工程实践](.github/context/gongfa/README.md#doc-quality-gates-and-pitfalls) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
-
-</details>
-
-<a id="gongfa"></a>
-<!-- 其他方法历史定位收口到功法；六命题旧锚点仅作兼容，正文入口在功法体系。 -->
-<a id="dao-fa-shu-qi"></a>
-<a id="tools"></a>
-<a id="经验"></a>
-<a id="实验性方法"></a>
-<a id="道法术器"></a>
-<a id="修仙解释图层"></a>
-
-<details>
-<summary><strong>📚 功法体系</strong></summary>
-
-## 功法体系
-
-思想、准则、思维模型、方法与工程流程统一从[功法体系](.github/context/gongfa/README.md)按当前问题选用。
-原来的经验、道法术器、实验性方法和哲学保留为同一集合中的原始文集，不再作为首页独立栏目或分库入口。
-
-逐条身份、内容版本、冻结来源与已有意见查看[功法原始资料](.github/context/gongfa/data.json)及[生成总表](.github/context/gongfa/README.md#全部记录)。
-文集归并不等于全部内容已经逐条登记；已有初评也不等于正式效果验证。
-
-</details>
-
-<a id="faqi"></a>
-<details>
-<summary><strong>🧰 法器体系</strong></summary>
-
-## 法器体系
-
-法器总表整理 Vibe Coding 流程中使用或依赖的工具、可调用入口和依赖类别；固定来源实现、当前运行实例、候选对象与抽象类别分别记录。文件级许可线索仅作支持证据，不等于许可批准或再分发授权。
-
-- [法器体系说明](.github/context/faqi/README.md#doc-faqi-system)：分类边界、重要性分级、选用方式与固定 MCP 源码的副作用边界。
-- [法器重要性总表](.github/context/faqi/README.md#法器总表)：30 项的品级、名称、说明与记录状态。
-- [法器登记源](.github/context/faqi/data.json)：唯一可编辑数据源；生成总表不可手改。
-- [法器类型与正式效能规约](.github/context/gongfa/README.md#doc-cultivation-ontology-taxonomy-法器品级规约)：正式任务效果量表仍为草案。
-
-当前 30 项按 Vibe Coding 重要性暂分天阶 4 项、地阶 12 项、玄阶 9 项、黄阶 5 项。重要性不代表实现质量、运行可用性或效能验证；正式效能评级尚未完成。
 
 </details>
 
@@ -324,6 +288,49 @@ gantt
 ```
 
 </details>
+
+</details>
+
+<a id="gongfa"></a>
+<!-- 其他方法历史定位收口到功法；六命题旧锚点仅作兼容，正文入口在功法体系。 -->
+<a id="dao-fa-shu-qi"></a>
+<a id="tools"></a>
+<a id="经验"></a>
+<a id="实验性方法"></a>
+<a id="道法术器"></a>
+<a id="修仙解释图层"></a>
+
+<details>
+<summary><strong>📚 功法体系</strong></summary>
+
+## 功法体系
+
+思想、准则、思维模型、方法与工程流程统一从[功法体系](.github/context/gongfa/README.md)按当前问题选用。
+原来的经验、道法术器、实验性方法和哲学保留为同一集合中的原始文集，不再作为首页独立栏目或分库入口。
+
+逐条身份、内容版本、冻结来源与已有意见查看[功法原始资料](.github/context/gongfa/data.json)及[生成总表](.github/context/gongfa/README.md#全部记录)。
+文集归并不等于全部内容已经逐条登记；已有初评也不等于正式效果验证。
+
+</details>
+
+<a id="faqi"></a>
+<details>
+<summary><strong>🧰 法器体系</strong></summary>
+
+## 法器体系
+
+法器总表整理 Vibe Coding 流程中使用或依赖的工具、可调用入口和依赖类别；固定来源实现、当前运行实例、候选对象与抽象类别分别记录。文件级许可线索仅作支持证据，不等于许可批准或再分发授权。
+
+- [法器体系说明](.github/context/faqi/README.md#doc-faqi-system)：分类边界、重要性分级、选用方式与固定 MCP 源码的副作用边界。
+- [法器重要性总表](.github/context/faqi/README.md#法器总表)：30 项的品级、名称、说明与记录状态。
+- [法器登记源](.github/context/faqi/data.json)：唯一可编辑数据源；生成总表不可手改。
+- [法器类型与正式效能规约](.github/context/gongfa/README.md#doc-cultivation-ontology-taxonomy-法器品级规约)：正式任务效果量表仍为草案。
+
+当前 30 项按 Vibe Coding 重要性暂分天阶 4 项、地阶 12 项、玄阶 9 项、黄阶 5 项。重要性不代表实现质量、运行可用性或效能验证；正式效能评级尚未完成。
+
+</details>
+
+
 
 <div align="center">
 
