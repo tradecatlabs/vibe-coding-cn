@@ -1,8 +1,9 @@
-# Vibe Coding工具箱：保留现有质量入口，路径统一为三域。
+# Vibe Coding工具箱：资源分三域，测试与校验维护入口统一在.github。
 .PHONY: help lint check-links check-details test-details check-doc-structure check-directory-docs check-metadata check-gongfa test-gongfa sync-gongfa-catalog check-gongfa-catalog test-gongfa-catalog sync-faqi-catalog check-faqi-catalog test-faqi-catalog test-source-archive check-ai-citation check-external-resources check-research-raw check-source-facts check-wiki fetch-research-raw sync-doc-toc build test clean clean-deps
 
 MARKDOWNLINT = npx --yes markdownlint-cli@0.48.0
-EXT = .github/extensions
+MAINT = .github
+EXT = $(MAINT)/extensions
 # 原tools/external各来源分别平铺；不能忽略整个Extensions，否则会漏掉自有工具。
 SOURCE_IGNORES = --ignore .history --ignore '$(EXT)/Skill_Seekers-development/**' --ignore '$(EXT)/claude-official-skills/**' --ignore '$(EXT)/tmux/**' --ignore '$(EXT)/oh-my-tmux/**' --ignore '$(EXT)/MCPlayerTransfer/**' --ignore '$(EXT)/XHS-image-to-PDF-conversion/**' --ignore '$(EXT)/my-nvim/**' --ignore '$(EXT)/html-tools-main.md' --ignore '.github/context/research/**/raw/repository/**' --ignore '.github/context/research/facts/**' --ignore '.github/context/research/vibe-cybersecurity-cn/**' --ignore '.github/context/research/vibe-harness-cn/**' --ignore '.github/context/research/vibe-mathing-cn-public/**'
 
@@ -23,31 +24,31 @@ help:
 	@echo "clean / clean-deps：现有清理入口，有删除副作用；不作为验证命令执行"
 
 lint:
-	@$(MARKDOWNLINT) --config .github/lint_config.json $(SOURCE_IGNORES) '**/*.md' '.github/context/**/*.md' '.github/skills/**/*.md' '.github/extensions/**/*.md'
+	@$(MARKDOWNLINT) --config .github/lint_config.json $(SOURCE_IGNORES) '**/*.md' '.github/context/**/*.md' '.github/skills/**/*.md' '.github/extensions/**/*.md' '.github/lib/**/*.md'
 
 check-links:
-	@python3 $(EXT)/check-local-links.py
+	@python3 $(MAINT)/check-local-links.py
 
 check-details:
-	@python3 $(EXT)/check-markdown-details.py
+	@python3 $(MAINT)/check-markdown-details.py
 
 test-details:
-	@python3 $(EXT)/test-markdown-details.py
+	@python3 $(MAINT)/test-markdown-details.py
 
 check-doc-structure:
-	@python3 $(EXT)/check-doc-structure.py
+	@python3 $(MAINT)/check-doc-structure.py
 
 check-directory-docs:
-	@python3 $(EXT)/check-directory-docs.py
+	@python3 $(MAINT)/check-directory-docs.py
 
 check-metadata:
-	@python3 $(EXT)/check-metadata.py
+	@python3 $(MAINT)/check-metadata.py
 
 check-gongfa:
-	@python3 $(EXT)/check-gongfa.py
+	@python3 $(MAINT)/check-gongfa.py
 
 test-gongfa:
-	@python3 $(EXT)/test-gongfa.py
+	@python3 $(MAINT)/test-gongfa.py
 
 sync-gongfa-catalog:
 	@python3 $(EXT)/sync-gongfa-catalog.py --write
@@ -56,7 +57,7 @@ check-gongfa-catalog:
 	@python3 $(EXT)/sync-gongfa-catalog.py --check
 
 test-gongfa-catalog:
-	@python3 $(EXT)/test-gongfa-catalog.py
+	@python3 $(MAINT)/test-gongfa-catalog.py
 
 sync-faqi-catalog:
 	@python3 $(EXT)/sync-faqi-catalog.py --write
@@ -65,25 +66,25 @@ check-faqi-catalog:
 	@python3 $(EXT)/sync-faqi-catalog.py --check
 
 test-faqi-catalog:
-	@python3 $(EXT)/test-faqi-catalog.py
+	@python3 $(MAINT)/test-faqi-catalog.py
 
 test-source-archive:
-	@python3 $(EXT)/test-source-archive.py
+	@python3 $(MAINT)/test-source-archive.py
 
 check-ai-citation:
-	@python3 $(EXT)/check-ai-citation.py
+	@python3 $(MAINT)/check-ai-citation.py
 
 check-external-resources:
-	@python3 $(EXT)/check-external-resources.py
+	@python3 $(MAINT)/check-external-resources.py
 
 check-research-raw:
-	@python3 $(EXT)/check-research-raw.py
+	@python3 $(MAINT)/check-research-raw.py
 
 check-source-facts:
-	@python3 $(EXT)/check-source-facts.py
+	@python3 $(MAINT)/check-source-facts.py
 
 check-wiki:
-	@python3 $(EXT)/check-wiki.py --wiki-dir "$${WIKI_DIR:-/tmp/vibe-coding-cn.wiki}"
+	@python3 $(MAINT)/check-wiki.py --wiki-dir "$${WIKI_DIR:-/tmp/vibe-coding-cn.wiki}"
 	@$(MARKDOWNLINT) --config .github/lint_config.json "$${WIKI_DIR:-/tmp/vibe-coding-cn.wiki}"/*.md
 
 fetch-research-raw:

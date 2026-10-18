@@ -10,7 +10,7 @@ from pathlib import Path
 
 import yaml
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 FACTS_DIR = ROOT / '.github' / 'context' / 'research' / 'facts'
 MANIFEST = FACTS_DIR / "sources.yml"
 EXPECTED_IDS = {

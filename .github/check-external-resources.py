@@ -12,7 +12,7 @@ from urllib.parse import urlparse
 import yaml
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_DIR = ROOT / '.github' / 'context' / 'external-resources'
 MANIFEST = REGISTRY_DIR / "resources.yml"
 SCHEMA = REGISTRY_DIR / "schema.yml"

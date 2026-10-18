@@ -17,7 +17,7 @@ import xml.etree.ElementTree as ET
 from markdown_it import MarkdownIt
 from lib import source_archive
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 ARTIFACTS = None
 
 

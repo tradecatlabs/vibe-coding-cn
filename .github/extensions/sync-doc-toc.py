@@ -7,9 +7,11 @@ import re
 import sys
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[2]
+# 同一维护库由校验器和生成器共享，使用真实入口位置而非调用者cwd。
+sys.path.insert(0, str(ROOT / '.github'))
 from lib.taxonomy import doc_readmes_from_taxonomy
 
-ROOT = Path(__file__).resolve().parents[2]
 SUMMARY_LINE = "<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>"
 ANCHOR_PATTERN = re.compile(r"<a\s+id=[\"']([^\"']+)[\"']")
 HEADING_PATTERN = re.compile(r"^(#{2,6})\s+(.+?)\s*#*\s*$")

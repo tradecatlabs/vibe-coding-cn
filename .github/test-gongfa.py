@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """功法JSON协议的CLI集成测试；仅使用隔离文件，不联网、不实际评级。
 
-运行：python3 .github/extensions/test-gongfa.py --artifacts /tmp/gongfa-test-run
+运行：python3 .github/test-gongfa.py --artifacts /tmp/gongfa-test-run
 产物：每个输入与CLI输出、result.json和JUnit XML。需要功法检查器的依赖。
 """
 
@@ -18,7 +18,7 @@ import tempfile
 import unittest
 import xml.etree.ElementTree as ET
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 ARTIFACTS = None
 EXPECTED_INITIAL_IDS = {
     'gongfa-compositional-description', 'gongfa-network-effects', 'gongfa-occams-razor',
@@ -85,7 +85,7 @@ class GongfaProtocolTest(unittest.TestCase):
         return self.run_path(path, stem, extra_args)
 
     def run_path(self, path, stem, extra_args=()):
-        command = [sys.executable, str(ROOT / '.github/extensions/check-gongfa.py'),
+        command = [sys.executable, str(ROOT / '.github/check-gongfa.py'),
                    '--root', str(self.fixture), '--registry', str(path)] + list(extra_args)
         process = subprocess.run(command, capture_output=True, text=True, timeout=20)
         stem.with_suffix('.log').write_text(process.stdout + process.stderr)

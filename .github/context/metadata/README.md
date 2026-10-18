@@ -16,8 +16,8 @@
 
 ## 使用
 
-功法检查需要Python3.10+及`python3 -m pip install -r .github/extensions/requirements-gongfa.txt`。
-法器维护需要Python3.10+、Git与`.github/extensions/requirements-faqi.txt`；submodule须按父仓库固定指针初始化。
+功法检查需要Python3.10+及`python3 -m pip install -r .github/requirements-gongfa.txt`。
+法器维护需要Python3.10+、Git与`.github/requirements-faqi.txt`；submodule须按父仓库固定指针初始化。
 更新法器来源或实现内容须核身份/版本，保留旧Git修订及旧记录，不把同名、副本、声明版本或源码变化自动当能力升级。
 当前固定来源实现10项；依赖图另列12项具名对象/运行观察及8项由用户确认纳入的依赖类别，不与固定来源实现数相加冒称独立产品数。30项按对Vibe Coding的重要性分布于天4、地12、玄9、黄5；此轴表示依赖角色重要性，不表示效能。正式法器效果量表仍为draft且阈值未校准，正式效能评级仍为空。Chat Vault、MC Player Transfer、XHS ZIP→PDF、HTML工具五项及my-nvim共9项仍为明确范围排除；复入前须按各自记录重新核验。
 2026-10-15补充oh-my-tmux固定submodule pin `87dcd13a28aeb5f18baee630e24b3f5765ae3a4f`的S65 `.logo/LICENSE`支持来源，选区SHA与文件SHA相同；许可证文本引用可变的tmux `master/logo`路径。该仓内`.logo/logomark.svg`、`.logo/logomark+wordmark.svg`与固定tmux pin的`logo/tmux-logomark.svg`、`logo/tmux-logo.svg`字节不相同；这不排除衍生或其他来源关系，许可覆盖范围及整体再分发兼容性仍未核实。S65只记录线索，不代表许可批准或独立法律审查，`license_approved`仍为false。

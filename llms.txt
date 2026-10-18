@@ -8,7 +8,7 @@ vibe-coding-cn是以Pi Agent与已授权OpenAI GPT为主体底座的Vibe Coding�
 - 想建立 AI 编程标准流程的团队
 
 核心内容：
-- Context：既有规则、知识、原始数据与研究；Skills：仅保留auto-skill、auto-tmux两个原生工具/规范指令入口，官方引用及原33个自有封装脚本已退役；Extensions：其余程序与公共维护工具，锁定上游和独立初始化器保留。
+- Context：既有规则、知识、原始数据与研究；Skills：仅保留auto-skill、auto-tmux两个原生工具/规范指令入口，官方引用及原33个自有封装脚本已退役；Extensions：其余程序与4个资料维护入口，锁定上游和独立初始化器保留；项目校验、测试、共享库及配套依赖统一在.github根维护层。
 - 功法、法器各以data.json为单一维护源，README.md为生成阅读视图；历史Excel只作载荷保留，不自动注册、评级或验证效果。
 - 选工具问问题、设计、实现、代价，再比较替代、共性与前提；Lambda记号只表达接口组合，不实现解释器或证明程序性质。
 - Quick Start：1 分钟开始 Vibe Coding

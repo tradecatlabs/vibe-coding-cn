@@ -44,7 +44,7 @@ def main():
             for name, markdown, expected in CASES:
                 with self.subTest(case=name):
                     case = artifacts / name
-                    script = case / '.github/extensions/check-markdown-details.py'
+                    script = case / '.github/check-markdown-details.py'
                     script.parent.mkdir(parents=True)
                     script.write_bytes(source)
                     library = script.parent / 'lib'

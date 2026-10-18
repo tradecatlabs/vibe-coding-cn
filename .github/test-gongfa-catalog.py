@@ -16,7 +16,7 @@ import unittest
 
 from lib import source_archive
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / '.github/extensions/sync-gongfa-catalog.py'
 ARTIFACTS = None
 catalog = None

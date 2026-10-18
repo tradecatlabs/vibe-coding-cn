@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 RESEARCH_DIR = ROOT / '.github' / 'context' / 'research'
 REQUIRED_RAW_FILES = [
     "README.md",

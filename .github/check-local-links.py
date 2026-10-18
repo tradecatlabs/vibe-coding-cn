@@ -10,7 +10,7 @@ from pathlib import Path
 from lib import SOURCE_PREFIXES, is_research_repository_snapshot
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 SKIP_PARTS = {".git", ".history", "node_modules"}
 SKIP_PREFIXES = SOURCE_PREFIXES
 LINK_PATTERNS = [

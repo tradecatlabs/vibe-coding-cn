@@ -41,23 +41,21 @@
 
 ### 检查与维护入口
 
-| 范围 | 既有脚本与入口 |
-|---|---|
-| Markdown | `check-local-links.py`、`check-markdown-details.py`、`test-markdown-details.py`；`make lint/check-links/check-details/test-details` |
-| 结构与索引 | `check-doc-structure.py`、`check-directory-docs.py`、`check-metadata.py`、`sync-doc-toc.py` |
-| 功法 | `check-gongfa.py`、`sync-gongfa-catalog.py`、`test-gongfa.py`、`test-gongfa-catalog.py` |
-| 法器 | `sync-faqi-catalog.py`、`test-faqi-catalog.py` |
-| 引用与资源 | `check-ai-citation.py`、`check-external-resources.py` |
-| 研究与来源 | `check-research-raw.py`、`check-source-facts.py`、`fetch-research-raw.py` |
-| Wiki | `check-wiki.py`；`make check-wiki WIKI_DIR=<本地checkout>` |
-| 迁移数据契约 | `test-source-archive.py`；`lib/source_archive.py`读取原始载荷，`lib/book_views.py`生成阅读导航 |
+11个校验脚本和5个测试脚本已迁至仓库根的`.github/`，不再列作Extensions工具；入口与职责见[维护规则](../AGENTS.md#维护脚本与共享库)。
+本域保留以下4个资料维护入口，本次没有扩大迁移范围：
 
-迁移新增的资料读取与测试是上述既有总表的必要维护支撑，不是新业务工具。
-共享库职责见[lib](lib/README.md)。完整本地检查为`make test`；它不执行被审第三方程序，也不证明运行、效果或许可。
+| 范围 | 本域保留入口 |
+|---|---|
+| 文档目录 | [sync-doc-toc.py](sync-doc-toc.py) |
+| 功法视图 | [sync-gongfa-catalog.py](sync-gongfa-catalog.py) |
+| 法器视图 | [sync-faqi-catalog.py](sync-faqi-catalog.py) |
+| 研究事实获取 | [fetch-research-raw.py](fetch-research-raw.py)；需要明确联网授权 |
+
+共享实现只有一份，职责见[仓库维护库](../lib/README.md)。完整本地检查仍为`make test`，不执行被审第三方程序，也不证明运行、效果或许可。
 
 ### 依赖与执行边界
 
-检查器使用Python3；功法、法器和资料档案维护使用Python3.10+，依赖分别见[requirements-gongfa.txt](requirements-gongfa.txt)、[requirements-faqi.txt](requirements-faqi.txt)。
+检查器使用Python3；功法、法器和资料档案维护使用Python3.10+，共享依赖在`.github/`，见[requirements-gongfa.txt](../requirements-gongfa.txt)、[requirements-faqi.txt](../requirements-faqi.txt)。
 复用jsonschema、PyYAML、tabulate、markdown-it-py；转换程序另用其原有requirements。Markdown lint使用Node22+及固定的markdownlint-cli0.48.0。
 
 来源树保持原Git修订。安装、抓取、上传、发布、修改配置和终端注入均有独立副作用，不因移入本域得到授权。

@@ -20,7 +20,7 @@ from bs4 import BeautifulSoup
 from jsonschema import Draft202012Validator, FormatChecker
 from jsonschema.exceptions import SchemaError
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 TIERS = [('huang', '黄阶'), ('xuan', '玄阶'), ('di', '地阶'), ('tian', '天阶')]
 LEVELS = [('initial', '初级'), ('intermediate', '中级'), ('advanced', '高级')]
 PROFILE_FIELDS = ('problem', 'mechanism', 'conditions', 'limitations', 'expected_outcomes', 'questions')

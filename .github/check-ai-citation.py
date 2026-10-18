@@ -10,7 +10,7 @@ from pathlib import Path
 
 from lib.taxonomy import taxonomy_document_paths
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 AI_ENTRY_FILES = [Path('llms.txt'), Path('.github/context/ai-citation/llms-full.txt')]
 AI_MARKDOWN_DIR = Path('.github/context/ai-citation')
 CANONICAL_REPOSITORY = "tradecatlabs/vibe-coding-cn"

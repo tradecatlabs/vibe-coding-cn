@@ -8,14 +8,14 @@ from pathlib import Path
 from lib import SOURCE_PREFIXES, VENDOR_SUBTREES, is_research_repository_snapshot
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_DIRS = list(map(Path, (
     '.github', '.github/ISSUE_TEMPLATE',
     '.github/context', '.github/context/assets', '.github/context/ai-citation',
     '.github/context/assets/datasets', '.github/context/assets/images', '.github/context/assets/templates',
     '.github/context/getting-started', '.github/context/gongfa', '.github/context/faqi',
     '.github/context/research', '.github/context/metadata', '.github/context/prompts',
-    '.github/extensions', '.github/extensions/lib',
+    '.github/extensions', '.github/lib',
     '.github/skills', '.github/skills/auto-skill', '.github/skills/auto-skill/assets',
     '.github/skills/auto-skill/references', '.github/skills/auto-tmux',
     '.github/extensions/chat-vault', '.github/extensions/codex-config', '.github/extensions/codex-config/.codex',

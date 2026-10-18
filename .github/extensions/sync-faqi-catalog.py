@@ -15,12 +15,13 @@ import sys
 import tempfile
 from urllib.parse import urlsplit
 
+ROOT = Path(__file__).resolve().parents[2]
+# 生成入口仍在Extensions；从唯一.github维护库导入，不复制实现或依赖当前cwd。
+sys.path.insert(0, str(ROOT / '.github'))
 from lib import source_archive, book_views
 import jsonschema
 from tabulate import tabulate
 import yaml
-
-ROOT = Path(__file__).resolve().parents[2]
 MARKER = "<!-- generated: sync-faqi-catalog.py -->"
 MAX_BYTES = 2 * 1024 * 1024
 # 固定来源仍指向迁移前提交；这些目录的新路径需回映到该提交中的原路径。

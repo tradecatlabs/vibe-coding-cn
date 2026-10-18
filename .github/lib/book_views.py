@@ -24,6 +24,11 @@ def chapter_id(path):
 
 def relocated(path, fragment=''):
     """把历史导航转成当前阅读地址；冻结原文字节不改写。"""
+    name = posixpath.basename(path)
+    if posixpath.dirname(path) in {'.github/scripts', '.github/extensions'} and (
+            (name.startswith(('check-', 'test-')) and name.endswith('.py'))
+            or name in {'requirements-gongfa.txt', 'requirements-faqi.txt'}):
+        return '.github/' + name, fragment
     aliases = {
         '.github/metadata/faqi/README.md': '.github/context/faqi/README.md',
         '.github/metadata/faqi/AGENTS.md': '.github/context/AGENTS.md',
@@ -64,6 +69,8 @@ def relocated(path, fragment=''):
         '.github/metadata': '.github/context/metadata',
         '.github/research': '.github/context/research',
         '.github/prompts': '.github/context/prompts',
+        '.github/scripts/lib': '.github/lib',
+        '.github/extensions/lib': '.github/lib',
         '.github/scripts': '.github/extensions',
         '.github/skills/auto-skill/scripts': '.github/extensions',
         '.github/skills/auto-tmux/scripts': '.github/extensions/auto-tmux',

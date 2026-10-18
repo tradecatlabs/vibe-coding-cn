@@ -9,7 +9,7 @@ import urllib.parse
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 METADATA_FILES = [
     Path('.github/context/metadata/taxonomy.yml'),
     Path('.github/context/metadata/redirects.yml'),
@@ -104,7 +104,7 @@ def validate_redirects(path: Path) -> list[str]:
     errors: list[str] = []
     seen_from: dict[str, int] = {}
 
-    for lineno, source, target in redirect_pairs(path):
+    for lineno, source, target in redirect_pairs(ROOT / path):
         normalized_source = source.rstrip("/")
         normalized_target = target.split("#", 1)[0].rstrip("/")
 

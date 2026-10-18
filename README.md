@@ -157,7 +157,26 @@ pi --skill .github/skills
 ├── .gitignore                   # Git 忽略规则
 ├── .lychee.toml                 # 外部链接检查配置
 └── .github/                     # GitHub 配置与仓库内容
-    ├── AGENTS.md                # 本目录规则和平台边界
+    ├── AGENTS.md                # 本目录规则、维护入口和平台边界
+    ├── check-ai-citation.py     # AI引用校验
+    ├── check-directory-docs.py  # 目录文档校验
+    ├── check-doc-structure.py   # 文档结构校验
+    ├── check-external-resources.py # 外部资源校验
+    ├── check-gongfa.py          # 功法协议校验
+    ├── check-local-links.py     # 内链与锚点校验
+    ├── check-markdown-details.py # 折叠块与围栏校验
+    ├── check-metadata.py        # 机器导航校验
+    ├── check-research-raw.py    # 研究原始事实校验
+    ├── check-source-facts.py    # 源事实镜像校验
+    ├── check-wiki.py            # 独立Wiki校验
+    ├── test-faqi-catalog.py     # 法器维护测试
+    ├── test-gongfa-catalog.py   # 功法总表测试
+    ├── test-gongfa.py           # 功法协议测试
+    ├── test-markdown-details.py # 折叠块与围栏测试
+    ├── test-source-archive.py   # 原始资料档案测试
+    ├── lib/                    # 维护入口唯一共享库
+    ├── requirements-faqi.txt    # 法器维护依赖
+    ├── requirements-gongfa.txt  # 功法维护依赖
     ├── context/                 # 按需读取的既有资料
     │   ├── README.md            # 资料导航
     │   ├── AGENTS.md            # 原始数据、来源与信任规则

@@ -2,7 +2,7 @@
 """从唯一JSON原始资料生成Markdown总表、词表及文集；默认只检查，不评级或写登记。
 
 运行：make sync-gongfa-catalog / make check-gongfa-catalog。
-依赖：requirements-gongfa.txt；复用原登记校验器与成熟Markdown解析器。
+依赖：.github/requirements-gongfa.txt；复用原登记校验器与成熟Markdown解析器。
 """
 import argparse
 from collections import Counter, defaultdict
@@ -14,10 +14,12 @@ from pathlib import Path
 import re
 import sys
 import tempfile
+ROOT = Path(__file__).resolve().parents[2]
+# 生成入口仍在Extensions；共用维护库与校验器已归.github，不保留旧位置副本。
+sys.path.insert(0, str(ROOT / '.github'))
 from lib import source_archive, book_views
 
-ROOT = Path(__file__).resolve().parents[2]
-spec = importlib.util.spec_from_file_location('gongfa_protocol', Path(__file__).with_name('check-gongfa.py'))
+spec = importlib.util.spec_from_file_location('gongfa_protocol', ROOT / '.github/check-gongfa.py')
 protocol = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(protocol)
 MARKER = '<!-- generated: sync-gongfa-catalog.py -->'
