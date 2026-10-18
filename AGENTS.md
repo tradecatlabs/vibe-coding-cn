@@ -6,6 +6,7 @@
 - 只组织现有资产；三域为`.github/context/`、`.github/skills/`、`.github/extensions/`，域内对象平铺。包内部源码、资料集合与共享实现不另算新的一级资源分类。
 - 根`README.md`是唯一主页；`.github/README.md`禁止创建。`llms.txt`是AI短入口；大资料按需读取，不全部注入系统上下文。
 - 读者按问题、设计、实现、代价及比较/共性/适用条件理解工具；Lambda记号只辅助表达输入输出与组合，不证明纯函数、正确、确定或终止。
+- 已登记的工具解释模板为`.github/context/assets/templates/tool-explanation-template-v0.md`：两份原模板按序拼接15项，仅第一项改为“工具的名称”。不要用AI自拟V1/V2替代；新增建议不自动纳入v0，不借登记模板改变原条目、来源或评级。
 
 ## 目录职责
 
