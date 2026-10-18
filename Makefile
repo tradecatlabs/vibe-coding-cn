@@ -24,7 +24,7 @@ help:
 	@echo "clean / clean-deps：现有清理入口，有删除副作用；不作为验证命令执行"
 
 lint:
-	@$(MARKDOWNLINT) --config .github/lint_config.json $(SOURCE_IGNORES) '**/*.md' '.github/context/**/*.md' '.github/skills/**/*.md' '.github/extensions/**/*.md' '.github/lib/**/*.md'
+	@$(MARKDOWNLINT) --config .github/lint_config.json $(SOURCE_IGNORES) '**/*.md' '.github/context/**/*.md' '.github/skills/**/*.md' '.github/extensions/**/*.md' '.github/*.md'
 
 check-links:
 	@python3 $(MAINT)/check-local-links.py

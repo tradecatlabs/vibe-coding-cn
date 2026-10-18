@@ -8,8 +8,8 @@ import re
 import sys
 from pathlib import Path
 
-from lib.taxonomy import doc_readmes_from_taxonomy, taxonomy_sections
-from lib import SOURCE_PREFIXES, is_research_repository_snapshot
+from taxonomy import doc_readmes_from_taxonomy, taxonomy_sections
+from source_boundaries import SOURCE_PREFIXES, is_research_repository_snapshot
 
 ROOT = Path(__file__).resolve().parents[1]
 SKIP_PARTS = {".git", ".history", "node_modules"}

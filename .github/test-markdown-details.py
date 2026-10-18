@@ -31,7 +31,7 @@ def main():
     args = parser.parse_args()
     source = args.checker.resolve(strict=True).read_bytes()
     # 隔离CLI保留其真实公共布局依赖，不复制或改写被测围栏逻辑。
-    layout = Path(__file__).with_name('lib').joinpath('__init__.py').read_bytes()
+    layout = Path(__file__).with_name('source_boundaries.py').read_bytes()
     if args.artifacts:
         artifacts = args.artifacts.resolve()
         artifacts.mkdir(parents=True, exist_ok=False)
@@ -47,9 +47,7 @@ def main():
                     script = case / '.github/check-markdown-details.py'
                     script.parent.mkdir(parents=True)
                     script.write_bytes(source)
-                    library = script.parent / 'lib'
-                    library.mkdir()
-                    (library / '__init__.py').write_bytes(layout)
+                    script.with_name('source_boundaries.py').write_bytes(layout)
                     (case / "README.md").write_text(markdown, encoding="utf-8")
                     command = [sys.executable, str(script)]
                     completed = subprocess.run(command, capture_output=True, text=True, timeout=10)

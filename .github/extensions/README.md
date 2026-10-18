@@ -51,7 +51,7 @@
 | 法器视图 | [sync-faqi-catalog.py](sync-faqi-catalog.py) |
 | 研究事实获取 | [fetch-research-raw.py](fetch-research-raw.py)；需要明确联网授权 |
 
-共享实现只有一份，职责见[仓库维护库](../lib/README.md)。完整本地检查仍为`make test`，不执行被审第三方程序，也不证明运行、效果或许可。
+共享实现只有一份，4个Python模块直接平铺到`.github/`；职责与原库规则见[维护说明](../AGENTS.md#维护脚本与共享库)，不再保留lib目录。完整本地检查仍为`make test`，不执行被审第三方程序，也不证明运行、效果或许可。
 
 ### 依赖与执行边界
 

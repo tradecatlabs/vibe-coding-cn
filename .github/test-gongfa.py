@@ -10,7 +10,7 @@ import copy
 import hashlib
 import json
 from pathlib import Path
-from lib import source_archive
+import source_archive
 import shutil
 import subprocess
 import sys

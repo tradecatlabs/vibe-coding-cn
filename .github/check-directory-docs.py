@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
-from lib import SOURCE_PREFIXES, VENDOR_SUBTREES, is_research_repository_snapshot
+from source_boundaries import SOURCE_PREFIXES, VENDOR_SUBTREES, is_research_repository_snapshot
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,14 +15,14 @@ REQUIRED_DIRS = list(map(Path, (
     '.github/context/assets/datasets', '.github/context/assets/images', '.github/context/assets/templates',
     '.github/context/getting-started', '.github/context/gongfa', '.github/context/faqi',
     '.github/context/research', '.github/context/metadata', '.github/context/prompts',
-    '.github/extensions', '.github/lib',
+    '.github/extensions',
     '.github/skills', '.github/skills/auto-skill', '.github/skills/auto-skill/assets',
     '.github/skills/auto-skill/references', '.github/skills/auto-tmux',
     '.github/extensions/prompts-library', '.github/extensions/prompts-library/docs',
     '.github/extensions/prompts-library/scripts',
 )))
 COLLECTION_DIRS = {Path('.github/context/gongfa'), Path('.github/context/faqi')}
-RETIRED_DIRS = (Path('.github/workflows'),)
+RETIRED_DIRS = (Path('.github/workflows'), Path('.github/lib'))
 README_OPTIONAL_DIRS = {
     # GitHub repository pages can surface `.github/README.md` as an overview file.
     # Keep the root project README authoritative and use `.github/AGENTS.md` only.

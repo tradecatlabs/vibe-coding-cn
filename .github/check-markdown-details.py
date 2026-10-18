@@ -6,7 +6,7 @@ from __future__ import annotations
 import re
 import sys
 from pathlib import Path
-from lib import SOURCE_PREFIXES, is_research_repository_snapshot
+from source_boundaries import SOURCE_PREFIXES, is_research_repository_snapshot
 
 
 ROOT = Path(__file__).resolve().parents[1]

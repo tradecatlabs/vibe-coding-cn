@@ -15,9 +15,10 @@ import re
 import sys
 import tempfile
 ROOT = Path(__file__).resolve().parents[2]
-# 生成入口仍在Extensions；共用维护库与校验器已归.github，不保留旧位置副本。
+# 生成入口仍在Extensions；共用模块与校验器直接平铺于.github，不保留旧包副本。
 sys.path.insert(0, str(ROOT / '.github'))
-from lib import source_archive, book_views
+import source_archive
+import book_views
 
 spec = importlib.util.spec_from_file_location('gongfa_protocol', ROOT / '.github/check-gongfa.py')
 protocol = importlib.util.module_from_spec(spec)

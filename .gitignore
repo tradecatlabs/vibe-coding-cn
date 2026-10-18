@@ -12,9 +12,6 @@ eggs/
 .eggs/
 lib/
 lib64/
-!.github/lib/
-!.github/lib/**
-.github/lib/__pycache__/
 parts/
 sdist/
 var/

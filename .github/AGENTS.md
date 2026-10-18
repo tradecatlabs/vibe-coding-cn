@@ -23,8 +23,24 @@
 | 数据与来源 | `check-gongfa.py`、`check-external-resources.py`、`check-research-raw.py`、`check-source-facts.py` |
 | Wiki | `check-wiki.py`；仍只校验明确给定的本地checkout |
 | 测试 | `test-gongfa.py`、`test-gongfa-catalog.py`、`test-faqi-catalog.py`、`test-markdown-details.py`、`test-source-archive.py` |
-| 共享实现 | `lib/`；供同级入口与原资料生成器共同使用，不重复复制 |
+| 共享实现 | `source_boundaries.py`、`taxonomy.py`、`source_archive.py`、`book_views.py`直接平铺；供同级入口与原资料生成器共用，不保留lib包 |
 | 依赖 | `requirements-gongfa.txt`、`requirements-faqi.txt` |
+
+### 平铺共享模块
+
+| 模块 | 职责 |
+|---|---|
+| [source_boundaries.py](source_boundaries.py) | 原lib/__init__中的第三方、镜像与研究缓存边界；保留各检查器范围差异 |
+| [taxonomy.py](taxonomy.py) | 读取原轻量YAML子集中的分类与文档导航 |
+| [source_archive.py](source_archive.py) | 严格读取JSON载荷，核对字节、模式、SHA、当前位置、当前绑定与隔离复原 |
+| [book_views.py](book_views.py) | 复用既有链接规则及markdown-it-py，生成文集锚点、历史导航及目录，代码示例不改写 |
+
+- 4个模块只保存一份，直接导入；不保留`.github/lib/`目录、软链接、__init__兼容包或新的运行框架。
+- 公共函数小而稳定，历史来源/选区与当前实现绑定不能混同；不增加模型客户端或独立注册框架。
+- 导入阶段不写文件、不联网、不执行目标程序；book_views只加载本仓链接检查器的规则函数。
+- source_archive在显式调用时读取资料；export_documents只向调用方指定的新隔离目录复原，拒绝越界、软链接及敏感路径，不恢复旧运行目录。
+- 复用标准库、原YAML子集、既有slug规则及markdown-it-py，不自研解析器；原字节、控制字符、读取预算、归属和并行变化保护不变。
+- 修改后先运行相关协议及`make test-source-archive`；最终完整`make test`按根AGENTS执行，不因路径调整削弱断言。
 
 3个sync与1个fetch入口仍在Extensions，本次没有迁移它们。保持原校验范围和断言，同步Makefile、真实ROOT、导入与隔离夹具；从其他cwd调用不能误判仓库根。
 归档Actions定义保持历史字节，不能当作仍有效的新路径调用；迁移Python脚本不恢复自动CI。

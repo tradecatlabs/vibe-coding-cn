@@ -3,7 +3,7 @@
 ## 目标与边界
 
 - 以Pi Agent和已授权的OpenAI GPT作为主体底座，复用原生工具、资源加载与模型选择；不新造Agent、模型客户端、Lambda解释器或资源管理框架。
-- 只组织现有资产；三域为`.github/context/`、`.github/skills/`、`.github/extensions/`，域内对象平铺。包内部源码、资料集合、共用lib不再算新的一级资源分类。
+- 只组织现有资产；三域为`.github/context/`、`.github/skills/`、`.github/extensions/`，域内对象平铺。包内部源码、资料集合与共享实现不另算新的一级资源分类。
 - 根`README.md`是唯一主页；`.github/README.md`禁止创建。`llms.txt`是AI短入口；大资料按需读取，不全部注入系统上下文。
 - 读者按问题、设计、实现、代价及比较/共性/适用条件理解工具；Lambda记号只辅助表达输入输出与组合，不证明纯函数、正确、确定或终止。
 
@@ -15,7 +15,7 @@
 | `.github/skills/` | 仅保留auto-skill、auto-tmux两个自有指令入口，使用原生工具；原专属封装已退役 |
 | `.github/extensions/` | 当前17个一级对象：现存程序、资料维护入口、固定源码与历史定义；不是全部可由Pi的`-e`加载 |
 | `.github/ISSUE_TEMPLATE/`及固定配置 | 现有GitHub协作入口；本次仅退役workflows，不扩改其他平台配置 |
-| `.github/check-*.py`、`test-*.py`、`lib/`及requirements | 仓库维护层：11个校验、5个测试及唯一配套实现，不是用户侧Extensions工具 |
+| `.github/check-*.py`、`test-*.py`、4个平铺共享模块及requirements | 仓库维护层：11个校验、5个测试及唯一配套实现；不保留lib目录，不是用户侧Extensions工具 |
 | `Makefile` | 本地可重复命令入口 |
 | `.github/context/metadata/` | 导航、术语及历史路径映射；不重复登记或定义另一套本体 |
 | `.github/context/ai-citation/` | 当前AI引用语料与llms-full |
@@ -71,7 +71,7 @@ Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-ad
 - 先写或选中真实行为测试取得RED，再修根因并原样取得GREEN；不删除测试、弱化断言或用新目标自证。
 - 开发中只跑相关测试，最终版本只运行一次完整`make test`，保存命令、实际HEAD、退出码、日志和可复验工件。
 - Markdown lint固定`markdownlint-cli@0.48.0`；功法/法器共享依赖为`.github/requirements-gongfa.txt`与`.github/requirements-faqi.txt`，转换器使用原包requirements。
-- 校验/测试入口及共享lib统一在`.github/`，不保留Extensions旧位置副本；3个sync与1个fetch入口本轮仍在Extensions，调用方必须使用实际新位置，不依赖当前cwd。
+- 校验/测试及source_boundaries、taxonomy、source_archive、book_views四个共享模块直接平铺在`.github/`，不保留lib包或旧位置副本；职责和原库规则合并到`.github/AGENTS.md`。3个sync与1个fetch入口仍在Extensions，按真实位置导入，不依赖当前cwd。
 - 三域入口、入门README及两本文集维持标题→字多不看→快速导航→完整细粒度目录→使用方式→正文；维护规则留AGENTS。
 - 功法/法器生成视图的目录由其生成器维护；`sync-doc-toc.py`不能二次编辑生成文件。文档结构与来源SHA检查仍保留。
 - 改Mermaid须真实渲染。首页2025Q4–2026Q2甘特图是历史规划，不冒充当前进度或新承诺。

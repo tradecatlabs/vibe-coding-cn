@@ -7,7 +7,7 @@ import re
 import sys
 import urllib.parse
 from pathlib import Path
-from lib import SOURCE_PREFIXES, is_research_repository_snapshot
+from source_boundaries import SOURCE_PREFIXES, is_research_repository_snapshot
 
 
 ROOT = Path(__file__).resolve().parents[1]

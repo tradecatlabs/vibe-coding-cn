@@ -9,10 +9,10 @@ from urllib.parse import quote, unquote, urlsplit
 
 from markdown_it import MarkdownIt
 
-from . import source_archive
+import source_archive
 
 # 复用现有链接检查器的GitHub标题语义，不维护另一种slug算法。
-_spec = importlib.util.spec_from_file_location('book_link_rules', Path(__file__).resolve().parents[1] / 'check-local-links.py')
+_spec = importlib.util.spec_from_file_location('book_link_rules', Path(__file__).resolve().parent / 'check-local-links.py')
 _links = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_links)
 slug = _links.github_slug
@@ -29,6 +29,11 @@ def relocated(path, fragment=''):
             (name.startswith(('check-', 'test-')) and name.endswith('.py'))
             or name in {'requirements-gongfa.txt', 'requirements-faqi.txt'}):
         return '.github/' + name, fragment
+    if posixpath.dirname(path) in {'.github/lib', '.github/extensions/lib', '.github/scripts/lib'}:
+        if name in {'README.md', 'AGENTS.md'}:
+            return '.github/AGENTS.md', '维护脚本与共享库'
+        if name == '__init__.py':
+            return '.github/source_boundaries.py', fragment
     aliases = {
         '.github/metadata/faqi/README.md': '.github/context/faqi/README.md',
         '.github/metadata/faqi/AGENTS.md': '.github/context/AGENTS.md',
@@ -69,8 +74,9 @@ def relocated(path, fragment=''):
         '.github/metadata': '.github/context/metadata',
         '.github/research': '.github/context/research',
         '.github/prompts': '.github/context/prompts',
-        '.github/scripts/lib': '.github/lib',
-        '.github/extensions/lib': '.github/lib',
+        '.github/scripts/lib': '.github',
+        '.github/extensions/lib': '.github',
+        '.github/lib': '.github',
         '.github/scripts': '.github/extensions',
         '.github/skills/auto-skill/scripts': '.github/extensions',
         '.github/skills/auto-tmux/scripts': '.github/extensions/auto-tmux',

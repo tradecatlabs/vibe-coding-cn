@@ -15,7 +15,7 @@ import re
 import sys
 from urllib.parse import urlsplit
 
-from lib import source_archive
+import source_archive
 from bs4 import BeautifulSoup
 from jsonschema import Draft202012Validator, FormatChecker
 from jsonschema.exceptions import SchemaError

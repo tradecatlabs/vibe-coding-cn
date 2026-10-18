@@ -174,7 +174,10 @@ Extensions当前保留17个一级对象；用户点名的8项程序/配置/图�
     ├── test-gongfa.py           # 功法协议测试
     ├── test-markdown-details.py # 折叠块与围栏测试
     ├── test-source-archive.py   # 原始资料档案测试
-    ├── lib/                    # 维护入口唯一共享库
+    ├── source_boundaries.py    # 共享第三方与来源检查边界
+    ├── taxonomy.py             # 共享分类与文档导航读取
+    ├── source_archive.py       # 原始资料读取与完整性保护
+    ├── book_views.py           # 文集阅读视图与历史导航
     ├── requirements-faqi.txt    # 法器维护依赖
     ├── requirements-gongfa.txt  # 功法维护依赖
     ├── context/                 # 按需读取的既有资料

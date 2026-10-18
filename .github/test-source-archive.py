@@ -10,7 +10,7 @@ import tempfile
 import unittest
 
 ARTIFACTS = Path(tempfile.mkdtemp(prefix='source-archive-test-'))
-MODULE = Path(__file__).with_name('lib') / 'source_archive.py'
+MODULE = Path(__file__).with_name('source_archive.py')
 spec = importlib.util.spec_from_file_location('source_archive_test_subject', MODULE)
 archive = importlib.util.module_from_spec(spec)
 
@@ -93,12 +93,16 @@ class SourceArchiveTest(unittest.TestCase):
         with self.assertRaises(ValueError): archive.read_bytes(self.root / old)
 
     def test_book_view_namespaces_headings_links_and_preserves_code(self):
-        from lib import book_views
+        import book_views
         text = '# 示例\n\n<a id="目标"></a>\n## 目标\n\n[另一篇](other.md#目标)\n\n[other.md](other.md)\n\n[other[0..4]复核](other.md)\n\n````text\n### 代码不是目录\n```\n````\n'
         text += ('\n[校验](../../scripts/check-gongfa.py)\n'
                  '\n[测试](../../extensions/test-source-archive.py)\n'
                  '\n[依赖](../../scripts/requirements-gongfa.txt)\n'
-                 '\n[共享库](../../scripts/lib/README.md)\n')
+                 '\n[共享库](../../scripts/lib/README.md)\n'
+                 '\n[资料读取](../../scripts/lib/source_archive.py)\n'
+                 '\n[视图模块](../../extensions/lib/book_views.py)\n'
+                 '\n[分类模块](../../lib/taxonomy.py)\n'
+                 '\n[资源边界](../../lib/__init__.py)\n')
         retired_links = {
             '../../tools/chat-vault/README.md': 'chat-vault/README.md',
             '../../tools/external/my-nvim/README.md': 'my-nvim/README.md',
@@ -127,7 +131,11 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertIn('[校验](../../check-gongfa.py)', rendered)
         self.assertIn('[测试](../../test-source-archive.py)', rendered)
         self.assertIn('[依赖](../../requirements-gongfa.txt)', rendered)
-        self.assertIn('[共享库](../../lib/README.md)', rendered)
+        self.assertIn('[共享库](../../AGENTS.md#维护脚本与共享库)', rendered)
+        self.assertIn('[资料读取](../../source_archive.py)', rendered)
+        self.assertIn('[视图模块](../../book_views.py)', rendered)
+        self.assertIn('[分类模块](../../taxonomy.py)', rendered)
+        self.assertIn('[资源边界](../../source_boundaries.py)', rendered)
         for index, target in enumerate(retired_links.values()):
             expected = ('https://github.com/tradecatlabs/vibe-coding-cn/blob/'
                         '44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58/.github/extensions/' + target)
