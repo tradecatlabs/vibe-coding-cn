@@ -244,22 +244,35 @@ def notes(rows, binding):
             f"品级是编者前瞻；来源候选不自动注册；当前正式评级记录数：{binding['registry_assessments']}。同名未合并。"]
 
 
-def render_markdown(rows, binding):
-    counts = Counter(row['entry_status'] for row in rows)
-    provisional = sum(row['grading_status'] == 'provisional' for row in rows)
-    undetermined = sum(row['grading_status'] == 'undetermined' for row in rows)
-    lines = [MARKER, '# 功法总表', '', '## 字多不看', '',
-             f"- 共**{len(rows)}条内容记录**；已登记{counts['已登记']}条，登记库候选{counts['登记库候选']}条，未入登记库的来源候选{counts['未入登记库']}条。不是独立功法去重后的总数。",
-             f'- 原前瞻初评{provisional}条，暂不可判{undetermined}条；不是正式效果评级，亦不把缺测默认补成黄阶。',
-             '- 每条内容记录独立使用一张v0表格；候选仍是候选，解释视图不构成登记、评级或效果证明。',
-             '- [data.json](data.json)是唯一原始数据源，保留限定原文、历史选区、意见、源文件及附件；本文件仅为生成阅读视图。', '',
-             '输入绑定：`' + digest(binding['registry_sha256'] + binding['candidate_sha256']) + '`。', '',
-             '## 快速导航', '', '- [全部记录](#全部记录)', '- [原文文集](#原文文集)', '- [品级词表](#品级词表)', '',
-             '<details>', '<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>', '',
-             '- [全部记录](#全部记录)', '- [原文文集](#原文文集)', '- [品级词表](#品级词表)', '- [数据与边界](#数据与边界)',
-             '<!-- source-toc -->', '', '</details>', '', '## 使用方式', '',
-             '按对象身份查阅独立v0表格与原文；修改data.json后运行make sync-gongfa-catalog，不手改生成视图。', '',
-             '## 正文', '', '## 全部记录', '']
+TIERS = (('tian', '天阶'), ('di', '地阶'), ('xuan', '玄阶'), ('huang', '黄阶'))
+VIEW_NAMES = ('README.md', *(tier + '.md' for tier, _label in TIERS))
+MAX_VIEW_BYTES = 4 * 1024 * 1024
+
+
+def source_navigation(root):
+    keys = book_views.source_keys(root, 'gongfa')
+    toc = book_views.source_toc(root, 'gongfa') if keys else []
+    anchors = []
+    for line in toc:
+        match = re.search(r'\]\(#([^)]+)\)', line)
+        if match and match.group(1) not in anchors:
+            anchors.append(match.group(1))
+    document_anchors = {book_views.chapter_id(key) for key in keys}
+    lines = ['## 原文文集', '',
+             '冻结原文、字节摘要和选择器保存在唯一资料源[data.json](data.json)的`documents`中；本页只保留历史入口，不重复展开原文。', '',
+             '### 原始文档', '']
+    for key in keys:
+        anchor = book_views.chapter_id(key)
+        lines.extend((f'<a id="{escape(anchor, quote=True)}"></a>',
+                      f'- `{escape(key)}`：原始字节与摘要见[data.json](data.json)'))
+    legacy = [anchor for anchor in anchors if anchor not in document_anchors]
+    if legacy:
+        lines.extend(('', '<!-- 兼容已发布阅读视图中的章节锚点 -->'))
+        lines.extend(f'<a id="{escape(anchor, quote=True)}"></a>' for anchor in legacy)
+    return lines
+
+
+def validate_rows(rows):
     keys = [row['key'] for row in rows]
     require(len(set(keys)) == len(keys), '功法对象身份重复')
     for row in rows:
@@ -267,19 +280,102 @@ def render_markdown(rows, binding):
         require(isinstance(fields, list) and len(fields) == 15, '对象缺少完整v0说明：' + row['key'])
         require([field.get('name') for field in fields] == list(tool_explanations.FIELD_NAMES), '对象v0栏目不符：' + row['key'])
         require(fields[0]['content'] == row['name'], '对象v0名称与登记身份不符：' + row['key'])
-        lines.append(tool_explanations.render_index_link(row['key'], row['name']))
-    lines.append('')
-    for row in rows:
-        lines.append(tool_explanations.render_object(row['key'], row['name'], row['v0_fields']))
-    lines += ['## 更新与核对', '', '```bash', 'make sync-gongfa-catalog', 'make check-gongfa-catalog', 'make test-gongfa-catalog', '```', '',
-              '不要手改生成视图；原始材料和候选来源仍保留版本、独立摘要与意见，不自动登记或重新评级。',
+        for value in row.values():
+            if isinstance(value, str):
+                require(len(value.encode('utf-8')) <= MAX_VIEW_BYTES, '字段超过阅读视图预算')
+                require(not re.search(r'[\x00-\x08\x0b-\x0c\x0e-\x1f]', value), '阅读视图不接受控制字符')
+
+
+def render_markdown(rows, binding, root=None):
+    counts = Counter(row['entry_status'] for row in rows)
+    provisional = sum(row['grading_status'] == 'provisional' for row in rows)
+    undetermined = sum(row['grading_status'] == 'undetermined' for row in rows)
+    by_tier = {tier: [row for row in rows if row['grade_id'] and row['grade_id'].startswith(tier + '-')]
+               for tier, _label in TIERS}
+    pending = [row for row in rows if row['grade_id'] is None]
+    lines = [MARKER, '# 功法总表', '', '## 字多不看', '',
+             f"- 共**{len(rows)}条内容记录**；已登记{counts['已登记']}条，登记库候选{counts['登记库候选']}条，未入登记库的来源候选{counts['未入登记库']}条。不是独立功法去重后的总数。",
+             f'- 原前瞻初评{provisional}条，暂不可判{undetermined}条；不是正式效果评级，亦不把缺测默认补成黄阶。',
+             '- 候选仍是候选；分阶文件只搬运现有记录，不构成登记、评级或效果证明。',
+             '- [data.json](data.json)是唯一原始数据源，冻结原文、历史选区、意见、来源和附件均保留其中。', '',
+             '输入绑定：`' + digest(binding['registry_sha256'] + binding['candidate_sha256']) + '`。', '',
+             '## 快速导航', '']
+    for tier, label in TIERS:
+        lines.append(f'- [{label}（{len(by_tier[tier])}条）]({tier}.md)')
+    lines += [f'- [未明确品级（{len(pending)}条；不归属任何阶）](huang.md#未明确品级不归属黄阶)',
+              '- [全部记录导航](#全部记录)', '- [原文文集](#原文文集)', '- [品级词表](#品级词表)', '',
+              '<details>', '<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>', '',
+              '- [全部记录](#全部记录)', '- [原文文集](#原文文集)', '- [品级词表](#品级词表)', '- [数据与边界](#数据与边界)',
+              '<!-- source-toc -->', '', '</details>', '', '## 使用方式', '',
+              '按阶打开对应文档；对象身份、字段说明与表格都由data.json和已登记模板生成。修改资料后运行make sync-gongfa-catalog，不手改阅读视图。', '',
+              '## 正文', '', '## 全部记录', '']
+    for tier, label in TIERS:
+        lines.extend((f'### {label}', ''))
+        for row in by_tier[tier]:
+            anchor = tool_explanations.anchor_for(row['key'])
+            lines.extend((f'<a id="{anchor}"></a>',
+                          tool_explanations.render_file_link(row['key'], row['name'], tier + '.md') + f' — {grade_label(row)}'))
+        if tier == 'huang' and pending:
+            lines.extend(('', '### 未明确品级（不归属任何阶）', ''))
+            for row in pending:
+                anchor = tool_explanations.anchor_for(row['key'])
+                lines.extend((f'<a id="{anchor}"></a>',
+                              tool_explanations.render_file_link(row['key'], row['name'], 'huang.md') + f' — {grade_label(row)}'))
+        lines.append('')
+    if root is not None:
+        lines += source_navigation(root)
+    registry, _summary = protocol.validate(root, root / '.github/metadata/gongfa/registry.json') if root and source_archive.bundles(root) else (None, None)
+    grades = protocol.render_grades(registry) if registry else ''
+    lines += ['## 品级词表', '', grades, '', '## 数据与边界', '',
+              '本工具只维护data.json原始资料和分阶阅读视图。原文、登记、候选与历史意见不因目录迁移而重评；历史附件保留为JSON原始载荷，不再维护第二个活动视图。', '',
+              '## 更新与核对', '', '```bash', 'make sync-gongfa-catalog', 'make check-gongfa-catalog', 'make test-gongfa-catalog', '```', '',
               '内容新版本不继承旧初评；同对象不同情境的活动意见并列保留，不按最高档或最新时间裁决。',
               '本视图不执行方法，不证明原著、许可证、独立语义批准或真实效果；未审材料不混入。', '']
+    text = '\n'.join(lines)
+    source_toc = book_views.source_toc(root, 'gongfa') if root is not None else []
+    return text.replace('<!-- source-toc -->', '\n'.join(source_toc))
+
+
+def render_grade_markdown(rows, tier):
+    label = dict(TIERS)[tier]
+    tier_rows = [row for row in rows if row['grade_id'] and row['grade_id'].startswith(tier + '-')]
+    pending = [row for row in rows if row['grade_id'] is None] if tier == 'huang' else []
+    lines = [MARKER, f'# 功法总表：{label}', '',
+             f'本页包含{len(tier_rows)}条{label}记录。品级沿用已有前瞻初评，不是正式效果评级。',
+             '- [返回总索引](README.md)；其他阶：[天阶](tian.md)、[地阶](di.md)、[玄阶](xuan.md)、[黄阶](huang.md)。', '',
+             f'## {label}记录', '']
+    for row in tier_rows:
+        lines.append(tool_explanations.render_index_link(row['key'], row['name']))
+    lines.append('')
+    for row in tier_rows:
+        lines.append(tool_explanations.render_object(row['key'], row['name'], row['v0_fields']))
+    if pending:
+        lines.extend(('## 未明确品级（不归属黄阶）', '',
+                      f'以下{len(pending)}条没有可沿用的明确品级；仅为减少文件数暂置本页附录，不视为黄阶。', ''))
+        for row in pending:
+            lines.append(tool_explanations.render_index_link(row['key'], row['name']))
+        lines.append('')
+        for row in pending:
+            lines.append(tool_explanations.render_object(row['key'], row['name'], row['v0_fields']))
     return '\n'.join(lines)
 
 
+def render_views(root, rows, binding, explanations=None):
+    if explanations is not None:
+        names = {row['key']: row['name'] for row in rows}
+        fields_by_key = tool_explanations.validate_payload(root, explanations, names)
+        for row in rows:
+            row['v0_fields'] = fields_by_key[row['key']]
+    validate_rows(rows)
+    views = {'README.md': render_markdown(rows, binding, root)}
+    views.update({tier + '.md': render_grade_markdown(rows, tier) for tier, _label in TIERS})
+    require(sum(len(text.encode('utf-8')) for text in views.values()) <= MAX_VIEW_BYTES,
+            '分阶阅读视图合计超过4MiB预算')
+    return views
+
+
 def view_path(root, name='README.md'):
-    require(name == 'README.md', '活动阅读视图仅README.md')
+    require(name in VIEW_NAMES, '未知功法阅读视图文件名')
     nominal = root.resolve() / '.github/context/gongfa' / name
     require(not nominal.is_symlink(), '生成目标不能是软链接')
     path = protocol.safe_path(root.resolve(), '.github/context/gongfa/' + name)
@@ -287,50 +383,42 @@ def view_path(root, name='README.md'):
     return path
 
 
-def render_view(root, rows, binding, explanations=None):
-    if explanations is not None:
-        names = {row['key']: row['name'] for row in rows}
-        fields_by_key = tool_explanations.validate_payload(root, explanations, names)
-        for row in rows:
-            row['v0_fields'] = fields_by_key[row['key']]
-    for row in rows:
-        for value in row.values():
-            if isinstance(value, str):
-                require(len(value.encode('utf-8')) <= 4 * 1024 * 1024, '字段超过阅读视图预算')
-                require(not re.search(r'[\x00-\x08\x0b-\x0c\x0e-\x1f]', value), '阅读视图不接受控制字符')
-    text = render_markdown(rows, binding)
-    text = text.replace('<!-- source-toc -->', '\n'.join(book_views.source_toc(root, 'gongfa')))
-    registry, _summary = protocol.validate(root, root / '.github/metadata/gongfa/registry.json') if source_archive.bundles(root) else (None, None)
-    grades = protocol.render_grades(registry) if registry else ''
-    text += '\n## 品级词表\n\n' + grades + '\n\n## 数据与边界\n\n'
-    text += '本工具只维护data.json原始资料和本阅读视图。原文、登记、候选与历史意见不因目录迁移而重评。历史附件保留为JSON原始载荷，不再维护第二个活动视图。\n\n'
-    text += '## 原文文集\n\n' + book_views.render_sources(root, 'gongfa')
-    raw = text.encode('utf-8')
-    require(len(raw) <= 4 * 1024 * 1024, '阅读视图超过4MiB预算')
-    return raw
+def output_bytes(root, rows, binding, explanations=None):
+    views = render_views(root, rows, binding, explanations)
+    return {view_path(root, name): text.encode('utf-8') for name, text in views.items()}
 
 
 def check_views(root, rows, binding, explanations=None):
-    require(protocol.bounded_read(view_path(root), 4 * 1024 * 1024) == render_view(root, rows, binding, explanations),
-            'README.md陈旧或手改；运行make sync-gongfa-catalog')
+    for path, expected in output_bytes(root, rows, binding, explanations).items():
+        require(protocol.bounded_read(path, MAX_VIEW_BYTES) == expected,
+                path.name + '陈旧或手改；运行make sync-gongfa-catalog')
 
 
 def write_views(root, rows, binding, explanations=None):
-    raw = render_view(root, rows, binding, explanations)
-    path = view_path(root)
-    before = path.read_bytes() if path.exists() else None
-    require(before is None or MARKER.encode() in before[:200], '拒绝覆盖非本工具生成的Markdown')
+    outputs = output_bytes(root, rows, binding, explanations)
+    before = {}
+    for path in outputs:
+        current = protocol.bounded_read(path, MAX_VIEW_BYTES) if path.exists() else None
+        require(current is None or MARKER.encode() in current[:200], '拒绝覆盖非本工具生成的Markdown：' + path.name)
+        before[path] = current
     source_archive.check_unchanged(root)
-    if before == raw:
+    if all(before[path] == raw for path, raw in outputs.items()):
         return
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.NamedTemporaryFile(prefix='.gongfa-', suffix='.tmp', dir=path.parent, delete=False) as stream:
-        stream.write(raw)
-        temporary = Path(stream.name)
+    parent = next(iter(outputs)).parent
+    parent.mkdir(parents=True, exist_ok=True)
+    temporaries = {}
+    for path, raw in outputs.items():
+        if before[path] == raw:
+            continue
+        with tempfile.NamedTemporaryFile(prefix='.gongfa-', suffix='.tmp', dir=parent, delete=False) as stream:
+            stream.write(raw)
+            temporaries[path] = Path(stream.name)
     source_archive.check_unchanged(root)
-    require(not path.is_symlink() and (path.read_bytes() if path.exists() else None) == before,
-            '提交视图前目标被并行修改；保留临时文件，不覆盖目标')
-    temporary.replace(path)
+    for path, temporary in temporaries.items():
+        require(not path.is_symlink() and
+                (protocol.bounded_read(path, MAX_VIEW_BYTES) if path.exists() else None) == before[path],
+                '提交视图前目标被并行修改；保留临时文件，不覆盖目标：' + path.name)
+        temporary.replace(path)
 
 
 def main():

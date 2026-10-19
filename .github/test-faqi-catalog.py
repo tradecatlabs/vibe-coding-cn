@@ -99,32 +99,50 @@ class FaqiCatalogTest(unittest.TestCase):
         self.assertEqual(30, len(assignments))
         self.assertTrue(all(item["basis"] for item in assignments))
         self.assertTrue(all(link["object_id"] in {o["id"] for o in data["objects"]} for link in data["dependency_graph"]["local_links"]))
-        catalog = (ROOT / ".github/context/faqi/README.md").read_text(encoding="utf-8")
-        self.assertEqual({p.name for p in (ROOT / '.github/context/faqi').iterdir()}, {'data.json', 'README.md'})
-        self.assertNotIn("dep-claude-code", catalog)
-        self.assertNotIn("Claude Code（依赖图替代项）", catalog)
+        directory = ROOT / ".github/context/faqi"
+        catalog = (directory / "README.md").read_text(encoding="utf-8")
+        self.assertEqual({p.name for p in directory.iterdir()},
+                         {'data.json', 'README.md', 'tian.md', 'di.md', 'xuan.md', 'huang.md'})
+        pages = {tier: (directory / f"{tier}.md").read_text(encoding="utf-8")
+                 for tier in ("tian", "di", "xuan", "huang")}
+        all_views = catalog + "\n" + "\n".join(pages.values())
+        self.assertNotIn("dep-claude-code", all_views)
+        self.assertNotIn("Claude Code（依赖图替代项）", all_views)
         self.assertIn("Vibe Coding 重要性暂定", catalog)
-        self.assertIn("天阶高级", catalog)
         self.assertIn("Codex CLI", catalog)
-        table_section = catalog.split('## 法器总表\n\n', 1)[1].split('\n## 原始说明', 1)[0]
-        self.assertIn("法器对象ID=faqi-prompt-converter", table_section)
-        self.assertIn("依赖图对象ID=dep-pi-cli", table_section)
-        self.assertNotIn("依赖图位置", table_section)
-        tokens = MarkdownIt("default").parse(table_section)
-        table_indexes = [index for index, token in enumerate(tokens) if token.type == "table_open"]
-        self.assertEqual(len(assignments), len(table_indexes), "每个法器对象必须独立使用一张v0表格")
+        self.assertIn("<a id=\"doc-faqi-system\"></a>", catalog)
+        self.assertIn("## 法器总表", catalog)
+        self.assertNotIn("| 序号 | 说明项 | 内容 |", catalog)
+        self.assertIn("天阶高级", pages["tian"])
+        self.assertIn("法器对象ID=faqi-prompt-converter", all_views)
+        self.assertIn("依赖图对象ID=dep-pi-cli", all_views)
+        self.assertNotIn("依赖图位置", all_views)
         field_names = v0_field_names()
         self.assertEqual(15, len(field_names))
-        for table_index in table_indexes:
-            table_end = next(index for index in range(table_index + 1, len(tokens)) if tokens[index].type == "table_close")
-            table_tokens = tokens[table_index:table_end + 1]
-            self.assertEqual(16, sum(token.type == "tr_open" for token in table_tokens), "一行表头加15项说明")
-            inline = [token.content for token in table_tokens if token.type == "inline"]
-            self.assertEqual(["序号", "说明项", "内容"], inline[:3])
-            self.assertEqual(field_names, [inline[4 + index * 3] for index in range(15)])
-            self.assertEqual(48, sum(token.type in {"th_open", "td_open"} for token in table_tokens), "每张表严格三列")
-        self.assertIn(assignments[0]["scope"], catalog)
-        self.assertIn(assignments[0]["basis"], catalog)
+        import tool_explanations
+        table_count = 0
+        tier_counts = Counter(item["grade_id"].split("-")[1] for item in assignments)
+        for tier, page in pages.items():
+            tokens = MarkdownIt("default").parse(page)
+            table_indexes = [index for index, token in enumerate(tokens) if token.type == "table_open"]
+            self.assertEqual(tier_counts[tier], len(table_indexes), f"{tier}文档只包含对应阶级的法器对象")
+            table_count += len(table_indexes)
+            for table_index in table_indexes:
+                table_end = next(index for index in range(table_index + 1, len(tokens)) if tokens[index].type == "table_close")
+                table_tokens = tokens[table_index:table_end + 1]
+                self.assertEqual(16, sum(token.type == "tr_open" for token in table_tokens), "一行表头加15项说明")
+                inline = [token.content for token in table_tokens if token.type == "inline"]
+                self.assertEqual(["序号", "说明项", "内容"], inline[:3])
+                self.assertEqual(field_names, [inline[4 + index * 3] for index in range(15)])
+                self.assertEqual(48, sum(token.type in {"th_open", "td_open"} for token in table_tokens), "每张表严格三列")
+        self.assertEqual(len(assignments), table_count, "每个法器对象恰好出现在一个阶级文档中")
+        for item in assignments:
+            tier = item["grade_id"].split("-")[1]
+            anchor = tool_explanations.anchor_for("faqi:" + item["subject_id"])
+            self.assertIn(f"{tier}.md#{anchor}", catalog)
+            self.assertIn(f'<a id="{anchor}"></a>', catalog, "旧README对象锚点应保留为跳转入口")
+        self.assertIn(assignments[0]["scope"], all_views)
+        self.assertIn(assignments[0]["basis"], all_views)
         # 首批父仓库来源必须在已发布主线可达，不能依赖仅本地存在的提交。
         published = subprocess.run(["git", "merge-base", "--is-ancestor", data["source_revision"], "refs/remotes/origin/main"], cwd=ROOT, capture_output=True, timeout=20)
         self.assertEqual(0, published.returncode, "父仓库来源不在已发布主线历史可达")
@@ -317,30 +335,33 @@ class FaqiCatalogTest(unittest.TestCase):
         input_path = self.input_copy("repeatable", data)
         view = ARTIFACTS / "safe-view.md"
         self.assertEqual(0, self.invoke("write-first", "--input", input_path, "--view", view, "--write").returncode)
-        first = view.read_bytes()
+        view_files = [view, *(view.parent / f"{tier}.md" for tier in ("tian", "di", "xuan", "huang"))]
+        first = {path: path.read_bytes() for path in view_files}
         parser = MarkdownIt("default")
-        table_section = first.decode().split('## 法器总表\n\n', 1)[1].split('\n## 原始说明', 1)[0]
-        tokens = parser.parse(table_section)
         table_column_counts = []
-        table_indexes = [index for index, token in enumerate(tokens) if token.type == "table_open"]
-        self.assertEqual(30, len(table_indexes))
-        for index, token in enumerate(tokens):
-            if token.type != "table_open":
-                continue
-            row_counts = []
-            current_count = 0
-            for nested in tokens[index + 1:]:
-                if nested.type == "table_close":
-                    break
-                if nested.type == "tr_open":
-                    current_count = 0
-                elif nested.type in {"th_open", "td_open"}:
-                    current_count += 1
-                elif nested.type == "tr_close":
-                    row_counts.append(current_count)
-            self.assertEqual(16, len(row_counts), "每个对象表格必须包含表头和15行说明")
-            self.assertEqual({3}, set(row_counts), "表格必须严格为三列")
-            table_column_counts.append(row_counts[0])
+        total_tables = 0
+        for path in view_files[1:]:
+            tokens = parser.parse(path.read_bytes().decode("utf-8"))
+            table_indexes = [index for index, token in enumerate(tokens) if token.type == "table_open"]
+            total_tables += len(table_indexes)
+            for index, token in enumerate(tokens):
+                if token.type != "table_open":
+                    continue
+                row_counts = []
+                current_count = 0
+                for nested in tokens[index + 1:]:
+                    if nested.type == "table_close":
+                        break
+                    if nested.type == "tr_open":
+                        current_count = 0
+                    elif nested.type in {"th_open", "td_open"}:
+                        current_count += 1
+                    elif nested.type == "tr_close":
+                        row_counts.append(current_count)
+                self.assertEqual(16, len(row_counts), "每个对象表格必须包含表头和15行说明")
+                self.assertEqual({3}, set(row_counts), "表格必须严格为三列")
+                table_column_counts.append(row_counts[0])
+        self.assertEqual(30, total_tables)
         self.assertEqual([3] * 30, table_column_counts)
         import tool_explanations
         hostile_fields = [{"name": label, "content": label} for label in v0_field_names()]
@@ -352,9 +373,9 @@ class FaqiCatalogTest(unittest.TestCase):
         self.assertIn("&lt;script&gt;unexpected&lt;/script&gt;", safe_markup)
         self.assertIn("&#124;", safe_table)
         self.assertEqual(0, self.invoke("write-repeat", "--input", input_path, "--view", view, "--write").returncode)
-        self.assertEqual(first, view.read_bytes())
+        self.assertEqual(first, {path: path.read_bytes() for path in view_files})
         self.assertEqual(0, self.invoke("check-repeat", "--input", input_path, "--view", view, "--check").returncode)
-        view.write_bytes(first + b"\nmanual-drift\n")
+        view.write_bytes(first[view] + b"\nmanual-drift\n")
         self.assertNotEqual(0, self.invoke("stale-view", "--input", input_path, "--view", view, "--check").returncode)
         plain = ARTIFACTS / "not-owned.md"; plain.write_text("必须保留的人工文档\n", encoding="utf-8")
         self.assertNotEqual(0, self.invoke("reject-non-owned", "--input", input_path, "--view", plain, "--write").returncode)
@@ -474,23 +495,29 @@ class FaqiCatalogTest(unittest.TestCase):
         rendered = view.read_bytes()
         self.assertLess(len(rendered), 64 * 1024)
         self.assertNotIn(b"x" * 4096, rendered)
-        tokens = MarkdownIt("default").parse(rendered.decode("utf-8"))
-        table_indexes = [index for index, token in enumerate(tokens) if token.type == "table_open"]
-        self.assertEqual(21, len(table_indexes), "隔离对象必须各自使用一张v0表格")
-        self.assertEqual(21, rendered.count("| 序号 | 说明项 | 内容 |".encode()))
-        for index in table_indexes:
-            row_counts = []
-            current_count = 0
-            for nested in tokens[index + 1:]:
-                if nested.type == "table_close":
-                    break
-                if nested.type == "tr_open":
-                    current_count = 0
-                elif nested.type in {"th_open", "td_open"}:
-                    current_count += 1
-                elif nested.type == "tr_close":
-                    row_counts.append(current_count)
-            self.assertEqual([3] * 16, row_counts, "每张表严格三列并含15项")
+        view_files = [view, *(view.parent / f"{tier}.md" for tier in ("tian", "di", "xuan", "huang"))]
+        table_count = 0
+        for path in view_files[1:]:
+            page_bytes = path.read_bytes()
+            self.assertNotIn(b"x" * 4096, page_bytes)
+            tokens = MarkdownIt("default").parse(page_bytes.decode("utf-8"))
+            table_indexes = [index for index, token in enumerate(tokens) if token.type == "table_open"]
+            table_count += len(table_indexes)
+            self.assertEqual(len(table_indexes), page_bytes.count("| 序号 | 说明项 | 内容 |".encode()))
+            for index in table_indexes:
+                row_counts = []
+                current_count = 0
+                for nested in tokens[index + 1:]:
+                    if nested.type == "table_close":
+                        break
+                    if nested.type == "tr_open":
+                        current_count = 0
+                    elif nested.type in {"th_open", "td_open"}:
+                        current_count += 1
+                    elif nested.type == "tr_close":
+                        row_counts.append(current_count)
+                self.assertEqual([3] * 16, row_counts, "每张表严格三列并含15项")
+        self.assertEqual(21, table_count, "隔离对象必须各自进入一张且仅一张阶级页v0表格")
         # 只允许已批准的同仓默认分支地址迁移，来源原 SHA 与指令仍固定。
         input_path = self.input_copy("branch-migration", data)
         main_body = b'RAW_BASE="https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/main/.github/tools/config/.codex"\nprintf "fixture only\\n"\n'

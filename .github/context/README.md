@@ -3,14 +3,14 @@
 ## 字多不看
 
 这里放既有规则、知识、文档、数据、研究与参考材料。它们是工具箱的资料，不是默认全部注入的系统指令。
-方法集中在功法，工具来源与重要性记录集中在法器；每个集合只有原始`data.json`和生成的`README.md`。
+方法集中在功法，工具来源与重要性记录集中在法器；每个集合以原始`data.json`为唯一维护源，`README.md`提供导航，正文按天、地、玄、黄四阶拆分。
 
 ## 快速导航
 
 | 对象 | 内容 |
 |---|---|
-| [功法](gongfa/README.md) | 既有方法总表、十二级词表及完整原文文集 |
-| [法器](faqi/README.md) | 既有工具来源、重要性总表及边界说明 |
+| [功法](gongfa/README.md) | 分阶导航：[天](gongfa/tian.md)、[地](gongfa/di.md)、[玄](gongfa/xuan.md)、[黄](gongfa/huang.md)；原文归档见data.json |
+| [法器](faqi/README.md) | 分阶导航：[天](faqi/tian.md)、[地](faqi/di.md)、[玄](faqi/xuan.md)、[黄](faqi/huang.md)；来源与边界见data.json |
 | [从零开始](getting-started/README.md) | 学习地图、网络、CLI、环境和首个项目 |
 | [提示词](prompts/README.md) | 现有云端提示词索引 |
 | [研究](research/README.md) | 对象观察、来源事实、固定镜像与原始缓存 |
@@ -48,7 +48,7 @@
 `gongfa/data.json`、`faqi/data.json`分别是本集合唯一维护源。历史文档身份、文件模式、原始字节、SHA、选择器和既有意见保留在`documents`中；文本用UTF-8，二进制用显式Base64。逐对象v0说明独立存于顶层`explanations_v0`，绑定模板SHA，不混入冻结原文载荷。
 `locations`只表达当前物理位置，`live_sources`绑定迁移后的当前实现；它们不代替原始SHA，也不构成重新源审或效果验证。
 
-每个集合仅包含`data.json`与生成的`README.md`；生成器为每个现有对象生成一张15项严格三列表格，未知信息标`待核`。功法历史Excel保留为原始载荷，不再产生第二份活动Excel视图。
+每个集合以`data.json`为唯一数据源，生成`README.md`导航页及天、地、玄、黄四个阶级正文页；每个对象仍独立生成一张15项严格三列表格，未知信息标`待核`。未明确分级的功法留在黄阶文档的独立“暂不可判”附录，不视作黄阶。README保留历史锚点供旧链接跳转；冻结原文仍在data.json。功法历史Excel保留为原始载荷，不再产生第二份活动Excel视图。
 新增或修订登记仍须遵守载荷内既有Schema、稳定ID、内容版本、来源与评级协议，不能把候选、排除项或历史判断自动晋升。
 
 ### 来源与信任边界

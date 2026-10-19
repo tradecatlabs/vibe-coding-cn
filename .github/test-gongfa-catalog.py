@@ -123,29 +123,46 @@ class CatalogMaintenanceTest(unittest.TestCase):
             '边界：' + solve_grade['editorial_caveat'],
         ))
         self.assertEqual(expected_solve_explanation, solve_row['explanation'])
-        markdown = catalog.render_markdown(rows, self.binding)
+        views = catalog.render_views(ROOT, rows, self.binding)
+        markdown = views['README.md']
         self.assertIn('- 共**411条内容记录**；已登记80条，登记库候选0条，未入登记库的来源候选331条。', markdown)
         self.assertNotIn('[控制论与科学方法论](#控制论与科学方法论)', markdown)
         self.assertFalse('catalog.xlsx' in markdown, '活动阅读视图只有Markdown，历史Excel仅作原始载荷保存')
+        self.assertLess(len(markdown.encode('utf-8')), 512 * 1024, 'README只作为轻量导航，不再展开全部功法表格与文集正文')
+        self.assertNotIn('| 序号 | 说明项 | 内容 |', markdown)
+        self.assertIn('## 原文文集', markdown)
+        self.assertIn('<a id="doc-glue-coding"></a>', markdown)
+        self.assertIn('tian.md#', markdown)
+        self.assertIn('huang.md#', markdown)
         field_names = v0_field_names()
         self.assertEqual(15, len(field_names))
-        lines = markdown.splitlines()
-        starts = [index for index, line in enumerate(lines) if line == '| 序号 | 说明项 | 内容 |']
-        self.assertEqual(len(rows), len(starts), '每个功法对象必须独立生成一张v0表格')
-        object_section = markdown.split('## 全部记录\n', 1)[1].split('## 更新与核对\n', 1)[0]
-        self.assertEqual(len(rows), sum(token.type == 'table_open' for token in catalog.book_views.MarkdownIt('default').parse(object_section)))
-        for row, start in zip(rows, starts):
-            table_rows = lines[start:start + 17]
-            self.assertEqual(17, len(table_rows))
-            self.assertEqual('|:---:|:---|:---|', table_rows[1])
-            cells = [parse_pipe_row(line) for line in table_rows]
-            self.assertTrue(all(len(cell) == 3 for cell in cells), '每张表严格为三列')
-            self.assertEqual(field_names, [cell[1] for cell in cells[2:]])
-            self.assertEqual(row['name'], unescape(cells[2][2]))
-        self.assertIn('天阶高级', markdown)
-        self.assertIn('第一性原理', markdown)
-        self.assertNotIn('天高', markdown)
-        self.assertNotIn('地高', markdown)
+        total_tables = 0
+        for tier in ('tian', 'di', 'xuan', 'huang'):
+            page = views[tier + '.md']
+            tier_rows = [row for row in rows if row['grade_id'] and row['grade_id'].startswith(tier + '-')]
+            if tier == 'huang':
+                tier_rows += [row for row in rows if row['grade_id'] is None]
+                self.assertIn('## 未明确品级（不归属黄阶）', page)
+            starts = [index for index, line in enumerate(page.splitlines()) if line == '| 序号 | 说明项 | 内容 |']
+            self.assertEqual(len(tier_rows), len(starts), f'{tier}页面只包含本阶记录及明确标记的未定级记录')
+            total_tables += len(starts)
+            lines = page.splitlines()
+            for row, start in zip(tier_rows, starts):
+                table_rows = lines[start:start + 17]
+                self.assertEqual(17, len(table_rows))
+                self.assertEqual('|:---:|:---|:---|', table_rows[1])
+                cells = [parse_pipe_row(line) for line in table_rows]
+                self.assertTrue(all(len(cell) == 3 for cell in cells), '每张表严格为三列')
+                self.assertEqual(field_names, [cell[1] for cell in cells[2:]])
+                self.assertEqual(row['name'], unescape(cells[2][2]))
+                anchor = catalog.tool_explanations.anchor_for(row['key'])
+                self.assertIn(f'{tier}.md#{anchor}', markdown)
+                self.assertIn(f'<a id="{anchor}"></a>', markdown, '旧README对象锚点应保留为跳转入口')
+        self.assertEqual(len(rows), total_tables, '所有对象恰好进入一个阶级页或黄阶页中的未定级附录')
+        self.assertIn('第一性原理', views['di.md'])
+        self.assertIn('天阶高级', views['tian.md'])
+        self.assertNotIn('天高', views['tian.md'])
+        self.assertNotIn('地高', views['tian.md'])
 
     def test_registry_candidate_count_is_separate_from_historical_sources(self):
         documents = deepcopy(self.documents)
@@ -201,7 +218,8 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertEqual(self.command(root, '--check').returncode, 0)
         data_path = root / '.github/context/gongfa/data.json'
         before = data_path.read_bytes()
-        self.assertEqual({p.name for p in data_path.parent.iterdir()}, {'data.json', 'README.md'})
+        self.assertEqual({p.name for p in data_path.parent.iterdir()},
+                         {'data.json', 'README.md', 'tian.md', 'di.md', 'xuan.md', 'huang.md'})
         bundle = json.loads(before)
         index_key = '.github/metadata/gongfa/catalog-sources.json'
         source_index = json.loads(bundle['documents'][index_key]['data'])
@@ -224,11 +242,11 @@ class CatalogMaintenanceTest(unittest.TestCase):
         grade = documents['html96_grades']['items'][0]
         item['name'] = grade['name'] = '<script>bad</script>|=2+2'
         rows = catalog.merge_rows(documents)
-        target = next(row for row in rows if row['namespace'] == 'html96' and row['original_id'] == item['candidate_id'])
-        if 'v0_fields' not in target:
-            target['v0_fields'] = [{'name': label, 'content': item['name'] if index == 0 else '隔离安全测试'}
-                                   for index, label in enumerate(v0_field_names())]
-        target['v0_fields'][0]['content'] = item['name']
+        hostile_row = next(row for row in rows if row['namespace'] == 'html96' and row['original_id'] == item['candidate_id'])
+        if 'v0_fields' not in hostile_row:
+            hostile_row['v0_fields'] = [{'name': label, 'content': item['name'] if index == 0 else '隔离安全测试'}
+                                        for index, label in enumerate(v0_field_names())]
+        hostile_row['v0_fields'][0]['content'] = item['name']
         root = Path(tempfile.mkdtemp(prefix='markdown-', dir=ARTIFACTS))
         target = root / '.github/context/gongfa'
         target.mkdir(parents=True)
@@ -237,7 +255,12 @@ class CatalogMaintenanceTest(unittest.TestCase):
         markdown = (target / 'README.md').read_text()
         self.assertNotIn('<script>bad</script>', markdown)
         self.assertIn('&lt;script&gt;bad&lt;/script&gt;&#124;=2+2', markdown)
-        self.assertEqual({p.name for p in target.iterdir()}, {'README.md'})
+        target_tier = hostile_row['grade_id'].split('-', 1)[0] if hostile_row['grade_id'] else 'huang'
+        target_page = (target / (target_tier + '.md')).read_text()
+        self.assertNotIn('<script>bad</script>', target_page)
+        self.assertIn('&lt;script&gt;bad&lt;/script&gt;&#124;=2+2', target_page)
+        self.assertEqual({p.name for p in target.iterdir()},
+                         {'README.md', 'tian.md', 'di.md', 'xuan.md', 'huang.md'})
         (target / 'README.md').write_text(markdown.replace('天阶高级', '改动品级', 1))
         with self.assertRaises(ValueError): catalog.check_views(root, rows, self.binding)
         for text in ['超限' * (4 * 1024 * 1024), '非法\x01字符']:

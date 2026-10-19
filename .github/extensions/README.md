@@ -51,7 +51,7 @@
 | 法器视图 | [sync-faqi-catalog.py](sync-faqi-catalog.py) |
 | 研究事实获取 | [fetch-research-raw.py](fetch-research-raw.py)；需要明确联网授权 |
 
-共享实现只有一份，5个Python模块直接平铺到`.github/`；职责与原库规则见[维护说明](../AGENTS.md#维护脚本与共享库)，不再保留lib目录。两个目录生成器从原始JSON中的`explanations_v0`读取已登记模板说明，每个对象输出一张严格三列表格。完整本地检查仍为`make test`，不执行被审第三方程序，也不证明运行、效果或许可。
+共享实现只有一份，5个Python模块直接平铺到`.github/`；职责与原库规则见[维护说明](../AGENTS.md#维护脚本与共享库)，不再保留lib目录。两个目录生成器从原始JSON中的`explanations_v0`读取已登记模板说明，输出轻量README导航页及天、地、玄、黄四阶正文；每个对象仍单独使用一张严格三列表格。未定级功法在黄阶文档中单列并标明“不归黄阶”。完整本地检查仍为`make test`，不执行被审第三方程序，也不证明运行、效果或许可。
 
 ### 依赖与执行边界
 

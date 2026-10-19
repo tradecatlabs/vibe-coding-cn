@@ -136,3 +136,9 @@ def render_object(object_key, title, fields):
 
 def render_index_link(object_key, title):
     return f"- [{_cell(title)}](#{anchor_for(object_key)})"
+
+
+def render_file_link(object_key, title, filename):
+    require(isinstance(filename, str) and re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", filename),
+            "对象导航目标文件名不规范")
+    return f"- [{_cell(title)}]({filename}#{anchor_for(object_key)})"

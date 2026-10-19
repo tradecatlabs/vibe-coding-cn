@@ -8,6 +8,7 @@ import json
 import os
 import posixpath
 from pathlib import Path, PurePosixPath
+from html import escape
 import re
 import subprocess
 import sys
@@ -362,7 +363,32 @@ def validate(root, input_path):
     return data, sources, objects, resources, decisions, bindings
 
 
-def render(data, objects, root, explanations):
+def source_navigation(root):
+    keys = book_views.source_keys(root, "faqi")
+    toc = book_views.source_toc(root, "faqi") if keys else []
+    anchors = []
+    for line in toc:
+        match = re.search(r"\]\(#([^)]+)\)", line)
+        if match and match.group(1) not in anchors:
+            anchors.append(match.group(1))
+    document_anchors = {book_views.chapter_id(key) for key in keys}
+    lines = ["## 原始说明", "",
+             "冻结说明原文、字节摘要和选择器保存在唯一资料源[data.json](data.json)的`documents`中；本页只保留历史入口，不重复展开原文。", "",
+             "### 原始文档", ""]
+    for key in keys:
+        anchor = book_views.chapter_id(key)
+        lines.extend((f'<a id="{escape(anchor, quote=True)}"></a>',
+                      f"- `{key}`：原始字节与摘要见[data.json](data.json)"))
+    legacy = [anchor for anchor in anchors if anchor not in document_anchors]
+    if legacy:
+        lines.extend(("", "<!-- 兼容已发布阅读视图中的章节锚点 -->"))
+        lines.extend(f'<a id="{escape(anchor, quote=True)}"></a>' for anchor in legacy)
+    return lines
+
+
+def render(data, objects, root, explanations, index_name="README.md"):
+    require(re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", index_name) is not None,
+            "索引文件名不规范")
     graph = data["dependency_graph"]
     assignments = data["provisional_grade_assignments"]
     grade_order = {
@@ -381,32 +407,55 @@ def render(data, objects, root, explanations):
     expected = {"faqi:" + subject_id: names[subject_id] for subject_id in names}
     fields_by_key = tool_explanations.validate_payload(root, explanations, expected)
     ordered = sorted(assignments, key=lambda item: (grade_order[item["grade_id"]], item["subject_id"]))
+    tier_items = {
+        tier: [item for item in ordered if item["grade_id"].split("-")[1] == tier]
+        for tier, _label in GRADE_TIERS
+    }
 
-    out = [
-        MARKER,
-        "# Vibe Coding法器重要性总表",
-        "",
-        "## 字多不看", "",
-        "当前30个对象分别使用v0的15项说明表；分级仅表示“Vibe Coding 重要性暂定”，不代表效能验证。",
+    index = [
+        MARKER, "# Vibe Coding法器重要性总表", "", "## 字多不看", "",
+        f"当前{len(assignments)}个对象分别使用v0的15项说明表；分级仅表示“Vibe Coding 重要性暂定”，不代表效能验证。",
         "原始登记、来源及历史见[data.json](data.json)；来源初审与当前迁移位置分开，视图不产生运行、许可或效果批准。", "",
-        "## 快速导航", "", "- [法器总表](#法器总表)", "- [原始说明](#原始说明)", "",
-        "<details>", "<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>", "",
-        "- [法器总表](#法器总表)", "- [原始说明](#原始说明)",
-        *(book_views.source_toc(root, 'faqi') if root else []), "", "</details>", "",
-        "## 使用方式", "", "原始数据只在data.json维护；运行make sync-faqi-catalog更新本文件。", "",
-        "## 正文", "", "## 法器总表", "",
+        "## 快速导航", "",
     ]
-    for item in ordered:
-        subject_id = item["subject_id"]
-        object_key = "faqi:" + subject_id
-        out.append(tool_explanations.render_index_link(object_key, names[subject_id]))
-    out.append("")
-    for item in ordered:
-        subject_id = item["subject_id"]
-        object_key = "faqi:" + subject_id
-        out.append(tool_explanations.render_object(object_key, names[subject_id], fields_by_key[object_key]))
-    out.extend(("## 原始说明", "", book_views.render_sources(root, 'faqi') if root else ""))
-    return "\n".join(out).encode("utf-8")
+    for tier, label in GRADE_TIERS:
+        index.append(f"- [{label}（{len(tier_items[tier])}项）]({tier}.md)")
+    index.extend(("- [法器总表](#法器总表)", "- [原始说明](#原始说明)", "",
+                  "<details>", "<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>", "",
+                  "- [法器总表](#法器总表)", "- [原始说明](#原始说明)",
+                  *(book_views.source_toc(root, "faqi") if root else []), "", "</details>", "",
+                  "## 使用方式", "", f"按重要性阶打开对应文档；原始数据只在data.json维护，运行make sync-faqi-catalog更新{index_name}及四阶文档。", "",
+                  "## 正文", "", "## 法器总表", ""))
+    for tier, label in GRADE_TIERS:
+        index.extend((f"### {label}", ""))
+        for item in tier_items[tier]:
+            subject_id = item["subject_id"]
+            object_key = "faqi:" + subject_id
+            anchor = tool_explanations.anchor_for(object_key)
+            index.extend((f'<a id="{anchor}"></a>',
+                          tool_explanations.render_file_link(object_key, names[subject_id], tier + ".md")))
+        index.append("")
+    index.extend(source_navigation(root) if root else ["## 原始说明", ""])
+    views = {index_name: "\n".join(index) + "\n"}
+
+    for tier, label in GRADE_TIERS:
+        items = tier_items[tier]
+        page = [MARKER, f"# Vibe Coding法器重要性总表：{label}", "",
+                f"本页包含{len(items)}项{label}对象。分级仅表示重要性暂定，不代表效能验证。",
+                f"- [返回总索引]({index_name})；其他阶：" + "、".join(
+                    f"[{other_label}]({other_tier}.md)" for other_tier, other_label in GRADE_TIERS if other_tier != tier
+                ), "", f"## {label}对象", ""]
+        for item in items:
+            object_key = "faqi:" + item["subject_id"]
+            page.append(tool_explanations.render_index_link(object_key, names[item["subject_id"]]))
+        page.append("")
+        for item in items:
+            object_key = "faqi:" + item["subject_id"]
+            page.append(tool_explanations.render_object(object_key, names[item["subject_id"]], fields_by_key[object_key]))
+        views[tier + ".md"] = "\n".join(page)
+    require(sum(len(text.encode("utf-8")) for text in views.values()) <= MAX_BYTES,
+            "四阶法器视图合计超过2 MiB")
+    return views
 
 
 def unchanged(bindings, root, data):
@@ -445,27 +494,47 @@ def main():
         data, _, objects, resources, _, bindings = validate(root, input_path)
         archive = source_archive.bundles(root).get("faqi")
         require(archive is not None and "explanations_v0" in archive["data"], "法器data.json缺少v0说明载荷")
-        rendered = render(data, objects, root, archive["data"]["explanations_v0"])
-        require(len(rendered) <= MAX_BYTES, "生成视图超过2 MiB")
-        before = bounded_read(view) if view.exists() else None
+        require(view.name not in {tier + ".md" for tier, _label in GRADE_TIERS}, "索引文件名不能与阶级文档冲突")
+        rendered = render(data, objects, root, archive["data"]["explanations_v0"], view.name)
+        outputs = {view: rendered[view.name]}
+        outputs.update({view.parent / (tier + ".md"): rendered[tier + ".md"] for tier, _label in GRADE_TIERS})
+        require(all(not path.is_symlink() for path in outputs), "生成目标不能是软链接")
+        before = {path: bounded_read(path) if path.exists() else None for path in outputs}
         unchanged(bindings, root, data)
         if args.write:
-            require(before is None or before.startswith(MARKER.encode()), "拒绝覆盖非本工具生成的文件")
+            for path, previous in before.items():
+                require(previous is None or previous.startswith(MARKER.encode()), "拒绝覆盖非本工具生成的文件：" + path.name)
             view.parent.mkdir(parents=True, exist_ok=True)
-            with tempfile.NamedTemporaryFile(dir=view.parent, prefix=".faqi-catalog-", suffix=".tmp", delete=False) as stream:
-                temporary = Path(stream.name); stream.write(rendered); stream.flush(); os.fsync(stream.fileno())
+            temporaries = {}
+            for path, raw in outputs.items():
+                if before[path] == raw.encode("utf-8"):
+                    continue
+                with tempfile.NamedTemporaryFile(dir=view.parent, prefix=".faqi-catalog-", suffix=".tmp", delete=False) as stream:
+                    temporary = Path(stream.name)
+                    stream.write(raw.encode("utf-8"))
+                    stream.flush()
+                    os.fsync(stream.fileno())
+                temporaries[path] = temporary
             unchanged(bindings, root, data)
-            require(not view.is_symlink() and (bounded_read(view) if view.exists() else None) == before, "目标被并行修改；保留临时文件，不覆盖")
-            os.replace(temporary, view)
+            for path, temporary in temporaries.items():
+                require(not path.is_symlink() and
+                        (bounded_read(path) if path.exists() else None) == before[path],
+                        "目标被并行修改；保留临时文件，不覆盖：" + path.name)
+                os.replace(temporary, path)
+            for path, raw in outputs.items():
+                require(bounded_read(path) == raw.encode("utf-8"), "写入后的法器视图与预期不符：" + path.name)
         else:
-            require(before == rendered, "法器视图缺失/陈旧或手改；运行make sync-faqi-catalog")
+            for path, raw in outputs.items():
+                require(before[path] == raw.encode("utf-8"), "法器视图缺失/陈旧或手改：" + path.name + "；运行make sync-faqi-catalog")
         unchanged(bindings, root, data)
         print(json.dumps({"status": "valid-master-classification-register", "objects": len(objects), "local_entries": len(data['local_entries']),
                           "local_exclusions": len(data['local_exclusions']), "external_resources": len(resources),
                           "dependency_objects": len(data['dependency_graph']['objects']),
                           "dependency_categories": len(data['dependency_graph']['dependency_categories']),
                           "provisional_grade_assignments": len(data['provisional_grade_assignments']),
-                          "view_sha256": digest(rendered), **data['limits']}, ensure_ascii=False))
+                          "view_sha256": digest(outputs[view].encode("utf-8")),
+                          "grade_view_sha256": {path.name: digest(raw.encode("utf-8")) for path, raw in outputs.items() if path != view},
+                          **data['limits']}, ensure_ascii=False))
         return 0
     except (ContractError, OSError, ValueError, KeyError, TypeError, RecursionError, subprocess.TimeoutExpired, yaml.YAMLError, jsonschema.exceptions.SchemaError) as error:
         # 不回显输入对象或Git异常中的潜在敏感值；错误只定位契约位置。

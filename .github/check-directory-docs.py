@@ -22,6 +22,7 @@ REQUIRED_DIRS = list(map(Path, (
     '.github/extensions/prompts-library/scripts',
 )))
 COLLECTION_DIRS = {Path('.github/context/gongfa'), Path('.github/context/faqi')}
+COLLECTION_FILES = {'data.json', 'README.md', 'tian.md', 'di.md', 'xuan.md', 'huang.md'}
 RETIRED_DIRS = (Path('.github/workflows'), Path('.github/lib'))
 README_OPTIONAL_DIRS = {
     # GitHub repository pages can surface `.github/README.md` as an overview file.
@@ -74,9 +75,9 @@ def main() -> int:
             errors.append(f"{rel_dir}: required directory is missing")
             continue
         if rel_dir in COLLECTION_DIRS:
-            if ({entry.name for entry in directory.iterdir()} != {'data.json', 'README.md'}
-                    or any(entry.is_symlink() for entry in directory.iterdir())):
-                errors.append(f'{rel_dir}: 文集必须且只能包含data.json和生成的README.md')
+            entries = list(directory.iterdir())
+            if ({entry.name for entry in entries} != COLLECTION_FILES or any(entry.is_symlink() for entry in entries)):
+                errors.append(f'{rel_dir}: 文集只能包含data.json、导航README.md和四阶生成文档')
             if not (ROOT / '.github/context/AGENTS.md').is_file():
                 errors.append(f'{rel_dir}: missing inherited context rules')
             continue
