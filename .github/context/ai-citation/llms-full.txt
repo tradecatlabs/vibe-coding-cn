@@ -19,7 +19,7 @@ vibe-coding-cn是以Pi Agent与已授权OpenAI GPT为主体底座的Vibe Coding�
 
 本文件只维护项目摘要与导航；方法论、哲学、模型、准则和流程的冻结原文保存在 `.github/context/gongfa/data.json` 的 `documents` 中。`.github/context/gongfa/README.md#原文文集`只提供原文索引与历史锚点，逐对象说明见天、地、玄、黄分阶页。核心命题见 `.github/context/gongfa/README.md#doc-ai-core-propositions`：固定目标基线，允许策略变化，以有界尝试、验证和显式授权控制闭环。摘要不保证自动收敛或效果。
 
-37 篇是归档的原文文集条目，不是37门已登记、已验证或已评级功法。身份、内容版本、来源与意见的唯一维护源是 `.github/context/gongfa/data.json`；总表保留411条记录，其中80登记、331候选，409初评、2条不可判，正式评级为0。新增Lambda演算按用户指定为天级上品（tian-advanced），紧随拼好码；旧内容版本、冻结来源与旧意见不变。
+37 篇是归档的原文文集条目，不是37门已登记、已验证或已评级功法。身份、内容版本、来源与意见的唯一维护源是 `.github/context/gongfa/data.json`；总表保留411条记录，其中80登记、331候选，409初评、2条不可判，正式评级为0。新增Lambda演算按用户指定为天级上品（tian-advanced），列在拼好码之前；旧内容版本、冻结来源与旧意见不变。
 
 工具选用按问题、设计、实现、代价展开，再比较替代、共性与适用前提；Lambda记号只表达接口组合，不实现解释器或证明程序性质。功法、法器以各自`data.json`维护原始资料，`README.md`提供轻量导航，天、地、玄、黄四阶页承载对象说明；历史Excel保留原字节，不再生成第二视图。
 
@@ -89,7 +89,7 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
   器灵、形态及材料转化先核对身份和实际变化；意向与章名不证明转化完成，未核验结果也不等于确认没有发生。
   未导入 OWL 或证明领域公理一致性；不推广为全仓 JSON IR。功法JSON的CLI只读输出词表与分类初评表，未建设独立数据库或网页应用。
 - .github/context/gongfa/README.md#doc-glue-coding：胶水原则的扩展，把复用成熟能力作为工程交付默认路径。
-- .github/context/gongfa/README.md#doc-lambda-calculus：Lambda演算；用户指定天级上品，紧随拼好码，解释变量绑定、抽象、应用、归约、组合及类型/副作用/终止边界。
+- .github/context/gongfa/README.md#doc-lambda-calculus：Lambda演算；用户指定天级上品，列在拼好码之前，解释变量绑定、抽象、应用、归约、组合及类型/副作用/终止边界。
 - .github/context/gongfa/README.md#doc-system-building：自顶向下、自底向上与分而治之的系统构建方法。
 - .github/context/gongfa/README.md#doc-development-paradigms：软件开发组织方式和 AI 编程范式的演进。
 - .github/context/gongfa/README.md#doc-language-layers：理解代码所需的语言层级、执行模型、类型系统和工程语义。

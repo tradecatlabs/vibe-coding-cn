@@ -88,8 +88,8 @@ pi --skill .github/skills
 2. [第一个项目](.github/context/getting-started/first-project.md) - 用本地待办清单走通需求、实现、验收和 Git 保存
 3. [问题求解](.github/context/gongfa/README.md#doc-problem-solving) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
 4. [Vibe Coding 状态转移闭环](.github/context/gongfa/README.md#doc-vibe-coding-state-transition) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding
-5. [拼好码](.github/context/gongfa/README.md#doc-glue-coding) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
-6. [Lambda演算](.github/context/gongfa/README.md#doc-lambda-calculus) - 天级上品；理解函数抽象、作用域、归约与组合边界
+5. [Lambda演算](.github/context/gongfa/README.md#doc-lambda-calculus) - 天级上品；理解函数抽象、作用域、归约与组合边界
+6. [拼好码](.github/context/gongfa/README.md#doc-glue-coding) - 优先复用成熟能力，用胶水代码连接、编排、适配业务流程
 7. [工程实践](.github/context/gongfa/README.md#doc-quality-gates-and-pitfalls) - 用项目架构、代码组织、开发经验和硬门禁约束 AI 输出
 
 </details>

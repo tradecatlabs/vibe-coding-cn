@@ -209,8 +209,17 @@ def merge_rows(documents):
         if others:
             row['relations'] += '\n同名限定内容未自动合并：' + '；'.join(others)
     rank = {grade: i for i, grade in enumerate(GRADES)}
-    rows.sort(key=lambda row: rank.get(row['grade_id'], -1), reverse=True)
     payload = documents.get('explanations_v0', {})
+    presentation_order = {
+        item['object_key']: position
+        for position, item in enumerate(payload.get('items', []))
+        if isinstance(item, dict) and isinstance(item.get('object_key'), str)
+    }
+    source_order = {row['key']: position for position, row in enumerate(rows)}
+    rows.sort(key=lambda row: (
+        -rank.get(row['grade_id'], -1),
+        presentation_order.get(row['key'], len(presentation_order) + source_order[row['key']]),
+    ))
     explanations = {item.get('object_key'): item.get('fields') for item in payload.get('items', [])
                     if isinstance(item, dict)} if isinstance(payload, dict) else {}
     for row in rows:

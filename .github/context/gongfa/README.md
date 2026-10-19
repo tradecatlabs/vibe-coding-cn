@@ -1919,10 +1919,10 @@
 
 ### 天阶
 
-<a id="v0-registry-gongfa-glue-coding-r1-22977803"></a>
-- [拼好码](tian.md#v0-registry-gongfa-glue-coding-r1-22977803) — 天阶高级
 <a id="v0-registry-gongfa-lambda-calculus-r1-093b4490"></a>
 - [Lambda 演算](tian.md#v0-registry-gongfa-lambda-calculus-r1-093b4490) — 天阶高级
+<a id="v0-registry-gongfa-glue-coding-r1-22977803"></a>
+- [拼好码](tian.md#v0-registry-gongfa-glue-coding-r1-22977803) — 天阶高级
 
 ### 地阶
 
