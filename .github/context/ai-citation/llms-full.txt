@@ -17,11 +17,11 @@ vibe-coding-cn是以Pi Agent与已授权OpenAI GPT为主体底座的Vibe Coding�
 
 ## Core method
 
-本文件只维护项目摘要与导航；方法论、哲学、模型、准则和流程的完整正文唯一维护于 `.github/context/gongfa/README.md#原文文集`。核心命题见 `.github/context/gongfa/README.md#doc-ai-core-propositions`：固定目标基线，允许策略变化，以有界尝试、验证和显式授权控制闭环。摘要不保证自动收敛或效果。
+本文件只维护项目摘要与导航；方法论、哲学、模型、准则和流程的冻结原文保存在 `.github/context/gongfa/data.json` 的 `documents` 中。`.github/context/gongfa/README.md#原文文集`只提供原文索引与历史锚点，逐对象说明见天、地、玄、黄分阶页。核心命题见 `.github/context/gongfa/README.md#doc-ai-core-propositions`：固定目标基线，允许策略变化，以有界尝试、验证和显式授权控制闭环。摘要不保证自动收敛或效果。
 
-37 篇是文集正文，不是37门已登记、已验证或已评级功法。身份、内容版本、来源与意见的唯一维护源是 `.github/context/gongfa/data.json`；总表保留411条记录，其中80登记、331候选，409初评、2条不可判，正式评级为0。新增Lambda演算按用户指定为天级上品（tian-advanced），紧随拼好码；旧内容版本、冻结来源与旧意见不变。
+37 篇是归档的原文文集条目，不是37门已登记、已验证或已评级功法。身份、内容版本、来源与意见的唯一维护源是 `.github/context/gongfa/data.json`；总表保留411条记录，其中80登记、331候选，409初评、2条不可判，正式评级为0。新增Lambda演算按用户指定为天级上品（tian-advanced），紧随拼好码；旧内容版本、冻结来源与旧意见不变。
 
-工具选用按问题、设计、实现、代价展开，再比较替代、共性与适用前提；Lambda记号只表达接口组合，不实现解释器或证明程序性质。功法、法器以各自data.json维护原始资料，README.md为唯一活动阅读视图；历史Excel保留原字节，不再生成第二视图。
+工具选用按问题、设计、实现、代价展开，再比较替代、共性与适用前提；Lambda记号只表达接口组合，不实现解释器或证明程序性质。功法、法器以各自`data.json`维护原始资料，`README.md`提供轻量导航，天、地、玄、黄四阶页承载对象说明；历史Excel保留原字节，不再生成第二视图。
 
 以下五项保留原协作概念，不是物理目录分类；物理结构只有三个域：
 
@@ -249,7 +249,7 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 
 目录边界：
 
-- `.github/context/gongfa/README.md#原文文集` 唯一维护可复用思想、哲学、准则、模型、方法、工程流程与配套文集；按任务选择，不恢复旧分库入口。
+- `.github/context/gongfa/data.json`唯一保存冻结原文、身份、版本、来源与历史意见；`.github/context/gongfa/README.md#原文文集`提供索引及历史锚点，天、地、玄、黄页提供分阶对象说明；按任务选择，不恢复旧分库入口。
 - `.github/context/getting-started/` 负责环境配置、学习路线与实例练习，通用方法正文引用功法。
 - `.github/context/research/` 负责具体研究对象、原始事实、观察和验证证据；通用研究方法引用功法。
 - `.github/context/gongfa/data.json` 唯一维护条目身份、版本、冻结来源与历史意见；生成总表不是第二正文或独立登记。

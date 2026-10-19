@@ -37,4 +37,4 @@
 
 ## docs 目录如何组织？
 
-`.github/context/README.md` 是知识库总索引；`.github/context/getting-started/` 负责启动教程与实例练习；`.github/context/gongfa/README.md#原文文集` 统一维护方法论、哲学、思维模型、工程准则与流程正文；根级 `.github/context/research/` 保留具体对象、原始事实和研究观察。功法登记与既有初评见 `.github/context/gongfa/README.md`。
+`.github/context/README.md` 是知识库总索引；`.github/context/getting-started/` 负责启动教程与实例练习；功法冻结原文保存在 `.github/context/gongfa/data.json`，`.github/context/gongfa/README.md#原文文集`提供索引与历史锚点，天、地、玄、黄页展示分阶说明；根级 `.github/context/research/` 保留具体对象、原始事实和研究观察。功法登记与既有初评见 `.github/context/gongfa/README.md` 及 `.github/context/gongfa/data.json`。
