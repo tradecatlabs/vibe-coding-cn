@@ -79,17 +79,25 @@ class CatalogMaintenanceTest(unittest.TestCase):
 
     def test_current_all_classified_content_and_two_bad_summaries_keep_original_opinions(self):
         rows = catalog.merge_rows(deepcopy(self.documents))
-        self.assertEqual(Counter(row['namespace'] for row in rows), {'registry': 80, 'html211': 211, 'solve24': 24, 'html96': 96})
+        self.assertEqual(Counter(row['namespace'] for row in rows), {'registry': 411})
         self.assertEqual(len(rows), 411)
         self.assertEqual(len({(r['namespace'], r['original_id'], r['content_version']) for r in rows}), 411)
-        undetermined = {(r['namespace'], r['original_id']) for r in rows if r['grading_status'] == 'undetermined'}
-        self.assertEqual(undetermined, {('html211', 'E001'), ('html96', 'VC029')})
+        undetermined = {r['original_id'] for r in rows if r['grading_status'] == 'undetermined'}
+        self.assertEqual(undetermined, {
+            'gongfa-candidate-html211-e001-a663456869',
+            'gongfa-candidate-html96-vc029-6cca304cec',
+        })
         by_id = {(r['namespace'], r['original_id']): r for r in rows}
         self.assertEqual(by_id['registry', 'gongfa-first-principles']['grade_id'], 'di-advanced')
-        self.assertEqual(by_id['solve24', 'psoa.programming.minimal-reproduction']['grade_id'], 'di-initial')
-        self.assertIn('一个分布式系统最多只能保证一致性、可用性和分区容错性中的两项。', by_id['html96', 'VC029']['original_text'])
-        self.assertIn('失去50%容量时剩余单位需要承担2倍总流量。', by_id['html211', 'E001']['original_text'])
-        self.assertEqual(sum(r['entry_status'] == '已登记' for r in rows), 80)
+        self.assertEqual(by_id['registry', 'gongfa-candidate-solve24-psoa-programming-minimal-reproduction-47a914cf5a']['grade_id'],
+                         'di-initial')
+        undetermined_html96 = 'gongfa-candidate-html96-vc029-6cca304cec'
+        self.assertIn('一个分布式系统最多只能保证一致性、可用性和分区容错性中的两项。',
+                      by_id['registry', undetermined_html96]['original_text'])
+        self.assertEqual(by_id['registry', 'gongfa-candidate-html211-e001-a663456869']['grading_status'], 'undetermined')
+        self.assertIn('失去50%容量时剩余单位需要承担2倍总流量。',
+                      by_id['registry', 'gongfa-candidate-html211-e001-a663456869']['original_text'])
+        self.assertEqual(sum(r['entry_status'] == '已登记' for r in rows), 411)
         lambda_index = next(index for index, row in enumerate(rows) if row['original_id'] == 'gongfa-lambda-calculus')
         glue_index = next(index for index, row in enumerate(rows) if row['original_id'] == 'gongfa-glue-coding')
         self.assertEqual(lambda_index + 1, glue_index)
@@ -101,6 +109,8 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertEqual(chapters[chapters.index('## 拼好码') + 1], '## Lambda 演算')
         self.assertEqual(sum(r['entry_status'] == '登记库候选' for r in rows), 0)
         self.assertEqual(self.documents['registry']['assessments'], [])
+        self.assertEqual(len(self.documents['registry']['gongfa']), 411)
+        self.assertTrue(all(item['entry_status'] == 'registered' for item in self.documents['registry']['gongfa']))
         registry_item = next(item for item in self.documents['registry']['gongfa'] if item['id'] == 'gongfa-first-principles')
         profile = registry_item['content']['profile']
         profile_parts = [profile['summary'], '问题：' + profile['problem'], '机制：' + profile['mechanism']]
@@ -108,26 +118,58 @@ class CatalogMaintenanceTest(unittest.TestCase):
             if profile[key]:
                 profile_parts.append(label + '：' + '；'.join(profile[key]))
         self.assertEqual(' '.join(profile_parts), by_id['registry', 'gongfa-first-principles']['explanation'])
-        html_grade = next(item for item in self.documents['html211_grades']['items'] if item['candidate_id'] == 'E001')
-        html_candidate = next(item for item in self.documents['html211_candidates']['candidates'] if item['candidate_id'] == 'E001')
-        expected_html_explanation = (html_candidate['original_text'] + ' 用途/任务族：' + html_grade['task_family'] +
-                                     ' 初评说明：' + html_grade['reason'])
-        self.assertEqual(expected_html_explanation, by_id['html211', 'E001']['explanation'])
-        solve_item = self.documents['solve24_analysis']['items'][0]
-        solve_grade = solve_item['editorial_analysis']
-        solve_row = by_id['solve24', solve_grade['source_id']]
-        expected_solve_explanation = '；'.join((
-            '用途/任务族：' + solve_grade['task_family'],
-            '机制：' + solve_grade['mechanism'],
-            '适用：' + '；'.join(solve_item['source_when']),
-            '不适用：' + '；'.join(solve_item['source_not_when']),
-            '前提：' + '；'.join(solve_item['source_preconditions']),
-            '边界：' + solve_grade['editorial_caveat'],
-        ))
-        self.assertEqual(expected_solve_explanation, solve_row['explanation'])
+        entries_by_anchor = {entry['source_ref']['heading_id']: entry
+                             for entry in self.documents['registry']['gongfa']
+                             if entry['source_ref']['source_id'] == 'source-classified-candidates-20261007'}
+        self.assertEqual(len(entries_by_anchor), 331)
+        self.assertEqual(set(entries_by_anchor), {
+            *(f"html211:{item['candidate_id']}" for item in self.documents['html211_candidates']['candidates']),
+            *(f"html96:{item['candidate_id']}" for item in self.documents['html96_candidates']['candidates']),
+            *(f"solve24:{item['source_id']}" for item in self.documents['solve24_analysis']['items']),
+        })
+        proposal_items = {
+            (item['gongfa_id'], item['content_version']): item
+            for batch in self.documents['registry']['grade_proposals'] for item in batch['items']
+        }
+        candidate_grades = [
+            (f"html211:{grade['candidate_id']}", grade)
+            for grade in self.documents['html211_grades']['items']
+        ] + [
+            (f"html96:{grade['candidate_id']}", grade)
+            for grade in self.documents['html96_grades']['items']
+        ] + [
+            (f"solve24:{item['source_id']}", item['editorial_analysis'])
+            for item in self.documents['solve24_analysis']['items']
+        ]
+        for anchor, previous in candidate_grades:
+            entry = entries_by_anchor[anchor]
+            current = proposal_items[entry['id'], entry['content_version']]
+            grade = previous.get('provisional_grade_id', previous.get('grade_id'))
+            self.assertEqual(current['grade_id'], grade, anchor)
+            self.assertEqual(current['task_family'], previous['task_family'], anchor)
+            self.assertEqual(current['reason'], previous['reason'], anchor)
+            self.assertEqual(current['falsifier'], previous['falsifier'], anchor)
+            self.assertEqual(current['confidence'], previous['confidence'], anchor)
+            self.assertEqual(current['content_sha256'], entry['content']['text_sha256'], anchor)
+        for anchor in ('html211:E001', 'html96:VC029'):
+            entry = entries_by_anchor[anchor]
+            proposal = proposal_items[entry['id'], entry['content_version']]
+            self.assertIsNone(proposal['grade_id'])
+            self.assertEqual(proposal['grading_status'], 'undetermined')
+            row = by_id['registry', entry['id']]
+            self.assertEqual(row['grading_status'], 'undetermined')
+            self.assertEqual(row['v0_fields'][5]['content'].split('登记状态：', 1)[1].split('；', 1)[0], '已登记')
+            self.assertIn('.github/metadata/gongfa/source-classified-candidates-20261007.json',
+                          row['v0_fields'][6]['content'])
+        self.assertEqual(self.documents['html211_candidates']['registry_updated'], False)
+        self.assertEqual(self.documents['html96_candidates']['registry_updated'], False)
+        self.assertEqual(self.documents['explanations_v0']['template_sha256'], catalog.tool_explanations.template_sha256(ROOT))
+        self.assertEqual(len(self.documents['explanations_v0']['items']), 411)
+        self.assertTrue(all(item['object_key'].startswith('registry:')
+                            for item in self.documents['explanations_v0']['items']))
         views = catalog.render_views(ROOT, rows, self.binding)
         markdown = views['README.md']
-        self.assertIn('- 共**411条内容记录**；已登记80条，登记库候选0条，未入登记库的来源候选331条。', markdown)
+        self.assertIn('- 共**411条内容记录**；已登记411条，登记库候选0条，未入登记库的来源候选0条。', markdown)
         self.assertNotIn('[控制论与科学方法论](#控制论与科学方法论)', markdown)
         self.assertFalse('catalog.xlsx' in markdown, '活动阅读视图只有Markdown，历史Excel仅作原始载荷保存')
         self.assertLess(len(markdown.encode('utf-8')), 512 * 1024, 'README只作为轻量导航，不再展开全部功法表格与文集正文')
@@ -165,6 +207,21 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertIn('天阶高级', views['tian.md'])
         self.assertNotIn('天高', views['tian.md'])
         self.assertNotIn('地高', views['tian.md'])
+
+    def test_candidate_promotion_preserves_the_frozen_undetermined_set(self):
+        entries = self.documents['registry']['gongfa']
+        by_anchor = {entry['source_ref']['heading_id']: entry for entry in entries
+                     if entry['source_ref']['source_id'] == 'source-classified-candidates-20261007'}
+        self.assertEqual(len(by_anchor), 331)
+        self.assertEqual({anchor for anchor, entry in by_anchor.items()
+                          if entry['name'] in {'灾备容量负载放大模型', 'CAP 定理 (CAP Theorem)'}},
+                         {'html211:E001', 'html96:VC029'})
+        for entry in by_anchor.values():
+            self.assertEqual(entry['entry_status'], 'registered')
+            self.assertEqual(entry['source_ref']['selection'], 'candidate-record')
+            self.assertEqual(entry['source_ref']['stop_before'], None)
+            self.assertEqual(entry['content']['text_sha256'], sha256(
+                entry['content']['original_text'].encode('utf-8')).hexdigest())
 
     def test_registry_candidate_count_is_separate_from_historical_sources(self):
         documents = deepcopy(self.documents)
@@ -242,9 +299,11 @@ class CatalogMaintenanceTest(unittest.TestCase):
         documents = deepcopy(self.documents)
         item = documents['html96_candidates']['candidates'][0]
         grade = documents['html96_grades']['items'][0]
-        item['name'] = grade['name'] = '<script>bad</script>|=2+2'
+        entry = next(record for record in documents['registry']['gongfa']
+                     if record['source_ref']['heading_id'] == 'html96:' + item['candidate_id'])
+        item['name'] = grade['name'] = entry['name'] = '<script>bad</script>|=2+2'
         rows = catalog.merge_rows(documents)
-        hostile_row = next(row for row in rows if row['namespace'] == 'html96' and row['original_id'] == item['candidate_id'])
+        hostile_row = next(row for row in rows if row['namespace'] == 'registry' and row['original_id'] == entry['id'])
         if 'v0_fields' not in hostile_row:
             hostile_row['v0_fields'] = [{'name': label, 'content': item['name'] if index == 0 else '隔离安全测试'}
                                         for index, label in enumerate(v0_field_names())]

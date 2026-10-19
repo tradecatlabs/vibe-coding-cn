@@ -19,7 +19,7 @@ vibe-coding-cn是以Pi Agent与已授权OpenAI GPT为主体底座的Vibe Coding�
 
 本文件只维护项目摘要与导航；方法论、哲学、模型、准则和流程的冻结原文保存在 `.github/context/gongfa/data.json` 的 `documents` 中。`.github/context/gongfa/README.md#原文文集`只提供原文索引与历史锚点，逐对象说明见天、地、玄、黄分阶页。核心命题见 `.github/context/gongfa/README.md#doc-ai-core-propositions`：固定目标基线，允许策略变化，以有界尝试、验证和显式授权控制闭环。摘要不保证自动收敛或效果。
 
-37 篇是归档的原文文集条目，不是37门已登记、已验证或已评级功法。身份、内容版本、来源与意见的唯一维护源是 `.github/context/gongfa/data.json`；总表保留411条记录，其中80登记、331候选，409初评、2条不可判，正式评级为0。新增Lambda演算按用户指定为天级上品（tian-advanced），列在拼好码之前；旧内容版本、冻结来源与旧意见不变。
+37 篇是归档的原文文集条目，不是37门已登记、已验证或已评级功法。身份、内容版本、来源与意见的唯一维护源是 `.github/context/gongfa/data.json`；当前总表411条均已登记，其中331条于2026-10-19按用户指令从冻结候选快照迁入；409条保留前瞻初评、2条为“暂不可判”，正式评级为0。迁入不代表独立语义审查、书目/许可核验或效果证明。新增Lambda演算按用户指定为天级上品（tian-advanced），列在拼好码之前；旧内容版本、冻结来源与旧意见不变。
 
 工具选用按问题、设计、实现、代价展开，再比较替代、共性与适用前提；Lambda记号只表达接口组合，不实现解释器或证明程序性质。功法、法器以各自`data.json`维护原始资料，`README.md`提供轻量导航，天、地、玄、黄四阶页承载对象说明；历史Excel保留原字节，不再生成第二视图。
 
@@ -99,7 +99,7 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - .github/context/gongfa/README.md#doc-compositional-description-model：对象、状态、快照、序列、过程、变换、同一/差异与关系。
 - .github/context/gongfa/README.md#doc-programming-dao：编程哲学、结构、状态、复杂度与工程判断。
 - .github/context/gongfa/README.md#doc-software-engineering-truths：代码、复杂度、需求、维护、质量、架构和团队的工程常识。
-- .github/context/gongfa/README.md#doc-methodology-toolbox：现象学还原、正反合、可证伪主义、形式化方法等提效工具；附11项备忘录草稿、3项跨域来源候选及P01–P32/Solve A–G主题级对照。26个精确标题命中中24个是已冻结同ID条目，另2个不按标题自动去重；6项优先素材尚未写入登记，A暂不作为单一方法候选，B语义上可保留为待审候选，C仅保留为检索结果集审计算子候选，二者均未入机器登记且仍需另行确认。其他候选待评审、拟议ID未分配。编号需区分：本体C01–C20是分类验收判例，历史候选快照为C001–C010、C012–C021（C011为排除视图）；均不据相近编号认作对话所指候选包，后者仍缺独立冻结定义与来源。556个Solve来源条目未与410条逐项语义比较。
+- .github/context/gongfa/README.md#doc-methodology-toolbox：现象学还原、正反合、可证伪主义、形式化方法等提效工具；附11项备忘录草稿、3项跨域来源候选及P01–P32/Solve A–G主题级对照。26个精确标题命中中24个是已冻结同ID条目，另2个不按标题自动去重；6项优先素材尚未写入登记，A暂不作为单一方法候选，B语义上可保留为待审候选，C仅保留为检索结果集审计算子候选，二者均未入机器登记且仍需另行确认。其他候选待评审、拟议ID未分配。编号需区分：本体C01–C20是分类验收判例，历史候选快照为C001–C010、C012–C021（C011为排除视图）；均不据相近编号认作对话所指候选包，后者仍缺独立冻结定义与来源。截至2026-10-14，556个Solve来源条目未与当时410条逐项语义比较；2026-10-19对331条冻结候选的登记不构成该项语义比较。
 - .github/context/gongfa/README.md#doc-project-architecture-template：常见项目结构、架构设计原则、最低门禁和检查清单。
 - .github/context/gongfa/README.md#doc-python-project-skeleton：Python 应用、服务、脚本工具和库项目的通用骨架。
 - .github/context/gongfa/README.md#doc-enterprise-architecture-template：中大型工程组织、平台工程和多产品线参考模型。

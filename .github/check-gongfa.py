@@ -123,11 +123,68 @@ def html_sections(raw):
     return result
 
 
+def candidate_registry_id(namespace, candidate_id):
+    require(namespace in {'html211', 'html96', 'solve24'} and isinstance(candidate_id, str) and candidate_id,
+            'candidate_id', '候选身份无效')
+    slug = re.sub(r'[^a-z0-9]+', '-', candidate_id.lower()).strip('-') or 'item'
+    suffix = hashlib.sha256(candidate_id.encode('utf-8')).hexdigest()[:10]
+    return f"gongfa-candidate-{namespace}-{slug[:64].rstrip('-')}-{suffix}"
+
+
+def candidate_archive_sections(raw):
+    try:
+        snapshot = source_archive.strict_json(raw)
+    except (ValueError, UnicodeError):
+        raise ContractError('candidate_archive: 冻结候选快照不是无重复键的UTF-8 JSON') from None
+    require(isinstance(snapshot, dict) and snapshot.get('schema_version') == '1.0.0'
+            and snapshot.get('kind') == 'frozen_classified_candidate_source_not_registry',
+            'candidate_archive', '候选来源快照身份不符')
+    require(snapshot.get('independent_semantic_approval') is False
+            and snapshot.get('source_books_and_licenses_verified') is False
+            and snapshot.get('formal_assessments_created') == 0,
+            'candidate_archive', '候选快照不得冒充独立批准、书目/许可核验或正式评级')
+    documents = snapshot.get('documents')
+    expected_documents = {'html211_candidates', 'html211_grades', 'html96_candidates',
+                          'html96_grades', 'solve24_analysis', 'solve_raw'}
+    require(isinstance(documents, dict) and set(documents) == expected_documents,
+            'candidate_archive', '冻结候选文档集合不符')
+    sections = {}
+    for namespace in ('html211', 'html96'):
+        candidates = documents[namespace + '_candidates'].get('candidates')
+        require(isinstance(candidates, list), 'candidate_archive', 'HTML候选清单无效')
+        for item in candidates:
+            candidate_id, text = item.get('candidate_id'), item.get('original_text')
+            require(isinstance(candidate_id, str) and isinstance(text, str) and text.strip()
+                    and item.get('text_sha256') == hashlib.sha256(text.encode('utf-8')).hexdigest(),
+                    'candidate_archive', 'HTML候选正文摘要或身份无效')
+            anchor = namespace + ':' + candidate_id
+            require(anchor not in sections, 'candidate_archive', '候选定位重复')
+            sections[anchor] = text
+    analyzed = documents['solve24_analysis'].get('items')
+    raw_items = documents['solve_raw'].get('items')
+    require(isinstance(analyzed, list) and isinstance(raw_items, list),
+            'candidate_archive', 'Solve候选清单无效')
+    raw_by_id = index_unique(raw_items, lambda item: item['source_id'], 'candidate_archive/solve_raw')
+    for item in analyzed:
+        candidate_id = item.get('source_id')
+        require(candidate_id in raw_by_id and raw_by_id[candidate_id].get('source_version') == item.get('source_version')
+                and raw_by_id[candidate_id].get('source_selection') == item.get('source_selection'),
+                'candidate_archive', 'Solve候选来源版本或选择器错配')
+        text = json.dumps(raw_by_id[candidate_id]['original_entry'], ensure_ascii=False, indent=2, allow_nan=False)
+        anchor = 'solve24:' + candidate_id
+        require(anchor not in sections, 'candidate_archive', '候选定位重复')
+        sections[anchor] = text
+    return snapshot, sections
+
+
 def selected_text(source, sections, reference):
     anchor = reference['heading_id']
     require(anchor in sections, 'source_ref', '不存在的正文锚点')
     text, selection = sections[anchor], reference['selection']
-    if source['kind'] == 'project_internal_publication':
+    if source['kind'] == 'classified_candidate_archive':
+        require(selection == 'candidate-record' and reference['stop_before'] is None,
+                'source_ref', '冻结候选档案只接受完整candidate-record')
+    elif source['kind'] == 'project_internal_publication':
         require(selection == 'html-paragraph' and reference['stop_before'] is None,
                 'source_ref', 'HTML来源只取已核对的方法段落')
     else:
@@ -203,8 +260,10 @@ def render_catalog(document, batch_id=None):
     for entry in document['gongfa']:
         item = proposals.get((entry['id'], entry['content_version']))
         ontology = item['ontology_type'] if item else entry['ontology_type']
-        cells = [entry['id'], entry['name'], labels.get(ontology, '待分类'),
-                 grades[item['grade_id']] if item else ('本批未初评' if batch else '未初评')]
+        grade = (grades[item['grade_id']] if item and item['grade_id'] is not None else
+                 '暂不可判' if item and item.get('grading_status') == 'undetermined' else
+                 '未初评' if item else ('本批未初评' if batch else '未初评'))
+        cells = [entry['id'], entry['name'], labels.get(ontology, '待分类'), grade]
         cells = [value.replace('|', '\\|').replace('\n', ' ') for value in cells]
         lines.append('| `' + cells[0] + '` | ' + ' | '.join(cells[1:]) + ' |')
     return '\n'.join(lines)
@@ -260,7 +319,7 @@ def validate(root, registry_path, check_view=True):
         if source['kind'] == 'repository_document':
             safe_path(root, source['path'])  # 当前导航不是历史快照，不要求当前文件仍逐字相同。
             sections = markdown_sections(raw.decode('utf-8'))
-        else:
+        elif source['kind'] == 'project_internal_publication':
             for url in (source['url'], source['resolved_url']):
                 parsed_url = urlsplit(url)
                 require(parsed_url.scheme == 'https' and parsed_url.hostname and
@@ -268,6 +327,21 @@ def validate(root, registry_path, check_view=True):
                         'sources/url', '发布来源须为无凭据的HTTPS地址')
             sections = html_sections(raw)
             require(set(sections) == set(source['included_anchors']), 'sources', '公开页面方法覆盖不完整')
+        else:
+            snapshot, sections = candidate_archive_sections(raw)
+            index = load_json(root / '.github/metadata/gongfa/catalog-sources.json', 1024 * 1024)
+            expected_path = '.github/metadata/gongfa/' + index['snapshot']['path']
+            require(index.get('kind') == 'catalog_candidate_source_index_not_registry'
+                    and index['snapshot']['sha256'] == source['snapshot_sha256']
+                    and source['path'] == source['snapshot_path'] == expected_path
+                    and source['captured_at'] == snapshot['captured_at'],
+                    'sources/candidate_archive', '登记来源未绑定当前冻结候选快照索引')
+            require(set(sections) == set(source['included_anchors']),
+                    'sources/candidate_archive', '候选快照声明范围与冻结记录不相等')
+            linked_entries = [entry for entry in entries.values() if entry['source_ref']['source_id'] == identity]
+            require(len(linked_entries) == len(sections)
+                    and all(entry['entry_status'] == 'registered' for entry in linked_entries),
+                    'sources/candidate_archive', '快照中的候选记录未全部以登记状态覆盖')
         require(set(source['included_anchors']) <= set(sections), 'sources', '收录范围包含不存在的锚点')
         parsed[identity] = sections
 
@@ -279,6 +353,10 @@ def validate(root, registry_path, check_view=True):
         require(identity in sources, position, '来源引用悬空')
         require(reference['heading_id'] in sources[identity]['included_anchors'], position, '条目越出声明收录范围')
         original = selected_text(sources[identity], parsed[identity], reference)
+        if sources[identity]['kind'] == 'classified_candidate_archive':
+            namespace, candidate_id = reference['heading_id'].split(':', 1)
+            require(entry['id'] == candidate_registry_id(namespace, candidate_id),
+                    position, '候选稳定登记ID与冻结来源身份不符')
         require(content['original_text'] == original, position, '原文与冻结来源/限定范围不一致')
         require(content['text_sha256'] == hashlib.sha256(original.encode('utf-8')).hexdigest(), position, '原文摘要不一致')
         profile = content['profile']
@@ -307,14 +385,25 @@ def validate(root, registry_path, check_view=True):
     for number, batch in enumerate(document['grade_proposals']):
         position = 'grade_proposals/' + str(number)
         current_time = timestamp(batch['assessed_at'], position + '/assessed_at')
-        require((batch['policy_id'], batch['policy_version']) in policies,
-                position, '人工初评引用的规约版本不存在')
+        if batch['policy_id'] is None or batch['policy_version'] is None:
+            require(batch['policy_id'] is None and batch['policy_version'] is None
+                    and batch['basis'] == 'provisional_expert_judgment',
+                    position, '仅未绑定原始策略的前瞻初评可显式保留双null策略引用')
+        else:
+            require((batch['policy_id'], batch['policy_version']) in policies,
+                    position, '人工初评引用的规约版本不存在')
         targets = index_unique(batch['items'], lambda item: (item['gongfa_id'], item['content_version']),
                                position + '/items')
         for target, item in targets.items():
             require(target in entries, position, '初评对象内容版本不存在')
             require(item['content_sha256'] == entries[target]['content']['text_sha256'],
                     position, '初评所依据的限定内容摘要错配')
+            if item['grade_id'] is None:
+                require(item.get('grading_status') == 'undetermined',
+                        position, '无品级的候选初评必须显式标记暂不可判')
+            else:
+                require(item.get('grading_status', 'provisional') == 'provisional',
+                        position, '有品级的初评必须保持provisional状态')
         previous = batch['supersedes']
         if previous is not None:
             require(previous in proposals, position, '被纠正初评批次不存在')

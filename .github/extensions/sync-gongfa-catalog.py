@@ -32,7 +32,7 @@ GRADE_LABELS = {f'{tier}-{level}': tier_label + level_label
                 for level, level_label in [('initial', '初级'), ('intermediate', '中级'), ('advanced', '高级')]}
 TYPE_LABELS = {'explanatory-content': '解释型', 'normative-allocation-content': '准则型',
                'method-specification': '方法型', 'dao-content': '复合（保留上位）', None: '待分类'}
-BATCH_LABELS = {'registry': '原登记库', 'html211': '此前四HTML', 'solve24': 'Solve已审首24', 'html96': 'HTML续提'}
+BATCH_LABELS = {'registry': '登记库'}
 
 
 def require(condition, message):
@@ -91,7 +91,8 @@ def load_inputs(root):
     archive = source_archive.bundles(root).get('gongfa')
     require(archive is not None and 'explanations_v0' in archive['data'], '功法data.json缺少v0说明载荷')
     binding = {'registry_sha256': registry_sha, 'candidate_sha256': reference['sha256'], 'candidate_snapshot': reference['path'],
-               'source_captured_at': snapshot['captured_at'], 'registry_assessments': registry_summary['assessments'],
+               'candidate_counts': counts, 'source_captured_at': snapshot['captured_at'],
+               'registry_assessments': registry_summary['assessments'],
                'archive_sha256': {str(path.relative_to(root)): digest for path, digest in source_archive.bundle_bindings(root).items()
                                   if path.parent.name == 'gongfa'}}
     return {**documents, 'registry': registry, 'explanations_v0': archive['data']['explanations_v0']}, binding
@@ -112,6 +113,45 @@ def merge_rows(documents):
             for item in batch['items']:
                 opinions[item['gongfa_id'], item['content_version']].append((item, batch))
     entries = unique(registry['gongfa'], lambda item: (item['id'], item['content_version']))
+    candidate_source_id = 'source-classified-candidates-20261007'
+    candidate_source = sources.get(candidate_source_id)
+    require(candidate_source is not None and candidate_source['kind'] == 'classified_candidate_archive',
+            '候选来源未绑定冻结登记源')
+    promoted_by_anchor = {
+        item['source_ref']['heading_id']: item for item in entries.values()
+        if item['source_ref']['source_id'] == candidate_source_id
+    }
+    require(len(promoted_by_anchor) == len(candidate_source['included_anchors'])
+            and set(promoted_by_anchor) == set(candidate_source['included_anchors']),
+            '候选登记范围与冻结来源锚点不一致')
+    checked_candidate_anchors = set()
+
+    def verify_promoted_candidate(namespace, candidate_id, name, ontology_type, original_text,
+                                  content_version, grade_id, grading_status, task_family,
+                                  classification_reason, reason, confidence, falsifier, assessed_at):
+        anchor = namespace + ':' + candidate_id
+        entry = promoted_by_anchor.get(anchor)
+        require(entry is not None, '冻结候选未逐条登记：' + anchor)
+        require(entry['id'] == protocol.candidate_registry_id(namespace, candidate_id)
+                and entry['name'] == name and entry['ontology_type'] == ontology_type
+                and entry['content_version'] == content_version and entry['entry_status'] == 'registered'
+                and entry['content']['original_text'] == original_text
+                and entry['content']['text_sha256'] == digest(original_text)
+                and entry['source_ref']['selection'] == 'candidate-record',
+                '候选登记身份、正文或来源不一致：' + anchor)
+        proposals = opinions[entry['id'], content_version]
+        require(len(proposals) == 1, '候选原初评必须且只能迁移一次：' + anchor)
+        proposal, batch = proposals[0]
+        require((proposal['grade_id'], proposal.get('grading_status', 'provisional'),
+                 proposal['ontology_type'], proposal['task_family'], proposal['classification_reason'],
+                 proposal['reason'], proposal['confidence'], proposal['falsifier'],
+                 proposal['content_sha256'], batch['assessed_at']) ==
+                (grade_id, grading_status, ontology_type, task_family, classification_reason,
+                 reason, confidence, falsifier, digest(original_text), assessed_at),
+                '候选既有初评或正文摘要迁移不一致：' + anchor)
+        checked_candidate_anchors.add(anchor)
+        return entry
+
     for item in entries.values():
         content = item['content']
         require(content['text_sha256'] == digest(content['original_text']), '登记正文SHA-256不符')
@@ -120,13 +160,14 @@ def merge_rows(documents):
             require(grade['content_sha256'] == content['text_sha256'], '登记初评正文绑定不符')
         grade = proposals[0][0] if len(proposals) == 1 else {}
         batch = proposals[0][1] if len(proposals) == 1 else {}
-        status = 'provisional' if len(proposals) == 1 else 'multiple-contexts' if proposals else 'unrated'
+        status = ('undetermined' if proposals[0][0].get('grading_status') == 'undetermined' else 'provisional') if len(proposals) == 1 else 'multiple-contexts' if proposals else 'unrated'
         detail = as_text([{'batch_id': b['id'], 'application_context': b['application_context'],
                            'baseline_assumption': b['baseline_assumption'], 'assessed_at': b['assessed_at'], 'item': g} for g, b in proposals])
         reference = item['source_ref']
         boundary = '选区说明：' + content['selection_note']
         profile = content['profile']
-        explanation_parts = [profile['summary'], '问题：' + profile['problem'], '机制：' + profile['mechanism']]
+        explanation_parts = [profile['summary'], '问题：' + (profile['problem'] or '待核'),
+                             '机制：' + (profile['mechanism'] or '待核')]
         for field, label in [('conditions', '条件'), ('limitations', '限制'), ('expected_outcomes', '预期结果')]:
             if profile[field]:
                 explanation_parts.append(label + '：' + '；'.join(profile[field]))
@@ -134,6 +175,10 @@ def merge_rows(documents):
         for field, label in [('conditions', '条件'), ('limitations', '限制')]:
             if content['profile'][field]:
                 boundary += '\n' + label + '：' + as_text(content['profile'][field])
+        source_record = sources[reference['source_id']]
+        source_summary = {key: source_record[key] for key in
+                          ('id', 'kind', 'path', 'captured_at', 'snapshot_path', 'snapshot_sha256', 'text_normalization')
+                          if key in source_record}
         rows.append({'namespace': 'registry', 'original_id': item['id'], 'name': item['name'], 'ontology_type': item['ontology_type'],
                      'grade_id': grade.get('grade_id'), 'grading_status': status,
                      'entry_status': '已登记' if item['entry_status'] == 'registered' else '登记库候选',
@@ -141,7 +186,7 @@ def merge_rows(documents):
                      'original_text': content['original_text'], 'boundary': boundary,
                      'reason': grade.get('reason', detail if proposals else '当前内容版本未初评；不继承旧版本意见。'),
                      'falsifier': grade.get('falsifier', ''), 'confidence': grade.get('confidence', ''), 'content_version': item['content_version'],
-                     'source': as_text({'source': sources[reference['source_id']], 'selection': reference, 'original_proposal_context': detail}),
+                     'source': as_text({'source': source_summary, 'selection': reference, 'original_proposal_context': detail}),
                      'content_sha256': content['text_sha256'], 'relations': '', 'assessed_at': batch.get('assessed_at', '')})
     for namespace in ('html211', 'html96'):
         candidates = unique(documents[namespace + '_candidates']['candidates'], lambda item: item['candidate_id'])
@@ -155,48 +200,24 @@ def merge_rows(documents):
                     and grade['name'] == item['name'], 'HTML选区、类型或名称与原意见不符')
             require(grade['grading_status'] in {'provisional', 'undetermined'}
                     and (grade['provisional_grade_id'] is None) == (grade['grading_status'] == 'undetermined'), '空品级状态不符')
-            boundary = grade.get('boundary') or item.get('editorial_boundary') or as_text(item.get('editorial_analysis'))
-            relations = item.get('related_existing_or_candidates') if namespace == 'html96' else item['related_existing']
-            explanation = (item['original_text'] + ' 用途/任务族：' + grade['task_family'] +
-                           ' 初评说明：' + grade['reason'])
-            rows.append({'namespace': namespace, 'original_id': item['candidate_id'], 'name': item['name'], 'ontology_type': item['ontology_type'],
-                         'grade_id': grade['provisional_grade_id'], 'grading_status': grade['grading_status'], 'entry_status': '未入登记库',
-                         'task_family': grade['task_family'], 'explanation': explanation,
-                         'original_text': item['original_text'],
-                         'boundary': boundary or '此前本选区未单独完善编者边界；不借邻条补写。',
-                         'reason': grade['reason'], 'falsifier': grade['falsifier'], 'confidence': grade['confidence'],
-                         'content_version': '冻结选区；未设登记版本',
-                         'source': as_text({'selection': item['source_selection'], 'declared_upstream': item['declared_upstream'],
-                                          'original_proposal_context': {key: grade_document.get(key) for key in ('batch_id', 'policy_id', 'policy_version', 'basis', 'assessor')}}),
-                         'content_sha256': item['text_sha256'], 'relations': as_text(relations), 'assessed_at': grade_document['created_at']})
+            verify_promoted_candidate(
+                namespace, item['candidate_id'], item['name'], item['ontology_type'], item['original_text'], 'r1',
+                grade['provisional_grade_id'], grade['grading_status'], grade['task_family'],
+                item['classification_reason'], grade['reason'], grade['confidence'], grade['falsifier'],
+                grade_document['created_at'])
     analyzed = unique(documents['solve24_analysis']['items'], lambda item: item['source_id'])
     raw_items = unique(documents['solve_raw']['items'], lambda item: item['source_id'])
+    require(set(analyzed) == set(raw_items), 'Solve冻结候选与原文范围不符')
     for item in analyzed.values():
         raw, grade = raw_items[item['source_id']], item['editorial_analysis']
         require(raw['source_version'] == item['source_version'] and raw['source_selection'] == item['source_selection']
                 and grade['source_id'] == item['source_id'], 'Solve版本、选区或意见外键不符')
         text = as_text(raw['original_entry'])
-        explanation_parts = [
-            '用途/任务族：' + grade['task_family'],
-            '机制：' + grade['mechanism'],
-            *[label + '：' + '；'.join(values) for label, values in (
-                ('适用', item['source_when']),
-                ('不适用', item['source_not_when']),
-                ('前提', item['source_preconditions']),
-            ) if values],
-        ]
-        if grade['editorial_caveat']:
-            explanation_parts.append('边界：' + grade['editorial_caveat'])
-        explanation = '；'.join(explanation_parts)
-        rows.append({'namespace': 'solve24', 'original_id': item['source_id'], 'name': raw['name'], 'ontology_type': grade['ontology_type'],
-                     'grade_id': grade['grade_id'], 'grading_status': 'provisional', 'entry_status': '未入登记库',
-                     'task_family': grade['task_family'], 'explanation': explanation,
-                     'original_text': text,
-                     'boundary': as_text({'when': item['source_when'], 'not_when': item['source_not_when'], 'preconditions': item['source_preconditions'],
-                                          'editorial_caveat': grade['editorial_caveat'], 'registration_recommendation': grade['registration_recommendation']}),
-                     'reason': grade['reason'], 'falsifier': grade['falsifier'], 'confidence': grade['confidence'], 'content_version': item['source_version'],
-                     'source': as_text(item['source_selection']), 'content_sha256': digest(text), 'relations': as_text(grade['related_existing']),
-                     'assessed_at': documents['solve24_analysis']['assessed_at']})
+        verify_promoted_candidate(
+            'solve24', item['source_id'], raw['name'], grade['ontology_type'], text, item['source_version'],
+            grade['grade_id'], 'provisional', grade['task_family'], grade['classification_reason'],
+            grade['reason'], grade['confidence'], grade['falsifier'], documents['solve24_analysis']['assessed_at'])
+    require(checked_candidate_anchors == set(promoted_by_anchor), '冻结候选存在未核验登记或额外身份')
     names = defaultdict(list)
     for row in rows:
         row['key'] = row['namespace'] + ':' + row['original_id'] + ('@' + row['content_version'] if row['namespace'] == 'registry' else '')
@@ -250,7 +271,7 @@ def notes(rows, binding):
     return ['全部功法总表（保留原初评，不重评）',
             f"合计{len(rows)}条；" + '；'.join(f'{BATCH_LABELS[ns]} {counts[ns]}' for ns in BATCH_LABELS)
             + '；输入：' + digest(binding['registry_sha256'] + binding['candidate_sha256']),
-            f"品级是编者前瞻；来源候选不自动注册；当前正式评级记录数：{binding['registry_assessments']}。同名未合并。"]
+            f"品级是编者前瞻；历史候选快照保留原状态；当前正式评级记录数：{binding['registry_assessments']}。同名未合并。"]
 
 
 TIERS = (('tian', '天阶'), ('di', '地阶'), ('xuan', '玄阶'), ('huang', '黄阶'))
@@ -305,8 +326,8 @@ def render_markdown(rows, binding, root=None):
     lines = [MARKER, '# 功法总表', '', '## 字多不看', '',
              f"- 共**{len(rows)}条内容记录**；已登记{counts['已登记']}条，登记库候选{counts['登记库候选']}条，未入登记库的来源候选{counts['未入登记库']}条。不是独立功法去重后的总数。",
              f'- 原前瞻初评{provisional}条，暂不可判{undetermined}条；不是正式效果评级，亦不把缺测默认补成黄阶。',
-             '- 候选仍是候选；分阶文件只搬运现有记录，不构成登记、评级或效果证明。',
-             '- [data.json](data.json)是唯一原始数据源，冻结原文、历史选区、意见、来源和附件均保留其中。', '',
+             f"- 冻结候选快照中的{sum(binding['candidate_counts'].values())}条来源候选已按用户指令逐条登记；快照仍保留当时状态，不代表独立语义审查、书目/许可核验或效果证明。",
+             '- [data.json](data.json)是唯一原始数据源，冻结原文、历史来源选区、意见、来源和附件均保留其中。', '',
              '输入绑定：`' + digest(binding['registry_sha256'] + binding['candidate_sha256']) + '`。', '',
              '## 快速导航', '']
     for tier, label in TIERS:
@@ -336,10 +357,10 @@ def render_markdown(rows, binding, root=None):
     registry, _summary = protocol.validate(root, root / '.github/metadata/gongfa/registry.json') if root and source_archive.bundles(root) else (None, None)
     grades = protocol.render_grades(registry) if registry else ''
     lines += ['## 品级词表', '', grades, '', '## 数据与边界', '',
-              '本工具只维护data.json原始资料和分阶阅读视图。原文、登记、候选与历史意见不因目录迁移而重评；历史附件保留为JSON原始载荷，不再维护第二个活动视图。', '',
+              '本工具只维护data.json原始资料和分阶阅读视图。登记不改写原文、冻结候选快照或历史意见，也不等于独立语义审查、原著/许可核验或正式效果评级；历史附件保留为JSON原始载荷，不再维护第二个活动视图。', '',
               '## 更新与核对', '', '```bash', 'make sync-gongfa-catalog', 'make check-gongfa-catalog', 'make test-gongfa-catalog', '```', '',
               '内容新版本不继承旧初评；同对象不同情境的活动意见并列保留，不按最高档或最新时间裁决。',
-              '本视图不执行方法，不证明原著、许可证、独立语义批准或真实效果；未审材料不混入。', '']
+              '本视图不执行方法，不证明原著、许可证、独立语义批准或真实效果；未知内容仍逐项标待核。', '']
     text = '\n'.join(lines)
     source_toc = book_views.source_toc(root, 'gongfa') if root is not None else []
     return text.replace('<!-- source-toc -->', '\n'.join(source_toc))

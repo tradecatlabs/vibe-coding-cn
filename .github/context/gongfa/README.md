@@ -3,12 +3,12 @@
 
 ## 字多不看
 
-- 共**411条内容记录**；已登记80条，登记库候选0条，未入登记库的来源候选331条。不是独立功法去重后的总数。
+- 共**411条内容记录**；已登记411条，登记库候选0条，未入登记库的来源候选0条。不是独立功法去重后的总数。
 - 原前瞻初评409条，暂不可判2条；不是正式效果评级，亦不把缺测默认补成黄阶。
-- 候选仍是候选；分阶文件只搬运现有记录，不构成登记、评级或效果证明。
-- [data.json](data.json)是唯一原始数据源，冻结原文、历史选区、意见、来源和附件均保留其中。
+- 冻结候选快照中的331条来源候选已按用户指令逐条登记；快照仍保留当时状态，不代表独立语义审查、书目/许可核验或效果证明。
+- [data.json](data.json)是唯一原始数据源，冻结原文、历史来源选区、意见、来源和附件均保留其中。
 
-输入绑定：`31d2cbc62550d12171db45576ccacc9a712517e27c2e2370ea43a463e627e2cc`。
+输入绑定：`6aab15530d4ceac9d1df29cbb235318eeb549726dab7c6c123c4dc3912c07bdd`。
 
 ## 快速导航
 
@@ -1948,12 +1948,12 @@
 - [最小先验条件下的代理增强型任务求解](di.md#v0-registry-gongfa-minimal-prior-agent-assisted-solving-r1-c297b171) — 地阶中级
 <a id="v0-registry-gongfa-problem-definition-framework-r1-c5485ecb"></a>
 - [问题界定与求解闭环（仓内体系版）](di.md#v0-registry-gongfa-problem-definition-framework-r1-c5485ecb) — 地阶中级
-<a id="v0-html211-a088-41c9480e"></a>
-- [6.2 契约式设计](di.md#v0-html211-a088-41c9480e) — 地阶中级
-<a id="v0-html211-d006-44989304"></a>
-- [性能工程“医生”闭环](di.md#v0-html211-d006-44989304) — 地阶中级
-<a id="v0-html211-d020-7ba19f44"></a>
-- [七步性能测试闭环](di.md#v0-html211-d020-7ba19f44) — 地阶中级
+<a id="v0-registry-gongfa-candidate-html211-a088-1f655d977a-r1-dd5b3b90"></a>
+- [6.2 契约式设计](di.md#v0-registry-gongfa-candidate-html211-a088-1f655d977a-r1-dd5b3b90) — 地阶中级
+<a id="v0-registry-gongfa-candidate-html211-d006-666ddc76da-r1-7b22f755"></a>
+- [性能工程“医生”闭环](di.md#v0-registry-gongfa-candidate-html211-d006-666ddc76da-r1-7b22f755) — 地阶中级
+<a id="v0-registry-gongfa-candidate-html211-d020-550f2ceea3-r1-9a85c8fd"></a>
+- [七步性能测试闭环](di.md#v0-registry-gongfa-candidate-html211-d020-550f2ceea3-r1-9a85c8fd) — 地阶中级
 <a id="v0-registry-gongfa-occams-razor-r1-ca4f4112"></a>
 - [奥卡姆剃刀](di.md#v0-registry-gongfa-occams-razor-r1-ca4f4112) — 地阶初级
 <a id="v0-registry-gongfa-state-space-thinking-r1-4ca3df78"></a>
@@ -1980,104 +1980,104 @@
 - [新建数据服务作业流](di.md#v0-registry-gongfa-dataset-service-construction-r1-3dd9d55d) — 地阶初级
 <a id="v0-registry-gongfa-cache-lifecycle-isolation-r1-8cdd759b"></a>
 - [缓存生命周期与隔离约束](di.md#v0-registry-gongfa-cache-lifecycle-isolation-r1-8cdd759b) — 地阶初级
-<a id="v0-html211-a015-d4868a2e"></a>
-- [3.5 效应局部化](di.md#v0-html211-a015-d4868a2e) — 地阶初级
-<a id="v0-html211-a020-4a71db48"></a>
-- [3.10 变动率](di.md#v0-html211-a020-4a71db48) — 地阶初级
-<a id="v0-html211-a021-29566483"></a>
-- [3.11 软件架构基本技法](di.md#v0-html211-a021-29566483) — 地阶初级
-<a id="v0-html211-a024-caaa374b"></a>
-- [3.14 信息隐藏](di.md#v0-html211-a024-caaa374b) — 地阶初级
-<a id="v0-html211-a026-eee90480"></a>
-- [3.16 关注点分离](di.md#v0-html211-a026-eee90480) — 地阶初级
-<a id="v0-html211-a031-0a325d65"></a>
-- [3.21 分治](di.md#v0-html211-a031-0a325d65) — 地阶初级
-<a id="v0-html211-a032-fe73b6a8"></a>
-- [3.22 软件架构的非功能需求](di.md#v0-html211-a032-fe73b6a8) — 地阶初级
-<a id="v0-html211-a036-3350a954"></a>
-- [3.26 可靠性](di.md#v0-html211-a036-3350a954) — 地阶初级
-<a id="v0-html211-a037-c563fc7c"></a>
-- [3.27 可测试性](di.md#v0-html211-a037-c563fc7c) — 地阶初级
-<a id="v0-html211-a046-e78d82a7"></a>
-- [3.36 安全原理](di.md#v0-html211-a046-e78d82a7) — 地阶初级
-<a id="v0-html211-a047-5936b274"></a>
-- [3.37 UNIX思想](di.md#v0-html211-a047-5936b274) — 地阶初级
-<a id="v0-html211-a054-93b481b8"></a>
-- [3.44 透明性原则](di.md#v0-html211-a054-93b481b8) — 地阶初级
-<a id="v0-html211-a059-c460875b"></a>
-- [3.49 修复原则](di.md#v0-html211-a059-c460875b) — 地阶初级
-<a id="v0-html211-a065-1a52c54f"></a>
-- [3.55 UNIX哲学](di.md#v0-html211-a065-1a52c54f) — 地阶初级
-<a id="v0-html211-a071-0be374d5"></a>
-- [3.61 充分利用软件的杠杆效应](di.md#v0-html211-a071-0be374d5) — 地阶初级
-<a id="v0-html211-a076-02c6bdf0"></a>
-- [4.2 耦合度](di.md#v0-html211-a076-02c6bdf0) — 地阶初级
-<a id="v0-html211-a083-d67757cc"></a>
-- [5.3 性能调优的箴言](di.md#v0-html211-a083-d67757cc) — 地阶初级
-<a id="v0-html211-a085-93522fe2"></a>
-- [5.5 一步一步走](di.md#v0-html211-a085-93522fe2) — 地阶初级
-<a id="v0-html211-a087-4718c889"></a>
-- [6.1 曳光弹](di.md#v0-html211-a087-4718c889) — 地阶初级
-<a id="v0-html211-a089-37a082f0"></a>
-- [6.3 防御性编程](di.md#v0-html211-a089-37a082f0) — 地阶初级
-<a id="v0-html211-a100-c3244f1a"></a>
-- [7.8 重新发明车轮](di.md#v0-html211-a100-c3244f1a) — 地阶初级
-<a id="v0-html211-b009-bf4be603"></a>
-- [健壮设计流程](di.md#v0-html211-b009-bf4be603) — 地阶初级
-<a id="v0-html211-b011-2581a58b"></a>
-- [根因与不复发](di.md#v0-html211-b011-2581a58b) — 地阶初级
-<a id="v0-html211-b023-8515c4c8"></a>
-- [测试即获取有效知识](di.md#v0-html211-b023-8515c4c8) — 地阶初级
-<a id="v0-html211-d009-c06c10b5"></a>
-- [阿姆达尔定律](di.md#v0-html211-d009-c06c10b5) — 地阶初级
-<a id="v0-html211-d010-3f266a0b"></a>
-- [利特尔法则](di.md#v0-html211-d010-3f266a0b) — 地阶初级
-<a id="v0-html211-d014-a4b094f2"></a>
-- [数据分析陷阱清单](di.md#v0-html211-d014-a4b094f2) — 地阶初级
-<a id="v0-html211-d022-c9650029"></a>
-- [九条性能测试经验](di.md#v0-html211-d022-c9650029) — 地阶初级
-<a id="v0-html211-d023-ad8d9501"></a>
-- [持续性能工程集成模型](di.md#v0-html211-d023-ad8d9501) — 地阶初级
-<a id="v0-html211-d025-e91c675f"></a>
-- [瓶颈分层分析](di.md#v0-html211-d025-e91c675f) — 地阶初级
-<a id="v0-html211-d031-e744a5e5"></a>
-- [网络分层诊断](di.md#v0-html211-d031-e744a5e5) — 地阶初级
-<a id="v0-html211-d033-3e06d628"></a>
-- [性能优化六原则](di.md#v0-html211-d033-3e06d628) — 地阶初级
-<a id="v0-html211-d034-f1de8d14"></a>
-- [性能优化十大策略](di.md#v0-html211-d034-f1de8d14) — 地阶初级
-<a id="v0-html211-d038-3f80d91d"></a>
-- [跨层STW根因链](di.md#v0-html211-d038-3f80d91d) — 地阶初级
-<a id="v0-html211-d054-27af330f"></a>
-- [容量规划闭环](di.md#v0-html211-d054-27af330f) — 地阶初级
-<a id="v0-html96-vc004-fce46ac8"></a>
-- [信息隐藏](di.md#v0-html96-vc004-fce46ac8) — 地阶初级
-<a id="v0-html96-vc063-ae9403fb"></a>
-- [提示注入分层防御](di.md#v0-html96-vc063-ae9403fb) — 地阶初级
-<a id="v0-html96-vc068-24c2ef90"></a>
-- [状态栏代码维护原则](di.md#v0-html96-vc068-24c2ef90) — 地阶初级
-<a id="v0-html96-vc079-3f69d25d"></a>
-- [评估集六原则](di.md#v0-html96-vc079-3f69d25d) — 地阶初级
-<a id="v0-solve24-psoa-programming-minimal-reproduction-f586081a"></a>
-- [最小复现](di.md#v0-solve24-psoa-programming-minimal-reproduction-f586081a) — 地阶初级
-<a id="v0-solve24-psoa-programming-property-based-testing-81aefa4f"></a>
-- [性质测试](di.md#v0-solve24-psoa-programming-property-based-testing-81aefa4f) — 地阶初级
-<a id="v0-solve24-psoa-programming-fuzzing-c9740af8"></a>
-- [模糊测试](di.md#v0-solve24-psoa-programming-fuzzing-c9740af8) — 地阶初级
-<a id="v0-solve24-psoa-computer-science-invariant-checking-d531f45b"></a>
-- [不变量检查](di.md#v0-solve24-psoa-computer-science-invariant-checking-d531f45b) — 地阶初级
-<a id="v0-solve24-psoa-software-engineering-risk-based-testing-c160e441"></a>
-- [风险驱动测试](di.md#v0-solve24-psoa-software-engineering-risk-based-testing-c160e441) — 地阶初级
-<a id="v0-solve24-psoa-software-engineering-incident-postmortem-bd5d6a60"></a>
-- [事故复盘](di.md#v0-solve24-psoa-software-engineering-incident-postmortem-bd5d6a60) — 地阶初级
-<a id="v0-solve24-psoa-research-pre-registration-afd32f4a"></a>
-- [预注册](di.md#v0-solve24-psoa-research-pre-registration-afd32f4a) — 地阶初级
-<a id="v0-solve24-psoa-research-replication-study-727e9511"></a>
-- [重复研究](di.md#v0-solve24-psoa-research-replication-study-727e9511) — 地阶初级
-<a id="v0-solve24-psoa-research-proxy-target-alignment-audit-2971b93a"></a>
-- [代理指标—真实目标对齐审计](di.md#v0-solve24-psoa-research-proxy-target-alignment-audit-2971b93a) — 地阶初级
-<a id="v0-solve24-psoa-decision-science-regret-robustness-c5901a2c"></a>
-- [后悔与鲁棒决策](di.md#v0-solve24-psoa-decision-science-regret-robustness-c5901a2c) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a015-06cc6912b1-r1-a560c3e9"></a>
+- [3.5 效应局部化](di.md#v0-registry-gongfa-candidate-html211-a015-06cc6912b1-r1-a560c3e9) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a020-d685b68ee2-r1-70c933b6"></a>
+- [3.10 变动率](di.md#v0-registry-gongfa-candidate-html211-a020-d685b68ee2-r1-70c933b6) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a021-50d43b8d88-r1-90a651d1"></a>
+- [3.11 软件架构基本技法](di.md#v0-registry-gongfa-candidate-html211-a021-50d43b8d88-r1-90a651d1) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a024-bf25a9ae50-r1-715b460d"></a>
+- [3.14 信息隐藏](di.md#v0-registry-gongfa-candidate-html211-a024-bf25a9ae50-r1-715b460d) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a026-e12e411313-r1-5e05835d"></a>
+- [3.16 关注点分离](di.md#v0-registry-gongfa-candidate-html211-a026-e12e411313-r1-5e05835d) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a031-024415ebde-r1-7a3ea07c"></a>
+- [3.21 分治](di.md#v0-registry-gongfa-candidate-html211-a031-024415ebde-r1-7a3ea07c) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a032-5968f80b4e-r1-45d3b84e"></a>
+- [3.22 软件架构的非功能需求](di.md#v0-registry-gongfa-candidate-html211-a032-5968f80b4e-r1-45d3b84e) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a036-679b43ad9f-r1-f5ff7f64"></a>
+- [3.26 可靠性](di.md#v0-registry-gongfa-candidate-html211-a036-679b43ad9f-r1-f5ff7f64) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a037-e31b4b317d-r1-b10b82fa"></a>
+- [3.27 可测试性](di.md#v0-registry-gongfa-candidate-html211-a037-e31b4b317d-r1-b10b82fa) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a046-53cc237933-r1-a48887cf"></a>
+- [3.36 安全原理](di.md#v0-registry-gongfa-candidate-html211-a046-53cc237933-r1-a48887cf) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a047-a2eb81f750-r1-94df154d"></a>
+- [3.37 UNIX思想](di.md#v0-registry-gongfa-candidate-html211-a047-a2eb81f750-r1-94df154d) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a054-0ce46b5a22-r1-500907d1"></a>
+- [3.44 透明性原则](di.md#v0-registry-gongfa-candidate-html211-a054-0ce46b5a22-r1-500907d1) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a059-7a44075e45-r1-b0a21d91"></a>
+- [3.49 修复原则](di.md#v0-registry-gongfa-candidate-html211-a059-7a44075e45-r1-b0a21d91) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a065-d9a824d7f0-r1-8eddc9b2"></a>
+- [3.55 UNIX哲学](di.md#v0-registry-gongfa-candidate-html211-a065-d9a824d7f0-r1-8eddc9b2) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a071-aca090447f-r1-89c1b77d"></a>
+- [3.61 充分利用软件的杠杆效应](di.md#v0-registry-gongfa-candidate-html211-a071-aca090447f-r1-89c1b77d) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a076-4e0b5b523e-r1-d4b25ef7"></a>
+- [4.2 耦合度](di.md#v0-registry-gongfa-candidate-html211-a076-4e0b5b523e-r1-d4b25ef7) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a083-b5060f6c59-r1-e1c2fc88"></a>
+- [5.3 性能调优的箴言](di.md#v0-registry-gongfa-candidate-html211-a083-b5060f6c59-r1-e1c2fc88) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a085-8ffece86a9-r1-50810622"></a>
+- [5.5 一步一步走](di.md#v0-registry-gongfa-candidate-html211-a085-8ffece86a9-r1-50810622) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a087-2fc375c302-r1-916807ee"></a>
+- [6.1 曳光弹](di.md#v0-registry-gongfa-candidate-html211-a087-2fc375c302-r1-916807ee) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a089-3f97e0822f-r1-db99fbf1"></a>
+- [6.3 防御性编程](di.md#v0-registry-gongfa-candidate-html211-a089-3f97e0822f-r1-db99fbf1) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-a100-9e909fd512-r1-5fcc5426"></a>
+- [7.8 重新发明车轮](di.md#v0-registry-gongfa-candidate-html211-a100-9e909fd512-r1-5fcc5426) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-b009-7827c40217-r1-a867dc93"></a>
+- [健壮设计流程](di.md#v0-registry-gongfa-candidate-html211-b009-7827c40217-r1-a867dc93) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-b011-0b0d3ff125-r1-7833b0ec"></a>
+- [根因与不复发](di.md#v0-registry-gongfa-candidate-html211-b011-0b0d3ff125-r1-7833b0ec) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-b023-ecb52947f4-r1-e3c9d2a3"></a>
+- [测试即获取有效知识](di.md#v0-registry-gongfa-candidate-html211-b023-ecb52947f4-r1-e3c9d2a3) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-d009-4d61eda424-r1-582f51f2"></a>
+- [阿姆达尔定律](di.md#v0-registry-gongfa-candidate-html211-d009-4d61eda424-r1-582f51f2) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-d010-5015859ffd-r1-abd5f381"></a>
+- [利特尔法则](di.md#v0-registry-gongfa-candidate-html211-d010-5015859ffd-r1-abd5f381) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-d014-49240fc008-r1-19b95d49"></a>
+- [数据分析陷阱清单](di.md#v0-registry-gongfa-candidate-html211-d014-49240fc008-r1-19b95d49) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-d022-e527a98bd6-r1-3136c29a"></a>
+- [九条性能测试经验](di.md#v0-registry-gongfa-candidate-html211-d022-e527a98bd6-r1-3136c29a) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-d023-56b0270605-r1-0dd0cb12"></a>
+- [持续性能工程集成模型](di.md#v0-registry-gongfa-candidate-html211-d023-56b0270605-r1-0dd0cb12) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-d025-cb94a81892-r1-60b2bb96"></a>
+- [瓶颈分层分析](di.md#v0-registry-gongfa-candidate-html211-d025-cb94a81892-r1-60b2bb96) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-d031-cad67d404d-r1-d78a7347"></a>
+- [网络分层诊断](di.md#v0-registry-gongfa-candidate-html211-d031-cad67d404d-r1-d78a7347) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-d033-79cec8303b-r1-1fdf0ef8"></a>
+- [性能优化六原则](di.md#v0-registry-gongfa-candidate-html211-d033-79cec8303b-r1-1fdf0ef8) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-d034-2164abb19a-r1-9f46fde0"></a>
+- [性能优化十大策略](di.md#v0-registry-gongfa-candidate-html211-d034-2164abb19a-r1-9f46fde0) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-d038-342c1847d5-r1-c1be31ca"></a>
+- [跨层STW根因链](di.md#v0-registry-gongfa-candidate-html211-d038-342c1847d5-r1-c1be31ca) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html211-d054-2a3e04f889-r1-8e617f18"></a>
+- [容量规划闭环](di.md#v0-registry-gongfa-candidate-html211-d054-2a3e04f889-r1-8e617f18) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc004-7ae99be743-r1-22f6bb0d"></a>
+- [信息隐藏](di.md#v0-registry-gongfa-candidate-html96-vc004-7ae99be743-r1-22f6bb0d) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc063-1e8c35ebf8-r1-75bfa7a0"></a>
+- [提示注入分层防御](di.md#v0-registry-gongfa-candidate-html96-vc063-1e8c35ebf8-r1-75bfa7a0) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc068-c13da28d27-r1-08aec936"></a>
+- [状态栏代码维护原则](di.md#v0-registry-gongfa-candidate-html96-vc068-c13da28d27-r1-08aec936) — 地阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc079-8ab4aaba7e-r1-44a58fc1"></a>
+- [评估集六原则](di.md#v0-registry-gongfa-candidate-html96-vc079-8ab4aaba7e-r1-44a58fc1) — 地阶初级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-programming-minimal-reproduction-47a914cf5a-1-0-0-acabdae3"></a>
+- [最小复现](di.md#v0-registry-gongfa-candidate-solve24-psoa-programming-minimal-reproduction-47a914cf5a-1-0-0-acabdae3) — 地阶初级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-programming-property-based-testing-53fab5bbdb-1-0-0-1a85166f"></a>
+- [性质测试](di.md#v0-registry-gongfa-candidate-solve24-psoa-programming-property-based-testing-53fab5bbdb-1-0-0-1a85166f) — 地阶初级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-programming-fuzzing-a78be6b0f2-1-0-0-897b752f"></a>
+- [模糊测试](di.md#v0-registry-gongfa-candidate-solve24-psoa-programming-fuzzing-a78be6b0f2-1-0-0-897b752f) — 地阶初级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-computer-science-invariant-checking-ff7aa82215-1-0-0-a3252f0d"></a>
+- [不变量检查](di.md#v0-registry-gongfa-candidate-solve24-psoa-computer-science-invariant-checking-ff7aa82215-1-0-0-a3252f0d) — 地阶初级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-software-engineering-risk-based-testing-0b7b3e08b5-1-0-0-60692584"></a>
+- [风险驱动测试](di.md#v0-registry-gongfa-candidate-solve24-psoa-software-engineering-risk-based-testing-0b7b3e08b5-1-0-0-60692584) — 地阶初级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-software-engineering-incident-postmortem-9b9e94d53d-1-0-0-61b68680"></a>
+- [事故复盘](di.md#v0-registry-gongfa-candidate-solve24-psoa-software-engineering-incident-postmortem-9b9e94d53d-1-0-0-61b68680) — 地阶初级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-research-pre-registration-cb2565324f-1-0-0-eeacfce0"></a>
+- [预注册](di.md#v0-registry-gongfa-candidate-solve24-psoa-research-pre-registration-cb2565324f-1-0-0-eeacfce0) — 地阶初级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-research-replication-study-9dcfbe8bfe-1-0-0-e2c2c1af"></a>
+- [重复研究](di.md#v0-registry-gongfa-candidate-solve24-psoa-research-replication-study-9dcfbe8bfe-1-0-0-e2c2c1af) — 地阶初级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-research-proxy-target-alignment-audit-2ab9f2a80d-0-1-0-9b02c5e1"></a>
+- [代理指标—真实目标对齐审计](di.md#v0-registry-gongfa-candidate-solve24-psoa-research-proxy-target-alignment-audit-2ab9f2a80d-0-1-0-9b02c5e1) — 地阶初级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-decision-science-regret-robustness-a15aa93cbd-1-0-0-9424888a"></a>
+- [后悔与鲁棒决策](di.md#v0-registry-gongfa-candidate-solve24-psoa-decision-science-regret-robustness-a15aa93cbd-1-0-0-9424888a) — 地阶初级
 
 ### 玄阶
 
@@ -2123,266 +2123,266 @@
 - [共享资源与并发安全约束](xuan.md#v0-registry-gongfa-shared-resource-concurrency-r1-d0bad3a1) — 玄阶高级
 <a id="v0-registry-gongfa-input-scale-complexity-constraints-r1-fc40633d"></a>
 - [输入规模与复杂度约束](xuan.md#v0-registry-gongfa-input-scale-complexity-constraints-r1-fc40633d) — 玄阶高级
-<a id="v0-html211-a004-121f17ec"></a>
-- [2.1 KISS原则](xuan.md#v0-html211-a004-121f17ec) — 玄阶高级
-<a id="v0-html211-a005-6102e4dc"></a>
-- [2.2 DRY](xuan.md#v0-html211-a005-6102e4dc) — 玄阶高级
-<a id="v0-html211-a006-df56c37b"></a>
-- [2.3 YAGNI](xuan.md#v0-html211-a006-df56c37b) — 玄阶高级
-<a id="v0-html211-a009-6e87419c"></a>
-- [2.6 OCP](xuan.md#v0-html211-a009-6e87419c) — 玄阶高级
-<a id="v0-html211-a013-aeed9fd8"></a>
-- [3.3 简洁](xuan.md#v0-html211-a013-aeed9fd8) — 玄阶高级
-<a id="v0-html211-a017-5b58d098"></a>
-- [3.7 逻辑与数据的一体化](xuan.md#v0-html211-a017-5b58d098) — 玄阶高级
-<a id="v0-html211-a022-a7fa28d7"></a>
-- [3.12 抽象](xuan.md#v0-html211-a022-a7fa28d7) — 玄阶高级
-<a id="v0-html211-a023-551a535e"></a>
-- [3.13 封装](xuan.md#v0-html211-a023-551a535e) — 玄阶高级
-<a id="v0-html211-a027-4ad3545a"></a>
-- [3.17 充足性、完整性、原始性](xuan.md#v0-html211-a027-4ad3545a) — 玄阶高级
-<a id="v0-html211-a028-5cb1a443"></a>
-- [3.18 策略和实现的分离](xuan.md#v0-html211-a028-5cb1a443) — 玄阶高级
-<a id="v0-html211-a029-d8afea3f"></a>
-- [3.19 接口与实现的分离](xuan.md#v0-html211-a029-d8afea3f) — 玄阶高级
-<a id="v0-html211-a030-0bb271a2"></a>
-- [3.20 单一引用点](xuan.md#v0-html211-a030-0bb271a2) — 玄阶高级
-<a id="v0-html211-a033-80689e07"></a>
-- [3.23 易变性](xuan.md#v0-html211-a033-80689e07) — 玄阶高级
-<a id="v0-html211-a034-c79b9365"></a>
-- [3.24 互操作性](xuan.md#v0-html211-a034-c79b9365) — 玄阶高级
-<a id="v0-html211-a035-68b8e3b5"></a>
-- [3.25 效率性](xuan.md#v0-html211-a035-68b8e3b5) — 玄阶高级
-<a id="v0-html211-a040-302fa3e6"></a>
-- [3.30 简单性原理](xuan.md#v0-html211-a040-302fa3e6) — 玄阶高级
-<a id="v0-html211-a043-cd9d4b6b"></a>
-- [3.33 层次原理](xuan.md#v0-html211-a043-cd9d4b6b) — 玄阶高级
-<a id="v0-html211-a048-fac04f6c"></a>
-- [3.38 模块化原则](xuan.md#v0-html211-a048-fac04f6c) — 玄阶高级
-<a id="v0-html211-a050-571f79f7"></a>
-- [3.40 组合原则](xuan.md#v0-html211-a050-571f79f7) — 玄阶高级
-<a id="v0-html211-a051-281b84ef"></a>
-- [3.41 分离原则](xuan.md#v0-html211-a051-281b84ef) — 玄阶高级
-<a id="v0-html211-a052-cbbec2ab"></a>
-- [3.42 简单原则](xuan.md#v0-html211-a052-cbbec2ab) — 玄阶高级
-<a id="v0-html211-a055-6ff29bd4"></a>
-- [3.45 健壮性原则](xuan.md#v0-html211-a055-6ff29bd4) — 玄阶高级
-<a id="v0-html211-a060-50f6658d"></a>
-- [3.50 经济原则](xuan.md#v0-html211-a060-50f6658d) — 玄阶高级
-<a id="v0-html211-a061-4809e522"></a>
-- [3.51 生成原则](xuan.md#v0-html211-a061-4809e522) — 玄阶高级
-<a id="v0-html211-a062-6739b6a8"></a>
-- [3.52 优化原则](xuan.md#v0-html211-a062-6739b6a8) — 玄阶高级
-<a id="v0-html211-a064-1ae4f871"></a>
-- [3.54 可扩展性原则](xuan.md#v0-html211-a064-1ae4f871) — 玄阶高级
-<a id="v0-html211-a068-1358b109"></a>
-- [3.58 尽早创建原型](xuan.md#v0-html211-a068-1358b109) — 玄阶高级
-<a id="v0-html211-a073-33e458f9"></a>
-- [3.63 避开交互式用户接口](xuan.md#v0-html211-a073-33e458f9) — 玄阶高级
-<a id="v0-html211-a074-5fdf8717"></a>
-- [3.64 过滤器化](xuan.md#v0-html211-a074-5fdf8717) — 玄阶高级
-<a id="v0-html211-a075-5d9eb62b"></a>
-- [4.1 内聚度](xuan.md#v0-html211-a075-5d9eb62b) — 玄阶高级
-<a id="v0-html211-a077-c8ce1f3c"></a>
-- [4.3 正交性](xuan.md#v0-html211-a077-c8ce1f3c) — 玄阶高级
-<a id="v0-html211-a078-3dc0d797"></a>
-- [4.4 可逆性](xuan.md#v0-html211-a078-3dc0d797) — 玄阶高级
-<a id="v0-html211-a080-38e77a31"></a>
-- [4.6 技术负债](xuan.md#v0-html211-a080-38e77a31) — 玄阶高级
-<a id="v0-html211-a092-13a5f160"></a>
-- [6.6 语境](xuan.md#v0-html211-a092-13a5f160) — 玄阶高级
-<a id="v0-html211-a093-ec6fc68c"></a>
-- [7.1 布鲁克斯法则](xuan.md#v0-html211-a093-ec6fc68c) — 玄阶高级
-<a id="v0-html211-a097-eed48186"></a>
-- [7.5 80-10-10原则](xuan.md#v0-html211-a097-eed48186) — 玄阶高级
-<a id="v0-html211-a099-7b0c6571"></a>
-- [7.7 第二系统综合征](xuan.md#v0-html211-a099-7b0c6571) — 玄阶高级
-<a id="v0-html211-a101-95ed0705"></a>
-- [7.9 给牦牛剃毛](xuan.md#v0-html211-a101-95ed0705) — 玄阶高级
-<a id="v0-html211-b003-538b5a66"></a>
-- [软件设计两原则](xuan.md#v0-html211-b003-538b5a66) — 玄阶高级
-<a id="v0-html211-b005-4522a0a1"></a>
-- [API 承诺与兼容性](xuan.md#v0-html211-b005-4522a0a1) — 玄阶高级
-<a id="v0-html211-b007-76e2d87e"></a>
-- [严格性—简约—可用性取舍](xuan.md#v0-html211-b007-76e2d87e) — 玄阶高级
-<a id="v0-html211-b012-e492df49"></a>
-- [调试四步法](xuan.md#v0-html211-b012-e492df49) — 玄阶高级
-<a id="v0-html211-b013-2ccb1f42"></a>
-- [产出物效率模型](xuan.md#v0-html211-b013-2ccb1f42) — 玄阶高级
-<a id="v0-html211-b015-b9a3aa51"></a>
-- [特性服务型重构](xuan.md#v0-html211-b015-b9a3aa51) — 玄阶高级
-<a id="v0-html211-b020-971c62d5"></a>
-- [隐私帮助—伤害权衡](xuan.md#v0-html211-b020-971c62d5) — 玄阶高级
-<a id="v0-html211-b021-dbb5dada"></a>
-- [简约安全模型](xuan.md#v0-html211-b021-dbb5dada) — 玄阶高级
-<a id="v0-html211-b022-e1846373"></a>
-- [ODA 观察循环](xuan.md#v0-html211-b022-e1846373) — 玄阶高级
-<a id="v0-html211-b026-064d2604"></a>
-- [设计拒绝门](xuan.md#v0-html211-b026-064d2604) — 玄阶高级
-<a id="v0-html211-b029-c09c23da"></a>
-- [杰出软件三条件](xuan.md#v0-html211-b029-c09c23da) — 玄阶高级
-<a id="v0-html211-c009-59d57eb1"></a>
-- [规则情境化](xuan.md#v0-html211-c009-59d57eb1) — 玄阶高级
-<a id="v0-html211-c017-f962e68b"></a>
-- [抽象模型不完备](xuan.md#v0-html211-c017-f962e68b) — 玄阶高级
-<a id="v0-html211-d003-099e3726"></a>
-- [多快好省四维性能观](xuan.md#v0-html211-d003-099e3726) — 玄阶高级
-<a id="v0-html211-d008-df88aeb9"></a>
-- [帕累托法则](xuan.md#v0-html211-d008-df88aeb9) — 玄阶高级
-<a id="v0-html211-d011-8400a44b"></a>
-- [性能统计工具箱](xuan.md#v0-html211-d011-8400a44b) — 玄阶高级
-<a id="v0-html211-d013-1ef4fcf4"></a>
-- [性能数据分析五类目标](xuan.md#v0-html211-d013-1ef4fcf4) — 玄阶高级
-<a id="v0-html211-d018-fca03f3d"></a>
-- [性能测试六维分类](xuan.md#v0-html211-d018-fca03f3d) — 玄阶高级
-<a id="v0-html211-d021-d9221559"></a>
-- [性能测试工具五模块](xuan.md#v0-html211-d021-d9221559) — 玄阶高级
-<a id="v0-html211-d024-6c8a2b88"></a>
-- [外部性能三指标](xuan.md#v0-html211-d024-6c8a2b88) — 玄阶高级
-<a id="v0-html211-d026-016dd5b3"></a>
-- [CPU资源诊断模型](xuan.md#v0-html211-d026-016dd5b3) — 玄阶高级
-<a id="v0-html211-d027-90bbdabe"></a>
-- [内存层级与局部性模型](xuan.md#v0-html211-d027-90bbdabe) — 玄阶高级
-<a id="v0-html211-d029-c4134a02"></a>
-- [存储三指标](xuan.md#v0-html211-d029-c4134a02) — 玄阶高级
-<a id="v0-html211-d035-19b6edcb"></a>
-- [LLC未命中优化三策](xuan.md#v0-html211-d035-19b6edcb) — 玄阶高级
-<a id="v0-html211-d036-911ac3ae"></a>
-- [iTLB优化流水线](xuan.md#v0-html211-d036-911ac3ae) — 玄阶高级
-<a id="v0-html211-d037-64a53cfd"></a>
-- [SSD写放大与Trim调优](xuan.md#v0-html211-d037-64a53cfd) — 玄阶高级
-<a id="v0-html211-d039-ec86d69f"></a>
-- [RedLiner生产容量测试](xuan.md#v0-html211-d039-ec86d69f) — 玄阶高级
-<a id="v0-html211-d040-d7408845"></a>
-- [五条线上容量测试原则](xuan.md#v0-html211-d040-d7408845) — 玄阶高级
-<a id="v0-html211-d041-c9046f11"></a>
-- [数据库复制三变量模型](xuan.md#v0-html211-d041-c9046f11) — 玄阶高级
-<a id="v0-html211-d044-011230c6"></a>
-- [Java多任务干扰三层机制](xuan.md#v0-html211-d044-011230c6) — 玄阶高级
-<a id="v0-html211-d048-4721b073"></a>
-- [SSD友好七原则](xuan.md#v0-html211-d048-4721b073) — 玄阶高级
-<a id="v0-html211-d049-7dad3f20"></a>
-- [服务器五阶段验证路线](xuan.md#v0-html211-d049-7dad3f20) — 玄阶高级
-<a id="v0-html211-d055-021a2fbd"></a>
-- [容量规划六挑战](xuan.md#v0-html211-d055-021a2fbd) — 玄阶高级
-<a id="v0-html211-d058-e4379ec8"></a>
-- [需求控制五模块](xuan.md#v0-html211-d058-e4379ec8) — 玄阶高级
-<a id="v0-html211-e003-edd22b35"></a>
-- [指标—成本映射可见性与更新](xuan.md#v0-html211-e003-edd22b35) — 玄阶高级
-<a id="v0-html96-vc003-5a36e8ea"></a>
-- [深模块](xuan.md#v0-html96-vc003-5a36e8ea) — 玄阶高级
-<a id="v0-html96-vc005-88627e08"></a>
-- [适度通用的模块](xuan.md#v0-html96-vc005-88627e08) — 玄阶高级
-<a id="v0-html96-vc006-1aac5b75"></a>
-- [下沉复杂性](xuan.md#v0-html96-vc006-1aac5b75) — 玄阶高级
-<a id="v0-html96-vc007-56e2d265"></a>
-- [基于复杂性的拆分/组合](xuan.md#v0-html96-vc007-56e2d265) — 玄阶高级
-<a id="v0-html96-vc008-61e88ea6"></a>
-- [通过定义来规避错误](xuan.md#v0-html96-vc008-61e88ea6) — 玄阶高级
-<a id="v0-html96-vc009-21cd3079"></a>
-- [设计两次](xuan.md#v0-html96-vc009-21cd3079) — 玄阶高级
-<a id="v0-html96-vc012-68d9de15"></a>
-- [重要性最小化与强调](xuan.md#v0-html96-vc012-68d9de15) — 玄阶高级
-<a id="v0-html96-vc016-ff6ee396"></a>
-- [大模型安全十九项控制](xuan.md#v0-html96-vc016-ff6ee396) — 玄阶高级
-<a id="v0-html96-vc017-b6ecd8d1"></a>
-- [提示工程实践清单](xuan.md#v0-html96-vc017-b6ecd8d1) — 玄阶高级
-<a id="v0-html96-vc018-e1d7dc6c"></a>
-- [语义完整切块](xuan.md#v0-html96-vc018-e1d7dc6c) — 玄阶高级
-<a id="v0-html96-vc020-f5e42edf"></a>
-- [智能体权限边界](xuan.md#v0-html96-vc020-f5e42edf) — 玄阶高级
-<a id="v0-html96-vc021-5cf5e350"></a>
-- [用户故事 + GWT](xuan.md#v0-html96-vc021-5cf5e350) — 玄阶高级
-<a id="v0-html96-vc023-1b715259"></a>
-- [组件库约束生成](xuan.md#v0-html96-vc023-1b715259) — 玄阶高级
-<a id="v0-html96-vc024-b4f1191b"></a>
-- [大模型时代的 UTDD](xuan.md#v0-html96-vc024-b4f1191b) — 玄阶高级
-<a id="v0-html96-vc025-3f4fc4f9"></a>
-- [大模型时代的 ATDD](xuan.md#v0-html96-vc025-3f4fc4f9) — 玄阶高级
-<a id="v0-html96-vc026-5f03ea58"></a>
-- [运维自愈边界](xuan.md#v0-html96-vc026-5f03ea58) — 玄阶高级
-<a id="v0-html96-vc035-6c22728a"></a>
-- [生命周期阶段评估问题集](xuan.md#v0-html96-vc035-6c22728a) — 玄阶高级
-<a id="v0-html96-vc037-61fec87c"></a>
-- [源系统评估框架](xuan.md#v0-html96-vc037-61fec87c) — 玄阶高级
-<a id="v0-html96-vc038-baf332d3"></a>
-- [事件与时间语义](xuan.md#v0-html96-vc038-baf332d3) — 玄阶高级
-<a id="v0-html96-vc039-b138393b"></a>
-- [流式摄取可靠性框架](xuan.md#v0-html96-vc039-b138393b) — 玄阶高级
-<a id="v0-html96-vc040-c667899d"></a>
-- [查询生命周期与优化闭环](xuan.md#v0-html96-vc040-c667899d) — 玄阶高级
-<a id="v0-html96-vc043-1ce244ff"></a>
-- [语义层与指标层](xuan.md#v0-html96-vc043-1ce244ff) — 玄阶高级
-<a id="v0-html96-vc046-b34511ec"></a>
-- [概念完整性](xuan.md#v0-html96-vc046-b34511ec) — 玄阶高级
-<a id="v0-html96-vc047-57deb0f5"></a>
-- [规格传播与解释闭环](xuan.md#v0-html96-vc047-57deb0f5) — 玄阶高级
-<a id="v0-html96-vc048-b10d2712"></a>
-- [独立产品测试](xuan.md#v0-html96-vc048-b10d2712) — 玄阶高级
-<a id="v0-html96-vc050-6be6502b"></a>
-- [规格外部审查](xuan.md#v0-html96-vc050-6be6502b) — 玄阶高级
-<a id="v0-html96-vc051-a887f502"></a>
-- [具体可度量的里程碑](xuan.md#v0-html96-vc051-a887f502) — 玄阶高级
-<a id="v0-html96-vc052-ffbba043"></a>
-- [计划日期与当前估计分离](xuan.md#v0-html96-vc052-ffbba043) — 玄阶高级
-<a id="v0-html96-vc060-78ff22e3"></a>
-- [输入—执行—输出三层护栏](xuan.md#v0-html96-vc060-78ff22e3) — 玄阶高级
-<a id="v0-html96-vc061-6c19b52d"></a>
-- [Human in the Loop](xuan.md#v0-html96-vc061-6c19b52d) — 玄阶高级
-<a id="v0-html96-vc062-f42bcec5"></a>
-- [业务规则可执行化](xuan.md#v0-html96-vc062-f42bcec5) — 玄阶高级
-<a id="v0-html96-vc064-850fcd3f"></a>
-- [Skills 三层渐进式披露](xuan.md#v0-html96-vc064-850fcd3f) — 玄阶高级
-<a id="v0-html96-vc065-a49026dc"></a>
-- [Skill 路由条件设计](xuan.md#v0-html96-vc065-a49026dc) — 玄阶高级
-<a id="v0-html96-vc067-53f5efd8"></a>
-- [Context Distillation](xuan.md#v0-html96-vc067-53f5efd8) — 玄阶高级
-<a id="v0-html96-vc070-7c1b5aef"></a>
-- [五层生产压缩](xuan.md#v0-html96-vc070-7c1b5aef) — 玄阶高级
-<a id="v0-html96-vc073-f4703a23"></a>
-- [记忆整理三层](xuan.md#v0-html96-vc073-f4703a23) — 玄阶高级
-<a id="v0-html96-vc074-6bdd2dcb"></a>
-- [ACI 防呆设计](xuan.md#v0-html96-vc074-6bdd2dcb) — 玄阶高级
-<a id="v0-html96-vc075-35fe714f"></a>
-- [提议者—审核者](xuan.md#v0-html96-vc075-35fe714f) — 玄阶高级
-<a id="v0-html96-vc077-2ae25118"></a>
-- [幂等性与预检—确认](xuan.md#v0-html96-vc077-2ae25118) — 玄阶高级
-<a id="v0-html96-vc078-626162e0"></a>
-- [异步任务生命周期](xuan.md#v0-html96-vc078-626162e0) — 玄阶高级
-<a id="v0-html96-vc084-486130b4"></a>
-- [离线—在线评估双轨](xuan.md#v0-html96-vc084-486130b4) — 玄阶高级
-<a id="v0-html96-vc090-b1d475bf"></a>
-- [黄金标准—功能测试—LLM 评估](xuan.md#v0-html96-vc090-b1d475bf) — 玄阶高级
-<a id="v0-html96-vc095-4fba8dd9"></a>
-- [多通道滤波](xuan.md#v0-html96-vc095-4fba8dd9) — 玄阶高级
-<a id="v0-html96-vc098-bf7a8797"></a>
-- [通用五步衡量法](xuan.md#v0-html96-vc098-bf7a8797) — 玄阶高级
-<a id="v0-html96-vc100-0d24160c"></a>
-- [门槛导向抽样](xuan.md#v0-html96-vc100-0d24160c) — 玄阶高级
-<a id="v0-solve24-psoa-problem-solving-methodology-means-ends-analysis-5eb1160e"></a>
-- [手段—目的分析](xuan.md#v0-solve24-psoa-problem-solving-methodology-means-ends-analysis-5eb1160e) — 玄阶高级
-<a id="v0-solve24-psoa-problem-solving-methodology-constructive-witness-c95e3dd2"></a>
-- [构造性见证](xuan.md#v0-solve24-psoa-problem-solving-methodology-constructive-witness-c95e3dd2) — 玄阶高级
-<a id="v0-solve24-psoa-problem-solving-methodology-metacognitive-monitoring-05d8a09e"></a>
-- [元认知监控](xuan.md#v0-solve24-psoa-problem-solving-methodology-metacognitive-monitoring-05d8a09e) — 玄阶高级
-<a id="v0-solve24-psoa-programming-binary-search-debugging-5ddfd611"></a>
-- [二分调试](xuan.md#v0-solve24-psoa-programming-binary-search-debugging-5ddfd611) — 玄阶高级
-<a id="v0-solve24-psoa-programming-differential-testing-61736d3c"></a>
-- [差分测试](xuan.md#v0-solve24-psoa-programming-differential-testing-61736d3c) — 玄阶高级
-<a id="v0-solve24-psoa-computer-science-dependency-graph-1de21d9b"></a>
-- [依赖图](xuan.md#v0-solve24-psoa-computer-science-dependency-graph-1de21d9b) — 玄阶高级
-<a id="v0-solve24-psoa-computer-science-interface-contract-cd33ce8c"></a>
-- [接口契约](xuan.md#v0-solve24-psoa-computer-science-interface-contract-cd33ce8c) — 玄阶高级
-<a id="v0-solve24-psoa-software-engineering-impact-analysis-f335a150"></a>
-- [影响分析](xuan.md#v0-solve24-psoa-software-engineering-impact-analysis-f335a150) — 玄阶高级
-<a id="v0-solve24-psoa-software-engineering-architecture-tradeoff-0ff3cb80"></a>
-- [架构权衡](xuan.md#v0-solve24-psoa-software-engineering-architecture-tradeoff-0ff3cb80) — 玄阶高级
-<a id="v0-solve24-psoa-software-engineering-incremental-development-73772d47"></a>
-- [增量开发](xuan.md#v0-solve24-psoa-software-engineering-incremental-development-73772d47) — 玄阶高级
-<a id="v0-solve24-psoa-research-source-criticism-86c7d14c"></a>
-- [来源批判](xuan.md#v0-solve24-psoa-research-source-criticism-86c7d14c) — 玄阶高级
-<a id="v0-solve24-psoa-engineering-failure-premortem-4800fd8c"></a>
-- [失败预演](xuan.md#v0-solve24-psoa-engineering-failure-premortem-4800fd8c) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a004-6ac400b9a7-r1-d289dd18"></a>
+- [2.1 KISS原则](xuan.md#v0-registry-gongfa-candidate-html211-a004-6ac400b9a7-r1-d289dd18) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a005-baabb6b8d2-r1-d2fa2401"></a>
+- [2.2 DRY](xuan.md#v0-registry-gongfa-candidate-html211-a005-baabb6b8d2-r1-d2fa2401) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a006-d4698f839b-r1-fc1245dc"></a>
+- [2.3 YAGNI](xuan.md#v0-registry-gongfa-candidate-html211-a006-d4698f839b-r1-fc1245dc) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a009-7ff10f65bd-r1-1c0b645e"></a>
+- [2.6 OCP](xuan.md#v0-registry-gongfa-candidate-html211-a009-7ff10f65bd-r1-1c0b645e) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a013-66bb26dda3-r1-801a0d8a"></a>
+- [3.3 简洁](xuan.md#v0-registry-gongfa-candidate-html211-a013-66bb26dda3-r1-801a0d8a) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a017-faa478e78e-r1-50d27b9b"></a>
+- [3.7 逻辑与数据的一体化](xuan.md#v0-registry-gongfa-candidate-html211-a017-faa478e78e-r1-50d27b9b) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a022-cc74719a02-r1-6871b1f4"></a>
+- [3.12 抽象](xuan.md#v0-registry-gongfa-candidate-html211-a022-cc74719a02-r1-6871b1f4) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a023-2f0c851698-r1-9dce9c91"></a>
+- [3.13 封装](xuan.md#v0-registry-gongfa-candidate-html211-a023-2f0c851698-r1-9dce9c91) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a027-99220276ad-r1-6580d977"></a>
+- [3.17 充足性、完整性、原始性](xuan.md#v0-registry-gongfa-candidate-html211-a027-99220276ad-r1-6580d977) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a028-2eea842381-r1-4d22540d"></a>
+- [3.18 策略和实现的分离](xuan.md#v0-registry-gongfa-candidate-html211-a028-2eea842381-r1-4d22540d) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a029-4dc3823b52-r1-bb6ba3a1"></a>
+- [3.19 接口与实现的分离](xuan.md#v0-registry-gongfa-candidate-html211-a029-4dc3823b52-r1-bb6ba3a1) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a030-b7e088a3fd-r1-8dcfc113"></a>
+- [3.20 单一引用点](xuan.md#v0-registry-gongfa-candidate-html211-a030-b7e088a3fd-r1-8dcfc113) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a033-840bc543dc-r1-c5e0f1fb"></a>
+- [3.23 易变性](xuan.md#v0-registry-gongfa-candidate-html211-a033-840bc543dc-r1-c5e0f1fb) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a034-2e966353b8-r1-cf62634e"></a>
+- [3.24 互操作性](xuan.md#v0-registry-gongfa-candidate-html211-a034-2e966353b8-r1-cf62634e) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a035-eb4747325f-r1-fb0c1353"></a>
+- [3.25 效率性](xuan.md#v0-registry-gongfa-candidate-html211-a035-eb4747325f-r1-fb0c1353) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a040-c86eb778b1-r1-15147eb3"></a>
+- [3.30 简单性原理](xuan.md#v0-registry-gongfa-candidate-html211-a040-c86eb778b1-r1-15147eb3) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a043-1c8e12cd51-r1-28dd2335"></a>
+- [3.33 层次原理](xuan.md#v0-registry-gongfa-candidate-html211-a043-1c8e12cd51-r1-28dd2335) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a048-12ff36d4f9-r1-380a96dc"></a>
+- [3.38 模块化原则](xuan.md#v0-registry-gongfa-candidate-html211-a048-12ff36d4f9-r1-380a96dc) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a050-23590f6a16-r1-92170ca1"></a>
+- [3.40 组合原则](xuan.md#v0-registry-gongfa-candidate-html211-a050-23590f6a16-r1-92170ca1) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a051-852ed72fb4-r1-25652e5e"></a>
+- [3.41 分离原则](xuan.md#v0-registry-gongfa-candidate-html211-a051-852ed72fb4-r1-25652e5e) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a052-f40ba40c20-r1-de723c05"></a>
+- [3.42 简单原则](xuan.md#v0-registry-gongfa-candidate-html211-a052-f40ba40c20-r1-de723c05) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a055-13806a5c5d-r1-9ceb6ca3"></a>
+- [3.45 健壮性原则](xuan.md#v0-registry-gongfa-candidate-html211-a055-13806a5c5d-r1-9ceb6ca3) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a060-0f1dec32e7-r1-2ea04cef"></a>
+- [3.50 经济原则](xuan.md#v0-registry-gongfa-candidate-html211-a060-0f1dec32e7-r1-2ea04cef) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a061-2d46c5330b-r1-28703e00"></a>
+- [3.51 生成原则](xuan.md#v0-registry-gongfa-candidate-html211-a061-2d46c5330b-r1-28703e00) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a062-f0ca04224d-r1-d442de4b"></a>
+- [3.52 优化原则](xuan.md#v0-registry-gongfa-candidate-html211-a062-f0ca04224d-r1-d442de4b) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a064-014988f65e-r1-405b469d"></a>
+- [3.54 可扩展性原则](xuan.md#v0-registry-gongfa-candidate-html211-a064-014988f65e-r1-405b469d) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a068-40c195bfbf-r1-ca0a44ed"></a>
+- [3.58 尽早创建原型](xuan.md#v0-registry-gongfa-candidate-html211-a068-40c195bfbf-r1-ca0a44ed) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a073-0709284c11-r1-b398231b"></a>
+- [3.63 避开交互式用户接口](xuan.md#v0-registry-gongfa-candidate-html211-a073-0709284c11-r1-b398231b) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a074-33a8bd6e88-r1-f81065fa"></a>
+- [3.64 过滤器化](xuan.md#v0-registry-gongfa-candidate-html211-a074-33a8bd6e88-r1-f81065fa) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a075-88e612b40a-r1-6f7b6193"></a>
+- [4.1 内聚度](xuan.md#v0-registry-gongfa-candidate-html211-a075-88e612b40a-r1-6f7b6193) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a077-aa945d4590-r1-14565a6c"></a>
+- [4.3 正交性](xuan.md#v0-registry-gongfa-candidate-html211-a077-aa945d4590-r1-14565a6c) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a078-2e5615a3a6-r1-d6fc25d5"></a>
+- [4.4 可逆性](xuan.md#v0-registry-gongfa-candidate-html211-a078-2e5615a3a6-r1-d6fc25d5) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a080-6820c97f69-r1-7a597c0b"></a>
+- [4.6 技术负债](xuan.md#v0-registry-gongfa-candidate-html211-a080-6820c97f69-r1-7a597c0b) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a092-98a1f6061e-r1-28ec9705"></a>
+- [6.6 语境](xuan.md#v0-registry-gongfa-candidate-html211-a092-98a1f6061e-r1-28ec9705) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a093-66bc467a47-r1-3ae375cc"></a>
+- [7.1 布鲁克斯法则](xuan.md#v0-registry-gongfa-candidate-html211-a093-66bc467a47-r1-3ae375cc) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a097-5968760ebf-r1-b309f032"></a>
+- [7.5 80-10-10原则](xuan.md#v0-registry-gongfa-candidate-html211-a097-5968760ebf-r1-b309f032) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a099-933496d745-r1-1f8cff99"></a>
+- [7.7 第二系统综合征](xuan.md#v0-registry-gongfa-candidate-html211-a099-933496d745-r1-1f8cff99) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a101-dc862a40a6-r1-308526a1"></a>
+- [7.9 给牦牛剃毛](xuan.md#v0-registry-gongfa-candidate-html211-a101-dc862a40a6-r1-308526a1) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-b003-1e1f431945-r1-2f0d14ec"></a>
+- [软件设计两原则](xuan.md#v0-registry-gongfa-candidate-html211-b003-1e1f431945-r1-2f0d14ec) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-b005-4f7b8525db-r1-8e5fba4d"></a>
+- [API 承诺与兼容性](xuan.md#v0-registry-gongfa-candidate-html211-b005-4f7b8525db-r1-8e5fba4d) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-b007-b3b6a92757-r1-f0313621"></a>
+- [严格性—简约—可用性取舍](xuan.md#v0-registry-gongfa-candidate-html211-b007-b3b6a92757-r1-f0313621) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-b012-0408a8f6ad-r1-bcb679d8"></a>
+- [调试四步法](xuan.md#v0-registry-gongfa-candidate-html211-b012-0408a8f6ad-r1-bcb679d8) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-b013-4a10a64323-r1-0ff9e845"></a>
+- [产出物效率模型](xuan.md#v0-registry-gongfa-candidate-html211-b013-4a10a64323-r1-0ff9e845) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-b015-ccf9fd1c67-r1-f3efef37"></a>
+- [特性服务型重构](xuan.md#v0-registry-gongfa-candidate-html211-b015-ccf9fd1c67-r1-f3efef37) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-b020-e7921f8a0f-r1-4dc64937"></a>
+- [隐私帮助—伤害权衡](xuan.md#v0-registry-gongfa-candidate-html211-b020-e7921f8a0f-r1-4dc64937) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-b021-1ee0f9661d-r1-d4130904"></a>
+- [简约安全模型](xuan.md#v0-registry-gongfa-candidate-html211-b021-1ee0f9661d-r1-d4130904) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-b022-64bca1b54e-r1-7ca8e9c1"></a>
+- [ODA 观察循环](xuan.md#v0-registry-gongfa-candidate-html211-b022-64bca1b54e-r1-7ca8e9c1) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-b026-8a02adf2e0-r1-adbfd98f"></a>
+- [设计拒绝门](xuan.md#v0-registry-gongfa-candidate-html211-b026-8a02adf2e0-r1-adbfd98f) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-b029-ecb66e91d6-r1-09440b7b"></a>
+- [杰出软件三条件](xuan.md#v0-registry-gongfa-candidate-html211-b029-ecb66e91d6-r1-09440b7b) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-c009-de36046be1-r1-f35de65a"></a>
+- [规则情境化](xuan.md#v0-registry-gongfa-candidate-html211-c009-de36046be1-r1-f35de65a) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-c017-2794c95608-r1-efd3ce7f"></a>
+- [抽象模型不完备](xuan.md#v0-registry-gongfa-candidate-html211-c017-2794c95608-r1-efd3ce7f) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d003-409af0e540-r1-1c9790a0"></a>
+- [多快好省四维性能观](xuan.md#v0-registry-gongfa-candidate-html211-d003-409af0e540-r1-1c9790a0) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d008-6fd753377e-r1-89c4f501"></a>
+- [帕累托法则](xuan.md#v0-registry-gongfa-candidate-html211-d008-6fd753377e-r1-89c4f501) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d011-f21dc03fb9-r1-a5fcebb8"></a>
+- [性能统计工具箱](xuan.md#v0-registry-gongfa-candidate-html211-d011-f21dc03fb9-r1-a5fcebb8) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d013-0d54552b4f-r1-0cdcdc68"></a>
+- [性能数据分析五类目标](xuan.md#v0-registry-gongfa-candidate-html211-d013-0d54552b4f-r1-0cdcdc68) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d018-188cbdb6e0-r1-b5b1a6b2"></a>
+- [性能测试六维分类](xuan.md#v0-registry-gongfa-candidate-html211-d018-188cbdb6e0-r1-b5b1a6b2) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d021-f934ed0f44-r1-6c98335d"></a>
+- [性能测试工具五模块](xuan.md#v0-registry-gongfa-candidate-html211-d021-f934ed0f44-r1-6c98335d) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d024-9fa58b009b-r1-0e9b43be"></a>
+- [外部性能三指标](xuan.md#v0-registry-gongfa-candidate-html211-d024-9fa58b009b-r1-0e9b43be) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d026-7d4e81c6d9-r1-e71e8be8"></a>
+- [CPU资源诊断模型](xuan.md#v0-registry-gongfa-candidate-html211-d026-7d4e81c6d9-r1-e71e8be8) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d027-ffea755eea-r1-3ef16aa0"></a>
+- [内存层级与局部性模型](xuan.md#v0-registry-gongfa-candidate-html211-d027-ffea755eea-r1-3ef16aa0) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d029-0f93e165af-r1-56f2b4de"></a>
+- [存储三指标](xuan.md#v0-registry-gongfa-candidate-html211-d029-0f93e165af-r1-56f2b4de) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d035-2b07b506a1-r1-3700d182"></a>
+- [LLC未命中优化三策](xuan.md#v0-registry-gongfa-candidate-html211-d035-2b07b506a1-r1-3700d182) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d036-9e9727c988-r1-1282464d"></a>
+- [iTLB优化流水线](xuan.md#v0-registry-gongfa-candidate-html211-d036-9e9727c988-r1-1282464d) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d037-1f65616b55-r1-ca27c705"></a>
+- [SSD写放大与Trim调优](xuan.md#v0-registry-gongfa-candidate-html211-d037-1f65616b55-r1-ca27c705) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d039-3767673667-r1-898507ea"></a>
+- [RedLiner生产容量测试](xuan.md#v0-registry-gongfa-candidate-html211-d039-3767673667-r1-898507ea) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d040-76e0eae85a-r1-4997fd82"></a>
+- [五条线上容量测试原则](xuan.md#v0-registry-gongfa-candidate-html211-d040-76e0eae85a-r1-4997fd82) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d041-7b17771812-r1-bd50af6e"></a>
+- [数据库复制三变量模型](xuan.md#v0-registry-gongfa-candidate-html211-d041-7b17771812-r1-bd50af6e) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d044-43baaac21e-r1-1d1414c1"></a>
+- [Java多任务干扰三层机制](xuan.md#v0-registry-gongfa-candidate-html211-d044-43baaac21e-r1-1d1414c1) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d048-2ccf3ad195-r1-fd6ea521"></a>
+- [SSD友好七原则](xuan.md#v0-registry-gongfa-candidate-html211-d048-2ccf3ad195-r1-fd6ea521) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d049-3085240166-r1-a948950d"></a>
+- [服务器五阶段验证路线](xuan.md#v0-registry-gongfa-candidate-html211-d049-3085240166-r1-a948950d) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d055-f3fdd9f70f-r1-eaef140b"></a>
+- [容量规划六挑战](xuan.md#v0-registry-gongfa-candidate-html211-d055-f3fdd9f70f-r1-eaef140b) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d058-ae8d06da2c-r1-e687f48b"></a>
+- [需求控制五模块](xuan.md#v0-registry-gongfa-candidate-html211-d058-ae8d06da2c-r1-e687f48b) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html211-e003-fc436ff652-r1-f209d6a0"></a>
+- [指标—成本映射可见性与更新](xuan.md#v0-registry-gongfa-candidate-html211-e003-fc436ff652-r1-f209d6a0) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc003-0a1600790f-r1-2a7fbe38"></a>
+- [深模块](xuan.md#v0-registry-gongfa-candidate-html96-vc003-0a1600790f-r1-2a7fbe38) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc005-cdd3b5f6a2-r1-0dd8aca0"></a>
+- [适度通用的模块](xuan.md#v0-registry-gongfa-candidate-html96-vc005-cdd3b5f6a2-r1-0dd8aca0) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc006-e55c3a08b2-r1-6f093e33"></a>
+- [下沉复杂性](xuan.md#v0-registry-gongfa-candidate-html96-vc006-e55c3a08b2-r1-6f093e33) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc007-6d9ec4ee03-r1-f2695084"></a>
+- [基于复杂性的拆分/组合](xuan.md#v0-registry-gongfa-candidate-html96-vc007-6d9ec4ee03-r1-f2695084) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc008-2eccd2b710-r1-610efa05"></a>
+- [通过定义来规避错误](xuan.md#v0-registry-gongfa-candidate-html96-vc008-2eccd2b710-r1-610efa05) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc009-945f0aea42-r1-87686730"></a>
+- [设计两次](xuan.md#v0-registry-gongfa-candidate-html96-vc009-945f0aea42-r1-87686730) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc012-5d5dc903d0-r1-a0fb13f3"></a>
+- [重要性最小化与强调](xuan.md#v0-registry-gongfa-candidate-html96-vc012-5d5dc903d0-r1-a0fb13f3) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc016-ba69d38aa6-r1-2f0ae24e"></a>
+- [大模型安全十九项控制](xuan.md#v0-registry-gongfa-candidate-html96-vc016-ba69d38aa6-r1-2f0ae24e) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc017-4c23a84777-r1-43881856"></a>
+- [提示工程实践清单](xuan.md#v0-registry-gongfa-candidate-html96-vc017-4c23a84777-r1-43881856) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc018-4a7df756f3-r1-d3fffcc5"></a>
+- [语义完整切块](xuan.md#v0-registry-gongfa-candidate-html96-vc018-4a7df756f3-r1-d3fffcc5) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc020-64b2b66d95-r1-e7ca110e"></a>
+- [智能体权限边界](xuan.md#v0-registry-gongfa-candidate-html96-vc020-64b2b66d95-r1-e7ca110e) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc021-e20ecfebb3-r1-837abbc3"></a>
+- [用户故事 + GWT](xuan.md#v0-registry-gongfa-candidate-html96-vc021-e20ecfebb3-r1-837abbc3) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc023-81a43e4ad4-r1-4ec68772"></a>
+- [组件库约束生成](xuan.md#v0-registry-gongfa-candidate-html96-vc023-81a43e4ad4-r1-4ec68772) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc024-4ecfc39c68-r1-35e30fe0"></a>
+- [大模型时代的 UTDD](xuan.md#v0-registry-gongfa-candidate-html96-vc024-4ecfc39c68-r1-35e30fe0) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc025-c04276f8fb-r1-16b18d52"></a>
+- [大模型时代的 ATDD](xuan.md#v0-registry-gongfa-candidate-html96-vc025-c04276f8fb-r1-16b18d52) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc026-b6c4dd3631-r1-82ed4eab"></a>
+- [运维自愈边界](xuan.md#v0-registry-gongfa-candidate-html96-vc026-b6c4dd3631-r1-82ed4eab) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc035-7660a9bdab-r1-fc12445d"></a>
+- [生命周期阶段评估问题集](xuan.md#v0-registry-gongfa-candidate-html96-vc035-7660a9bdab-r1-fc12445d) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc037-e9df870918-r1-2129b3a3"></a>
+- [源系统评估框架](xuan.md#v0-registry-gongfa-candidate-html96-vc037-e9df870918-r1-2129b3a3) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc038-7c0f47ba7f-r1-c72c2dbb"></a>
+- [事件与时间语义](xuan.md#v0-registry-gongfa-candidate-html96-vc038-7c0f47ba7f-r1-c72c2dbb) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc039-b2dc6671b1-r1-6d7c88d7"></a>
+- [流式摄取可靠性框架](xuan.md#v0-registry-gongfa-candidate-html96-vc039-b2dc6671b1-r1-6d7c88d7) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc040-8ff7a35c26-r1-7dce73e3"></a>
+- [查询生命周期与优化闭环](xuan.md#v0-registry-gongfa-candidate-html96-vc040-8ff7a35c26-r1-7dce73e3) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc043-9140b2ecf7-r1-a1698af2"></a>
+- [语义层与指标层](xuan.md#v0-registry-gongfa-candidate-html96-vc043-9140b2ecf7-r1-a1698af2) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc046-5aa0107183-r1-b01fcb72"></a>
+- [概念完整性](xuan.md#v0-registry-gongfa-candidate-html96-vc046-5aa0107183-r1-b01fcb72) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc047-95eff5be91-r1-941b40c1"></a>
+- [规格传播与解释闭环](xuan.md#v0-registry-gongfa-candidate-html96-vc047-95eff5be91-r1-941b40c1) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc048-27f2dad13f-r1-3f90bc71"></a>
+- [独立产品测试](xuan.md#v0-registry-gongfa-candidate-html96-vc048-27f2dad13f-r1-3f90bc71) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc050-a7c0c3f5b3-r1-93be3f8f"></a>
+- [规格外部审查](xuan.md#v0-registry-gongfa-candidate-html96-vc050-a7c0c3f5b3-r1-93be3f8f) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc051-17b89b8935-r1-df0aa210"></a>
+- [具体可度量的里程碑](xuan.md#v0-registry-gongfa-candidate-html96-vc051-17b89b8935-r1-df0aa210) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc052-ccac538236-r1-f1cb315e"></a>
+- [计划日期与当前估计分离](xuan.md#v0-registry-gongfa-candidate-html96-vc052-ccac538236-r1-f1cb315e) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc060-c538b2d407-r1-e5abe7bb"></a>
+- [输入—执行—输出三层护栏](xuan.md#v0-registry-gongfa-candidate-html96-vc060-c538b2d407-r1-e5abe7bb) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc061-ab0f344082-r1-1a9ab897"></a>
+- [Human in the Loop](xuan.md#v0-registry-gongfa-candidate-html96-vc061-ab0f344082-r1-1a9ab897) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc062-08737c8720-r1-a4da43b6"></a>
+- [业务规则可执行化](xuan.md#v0-registry-gongfa-candidate-html96-vc062-08737c8720-r1-a4da43b6) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc064-b9a61a8155-r1-a9a8b2ee"></a>
+- [Skills 三层渐进式披露](xuan.md#v0-registry-gongfa-candidate-html96-vc064-b9a61a8155-r1-a9a8b2ee) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc065-2e152678b3-r1-5afc0308"></a>
+- [Skill 路由条件设计](xuan.md#v0-registry-gongfa-candidate-html96-vc065-2e152678b3-r1-5afc0308) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc067-340e5fb02f-r1-5714e10d"></a>
+- [Context Distillation](xuan.md#v0-registry-gongfa-candidate-html96-vc067-340e5fb02f-r1-5714e10d) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc070-9e82663c7b-r1-3aea06f4"></a>
+- [五层生产压缩](xuan.md#v0-registry-gongfa-candidate-html96-vc070-9e82663c7b-r1-3aea06f4) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc073-b49c97f49a-r1-317c8cdd"></a>
+- [记忆整理三层](xuan.md#v0-registry-gongfa-candidate-html96-vc073-b49c97f49a-r1-317c8cdd) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc074-fc2efb0f9d-r1-0f0e4105"></a>
+- [ACI 防呆设计](xuan.md#v0-registry-gongfa-candidate-html96-vc074-fc2efb0f9d-r1-0f0e4105) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc075-cc50dde1ac-r1-7391ba0e"></a>
+- [提议者—审核者](xuan.md#v0-registry-gongfa-candidate-html96-vc075-cc50dde1ac-r1-7391ba0e) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc077-3454e2c6ff-r1-712baaca"></a>
+- [幂等性与预检—确认](xuan.md#v0-registry-gongfa-candidate-html96-vc077-3454e2c6ff-r1-712baaca) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc078-9f3c420b1b-r1-f433959a"></a>
+- [异步任务生命周期](xuan.md#v0-registry-gongfa-candidate-html96-vc078-9f3c420b1b-r1-f433959a) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc084-25055bf8b2-r1-6f02152f"></a>
+- [离线—在线评估双轨](xuan.md#v0-registry-gongfa-candidate-html96-vc084-25055bf8b2-r1-6f02152f) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc090-f91a40655e-r1-d4cfd8bb"></a>
+- [黄金标准—功能测试—LLM 评估](xuan.md#v0-registry-gongfa-candidate-html96-vc090-f91a40655e-r1-d4cfd8bb) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc095-532e31ff10-r1-b19b80b9"></a>
+- [多通道滤波](xuan.md#v0-registry-gongfa-candidate-html96-vc095-532e31ff10-r1-b19b80b9) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc098-f3093af589-r1-ac19a090"></a>
+- [通用五步衡量法](xuan.md#v0-registry-gongfa-candidate-html96-vc098-f3093af589-r1-ac19a090) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc100-6da755fe0b-r1-2b5aa51d"></a>
+- [门槛导向抽样](xuan.md#v0-registry-gongfa-candidate-html96-vc100-6da755fe0b-r1-2b5aa51d) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-problem-solving-methodology-means-ends-analysis-31a4dd072b-1-0-0-f4be8f62"></a>
+- [手段—目的分析](xuan.md#v0-registry-gongfa-candidate-solve24-psoa-problem-solving-methodology-means-ends-analysis-31a4dd072b-1-0-0-f4be8f62) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-problem-solving-methodology-constructive-witness-be7dab6e3f-1-0-0-2d1644be"></a>
+- [构造性见证](xuan.md#v0-registry-gongfa-candidate-solve24-psoa-problem-solving-methodology-constructive-witness-be7dab6e3f-1-0-0-2d1644be) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-problem-solving-methodology-metacognitive-monitoring-50d157c1c8-1-0-0-890e70fa"></a>
+- [元认知监控](xuan.md#v0-registry-gongfa-candidate-solve24-psoa-problem-solving-methodology-metacognitive-monitoring-50d157c1c8-1-0-0-890e70fa) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-programming-binary-search-debugging-3cc299f324-1-0-0-fa68e7cf"></a>
+- [二分调试](xuan.md#v0-registry-gongfa-candidate-solve24-psoa-programming-binary-search-debugging-3cc299f324-1-0-0-fa68e7cf) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-programming-differential-testing-3b37392484-1-0-0-921cfbd7"></a>
+- [差分测试](xuan.md#v0-registry-gongfa-candidate-solve24-psoa-programming-differential-testing-3b37392484-1-0-0-921cfbd7) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-computer-science-dependency-graph-bd5ad1021a-1-0-0-d67f0498"></a>
+- [依赖图](xuan.md#v0-registry-gongfa-candidate-solve24-psoa-computer-science-dependency-graph-bd5ad1021a-1-0-0-d67f0498) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-computer-science-interface-contract-4c64b22002-1-0-0-853d1600"></a>
+- [接口契约](xuan.md#v0-registry-gongfa-candidate-solve24-psoa-computer-science-interface-contract-4c64b22002-1-0-0-853d1600) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-software-engineering-impact-analysis-3389d2886d-1-0-0-3fcc882b"></a>
+- [影响分析](xuan.md#v0-registry-gongfa-candidate-solve24-psoa-software-engineering-impact-analysis-3389d2886d-1-0-0-3fcc882b) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-software-engineering-architecture-tradeoff-e9c00cf404-1-0-0-82751569"></a>
+- [架构权衡](xuan.md#v0-registry-gongfa-candidate-solve24-psoa-software-engineering-architecture-tradeoff-e9c00cf404-1-0-0-82751569) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-software-engineering-incremental-development-785e8a3351-1-0-0-170e9e38"></a>
+- [增量开发](xuan.md#v0-registry-gongfa-candidate-solve24-psoa-software-engineering-incremental-development-785e8a3351-1-0-0-170e9e38) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-research-source-criticism-9487568d77-1-0-0-788c436f"></a>
+- [来源批判](xuan.md#v0-registry-gongfa-candidate-solve24-psoa-research-source-criticism-9487568d77-1-0-0-788c436f) — 玄阶高级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-engineering-failure-premortem-5b30c384e8-0-1-0-625fe2a9"></a>
+- [失败预演](xuan.md#v0-registry-gongfa-candidate-solve24-psoa-engineering-failure-premortem-5b30c384e8-0-1-0-625fe2a9) — 玄阶高级
 <a id="v0-registry-gongfa-compositional-description-r1-4d4ecf20"></a>
 - [组合描述模型](xuan.md#v0-registry-gongfa-compositional-description-r1-4d4ecf20) — 玄阶中级
 <a id="v0-registry-gongfa-thought-experiment-r1-9c6f33d3"></a>
@@ -2425,206 +2425,206 @@
 - [输入输出与状态变换分离](xuan.md#v0-registry-gongfa-input-state-transform-separation-r1-2443d5c8) — 玄阶中级
 <a id="v0-registry-gongfa-dry-reuse-r1-5af5b36d"></a>
 - [DRY 逻辑复用准则](xuan.md#v0-registry-gongfa-dry-reuse-r1-5af5b36d) — 玄阶中级
-<a id="v0-html211-a001-6bf0584a"></a>
-- [1.1 编程没有银弹](xuan.md#v0-html211-a001-6bf0584a) — 玄阶中级
-<a id="v0-html211-a002-810c72b3"></a>
-- [1.2 代码即设计文档](xuan.md#v0-html211-a002-810c72b3) — 玄阶中级
-<a id="v0-html211-a003-9579dda9"></a>
-- [1.3 代码必然被修改](xuan.md#v0-html211-a003-9579dda9) — 玄阶中级
-<a id="v0-html211-a007-eaef73e6"></a>
-- [2.4 PIE](xuan.md#v0-html211-a007-eaef73e6) — 玄阶中级
-<a id="v0-html211-a008-5eeb5214"></a>
-- [2.5 SLAP](xuan.md#v0-html211-a008-5eeb5214) — 玄阶中级
-<a id="v0-html211-a010-34868b0e"></a>
-- [2.7 名字很重要](xuan.md#v0-html211-a010-34868b0e) — 玄阶中级
-<a id="v0-html211-a011-b4afce67"></a>
-- [3.1 编程理论](xuan.md#v0-html211-a011-b4afce67) — 玄阶中级
-<a id="v0-html211-a012-7a72c4c9"></a>
-- [3.2 交流](xuan.md#v0-html211-a012-7a72c4c9) — 玄阶中级
-<a id="v0-html211-a014-e484cab6"></a>
-- [3.4 灵活性](xuan.md#v0-html211-a014-e484cab6) — 玄阶中级
-<a id="v0-html211-a016-938acb80"></a>
-- [3.6 重复最少化](xuan.md#v0-html211-a016-938acb80) — 玄阶中级
-<a id="v0-html211-a018-1fd0329f"></a>
-- [3.8 对称性](xuan.md#v0-html211-a018-1fd0329f) — 玄阶中级
-<a id="v0-html211-a019-b803c54d"></a>
-- [3.9 声明式表](xuan.md#v0-html211-a019-b803c54d) — 玄阶中级
-<a id="v0-html211-a025-bcf46e7a"></a>
-- [3.15 打包](xuan.md#v0-html211-a025-bcf46e7a) — 玄阶中级
-<a id="v0-html211-a038-494411f4"></a>
-- [3.28 可复用性](xuan.md#v0-html211-a038-494411f4) — 玄阶中级
-<a id="v0-html211-a039-15b5e6b4"></a>
-- [3.29 七个设计原理](xuan.md#v0-html211-a039-15b5e6b4) — 玄阶中级
-<a id="v0-html211-a041-be6de993"></a>
-- [3.31 同构原理](xuan.md#v0-html211-a041-be6de993) — 玄阶中级
-<a id="v0-html211-a042-4b471671"></a>
-- [3.32 对称原理](xuan.md#v0-html211-a042-4b471671) — 玄阶中级
-<a id="v0-html211-a044-14dfb265"></a>
-- [3.34 线性原理](xuan.md#v0-html211-a044-14dfb265) — 玄阶中级
-<a id="v0-html211-a045-35a928d6"></a>
-- [3.35 清晰原理](xuan.md#v0-html211-a045-35a928d6) — 玄阶中级
-<a id="v0-html211-a049-7e50d4eb"></a>
-- [3.39 清晰原则](xuan.md#v0-html211-a049-7e50d4eb) — 玄阶中级
-<a id="v0-html211-a053-7557c9fc"></a>
-- [3.43 简约原则](xuan.md#v0-html211-a053-7557c9fc) — 玄阶中级
-<a id="v0-html211-a056-a15297d5"></a>
-- [3.46 表达性原则](xuan.md#v0-html211-a056-a15297d5) — 玄阶中级
-<a id="v0-html211-a057-901030a2"></a>
-- [3.47 最小意外原则](xuan.md#v0-html211-a057-901030a2) — 玄阶中级
-<a id="v0-html211-a063-ba84d426"></a>
-- [3.53 多样性原则](xuan.md#v0-html211-a063-ba84d426) — 玄阶中级
-<a id="v0-html211-a067-f3895397"></a>
-- [3.57 工作唯一](xuan.md#v0-html211-a067-f3895397) — 玄阶中级
-<a id="v0-html211-a069-eca2866d"></a>
-- [3.59 可移植性优先于效率](xuan.md#v0-html211-a069-eca2866d) — 玄阶中级
-<a id="v0-html211-a070-1a38a65c"></a>
-- [3.60 文本数据](xuan.md#v0-html211-a070-1a38a65c) — 玄阶中级
-<a id="v0-html211-a072-4108a8b8"></a>
-- [3.62 活用shell脚本](xuan.md#v0-html211-a072-4108a8b8) — 玄阶中级
-<a id="v0-html211-a079-c1c3d9e6"></a>
-- [4.5 代码中的“坏味”](xuan.md#v0-html211-a079-c1c3d9e6) — 玄阶中级
-<a id="v0-html211-a084-a098b259"></a>
-- [5.4 无我编程](xuan.md#v0-html211-a084-a098b259) — 玄阶中级
-<a id="v0-html211-a090-c1ec25ba"></a>
-- [6.4 内部测试](xuan.md#v0-html211-a090-c1ec25ba) — 玄阶中级
-<a id="v0-html211-a091-f82d0918"></a>
-- [6.5 橡皮鸭调试法](xuan.md#v0-html211-a091-f82d0918) — 玄阶中级
-<a id="v0-html211-a094-c9c50403"></a>
-- [7.2 康威定律](xuan.md#v0-html211-a094-c9c50403) — 玄阶中级
-<a id="v0-html211-a098-32078599"></a>
-- [7.6 约书亚树原则](xuan.md#v0-html211-a098-32078599) — 玄阶中级
-<a id="v0-html211-b002-f1baf1d6"></a>
-- [理解驱动能力](xuan.md#v0-html211-b002-f1baf1d6) — 玄阶中级
-<a id="v0-html211-b004-8655e019"></a>
-- [复杂性症状清单](xuan.md#v0-html211-b004-8655e019) — 玄阶中级
-<a id="v0-html211-b010-67ab5ad2"></a>
-- [Bug 双重定义](xuan.md#v0-html211-b010-67ab5ad2) — 玄阶中级
-<a id="v0-html211-b017-9b014fba"></a>
-- [SAR / ISAR](xuan.md#v0-html211-b017-9b014fba) — 玄阶中级
-<a id="v0-html211-b024-b8f0c1f7"></a>
-- [持续改善](xuan.md#v0-html211-b024-b8f0c1f7) — 玄阶中级
-<a id="v0-html211-b025-366d01bb"></a>
-- [改善优先级两阶段](xuan.md#v0-html211-b025-366d01bb) — 玄阶中级
-<a id="v0-html211-b027-bee2937c"></a>
-- [学习—实践闭环](xuan.md#v0-html211-b027-bee2937c) — 玄阶中级
-<a id="v0-html211-b028-cbf513ee"></a>
-- [用户问题 / 开发者方案](xuan.md#v0-html211-b028-cbf513ee) — 玄阶中级
-<a id="v0-html211-c005-5623ab11"></a>
-- [用户—程序—计算机中介模型](xuan.md#v0-html211-c005-5623ab11) — 玄阶中级
-<a id="v0-html211-c006-5797a208"></a>
-- [团队规模—协调成本悖论](xuan.md#v0-html211-c006-5797a208) — 玄阶中级
-<a id="v0-html211-c007-d6439d23"></a>
-- [最小惊讶原则](xuan.md#v0-html211-c007-d6439d23) — 玄阶中级
-<a id="v0-html211-c008-8c4a5487"></a>
-- [程序单一整体](xuan.md#v0-html211-c008-8c4a5487) — 玄阶中级
-<a id="v0-html211-c010-80364461"></a>
-- [维护即长期滋养](xuan.md#v0-html211-c010-80364461) — 玄阶中级
-<a id="v0-html211-c016-de0eeb70"></a>
-- [系统三元组：硬件、软件与人](xuan.md#v0-html211-c016-de0eeb70) — 玄阶中级
-<a id="v0-html211-d002-fd6e10e9"></a>
-- [性能价值链](xuan.md#v0-html211-d002-fd6e10e9) — 玄阶中级
-<a id="v0-html211-d004-88f96dce"></a>
-- [性能影响层级链](xuan.md#v0-html211-d004-88f96dce) — 玄阶中级
-<a id="v0-html211-d012-970dcdfa"></a>
-- [排队系统模型](xuan.md#v0-html211-d012-970dcdfa) — 玄阶中级
-<a id="v0-html211-d015-7ddf6c0e"></a>
-- [性能数据展示六条经验](xuan.md#v0-html211-d015-7ddf6c0e) — 玄阶中级
-<a id="v0-html211-d016-0b676837"></a>
-- [图表选择矩阵](xuan.md#v0-html211-d016-0b676837) — 玄阶中级
-<a id="v0-html211-d019-23089a4d"></a>
-- [十类性能测试谱系](xuan.md#v0-html211-d019-23089a4d) — 玄阶中级
-<a id="v0-html211-d028-c1136fcb"></a>
-- [NUMA亲和策略](xuan.md#v0-html211-d028-c1136fcb) — 玄阶中级
-<a id="v0-html211-d030-afc2438c"></a>
-- [SSD内部页块模型](xuan.md#v0-html211-d030-afc2438c) — 玄阶中级
-<a id="v0-html211-d042-b896bd73"></a>
-- [两步时间序列预测](xuan.md#v0-html211-d042-b896bd73) — 玄阶中级
-<a id="v0-html211-d045-a3fc0a65"></a>
-- [三元素干扰治理](xuan.md#v0-html211-d045-a3fc0a65) — 玄阶中级
-<a id="v0-html211-d047-83aa15a6"></a>
-- [HTTP传输状态机](xuan.md#v0-html211-d047-83aa15a6) — 玄阶中级
-<a id="v0-html211-d051-98ea9bae"></a>
-- [数据中心选址因子](xuan.md#v0-html211-d051-98ea9bae) — 玄阶中级
-<a id="v0-html211-d053-22169f5d"></a>
-- [模块化Pod网络](xuan.md#v0-html211-d053-22169f5d) — 玄阶中级
-<a id="v0-html211-d056-77800ca0"></a>
-- [服务效率八分类](xuan.md#v0-html211-d056-77800ca0) — 玄阶中级
-<a id="v0-html211-d057-fca04f92"></a>
-- [效率提升五条执行原则](xuan.md#v0-html211-d057-fca04f92) — 玄阶中级
-<a id="v0-html211-d062-8ff1243d"></a>
-- [持续学习循环](xuan.md#v0-html211-d062-8ff1243d) — 玄阶中级
-<a id="v0-html211-e004-b3ce29eb"></a>
-- [有效沟通四准则](xuan.md#v0-html211-e004-b3ce29eb) — 玄阶中级
-<a id="v0-html96-vc001-3a75cdb8"></a>
-- [复杂性症状—根因模型](xuan.md#v0-html96-vc001-3a75cdb8) — 玄阶中级
-<a id="v0-html96-vc002-7f2eeb71"></a>
-- [战略式编程](xuan.md#v0-html96-vc002-7f2eeb71) — 玄阶中级
-<a id="v0-html96-vc010-0e2f2106"></a>
-- [先写注释](xuan.md#v0-html96-vc010-0e2f2106) — 玄阶中级
-<a id="v0-html96-vc011-ec336c84"></a>
-- [抽象增量](xuan.md#v0-html96-vc011-ec336c84) — 玄阶中级
-<a id="v0-html96-vc013-44306047"></a>
-- [价值优先推进](xuan.md#v0-html96-vc013-44306047) — 玄阶中级
-<a id="v0-html96-vc014-c9c410fe"></a>
-- [第三方模型六维选择](xuan.md#v0-html96-vc014-c9c410fe) — 玄阶中级
-<a id="v0-html96-vc015-c11ea0bf"></a>
-- [第三方 API 十二维选择](xuan.md#v0-html96-vc015-c11ea0bf) — 玄阶中级
-<a id="v0-html96-vc019-48a6ae94"></a>
-- [代码 RAG](xuan.md#v0-html96-vc019-48a6ae94) — 玄阶中级
-<a id="v0-html96-vc022-0664c0c6"></a>
-- [INVEST 需求评审](xuan.md#v0-html96-vc022-0664c0c6) — 玄阶中级
-<a id="v0-html96-vc031-8cc8d726"></a>
-- [巴士系数 (Bus Factor)](xuan.md#v0-html96-vc031-8cc8d726) — 玄阶中级
-<a id="v0-html96-vc032-d9afa839"></a>
-- [古德哈特定律 (Goodhart's Law)](xuan.md#v0-html96-vc032-d9afa839) — 玄阶中级
-<a id="v0-html96-vc033-98dd7f00"></a>
-- [测试金字塔 (Testing Pyramid)](xuan.md#v0-html96-vc033-98dd7f00) — 玄阶中级
-<a id="v0-html96-vc036-3d5ef559"></a>
-- [技术选型多维决策框架](xuan.md#v0-html96-vc036-3d5ef559) — 玄阶中级
-<a id="v0-html96-vc041-f19636d4"></a>
-- [流式窗口与水位线](xuan.md#v0-html96-vc041-f19636d4) — 玄阶中级
-<a id="v0-html96-vc042-c2235b36"></a>
-- [服务阶段信任模型](xuan.md#v0-html96-vc042-c2235b36) — 玄阶中级
-<a id="v0-html96-vc044-96f9460f"></a>
-- [序列化格式选择框架](xuan.md#v0-html96-vc044-96f9460f) — 玄阶中级
-<a id="v0-html96-vc045-0578a5e0"></a>
-- [人月不可互换与Brooks法则](xuan.md#v0-html96-vc045-0578a5e0) — 玄阶中级
-<a id="v0-html96-vc049-7c5d2eb5"></a>
-- [基于同类项目数据的系统估算](xuan.md#v0-html96-vc049-7c5d2eb5) — 玄阶中级
-<a id="v0-html96-vc053-a386ee7f"></a>
-- [可持续工作周](xuan.md#v0-html96-vc053-a386ee7f) — 玄阶中级
-<a id="v0-html96-vc055-669bb6ba"></a>
-- [异步优先的打断判断](xuan.md#v0-html96-vc055-669bb6ba) — 玄阶中级
-<a id="v0-html96-vc059-68e5c2cf"></a>
-- [工具调用四步循环](xuan.md#v0-html96-vc059-68e5c2cf) — 玄阶中级
-<a id="v0-html96-vc066-6a3f4940"></a>
-- [Skill 路由与执行分离](xuan.md#v0-html96-vc066-6a3f4940) — 玄阶中级
-<a id="v0-html96-vc071-9068e9bd"></a>
-- [隔离优于压缩](xuan.md#v0-html96-vc071-9068e9bd) — 玄阶中级
-<a id="v0-html96-vc072-660e7554"></a>
-- [记忆三层评估](xuan.md#v0-html96-vc072-660e7554) — 玄阶中级
-<a id="v0-html96-vc076-9d942016"></a>
-- [沙盒隔离层级](xuan.md#v0-html96-vc076-9d942016) — 玄阶中级
-<a id="v0-html96-vc080-b7aebce3"></a>
-- [LLM-as-a-Judge + Rubric](xuan.md#v0-html96-vc080-b7aebce3) — 玄阶中级
-<a id="v0-html96-vc082-67774c46"></a>
-- [用户域—模型域双向转换](xuan.md#v0-html96-vc082-67774c46) — 玄阶中级
-<a id="v0-html96-vc085-a3a334a3"></a>
-- [上下文来源矩阵](xuan.md#v0-html96-vc085-a3a334a3) — 玄阶中级
-<a id="v0-html96-vc086-17dbd7cf"></a>
-- [契诃夫的枪支谬误](xuan.md#v0-html96-vc086-17dbd7cf) — 玄阶中级
-<a id="v0-html96-vc088-0a08444c"></a>
-- [加法—减法贪心算法](xuan.md#v0-html96-vc088-0a08444c) — 玄阶中级
-<a id="v0-html96-vc092-c7c17db4"></a>
-- [系统边界设定原则](xuan.md#v0-html96-vc092-c7c17db4) — 玄阶中级
-<a id="v0-html96-vc093-b1d1b997"></a>
-- [因果回路图](xuan.md#v0-html96-vc093-b1d1b997) — 玄阶中级
-<a id="v0-html96-vc099-17477392"></a>
-- [校准估计](xuan.md#v0-html96-vc099-17477392) — 玄阶中级
-<a id="v0-solve24-psoa-problem-solving-methodology-heuristic-search-22607cdf"></a>
-- [选择性启发式搜索](xuan.md#v0-solve24-psoa-problem-solving-methodology-heuristic-search-22607cdf) — 玄阶中级
-<a id="v0-solve24-psoa-decision-science-value-of-information-6a2bfb1b"></a>
-- [信息价值](xuan.md#v0-solve24-psoa-decision-science-value-of-information-6a2bfb1b) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a001-8e7d97a738-r1-e931f6bf"></a>
+- [1.1 编程没有银弹](xuan.md#v0-registry-gongfa-candidate-html211-a001-8e7d97a738-r1-e931f6bf) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a002-4d2dd6d6ba-r1-303bb5ba"></a>
+- [1.2 代码即设计文档](xuan.md#v0-registry-gongfa-candidate-html211-a002-4d2dd6d6ba-r1-303bb5ba) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a003-a0e3ed09b3-r1-b73ea36e"></a>
+- [1.3 代码必然被修改](xuan.md#v0-registry-gongfa-candidate-html211-a003-a0e3ed09b3-r1-b73ea36e) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a007-9f5d58c4c2-r1-2f7fcf04"></a>
+- [2.4 PIE](xuan.md#v0-registry-gongfa-candidate-html211-a007-9f5d58c4c2-r1-2f7fcf04) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a008-3859e64713-r1-b514e5e6"></a>
+- [2.5 SLAP](xuan.md#v0-registry-gongfa-candidate-html211-a008-3859e64713-r1-b514e5e6) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a010-1f064950c2-r1-a48f2be3"></a>
+- [2.7 名字很重要](xuan.md#v0-registry-gongfa-candidate-html211-a010-1f064950c2-r1-a48f2be3) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a011-524f16bc1d-r1-76b4b7a1"></a>
+- [3.1 编程理论](xuan.md#v0-registry-gongfa-candidate-html211-a011-524f16bc1d-r1-76b4b7a1) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a012-b7f6799a7b-r1-2274c61c"></a>
+- [3.2 交流](xuan.md#v0-registry-gongfa-candidate-html211-a012-b7f6799a7b-r1-2274c61c) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a014-0404d27bb5-r1-509ca68d"></a>
+- [3.4 灵活性](xuan.md#v0-registry-gongfa-candidate-html211-a014-0404d27bb5-r1-509ca68d) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a016-53aedb0dc6-r1-a93d0a6d"></a>
+- [3.6 重复最少化](xuan.md#v0-registry-gongfa-candidate-html211-a016-53aedb0dc6-r1-a93d0a6d) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a018-b70e5bea74-r1-995f6075"></a>
+- [3.8 对称性](xuan.md#v0-registry-gongfa-candidate-html211-a018-b70e5bea74-r1-995f6075) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a019-f38b5a87f1-r1-f4a31295"></a>
+- [3.9 声明式表](xuan.md#v0-registry-gongfa-candidate-html211-a019-f38b5a87f1-r1-f4a31295) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a025-64fbbb3b0b-r1-604cbedd"></a>
+- [3.15 打包](xuan.md#v0-registry-gongfa-candidate-html211-a025-64fbbb3b0b-r1-604cbedd) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a038-8a3b636f85-r1-acc6334e"></a>
+- [3.28 可复用性](xuan.md#v0-registry-gongfa-candidate-html211-a038-8a3b636f85-r1-acc6334e) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a039-8414fd26a8-r1-3006f046"></a>
+- [3.29 七个设计原理](xuan.md#v0-registry-gongfa-candidate-html211-a039-8414fd26a8-r1-3006f046) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a041-05fc61c242-r1-c46e09f5"></a>
+- [3.31 同构原理](xuan.md#v0-registry-gongfa-candidate-html211-a041-05fc61c242-r1-c46e09f5) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a042-f9481e5604-r1-835c8532"></a>
+- [3.32 对称原理](xuan.md#v0-registry-gongfa-candidate-html211-a042-f9481e5604-r1-835c8532) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a044-58945da4a1-r1-b031379f"></a>
+- [3.34 线性原理](xuan.md#v0-registry-gongfa-candidate-html211-a044-58945da4a1-r1-b031379f) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a045-65a577c76d-r1-e3340d3e"></a>
+- [3.35 清晰原理](xuan.md#v0-registry-gongfa-candidate-html211-a045-65a577c76d-r1-e3340d3e) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a049-c44b012d08-r1-a6f47696"></a>
+- [3.39 清晰原则](xuan.md#v0-registry-gongfa-candidate-html211-a049-c44b012d08-r1-a6f47696) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a053-a7b961dd5b-r1-524aa6ee"></a>
+- [3.43 简约原则](xuan.md#v0-registry-gongfa-candidate-html211-a053-a7b961dd5b-r1-524aa6ee) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a056-6e8037bbf4-r1-b8b0ce68"></a>
+- [3.46 表达性原则](xuan.md#v0-registry-gongfa-candidate-html211-a056-6e8037bbf4-r1-b8b0ce68) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a057-846064fae9-r1-8cfd673b"></a>
+- [3.47 最小意外原则](xuan.md#v0-registry-gongfa-candidate-html211-a057-846064fae9-r1-8cfd673b) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a063-9838ec2916-r1-3464551e"></a>
+- [3.53 多样性原则](xuan.md#v0-registry-gongfa-candidate-html211-a063-9838ec2916-r1-3464551e) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a067-0ab54271db-r1-70cea0ff"></a>
+- [3.57 工作唯一](xuan.md#v0-registry-gongfa-candidate-html211-a067-0ab54271db-r1-70cea0ff) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a069-ce67e069c9-r1-20cba35c"></a>
+- [3.59 可移植性优先于效率](xuan.md#v0-registry-gongfa-candidate-html211-a069-ce67e069c9-r1-20cba35c) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a070-7422ebcca4-r1-e70359c7"></a>
+- [3.60 文本数据](xuan.md#v0-registry-gongfa-candidate-html211-a070-7422ebcca4-r1-e70359c7) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a072-548773e5aa-r1-67b30f49"></a>
+- [3.62 活用shell脚本](xuan.md#v0-registry-gongfa-candidate-html211-a072-548773e5aa-r1-67b30f49) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a079-fcb2eec37f-r1-d98719fc"></a>
+- [4.5 代码中的“坏味”](xuan.md#v0-registry-gongfa-candidate-html211-a079-fcb2eec37f-r1-d98719fc) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a084-9ed61bca4f-r1-ca85fd3d"></a>
+- [5.4 无我编程](xuan.md#v0-registry-gongfa-candidate-html211-a084-9ed61bca4f-r1-ca85fd3d) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a090-20e76f8c68-r1-c79527be"></a>
+- [6.4 内部测试](xuan.md#v0-registry-gongfa-candidate-html211-a090-20e76f8c68-r1-c79527be) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a091-a929ab63af-r1-fcbfccff"></a>
+- [6.5 橡皮鸭调试法](xuan.md#v0-registry-gongfa-candidate-html211-a091-a929ab63af-r1-fcbfccff) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a094-349b5fcc49-r1-02e4db60"></a>
+- [7.2 康威定律](xuan.md#v0-registry-gongfa-candidate-html211-a094-349b5fcc49-r1-02e4db60) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-a098-45e07846f3-r1-b3435933"></a>
+- [7.6 约书亚树原则](xuan.md#v0-registry-gongfa-candidate-html211-a098-45e07846f3-r1-b3435933) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-b002-556ed9e790-r1-401df117"></a>
+- [理解驱动能力](xuan.md#v0-registry-gongfa-candidate-html211-b002-556ed9e790-r1-401df117) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-b004-605c2f5cf8-r1-28a7954e"></a>
+- [复杂性症状清单](xuan.md#v0-registry-gongfa-candidate-html211-b004-605c2f5cf8-r1-28a7954e) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-b010-2150aaf889-r1-5e83fed8"></a>
+- [Bug 双重定义](xuan.md#v0-registry-gongfa-candidate-html211-b010-2150aaf889-r1-5e83fed8) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-b017-f0b7aaf768-r1-5c647c08"></a>
+- [SAR / ISAR](xuan.md#v0-registry-gongfa-candidate-html211-b017-f0b7aaf768-r1-5c647c08) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-b024-ea164ea4bc-r1-6cf1d9cf"></a>
+- [持续改善](xuan.md#v0-registry-gongfa-candidate-html211-b024-ea164ea4bc-r1-6cf1d9cf) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-b025-39f28ab5e4-r1-96bc2a4d"></a>
+- [改善优先级两阶段](xuan.md#v0-registry-gongfa-candidate-html211-b025-39f28ab5e4-r1-96bc2a4d) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-b027-34deece801-r1-f5ad9edd"></a>
+- [学习—实践闭环](xuan.md#v0-registry-gongfa-candidate-html211-b027-34deece801-r1-f5ad9edd) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-b028-38404c0eca-r1-91397b4f"></a>
+- [用户问题 / 开发者方案](xuan.md#v0-registry-gongfa-candidate-html211-b028-38404c0eca-r1-91397b4f) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-c005-95adbabc0d-r1-abe4779c"></a>
+- [用户—程序—计算机中介模型](xuan.md#v0-registry-gongfa-candidate-html211-c005-95adbabc0d-r1-abe4779c) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-c006-2db7a28cc4-r1-8145d7df"></a>
+- [团队规模—协调成本悖论](xuan.md#v0-registry-gongfa-candidate-html211-c006-2db7a28cc4-r1-8145d7df) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-c007-ac8d2a6d24-r1-23abaa5e"></a>
+- [最小惊讶原则](xuan.md#v0-registry-gongfa-candidate-html211-c007-ac8d2a6d24-r1-23abaa5e) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-c008-8d9e24cf98-r1-e939db7d"></a>
+- [程序单一整体](xuan.md#v0-registry-gongfa-candidate-html211-c008-8d9e24cf98-r1-e939db7d) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-c010-e5f231360a-r1-1dfae689"></a>
+- [维护即长期滋养](xuan.md#v0-registry-gongfa-candidate-html211-c010-e5f231360a-r1-1dfae689) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-c016-0c3e561061-r1-c1df1f06"></a>
+- [系统三元组：硬件、软件与人](xuan.md#v0-registry-gongfa-candidate-html211-c016-0c3e561061-r1-c1df1f06) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d002-ec94d50c99-r1-5689bf0a"></a>
+- [性能价值链](xuan.md#v0-registry-gongfa-candidate-html211-d002-ec94d50c99-r1-5689bf0a) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d004-4275e4cc54-r1-6ea0d3d5"></a>
+- [性能影响层级链](xuan.md#v0-registry-gongfa-candidate-html211-d004-4275e4cc54-r1-6ea0d3d5) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d012-17624a05ae-r1-aa10c84a"></a>
+- [排队系统模型](xuan.md#v0-registry-gongfa-candidate-html211-d012-17624a05ae-r1-aa10c84a) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d015-a84c4215f9-r1-4142ff99"></a>
+- [性能数据展示六条经验](xuan.md#v0-registry-gongfa-candidate-html211-d015-a84c4215f9-r1-4142ff99) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d016-f1f5aa876b-r1-ffcf3110"></a>
+- [图表选择矩阵](xuan.md#v0-registry-gongfa-candidate-html211-d016-f1f5aa876b-r1-ffcf3110) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d019-bd404db9f3-r1-bfcb59f4"></a>
+- [十类性能测试谱系](xuan.md#v0-registry-gongfa-candidate-html211-d019-bd404db9f3-r1-bfcb59f4) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d028-051e730013-r1-bd332738"></a>
+- [NUMA亲和策略](xuan.md#v0-registry-gongfa-candidate-html211-d028-051e730013-r1-bd332738) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d030-b653c2000d-r1-b9a8e402"></a>
+- [SSD内部页块模型](xuan.md#v0-registry-gongfa-candidate-html211-d030-b653c2000d-r1-b9a8e402) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d042-eecda0e920-r1-1dd977c0"></a>
+- [两步时间序列预测](xuan.md#v0-registry-gongfa-candidate-html211-d042-eecda0e920-r1-1dd977c0) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d045-b04c03c190-r1-59978219"></a>
+- [三元素干扰治理](xuan.md#v0-registry-gongfa-candidate-html211-d045-b04c03c190-r1-59978219) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d047-544255383d-r1-b2314f4a"></a>
+- [HTTP传输状态机](xuan.md#v0-registry-gongfa-candidate-html211-d047-544255383d-r1-b2314f4a) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d051-f81a71f39c-r1-e50efe91"></a>
+- [数据中心选址因子](xuan.md#v0-registry-gongfa-candidate-html211-d051-f81a71f39c-r1-e50efe91) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d053-aed97bf0ae-r1-179c8069"></a>
+- [模块化Pod网络](xuan.md#v0-registry-gongfa-candidate-html211-d053-aed97bf0ae-r1-179c8069) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d056-0ea4f6b2d0-r1-2d2dc650"></a>
+- [服务效率八分类](xuan.md#v0-registry-gongfa-candidate-html211-d056-0ea4f6b2d0-r1-2d2dc650) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d057-8d72891b82-r1-b6e88752"></a>
+- [效率提升五条执行原则](xuan.md#v0-registry-gongfa-candidate-html211-d057-8d72891b82-r1-b6e88752) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-d062-a6e9b00b7b-r1-5515ddbf"></a>
+- [持续学习循环](xuan.md#v0-registry-gongfa-candidate-html211-d062-a6e9b00b7b-r1-5515ddbf) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html211-e004-1ad9f48b04-r1-b6a234e7"></a>
+- [有效沟通四准则](xuan.md#v0-registry-gongfa-candidate-html211-e004-1ad9f48b04-r1-b6a234e7) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc001-6e2806bd4b-r1-f891bfd4"></a>
+- [复杂性症状—根因模型](xuan.md#v0-registry-gongfa-candidate-html96-vc001-6e2806bd4b-r1-f891bfd4) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc002-4b9b414a8b-r1-30c656df"></a>
+- [战略式编程](xuan.md#v0-registry-gongfa-candidate-html96-vc002-4b9b414a8b-r1-30c656df) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc010-0b973e0e44-r1-79775e49"></a>
+- [先写注释](xuan.md#v0-registry-gongfa-candidate-html96-vc010-0b973e0e44-r1-79775e49) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc011-ce420d245a-r1-c56c9c2e"></a>
+- [抽象增量](xuan.md#v0-registry-gongfa-candidate-html96-vc011-ce420d245a-r1-c56c9c2e) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc013-dbb66f901f-r1-a6ac3dd2"></a>
+- [价值优先推进](xuan.md#v0-registry-gongfa-candidate-html96-vc013-dbb66f901f-r1-a6ac3dd2) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc014-0843a81ffc-r1-d7024119"></a>
+- [第三方模型六维选择](xuan.md#v0-registry-gongfa-candidate-html96-vc014-0843a81ffc-r1-d7024119) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc015-679dd3145a-r1-ed0c064c"></a>
+- [第三方 API 十二维选择](xuan.md#v0-registry-gongfa-candidate-html96-vc015-679dd3145a-r1-ed0c064c) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc019-a171c1ed92-r1-d9da5be3"></a>
+- [代码 RAG](xuan.md#v0-registry-gongfa-candidate-html96-vc019-a171c1ed92-r1-d9da5be3) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc022-ad1adb6128-r1-c3a4648d"></a>
+- [INVEST 需求评审](xuan.md#v0-registry-gongfa-candidate-html96-vc022-ad1adb6128-r1-c3a4648d) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc031-5762f97643-r1-6d1c6148"></a>
+- [巴士系数 (Bus Factor)](xuan.md#v0-registry-gongfa-candidate-html96-vc031-5762f97643-r1-6d1c6148) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc032-264ffc8421-r1-a61c46ec"></a>
+- [古德哈特定律 (Goodhart's Law)](xuan.md#v0-registry-gongfa-candidate-html96-vc032-264ffc8421-r1-a61c46ec) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc033-e4e61a749d-r1-80d67041"></a>
+- [测试金字塔 (Testing Pyramid)](xuan.md#v0-registry-gongfa-candidate-html96-vc033-e4e61a749d-r1-80d67041) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc036-95faf792d5-r1-f39cb5e2"></a>
+- [技术选型多维决策框架](xuan.md#v0-registry-gongfa-candidate-html96-vc036-95faf792d5-r1-f39cb5e2) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc041-9e4c693ab6-r1-d01217fd"></a>
+- [流式窗口与水位线](xuan.md#v0-registry-gongfa-candidate-html96-vc041-9e4c693ab6-r1-d01217fd) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc042-c32c9fe09c-r1-d7af9dab"></a>
+- [服务阶段信任模型](xuan.md#v0-registry-gongfa-candidate-html96-vc042-c32c9fe09c-r1-d7af9dab) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc044-3255725bf7-r1-26fc3f50"></a>
+- [序列化格式选择框架](xuan.md#v0-registry-gongfa-candidate-html96-vc044-3255725bf7-r1-26fc3f50) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc045-e245d29d3e-r1-39620ffc"></a>
+- [人月不可互换与Brooks法则](xuan.md#v0-registry-gongfa-candidate-html96-vc045-e245d29d3e-r1-39620ffc) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc049-24aaf12f2d-r1-847f32c0"></a>
+- [基于同类项目数据的系统估算](xuan.md#v0-registry-gongfa-candidate-html96-vc049-24aaf12f2d-r1-847f32c0) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc053-ecc9ee9a43-r1-4fe11313"></a>
+- [可持续工作周](xuan.md#v0-registry-gongfa-candidate-html96-vc053-ecc9ee9a43-r1-4fe11313) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc055-0f8b4978f5-r1-5303b24f"></a>
+- [异步优先的打断判断](xuan.md#v0-registry-gongfa-candidate-html96-vc055-0f8b4978f5-r1-5303b24f) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc059-06b09d8617-r1-e3aa04d1"></a>
+- [工具调用四步循环](xuan.md#v0-registry-gongfa-candidate-html96-vc059-06b09d8617-r1-e3aa04d1) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc066-60c2a7546c-r1-80c37969"></a>
+- [Skill 路由与执行分离](xuan.md#v0-registry-gongfa-candidate-html96-vc066-60c2a7546c-r1-80c37969) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc071-377b89bdee-r1-650f75cb"></a>
+- [隔离优于压缩](xuan.md#v0-registry-gongfa-candidate-html96-vc071-377b89bdee-r1-650f75cb) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc072-fede19a89c-r1-d7ceb8b9"></a>
+- [记忆三层评估](xuan.md#v0-registry-gongfa-candidate-html96-vc072-fede19a89c-r1-d7ceb8b9) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc076-5038ad1ea1-r1-4ce78288"></a>
+- [沙盒隔离层级](xuan.md#v0-registry-gongfa-candidate-html96-vc076-5038ad1ea1-r1-4ce78288) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc080-fa9f8aae3e-r1-e889fecc"></a>
+- [LLM-as-a-Judge + Rubric](xuan.md#v0-registry-gongfa-candidate-html96-vc080-fa9f8aae3e-r1-e889fecc) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc082-c34a71c88d-r1-cb03d8d4"></a>
+- [用户域—模型域双向转换](xuan.md#v0-registry-gongfa-candidate-html96-vc082-c34a71c88d-r1-cb03d8d4) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc085-d21d8d2f90-r1-7222db02"></a>
+- [上下文来源矩阵](xuan.md#v0-registry-gongfa-candidate-html96-vc085-d21d8d2f90-r1-7222db02) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc086-bc8e97ea79-r1-69c0d47b"></a>
+- [契诃夫的枪支谬误](xuan.md#v0-registry-gongfa-candidate-html96-vc086-bc8e97ea79-r1-69c0d47b) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc088-25d71198c1-r1-8dbc1866"></a>
+- [加法—减法贪心算法](xuan.md#v0-registry-gongfa-candidate-html96-vc088-25d71198c1-r1-8dbc1866) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc092-7bc0069deb-r1-3f152f29"></a>
+- [系统边界设定原则](xuan.md#v0-registry-gongfa-candidate-html96-vc092-7bc0069deb-r1-3f152f29) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc093-29a6ebb513-r1-7c49c694"></a>
+- [因果回路图](xuan.md#v0-registry-gongfa-candidate-html96-vc093-29a6ebb513-r1-7c49c694) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-html96-vc099-324f0a252f-r1-daa2b04d"></a>
+- [校准估计](xuan.md#v0-registry-gongfa-candidate-html96-vc099-324f0a252f-r1-daa2b04d) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-problem-solving-methodology-heuristic-search-7062e9e80b-1-0-0-74e69702"></a>
+- [选择性启发式搜索](xuan.md#v0-registry-gongfa-candidate-solve24-psoa-problem-solving-methodology-heuristic-search-7062e9e80b-1-0-0-74e69702) — 玄阶中级
+<a id="v0-registry-gongfa-candidate-solve24-psoa-decision-science-value-of-information-61714fb11c-1-0-0-45e94b36"></a>
+- [信息价值](xuan.md#v0-registry-gongfa-candidate-solve24-psoa-decision-science-value-of-information-61714fb11c-1-0-0-45e94b36) — 玄阶中级
 <a id="v0-registry-gongfa-steelmanning-r1-8df598e7"></a>
 - ["钢人化"原则（最强版本理解）](xuan.md#v0-registry-gongfa-steelmanning-r1-8df598e7) — 玄阶初级
 <a id="v0-registry-gongfa-methodological-doubt-r1-2a76a99b"></a>
@@ -2635,72 +2635,72 @@
 - [吸引子](xuan.md#v0-registry-gongfa-attractor-model-r1-998b0dd9) — 玄阶初级
 <a id="v0-registry-gongfa-representation-flattening-r1-bae81083"></a>
 - [拍扁](xuan.md#v0-registry-gongfa-representation-flattening-r1-bae81083) — 玄阶初级
-<a id="v0-html211-a081-54fff2f4"></a>
-- [5.1 程序员的三大美德](xuan.md#v0-html211-a081-54fff2f4) — 玄阶初级
-<a id="v0-html211-a082-ebdbd2b7"></a>
-- [5.2 童子军规则](xuan.md#v0-html211-a082-ebdbd2b7) — 玄阶初级
-<a id="v0-html211-a086-bb994193"></a>
-- [5.6 TMTOWTDI](xuan.md#v0-html211-a086-bb994193) — 玄阶初级
-<a id="v0-html211-a095-7b836a2b"></a>
-- [7.3 破窗效应](xuan.md#v0-html211-a095-7b836a2b) — 玄阶初级
-<a id="v0-html211-a096-746afbfe"></a>
-- [7.4 熵增原理](xuan.md#v0-html211-a096-746afbfe) — 玄阶初级
-<a id="v0-html211-b006-eb574f1c"></a>
-- [未来预测准确度模型](xuan.md#v0-html211-b006-eb574f1c) — 玄阶初级
-<a id="v0-html211-b008-bd033a46"></a>
-- [两遍已太多](xuan.md#v0-html211-b008-bd033a46) — 玄阶初级
-<a id="v0-html211-b014-438920b3"></a>
-- [复杂代码六步治理](xuan.md#v0-html211-b014-438920b3) — 玄阶初级
-<a id="v0-html211-b018-b8922867"></a>
-- [软件即知识](xuan.md#v0-html211-b018-b8922867) — 玄阶初级
-<a id="v0-html211-c001-4d2cb170"></a>
-- [编程之道的整体和谐观](xuan.md#v0-html211-c001-4d2cb170) — 玄阶初级
-<a id="v0-html211-c002-13d2d2c9"></a>
-- [语言谱系与多样目的](xuan.md#v0-html211-c002-13d2d2c9) — 玄阶初级
-<a id="v0-html211-c004-17d902e0"></a>
-- [设计先于测试](xuan.md#v0-html211-c004-17d902e0) — 玄阶初级
-<a id="v0-html211-c013-47a3d028"></a>
-- [真实时间表](xuan.md#v0-html211-c013-47a3d028) — 玄阶初级
-<a id="v0-html211-c015-bd8e75ad"></a>
-- [倒置树式领导](xuan.md#v0-html211-c015-bd8e75ad) — 玄阶初级
-<a id="v0-html211-c018-6fb7d62b"></a>
-- [技术介入的组织成熟度](xuan.md#v0-html211-c018-6fb7d62b) — 玄阶初级
-<a id="v0-html211-c020-0706c619"></a>
-- [蜘蛛网系统观](xuan.md#v0-html211-c020-0706c619) — 玄阶初级
-<a id="v0-html211-d005-1085dba5"></a>
-- [退避式重试](xuan.md#v0-html211-d005-1085dba5) — 玄阶初级
-<a id="v0-html211-d032-2d0dc822"></a>
-- [CDN边缘缓存流程](xuan.md#v0-html211-d032-2d0dc822) — 玄阶初级
-<a id="v0-html211-d050-87a8e51a"></a>
-- [硬件趋势到软件策略](xuan.md#v0-html211-d050-87a8e51a) — 玄阶初级
-<a id="v0-html211-d052-0f974edd"></a>
-- [服务器生命周期](xuan.md#v0-html211-d052-0f974edd) — 玄阶初级
-<a id="v0-html211-e002-1d92b316"></a>
-- [渐进配额告警与任务升级](xuan.md#v0-html211-e002-1d92b316) — 玄阶初级
-<a id="v0-html96-vc027-ed4e48fb"></a>
-- [海勒姆定律 (Hyrum's Law)](xuan.md#v0-html96-vc027-ed4e48fb) — 玄阶初级
-<a id="v0-html96-vc028-c93ab41e"></a>
-- [抽象泄漏定律 (The Law of Leaky Abstractions)](xuan.md#v0-html96-vc028-c93ab41e) — 玄阶初级
-<a id="v0-html96-vc034-bd501074"></a>
-- [杀虫剂悖论 (Pesticide Paradox)](xuan.md#v0-html96-vc034-bd501074) — 玄阶初级
-<a id="v0-html96-vc054-9140d5bd"></a>
-- [E参数](xuan.md#v0-html96-vc054-9140d5bd) — 玄阶初级
-<a id="v0-html96-vc057-21e0875a"></a>
-- [会议结束条件测试](xuan.md#v0-html96-vc057-21e0875a) — 玄阶初级
-<a id="v0-html96-vc069-1d39b0f6"></a>
-- [时间感三轴](xuan.md#v0-html96-vc069-1d39b0f6) — 玄阶初级
-<a id="v0-html96-vc081-5ba26e64"></a>
-- [提示工程复杂度阶梯](xuan.md#v0-html96-vc081-5ba26e64) — 玄阶初级
-<a id="v0-html96-vc083-627bc540"></a>
-- [小红帽原则](xuan.md#v0-html96-vc083-627bc540) — 玄阶初级
-<a id="v0-html96-vc087-5353e41f"></a>
-- [位置—重要性—依赖三维关系](xuan.md#v0-html96-vc087-5353e41f) — 玄阶初级
-<a id="v0-html96-vc091-9b48023f"></a>
-- [行为模式图](xuan.md#v0-html96-vc091-9b48023f) — 玄阶初级
-<a id="v0-html96-vc096-a6449e71"></a>
-- [反馈速度条件](xuan.md#v0-html96-vc096-a6449e71) — 玄阶初级
-<a id="v0-html96-vc097-7416d447"></a>
-- [反馈过度](xuan.md#v0-html96-vc097-7416d447) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-a081-3fef410bca-r1-b8c877cb"></a>
+- [5.1 程序员的三大美德](xuan.md#v0-registry-gongfa-candidate-html211-a081-3fef410bca-r1-b8c877cb) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-a082-f9f4df5472-r1-ef5c5f3f"></a>
+- [5.2 童子军规则](xuan.md#v0-registry-gongfa-candidate-html211-a082-f9f4df5472-r1-ef5c5f3f) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-a086-36f248c9f3-r1-7734175c"></a>
+- [5.6 TMTOWTDI](xuan.md#v0-registry-gongfa-candidate-html211-a086-36f248c9f3-r1-7734175c) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-a095-924f9a898f-r1-cde2f0c6"></a>
+- [7.3 破窗效应](xuan.md#v0-registry-gongfa-candidate-html211-a095-924f9a898f-r1-cde2f0c6) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-a096-8147e5b67c-r1-04637a7b"></a>
+- [7.4 熵增原理](xuan.md#v0-registry-gongfa-candidate-html211-a096-8147e5b67c-r1-04637a7b) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-b006-6154b5279a-r1-ecf67321"></a>
+- [未来预测准确度模型](xuan.md#v0-registry-gongfa-candidate-html211-b006-6154b5279a-r1-ecf67321) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-b008-3a557875b1-r1-4a508faf"></a>
+- [两遍已太多](xuan.md#v0-registry-gongfa-candidate-html211-b008-3a557875b1-r1-4a508faf) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-b014-ced481739d-r1-1ca9ac8d"></a>
+- [复杂代码六步治理](xuan.md#v0-registry-gongfa-candidate-html211-b014-ced481739d-r1-1ca9ac8d) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-b018-80b84b7096-r1-ce98547d"></a>
+- [软件即知识](xuan.md#v0-registry-gongfa-candidate-html211-b018-80b84b7096-r1-ce98547d) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-c001-a4906a54b9-r1-d92584ae"></a>
+- [编程之道的整体和谐观](xuan.md#v0-registry-gongfa-candidate-html211-c001-a4906a54b9-r1-d92584ae) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-c002-fdc98571fc-r1-8cff58e9"></a>
+- [语言谱系与多样目的](xuan.md#v0-registry-gongfa-candidate-html211-c002-fdc98571fc-r1-8cff58e9) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-c004-f12ce50422-r1-f54b4288"></a>
+- [设计先于测试](xuan.md#v0-registry-gongfa-candidate-html211-c004-f12ce50422-r1-f54b4288) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-c013-6b277c9c12-r1-6e198118"></a>
+- [真实时间表](xuan.md#v0-registry-gongfa-candidate-html211-c013-6b277c9c12-r1-6e198118) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-c015-ee4dd2a61b-r1-14d0d147"></a>
+- [倒置树式领导](xuan.md#v0-registry-gongfa-candidate-html211-c015-ee4dd2a61b-r1-14d0d147) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-c018-32da8a5adf-r1-61457899"></a>
+- [技术介入的组织成熟度](xuan.md#v0-registry-gongfa-candidate-html211-c018-32da8a5adf-r1-61457899) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-c020-0c7cd539bb-r1-67b36337"></a>
+- [蜘蛛网系统观](xuan.md#v0-registry-gongfa-candidate-html211-c020-0c7cd539bb-r1-67b36337) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-d005-e9ae8ae992-r1-b73293ed"></a>
+- [退避式重试](xuan.md#v0-registry-gongfa-candidate-html211-d005-e9ae8ae992-r1-b73293ed) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-d032-1f5da9f56b-r1-b8d5ba30"></a>
+- [CDN边缘缓存流程](xuan.md#v0-registry-gongfa-candidate-html211-d032-1f5da9f56b-r1-b8d5ba30) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-d050-1eaee7724c-r1-9cf32569"></a>
+- [硬件趋势到软件策略](xuan.md#v0-registry-gongfa-candidate-html211-d050-1eaee7724c-r1-9cf32569) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-d052-d24fa37d9b-r1-2c72a6d5"></a>
+- [服务器生命周期](xuan.md#v0-registry-gongfa-candidate-html211-d052-d24fa37d9b-r1-2c72a6d5) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html211-e002-71c566e1c8-r1-397c0ca6"></a>
+- [渐进配额告警与任务升级](xuan.md#v0-registry-gongfa-candidate-html211-e002-71c566e1c8-r1-397c0ca6) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc027-42c1e37ed4-r1-00286454"></a>
+- [海勒姆定律 (Hyrum's Law)](xuan.md#v0-registry-gongfa-candidate-html96-vc027-42c1e37ed4-r1-00286454) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc028-bb7f77a202-r1-6446c790"></a>
+- [抽象泄漏定律 (The Law of Leaky Abstractions)](xuan.md#v0-registry-gongfa-candidate-html96-vc028-bb7f77a202-r1-6446c790) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc034-66c8e54085-r1-4274c2e5"></a>
+- [杀虫剂悖论 (Pesticide Paradox)](xuan.md#v0-registry-gongfa-candidate-html96-vc034-66c8e54085-r1-4274c2e5) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc054-59c04718cc-r1-2dac3261"></a>
+- [E参数](xuan.md#v0-registry-gongfa-candidate-html96-vc054-59c04718cc-r1-2dac3261) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc057-a576c7cc82-r1-4d24a05b"></a>
+- [会议结束条件测试](xuan.md#v0-registry-gongfa-candidate-html96-vc057-a576c7cc82-r1-4d24a05b) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc069-672ffddb45-r1-ef5f9ccb"></a>
+- [时间感三轴](xuan.md#v0-registry-gongfa-candidate-html96-vc069-672ffddb45-r1-ef5f9ccb) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc081-baf2787afb-r1-36031feb"></a>
+- [提示工程复杂度阶梯](xuan.md#v0-registry-gongfa-candidate-html96-vc081-baf2787afb-r1-36031feb) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc083-462a39bb48-r1-00862187"></a>
+- [小红帽原则](xuan.md#v0-registry-gongfa-candidate-html96-vc083-462a39bb48-r1-00862187) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc087-24a750015e-r1-2f1df079"></a>
+- [位置—重要性—依赖三维关系](xuan.md#v0-registry-gongfa-candidate-html96-vc087-24a750015e-r1-2f1df079) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc091-e875cac347-r1-d53d3c67"></a>
+- [行为模式图](xuan.md#v0-registry-gongfa-candidate-html96-vc091-e875cac347-r1-d53d3c67) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc096-a54d168dfb-r1-097e2f79"></a>
+- [反馈速度条件](xuan.md#v0-registry-gongfa-candidate-html96-vc096-a54d168dfb-r1-097e2f79) — 玄阶初级
+<a id="v0-registry-gongfa-candidate-html96-vc097-525503248e-r1-51675c09"></a>
+- [反馈过度](xuan.md#v0-registry-gongfa-candidate-html96-vc097-525503248e-r1-51675c09) — 玄阶初级
 
 ### 黄阶
 
@@ -2714,45 +2714,45 @@
 - [预测加工与模型更新](huang.md#v0-registry-gongfa-predictive-processing-update-r1-d4e01e18) — 黄阶高级
 <a id="v0-registry-gongfa-symbol-name-index-maintenance-r1-9ac1dd14"></a>
 - [变量名索引维护](huang.md#v0-registry-gongfa-symbol-name-index-maintenance-r1-9ac1dd14) — 黄阶高级
-<a id="v0-html211-a058-9107304c"></a>
-- [3.48 沉默原则](huang.md#v0-html211-a058-9107304c) — 黄阶高级
-<a id="v0-html211-a066-affe18dc"></a>
-- [3.56 小就是美](huang.md#v0-html211-a066-affe18dc) — 黄阶高级
-<a id="v0-html211-b016-1675bc64"></a>
-- [开源社区三问题](huang.md#v0-html211-b016-1675bc64) — 黄阶高级
-<a id="v0-html211-c003-352e48b5"></a>
-- [空间—时间双重约束](huang.md#v0-html211-c003-352e48b5) — 黄阶高级
-<a id="v0-html211-c012-6960c5e4"></a>
-- [自主性—效率关系](huang.md#v0-html211-c012-6960c5e4) — 黄阶高级
-<a id="v0-html211-c019-ea0425f0"></a>
-- [观念桥梁](huang.md#v0-html211-c019-ea0425f0) — 黄阶高级
-<a id="v0-html211-c021-e8e8a3c7"></a>
-- [领导退出准则](huang.md#v0-html211-c021-e8e8a3c7) — 黄阶高级
-<a id="v0-html211-d017-6f826fbc"></a>
-- [性能数字锚点](huang.md#v0-html211-d017-6f826fbc) — 黄阶高级
-<a id="v0-html211-d043-a1e5ab98"></a>
-- [容量二分搜索](huang.md#v0-html211-d043-a1e5ab98) — 黄阶高级
-<a id="v0-html211-d046-9ccce0a1"></a>
-- [TCP队列三分诊断](huang.md#v0-html211-d046-9ccce0a1) — 黄阶高级
-<a id="v0-html96-vc089-4da03dd2"></a>
-- [Logprobs 置信诊断](huang.md#v0-html96-vc089-4da03dd2) — 黄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a058-2de6cbc222-r1-ae19afea"></a>
+- [3.48 沉默原则](huang.md#v0-registry-gongfa-candidate-html211-a058-2de6cbc222-r1-ae19afea) — 黄阶高级
+<a id="v0-registry-gongfa-candidate-html211-a066-45cfd1a4a1-r1-8e34a5da"></a>
+- [3.56 小就是美](huang.md#v0-registry-gongfa-candidate-html211-a066-45cfd1a4a1-r1-8e34a5da) — 黄阶高级
+<a id="v0-registry-gongfa-candidate-html211-b016-2769017384-r1-f68f1ef5"></a>
+- [开源社区三问题](huang.md#v0-registry-gongfa-candidate-html211-b016-2769017384-r1-f68f1ef5) — 黄阶高级
+<a id="v0-registry-gongfa-candidate-html211-c003-64604487c7-r1-a7b3ff1c"></a>
+- [空间—时间双重约束](huang.md#v0-registry-gongfa-candidate-html211-c003-64604487c7-r1-a7b3ff1c) — 黄阶高级
+<a id="v0-registry-gongfa-candidate-html211-c012-9d89773572-r1-c833279e"></a>
+- [自主性—效率关系](huang.md#v0-registry-gongfa-candidate-html211-c012-9d89773572-r1-c833279e) — 黄阶高级
+<a id="v0-registry-gongfa-candidate-html211-c019-39eb8e00dd-r1-38a5bc92"></a>
+- [观念桥梁](huang.md#v0-registry-gongfa-candidate-html211-c019-39eb8e00dd-r1-38a5bc92) — 黄阶高级
+<a id="v0-registry-gongfa-candidate-html211-c021-308fff13bc-r1-19ecddae"></a>
+- [领导退出准则](huang.md#v0-registry-gongfa-candidate-html211-c021-308fff13bc-r1-19ecddae) — 黄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d017-479973bfe4-r1-083b84ea"></a>
+- [性能数字锚点](huang.md#v0-registry-gongfa-candidate-html211-d017-479973bfe4-r1-083b84ea) — 黄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d043-b16c1a48e2-r1-913832f6"></a>
+- [容量二分搜索](huang.md#v0-registry-gongfa-candidate-html211-d043-b16c1a48e2-r1-913832f6) — 黄阶高级
+<a id="v0-registry-gongfa-candidate-html211-d046-4862594685-r1-e86620fe"></a>
+- [TCP队列三分诊断](huang.md#v0-registry-gongfa-candidate-html211-d046-4862594685-r1-e86620fe) — 黄阶高级
+<a id="v0-registry-gongfa-candidate-html96-vc089-12547900ce-r1-293de2dc"></a>
+- [Logprobs 置信诊断](huang.md#v0-registry-gongfa-candidate-html96-vc089-12547900ce-r1-293de2dc) — 黄阶高级
 <a id="v0-registry-gongfa-symbolic-space-validated-knowledge-r1-0a87c72f"></a>
 - [符号序列空间与有效知识子集](huang.md#v0-registry-gongfa-symbolic-space-validated-knowledge-r1-0a87c72f) — 黄阶中级
 <a id="v0-registry-gongfa-recursive-generator-optimization-r1-0ef305ee"></a>
 - [递归生成器自优化（仓内形式模型）](huang.md#v0-registry-gongfa-recursive-generator-optimization-r1-0ef305ee) — 黄阶中级
-<a id="v0-html211-b001-fc05f9b6"></a>
-- [正确方式工程观](huang.md#v0-html211-b001-fc05f9b6) — 黄阶中级
-<a id="v0-html211-b019-055be365"></a>
-- [技术使命筛选器](huang.md#v0-html211-b019-055be365) — 黄阶中级
-<a id="v0-html211-c014-22e54a86"></a>
-- [项目失败三条件](huang.md#v0-html211-c014-22e54a86) — 黄阶初级
+<a id="v0-registry-gongfa-candidate-html211-b001-478c3f1e69-r1-46aa976f"></a>
+- [正确方式工程观](huang.md#v0-registry-gongfa-candidate-html211-b001-478c3f1e69-r1-46aa976f) — 黄阶中级
+<a id="v0-registry-gongfa-candidate-html211-b019-2247412740-r1-95ab1664"></a>
+- [技术使命筛选器](huang.md#v0-registry-gongfa-candidate-html211-b019-2247412740-r1-95ab1664) — 黄阶中级
+<a id="v0-registry-gongfa-candidate-html211-c014-1bae4df88a-r1-c2036181"></a>
+- [项目失败三条件](huang.md#v0-registry-gongfa-candidate-html211-c014-1bae4df88a-r1-c2036181) — 黄阶初级
 
 ### 未明确品级（不归属任何阶）
 
-<a id="v0-html211-e001-d42a6797"></a>
-- [灾备容量负载放大模型](huang.md#v0-html211-e001-d42a6797) — 暂不可判
-<a id="v0-html96-vc029-a3226f06"></a>
-- [CAP 定理 (CAP Theorem)](huang.md#v0-html96-vc029-a3226f06) — 暂不可判
+<a id="v0-registry-gongfa-candidate-html211-e001-a663456869-r1-5c259ebd"></a>
+- [灾备容量负载放大模型](huang.md#v0-registry-gongfa-candidate-html211-e001-a663456869-r1-5c259ebd) — 暂不可判
+<a id="v0-registry-gongfa-candidate-html96-vc029-6cca304cec-r1-434a756e"></a>
+- [CAP 定理 (CAP Theorem)](huang.md#v0-registry-gongfa-candidate-html96-vc029-6cca304cec-r1-434a756e) — 暂不可判
 
 ## 原文文集
 
@@ -4696,7 +4696,7 @@
 
 ## 数据与边界
 
-本工具只维护data.json原始资料和分阶阅读视图。原文、登记、候选与历史意见不因目录迁移而重评；历史附件保留为JSON原始载荷，不再维护第二个活动视图。
+本工具只维护data.json原始资料和分阶阅读视图。登记不改写原文、冻结候选快照或历史意见，也不等于独立语义审查、原著/许可核验或正式效果评级；历史附件保留为JSON原始载荷，不再维护第二个活动视图。
 
 ## 更新与核对
 
@@ -4707,4 +4707,4 @@ make test-gongfa-catalog
 ```
 
 内容新版本不继承旧初评；同对象不同情境的活动意见并列保留，不按最高档或最新时间裁决。
-本视图不执行方法，不证明原著、许可证、独立语义批准或真实效果；未审材料不混入。
+本视图不执行方法，不证明原著、许可证、独立语义批准或真实效果；未知内容仍逐项标待核。

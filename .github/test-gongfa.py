@@ -165,7 +165,11 @@ class GongfaProtocolTest(unittest.TestCase):
                           for batch in proposals for item in batch['items']}, targets)
         self.assertEqual(summary['proposed_grades'], len(entries))
         for batch in proposals:
-            self.assertEqual(batch['basis'], 'expert_judgment')
+            if batch['policy_id'] is None:
+                self.assertIsNone(batch['policy_version'])
+                self.assertEqual(batch['basis'], 'provisional_expert_judgment')
+            else:
+                self.assertEqual(batch['basis'], 'expert_judgment')
             self.assertEqual(batch['status'], 'provisional')
 
     def test_repository_continuation(self):
@@ -276,6 +280,44 @@ class GongfaProtocolTest(unittest.TestCase):
         explicit = self.run_catalog(document, 'explicit-catalog',
                                     ['--render-catalog', '--proposal-batch', proposal['id']])
         self.assertEqual(explicit.returncode, 0, explicit.stdout + explicit.stderr)
+
+    def test_imported_provisional_opinion_can_preserve_missing_policy_binding(self):
+        document = copy.deepcopy(self.baseline)
+        proposal = self.proposal_batch()
+        proposal['policy_id'] = None
+        proposal['policy_version'] = None
+        proposal['basis'] = 'provisional_expert_judgment'
+        document['grade_proposals'] = [proposal]
+        accepted = self.run_catalog(document, 'unbound-source-opinion')
+        self.assertEqual(accepted.returncode, 0, accepted.stdout + accepted.stderr)
+        proposal['policy_version'] = 'v1'
+        rejected = self.run_catalog(document, 'partially-bound-source-opinion')
+        self.assertNotEqual(rejected.returncode, 0, rejected.stdout + rejected.stderr)
+
+    def test_undetermined_proposal_is_explicit_and_never_rendered_as_a_grade(self):
+        document = copy.deepcopy(self.baseline)
+        proposal = self.proposal_batch()
+        item = proposal['items'][0]
+        item['grade_id'] = None
+        item['grading_status'] = 'undetermined'
+        item['reason'] = '限定内容存在未解决的正确性问题，暂不可判。'
+        document['grade_proposals'] = [proposal]
+        process = self.run_catalog(document, 'valid-undetermined-proposal')
+        self.assertEqual(process.returncode, 0, process.stdout + process.stderr)
+        table = self.run_catalog(document, 'render-undetermined-proposal',
+                                 ['--render-catalog', '--proposal-batch', proposal['id']])
+        self.assertEqual(table.returncode, 0, table.stdout + table.stderr)
+        self.assertIn('| `gongfa-compositional-description` | 组合描述模型 | 解释型 | 暂不可判 |', table.stdout)
+        for label in ('missing-status', 'wrong-status'):
+            with self.subTest(label=label):
+                damaged = copy.deepcopy(document)
+                target = damaged['grade_proposals'][0]['items'][0]
+                if label == 'missing-status':
+                    target.pop('grading_status')
+                else:
+                    target['grading_status'] = 'provisional'
+                rejected = self.run_catalog(damaged, label)
+                self.assertNotEqual(rejected.returncode, 0, rejected.stdout + rejected.stderr)
 
     def assessment(self, status='unrated'):
         entry = self.baseline['gongfa'][0]

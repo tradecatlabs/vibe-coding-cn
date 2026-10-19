@@ -11,22 +11,22 @@
 - [合成模型](#v0-registry-gongfa-compositional-model-r1-d1434d5b)
 - [预测加工与模型更新](#v0-registry-gongfa-predictive-processing-update-r1-d4e01e18)
 - [变量名索引维护](#v0-registry-gongfa-symbol-name-index-maintenance-r1-9ac1dd14)
-- [3.48 沉默原则](#v0-html211-a058-9107304c)
-- [3.56 小就是美](#v0-html211-a066-affe18dc)
-- [开源社区三问题](#v0-html211-b016-1675bc64)
-- [空间—时间双重约束](#v0-html211-c003-352e48b5)
-- [自主性—效率关系](#v0-html211-c012-6960c5e4)
-- [观念桥梁](#v0-html211-c019-ea0425f0)
-- [领导退出准则](#v0-html211-c021-e8e8a3c7)
-- [性能数字锚点](#v0-html211-d017-6f826fbc)
-- [容量二分搜索](#v0-html211-d043-a1e5ab98)
-- [TCP队列三分诊断](#v0-html211-d046-9ccce0a1)
-- [Logprobs 置信诊断](#v0-html96-vc089-4da03dd2)
+- [3.48 沉默原则](#v0-registry-gongfa-candidate-html211-a058-2de6cbc222-r1-ae19afea)
+- [3.56 小就是美](#v0-registry-gongfa-candidate-html211-a066-45cfd1a4a1-r1-8e34a5da)
+- [开源社区三问题](#v0-registry-gongfa-candidate-html211-b016-2769017384-r1-f68f1ef5)
+- [空间—时间双重约束](#v0-registry-gongfa-candidate-html211-c003-64604487c7-r1-a7b3ff1c)
+- [自主性—效率关系](#v0-registry-gongfa-candidate-html211-c012-9d89773572-r1-c833279e)
+- [观念桥梁](#v0-registry-gongfa-candidate-html211-c019-39eb8e00dd-r1-38a5bc92)
+- [领导退出准则](#v0-registry-gongfa-candidate-html211-c021-308fff13bc-r1-19ecddae)
+- [性能数字锚点](#v0-registry-gongfa-candidate-html211-d017-479973bfe4-r1-083b84ea)
+- [容量二分搜索](#v0-registry-gongfa-candidate-html211-d043-b16c1a48e2-r1-913832f6)
+- [TCP队列三分诊断](#v0-registry-gongfa-candidate-html211-d046-4862594685-r1-e86620fe)
+- [Logprobs 置信诊断](#v0-registry-gongfa-candidate-html96-vc089-12547900ce-r1-293de2dc)
 - [符号序列空间与有效知识子集](#v0-registry-gongfa-symbolic-space-validated-knowledge-r1-0a87c72f)
 - [递归生成器自优化（仓内形式模型）](#v0-registry-gongfa-recursive-generator-optimization-r1-0ef305ee)
-- [正确方式工程观](#v0-html211-b001-fc05f9b6)
-- [技术使命筛选器](#v0-html211-b019-055be365)
-- [项目失败三条件](#v0-html211-c014-22e54a86)
+- [正确方式工程观](#v0-registry-gongfa-candidate-html211-b001-478c3f1e69-r1-46aa976f)
+- [技术使命筛选器](#v0-registry-gongfa-candidate-html211-b019-2247412740-r1-95ab1664)
+- [项目失败三条件](#v0-registry-gongfa-candidate-html211-c014-1bae4df88a-r1-c2036181)
 
 <a id="v0-registry-gongfa-network-effects-r1-9c28601f"></a>
 ### 网络效应
@@ -133,236 +133,236 @@
 | 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
 | 15 | 明确这些规律成立的前提与适用条件。 | 登记预期结果（不是实际效果证据）：统一命名、方便全局搜索与统一管理/重构，降低命名冲突和语义不清风险。<br>登记缺项标记：conditions；limitations；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
 
-<a id="v0-html211-a058-9107304c"></a>
+<a id="v0-registry-gongfa-candidate-html211-a058-2de6cbc222-r1-ae19afea"></a>
 ### 3.48 沉默原则
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.48 沉默原则 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：A058；内容版本：冻结选区；未设登记版本；本体类型：normative-allocation-content；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=黄阶高级；状态=provisional；任务族=命令成功输出控制；理由=仅预测在常规命令组合中满足低噪声输出要求；不据此预定超越合理基线的系统性增益。；反证条件=若沉默隐藏必要状态或削弱故障发现，导致管道与自动化错误，则推翻。；置信标签=medium；意见时间=2026-10-07T13:04:26.525896+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-72d4c6d2c4d5bdde02",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/47",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 143,<br>      "end": 146<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第72节《3.48 沉默原则》",<br>  "text&#95;sha256": "e3089eca629a9637b9c026233b35530817ed8d650235d0688e5c7e894b445482",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "e3089eca629a9637b9c026233b35530817ed8d650235d0688e5c7e894b445482",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：此前本选区未单独完善编者边界；不借邻条补写。<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：沉默原则要求成功时没有必要就不要输出噪声 |
+| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：低噪声便于组合和自动化，也让异常更突出 |
+| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：默认保持安静，只在需要的信息或错误出现时输出 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：A058；登记ID：gongfa-candidate-html211-a058-2de6cbc222；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=黄阶高级（huang-advanced）；任务族=命令成功输出控制；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=仅预测在常规命令组合中满足低噪声输出要求；不据此预定超越合理基线的系统性增益。；置信标签=medium；反证条件=若沉默隐藏必要状态或削弱故障发现，导致管道与自动化错误，则推翻。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/57",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A058；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A058",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-72d4c6d2c4d5bdde02",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/47",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 143,<br>      "end": 146<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第72节《3.48 沉默原则》",<br>  "content&#95;sha256": "e3089eca629a9637b9c026233b35530817ed8d650235d0688e5c7e894b445482",<br>  "registry&#95;id": "gongfa-candidate-html211-a058-2de6cbc222",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第72节《3.48 沉默原则》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：命令成功输出控制（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：低噪声便于组合和自动化，也让异常更突出；作者历史设计意图仍未独立核验。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：命令正常运行却产生大量无价值输出时 |
 
-<a id="v0-html211-a066-affe18dc"></a>
+<a id="v0-registry-gongfa-candidate-html211-a066-45cfd1a4a1-r1-8e34a5da"></a>
 ### 3.56 小就是美
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.56 小就是美 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：A066；内容版本：冻结选区；未设登记版本；本体类型：normative-allocation-content；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=黄阶高级；状态=provisional；任务族=过大工具规模初筛；理由=预计能在常规工具设计中发现规模膨胀；只有大小判断，不能直接预期稳定的整体收益。；反证条件=若机械拆小使交互复杂度和部署成本增大，或必要能力被删，则下调。；置信标签=medium；意见时间=2026-10-07T13:04:26.525896+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-28f244219df351c0bf",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/55",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 167,<br>      "end": 170<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第80节《3.56 小就是美》",<br>  "text&#95;sha256": "dc159c2a665357343b440062279b73f9aa665728fe3a0896c8cc82dd314a4273",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "dc159c2a665357343b440062279b73f9aa665728fe3a0896c8cc82dd314a4273",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：此前本选区未单独完善编者边界；不借邻条补写。<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：小就是美强调程序规模越小越容易理解、验证和组合 |
+| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：小规模降低复杂度并促进复用 |
+| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：拆成更小的程序或模块 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：A066；登记ID：gongfa-candidate-html211-a066-45cfd1a4a1；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=黄阶高级（huang-advanced）；任务族=过大工具规模初筛；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=预计能在常规工具设计中发现规模膨胀；只有大小判断，不能直接预期稳定的整体收益。；置信标签=medium；反证条件=若机械拆小使交互复杂度和部署成本增大，或必要能力被删，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/65",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A066；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A066",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-28f244219df351c0bf",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/55",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 167,<br>      "end": 170<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第80节《3.56 小就是美》",<br>  "content&#95;sha256": "dc159c2a665357343b440062279b73f9aa665728fe3a0896c8cc82dd314a4273",<br>  "registry&#95;id": "gongfa-candidate-html211-a066-45cfd1a4a1",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第80节《3.56 小就是美》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：过大工具规模初筛（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：小规模降低复杂度并促进复用；作者历史设计意图仍未独立核验。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：一个工具开始承担过多功能时 |
 
-<a id="v0-html211-b016-1675bc64"></a>
+<a id="v0-registry-gongfa-candidate-html211-b016-2769017384-r1-f68f1ef5"></a>
 ### 开源社区三问题
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 开源社区三问题 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：B016；内容版本：冻结选区；未设登记版本；本体类型：normative-allocation-content；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=黄阶高级；状态=provisional；任务族=开源贡献流程规划；理由=预计能在限定社区任务中提出留存、门槛与吸引的常规检查；不预定顺序对所有社区有稳定收益。；反证条件=若留存优先与社区真实瓶颈不符，或贡献结果没有改善，则下调。；置信标签=low；意见时间=2026-10-07T13:04:26.525896+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "编程原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "6d851e6a95fc9b01cf0f83f1c48fe5a0bfc98d7ae59a00e752146c03d1c3837b",<br>    "source&#95;entry&#95;id": "frameworks-501cbbfc48cc9478ed",<br>    "json&#95;pointer": "/frameworks/15"<br>  },<br>  "declared&#95;upstream": "旧HTML：编程原则-系统学习.html · 开源社区三问题（旧页未标具体材料出处；未重新核验）",<br>  "text&#95;sha256": "daf40896b50c0ae321c10dc89d7ba1364c6b003af52098589e04421209f299a1",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "daf40896b50c0ae321c10dc89d7ba1364c6b003af52098589e04421209f299a1",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：此前本选区未单独完善编者边界；不借邻条补写。<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：吸引贡献、降低门槛、留住贡献者；执行顺序优先解决留存。 |
+| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
+| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：建设或修复开源贡献者社区时 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：B016；登记ID：gongfa-candidate-html211-b016-2769017384；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=黄阶高级（huang-advanced）；任务族=开源贡献流程规划；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=预计能在限定社区任务中提出留存、门槛与吸引的常规检查；不预定顺序对所有社区有稳定收益。；置信标签=low；反证条件=若留存优先与社区真实瓶颈不符，或贡献结果没有改善，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/15",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:B016；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:B016",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "6d851e6a95fc9b01cf0f83f1c48fe5a0bfc98d7ae59a00e752146c03d1c3837b",<br>    "source&#95;entry&#95;id": "frameworks-501cbbfc48cc9478ed",<br>    "json&#95;pointer": "/frameworks/15"<br>  },<br>  "declared&#95;upstream": "旧HTML：编程原则-系统学习.html · 开源社区三问题（旧页未标具体材料出处；未重新核验）",<br>  "content&#95;sha256": "daf40896b50c0ae321c10dc89d7ba1364c6b003af52098589e04421209f299a1",<br>  "registry&#95;id": "gongfa-candidate-html211-b016-2769017384",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：旧HTML：编程原则-系统学习.html · 开源社区三问题（旧页未标具体材料出处；未重新核验）。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：开源贡献流程规划（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 待核：候选记录未提供独立适用边界；不据标题或初评品级外推。 |
 
-<a id="v0-html211-c003-352e48b5"></a>
+<a id="v0-registry-gongfa-candidate-html211-c003-64604487c7-r1-a7b3ff1c"></a>
 ### 空间—时间双重约束
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 空间—时间双重约束 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：C003；内容版本：冻结选区；未设登记版本；本体类型：explanatory-content；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=黄阶高级；状态=provisional；任务族=时间与空间资源权衡入门；理由=预计可在常规资源讨论中提出双重约束；不能覆盖正确性、权限和全部交付因素。；反证条件=若双轴遗漏关键验收要求或不能支持基本资源判断，则下调。；置信标签=low；意见时间=2026-10-07T13:04:26.525896+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "编程之道.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "bd9467ba14f2d4c7e60bc2a8ba9a8843e88cf1955d7ea6207a8b222fc1b98f49",<br>    "source&#95;entry&#95;id": "frameworks-6179d871105aa49f8d",<br>    "json&#95;pointer": "/frameworks/2"<br>  },<br>  "declared&#95;upstream": "《编程之道》 · 《编程之道》第一篇：静寂的空宇 · EPUB第10节",<br>  "text&#95;sha256": "99193fcfafd0bfc1d6ffa265deac29c39ab0aaaf6e4d9914b6473e1f000fbb0b",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "99193fcfafd0bfc1d6ffa265deac29c39ab0aaaf6e4d9914b6473e1f000fbb0b",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：此前本选区未单独完善编者边界；不借邻条补写。<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：空间和时间被视作编程的两极资源约束。 |
+| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
+| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：C003；登记ID：gongfa-candidate-html211-c003-64604487c7；内容版本：r1；本体类型：explanatory-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=黄阶高级（huang-advanced）；任务族=时间与空间资源权衡入门；类型理由=以关系、模型或机制的解释为主，不强编施行步骤。；理由=预计可在常规资源讨论中提出双重约束；不能覆盖正确性、权限和全部交付因素。；置信标签=low；反证条件=若双轴遗漏关键验收要求或不能支持基本资源判断，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "解释",<br>  "related&#95;framework&#95;view": "/frameworks/2",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:C003；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:C003",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程之道.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "bd9467ba14f2d4c7e60bc2a8ba9a8843e88cf1955d7ea6207a8b222fc1b98f49",<br>    "source&#95;entry&#95;id": "frameworks-6179d871105aa49f8d",<br>    "json&#95;pointer": "/frameworks/2"<br>  },<br>  "declared&#95;upstream": "《编程之道》 · 《编程之道》第一篇：静寂的空宇 · EPUB第10节",<br>  "content&#95;sha256": "99193fcfafd0bfc1d6ffa265deac29c39ab0aaaf6e4d9914b6473e1f000fbb0b",<br>  "registry&#95;id": "gongfa-candidate-html211-c003-64604487c7",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：《编程之道》 · 《编程之道》第一篇：静寂的空宇 · EPUB第10节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：时间与空间资源权衡入门（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用”：做性能、资源和交付权衡时 |
 
-<a id="v0-html211-c012-6960c5e4"></a>
+<a id="v0-registry-gongfa-candidate-html211-c012-9d89773572-r1-c833279e"></a>
 ### 自主性—效率关系
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 自主性—效率关系 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：C012；内容版本：冻结选区；未设登记版本；本体类型：dao-content；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=黄阶高级；状态=provisional；任务族=有明确交付的团队自主性；理由=仅预计为限定管理情境提供常规提醒；不把会议、作息和干预一概视为低效原因。；反证条件=若自主安排损坏协作、交付或必要风险控制，或效率未改善，则下调。；置信标签=low；意见时间=2026-10-07T13:04:26.525896+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "编程之道.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "bd9467ba14f2d4c7e60bc2a8ba9a8843e88cf1955d7ea6207a8b222fc1b98f49",<br>    "source&#95;entry&#95;id": "frameworks-592d20111283b732b3",<br>    "json&#95;pointer": "/frameworks/11"<br>  },<br>  "declared&#95;upstream": "《编程之道》 · 《编程之道》第六篇：管理 · EPUB第34节",<br>  "text&#95;sha256": "cf648130cd3bdbc614bb8ee34b4d78864c29826b66a6ee7f228f6c8acae6b3a5",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "cf648130cd3bdbc614bb8ee34b4d78864c29826b66a6ee7f228f6c8acae6b3a5",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：此前本选区未单独完善编者边界；不借邻条补写。<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：会议、干预和固定作息会损害知识工作的效率与乐趣；交付清楚时自主性更重要。 |
+| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
+| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：C012；登记ID：gongfa-candidate-html211-c012-9d89773572；内容版本：r1；本体类型：dao-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=黄阶高级（huang-advanced）；任务族=有明确交付的团队自主性；类型理由=相对独立的解释、准则或操作集合共同出现；不自动拆成新身份或本体子类。；理由=仅预计为限定管理情境提供常规提醒；不把会议、作息和干预一概视为低效原因。；置信标签=low；反证条件=若自主安排损坏协作、交付或必要风险控制，或效率未改善，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "复合",<br>  "related&#95;framework&#95;view": "/frameworks/11",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:C012；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:C012",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程之道.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "bd9467ba14f2d4c7e60bc2a8ba9a8843e88cf1955d7ea6207a8b222fc1b98f49",<br>    "source&#95;entry&#95;id": "frameworks-592d20111283b732b3",<br>    "json&#95;pointer": "/frameworks/11"<br>  },<br>  "declared&#95;upstream": "《编程之道》 · 《编程之道》第六篇：管理 · EPUB第34节",<br>  "content&#95;sha256": "cf648130cd3bdbc614bb8ee34b4d78864c29826b66a6ee7f228f6c8acae6b3a5",<br>  "registry&#95;id": "gongfa-candidate-html211-c012-9d89773572",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：《编程之道》 · 《编程之道》第六篇：管理 · EPUB第34节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：有明确交付的团队自主性（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用”：设计开发团队管理方式时 |
 
-<a id="v0-html211-c019-ea0425f0"></a>
+<a id="v0-registry-gongfa-candidate-html211-c019-39eb8e00dd-r1-38a5bc92"></a>
 ### 观念桥梁
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 观念桥梁 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：C019；内容版本：冻结选区；未设登记版本；本体类型：normative-allocation-content；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=黄阶高级；状态=provisional；任务族=高阻力变革沟通提醒；理由=仅预计在限定说服任务中提醒理解对方立场；缺可验收操作安排，不预定稳定沟通增益。；反证条件=若观念桥梁歪曲事实、操控关系或不能改善共同理解，则下调。；置信标签=low；意见时间=2026-10-07T13:04:26.525896+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "编程之道.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "bd9467ba14f2d4c7e60bc2a8ba9a8843e88cf1955d7ea6207a8b222fc1b98f49",<br>    "source&#95;entry&#95;id": "frameworks-e4fd6b15e559b83961",<br>    "json&#95;pointer": "/frameworks/18"<br>  },<br>  "declared&#95;upstream": "《编程之道》 · 《计算机寓言》第四篇：夏——启示 · EPUB第149节",<br>  "text&#95;sha256": "1bd18b042e0602e0015e357ede0a50f0d00cc27d0042e2c70e76ed6798bfc243",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "1bd18b042e0602e0015e357ede0a50f0d00cc27d0042e2c70e76ed6798bfc243",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：此前本选区未单独完善编者边界；不借邻条补写。<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：面对身份绑定的固执观点，堆积事实可能无效；需要能连接对方本性与现实的观念。 |
+| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
+| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：C019；登记ID：gongfa-candidate-html211-c019-39eb8e00dd；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=黄阶高级（huang-advanced）；任务族=高阻力变革沟通提醒；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=仅预计在限定说服任务中提醒理解对方立场；缺可验收操作安排，不预定稳定沟通增益。；置信标签=low；反证条件=若观念桥梁歪曲事实、操控关系或不能改善共同理解，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/18",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:C019；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:C019",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程之道.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "bd9467ba14f2d4c7e60bc2a8ba9a8843e88cf1955d7ea6207a8b222fc1b98f49",<br>    "source&#95;entry&#95;id": "frameworks-e4fd6b15e559b83961",<br>    "json&#95;pointer": "/frameworks/18"<br>  },<br>  "declared&#95;upstream": "《编程之道》 · 《计算机寓言》第四篇：夏——启示 · EPUB第149节",<br>  "content&#95;sha256": "1bd18b042e0602e0015e357ede0a50f0d00cc27d0042e2c70e76ed6798bfc243",<br>  "registry&#95;id": "gongfa-candidate-html211-c019-39eb8e00dd",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：《编程之道》 · 《计算机寓言》第四篇：夏——启示 · EPUB第149节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：高阻力变革沟通提醒（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用”：做高阻力说服和变革沟通时 |
 
-<a id="v0-html211-c021-e8e8a3c7"></a>
+<a id="v0-registry-gongfa-candidate-html211-c021-308fff13bc-r1-19ecddae"></a>
 ### 领导退出准则
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 领导退出准则 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：C021；内容版本：冻结选区；未设登记版本；本体类型：normative-allocation-content；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=黄阶高级；状态=provisional；任务族=组织继任与持续指引讨论；理由=预计能在常规继任任务中提出独立运行目标；不把领导离开直接当组织成熟证据。；反证条件=若退出导致责任真空或关键知识丢失，目标与实际运行不符，则推翻。；置信标签=low；意见时间=2026-10-07T13:04:26.525896+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "编程之道.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "bd9467ba14f2d4c7e60bc2a8ba9a8843e88cf1955d7ea6207a8b222fc1b98f49",<br>    "source&#95;entry&#95;id": "frameworks-6a4142c88a58507411",<br>    "json&#95;pointer": "/frameworks/20"<br>  },<br>  "declared&#95;upstream": "《编程之道》 · 《计算机寓言》第四篇：夏——启示 · EPUB第147节",<br>  "text&#95;sha256": "e9845ab280be1df44b71ef4d0731765a85969d8c98c1350ebafc9042226993c0",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "e9845ab280be1df44b71ef4d0731765a85969d8c98c1350ebafc9042226993c0",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：此前本选区未单独完善编者边界；不借邻条补写。<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：组织成熟的一个标志是它能在没有持续指引的情况下运行，领导可以退出。 |
+| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
+| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：C021；登记ID：gongfa-candidate-html211-c021-308fff13bc；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=黄阶高级（huang-advanced）；任务族=组织继任与持续指引讨论；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=预计能在常规继任任务中提出独立运行目标；不把领导离开直接当组织成熟证据。；置信标签=low；反证条件=若退出导致责任真空或关键知识丢失，目标与实际运行不符，则推翻。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/20",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:C021；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:C021",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程之道.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "bd9467ba14f2d4c7e60bc2a8ba9a8843e88cf1955d7ea6207a8b222fc1b98f49",<br>    "source&#95;entry&#95;id": "frameworks-6a4142c88a58507411",<br>    "json&#95;pointer": "/frameworks/20"<br>  },<br>  "declared&#95;upstream": "《编程之道》 · 《计算机寓言》第四篇：夏——启示 · EPUB第147节",<br>  "content&#95;sha256": "e9845ab280be1df44b71ef4d0731765a85969d8c98c1350ebafc9042226993c0",<br>  "registry&#95;id": "gongfa-candidate-html211-c021-308fff13bc",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：《编程之道》 · 《计算机寓言》第四篇：夏——启示 · EPUB第147节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：组织继任与持续指引讨论（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用”：设计组织能力与继任机制时 |
 
-<a id="v0-html211-d017-6f826fbc"></a>
+<a id="v0-registry-gongfa-candidate-html211-d017-479973bfe4-r1-083b84ea"></a>
 ### 性能数字锚点
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 性能数字锚点 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：D017；内容版本：冻结选区；未设登记版本；本体类型：normative-allocation-content；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=黄阶高级；状态=provisional；任务族=历史性能量级初筛；理由=预计能在常规数量级检查中达标；源文明确是时代与负载相关锚点，不预定当前硬件精确收益。；反证条件=若旧量级导致错误判异常或误选硬件，且未以真实测量纠正，则下调。；置信标签=medium；意见时间=2026-10-07T13:04:26.525896+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 130,<br>    "end": 149<br>  },<br>  "declared&#95;upstream": "第8节《08-经验总结：必须熟记的一组常用性能数字》 · EPUB第62–69节",<br>  "text&#95;sha256": "8af9d1864afe85ce00417ac6f49aee7283bf778dac29105c1b016a3ef7d67186",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "8af9d1864afe85ce00417ac6f49aee7283bf778dac29105c1b016a3ef7d67186",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：此前本选区未单独完善编者边界；不借邻条补写。<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：EPUB第62–69节 · 08-经验总结：必须熟记的一组常用性能数字 |
+| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
+| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：D017；登记ID：gongfa-candidate-html211-d017-479973bfe4；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=黄阶高级（huang-advanced）；任务族=历史性能量级初筛；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=预计能在常规数量级检查中达标；源文明确是时代与负载相关锚点，不预定当前硬件精确收益。；置信标签=medium；反证条件=若旧量级导致错误判异常或误选硬件，且未以真实测量纠正，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/16",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D017；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D017",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 130,<br>    "end": 149<br>  },<br>  "declared&#95;upstream": "第8节《08-经验总结：必须熟记的一组常用性能数字》 · EPUB第62–69节",<br>  "content&#95;sha256": "8af9d1864afe85ce00417ac6f49aee7283bf778dac29105c1b016a3ef7d67186",<br>  "registry&#95;id": "gongfa-candidate-html211-d017-479973bfe4",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：第8节《08-经验总结：必须熟记的一组常用性能数字》 · EPUB第62–69节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：历史性能量级初筛（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 待核：候选记录未提供独立适用边界；不据标题或初评品级外推。 |
 
-<a id="v0-html211-d043-a1e5ab98"></a>
+<a id="v0-registry-gongfa-candidate-html211-d043-b16c1a48e2-r1-913832f6"></a>
 ### 容量二分搜索
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 容量二分搜索 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：D043；内容版本：冻结选区；未设登记版本；本体类型：method-specification；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=黄阶高级；状态=provisional；任务族=SLA容量搜索方向提示；理由=仅预计为有独立容量判定能力的常规搜索提供方向；卡片缺单调性、界限与终止规约，不借D041补齐。；反证条件=若容量判定不单调或oracle误差导致找错最小容量，则推翻。；置信标签=low；意见时间=2026-10-07T13:04:26.525896+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "frameworks-04bfcba058b0131329",<br>    "json&#95;pointer": "/frameworks/42"<br>  },<br>  "declared&#95;upstream": "第26节《26-怎么规划和控制数据库的复制延迟大小？》 · EPUB第197–203节",<br>  "text&#95;sha256": "a1cd0e20c81c4b17a2695b5dad1bab83a0ac60724f2e94ac560a0e9fcb4ad6b3",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "a1cd0e20c81c4b17a2695b5dad1bab83a0ac60724f2e94ac560a0e9fcb4ad6b3",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：{<br>  "candidate&#95;id": "D043",<br>  "value": "SLA约束下数值计算和二分搜索容量。",<br>  "boundary": "卡片未给单调性、搜索范围、oracle误差和终止精度；不能用有序就推出可二分或用同章预测冒充算法规约。"<br>}<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：在SLA约束下用数值计算和二分搜索求最小所需容量 |
+| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
+| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：D043；登记ID：gongfa-candidate-html211-d043-b16c1a48e2；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=黄阶高级（huang-advanced）；任务族=SLA容量搜索方向提示；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=仅预计为有独立容量判定能力的常规搜索提供方向；卡片缺单调性、界限与终止规约，不借D041补齐。；置信标签=low；反证条件=若容量判定不单调或oracle误差导致找错最小容量，则推翻。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "方法",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "D043",<br>    "value": "SLA约束下数值计算和二分搜索容量。",<br>    "boundary": "卡片未给单调性、搜索范围、oracle误差和终止精度；不能用有序就推出可二分或用同章预测冒充算法规约。"<br>  },<br>  "related&#95;framework&#95;view": "/frameworks/42",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D043；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D043",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "frameworks-04bfcba058b0131329",<br>    "json&#95;pointer": "/frameworks/42"<br>  },<br>  "declared&#95;upstream": "第26节《26-怎么规划和控制数据库的复制延迟大小？》 · EPUB第197–203节",<br>  "content&#95;sha256": "a1cd0e20c81c4b17a2695b5dad1bab83a0ac60724f2e94ac560a0e9fcb4ad6b3",<br>  "registry&#95;id": "gongfa-candidate-html211-d043-b16c1a48e2",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：第26节《26-怎么规划和控制数据库的复制延迟大小？》 · EPUB第197–203节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：SLA容量搜索方向提示（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用”：给定流量与SLA反推复制容量时；既有候选编辑边界（非独立原著核验）：卡片未给单调性、搜索范围、oracle误差和终止精度；不能用有序就推出可二分或用同章预测冒充算法规约。 |
 
-<a id="v0-html211-d046-9ccce0a1"></a>
+<a id="v0-registry-gongfa-candidate-html211-d046-4862594685-r1-e86620fe"></a>
 ### TCP队列三分诊断
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | TCP队列三分诊断 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：D046；内容版本：冻结选区；未设登记版本；本体类型：method-specification；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=黄阶高级；状态=provisional；任务族=TCP两端队列候选根因初筛；理由=仅预计常规初筛有用；三式不是充分因果判据，不能据SendQ与RecvQ单独宣布网络或应用根因。；反证条件=若相同队列组合对应不同窗口、背压或应用原因，三分判断仍被当充分诊断，则推翻。；置信标签=low；意见时间=2026-10-07T13:04:26.525896+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 433,<br>    "end": 437<br>  },<br>  "declared&#95;upstream": "第28节《28-网络数据传输慢，问题到底出在哪了？》 · EPUB第211–216节",<br>  "text&#95;sha256": "a92dd83d8772451ba24a5eefb271817d1c9220d91d7791b89249981778f7e2db",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "a92dd83d8772451ba24a5eefb271817d1c9220d91d7791b89249981778f7e2db",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：{<br>  "candidate&#95;id": "D046",<br>  "value": "观察两端TCP队列，初步隔离发送应用、接收应用和传输路径。",<br>  "boundary": "源给的是特定传输场景的简化判别，非万能因果证明；观察窗口、应用背压、流控、缓冲与双方状态均需核对。"<br>}<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：TCP流控队列提供跨主机的快速责任隔离。 |
+| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
+| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：D046；登记ID：gongfa-candidate-html211-d046-4862594685；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=黄阶高级（huang-advanced）；任务族=TCP两端队列候选根因初筛；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=仅预计常规初筛有用；三式不是充分因果判据，不能据SendQ与RecvQ单独宣布网络或应用根因。；置信标签=low；反证条件=若相同队列组合对应不同窗口、背压或应用原因，三分判断仍被当充分诊断，则推翻。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "方法",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "D046",<br>    "value": "观察两端TCP队列，初步隔离发送应用、接收应用和传输路径。",<br>    "boundary": "源给的是特定传输场景的简化判别，非万能因果证明；观察窗口、应用背压、流控、缓冲与双方状态均需核对。"<br>  },<br>  "related&#95;framework&#95;view": "/frameworks/45",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D046；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D046",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 433,<br>    "end": 437<br>  },<br>  "declared&#95;upstream": "第28节《28-网络数据传输慢，问题到底出在哪了？》 · EPUB第211–216节",<br>  "content&#95;sha256": "a92dd83d8772451ba24a5eefb271817d1c9220d91d7791b89249981778f7e2db",<br>  "registry&#95;id": "gongfa-candidate-html211-d046-4862594685",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：第28节《28-网络数据传输慢，问题到底出在哪了？》 · EPUB第211–216节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：TCP两端队列候选根因初筛（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 既有候选编辑边界（非独立原著核验）：源给的是特定传输场景的简化判别，非万能因果证明；观察窗口、应用背压、流控、缓冲与双方状态均需核对。 |
 
-<a id="v0-html96-vc089-4da03dd2"></a>
+<a id="v0-registry-gongfa-candidate-html96-vc089-12547900ce-r1-293de2dc"></a>
 ### Logprobs 置信诊断
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | Logprobs 置信诊断 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：VC089；内容版本：冻结选区；未设登记版本；本体类型：method-specification；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=黄阶高级；状态=provisional；任务族=词元选择相对概率诊断；理由=预计只支持有限的词元偏好观察，不支持事实置信或用户正确率判定。；反证条件=在声明的词元诊断任务中不能正确读取或比较相同口径概率。；置信标签=low；意见时间=2026-10-07T14:12:04.661998+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "机器学习/提示词工程-面向大语言模型.html",<br>    "script&#95;id": "pageData",<br>    "json&#95;pointer": "/frameworks/35",<br>    "source&#95;entry&#95;id": "frameworks-6baa3cc220c09a7cbd",<br>    "actual&#95;html&#95;sha256": "c004f3f3af3fb2d3a000d3b1d65dc145e139d13024caabd1e6a40b0c7024b729"<br>  },<br>  "declared&#95;upstream": "第7章《驯服模型》 · EPUB第104节 · 小节《超越文本：Logprobs》",<br>  "text&#95;sha256": "35c8f15a45cee0d3a846ab4738aaac611c5e8674b59a21fdca43bf536391ff1c",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "35c8f15a45cee0d3a846ab4738aaac611c5e8674b59a21fdca43bf536391ff1c",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：logprobs不是事实概率；API支持、分词与模型版本另核，不补校准概率。<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：读取词元概率，观察模型对生成选择的相对把握。 |
+| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
+| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：VC089；登记ID：gongfa-candidate-html96-vc089-12547900ce；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=黄阶高级（huang-advanced）；任务族=词元选择相对概率诊断；类型理由=读取词元概率观察生成选择；理由=预计只支持有限的词元偏好观察，不支持事实置信或用户正确率判定。；置信标签=low；反证条件=在声明的词元诊断任务中不能正确读取或比较相同口径概率。；原意见时间=2026-10-07T14:12:04.661998+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "AI&#95;editorial&#95;selection&#95;not&#95;independent&#95;approval",<br>  "source&#95;status": "local&#95;study&#95;page&#95;not&#95;original&#95;verified",<br>  "editorial&#95;use": "词元选择相对概率诊断",<br>  "editorial&#95;type&#95;label": "方法",<br>  "editorial&#95;boundary": "logprobs不是事实概率；API支持、分词与模型版本另核，不补校准概率。",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html96:VC089；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html96:VC089",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "机器学习/提示词工程-面向大语言模型.html",<br>    "script&#95;id": "pageData",<br>    "json&#95;pointer": "/frameworks/35",<br>    "source&#95;entry&#95;id": "frameworks-6baa3cc220c09a7cbd",<br>    "actual&#95;html&#95;sha256": "c004f3f3af3fb2d3a000d3b1d65dc145e139d13024caabd1e6a40b0c7024b729"<br>  },<br>  "declared&#95;upstream": "第7章《驯服模型》 · EPUB第104节 · 小节《超越文本：Logprobs》",<br>  "content&#95;sha256": "35c8f15a45cee0d3a846ab4738aaac611c5e8674b59a21fdca43bf536391ff1c",<br>  "registry&#95;id": "gongfa-candidate-html96-vc089-12547900ce",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：第7章《驯服模型》 · EPUB第104节 · 小节《超越文本：Logprobs》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：词元选择相对概率诊断（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 既有候选编辑边界（非独立原著核验）：logprobs不是事实概率；API支持、分词与模型版本另核，不补校准概率。 |
 
 <a id="v0-registry-gongfa-symbolic-space-validated-knowledge-r1-0a87c72f"></a>
 ### 符号序列空间与有效知识子集
@@ -406,114 +406,114 @@
 | 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
 | 15 | 明确这些规律成立的前提与适用条件。 | 登记适用条件（原登记字段）：源文只在满足适当连续性或压缩性条件时讨论以迭代极限获得不动点。<br>登记限制（原登记字段）：源文称生成器序列“可能收敛”，形式表示和自指结构本身不是实际改进或工程收敛的证明。<br>登记预期结果（不是实际效果证据）：源文目标是稳定生成能力，而非仅一个具体优化输出。<br>登记缺项标记：questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
 
-<a id="v0-html211-b001-fc05f9b6"></a>
+<a id="v0-registry-gongfa-candidate-html211-b001-478c3f1e69-r1-46aa976f"></a>
 ### 正确方式工程观
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 正确方式工程观 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：B001；内容版本：冻结选区；未设登记版本；本体类型：normative-allocation-content；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=黄阶中级；状态=provisional；任务族=困难技术问题的探索动机；理由=仅预计作为不轻易妥协的常规提醒有用；信念不能证明正确解存在、唯一或资源可达。；反证条件=若信念导致无界搜索或否认真实不可行约束，则推翻这一用途。；置信标签=low；意见时间=2026-10-07T13:04:26.525896+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "编程原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "6d851e6a95fc9b01cf0f83f1c48fe5a0bfc98d7ae59a00e752146c03d1c3837b",<br>    "source&#95;entry&#95;id": "frameworks-dc7cc7c3ac5e605cb5",<br>    "json&#95;pointer": "/frameworks/0"<br>  },<br>  "declared&#95;upstream": "旧HTML：编程原则-系统学习.html · 正确方式工程观（旧页未标具体材料出处；未重新核验）",<br>  "text&#95;sha256": "140151960be3ee5677be50b51c205ef2a9a8ae6020b752ca70aa668f83cb3d1c",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "140151960be3ee5677be50b51c205ef2a9a8ae6020b752ca70aa668f83cb3d1c",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：{<br>  "candidate&#95;id": "B001",<br>  "value": "寻求长期正确且可落地的方案。",<br>  "boundary": "正确方式的信念不证明解存在、唯一、可构造或资源可达；先定义可行集合和目标。"<br>}<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：相信可落地的正确方式存在，在资源足够时优先寻找能长期成立的方案。 |
+| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
+| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：面对技术问题、团队分歧或因疲劳准备妥协时 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：B001；登记ID：gongfa-candidate-html211-b001-478c3f1e69；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=黄阶中级（huang-intermediate）；任务族=困难技术问题的探索动机；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=仅预计作为不轻易妥协的常规提醒有用；信念不能证明正确解存在、唯一或资源可达。；置信标签=low；反证条件=若信念导致无界搜索或否认真实不可行约束，则推翻这一用途。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "准则",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "B001",<br>    "value": "寻求长期正确且可落地的方案。",<br>    "boundary": "正确方式的信念不证明解存在、唯一、可构造或资源可达；先定义可行集合和目标。"<br>  },<br>  "related&#95;framework&#95;view": "/frameworks/0",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:B001；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:B001",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "6d851e6a95fc9b01cf0f83f1c48fe5a0bfc98d7ae59a00e752146c03d1c3837b",<br>    "source&#95;entry&#95;id": "frameworks-dc7cc7c3ac5e605cb5",<br>    "json&#95;pointer": "/frameworks/0"<br>  },<br>  "declared&#95;upstream": "旧HTML：编程原则-系统学习.html · 正确方式工程观（旧页未标具体材料出处；未重新核验）",<br>  "content&#95;sha256": "140151960be3ee5677be50b51c205ef2a9a8ae6020b752ca70aa668f83cb3d1c",<br>  "registry&#95;id": "gongfa-candidate-html211-b001-478c3f1e69",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：旧HTML：编程原则-系统学习.html · 正确方式工程观（旧页未标具体材料出处；未重新核验）。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：困难技术问题的探索动机（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 既有候选编辑边界（非独立原著核验）：正确方式的信念不证明解存在、唯一、可构造或资源可达；先定义可行集合和目标。 |
 
-<a id="v0-html211-b019-055be365"></a>
+<a id="v0-registry-gongfa-candidate-html211-b019-2247412740-r1-95ab1664"></a>
 ### 技术使命筛选器
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 技术使命筛选器 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：B019；内容版本：冻结选区；未设登记版本；本体类型：dao-content；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=黄阶中级；状态=provisional；任务族=技术创意边界初筛；理由=仅预计在常规目标讨论中提醒约束边界；不把物质与人的二分当可行性判据。；反证条件=若错误否决教育或能力增强类有效创意，或无法区分真实技术可行性，则下调。；置信标签=low；意见时间=2026-10-07T13:04:26.525896+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "编程原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "6d851e6a95fc9b01cf0f83f1c48fe5a0bfc98d7ae59a00e752146c03d1c3837b",<br>    "source&#95;entry&#95;id": "frameworks-5351fa7c107fce70c5",<br>    "json&#95;pointer": "/frameworks/18"<br>  },<br>  "declared&#95;upstream": "旧HTML：编程原则-系统学习.html · 技术使命筛选器（旧页未标具体材料出处；未重新核验）",<br>  "text&#95;sha256": "7ed2d7db4a7019c4a365e81c82e92181caa92c162b880fe61b810098a87fbede",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "7ed2d7db4a7019c4a365e81c82e92181caa92c162b880fe61b810098a87fbede",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：此前本选区未单独完善编者边界；不借邻条补写。<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：技术更擅长消除物质、能源、空间和时间约束，对直接改变人的思维与能力更有限。 |
+| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
+| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：评估软件创意的目标与边界时 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：B019；登记ID：gongfa-candidate-html211-b019-2247412740；内容版本：r1；本体类型：dao-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=黄阶中级（huang-intermediate）；任务族=技术创意边界初筛；类型理由=相对独立的解释、准则或操作集合共同出现；不自动拆成新身份或本体子类。；理由=仅预计在常规目标讨论中提醒约束边界；不把物质与人的二分当可行性判据。；置信标签=low；反证条件=若错误否决教育或能力增强类有效创意，或无法区分真实技术可行性，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "复合",<br>  "related&#95;framework&#95;view": "/frameworks/18",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:B019；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:B019",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "6d851e6a95fc9b01cf0f83f1c48fe5a0bfc98d7ae59a00e752146c03d1c3837b",<br>    "source&#95;entry&#95;id": "frameworks-5351fa7c107fce70c5",<br>    "json&#95;pointer": "/frameworks/18"<br>  },<br>  "declared&#95;upstream": "旧HTML：编程原则-系统学习.html · 技术使命筛选器（旧页未标具体材料出处；未重新核验）",<br>  "content&#95;sha256": "7ed2d7db4a7019c4a365e81c82e92181caa92c162b880fe61b810098a87fbede",<br>  "registry&#95;id": "gongfa-candidate-html211-b019-2247412740",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：旧HTML：编程原则-系统学习.html · 技术使命筛选器（旧页未标具体材料出处；未重新核验）。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：技术创意边界初筛（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 待核：候选记录未提供独立适用边界；不据标题或初评品级外推。 |
 
-<a id="v0-html211-c014-22e54a86"></a>
+<a id="v0-registry-gongfa-candidate-html211-c014-1bae4df88a-r1-c2036181"></a>
 ### 项目失败三条件
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 项目失败三条件 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：C014；内容版本：冻结选区；未设登记版本；本体类型：explanatory-content；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=黄阶初级；状态=provisional；任务族=组织风险的寓言性假设提出；理由=只预计可提示常规讨论中的待查组织问题；人格与承诺标签不能作为失败、概率或绩效判据。；反证条件=若这些标签不能指向可核验工作问题，或造成错误人员判断，则推翻。；置信标签=low；意见时间=2026-10-07T13:04:26.525896+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "编程之道.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "bd9467ba14f2d4c7e60bc2a8ba9a8843e88cf1955d7ea6207a8b222fc1b98f49",<br>    "source&#95;entry&#95;id": "frameworks-7b78b4d75f7f40d054",<br>    "json&#95;pointer": "/frameworks/13"<br>  },<br>  "declared&#95;upstream": "《编程之道》 · 《编程之禅》第三篇：土 · EPUB第79节",<br>  "text&#95;sha256": "268c3c72bcf2e2414f7a7772107068598a5a3beeb541ff702d8a8ac7e6edc45d",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "268c3c72bcf2e2414f7a7772107068598a5a3beeb541ff702d8a8ac7e6edc45d",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：此前本选区未单独完善编者边界；不借邻条补写。<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：管理者不懂软件、技术负责人不爱编码、程序员缺乏长期承诺被列为三类高风险条件。 |
+| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
+| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：C014；登记ID：gongfa-candidate-html211-c014-1bae4df88a；内容版本：r1；本体类型：explanatory-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=黄阶初级（huang-initial）；任务族=组织风险的寓言性假设提出；类型理由=以关系、模型或机制的解释为主，不强编施行步骤。；理由=只预计可提示常规讨论中的待查组织问题；人格与承诺标签不能作为失败、概率或绩效判据。；置信标签=low；反证条件=若这些标签不能指向可核验工作问题，或造成错误人员判断，则推翻。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "解释",<br>  "related&#95;framework&#95;view": "/frameworks/13",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:C014；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:C014",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程之道.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "bd9467ba14f2d4c7e60bc2a8ba9a8843e88cf1955d7ea6207a8b222fc1b98f49",<br>    "source&#95;entry&#95;id": "frameworks-7b78b4d75f7f40d054",<br>    "json&#95;pointer": "/frameworks/13"<br>  },<br>  "declared&#95;upstream": "《编程之道》 · 《编程之禅》第三篇：土 · EPUB第79节",<br>  "content&#95;sha256": "268c3c72bcf2e2414f7a7772107068598a5a3beeb541ff702d8a8ac7e6edc45d",<br>  "registry&#95;id": "gongfa-candidate-html211-c014-1bae4df88a",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：《编程之道》 · 《编程之禅》第三篇：土 · EPUB第79节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：组织风险的寓言性假设提出（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用”：做项目组织风险检查时 |
 
 ## 未明确品级（不归属黄阶）
 
 以下2条没有可沿用的明确品级；仅为减少文件数暂置本页附录，不视为黄阶。
 
-- [灾备容量负载放大模型](#v0-html211-e001-d42a6797)
-- [CAP 定理 (CAP Theorem)](#v0-html96-vc029-a3226f06)
+- [灾备容量负载放大模型](#v0-registry-gongfa-candidate-html211-e001-a663456869-r1-5c259ebd)
+- [CAP 定理 (CAP Theorem)](#v0-registry-gongfa-candidate-html96-vc029-6cca304cec-r1-434a756e)
 
-<a id="v0-html211-e001-d42a6797"></a>
+<a id="v0-registry-gongfa-candidate-html211-e001-a663456869-r1-5c259ebd"></a>
 ### 灾备容量负载放大模型
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 灾备容量负载放大模型 |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：E001；内容版本：冻结选区；未设登记版本；本体类型：explanatory-content；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=未记录；状态=undetermined；任务族=灾备损失后的剩余相对负载计算；理由=原文x%与1/(1-x)口径冲突且写成2倍总流量；已发现正确性问题，暂不赋阶，不能用低阶掩盖错误。；反证条件=只有另存修订内容，明确x为比例及总流量不翻倍并经独立核算后，才可重新初评。；置信标签=low；意见时间=2026-10-07T13:04:26.525896+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 502,<br>    "end": 506<br>  },<br>  "declared&#95;upstream": null,<br>  "text&#95;sha256": "a21f7c2c60031720e63da08cdb973c25b8bf3ac1fe291f4cc4ac126213ba7017",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "a21f7c2c60031720e63da08cdb973c25b8bf3ac1fe291f4cc4ac126213ba7017",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：{<br>  "candidate&#95;id": "E001",<br>  "value": "估算容量丢失对剩余单元负载的放大。",<br>  "boundary": "原文字面保留，但x%和公式1/(1-x)有单位歧义：代入x应是0.5而非50。总业务流量未翻倍，是剩余可替代容量的相对负载加倍；源“2倍总流量”措辞有误。还须满足可重路由及等效容量前提。"<br>}<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：若失去承担x%流量的容量单位，其余单位负载增幅为&#91;1/(1-x)-1&#93;×100%。 |
+| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
+| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：E001；登记ID：gongfa-candidate-html211-e001-a663456869；内容版本：r1；本体类型：explanatory-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=undetermined；品级=暂不可判（无）；任务族=灾备损失后的剩余相对负载计算；类型理由=表达容量丢失比例与剩余负载倍率的模型，不是执行灾备的步骤。；理由=原文x%与1/(1-x)口径冲突且写成2倍总流量；已发现正确性问题，暂不赋阶，不能用低阶掩盖错误。；置信标签=low；反证条件=只有另存修订内容，明确x为比例及总流量不翻倍并经独立核算后，才可重新初评。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "解释",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "E001",<br>    "value": "估算容量丢失对剩余单元负载的放大。",<br>    "boundary": "原文字面保留，但x%和公式1/(1-x)有单位歧义：代入x应是0.5而非50。总业务流量未翻倍，是剩余可替代容量的相对负载加倍；源“2倍总流量”措辞有误。还须满足可重路由及等效容量前提。"<br>  },<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:E001；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:E001",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 502,<br>    "end": 506<br>  },<br>  "declared&#95;upstream": null,<br>  "content&#95;sha256": "a21f7c2c60031720e63da08cdb973c25b8bf3ac1fe291f4cc4ac126213ba7017",<br>  "registry&#95;id": "gongfa-candidate-html211-e001-a663456869",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 待核：候选快照没有声明上游书目；不从HTML文件名或路径猜测书名、作者或版次。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：灾备损失后的剩余相对负载计算（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 既有候选编辑边界（非独立原著核验）：原文字面保留，但x%和公式1/(1-x)有单位歧义：代入x应是0.5而非50。总业务流量未翻倍，是剩余可替代容量的相对负载加倍；源“2倍总流量”措辞有误。还须满足可重路由及等效容量前提。 |
 
-<a id="v0-html96-vc029-a3226f06"></a>
+<a id="v0-registry-gongfa-candidate-html96-vc029-6cca304cec-r1-434a756e"></a>
 ### CAP 定理 (CAP Theorem)
 
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | CAP 定理 (CAP Theorem) |
-| 2 | 是什么 | 本条仍是未入登记库的冻结来源候选；独立定义待核，原始摘录保留于第7项。 |
-| 3 | 为什么 | 待核：仍是来源候选；初评理由不等于来源作者的采用动机。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：未核实可复现步骤；不把原则摘录改写成流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定选区ID：VC029；内容版本：冻结选区；未设登记版本；本体类型：explanatory-content；登记状态：未入登记库（保持候选，不自动晋升）。<br>既有候选品级/初评记录：既有候选意见：品级=未记录；状态=undetermined；任务族=分布式一致性与可用性取舍；理由=缺分区情境及C/A的严格口径，当前简述容易误导，暂不判阶。；反证条件=若来源选区补足精确前提且独立核算成立，应以新内容版本重新初评。；置信标签=low；意见时间=2026-10-07T14:12:04.661998+00:00。这些是既有候选记录，不代表正式登记或效果验证。<br>候选来源登记的关系/同名线索：&#91;&#93;<br>这些线索不构成身份合并或同任务优劣比较。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "selection": {<br>    "file": "计算机科学/软件工程法则.html",<br>    "script&#95;id": "pageData",<br>    "json&#95;pointer": "/frameworks/9",<br>    "source&#95;entry&#95;id": "frameworks-a5b5d342bcf2a569de",<br>    "actual&#95;html&#95;sha256": "a27ad7bcf0a28c7786be08abd61e0dc3e4f25f740b1be463e56b1d9a09ca5b55"<br>  },<br>  "declared&#95;upstream": "第10节《CAP 定理 (CAP Theorem)》 · EPUB第11节",<br>  "text&#95;sha256": "35c745fc67696643144df4194608d76b24c9e3462c841079c3735d5dedf702cd",<br>  "source&#95;note": "冻结候选选区及其声明；未入登记库，未作为独立语义批准。",<br>  "original&#95;text&#95;sha256": "35c745fc67696643144df4194608d76b24c9e3462c841079c3735d5dedf702cd",<br>  "original&#95;text&#95;storage": "固定候选快照/selection记录；原始正文保留在data.json的冻结documents中"<br>} |
-| 8 | 相关图书 | 待核：未核实逐条书目、作者、版次或章节；来源声明不等于图书关联。 |
-| 9 | 它要解决什么问题？ | 待核：原文未结构化为场景、矛盾和目标；任务族/品级不是问题定义。 |
-| 10 | 为什么这样设计？ | 待核：无可核实的作者设计理由；不从标题或品级推断。 |
-| 11 | 内部如何实现？ | 待核：未对本候选完整原文作因果/变换机制核验。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 候选边界记录：不得默默补写原文；应另存限定版本，明确分区时的响应与一致性合同。<br>边界尚待回查固定选区，不构成正式适用承诺。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：一个分布式系统最多只能保证一致性、可用性和分区容错性中的两项。 |
+| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
+| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
+| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 6 | 关联信息 | 候选ID：VC029；登记ID：gongfa-candidate-html96-vc029-6cca304cec；内容版本：r1；本体类型：explanatory-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=undetermined；品级=暂不可判（无）；任务族=分布式一致性与可用性取舍；类型理由=原卡把CAP概括为无条件三选二；理由=缺分区情境及C/A的严格口径，当前简述容易误导，暂不判阶。；置信标签=low；反证条件=若来源选区补足精确前提且独立核算成立，应以新内容版本重新初评。；原意见时间=2026-10-07T14:12:04.661998+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "AI&#95;editorial&#95;selection&#95;not&#95;independent&#95;approval",<br>  "source&#95;status": "local&#95;study&#95;page&#95;not&#95;original&#95;verified",<br>  "editorial&#95;use": "分布式一致性与可用性取舍",<br>  "editorial&#95;type&#95;label": "解释",<br>  "editorial&#95;boundary": "不得默默补写原文；应另存限定版本，明确分区时的响应与一致性合同。",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
+| 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html96:VC029；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html96:VC029",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "计算机科学/软件工程法则.html",<br>    "script&#95;id": "pageData",<br>    "json&#95;pointer": "/frameworks/9",<br>    "source&#95;entry&#95;id": "frameworks-a5b5d342bcf2a569de",<br>    "actual&#95;html&#95;sha256": "a27ad7bcf0a28c7786be08abd61e0dc3e4f25f740b1be463e56b1d9a09ca5b55"<br>  },<br>  "declared&#95;upstream": "第10节《CAP 定理 (CAP Theorem)》 · EPUB第11节",<br>  "content&#95;sha256": "35c745fc67696643144df4194608d76b24c9e3462c841079c3735d5dedf702cd",<br>  "registry&#95;id": "gongfa-candidate-html96-vc029-6cca304cec",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
+| 8 | 相关图书 | 候选快照声明的上游定位：第10节《CAP 定理 (CAP Theorem)》 · EPUB第11节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
+| 9 | 它要解决什么问题？ | 既有候选评估任务族：分布式一致性与可用性取舍（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
+| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
+| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
+| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
+| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
+| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 既有候选编辑边界（非独立原著核验）：不得默默补写原文；应另存限定版本，明确分区时的响应与一致性合同。 |
