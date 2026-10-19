@@ -82,9 +82,17 @@ def bundles(root):
             continue
         raw = raw_read(path)
         data = strict_json(raw)
-        require(set(data) == {'format', 'kind', 'source_revision', 'documents', 'locations', 'live_sources', 'projections'}
+        archive_fields = {'format', 'kind', 'source_revision', 'documents', 'locations', 'live_sources', 'projections'}
+        require(frozenset(data) in {frozenset(archive_fields), frozenset(archive_fields | {'explanations_v0'})}
                 and data['format'] == FORMAT and data['kind'] == kind
                 and re.fullmatch('[a-f0-9]{40}', data['source_revision']), '原始数据格式不符')
+        if 'explanations_v0' in data:
+            explanations = data['explanations_v0']
+            require(isinstance(explanations, dict) and set(explanations) == {'template_sha256', 'items'}
+                    and isinstance(explanations['template_sha256'], str)
+                    and re.fullmatch('[a-f0-9]{64}', explanations['template_sha256'])
+                    and isinstance(explanations['items'], list) and len(explanations['items']) <= 1024,
+                    'v0说明载荷格式不符')
         require(isinstance(data['documents'], dict) and len(data['documents']) <= 4096, '来源文档数量超限')
         decoded, total = {}, 0
         for key, item in data['documents'].items():

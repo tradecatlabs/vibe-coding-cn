@@ -45,10 +45,10 @@
 
 ### 两个资料集合
 
-`gongfa/data.json`、`faqi/data.json`分别是本集合唯一维护源。历史文档身份、文件模式、原始字节、SHA、选择器和既有意见保留在`documents`中；文本用UTF-8，二进制用显式Base64。
+`gongfa/data.json`、`faqi/data.json`分别是本集合唯一维护源。历史文档身份、文件模式、原始字节、SHA、选择器和既有意见保留在`documents`中；文本用UTF-8，二进制用显式Base64。逐对象v0说明独立存于顶层`explanations_v0`，绑定模板SHA，不混入冻结原文载荷。
 `locations`只表达当前物理位置，`live_sources`绑定迁移后的当前实现；它们不代替原始SHA，也不构成重新源审或效果验证。
 
-每个集合仅包含`data.json`与生成的`README.md`。功法历史Excel保留为原始载荷，不再产生第二份活动Excel视图。
+每个集合仅包含`data.json`与生成的`README.md`；生成器为每个现有对象生成一张15项严格三列表格，未知信息标`待核`。功法历史Excel保留为原始载荷，不再产生第二份活动Excel视图。
 新增或修订登记仍须遵守载荷内既有Schema、稳定ID、内容版本、来源与评级协议，不能把候选、排除项或历史判断自动晋升。
 
 ### 来源与信任边界

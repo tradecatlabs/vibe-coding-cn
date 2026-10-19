@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / '.github'))
 import source_archive
 import book_views
+import tool_explanations
 
 spec = importlib.util.spec_from_file_location('gongfa_protocol', ROOT / '.github/check-gongfa.py')
 protocol = importlib.util.module_from_spec(spec)
@@ -87,11 +88,13 @@ def load_inputs(root):
     require(counts == index['candidate_counts'], '候选批次范围与索引不一致')
     reviewed = {item['source_id'] for item in documents['solve24_analysis']['items']}
     require({item['source_id'] for item in documents['solve_raw']['items']} == reviewed, 'Solve原条目须仅含已审范围')
+    archive = source_archive.bundles(root).get('gongfa')
+    require(archive is not None and 'explanations_v0' in archive['data'], '功法data.json缺少v0说明载荷')
     binding = {'registry_sha256': registry_sha, 'candidate_sha256': reference['sha256'], 'candidate_snapshot': reference['path'],
                'source_captured_at': snapshot['captured_at'], 'registry_assessments': registry_summary['assessments'],
                'archive_sha256': {str(path.relative_to(root)): digest for path, digest in source_archive.bundle_bindings(root).items()
                                   if path.parent.name == 'gongfa'}}
-    return {**documents, 'registry': registry}, binding
+    return {**documents, 'registry': registry, 'explanations_v0': archive['data']['explanations_v0']}, binding
 
 
 def merge_rows(documents):
@@ -207,6 +210,11 @@ def merge_rows(documents):
             row['relations'] += '\n同名限定内容未自动合并：' + '；'.join(others)
     rank = {grade: i for i, grade in enumerate(GRADES)}
     rows.sort(key=lambda row: rank.get(row['grade_id'], -1), reverse=True)
+    payload = documents.get('explanations_v0', {})
+    explanations = {item.get('object_key'): item.get('fields') for item in payload.get('items', [])
+                    if isinstance(item, dict)} if isinstance(payload, dict) else {}
+    for row in rows:
+        row['v0_fields'] = explanations.get(row['key'])
     return rows
 
 
@@ -237,28 +245,33 @@ def notes(rows, binding):
 
 
 def render_markdown(rows, binding):
-    def cell(value):
-        return (escape(str(value), quote=False).replace('[', '&#91;').replace(']', '&#93;')
-                .replace('|', '\\|').replace('\r', ' ').replace('\n', ' '))
     counts = Counter(row['entry_status'] for row in rows)
     provisional = sum(row['grading_status'] == 'provisional' for row in rows)
     undetermined = sum(row['grading_status'] == 'undetermined' for row in rows)
     lines = [MARKER, '# 功法总表', '', '## 字多不看', '',
              f"- 共**{len(rows)}条内容记录**；已登记{counts['已登记']}条，登记库候选{counts['登记库候选']}条，未入登记库的来源候选{counts['未入登记库']}条。不是独立功法去重后的总数。",
              f'- 原前瞻初评{provisional}条，暂不可判{undetermined}条；不是正式效果评级，亦不把缺测默认补成黄阶。',
-             '- Markdown仅作浏览；解释列展开登记摘要/问题/机制及条件/限制/预期结果、候选原文与用途/理由、Solve适用边界；不新增主张，详情仍以JSON为准。',
+             '- 每条内容记录独立使用一张v0表格；候选仍是候选，解释视图不构成登记、评级或效果证明。',
              '- [data.json](data.json)是唯一原始数据源，保留限定原文、历史选区、意见、源文件及附件；本文件仅为生成阅读视图。', '',
              '输入绑定：`' + digest(binding['registry_sha256'] + binding['candidate_sha256']) + '`。', '',
              '## 快速导航', '', '- [全部记录](#全部记录)', '- [原文文集](#原文文集)', '- [品级词表](#品级词表)', '',
              '<details>', '<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>', '',
              '- [全部记录](#全部记录)', '- [原文文集](#原文文集)', '- [品级词表](#品级词表)', '- [数据与边界](#数据与边界)',
              '<!-- source-toc -->', '', '</details>', '', '## 使用方式', '',
-             '按问题查阅总表与原文；修改data.json后运行make sync-gongfa-catalog，不手改生成视图。', '',
-             '## 正文', '', '## 全部记录', '', '| 品级 | 功法名称 | 解释 |', '|---|---|---|']
+             '按对象身份查阅独立v0表格与原文；修改data.json后运行make sync-gongfa-catalog，不手改生成视图。', '',
+             '## 正文', '', '## 全部记录', '']
+    keys = [row['key'] for row in rows]
+    require(len(set(keys)) == len(keys), '功法对象身份重复')
     for row in rows:
-        values = [grade_label(row), row['name'], row['explanation']]
-        lines.append('| ' + ' | '.join(cell(value) for value in values) + ' |')
-    lines += ['', '## 更新与核对', '', '```bash', 'make sync-gongfa-catalog', 'make check-gongfa-catalog', 'make test-gongfa-catalog', '```', '',
+        fields = row.get('v0_fields')
+        require(isinstance(fields, list) and len(fields) == 15, '对象缺少完整v0说明：' + row['key'])
+        require([field.get('name') for field in fields] == list(tool_explanations.FIELD_NAMES), '对象v0栏目不符：' + row['key'])
+        require(fields[0]['content'] == row['name'], '对象v0名称与登记身份不符：' + row['key'])
+        lines.append(tool_explanations.render_index_link(row['key'], row['name']))
+    lines.append('')
+    for row in rows:
+        lines.append(tool_explanations.render_object(row['key'], row['name'], row['v0_fields']))
+    lines += ['## 更新与核对', '', '```bash', 'make sync-gongfa-catalog', 'make check-gongfa-catalog', 'make test-gongfa-catalog', '```', '',
               '不要手改生成视图；原始材料和候选来源仍保留版本、独立摘要与意见，不自动登记或重新评级。',
               '内容新版本不继承旧初评；同对象不同情境的活动意见并列保留，不按最高档或最新时间裁决。',
               '本视图不执行方法，不证明原著、许可证、独立语义批准或真实效果；未审材料不混入。', '']
@@ -274,7 +287,12 @@ def view_path(root, name='README.md'):
     return path
 
 
-def render_view(root, rows, binding):
+def render_view(root, rows, binding, explanations=None):
+    if explanations is not None:
+        names = {row['key']: row['name'] for row in rows}
+        fields_by_key = tool_explanations.validate_payload(root, explanations, names)
+        for row in rows:
+            row['v0_fields'] = fields_by_key[row['key']]
     for row in rows:
         for value in row.values():
             if isinstance(value, str):
@@ -292,13 +310,13 @@ def render_view(root, rows, binding):
     return raw
 
 
-def check_views(root, rows, binding):
-    require(protocol.bounded_read(view_path(root), 4 * 1024 * 1024) == render_view(root, rows, binding),
+def check_views(root, rows, binding, explanations=None):
+    require(protocol.bounded_read(view_path(root), 4 * 1024 * 1024) == render_view(root, rows, binding, explanations),
             'README.md陈旧或手改；运行make sync-gongfa-catalog')
 
 
-def write_views(root, rows, binding):
-    raw = render_view(root, rows, binding)
+def write_views(root, rows, binding, explanations=None):
+    raw = render_view(root, rows, binding, explanations)
     path = view_path(root)
     before = path.read_bytes() if path.exists() else None
     require(before is None or MARKER.encode() in before[:200], '拒绝覆盖非本工具生成的Markdown')
@@ -326,9 +344,10 @@ def main():
         root = args.root.resolve(strict=True)
         documents, binding = load_inputs(root)
         rows = merge_rows(documents)
+        explanations = documents['explanations_v0']
         if args.write:
-            write_views(root, rows, binding)
-        check_views(root, rows, binding)
+            write_views(root, rows, binding, explanations)
+        check_views(root, rows, binding, explanations)
         _documents, fresh_binding = load_inputs(root)
         require(fresh_binding == binding, '输入在生成/检查期间变化；视图不宣称最新，请重跑')
         print(json.dumps({'records': len(rows), 'batches': dict(Counter(row['namespace'] for row in rows)),

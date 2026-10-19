@@ -4,7 +4,6 @@ import argparse
 import configparser
 import datetime
 import hashlib
-import html
 import json
 import os
 import posixpath
@@ -20,8 +19,8 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / '.github'))
 import source_archive
 import book_views
+import tool_explanations
 import jsonschema
-from tabulate import tabulate
 import yaml
 MARKER = "<!-- generated: sync-faqi-catalog.py -->"
 MAX_BYTES = 2 * 1024 * 1024
@@ -363,35 +362,7 @@ def validate(root, input_path):
     return data, sources, objects, resources, decisions, bindings
 
 
-def table_cell(value):
-    value = str(value).replace("\r\n", "\n").replace("\r", "\n")
-    escaped = html.escape(value, quote=False)
-    for char, entity in (("\\", "&#92;"), ("`", "&#96;"), ("*", "&#42;"), ("_", "&#95;"),
-                         ("~", "&#126;"), ("[", "&#91;"), ("]", "&#93;"), ("|", "&#124;")):
-        escaped = escaped.replace(char, entity)
-    return escaped.replace("\n", "<br>")
-
-
-def table(rows, headers):
-    # 对齐表格会把单个长解释扩展到整列；先用转义后UTF-8字节做保守预算。
-    escaped_headers = [table_cell(header) for header in headers]
-    widths = [len(header.encode("utf-8")) for header in escaped_headers]
-    escaped_rows = []
-    height = 5
-    for row in rows:
-        require(len(row) == len(headers), "生成表格的行列数不一致")
-        values = [str(value) for value in row]
-        escaped_row = [table_cell(value) for value in values]
-        escaped_rows.append(escaped_row)
-        height += max([1, *[len(value.splitlines()) for value in values]])
-        for index, value in enumerate(escaped_row):
-            widths[index] = max(widths[index], len(value.encode("utf-8")))
-    require((sum(widths) + 3 * len(headers) + 1) * height + 20 <= MAX_BYTES,
-            "Markdown表格列宽与行数超过2 MiB预算，不能静默截断")
-    return tabulate(escaped_rows, headers=escaped_headers, tablefmt="pipe", disable_numparse=True) + "\n"
-
-
-def render(data, objects, root=None):
+def render(data, objects, root, explanations):
     graph = data["dependency_graph"]
     assignments = data["provisional_grade_assignments"]
     grade_order = {
@@ -400,32 +371,41 @@ def render(data, objects, root=None):
             [(tier, level) for tier, _ in GRADE_TIERS for level, _ in reversed(GRADE_LEVELS)]
         )
     }
+    graph_objects = {item["id"]: item for item in graph["objects"]}
+    categories = {item["id"]: item for item in graph["dependency_categories"]}
     names = {
         **{object_id: obj["name"] for object_id, obj in objects.items()},
-        **{obj["id"]: obj["name"] for obj in graph["objects"]},
-        **{item["id"]: item["node"] for item in graph["dependency_categories"]},
+        **{object_id: obj["name"] for object_id, obj in graph_objects.items()},
+        **{object_id: item["node"] for object_id, item in categories.items()},
     }
-    rows = [
-        [GRADE_LABELS[item["grade_id"]], names[item["subject_id"]], item["scope"] + "；" + item["basis"]]
-        for item in sorted(assignments, key=lambda item: (grade_order[item["grade_id"]], item["subject_id"]))
-    ]
+    expected = {"faqi:" + subject_id: names[subject_id] for subject_id in names}
+    fields_by_key = tool_explanations.validate_payload(root, explanations, expected)
+    ordered = sorted(assignments, key=lambda item: (grade_order[item["grade_id"]], item["subject_id"]))
+
     out = [
         MARKER,
         "# Vibe Coding法器重要性总表",
         "",
         "## 字多不看", "",
-        "品级仅表示 Vibe Coding 重要性暂定，不代表效能验证；原始登记、来源及历史见[data.json](data.json)。",
-        "历史来源初审与当前迁移位置分开；目录重构不产生新的运行、许可或效果批准。", "",
+        "当前30个对象分别使用v0的15项说明表；分级仅表示“Vibe Coding 重要性暂定”，不代表效能验证。",
+        "原始登记、来源及历史见[data.json](data.json)；来源初审与当前迁移位置分开，视图不产生运行、许可或效果批准。", "",
         "## 快速导航", "", "- [法器总表](#法器总表)", "- [原始说明](#原始说明)", "",
         "<details>", "<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>", "",
         "- [法器总表](#法器总表)", "- [原始说明](#原始说明)",
         *(book_views.source_toc(root, 'faqi') if root else []), "", "</details>", "",
         "## 使用方式", "", "原始数据只在data.json维护；运行make sync-faqi-catalog更新本文件。", "",
         "## 正文", "", "## 法器总表", "",
-        table(rows, ["品级", "名称", "解释"]),
-        "## 原始说明", "",
-        book_views.render_sources(root, 'faqi') if root else "",
     ]
+    for item in ordered:
+        subject_id = item["subject_id"]
+        object_key = "faqi:" + subject_id
+        out.append(tool_explanations.render_index_link(object_key, names[subject_id]))
+    out.append("")
+    for item in ordered:
+        subject_id = item["subject_id"]
+        object_key = "faqi:" + subject_id
+        out.append(tool_explanations.render_object(object_key, names[subject_id], fields_by_key[object_key]))
+    out.extend(("## 原始说明", "", book_views.render_sources(root, 'faqi') if root else ""))
     return "\n".join(out).encode("utf-8")
 
 
@@ -463,7 +443,9 @@ def main():
         require(not input_path.is_symlink() and input_path.parent.resolve() == input_path.parent and
                 not view.is_symlink() and view.parent.resolve() == view.parent, "输入/输出含软链接")
         data, _, objects, resources, _, bindings = validate(root, input_path)
-        rendered = render(data, objects, root)
+        archive = source_archive.bundles(root).get("faqi")
+        require(archive is not None and "explanations_v0" in archive["data"], "法器data.json缺少v0说明载荷")
+        rendered = render(data, objects, root, archive["data"]["explanations_v0"])
         require(len(rendered) <= MAX_BYTES, "生成视图超过2 MiB")
         before = bounded_read(view) if view.exists() else None
         unchanged(bindings, root, data)

@@ -20,6 +20,12 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / '.github/extensions/sync-gongfa-catalog.py'
 ARTIFACTS = None
 catalog = None
+TEMPLATE = Path(__file__).resolve().parents[1] / '.github/context/assets/templates/tool-explanation-template-v0.md'
+
+
+def v0_field_names():
+    return [line.split('|')[2].strip() for line in TEMPLATE.read_text(encoding='utf-8').splitlines()
+            if line.startswith('| ') and line.split('|')[1].strip().isdigit()]
 
 
 def save(path, value):
@@ -56,6 +62,9 @@ class CatalogMaintenanceTest(unittest.TestCase):
         target = root / '.github/context/gongfa'
         target.mkdir(parents=True)
         shutil.copyfile(ROOT / '.github/context/gongfa/data.json', target / 'data.json')
+        template_dir = root / '.github/context/assets/templates'
+        template_dir.mkdir(parents=True)
+        shutil.copyfile(TEMPLATE, template_dir / TEMPLATE.name)
         return root
 
     def command(self, root, *options):
@@ -118,19 +127,25 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertIn('- 共**411条内容记录**；已登记80条，登记库候选0条，未入登记库的来源候选331条。', markdown)
         self.assertNotIn('[控制论与科学方法论](#控制论与科学方法论)', markdown)
         self.assertFalse('catalog.xlsx' in markdown, '活动阅读视图只有Markdown，历史Excel仅作原始载荷保存')
-        section = markdown.split('## 全部记录\n\n', 1)[1].split('\n\n## 更新与核对', 1)[0]
-        table_rows = [line for line in section.splitlines() if line.startswith('|')]
-        cells = [parse_pipe_row(line) for line in table_rows]
-        self.assertEqual(['品级', '功法名称', '解释'], cells[0])
-        self.assertEqual(len(rows) + 2, len(cells))
-        self.assertTrue(all(len(row) == 3 for row in cells), 'Markdown浏览表只保留品级、名称和解释')
-        self.assertEqual([row['name'] for row in rows], [row[1] for row in cells[2:]])
-        self.assertEqual('天阶高级', cells[2][0])
-        self.assertIn(('地阶高级', '第一性原理'), [(row[0], row[1]) for row in cells[2:]])
+        field_names = v0_field_names()
+        self.assertEqual(15, len(field_names))
+        lines = markdown.splitlines()
+        starts = [index for index, line in enumerate(lines) if line == '| 序号 | 说明项 | 内容 |']
+        self.assertEqual(len(rows), len(starts), '每个功法对象必须独立生成一张v0表格')
+        object_section = markdown.split('## 全部记录\n', 1)[1].split('## 更新与核对\n', 1)[0]
+        self.assertEqual(len(rows), sum(token.type == 'table_open' for token in catalog.book_views.MarkdownIt('default').parse(object_section)))
+        for row, start in zip(rows, starts):
+            table_rows = lines[start:start + 17]
+            self.assertEqual(17, len(table_rows))
+            self.assertEqual('|:---:|:---|:---|', table_rows[1])
+            cells = [parse_pipe_row(line) for line in table_rows]
+            self.assertTrue(all(len(cell) == 3 for cell in cells), '每张表严格为三列')
+            self.assertEqual(field_names, [cell[1] for cell in cells[2:]])
+            self.assertEqual(row['name'], unescape(cells[2][2]))
+        self.assertIn('天阶高级', markdown)
+        self.assertIn('第一性原理', markdown)
         self.assertNotIn('天高', markdown)
         self.assertNotIn('地高', markdown)
-        expected_explanations = [row['explanation'].replace('\r', ' ').replace('\n', ' ') for row in rows]
-        self.assertEqual(expected_explanations, [unescape(row[2]) for row in cells[2:]])
 
     def test_registry_candidate_count_is_separate_from_historical_sources(self):
         documents = deepcopy(self.documents)
@@ -143,8 +158,8 @@ class CatalogMaintenanceTest(unittest.TestCase):
         documents['registry']['gongfa'].append(candidate)
         rows = catalog.merge_rows(documents)
         self.assertEqual(sum(row['entry_status'] == '登记库候选' for row in rows), 1)
-        markdown = catalog.render_markdown(rows, self.binding)
-        self.assertIn('- 共**412条内容记录**；已登记80条，登记库候选1条，未入登记库的来源候选331条。', markdown)
+        self.assertEqual(412, len(rows))
+        self.assertIn('合计412条', '\n'.join(catalog.notes(rows, self.binding)))
 
     def test_registry_updates_follow_explicit_correction_and_never_inherit_a_new_version(self):
         documents = deepcopy(self.documents)
@@ -209,6 +224,11 @@ class CatalogMaintenanceTest(unittest.TestCase):
         grade = documents['html96_grades']['items'][0]
         item['name'] = grade['name'] = '<script>bad</script>|=2+2'
         rows = catalog.merge_rows(documents)
+        target = next(row for row in rows if row['namespace'] == 'html96' and row['original_id'] == item['candidate_id'])
+        if 'v0_fields' not in target:
+            target['v0_fields'] = [{'name': label, 'content': item['name'] if index == 0 else '隔离安全测试'}
+                                   for index, label in enumerate(v0_field_names())]
+        target['v0_fields'][0]['content'] = item['name']
         root = Path(tempfile.mkdtemp(prefix='markdown-', dir=ARTIFACTS))
         target = root / '.github/context/gongfa'
         target.mkdir(parents=True)
@@ -216,7 +236,7 @@ class CatalogMaintenanceTest(unittest.TestCase):
         catalog.check_views(root, rows, self.binding)
         markdown = (target / 'README.md').read_text()
         self.assertNotIn('<script>bad</script>', markdown)
-        self.assertIn('&lt;script&gt;bad&lt;/script&gt;\\|=2+2', markdown)
+        self.assertIn('&lt;script&gt;bad&lt;/script&gt;&#124;=2+2', markdown)
         self.assertEqual({p.name for p in target.iterdir()}, {'README.md'})
         (target / 'README.md').write_text(markdown.replace('天阶高级', '改动品级', 1))
         with self.assertRaises(ValueError): catalog.check_views(root, rows, self.binding)

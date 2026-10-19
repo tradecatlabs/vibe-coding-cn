@@ -150,6 +150,15 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertIn('](#doc-other-目标)', toc)
         self.assertNotIn('代码不是目录', toc)
 
+    def test_v0_explanations_remain_separate_from_frozen_source_documents(self):
+        explanation = {'template_sha256': 'a' * 64, 'items': []}
+        self.data['explanations_v0'] = explanation
+        self.save()
+        archive.clear_cache()
+        bundle = archive.bundles(self.root)['gongfa']
+        self.assertEqual(explanation, bundle['data']['explanations_v0'])
+        self.assertNotIn('explanations_v0', bundle['bytes'])
+
     def test_independent_raw_input_remains_readable(self):
         raw_root = self.root / 'standalone-input'
         path = raw_root / '.github/metadata/gongfa/registry.json'
