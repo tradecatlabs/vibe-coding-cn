@@ -90,19 +90,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 第一性原理 |
 | 2 | 是什么 | 现有登记摘要：审查结论的前提，区分事实、假设、偏好与惯例，从事实约束重推最小路径。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“经验惯例绑架需求，或复杂方案无法解释其必要性”，本条以“审查结论的前提，区分事实、假设、偏好与惯例，从事实约束重推最小路径”提供理解或分析视角，可服务于基于事实约束的最小可行路径。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定登记来源选区列出的步骤/操作是：写出当前结论；逐条追问：这个结论依赖哪些前提？；区分事实、假设、偏好、惯例；保留不可再拆的事实约束；从事实约束重新推导最小可行路径。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“审查结论的前提，区分事实、假设、偏好与惯例，从事实约束重推最小路径”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-first-principles；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶高级；意见状态：provisional；任务族：错误前提下的问题重构与方案重推；初评/上下文理由：预计在需求含错误假设的困难或迁移任务中纠正问题定义并重建可行方案；不是通用最优解保证。；反证条件：若不能识别错误前提，重推方案违反事实或预算，或成熟基线已经同样处理这些前提，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-thinking-models-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/thinking-models.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T04:29:18.396921Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-thinking-models-81fc7ae.txt",<br>    "snapshot&#95;sha256": "9d2d15caff363d01facb15f633114f2b3ad708797d7ef8302a02442a7321f28d",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-thinking-models-网络效应",<br>      "philosophy-thinking-models-奥卡姆剃刀",<br>      "philosophy-thinking-models-第一性原理",<br>      "philosophy-thinking-models-思想实验",<br>      "philosophy-thinking-models-逆向思维",<br>      "philosophy-thinking-models-多阶思维",<br>      "philosophy-thinking-models-状态空间思维模型"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-thinking-models-81fc7ae",<br>    "heading&#95;id": "philosophy-thinking-models-第一性原理",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "e92e76bdb2c16e50f9303929b3383074564aaa4b4728859b3deba3750790e71a",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "e92e76bdb2c16e50f9303929b3383074564aaa4b4728859b3deba3750790e71a",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-thinking-models-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/thinking-models.md#philosophy-thinking-models-第一性原理）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
 | 9 | 它要解决什么问题？ | 经验惯例绑架需求，或复杂方案无法解释其必要性。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“收录当前仓内五步操作版，不宣称覆盖第一性原理的全部历史表述”；可见结构以“写结论→审查前提→区分事实/假设/偏好/惯例→保留事实约束→重推路径”说明主题“审查结论的前提，区分事实、假设、偏好与惯例，从事实约束重推最小路径”与问题“经验惯例绑架需求，或复杂方案无法解释其必要性”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | 写结论→审查前提→区分事实/假设/偏好/惯例→保留事实约束→重推路径。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记适用条件（原登记字段）：需求受经验做法影响，或需要核对默认方案是否成立。<br>登记预期结果（不是实际效果证据）：基于事实约束的最小可行路径。<br>登记缺项标记：limitations<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“写出当前结论；逐条追问：这个结论依赖哪些前提？；区分事实、假设、偏好、惯例；保留不可再拆的事实约束；从事实约束重新推导最小可行路径”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。固定选区及登记未提供量化成本或运行测量。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“经验惯例绑架需求，或复杂方案无法解释其必要性”的同目标替代方案及可比结果。现阶段只能说明本条关注“审查结论的前提，区分事实、假设、偏好与惯例，从事实约束重推最小路径”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：对适用情境先界定条件，再按固定选区步骤“写出当前结论；逐条追问：这个结论依赖哪些前提？；区分事实、假设、偏好、惯例；保留不可再拆的事实约束；从事实约束重新推导最小可行路径”处理并核对边界；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记profile的编辑性条件摘要：需求受经验做法影响，或需要核对默认方案是否成立。边界：登记及固定选区未记录“第一性原理”的具体限制或反例。选区说明另限定：“收录当前仓内五步操作版，不宣称覆盖第一性原理的全部历史表述”（登记编者说明，非原文）。登记profile列出的预期结果是“基于事实约束的最小可行路径”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-lightweight-formal-methods-r1-b7023a05"></a>
 ### 形式化方法（轻量形式化）
@@ -111,19 +111,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 形式化方法（轻量形式化） |
 | 2 | 是什么 | 现有登记摘要：原文用途：减少非法状态、约束模型输出、让行为可检查可累积。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“减少非法状态、约束模型输出、让行为可检查可累积”，本条以“原文用途：减少非法状态、约束模型输出、让行为可检查可累积”提供理解或分析视角，可服务于类型、schema、不变式与错误语义规格；类型/运行时校验、契约和性质测试；实现与规格的满足关系说明。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定登记来源选区列出的步骤/操作是：&#42;&#42;先规格&#42;&#42;：类型 + schema + 不变式 + 错误集合（异常或 error object）+ 复杂度约束（可选）；&#42;&#42;再检查器&#42;&#42;：类型检查 + 运行时校验 + 断言/契约 + 性质测试；&#42;&#42;最后实现&#42;&#42;：逐条映射规格（谁保证哪条约束）。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“原文用途：减少非法状态、约束模型输出、让行为可检查可累积”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-lightweight-formal-methods；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶高级；意见状态：provisional；任务族：协议、不变量与边界条件检查；初评/上下文理由：预计在复杂协议与边界案例中发现常规示例测试遗漏的不一致；结论受模型和工具保证范围限制。；反证条件：若形式模型遗漏用户关键性质、验证方向错误，或工具通过却实际契约违约，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-methodology-toolbox-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/methodology-toolbox.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T04:29:18.396921Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-methodology-toolbox-81fc7ae.txt",<br>    "snapshot&#95;sha256": "1bb43f897974dcbf6837a35b26f64f0277de68188ee2353bb4c58ef176a4bce0",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-methodology-toolbox-1-现象学还原悬置假设",<br>      "philosophy-methodology-toolbox-2-正反合三段迭代",<br>      "philosophy-methodology-toolbox-3-可证伪主义波普尔",<br>      "philosophy-methodology-toolbox-4-形式化方法轻量形式化",<br>      "philosophy-methodology-toolbox-5-奥卡姆剃刀最小复杂度",<br>      "philosophy-methodology-toolbox-6-实用主义以指标为准",<br>      "philosophy-methodology-toolbox-7-系统论整体论边界与反馈回路",<br>      "philosophy-methodology-toolbox-8-诠释学语境澄清",<br>      "philosophy-methodology-toolbox-9-钢人化原则最强版本理解",<br>      "philosophy-methodology-toolbox-10-决策论机会成本可逆优先",<br>      "philosophy-methodology-toolbox-11-反事实推理counterfactuals",<br>      "philosophy-methodology-toolbox-12-溯因推理abduction最佳解释",<br>      "philosophy-methodology-toolbox-13-贝叶斯式信念更新与溯因配合",<br>      "philosophy-methodology-toolbox-14-反思平衡reflective-equilibrium",<br>      "philosophy-methodology-toolbox-15-概念分析-概念工程",<br>      "philosophy-methodology-toolbox-16-方法论怀疑笛卡尔式",<br>      "philosophy-methodology-toolbox-17-视角三角测量triangulation",<br>      "philosophy-methodology-toolbox-18-机制解释mechanistic-explanation",<br>      "philosophy-methodology-toolbox-19-错误认识论error-epistemology",<br>      "philosophy-methodology-toolbox-20-实验哲学x-phi",<br>      "philosophy-methodology-toolbox-21-计算哲学computational-philosophy",<br>      "philosophy-methodology-toolbox-22-自然化认识论naturalized-epistemology",<br>      "philosophy-methodology-toolbox-23-贝叶斯认识论bayesian-epistemology",<br>      "philosophy-methodology-toolbox-总体作业流",<br>      "philosophy-methodology-toolbox-控制论与科学方法论"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-methodology-toolbox-81fc7ae",<br>    "heading&#95;id": "philosophy-methodology-toolbox-4-形式化方法轻量形式化",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "bee84e77c89b64a2aefb1f6fff50c9c181028905364860b295356f1f4d47c13c",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "bee84e77c89b64a2aefb1f6fff50c9c181028905364860b295356f1f4d47c13c",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
-| 9 | 它要解决什么问题？ | 减少非法状态、约束模型输出、让行为可检查可累积。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-methodology-toolbox-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/methodology-toolbox.md#philosophy-methodology-toolbox-4-形式化方法轻量形式化）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
+| 9 | 它要解决什么问题？ | 如何把类型、schema、不变式和错误语义写成规格，再用检查器逐项核验实现是否符合约束？ |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”；可见结构以“- &#42;&#42;先规格&#42;&#42;：类型 + schema + 不变式 + 错误集合（异常或 error object）+ 复杂度约束（可选） - &#42;&#42;再检查器&#42;&#42;：类型检查 + 运行时校验 + 断言/契约 + 性质测试 - &#42;&#42;最后实现&#42;&#42;：逐条映射规格（谁保证哪条约束）”说明主题“原文用途：减少非法状态、约束模型输出、让行为可检查可累积”与问题“减少非法状态、约束模型输出、让行为可检查可累积”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | - &#42;&#42;先规格&#42;&#42;：类型 + schema + 不变式 + 错误集合（异常或 error object）+ 复杂度约束（可选）<br>- &#42;&#42;再检查器&#42;&#42;：类型检查 + 运行时校验 + 断言/契约 + 性质测试<br>- &#42;&#42;最后实现&#42;&#42;：逐条映射规格（谁保证哪条约束） |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记预期结果（不是实际效果证据）：类型、schema、不变式与错误语义规格。；类型/运行时校验、契约和性质测试。；实现与规格的满足关系说明。<br>登记缺项标记：conditions；limitations；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“&#42;&#42;先规格&#42;&#42;：类型 + schema + 不变式 + 错误集合（异常或 error object）+ 复杂度约束（可选）；&#42;&#42;再检查器&#42;&#42;：类型检查 + 运行时校验 + 断言/契约 + 性质测试；&#42;&#42;最后实现&#42;&#42;：逐条映射规格（谁保证哪条约束）”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。固定选区及登记未提供量化成本或运行测量。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“减少非法状态、约束模型输出、让行为可检查可累积”的同目标替代方案及可比结果。现阶段只能说明本条关注“原文用途：减少非法状态、约束模型输出、让行为可检查可累积”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：对适用情境先界定条件，再按固定选区步骤“&#42;&#42;先规格&#42;&#42;：类型 + schema + 不变式 + 错误集合（异常或 error object）+ 复杂度约束（可选）；&#42;&#42;再检查器&#42;&#42;：类型检查 + 运行时校验 + 断言/契约 + 性质测试；&#42;&#42;最后实现&#42;&#42;：逐条映射规格（谁保证哪条约束）”处理并核对边界；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记及固定选区未明确列出“形式化方法（轻量形式化）”的进一步适用条件。边界：登记及固定选区未记录“形式化方法（轻量形式化）”的具体限制或反例。选区说明另限定：“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”（登记编者说明，非原文）。登记profile列出的预期结果是“类型、schema、不变式与错误语义规格；类型/运行时校验、契约和性质测试；实现与规格的满足关系说明”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-methodology-delivery-loop-r1-ddf421f4"></a>
 ### 方法论工具箱总体作业流
@@ -131,20 +131,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 方法论工具箱总体作业流 |
-| 2 | 是什么 | 现有登记摘要：用现象卡片、规格、检查器、最小实现、反例与收敛重构组织工程交付。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定ID：gongfa-methodology-delivery-loop；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶高级；意见状态：provisional；任务族：从需求澄清到交付验证的整体作业；初评/上下文理由：预计在复杂交付与迁移任务中减少阶段脱节和无验收实现，形成目标与结果的可核对链。；反证条件：若前后阶段的条件和证据不一致、实现未被独立验收，或额外流程成本超过任务预算，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-methodology-toolbox-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/methodology-toolbox.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T04:29:18.396921Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-methodology-toolbox-81fc7ae.txt",<br>    "snapshot&#95;sha256": "1bb43f897974dcbf6837a35b26f64f0277de68188ee2353bb4c58ef176a4bce0",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-methodology-toolbox-1-现象学还原悬置假设",<br>      "philosophy-methodology-toolbox-2-正反合三段迭代",<br>      "philosophy-methodology-toolbox-3-可证伪主义波普尔",<br>      "philosophy-methodology-toolbox-4-形式化方法轻量形式化",<br>      "philosophy-methodology-toolbox-5-奥卡姆剃刀最小复杂度",<br>      "philosophy-methodology-toolbox-6-实用主义以指标为准",<br>      "philosophy-methodology-toolbox-7-系统论整体论边界与反馈回路",<br>      "philosophy-methodology-toolbox-8-诠释学语境澄清",<br>      "philosophy-methodology-toolbox-9-钢人化原则最强版本理解",<br>      "philosophy-methodology-toolbox-10-决策论机会成本可逆优先",<br>      "philosophy-methodology-toolbox-11-反事实推理counterfactuals",<br>      "philosophy-methodology-toolbox-12-溯因推理abduction最佳解释",<br>      "philosophy-methodology-toolbox-13-贝叶斯式信念更新与溯因配合",<br>      "philosophy-methodology-toolbox-14-反思平衡reflective-equilibrium",<br>      "philosophy-methodology-toolbox-15-概念分析-概念工程",<br>      "philosophy-methodology-toolbox-16-方法论怀疑笛卡尔式",<br>      "philosophy-methodology-toolbox-17-视角三角测量triangulation",<br>      "philosophy-methodology-toolbox-18-机制解释mechanistic-explanation",<br>      "philosophy-methodology-toolbox-19-错误认识论error-epistemology",<br>      "philosophy-methodology-toolbox-20-实验哲学x-phi",<br>      "philosophy-methodology-toolbox-21-计算哲学computational-philosophy",<br>      "philosophy-methodology-toolbox-22-自然化认识论naturalized-epistemology",<br>      "philosophy-methodology-toolbox-23-贝叶斯认识论bayesian-epistemology",<br>      "philosophy-methodology-toolbox-总体作业流",<br>      "philosophy-methodology-toolbox-控制论与科学方法论"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-methodology-toolbox-81fc7ae",<br>    "heading&#95;id": "philosophy-methodology-toolbox-总体作业流",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "6f224bc1df90eee7f2d857e492b3465a1d04801e579b7f8f20e592758c1ca5c6",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "6f224bc1df90eee7f2d857e492b3465a1d04801e579b7f8f20e592758c1ca5c6",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
-| 9 | 它要解决什么问题？ | 如何将探索组织为可检查、可证伪和可维护的工程产出。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
-| 11 | 内部如何实现？ | 现象卡片→规格化→检查器→最小实现→反例驱动→收敛重构。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记预期结果（不是实际效果证据）：现象/意图/情境/边界卡片、规格与检查器、最小实现、失败模式及维护后的稳定版本。<br>登记缺项标记：conditions；limitations；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 冻结来源所称的默认工程作业流：现象卡片→规格化→检查器→最小实现→反例驱动→收敛重构，用可观察输入和验证证据组织实现。 |
+| 3 | 为什么 | 来源把该流程放在方法论工具箱中，目标是减少脑补，使规格可检查、实现可证伪、失败模式可发现、接口和文档可维护；这些是来源提出的目标，未由本条记录证明对所有项目都有效。 |
+| 4 | 怎么做 | 依次记录现象/意图/情境/边界；固定类型、schema、错误语义和不变量；建立单测/性质测试/lint/类型检查；实现最小主路径；用边界、随机、差分或基准寻找反例；删除复杂度并稳定接口、补文档。 |
+| 5 | 扩展 | 同一冻结文集还提供现象学还原、正反合、可证伪、轻量形式化、复杂度最小化等方法，可按问题选择；来源没有证明每项都必须叠加，也没有将这些工具合并为本条的新身份。 |
+| 6 | 关联信息 | 稳定ID：gongfa-methodology-delivery-loop；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶高级；意见状态：provisional；任务族：从需求澄清到交付验证的整体作业；初评/上下文理由：预计在复杂交付与迁移任务中减少阶段脱节和无验收实现，形成目标与结果的可核对链。；反证条件：若前后阶段的条件和证据不一致、实现未被独立验收，或额外流程成本超过任务预算，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。<br>与问题定义、轻量形式化、可证伪测试和收敛重构相关；方法论工具箱中其他方法可作为步骤的可选支撑。这里只标概念关系，不新增registry关系。 |
+| 7 | 出处 | 登记源&#96;repo-methodology-toolbox-81fc7ae&#96;绑定&#96;.github/docs/gongfa/methodology-toolbox.md&#96;的“总体作业流”选择器，固定摘录SHA-256 &#96;1bb43f897974dcbf6837a35b26f64f0277de68188ee2353bb4c58ef176a4bce0&#96;；该摘录列出六阶段。本文内容逐项按此冻结段落整理，不把其推荐工具清单当本条必须依赖。 |
+| 8 | 相关图书 | 冻结“总体作业流”段落未列本条对应的作者、书名、版本或章节；方法名和工具名不能构成书目关联，本项不列图书。 |
+| 9 | 它要解决什么问题？ | 在工程任务中把模糊现象直接跳成代码、缺少可验证规格、遗漏边界失败以及实现后难维护的问题。原文提供的是流程建议，不是根因诊断或效果保证。 |
+| 10 | 为什么这样设计？ | 六阶段从观察到规格、再到可证伪实现和重构，逐步增加可检查证据；失败时可返回具体假设或规则，而不是只凭最终主观印象判断。此为对来源顺序的解释。 |
+| 11 | 内部如何实现？ | 流程输入是现象/意图/情境/边界卡片；规格化形成类型、schema、错误语义和不变量；检查器暴露违反；最小主路径产出候选实现；反例阶段定位失败模式；最后重构并记录稳定接口。 |
+| 12 | 付出了什么代价？ | 需要编写规格、检查器、反例和维护文档，复杂度可能超过极小或一次性任务；来源未给出时长、资源或成功率数据，不能把流程开销称为零。 |
+| 13 | 比较不同技术与方法。 | 相对直接一次性实现，本流程增加规格、检查器与反例工作，换取可定位的阶段产物和失败反馈；冻结来源没有同任务基线或量化结果，因此不据此断言哪种方法更优。 |
+| 14 | 提炼共同规律。 | 编辑归纳：将假设逐段转成可检查产物，并尽早用反例检验；最终重构只保留已稳定的概念与接口。该总结限于本段六步骤，不推断跨行业普遍效果。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用于存在可描述输入/输出、可写规格或不变量、可构造反例/检查器的工程工作。测试和基准类型须匹配目标；原文未给出小任务的流程成本阈值，是否完整走六步需按风险与任务预算判断。 |
 
 <a id="v0-registry-gongfa-glue-principle-r1-f200a2e6"></a>
 ### 胶水原则
@@ -152,20 +152,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 胶水原则 |
-| 2 | 是什么 | 现有登记摘要：成熟能力能以可接受代价可靠满足需求时默认复用，自研核心须证明合理性。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
-| 6 | 关联信息 | 稳定ID：gongfa-glue-principle；内容版本：r1；本体类型：normative-allocation-content；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶中级；意见状态：provisional；任务族：技术选型与成熟能力复用；初评/上下文理由：预计在陌生技术和维护约束较强的任务中减少自研错误与长期所有权成本，但复用必须满足关键约束。；反证条件：若依赖无法维护、集成成本超过收益、供应链风险失控，或关键约束不满足，初评应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
-| 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-glue-coding-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/glue-coding.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T04:29:18.396921Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-glue-coding-81fc7ae.txt",<br>    "snapshot&#95;sha256": "3c537bbdb5dc4027d3c03b487193aa5f896e645ad57c734e108a677393cbb105",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "concept-glue-coding-胶水原则"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-glue-coding-81fc7ae",<br>    "heading&#95;id": "concept-glue-coding-胶水原则",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "e761c7f0a020ec6e5fd12ebfa2496fc869f7dd29a982fc849a9c0b849d8ef44f",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "e761c7f0a020ec6e5fd12ebfa2496fc869f7dd29a982fc849a9c0b849d8ef44f",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
-| 9 | 它要解决什么问题？ | 何时复用、何时自研通用底层能力。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
-| 11 | 内部如何实现？ | 先查现成能力，只写必要连接、编排、适配、隔离和业务表达。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记适用条件（原登记字段）：成熟方案能以可接受的成本、风险和复杂度可靠满足需求。<br>登记限制（原登记字段）：自研不是默认选项，但可以成为有合理依据的例外。<br>登记缺项标记：expected&#95;outcomes<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 2 | 是什么 | 面向技术选型的分配原则：成熟方案能够以可接受的成本、风险和复杂度可靠满足需求时优先复用；自研通用核心属于需说明依据的例外。 |
+| 3 | 为什么 | 固定来源将其定位为避免重复实现已有通用能力、把工程投入集中于业务差异；来源同时明确复用不是盲目依赖，故该理由不等于复用必然更安全、便宜或有效。 |
+| 4 | 怎么做 | 按来源顺序检查：官方/平台/事实标准/内部公共能力；维护良好的库、框架或服务；配置、插件、扩展、适配与编排；再实现领域差异。只有关键约束无法满足或既有方案代价不可接受，才评估自研核心，并记录偏离原因、范围、维护/安全风险、测试和回滚。 |
+| 5 | 扩展 | 来源给出可用于偏离判断的成熟度标准（维护、文档、测试、安全更新、生产使用、兼容、可观测和回滚），以及薄胶水的连接/适配/业务规则范围；这些是原则的操作化，不是新增变体。 |
+| 6 | 关联信息 | 稳定ID：gongfa-glue-principle；内容版本：r1；本体类型：normative-allocation-content；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶中级；意见状态：provisional；任务族：技术选型与成熟能力复用；初评/上下文理由：预计在陌生技术和维护约束较强的任务中减少自研错误与长期所有权成本，但复用必须满足关键约束。；反证条件：若依赖无法维护、集成成本超过收益、供应链风险失控，或关键约束不满足，初评应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。<br>与拼好码、胶水编程和成熟方案评估流程概念相邻；来源明确拼好码范围更广。登记未记录逐条关系，不把概念相邻写成身份合并或本体继承。 |
+| 7 | 出处 | 登记来源为冻结文档&#96;.github/docs/gongfa/glue-coding.md&#96;中锚点&#96;concept-glue-coding-胶水原则&#96;；完整文档SHA-256 &#96;3c537bbdb5dc4027d3c03b487193aa5f896e645ad57c734e108a677393cbb105&#96;。登记仍保留原段落选择器与正文SHA；此处使用相邻的决策顺序、成熟度标准和偏离协议补充说明，不改来源身份。 |
+| 8 | 相关图书 | 来源和当前登记没有提供与此原则直接关联的书名、作者、版次或章节；文中工具、平台和网页入口不是图书，本项不列书目。 |
+| 9 | 它要解决什么问题？ | 技术选型中如何避免在成熟通用方案已能满足约束时仍重复自研，同时避免把“复用优先”误解为不评估依赖风险。 |
+| 10 | 为什么这样设计？ | 来源将通用复杂度交给外部成熟能力，把项目特有规则留在可测试的薄边界中，并要求自研例外提供论证；这是来源的规范性理由，不是普遍效果证明。 |
+| 11 | 内部如何实现？ | 这是一条决策规约，不是程序。其可观察机制是候选搜索→成熟度/兼容/风险评估→配置或适配→必要时偏离说明→测试与替换/回滚计划；各门槛仍需按具体任务核验。 |
+| 12 | 付出了什么代价？ | 采用原则需要调研和维护依赖信息；复用会引入外部升级、许可证、供应链、锁定和接口适配成本。来源没有量化比较数据，不能断言净成本必然下降。 |
+| 13 | 比较不同技术与方法。 | 与默认自研相比，来源把复用设为满足关键约束时的默认分支，把自研作为经过论证的例外；与盲目复用相比，成熟度和边界标准要求先做评估。它是决策规则，不是固定库/产品排名。 |
+| 14 | 提炼共同规律。 | 编辑归纳：通用能力优先复用、业务差异保持局部；复用和自研都必须服从关键约束、可维护性与失败恢复，选择结果应能被解释和检验。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 只在候选成熟方案确实满足关键功能、兼容、安全、部署和运维约束，且其成本/风险/复杂度可接受时优先采用。若没有合格方案、依赖不可维护或锁定/集成风险不可接受，可自研，但需有明确范围与验证/回滚。 |
 
 <a id="v0-registry-gongfa-counterfactual-testing-r1-64777e05"></a>
 ### 反事实推理（Counterfactuals）
@@ -174,19 +174,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 反事实推理（Counterfactuals） |
 | 2 | 是什么 | 现有登记摘要：原文用途：系统性覆盖异常路径，降低线上事故。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“系统性覆盖异常路径，降低线上事故”，本条以“原文用途：系统性覆盖异常路径，降低线上事故”提供理解或分析视角，可服务于异常条件的反事实场景矩阵；风险对应的测试、降级与错误语义。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定登记来源选区列出的步骤/操作是：问"如果 X 不成立会怎样"：超时、乱序、重复、空值、弱网、权限缺失、时钟漂移；把反事实转成测试矩阵与降级策略。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“原文用途：系统性覆盖异常路径，降低线上事故”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-counterfactual-testing；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶中级；意见状态：provisional；任务族：因果解释与验证器的反事实检查；初评/上下文理由：预计能在困难排错与迁移验证中暴露自证、混杂和不敏感测试；反事实必须可比较。；反证条件：若改变多个混杂因素、预期值复写实现，或测试对已知缺陷仍不敏感，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-methodology-toolbox-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/methodology-toolbox.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T04:29:18.396921Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-methodology-toolbox-81fc7ae.txt",<br>    "snapshot&#95;sha256": "1bb43f897974dcbf6837a35b26f64f0277de68188ee2353bb4c58ef176a4bce0",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-methodology-toolbox-1-现象学还原悬置假设",<br>      "philosophy-methodology-toolbox-2-正反合三段迭代",<br>      "philosophy-methodology-toolbox-3-可证伪主义波普尔",<br>      "philosophy-methodology-toolbox-4-形式化方法轻量形式化",<br>      "philosophy-methodology-toolbox-5-奥卡姆剃刀最小复杂度",<br>      "philosophy-methodology-toolbox-6-实用主义以指标为准",<br>      "philosophy-methodology-toolbox-7-系统论整体论边界与反馈回路",<br>      "philosophy-methodology-toolbox-8-诠释学语境澄清",<br>      "philosophy-methodology-toolbox-9-钢人化原则最强版本理解",<br>      "philosophy-methodology-toolbox-10-决策论机会成本可逆优先",<br>      "philosophy-methodology-toolbox-11-反事实推理counterfactuals",<br>      "philosophy-methodology-toolbox-12-溯因推理abduction最佳解释",<br>      "philosophy-methodology-toolbox-13-贝叶斯式信念更新与溯因配合",<br>      "philosophy-methodology-toolbox-14-反思平衡reflective-equilibrium",<br>      "philosophy-methodology-toolbox-15-概念分析-概念工程",<br>      "philosophy-methodology-toolbox-16-方法论怀疑笛卡尔式",<br>      "philosophy-methodology-toolbox-17-视角三角测量triangulation",<br>      "philosophy-methodology-toolbox-18-机制解释mechanistic-explanation",<br>      "philosophy-methodology-toolbox-19-错误认识论error-epistemology",<br>      "philosophy-methodology-toolbox-20-实验哲学x-phi",<br>      "philosophy-methodology-toolbox-21-计算哲学computational-philosophy",<br>      "philosophy-methodology-toolbox-22-自然化认识论naturalized-epistemology",<br>      "philosophy-methodology-toolbox-23-贝叶斯认识论bayesian-epistemology",<br>      "philosophy-methodology-toolbox-总体作业流",<br>      "philosophy-methodology-toolbox-控制论与科学方法论"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-methodology-toolbox-81fc7ae",<br>    "heading&#95;id": "philosophy-methodology-toolbox-11-反事实推理counterfactuals",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "e57e942bf45b08954531e3b0be0e11580237d5017f773e5c024b7d1b4b03dce0",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "e57e942bf45b08954531e3b0be0e11580237d5017f773e5c024b7d1b4b03dce0",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
-| 9 | 它要解决什么问题？ | 系统性覆盖异常路径，降低线上事故。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-methodology-toolbox-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/methodology-toolbox.md#philosophy-methodology-toolbox-11-反事实推理counterfactuals）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
+| 9 | 它要解决什么问题？ | 如何把超时、乱序、重复、空值、弱网、权限缺失和时钟漂移等异常转成测试矩阵与降级策略？ |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”；可见结构以“- 问"如果 X 不成立会怎样"：超时、乱序、重复、空值、弱网、权限缺失、时钟漂移 - 把反事实转成测试矩阵与降级策略”说明主题“原文用途：系统性覆盖异常路径，降低线上事故”与问题“系统性覆盖异常路径，降低线上事故”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | - 问"如果 X 不成立会怎样"：超时、乱序、重复、空值、弱网、权限缺失、时钟漂移<br>- 把反事实转成测试矩阵与降级策略 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记预期结果（不是实际效果证据）：异常条件的反事实场景矩阵。；风险对应的测试、降级与错误语义。<br>登记缺项标记：conditions；limitations；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“问"如果 X 不成立会怎样"：超时、乱序、重复、空值、弱网、权限缺失、时钟漂移；把反事实转成测试矩阵与降级策略”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。固定选区及登记未提供量化成本或运行测量。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“系统性覆盖异常路径，降低线上事故”的同目标替代方案及可比结果。现阶段只能说明本条关注“原文用途：系统性覆盖异常路径，降低线上事故”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：对适用情境先界定条件，再按固定选区步骤“问"如果 X 不成立会怎样"：超时、乱序、重复、空值、弱网、权限缺失、时钟漂移；把反事实转成测试矩阵与降级策略”处理并核对边界；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记及固定选区未明确列出“反事实推理（Counterfactuals）”的进一步适用条件。边界：登记及固定选区未记录“反事实推理（Counterfactuals）”的具体限制或反例。选区说明另限定：“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”（登记编者说明，非原文）。登记profile列出的预期结果是“异常条件的反事实场景矩阵；风险对应的测试、降级与错误语义”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-abductive-debugging-r1-525ac8cb"></a>
 ### 溯因排错法（仓内操作版）
@@ -195,19 +195,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 溯因排错法（仓内操作版） |
 | 2 | 是什么 | 现有登记摘要：原文用途：debug/性能退化时，比穷举更快定位"最可能原因"。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“debug/性能退化时，比穷举更快定位"最可能原因"”，本条以“原文用途：debug/性能退化时，比穷举更快定位"最可能原因"”提供理解或分析视角，可服务于候选原因及低成本、高区分度的实验与预期观察；用证据淘汰原因的排查结果。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定登记来源选区列出的步骤/操作是：列候选原因 → 为每个原因写最便宜的区分性实验（日志点/开关/最小基准）；用证据淘汰而不是凭感觉改代码。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“原文用途：debug/性能退化时，比穷举更快定位"最可能原因"”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-abductive-debugging；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶中级；意见状态：provisional；任务族：多候选原因的故障诊断；初评/上下文理由：预计在多原因且成本受限的故障中减少盲改和无信息重试，较单假设调试更易保留替代解释。；反证条件：若候选集遗漏真实原因、实验无法区分假设，或观察失败却不更新解释，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-methodology-toolbox-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/methodology-toolbox.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T04:29:18.396921Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-methodology-toolbox-81fc7ae.txt",<br>    "snapshot&#95;sha256": "1bb43f897974dcbf6837a35b26f64f0277de68188ee2353bb4c58ef176a4bce0",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-methodology-toolbox-1-现象学还原悬置假设",<br>      "philosophy-methodology-toolbox-2-正反合三段迭代",<br>      "philosophy-methodology-toolbox-3-可证伪主义波普尔",<br>      "philosophy-methodology-toolbox-4-形式化方法轻量形式化",<br>      "philosophy-methodology-toolbox-5-奥卡姆剃刀最小复杂度",<br>      "philosophy-methodology-toolbox-6-实用主义以指标为准",<br>      "philosophy-methodology-toolbox-7-系统论整体论边界与反馈回路",<br>      "philosophy-methodology-toolbox-8-诠释学语境澄清",<br>      "philosophy-methodology-toolbox-9-钢人化原则最强版本理解",<br>      "philosophy-methodology-toolbox-10-决策论机会成本可逆优先",<br>      "philosophy-methodology-toolbox-11-反事实推理counterfactuals",<br>      "philosophy-methodology-toolbox-12-溯因推理abduction最佳解释",<br>      "philosophy-methodology-toolbox-13-贝叶斯式信念更新与溯因配合",<br>      "philosophy-methodology-toolbox-14-反思平衡reflective-equilibrium",<br>      "philosophy-methodology-toolbox-15-概念分析-概念工程",<br>      "philosophy-methodology-toolbox-16-方法论怀疑笛卡尔式",<br>      "philosophy-methodology-toolbox-17-视角三角测量triangulation",<br>      "philosophy-methodology-toolbox-18-机制解释mechanistic-explanation",<br>      "philosophy-methodology-toolbox-19-错误认识论error-epistemology",<br>      "philosophy-methodology-toolbox-20-实验哲学x-phi",<br>      "philosophy-methodology-toolbox-21-计算哲学computational-philosophy",<br>      "philosophy-methodology-toolbox-22-自然化认识论naturalized-epistemology",<br>      "philosophy-methodology-toolbox-23-贝叶斯认识论bayesian-epistemology",<br>      "philosophy-methodology-toolbox-总体作业流",<br>      "philosophy-methodology-toolbox-控制论与科学方法论"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-methodology-toolbox-81fc7ae",<br>    "heading&#95;id": "philosophy-methodology-toolbox-12-溯因推理abduction最佳解释",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "a9b821e8da4740b609d4252e935dbd7859e9393663e922c5a0ed6904be03682b",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "a9b821e8da4740b609d4252e935dbd7859e9393663e922c5a0ed6904be03682b",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
-| 9 | 它要解决什么问题？ | debug/性能退化时，比穷举更快定位"最可能原因"。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-methodology-toolbox-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/methodology-toolbox.md#philosophy-methodology-toolbox-12-溯因推理abduction最佳解释）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
+| 9 | 它要解决什么问题？ | 面对多个候选原因时，如何为各原因设计低成本、可区分的实验，并依据证据排除假设？ |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”；可见结构以“- 列候选原因 → 为每个原因写最便宜的区分性实验（日志点/开关/最小基准） - 用证据淘汰而不是凭感觉改代码”说明主题“原文用途：debug/性能退化时，比穷举更快定位"最可能原因"”与问题“debug/性能退化时，比穷举更快定位"最可能原因"”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | - 列候选原因 → 为每个原因写最便宜的区分性实验（日志点/开关/最小基准）<br>- 用证据淘汰而不是凭感觉改代码 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记适用条件（原登记字段）：适用情境：debug或性能退化的原因排查。<br>登记预期结果（不是实际效果证据）：候选原因及低成本、高区分度的实验与预期观察。；用证据淘汰原因的排查结果。<br>登记缺项标记：limitations；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“列候选原因 → 为每个原因写最便宜的区分性实验（日志点/开关/最小基准）；用证据淘汰而不是凭感觉改代码”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。固定选区及登记未提供量化成本或运行测量。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“debug/性能退化时，比穷举更快定位"最可能原因"”的同目标替代方案及可比结果。现阶段只能说明本条关注“原文用途：debug/性能退化时，比穷举更快定位"最可能原因"”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：对适用情境先界定条件，再按固定选区步骤“列候选原因 → 为每个原因写最便宜的区分性实验（日志点/开关/最小基准）；用证据淘汰而不是凭感觉改代码”处理并核对边界；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记profile的编辑性条件摘要：适用情境：debug或性能退化的原因排查。边界：登记及固定选区未记录“溯因排错法（仓内操作版）”的具体限制或反例。选区说明另限定：“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”（登记编者说明，非原文）。登记profile列出的预期结果是“候选原因及低成本、高区分度的实验与预期观察；用证据淘汰原因的排查结果”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-failure-mode-analysis-r1-a06a3fa2"></a>
 ### 错误认识论（Error epistemology）
@@ -216,19 +216,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 错误认识论（Error epistemology） |
 | 2 | 是什么 | 现有登记摘要：原文用途：系统化"我们会如何错"，比事后补洞更省。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“系统化"我们会如何错"，比事后补洞更省”，本条以“原文用途：系统化"我们会如何错"，比事后补洞更省”提供理解或分析视角，可服务于按风险排序的失败模式清单及对应测试；统一错误模型与示例响应/异常层级。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定登记来源选区列出的步骤/操作是：先做失败模式清单（空值/乱序/重复/并发/权限/超时/编码/浮点等）；每类至少一个测试；明确错误语义（raise / error object / log+metric）。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“原文用途：系统化"我们会如何错"，比事后补洞更省”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-failure-mode-analysis；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶中级；意见状态：provisional；任务族：高风险方案的失败模式与防护分析；初评/上下文理由：预计在困难场景中提高对部分失败和恢复路径的覆盖；清单本身不证明防护有效。；反证条件：若主要故障模式仍遗漏、错误检测不敏感，或恢复措施在受控故障中不能执行，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-methodology-toolbox-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/methodology-toolbox.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T04:29:18.396921Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-methodology-toolbox-81fc7ae.txt",<br>    "snapshot&#95;sha256": "1bb43f897974dcbf6837a35b26f64f0277de68188ee2353bb4c58ef176a4bce0",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-methodology-toolbox-1-现象学还原悬置假设",<br>      "philosophy-methodology-toolbox-2-正反合三段迭代",<br>      "philosophy-methodology-toolbox-3-可证伪主义波普尔",<br>      "philosophy-methodology-toolbox-4-形式化方法轻量形式化",<br>      "philosophy-methodology-toolbox-5-奥卡姆剃刀最小复杂度",<br>      "philosophy-methodology-toolbox-6-实用主义以指标为准",<br>      "philosophy-methodology-toolbox-7-系统论整体论边界与反馈回路",<br>      "philosophy-methodology-toolbox-8-诠释学语境澄清",<br>      "philosophy-methodology-toolbox-9-钢人化原则最强版本理解",<br>      "philosophy-methodology-toolbox-10-决策论机会成本可逆优先",<br>      "philosophy-methodology-toolbox-11-反事实推理counterfactuals",<br>      "philosophy-methodology-toolbox-12-溯因推理abduction最佳解释",<br>      "philosophy-methodology-toolbox-13-贝叶斯式信念更新与溯因配合",<br>      "philosophy-methodology-toolbox-14-反思平衡reflective-equilibrium",<br>      "philosophy-methodology-toolbox-15-概念分析-概念工程",<br>      "philosophy-methodology-toolbox-16-方法论怀疑笛卡尔式",<br>      "philosophy-methodology-toolbox-17-视角三角测量triangulation",<br>      "philosophy-methodology-toolbox-18-机制解释mechanistic-explanation",<br>      "philosophy-methodology-toolbox-19-错误认识论error-epistemology",<br>      "philosophy-methodology-toolbox-20-实验哲学x-phi",<br>      "philosophy-methodology-toolbox-21-计算哲学computational-philosophy",<br>      "philosophy-methodology-toolbox-22-自然化认识论naturalized-epistemology",<br>      "philosophy-methodology-toolbox-23-贝叶斯认识论bayesian-epistemology",<br>      "philosophy-methodology-toolbox-总体作业流",<br>      "philosophy-methodology-toolbox-控制论与科学方法论"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-methodology-toolbox-81fc7ae",<br>    "heading&#95;id": "philosophy-methodology-toolbox-19-错误认识论error-epistemology",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "9245e35da05e68b72a9a0519b46919e4ef10c263b29e40f549d9c8421b9a1cbc",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "9245e35da05e68b72a9a0519b46919e4ef10c263b29e40f549d9c8421b9a1cbc",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
-| 9 | 它要解决什么问题？ | 系统化"我们会如何错"，比事后补洞更省。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-methodology-toolbox-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/methodology-toolbox.md#philosophy-methodology-toolbox-19-错误认识论error-epistemology）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
+| 9 | 它要解决什么问题？ | 如何系统列出潜在失败模式，并为每类指定测试与错误语义？ |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”；可见结构以“- 先做失败模式清单（空值/乱序/重复/并发/权限/超时/编码/浮点等） - 每类至少一个测试；明确错误语义（raise / error object / log+metric）”说明主题“原文用途：系统化"我们会如何错"，比事后补洞更省”与问题“系统化"我们会如何错"，比事后补洞更省”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | - 先做失败模式清单（空值/乱序/重复/并发/权限/超时/编码/浮点等）<br>- 每类至少一个测试；明确错误语义（raise / error object / log+metric） |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记预期结果（不是实际效果证据）：按风险排序的失败模式清单及对应测试。；统一错误模型与示例响应/异常层级。<br>登记缺项标记：conditions；limitations；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“先做失败模式清单（空值/乱序/重复/并发/权限/超时/编码/浮点等）；每类至少一个测试；明确错误语义（raise / error object / log+metric）”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。固定选区及登记未提供量化成本或运行测量。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“系统化"我们会如何错"，比事后补洞更省”的同目标替代方案及可比结果。现阶段只能说明本条关注“原文用途：系统化"我们会如何错"，比事后补洞更省”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：对适用情境先界定条件，再按固定选区步骤“先做失败模式清单（空值/乱序/重复/并发/权限/超时/编码/浮点等）；每类至少一个测试；明确错误语义（raise / error object / log+metric）”处理并核对边界；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记及固定选区未明确列出“错误认识论（Error epistemology）”的进一步适用条件。边界：登记及固定选区未记录“错误认识论（Error epistemology）”的具体限制或反例。选区说明另限定：“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”（登记编者说明，非原文）。登记profile列出的预期结果是“按风险排序的失败模式清单及对应测试；统一错误模型与示例响应/异常层级”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-experimental-design-r1-180422cd"></a>
 ### 实验哲学（x-phi）
@@ -237,19 +237,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 实验哲学（x-phi） |
 | 2 | 是什么 | 现有登记摘要：原文用途：交互与默认策略别靠直觉，用数据决定。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“交互与默认策略别靠直觉，用数据决定”，本条以“原文用途：交互与默认策略别靠直觉，用数据决定”提供理解或分析视角，可服务于实验分组、指标、样本、持续时间与判定阈值方案；埋点字段与分析方法。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定登记来源选区列出的步骤/操作是：把争议点改成可测实验（A/B 默认值、错误文案、重试策略）；指标：误用率、重试率、成功率、工单率、完成时间。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“原文用途：交互与默认策略别靠直觉，用数据决定”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-experimental-design；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶中级；意见状态：provisional；任务族：可区分假设的工程实验设计；初评/上下文理由：预计能在多因素问题中减少混杂和错误归因，支持困难假设的淘汰；外推范围仍受样本限制。；反证条件：若对照不可比、变量控制失败、oracle不独立，或实验不足以区分候选假设，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-methodology-toolbox-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/methodology-toolbox.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T04:29:18.396921Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-methodology-toolbox-81fc7ae.txt",<br>    "snapshot&#95;sha256": "1bb43f897974dcbf6837a35b26f64f0277de68188ee2353bb4c58ef176a4bce0",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-methodology-toolbox-1-现象学还原悬置假设",<br>      "philosophy-methodology-toolbox-2-正反合三段迭代",<br>      "philosophy-methodology-toolbox-3-可证伪主义波普尔",<br>      "philosophy-methodology-toolbox-4-形式化方法轻量形式化",<br>      "philosophy-methodology-toolbox-5-奥卡姆剃刀最小复杂度",<br>      "philosophy-methodology-toolbox-6-实用主义以指标为准",<br>      "philosophy-methodology-toolbox-7-系统论整体论边界与反馈回路",<br>      "philosophy-methodology-toolbox-8-诠释学语境澄清",<br>      "philosophy-methodology-toolbox-9-钢人化原则最强版本理解",<br>      "philosophy-methodology-toolbox-10-决策论机会成本可逆优先",<br>      "philosophy-methodology-toolbox-11-反事实推理counterfactuals",<br>      "philosophy-methodology-toolbox-12-溯因推理abduction最佳解释",<br>      "philosophy-methodology-toolbox-13-贝叶斯式信念更新与溯因配合",<br>      "philosophy-methodology-toolbox-14-反思平衡reflective-equilibrium",<br>      "philosophy-methodology-toolbox-15-概念分析-概念工程",<br>      "philosophy-methodology-toolbox-16-方法论怀疑笛卡尔式",<br>      "philosophy-methodology-toolbox-17-视角三角测量triangulation",<br>      "philosophy-methodology-toolbox-18-机制解释mechanistic-explanation",<br>      "philosophy-methodology-toolbox-19-错误认识论error-epistemology",<br>      "philosophy-methodology-toolbox-20-实验哲学x-phi",<br>      "philosophy-methodology-toolbox-21-计算哲学computational-philosophy",<br>      "philosophy-methodology-toolbox-22-自然化认识论naturalized-epistemology",<br>      "philosophy-methodology-toolbox-23-贝叶斯认识论bayesian-epistemology",<br>      "philosophy-methodology-toolbox-总体作业流",<br>      "philosophy-methodology-toolbox-控制论与科学方法论"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-methodology-toolbox-81fc7ae",<br>    "heading&#95;id": "philosophy-methodology-toolbox-20-实验哲学x-phi",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "f06a372c255f5363d8555a0e30999ea6c6c0904d432dcaca20491b168af856e1",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "f06a372c255f5363d8555a0e30999ea6c6c0904d432dcaca20491b168af856e1",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-methodology-toolbox-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/methodology-toolbox.md#philosophy-methodology-toolbox-20-实验哲学x-phi）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
 | 9 | 它要解决什么问题？ | 交互与默认策略别靠直觉，用数据决定。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”；可见结构以“- 把争议点改成可测实验（A/B 默认值、错误文案、重试策略） - 指标：误用率、重试率、成功率、工单率、完成时间”说明主题“原文用途：交互与默认策略别靠直觉，用数据决定”与问题“交互与默认策略别靠直觉，用数据决定”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | - 把争议点改成可测实验（A/B 默认值、错误文案、重试策略）<br>- 指标：误用率、重试率、成功率、工单率、完成时间 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记适用条件（原登记字段）：适用情境：交互与默认策略存在设计争议，可将争议改成可测实验。<br>登记预期结果（不是实际效果证据）：实验分组、指标、样本、持续时间与判定阈值方案。；埋点字段与分析方法。<br>登记缺项标记：limitations；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“把争议点改成可测实验（A/B 默认值、错误文案、重试策略）；指标：误用率、重试率、成功率、工单率、完成时间”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。固定选区及登记未提供量化成本或运行测量。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“交互与默认策略别靠直觉，用数据决定”的同目标替代方案及可比结果。现阶段只能说明本条关注“原文用途：交互与默认策略别靠直觉，用数据决定”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：对适用情境先界定条件，再按固定选区步骤“把争议点改成可测实验（A/B 默认值、错误文案、重试策略）；指标：误用率、重试率、成功率、工单率、完成时间”处理并核对边界；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记profile的编辑性条件摘要：适用情境：交互与默认策略存在设计争议，可将争议改成可测实验。边界：登记及固定选区未记录“实验哲学（x-phi）”的具体限制或反例。选区说明另限定：“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”（登记编者说明，非原文）。登记profile列出的预期结果是“实验分组、指标、样本、持续时间与判定阈值方案；埋点字段与分析方法”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-fixed-point-convergence-r1-3023825f"></a>
 ### 固定点收敛系统
@@ -258,19 +258,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 固定点收敛系统 |
 | 2 | 是什么 | 现有登记摘要：以分层闭环控制，将意图转成可执行、可验证的目标状态，并按失效层级调整行动、策略或目标。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“动态环境下，如何对趋近目标的过程实施可验证控制”，本条以“以分层闭环控制，将意图转成可执行、可验证的目标状态，并按失效层级调整行动、策略或目标”提供理解或分析视角，可服务于可执行、可验证且受变更约束的目标状态，以及现实与目标偏差的持续缩小。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 登记机制摘要（编辑归纳）给出的处理链为“观察→差距识别→行动→验证→修正；行动失效则升级策略，策略失效则复审目标，目标不可确定则回退需求或交由人工裁决”；它概括固定选区中的方法关系，具体执行仍须按来源所列条件与任务验收落实，不把摘要当作效果证明。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“以分层闭环控制，将意图转成可执行、可验证的目标状态，并按失效层级调整行动、策略或目标”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-fixed-point-convergence；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶中级；意见状态：provisional；任务族：自治任务执行的分层验证与升级；初评/上下文理由：预计在动态或执行反复失效的任务中更好地区分行动、策略和目标问题，保留人工退出；不预言数学收敛。；反证条件：若目标不可识别、验证信号不可靠、升级持续振荡或无法退出，初评应下调。；置信标签：low；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "tradecatlabs-vibe-coding-methodology-page",<br>    "kind": "project&#95;internal&#95;publication",<br>    "url": "https://tradecatlabs.com/portfolio/02-vibe-coding-cn/",<br>    "resolved&#95;url": "https://tradecatlabs.com/portfolio/02-vibe-coding-cn/",<br>    "captured&#95;at": "2026-10-07T04:17:07.958661Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-methodology-931f79be.txt",<br>    "snapshot&#95;sha256": "931f79be42fee9c17a2765214977b5c30311fbbd0ab983f510fefff784705de2",<br>    "text&#95;normalization": "html-text-whitespace-v1",<br>    "included&#95;anchors": &#91;<br>      "固定点收敛系统",<br>      "递归式-ai-治理",<br>      "拼好码",<br>      "吸引子",<br>      "有限样本生成推断",<br>      "ai-native",<br>      "拍扁",<br>      "符号序列空间与有效知识子集",<br>      "合成模型",<br>      "解空间",<br>      "近端因果机制",<br>      "目的导向的行动选择",<br>      "预测加工与模型更新",<br>      "受约束的状态变换",<br>      "最小先验条件下的代理增强型任务求解",<br>      "projection-表示转换",<br>      "状态分类工具"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "tradecatlabs-vibe-coding-methodology-page",<br>    "heading&#95;id": "固定点收敛系统",<br>    "selection": "html-paragraph",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "228dc7de506eceac46c6f19d9c679c39e43f581991c9c3caae93d021d3d0823a",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "228dc7de506eceac46c6f19d9c679c39e43f581991c9c3caae93d021d3d0823a",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“tradecatlabs-vibe-coding-methodology-page”（类型：project&#95;internal&#95;publication；定位：tradecatlabs-vibe-coding-methodology-page）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
 | 9 | 它要解决什么问题？ | 动态环境下，如何对趋近目标的过程实施可验证控制。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只取标题下的方法段落；页面根节点和宏观表述不构成本体继承、权限授予或品级证据”；可见结构以“观察→差距识别→行动→验证→修正；行动失效则升级策略，策略失效则复审目标，目标不可确定则回退需求或交由人工裁决”说明主题“以分层闭环控制，将意图转成可执行、可验证的目标状态，并按失效层级调整行动、策略或目标”与问题“动态环境下，如何对趋近目标的过程实施可验证控制”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | 观察→差距识别→行动→验证→修正；行动失效则升级策略，策略失效则复审目标，目标不可确定则回退需求或交由人工裁决。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记适用条件（原登记字段）：目标可识别、状态可观测、验证准则一致，策略空间中存在有效控制路径。<br>登记限制（原登记字段）：缺乏稳定性或充分反馈时，“收敛”只能作为架构期望。<br>登记预期结果（不是实际效果证据）：可执行、可验证且受变更约束的目标状态，以及现实与目标偏差的持续缩小。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“观察→差距识别→行动→验证→修正；行动失效则升级策略，策略失效则复审目标，目标不可确定则回退需求或交由人工裁决”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。登记的边界说明为“缺乏稳定性或充分反馈时，“收敛”只能作为架构期望”（编辑归纳）。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“动态环境下，如何对趋近目标的过程实施可验证控制”的同目标替代方案及可比结果。现阶段只能说明本条关注“以分层闭环控制，将意图转成可执行、可验证的目标状态，并按失效层级调整行动、策略或目标”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：把登记摘要“以分层闭环控制，将意图转成可执行、可验证的目标状态，并按失效层级调整行动、策略或目标”仅用于其所述主题“动态环境下，如何对趋近目标的过程实施可验证控制”，不外推到未记录场景；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记profile的编辑性条件摘要：目标可识别、状态可观测、验证准则一致，策略空间中存在有效控制路径。边界：登记profile的编辑性边界摘要：缺乏稳定性或充分反馈时，“收敛”只能作为架构期望。选区说明另限定：“只取标题下的方法段落；页面根节点和宏观表述不构成本体继承、权限授予或品级证据”（登记编者说明，非原文）。登记profile列出的预期结果是“可执行、可验证且受变更约束的目标状态，以及现实与目标偏差的持续缩小”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-minimal-prior-agent-assisted-solving-r1-c297b171"></a>
 ### 最小先验条件下的代理增强型任务求解
@@ -279,19 +279,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 最小先验条件下的代理增强型任务求解 |
 | 2 | 是什么 | 现有登记摘要：在陌生领域固定完成条件、约束与验收标准，以外部知识、成熟能力、PoC与代理降低求解成本。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“有限认知与成本下，如何设计可校验、可复用、可更新的任务求解机制”，本条以“在陌生领域固定完成条件、约束与验收标准，以外部知识、成熟能力、PoC与代理降低求解成本”提供理解或分析视角，可服务于需求覆盖下的任务求解方案、关键假设PoC、实现与验证确认；选型、实验、Runbook及失败记录用于更新。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 登记机制摘要（编辑归纳）给出的处理链为“任务定义→外部知识检索→能力复用→模型选择→关键假设PoC→实现→验证与确认→经验更新”；它概括固定选区中的方法关系，具体执行仍须按来源所列条件与任务验收落实，不把摘要当作效果证明。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“在陌生领域固定完成条件、约束与验收标准，以外部知识、成熟能力、PoC与代理降低求解成本”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-minimal-prior-agent-assisted-solving；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶中级；意见状态：provisional；任务族：陌生领域的受控代理增强交付；初评/上下文理由：预计在陌生技术的迁移任务中通过成熟能力和关键假设检验降低知识缺口，前提是权限与来源质量受控。；反证条件：若代理借权限扩张替代验证、来源不可靠、接口不可集成，或结果不满足独立验收，应下调。；置信标签：low；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "tradecatlabs-vibe-coding-methodology-page",<br>    "kind": "project&#95;internal&#95;publication",<br>    "url": "https://tradecatlabs.com/portfolio/02-vibe-coding-cn/",<br>    "resolved&#95;url": "https://tradecatlabs.com/portfolio/02-vibe-coding-cn/",<br>    "captured&#95;at": "2026-10-07T04:17:07.958661Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-methodology-931f79be.txt",<br>    "snapshot&#95;sha256": "931f79be42fee9c17a2765214977b5c30311fbbd0ab983f510fefff784705de2",<br>    "text&#95;normalization": "html-text-whitespace-v1",<br>    "included&#95;anchors": &#91;<br>      "固定点收敛系统",<br>      "递归式-ai-治理",<br>      "拼好码",<br>      "吸引子",<br>      "有限样本生成推断",<br>      "ai-native",<br>      "拍扁",<br>      "符号序列空间与有效知识子集",<br>      "合成模型",<br>      "解空间",<br>      "近端因果机制",<br>      "目的导向的行动选择",<br>      "预测加工与模型更新",<br>      "受约束的状态变换",<br>      "最小先验条件下的代理增强型任务求解",<br>      "projection-表示转换",<br>      "状态分类工具"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "tradecatlabs-vibe-coding-methodology-page",<br>    "heading&#95;id": "最小先验条件下的代理增强型任务求解",<br>    "selection": "html-paragraph",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "0cdfa62012abcb3b56875094c294032b92b8f4e9482e77f8bccca44507a9de6e",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "0cdfa62012abcb3b56875094c294032b92b8f4e9482e77f8bccca44507a9de6e",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“tradecatlabs-vibe-coding-methodology-page”（类型：project&#95;internal&#95;publication；定位：tradecatlabs-vibe-coding-methodology-page）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
 | 9 | 它要解决什么问题？ | 有限认知与成本下，如何设计可校验、可复用、可更新的任务求解机制。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只取标题下的方法段落；页面根节点和宏观表述不构成本体继承、权限授予或品级证据”；可见结构以“任务定义→外部知识检索→能力复用→模型选择→关键假设PoC→实现→验证与确认→经验更新”说明主题“在陌生领域固定完成条件、约束与验收标准，以外部知识、成熟能力、PoC与代理降低求解成本”与问题“有限认知与成本下，如何设计可校验、可复用、可更新的任务求解机制”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | 任务定义→外部知识检索→能力复用→模型选择→关键假设PoC→实现→验证与确认→经验更新 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记适用条件（原登记字段）：外部知识源质量、工具可调用性、接口可集成性及关键假设的可识别性。<br>登记限制（原登记字段）：信息欠决定、外推失效或权限扩大时，可能放大系统性误差与操作风险。<br>登记预期结果（不是实际效果证据）：需求覆盖下的任务求解方案、关键假设PoC、实现与验证确认；选型、实验、Runbook及失败记录用于更新。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“任务定义→外部知识检索→能力复用→模型选择→关键假设PoC→实现→验证与确认→经验更新”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。登记的边界说明为“信息欠决定、外推失效或权限扩大时，可能放大系统性误差与操作风险”（编辑归纳）。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“有限认知与成本下，如何设计可校验、可复用、可更新的任务求解机制”的同目标替代方案及可比结果。现阶段只能说明本条关注“在陌生领域固定完成条件、约束与验收标准，以外部知识、成熟能力、PoC与代理降低求解成本”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：把登记摘要“在陌生领域固定完成条件、约束与验收标准，以外部知识、成熟能力、PoC与代理降低求解成本”仅用于其所述主题“有限认知与成本下，如何设计可校验、可复用、可更新的任务求解机制”，不外推到未记录场景；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记profile的编辑性条件摘要：外部知识源质量、工具可调用性、接口可集成性及关键假设的可识别性。边界：登记profile的编辑性边界摘要：信息欠决定、外推失效或权限扩大时，可能放大系统性误差与操作风险。选区说明另限定：“只取标题下的方法段落；页面根节点和宏观表述不构成本体继承、权限授予或品级证据”（登记编者说明，非原文）。登记profile列出的预期结果是“需求覆盖下的任务求解方案、关键假设PoC、实现与验证确认；选型、实验、Runbook及失败记录用于更新”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-problem-definition-framework-r1-c5485ecb"></a>
 ### 问题界定与求解闭环（仓内体系版）
@@ -300,19 +300,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 问题界定与求解闭环（仓内体系版） |
 | 2 | 是什么 | 现有登记摘要：用目标、现状、差距与标准界定问题，在目标/约束/对象下选择路径，再用反馈修正。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“如何避免解错问题，并让求解过程通过结果反馈趋近目标”，本条以“用目标、现状、差距与标准界定问题，在目标/约束/对象下选择路径，再用反馈修正”提供理解或分析视角，可服务于明确的问题定义、受约束的求解路径及经反馈修正的结果。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 登记机制摘要（编辑归纳）给出的处理链为“定义目标/现状/差距/标准→按目标、约束和对象构造路径→执行→比较结果与目标→修正→再执行”；它概括固定选区中的方法关系，具体执行仍须按来源所列条件与任务验收落实，不把摘要当作效果证明。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“用目标、现状、差距与标准界定问题，在目标/约束/对象下选择路径，再用反馈修正”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-problem-definition-framework；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶中级；意见状态：provisional；任务族：复杂需求的问题界定与求解闭环；初评/上下文理由：预计在含糊需求与跨领域任务中减少解错问题和忽略约束；不能替代真实用户验收。；反证条件：若问题界定遗漏利益相关者或硬约束、验收与目标不对应，或闭环只更新表述不更新事实，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-problem-solving-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/problem-solving.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T06:03:59.365887Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-problem-solving-81fc7ae.txt",<br>    "snapshot&#95;sha256": "1a431241414583735f60426321e35573561a0280a1d716ef50ff6f8eb045aa73",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "concept-problem-solving-5-搭建体系"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-problem-solving-81fc7ae",<br>    "heading&#95;id": "concept-problem-solving-5-搭建体系",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "5f98b23774d0fd73e31f8db76ed410d74f062dde92ab7df18e7670ab1a05c7b2",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "5f98b23774d0fd73e31f8db76ed410d74f062dde92ab7df18e7670ab1a05c7b2",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-problem-solving-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/problem-solving.md#concept-problem-solving-5-搭建体系）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
 | 9 | 它要解决什么问题？ | 如何避免解错问题，并让求解过程通过结果反馈趋近目标。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收“5.搭建体系”及其下位解释，排除新手提示词和后续应用案例；差距式是源文概念简记，不是通用数值减法”；可见结构以“定义目标/现状/差距/标准→按目标、约束和对象构造路径→执行→比较结果与目标→修正→再执行”说明主题“用目标、现状、差距与标准界定问题，在目标/约束/对象下选择路径，再用反馈修正”与问题“如何避免解错问题，并让求解过程通过结果反馈趋近目标”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | 定义目标/现状/差距/标准→按目标、约束和对象构造路径→执行→比较结果与目标→修正→再执行。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记适用条件（原登记字段）：问题定义的目标、现状、差距和标准须清楚；路径需考虑时间、资源、成本、风险、规则、能力上限与环境。<br>登记限制（原登记字段）：四项定义不清，努力可能是在解错题；没有约束的方案往往只是空想。<br>登记预期结果（不是实际效果证据）：明确的问题定义、受约束的求解路径及经反馈修正的结果。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“定义目标/现状/差距/标准→按目标、约束和对象构造路径→执行→比较结果与目标→修正→再执行”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。登记的边界说明为“四项定义不清，努力可能是在解错题；没有约束的方案往往只是空想”（编辑归纳）。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“如何避免解错问题，并让求解过程通过结果反馈趋近目标”的同目标替代方案及可比结果。现阶段只能说明本条关注“用目标、现状、差距与标准界定问题，在目标/约束/对象下选择路径，再用反馈修正”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：把登记摘要“用目标、现状、差距与标准界定问题，在目标/约束/对象下选择路径，再用反馈修正”仅用于其所述主题“如何避免解错问题，并让求解过程通过结果反馈趋近目标”，不外推到未记录场景；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记profile的编辑性条件摘要：问题定义的目标、现状、差距和标准须清楚；路径需考虑时间、资源、成本、风险、规则、能力上限与环境。边界：登记profile的编辑性边界摘要：四项定义不清，努力可能是在解错题；没有约束的方案往往只是空想。选区说明另限定：“只收“5.搭建体系”及其下位解释，排除新手提示词和后续应用案例；差距式是源文概念简记，不是通用数值减法”（登记编者说明，非原文）。登记profile列出的预期结果是“明确的问题定义、受约束的求解路径及经反馈修正的结果”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a088-1f655d977a-r1-dd5b3b90"></a>
 ### 6.2 契约式设计
@@ -320,20 +320,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 6.2 契约式设计 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：契约式设计用前置条件、后置条件和不变式明确调用双方责任 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：责任边界明确能简化函数内部并更早暴露理解偏差 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：把契约写清并用断言检查程序员错误，违约时尽早失败 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：契约式设计用前置条件、后置条件和不变式明确调用双方责任。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“责任边界明确能简化函数内部并更早暴露理解偏差”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：前置条件由调用方负责；后置条件由被调用方负责；面向对象场景还包含类不变式。外部用户输入先由调用方做合法性验证；断言用于暴露程序员预想之外的错误。书中要求断言表达式避免副作用，并把断言定位为开发/维护阶段工具。视觉时序图明确展示“外部输入验证 → 前置条件 → 函数处理 → 后置条件 → 返回结果”。适用判断：函数之间需要明确合法输入、结果保证和对象状态约束时行动：把契约写清并用断言检查程序员错误，违约时尽早失败理由：责任边界明确能简化函数内部并更早暴露理解偏差。相关边界（候选编者说明，未独立复核）：外部输入验证不能只靠会被禁用的assert；断言不带副作用。视觉核验是旧页的声明，本轮没有重做。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“契约式设计用前置条件、后置条件和不变式明确调用双方责任”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A088；登记ID：gongfa-candidate-html211-a088-1f655d977a；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶中级（di-intermediate）；任务族=跨模块责任与不变式约束；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=输入验证、前后条件及不变式区分责任，预计在困难接口组合中较有力减少状态与调用错误。；置信标签=medium；反证条件=若契约本身错误、关键路径未覆盖或断言被误用为外部安全校验，则推翻。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "方法",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "A088",<br>    "value": "明确前置条件、后置条件、不变式以及调用双方责任。",<br>    "boundary": "外部输入验证不能只靠会被禁用的assert；断言不带副作用。视觉核验是旧页的声明，本轮没有重做。"<br>  },<br>  "related&#95;framework&#95;view": "/frameworks/87",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-invariant-constraints",<br>  "gongfa-stable-interface-contract"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A088；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A088",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-bfab554c93d1c58c71",<br>    "json&#95;pointer": "/contentUnits/6/excerpts/1",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/6/passages",<br>      "start": 5,<br>      "end": 8<br>    }<br>  },<br>  "declared&#95;upstream": "第6章《手法》 · EPUB第105节《6.2 契约式设计》",<br>  "content&#95;sha256": "7d06b86873a75daaed0ea2cf2e754921e5c6f89911b50560dabe550d7d1b0ccd",<br>  "registry&#95;id": "gongfa-candidate-html211-a088-1f655d977a",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第6章《手法》 · EPUB第105节《6.2 契约式设计》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：跨模块责任与不变式约束（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：责任边界明确能简化函数内部并更早暴露理解偏差；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：函数之间需要明确合法输入、结果保证和对象状态约束时；既有候选编辑边界（非独立原著核验）：外部输入验证不能只靠会被禁用的assert；断言不带副作用。视觉核验是旧页的声明，本轮没有重做。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“契约式设计用前置条件、后置条件和不变式明确调用双方责任”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“函数之间需要明确合法输入、结果保证和对象状态约束时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“责任边界明确能简化函数内部并更早暴露理解偏差”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“明确前置条件、后置条件、不变式以及调用双方责任”，与摘要问题“契约式设计用前置条件、后置条件和不变式明确调用双方责任”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于method-specification，并非可直接运行的程序。固定选区把调用方责任表示为前置条件，把被调用方保证表示为后置条件，并在面向对象情境加入对象不变式；它是契约/断言的说明，不是独立程序实现；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：前置条件由调用方负责；后置条件由被调用方负责；面向对象场景还包含类不变式。外部用户输入先由调用方做合法性验证；断言用于暴露程序员预想之外的错误。书中要求断言表达式避免副作用，并把断言定位为开发/维护阶段工具。视觉时序图明确展示“外部输入验证 → 前置条件 → 函数处理 → 后置条件 → 返回结果”。适用判断：函数之间需要明确合法输入、结果保证和对象状态约束时行动：把契约写清并用断言检查程序员错误，违约时尽早失败理由：责任边界明确能简化函…。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“6.2 契约式设计”（摘要：契约式设计用前置条件、后置条件和不变式明确调用双方责任）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照的编辑边界为“外部输入验证不能只靠会被禁用的assert；断言不带副作用。视觉核验是旧页的声明，本轮没有重做”；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“6.2 契约式设计”（契约式设计用前置条件、后置条件和不变式明确调用双方责任），冻结快照的编者分析列出关联线索“不变式与明确约束、稳定接口与可变实现”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“不变式与明确约束、稳定接口与可变实现”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“函数之间需要明确合法输入、结果保证和对象状态约束时”下，按“前置条件由调用方负责；后置条件由被调用方负责；面向对象场景还包含类不变式。外部用户输入先由调用方做合法性验证；断言用于暴露程序员预想之外的错误。书中要求断言表达式避免副作用，并把断言定位为开发/维护阶段工具。视觉时序图明确展示“外部输入验证 → 前置条件 → 函数处理 → 后置条件 → 返回结果”。适用判断：函数之间需要明确合法输入、结果保证和对象状态约束时行动：把契约写清并用断言检查程序员错误…”处理“契约式设计用前置条件、后置条件和不变式明确调用双方责任”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：函数之间需要明确合法输入、结果保证和对象状态约束时。编者边界（未独立复核）：外部输入验证不能只靠会被禁用的assert；断言不带副作用。视觉核验是旧页的声明，本轮没有重做。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-d006-666ddc76da-r1-7b22f755"></a>
 ### 性能工程“医生”闭环
@@ -341,20 +341,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 性能工程“医生”闭环 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：EPUB第27–33节 · 03-导读：专栏是怎么设计的？需要哪些知识？ |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：性能工程师应像医生一样：先收集症状和数据，再测试与诊断根因，最后实施治疗并复检；这要求横跨软硬件和组织协作。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“性能工程师应像医生一样：先收集症状和数据，再测试与诊断根因，最后实施治疗并复检；这要求横跨软硬件和组织协作”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：性能问题通常跨软件、OS、CPU、内存、存储和网络。搜索和经验只能辅助定位，最终要靠数据与实验确认。复杂问题往往需要跨团队推动；医生式诊断闭环；性能工作应从现象到证据、从根因到验证形成闭环；先观察用户和系统症状。设计测试收集可重复证据。定位瓶颈与根因。实施优化后重新测量。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“性能工程师应像医生一样：先收集症状和数据，再测试与诊断根因，最后实施治疗并复检；这要求横跨软硬件和组织协作”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：D006；登记ID：gongfa-candidate-html211-d006-666ddc76da；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶中级（di-intermediate）；任务族=跨软硬件困难性能诊断；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=症状、可重复测试、根因与复测结合，预计在复杂资源交互任务中较有力减少错误治疗。；置信标签=medium；反证条件=若证据不能区分根因、复测负载不一致或优化只是转移瓶颈，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "方法",<br>  "related&#95;framework&#95;view": "/frameworks/5",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-performance-by-measurement",<br>  "gongfa-abductive-debugging"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D006；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D006",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 57,<br>    "end": 67<br>  },<br>  "declared&#95;upstream": "第3节《03-导读：专栏是怎么设计的？需要哪些知识？》 · EPUB第27–33节",<br>  "content&#95;sha256": "a86a564cef3d6ecdfc485ca16878943bc30e3f81616414cdf7753862941681f8",<br>  "registry&#95;id": "gongfa-candidate-html211-d006-666ddc76da",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3节《03-导读：专栏是怎么设计的？需要哪些知识？》 · EPUB第27–33节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：跨软硬件困难性能诊断（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 待核：候选记录未提供独立适用边界；不据标题或初评品级外推。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“性能工程师应像医生一样：先收集症状和数据，再测试与诊断根因，最后实施治疗并复检；这要求横跨软硬件和组织协作”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照未列出可独立确认的适用情境。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“性能工程师应像医生一样：先收集症状和数据，再测试与诊断根因，最后实施治疗并复检；这要求横跨软硬件和组织协作”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于method-specification，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：性能工程师应像医生一样：先收集症状和数据，再测试与诊断根因，最后实施治疗并复检；这要求横跨软硬件和组织协作；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：性能问题通常跨软件、OS、CPU、内存、存储和网络。搜索和经验只能辅助定位，最终要靠数据与实验确认。复杂问题往往需要跨团队推动；医生式诊断闭环；性能工作应从现象到证据、从根因到验证形成闭环；先观察用户和系统症状。设计测试收集可重复证据。定位瓶颈与根因。实施优化后重新测量。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“性能工程“医生”闭环”（摘要：性能工程师应像医生一样：先收集症状和数据，再测试与诊断根因，最后实施治疗并复检；这要求横跨软硬件和组织协作）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“性能工程“医生”闭环”（性能工程师应像医生一样：先收集症状和数据，再测试与诊断根因，最后实施治疗并复检；这要求横跨软硬件和组织协作），冻结快照的编者分析列出关联线索“性能定位以测量为准、溯因排错法（仓内操作版）”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“性能定位以测量为准、溯因排错法（仓内操作版）”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：围绕候选摘要“性能工程师应像医生一样：先收集症状和数据，再测试与诊断根因，最后实施治疗并复检；这要求横跨软硬件和组织协作”分析其条件、步骤与可能反例；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：快照未列出“性能工程“医生”闭环”的独立确认适用条件；当前只能定位于摘要“性能工程师应像医生一样：先收集症状和数据，再测试与诊断根因，最后实施治疗并复检；这要求横跨软硬件和组织协作”。编者边界（未独立复核）：候选快照未提供“性能工程“医生”闭环”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-d020-550f2ceea3-r1-9a85c8fd"></a>
 ### 七步性能测试闭环
@@ -362,20 +362,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 七步性能测试闭环 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：EPUB第75–84节 · 10-性能测试的规划和步骤：为什么性能测试不容易一蹴而就呢？ |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：为什么性能测试不容易一蹴而就呢？ |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：可靠性能测试遵循七步闭环：对象→指标→度量→期望→规划→执行→分析；后三步需要反复迭代。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“冻结对象、指标、度量和期望，再规划、执行、分析迭代。”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：可靠性能测试遵循七步闭环：对象→指标→度量→期望→规划→执行→分析；后三步需要反复迭代；负载发生器自身不能成为瓶颈。指标应覆盖响应时间、吞吐和资源使用。测试环境和流量必须可复现，结果不满意时回到前序步骤；测试的前四步先定义“测什么、如何判定”；确定SUT。确定性能指标。确定统计度量。确定期望/阈值；规划、执行和分析是持续迭代部分；负载和数据要接近目标场景。先短测再长测、逐步加压。分析结果后可回退修改计划再测。相关边界（候选编者说明，未独立复核）：负载发生器不能是瓶颈；若事后改目标或只报最好一轮，重复流程也不能证明可信收益。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“可靠性能测试遵循七步闭环：对象→指标→度量→期望→规划→执行→分析；后三步需要反复迭代”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：D020；登记ID：gongfa-candidate-html211-d020-550f2ceea3；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶中级（di-intermediate）；任务族=复杂性能测试设计与判定；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=对象、指标、度量、阈值到可复现执行分析，且限制发生器瓶颈，预计在困难测试中较有力减少无效结果。；置信标签=medium；反证条件=若发生器受限、事后改目标或统计与负载不代表目标场景，则推翻。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "方法",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "D020",<br>    "value": "冻结对象、指标、度量和期望，再规划、执行、分析迭代。",<br>    "boundary": "负载发生器不能是瓶颈；若事后改目标或只报最好一轮，重复流程也不能证明可信收益。"<br>  },<br>  "related&#95;framework&#95;view": "/frameworks/19",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D020；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D020",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 163,<br>    "end": 177<br>  },<br>  "declared&#95;upstream": "第10节《10-性能测试的规划和步骤：为什么性能测试不容易一蹴而就呢？》 · EPUB第75–84节",<br>  "content&#95;sha256": "e5dbf37e1242378789516164b8ab1fc59103bfc341c77af486a60290eaab2e10",<br>  "registry&#95;id": "gongfa-candidate-html211-d020-550f2ceea3",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第10节《10-性能测试的规划和步骤：为什么性能测试不容易一蹴而就呢？》 · EPUB第75–84节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：复杂性能测试设计与判定（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 既有候选编辑边界（非独立原著核验）：负载发生器不能是瓶颈；若事后改目标或只报最好一轮，重复流程也不能证明可信收益。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“可靠性能测试遵循七步闭环：对象→指标→度量→期望→规划→执行→分析；后三步需要反复迭代”（上游来源未独立核验）；候选标题/选区的问题线索为“为什么性能测试不容易一蹴而就呢？”（候选快照的标题问题线索（未独立语义核验））；快照未列出可独立确认的适用情境。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“冻结对象、指标、度量和期望，再规划、执行、分析迭代”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于method-specification，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：冻结对象、指标、度量和期望，再规划、执行、分析迭代；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：可靠性能测试遵循七步闭环：对象→指标→度量→期望→规划→执行→分析；后三步需要反复迭代；负载发生器自身不能成为瓶颈。指标应覆盖响应时间、吞吐和资源使用。测试环境和流量必须可复现，结果不满意时回到前序步骤；测试的前四步先定义“测什么、如何判定”；确定SUT。确定性能指标。确定统计度量。确定期望/阈值；规划、执行和分析是持续迭代部分；负载和数据要接近目标场景。先短测再长测、逐步加压。分析结果后可回退修改计划再测。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“七步性能测试闭环”（摘要：可靠性能测试遵循七步闭环：对象→指标→度量→期望→规划→执行→分析；后三步需要反复迭代）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照的编辑边界为“负载发生器不能是瓶颈；若事后改目标或只报最好一轮，重复流程也不能证明可信收益”；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“七步性能测试闭环”的冻结快照仅给出“可靠性能测试遵循七步闭环：对象→指标→度量→期望→规划→执行→分析；后三步需要反复迭代”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：围绕候选摘要“可靠性能测试遵循七步闭环：对象→指标→度量→期望→规划→执行→分析；后三步需要反复迭代”分析其条件、步骤与可能反例；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：快照未列出“七步性能测试闭环”的独立确认适用条件；当前只能定位于摘要“可靠性能测试遵循七步闭环：对象→指标→度量→期望→规划→执行→分析；后三步需要反复迭代”。编者边界（未独立复核）：负载发生器不能是瓶颈；若事后改目标或只报最好一轮，重复流程也不能证明可信收益。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-occams-razor-r1-ca4f4112"></a>
 ### 奥卡姆剃刀
@@ -384,19 +384,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 奥卡姆剃刀 |
 | 2 | 是什么 | 现有登记摘要：在相同解释、验收及关键约束下优先选择更少假设、结构、依赖和状态的方案。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“多个满足同一目标的方案如何取舍”，本条以“在相同解释、验收及关键约束下优先选择更少假设、结构、依赖和状态的方案”提供理解或分析视角，可服务于围绕登记摘要所述主题形成分析依据。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定选区未给出“奥卡姆剃刀”的可复现操作序列；登记机制摘要（编辑归纳）为“在不牺牲关键约束的前提下少引入不必要实体”，仅用于解释主题“多个满足同一目标的方案如何取舍”，不把编辑说明冒充原文步骤或效果证据。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“在相同解释、验收及关键约束下优先选择更少假设、结构、依赖和状态的方案”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-occams-razor；内容版本：r1；本体类型：normative-allocation-content；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶初级；意见状态：provisional；任务族：等效方案的复杂度取舍；初评/上下文理由：预计在多方案和遗留设计取舍中减少无价值复杂度，同时保留关键约束；困难情境的增益仍须检验。；反证条件：若删减破坏正确性、安全或必要表达能力，或简化仅把成本转嫁调用者，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-thinking-models-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/thinking-models.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T04:29:18.396921Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-thinking-models-81fc7ae.txt",<br>    "snapshot&#95;sha256": "9d2d15caff363d01facb15f633114f2b3ad708797d7ef8302a02442a7321f28d",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-thinking-models-网络效应",<br>      "philosophy-thinking-models-奥卡姆剃刀",<br>      "philosophy-thinking-models-第一性原理",<br>      "philosophy-thinking-models-思想实验",<br>      "philosophy-thinking-models-逆向思维",<br>      "philosophy-thinking-models-多阶思维",<br>      "philosophy-thinking-models-状态空间思维模型"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-thinking-models-81fc7ae",<br>    "heading&#95;id": "philosophy-thinking-models-奥卡姆剃刀",<br>    "selection": "markdown-prefix",<br>    "stop&#95;before": "适合："<br>  },<br>  "text&#95;sha256": "6003a6c40e6602423049b5b963a4a3f741cbe224f98e3090d85f1df76a8753b4",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "6003a6c40e6602423049b5b963a4a3f741cbe224f98e3090d85f1df76a8753b4",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-thinking-models-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/thinking-models.md#philosophy-thinking-models-奥卡姆剃刀）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
 | 9 | 它要解决什么问题？ | 多个满足同一目标的方案如何取舍。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
-| 11 | 内部如何实现？ | 在不牺牲关键约束的前提下少引入不必要实体。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记适用条件（原登记字段）：能解释同一现象、满足同一验收标准。；不牺牲关键约束。<br>登记限制（原登记字段）：不是无条件的“越简单越好”。<br>登记缺项标记：expected&#95;outcomes；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收同解释/验收与关键约束下的简化准则，不收后续四步操作版；不构成删除防护的授权”；可见结构以“在不牺牲关键约束的前提下少引入不必要实体”说明主题“在相同解释、验收及关键约束下优先选择更少假设、结构、依赖和状态的方案”与问题“多个满足同一目标的方案如何取舍”的关系；这是编辑解释，不是作者意图陈述。 |
+| 11 | 内部如何实现？ | 固定来源的规则是：在解释、验收和关键约束相同的方案间，减少不必要的假设、结构、依赖与状态；关键约束不能为求简单而删去。来源未提供通用简化算法或复杂度量尺。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按登记摘要中的“在不牺牲关键约束的前提下少引入不必要实体”作取舍，需要情境判断并可能限制只追求短期便利的选择；应用范围改变时还须重核前提。登记的边界说明为“不是无条件的“越简单越好””（编辑归纳）。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“多个满足同一目标的方案如何取舍”的同目标替代方案及可比结果。现阶段只能说明本条关注“在相同解释、验收及关键约束下优先选择更少假设、结构、依赖和状态的方案”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：把登记摘要“在相同解释、验收及关键约束下优先选择更少假设、结构、依赖和状态的方案”仅用于其所述主题“多个满足同一目标的方案如何取舍”，不外推到未记录场景；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记profile的编辑性条件摘要：能解释同一现象、满足同一验收标准；不牺牲关键约束。边界：登记profile的编辑性边界摘要：不是无条件的“越简单越好”。选区说明另限定：“只收同解释/验收与关键约束下的简化准则，不收后续四步操作版；不构成删除防护的授权”（登记编者说明，非原文）。材料未提供该条的独立效果验证。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-state-space-thinking-r1-4ca3df78"></a>
 ### 状态空间思维模型
@@ -405,19 +405,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 状态空间思维模型 |
 | 2 | 是什么 | 现有登记摘要：状态空间思维模型把“状态、变化、序列、决策树、多元宇宙”整合在一起，用来分析一个系统从当前状态可能走向哪些未来状态。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“系统从当前状态可沿哪些动作进入哪些未来状态，哪些路径可逆或可回滚”，本条以“状态空间思维模型把“状态、变化、序列、决策树、多元宇宙”整合在一起，用来分析一个系统从当前状态可能走向哪些未来状态”提供理解或分析视角，可服务于当前状态、可行动作与可能后续状态的描述；不可逆、高风险、可回滚路径标记及检查点选择。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定登记来源选区列出的步骤/操作是：描述当前状态，不急着下结论；列出可行动作，而不是只看默认动作；为每个动作写出可能的后续状态；标记不可逆动作、高风险动作和可回滚动作；选择能保留最多未来选择权、同时最接近目标的路径；用检查点、测试、提交、备份和 CI 把路径变得可回退。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“状态空间思维模型把“状态、变化、序列、决策树、多元宇宙”整合在一起，用来分析一个系统从当前状态可能走向哪些未来状态”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-state-space-thinking；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶初级；意见状态：provisional；任务族：状态空间中的目标、路径和约束建模；初评/上下文理由：预计在多路径和多约束任务中帮助排除不可达方案并保留可验证路径；状态不可识别时不能保证效果。；反证条件：若关键状态或约束遗漏、状态空间不可控爆炸，或路径无法实际验证，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-thinking-models-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/thinking-models.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T04:29:18.396921Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-thinking-models-81fc7ae.txt",<br>    "snapshot&#95;sha256": "9d2d15caff363d01facb15f633114f2b3ad708797d7ef8302a02442a7321f28d",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-thinking-models-网络效应",<br>      "philosophy-thinking-models-奥卡姆剃刀",<br>      "philosophy-thinking-models-第一性原理",<br>      "philosophy-thinking-models-思想实验",<br>      "philosophy-thinking-models-逆向思维",<br>      "philosophy-thinking-models-多阶思维",<br>      "philosophy-thinking-models-状态空间思维模型"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-thinking-models-81fc7ae",<br>    "heading&#95;id": "philosophy-thinking-models-状态空间思维模型",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "cafcf77b67302d17563e03a6e0017dc3cf48e3432af5174079f21b93fa3dc2ba",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "cafcf77b67302d17563e03a6e0017dc3cf48e3432af5174079f21b93fa3dc2ba",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-thinking-models-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/thinking-models.md#philosophy-thinking-models-状态空间思维模型）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
 | 9 | 它要解决什么问题？ | 系统从当前状态可沿哪些动作进入哪些未来状态，哪些路径可逆或可回滚。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“收当前独立模型节；适用场景不代表充分成立条件，原文未明示的失效边界留空”；可见结构以“描述当前状态→列出动作→展开后续状态→标记不可逆/高风险/可回滚路径→选择保留选择权且接近目标的路径→建立检查点与回退手段”说明主题“状态空间思维模型把“状态、变化、序列、决策树、多元宇宙”整合在一起，用来分析一个系统从当前状态可能走向哪些未来状态”与问题“系统从当前状态可沿哪些动作进入哪些未来状态，哪些路径可逆或可回滚”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | 描述当前状态→列出动作→展开后续状态→标记不可逆/高风险/可回滚路径→选择保留选择权且接近目标的路径→建立检查点与回退手段。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记预期结果（不是实际效果证据）：当前状态、可行动作与可能后续状态的描述。；不可逆、高风险、可回滚路径标记及检查点选择。<br>登记缺项标记：conditions；limitations<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“描述当前状态，不急着下结论；列出可行动作，而不是只看默认动作；为每个动作写出可能的后续状态；标记不可逆动作、高风险动作和可回滚动作；选择能保留最多未来选择权、同时最接近目标的路径；用检查点、测试、提交、备份和 CI 把路径变得可回退”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。固定选区及登记未提供量化成本或运行测量。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“系统从当前状态可沿哪些动作进入哪些未来状态，哪些路径可逆或可回滚”的同目标替代方案及可比结果。现阶段只能说明本条关注“状态空间思维模型把“状态、变化、序列、决策树、多元宇宙”整合在一起，用来分析一个系统从当前状态可能走向哪些未来状态”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：对适用情境先界定条件，再按固定选区步骤“描述当前状态，不急着下结论；列出可行动作，而不是只看默认动作；为每个动作写出可能的后续状态；标记不可逆动作、高风险动作和可回滚动作；选择能保留最多未来选择权、同时最接近目标的路径；用检查点、测试、提交、备份和 CI 把路径变得可回退”处理并核对边界；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记及固定选区未明确列出“状态空间思维模型”的进一步适用条件。边界：登记及固定选区未记录“状态空间思维模型”的具体限制或反例。选区说明另限定：“收当前独立模型节；适用场景不代表充分成立条件，原文未明示的失效边界留空”（登记编者说明，非原文）。登记profile列出的预期结果是“当前状态、可行动作与可能后续状态的描述；不可逆、高风险、可回滚路径标记及检查点选择”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-falsification-r1-9193b01b"></a>
 ### 可证伪主义（波普尔）
@@ -426,19 +426,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 可证伪主义（波普尔） |
 | 2 | 是什么 | 现有登记摘要：原文用途：把"看起来对"变成"暂时无法证伪"；显著降低隐藏 bug。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“把"看起来对"变成"暂时无法证伪"；显著降低隐藏 bug”，本条以“原文用途：把"看起来对"变成"暂时无法证伪"；显著降低隐藏 bug”提供理解或分析视角，可服务于关键断言对应的可失败测试，优先性质测试。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定登记来源选区列出的步骤/操作是：每个关键断言都要配一个能让它失败的测试（边界/随机/反例）；优先性质测试而非只写示例测试。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“原文用途：把"看起来对"变成"暂时无法证伪"；显著降低隐藏 bug”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-falsification；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶初级；意见状态：provisional；任务族：假设和方案的反例验证；初评/上下文理由：预计在错误高风险及迁移任务中更早淘汰不成立主张，保留反例敏感性；有限通过不证明普适。；反证条件：若反例不能区分真假假设、测试不敏感，或失败后通过改目标保住原结论，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-methodology-toolbox-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/methodology-toolbox.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T04:29:18.396921Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-methodology-toolbox-81fc7ae.txt",<br>    "snapshot&#95;sha256": "1bb43f897974dcbf6837a35b26f64f0277de68188ee2353bb4c58ef176a4bce0",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-methodology-toolbox-1-现象学还原悬置假设",<br>      "philosophy-methodology-toolbox-2-正反合三段迭代",<br>      "philosophy-methodology-toolbox-3-可证伪主义波普尔",<br>      "philosophy-methodology-toolbox-4-形式化方法轻量形式化",<br>      "philosophy-methodology-toolbox-5-奥卡姆剃刀最小复杂度",<br>      "philosophy-methodology-toolbox-6-实用主义以指标为准",<br>      "philosophy-methodology-toolbox-7-系统论整体论边界与反馈回路",<br>      "philosophy-methodology-toolbox-8-诠释学语境澄清",<br>      "philosophy-methodology-toolbox-9-钢人化原则最强版本理解",<br>      "philosophy-methodology-toolbox-10-决策论机会成本可逆优先",<br>      "philosophy-methodology-toolbox-11-反事实推理counterfactuals",<br>      "philosophy-methodology-toolbox-12-溯因推理abduction最佳解释",<br>      "philosophy-methodology-toolbox-13-贝叶斯式信念更新与溯因配合",<br>      "philosophy-methodology-toolbox-14-反思平衡reflective-equilibrium",<br>      "philosophy-methodology-toolbox-15-概念分析-概念工程",<br>      "philosophy-methodology-toolbox-16-方法论怀疑笛卡尔式",<br>      "philosophy-methodology-toolbox-17-视角三角测量triangulation",<br>      "philosophy-methodology-toolbox-18-机制解释mechanistic-explanation",<br>      "philosophy-methodology-toolbox-19-错误认识论error-epistemology",<br>      "philosophy-methodology-toolbox-20-实验哲学x-phi",<br>      "philosophy-methodology-toolbox-21-计算哲学computational-philosophy",<br>      "philosophy-methodology-toolbox-22-自然化认识论naturalized-epistemology",<br>      "philosophy-methodology-toolbox-23-贝叶斯认识论bayesian-epistemology",<br>      "philosophy-methodology-toolbox-总体作业流",<br>      "philosophy-methodology-toolbox-控制论与科学方法论"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-methodology-toolbox-81fc7ae",<br>    "heading&#95;id": "philosophy-methodology-toolbox-3-可证伪主义波普尔",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "411481762ecb2c3ec1537e56314e0d16f154c58484bc3514981842437dbf2937",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "411481762ecb2c3ec1537e56314e0d16f154c58484bc3514981842437dbf2937",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
-| 9 | 它要解决什么问题？ | 把"看起来对"变成"暂时无法证伪"；显著降低隐藏 bug。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-methodology-toolbox-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/methodology-toolbox.md#philosophy-methodology-toolbox-3-可证伪主义波普尔）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
+| 9 | 它要解决什么问题？ | 如何为关键断言构造可令其失败的边界、随机或反例测试？ |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”；可见结构以“- 每个关键断言都要配一个能让它失败的测试（边界/随机/反例） - 优先性质测试而非只写示例测试”说明主题“原文用途：把"看起来对"变成"暂时无法证伪"；显著降低隐藏 bug”与问题“把"看起来对"变成"暂时无法证伪"；显著降低隐藏 bug”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | - 每个关键断言都要配一个能让它失败的测试（边界/随机/反例）<br>- 优先性质测试而非只写示例测试 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记预期结果（不是实际效果证据）：关键断言对应的可失败测试，优先性质测试。<br>登记缺项标记：conditions；limitations；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“每个关键断言都要配一个能让它失败的测试（边界/随机/反例）；优先性质测试而非只写示例测试”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。固定选区及登记未提供量化成本或运行测量。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“把"看起来对"变成"暂时无法证伪"；显著降低隐藏 bug”的同目标替代方案及可比结果。现阶段只能说明本条关注“原文用途：把"看起来对"变成"暂时无法证伪"；显著降低隐藏 bug”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：对适用情境先界定条件，再按固定选区步骤“每个关键断言都要配一个能让它失败的测试（边界/随机/反例）；优先性质测试而非只写示例测试”处理并核对边界；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记及固定选区未明确列出“可证伪主义（波普尔）”的进一步适用条件。边界：登记及固定选区未记录“可证伪主义（波普尔）”的具体限制或反例。选区说明另限定：“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”（登记编者说明，非原文）。登记profile列出的预期结果是“关键断言对应的可失败测试，优先性质测试”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-systems-boundary-feedback-r1-d0e350d3"></a>
 ### 系统论/整体论（边界与反馈回路）
@@ -447,19 +447,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 系统论/整体论（边界与反馈回路） |
 | 2 | 是什么 | 现有登记摘要：原文用途：复杂系统容易在耦合点失控；缩短反馈回路提效最大。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“复杂系统容易在耦合点失控；缩短反馈回路提效最大”，本条以“原文用途：复杂系统容易在耦合点失控；缩短反馈回路提效最大”提供理解或分析视角，可服务于数据流、依赖边界与高耦合点分析；可测试纯函数核心及I/O适配方案。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定登记来源选区列出的步骤/操作是：先画数据流/依赖边界：I/O 放边缘，核心逻辑保持纯函数；优先解耦高耦合点；把慢依赖换成桩/模拟以加速测试。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“原文用途：复杂系统容易在耦合点失控；缩短反馈回路提效最大”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-systems-boundary-feedback；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶初级；意见状态：provisional；任务族：跨模块依赖、边界和反馈诊断；初评/上下文理由：预计在跨组件困难问题中暴露局部修补遗漏的反馈与边界，避免把系统缺陷误判为单点问题。；反证条件：若边界排除了真实因果链、干预影响不可分辨，或只画关系图却无法检验解释，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-methodology-toolbox-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/methodology-toolbox.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T04:29:18.396921Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-methodology-toolbox-81fc7ae.txt",<br>    "snapshot&#95;sha256": "1bb43f897974dcbf6837a35b26f64f0277de68188ee2353bb4c58ef176a4bce0",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-methodology-toolbox-1-现象学还原悬置假设",<br>      "philosophy-methodology-toolbox-2-正反合三段迭代",<br>      "philosophy-methodology-toolbox-3-可证伪主义波普尔",<br>      "philosophy-methodology-toolbox-4-形式化方法轻量形式化",<br>      "philosophy-methodology-toolbox-5-奥卡姆剃刀最小复杂度",<br>      "philosophy-methodology-toolbox-6-实用主义以指标为准",<br>      "philosophy-methodology-toolbox-7-系统论整体论边界与反馈回路",<br>      "philosophy-methodology-toolbox-8-诠释学语境澄清",<br>      "philosophy-methodology-toolbox-9-钢人化原则最强版本理解",<br>      "philosophy-methodology-toolbox-10-决策论机会成本可逆优先",<br>      "philosophy-methodology-toolbox-11-反事实推理counterfactuals",<br>      "philosophy-methodology-toolbox-12-溯因推理abduction最佳解释",<br>      "philosophy-methodology-toolbox-13-贝叶斯式信念更新与溯因配合",<br>      "philosophy-methodology-toolbox-14-反思平衡reflective-equilibrium",<br>      "philosophy-methodology-toolbox-15-概念分析-概念工程",<br>      "philosophy-methodology-toolbox-16-方法论怀疑笛卡尔式",<br>      "philosophy-methodology-toolbox-17-视角三角测量triangulation",<br>      "philosophy-methodology-toolbox-18-机制解释mechanistic-explanation",<br>      "philosophy-methodology-toolbox-19-错误认识论error-epistemology",<br>      "philosophy-methodology-toolbox-20-实验哲学x-phi",<br>      "philosophy-methodology-toolbox-21-计算哲学computational-philosophy",<br>      "philosophy-methodology-toolbox-22-自然化认识论naturalized-epistemology",<br>      "philosophy-methodology-toolbox-23-贝叶斯认识论bayesian-epistemology",<br>      "philosophy-methodology-toolbox-总体作业流",<br>      "philosophy-methodology-toolbox-控制论与科学方法论"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-methodology-toolbox-81fc7ae",<br>    "heading&#95;id": "philosophy-methodology-toolbox-7-系统论整体论边界与反馈回路",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "72cbec4e59f98ee44b9777113ed7aa97646441f30f1be47f61f72bdca56f64c0",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "72cbec4e59f98ee44b9777113ed7aa97646441f30f1be47f61f72bdca56f64c0",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
-| 9 | 它要解决什么问题？ | 复杂系统容易在耦合点失控；缩短反馈回路提效最大。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-methodology-toolbox-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/methodology-toolbox.md#philosophy-methodology-toolbox-7-系统论整体论边界与反馈回路）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
+| 9 | 它要解决什么问题？ | 如何画出数据流和依赖边界，识别高耦合点，并形成更短的测试反馈回路？ |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”；可见结构以“- 先画数据流/依赖边界：I/O 放边缘，核心逻辑保持纯函数 - 优先解耦高耦合点；把慢依赖换成桩/模拟以加速测试”说明主题“原文用途：复杂系统容易在耦合点失控；缩短反馈回路提效最大”与问题“复杂系统容易在耦合点失控；缩短反馈回路提效最大”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | - 先画数据流/依赖边界：I/O 放边缘，核心逻辑保持纯函数<br>- 优先解耦高耦合点；把慢依赖换成桩/模拟以加速测试 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记预期结果（不是实际效果证据）：数据流、依赖边界与高耦合点分析。；可测试纯函数核心及I/O适配方案。<br>登记缺项标记：conditions；limitations；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“先画数据流/依赖边界：I/O 放边缘，核心逻辑保持纯函数；优先解耦高耦合点；把慢依赖换成桩/模拟以加速测试”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。登记的边界说明为“I/O 放边缘，核心逻辑保持纯函数 - 优先解耦高耦合点；把慢依赖换成桩/模拟以加速测试 &#42;&#42;Python工具&#42;&#42;：依赖注入（轻量）、&#96;pytest fixtures&#96;、纯函数设计 &#42;&#42;提示词&#42;&#42;： &#96;&#96;&#96;text 画出数据流与依赖边界，指出最高耦合点与最短反馈回路改造方案；给出可测试的纯函数核心与 I/O 适配层。 &#96;&#96;&#96; &#42;&#42;扩展阅读&#42;&#42;： - &#91;控制论与科学方法论&#93;(#控制论与科学方法论) - 用“可能性空间/反馈/信息/黑箱/可证伪”解释从试错到收敛的机制 ---”（编辑归纳）。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“复杂系统容易在耦合点失控；缩短反馈回路提效最大”的同目标替代方案及可比结果。现阶段只能说明本条关注“原文用途：复杂系统容易在耦合点失控；缩短反馈回路提效最大”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：对适用情境先界定条件，再按固定选区步骤“先画数据流/依赖边界：I/O 放边缘，核心逻辑保持纯函数；优先解耦高耦合点；把慢依赖换成桩/模拟以加速测试”处理并核对边界；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记及固定选区未明确列出“系统论/整体论（边界与反馈回路）”的进一步适用条件。边界：固定登记来源选区：I/O 放边缘，核心逻辑保持纯函数 - 优先解耦高耦合点；把慢依赖换成桩/模拟以加速测试 &#42;&#42;Python工具&#42;&#42;：依赖注入（轻量）、&#96;pytest fixtures&#96;、纯函数设计 &#42;&#42;提示词&#42;&#42;： &#96;&#96;&#96;text 画出数据流与依赖边界，指出最高耦合点与最短反馈回路改造方案；给出可测试的纯函数核心与 I/O 适配层。 &#96;&#96;&#96; &#42;&#42;扩展阅读&#42;&#42;： - &#91;控制论与科学方法论&#93;(#控制论与科学方法论) - 用“可能性空间/反馈/信息/黑箱/可证伪”解释从试错到收敛的机制 ---。选区说明另限定：“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”（登记编者说明，非原文）。登记profile列出的预期结果是“数据流、依赖边界与高耦合点分析；可测试纯函数核心及I/O适配方案”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-mechanistic-explanation-r1-c8343c31"></a>
 ### 机制解释（Mechanistic explanation）
@@ -468,19 +468,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 机制解释（Mechanistic explanation） |
 | 2 | 是什么 | 现有登记摘要：原文用途：把"能跑"变成"可解释可维护"；降低未来修改风险。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“把"能跑"变成"可解释可维护"；降低未来修改风险”，本条以“原文用途：把"能跑"变成"可解释可维护"；降低未来修改风险”提供理解或分析视角，可服务于输入、中间状态、输出的数据流机制说明；中间状态的不变量及断言或类型保证。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定登记来源选区列出的步骤/操作是：要求输出数据流：输入 → 中间状态 → 输出；对中间状态写不变式/断言；把解释与代码结构对齐。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“原文用途：把"能跑"变成"可解释可维护"；降低未来修改风险”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-mechanistic-explanation；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶初级；意见状态：provisional；任务族：从现象到生成机制的解释检验；初评/上下文理由：预计能在跨层故障中提升解释的可检验性，减少只凭相关性定位；机制仍可能欠决定。；反证条件：若机制无法产生可区分预测、关键中介遗漏，或干预不支持所提因果链，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-methodology-toolbox-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/methodology-toolbox.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T04:29:18.396921Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-methodology-toolbox-81fc7ae.txt",<br>    "snapshot&#95;sha256": "1bb43f897974dcbf6837a35b26f64f0277de68188ee2353bb4c58ef176a4bce0",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-methodology-toolbox-1-现象学还原悬置假设",<br>      "philosophy-methodology-toolbox-2-正反合三段迭代",<br>      "philosophy-methodology-toolbox-3-可证伪主义波普尔",<br>      "philosophy-methodology-toolbox-4-形式化方法轻量形式化",<br>      "philosophy-methodology-toolbox-5-奥卡姆剃刀最小复杂度",<br>      "philosophy-methodology-toolbox-6-实用主义以指标为准",<br>      "philosophy-methodology-toolbox-7-系统论整体论边界与反馈回路",<br>      "philosophy-methodology-toolbox-8-诠释学语境澄清",<br>      "philosophy-methodology-toolbox-9-钢人化原则最强版本理解",<br>      "philosophy-methodology-toolbox-10-决策论机会成本可逆优先",<br>      "philosophy-methodology-toolbox-11-反事实推理counterfactuals",<br>      "philosophy-methodology-toolbox-12-溯因推理abduction最佳解释",<br>      "philosophy-methodology-toolbox-13-贝叶斯式信念更新与溯因配合",<br>      "philosophy-methodology-toolbox-14-反思平衡reflective-equilibrium",<br>      "philosophy-methodology-toolbox-15-概念分析-概念工程",<br>      "philosophy-methodology-toolbox-16-方法论怀疑笛卡尔式",<br>      "philosophy-methodology-toolbox-17-视角三角测量triangulation",<br>      "philosophy-methodology-toolbox-18-机制解释mechanistic-explanation",<br>      "philosophy-methodology-toolbox-19-错误认识论error-epistemology",<br>      "philosophy-methodology-toolbox-20-实验哲学x-phi",<br>      "philosophy-methodology-toolbox-21-计算哲学computational-philosophy",<br>      "philosophy-methodology-toolbox-22-自然化认识论naturalized-epistemology",<br>      "philosophy-methodology-toolbox-23-贝叶斯认识论bayesian-epistemology",<br>      "philosophy-methodology-toolbox-总体作业流",<br>      "philosophy-methodology-toolbox-控制论与科学方法论"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-methodology-toolbox-81fc7ae",<br>    "heading&#95;id": "philosophy-methodology-toolbox-18-机制解释mechanistic-explanation",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "0c8a0cb4a0ce1623aa9937e7b4e3c0588fcbe902cdef2ef123ce2a0842d1bb5e",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "0c8a0cb4a0ce1623aa9937e7b4e3c0588fcbe902cdef2ef123ce2a0842d1bb5e",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
-| 9 | 它要解决什么问题？ | 把"能跑"变成"可解释可维护"；降低未来修改风险。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-methodology-toolbox-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/methodology-toolbox.md#philosophy-methodology-toolbox-18-机制解释mechanistic-explanation）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
+| 9 | 它要解决什么问题？ | 如何说明输入、中间状态与输出的数据流，为中间状态写不变量或断言，并让解释与代码结构对齐？ |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”；可见结构以“- 要求输出数据流：输入 → 中间状态 → 输出 - 对中间状态写不变式/断言；把解释与代码结构对齐”说明主题“原文用途：把"能跑"变成"可解释可维护"；降低未来修改风险”与问题“把"能跑"变成"可解释可维护"；降低未来修改风险”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | - 要求输出数据流：输入 → 中间状态 → 输出<br>- 对中间状态写不变式/断言；把解释与代码结构对齐 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记预期结果（不是实际效果证据）：输入、中间状态、输出的数据流机制说明。；中间状态的不变量及断言或类型保证。<br>登记缺项标记：conditions；limitations；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“要求输出数据流：输入 → 中间状态 → 输出；对中间状态写不变式/断言；把解释与代码结构对齐”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。固定选区及登记未提供量化成本或运行测量。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“把"能跑"变成"可解释可维护"；降低未来修改风险”的同目标替代方案及可比结果。现阶段只能说明本条关注“原文用途：把"能跑"变成"可解释可维护"；降低未来修改风险”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：对适用情境先界定条件，再按固定选区步骤“要求输出数据流：输入 → 中间状态 → 输出；对中间状态写不变式/断言；把解释与代码结构对齐”处理并核对边界；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记及固定选区未明确列出“机制解释（Mechanistic explanation）”的进一步适用条件。边界：登记及固定选区未记录“机制解释（Mechanistic explanation）”的具体限制或反例。选区说明另限定：“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”（登记编者说明，非原文）。登记profile列出的预期结果是“输入、中间状态、输出的数据流机制说明；中间状态的不变量及断言或类型保证”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-computational-modeling-r1-150e4557"></a>
 ### 计算哲学（Computational philosophy）
@@ -489,19 +489,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 计算哲学（Computational philosophy） |
 | 2 | 是什么 | 现有登记摘要：原文用途：复杂状态与规则用"可运行模型/仿真/搜索"代替纯讨论。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“复杂状态与规则用"可运行模型/仿真/搜索"代替纯讨论”，本条以“原文用途：复杂状态与规则用"可运行模型/仿真/搜索"代替纯讨论”提供理解或分析视角，可服务于清晰的reference实现与优化实现；差分、仿真、生成器或状态机测试的反例。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定登记来源选区列出的步骤/操作是：reference 实现（慢但清晰）作为 oracle；optimized 实现（快/工程化）用差分测试锁死行为；用仿真/生成器自动探索边界。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“原文用途：复杂状态与规则用"可运行模型/仿真/搜索"代替纯讨论”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-computational-modeling；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶初级；意见状态：provisional；任务族：复杂机制的模拟与现实对照；初评/上下文理由：预计能在现实试验昂贵的困难任务中暴露机制边界；模拟收益不能替代真实场景验收。；反证条件：若模型省略主导因素、参数拟合泄漏，或预测在未参与建模案例中失效，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-methodology-toolbox-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/methodology-toolbox.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T04:29:18.396921Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-methodology-toolbox-81fc7ae.txt",<br>    "snapshot&#95;sha256": "1bb43f897974dcbf6837a35b26f64f0277de68188ee2353bb4c58ef176a4bce0",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-methodology-toolbox-1-现象学还原悬置假设",<br>      "philosophy-methodology-toolbox-2-正反合三段迭代",<br>      "philosophy-methodology-toolbox-3-可证伪主义波普尔",<br>      "philosophy-methodology-toolbox-4-形式化方法轻量形式化",<br>      "philosophy-methodology-toolbox-5-奥卡姆剃刀最小复杂度",<br>      "philosophy-methodology-toolbox-6-实用主义以指标为准",<br>      "philosophy-methodology-toolbox-7-系统论整体论边界与反馈回路",<br>      "philosophy-methodology-toolbox-8-诠释学语境澄清",<br>      "philosophy-methodology-toolbox-9-钢人化原则最强版本理解",<br>      "philosophy-methodology-toolbox-10-决策论机会成本可逆优先",<br>      "philosophy-methodology-toolbox-11-反事实推理counterfactuals",<br>      "philosophy-methodology-toolbox-12-溯因推理abduction最佳解释",<br>      "philosophy-methodology-toolbox-13-贝叶斯式信念更新与溯因配合",<br>      "philosophy-methodology-toolbox-14-反思平衡reflective-equilibrium",<br>      "philosophy-methodology-toolbox-15-概念分析-概念工程",<br>      "philosophy-methodology-toolbox-16-方法论怀疑笛卡尔式",<br>      "philosophy-methodology-toolbox-17-视角三角测量triangulation",<br>      "philosophy-methodology-toolbox-18-机制解释mechanistic-explanation",<br>      "philosophy-methodology-toolbox-19-错误认识论error-epistemology",<br>      "philosophy-methodology-toolbox-20-实验哲学x-phi",<br>      "philosophy-methodology-toolbox-21-计算哲学computational-philosophy",<br>      "philosophy-methodology-toolbox-22-自然化认识论naturalized-epistemology",<br>      "philosophy-methodology-toolbox-23-贝叶斯认识论bayesian-epistemology",<br>      "philosophy-methodology-toolbox-总体作业流",<br>      "philosophy-methodology-toolbox-控制论与科学方法论"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-methodology-toolbox-81fc7ae",<br>    "heading&#95;id": "philosophy-methodology-toolbox-21-计算哲学computational-philosophy",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "12d5d8e70ce2fa678f55802b543965ed174d2004b2838629da420da40a1808e8",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "12d5d8e70ce2fa678f55802b543965ed174d2004b2838629da420da40a1808e8",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-methodology-toolbox-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/methodology-toolbox.md#philosophy-methodology-toolbox-21-计算哲学computational-philosophy）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
 | 9 | 它要解决什么问题？ | 复杂状态与规则用"可运行模型/仿真/搜索"代替纯讨论。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”；可见结构以“- reference 实现（慢但清晰）作为 oracle - optimized 实现（快/工程化）用差分测试锁死行为 - 用仿真/生成器自动探索边界”说明主题“原文用途：复杂状态与规则用"可运行模型/仿真/搜索"代替纯讨论”与问题“复杂状态与规则用"可运行模型/仿真/搜索"代替纯讨论”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | - reference 实现（慢但清晰）作为 oracle<br>- optimized 实现（快/工程化）用差分测试锁死行为<br>- 用仿真/生成器自动探索边界 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记适用条件（原登记字段）：适用情境：复杂状态与规则需要用可运行模型、仿真或搜索探索。<br>登记预期结果（不是实际效果证据）：清晰的reference实现与优化实现。；差分、仿真、生成器或状态机测试的反例。<br>登记缺项标记：limitations；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“reference 实现（慢但清晰）作为 oracle；optimized 实现（快/工程化）用差分测试锁死行为；用仿真/生成器自动探索边界”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。固定选区及登记未提供量化成本或运行测量。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“复杂状态与规则用"可运行模型/仿真/搜索"代替纯讨论”的同目标替代方案及可比结果。现阶段只能说明本条关注“原文用途：复杂状态与规则用"可运行模型/仿真/搜索"代替纯讨论”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：对适用情境先界定条件，再按固定选区步骤“reference 实现（慢但清晰）作为 oracle；optimized 实现（快/工程化）用差分测试锁死行为；用仿真/生成器自动探索边界”处理并核对边界；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记profile的编辑性条件摘要：适用情境：复杂状态与规则需要用可运行模型、仿真或搜索探索。边界：登记及固定选区未记录“计算哲学（Computational philosophy）”的具体限制或反例。选区说明另限定：“只收编号方法节的用途、操作、工具建议与提示词；数字建议和工具名称不自动成为倍率、唯一依赖或授权”（登记编者说明，非原文）。登记profile列出的预期结果是“清晰的reference实现与优化实现；差分、仿真、生成器或状态机测试的反例”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-proximate-causal-mechanism-r1-05110b15"></a>
 ### 近端因果机制
@@ -510,19 +510,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 近端因果机制 |
 | 2 | 是什么 | 现有登记摘要：区分上游背景、传导环节与直接作用项，用干预、时序和反事实证据检验结果末端的生成机制。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“复杂生成过程中，什么层级的机制对特定结果最有解释相关性”，本条以“区分上游背景、传导环节与直接作用项，用干预、时序和反事实证据检验结果末端的生成机制”提供理解或分析视角，可服务于解释结果在何种局部条件下被即时产生。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 登记机制摘要（编辑归纳）给出的处理链为“结果界定→近邻原因识别→机制推演→经验检验→因果更新”；它概括固定选区中的方法关系，具体执行仍须按来源所列条件与任务验收落实，不把摘要当作效果证明。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“区分上游背景、传导环节与直接作用项，用干预、时序和反事实证据检验结果末端的生成机制”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-proximate-causal-mechanism；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶初级；意见状态：provisional；任务族：故障末端因果机制的定位与检验；初评/上下文理由：预计在复杂因果链的局部诊断中减少把上游背景误当直接触发项；不能把近端发现直接推广到全链。；反证条件：若共同原因、关键中介或反馈未控制，或局部干预不支持所提触发机制，应下调。；置信标签：low；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "tradecatlabs-vibe-coding-methodology-page",<br>    "kind": "project&#95;internal&#95;publication",<br>    "url": "https://tradecatlabs.com/portfolio/02-vibe-coding-cn/",<br>    "resolved&#95;url": "https://tradecatlabs.com/portfolio/02-vibe-coding-cn/",<br>    "captured&#95;at": "2026-10-07T04:17:07.958661Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-methodology-931f79be.txt",<br>    "snapshot&#95;sha256": "931f79be42fee9c17a2765214977b5c30311fbbd0ab983f510fefff784705de2",<br>    "text&#95;normalization": "html-text-whitespace-v1",<br>    "included&#95;anchors": &#91;<br>      "固定点收敛系统",<br>      "递归式-ai-治理",<br>      "拼好码",<br>      "吸引子",<br>      "有限样本生成推断",<br>      "ai-native",<br>      "拍扁",<br>      "符号序列空间与有效知识子集",<br>      "合成模型",<br>      "解空间",<br>      "近端因果机制",<br>      "目的导向的行动选择",<br>      "预测加工与模型更新",<br>      "受约束的状态变换",<br>      "最小先验条件下的代理增强型任务求解",<br>      "projection-表示转换",<br>      "状态分类工具"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "tradecatlabs-vibe-coding-methodology-page",<br>    "heading&#95;id": "近端因果机制",<br>    "selection": "html-paragraph",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "77f74cfde9c59c0b5ac6f410db6e5422ea673a5ac6efad12b976d100b2ffb18a",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "77f74cfde9c59c0b5ac6f410db6e5422ea673a5ac6efad12b976d100b2ffb18a",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“tradecatlabs-vibe-coding-methodology-page”（类型：project&#95;internal&#95;publication；定位：tradecatlabs-vibe-coding-methodology-page）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
 | 9 | 它要解决什么问题？ | 复杂生成过程中，什么层级的机制对特定结果最有解释相关性。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
-| 11 | 内部如何实现？ | 结果界定→近邻原因识别→机制推演→经验检验→因果更新 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记适用条件（原登记字段）：因果结构具有足够可识别性，关键中介未被遗漏。<br>登记限制（原登记字段）：存在共同原因、反馈回路或多重充分路径时，近端解释可能欠决定，也难直接外推至更远层级。<br>登记预期结果（不是实际效果证据）：解释结果在何种局部条件下被即时产生<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只取标题下的方法段落；页面根节点和宏观表述不构成本体继承、权限授予或品级证据”；可见结构以“结果界定→近邻原因识别→机制推演→经验检验→因果更新”说明主题“区分上游背景、传导环节与直接作用项，用干预、时序和反事实证据检验结果末端的生成机制”与问题“复杂生成过程中，什么层级的机制对特定结果最有解释相关性”的关系；这是编辑解释，不是作者意图陈述。 |
+| 11 | 内部如何实现？ | 界定目标结果后，区分上游背景、传导环节和直接作用项；提出近邻机制，再用干预、时序或反事实证据检验，并据此更新因果解释。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“结果界定→近邻原因识别→机制推演→经验检验→因果更新”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。登记的边界说明为“存在共同原因、反馈回路或多重充分路径时，近端解释可能欠决定，也难直接外推至更远层级”（编辑归纳）。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“复杂生成过程中，什么层级的机制对特定结果最有解释相关性”的同目标替代方案及可比结果。现阶段只能说明本条关注“区分上游背景、传导环节与直接作用项，用干预、时序和反事实证据检验结果末端的生成机制”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：把登记摘要“区分上游背景、传导环节与直接作用项，用干预、时序和反事实证据检验结果末端的生成机制”仅用于其所述主题“复杂生成过程中，什么层级的机制对特定结果最有解释相关性”，不外推到未记录场景；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记profile的编辑性条件摘要：因果结构具有足够可识别性，关键中介未被遗漏。边界：登记profile的编辑性边界摘要：存在共同原因、反馈回路或多重充分路径时，近端解释可能欠决定，也难直接外推至更远层级。选区说明另限定：“只取标题下的方法段落；页面根节点和宏观表述不构成本体继承、权限授予或品级证据”（登记编者说明，非原文）。登记profile列出的预期结果是“解释结果在何种局部条件下被即时产生”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-divide-and-conquer-r1-5c3ee47b"></a>
 ### 分而治之
@@ -531,19 +531,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 分而治之 |
 | 2 | 是什么 | 现有登记摘要：把复杂整体拆成相对独立的小问题，分别求解，再集成为完整结果。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“如何将难以理解、实现和测试的复杂问题分解为可管理单元”，本条以“把复杂整体拆成相对独立的小问题，分别求解，再集成为完整结果”提供理解或分析视角，可服务于更清晰、易测试与维护的子问题，以及集成后的完整系统。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 登记机制摘要（编辑归纳）给出的处理链为“按问题边界拆分→分别解决子问题→通过清晰接口集成”；它概括固定选区中的方法关系，具体执行仍须按来源所列条件与任务验收落实，不把摘要当作效果证明。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“把复杂整体拆成相对独立的小问题，分别求解，再集成为完整结果”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-divide-and-conquer；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶初级；意见状态：provisional；任务族：可分解复杂问题的边界与集成；初评/上下文理由：预计在可分解的困难任务中降低求解负担并隔离验证；前提是边界与合并契约合理。；反证条件：若分解切断关键依赖、子问题解无法组合，或协调成本超过分解收益，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-system-building-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/system-building.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T06:03:59.363591Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-system-building-81fc7ae.txt",<br>    "snapshot&#95;sha256": "3ef5e41bda96ba4e96f0979722c6d6c5d3838e243cf9eaf2faccc39e3672648b",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "concept-system-building-一自顶向下先看整体再拆细节",<br>      "concept-system-building-二自底向上先做组件再组系统",<br>      "concept-system-building-三分而治之把复杂问题拆成小问题"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-system-building-81fc7ae",<br>    "heading&#95;id": "concept-system-building-三分而治之把复杂问题拆成小问题",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "93a23c4213f381f7de16ad98ac7aeeb3aa58d6870a97aefca35fbfe04fc01b26",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "93a23c4213f381f7de16ad98ac7aeeb3aa58d6870a97aefca35fbfe04fc01b26",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-system-building-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/system-building.md#concept-system-building-三分而治之把复杂问题拆成小问题）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
 | 9 | 它要解决什么问题？ | 如何将难以理解、实现和测试的复杂问题分解为可管理单元。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收分而治之的完整限定节；不把任务拆分次序改成类型继承”；可见结构以“按问题边界拆分→分别解决子问题→通过清晰接口集成”说明主题“把复杂整体拆成相对独立的小问题，分别求解，再集成为完整结果”与问题“如何将难以理解、实现和测试的复杂问题分解为可管理单元”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | 按问题边界拆分→分别解决子问题→通过清晰接口集成。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记适用条件（原登记字段）：拆分尽量高内聚、低耦合，模块职责集中，通过清晰接口协作。<br>登记限制（原登记字段）：边界不合理会造成耦合严重、接口混乱与集成困难。<br>登记预期结果（不是实际效果证据）：更清晰、易测试与维护的子问题，以及集成后的完整系统。<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“按问题边界拆分→分别解决子问题→通过清晰接口集成”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。登记的边界说明为“边界不合理会造成耦合严重、接口混乱与集成困难”（编辑归纳）。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“如何将难以理解、实现和测试的复杂问题分解为可管理单元”的同目标替代方案及可比结果。现阶段只能说明本条关注“把复杂整体拆成相对独立的小问题，分别求解，再集成为完整结果”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：把登记摘要“把复杂整体拆成相对独立的小问题，分别求解，再集成为完整结果”仅用于其所述主题“如何将难以理解、实现和测试的复杂问题分解为可管理单元”，不外推到未记录场景；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记profile的编辑性条件摘要：拆分尽量高内聚、低耦合，模块职责集中，通过清晰接口协作。边界：登记profile的编辑性边界摘要：边界不合理会造成耦合严重、接口混乱与集成困难。选区说明另限定：“只收分而治之的完整限定节；不把任务拆分次序改成类型继承”（登记编者说明，非原文）。登记profile列出的预期结果是“更清晰、易测试与维护的子问题，以及集成后的完整系统”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-specification-before-implementation-r1-f3a38df8"></a>
 ### 规约先于实现
@@ -552,19 +552,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 规约先于实现 |
 | 2 | 是什么 | 现有登记摘要：先明确行为，再确定结构，最后落实代码。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“实现前如何安排规约、结构与代码的先后”，本条以“先明确行为，再确定结构，最后落实代码”提供理解或分析视角，可服务于围绕登记摘要所述主题形成分析依据。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定选区未给出“规约先于实现”的可复现操作序列；登记机制摘要（编辑归纳）为“行为先于结构，结构先于代码；源文将程序称为规约的影子”，仅用于解释主题“实现前如何安排规约、结构与代码的先后”，不把编辑说明冒充原文步骤或效果证据。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“先明确行为，再确定结构，最后落实代码”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-specification-before-implementation；内容版本：r1；本体类型：normative-allocation-content；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶初级；意见状态：provisional；任务族：实现前的行为与边界约定；初评/上下文理由：预计在接口复杂和需求易错任务中减少先实现再补解释的返工；规约仍须忠实于用户任务。；反证条件：若规约与真实需求不符、关键边界未覆盖，或实现违反已定行为却仍被接受，应下调。；置信标签：medium；意见时间：2026-10-07T07:47:52.872364Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-programming-dao-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/programming-dao.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T06:03:59.370173Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-programming-dao-81fc7ae.txt",<br>    "snapshot&#95;sha256": "d265d87953c8cae957cd41df02dcd76c91b99601703bb517661556738f73ba9e",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-programming-dao-规约先于实现",<br>      "philosophy-programming-dao-10-时间视角",<br>      "philosophy-programming-dao-高内聚",<br>      "philosophy-programming-dao-低耦合",<br>      "philosophy-programming-dao-稳定接口不稳定实现",<br>      "philosophy-programming-dao-隐藏的依赖最危险",<br>      "philosophy-programming-dao-不变式保持世界稳定",<br>      "philosophy-programming-dao-9-可推理性",<br>      "philosophy-programming-dao-16-最小惊讶原则"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-programming-dao-81fc7ae",<br>    "heading&#95;id": "philosophy-programming-dao-规约先于实现",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "16be4868fed3dca76ed76552f2a03824185d7e0b9846b4cc15178a89ade7a18c",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "16be4868fed3dca76ed76552f2a03824185d7e0b9846b4cc15178a89ade7a18c",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-programming-dao-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/programming-dao.md#philosophy-programming-dao-规约先于实现）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
 | 9 | 它要解决什么问题？ | 实现前如何安排规约、结构与代码的先后。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收该准则的三条原文，不把整篇编程之道或“18.语录”重复收录”；可见结构以“行为先于结构，结构先于代码；源文将程序称为规约的影子”说明主题“先明确行为，再确定结构，最后落实代码”与问题“实现前如何安排规约、结构与代码的先后”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | 行为先于结构，结构先于代码；源文将程序称为规约的影子。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记缺项标记：conditions；limitations；expected&#95;outcomes；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按登记摘要中的“行为先于结构，结构先于代码；源文将程序称为规约的影子”作取舍，需要情境判断并可能限制只追求短期便利的选择；应用范围改变时还须重核前提。固定选区及登记未提供量化成本或运行测量。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“实现前如何安排规约、结构与代码的先后”的同目标替代方案及可比结果。现阶段只能说明本条关注“先明确行为，再确定结构，最后落实代码”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：把登记摘要“先明确行为，再确定结构，最后落实代码”仅用于其所述主题“实现前如何安排规约、结构与代码的先后”，不外推到未记录场景；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记及固定选区未明确列出“规约先于实现”的进一步适用条件。边界：登记及固定选区未记录“规约先于实现”的具体限制或反例。选区说明另限定：“只收该准则的三条原文，不把整篇编程之道或“18.语录”重复收录”（登记编者说明，非原文）。材料未提供该条的独立效果验证。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-controllable-failure-r1-be46e549"></a>
 ### 故障可控与恢复优先
@@ -573,19 +573,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 故障可控与恢复优先 |
 | 2 | 是什么 | 现有登记摘要：稳定不是永不出错，而是故障能够被发现、定位、隔离和恢复。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“有故障时系统怎样保持可控”，本条以“稳定不是永不出错，而是故障能够被发现、定位、隔离和恢复”提供理解或分析视角，可服务于出问题时能够被发现、被定位、被隔离、被恢复。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定选区未给出“故障可控与恢复优先”的可复现操作序列；登记机制摘要（编辑归纳）为“围绕发现、定位、隔离、恢复组织稳定性能力，日志、监控、告警、追踪、降级、限流、回滚是其中部分”，仅用于解释主题“有故障时系统怎样保持可控”，不把编辑说明冒充原文步骤或效果证据。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“稳定不是永不出错，而是故障能够被发现、定位、隔离和恢复”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-controllable-failure；内容版本：r1；本体类型：normative-allocation-content；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶初级；意见状态：provisional；任务族：有故障条件下的可观测、隔离与恢复设计；初评/上下文理由：预计不仅帮助正常任务，也能在预定义故障注入与恢复任务中保留关键处置能力；没有给恢复期限、数据完整性及验收阈值，因此只作地阶初级前瞻建议。；反证条件：若代表性故障任务中无法发现、隔离或恢复，或恢复破坏数据完整性并违反事前期限，则地阶预期不成立；工具已部署不等于这些能力已取得。；置信标签：medium；意见时间：2026-10-07T09:20:36.251520Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-software-engineering-truths-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/software-engineering-truths.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T09:20:36.243253Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-software-engineering-truths-81fc7ae.txt",<br>    "snapshot&#95;sha256": "e08b9a728825dc175a0bc68d22e2d90cb43ef9f368cd373368ca6d456ff329f3",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "philosophy-software-engineering-truths-5-重复代码不一定坏错误抽象更坏",<br>      "philosophy-software-engineering-truths-14-技术债不是罪假装没有技术债才是罪",<br>      "philosophy-software-engineering-truths-16-性能问题要靠测量不要靠感觉",<br>      "philosophy-software-engineering-truths-18-稳定不是没有故障而是故障可控",<br>      "philosophy-software-engineering-truths-23-文档不是装饰品"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-software-engineering-truths-81fc7ae",<br>    "heading&#95;id": "philosophy-software-engineering-truths-18-稳定不是没有故障而是故障可控",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "c84538242086e542ab36b740bbf33388e676b0ed1bbd17c06848b023eec722d6",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "c84538242086e542ab36b740bbf33388e676b0ed1bbd17c06848b023eec722d6",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-software-engineering-truths-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/software-engineering-truths.md#philosophy-software-engineering-truths-18-稳定不是没有故障而是故障可控）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
 | 9 | 它要解决什么问题？ | 有故障时系统怎样保持可控。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收此独立限定节，不借同篇其他内容补字段；来源要求不成为本次执行或发布授权”；可见结构以“围绕发现、定位、隔离、恢复组织稳定性能力，日志、监控、告警、追踪、降级、限流、回滚是其中部分”说明主题“稳定不是永不出错，而是故障能够被发现、定位、隔离和恢复”与问题“有故障时系统怎样保持可控”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | 围绕发现、定位、隔离、恢复组织稳定性能力，日志、监控、告警、追踪、降级、限流、回滚是其中部分。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记限制（原登记字段）：稳定不依赖永远不出问题。<br>登记预期结果（不是实际效果证据）：出问题时能够被发现、被定位、被隔离、被恢复。<br>登记缺项标记：conditions；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按登记摘要中的“围绕发现、定位、隔离、恢复组织稳定性能力，日志、监控、告警、追踪、降级、限流、回滚是其中部分”作取舍，需要情境判断并可能限制只追求短期便利的选择；应用范围改变时还须重核前提。登记的边界说明为“稳定不依赖永远不出问题”（编辑归纳）。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“有故障时系统怎样保持可控”的同目标替代方案及可比结果。现阶段只能说明本条关注“稳定不是永不出错，而是故障能够被发现、定位、隔离和恢复”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：把登记摘要“稳定不是永不出错，而是故障能够被发现、定位、隔离和恢复”仅用于其所述主题“有故障时系统怎样保持可控”，不外推到未记录场景；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记及固定选区未明确列出“故障可控与恢复优先”的进一步适用条件。边界：登记profile的编辑性边界摘要：稳定不依赖永远不出问题。选区说明另限定：“只收此独立限定节，不借同篇其他内容补字段；来源要求不成为本次执行或发布授权”（登记编者说明，非原文）。登记profile列出的预期结果是“出问题时能够被发现、被定位、被隔离、被恢复”，属编辑归纳而非实测。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-dataset-first-architecture-r1-b99a91f1"></a>
 ### Dataset First 数据服务范式
@@ -594,19 +594,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | Dataset First 数据服务范式 |
 | 2 | 是什么 | 现有登记摘要：稳定数据集服务优先按 dataset 分边界，先定契约、区分数据层、共享控制面并显式隔离 legacy。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“核心交付物为稳定数据集的服务怎样组织”，本条以“稳定数据集服务优先按 dataset 分边界，先定契约、区分数据层、共享控制面并显式隔离 legacy”提供理解或分析视角，可服务于围绕登记摘要所述主题形成分析依据。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定选区未给出“Dataset First 数据服务范式”的可复现操作序列；登记机制摘要（编辑归纳）为“顶层按 dataset 划分，先定义落表、字段语义、主键、时间与分区/刷新策略；数据层分开，控制面统一，legacy 只兼容转发”，仅用于解释主题“核心交付物为稳定数据集的服务怎样组织”，不把编辑说明冒充原文步骤或效果证据。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“稳定数据集服务优先按 dataset 分边界，先定契约、区分数据层、共享控制面并显式隔离 legacy”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-dataset-first-architecture；内容版本：r1；本体类型：normative-allocation-content；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶初级；意见状态：provisional；任务族：稳定数据集产品的服务边界与控制面设计；初评/上下文理由：预计在补数、巡检、血缘和质量治理等困难数据任务中，显式数据边界与契约比按脚本隐藏数据对象更容易保持一致性；仅适用于稳定数据集产品，尚无实测迁移或成本证据。；反证条件：若预定义补数与修复任务中仍出现数据对象遗漏、契约冲突，或共享控制面使独立数据集难以维护，则地阶预期应下调；纯网关等不适用场景不得用于抬高该级。；置信标签：medium；意见时间：2026-10-07T09:20:36.251520Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-dataset-first-data-service-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/dataset-first-data-service.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T09:20:36.245521Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-dataset-first-data-service-81fc7ae.txt",<br>    "snapshot&#95;sha256": "871b29acdde5879710c512890d345d91086a369db6f9fd84a5755958011648b9",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "reference-engineering-practice-7-dataset-first-数据服务结构",<br>      "reference-engineering-practice-新建数据服务流程",<br>      "reference-engineering-practice-外部源码接入流程"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-dataset-first-data-service-81fc7ae",<br>    "heading&#95;id": "reference-engineering-practice-7-dataset-first-数据服务结构",<br>    "selection": "markdown-prefix",<br>    "stop&#95;before": "&lt;a id=&#92;"reference-engineering-practice-标准目录&#92;"&gt;&lt;/a&gt;"<br>  },<br>  "text&#95;sha256": "45bb5f2e9244ad307d77b85aea7a182e2c153fb56c6fbba253e025c8abe61282",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "45bb5f2e9244ad307d77b85aea7a182e2c153fb56c6fbba253e025c8abe61282",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-dataset-first-data-service-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/dataset-first-data-service.md#reference-engineering-practice-7-dataset-first-数据服务结构）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
 | 9 | 它要解决什么问题？ | 核心交付物为稳定数据集的服务怎样组织。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收目录模板之前的判断规则、适用/不适用范围及核心原则；不收目录图或后续构建/接入流程”；可见结构以“顶层按 dataset 划分，先定义落表、字段语义、主键、时间与分区/刷新策略；数据层分开，控制面统一，legacy 只兼容转发”说明主题“稳定数据集服务优先按 dataset 分边界，先定契约、区分数据层、共享控制面并显式隔离 legacy”与问题“核心交付物为稳定数据集的服务怎样组织”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | 顶层按 dataset 划分，先定义落表、字段语义、主键、时间与分区/刷新策略；数据层分开，控制面统一，legacy 只兼容转发。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记适用条件（原登记字段）：核心交付物是稳定数据集，而不是页面、接口或一次性脚本。；适用于事实/事件采集、周期快照、事件流与时间桶并存，以及长期补数、巡检、血缘和质量治理的数据服务。<br>登记限制（原登记字段）：纯 API 网关、纯 Web 应用、纯交易执行服务、一次性脚本及不产出稳定 dataset 的临时任务不适合直接照抄。；迁移期 legacy 壳只能兼容转发，新逻辑不得回流旧路径。<br>登记缺项标记：expected&#95;outcomes；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按登记摘要中的“顶层按 dataset 划分，先定义落表、字段语义、主键、时间与分区/刷新策略；数据层分开，控制面统一，legacy 只兼容转发”作取舍，需要情境判断并可能限制只追求短期便利的选择；应用范围改变时还须重核前提。登记的边界说明为“纯 API 网关、纯 Web 应用、纯交易执行服务、一次性脚本及不产出稳定 dataset 的临时任务不适合直接照抄；迁移期 legacy 壳只能兼容转发，新逻辑不得回流旧路径”（编辑归纳）。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“核心交付物为稳定数据集的服务怎样组织”的同目标替代方案及可比结果。现阶段只能说明本条关注“稳定数据集服务优先按 dataset 分边界，先定契约、区分数据层、共享控制面并显式隔离 legacy”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：把登记摘要“稳定数据集服务优先按 dataset 分边界，先定契约、区分数据层、共享控制面并显式隔离 legacy”仅用于其所述主题“核心交付物为稳定数据集的服务怎样组织”，不外推到未记录场景；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记profile的编辑性条件摘要：核心交付物是稳定数据集，而不是页面、接口或一次性脚本；适用于事实/事件采集、周期快照、事件流与时间桶并存，以及长期补数、巡检、血缘和质量治理的数据服务。边界：登记profile的编辑性边界摘要：纯 API 网关、纯 Web 应用、纯交易执行服务、一次性脚本及不产出稳定 dataset 的临时任务不适合直接照抄；迁移期 legacy 壳只能兼容转发，新逻辑不得回流旧路径。选区说明另限定：“只收目录模板之前的判断规则、适用/不适用范围及核心原则；不收目录图或后续构建/接入流程”（登记编者说明，非原文）。材料未提供该条的独立效果验证。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-dataset-service-construction-r1-3dd9d55d"></a>
 ### 新建数据服务作业流
@@ -615,19 +615,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 新建数据服务作业流 |
 | 2 | 是什么 | 现有登记摘要：先定数据集清单与契约，再建控制面，逐个实现数据集，最后补文档、验证和血缘。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“怎样新建数据服务”，本条以“先定数据集清单与契约，再建控制面，逐个实现数据集，最后补文档、验证和血缘”提供理解或分析视角，可服务于围绕登记摘要所述主题形成分析依据。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定登记来源选区列出的步骤/操作是：新建数据服务流程：先定 dataset 清单：哪些 active、哪些 backfill&#95;only、哪些 reserved；先写 contract：字段、主键、时间列、分区策略、资源 ID、schema version；再建 registry、config、service&#95;entry、runtime；逐个实现 dataset：&#96;contract -&gt; writer -&gt; collect -&gt; backfill -&gt; validate -&gt; repair&#96;；最后补 README、AGENTS、verify/CI、资源目录、血缘映射、smoke。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“先定数据集清单与契约，再建控制面，逐个实现数据集，最后补文档、验证和血缘”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-dataset-service-construction；内容版本：r1；本体类型：method-specification；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶初级；意见状态：provisional；任务族：按数据契约构建采集、补数与修复服务；初评/上下文理由：预计对含多个数据集与补数/修复路径的构建任务减少漏项，并支持比单脚本更困难的服务交付；原文没有提供独立测试合同和完成阈值，地阶初级仅是预计。；反证条件：若固定多数据集构建任务仍遗漏契约、补数或修复能力，或在同预算下控制面成本超过收益，则地阶预期应下调；走完五步不证明输出正确。；置信标签：medium；意见时间：2026-10-07T09:20:36.251520Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-dataset-first-data-service-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/dataset-first-data-service.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T09:20:36.245521Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-dataset-first-data-service-81fc7ae.txt",<br>    "snapshot&#95;sha256": "871b29acdde5879710c512890d345d91086a369db6f9fd84a5755958011648b9",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "reference-engineering-practice-7-dataset-first-数据服务结构",<br>      "reference-engineering-practice-新建数据服务流程",<br>      "reference-engineering-practice-外部源码接入流程"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-dataset-first-data-service-81fc7ae",<br>    "heading&#95;id": "reference-engineering-practice-新建数据服务流程",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "baf1bafb0ba2902b325e23c3b23b87152af259ade01b0d4ec07ea9e9169646cc",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "baf1bafb0ba2902b325e23c3b23b87152af259ade01b0d4ec07ea9e9169646cc",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
-| 9 | 它要解决什么问题？ | 怎样新建数据服务。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-dataset-first-data-service-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/dataset-first-data-service.md#reference-engineering-practice-新建数据服务流程）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
+| 9 | 它要解决什么问题？ | 如何把数据集清单与契约落到可重复的新建流程，并串联writer、collect、backfill、validate和repair？ |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收此独立限定节，不借同篇其他内容补字段；来源要求不成为本次执行或发布授权”；可见结构以“清单 -&gt; contract -&gt; registry/config/service&#95;entry/runtime -&gt; contract、writer、collect、backfill、validate、repair -&gt; README、AGENTS、verify/CI、资源目录、血缘、smoke”说明主题“先定数据集清单与契约，再建控制面，逐个实现数据集，最后补文档、验证和血缘”与问题“怎样新建数据服务”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | 清单 -&gt; contract -&gt; registry/config/service&#95;entry/runtime -&gt; contract、writer、collect、backfill、validate、repair -&gt; README、AGENTS、verify/CI、资源目录、血缘、smoke。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记缺项标记：conditions；limitations；expected&#95;outcomes；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按固定选区的“新建数据服务流程：先定 dataset 清单：哪些 active、哪些 backfill&#95;only、哪些 reserved；先写 contract：字段、主键、时间列、分区策略、资源 ID、schema version；再建 registry、config、service&#95;entry、runtime；逐个实现 dataset：&#96;contract -&gt; writer -&gt; collect -&gt; backfill -&gt; validate -&gt; repair&#96;；最后补 README、AGENTS、verify/CI、资源目录、血缘映射、smoke”操作，会增加分析、记录或复核工作；应用范围改变时还须重核前提。固定选区及登记未提供量化成本或运行测量。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“怎样新建数据服务”的同目标替代方案及可比结果。现阶段只能说明本条关注“先定数据集清单与契约，再建控制面，逐个实现数据集，最后补文档、验证和血缘”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：对适用情境先界定条件，再按固定选区步骤“新建数据服务流程：先定 dataset 清单：哪些 active、哪些 backfill&#95;only、哪些 reserved；先写 contract：字段、主键、时间列、分区策略、资源 ID、schema version；再建 registry、config、service&#95;entry、runtime；逐个实现 dataset：&#96;contract -&gt; writer -&gt; collect -&gt; backfill -&gt; validate -&gt; repair&#96;；最后补 README、AGENTS、verify/CI、资源目录、血缘映射、smoke”处理并核对边界；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记及固定选区未明确列出“新建数据服务作业流”的进一步适用条件。边界：登记及固定选区未记录“新建数据服务作业流”的具体限制或反例。选区说明另限定：“只收此独立限定节，不借同篇其他内容补字段；来源要求不成为本次执行或发布授权”（登记编者说明，非原文）。材料未提供该条的独立效果验证。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-cache-lifecycle-isolation-r1-8cdd759b"></a>
 ### 缓存生命周期与隔离约束
@@ -636,19 +636,19 @@
 |:---:|:---|:---|
 | 1 | 工具的名称 | 缓存生命周期与隔离约束 |
 | 2 | 是什么 | 现有登记摘要：缓存必须审查对象、状态版本、容量、隔离、失效和观测，不假定本地缓存自动共享或全局一致。 |
-| 3 | 为什么 | 待核：未单列采用动机；品级理由和摘要不能替代采用理由。须核第7项完整上下文。 |
-| 4 | 怎么做 | 待核：缺少可复现步骤；须回查第7项，不把机制摘要当流程。 |
-| 5 | 扩展 | 待核：未确认有据可查的变体/扩展；不按标题相似性推演。 |
+| 3 | 为什么 | 采用理由（编辑用途归纳）：面对“怎样避免缓存的正确性、隔离和成本误用”，本条以“缓存必须审查对象、状态版本、容量、隔离、失效和观测，不假定本地缓存自动共享或全局一致”提供理解或分析视角，可服务于围绕登记摘要所述主题形成分析依据。登记未记录作者历史采用动机；这里不声称效果已验证。 |
+| 4 | 怎么做 | 固定选区未给出“缓存生命周期与隔离约束”的可复现操作序列；登记机制摘要（编辑归纳）为“约束副作用与外部状态缓存，要求合理 key、容量上限、敏感数据隔离、失效策略及命中率观测；核对多进程和分布式语义”，仅用于解释主题“怎样避免缓存的正确性、隔离和成本误用”，不把编辑说明冒充原文步骤或效果证据。 |
+| 5 | 扩展 | 固定登记来源选区的核心内容是“缓存必须审查对象、状态版本、容量、隔离、失效和观测，不假定本地缓存自动共享或全局一致”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 稳定ID：gongfa-cache-lifecycle-isolation；内容版本：r1；本体类型：normative-allocation-content；身份状态：已登记。<br>既有品级与初评记录：品级意见：地阶初级；意见状态：provisional；任务族：有状态与多用户场景的缓存正确性设计；初评/上下文理由：预计在状态更新、多用户及多进程等困难任务中防止错值、泄漏与一致性误判；未提供失效实现、测试矩阵和阈值，地阶初级只针对这些任务族作预计。；反证条件：若预定义更新、隔离及多进程任务仍产生陈旧错值或跨用户泄漏，或内存和一致性成本高于省下的计算，则地阶预期不成立。；置信标签：medium；意见时间：2026-10-07T09:20:36.251520Z。此处为既有初评，不是正式效果评级。<br>关联候选/既有关系列表：未记录逐条关系。<br>关系登记不等于身份合并、比较结论或本体继承。 |
 | 7 | 出处 | 固定来源记录与原文定位（正文仍保存在对应唯一登记源或冻结原始载荷中；此处列源记录、选择器与SHA，不改写原文）：<br>{<br>  "source&#95;record": {<br>    "id": "repo-quality-gates-and-pitfalls-81fc7ae",<br>    "kind": "repository&#95;document",<br>    "path": ".github/docs/gongfa/quality-gates-and-pitfalls.md",<br>    "git&#95;revision": "81fc7ae599da7b7b0ce02ea0b069a2c88d288a4e",<br>    "captured&#95;at": "2026-10-07T09:20:36.250898Z",<br>    "snapshot&#95;path": ".github/metadata/gongfa/source-quality-gates-and-pitfalls-81fc7ae.txt",<br>    "snapshot&#95;sha256": "bf0f2ba0af22ff3e806695f42c23655ab957496faf01f4148f7a0ffa85840e0a",<br>    "text&#95;normalization": "markdown-section-trim-v1",<br>    "included&#95;anchors": &#91;<br>      "reference-engineering-practice-三新手常见复杂度误区",<br>      "reference-engineering-practice-六缓存误用"<br>    &#93;<br>  },<br>  "selection": {<br>    "source&#95;id": "repo-quality-gates-and-pitfalls-81fc7ae",<br>    "heading&#95;id": "reference-engineering-practice-六缓存误用",<br>    "selection": "markdown-section",<br>    "stop&#95;before": null<br>  },<br>  "text&#95;sha256": "3ca37523c3c65d4ed5db914528885cb9224ede6067c91e3a6e857585ebf28005",<br>  "source&#95;note": "下列原文按当前登记载荷保留；路径、版本与选区是登记记录，不等于独立书目或原著核验。",<br>  "original&#95;text&#95;sha256": "3ca37523c3c65d4ed5db914528885cb9224ede6067c91e3a6e857585ebf28005",<br>  "original&#95;text&#95;storage": ".github/metadata/gongfa/registry.json中的对应稳定ID与内容版本"<br>} |
-| 8 | 相关图书 | 待核：未提供逐条作者、书名、版本或章节；来源快照不构成书目。 |
+| 8 | 相关图书 | 本条绑定的来源记录为“repo-quality-gates-and-pitfalls-81fc7ae”（类型：repository&#95;document；定位：.github/docs/gongfa/quality-gates-and-pitfalls.md#reference-engineering-practice-六缓存误用）。登记未提供与本条直接对应、可核对作者/版本/章节的图书书目；不把项目文档或方法名称冒充图书。 |
 | 9 | 它要解决什么问题？ | 怎样避免缓存的正确性、隔离和成本误用。 |
-| 10 | 为什么这样设计？ | 待核：未记录设计理由；不把品级意见当作设计动机。 |
+| 10 | 为什么这样设计？ | 固定来源选区未单列作者历史设计动机。登记选区说明限定为“只收此独立限定节，不借同篇其他内容补字段；来源要求不成为本次执行或发布授权”；可见结构以“约束副作用与外部状态缓存，要求合理 key、容量上限、敏感数据隔离、失效策略及命中率观测；核对多进程和分布式语义”说明主题“缓存必须审查对象、状态版本、容量、隔离、失效和观测，不假定本地缓存自动共享或全局一致”与问题“怎样避免缓存的正确性、隔离和成本误用”的关系；这是编辑解释，不是作者意图陈述。 |
 | 11 | 内部如何实现？ | 约束副作用与外部状态缓存，要求合理 key、容量上限、敏感数据隔离、失效策略及命中率观测；核对多进程和分布式语义。 |
-| 12 | 付出了什么代价？ | 待核：操作、时间、资源及维护成本未核实；限制不等于成本。 |
-| 13 | 比较不同技术与方法。 | 待核：无同问题、同前提的方案比较；关联不等于优劣。 |
-| 14 | 提炼共同规律。 | 待核：缺少同目标比较，暂不归纳共同规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 登记适用条件（原登记字段）：原文针对带外部状态、用户级敏感数据、大型返回值及多进程/分布式缓存场景提出相应约束。<br>登记限制（原登记字段）：不应缓存带副作用函数或会频繁变化的数据。；单机或本地缓存不自动全局一致或进程共享。；避免计算不能以更高的内存和一致性成本为代价。<br>登记缺项标记：expected&#95;outcomes；questions<br>规律迁移条件与反例待核，不作普遍性推断。 |
+| 12 | 付出了什么代价？ | 定性应用代价（编辑推断）：按登记摘要中的“约束副作用与外部状态缓存，要求合理 key、容量上限、敏感数据隔离、失效策略及命中率观测；核对多进程和分布式语义”作取舍，需要情境判断并可能限制只追求短期便利的选择；应用范围改变时还须重核前提。登记的边界说明为“不应缓存带副作用函数或会频繁变化的数据；单机或本地缓存不自动全局一致或进程共享；避免计算不能以更高的内存和一致性成本为代价”（编辑归纳）。现有材料没有时间、资源或效能数值，不据此声称成本高低。 |
+| 13 | 比较不同技术与方法。 | 固定来源与登记摘要未提供针对“怎样避免缓存的正确性、隔离和成本误用”的同目标替代方案及可比结果。现阶段只能说明本条关注“缓存必须审查对象、状态版本、容量、隔离、失效和观测，不假定本地缓存自动共享或全局一致”；不编造比较对象，也不作效果或成本排名。 |
+| 14 | 提炼共同规律。 | 单条来源不足以证明跨对象共同规律。由本条可作的编辑性局部归纳是：把登记摘要“缓存必须审查对象、状态版本、容量、隔离、失效和观测，不假定本地缓存自动共享或全局一致”仅用于其所述主题“怎样避免缓存的正确性、隔离和成本误用”，不外推到未记录场景；这不是跨方法定律或效果保证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 适用条件：登记profile的编辑性条件摘要：原文针对带外部状态、用户级敏感数据、大型返回值及多进程/分布式缓存场景提出相应约束。边界：登记profile的编辑性边界摘要：不应缓存带副作用函数或会频繁变化的数据；单机或本地缓存不自动全局一致或进程共享；避免计算不能以更高的内存和一致性成本为代价。选区说明另限定：“只收此独立限定节，不借同篇其他内容补字段；来源要求不成为本次执行或发布授权”（登记编者说明，非原文）。材料未提供该条的独立效果验证。以上仅界定当前单条结论的适用范围，不证明跨场景普遍性、性能提升或业务正确性。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a015-06cc6912b1-r1-a560c3e9"></a>
 ### 3.5 效应局部化
@@ -656,20 +656,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.5 效应局部化 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：效应局部化要求相关行为和数据靠近，让修改影响尽量停留在小范围 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：影响面越小，理解、测试和修改越安全 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：把共同变化的代码聚集，建立清晰边界并缩小依赖范围 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：效应局部化要求相关行为和数据靠近，让修改影响尽量停留在小范围。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“影响面越小，理解、测试和修改越安全”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：把共同变化的代码聚集，建立清晰边界并缩小依赖范围。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“效应局部化要求相关行为和数据靠近，让修改影响尽量停留在小范围”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A015；登记ID：gongfa-candidate-html211-a015-06cc6912b1；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=高传播变更的边界设计；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=共同变化聚集并缩小依赖，预计在复杂联动修改中仍能压低遗漏和回归面。；置信标签=medium；反证条件=若困难变更依旧跨越大量无关模块，或局部化造成重复与集成失败，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/14",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A015；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A015",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-c5dc7080100f6f1862",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/4",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 14,<br>      "end": 17<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第29节《3.5 效应局部化》",<br>  "content&#95;sha256": "7ec8189a613a2dc68439eb6c5dda071d24d3cafa5f9c9d8a23d888f7c29ad425",<br>  "registry&#95;id": "gongfa-candidate-html211-a015-06cc6912b1",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第29节《3.5 效应局部化》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：高传播变更的边界设计（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：影响面越小，理解、测试和修改越安全；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：一次修改容易波及许多模块时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“效应局部化要求相关行为和数据靠近，让修改影响尽量停留在小范围”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“一次修改容易波及许多模块时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“影响面越小，理解、测试和修改越安全”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“效应局部化要求相关行为和数据靠近，让修改影响尽量停留在小范围”，与摘要问题“效应局部化要求相关行为和数据靠近，让修改影响尽量停留在小范围”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：效应局部化要求相关行为和数据靠近，让修改影响尽量停留在小范围；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：把共同变化的代码聚集，建立清晰边界并缩小依赖范围。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“3.5 效应局部化”（摘要：效应局部化要求相关行为和数据靠近，让修改影响尽量停留在小范围）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“3.5 效应局部化”的冻结快照仅给出“效应局部化要求相关行为和数据靠近，让修改影响尽量停留在小范围”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“一次修改容易波及许多模块时”下，按“把共同变化的代码聚集，建立清晰边界并缩小依赖范围”处理“效应局部化要求相关行为和数据靠近，让修改影响尽量停留在小范围”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：一次修改容易波及许多模块时。编者边界（未独立复核）：候选快照未提供“3.5 效应局部化”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a020-d685b68ee2-r1-70c933b6"></a>
 ### 3.10 变动率
@@ -677,20 +677,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.10 变动率 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：变动率要求按照变化原因与速度组织代码，让一起变化的内容靠近、不同步变化的内容分开 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：不同变化轴混在一起会造成不必要的联动修改 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：依据变化原因拆分职责，把同节奏变化的元素放在一起 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：变动率要求按照变化原因与速度组织代码，让一起变化的内容靠近、不同步变化的内容分开。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“不同变化轴混在一起会造成不必要的联动修改”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：依据变化原因拆分职责，把同节奏变化的元素放在一起。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“变动率要求按照变化原因与速度组织代码，让一起变化的内容靠近、不同步变化的内容分开”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A020；登记ID：gongfa-candidate-html211-a020-d685b68ee2；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=多变化轴模块划分；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=按变化原因与速度组织结构，预计在多类需求迁移中持续减少无关联动修改。；置信标签=medium；反证条件=若实际变化模式不匹配分组，或迁移任务修改范围没有下降，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/19",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A020；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A020",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-e4148b5fa5f9d31941",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/9",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 29,<br>      "end": 32<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第34节《3.10 变动率》",<br>  "content&#95;sha256": "d96c10fbed82536e46c2f8e25747f546fff6090b1231c3f573d52af13cb70128",<br>  "registry&#95;id": "gongfa-candidate-html211-a020-d685b68ee2",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第34节《3.10 变动率》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：多变化轴模块划分（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：不同变化轴混在一起会造成不必要的联动修改；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：一个模块内的内容因不同原因以不同频率变化时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“变动率要求按照变化原因与速度组织代码，让一起变化的内容靠近、不同步变化的内容分开”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“一个模块内的内容因不同原因以不同频率变化时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“不同变化轴混在一起会造成不必要的联动修改”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“变动率要求按照变化原因与速度组织代码，让一起变化的内容靠近、不同步变化的内容分开”，与摘要问题“变动率要求按照变化原因与速度组织代码，让一起变化的内容靠近、不同步变化的内容分开”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：变动率要求按照变化原因与速度组织代码，让一起变化的内容靠近、不同步变化的内容分开；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：依据变化原因拆分职责，把同节奏变化的元素放在一起。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“3.10 变动率”（摘要：变动率要求按照变化原因与速度组织代码，让一起变化的内容靠近、不同步变化的内容分开）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“3.10 变动率”的冻结快照仅给出“变动率要求按照变化原因与速度组织代码，让一起变化的内容靠近、不同步变化的内容分开”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“一个模块内的内容因不同原因以不同频率变化时”下，按“依据变化原因拆分职责，把同节奏变化的元素放在一起”处理“变动率要求按照变化原因与速度组织代码，让一起变化的内容靠近、不同步变化的内容分开”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：一个模块内的内容因不同原因以不同频率变化时。编者边界（未独立复核）：候选快照未提供“3.10 变动率”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a021-50d43b8d88-r1-90a651d1"></a>
 ### 3.11 软件架构基本技法
@@ -698,20 +698,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.11 软件架构基本技法 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：软件架构基本技法是一组通过边界、抽象和分解来控制复杂性的通用工具 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：结构化控制复杂性可以限制变化传播并提升理解能力 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：综合使用抽象、封装、信息隐藏、分离和分治等技法 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：软件架构基本技法是一组通过边界、抽象和分解来控制复杂性的通用工具。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“结构化控制复杂性可以限制变化传播并提升理解能力”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：综合使用抽象、封装、信息隐藏、分离和分治等技法。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“软件架构基本技法是一组通过边界、抽象和分解来控制复杂性的通用工具”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A021；登记ID：gongfa-candidate-html211-a021-50d43b8d88；内容版本：r1；本体类型：dao-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=复杂系统模块与接口设计；类型理由=相对独立的解释、准则或操作集合共同出现；不自动拆成新身份或本体子类。；理由=综合边界、分离和组合技法，预计帮助处理困难的依赖与集成任务；集合数量不构成评级理由。；置信标签=low；反证条件=若组合技法在困难系统中冲突、增加所有权或不能改善验收与维护，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "复合",<br>  "related&#95;framework&#95;view": "/frameworks/20",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A021；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A021",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-5c601de053e8060c6a",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/10",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 32,<br>      "end": 35<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第35节《3.11 软件架构基本技法》",<br>  "content&#95;sha256": "b3276917cc235da5e8660e95eb413d8bfb6ab975d16fcd92a936cb0fa4bacc2a",<br>  "registry&#95;id": "gongfa-candidate-html211-a021-50d43b8d88",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第35节《3.11 软件架构基本技法》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：复杂系统模块与接口设计（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：结构化控制复杂性可以限制变化传播并提升理解能力；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：需要设计模块、接口和依赖结构时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“软件架构基本技法是一组通过边界、抽象和分解来控制复杂性的通用工具”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“需要设计模块、接口和依赖结构时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“结构化控制复杂性可以限制变化传播并提升理解能力”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“软件架构基本技法是一组通过边界、抽象和分解来控制复杂性的通用工具”，与摘要问题“软件架构基本技法是一组通过边界、抽象和分解来控制复杂性的通用工具”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于dao-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：软件架构基本技法是一组通过边界、抽象和分解来控制复杂性的通用工具；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：综合使用抽象、封装、信息隐藏、分离和分治等技法。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“3.11 软件架构基本技法”（摘要：软件架构基本技法是一组通过边界、抽象和分解来控制复杂性的通用工具）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“3.11 软件架构基本技法”的冻结快照仅给出“软件架构基本技法是一组通过边界、抽象和分解来控制复杂性的通用工具”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“需要设计模块、接口和依赖结构时”下，按“综合使用抽象、封装、信息隐藏、分离和分治等技法”处理“软件架构基本技法是一组通过边界、抽象和分解来控制复杂性的通用工具”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：需要设计模块、接口和依赖结构时。编者边界（未独立复核）：候选快照未提供“3.11 软件架构基本技法”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a024-bf25a9ae50-r1-715b460d"></a>
 ### 3.14 信息隐藏
@@ -719,20 +719,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.14 信息隐藏 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：信息隐藏要求主动隐藏可能变化的设计决策，只暴露稳定事实 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：隐藏变化点能把未来修改限制在局部 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：把易变决策放在模块内部，用稳定接口隔离调用方 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：信息隐藏要求主动隐藏可能变化的设计决策，只暴露稳定事实。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“隐藏变化点能把未来修改限制在局部”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：把易变决策放在模块内部，用稳定接口隔离调用方。相关边界（候选编者说明，未独立复核）：不能隐藏权限、错误语义或调用者必须理解的契约；信息隐藏不等于把所有东西变成private。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“信息隐藏要求主动隐藏可能变化的设计决策，只暴露稳定事实”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A024；登记ID：gongfa-candidate-html211-a024-bf25a9ae50；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=易变决策隔离；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=隐藏易变选择并暴露稳定事实，预计在困难的技术替换和需求迁移中仍限制修改传播。；置信标签=medium；反证条件=若内部选择仍泄漏到调用者，或隐藏了必要错误与权限合同，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "准则",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "A024",<br>    "value": "隐藏易变设计决策，限制修改传播。",<br>    "boundary": "不能隐藏权限、错误语义或调用者必须理解的契约；信息隐藏不等于把所有东西变成private。"<br>  },<br>  "related&#95;framework&#95;view": "/frameworks/23",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-stable-interface-contract"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A024；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A024",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-ce54b2349703a52796",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/13",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 41,<br>      "end": 44<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第38节《3.14 信息隐藏》",<br>  "content&#95;sha256": "6b73ad0ddc88b26f092dcb0e1d43b0ecc846eb4c5473f88476198647945580b0",<br>  "registry&#95;id": "gongfa-candidate-html211-a024-bf25a9ae50",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第38节《3.14 信息隐藏》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：易变决策隔离（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：隐藏变化点能把未来修改限制在局部；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：某项内部选择可能变化且不应影响调用者时；既有候选编辑边界（非独立原著核验）：不能隐藏权限、错误语义或调用者必须理解的契约；信息隐藏不等于把所有东西变成private。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“信息隐藏要求主动隐藏可能变化的设计决策，只暴露稳定事实”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“某项内部选择可能变化且不应影响调用者时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“隐藏变化点能把未来修改限制在局部”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“隐藏易变设计决策，限制修改传播”，与摘要问题“信息隐藏要求主动隐藏可能变化的设计决策，只暴露稳定事实”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：隐藏易变设计决策，限制修改传播；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：把易变决策放在模块内部，用稳定接口隔离调用方。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“3.14 信息隐藏”（摘要：信息隐藏要求主动隐藏可能变化的设计决策，只暴露稳定事实）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照的编辑边界为“不能隐藏权限、错误语义或调用者必须理解的契约；信息隐藏不等于把所有东西变成private”；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“3.14 信息隐藏”（信息隐藏要求主动隐藏可能变化的设计决策，只暴露稳定事实），冻结快照的编者分析列出关联线索“稳定接口与可变实现”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“稳定接口与可变实现”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“某项内部选择可能变化且不应影响调用者时”下，按“把易变决策放在模块内部，用稳定接口隔离调用方”处理“信息隐藏要求主动隐藏可能变化的设计决策，只暴露稳定事实”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：某项内部选择可能变化且不应影响调用者时。编者边界（未独立复核）：不能隐藏权限、错误语义或调用者必须理解的契约；信息隐藏不等于把所有东西变成private。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a026-e12e411313-r1-5e05835d"></a>
 ### 3.16 关注点分离
@@ -740,20 +740,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.16 关注点分离 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：关注点分离要求把不同问题域或责任拆开处理，避免相互纠缠 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：分离后每个部分更容易理解、替换和测试 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：识别不同关注点并为其建立独立结构或层 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：关注点分离要求把不同问题域或责任拆开处理，避免相互纠缠。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“分离后每个部分更容易理解、替换和测试”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：识别不同关注点并为其建立独立结构或层。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“关注点分离要求把不同问题域或责任拆开处理，避免相互纠缠”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A026；登记ID：gongfa-candidate-html211-a026-e12e411313；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=交织职责的分离；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=分离独立关注点预计在复杂替换和局部验证任务中仍提高可控性。；置信标签=medium；反证条件=若关注点并不独立，或拆分后的协调与一致性成本抵消收益，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/25",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A026；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A026",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-d5eb9c96b7333decdd",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/15",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 47,<br>      "end": 50<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第40节《3.16 关注点分离》",<br>  "content&#95;sha256": "2d6a5ee033f8aeb17bce144271ccb5cf84ad31c6410d156da2ed81c21c31e40f",<br>  "registry&#95;id": "gongfa-candidate-html211-a026-e12e411313",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第40节《3.16 关注点分离》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：交织职责的分离（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：分离后每个部分更容易理解、替换和测试；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：一个模块同时处理多个独立关注点时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“关注点分离要求把不同问题域或责任拆开处理，避免相互纠缠”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“一个模块同时处理多个独立关注点时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“分离后每个部分更容易理解、替换和测试”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“关注点分离要求把不同问题域或责任拆开处理，避免相互纠缠”，与摘要问题“关注点分离要求把不同问题域或责任拆开处理，避免相互纠缠”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：关注点分离要求把不同问题域或责任拆开处理，避免相互纠缠；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：识别不同关注点并为其建立独立结构或层。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“3.16 关注点分离”（摘要：关注点分离要求把不同问题域或责任拆开处理，避免相互纠缠）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“3.16 关注点分离”的冻结快照仅给出“关注点分离要求把不同问题域或责任拆开处理，避免相互纠缠”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“一个模块同时处理多个独立关注点时”下，按“识别不同关注点并为其建立独立结构或层”处理“关注点分离要求把不同问题域或责任拆开处理，避免相互纠缠”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：一个模块同时处理多个独立关注点时。编者边界（未独立复核）：候选快照未提供“3.16 关注点分离”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a031-024415ebde-r1-7a3ea07c"></a>
 ### 3.21 分治
@@ -761,20 +761,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.21 分治 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：分治把复杂问题拆成较小、边界清晰的问题分别解决再组合 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：小问题更易理解、验证和复用，整体复杂度更可控 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：沿职责、数据或流程边界分解，再定义清楚的组合方式 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：分治把复杂问题拆成较小、边界清晰的问题分别解决再组合。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“小问题更易理解、验证和复用，整体复杂度更可控”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：沿职责、数据或流程边界分解，再定义清楚的组合方式。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“分治把复杂问题拆成较小、边界清晰的问题分别解决再组合”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A031；登记ID：gongfa-candidate-html211-a031-024415ebde；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=复杂问题分解与再集成；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=明确较小边界并定义组合方式，预计困难任务中仍降低单次理解负担；拆完未集成不算达标。；置信标签=medium；反证条件=若分解不能保留整体约束，或集成代价抵消局部收益，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "方法",<br>  "related&#95;framework&#95;view": "/frameworks/30",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-divide-and-conquer"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A031；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A031",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-76d4e96a72f98ae469",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/20",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 62,<br>      "end": 65<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第45节《3.21 分治》",<br>  "content&#95;sha256": "0af7402bfe164e75ba9b5c786f991bd6159a90444b2cc9cdd853fd30b34773fb",<br>  "registry&#95;id": "gongfa-candidate-html211-a031-024415ebde",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第45节《3.21 分治》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：复杂问题分解与再集成（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：小问题更易理解、验证和复用，整体复杂度更可控；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：问题规模超过一次性理解和处理能力时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“分治把复杂问题拆成较小、边界清晰的问题分别解决再组合”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“问题规模超过一次性理解和处理能力时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“小问题更易理解、验证和复用，整体复杂度更可控”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“分治把复杂问题拆成较小、边界清晰的问题分别解决再组合”，与摘要问题“分治把复杂问题拆成较小、边界清晰的问题分别解决再组合”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于method-specification，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：分治把复杂问题拆成较小、边界清晰的问题分别解决再组合；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：沿职责、数据或流程边界分解，再定义清楚的组合方式。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“3.21 分治”（摘要：分治把复杂问题拆成较小、边界清晰的问题分别解决再组合）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“3.21 分治”（分治把复杂问题拆成较小、边界清晰的问题分别解决再组合），冻结快照的编者分析列出关联线索“分而治之”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“分而治之”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“问题规模超过一次性理解和处理能力时”下，按“沿职责、数据或流程边界分解，再定义清楚的组合方式”处理“分治把复杂问题拆成较小、边界清晰的问题分别解决再组合”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：问题规模超过一次性理解和处理能力时。编者边界（未独立复核）：候选快照未提供“3.21 分治”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a032-5968f80b4e-r1-45d3b84e"></a>
 ### 3.22 软件架构的非功能需求
@@ -782,20 +782,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.22 软件架构的非功能需求 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：非功能需求从易变性、互操作性、效率、可靠性、可测试性和可复用性等维度约束架构质量 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：系统质量由功能之外的结构属性共同决定 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：逐项检查关键非功能属性，并根据语境权衡冲突 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：非功能需求从易变性、互操作性、效率、可靠性、可测试性和可复用性等维度约束架构质量。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“系统质量由功能之外的结构属性共同决定”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：逐项检查关键非功能属性，并根据语境权衡冲突。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“非功能需求从易变性、互操作性、效率、可靠性、可测试性和可复用性等维度约束架构质量”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A032；登记ID：gongfa-candidate-html211-a032-5968f80b4e；内容版本：r1；本体类型：dao-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=困难架构质量权衡；类型理由=相对独立的解释、准则或操作集合共同出现；不自动拆成新身份或本体子类。；理由=同时审查非功能维度与CIA，预计在功能正确但质量冲突的任务中减少遗漏。；置信标签=low；反证条件=若检查未暴露真实质量冲突，或难任务依然违反安全及可靠性验收，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "复合",<br>  "related&#95;framework&#95;view": "/frameworks/31",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A032；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A032",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-67685773b60ffdf639",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/21",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 65,<br>      "end": 68<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第46节《3.22 软件架构的非功能需求》",<br>  "content&#95;sha256": "e0abd4177f9fb9910a8dc245e7c6d5ed1bff50ed41a331478e8f0f7f45faf3fe",<br>  "registry&#95;id": "gongfa-candidate-html211-a032-5968f80b4e",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第46节《3.22 软件架构的非功能需求》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：困难架构质量权衡（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：系统质量由功能之外的结构属性共同决定；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：方案功能正确但仍需评价长期质量时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“非功能需求从易变性、互操作性、效率、可靠性、可测试性和可复用性等维度约束架构质量”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“方案功能正确但仍需评价长期质量时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“系统质量由功能之外的结构属性共同决定”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“非功能需求从易变性、互操作性、效率、可靠性、可测试性和可复用性等维度约束架构质量”，与摘要问题“非功能需求从易变性、互操作性、效率、可靠性、可测试性和可复用性等维度约束架构质量”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于dao-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：非功能需求从易变性、互操作性、效率、可靠性、可测试性和可复用性等维度约束架构质量；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：逐项检查关键非功能属性，并根据语境权衡冲突。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“3.22 软件架构的非功能需求”（摘要：非功能需求从易变性、互操作性、效率、可靠性、可测试性和可复用性等维度约束架构质量）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“3.22 软件架构的非功能需求”的冻结快照仅给出“非功能需求从易变性、互操作性、效率、可靠性、可测试性和可复用性等维度约束架构质量”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“方案功能正确但仍需评价长期质量时”下，按“逐项检查关键非功能属性，并根据语境权衡冲突”处理“非功能需求从易变性、互操作性、效率、可靠性、可测试性和可复用性等维度约束架构质量”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：方案功能正确但仍需评价长期质量时。编者边界（未独立复核）：候选快照未提供“3.22 软件架构的非功能需求”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a036-679b43ad9f-r1-f5ff7f64"></a>
 ### 3.26 可靠性
@@ -803,20 +803,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.26 可靠性 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：可靠性要求软件在预期条件下持续给出正确结果，并能控制故障影响 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：可靠性来自对错误和变化传播的持续控制 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：通过简单结构、检查、测试和故障隔离提高确定性 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：可靠性要求软件在预期条件下持续给出正确结果，并能控制故障影响。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“可靠性来自对错误和变化传播的持续控制”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：通过简单结构、检查、测试和故障隔离提高确定性。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“可靠性要求软件在预期条件下持续给出正确结果，并能控制故障影响”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A036；登记ID：gongfa-candidate-html211-a036-679b43ad9f；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=高损失故障影响控制；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=简单结构、检查与隔离预计在困难异常场景中仍约束错误传播；不是不故障保证。；置信标签=medium；反证条件=若异常仍越过隔离边界造成数据损坏或恢复失败，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/35",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A036；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A036",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-11af53439a531767da",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/25",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 77,<br>      "end": 80<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第50节《3.26 可靠性》",<br>  "content&#95;sha256": "4fe7648549cf5e0b2e4fbbe1758ba533fab6388c08c30ab662c1c415f896e973",<br>  "registry&#95;id": "gongfa-candidate-html211-a036-679b43ad9f",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第50节《3.26 可靠性》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：高损失故障影响控制（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：可靠性来自对错误和变化传播的持续控制；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：错误可能造成较大业务或数据损失时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“可靠性要求软件在预期条件下持续给出正确结果，并能控制故障影响”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“错误可能造成较大业务或数据损失时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“可靠性来自对错误和变化传播的持续控制”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“可靠性要求软件在预期条件下持续给出正确结果，并能控制故障影响”，与摘要问题“可靠性要求软件在预期条件下持续给出正确结果，并能控制故障影响”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：可靠性要求软件在预期条件下持续给出正确结果，并能控制故障影响；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：通过简单结构、检查、测试和故障隔离提高确定性。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“3.26 可靠性”（摘要：可靠性要求软件在预期条件下持续给出正确结果，并能控制故障影响）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“3.26 可靠性”的冻结快照仅给出“可靠性要求软件在预期条件下持续给出正确结果，并能控制故障影响”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“错误可能造成较大业务或数据损失时”下，按“通过简单结构、检查、测试和故障隔离提高确定性”处理“可靠性要求软件在预期条件下持续给出正确结果，并能控制故障影响”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：错误可能造成较大业务或数据损失时。编者边界（未独立复核）：候选快照未提供“3.26 可靠性”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a037-e31b4b317d-r1-b10b82fa"></a>
 ### 3.27 可测试性
@@ -824,20 +824,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.27 可测试性 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：可测试性要求设计让行为能被独立观察、输入可控、结果可验证 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：可测试结构能更早发现回归并支持安全修改 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：降低隐藏依赖，拆分职责并提供可控接口 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：可测试性要求设计让行为能被独立观察、输入可控、结果可验证。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“可测试结构能更早发现回归并支持安全修改”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：降低隐藏依赖，拆分职责并提供可控接口。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“可测试性要求设计让行为能被独立观察、输入可控、结果可验证”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A037；登记ID：gongfa-candidate-html211-a037-e31b4b317d；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=难观察和难复现行为设计；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=可控输入、独立观察与显式接口预计在困难回归和迁移任务中仍改善验证能力。；置信标签=medium；反证条件=若关键行为依然不可观察或结果oracle无效，新增可测试结构没有实际覆盖收益，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/36",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A037；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A037",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-3998c7bacdf27b5a3e",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/26",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 80,<br>      "end": 83<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第51节《3.27 可测试性》",<br>  "content&#95;sha256": "847849f98ff8b1b4d4eca47db090f3fbf58aea4aa9e8401a25f67608b1277a15",<br>  "registry&#95;id": "gongfa-candidate-html211-a037-e31b4b317d",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第51节《3.27 可测试性》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：难观察和难复现行为设计（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：可测试结构能更早发现回归并支持安全修改；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：测试难以编写或故障只能靠集成环境复现时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“可测试性要求设计让行为能被独立观察、输入可控、结果可验证”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“测试难以编写或故障只能靠集成环境复现时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“可测试结构能更早发现回归并支持安全修改”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“可测试性要求设计让行为能被独立观察、输入可控、结果可验证”，与摘要问题“可测试性要求设计让行为能被独立观察、输入可控、结果可验证”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：可测试性要求设计让行为能被独立观察、输入可控、结果可验证；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：降低隐藏依赖，拆分职责并提供可控接口。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“3.27 可测试性”（摘要：可测试性要求设计让行为能被独立观察、输入可控、结果可验证）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“3.27 可测试性”的冻结快照仅给出“可测试性要求设计让行为能被独立观察、输入可控、结果可验证”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“测试难以编写或故障只能靠集成环境复现时”下，按“降低隐藏依赖，拆分职责并提供可控接口”处理“可测试性要求设计让行为能被独立观察、输入可控、结果可验证”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：测试难以编写或故障只能靠集成环境复现时。编者边界（未独立复核）：候选快照未提供“3.27 可测试性”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a046-53cc237933-r1-a48887cf"></a>
 ### 3.36 安全原理
@@ -845,20 +845,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.36 安全原理 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：安全原理要求面对异常与误用时限制损害，并把失败尽早暴露 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：控制错误传播可以保护数据和后续处理 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：验证边界、隔离风险并在异常状态下安全失败 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：安全原理要求面对异常与误用时限制损害，并把失败尽早暴露。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“控制错误传播可以保护数据和后续处理”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：验证边界、隔离风险并在异常状态下安全失败。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“安全原理要求面对异常与误用时限制损害，并把失败尽早暴露”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A046；登记ID：gongfa-candidate-html211-a046-53cc237933；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=不可信输入与高代价异常；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=边界验证、隔离与安全失败预计在困难异常任务中仍保护数据与后续处理。；置信标签=medium；反证条件=若允许输入被错拒、非法状态漏过或失败方式损坏数据，则推翻。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/45",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A046；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A046",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-1d60a042d4c97a0393",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/35",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 107,<br>      "end": 110<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第60节《3.36 安全原理》",<br>  "content&#95;sha256": "1fb31f177fd730b49a8d82b7f24c68b4a93e48bcc0d4259e30bb545f541f9fd5",<br>  "registry&#95;id": "gongfa-candidate-html211-a046-53cc237933",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第60节《3.36 安全原理》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：不可信输入与高代价异常（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：控制错误传播可以保护数据和后续处理；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：输入不可信、状态可能异常或错误代价高时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“安全原理要求面对异常与误用时限制损害，并把失败尽早暴露”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“输入不可信、状态可能异常或错误代价高时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“控制错误传播可以保护数据和后续处理”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“安全原理要求面对异常与误用时限制损害，并把失败尽早暴露”，与摘要问题“安全原理要求面对异常与误用时限制损害，并把失败尽早暴露”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：安全原理要求面对异常与误用时限制损害，并把失败尽早暴露；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：验证边界、隔离风险并在异常状态下安全失败。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 候选快照把“输入不可信、状态可能异常或错误代价高时”作为适用情境/风险线索；其中提到的成本不是该方法本身付出的代价。选区未提供本条采用或执行的工时、资源测量；候选内容尚未独立语义复核。 |
+| 13 | 比较不同技术与方法。 | 候选“3.36 安全原理”的冻结快照仅给出“安全原理要求面对异常与误用时限制损害，并把失败尽早暴露”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“输入不可信、状态可能异常或错误代价高时”下，按“验证边界、隔离风险并在异常状态下安全失败”处理“安全原理要求面对异常与误用时限制损害，并把失败尽早暴露”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：输入不可信、状态可能异常或错误代价高时。编者边界（未独立复核）：候选快照未提供“3.36 安全原理”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a047-a2eb81f750-r1-94df154d"></a>
 ### 3.37 UNIX思想
@@ -866,20 +866,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.37 UNIX思想 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：UNIX思想以模块化、组合、清晰和简单等原则构造可协作工具生态 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：独立小工具通过清晰协议组合，整体更灵活 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：优先小模块、文本/标准接口与可组合性 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：UNIX思想以模块化、组合、清晰和简单等原则构造可协作工具生态。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“独立小工具通过清晰协议组合，整体更灵活”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：优先小模块、文本/标准接口与可组合性。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“UNIX思想以模块化、组合、清晰和简单等原则构造可协作工具生态”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A047；登记ID：gongfa-candidate-html211-a047-a2eb81f750；内容版本：r1；本体类型：dao-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=可组合工具生态设计；类型理由=相对独立的解释、准则或操作集合共同出现；不自动拆成新身份或本体子类。；理由=透明小模块和清晰协议预计在异构工具集成中仍减少联动故障与重复实现。；置信标签=low；反证条件=若组合接口损失关键语义，或集成与授权成本抵消小模块收益，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "复合",<br>  "related&#95;framework&#95;view": "/frameworks/46",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A047；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A047",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-579e82a856e7d873aa",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/36",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 110,<br>      "end": 113<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第61节《3.37 UNIX思想》",<br>  "content&#95;sha256": "950a20787cc5dce17b170b1107418d5a762d308565dca7103abe2333ec070d9b",<br>  "registry&#95;id": "gongfa-candidate-html211-a047-a2eb81f750",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第61节《3.37 UNIX思想》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：可组合工具生态设计（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：独立小工具通过清晰协议组合，整体更灵活；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：设计命令行工具、服务或可组合模块时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“UNIX思想以模块化、组合、清晰和简单等原则构造可协作工具生态”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“设计命令行工具、服务或可组合模块时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“独立小工具通过清晰协议组合，整体更灵活”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“UNIX思想以模块化、组合、清晰和简单等原则构造可协作工具生态”，与摘要问题“UNIX思想以模块化、组合、清晰和简单等原则构造可协作工具生态”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于dao-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：UNIX思想以模块化、组合、清晰和简单等原则构造可协作工具生态；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：优先小模块、文本/标准接口与可组合性。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“3.37 UNIX思想”（摘要：UNIX思想以模块化、组合、清晰和简单等原则构造可协作工具生态）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“3.37 UNIX思想”的冻结快照仅给出“UNIX思想以模块化、组合、清晰和简单等原则构造可协作工具生态”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“设计命令行工具、服务或可组合模块时”下，按“优先小模块、文本/标准接口与可组合性”处理“UNIX思想以模块化、组合、清晰和简单等原则构造可协作工具生态”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：设计命令行工具、服务或可组合模块时。编者边界（未独立复核）：候选快照未提供“3.37 UNIX思想”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a054-0ce46b5a22-r1-500907d1"></a>
 ### 3.44 透明性原则
@@ -887,20 +887,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.44 透明性原则 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：透明性原则要求系统的行为和状态可被观察，便于理解与诊断 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：可见性让问题更容易理解和修复 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：让关键状态、数据流和行为可检查 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：透明性原则要求系统的行为和状态可被观察，便于理解与诊断。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“可见性让问题更容易理解和修复”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：让关键状态、数据流和行为可检查。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“透明性原则要求系统的行为和状态可被观察，便于理解与诊断”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A054；登记ID：gongfa-candidate-html211-a054-0ce46b5a22；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=隐藏状态的困难诊断；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=关键状态与数据流可检查，预计在跨模块异常中仍缩短候选根因定位范围。；置信标签=medium；反证条件=若观测误导、造成敏感数据暴露或扰动过大，且诊断质量未改善，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/53",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A054；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A054",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-88ded59960d9ff447d",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/43",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 131,<br>      "end": 134<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第68节《3.44 透明性原则》",<br>  "content&#95;sha256": "4bd91d865cdd38b5286c092a398ed26b928d3734caa65236cdedc042df04bbe7",<br>  "registry&#95;id": "gongfa-candidate-html211-a054-0ce46b5a22",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第68节《3.44 透明性原则》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：隐藏状态的困难诊断（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：可见性让问题更容易理解和修复；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：错误难以定位或运行机制过于隐蔽时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“透明性原则要求系统的行为和状态可被观察，便于理解与诊断”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“错误难以定位或运行机制过于隐蔽时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“可见性让问题更容易理解和修复”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“透明性原则要求系统的行为和状态可被观察，便于理解与诊断”，与摘要问题“透明性原则要求系统的行为和状态可被观察，便于理解与诊断”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：透明性原则要求系统的行为和状态可被观察，便于理解与诊断；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：让关键状态、数据流和行为可检查。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“3.44 透明性原则”（摘要：透明性原则要求系统的行为和状态可被观察，便于理解与诊断）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“3.44 透明性原则”的冻结快照仅给出“透明性原则要求系统的行为和状态可被观察，便于理解与诊断”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“错误难以定位或运行机制过于隐蔽时”下，按“让关键状态、数据流和行为可检查”处理“透明性原则要求系统的行为和状态可被观察，便于理解与诊断”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：错误难以定位或运行机制过于隐蔽时。编者边界（未独立复核）：候选快照未提供“3.44 透明性原则”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a059-7a44075e45-r1-b0a21d91"></a>
 ### 3.49 修复原则
@@ -908,20 +908,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.49 修复原则 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：修复原则要求失败应显著且尽可能早，错误信息要帮助定位原因 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：延迟和隐蔽失败会扩大损害并增加排查难度 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：显式报告并尽早终止或隔离，避免悄悄带错运行 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：修复原则要求失败应显著且尽可能早，错误信息要帮助定位原因。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“延迟和隐蔽失败会扩大损害并增加排查难度”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：显式报告并尽早终止或隔离，避免悄悄带错运行。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“修复原则要求失败应显著且尽可能早，错误信息要帮助定位原因”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A059；登记ID：gongfa-candidate-html211-a059-7a44075e45；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=错误早暴露与隔离；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=显著且早期的失败预计在困难异常链中减少带错继续运行及损害扩大。；置信标签=medium；反证条件=若错误被延迟吞掉、没有有效定位信息或退出导致更大不可恢复损失，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/58",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A059；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A059",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-e822fdc556bfae01ec",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/48",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 146,<br>      "end": 149<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第73节《3.49 修复原则》",<br>  "content&#95;sha256": "60bad0de2b5fb379b99b36fe2217fb9909f624767635b2e37fa06ad0766a4276",<br>  "registry&#95;id": "gongfa-candidate-html211-a059-7a44075e45",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第73节《3.49 修复原则》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：错误早暴露与隔离（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：延迟和隐蔽失败会扩大损害并增加排查难度；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：程序无法可靠继续运行或输入严重异常时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“修复原则要求失败应显著且尽可能早，错误信息要帮助定位原因”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“程序无法可靠继续运行或输入严重异常时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“延迟和隐蔽失败会扩大损害并增加排查难度”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“修复原则要求失败应显著且尽可能早，错误信息要帮助定位原因”，与摘要问题“修复原则要求失败应显著且尽可能早，错误信息要帮助定位原因”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：修复原则要求失败应显著且尽可能早，错误信息要帮助定位原因；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：显式报告并尽早终止或隔离，避免悄悄带错运行。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“3.49 修复原则”（摘要：修复原则要求失败应显著且尽可能早，错误信息要帮助定位原因）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“3.49 修复原则”的冻结快照仅给出“修复原则要求失败应显著且尽可能早，错误信息要帮助定位原因”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“程序无法可靠继续运行或输入严重异常时”下，按“显式报告并尽早终止或隔离，避免悄悄带错运行”处理“修复原则要求失败应显著且尽可能早，错误信息要帮助定位原因”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：程序无法可靠继续运行或输入严重异常时。编者边界（未独立复核）：候选快照未提供“3.49 修复原则”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a065-d9a824d7f0-r1-8eddc9b2"></a>
 ### 3.55 UNIX哲学
@@ -929,20 +929,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.55 UNIX哲学 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：UNIX哲学把小程序、单一职责、文本数据、组合与过滤器连接成工作方式 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：统一简单接口使工具之间产生杠杆效应 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：让工具小而专一，以文本/管道连接，并优先组合现有能力 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：UNIX哲学把小程序、单一职责、文本数据、组合与过滤器连接成工作方式。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“统一简单接口使工具之间产生杠杆效应”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：让工具小而专一，以文本/管道连接，并优先组合现有能力。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“UNIX哲学把小程序、单一职责、文本数据、组合与过滤器连接成工作方式”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A065；登记ID：gongfa-candidate-html211-a065-d9a824d7f0；内容版本：r1；本体类型：dao-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=异构自动化工具链构建；类型理由=相对独立的解释、准则或操作集合共同出现；不自动拆成新身份或本体子类。；理由=专一工具通过简单接口组合，预计在困难工具链重组中仍能复用与局部替换。；置信标签=low；反证条件=若文本和管道损失语义或出现不可控失败链，重组任务无法可靠验收，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "复合",<br>  "related&#95;framework&#95;view": "/frameworks/64",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A065；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A065",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-d9f95ac1a008238cf4",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/54",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 164,<br>      "end": 167<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第79节《3.55 UNIX哲学》",<br>  "content&#95;sha256": "3937e6a028bb323afeb2e86d91e9bda149a172b5ce14555a53818688c149941e",<br>  "registry&#95;id": "gongfa-candidate-html211-a065-d9a824d7f0",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第79节《3.55 UNIX哲学》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：异构自动化工具链构建（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：统一简单接口使工具之间产生杠杆效应；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：构建可复用工具链或自动化环境时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“UNIX哲学把小程序、单一职责、文本数据、组合与过滤器连接成工作方式”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“构建可复用工具链或自动化环境时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“统一简单接口使工具之间产生杠杆效应”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“UNIX哲学把小程序、单一职责、文本数据、组合与过滤器连接成工作方式”，与摘要问题“UNIX哲学把小程序、单一职责、文本数据、组合与过滤器连接成工作方式”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于dao-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：UNIX哲学把小程序、单一职责、文本数据、组合与过滤器连接成工作方式；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：让工具小而专一，以文本/管道连接，并优先组合现有能力。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“3.55 UNIX哲学”（摘要：UNIX哲学把小程序、单一职责、文本数据、组合与过滤器连接成工作方式）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“3.55 UNIX哲学”的冻结快照仅给出“UNIX哲学把小程序、单一职责、文本数据、组合与过滤器连接成工作方式”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“构建可复用工具链或自动化环境时”下，按“让工具小而专一，以文本/管道连接，并优先组合现有能力”处理“UNIX哲学把小程序、单一职责、文本数据、组合与过滤器连接成工作方式”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：构建可复用工具链或自动化环境时。编者边界（未独立复核）：候选快照未提供“3.55 UNIX哲学”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a071-aca090447f-r1-89c1b77d"></a>
 ### 3.61 充分利用软件的杠杆效应
@@ -950,20 +950,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 3.61 充分利用软件的杠杆效应 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：软件杠杆效应来自复用既有程序与自动化，让少量代码驱动大量工作 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：复用成熟工具可以用更低成本获得更大产出 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：先搜索并组合现有能力，再补最少的新代码 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：软件杠杆效应来自复用既有程序与自动化，让少量代码驱动大量工作。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“复用成熟工具可以用更低成本获得更大产出”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：先搜索并组合现有能力，再补最少的新代码。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“软件杠杆效应来自复用既有程序与自动化，让少量代码驱动大量工作”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A071；登记ID：gongfa-candidate-html211-a071-aca090447f；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=成熟能力复用与业务编排；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=复用已有工具再补必要代码，预计在困难集成任务中仍降低自研核心的维护投入。；置信标签=medium；反证条件=若成熟工具不满足关键约束或集成成本更高，不能据杠杆口号坚持复用，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/70",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-glue-principle"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A071；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A071",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-a1b66ea678ceb9b965",<br>    "json&#95;pointer": "/contentUnits/3/excerpts/60",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/3/passages",<br>      "start": 182,<br>      "end": 185<br>    }<br>  },<br>  "declared&#95;upstream": "第3章《思想》 · EPUB第85节《3.61 充分利用软件的杠杆效应》",<br>  "content&#95;sha256": "c3942239c5412f79855cc33b70a566b8c3b7d5097c3c7d0d034b9a9382ea51ef",<br>  "registry&#95;id": "gongfa-candidate-html211-a071-aca090447f",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第3章《思想》 · EPUB第85节《3.61 充分利用软件的杠杆效应》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：成熟能力复用与业务编排（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：复用成熟工具可以用更低成本获得更大产出；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：已有工具能够完成部分任务时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“软件杠杆效应来自复用既有程序与自动化，让少量代码驱动大量工作”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“已有工具能够完成部分任务时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“复用成熟工具可以用更低成本获得更大产出”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“软件杠杆效应来自复用既有程序与自动化，让少量代码驱动大量工作”，与摘要问题“软件杠杆效应来自复用既有程序与自动化，让少量代码驱动大量工作”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：软件杠杆效应来自复用既有程序与自动化，让少量代码驱动大量工作；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：先搜索并组合现有能力，再补最少的新代码。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 候选快照的理由/边界内容提到：“复用成熟工具可以用更低成本获得更大产出”。这描述其要处理或避免的成本背景，不等于采用本方法须付出的成本；选区未提供实施成本测量，上游内容尚未独立语义复核。 |
+| 13 | 比较不同技术与方法。 | 关于候选“3.61 充分利用软件的杠杆效应”（软件杠杆效应来自复用既有程序与自动化，让少量代码驱动大量工作），冻结快照的编者分析列出关联线索“胶水原则”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“胶水原则”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“已有工具能够完成部分任务时”下，按“先搜索并组合现有能力，再补最少的新代码”处理“软件杠杆效应来自复用既有程序与自动化，让少量代码驱动大量工作”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：已有工具能够完成部分任务时。编者边界（未独立复核）：候选快照未提供“3.61 充分利用软件的杠杆效应”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a076-4e0b5b523e-r1-d4b25ef7"></a>
 ### 4.2 耦合度
@@ -971,20 +971,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 4.2 耦合度 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：耦合度衡量模块之间依赖，应减少强耦合并让依赖指向更稳定的部分 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：较弱耦合能限制变化传播并提高独立性 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：降低内容/公共/控制等强耦合，优先简单数据接口和稳定依赖 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：耦合度衡量模块之间依赖，应减少强耦合并让依赖指向更稳定的部分。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“较弱耦合能限制变化传播并提高独立性”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：降低内容/公共/控制等强耦合，优先简单数据接口和稳定依赖。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“耦合度衡量模块之间依赖，应减少强耦合并让依赖指向更稳定的部分”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A076；登记ID：gongfa-candidate-html211-a076-4e0b5b523e；内容版本：r1；本体类型：dao-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=复杂依赖关系与稳定性治理；类型理由=相对独立的解释、准则或操作集合共同出现；不自动拆成新身份或本体子类。；理由=同时看类型、数量、方向和稳定目标，预计在困难依赖迁移中仍缩小传播面。；置信标签=medium；反证条件=若减少形式耦合却增加隐藏依赖或无法兼容迁移，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "复合",<br>  "related&#95;framework&#95;view": "/frameworks/75",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-low-coupling",<br>  "gongfa-explicit-dependencies"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A076；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A076",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-1cad5ad1a33548df91",<br>    "json&#95;pointer": "/contentUnits/4/excerpts/1",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/4/passages",<br>      "start": 5,<br>      "end": 8<br>    }<br>  },<br>  "declared&#95;upstream": "第4章《视角》 · EPUB第91节《4.2 耦合度》",<br>  "content&#95;sha256": "a43432eaad8ee716e960b98bb3a796da5927ae83328292283384c87e41b329c6",<br>  "registry&#95;id": "gongfa-candidate-html211-a076-4e0b5b523e",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第4章《视角》 · EPUB第91节《4.2 耦合度》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：复杂依赖关系与稳定性治理（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：较弱耦合能限制变化传播并提高独立性；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：一个模块了解或控制另一个模块过多内部细节时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“耦合度衡量模块之间依赖，应减少强耦合并让依赖指向更稳定的部分”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“一个模块了解或控制另一个模块过多内部细节时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“较弱耦合能限制变化传播并提高独立性”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“耦合度衡量模块之间依赖，应减少强耦合并让依赖指向更稳定的部分”，与摘要问题“耦合度衡量模块之间依赖，应减少强耦合并让依赖指向更稳定的部分”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于dao-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：耦合度衡量模块之间依赖，应减少强耦合并让依赖指向更稳定的部分；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：降低内容/公共/控制等强耦合，优先简单数据接口和稳定依赖。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“4.2 耦合度”（摘要：耦合度衡量模块之间依赖，应减少强耦合并让依赖指向更稳定的部分）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“4.2 耦合度”（耦合度衡量模块之间依赖，应减少强耦合并让依赖指向更稳定的部分），冻结快照的编者分析列出关联线索“低耦合、显式依赖优先”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“低耦合、显式依赖优先”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“一个模块了解或控制另一个模块过多内部细节时”下，按“降低内容/公共/控制等强耦合，优先简单数据接口和稳定依赖”处理“耦合度衡量模块之间依赖，应减少强耦合并让依赖指向更稳定的部分”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：一个模块了解或控制另一个模块过多内部细节时。编者边界（未独立复核）：候选快照未提供“4.2 耦合度”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a083-b5060f6c59-r1-e1c2fc88"></a>
 ### 5.3 性能调优的箴言
@@ -992,20 +992,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 5.3 性能调优的箴言 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：性能调优的核心是避免过早优化，用测量驱动针对热点的改进 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：大多数性能收益集中在少数热点，盲目优化会损害清晰度 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：证明需要、测量定位、优化热点、再次测量并验证正确性 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：性能调优的核心是避免过早优化，用测量驱动针对热点的改进。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“大多数性能收益集中在少数热点，盲目优化会损害清晰度”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：调优流程：先证明有性能需求 → 测量并找热点 → 优化热点 → 再次测量 → 验证正确性。涉及架构级性能约束时应尽早做测量性实验，避免把“不要过早优化”误解为完全不考虑性能。适用判断：性能问题被明确提出或指标不达标时行动：证明需要、测量定位、优化热点、再次测量并验证正确性理由：大多数性能收益集中在少数热点，盲目优化会损害清晰度。相关边界（候选编者说明，未独立复核）：已与旧性能定位准则同题，先辨明操作版增量；不把不要过早优化解释为架构阶段不检查性能。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“性能调优的核心是避免过早优化，用测量驱动针对热点的改进”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A083；登记ID：gongfa-candidate-html211-a083-b5060f6c59；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=困难性能问题测量与复测；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=明确需求、热点、复测及正确性形成闭环，预计在困难优化任务中仍抑制错误收益判断。；置信标签=medium；反证条件=若热点识别错误、复测工作负载不同或优化损害验收，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "方法",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "A083",<br>    "value": "证明性能需求、测量热点、优化、复测并验证正确性。",<br>    "boundary": "已与旧性能定位准则同题，先辨明操作版增量；不把不要过早优化解释为架构阶段不检查性能。"<br>  },<br>  "related&#95;framework&#95;view": "/frameworks/82",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-performance-by-measurement"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A083；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A083",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-25d08a01f0ed3c6ca8",<br>    "json&#95;pointer": "/contentUnits/5/excerpts/2",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/5/passages",<br>      "start": 8,<br>      "end": 11<br>    }<br>  },<br>  "declared&#95;upstream": "第5章《习惯》 · EPUB第99节《5.3 性能调优的箴言》",<br>  "content&#95;sha256": "e87e3c1ba4eb4580dbfc2cf24282c19aa53920083904fbdb81e42fbe2eba9e6d",<br>  "registry&#95;id": "gongfa-candidate-html211-a083-b5060f6c59",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第5章《习惯》 · EPUB第99节《5.3 性能调优的箴言》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：困难性能问题测量与复测（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：大多数性能收益集中在少数热点，盲目优化会损害清晰度；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：性能问题被明确提出或指标不达标时；既有候选编辑边界（非独立原著核验）：已与旧性能定位准则同题，先辨明操作版增量；不把不要过早优化解释为架构阶段不检查性能。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“性能调优的核心是避免过早优化，用测量驱动针对热点的改进”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“性能问题被明确提出或指标不达标时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“大多数性能收益集中在少数热点，盲目优化会损害清晰度”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“证明性能需求、测量热点、优化、复测并验证正确性”，与摘要问题“性能调优的核心是避免过早优化，用测量驱动针对热点的改进”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于method-specification，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：证明性能需求、测量热点、优化、复测并验证正确性；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：调优流程：先证明有性能需求 → 测量并找热点 → 优化热点 → 再次测量 → 验证正确性。涉及架构级性能约束时应尽早做测量性实验，避免把“不要过早优化”误解为完全不考虑性能。适用判断：性能问题被明确提出或指标不达标时行动：证明需要、测量定位、优化热点、再次测量并验证正确性理由：大多数性能收益集中在少数热点，盲目优化会损害清晰度。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“5.3 性能调优的箴言”（摘要：性能调优的核心是避免过早优化，用测量驱动针对热点的改进）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照的编辑边界为“已与旧性能定位准则同题，先辨明操作版增量；不把不要过早优化解释为架构阶段不检查性能”；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“5.3 性能调优的箴言”（性能调优的核心是避免过早优化，用测量驱动针对热点的改进），冻结快照的编者分析列出关联线索“性能定位以测量为准”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“性能定位以测量为准”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“性能问题被明确提出或指标不达标时”下，按“调优流程：先证明有性能需求 → 测量并找热点 → 优化热点 → 再次测量 → 验证正确性。涉及架构级性能约束时应尽早做测量性实验，避免把“不要过早优化”误解为完全不考虑性能。适用判断：性能问题被明确提出或指标不达标时行动：证明需要、测量定位、优化热点、再次测量并验证正确性理由：大多数性能收益集中在少数热点，盲目优化会损害清晰度”处理“性能调优的核心是避免过早优化，用测量驱动针对热点的改进”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：性能问题被明确提出或指标不达标时。编者边界（未独立复核）：已与旧性能定位准则同题，先辨明操作版增量；不把不要过早优化解释为架构阶段不检查性能。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a085-8ffece86a9-r1-50810622"></a>
 ### 5.5 一步一步走
@@ -1013,20 +1013,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 5.5 一步一步走 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：一步一步走要求一次只做一个小变更并立即验证，再继续下一步 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：小步能缩小故障来源并保持系统始终接近可工作状态 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：拆成可回滚的小步，每步完成后测试或确认 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：一步一步走要求一次只做一个小变更并立即验证，再继续下一步。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“小步能缩小故障来源并保持系统始终接近可工作状态”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：拆成可回滚的小步，每步完成后测试或确认。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“一步一步走要求一次只做一个小变更并立即验证，再继续下一步”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A085；登记ID：gongfa-candidate-html211-a085-8ffece86a9；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=高风险重构的增量验证；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=小变更、立即验证和回滚余地预计在困难替换任务中仍减小故障定位与恢复范围。；置信标签=medium；反证条件=若中间状态不可安全运行或回退不成立，步骤拆小未改善风险与成本，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "方法",<br>  "related&#95;framework&#95;view": "/frameworks/84",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-methodology-delivery-loop"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A085；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A085",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-5ed85aa9e503d82b31",<br>    "json&#95;pointer": "/contentUnits/5/excerpts/4",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/5/passages",<br>      "start": 14,<br>      "end": 17<br>    }<br>  },<br>  "declared&#95;upstream": "第5章《习惯》 · EPUB第101节《5.5 一步一步走》",<br>  "content&#95;sha256": "177022b5ab848a5e05064f3480d5ec8dea18fe9f9b053c77157c42b6d83d7e6f",<br>  "registry&#95;id": "gongfa-candidate-html211-a085-8ffece86a9",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第5章《习惯》 · EPUB第101节《5.5 一步一步走》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：高风险重构的增量验证（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：小步能缩小故障来源并保持系统始终接近可工作状态；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：重构、排错或替换工作范围很大时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“一步一步走要求一次只做一个小变更并立即验证，再继续下一步”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“重构、排错或替换工作范围很大时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“小步能缩小故障来源并保持系统始终接近可工作状态”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“一步一步走要求一次只做一个小变更并立即验证，再继续下一步”，与摘要问题“一步一步走要求一次只做一个小变更并立即验证，再继续下一步”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于method-specification，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：一步一步走要求一次只做一个小变更并立即验证，再继续下一步；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：拆成可回滚的小步，每步完成后测试或确认。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“5.5 一步一步走”（摘要：一步一步走要求一次只做一个小变更并立即验证，再继续下一步）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“5.5 一步一步走”（一步一步走要求一次只做一个小变更并立即验证，再继续下一步），冻结快照的编者分析列出关联线索“方法论工具箱总体作业流”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“方法论工具箱总体作业流”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“重构、排错或替换工作范围很大时”下，按“拆成可回滚的小步，每步完成后测试或确认”处理“一步一步走要求一次只做一个小变更并立即验证，再继续下一步”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：重构、排错或替换工作范围很大时。编者边界（未独立复核）：候选快照未提供“5.5 一步一步走”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a087-2fc375c302-r1-916807ee"></a>
 ### 6.1 曳光弹
@@ -1034,20 +1034,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 6.1 曳光弹 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：曳光弹用可运行的最小端到端骨架获取真实反馈，并持续演化为最终系统 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：真实环境反馈能早暴露接口和集成问题 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：尽快打通一条真实端到端路径，再沿骨架逐步充实 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：曳光弹用可运行的最小端到端骨架获取真实反馈，并持续演化为最终系统。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“真实环境反馈能早暴露接口和集成问题”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：尽快打通一条真实端到端路径，再沿骨架逐步充实。相关边界（候选编者说明，未独立复核）：必须区分可演化交付骨架和丢弃原型；一次真实链路通过不保证困难路径或生产安全。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“曳光弹用可运行的最小端到端骨架获取真实反馈，并持续演化为最终系统”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A087；登记ID：gongfa-candidate-html211-a087-2fc375c302；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=集成不确定性下的演化骨架；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=真实端到端路径持续演化，预计在困难集成任务中更早暴露边界错误；一条路径不代表全部验收。；置信标签=medium；反证条件=若骨架不能代表困难路径或被错误当作生产安全证据，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "方法",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "A087",<br>    "value": "真实端到端最小骨架，保留并逐步演进。",<br>    "boundary": "必须区分可演化交付骨架和丢弃原型；一次真实链路通过不保证困难路径或生产安全。"<br>  },<br>  "related&#95;framework&#95;view": "/frameworks/86",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A087；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A087",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-af628dbe80b65cd83a",<br>    "json&#95;pointer": "/contentUnits/6/excerpts/0",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/6/passages",<br>      "start": 2,<br>      "end": 5<br>    }<br>  },<br>  "declared&#95;upstream": "第6章《手法》 · EPUB第104节《6.1 曳光弹》",<br>  "content&#95;sha256": "22364f81a24f48d409f2917caae061004f17693cd5bea0d02050f7da01c31810",<br>  "registry&#95;id": "gongfa-candidate-html211-a087-2fc375c302",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第6章《手法》 · EPUB第104节《6.1 曳光弹》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：集成不确定性下的演化骨架（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：真实环境反馈能早暴露接口和集成问题；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：架构路径、集成链路或需求理解存在不确定性时；既有候选编辑边界（非独立原著核验）：必须区分可演化交付骨架和丢弃原型；一次真实链路通过不保证困难路径或生产安全。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“曳光弹用可运行的最小端到端骨架获取真实反馈，并持续演化为最终系统”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“架构路径、集成链路或需求理解存在不确定性时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“真实环境反馈能早暴露接口和集成问题”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“真实端到端最小骨架，保留并逐步演进”，与摘要问题“曳光弹用可运行的最小端到端骨架获取真实反馈，并持续演化为最终系统”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于method-specification，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：真实端到端最小骨架，保留并逐步演进；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：尽快打通一条真实端到端路径，再沿骨架逐步充实。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“6.1 曳光弹”（摘要：曳光弹用可运行的最小端到端骨架获取真实反馈，并持续演化为最终系统）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照的编辑边界为“必须区分可演化交付骨架和丢弃原型；一次真实链路通过不保证困难路径或生产安全”；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“6.1 曳光弹”的冻结快照仅给出“曳光弹用可运行的最小端到端骨架获取真实反馈，并持续演化为最终系统”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“架构路径、集成链路或需求理解存在不确定性时”下，按“尽快打通一条真实端到端路径，再沿骨架逐步充实”处理“曳光弹用可运行的最小端到端骨架获取真实反馈，并持续演化为最终系统”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：架构路径、集成链路或需求理解存在不确定性时。编者边界（未独立复核）：必须区分可演化交付骨架和丢弃原型；一次真实链路通过不保证困难路径或生产安全。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a089-3f97e0822f-r1-db99fbf1"></a>
 ### 6.3 防御性编程
@@ -1055,20 +1055,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 6.3 防御性编程 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：防御性编程把不可信输入挡在边界外，并区分可预期错误与代码缺陷 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：早期隔离错误可防止损害向系统深处传播 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：在边界验证和净化数据；预期错误做错误处理，内部不可能状态用断言暴露 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：防御性编程把不可信输入挡在边界外，并区分可预期错误与代码缺陷。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“早期隔离错误可防止损害向系统深处传播”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：在边界验证和净化数据；预期错误做错误处理，内部不可能状态用断言暴露。相关边界（候选编者说明，未独立复核）：无害值、跳过、近似、保留旧值只是源列举的候选，不能擅自静默吞错；选择须服从真实数据完整性合同。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“防御性编程把不可信输入挡在边界外，并区分可预期错误与代码缺陷”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A089；登记ID：gongfa-candidate-html211-a089-3f97e0822f；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=不可信数据与内部缺陷隔离；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=脏净边界和错误类型分开预计在困难异常输入中仍降低传播风险；错误策略须服从真实业务合同。；置信标签=medium；反证条件=若跳过、近似或旧值损坏数据完整性，或非法输入仍进入核心，则推翻。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "方法",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "A089",<br>    "value": "在信任边界处理可预期外部错误，内部违约显式暴露。",<br>    "boundary": "无害值、跳过、近似、保留旧值只是源列举的候选，不能擅自静默吞错；选择须服从真实数据完整性合同。"<br>  },<br>  "related&#95;framework&#95;view": "/frameworks/88",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-controllable-failure"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A089；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A089",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-178c67c06b636d1da0",<br>    "json&#95;pointer": "/contentUnits/6/excerpts/2",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/6/passages",<br>      "start": 8,<br>      "end": 11<br>    }<br>  },<br>  "declared&#95;upstream": "第6章《手法》 · EPUB第106节《6.3 防御性编程》",<br>  "content&#95;sha256": "90a8de1e98d69a0204aad0d155c84c793c1bb07d8517774446eed86e58ff8bd7",<br>  "registry&#95;id": "gongfa-candidate-html211-a089-3f97e0822f",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第6章《手法》 · EPUB第106节《6.3 防御性编程》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：不可信数据与内部缺陷隔离（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：早期隔离错误可防止损害向系统深处传播；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：系统接收用户、文件、网络或其他外部数据时；既有候选编辑边界（非独立原著核验）：无害值、跳过、近似、保留旧值只是源列举的候选，不能擅自静默吞错；选择须服从真实数据完整性合同。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“防御性编程把不可信输入挡在边界外，并区分可预期错误与代码缺陷”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“系统接收用户、文件、网络或其他外部数据时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“早期隔离错误可防止损害向系统深处传播”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“在信任边界处理可预期外部错误，内部违约显式暴露”，与摘要问题“防御性编程把不可信输入挡在边界外，并区分可预期错误与代码缺陷”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于method-specification，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：在信任边界处理可预期外部错误，内部违约显式暴露；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：在边界验证和净化数据；预期错误做错误处理，内部不可能状态用断言暴露。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“6.3 防御性编程”（摘要：防御性编程把不可信输入挡在边界外，并区分可预期错误与代码缺陷）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照的编辑边界为“无害值、跳过、近似、保留旧值只是源列举的候选，不能擅自静默吞错；选择须服从真实数据完整性合同”；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“6.3 防御性编程”（防御性编程把不可信输入挡在边界外，并区分可预期错误与代码缺陷），冻结快照的编者分析列出关联线索“故障可控与恢复优先”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“故障可控与恢复优先”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“系统接收用户、文件、网络或其他外部数据时”下，按“在边界验证和净化数据；预期错误做错误处理，内部不可能状态用断言暴露”处理“防御性编程把不可信输入挡在边界外，并区分可预期错误与代码缺陷”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：系统接收用户、文件、网络或其他外部数据时。编者边界（未独立复核）：无害值、跳过、近似、保留旧值只是源列举的候选，不能擅自静默吞错；选择须服从真实数据完整性合同。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-a100-9e909fd512-r1-5fcc5426"></a>
 ### 7.8 重新发明车轮
@@ -1076,20 +1076,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 7.8 重新发明车轮 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：重新发明车轮提醒先利用已有标准、库和协议，仅在差异化、控制权或学习价值足够时自建 |
-| 3 | 为什么 | 冻结选区记录的理由（不等同于作者历史动机，且上游未独立核验）：重复造轮会承担设计、测试和维护成熟组件已付过的成本 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：先调查现有方案，再基于真实缺口决定是否自建 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：重新发明车轮提醒先利用已有标准、库和协议，仅在差异化、控制权或学习价值足够时自建。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“重复造轮会承担设计、测试和维护成熟组件已付过的成本”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：先调查现有方案，再基于真实缺口决定是否自建。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“重新发明车轮提醒先利用已有标准、库和协议，仅在差异化、控制权或学习价值足够时自建”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：A100；登记ID：gongfa-candidate-html211-a100-9e909fd512；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=成熟方案与自研边界；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=先调查标准方案并按真实缺口自建，预计在困难工程选型中降低重复承担的验证与维护成本。；置信标签=medium；反证条件=若成熟方案不满足关键合同或自建理由不真实，选择使总成本更高，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/99",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-glue-principle"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:A100；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:A100",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程的原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326",<br>    "source&#95;entry&#95;id": "excerpt-11001d998e271c3ef5",<br>    "json&#95;pointer": "/contentUnits/7/excerpts/7",<br>    "passage&#95;selection": {<br>      "json&#95;pointer": "/contentUnits/7/passages",<br>      "start": 23,<br>      "end": 26<br>    }<br>  },<br>  "declared&#95;upstream": "第7章《法则》 · EPUB第118节《7.8 重新发明车轮》",<br>  "content&#95;sha256": "9016922cec8d24953e1139fdef47ad17c2d37ec05e6ae05441cb8f6dd3c0d59d",<br>  "registry&#95;id": "gongfa-candidate-html211-a100-9e909fd512",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第7章《法则》 · EPUB第118节《7.8 重新发明车轮》。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：成熟方案与自研边界（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 冻结选区记载的设计理由：重复造轮会承担设计、测试和维护成熟组件已付过的成本；作者历史设计意图仍未独立核验。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用判断”：准备实现已有成熟解决方案能覆盖的能力时 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“重新发明车轮提醒先利用已有标准、库和协议，仅在差异化、控制权或学习价值足够时自建”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“准备实现已有成熟解决方案能覆盖的能力时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“重复造轮会承担设计、测试和维护成熟组件已付过的成本”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“重新发明车轮提醒先利用已有标准、库和协议，仅在差异化、控制权或学习价值足够时自建”，与摘要问题“重新发明车轮提醒先利用已有标准、库和协议，仅在差异化、控制权或学习价值足够时自建”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：重新发明车轮提醒先利用已有标准、库和协议，仅在差异化、控制权或学习价值足够时自建；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：先调查现有方案，再基于真实缺口决定是否自建。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 候选快照的理由/边界内容提到：“重复造轮会承担设计、测试和维护成熟组件已付过的成本”。这描述其要处理或避免的成本背景，不等于采用本方法须付出的成本；选区未提供实施成本测量，上游内容尚未独立语义复核。 |
+| 13 | 比较不同技术与方法。 | 关于候选“7.8 重新发明车轮”（重新发明车轮提醒先利用已有标准、库和协议，仅在差异化、控制权或学习价值足够时自建），冻结快照的编者分析列出关联线索“胶水原则”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“胶水原则”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“准备实现已有成熟解决方案能覆盖的能力时”下，按“先调查现有方案，再基于真实缺口决定是否自建”处理“重新发明车轮提醒先利用已有标准、库和协议，仅在差异化、控制权或学习价值足够时自建”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：准备实现已有成熟解决方案能覆盖的能力时。编者边界（未独立复核）：候选快照未提供“7.8 重新发明车轮”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-b009-7827c40217-r1-a867dc93"></a>
 ### 健壮设计流程
@@ -1097,20 +1097,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 健壮设计流程 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：标准化组件、可替换连接、增量组装、逐步测试形成可并行且可演化的系统。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：从零设计或大规模重构系统时 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：标准化组件、可替换连接、增量组装、逐步测试形成可并行且可演化的系统。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“标准组件、可替换连接、增量组装与逐步测试。”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照把“健壮设计流程”概括为“标准化组件、可替换连接、增量组装、逐步测试形成可并行且可演化的系统”，但选区未记录可复现的操作序列；摘要和编者初评不能替代上游原文步骤。具体运用须先核验来源与情境，本项不补造流程。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“标准化组件、可替换连接、增量组装、逐步测试形成可并行且可演化的系统”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：B009；登记ID：gongfa-candidate-html211-b009-7827c40217；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=组件增量组装与演化；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=标准件、可替换连接及逐步测试预计在困难集成中仍缩小返工；不把任意分割视作可并行。；置信标签=low；反证条件=若组件无法保持语义兼容或增量中间态不能验收，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "方法",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "B009",<br>    "value": "标准组件、可替换连接、增量组装与逐步测试。",<br>    "boundary": "标准件不会消除接口语义、集成、授权和数据失败；不证明任意切分都可并行。"<br>  },<br>  "related&#95;framework&#95;view": "/frameworks/8",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:B009；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:B009",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "6d851e6a95fc9b01cf0f83f1c48fe5a0bfc98d7ae59a00e752146c03d1c3837b",<br>    "source&#95;entry&#95;id": "frameworks-1f86e4633cf168d4d7",<br>    "json&#95;pointer": "/frameworks/8"<br>  },<br>  "declared&#95;upstream": "旧HTML：编程原则-系统学习.html · 健壮设计流程（旧页未标具体材料出处；未重新核验）",<br>  "content&#95;sha256": "1c67570bd31228db62c750d4815b12f40b8d3d5b08ad6bb9418ae7755181a236",<br>  "registry&#95;id": "gongfa-candidate-html211-b009-7827c40217",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：旧HTML：编程原则-系统学习.html · 健壮设计流程（旧页未标具体材料出处；未重新核验）。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：组件增量组装与演化（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 既有候选编辑边界（非独立原著核验）：标准件不会消除接口语义、集成、授权和数据失败；不证明任意切分都可并行。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“标准化组件、可替换连接、增量组装、逐步测试形成可并行且可演化的系统”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照未列出可独立确认的适用情境。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“标准组件、可替换连接、增量组装与逐步测试”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于method-specification，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：标准组件、可替换连接、增量组装与逐步测试。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“健壮设计流程”（摘要：标准化组件、可替换连接、增量组装、逐步测试形成可并行且可演化的系统）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照的编辑边界为“标准件不会消除接口语义、集成、授权和数据失败；不证明任意切分都可并行”；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“健壮设计流程”的冻结快照仅给出“标准化组件、可替换连接、增量组装、逐步测试形成可并行且可演化的系统”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：围绕候选摘要“标准化组件、可替换连接、增量组装、逐步测试形成可并行且可演化的系统”分析其条件、步骤与可能反例；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：快照未列出“健壮设计流程”的独立确认适用条件；当前只能定位于摘要“标准化组件、可替换连接、增量组装、逐步测试形成可并行且可演化的系统”。编者边界（未独立复核）：标准件不会消除接口语义、集成、授权和数据失败；不证明任意切分都可并行。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-b011-0b0d3ff125-r1-7833b0ec"></a>
 ### 根因与不复发
@@ -1118,20 +1118,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 根因与不复发 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：修复目标应达到问题不再反复需要关注，并用可维护测试保护结果。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：修复重复故障与遗留问题时 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：修复目标应达到问题不再反复需要关注，并用可维护测试保护结果。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“修复目标应达到问题不再反复需要关注，并用可维护测试保护结果”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照把“根因与不复发”概括为“修复目标应达到问题不再反复需要关注，并用可维护测试保护结果”，但选区未记录可复现的操作序列；摘要和编者初评不能替代上游原文步骤。具体运用须先核验来源与情境，本项不补造流程。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“修复目标应达到问题不再反复需要关注，并用可维护测试保护结果”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：B011；登记ID：gongfa-candidate-html211-b011-0b0d3ff125；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=反复故障根因修复；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=不复发目标与可维护测试保护预计在困难遗留缺陷中减少重复关注和返工。；置信标签=medium；反证条件=若同一机制仍复发、测试未覆盖真实故障或修复不可维护，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/10",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:B011；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:B011",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "6d851e6a95fc9b01cf0f83f1c48fe5a0bfc98d7ae59a00e752146c03d1c3837b",<br>    "source&#95;entry&#95;id": "frameworks-562dbfe8c7c73e520d",<br>    "json&#95;pointer": "/frameworks/10"<br>  },<br>  "declared&#95;upstream": "旧HTML：编程原则-系统学习.html · 根因与不复发（旧页未标具体材料出处；未重新核验）",<br>  "content&#95;sha256": "484455ff8ffc553163419049c671857273aeaf2cbf2e5d1a7c3c64e6d48aae17",<br>  "registry&#95;id": "gongfa-candidate-html211-b011-0b0d3ff125",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：旧HTML：编程原则-系统学习.html · 根因与不复发（旧页未标具体材料出处；未重新核验）。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：反复故障根因修复（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 待核：候选记录未提供独立适用边界；不据标题或初评品级外推。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“修复目标应达到问题不再反复需要关注，并用可维护测试保护结果”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照未列出可独立确认的适用情境。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“修复目标应达到问题不再反复需要关注，并用可维护测试保护结果”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：修复目标应达到问题不再反复需要关注，并用可维护测试保护结果。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“根因与不复发”（摘要：修复目标应达到问题不再反复需要关注，并用可维护测试保护结果）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“根因与不复发”的冻结快照仅给出“修复目标应达到问题不再反复需要关注，并用可维护测试保护结果”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：围绕候选摘要“修复目标应达到问题不再反复需要关注，并用可维护测试保护结果”分析其条件、步骤与可能反例；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：快照未列出“根因与不复发”的独立确认适用条件；当前只能定位于摘要“修复目标应达到问题不再反复需要关注，并用可维护测试保护结果”。编者边界（未独立复核）：候选快照未提供“根因与不复发”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-b023-ecb52947f4-r1-e3c9d2a3"></a>
 ### 测试即获取有效知识
@@ -1139,20 +1139,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 测试即获取有效知识 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：测试通过断言、边界、假设和实验，为系统行为提供可验证知识。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 冻结候选选区标注的行动/使用方式（不是已执行步骤）：选择测试类型、构造测试套件和评估测试价值时 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：测试通过断言、边界、假设和实验，为系统行为提供可验证知识。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“测试通过断言、边界、假设和实验，为系统行为提供可验证知识”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照把“测试即获取有效知识”概括为“测试通过断言、边界、假设和实验，为系统行为提供可验证知识”，但选区未记录可复现的操作序列；摘要和编者初评不能替代上游原文步骤。具体运用须先核验来源与情境，本项不补造流程。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“测试通过断言、边界、假设和实验，为系统行为提供可验证知识”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：B023；登记ID：gongfa-candidate-html211-b023-ecb52947f4；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=困难测试目标与oracle审查；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=断言、边界与假设对应可验证知识，预计在困难验证任务中仍减少无信息的绿灯。；置信标签=medium；反证条件=若测试没有有效独立oracle或不能对真实缺陷敏感，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/22",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:B023；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:B023",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "编程原则.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "6d851e6a95fc9b01cf0f83f1c48fe5a0bfc98d7ae59a00e752146c03d1c3837b",<br>    "source&#95;entry&#95;id": "frameworks-10402ecb6390239e2a",<br>    "json&#95;pointer": "/frameworks/22"<br>  },<br>  "declared&#95;upstream": "旧HTML：编程原则-系统学习.html · 测试即获取有效知识（旧页未标具体材料出处；未重新核验）",<br>  "content&#95;sha256": "e05b231ce923985ef15752d6665581fd54c492422e69a05547a495de23da55a8",<br>  "registry&#95;id": "gongfa-candidate-html211-b023-ecb52947f4",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：旧HTML：编程原则-系统学习.html · 测试即获取有效知识（旧页未标具体材料出处；未重新核验）。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：困难测试目标与oracle审查（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 待核：候选记录未提供独立适用边界；不据标题或初评品级外推。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“测试通过断言、边界、假设和实验，为系统行为提供可验证知识”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照未列出可独立确认的适用情境。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“测试通过断言、边界、假设和实验，为系统行为提供可验证知识”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：测试通过断言、边界、假设和实验，为系统行为提供可验证知识。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“测试即获取有效知识”（摘要：测试通过断言、边界、假设和实验，为系统行为提供可验证知识）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“测试即获取有效知识”的冻结快照仅给出“测试通过断言、边界、假设和实验，为系统行为提供可验证知识”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：围绕候选摘要“测试通过断言、边界、假设和实验，为系统行为提供可验证知识”分析其条件、步骤与可能反例；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：快照未列出“测试即获取有效知识”的独立确认适用条件；当前只能定位于摘要“测试通过断言、边界、假设和实验，为系统行为提供可验证知识”。编者边界（未独立复核）：候选快照未提供“测试即获取有效知识”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-d009-4d61eda424-r1-582f51f2"></a>
 ### 阿姆达尔定律
@@ -1160,20 +1160,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 阿姆达尔定律 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：若可优化部分占比为P、加速N倍，则新运行时间为(1-P)+P/N。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：若可优化部分占比为P、加速N倍，则新运行时间为(1-P)+P/N。 |
+| 3 | 为什么 | 候选快照可支持的用途归纳：局部部件变快不等于整体按同一倍数变快；该公式用于估算整体收益上限，帮助判断继续优化局部是否值得。这是基于快照内容的编辑说明，不是作者历史动机或效果证明；原上游尚未独立语义核验。 |
+| 4 | 怎么做 | 根据冻结候选快照中的公式整理（编辑归纳，非上游步骤原文）：先估计可优化部分占总运行时间的比例P及该部分的加速倍数N，代入(1-P)+P/N得到归一化的新运行时间，再取倒数得到总体加速比1/((1-P)+P/N)；比较不同N可观察快照所述的收益递减。选区未说明如何测量P、N，也未列额外开销。 |
+| 5 | 扩展 | 同一选区还给出总体加速比1/((1-P)+P/N)，并指出P有限时提高N会收益递减；这是公式的补充结论，不是另一种优化方法。以上为冻结候选快照内容，尚未独立语义复核。 |
 | 6 | 关联信息 | 候选ID：D009；登记ID：gongfa-candidate-html211-d009-4d61eda424；内容版本：r1；本体类型：explanatory-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=优化上界与并行收益判断；类型理由=以关系、模型或机制的解释为主，不强编施行步骤。；理由=公式可预测未优化部分对总收益的约束，预计在困难资源取舍中减少高估；只限模型前提成立。；置信标签=medium；反证条件=若工作量和串并行假设不成立或预测偏差使选型更差，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "解释",<br>  "related&#95;framework&#95;view": "/frameworks/8",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D009；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D009",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 81,<br>    "end": 84<br>  },<br>  "declared&#95;upstream": "第4节《04-性能工程三定律：IT业和性能优化工作的“法律法规”》 · EPUB第34–39节",<br>  "content&#95;sha256": "bd340cd26ebb971ac399a12c530f638f871cdbd712da6ec299a390c5eafd3552",<br>  "registry&#95;id": "gongfa-candidate-html211-d009-4d61eda424",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第4节《04-性能工程三定律：IT业和性能优化工作的“法律法规”》 · EPUB第34–39节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：优化上界与并行收益判断（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 待核：候选记录未提供独立适用边界；不据标题或初评品级外推。 |
+| 9 | 它要解决什么问题？ | 按冻结候选快照归纳，本条针对：如何从可优化比例和局部加速幅度推算整体运行时间与收益上限。本段是对快照的整理，不是独立验证的效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照中可见的设计结构：公式将未优化部分(1-P)与优化后部分P/N分开计算，再用其倒数表达整体加速比；这是对公式结构的编辑解释，不是作者动机陈述。上游来源及作者意图仍未独立核验。 |
+| 11 | 内部如何实现？ | 冻结候选快照保存的内容（未独立语义复核）显示：新运行时间比例=(1-P)+P/N；总体加速比为其倒数。P表示可优化部分占比，N表示该部分加速倍数；快照还指出P有限时继续提高N会收益递减。这是数学/方法关系说明，不代表已运行或在具体系统中验证。 |
+| 12 | 付出了什么代价？ | 在具体任务中须估计P和N，通常还需测量与复测；快照未给测量成本、模型误差或额外开销数据，不能据公式宣称真实收益。以上是定性工作量说明，不是实测代价。 |
+| 13 | 比较不同技术与方法。 | 同一冻结候选章节还列出三种不同分析视角：帕累托法则回答“先优化哪里”，阿姆达尔定律估算“局部加速对整体上限的影响”，利特尔法则关联“稳定系统的平均并发、吞吐与停留时间”。三者回答的问题不同、不能互换；这只是候选快照内容的概念对照，没有同任务实验或优劣排名，上游尚未独立核验。 |
+| 14 | 提炼共同规律。 | 对同一候选章节的三条性能分析视角作编辑归纳：先用测量识别问题位置，再用与问题匹配的数量关系估算约束，最后回到具体系统复测。该归纳不证明三种方法效果相同，也不是跨场景普遍定律；候选上游尚未独立核验。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照及公式结构支持的条件：P须表示固定工作负载中可优化部分占比，N须表示该部分的加速倍数；公式未计入额外开销或工作负载变化。这些条件未由本轮独立原著审查或系统测量验证。 |
 
 <a id="v0-registry-gongfa-candidate-html211-d010-5015859ffd-r1-abd5f381"></a>
 ### 利特尔法则
@@ -1181,20 +1181,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 利特尔法则 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：稳定系统的在途量N等于到达/吞吐率X乘以平均停留时间W。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：稳定系统的在途量N等于到达/吞吐率X乘以平均停留时间W。 |
+| 3 | 为什么 | 候选快照可支持的用途归纳：并发量、吞吐率与平均停留时间相互制约；稳定系统中的关系可用于检查容量与响应时间之间的数量关系。这是基于快照内容的编辑说明，不是作者历史动机或效果证明；原上游尚未独立语义核验。 |
+| 4 | 怎么做 | 根据冻结候选快照中的关系整理（编辑归纳，非上游步骤原文）：仅在稳定系统中，以一致时间窗口和单位取得平均在途量N、吞吐率X及平均停留时间W，核对N=XW；也可在已知两项时求第三项。容量不足时，快照建议从降低W或提升处理能力两端思考。快照未给出采样/估计方法，不能把平均关系直接当成瞬时队列或尾延迟结论。 |
+| 5 | 扩展 | 同一选区还指出N=XW可联系并发、QPS和响应时间，容量不足时可从降低W或提升处理能力思考；这是同一关系的使用线索，不构成额外效果结论。以上为冻结候选快照内容，尚未独立语义复核。 |
 | 6 | 关联信息 | 候选ID：D010；登记ID：gongfa-candidate-html211-d010-5015859ffd；内容版本：r1；本体类型：explanatory-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=稳定系统并发与平均容量核对；类型理由=以关系、模型或机制的解释为主，不强编施行步骤。；理由=同边界平均在途量、吞吐和停留时间关系预计在困难容量判断中发现口径矛盾；不换算P99或失稳瞬时量。；置信标签=medium；反证条件=若稳定性、边界或平均口径不成立，公式仍被用于错误容量结论，则推翻。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "解释",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "D010",<br>    "value": "在稳定系统同边界下用N=XW关联平均在途量、吞吐与停留时间。",<br>    "boundary": "原文说平均，不是P99；不能把瞬时队长、尾延迟或失稳系统直接代入，也不能与阿姆达尔定律混用字母N。"<br>  },<br>  "related&#95;framework&#95;view": "/frameworks/9",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D010；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D010",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 84,<br>    "end": 88<br>  },<br>  "declared&#95;upstream": "第4节《04-性能工程三定律：IT业和性能优化工作的“法律法规”》 · EPUB第34–39节",<br>  "content&#95;sha256": "3edde40b1b188d0087754a1a6565a9197698c5fb52f05435d07bf28eda02cb29",<br>  "registry&#95;id": "gongfa-candidate-html211-d010-5015859ffd",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第4节《04-性能工程三定律：IT业和性能优化工作的“法律法规”》 · EPUB第34–39节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：稳定系统并发与平均容量核对（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 既有候选编辑边界（非独立原著核验）：原文说平均，不是P99；不能把瞬时队长、尾延迟或失稳系统直接代入，也不能与阿姆达尔定律混用字母N。 |
+| 9 | 它要解决什么问题？ | 按冻结候选快照归纳，本条针对：如何在稳定系统中解释平均并发、吞吐和停留时间之间的关系。利特尔关系明确以稳定系统和平均量为前提。本段是对快照的整理，不是独立验证的效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照中可见的设计结构：N=XW把系统内在工作量、处理速率与平均停留时间写成可核对的数量关系；该解释仅限快照给出的稳定系统条件。上游来源及作者意图仍未独立核验。 |
+| 11 | 内部如何实现？ | 冻结候选快照保存的内容（未独立语义复核）显示：关系式N=XW将平均在途量N、吞吐率X和平均停留时间W相连；已知其中两项可由代数关系求第三项，但观测口径必须匹配。这是数学/方法关系说明，不代表已运行或在具体系统中验证。 |
+| 12 | 付出了什么代价？ | 须取得同一稳定窗口下的平均在途量、吞吐率和平均停留时间，产生采集与口径核对工作；快照没有给出实际测量成本。以上是定性工作量说明，不是实测代价。 |
+| 13 | 比较不同技术与方法。 | 同一冻结候选章节还列出三种不同分析视角：帕累托法则回答“先优化哪里”，阿姆达尔定律估算“局部加速对整体上限的影响”，利特尔法则关联“稳定系统的平均并发、吞吐与停留时间”。三者回答的问题不同、不能互换；这只是候选快照内容的概念对照，没有同任务实验或优劣排名，上游尚未独立核验。 |
+| 14 | 提炼共同规律。 | 对同一候选章节的三条性能分析视角作编辑归纳：先用测量识别问题位置，再用与问题匹配的数量关系估算约束，最后回到具体系统复测。该归纳不证明三种方法效果相同，也不是跨场景普遍定律；候选上游尚未独立核验。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照及公式结构支持的条件：仅针对稳定系统的平均量；N、X、W的定义、观测窗口与单位必须一致，不能直接套用于瞬时队列或尾延迟。这些条件未由本轮独立原著审查或系统测量验证。 |
 
 <a id="v0-registry-gongfa-candidate-html211-d014-49240fc008-r1-19b95d49"></a>
 ### 数据分析陷阱清单
@@ -1202,20 +1202,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 数据分析陷阱清单 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：数据分析结论需要机制验证。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：数据分析结论需要机制验证。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“数据分析结论需要机制验证”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照把“数据分析陷阱清单”概括为“数据分析结论需要机制验证”，但选区未记录可复现的操作序列；摘要和编者初评不能替代上游原文步骤。具体运用须先核验来源与情境，本项不补造流程。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“数据分析结论需要机制验证”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：D014；登记ID：gongfa-candidate-html211-d014-49240fc008；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=脏数据与跨系统指标语义审查；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=相关非因果及同名指标未必同义的约束，预计在困难迁移分析中仍减少虚假根因。；置信标签=medium；反证条件=若未审查真实数据与机制，错误模式仍被当因果或跨系统事实，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/13",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D014；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D014",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 112,<br>    "end": 116<br>  },<br>  "declared&#95;upstream": "第6节《06-性能数据的分析：如何从大量数据中看出想要的信号？》 · EPUB第47–54节",<br>  "content&#95;sha256": "f4c4d2b3302f9e67831d84af39119b770be3118f59266f2458fae7a2536e0aae",<br>  "registry&#95;id": "gongfa-candidate-html211-d014-49240fc008",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第6节《06-性能数据的分析：如何从大量数据中看出想要的信号？》 · EPUB第47–54节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：脏数据与跨系统指标语义审查（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 待核：候选记录未提供独立适用边界；不据标题或初评品级外推。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“数据分析结论需要机制验证”（上游来源未独立核验）；候选标题/选区的问题线索为“如何从大量数据中看出想要的信号？”（候选快照的标题问题线索（未独立语义核验））；快照未列出可独立确认的适用情境。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“数据分析结论需要机制验证”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：数据分析结论需要机制验证。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“数据分析陷阱清单”（摘要：数据分析结论需要机制验证）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“数据分析陷阱清单”的冻结快照仅给出“数据分析结论需要机制验证”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：围绕候选摘要“数据分析结论需要机制验证”分析其条件、步骤与可能反例；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：快照未列出“数据分析陷阱清单”的独立确认适用条件；当前只能定位于摘要“数据分析结论需要机制验证”。编者边界（未独立复核）：候选快照未提供“数据分析陷阱清单”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-d022-e527a98bd6-r1-3136c29a"></a>
 ### 九条性能测试经验
@@ -1223,20 +1223,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 九条性能测试经验 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：EPUB第96–101节 · 12-九条性能测试的经验和教训：如何保证测试结果可靠且可重复？ |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：可重复性能测试依赖九条经验：规划阶段记录环境、快速复位、准备足够负载；执行阶段控制日志、稳定环境、理解单参数调优局限；分析阶段由易到难、多法验证、对照生产。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“可重复性能测试依赖九条经验：规划阶段记录环境、快速复位、准备足够负载；执行阶段控制日志、稳定环境、理解单参数调优局限；分析阶段由易到难、多法验证、对照生产”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：每次测试都应可追溯到完整环境与配置。一次只调一个参数有利于解释，但可能错过参数交互和全局最优。根因结论最好由不同测试或生产数据交叉验证；规划三条；测试前的工程化准备决定结果是否可信；详细记录环境和过程。快速复位配置与缓存。准备足够而多样的负载请求和数据；执行与分析六条；执行控制和结果解释同样重要；日志适量输出，避免监控本身扰动。环境要稳定。参数调节要理解交互。根因由易到难。多种测试互相验证。最终与生产行为比较。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“可重复性能测试依赖九条经验：规划阶段记录环境、快速复位、准备足够负载；执行阶段控制日志、稳定环境、理解单参数调优局限；分析阶段由易到难、多法验证、对照生产”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：D022；登记ID：gongfa-candidate-html211-d022-e527a98bd6；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=困难性能实验的重复与解释；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=环境记录、复位、扰动控制与多法验证预计在困难复测和迁移中保留可比性。；置信标签=medium；反证条件=若缓存或环境漂移不可控、共同错误源被当独立验证或根因复测失败，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/21",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-evidence-triangulation"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D022；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D022",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 191,<br>    "end": 205<br>  },<br>  "declared&#95;upstream": "第12节《12-九条性能测试的经验和教训：如何保证测试结果可靠且可重复？》 · EPUB第96–101节",<br>  "content&#95;sha256": "f9a0359268fcb3b27502af484f2d5825c2f030b601a6d0bdefb24c8152024af1",<br>  "registry&#95;id": "gongfa-candidate-html211-d022-e527a98bd6",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第12节《12-九条性能测试的经验和教训：如何保证测试结果可靠且可重复？》 · EPUB第96–101节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：困难性能实验的重复与解释（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 待核：候选记录未提供独立适用边界；不据标题或初评品级外推。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“可重复性能测试依赖九条经验：规划阶段记录环境、快速复位、准备足够负载；执行阶段控制日志、稳定环境、理解单参数调优局限；分析阶段由易到难、多法验证、对照生产”（上游来源未独立核验）；候选标题/选区的问题线索为“如何保证测试结果可靠且可重复？”（候选快照的标题问题线索（未独立语义核验））；快照未列出可独立确认的适用情境。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“可重复性能测试依赖九条经验：规划阶段记录环境、快速复位、准备足够负载；执行阶段控制日志、稳定环境、理解单参数调优局限；分析阶段由易到难、多法验证、对照生产”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：可重复性能测试依赖九条经验：规划阶段记录环境、快速复位、准备足够负载；执行阶段控制日志、稳定环境、理解单参数调优局限；分析阶段由易到难、多法验证、对照生产；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：每次测试都应可追溯到完整环境与配置。一次只调一个参数有利于解释，但可能错过参数交互和全局最优。根因结论最好由不同测试或生产数据交叉验证；规划三条；测试前的工程化准备决定结果是否可信；详细记录环境和过程。快速复位配置与缓存。准备足够而多样的负载请求和数据；执行与分析六条；执行控制和结果解释同样重要；日志适量输出，避免监控本身扰动。环境要稳定。参数调节要理解交互。根因由易到难。多种测试互相验证。最终与生产行为比较。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“九条性能测试经验”（摘要：可重复性能测试依赖九条经验：规划阶段记录环境、快速复位、准备足够负载；执行阶段控制日志、稳定环境、理解单参数调优局限；分析阶段由易到难、多法验证、对照生产）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“九条性能测试经验”（可重复性能测试依赖九条经验：规划阶段记录环境、快速复位、准备足够负载；执行阶段控制日志、稳定环境、理解单参数调优局限；分析阶段由易到难、多法验证、对照生产），冻结快照的编者分析列出关联线索“视角三角测量（Triangulation）”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“视角三角测量（Triangulation）”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：围绕候选摘要“可重复性能测试依赖九条经验：规划阶段记录环境、快速复位、准备足够负载；执行阶段控制日志、稳定环境、理解单参数调优局限；分析阶段由易到难、多法验证、对照生产”分析其条件、步骤与可能反例；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：快照未列出“九条性能测试经验”的独立确认适用条件；当前只能定位于摘要“可重复性能测试依赖九条经验：规划阶段记录环境、快速复位、准备足够负载；执行阶段控制日志、稳定环境、理解单参数调优局限；分析阶段由易到难、多法验证、对照生产”。编者边界（未独立复核）：候选快照未提供“九条性能测试经验”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-d023-56b0270605-r1-0dd0cb12"></a>
 ### 持续性能工程集成模型
@@ -1244,20 +1244,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 持续性能工程集成模型 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：EPUB第102–107节 · 13-性能测试的工程集成：如何与产品开发和运维业务有机集成？ |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：性能测试应从独立、人工、一次性的活动演化为与CI/CD和运维监控集成的持续性能工程。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“性能测试应从独立、人工、一次性的活动演化为与CI/CD和运维监控集成的持续性能工程”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：性能回归应进入持续集成流水线。上线后的监控、诊断和自动化优化需要统一数据基础。AIOps的前提是持续、可信的数据采集；与开发集成；持续测试使性能回归更早暴露；构建/提交后自动执行关键性能检查。阈值不满足时可阻止发布或触发回滚；与运维集成；生产监控将一次性测试扩展为持续反馈；自动采集指标。自动检测异常。条件成熟时可自动诊断和建议优化。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“性能测试应从独立、人工、一次性的活动演化为与CI/CD和运维监控集成的持续性能工程”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：D023；登记ID：gongfa-candidate-html211-d023-56b0270605；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=性能回归的持续反馈；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=关键检查与运维数据持续接入预计在长期变化和迁移任务中更早发现性能退化。；置信标签=medium；反证条件=若持续门禁噪声过大、数据不可信或错误回滚损坏正确性与交付，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "方法",<br>  "related&#95;framework&#95;view": "/frameworks/22",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D023；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D023",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 205,<br>    "end": 219<br>  },<br>  "declared&#95;upstream": "第13节《13-性能测试的工程集成：如何与产品开发和运维业务有机集成？》 · EPUB第102–107节",<br>  "content&#95;sha256": "c81ae5bc406ab96fa82949d34a1280e47e3dabcefdc091941654326ce7d20c6f",<br>  "registry&#95;id": "gongfa-candidate-html211-d023-56b0270605",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第13节《13-性能测试的工程集成：如何与产品开发和运维业务有机集成？》 · EPUB第102–107节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：性能回归的持续反馈（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 待核：候选记录未提供独立适用边界；不据标题或初评品级外推。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“性能测试应从独立、人工、一次性的活动演化为与CI/CD和运维监控集成的持续性能工程”（上游来源未独立核验）；候选标题/选区的问题线索为“如何与产品开发和运维业务有机集成？”（候选快照的标题问题线索（未独立语义核验））；快照未列出可独立确认的适用情境。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“性能测试应从独立、人工、一次性的活动演化为与CI/CD和运维监控集成的持续性能工程”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于method-specification，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：性能测试应从独立、人工、一次性的活动演化为与CI/CD和运维监控集成的持续性能工程；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：性能回归应进入持续集成流水线。上线后的监控、诊断和自动化优化需要统一数据基础。AIOps的前提是持续、可信的数据采集；与开发集成；持续测试使性能回归更早暴露；构建/提交后自动执行关键性能检查。阈值不满足时可阻止发布或触发回滚；与运维集成；生产监控将一次性测试扩展为持续反馈；自动采集指标。自动检测异常。条件成熟时可自动诊断和建议优化。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“持续性能工程集成模型”（摘要：性能测试应从独立、人工、一次性的活动演化为与CI/CD和运维监控集成的持续性能工程）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“持续性能工程集成模型”的冻结快照仅给出“性能测试应从独立、人工、一次性的活动演化为与CI/CD和运维监控集成的持续性能工程”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：围绕候选摘要“性能测试应从独立、人工、一次性的活动演化为与CI/CD和运维监控集成的持续性能工程”分析其条件、步骤与可能反例；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：快照未列出“持续性能工程集成模型”的独立确认适用条件；当前只能定位于摘要“性能测试应从独立、人工、一次性的活动演化为与CI/CD和运维监控集成的持续性能工程”。编者边界（未独立复核）：候选快照未提供“持续性能工程集成模型”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-d025-cb94a81892-r1-60b2bb96"></a>
 ### 瓶颈分层分析
@@ -1265,20 +1265,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 瓶颈分层分析 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：根因定位从“哪里受限”逐步缩小到具体资源和机制。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：根因定位从“哪里受限”逐步缩小到具体资源和机制。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“从服务/节点到资源种类，再到内部机制逐层定位。”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照把“瓶颈分层分析”概括为“根因定位从“哪里受限”逐步缩小到具体资源和机制”，但选区未记录可复现的操作序列；摘要和编者初评不能替代上游原文步骤。具体运用须先核验来源与情境，本项不补造流程。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“根因定位从“哪里受限”逐步缩小到具体资源和机制”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：D025；登记ID：gongfa-candidate-html211-d025-cb94a81892；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=困难跨资源瓶颈缩小；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=从服务节点到资源再到内部机制，预计复杂问题中仍减少盲目调参和定位范围。；置信标签=medium；反证条件=若资源线索不能通过机制与实验区分根因，或瓶颈只是被转移，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "方法",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "D025",<br>    "value": "从服务/节点到资源种类，再到内部机制逐层定位。",<br>    "boundary": "高使用率或相关尖峰只是线索，须独立机制/实验；不能从总体CPU平均值宣布唯一瓶颈。"<br>  },<br>  "related&#95;framework&#95;view": "/frameworks/24",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-abductive-debugging"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D025；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D025",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 229,<br>    "end": 233<br>  },<br>  "declared&#95;upstream": "第14节《14-性能分析概述：性能问题归根结底是什么原因？》 · EPUB第108–114节",<br>  "content&#95;sha256": "35e554fe204da5802430c86c4a5ae6e615d8859984439ed7369cfe638227e77a",<br>  "registry&#95;id": "gongfa-candidate-html211-d025-cb94a81892",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第14节《14-性能分析概述：性能问题归根结底是什么原因？》 · EPUB第108–114节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：困难跨资源瓶颈缩小（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 既有候选编辑边界（非独立原著核验）：高使用率或相关尖峰只是线索，须独立机制/实验；不能从总体CPU平均值宣布唯一瓶颈。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“根因定位从“哪里受限”逐步缩小到具体资源和机制”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照未列出可独立确认的适用情境。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“从服务/节点到资源种类，再到内部机制逐层定位”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于method-specification，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：从服务/节点到资源种类，再到内部机制逐层定位。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“瓶颈分层分析”（摘要：根因定位从“哪里受限”逐步缩小到具体资源和机制）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照的编辑边界为“高使用率或相关尖峰只是线索，须独立机制/实验；不能从总体CPU平均值宣布唯一瓶颈”；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“瓶颈分层分析”（根因定位从“哪里受限”逐步缩小到具体资源和机制），冻结快照的编者分析列出关联线索“溯因排错法（仓内操作版）”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“溯因排错法（仓内操作版）”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：围绕候选摘要“根因定位从“哪里受限”逐步缩小到具体资源和机制”分析其条件、步骤与可能反例；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：快照未列出“瓶颈分层分析”的独立确认适用条件；当前只能定位于摘要“根因定位从“哪里受限”逐步缩小到具体资源和机制”。编者边界（未独立复核）：高使用率或相关尖峰只是线索，须独立机制/实验；不能从总体CPU平均值宣布唯一瓶颈。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-d031-cad67d404d-r1-d78a7347"></a>
 ### 网络分层诊断
@@ -1286,20 +1286,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 网络分层诊断 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：EPUB第140–148节 · 18-网络篇：如何步步拆解处理复杂的网络性能问题？ |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：网络性能要分层看连通性、延迟、带宽/吞吐与利用率，从单机协议栈、数据中心拓扑到互联网/CDN逐层定位。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“网络性能要分层看连通性、延迟、带宽/吞吐与利用率，从单机协议栈、数据中心拓扑到互联网/CDN逐层定位”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：跨机架/数据中心链路存在超订，聊天型服务尽量近距离部署。TCP丢包会显著降低吞吐。CDN用DNS导向边缘，未命中回源，命中直接返回；网络三维指标；连接是否可用、传输延迟和有效带宽构成基本诊断入口；单机关注协议栈和网卡。数据中心关注拓扑和超订。互联网关注路由距离和丢包。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“网络性能要分层看连通性、延迟、带宽/吞吐与利用率，从单机协议栈、数据中心拓扑到互联网/CDN逐层定位”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：D031；登记ID：gongfa-candidate-html211-d031-cad67d404d；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=复杂跨域网络性能诊断；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=单机、数据中心和互联网分层预计在困难端到端路径中仍减少层间误归因。；置信标签=medium；反证条件=若丢包、拓扑或协议栈判断不符合观测，诊断无法减少根因范围，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "方法",<br>  "related&#95;framework&#95;view": "/frameworks/30",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D031；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D031",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 278,<br>    "end": 288<br>  },<br>  "declared&#95;upstream": "第18节《18-网络篇：如何步步拆解处理复杂的网络性能问题？》 · EPUB第140–148节",<br>  "content&#95;sha256": "bc7a214c3f7c789dca44229ebbbca0118c210392ca2f2f4ce37ec1e4a7e90b7d",<br>  "registry&#95;id": "gongfa-candidate-html211-d031-cad67d404d",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第18节《18-网络篇：如何步步拆解处理复杂的网络性能问题？》 · EPUB第140–148节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：复杂跨域网络性能诊断（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 待核：候选记录未提供独立适用边界；不据标题或初评品级外推。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“网络性能要分层看连通性、延迟、带宽/吞吐与利用率，从单机协议栈、数据中心拓扑到互联网/CDN逐层定位”（上游来源未独立核验）；候选标题/选区的问题线索为“如何步步拆解处理复杂的网络性能问题？”（候选快照的标题问题线索（未独立语义核验））；快照未列出可独立确认的适用情境。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“网络性能要分层看连通性、延迟、带宽/吞吐与利用率，从单机协议栈、数据中心拓扑到互联网/CDN逐层定位”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于method-specification，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：网络性能要分层看连通性、延迟、带宽/吞吐与利用率，从单机协议栈、数据中心拓扑到互联网/CDN逐层定位；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：跨机架/数据中心链路存在超订，聊天型服务尽量近距离部署。TCP丢包会显著降低吞吐。CDN用DNS导向边缘，未命中回源，命中直接返回；网络三维指标；连接是否可用、传输延迟和有效带宽构成基本诊断入口；单机关注协议栈和网卡。数据中心关注拓扑和超订。互联网关注路由距离和丢包。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“网络分层诊断”（摘要：网络性能要分层看连通性、延迟、带宽/吞吐与利用率，从单机协议栈、数据中心拓扑到互联网/CDN逐层定位）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“网络分层诊断”的冻结快照仅给出“网络性能要分层看连通性、延迟、带宽/吞吐与利用率，从单机协议栈、数据中心拓扑到互联网/CDN逐层定位”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：围绕候选摘要“网络性能要分层看连通性、延迟、带宽/吞吐与利用率，从单机协议栈、数据中心拓扑到互联网/CDN逐层定位”分析其条件、步骤与可能反例；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：快照未列出“网络分层诊断”的独立确认适用条件；当前只能定位于摘要“网络性能要分层看连通性、延迟、带宽/吞吐与利用率，从单机协议栈、数据中心拓扑到互联网/CDN逐层定位”。编者边界（未独立复核）：候选快照未提供“网络分层诊断”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-d033-79cec8303b-r1-1fdf0ef8"></a>
 ### 性能优化六原则
@@ -1307,20 +1307,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 性能优化六原则 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：EPUB第149–154节 · 19-性能优化六大原则：三要三不要，快速有效地进行优化 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：优化前先遵循“三要三不要”：要抓最大瓶颈、确诊根因、考虑多场景与全局；不要过度优化、过早优化、肤浅调参。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“优化前先遵循“三要三不要”：要抓最大瓶颈、确诊根因、考虑多场景与全局；不要过度优化、过早优化、肤浅调参”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：优化收益要与成本和风险比较。根因未确认时直接调参容易把问题转移或暂时掩盖。单一场景最优不等于系统全局最优；三个要；有效优化先确定价值、根因和边界；优先最大的瓶颈。确诊问题根因。考虑各种场景和权衡；三个不要；材料要求避免三类常见误区；不要反常态地过度优化。不要在缺乏数据时过早优化。不要停留在表面参数微调。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“优化前先遵循“三要三不要”：要抓最大瓶颈、确诊根因、考虑多场景与全局；不要过度优化、过早优化、肤浅调参”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：D033；登记ID：gongfa-candidate-html211-d033-79cec8303b；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=多场景困难性能优化取舍；类型理由=以设计取舍、目标或行为约束为主，短行动建议不自动变成完整方法。；理由=确诊根因并考虑全局与成本预计在困难场景迁移中仍抑制局部最优和表面调参。；置信标签=medium；反证条件=若优化只在单场景有效、损害其他SLA或总体成本上升，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "准则",<br>  "related&#95;framework&#95;view": "/frameworks/32",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-performance-by-measurement"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D033；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D033",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 292,<br>    "end": 306<br>  },<br>  "declared&#95;upstream": "第19节《19-性能优化六大原则：三要三不要，快速有效地进行优化》 · EPUB第149–154节",<br>  "content&#95;sha256": "bcb3f53de735b9e81e8756da7be9bd7f0b2c9217b47a129e9353e281278a1343",<br>  "registry&#95;id": "gongfa-candidate-html211-d033-79cec8303b",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第19节《19-性能优化六大原则：三要三不要，快速有效地进行优化》 · EPUB第149–154节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：多场景困难性能优化取舍（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 待核：候选记录未提供独立适用边界；不据标题或初评品级外推。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“优化前先遵循“三要三不要”：要抓最大瓶颈、确诊根因、考虑多场景与全局；不要过度优化、过早优化、肤浅调参”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照未列出可独立确认的适用情境。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“优化前先遵循“三要三不要”：要抓最大瓶颈、确诊根因、考虑多场景与全局；不要过度优化、过早优化、肤浅调参”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：优化前先遵循“三要三不要”：要抓最大瓶颈、确诊根因、考虑多场景与全局；不要过度优化、过早优化、肤浅调参；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：优化收益要与成本和风险比较。根因未确认时直接调参容易把问题转移或暂时掩盖。单一场景最优不等于系统全局最优；三个要；有效优化先确定价值、根因和边界；优先最大的瓶颈。确诊问题根因。考虑各种场景和权衡；三个不要；材料要求避免三类常见误区；不要反常态地过度优化。不要在缺乏数据时过早优化。不要停留在表面参数微调。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 候选快照记录的权衡线索为：“优化收益要与成本和风险比较。根因未确认时直接调参容易把问题转移或暂时掩盖。单一场景最优不等于系统全局最优”（尚未独立语义复核）。这是来源对相关情境的定性描述，不等同于本条在具体环境中的实测代价；选区未提供实施成本测量。 |
+| 13 | 比较不同技术与方法。 | 关于候选“性能优化六原则”（优化前先遵循“三要三不要”：要抓最大瓶颈、确诊根因、考虑多场景与全局；不要过度优化、过早优化、肤浅调参），冻结快照的编者分析列出关联线索“性能定位以测量为准”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“性能定位以测量为准”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：围绕候选摘要“优化前先遵循“三要三不要”：要抓最大瓶颈、确诊根因、考虑多场景与全局；不要过度优化、过早优化、肤浅调参”分析其条件、步骤与可能反例；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：快照未列出“性能优化六原则”的独立确认适用条件；当前只能定位于摘要“优化前先遵循“三要三不要”：要抓最大瓶颈、确诊根因、考虑多场景与全局；不要过度优化、过早优化、肤浅调参”。编者边界（未独立复核）：候选快照未提供“性能优化六原则”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-d034-2164abb19a-r1-9f46fde0"></a>
 ### 性能优化十大策略
@@ -1328,20 +1328,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 性能优化十大策略 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：EPUB第155–162节 · 20-性能优化十大策略：如何系统地有层次地优化性能问题？ |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：十大优化策略可以按五对互补思想组织：时空转换、提前/延后、并行/异步、缓存/批量、算法/数据结构。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“十大优化策略可以按五对互补思想组织：时空转换、提前/延后、并行/异步、缓存/批量、算法/数据结构”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：策略选择取决于瓶颈机制，不能机械套用。每种策略都可能把成本转移到另一种资源或阶段。算法和数据结构仍是基础性的高杠杆优化；五对策略；十种策略分别改变资源、时间或执行组织；时间换空间 / 空间换时间。预先处理 / 惰性处理。并行 / 异步。缓存 / 批量合并。先进算法 / 高效数据结构；工程取舍；优化不是无代价加速；预取可能污染缓存。缓存占用空间且引入一致性问题。并行增加同步与竞争。批量提高吞吐但可能增加单请求等待。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“十大优化策略可以按五对互补思想组织：时空转换、提前/延后、并行/异步、缓存/批量、算法/数据结构”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：D034；登记ID：gongfa-candidate-html211-d034-2164abb19a；内容版本：r1；本体类型：dao-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=复杂资源瓶颈的策略权衡；类型理由=相对独立的解释、准则或操作集合共同出现；不自动拆成新身份或本体子类。；理由=互补策略同时说明污染、一致性、同步和等待代价，预计困难资源取舍中仍能减少错用。；置信标签=medium；反证条件=若策略选择无机制依据或只是转移资源成本而违反验收，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;only",<br>  "editorial&#95;type&#95;label": "复合",<br>  "related&#95;framework&#95;view": "/frameworks/33",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D034；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D034",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 306,<br>    "end": 320<br>  },<br>  "declared&#95;upstream": "第20节《20-性能优化十大策略：如何系统地有层次地优化性能问题？》 · EPUB第155–162节",<br>  "content&#95;sha256": "909d898b62d5b58409385728d27d642093b73650e8d2fee817f486a1b5b081b8",<br>  "registry&#95;id": "gongfa-candidate-html211-d034-2164abb19a",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第20节《20-性能优化十大策略：如何系统地有层次地优化性能问题？》 · EPUB第155–162节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：复杂资源瓶颈的策略权衡（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 待核：候选记录未提供独立适用边界；不据标题或初评品级外推。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“十大优化策略可以按五对互补思想组织：时空转换、提前/延后、并行/异步、缓存/批量、算法/数据结构”（上游来源未独立核验）；候选标题/选区的问题线索为“如何系统地有层次地优化性能问题？”（候选快照的标题问题线索（未独立语义核验））；快照未列出可独立确认的适用情境。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“十大优化策略可以按五对互补思想组织：时空转换、提前/延后、并行/异步、缓存/批量、算法/数据结构”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于dao-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：十大优化策略可以按五对互补思想组织：时空转换、提前/延后、并行/异步、缓存/批量、算法/数据结构；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：策略选择取决于瓶颈机制，不能机械套用。每种策略都可能把成本转移到另一种资源或阶段。算法和数据结构仍是基础性的高杠杆优化；五对策略；十种策略分别改变资源、时间或执行组织；时间换空间 / 空间换时间。预先处理 / 惰性处理。并行 / 异步。缓存 / 批量合并。先进算法 / 高效数据结构；工程取舍；优化不是无代价加速；预取可能污染缓存。缓存占用空间且引入一致性问题。并行增加同步与竞争。批量提高吞吐但可能增加单请求等待。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 候选快照记录的权衡线索为：“策略选择取决于瓶颈机制，不能机械套用。每种策略都可能把成本转移到另一种资源或阶段。算法和数据结构仍是基础性的高杠杆优化”（尚未独立语义复核）。这是来源对相关情境的定性描述，不等同于本条在具体环境中的实测代价；选区未提供实施成本测量。 |
+| 13 | 比较不同技术与方法。 | 候选“性能优化十大策略”的冻结快照仅给出“十大优化策略可以按五对互补思想组织：时空转换、提前/延后、并行/异步、缓存/批量、算法/数据结构”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：围绕候选摘要“十大优化策略可以按五对互补思想组织：时空转换、提前/延后、并行/异步、缓存/批量、算法/数据结构”分析其条件、步骤与可能反例；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：快照未列出“性能优化十大策略”的独立确认适用条件；当前只能定位于摘要“十大优化策略可以按五对互补思想组织：时空转换、提前/延后、并行/异步、缓存/批量、算法/数据结构”。编者边界（未独立复核）：候选快照未提供“性能优化十大策略”经独立核实的边界。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-d038-342c1847d5-r1-c1be31ca"></a>
 ### 跨层STW根因链
@@ -1349,20 +1349,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 跨层STW根因链 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：EPUB第183–190节 · 24-跨层案例：如何优化程序、OS和存储系统的交互？ |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：跨层性能问题必须沿应用→JVM→OS→文件系统→存储追踪；案例中长STW的根因是GC日志write()被OS写回和I/O压力阻塞，而非GC算法本身。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“GC暂停表象沿JVM、OS、文件系统和存储追踪，列出日志I/O调整候选。”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照选区中的行动/流程文本（未独立语义复核）列出的步骤/操作是：跨层性能问题必须沿应用→JVM→OS→文件系统→存储追踪；案例中长STW的根因是GC日志write()被OS写回和I/O压力阻塞，而非GC算法本身；STW总时长可以包含GC之外的同步日志阻塞。对照实验用150MB/s后台I/O复现了问题。解决方案需通过分离/异步日志等方式后重新测量；JVM暂停表象最终落到操作系统和存储交互；GC期间同步写日志。OS脏页写回与文件系统日志产生I/O压力。write()阻塞被计入STW；可减少或隔离GC日志路径的同步I/O风险；使用异步GC日志会有丢失尾部日志的风险。降低其他后台I/O。把GC日志放到独立/更快存储或tmpfs。材料验证中，分离到SSD后大暂停显著消失。相关边界（候选编者说明，未独立复核）：这是案例机制及对策组合，不推断所有STW都由日志导致；异步日志、tmpfs及独立存储各有丢失、内存或成本代价。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“跨层性能问题必须沿应用→JVM→OS→文件系统→存储追踪；案例中长STW的根因是GC日志write()被OS写回和I/O压力阻塞，而非GC算法本身”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：D038；登记ID：gongfa-candidate-html211-d038-342c1847d5；内容版本：r1；本体类型：dao-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=困难跨层暂停根因追踪；类型理由=相对独立的解释、准则或操作集合共同出现；不自动拆成新身份或本体子类。；理由=沿应用、JVM、OS、文件系统和存储核链并复测，预计困难交互故障中仍避免只改GC算法。；置信标签=medium；反证条件=若把案例根因套到所有暂停、丢日志或改变存储后原故障仍在，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "复合",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "D038",<br>    "value": "GC暂停表象沿JVM、OS、文件系统和存储追踪，列出日志I/O调整候选。",<br>    "boundary": "这是案例机制及对策组合，不推断所有STW都由日志导致；异步日志、tmpfs及独立存储各有丢失、内存或成本代价。"<br>  },<br>  "related&#95;framework&#95;view": "/frameworks/37",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：无冻结候选快照登记的关联线索；不据此断言不存在关系。 |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D038；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D038",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 362,<br>    "end": 376<br>  },<br>  "declared&#95;upstream": "第24节《24-跨层案例：如何优化程序、OS和存储系统的交互？》 · EPUB第183–190节",<br>  "content&#95;sha256": "66d3ae85e1516af1c982b479e6979b4a1b0a62c982ae0cfeb407632b62026e6f",<br>  "registry&#95;id": "gongfa-candidate-html211-d038-342c1847d5",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第24节《24-跨层案例：如何优化程序、OS和存储系统的交互？》 · EPUB第183–190节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：困难跨层暂停根因追踪（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 既有候选编辑边界（非独立原著核验）：这是案例机制及对策组合，不推断所有STW都由日志导致；异步日志、tmpfs及独立存储各有丢失、内存或成本代价。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“跨层性能问题必须沿应用→JVM→OS→文件系统→存储追踪；案例中长STW的根因是GC日志write()被OS写回和I/O压力阻塞，而非GC算法本身”（上游来源未独立核验）；候选标题/选区的问题线索为“如何优化程序、OS和存储系统的交互？”（候选快照的标题问题线索（未独立语义核验））；快照未列出可独立确认的适用情境。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“GC暂停表象沿JVM、OS、文件系统和存储追踪，列出日志I/O调整候选”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于dao-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：GC暂停表象沿JVM、OS、文件系统和存储追踪，列出日志I/O调整候选；冻结候选快照选区中的行动/流程文本（未独立语义复核）另列操作内容：跨层性能问题必须沿应用→JVM→OS→文件系统→存储追踪；案例中长STW的根因是GC日志write()被OS写回和I/O压力阻塞，而非GC算法本身；STW总时长可以包含GC之外的同步日志阻塞。对照实验用150MB/s后台I/O复现了问题。解决方案需通过分离/异步日志等方式后重新测量；JVM暂停表象最终落到操作系统和存储交互；GC期间同步写日志。OS脏页写回与文件系统日志产生I/O压力。write()阻塞被计入STW；可减少或隔离GC日志…。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“跨层STW根因链”（摘要：跨层性能问题必须沿应用→JVM→OS→文件系统→存储追踪；案例中长STW的根因是GC日志write()被OS写回和I/O压力阻塞，而非GC算法本身）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照的编辑边界为“这是案例机制及对策组合，不推断所有STW都由日志导致；异步日志、tmpfs及独立存储各有丢失、内存或成本代价”；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 候选“跨层STW根因链”的冻结快照仅给出“跨层性能问题必须沿应用→JVM→OS→文件系统→存储追踪；案例中长STW的根因是GC日志write()被OS写回和I/O压力阻塞，而非GC算法本身”这一方法摘要，未提供可核对的同目标替代方案或比较数据；上游内容未独立语义复核，因此不把编者初评改写成方法比较结论。 |
+| 14 | 提炼共同规律。 | 仅有单条候选记录，未提供经独立确认的共同样本；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：围绕候选摘要“跨层性能问题必须沿应用→JVM→OS→文件系统→存储追踪；案例中长STW的根因是GC日志write()被OS写回和I/O压力阻塞，而非GC算法本身”分析其条件、步骤与可能反例；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：快照未列出“跨层STW根因链”的独立确认适用条件；当前只能定位于摘要“跨层性能问题必须沿应用→JVM→OS→文件系统→存储追踪；案例中长STW的根因是GC日志write()被OS写回和I/O压力阻塞，而非GC算法本身”。编者边界（未独立复核）：这是案例机制及对策组合，不推断所有STW都由日志导致；异步日志、tmpfs及独立存储各有丢失、内存或成本代价。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html211-d054-2a3e04f889-r1-8e617f18"></a>
 ### 容量规划闭环
@@ -1370,20 +1370,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 容量规划闭环 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：规划输入包括单位容量、业务增长、预算和约束。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：规划输入包括单位容量、业务增长、预算和约束。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“单位容量、需求、预算与约束转成订购计划，再校正。”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照把“容量规划闭环”概括为“规划输入包括单位容量、业务增长、预算和约束”，但选区未记录可复现的操作序列；摘要和编者初评不能替代上游原文步骤。具体运用须先核验来源与情境，本项不补造流程。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“规划输入包括单位容量、业务增长、预算和约束”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：D054；登记ID：gongfa-candidate-html211-d054-2a3e04f889；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=困难需求预算下的容量规划；类型理由=限定原文已给施行动作、分析方式或条件动作；未据此宣称验收充分。；理由=单位能力测量、需求预测与预算约束迭代预计困难规划中仍能减少错订；计划不等于已到货可用容量。；置信标签=medium；反证条件=若预测、供给或单位能力错误导致目标期容量短缺或明显浪费，则下调。；原意见时间=2026-10-07T13:04:26.525896+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "initial&#95;type&#95;and&#95;limited&#95;semantic&#95;review",<br>  "editorial&#95;type&#95;label": "方法",<br>  "editorial&#95;analysis": {<br>    "candidate&#95;id": "D054",<br>    "value": "单位容量、需求、预算与约束转成订购计划，再校正。",<br>    "boundary": "预测不等于可用容量或采购已到位；供货、区域、灾备与上下游约束需具体冻结，10%经验不作默认。"<br>  },<br>  "related&#95;framework&#95;view": "/frameworks/53",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-state-ownership-questions"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html211:D054；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html211:D054",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "性能工程高手课.html",<br>    "script&#95;id": "pageData",<br>    "actual&#95;html&#95;sha256": "f5e0021cc8af0031cc8bf587f063c8993d2a87ca56fe518939ec3c86a1827c42",<br>    "source&#95;entry&#95;id": "contentContext-769242ed291c72347e",<br>    "json&#95;pointer": "/contentContext/0/passages",<br>    "start": 495,<br>    "end": 499<br>  },<br>  "declared&#95;upstream": "第32节《32-服务的容量规划：怎样才能做到有备无患？》 · EPUB第234–238节",<br>  "content&#95;sha256": "15a724ed5fb774ea09316b8189f8fad62db17bd6f9d99f8606ac65710e375842",<br>  "registry&#95;id": "gongfa-candidate-html211-d054-2a3e04f889",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第32节《32-服务的容量规划：怎样才能做到有备无患？》 · EPUB第234–238节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：困难需求预算下的容量规划（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 既有候选编辑边界（非独立原著核验）：预测不等于可用容量或采购已到位；供货、区域、灾备与上下游约束需具体冻结，10%经验不作默认。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“规划输入包括单位容量、业务增长、预算和约束”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照未列出可独立确认的适用情境。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“单位容量、需求、预算与约束转成订购计划，再校正”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于method-specification，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：单位容量、需求、预算与约束转成订购计划，再校正。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“容量规划闭环”（摘要：规划输入包括单位容量、业务增长、预算和约束）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照的编辑边界为“预测不等于可用容量或采购已到位；供货、区域、灾备与上下游约束需具体冻结，10%经验不作默认”；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“容量规划闭环”（规划输入包括单位容量、业务增长、预算和约束），冻结快照的编者分析列出关联线索“状态时间与责任追踪”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“状态时间与责任追踪”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：围绕候选摘要“规划输入包括单位容量、业务增长、预算和约束”分析其条件、步骤与可能反例；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：快照未列出“容量规划闭环”的独立确认适用条件；当前只能定位于摘要“规划输入包括单位容量、业务增长、预算和约束”。编者边界（未独立复核）：预测不等于可用容量或采购已到位；供货、区域、灾备与上下游约束需具体冻结，10%经验不作默认。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html96-vc004-7ae99be743-r1-22f6bb0d"></a>
 ### 信息隐藏
@@ -1391,20 +1391,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 信息隐藏 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：让每项重要设计知识尽量由一个模块拥有，减少跨模块依赖。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：让每项重要设计知识尽量由一个模块拥有，减少跨模块依赖。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“跨模块知识重复与联动变更”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照把“信息隐藏”概括为“让每项重要设计知识尽量由一个模块拥有，减少跨模块依赖”，但选区未记录可复现的操作序列；摘要和编者初评不能替代上游原文步骤。具体运用须先核验来源与情境，本项不补造流程。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“让每项重要设计知识尽量由一个模块拥有，减少跨模块依赖”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：VC004；登记ID：gongfa-candidate-html96-vc004-7ae99be743；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=跨模块知识重复与联动变更；类型理由=要求重要设计知识尽量单点拥有；理由=预计在多调用者、多变化点的困难维护中仍能约束扩散；不是已测迁移结果。；置信标签=medium；反证条件=在预先固定的困难变更中仍反复多头修改或损坏消费者。；原意见时间=2026-10-07T14:12:04.661998+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "AI&#95;editorial&#95;selection&#95;not&#95;independent&#95;approval",<br>  "source&#95;status": "local&#95;study&#95;page&#95;not&#95;original&#95;verified",<br>  "editorial&#95;use": "跨模块知识重复与联动变更",<br>  "editorial&#95;type&#95;label": "准则",<br>  "editorial&#95;boundary": "隐藏知识不等于隐藏必要合同；所有权须按真实变化边界验证。",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  {<br>    "target": "registry:gongfa-dry-reuse",<br>    "name": "DRY 逻辑复用准则",<br>    "relationship": "related&#95;topic&#95;or&#95;mechanism&#95;not&#95;identity&#95;or&#95;independent&#95;effect&#95;evidence"<br>  },<br>  {<br>    "target": "registry:gongfa-low-coupling",<br>    "name": "低耦合",<br>    "relationship": "related&#95;topic&#95;or&#95;mechanism&#95;not&#95;identity&#95;or&#95;independent&#95;effect&#95;evidence"<br>  }<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html96:VC004；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html96:VC004",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "计算机科学/软件设计哲学.html",<br>    "script&#95;id": "pageData",<br>    "json&#95;pointer": "/frameworks/3",<br>    "source&#95;entry&#95;id": "frameworks-e16c3df3c7875e2847",<br>    "actual&#95;html&#95;sha256": "7a1b8e374e4d0e6d329a558a82ed888ab6d36fe11d683f2d9fe5a2a17af558b2"<br>  },<br>  "declared&#95;upstream": "第5章《信息隐藏和信息泄露》 · EPUB第26–36节",<br>  "content&#95;sha256": "86abf2095544f61e4766c3d162b766bd0a10fbe5f5e963e18b5cc296c1bd3e1f",<br>  "registry&#95;id": "gongfa-candidate-html96-vc004-7ae99be743",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第5章《信息隐藏和信息泄露》 · EPUB第26–36节。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：跨模块知识重复与联动变更（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用”：划分模块职责与数据表示时；既有候选编辑边界（非独立原著核验）：隐藏知识不等于隐藏必要合同；所有权须按真实变化边界验证。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“让每项重要设计知识尽量由一个模块拥有，减少跨模块依赖”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“划分模块职责与数据表示时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“让每项重要设计知识尽量由一个模块拥有，减少跨模块依赖”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：让每项重要设计知识尽量由一个模块拥有，减少跨模块依赖。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“信息隐藏”（摘要：让每项重要设计知识尽量由一个模块拥有，减少跨模块依赖）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照的编辑边界为“隐藏知识不等于隐藏必要合同；所有权须按真实变化边界验证”；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“信息隐藏”（让每项重要设计知识尽量由一个模块拥有，减少跨模块依赖），冻结快照的编者分析列出关联线索“DRY 逻辑复用准则、低耦合”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“DRY 逻辑复用准则、低耦合”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“划分模块职责与数据表示时”下，按“让每项重要设计知识尽量由一个模块拥有，减少跨模块依赖”处理“让每项重要设计知识尽量由一个模块拥有，减少跨模块依赖”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：划分模块职责与数据表示时。编者边界（未独立复核）：隐藏知识不等于隐藏必要合同；所有权须按真实变化边界验证。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html96-vc063-1e8c35ebf8-r1-75bfa7a0"></a>
 ### 提示注入分层防御
@@ -1412,20 +1412,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 提示注入分层防御 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：来源标记、角色隔离、输入清洗作为上下文防线，并由权限/沙盒/审批兜底。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：来源标记、角色隔离、输入清洗作为上下文防线，并由权限/沙盒/审批兜底。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“不可信仓库材料的提示注入防御”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照把“提示注入分层防御”概括为“来源标记、角色隔离、输入清洗作为上下文防线，并由权限/沙盒/审批兜底”，但选区未记录可复现的操作序列；摘要和编者初评不能替代上游原文步骤。具体运用须先核验来源与情境，本项不补造流程。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“来源标记、角色隔离、输入清洗作为上下文防线，并由权限/沙盒/审批兜底”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：VC063；登记ID：gongfa-candidate-html96-vc063-1e8c35ebf8；内容版本：r1；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=不可信仓库材料的提示注入防御；类型理由=结合上下文标记隔离与权限沙盒审批；理由=预计在复杂检索和工具链中仍能用不同层的约束控制越权；未做攻击实验。；置信标签=medium；反证条件=冻结攻击与正常任务中发生越权，或防御使正常任务不能验收。；原意见时间=2026-10-07T14:12:04.661998+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "AI&#95;editorial&#95;selection&#95;not&#95;independent&#95;approval",<br>  "source&#95;status": "local&#95;study&#95;page&#95;not&#95;original&#95;verified",<br>  "editorial&#95;use": "不可信仓库材料的提示注入防御",<br>  "editorial&#95;type&#95;label": "方法",<br>  "editorial&#95;boundary": "来源标记和清洗不能代替运行时授权；正常允许输入不能被无合同拒绝。",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  {<br>    "target": "VC060",<br>    "name": "输入—执行—输出三层护栏",<br>    "relationship": "related&#95;topic&#95;or&#95;mechanism&#95;not&#95;identity&#95;or&#95;independent&#95;effect&#95;evidence"<br>  },<br>  {<br>    "target": "VC020",<br>    "name": "智能体权限边界",<br>    "relationship": "related&#95;topic&#95;or&#95;mechanism&#95;not&#95;identity&#95;or&#95;independent&#95;effect&#95;evidence"<br>  }<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html96:VC063；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html96:VC063",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "机器学习/深入理解AI-Agent.html",<br>    "script&#95;id": "pageData",<br>    "json&#95;pointer": "/frameworks/27",<br>    "source&#95;entry&#95;id": "frameworks-29be2c853ce90b2706",<br>    "actual&#95;html&#95;sha256": "00972480dae36aa1a10816c40597bec5334f39f99ffb7d515e976ce23cb14351"<br>  },<br>  "declared&#95;upstream": "第2章《上下文工程》 · 原书第037页 · PDF第045页",<br>  "content&#95;sha256": "c57e95ff5b036ebbd7811762e6f4aeaf4861587ffbe4bb0edf40867a908af7a6",<br>  "registry&#95;id": "gongfa-candidate-html96-vc063-1e8c35ebf8",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第2章《上下文工程》 · 原书第037页 · PDF第045页。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：不可信仓库材料的提示注入防御（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用”：处理网页、邮件、文档等不可信外部内容时；既有候选编辑边界（非独立原著核验）：来源标记和清洗不能代替运行时授权；正常允许输入不能被无合同拒绝。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“来源标记、角色隔离、输入清洗作为上下文防线，并由权限/沙盒/审批兜底”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“处理网页、邮件、文档等不可信外部内容时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“来源标记、角色隔离、输入清洗作为上下文防线，并由权限/沙盒/审批兜底”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于method-specification，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：来源标记、角色隔离、输入清洗作为上下文防线，并由权限/沙盒/审批兜底。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“提示注入分层防御”（摘要：来源标记、角色隔离、输入清洗作为上下文防线，并由权限/沙盒/审批兜底）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照的编辑边界为“来源标记和清洗不能代替运行时授权；正常允许输入不能被无合同拒绝”；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“提示注入分层防御”（来源标记、角色隔离、输入清洗作为上下文防线，并由权限/沙盒/审批兜底），冻结快照的编者分析列出关联线索“输入—执行—输出三层护栏、智能体权限边界”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“输入—执行—输出三层护栏、智能体权限边界”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“处理网页、邮件、文档等不可信外部内容时”下，按“来源标记、角色隔离、输入清洗作为上下文防线，并由权限/沙盒/审批兜底”处理“来源标记、角色隔离、输入清洗作为上下文防线，并由权限/沙盒/审批兜底”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：处理网页、邮件、文档等不可信外部内容时。编者边界（未独立复核）：来源标记和清洗不能代替运行时授权；正常允许输入不能被无合同拒绝。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html96-vc068-c13da28d27-r1-08aec936"></a>
 ### 状态栏代码维护原则
@@ -1433,20 +1433,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 状态栏代码维护原则 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：确定性状态优先由代码增量维护，避免让 LLM 一次性重读长历史做统计。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：确定性状态优先由代码增量维护，避免让 LLM 一次性重读长历史做统计。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“长历史下确定性计数与状态维护”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照把“状态栏代码维护原则”概括为“确定性状态优先由代码增量维护，避免让 LLM 一次性重读长历史做统计”，但选区未记录可复现的操作序列；摘要和编者初评不能替代上游原文步骤。具体运用须先核验来源与情境，本项不补造流程。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“确定性状态优先由代码增量维护，避免让 LLM 一次性重读长历史做统计”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：VC068；登记ID：gongfa-candidate-html96-vc068-c13da28d27；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=长历史下确定性计数与状态维护；类型理由=要求可确定计算的状态由代码增量维护；理由=预计在长轨迹和重复事件条件下比让LLM重数更稳；输入事件必须准确。；置信标签=medium；反证条件=预定重放、乱序或取消案例中账本与真实副作用持续不一致。；原意见时间=2026-10-07T14:12:04.661998+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "AI&#95;editorial&#95;selection&#95;not&#95;independent&#95;approval",<br>  "source&#95;status": "local&#95;study&#95;page&#95;not&#95;original&#95;verified",<br>  "editorial&#95;use": "长历史下确定性计数与状态维护",<br>  "editorial&#95;type&#95;label": "准则",<br>  "editorial&#95;boundary": "不自动保证事件恰好一次、时序和原子性；缓存不是状态真相源。",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  {<br>    "target": "VC067",<br>    "name": "Context Distillation",<br>    "relationship": "related&#95;topic&#95;or&#95;mechanism&#95;not&#95;identity&#95;or&#95;independent&#95;effect&#95;evidence"<br>  },<br>  {<br>    "target": "registry:gongfa-state-ownership-questions",<br>    "name": "状态时间与责任追踪",<br>    "relationship": "related&#95;topic&#95;or&#95;mechanism&#95;not&#95;identity&#95;or&#95;independent&#95;effect&#95;evidence"<br>  }<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html96:VC068；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html96:VC068",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "机器学习/深入理解AI-Agent.html",<br>    "script&#95;id": "pageData",<br>    "json&#95;pointer": "/frameworks/33",<br>    "source&#95;entry&#95;id": "frameworks-d8c6d79bd7c7f7a439",<br>    "actual&#95;html&#95;sha256": "00972480dae36aa1a10816c40597bec5334f39f99ffb7d515e976ce23cb14351"<br>  },<br>  "declared&#95;upstream": "第2章《上下文工程》 · 原书第057页 · PDF第065页",<br>  "content&#95;sha256": "72f7a00f374773987c62953ab3663a81b1def7130a709257b7b80fddce390bdf",<br>  "registry&#95;id": "gongfa-candidate-html96-vc068-c13da28d27",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第2章《上下文工程》 · 原书第057页 · PDF第065页。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：长历史下确定性计数与状态维护（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用”：状态可由结构化事件准确计算时；既有候选编辑边界（非独立原著核验）：不自动保证事件恰好一次、时序和原子性；缓存不是状态真相源。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“确定性状态优先由代码增量维护，避免让 LLM 一次性重读长历史做统计”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“状态可由结构化事件准确计算时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“确定性状态优先由代码增量维护，避免让 LLM 一次性重读长历史做统计”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：确定性状态优先由代码增量维护，避免让 LLM 一次性重读长历史做统计。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“状态栏代码维护原则”（摘要：确定性状态优先由代码增量维护，避免让 LLM 一次性重读长历史做统计）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照的编辑边界为“不自动保证事件恰好一次、时序和原子性；缓存不是状态真相源”；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“状态栏代码维护原则”（确定性状态优先由代码增量维护，避免让 LLM 一次性重读长历史做统计），冻结快照的编者分析列出关联线索“Context Distillation、状态时间与责任追踪”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“Context Distillation、状态时间与责任追踪”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“状态可由结构化事件准确计算时”下，按“确定性状态优先由代码增量维护，避免让 LLM 一次性重读长历史做统计”处理“确定性状态优先由代码增量维护，避免让 LLM 一次性重读长历史做统计”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：状态可由结构化事件准确计算时。编者边界（未独立复核）：不自动保证事件恰好一次、时序和原子性；缓存不是状态真相源。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-html96-vc079-8ab4aaba7e-r1-44a58fc1"></a>
 ### 评估集六原则
@@ -1454,20 +1454,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 评估集六原则 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：精确任务描述、复杂度分层、可验证性、分布覆盖、质量控制与持续迭代。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 待核：限定选区未给出可复现的步骤/操作序列；不把任务族或标题改写为流程。 |
-| 5 | 扩展 | 待核：快照未记录可核的变体/扩展，不按相近标题推演。 |
+| 2 | 是什么 | 冻结候选快照保存的选区内容（尚未独立语义复核）：精确任务描述、复杂度分层、可验证性、分布覆盖、质量控制与持续迭代。 |
+| 3 | 为什么 | 候选快照记录的用途/价值线索为：“困难及迁移开发任务的评估集审查”。这是对所选内容的编辑说明，不是上游作者的历史动机或效果证据；快照尚未独立语义核验。 |
+| 4 | 怎么做 | 冻结候选快照把“评估集六原则”概括为“精确任务描述、复杂度分层、可验证性、分布覆盖、质量控制与持续迭代”，但选区未记录可复现的操作序列；摘要和编者初评不能替代上游原文步骤。具体运用须先核验来源与情境，本项不补造流程。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“精确任务描述、复杂度分层、可验证性、分布覆盖、质量控制与持续迭代”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：VC079；登记ID：gongfa-candidate-html96-vc079-8ab4aaba7e；内容版本：r1；本体类型：normative-allocation-content；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=困难及迁移开发任务的评估集审查；类型理由=要求精确描述、分层、覆盖和可验证质量；理由=预计在复杂任务族中仍能检查评估代表性；不是方法效果已达地阶。；置信标签=medium；反证条件=留出表现崩溃或高分仍不对应真实需求且评估集未暴露问题。；原意见时间=2026-10-07T14:12:04.661998+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "review&#95;status": "AI&#95;editorial&#95;selection&#95;not&#95;independent&#95;approval",<br>  "source&#95;status": "local&#95;study&#95;page&#95;not&#95;original&#95;verified",<br>  "editorial&#95;use": "困难及迁移开发任务的评估集审查",<br>  "editorial&#95;type&#95;label": "准则",<br>  "editorial&#95;boundary": "质量原则不证明无同源泄漏；冻结留出、预算、oracle和版本另需执行。",<br>  "missing&#95;fields": &#91;<br>    "verified&#95;upstream&#95;passage",<br>    "independent&#95;semantic&#95;approval",<br>    "measured&#95;effect&#95;evidence"<br>  &#93;,<br>  "effect&#95;measured": false,<br>  "independent&#95;semantic&#95;approval": false,<br>  "capability&#95;gap&#95;evidence": null<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  {<br>    "target": "VC084",<br>    "name": "离线—在线评估双轨",<br>    "relationship": "related&#95;topic&#95;or&#95;mechanism&#95;not&#95;identity&#95;or&#95;independent&#95;effect&#95;evidence"<br>  },<br>  {<br>    "target": "VC090",<br>    "name": "黄金标准—功能测试—LLM 评估",<br>    "relationship": "related&#95;topic&#95;or&#95;mechanism&#95;not&#95;identity&#95;or&#95;independent&#95;effect&#95;evidence"<br>  }<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：html96:VC079；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "html96:VC079",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "机器学习/深入理解AI-Agent.html",<br>    "script&#95;id": "pageData",<br>    "json&#95;pointer": "/frameworks/76",<br>    "source&#95;entry&#95;id": "frameworks-599232be26eeab832d",<br>    "actual&#95;html&#95;sha256": "00972480dae36aa1a10816c40597bec5334f39f99ffb7d515e976ce23cb14351"<br>  },<br>  "declared&#95;upstream": "第6章《Agent 的评估》 · 原书第161页 · PDF第169页",<br>  "content&#95;sha256": "c4b9be4f6a17bfaa9059cc8842294138e48095d1759d7c172c74963d52ec4a46",<br>  "registry&#95;id": "gongfa-candidate-html96-vc079-8ab4aaba7e",<br>  "content&#95;version": "r1",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 候选快照声明的上游定位：第6章《Agent 的评估》 · 原书第161页 · PDF第169页。作者、书名/版次、页码及许可证尚未独立核验；此字段不是正式书目记录。 |
-| 9 | 它要解决什么问题？ | 既有候选评估任务族：困难及迁移开发任务的评估集审查（编者应用情境，不等同于原文问题定义）；具体问题、目标与约束待核。 |
-| 10 | 为什么这样设计？ | 待核：没有来源作者的设计理由记录；不从标题、任务族或品级反推。 |
-| 11 | 内部如何实现？ | 待核：冻结限定内容没有明确标注可核的内部机制；不把用途或任务族当成机制。 |
-| 12 | 付出了什么代价？ | 待核：来源摘录与既有初评未提供时间、资源、操作或维护成本；不从限制推算成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有同目标、同前提、同预算和同评价口径的比较；关联线索不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象/场景的对照，不能从单条摘录提炼普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 冻结选区标注“适用”：制作能指导产品改进的评估数据集时；既有候选编辑边界（非独立原著核验）：质量原则不证明无同源泄漏；冻结留出、预算、oracle和版本另需执行。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“精确任务描述、复杂度分层、可验证性、分布覆盖、质量控制与持续迭代”（上游来源未独立核验）；候选快照未提供单独的问题定义；快照记录的适用情境为“制作能指导产品改进的评估数据集时”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照未提供可独立确认的作者设计理由。可见结构是“精确任务描述、复杂度分层、可验证性、分布覆盖、质量控制与持续迭代”；这是对所选内容的结构说明，不推断作者历史动机。 |
+| 11 | 内部如何实现？ | 本条属于normative-allocation-content，并非可直接运行的程序。冻结候选快照中的编者机制摘要（未独立语义复核）为：精确任务描述、复杂度分层、可验证性、分布覆盖、质量控制与持续迭代。这里解释材料可见的推理/变换结构，不把自然语言方法伪装成代码实现或效果验证。 |
+| 12 | 付出了什么代价？ | 冻结候选“评估集六原则”（摘要：精确任务描述、复杂度分层、可验证性、分布覆盖、质量控制与持续迭代）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照的编辑边界为“质量原则不证明无同源泄漏；冻结留出、预算、oracle和版本另需执行”；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 关于候选“评估集六原则”（精确任务描述、复杂度分层、可验证性、分布覆盖、质量控制与持续迭代），冻结快照的编者分析列出关联线索“离线—在线评估双轨、黄金标准—功能测试—LLM 评估”；这只是待核的可能关联，不是上游来源关系或已完成比较。快照没有同任务、同前提、同预算的结果对照，不能据此作优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“离线—在线评估双轨、黄金标准—功能测试—LLM 评估”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“制作能指导产品改进的评估数据集时”下，按“精确任务描述、复杂度分层、可验证性、分布覆盖、质量控制与持续迭代”处理“精确任务描述、复杂度分层、可验证性、分布覆盖、质量控制与持续迭代”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：制作能指导产品改进的评估数据集时。编者边界（未独立复核）：质量原则不证明无同源泄漏；冻结留出、预算、oracle和版本另需执行。待补证据或验证要求：未提供独立效果证据；需先核验上游选区，再按具体任务预先确定目标与指标。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-solve24-psoa-programming-minimal-reproduction-47a914cf5a-1-0-0-acabdae3"></a>
 ### 最小复现
@@ -1475,20 +1475,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 最小复现 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：最小复现：自动压缩 Bug 为最小失败输入和环境。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 固定失败 → 逐步移除输入与依赖 → 保留失败 → 形成最小案例 |
-| 5 | 扩展 | 待核：冻结来源与候选分析未记录可核的变体/扩展。 |
+| 2 | 是什么 | 经文件SHA与JSON Pointer校验的固定Solve pack选区：最小复现：自动压缩 Bug 为最小失败输入和环境。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“预计在依赖较多的困难故障中仍可减少干扰并提高定位可靠性；不适用于无法保持故障身份的缩减”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 经文件SHA校验的固定Solve pack选区（references/packs/programming.json#/entries/6）列出的步骤/操作是：固定失败 → 逐步移除输入与依赖 → 保留失败 → 形成最小案例。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“最小复现：自动压缩 Bug 为最小失败输入和环境”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：psoa.programming.minimal-reproduction；登记ID：gongfa-candidate-solve24-psoa-programming-minimal-reproduction-47a914cf5a；内容版本：1.0.0；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=复杂可复现程序故障的失败输入缩减；类型理由=固定故障、删减输入与依赖、保持失败，产出复现案例，是诊断准备方法。；理由=预计在依赖较多的困难故障中仍可减少干扰并提高定位可靠性；不适用于无法保持故障身份的缩减。；置信标签=medium；反证条件=在可重复的困难故障上，缩减经常改变故障类别或丢失关键条件，且总体定位成本不优于合理基线。；原意见时间=2026-10-07T10:32:40.652763+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "editorial&#95;analysis": {<br>    "source&#95;id": "psoa.programming.minimal-reproduction",<br>    "ontology&#95;type": "method-specification",<br>    "classification&#95;reason": "固定故障、删减输入与依赖、保持失败，产出复现案例，是诊断准备方法。",<br>    "mechanism": "逐步缩减触发条件但保持同一故障，形成可重复检查的案例。",<br>    "related&#95;existing": &#91;<br>      "gongfa-abductive-debugging"<br>    &#93;,<br>    "relation&#95;reason": "旧条目是候选原因与区分实验；本条负责收缩失败输入，既不是整个溯因排错法也不证明根因。",<br>    "registration&#95;recommendation": "优先候选",<br>    "grade&#95;id": "di-initial",<br>    "task&#95;family": "复杂可复现程序故障的失败输入缩减",<br>    "reason": "预计在依赖较多的困难故障中仍可减少干扰并提高定位可靠性；不适用于无法保持故障身份的缩减。",<br>    "confidence": "medium",<br>    "falsifier": "在可重复的困难故障上，缩减经常改变故障类别或丢失关键条件，且总体定位成本不优于合理基线。",<br>    "editorial&#95;caveat": "源文的最小与自动不是已实现自动化，也不证明全局最小案例。"<br>  },<br>  "relation&#95;reason": "旧条目是候选原因与区分实验；本条负责收缩失败输入，既不是整个溯因排错法也不证明根因。",<br>  "registration&#95;recommendation": "优先候选",<br>  "editorial&#95;caveat": "源文的最小与自动不是已实现自动化，也不证明全局最小案例。"<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-abductive-debugging"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：solve24:psoa.programming.minimal-reproduction；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "solve24:psoa.programming.minimal-reproduction",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "references/packs/programming.json",<br>    "json&#95;pointer": "/entries/6",<br>    "file&#95;sha256": "66958c76ca33cc03b5740f463065c9c0b80b5a951b9a1e1df3c46b071862e7d5"<br>  },<br>  "declared&#95;upstream": null,<br>  "content&#95;sha256": "599751ea6f0cb63eb453a236bd51c8642bc5ffaa65eff74916d2dbe735704737",<br>  "registry&#95;id": "gongfa-candidate-solve24-psoa-programming-minimal-reproduction-47a914cf5a",<br>  "content&#95;version": "1.0.0",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 不适用：本条来源是冻结Solve operator pack的JSON条目，不是书目来源；文件、JSON Pointer与摘要见第7项。 |
-| 9 | 它要解决什么问题？ | 最少什么条件仍能触发问题？ |
-| 10 | 为什么这样设计？ | 待核：候选快照没有作者设计动机字段；编辑分析与初评理由不冒充作者意图。 |
-| 11 | 内部如何实现？ | 既有候选编辑分析（非原文、未运行验证）：逐步缩减触发条件但保持同一故障，形成可重复检查的案例。；来源JSON operation字段：固定失败 → 逐步移除输入与依赖 → 保留失败 → 形成最小案例 |
-| 12 | 付出了什么代价？ | 待核：冻结来源与既有候选评估没有可核的时间、资源、运行或维护成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有相同任务、前提、预算与评价口径下的比较证据；关联关系不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象比较材料，不能从单条operator记录归纳普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 适用：失败复杂、依赖多或难以定位首个无效节点。; 不适用：移除步骤会改变故障类别或问题不可重复。; 前提：失败复杂、依赖多或难以定位首个无效节点。; 待补证据（非已验证结果）：最小复现、运行输出、trace/profile、静态诊断、失败与回归结果。; 既有编辑边界（非来源原文）：源文的最小与自动不是已实现自动化，也不证明全局最小案例。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“最小复现：自动压缩 Bug 为最小失败输入和环境”（上游来源未独立核验）；候选标题/选区的问题线索为“最少什么条件仍能触发问题？”（固定Solve pack的core&#95;question）；快照记录的适用情境为“失败复杂、依赖多或难以定位首个无效节点”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“预计在依赖较多的困难故障中仍可减少干扰并提高定位可靠性；不适用于无法保持故障身份的缩减”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“逐步缩减触发条件但保持同一故障，形成可重复检查的案例”，与摘要问题“最少什么条件仍能触发问题？”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 经SHA校验的Solve pack JSON选区（references/packs/programming.json#/entries/6）记录：最小复现：自动压缩 Bug 为最小失败输入和环境。；操作链为“固定失败 → 逐步移除输入与依赖 → 保留失败 → 形成最小案例”；结构化步骤为“”。这是固定方法规格的静态内容，不表示已执行、效果已验证或源文适用于所有任务。 |
+| 12 | 付出了什么代价？ | 冻结候选“最小复现”（摘要：最小复现：自动压缩 Bug 为最小失败输入和环境）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 冻结候选快照将本条与“溯因排错法（仓内操作版）”联系，编者给出的关系理由是：“旧条目是候选原因与区分实验；本条负责收缩失败输入，既不是整个溯因排错法也不证明根因”。据此只能比较概念角色或机制线索；该关联尚未独立核验，且没有同任务结果对照，不据此作效果或优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“溯因排错法（仓内操作版）”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“失败复杂、依赖多或难以定位首个无效节点”下，按“固定失败 → 逐步移除输入与依赖 → 保留失败 → 形成最小案例”处理“最少什么条件仍能触发问题？”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：失败复杂、依赖多或难以定位首个无效节点。编者边界（未独立复核）：候选快照未提供“最小复现”经独立核实的边界；快照列出的不适用情形：移除步骤会改变故障类别或问题不可重复。待补证据或验证要求：最小复现、运行输出、trace/profile、静态诊断、失败与回归结果。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-solve24-psoa-programming-property-based-testing-53fab5bbdb-1-0-0-1a85166f"></a>
 ### 性质测试
@@ -1496,20 +1496,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 性质测试 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：声明输入输出性质并生成多样输入，检查性质而非只检查固定样例。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 定义性质/生成域 → 生成或变异输入 → 执行 → 缩减失败样例 → 修复并回归 |
-| 5 | 扩展 | 待核：冻结来源与候选分析未记录可核的变体/扩展。 |
+| 2 | 是什么 | 经文件SHA与JSON Pointer校验的固定Solve pack选区：声明输入输出性质并生成多样输入，检查性质而非只检查固定样例。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“预计能覆盖固定样例遗漏的困难组合；增益取决于独立性质和生成域，不能保证普遍正确”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 经文件SHA校验的固定Solve pack选区（references/packs/programming.json#/entries/12）列出的步骤/操作是：定义性质/生成域 → 生成或变异输入 → 执行 → 缩减失败样例 → 修复并回归。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“声明输入输出性质并生成多样输入，检查性质而非只检查固定样例”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：psoa.programming.property-based-testing；登记ID：gongfa-candidate-solve24-psoa-programming-property-based-testing-53fab5bbdb；内容版本：1.0.0；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=可声明性质的软件接口边界与组合检验；类型理由=独立性质、输入生成、失败缩减和重放组成可执行检验方法。；理由=预计能覆盖固定样例遗漏的困难组合；增益取决于独立性质和生成域，不能保证普遍正确。；置信标签=medium；反证条件=性质来自被测实现而自证，或生成器在困难输入上持续漏检，不能优于同预算的胜任测试基线。；原意见时间=2026-10-07T10:32:40.652763+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "editorial&#95;analysis": {<br>    "source&#95;id": "psoa.programming.property-based-testing",<br>    "ontology&#95;type": "method-specification",<br>    "classification&#95;reason": "独立性质、输入生成、失败缩减和重放组成可执行检验方法。",<br>    "mechanism": "按允许输入域生成多样案例，检查与实现无关的性质并缩减反例。",<br>    "related&#95;existing": &#91;<br>      "gongfa-evidence-triangulation",<br>      "gongfa-methodology-delivery-loop"<br>    &#93;,<br>    "relation&#95;reason": "旧条目引用性质测试作为组件，但未独立规定性质、生成器、种子与缩减方法。",<br>    "registration&#95;recommendation": "优先候选；记录被旧组合方法引用",<br>    "grade&#95;id": "di-initial",<br>    "task&#95;family": "可声明性质的软件接口边界与组合检验",<br>    "reason": "预计能覆盖固定样例遗漏的困难组合；增益取决于独立性质和生成域，不能保证普遍正确。",<br>    "confidence": "medium",<br>    "falsifier": "性质来自被测实现而自证，或生成器在困难输入上持续漏检，不能优于同预算的胜任测试基线。",<br>    "editorial&#95;caveat": "有限生成样例通过不证明所有输入满足性质。"<br>  },<br>  "relation&#95;reason": "旧条目引用性质测试作为组件，但未独立规定性质、生成器、种子与缩减方法。",<br>  "registration&#95;recommendation": "优先候选；记录被旧组合方法引用",<br>  "editorial&#95;caveat": "有限生成样例通过不证明所有输入满足性质。"<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-evidence-triangulation",<br>  "gongfa-methodology-delivery-loop"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：solve24:psoa.programming.property-based-testing；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "solve24:psoa.programming.property-based-testing",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "references/packs/programming.json",<br>    "json&#95;pointer": "/entries/12",<br>    "file&#95;sha256": "66958c76ca33cc03b5740f463065c9c0b80b5a951b9a1e1df3c46b071862e7d5"<br>  },<br>  "declared&#95;upstream": null,<br>  "content&#95;sha256": "272f2821f7a08ea872c05a97e61811f3dfafa717229eb8d87475753397a08407",<br>  "registry&#95;id": "gongfa-candidate-solve24-psoa-programming-property-based-testing-53fab5bbdb",<br>  "content&#95;version": "1.0.0",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 不适用：本条来源是冻结Solve operator pack的JSON条目，不是书目来源；文件、JSON Pointer与摘要见第7项。 |
-| 9 | 它要解决什么问题？ | 实现是否对一类输入都满足不变量？ |
-| 10 | 为什么这样设计？ | 待核：候选快照没有作者设计动机字段；编辑分析与初评理由不冒充作者意图。 |
-| 11 | 内部如何实现？ | 既有候选编辑分析（非原文、未运行验证）：按允许输入域生成多样案例，检查与实现无关的性质并缩减反例。；来源JSON operation字段：定义性质/生成域 → 生成或变异输入 → 执行 → 缩减失败样例 → 修复并回归 |
-| 12 | 付出了什么代价？ | 待核：冻结来源与既有候选评估没有可核的时间、资源、运行或维护成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有相同任务、前提、预算与评价口径下的比较证据；关联关系不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象比较材料，不能从单条operator记录归纳普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 适用：行为可表达为跨多输入成立的性质或不变量。; 不适用：性质本身含糊或生成输入会触发不可逆外部副作用。; 前提：性质、输入生成域和安全执行边界已定义。; 待补证据（非已验证结果）：性质、生成器、种子、失败输入、缩减过程和重放结果。; 既有编辑边界（非来源原文）：有限生成样例通过不证明所有输入满足性质。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“声明输入输出性质并生成多样输入，检查性质而非只检查固定样例”（上游来源未独立核验）；候选标题/选区的问题线索为“实现是否对一类输入都满足不变量？”（固定Solve pack的core&#95;question）；快照记录的适用情境为“行为可表达为跨多输入成立的性质或不变量”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“预计能覆盖固定样例遗漏的困难组合；增益取决于独立性质和生成域，不能保证普遍正确”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“按允许输入域生成多样案例，检查与实现无关的性质并缩减反例”，与摘要问题“实现是否对一类输入都满足不变量？”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 经SHA校验的Solve pack JSON选区（references/packs/programming.json#/entries/12）记录：声明输入输出性质并生成多样输入，检查性质而非只检查固定样例。；操作链为“定义性质/生成域 → 生成或变异输入 → 执行 → 缩减失败样例 → 修复并回归”；结构化步骤为“写出与实现无关的性质和输入约束 → 生成、变异并执行有界输入 → 记录违反性质的最小反例 → 修复后重放反例并扩展回归”。这是固定方法规格的静态内容，不表示已执行、效果已验证或源文适用于所有任务。 |
+| 12 | 付出了什么代价？ | 冻结候选“性质测试”（摘要：声明输入输出性质并生成多样输入，检查性质而非只检查固定样例）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 冻结候选快照将本条与“视角三角测量（Triangulation）、方法论工具箱总体作业流”联系，编者给出的关系理由是：“旧条目引用性质测试作为组件，但未独立规定性质、生成器、种子与缩减方法”。据此只能比较概念角色或机制线索；该关联尚未独立核验，且没有同任务结果对照，不据此作效果或优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“视角三角测量（Triangulation）、方法论工具箱总体作业流”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“行为可表达为跨多输入成立的性质或不变量”下，按“定义性质/生成域 → 生成或变异输入 → 执行 → 缩减失败样例 → 修复并回归”处理“实现是否对一类输入都满足不变量？”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：行为可表达为跨多输入成立的性质或不变量; 性质、输入生成域和安全执行边界已定义。编者边界（未独立复核）：候选快照未提供“性质测试”经独立核实的边界；快照列出的不适用情形：性质本身含糊或生成输入会触发不可逆外部副作用。待补证据或验证要求：性质、生成器、种子、失败输入、缩减过程和重放结果。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-solve24-psoa-programming-fuzzing-a78be6b0f2-1-0-0-897b752f"></a>
 ### 模糊测试
@@ -1517,20 +1517,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 模糊测试 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：模糊测试：让 Agent 主动攻击刚写的接口和解析器。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 生成或变异输入 → 执行 → 捕获 crash/violation → 最小化 → 加入回归 |
-| 5 | 扩展 | 待核：冻结来源与候选分析未记录可核的变体/扩展。 |
+| 2 | 是什么 | 经文件SHA与JSON Pointer校验的固定Solve pack选区：模糊测试：让 Agent 主动攻击刚写的接口和解析器。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“预计能发现困难边界和组合输入错误；弱oracle、无隔离或不稳定故障会使收益失真”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 经文件SHA校验的固定Solve pack选区（references/packs/programming.json#/entries/7）列出的步骤/操作是：生成或变异输入 → 执行 → 捕获 crash/violation → 最小化 → 加入回归。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“模糊测试：让 Agent 主动攻击刚写的接口和解析器”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：psoa.programming.fuzzing；登记ID：gongfa-candidate-solve24-psoa-programming-fuzzing-a78be6b0f2；内容版本：1.0.0；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=解析器与接口的大输入空间异常发现；类型理由=生成变异输入、捕获异常、最小化并回归，是输入攻击式检验方法。；理由=预计能发现困难边界和组合输入错误；弱oracle、无隔离或不稳定故障会使收益失真。；置信标签=medium；反证条件=在稳定oracle和隔离环境中，持续只发现无关崩溃或无法重放的异常，且关键缺陷发现不优于合理基线。；原意见时间=2026-10-07T10:32:40.652763+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "editorial&#95;analysis": {<br>    "source&#95;id": "psoa.programming.fuzzing",<br>    "ontology&#95;type": "method-specification",<br>    "classification&#95;reason": "生成变异输入、捕获异常、最小化并回归，是输入攻击式检验方法。",<br>    "mechanism": "在隔离和稳定oracle下探索大输入空间，保存可重放失败。",<br>    "related&#95;existing": &#91;<br>      "gongfa-evidence-triangulation"<br>    &#93;,<br>    "relation&#95;reason": "旧条目只是把fuzz作为互补证据组件；本条独立规定生成、异常捕获及缩减循环。",<br>    "registration&#95;recommendation": "优先候选",<br>    "grade&#95;id": "di-initial",<br>    "task&#95;family": "解析器与接口的大输入空间异常发现",<br>    "reason": "预计能发现困难边界和组合输入错误；弱oracle、无隔离或不稳定故障会使收益失真。",<br>    "confidence": "medium",<br>    "falsifier": "在稳定oracle和隔离环境中，持续只发现无关崩溃或无法重放的异常，且关键缺陷发现不优于合理基线。",<br>    "editorial&#95;caveat": "源文的攻击是方法描述，不是目标权限；通用成功字段没有给出充分覆盖阈值。"<br>  },<br>  "relation&#95;reason": "旧条目只是把fuzz作为互补证据组件；本条独立规定生成、异常捕获及缩减循环。",<br>  "registration&#95;recommendation": "优先候选",<br>  "editorial&#95;caveat": "源文的攻击是方法描述，不是目标权限；通用成功字段没有给出充分覆盖阈值。"<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-evidence-triangulation"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：solve24:psoa.programming.fuzzing；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "solve24:psoa.programming.fuzzing",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "references/packs/programming.json",<br>    "json&#95;pointer": "/entries/7",<br>    "file&#95;sha256": "66958c76ca33cc03b5740f463065c9c0b80b5a951b9a1e1df3c46b071862e7d5"<br>  },<br>  "declared&#95;upstream": null,<br>  "content&#95;sha256": "6fc83bd9046f3d9fa7be7bb6e08ebf33227bc24d5f395b0c66809a92b0ba2f86",<br>  "registry&#95;id": "gongfa-candidate-solve24-psoa-programming-fuzzing-a78be6b0f2",<br>  "content&#95;version": "1.0.0",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 不适用：本条来源是冻结Solve operator pack的JSON条目，不是书目来源；文件、JSON Pointer与摘要见第7项。 |
-| 9 | 它要解决什么问题？ | 有没有人没有想到的输入能破坏性质？ |
-| 10 | 为什么这样设计？ | 待核：候选快照没有作者设计动机字段；编辑分析与初评理由不冒充作者意图。 |
-| 11 | 内部如何实现？ | 既有候选编辑分析（非原文、未运行验证）：在隔离和稳定oracle下探索大输入空间，保存可重放失败。；来源JSON operation字段：生成或变异输入 → 执行 → 捕获 crash/violation → 最小化 → 加入回归 |
-| 12 | 付出了什么代价？ | 待核：冻结来源与既有候选评估没有可核的时间、资源、运行或维护成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有相同任务、前提、预算与评价口径下的比较证据；关联关系不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象比较材料，不能从单条operator记录归纳普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 适用：输入空间大、边界复杂且有可自动判定的异常。; 不适用：目标有不可控副作用、无执行隔离或没有稳定 oracle。; 前提：输入空间大、边界复杂且有可自动判定的异常。; 待补证据（非已验证结果）：最小复现、运行输出、trace/profile、静态诊断、失败与回归结果。; 既有编辑边界（非来源原文）：源文的攻击是方法描述，不是目标权限；通用成功字段没有给出充分覆盖阈值。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“模糊测试：让 Agent 主动攻击刚写的接口和解析器”（上游来源未独立核验）；候选标题/选区的问题线索为“有没有人没有想到的输入能破坏性质？”（固定Solve pack的core&#95;question）；快照记录的适用情境为“输入空间大、边界复杂且有可自动判定的异常”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“预计能发现困难边界和组合输入错误；弱oracle、无隔离或不稳定故障会使收益失真”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“在隔离和稳定oracle下探索大输入空间，保存可重放失败”，与摘要问题“有没有人没有想到的输入能破坏性质？”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 经SHA校验的Solve pack JSON选区（references/packs/programming.json#/entries/7）记录：模糊测试：让 Agent 主动攻击刚写的接口和解析器。；操作链为“生成或变异输入 → 执行 → 捕获 crash/violation → 最小化 → 加入回归”；结构化步骤为“生成或变异输入 → 执行 → 捕获 crash/violation → 最小化 → 加入回归”。这是固定方法规格的静态内容，不表示已执行、效果已验证或源文适用于所有任务。 |
+| 12 | 付出了什么代价？ | 冻结候选“模糊测试”（摘要：模糊测试：让 Agent 主动攻击刚写的接口和解析器）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 冻结候选快照将本条与“视角三角测量（Triangulation）”联系，编者给出的关系理由是：“旧条目只是把fuzz作为互补证据组件；本条独立规定生成、异常捕获及缩减循环”。据此只能比较概念角色或机制线索；该关联尚未独立核验，且没有同任务结果对照，不据此作效果或优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“视角三角测量（Triangulation）”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“输入空间大、边界复杂且有可自动判定的异常”下，按“生成或变异输入 → 执行 → 捕获 crash/violation → 最小化 → 加入回归”处理“有没有人没有想到的输入能破坏性质？”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：输入空间大、边界复杂且有可自动判定的异常。编者边界（未独立复核）：候选快照未提供“模糊测试”经独立核实的边界；快照列出的不适用情形：目标有不可控副作用、无执行隔离或没有稳定 oracle。待补证据或验证要求：最小复现、运行输出、trace/profile、静态诊断、失败与回归结果。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-solve24-psoa-computer-science-invariant-checking-ff7aa82215-1-0-0-a3252f0d"></a>
 ### 不变量检查
@@ -1538,20 +1538,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 不变量检查 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：在每个状态转移前后检查必须始终保持的安全、数据和一致性性质。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 定义不变量 → 找覆盖所有转移的检查点 → 验证状态前后 → 生成违反路径或证明摘要 |
-| 5 | 扩展 | 待核：冻结来源与候选分析未记录可核的变体/扩展。 |
+| 2 | 是什么 | 经文件SHA与JSON Pointer校验的固定Solve pack选区：在每个状态转移前后检查必须始终保持的安全、数据和一致性性质。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“预计能发现最终状态掩盖的中间违反；困难状态流中的可靠性仍依赖谓词与检查点覆盖”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 经文件SHA校验的固定Solve pack选区（references/packs/computer-science.json#/entries/11）列出的步骤/操作是：定义不变量 → 找覆盖所有转移的检查点 → 验证状态前后 → 生成违反路径或证明摘要。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“在每个状态转移前后检查必须始终保持的安全、数据和一致性性质”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：psoa.computer-science.invariant-checking；登记ID：gongfa-candidate-solve24-psoa-computer-science-invariant-checking-ff7aa82215；内容版本：1.0.0；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=多步状态流的权限、数据与一致性检查；类型理由=将性质变为谓词，在状态转移检查点求值并记录违反路径，是检查方法。；理由=预计能发现最终状态掩盖的中间违反；困难状态流中的可靠性仍依赖谓词与检查点覆盖。；置信标签=medium；反证条件=正确规定关键性质后，中间违反仍在声明覆盖内漏检，或谓词误判正常状态导致任务失败。；原意见时间=2026-10-07T10:32:40.652763+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "editorial&#95;analysis": {<br>    "source&#95;id": "psoa.computer-science.invariant-checking",<br>    "ontology&#95;type": "method-specification",<br>    "classification&#95;reason": "将性质变为谓词，在状态转移检查点求值并记录违反路径，是检查方法。",<br>    "mechanism": "在关键转移前后检查明确不变量，不只看最终状态。",<br>    "related&#95;existing": &#91;<br>      "gongfa-invariant-constraints"<br>    &#93;,<br>    "relation&#95;reason": "旧条目为两句准则；本条带谓词、检查点和违反路径。二者相关但不相同，不把旧准则改成完整方法。",<br>    "registration&#95;recommendation": "可作为同题操作版候选，保留旧准则身份",<br>    "grade&#95;id": "di-initial",<br>    "task&#95;family": "多步状态流的权限、数据与一致性检查",<br>    "reason": "预计能发现最终状态掩盖的中间违反；困难状态流中的可靠性仍依赖谓词与检查点覆盖。",<br>    "confidence": "medium",<br>    "falsifier": "正确规定关键性质后，中间违反仍在声明覆盖内漏检，或谓词误判正常状态导致任务失败。",<br>    "editorial&#95;caveat": "执行路径检查不证明未执行路径安全；形式验证是条件性选项而非已有回执。"<br>  },<br>  "relation&#95;reason": "旧条目为两句准则；本条带谓词、检查点和违反路径。二者相关但不相同，不把旧准则改成完整方法。",<br>  "registration&#95;recommendation": "可作为同题操作版候选，保留旧准则身份",<br>  "editorial&#95;caveat": "执行路径检查不证明未执行路径安全；形式验证是条件性选项而非已有回执。"<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-invariant-constraints"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：solve24:psoa.computer-science.invariant-checking；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "solve24:psoa.computer-science.invariant-checking",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "references/packs/computer-science.json",<br>    "json&#95;pointer": "/entries/11",<br>    "file&#95;sha256": "a82461bb418bf006ac37285612120a2e0595adf95b8d8d1a62cc918b0fcf695f"<br>  },<br>  "declared&#95;upstream": null,<br>  "content&#95;sha256": "e81824783a194818343fc76bfeb51896ff72cc948d7e5d619461e6219828a7af",<br>  "registry&#95;id": "gongfa-candidate-solve24-psoa-computer-science-invariant-checking-ff7aa82215",<br>  "content&#95;version": "1.0.0",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 不适用：本条来源是冻结Solve operator pack的JSON条目，不是书目来源；文件、JSON Pointer与摘要见第7项。 |
-| 9 | 它要解决什么问题？ | 无论走哪条路径，什么性质都不能被破坏？ |
-| 10 | 为什么这样设计？ | 待核：候选快照没有作者设计动机字段；编辑分析与初评理由不冒充作者意图。 |
-| 11 | 内部如何实现？ | 既有候选编辑分析（非原文、未运行验证）：在关键转移前后检查明确不变量，不只看最终状态。；来源JSON operation字段：定义不变量 → 找覆盖所有转移的检查点 → 验证状态前后 → 生成违反路径或证明摘要 |
-| 12 | 付出了什么代价？ | 待核：冻结来源与既有候选评估没有可核的时间、资源、运行或维护成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有相同任务、前提、预算与评价口径下的比较证据；关联关系不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象比较材料，不能从单条operator记录归纳普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 适用：系统有跨步骤必须保持的性质。; 不适用：性质本身不稳定或只能靠主观判断。; 前提：状态和不变量表达式已定义。; 待补证据（非已验证结果）：不变量定义、检查点、状态转移、违反路径或覆盖证明。; 既有编辑边界（非来源原文）：执行路径检查不证明未执行路径安全；形式验证是条件性选项而非已有回执。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“在每个状态转移前后检查必须始终保持的安全、数据和一致性性质”（上游来源未独立核验）；候选标题/选区的问题线索为“无论走哪条路径，什么性质都不能被破坏？”（固定Solve pack的core&#95;question）；快照记录的适用情境为“系统有跨步骤必须保持的性质”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“预计能发现最终状态掩盖的中间违反；困难状态流中的可靠性仍依赖谓词与检查点覆盖”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“在关键转移前后检查明确不变量，不只看最终状态”，与摘要问题“无论走哪条路径，什么性质都不能被破坏？”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 经SHA校验的Solve pack JSON选区（references/packs/computer-science.json#/entries/11）记录：在每个状态转移前后检查必须始终保持的安全、数据和一致性性质。；操作链为“定义不变量 → 找覆盖所有转移的检查点 → 验证状态前后 → 生成违反路径或证明摘要”；结构化步骤为“”。这是固定方法规格的静态内容，不表示已执行、效果已验证或源文适用于所有任务。 |
+| 12 | 付出了什么代价？ | 冻结候选“不变量检查”（摘要：在每个状态转移前后检查必须始终保持的安全、数据和一致性性质）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 冻结候选快照将本条与“不变式与明确约束”联系，编者给出的关系理由是：“旧条目为两句准则；本条带谓词、检查点和违反路径。二者相关但不相同，不把旧准则改成完整方法”。据此只能比较概念角色或机制线索；该关联尚未独立核验，且没有同任务结果对照，不据此作效果或优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“不变式与明确约束”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“系统有跨步骤必须保持的性质”下，按“定义不变量 → 找覆盖所有转移的检查点 → 验证状态前后 → 生成违反路径或证明摘要”处理“无论走哪条路径，什么性质都不能被破坏？”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：系统有跨步骤必须保持的性质; 状态和不变量表达式已定义。编者边界（未独立复核）：候选快照未提供“不变量检查”经独立核实的边界；快照列出的不适用情形：性质本身不稳定或只能靠主观判断。待补证据或验证要求：不变量定义、检查点、状态转移、违反路径或覆盖证明。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-solve24-psoa-software-engineering-risk-based-testing-0b7b3e08b5-1-0-0-60692584"></a>
 ### 风险驱动测试
@@ -1559,20 +1559,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 风险驱动测试 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：按风险、影响和不确定性安排测试深度与顺序。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 识别风险 → 排序影响/可能性 → 选择测试 → 根据结果调整覆盖 |
-| 5 | 扩展 | 待核：冻结来源与候选分析未记录可核的变体/扩展。 |
+| 2 | 是什么 | 经文件SHA与JSON Pointer校验的固定Solve pack选区：按风险、影响和不确定性安排测试深度与顺序。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“预计在困难验证预算中保持关键风险覆盖；风险估计失真与低概率高影响遗漏会削弱效果”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 经文件SHA校验的固定Solve pack选区（references/packs/software-engineering.json#/entries/12）列出的步骤/操作是：识别风险 → 排序影响/可能性 → 选择测试 → 根据结果调整覆盖。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“按风险、影响和不确定性安排测试深度与顺序”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：psoa.software-engineering.risk-based-testing；登记ID：gongfa-candidate-solve24-psoa-software-engineering-risk-based-testing-0b7b3e08b5；内容版本：1.0.0；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=有限预算下高影响失效路径的验证安排；类型理由=列风险、按影响与可检测性排序、选择测试并依据结果重排，是验证预算分配方法。；理由=预计在困难验证预算中保持关键风险覆盖；风险估计失真与低概率高影响遗漏会削弱效果。；置信标签=low；反证条件=在相同风险合同与预算下，高影响缺陷漏检增加，或测试顺序只与行数、便利性而非风险对应。；原意见时间=2026-10-07T10:32:40.652763+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "editorial&#95;analysis": {<br>    "source&#95;id": "psoa.software-engineering.risk-based-testing",<br>    "ontology&#95;type": "method-specification",<br>    "classification&#95;reason": "列风险、按影响与可检测性排序、选择测试并依据结果重排，是验证预算分配方法。",<br>    "mechanism": "把有限测试预算优先用于重要失败路径，保留覆盖缺口与剩余风险。",<br>    "related&#95;existing": &#91;<br>      "gongfa-failure-mode-analysis"<br>    &#93;,<br>    "relation&#95;reason": "旧错误认识论已经要求失败模式、风险排序及Top N测试；本条增加测试深度和新证据重排。先比较限定内容，不能按新标题双增。",<br>    "registration&#95;recommendation": "暂缓另增；对照旧方法或作为操作版候选",<br>    "grade&#95;id": "di-initial",<br>    "task&#95;family": "有限预算下高影响失效路径的验证安排",<br>    "reason": "预计在困难验证预算中保持关键风险覆盖；风险估计失真与低概率高影响遗漏会削弱效果。",<br>    "confidence": "low",<br>    "falsifier": "在相同风险合同与预算下，高影响缺陷漏检增加，或测试顺序只与行数、便利性而非风险对应。",<br>    "editorial&#95;caveat": "预算与优先级一致不等于风险已降低或正确性已证明。"<br>  },<br>  "relation&#95;reason": "旧错误认识论已经要求失败模式、风险排序及Top N测试；本条增加测试深度和新证据重排。先比较限定内容，不能按新标题双增。",<br>  "registration&#95;recommendation": "暂缓另增；对照旧方法或作为操作版候选",<br>  "editorial&#95;caveat": "预算与优先级一致不等于风险已降低或正确性已证明。"<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-failure-mode-analysis"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：solve24:psoa.software-engineering.risk-based-testing；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "solve24:psoa.software-engineering.risk-based-testing",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "references/packs/software-engineering.json",<br>    "json&#95;pointer": "/entries/12",<br>    "file&#95;sha256": "801ea4ccd24ddcfff6f1d0115c3c41184390690046f929df21657cd20ef216b1"<br>  },<br>  "declared&#95;upstream": null,<br>  "content&#95;sha256": "48360c0051f46187c29dde8eac5a9734d7949effaa6118d50facafee0ec55510",<br>  "registry&#95;id": "gongfa-candidate-solve24-psoa-software-engineering-risk-based-testing-0b7b3e08b5",<br>  "content&#95;version": "1.0.0",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 不适用：本条来源是冻结Solve operator pack的JSON条目，不是书目来源；文件、JSON Pointer与摘要见第7项。 |
-| 9 | 它要解决什么问题？ | 哪些失败最值得先被发现？ |
-| 10 | 为什么这样设计？ | 待核：候选快照没有作者设计动机字段；编辑分析与初评理由不冒充作者意图。 |
-| 11 | 内部如何实现？ | 既有候选编辑分析（非原文、未运行验证）：把有限测试预算优先用于重要失败路径，保留覆盖缺口与剩余风险。；来源JSON operation字段：识别风险 → 排序影响/可能性 → 选择测试 → 根据结果调整覆盖 |
-| 12 | 付出了什么代价？ | 待核：冻结来源与既有候选评估没有可核的时间、资源、运行或维护成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有相同任务、前提、预算与评价口径下的比较证据；关联关系不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象比较材料，不能从单条operator记录归纳普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 适用：验证预算有限且系统存在不同严重度的失败路径。; 不适用：所有路径风险和代价相同且已有穷尽证明。; 前提：风险项、质量目标和测试资源已声明。; 待补证据（非已验证结果）：风险登记、测试选择理由、结果、覆盖和剩余风险。; 既有编辑边界（非来源原文）：预算与优先级一致不等于风险已降低或正确性已证明。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“按风险、影响和不确定性安排测试深度与顺序”（上游来源未独立核验）；候选标题/选区的问题线索为“哪些失败最值得先被发现？”（固定Solve pack的core&#95;question）；快照记录的适用情境为“验证预算有限且系统存在不同严重度的失败路径”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“预计在困难验证预算中保持关键风险覆盖；风险估计失真与低概率高影响遗漏会削弱效果”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“把有限测试预算优先用于重要失败路径，保留覆盖缺口与剩余风险”，与摘要问题“哪些失败最值得先被发现？”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 经SHA校验的Solve pack JSON选区（references/packs/software-engineering.json#/entries/12）记录：按风险、影响和不确定性安排测试深度与顺序。；操作链为“识别风险 → 排序影响/可能性 → 选择测试 → 根据结果调整覆盖”；结构化步骤为“列出故障模式、影响、可能性和可检测性 → 按风险排序并选择对应测试深度 → 执行高风险测试并记录覆盖缺口 → 依据新证据重排风险和测试计划”。这是固定方法规格的静态内容，不表示已执行、效果已验证或源文适用于所有任务。 |
+| 12 | 付出了什么代价？ | 冻结候选“风险驱动测试”（摘要：按风险、影响和不确定性安排测试深度与顺序）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 冻结候选快照将本条与“错误认识论（Error epistemology）”联系，编者给出的关系理由是：“旧错误认识论已经要求失败模式、风险排序及Top N测试；本条增加测试深度和新证据重排。先比较限定内容，不能按新标题双增”。据此只能比较概念角色或机制线索；该关联尚未独立核验，且没有同任务结果对照，不据此作效果或优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“错误认识论（Error epistemology）”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“验证预算有限且系统存在不同严重度的失败路径”下，按“识别风险 → 排序影响/可能性 → 选择测试 → 根据结果调整覆盖”处理“哪些失败最值得先被发现？”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：验证预算有限且系统存在不同严重度的失败路径; 风险项、质量目标和测试资源已声明。编者边界（未独立复核）：候选快照未提供“风险驱动测试”经独立核实的边界；快照列出的不适用情形：所有路径风险和代价相同且已有穷尽证明。待补证据或验证要求：风险登记、测试选择理由、结果、覆盖和剩余风险。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-solve24-psoa-software-engineering-incident-postmortem-9b9e94d53d-1-0-0-61b68680"></a>
 ### 事故复盘
@@ -1580,20 +1580,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 事故复盘 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：用时间线、因果链和行动项把事故转成可验证的系统改进。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 保全证据 → 建时间线 → 分离触发/根因/放大器 → 制定行动 → 验证关闭 |
-| 5 | 扩展 | 待核：冻结来源与候选分析未记录可核的变体/扩展。 |
+| 2 | 是什么 | 经文件SHA与JSON Pointer校验的固定Solve pack选区：用时间线、因果链和行动项把事故转成可验证的系统改进。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“预计能在跨组件困难事故中留下可检验改进，而非只修触发点；共同根因与证据不全仍可能限制判断”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 经文件SHA校验的固定Solve pack选区（references/packs/software-engineering.json#/entries/14）列出的步骤/操作是：保全证据 → 建时间线 → 分离触发/根因/放大器 → 制定行动 → 验证关闭。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“用时间线、因果链和行动项把事故转成可验证的系统改进”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：psoa.software-engineering.incident-postmortem；登记ID：gongfa-candidate-solve24-psoa-software-engineering-incident-postmortem-9b9e94d53d；内容版本：1.0.0；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=有可保全证据的事故根因与复发治理；类型理由=保全事故证据、建时间线、区分机制并验证行动关闭，是事故分析与改进方法。；理由=预计能在跨组件困难事故中留下可检验改进，而非只修触发点；共同根因与证据不全仍可能限制判断。；置信标签=medium；反证条件=复盘持续把时间相关当因果、行动项不能独立验证，或困难事故复发没有在受控比较中改善。；原意见时间=2026-10-07T10:32:40.652763+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "editorial&#95;analysis": {<br>    "source&#95;id": "psoa.software-engineering.incident-postmortem",<br>    "ontology&#95;type": "method-specification",<br>    "classification&#95;reason": "保全事故证据、建时间线、区分机制并验证行动关闭，是事故分析与改进方法。",<br>    "mechanism": "从真实事故证据建立触发、根因、检测缺口和放大器，再形成可验收行动。",<br>    "related&#95;existing": &#91;<br>      "gongfa-failure-mode-analysis"<br>    &#93;,<br>    "relation&#95;reason": "旧失败模式方法侧重事前错误清单；本条以已发生事故的真实时间线和机制证据为对象，不是失败预演。",<br>    "registration&#95;recommendation": "优先候选",<br>    "grade&#95;id": "di-initial",<br>    "task&#95;family": "有可保全证据的事故根因与复发治理",<br>    "reason": "预计能在跨组件困难事故中留下可检验改进，而非只修触发点；共同根因与证据不全仍可能限制判断。",<br>    "confidence": "medium",<br>    "falsifier": "复盘持续把时间相关当因果、行动项不能独立验证，或困难事故复发没有在受控比较中改善。",<br>    "editorial&#95;caveat": "行动项关闭与复发率下降分开验收；不能从结果倒推出唯一根因。"<br>  },<br>  "relation&#95;reason": "旧失败模式方法侧重事前错误清单；本条以已发生事故的真实时间线和机制证据为对象，不是失败预演。",<br>  "registration&#95;recommendation": "优先候选",<br>  "editorial&#95;caveat": "行动项关闭与复发率下降分开验收；不能从结果倒推出唯一根因。"<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-failure-mode-analysis"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：solve24:psoa.software-engineering.incident-postmortem；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "solve24:psoa.software-engineering.incident-postmortem",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "references/packs/software-engineering.json",<br>    "json&#95;pointer": "/entries/14",<br>    "file&#95;sha256": "801ea4ccd24ddcfff6f1d0115c3c41184390690046f929df21657cd20ef216b1"<br>  },<br>  "declared&#95;upstream": null,<br>  "content&#95;sha256": "f3b19a6782307c30dab202deebd586ba364b8164fa911c93f003d23ef3937ad9",<br>  "registry&#95;id": "gongfa-candidate-solve24-psoa-software-engineering-incident-postmortem-9b9e94d53d",<br>  "content&#95;version": "1.0.0",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 不适用：本条来源是冻结Solve operator pack的JSON条目，不是书目来源；文件、JSON Pointer与摘要见第7项。 |
-| 9 | 它要解决什么问题？ | 为什么系统允许这次故障发生并扩大？ |
-| 10 | 为什么这样设计？ | 待核：候选快照没有作者设计动机字段；编辑分析与初评理由不冒充作者意图。 |
-| 11 | 内部如何实现？ | 既有候选编辑分析（非原文、未运行验证）：从真实事故证据建立触发、根因、检测缺口和放大器，再形成可验收行动。；来源JSON operation字段：保全证据 → 建时间线 → 分离触发/根因/放大器 → 制定行动 → 验证关闭 |
-| 12 | 付出了什么代价？ | 待核：冻结来源与既有候选评估没有可核的时间、资源、运行或维护成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有相同任务、前提、预算与评价口径下的比较证据；关联关系不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象比较材料，不能从单条operator记录归纳普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 适用：发生生产、验证或协作事故且有可保全证据。; 不适用：只有无证据的主观猜测，无法形成因果链。; 前提：日志、版本、变更和影响范围可被保全。; 待补证据（非已验证结果）：事件时间线、影响、根因证据、行动项和关闭证明。; 既有编辑边界（非来源原文）：行动项关闭与复发率下降分开验收；不能从结果倒推出唯一根因。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“用时间线、因果链和行动项把事故转成可验证的系统改进”（上游来源未独立核验）；候选标题/选区的问题线索为“为什么系统允许这次故障发生并扩大？”（固定Solve pack的core&#95;question）；快照记录的适用情境为“发生生产、验证或协作事故且有可保全证据”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“预计能在跨组件困难事故中留下可检验改进，而非只修触发点；共同根因与证据不全仍可能限制判断”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“从真实事故证据建立触发、根因、检测缺口和放大器，再形成可验收行动”，与摘要问题“为什么系统允许这次故障发生并扩大？”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 经SHA校验的Solve pack JSON选区（references/packs/software-engineering.json#/entries/14）记录：用时间线、因果链和行动项把事故转成可验证的系统改进。；操作链为“保全证据 → 建时间线 → 分离触发/根因/放大器 → 制定行动 → 验证关闭”；结构化步骤为“冻结并校验时间线、输入、变更和影响证据 → 区分触发条件、根因、检测缺口和放大器 → 提出带负责人、期限和验证方式的行动项 → 重放或检查证据确认行动已降低复发风险”。这是固定方法规格的静态内容，不表示已执行、效果已验证或源文适用于所有任务。 |
+| 12 | 付出了什么代价？ | 冻结候选“事故复盘”（摘要：用时间线、因果链和行动项把事故转成可验证的系统改进）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 冻结候选快照将本条与“错误认识论（Error epistemology）”联系，编者给出的关系理由是：“旧失败模式方法侧重事前错误清单；本条以已发生事故的真实时间线和机制证据为对象，不是失败预演”。据此只能比较概念角色或机制线索；该关联尚未独立核验，且没有同任务结果对照，不据此作效果或优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“错误认识论（Error epistemology）”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“发生生产、验证或协作事故且有可保全证据”下，按“保全证据 → 建时间线 → 分离触发/根因/放大器 → 制定行动 → 验证关闭”处理“为什么系统允许这次故障发生并扩大？”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：发生生产、验证或协作事故且有可保全证据; 日志、版本、变更和影响范围可被保全。编者边界（未独立复核）：候选快照未提供“事故复盘”经独立核实的边界；快照列出的不适用情形：只有无证据的主观猜测，无法形成因果链。待补证据或验证要求：事件时间线、影响、根因证据、行动项和关闭证明。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-solve24-psoa-research-pre-registration-cb2565324f-1-0-0-eeacfce0"></a>
 ### 预注册
@@ -1601,20 +1601,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 预注册 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：在观察结果前冻结问题、假设、主要终点、分析和停止规则，区分确认性与探索性结果。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 记录假设/设计/分析/停止 → 生成时间戳只读版本 → 执行 → 对照注册并披露偏离 |
-| 5 | 扩展 | 待核：冻结来源与候选分析未记录可核的变体/扩展。 |
+| 2 | 是什么 | 经文件SHA与JSON Pointer校验的固定Solve pack选区：在观察结果前冻结问题、假设、主要终点、分析和停止规则，区分确认性与探索性结果。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“预计能在多选择、多终点的困难比较中限制事后改目标；不正确设计不会因预注册变正确”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 经文件SHA校验的固定Solve pack选区（references/packs/research.json#/entries/6）列出的步骤/操作是：记录假设/设计/分析/停止 → 生成时间戳只读版本 → 执行 → 对照注册并披露偏离。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“在观察结果前冻结问题、假设、主要终点、分析和停止规则，区分确认性与探索性结果”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：psoa.research.pre-registration；登记ID：gongfa-candidate-solve24-psoa-research-pre-registration-cb2565324f；内容版本：1.0.0；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=模型或方法晋升中的确认性评估；类型理由=观察结果前冻结假设、分析与停止条件，执行后披露偏离，是评估协议方法。；理由=预计能在多选择、多终点的困难比较中限制事后改目标；不正确设计不会因预注册变正确。；置信标签=medium；反证条件=注册可被事后覆盖、关键决定仍在看结果后修改且未披露，或同预算下不能改善确认性结论可信度。；原意见时间=2026-10-07T10:32:40.652763+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "editorial&#95;analysis": {<br>    "source&#95;id": "psoa.research.pre-registration",<br>    "ontology&#95;type": "method-specification",<br>    "classification&#95;reason": "观察结果前冻结假设、分析与停止条件，执行后披露偏离，是评估协议方法。",<br>    "mechanism": "留下不能事后改写的计划版本，区分预设判断与探索发现。",<br>    "related&#95;existing": &#91;<br>      "gongfa-experimental-design"<br>    &#93;,<br>    "relation&#95;reason": "旧实验设计列分组、指标与阈值；本条独立约束观察前的冻结及事后偏离披露。",<br>    "registration&#95;recommendation": "优先候选",<br>    "grade&#95;id": "di-initial",<br>    "task&#95;family": "模型或方法晋升中的确认性评估",<br>    "reason": "预计能在多选择、多终点的困难比较中限制事后改目标；不正确设计不会因预注册变正确。",<br>    "confidence": "medium",<br>    "falsifier": "注册可被事后覆盖、关键决定仍在看结果后修改且未披露，或同预算下不能改善确认性结论可信度。",<br>    "editorial&#95;caveat": "单个文件时间戳不自动证明观察先后；需可信版本与执行时间线。"<br>  },<br>  "relation&#95;reason": "旧实验设计列分组、指标与阈值；本条独立约束观察前的冻结及事后偏离披露。",<br>  "registration&#95;recommendation": "优先候选",<br>  "editorial&#95;caveat": "单个文件时间戳不自动证明观察先后；需可信版本与执行时间线。"<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-experimental-design"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：solve24:psoa.research.pre-registration；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "solve24:psoa.research.pre-registration",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "references/packs/research.json",<br>    "json&#95;pointer": "/entries/6",<br>    "file&#95;sha256": "50b785cfb1a9cd659b060aad16a3db7a45041a02087472c2b08b9239fd9843f5"<br>  },<br>  "declared&#95;upstream": null,<br>  "content&#95;sha256": "8e006d1674d8f12982f5c5f84ca0c96a29721ef2afc775666c4b95933b38f754",<br>  "registry&#95;id": "gongfa-candidate-solve24-psoa-research-pre-registration-cb2565324f",<br>  "content&#95;version": "1.0.0",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 不适用：本条来源是冻结Solve operator pack的JSON条目，不是书目来源；文件、JSON Pointer与摘要见第7项。 |
-| 9 | 它要解决什么问题？ | 哪些决定是在看结果前做的？ |
-| 10 | 为什么这样设计？ | 待核：候选快照没有作者设计动机字段；编辑分析与初评理由不冒充作者意图。 |
-| 11 | 内部如何实现？ | 既有候选编辑分析（非原文、未运行验证）：留下不能事后改写的计划版本，区分预设判断与探索发现。；来源JSON operation字段：记录假设/设计/分析/停止 → 生成时间戳只读版本 → 执行 → 对照注册并披露偏离 |
-| 12 | 付出了什么代价？ | 待核：冻结来源与既有候选评估没有可核的时间、资源、运行或维护成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有相同任务、前提、预算与评价口径下的比较证据；关联关系不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象比较材料，不能从单条operator记录归纳普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 适用：结果会影响科学结论、模型晋升或资源决策。; 不适用：纯探索草稿且明确不作确认性声明。; 前提：问题、设计、主要结果和版本保存方式已定义。; 待补证据（非已验证结果）：预注册版本、时间戳、分析计划、偏离日志和最终报告。; 既有编辑边界（非来源原文）：单个文件时间戳不自动证明观察先后；需可信版本与执行时间线。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“在观察结果前冻结问题、假设、主要终点、分析和停止规则，区分确认性与探索性结果”（上游来源未独立核验）；候选标题/选区的问题线索为“哪些决定是在看结果前做的？”（固定Solve pack的core&#95;question）；快照记录的适用情境为“结果会影响科学结论、模型晋升或资源决策”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“预计能在多选择、多终点的困难比较中限制事后改目标；不正确设计不会因预注册变正确”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“留下不能事后改写的计划版本，区分预设判断与探索发现”，与摘要问题“哪些决定是在看结果前做的？”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 经SHA校验的Solve pack JSON选区（references/packs/research.json#/entries/6）记录：在观察结果前冻结问题、假设、主要终点、分析和停止规则，区分确认性与探索性结果。；操作链为“记录假设/设计/分析/停止 → 生成时间戳只读版本 → 执行 → 对照注册并披露偏离”；结构化步骤为“写出假设、终点、协变量和排除规则 → 冻结分析、样本量、停止条件和偏离处理 → 在观察结果前保存带时间戳版本 → 执行后逐项对照注册并披露探索性偏离”。这是固定方法规格的静态内容，不表示已执行、效果已验证或源文适用于所有任务。 |
+| 12 | 付出了什么代价？ | 冻结候选“预注册”（摘要：在观察结果前冻结问题、假设、主要终点、分析和停止规则，区分确认性与探索性结果）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 冻结候选快照将本条与“实验哲学（x-phi）”联系，编者给出的关系理由是：“旧实验设计列分组、指标与阈值；本条独立约束观察前的冻结及事后偏离披露”。据此只能比较概念角色或机制线索；该关联尚未独立核验，且没有同任务结果对照，不据此作效果或优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“实验哲学（x-phi）”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“结果会影响科学结论、模型晋升或资源决策”下，按“记录假设/设计/分析/停止 → 生成时间戳只读版本 → 执行 → 对照注册并披露偏离”处理“哪些决定是在看结果前做的？”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：结果会影响科学结论、模型晋升或资源决策; 问题、设计、主要结果和版本保存方式已定义。编者边界（未独立复核）：候选快照未提供“预注册”经独立核实的边界；快照列出的不适用情形：纯探索草稿且明确不作确认性声明。待补证据或验证要求：预注册版本、时间戳、分析计划、偏离日志和最终报告。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-solve24-psoa-research-replication-study-9dcfbe8bfe-1-0-0-e2c2c1af"></a>
 ### 重复研究
@@ -1622,20 +1622,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 重复研究 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：在独立执行者、样本或环境中重复关键方法，比较效应、误差和边界。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 锁定原主张和协议 → 选择独立复制条件 → 预先固定分析 → 执行 → 比较差异并解释 |
-| 5 | 扩展 | 待核：冻结来源与候选分析未记录可核的变体/扩展。 |
+| 2 | 是什么 | 经文件SHA与JSON Pointer校验的固定Solve pack选区：在独立执行者、样本或环境中重复关键方法，比较效应、误差和边界。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“预计能暴露困难迁移与环境依赖；只换标签或复用同一错误上游不构成独立复制”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 经文件SHA校验的固定Solve pack选区（references/packs/research.json#/entries/5）列出的步骤/操作是：锁定原主张和协议 → 选择独立复制条件 → 预先固定分析 → 执行 → 比较差异并解释。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“在独立执行者、样本或环境中重复关键方法，比较效应、误差和边界”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：psoa.research.replication-study；登记ID：gongfa-candidate-solve24-psoa-research-replication-study-9dcfbe8bfe；内容版本：1.0.0；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=软件方法与模型效果的独立重复评估；类型理由=锁定主张、选择独立复制条件、固定分析并比较结果，是跨条件验证方法。；理由=预计能暴露困难迁移与环境依赖；只换标签或复用同一错误上游不构成独立复制。；置信标签=medium；反证条件=复制关键条件无法锁定、事后调参追求一致，或所谓独立条件实际共享同一错误源而误报普遍有效。；原意见时间=2026-10-07T10:32:40.652763+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "editorial&#95;analysis": {<br>    "source&#95;id": "psoa.research.replication-study",<br>    "ontology&#95;type": "method-specification",<br>    "classification&#95;reason": "锁定主张、选择独立复制条件、固定分析并比较结果，是跨条件验证方法。",<br>    "mechanism": "换有意义的执行者、数据、环境或实现，对照效应、误差与失败边界。",<br>    "related&#95;existing": &#91;<br>      "gongfa-evidence-triangulation"<br>    &#93;,<br>    "relation&#95;reason": "多种证据互补不等于独立重复同一声明；本条检验复制与跨条件成立。",<br>    "registration&#95;recommendation": "优先候选",<br>    "grade&#95;id": "di-initial",<br>    "task&#95;family": "软件方法与模型效果的独立重复评估",<br>    "reason": "预计能暴露困难迁移与环境依赖；只换标签或复用同一错误上游不构成独立复制。",<br>    "confidence": "medium",<br>    "falsifier": "复制关键条件无法锁定、事后调参追求一致，或所谓独立条件实际共享同一错误源而误报普遍有效。",<br>    "editorial&#95;caveat": "本轮没有执行重复研究，也没有独立执行者回执。"<br>  },<br>  "relation&#95;reason": "多种证据互补不等于独立重复同一声明；本条检验复制与跨条件成立。",<br>  "registration&#95;recommendation": "优先候选",<br>  "editorial&#95;caveat": "本轮没有执行重复研究，也没有独立执行者回执。"<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-evidence-triangulation"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：solve24:psoa.research.replication-study；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "solve24:psoa.research.replication-study",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "references/packs/research.json",<br>    "json&#95;pointer": "/entries/5",<br>    "file&#95;sha256": "50b785cfb1a9cd659b060aad16a3db7a45041a02087472c2b08b9239fd9843f5"<br>  },<br>  "declared&#95;upstream": null,<br>  "content&#95;sha256": "82c36be1824cfd5f3c9305be3219da3d1d58822f1ff7cc0d1d3bb5034d4bf7dd",<br>  "registry&#95;id": "gongfa-candidate-solve24-psoa-research-replication-study-9dcfbe8bfe",<br>  "content&#95;version": "1.0.0",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 不适用：本条来源是冻结Solve operator pack的JSON条目，不是书目来源；文件、JSON Pointer与摘要见第7项。 |
-| 9 | 它要解决什么问题？ | 这个结果换人、换数据、换环境还成立吗？ |
-| 10 | 为什么这样设计？ | 待核：候选快照没有作者设计动机字段；编辑分析与初评理由不冒充作者意图。 |
-| 11 | 内部如何实现？ | 既有候选编辑分析（非原文、未运行验证）：换有意义的执行者、数据、环境或实现，对照效应、误差与失败边界。；来源JSON operation字段：锁定原主张和协议 → 选择独立复制条件 → 预先固定分析 → 执行 → 比较差异并解释 |
-| 12 | 付出了什么代价？ | 待核：冻结来源与既有候选评估没有可核的时间、资源、运行或维护成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有相同任务、前提、预算与评价口径下的比较证据；关联关系不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象比较材料，不能从单条operator记录归纳普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 适用：结论需要被独立验证或作为高影响决策依据。; 不适用：只是一次性探索且没有可复用声明。; 前提：原研究的输入、方法、结果和关键主张可获得。; 待补证据（非已验证结果）：原主张、复制协议、独立输入、分析计划、结果和差异归因。; 既有编辑边界（非来源原文）：本轮没有执行重复研究，也没有独立执行者回执。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“在独立执行者、样本或环境中重复关键方法，比较效应、误差和边界”（上游来源未独立核验）；候选标题/选区的问题线索为“这个结果换人、换数据、换环境还成立吗？”（固定Solve pack的core&#95;question）；快照记录的适用情境为“结论需要被独立验证或作为高影响决策依据”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“预计能暴露困难迁移与环境依赖；只换标签或复用同一错误上游不构成独立复制”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“换有意义的执行者、数据、环境或实现，对照效应、误差与失败边界”，与摘要问题“这个结果换人、换数据、换环境还成立吗？”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 经SHA校验的Solve pack JSON选区（references/packs/research.json#/entries/5）记录：在独立执行者、样本或环境中重复关键方法，比较效应、误差和边界。；操作链为“锁定原主张和协议 → 选择独立复制条件 → 预先固定分析 → 执行 → 比较差异并解释”；结构化步骤为“锁定要复制的主张、主要终点和容忍差异 → 选择独立数据、执行者、环境或实现 → 预先固定分析、排除和停止规则 → 比较效应、区间、失败模式和边界”。这是固定方法规格的静态内容，不表示已执行、效果已验证或源文适用于所有任务。 |
+| 12 | 付出了什么代价？ | 冻结候选“重复研究”（摘要：在独立执行者、样本或环境中重复关键方法，比较效应、误差和边界）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 冻结候选快照将本条与“视角三角测量（Triangulation）”联系，编者给出的关系理由是：“多种证据互补不等于独立重复同一声明；本条检验复制与跨条件成立”。据此只能比较概念角色或机制线索；该关联尚未独立核验，且没有同任务结果对照，不据此作效果或优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“视角三角测量（Triangulation）”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“结论需要被独立验证或作为高影响决策依据”下，按“锁定原主张和协议 → 选择独立复制条件 → 预先固定分析 → 执行 → 比较差异并解释”处理“这个结果换人、换数据、换环境还成立吗？”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：结论需要被独立验证或作为高影响决策依据; 原研究的输入、方法、结果和关键主张可获得。编者边界（未独立复核）：候选快照未提供“重复研究”经独立核实的边界；快照列出的不适用情形：只是一次性探索且没有可复用声明。待补证据或验证要求：原主张、复制协议、独立输入、分析计划、结果和差异归因。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-solve24-psoa-research-proxy-target-alignment-audit-2ab9f2a80d-0-1-0-9b02c5e1"></a>
 ### 代理指标—真实目标对齐审计
@@ -1643,20 +1643,20 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 代理指标—真实目标对齐审计 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：对照真实目标与代理指标、模型或规范，寻找代理改善而目标不改善或受损的反例，限定代理的可用范围。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 区分目标/代理/契约 → 审查桥接关系 → 寻找失配见证 → 分开记录指标与目标达标 |
-| 5 | 扩展 | 待核：冻结来源与候选分析未记录可核的变体/扩展。 |
+| 2 | 是什么 | 经文件SHA与JSON Pointer校验的固定Solve pack选区：对照真实目标与代理指标、模型或规范，寻找代理改善而目标不改善或受损的反例，限定代理的可用范围。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“预计能在困难指标冲突中暴露表面进步与目标违约；没有独立目标观察时不能产生有效判定”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 经文件SHA校验的固定Solve pack选区（references/packs/research.json#/entries/8）列出的步骤/操作是：区分目标/代理/契约 → 审查桥接关系 → 寻找失配见证 → 分开记录指标与目标达标。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“对照真实目标与代理指标、模型或规范，寻找代理改善而目标不改善或受损的反例，限定代理的可用范围”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：psoa.research.proxy-target-alignment-audit；登记ID：gongfa-candidate-solve24-psoa-research-proxy-target-alignment-audit-2ab9f2a80d；内容版本：0.1.0；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=模型评分、测试通过率与真实验收目标的失配审计；类型理由=拆分目标、代理与契约，检验桥接假设并寻找失配见证，是指标有效范围审计方法。；理由=预计能在困难指标冲突中暴露表面进步与目标违约；没有独立目标观察时不能产生有效判定。；置信标签=low；反证条件=以同一代理自造真值、删除契约迎合评分，或在有独立目标反例时仍把代理通过判作目标通过。；原意见时间=2026-10-07T10:32:40.652763+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "editorial&#95;analysis": {<br>    "source&#95;id": "psoa.research.proxy-target-alignment-audit",<br>    "ontology&#95;type": "method-specification",<br>    "classification&#95;reason": "拆分目标、代理与契约，检验桥接假设并寻找失配见证，是指标有效范围审计方法。",<br>    "mechanism": "用独立目标观测核对指标变化，保留代理改善但目标失败的反例。",<br>    "related&#95;existing": &#91;<br>      "gongfa-pragmatic-optimization"<br>    &#93;,<br>    "relation&#95;reason": "旧实用主义按指标衡量方案；本条专门审查指标是否代表目标，不借旧条目的指标直接生成真值。",<br>    "registration&#95;recommendation": "优先候选",<br>    "grade&#95;id": "di-initial",<br>    "task&#95;family": "模型评分、测试通过率与真实验收目标的失配审计",<br>    "reason": "预计能在困难指标冲突中暴露表面进步与目标违约；没有独立目标观察时不能产生有效判定。",<br>    "confidence": "low",<br>    "falsifier": "以同一代理自造真值、删除契约迎合评分，或在有独立目标反例时仍把代理通过判作目标通过。",<br>    "editorial&#95;caveat": "源版本0.1.0且evaluation&#95;status=not-run；古文标题与例子不证明实测效果。"<br>  },<br>  "relation&#95;reason": "旧实用主义按指标衡量方案；本条专门审查指标是否代表目标，不借旧条目的指标直接生成真值。",<br>  "registration&#95;recommendation": "优先候选",<br>  "editorial&#95;caveat": "源版本0.1.0且evaluation&#95;status=not-run；古文标题与例子不证明实测效果。"<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-pragmatic-optimization"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：solve24:psoa.research.proxy-target-alignment-audit；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "solve24:psoa.research.proxy-target-alignment-audit",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "references/packs/research.json",<br>    "json&#95;pointer": "/entries/8",<br>    "file&#95;sha256": "50b785cfb1a9cd659b060aad16a3db7a45041a02087472c2b08b9239fd9843f5"<br>  },<br>  "declared&#95;upstream": null,<br>  "content&#95;sha256": "f8eb19ae8594f6f3880aada9da6ab4897572d739b5d776a16b6bb8af2416a295",<br>  "registry&#95;id": "gongfa-candidate-solve24-psoa-research-proxy-target-alignment-audit-2ab9f2a80d",<br>  "content&#95;version": "0.1.0",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 不适用：本条来源是冻结Solve operator pack的JSON条目，不是书目来源；文件、JSON Pointer与摘要见第7项。 |
-| 9 | 它要解决什么问题？ | 这个指标变好，是否真的意味着我们想要的结果变好？ |
-| 10 | 为什么这样设计？ | 待核：候选快照没有作者设计动机字段；编辑分析与初评理由不冒充作者意图。 |
-| 11 | 内部如何实现？ | 既有候选编辑分析（非原文、未运行验证）：用独立目标观测核对指标变化，保留代理改善但目标失败的反例。；来源JSON operation字段：区分目标/代理/契约 → 审查桥接关系 → 寻找失配见证 → 分开记录指标与目标达标 |
-| 12 | 付出了什么代价？ | 待核：冻结来源与既有候选评估没有可核的时间、资源、运行或维护成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有相同任务、前提、预算与评价口径下的比较证据；关联关系不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象比较材料，不能从单条operator记录归纳普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 适用：决策依赖代理指标、评分、模型或文档，且真实目标及其观察边界可明确。; 不适用：没有明确目标，无法确定代理究竟代表什么。; 不适用：只能重复观察同一代理而无法提供任何独立目标证据；此时只能登记待验证假设。; 前提：真实目标、代理定义、使用场景和不可违反契约已声明。; 前提：有目标观测或可定位反例；缺少时必须保留 inconclusive，不伪造真值。; 待补证据（非已验证结果）：独立目标定义、代理协议和不可违反契约。; 待补证据（非已验证结果）：代理/目标对照、桥接假设、失配见证、测量条件和归因边界。; 既有编辑边界（非来源原文）：源版本0.1.0且evaluation&#95;status=not-run；古文标题与例子不证明实测效果。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“对照真实目标与代理指标、模型或规范，寻找代理改善而目标不改善或受损的反例，限定代理的可用范围”（上游来源未独立核验）；候选标题/选区的问题线索为“这个指标变好，是否真的意味着我们想要的结果变好？”（固定Solve pack的core&#95;question）；快照记录的适用情境为“决策依赖代理指标、评分、模型或文档，且真实目标及其观察边界可明确”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“预计能在困难指标冲突中暴露表面进步与目标违约；没有独立目标观察时不能产生有效判定”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“用独立目标观测核对指标变化，保留代理改善但目标失败的反例”，与摘要问题“这个指标变好，是否真的意味着我们想要的结果变好？”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 经SHA校验的Solve pack JSON选区（references/packs/research.json#/entries/8）记录：对照真实目标与代理指标、模型或规范，寻找代理改善而目标不改善或受损的反例，限定代理的可用范围。；操作链为“区分目标/代理/契约 → 审查桥接关系 → 寻找失配见证 → 分开记录指标与目标达标”；结构化步骤为“”。这是固定方法规格的静态内容，不表示已执行、效果已验证或源文适用于所有任务。 |
+| 12 | 付出了什么代价？ | 冻结候选“代理指标—真实目标对齐审计”（摘要：对照真实目标与代理指标、模型或规范，寻找代理改善而目标不改善或受损的反例，限定代理的可用范围）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 冻结候选快照将本条与“实用主义（以指标为准）”联系，编者给出的关系理由是：“旧实用主义按指标衡量方案；本条专门审查指标是否代表目标，不借旧条目的指标直接生成真值”。据此只能比较概念角色或机制线索；该关联尚未独立核验，且没有同任务结果对照，不据此作效果或优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“实用主义（以指标为准）”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“决策依赖代理指标、评分、模型或文档，且真实目标及其观察边界可明确”下，按“区分目标/代理/契约 → 审查桥接关系 → 寻找失配见证 → 分开记录指标与目标达标”处理“这个指标变好，是否真的意味着我们想要的结果变好？”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：决策依赖代理指标、评分、模型或文档，且真实目标及其观察边界可明确; 真实目标、代理定义、使用场景和不可违反契约已声明；有目标观测或可定位反例；缺少时必须保留 inconclusive，不伪造真值。编者边界（未独立复核）：候选快照未提供“代理指标—真实目标对齐审计”经独立核实的边界；快照列出的不适用情形：没有明确目标，无法确定代理究竟代表什么；只能重复观察同一代理而无法提供任何独立目标证据；此时只能登记待验证假设。待补证据或验证要求：独立目标定义、代理协议和不可违反契约；代理/目标对照、桥接假设、失配见证、测量条件和归因边界。这些是候选记录，不代表方法已获独立批准或证明有效。 |
 
 <a id="v0-registry-gongfa-candidate-solve24-psoa-decision-science-regret-robustness-a15aa93cbd-1-0-0-9424888a"></a>
 ### 后悔与鲁棒决策
@@ -1664,17 +1664,17 @@
 | 序号 | 说明项 | 内容 |
 |:---:|:---|:---|
 | 1 | 工具的名称 | 后悔与鲁棒决策 |
-| 2 | 是什么 | 冻结候选快照的原文摘要（上游未独立复核）：在概率不可信或未来状态变化时，比较最坏后悔、阈值安全和方案对假设的敏感性。 |
-| 3 | 为什么 | 待核：冻结选区未单独记录来源作者的采用/设计动机；既有初评理由是编者判断，不能替代作者动机。 |
-| 4 | 怎么做 | 列状态和损失矩阵 → 计算后悔/最坏损失 → 扰动概率和参数 → 选择可接受的鲁棒方案 |
-| 5 | 扩展 | 待核：冻结来源与候选分析未记录可核的变体/扩展。 |
+| 2 | 是什么 | 经文件SHA与JSON Pointer校验的固定Solve pack选区：在概率不可信或未来状态变化时，比较最坏后悔、阈值安全和方案对假设的敏感性。 |
+| 3 | 为什么 | 冻结候选快照中的编者初评理由是：“预计可在困难不确定性下限制脆弱选择；效果受情景覆盖、损失语义与参数交互限制”。它来自editorial&#95;analysis，不是上游作者的动机陈述；该初评尚未独立语义复核，也不构成效果证据。 |
+| 4 | 怎么做 | 经文件SHA校验的固定Solve pack选区（references/packs/decision-science.json#/entries/4）列出的步骤/操作是：列状态和损失矩阵 → 计算后悔/最坏损失 → 扰动概率和参数 → 选择可接受的鲁棒方案。这说明材料记载的流程，不证明它已在特定任务中成功或产生预期效果。 |
+| 5 | 扩展 | 冻结候选快照选区（未独立语义复核）的核心内容是“在概率不可信或未来状态变化时，比较最坏后悔、阈值安全和方案对假设的敏感性”；未提出可独立确认的变体、推导或组合契约。关联线索不自动构成本条扩展，本说明不补造新内容。 |
 | 6 | 关联信息 | 候选ID：psoa.decision-science.regret-robustness；登记ID：gongfa-candidate-solve24-psoa-decision-science-regret-robustness-a15aa93cbd；内容版本：1.0.0；本体类型：method-specification；登记状态：已登记；该状态按用户指令设置，不代表独立语义批准。<br>既有候选初评：状态=provisional；品级=地阶初级（di-initial）；任务族=概率不稳且损失不对称的软件方案选择；类型理由=构造损失与后悔矩阵，扰动情景参数并检查安全阈值，是稳健选择方法。；理由=预计可在困难不确定性下限制脆弱选择；效果受情景覆盖、损失语义与参数交互限制。；置信标签=low；反证条件=合理情景内推荐方案仍违反已声明安全阈值，或无限放大最坏情形导致可行任务长期停摆。；原意见时间=2026-10-07T10:32:40.652763+00:00。该意见原样迁移，仍非正式评级或效果证据。<br>候选快照中的其他编辑/效果边界字段（原样保留于快照）：{<br>  "editorial&#95;analysis": {<br>    "source&#95;id": "psoa.decision-science.regret-robustness",<br>    "ontology&#95;type": "method-specification",<br>    "classification&#95;reason": "构造损失与后悔矩阵，扰动情景参数并检查安全阈值，是稳健选择方法。",<br>    "mechanism": "在不确定情景中比较最坏后悔和可接受阈值，而非只追点估计最优。",<br>    "related&#95;existing": &#91;<br>      "gongfa-reversible-decisions",<br>      "gongfa-state-space-thinking"<br>    &#93;,<br>    "relation&#95;reason": "保留可逆选择权不等于损失矩阵、后悔与多参数鲁棒性分析。",<br>    "registration&#95;recommendation": "优先候选",<br>    "grade&#95;id": "di-initial",<br>    "task&#95;family": "概率不稳且损失不对称的软件方案选择",<br>    "reason": "预计可在困难不确定性下限制脆弱选择；效果受情景覆盖、损失语义与参数交互限制。",<br>    "confidence": "low",<br>    "falsifier": "合理情景内推荐方案仍违反已声明安全阈值，或无限放大最坏情形导致可行任务长期停摆。",<br>    "editorial&#95;caveat": "仅覆盖选定情景；未知情景和共同模型错误不能由一条曲线消除。"<br>  },<br>  "relation&#95;reason": "保留可逆选择权不等于损失矩阵、后悔与多参数鲁棒性分析。",<br>  "registration&#95;recommendation": "优先候选",<br>  "editorial&#95;caveat": "仅覆盖选定情景；未知情景和共同模型错误不能由一条曲线消除。"<br>}<br>冻结来源关联线索（不构成身份合并）：&#91;<br>  "gongfa-reversible-decisions",<br>  "gongfa-state-space-thinking"<br>&#93; |
 | 7 | 出处 | 冻结候选快照路径：.github/metadata/gongfa/source-classified-candidates-20261007.json；快照SHA-256：6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5；候选定位：solve24:psoa.decision-science.regret-robustness；来源选择器、上游声明、登记ID、内容版本及原文SHA：<br>{<br>  "candidate&#95;record": "solve24:psoa.decision-science.regret-robustness",<br>  "candidate&#95;snapshot": ".github/metadata/gongfa/source-classified-candidates-20261007.json",<br>  "candidate&#95;snapshot&#95;sha256": "6f3246373eb2b1d3c6d5916d42133cbf1d6d2988a2c54514bc8ea09816de70b5",<br>  "source&#95;selection": {<br>    "file": "references/packs/decision-science.json",<br>    "json&#95;pointer": "/entries/4",<br>    "file&#95;sha256": "89ddd8d4eeb4641787817e756844012c73c4a607d34e793e8137fffc466ebb5b"<br>  },<br>  "declared&#95;upstream": null,<br>  "content&#95;sha256": "188775d682dc48a433f53a31f3db6dc2a81d46ff9449de2d0babebe017bde553",<br>  "registry&#95;id": "gongfa-candidate-solve24-psoa-decision-science-regret-robustness-a15aa93cbd",<br>  "content&#95;version": "1.0.0",<br>  "snapshot&#95;approval&#95;state": {<br>    "independent&#95;semantic&#95;approval": false,<br>    "source&#95;books&#95;and&#95;licenses&#95;verified": false,<br>    "formal&#95;assessments&#95;created": 0<br>  }<br>}<br>登记正文与冻结候选记录逐字节绑定；上游原著/HTML未重新获取或独立核验。 |
 | 8 | 相关图书 | 不适用：本条来源是冻结Solve operator pack的JSON条目，不是书目来源；文件、JSON Pointer与摘要见第7项。 |
-| 9 | 它要解决什么问题？ | 如果我们错估未来，哪个方案仍不至于太糟？ |
-| 10 | 为什么这样设计？ | 待核：候选快照没有作者设计动机字段；编辑分析与初评理由不冒充作者意图。 |
-| 11 | 内部如何实现？ | 既有候选编辑分析（非原文、未运行验证）：在不确定情景中比较最坏后悔和可接受阈值，而非只追点估计最优。；来源JSON operation字段：列状态和损失矩阵 → 计算后悔/最坏损失 → 扰动概率和参数 → 选择可接受的鲁棒方案 |
-| 12 | 付出了什么代价？ | 待核：冻结来源与既有候选评估没有可核的时间、资源、运行或维护成本。 |
-| 13 | 比较不同技术与方法。 | 待核：没有相同任务、前提、预算与评价口径下的比较证据；关联关系不代表优劣。 |
-| 14 | 提炼共同规律。 | 待核：没有跨对象比较材料，不能从单条operator记录归纳普遍规律。 |
-| 15 | 明确这些规律成立的前提与适用条件。 | 适用：概率、偏好或模型存在显著不确定性，且失败代价不对称。; 不适用：状态和概率已经可靠且错误代价对称。; 前提：行动、状态、损失和可接受风险阈值已定义。; 待补证据（非已验证结果）：损失矩阵、后悔定义、参数范围、阈值和鲁棒性曲线。; 既有编辑边界（非来源原文）：仅覆盖选定情景；未知情景和共同模型错误不能由一条曲线消除。 |
+| 9 | 它要解决什么问题？ | 冻结候选快照记录的主题是“在概率不可信或未来状态变化时，比较最坏后悔、阈值安全和方案对假设的敏感性”（上游来源未独立核验）；候选标题/选区的问题线索为“如果我们错估未来，哪个方案仍不至于太糟？”（固定Solve pack的core&#95;question）；快照记录的适用情境为“概率、偏好或模型存在显著不确定性，且失败代价不对称”。因此本条只描述候选记录中的问题线索，不当作已验证的问题或效果结论。 |
+| 10 | 为什么这样设计？ | 冻结候选快照的编者初评给出理由：“预计可在困难不确定性下限制脆弱选择；效果受情景覆盖、损失语义与参数交互限制”；这是未独立语义复核的编辑判断，不是上游作者的设计说明。候选机制被概括为“在不确定情景中比较最坏后悔和可接受阈值，而非只追点估计最优”，与摘要问题“如果我们错估未来，哪个方案仍不至于太糟？”之间的关系也仅是该初评的解释。 |
+| 11 | 内部如何实现？ | 经SHA校验的Solve pack JSON选区（references/packs/decision-science.json#/entries/4）记录：在概率不可信或未来状态变化时，比较最坏后悔、阈值安全和方案对假设的敏感性。；操作链为“列状态和损失矩阵 → 计算后悔/最坏损失 → 扰动概率和参数 → 选择可接受的鲁棒方案”；结构化步骤为“”。这是固定方法规格的静态内容，不表示已执行、效果已验证或源文适用于所有任务。 |
+| 12 | 付出了什么代价？ | 冻结候选“后悔与鲁棒决策”（摘要：在概率不可信或未来状态变化时，比较最坏后悔、阈值安全和方案对假设的敏感性）没有提供执行时长、资源消耗或效果数据。将其用于具体任务会产生分析、记录与检查工作，这是编辑推断而非实测成本；候选快照未列出可量化代价；上游来源与适用范围仍需独立核实。 |
+| 13 | 比较不同技术与方法。 | 冻结候选快照将本条与“决策论/机会成本（可逆优先）、状态空间思维模型”联系，编者给出的关系理由是：“保留可逆选择权不等于损失矩阵、后悔与多参数鲁棒性分析”。据此只能比较概念角色或机制线索；该关联尚未独立核验，且没有同任务结果对照，不据此作效果或优劣排名。 |
+| 14 | 提炼共同规律。 | 候选快照列出的编者关联线索包括“决策论/机会成本（可逆优先）、状态空间思维模型”，但未独立核验；因此不能据此宣称跨对象共同规律。最多可提出待验证的局部命题：在快照记录的条件“概率、偏好或模型存在显著不确定性，且失败代价不对称”下，按“列状态和损失矩阵 → 计算后悔/最坏损失 → 扰动概率和参数 → 选择可接受的鲁棒方案”处理“如果我们错估未来，哪个方案仍不至于太糟？”；它仍须经上游核实和独立任务证据验证。 |
+| 15 | 明确这些规律成立的前提与适用条件。 | 候选快照记录的条件：概率、偏好或模型存在显著不确定性，且失败代价不对称; 行动、状态、损失和可接受风险阈值已定义。编者边界（未独立复核）：候选快照未提供“后悔与鲁棒决策”经独立核实的边界；快照列出的不适用情形：状态和概率已经可靠且错误代价对称。待补证据或验证要求：损失矩阵、后悔定义、参数范围、阈值和鲁棒性曲线。这些是候选记录，不代表方法已获独立批准或证明有效。 |
