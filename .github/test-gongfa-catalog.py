@@ -306,8 +306,12 @@ class CatalogMaintenanceTest(unittest.TestCase):
             v0_field_names() + ['结论', '连接规则', '依据'],
             [name for _number, name in rows],
         )
+        contract = V1_TEMPLATE.read_text(encoding='utf-8')
+        self.assertIn('图尔敏', contract)
+        self.assertIn('Warrant', contract)
+        self.assertIn('仅列字段交叉引用', contract)
 
-    def test_active_v1_payload_migrates_all_441_records_and_connects_argument_fields(self):
+    def test_active_v1_payload_migrates_all_441_records_with_toulmin_warrants(self):
         expected_counts = {'gongfa': 411, 'faqi': 30}
         expected_names = v0_field_names() + ['结论', '连接规则', '依据']
         bundles = source_archive.bundles(ROOT)
@@ -324,11 +328,44 @@ class CatalogMaintenanceTest(unittest.TestCase):
                 fields = {field['name']: field['content'] for field in item['fields']}
                 self.assertEqual(expected_names, list(fields), item['object_key'])
                 self.assertIn(fields['提炼共同规律。'], fields['结论'], item['object_key'])
-                for reference in ('第9项', '第11项', '第14项', '第15项', '第16项', '第18项'):
-                    self.assertIn(reference, fields['连接规则'], item['object_key'])
+                warrant = fields['连接规则']
+                self.assertTrue(warrant.startswith('推理桥梁：'), item['object_key'])
+                self.assertIn('证据命题：', warrant, item['object_key'])
+                self.assertIn('推理根据：', warrant, item['object_key'])
+                self.assertGreater(len(warrant), 200, item['object_key'])
+                self.assertIn('由于', warrant, item['object_key'])
+                self.assertIn('因此', warrant, item['object_key'])
+                self.assertIn('成立边界：第15项', warrant, item['object_key'])
+                self.assertNotIn('仅当第18项支持第11项机制适用于第9项问题', warrant, item['object_key'])
                 self.assertIn('第7项', fields['依据'], item['object_key'])
                 self.assertIn('第11项', fields['依据'], item['object_key'])
         self.assertEqual(441, total)
+        gongfa_items = {
+            item['object_key']: {field['name']: field['content'] for field in item['fields']}
+            for item in bundles['gongfa']['data']['explanations_v1']['items']
+        }
+        performance_sources = ('html211:D008', 'html211:D009', 'html211:D010')
+        archive_path = '.github/metadata/gongfa/source-classified-candidates-20261007.json'
+        archive_document = bundles['gongfa']['data']['documents'][archive_path]
+        archive = json.loads(archive_document['data'])
+        archived_candidates = {
+            item['candidate_id']: item
+            for item in archive['documents']['html211_candidates']['candidates']
+        }
+        for object_key in (
+            'registry:gongfa-candidate-html211-d008-6fd753377e@r1',
+            'registry:gongfa-candidate-html211-d009-4d61eda424@r1',
+            'registry:gongfa-candidate-html211-d010-5015859ffd@r1',
+        ):
+            basis = gongfa_items[object_key]['依据']
+            self.assertIn(archive_document['sha256'], basis, object_key)
+            for source_id in performance_sources:
+                self.assertIn(source_id, basis, object_key)
+            for candidate_id in ('D008', 'D009', 'D010'):
+                source = archived_candidates[candidate_id]
+                selection = source['source_selection']
+                self.assertIn(source['text_sha256'], basis, object_key)
+                self.assertIn(f"passages {selection['start']}–{selection['end']}", basis, object_key)
 
     def test_historical_archive_status_words_are_identified_as_historical(self):
         rows = catalog.merge_rows(deepcopy(self.documents))
