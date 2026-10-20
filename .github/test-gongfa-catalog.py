@@ -22,11 +22,24 @@ SCRIPT = ROOT / '.github/extensions/sync-gongfa-catalog.py'
 ARTIFACTS = None
 catalog = None
 TEMPLATE = Path(__file__).resolve().parents[1] / '.github/context/assets/templates/tool-explanation-template-v0.md'
+V1_TEMPLATE = Path(__file__).resolve().parents[1] / '.github/context/assets/templates/tool-explanation-template-v1.md'
+STALE_EXPLANATION_LABELS = (
+    '冻结候选', '候选快照', '尚未独立语义复核', '未独立语义复核',
+    '尚未独立语义核验', '不代表独立语义批准',
+)
+
+
+def template_rows(path):
+    rows = []
+    for line in path.read_text(encoding='utf-8').splitlines():
+        parts = line.split('|')
+        if len(parts) == 5 and parts[1].strip().isdigit():
+            rows.append((int(parts[1].strip()), parts[2].strip()))
+    return rows
 
 
 def v0_field_names():
-    return [line.split('|')[2].strip() for line in TEMPLATE.read_text(encoding='utf-8').splitlines()
-            if line.startswith('| ') and line.split('|')[1].strip().isdigit()]
+    return [name for _number, name in template_rows(TEMPLATE)]
 
 
 def save(path, value):
@@ -246,8 +259,7 @@ class CatalogMaintenanceTest(unittest.TestCase):
         items = [item for item in self.documents['explanations_v0']['items']
                  if item['object_key'].startswith('registry:gongfa-candidate-')]
         self.assertEqual(len(items), 331)
-        stale_labels = ('冻结候选', '候选快照', '尚未独立语义复核', '未独立语义复核',
-                        '尚未独立语义核验', '不代表独立语义批准')
+        stale_labels = STALE_EXPLANATION_LABELS
         for item in items:
             fields = {field['name']: field['content'] for field in item['fields']}
             self.assertEqual(list(fields), v0_field_names())
@@ -262,6 +274,34 @@ class CatalogMaintenanceTest(unittest.TestCase):
         for name in ('README.md', 'tian.md', 'di.md', 'xuan.md', 'huang.md'):
             for label in stale_labels:
                 self.assertNotIn(label, views[name], name)
+
+    def test_stale_status_scan_covers_all_441_explanation_items_without_rewriting_them(self):
+        expected_counts = {'gongfa': 411, 'faqi': 30}
+        bundles = source_archive.bundles(ROOT)
+        self.assertEqual(set(expected_counts), set(bundles))
+        hits = []
+        total = 0
+        for kind, expected_count in expected_counts.items():
+            payload = bundles[kind]['data'].get('explanations_v0')
+            self.assertIsNotNone(payload, f'{kind}缺少当前v0说明载荷')
+            items = payload['items']
+            self.assertEqual(expected_count, len(items), kind)
+            total += len(items)
+            for item in items:
+                for field in item['fields']:
+                    for label in STALE_EXPLANATION_LABELS:
+                        if label in field['content']:
+                            hits.append(f"{kind}:{item['object_key']}:{field['name']}:{label}")
+        self.assertEqual(441, total)
+        self.assertEqual([], hits, '仅报告过时状态词候选，不自动改写说明：' + chr(10) + chr(10).join(hits))
+
+    def test_v1_template_appends_the_three_argument_fields_without_changing_v0(self):
+        rows = template_rows(V1_TEMPLATE)
+        self.assertEqual(list(range(1, 19)), [number for number, _name in rows])
+        self.assertEqual(
+            v0_field_names() + ['结论', '连接规则', '依据'],
+            [name for _number, name in rows],
+        )
 
     def test_historical_archive_status_words_are_identified_as_historical(self):
         rows = catalog.merge_rows(deepcopy(self.documents))
