@@ -414,7 +414,7 @@ def render(data, objects, root, explanations, index_name="README.md"):
 
     index = [
         MARKER, "# Vibe Coding法器重要性总表", "", "## 字多不看", "",
-        f"当前{len(assignments)}个对象分别使用v1的18项说明表；新增论证项与Vibe Coding 重要性暂定分开，不代表效能验证。",
+        f"目录登记{len(assignments)}个对象的Vibe Coding重要性；部分软件工件已退役但保留历史重要性记录，不表示当前可运行。各对象使用v1的18项说明表；Vibe Coding 重要性暂定不代表效能验证。",
         "原始登记、来源及历史见[data.json](data.json)；来源初审与当前迁移位置分开，视图不产生运行、许可或效果批准。", "",
         "## 快速导航", "",
     ]

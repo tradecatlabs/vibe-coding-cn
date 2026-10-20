@@ -436,11 +436,7 @@
     ".github/tools/prompts-library/README.md": ".github/extensions/prompts-library/README.md",
     ".github/tools/prompts-library/main.py": ".github/extensions/prompts-library/main.py",
     ".github/skills/auto-skill/README.md": ".github/skills/auto-skill/README.md",
-    ".github/skills/auto-skill/scripts/create-skill.sh": ".github/extensions/create-skill.sh",
-    ".github/skills/auto-skill/scripts/validate-skill.sh": ".github/extensions/validate-skill.sh",
-    ".github/skills/auto-skill/scripts/skill-seekers.sh": ".github/extensions/skill-seekers.sh",
     ".github/skills/auto-tmux/README.md": ".github/skills/auto-tmux/README.md",
-    ".github/skills/auto-tmux/scripts/auto-tmux.sh": ".github/extensions/auto-tmux/auto-tmux.sh",
     ".github/tools/external/html-tools-main/clean_epub_css.html": ".github/extensions/clean_epub_css.html",
     ".github/tools/external/html-tools-main/markdown-bianjiqi.html": ".github/extensions/markdown-bianjiqi.html",
     ".github/tools/external/html-tools-main/task card generator.html": ".github/extensions/task card generator.html"
@@ -657,7 +653,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-prompt-converter；本体类型=software-artifact；版本声明=未声明；本地入口=.github/tools/prompts-library；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：黄阶初级（grade_id=faqi-huang-initial；状态=user_directed_provisional）；范围：Vibe Coding重要性：提示词资产格式迁移的辅助支路；分级依据：只负责格式转换，能维护和复用提示词资产但不参与模型推理或代码执行；替代方式多，属低重要性辅助。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S02, S01。\n输入/输出资产由Excel、Markdown、JSONL组成；main.py委托`start_convert.py`处理部分模式，README记录默认目录及辅助脚本。格式和生成文件不是额外法器对象。"
+            "content": "法器对象ID=faqi-prompt-converter；本体类型=software-artifact；版本声明=未声明；本地入口=.github/extensions/prompts-library；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：黄阶初级（grade_id=faqi-huang-initial；状态=user_directed_provisional）；范围：Vibe Coding重要性：提示词资产格式迁移的辅助支路；分级依据：只负责格式转换，能维护和复用提示词资产但不参与模型推理或代码执行；替代方式多，属低重要性辅助。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S02, S01。\n输入/输出资产由Excel、Markdown、JSONL组成；main.py委托`start_convert.py`处理部分模式，README记录默认目录及辅助脚本。格式和生成文件不是额外法器对象。"
           },
           {
             "name": "出处",
@@ -734,7 +730,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-codex-config-installer；本体类型=software-artifact；版本声明=未声明；本地入口=.github/tools/config/.codex；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶初级（grade_id=faqi-xuan-initial；状态=user_directed_provisional）；范围：Vibe Coding重要性：特定Agent接入配置；分级依据：降低特定Agent初始配置成本，但只服务候选运行时且可手工替代；不属于核心模型推理或执行闭环。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S06, S05。\n与Codex CLI配置文件、AGENTS文本和Codex Home有关；配置与Agent指令不是CLI本身，profile不证明账户、安装版本或审批行为。对象及当前绑定已按退役状态记录。"
+            "content": "法器对象ID=faqi-codex-config-installer；本体类型=software-artifact；版本声明=未声明；本地入口=无（Codex配置安装与恢复脚本已退役；历史路径与来源见第7项）；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶初级（grade_id=faqi-xuan-initial；状态=user_directed_provisional）；范围：Vibe Coding重要性：特定Agent接入配置；分级依据：降低特定Agent初始配置成本，但只服务候选运行时且可手工替代；不属于核心模型推理或执行闭环。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S06, S05。\n与Codex CLI配置文件、AGENTS文本和Codex Home有关；配置与Agent指令不是CLI本身，profile不证明账户、安装版本或审批行为。对象及当前绑定已按退役状态记录。"
           },
           {
             "name": "出处",
@@ -811,7 +807,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-auto-skill-create；本体类型=software-artifact；版本声明=未声明；本地入口=.github/skills/auto-skill；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶中级（grade_id=faqi-xuan-intermediate；状态=user_directed_provisional）；范围：Vibe Coding重要性：技能资产扩展与复用；分级依据：把操作知识封装为可复用Agent技能，能扩展后续任务能力；属于增益支路，不是最小编码闭环的必需组件。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S08, S07。"
+            "content": "法器对象ID=faqi-auto-skill-create；本体类型=software-artifact；版本声明=未声明；本地入口=无（模板生成脚本已退役；历史路径与来源见第7项）；相关Skill说明=.github/skills/auto-skill（不同对象，不是该脚本）；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶中级（grade_id=faqi-xuan-intermediate；状态=user_directed_provisional）；范围：Vibe Coding重要性：技能资产扩展与复用；分级依据：把操作知识封装为可复用Agent技能，能扩展后续任务能力；属于增益支路，不是最小编码闭环的必需组件。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S08, S07。"
           },
           {
             "name": "出处",
@@ -888,7 +884,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-auto-skill-validate；本体类型=software-artifact；版本声明=未声明；本地入口=.github/skills/auto-skill；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶中级（grade_id=faqi-xuan-intermediate；状态=user_directed_provisional）；范围：Vibe Coding重要性：技能资产质量与可载入性；分级依据：降低扩展技能结构错误造成的接入阻断；不判断语义正确性，属于能力扩展的质量辅助。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S09, S07。"
+            "content": "法器对象ID=faqi-auto-skill-validate；本体类型=software-artifact；版本声明=未声明；本地入口=无（结构校验脚本已退役；历史路径与来源见第7项）；相关Skill说明=.github/skills/auto-skill（不同对象，不是该脚本）；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶中级（grade_id=faqi-xuan-intermediate；状态=user_directed_provisional）；范围：Vibe Coding重要性：技能资产质量与可载入性；分级依据：降低扩展技能结构错误造成的接入阻断；不判断语义正确性，属于能力扩展的质量辅助。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S09, S07。"
           },
           {
             "name": "出处",
@@ -965,7 +961,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-skill-seekers-adapter；本体类型=software-artifact；版本声明=未声明；本地入口=.github/skills/auto-skill；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶初级（grade_id=faqi-xuan-initial；状态=user_directed_provisional）；范围：Vibe Coding重要性：Skill Seekers本地适配入口；分级依据：便于调用特定知识转技能工具；范围受上游工具限制，可直接调用或人工替代。不代表效能评级、运行结果或质量结论。\n既有关系记录：{\n  \"subject\": \"faqi-skill-seekers-adapter\",\n  \"predicate\": \"requires\",\n  \"target_label\": \"链接源码中的skill_seekers.cli.main\",\n  \"related_object_id\": \"faqi-skill-seekers\",\n  \"evidence\": \"S10\",\n  \"boundary\": \"源码路径确由软链接指到选定submodule；这是静态加载意图，venv实际依赖、Python解析和运行结果未核。\"\n}\n来源ID：S10, S07。"
+            "content": "法器对象ID=faqi-skill-seekers-adapter；本体类型=software-artifact；版本声明=未声明；本地入口=无（Skill Seekers本地适配脚本已退役；历史路径与来源见第7项）；相关Skill说明=.github/skills/auto-skill（不同对象，不是该适配脚本）；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶初级（grade_id=faqi-xuan-initial；状态=user_directed_provisional）；范围：Vibe Coding重要性：Skill Seekers本地适配入口；分级依据：便于调用特定知识转技能工具；范围受上游工具限制，可直接调用或人工替代。不代表效能评级、运行结果或质量结论。\n既有关系记录：{\n  \"subject\": \"faqi-skill-seekers-adapter\",\n  \"predicate\": \"requires\",\n  \"target_label\": \"链接源码中的skill_seekers.cli.main\",\n  \"related_object_id\": \"faqi-skill-seekers\",\n  \"evidence\": \"S10\",\n  \"boundary\": \"源码路径确由软链接指到选定submodule；这是静态加载意图，venv实际依赖、Python解析和运行结果未核。\"\n}\n来源ID：S10, S07。"
           },
           {
             "name": "出处",
@@ -1042,7 +1038,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-auto-tmux；本体类型=software-artifact；版本声明=未声明；本地入口=.github/skills/auto-tmux；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：黄阶高级（grade_id=faqi-huang-advanced；状态=user_directed_provisional）；范围：Vibe Coding重要性：多会话终端协作自动化；分级依据：多会话与worker协作在复杂并行时有用，但基础单Agent编码有替代路径；本级只表达工作流重要性，不评价实现质量或效能。不代表效能评级、运行结果或质量结论。\n既有关系记录：{\n  \"subject\": \"faqi-auto-tmux\",\n  \"predicate\": \"requires\",\n  \"target_label\": \"tmux程序（运行版本未知）\",\n  \"related_object_id\": \"faqi-tmux\",\n  \"evidence\": \"S13\",\n  \"boundary\": \"脚本调用PATH中的tmux；本地上游源码仅作相关参照，不证明实际安装二进制来自该修订。\"\n}\n来源ID：S12, S11。"
+            "content": "法器对象ID=faqi-auto-tmux；本体类型=software-artifact；版本声明=未声明；本地入口=无（auto-tmux命令封装脚本已退役；历史路径与来源见第7项）；相关Skill说明=.github/skills/auto-tmux（不同对象，不是该封装脚本）；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：黄阶高级（grade_id=faqi-huang-advanced；状态=user_directed_provisional）；范围：Vibe Coding重要性：多会话终端协作自动化；分级依据：多会话与worker协作在复杂并行时有用，但基础单Agent编码有替代路径；本级只表达工作流重要性，不评价实现质量或效能。不代表效能评级、运行结果或质量结论。\n既有关系记录：{\n  \"subject\": \"faqi-auto-tmux\",\n  \"predicate\": \"requires\",\n  \"target_label\": \"tmux程序（运行版本未知）\",\n  \"related_object_id\": \"faqi-tmux\",\n  \"evidence\": \"S13\",\n  \"boundary\": \"脚本调用PATH中的tmux；本地上游源码仅作相关参照，不证明实际安装二进制来自该修订。\"\n}\n来源ID：S12, S11。"
           },
           {
             "name": "出处",
@@ -1196,7 +1192,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-oh-my-tmux；本体类型=software-artifact；版本声明=未声明；本地入口=.github/tools/external/.tmux；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：黄阶中级（grade_id=faqi-huang-intermediate；状态=user_directed_provisional）；范围：Vibe Coding重要性：终端复用器体验配置；分级依据：改善tmux使用便利性，但不提供模型推理或核心代码执行能力，可由其他终端配置替代。不代表效能评级、运行结果或质量结论。\n既有关系记录：{\n  \"subject\": \"faqi-oh-my-tmux\",\n  \"predicate\": \"requires\",\n  \"target_label\": \"tmux>=2.6及awk/perl/grep/sed\",\n  \"related_object_id\": \"faqi-tmux\",\n  \"evidence\": \"S17\",\n  \"boundary\": \"README声明版本下限，不将配置修订误写成tmux版本，也不保证当前环境满足依赖。\"\n}\n来源ID：S18, S17, S19, S37, S38, S39, S65。"
+            "content": "法器对象ID=faqi-oh-my-tmux；本体类型=software-artifact；版本声明=未声明；本地入口=.github/extensions/oh-my-tmux；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：黄阶中级（grade_id=faqi-huang-intermediate；状态=user_directed_provisional）；范围：Vibe Coding重要性：终端复用器体验配置；分级依据：改善tmux使用便利性，但不提供模型推理或核心代码执行能力，可由其他终端配置替代。不代表效能评级、运行结果或质量结论。\n既有关系记录：{\n  \"subject\": \"faqi-oh-my-tmux\",\n  \"predicate\": \"requires\",\n  \"target_label\": \"tmux>=2.6及awk/perl/grep/sed\",\n  \"related_object_id\": \"faqi-tmux\",\n  \"evidence\": \"S17\",\n  \"boundary\": \"README声明版本下限，不将配置修订误写成tmux版本，也不保证当前环境满足依赖。\"\n}\n来源ID：S18, S17, S19, S37, S38, S39, S65。"
           },
           {
             "name": "出处",
@@ -1273,7 +1269,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-tmux；本体类型=software-artifact；版本声明=未声明；本地入口=.github/tools/external/tmux；当前运行实例/部署状态未在对象记录中声明。；当前资源关联ID=repo-rules-scaffolds-tmux-9f36981a（关联不等于许可或运行证明）。\nVibe Coding 重要性暂定：黄阶高级（grade_id=faqi-huang-advanced；状态=user_directed_provisional）；范围：Vibe Coding重要性：可选的多会话终端复用；分级依据：支持持久终端与多窗口工作流，复杂长任务可受益；普通编码闭环有替代方案，不属定义性核心。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n关联资源ID：repo-rules-scaffolds-tmux-9f36981a。资源链接/本地关联不证明许可、兼容性或功能等价。\n来源ID：S21, S20, S40, S41, S52, S53, S54, S55, S56, S57, S58, S59, S60, S61, S62, S63, S64。"
+            "content": "法器对象ID=faqi-tmux；本体类型=software-artifact；版本声明=未声明；本地入口=.github/extensions/tmux；当前运行实例/部署状态未在对象记录中声明。；当前资源关联ID=repo-rules-scaffolds-tmux-9f36981a（关联不等于许可或运行证明）。\nVibe Coding 重要性暂定：黄阶高级（grade_id=faqi-huang-advanced；状态=user_directed_provisional）；范围：Vibe Coding重要性：可选的多会话终端复用；分级依据：支持持久终端与多窗口工作流，复杂长任务可受益；普通编码闭环有替代方案，不属定义性核心。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n关联资源ID：repo-rules-scaffolds-tmux-9f36981a。资源链接/本地关联不证明许可、兼容性或功能等价。\n来源ID：S21, S20, S40, S41, S52, S53, S54, S55, S56, S57, S58, S59, S60, S61, S62, S63, S64。"
           },
           {
             "name": "出处",
@@ -1350,7 +1346,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-claude-skill-init；本体类型=software-artifact；版本声明=未声明；本地入口=.github/tools/external/claude-official-skills；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶初级（grade_id=faqi-xuan-initial；状态=user_directed_provisional）；范围：Vibe Coding重要性：特定Skill模板初始化；分级依据：降低Claude Skill结构初始化成本，作用范围绑定特定生态，可手工完成且不影响其他Agent的基础闭环。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S23, S22, S43, S51。"
+            "content": "法器对象ID=faqi-claude-skill-init；本体类型=software-artifact；版本声明=未声明；本地入口=.github/extensions/claude-official-skills；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶初级（grade_id=faqi-xuan-initial；状态=user_directed_provisional）；范围：Vibe Coding重要性：特定Skill模板初始化；分级依据：降低Claude Skill结构初始化成本，作用范围绑定特定生态，可手工完成且不影响其他Agent的基础闭环。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S23, S22, S43, S51。"
           },
           {
             "name": "出处",

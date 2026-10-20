@@ -116,6 +116,35 @@ class FaqiCatalogTest(unittest.TestCase):
         self.assertIn("作者元数据不证明版权归属或授权", association)
         self.assertIn("本项目仍未批准该许可证", association)
         self.assertIn("本地入口=.github/extensions/Skill_Seekers-development", association)
+        current_paths = {
+            "faqi:faqi-prompt-converter": ".github/extensions/prompts-library",
+            "faqi:faqi-skill-seekers": ".github/extensions/Skill_Seekers-development",
+            "faqi:faqi-oh-my-tmux": ".github/extensions/oh-my-tmux",
+            "faqi:faqi-tmux": ".github/extensions/tmux",
+            "faqi:faqi-claude-skill-init": ".github/extensions/claude-official-skills",
+        }
+        associations = {
+            item["object_key"]: next(field["content"] for field in item["fields"] if field["name"] == "关联信息")
+            for item in active_archive["explanations_v1"]["items"]
+        }
+        for object_key, path in current_paths.items():
+            self.assertIn(f"本地入口={path}", associations[object_key], object_key)
+        for object_key in (
+            "faqi:faqi-codex-config-installer",
+            "faqi:faqi-auto-skill-create",
+            "faqi:faqi-auto-skill-validate",
+            "faqi:faqi-skill-seekers-adapter",
+            "faqi:faqi-auto-tmux",
+        ):
+            self.assertIn("本地入口=无", associations[object_key], object_key)
+            self.assertIn("已退役", associations[object_key], object_key)
+        for path in (
+            ".github/skills/auto-skill/scripts/create-skill.sh",
+            ".github/skills/auto-skill/scripts/validate-skill.sh",
+            ".github/skills/auto-skill/scripts/skill-seekers.sh",
+            ".github/skills/auto-tmux/scripts/auto-tmux.sh",
+        ):
+            self.assertNotIn(path, active_archive["locations"], path)
         fields_by_name = {field["name"]: field["content"] for field in skill_seekers["fields"]}
         implementation = fields_by_name["内部如何实现？"]
         cost = fields_by_name["付出了什么代价？"]
@@ -141,6 +170,8 @@ class FaqiCatalogTest(unittest.TestCase):
         self.assertNotIn("dep-claude-code", all_views)
         self.assertNotIn("Claude Code（依赖图替代项）", all_views)
         self.assertIn("Vibe Coding 重要性暂定", catalog)
+        self.assertIn("部分软件工件已退役但保留历史重要性记录", catalog)
+        self.assertIn("不表示当前可运行", catalog)
         self.assertIn("Codex CLI", catalog)
         self.assertIn("<a id=\"doc-faqi-system\"></a>", catalog)
         self.assertIn("## 法器总表", catalog)
