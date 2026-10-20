@@ -346,10 +346,17 @@ class CatalogMaintenanceTest(unittest.TestCase):
             candidate = candidates[candidate_id]
             self.assertEqual(candidate['source_selection'], metadata['source_selection'], candidate_id)
             self.assertEqual(candidate['declared_upstream'], metadata['declared_upstream'], candidate_id)
+            location = re.search(r'EPUB第(\d+)节', metadata['declared_upstream'])
+            self.assertIsNotNone(location, candidate_id)
             for fact in ('上田勋著', '支鹏浩译', '编程的原则：改善代码质量的101个方法',
                          '人民邮电出版社', '2020年6月', '978-7-115-53914-4',
                          book_url, catalogue_url, metadata['declared_upstream'],
-                         '尚未逐项独立核对原书/EPUB或纸本页码', '许可证尚未核验'):
+                         '用户提供的EPUB逐条核对', f'spine第{location.group(1)}项', '101/101',
+                         'a84baec52ce401f8af0bfe8924a51d0dcfa1cbcf0f7e27d86f0888b986747615',
+                         'EPUB未提供稳定的印刷页码定位',
+                         '未逐句验证原摘录和说明的语义支持',
+                         '未独立认证文件外部来源、版权或本仓使用许可',
+                         '不证明效果或评级'):
                 self.assertIn(fact, related_book, candidate_id)
 
     def test_stale_status_scan_covers_all_441_explanation_items_without_rewriting_them(self):
