@@ -263,6 +263,14 @@ class CatalogMaintenanceTest(unittest.TestCase):
             for label in stale_labels:
                 self.assertNotIn(label, views[name], name)
 
+    def test_historical_archive_status_words_are_identified_as_historical(self):
+        rows = catalog.merge_rows(deepcopy(self.documents))
+        markdown = catalog.render_views(ROOT, rows, self.binding)['README.md']
+        self.assertIn(
+            '原文档中的候选/复核状态只表示记录时点；当前登记和说明审阅状态以本总表及对象页为准。',
+            markdown,
+        )
+
     def test_candidate_promotion_preserves_the_frozen_undetermined_set(self):
         entries = self.documents['registry']['gongfa']
         by_anchor = {entry['source_ref']['heading_id']: entry for entry in entries

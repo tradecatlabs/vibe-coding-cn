@@ -304,6 +304,7 @@ def source_navigation(root):
     document_anchors = {book_views.chapter_id(key) for key in keys}
     lines = ['## 原文文集', '',
              '原始文档、字节摘要和选择器保存在唯一资料源[data.json](data.json)的`documents`中；本页只保留历史入口，不重复展开原文。', '',
+             '原文档中的候选/复核状态只表示记录时点；当前登记和说明审阅状态以本总表及对象页为准。', '',
              '### 原始文档', '']
     for key in keys:
         anchor = book_views.chapter_id(key)
