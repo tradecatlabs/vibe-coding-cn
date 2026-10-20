@@ -106,6 +106,38 @@ class FaqiCatalogTest(unittest.TestCase):
         pages = {tier: (directory / f"{tier}.md").read_text(encoding="utf-8")
                  for tier in ("tian", "di", "xuan", "huang")}
         all_views = catalog + "\n" + "\n".join(pages.values())
+        active_archive = json.loads((directory / "data.json").read_text(encoding="utf-8"))
+        skill_seekers = next(item for item in active_archive["explanations_v1"]["items"]
+                             if item["object_key"] == "faqi:faqi-skill-seekers")
+        association = next(field["content"] for field in skill_seekers["fields"]
+                           if field["name"] == "关联信息")
+        self.assertIn("LICENSE文本标为MIT，但版权行仍为[Your Name/Username]占位符", association)
+        self.assertIn("同修订pyproject.toml的authors字段列为Yusuf Karaaslan", association)
+        self.assertIn("作者元数据不证明版权归属或授权", association)
+        self.assertIn("本项目仍未批准该许可证", association)
+        self.assertIn("本地入口=.github/extensions/Skill_Seekers-development", association)
+        fields_by_name = {field["name"]: field["content"] for field in skill_seekers["fields"]}
+        implementation = fields_by_name["内部如何实现？"]
+        cost = fields_by_name["付出了什么代价？"]
+        applicability = fields_by_name["明确这些规律成立的前提与适用条件。"]
+        conclusion = fields_by_name["结论"]
+        warrant = fields_by_name["连接规则"]
+        evidence = fields_by_name["依据"]
+        self.assertIn("默认绑定127.0.0.1", implementation)
+        self.assertIn("可通过--host指定其他地址", implementation)
+        self.assertIn('allow_origins=["*"]', implementation)
+        self.assertIn("所检server路径未配置应用层认证", implementation)
+        self.assertIn("api_key参数最终加入子进程argv（--api-key）", cost)
+        self.assertIn("形成进程参数暴露面", cost)
+        self.assertIn("可被不可信调用者访问", cost)
+        self.assertIn("仅固定修订26638b248279a3b001b651475e0f28975f5ff069的S67–S73选区", applicability)
+        self.assertIn("未运行服务、导入或执行上游代码", applicability)
+        self.assertIn("静态审阅结果：WARN", conclusion)
+        self.assertIn("不要向不可信网络暴露HTTP MCP", conclusion)
+        self.assertIn("来源S67/S68显示", warrant)
+        self.assertIn("S67, S68, S69, S70, S71, S72, S73", evidence)
+        self.assertIn("静态审阅结果：WARN", pages["xuan"])
+        self.assertIn("固定修订许可观察", pages["xuan"])
         self.assertNotIn("dep-claude-code", all_views)
         self.assertNotIn("Claude Code（依赖图替代项）", all_views)
         self.assertIn("Vibe Coding 重要性暂定", catalog)
