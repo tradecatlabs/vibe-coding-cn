@@ -348,6 +348,29 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertIn('Warrant', contract)
         self.assertIn('仅列字段交叉引用', contract)
 
+    def test_gongfa_claims_do_not_apply_the_problem_summary_to_itself(self):
+        findings = []
+        marker = '来源快照记录的主题是“'
+        topic_end = '”（上游来源未独立核验）'
+        for item in self.documents['explanations_v1']['items']:
+            fields = {field['name']: field['content'] for field in item['fields']}
+            problem = fields['它要解决什么问题？']
+            if '未提供单独的问题定义' not in problem:
+                continue
+            topic_start = problem.find(marker)
+            if topic_start < 0:
+                continue
+            topic_start += len(marker)
+            topic_stop = problem.find(topic_end, topic_start)
+            if topic_stop < 0:
+                continue
+            topic = problem[topic_start:topic_stop]
+            self_application = f'按“{topic}”处理“{topic}”'
+            for name in ('提炼共同规律。', '结论', '连接规则'):
+                if self_application in fields[name]:
+                    findings.append(f"{item['object_key']}:{name}")
+        self.assertEqual([], findings, '主张不能把同一摘要同时当作方法和问题：' + ', '.join(findings))
+
     def test_active_v1_payload_migrates_all_441_records_with_toulmin_warrants(self):
         expected_counts = {'gongfa': 411, 'faqi': 30}
         expected_names = v0_field_names() + ['结论', '连接规则', '依据']
