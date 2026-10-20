@@ -1911,7 +1911,7 @@
 
 ## 使用方式
 
-按阶打开对应文档；对象身份、字段说明与表格都由data.json和已登记模板生成。修改资料后运行make sync-gongfa-catalog，不手改阅读视图。
+按阶打开对应文档；对象身份、字段说明与表格都由data.json和已登记模板生成。修改资料后运行make sync-gongfa-catalog，不手改阅读视图。同名条目在导航中附稳定对象ID，不表示身份合并。
 
 ## 正文
 
@@ -1987,7 +1987,7 @@
 <a id="v0-registry-gongfa-candidate-html211-a021-50d43b8d88-r1-90a651d1"></a>
 - [软件架构基本技法](di.md#v0-registry-gongfa-candidate-html211-a021-50d43b8d88-r1-90a651d1) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a024-bf25a9ae50-r1-715b460d"></a>
-- [信息隐藏](di.md#v0-registry-gongfa-candidate-html211-a024-bf25a9ae50-r1-715b460d) — 地阶初级
+- [信息隐藏（registry:gongfa-candidate-html211-a024-bf25a9ae50@r1）](di.md#v0-registry-gongfa-candidate-html211-a024-bf25a9ae50-r1-715b460d) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a026-e12e411313-r1-5e05835d"></a>
 - [关注点分离](di.md#v0-registry-gongfa-candidate-html211-a026-e12e411313-r1-5e05835d) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a031-024415ebde-r1-7a3ea07c"></a>
@@ -2051,7 +2051,7 @@
 <a id="v0-registry-gongfa-candidate-html211-d054-2a3e04f889-r1-8e617f18"></a>
 - [容量规划闭环](di.md#v0-registry-gongfa-candidate-html211-d054-2a3e04f889-r1-8e617f18) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html96-vc004-7ae99be743-r1-22f6bb0d"></a>
-- [信息隐藏](di.md#v0-registry-gongfa-candidate-html96-vc004-7ae99be743-r1-22f6bb0d) — 地阶初级
+- [信息隐藏（registry:gongfa-candidate-html96-vc004-7ae99be743@r1）](di.md#v0-registry-gongfa-candidate-html96-vc004-7ae99be743-r1-22f6bb0d) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html96-vc063-1e8c35ebf8-r1-75bfa7a0"></a>
 - [提示注入分层防御](di.md#v0-registry-gongfa-candidate-html96-vc063-1e8c35ebf8-r1-75bfa7a0) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html96-vc068-c13da28d27-r1-08aec936"></a>
@@ -2418,7 +2418,7 @@
 <a id="v0-registry-gongfa-reasonable-code-r1-9913a87a"></a>
 - [可推理性优先](xuan.md#v0-registry-gongfa-reasonable-code-r1-9913a87a) — 玄阶中级
 <a id="v0-registry-gongfa-least-surprise-r1-fd734c68"></a>
-- [最小惊讶原则](xuan.md#v0-registry-gongfa-least-surprise-r1-fd734c68) — 玄阶中级
+- [最小惊讶原则（registry:gongfa-least-surprise@r1）](xuan.md#v0-registry-gongfa-least-surprise-r1-fd734c68) — 玄阶中级
 <a id="v0-registry-gongfa-decision-rationale-documentation-r1-8188a83c"></a>
 - [文档记录设计理由](xuan.md#v0-registry-gongfa-decision-rationale-documentation-r1-8188a83c) — 玄阶中级
 <a id="v0-registry-gongfa-input-state-transform-separation-r1-2443d5c8"></a>
@@ -2514,7 +2514,7 @@
 <a id="v0-registry-gongfa-candidate-html211-c006-2db7a28cc4-r1-8145d7df"></a>
 - [团队规模—协调成本悖论](xuan.md#v0-registry-gongfa-candidate-html211-c006-2db7a28cc4-r1-8145d7df) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-c007-ac8d2a6d24-r1-23abaa5e"></a>
-- [最小惊讶原则](xuan.md#v0-registry-gongfa-candidate-html211-c007-ac8d2a6d24-r1-23abaa5e) — 玄阶中级
+- [最小惊讶原则（registry:gongfa-candidate-html211-c007-ac8d2a6d24@r1）](xuan.md#v0-registry-gongfa-candidate-html211-c007-ac8d2a6d24-r1-23abaa5e) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-c008-8d9e24cf98-r1-e939db7d"></a>
 - [程序单一整体](xuan.md#v0-registry-gongfa-candidate-html211-c008-8d9e24cf98-r1-e939db7d) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-c010-e5f231360a-r1-1dfae689"></a>

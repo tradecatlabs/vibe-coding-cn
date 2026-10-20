@@ -189,6 +189,7 @@ class CatalogMaintenanceTest(unittest.TestCase):
         markdown = views['README.md']
         self.assertIn('- 共**411条内容记录**；已登记411条，待登记0条，未登记来源条目0条。', markdown)
         self.assertNotIn('[控制论与科学方法论](#控制论与科学方法论)', markdown)
+        self.assertIn('同名条目在导航中附稳定对象ID，不表示身份合并。', markdown)
         self.assertFalse('catalog.xlsx' in markdown, '活动阅读视图只有Markdown，历史Excel仅作原始载荷保存')
         self.assertLess(len(markdown.encode('utf-8')), 512 * 1024, 'README只作为轻量导航，不再展开全部功法表格与文集正文')
         self.assertNotIn('| 序号 | 说明项 | 内容 |', markdown)
@@ -239,15 +240,18 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertEqual(len(duplicate_display), 2)
         self.assertEqual(len({catalog.tool_explanations.anchor_for(row['key'])
                               for row in duplicate_display}), 2)
+        display_counts = Counter(prefix.sub('', row['name'], count=1) for row in rows)
         for row in numbered:
             match = prefix.match(row['name'])
             display_name = row['name'][match.end():]
+            navigation_label = (f'{display_name}（{row["key"]}）'
+                                if display_counts[display_name] > 1 else display_name)
             anchor = catalog.tool_explanations.anchor_for(row['key'])
             tier = row['grade_id'].split('-', 1)[0] if row['grade_id'] else 'huang'
             page = views[tier + '.md']
             link = next(line for line in page.splitlines() if line.endswith(f'(#{anchor})'))
             decoded_link = unescape(link)
-            self.assertIn(f'[{display_name}](#{anchor})', decoded_link)
+            self.assertIn(f'[{navigation_label}](#{anchor})', decoded_link)
             self.assertNotIn(row['name'], decoded_link)
             section = page.split(f'<a id="{anchor}"></a>', 1)[1].split('<a id="', 1)[0]
             decoded_section = unescape(section)
@@ -256,8 +260,40 @@ class CatalogMaintenanceTest(unittest.TestCase):
             readme_link = next(line for line in views['README.md'].splitlines()
                                if f'{tier}.md#{anchor})' in line)
             decoded_readme_link = unescape(readme_link)
-            self.assertIn(f'[{display_name}](', decoded_readme_link)
+            self.assertIn(f'[{navigation_label}](', decoded_readme_link)
             self.assertNotIn(row['name'], decoded_readme_link)
+
+    def test_duplicate_display_names_are_disambiguated_in_navigation(self):
+        rows = catalog.merge_rows(deepcopy(self.documents))
+        views = catalog.render_views(ROOT, rows, self.binding)
+        duplicates = [
+            row for row in rows
+            if re.sub(r'^\d+(?:\.\d+)+[ \t]+', '', row['name'], count=1) == '最小惊讶原则'
+        ]
+        self.assertEqual(
+            {
+                'registry:gongfa-least-surprise@r1',
+                'registry:gongfa-candidate-html211-c007-ac8d2a6d24@r1',
+            },
+            {row['key'] for row in duplicates},
+        )
+        for row in duplicates:
+            anchor = catalog.tool_explanations.anchor_for(row['key'])
+            label = f"最小惊讶原则（{row['key']}）"
+            page = views['xuan.md']
+            page_link = next(
+                unescape(line) for line in page.splitlines()
+                if line.endswith(f'(#{anchor})')
+            )
+            self.assertIn(f'[{label}](#{anchor})', page_link)
+            readme_link = next(
+                unescape(line) for line in views['README.md'].splitlines()
+                if f'xuan.md#{anchor})' in line
+            )
+            self.assertIn(f'[{label}](xuan.md#{anchor})', readme_link)
+            section = page.split(f'<a id="{anchor}"></a>', 1)[1].split('<a id="', 1)[0]
+            self.assertIn('### 最小惊讶原则', unescape(section))
+            self.assertIn('| 1 | 工具的名称 | 最小惊讶原则 |', unescape(section))
 
     def test_user_confirmed_candidate_review_replaces_stale_labels_in_active_views(self):
         items = [item for item in self.documents['explanations_v1']['items']

@@ -256,6 +256,15 @@ def display_name(name):
     return CHAPTER_NUMBER_PREFIX.sub('', name, count=1)
 
 
+def navigation_labels(rows):
+    visible_names = [display_name(row['name']) for row in rows]
+    counts = Counter(visible_names)
+    return {
+        row['key']: name if counts[name] == 1 else f"{name}（{row['key']}）"
+        for row, name in zip(rows, visible_names)
+    }
+
+
 def render_explanation_object(row):
     fields = [dict(field) for field in row['explanation_fields']]
     fields[0]['content'] = display_name(fields[0]['content'])
@@ -333,6 +342,7 @@ def validate_rows(rows):
 
 
 def render_markdown(rows, binding, root=None):
+    labels = navigation_labels(rows)
     counts = Counter(row['entry_status'] for row in rows)
     provisional = sum(row['grading_status'] == 'provisional' for row in rows)
     undetermined = sum(row['grading_status'] == 'undetermined' for row in rows)
@@ -353,20 +363,20 @@ def render_markdown(rows, binding, root=None):
               '<details>', '<summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>', '',
               '- [全部记录](#全部记录)', '- [原文文集](#原文文集)', '- [品级词表](#品级词表)', '- [数据与边界](#数据与边界)',
               '<!-- source-toc -->', '', '</details>', '', '## 使用方式', '',
-              '按阶打开对应文档；对象身份、字段说明与表格都由data.json和已登记模板生成。修改资料后运行make sync-gongfa-catalog，不手改阅读视图。', '',
+              '按阶打开对应文档；对象身份、字段说明与表格都由data.json和已登记模板生成。修改资料后运行make sync-gongfa-catalog，不手改阅读视图。同名条目在导航中附稳定对象ID，不表示身份合并。', '',
               '## 正文', '', '## 全部记录', '']
     for tier, label in TIERS:
         lines.extend((f'### {label}', ''))
         for row in by_tier[tier]:
             anchor = tool_explanations.anchor_for(row['key'])
             lines.extend((f'<a id="{anchor}"></a>',
-                          tool_explanations.render_file_link(row['key'], display_name(row['name']), tier + '.md') + f' — {grade_label(row)}'))
+                          tool_explanations.render_file_link(row['key'], labels[row['key']], tier + '.md') + f' — {grade_label(row)}'))
         if tier == 'huang' and pending:
             lines.extend(('', '### 未明确品级（不归属任何阶）', ''))
             for row in pending:
                 anchor = tool_explanations.anchor_for(row['key'])
                 lines.extend((f'<a id="{anchor}"></a>',
-                              tool_explanations.render_file_link(row['key'], display_name(row['name']), 'huang.md') + f' — {grade_label(row)}'))
+                              tool_explanations.render_file_link(row['key'], labels[row['key']], 'huang.md') + f' — {grade_label(row)}'))
         lines.append('')
     if root is not None:
         lines += source_navigation(root)
@@ -383,6 +393,7 @@ def render_markdown(rows, binding, root=None):
 
 
 def render_grade_markdown(rows, tier):
+    labels = navigation_labels(rows)
     label = dict(TIERS)[tier]
     tier_rows = [row for row in rows if row['grade_id'] and row['grade_id'].startswith(tier + '-')]
     pending = [row for row in rows if row['grade_id'] is None] if tier == 'huang' else []
@@ -391,7 +402,7 @@ def render_grade_markdown(rows, tier):
              '- [返回总索引](README.md)；其他阶：[天阶](tian.md)、[地阶](di.md)、[玄阶](xuan.md)、[黄阶](huang.md)。', '',
              f'## {label}记录', '']
     for row in tier_rows:
-        lines.append(tool_explanations.render_index_link(row['key'], display_name(row['name'])))
+        lines.append(tool_explanations.render_index_link(row['key'], labels[row['key']]))
     lines.append('')
     for row in tier_rows:
         lines.append(render_explanation_object(row))
@@ -399,7 +410,7 @@ def render_grade_markdown(rows, tier):
         lines.extend(('## 未明确品级（不归属黄阶）', '',
                       f'以下{len(pending)}条没有可沿用的明确品级；仅为减少文件数暂置本页附录，不视为黄阶。', ''))
         for row in pending:
-            lines.append(tool_explanations.render_index_link(row['key'], display_name(row['name'])))
+            lines.append(tool_explanations.render_index_link(row['key'], labels[row['key']]))
         lines.append('')
         for row in pending:
             lines.append(render_explanation_object(row))
