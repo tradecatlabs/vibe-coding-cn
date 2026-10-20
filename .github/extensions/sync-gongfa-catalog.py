@@ -248,6 +248,20 @@ def merge_rows(documents):
     return rows
 
 
+# 章节编号保留在冻结来源和登记名中；阅读视图只显示标题正文。
+CHAPTER_NUMBER_PREFIX = re.compile(r'^\d+(?:\.\d+)+[ \t]+')
+
+
+def display_name(name):
+    return CHAPTER_NUMBER_PREFIX.sub('', name, count=1)
+
+
+def render_v0_object(row):
+    fields = [dict(field) for field in row['v0_fields']]
+    fields[0]['content'] = display_name(fields[0]['content'])
+    return tool_explanations.render_object(row['key'], display_name(row['name']), fields)
+
+
 def grade_label(row):
     return GRADE_LABELS[row['grade_id']] if row['grade_id'] else {'undetermined': '暂不可判', 'unrated': '未初评', 'multiple-contexts': '多情境意见'}[row['grading_status']]
 
@@ -344,13 +358,13 @@ def render_markdown(rows, binding, root=None):
         for row in by_tier[tier]:
             anchor = tool_explanations.anchor_for(row['key'])
             lines.extend((f'<a id="{anchor}"></a>',
-                          tool_explanations.render_file_link(row['key'], row['name'], tier + '.md') + f' — {grade_label(row)}'))
+                          tool_explanations.render_file_link(row['key'], display_name(row['name']), tier + '.md') + f' — {grade_label(row)}'))
         if tier == 'huang' and pending:
             lines.extend(('', '### 未明确品级（不归属任何阶）', ''))
             for row in pending:
                 anchor = tool_explanations.anchor_for(row['key'])
                 lines.extend((f'<a id="{anchor}"></a>',
-                              tool_explanations.render_file_link(row['key'], row['name'], 'huang.md') + f' — {grade_label(row)}'))
+                              tool_explanations.render_file_link(row['key'], display_name(row['name']), 'huang.md') + f' — {grade_label(row)}'))
         lines.append('')
     if root is not None:
         lines += source_navigation(root)
@@ -375,18 +389,18 @@ def render_grade_markdown(rows, tier):
              '- [返回总索引](README.md)；其他阶：[天阶](tian.md)、[地阶](di.md)、[玄阶](xuan.md)、[黄阶](huang.md)。', '',
              f'## {label}记录', '']
     for row in tier_rows:
-        lines.append(tool_explanations.render_index_link(row['key'], row['name']))
+        lines.append(tool_explanations.render_index_link(row['key'], display_name(row['name'])))
     lines.append('')
     for row in tier_rows:
-        lines.append(tool_explanations.render_object(row['key'], row['name'], row['v0_fields']))
+        lines.append(render_v0_object(row))
     if pending:
         lines.extend(('## 未明确品级（不归属黄阶）', '',
                       f'以下{len(pending)}条没有可沿用的明确品级；仅为减少文件数暂置本页附录，不视为黄阶。', ''))
         for row in pending:
-            lines.append(tool_explanations.render_index_link(row['key'], row['name']))
+            lines.append(tool_explanations.render_index_link(row['key'], display_name(row['name'])))
         lines.append('')
         for row in pending:
-            lines.append(tool_explanations.render_object(row['key'], row['name'], row['v0_fields']))
+            lines.append(render_v0_object(row))
     return '\n'.join(lines)
 
 

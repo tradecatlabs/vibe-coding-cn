@@ -8,6 +8,7 @@ from html import unescape
 import importlib.util
 import json
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
@@ -198,7 +199,8 @@ class CatalogMaintenanceTest(unittest.TestCase):
                 cells = [parse_pipe_row(line) for line in table_rows]
                 self.assertTrue(all(len(cell) == 3 for cell in cells), '每张表严格为三列')
                 self.assertEqual(field_names, [cell[1] for cell in cells[2:]])
-                self.assertEqual(row['name'], unescape(cells[2][2]))
+                display_name = re.sub(r'^\d+(?:\.\d+)+[ \t]+', '', row['name'], count=1)
+                self.assertEqual(display_name, unescape(cells[2][2]))
                 anchor = catalog.tool_explanations.anchor_for(row['key'])
                 self.assertIn(f'{tier}.md#{anchor}', markdown)
                 self.assertIn(f'<a id="{anchor}"></a>', markdown, '旧README对象锚点应保留为跳转入口')
@@ -207,6 +209,38 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertIn('天阶高级', views['tian.md'])
         self.assertNotIn('天高', views['tian.md'])
         self.assertNotIn('地高', views['tian.md'])
+
+    def test_numbered_chapter_prefixes_are_removed_from_all_rendered_views(self):
+        rows = catalog.merge_rows(deepcopy(self.documents))
+        views = catalog.render_views(ROOT, rows, self.binding)
+        prefix = re.compile(r'^\d+(?:\.\d+)+[ \t]+')
+        numbered = [row for row in rows if prefix.match(row['name'])]
+        self.assertEqual(len(numbered), 101)
+        self.assertIn('3.5 效应局部化', [row['name'] for row in numbered])
+        duplicate_display = [row for row in rows
+                             if prefix.sub('', row['name'], count=1) == '信息隐藏']
+        self.assertEqual(len(duplicate_display), 2)
+        self.assertEqual(len({catalog.tool_explanations.anchor_for(row['key'])
+                              for row in duplicate_display}), 2)
+        for row in numbered:
+            match = prefix.match(row['name'])
+            display_name = row['name'][match.end():]
+            anchor = catalog.tool_explanations.anchor_for(row['key'])
+            tier = row['grade_id'].split('-', 1)[0] if row['grade_id'] else 'huang'
+            page = views[tier + '.md']
+            link = next(line for line in page.splitlines() if line.endswith(f'(#{anchor})'))
+            decoded_link = unescape(link)
+            self.assertIn(f'[{display_name}](#{anchor})', decoded_link)
+            self.assertNotIn(row['name'], decoded_link)
+            section = page.split(f'<a id="{anchor}"></a>', 1)[1].split('<a id="', 1)[0]
+            decoded_section = unescape(section)
+            self.assertIn(f'### {display_name}', decoded_section)
+            self.assertIn(f'| 1 | 工具的名称 | {display_name} |', decoded_section)
+            readme_link = next(line for line in views['README.md'].splitlines()
+                               if f'{tier}.md#{anchor})' in line)
+            decoded_readme_link = unescape(readme_link)
+            self.assertIn(f'[{display_name}](', decoded_readme_link)
+            self.assertNotIn(row['name'], decoded_readme_link)
 
     def test_candidate_promotion_preserves_the_frozen_undetermined_set(self):
         entries = self.documents['registry']['gongfa']

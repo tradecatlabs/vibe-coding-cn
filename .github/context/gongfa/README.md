@@ -1949,7 +1949,7 @@
 <a id="v0-registry-gongfa-problem-definition-framework-r1-c5485ecb"></a>
 - [问题界定与求解闭环（仓内体系版）](di.md#v0-registry-gongfa-problem-definition-framework-r1-c5485ecb) — 地阶中级
 <a id="v0-registry-gongfa-candidate-html211-a088-1f655d977a-r1-dd5b3b90"></a>
-- [6.2 契约式设计](di.md#v0-registry-gongfa-candidate-html211-a088-1f655d977a-r1-dd5b3b90) — 地阶中级
+- [契约式设计](di.md#v0-registry-gongfa-candidate-html211-a088-1f655d977a-r1-dd5b3b90) — 地阶中级
 <a id="v0-registry-gongfa-candidate-html211-d006-666ddc76da-r1-7b22f755"></a>
 - [性能工程“医生”闭环](di.md#v0-registry-gongfa-candidate-html211-d006-666ddc76da-r1-7b22f755) — 地阶中级
 <a id="v0-registry-gongfa-candidate-html211-d020-550f2ceea3-r1-9a85c8fd"></a>
@@ -1981,47 +1981,47 @@
 <a id="v0-registry-gongfa-cache-lifecycle-isolation-r1-8cdd759b"></a>
 - [缓存生命周期与隔离约束](di.md#v0-registry-gongfa-cache-lifecycle-isolation-r1-8cdd759b) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a015-06cc6912b1-r1-a560c3e9"></a>
-- [3.5 效应局部化](di.md#v0-registry-gongfa-candidate-html211-a015-06cc6912b1-r1-a560c3e9) — 地阶初级
+- [效应局部化](di.md#v0-registry-gongfa-candidate-html211-a015-06cc6912b1-r1-a560c3e9) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a020-d685b68ee2-r1-70c933b6"></a>
-- [3.10 变动率](di.md#v0-registry-gongfa-candidate-html211-a020-d685b68ee2-r1-70c933b6) — 地阶初级
+- [变动率](di.md#v0-registry-gongfa-candidate-html211-a020-d685b68ee2-r1-70c933b6) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a021-50d43b8d88-r1-90a651d1"></a>
-- [3.11 软件架构基本技法](di.md#v0-registry-gongfa-candidate-html211-a021-50d43b8d88-r1-90a651d1) — 地阶初级
+- [软件架构基本技法](di.md#v0-registry-gongfa-candidate-html211-a021-50d43b8d88-r1-90a651d1) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a024-bf25a9ae50-r1-715b460d"></a>
-- [3.14 信息隐藏](di.md#v0-registry-gongfa-candidate-html211-a024-bf25a9ae50-r1-715b460d) — 地阶初级
+- [信息隐藏](di.md#v0-registry-gongfa-candidate-html211-a024-bf25a9ae50-r1-715b460d) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a026-e12e411313-r1-5e05835d"></a>
-- [3.16 关注点分离](di.md#v0-registry-gongfa-candidate-html211-a026-e12e411313-r1-5e05835d) — 地阶初级
+- [关注点分离](di.md#v0-registry-gongfa-candidate-html211-a026-e12e411313-r1-5e05835d) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a031-024415ebde-r1-7a3ea07c"></a>
-- [3.21 分治](di.md#v0-registry-gongfa-candidate-html211-a031-024415ebde-r1-7a3ea07c) — 地阶初级
+- [分治](di.md#v0-registry-gongfa-candidate-html211-a031-024415ebde-r1-7a3ea07c) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a032-5968f80b4e-r1-45d3b84e"></a>
-- [3.22 软件架构的非功能需求](di.md#v0-registry-gongfa-candidate-html211-a032-5968f80b4e-r1-45d3b84e) — 地阶初级
+- [软件架构的非功能需求](di.md#v0-registry-gongfa-candidate-html211-a032-5968f80b4e-r1-45d3b84e) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a036-679b43ad9f-r1-f5ff7f64"></a>
-- [3.26 可靠性](di.md#v0-registry-gongfa-candidate-html211-a036-679b43ad9f-r1-f5ff7f64) — 地阶初级
+- [可靠性](di.md#v0-registry-gongfa-candidate-html211-a036-679b43ad9f-r1-f5ff7f64) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a037-e31b4b317d-r1-b10b82fa"></a>
-- [3.27 可测试性](di.md#v0-registry-gongfa-candidate-html211-a037-e31b4b317d-r1-b10b82fa) — 地阶初级
+- [可测试性](di.md#v0-registry-gongfa-candidate-html211-a037-e31b4b317d-r1-b10b82fa) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a046-53cc237933-r1-a48887cf"></a>
-- [3.36 安全原理](di.md#v0-registry-gongfa-candidate-html211-a046-53cc237933-r1-a48887cf) — 地阶初级
+- [安全原理](di.md#v0-registry-gongfa-candidate-html211-a046-53cc237933-r1-a48887cf) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a047-a2eb81f750-r1-94df154d"></a>
-- [3.37 UNIX思想](di.md#v0-registry-gongfa-candidate-html211-a047-a2eb81f750-r1-94df154d) — 地阶初级
+- [UNIX思想](di.md#v0-registry-gongfa-candidate-html211-a047-a2eb81f750-r1-94df154d) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a054-0ce46b5a22-r1-500907d1"></a>
-- [3.44 透明性原则](di.md#v0-registry-gongfa-candidate-html211-a054-0ce46b5a22-r1-500907d1) — 地阶初级
+- [透明性原则](di.md#v0-registry-gongfa-candidate-html211-a054-0ce46b5a22-r1-500907d1) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a059-7a44075e45-r1-b0a21d91"></a>
-- [3.49 修复原则](di.md#v0-registry-gongfa-candidate-html211-a059-7a44075e45-r1-b0a21d91) — 地阶初级
+- [修复原则](di.md#v0-registry-gongfa-candidate-html211-a059-7a44075e45-r1-b0a21d91) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a065-d9a824d7f0-r1-8eddc9b2"></a>
-- [3.55 UNIX哲学](di.md#v0-registry-gongfa-candidate-html211-a065-d9a824d7f0-r1-8eddc9b2) — 地阶初级
+- [UNIX哲学](di.md#v0-registry-gongfa-candidate-html211-a065-d9a824d7f0-r1-8eddc9b2) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a071-aca090447f-r1-89c1b77d"></a>
-- [3.61 充分利用软件的杠杆效应](di.md#v0-registry-gongfa-candidate-html211-a071-aca090447f-r1-89c1b77d) — 地阶初级
+- [充分利用软件的杠杆效应](di.md#v0-registry-gongfa-candidate-html211-a071-aca090447f-r1-89c1b77d) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a076-4e0b5b523e-r1-d4b25ef7"></a>
-- [4.2 耦合度](di.md#v0-registry-gongfa-candidate-html211-a076-4e0b5b523e-r1-d4b25ef7) — 地阶初级
+- [耦合度](di.md#v0-registry-gongfa-candidate-html211-a076-4e0b5b523e-r1-d4b25ef7) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a083-b5060f6c59-r1-e1c2fc88"></a>
-- [5.3 性能调优的箴言](di.md#v0-registry-gongfa-candidate-html211-a083-b5060f6c59-r1-e1c2fc88) — 地阶初级
+- [性能调优的箴言](di.md#v0-registry-gongfa-candidate-html211-a083-b5060f6c59-r1-e1c2fc88) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a085-8ffece86a9-r1-50810622"></a>
-- [5.5 一步一步走](di.md#v0-registry-gongfa-candidate-html211-a085-8ffece86a9-r1-50810622) — 地阶初级
+- [一步一步走](di.md#v0-registry-gongfa-candidate-html211-a085-8ffece86a9-r1-50810622) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a087-2fc375c302-r1-916807ee"></a>
-- [6.1 曳光弹](di.md#v0-registry-gongfa-candidate-html211-a087-2fc375c302-r1-916807ee) — 地阶初级
+- [曳光弹](di.md#v0-registry-gongfa-candidate-html211-a087-2fc375c302-r1-916807ee) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a089-3f97e0822f-r1-db99fbf1"></a>
-- [6.3 防御性编程](di.md#v0-registry-gongfa-candidate-html211-a089-3f97e0822f-r1-db99fbf1) — 地阶初级
+- [防御性编程](di.md#v0-registry-gongfa-candidate-html211-a089-3f97e0822f-r1-db99fbf1) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-a100-9e909fd512-r1-5fcc5426"></a>
-- [7.8 重新发明车轮](di.md#v0-registry-gongfa-candidate-html211-a100-9e909fd512-r1-5fcc5426) — 地阶初级
+- [重新发明车轮](di.md#v0-registry-gongfa-candidate-html211-a100-9e909fd512-r1-5fcc5426) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-b009-7827c40217-r1-a867dc93"></a>
 - [健壮设计流程](di.md#v0-registry-gongfa-candidate-html211-b009-7827c40217-r1-a867dc93) — 地阶初级
 <a id="v0-registry-gongfa-candidate-html211-b011-0b0d3ff125-r1-7833b0ec"></a>
@@ -2124,81 +2124,81 @@
 <a id="v0-registry-gongfa-input-scale-complexity-constraints-r1-fc40633d"></a>
 - [输入规模与复杂度约束](xuan.md#v0-registry-gongfa-input-scale-complexity-constraints-r1-fc40633d) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a004-6ac400b9a7-r1-d289dd18"></a>
-- [2.1 KISS原则](xuan.md#v0-registry-gongfa-candidate-html211-a004-6ac400b9a7-r1-d289dd18) — 玄阶高级
+- [KISS原则](xuan.md#v0-registry-gongfa-candidate-html211-a004-6ac400b9a7-r1-d289dd18) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a005-baabb6b8d2-r1-d2fa2401"></a>
-- [2.2 DRY](xuan.md#v0-registry-gongfa-candidate-html211-a005-baabb6b8d2-r1-d2fa2401) — 玄阶高级
+- [DRY](xuan.md#v0-registry-gongfa-candidate-html211-a005-baabb6b8d2-r1-d2fa2401) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a006-d4698f839b-r1-fc1245dc"></a>
-- [2.3 YAGNI](xuan.md#v0-registry-gongfa-candidate-html211-a006-d4698f839b-r1-fc1245dc) — 玄阶高级
+- [YAGNI](xuan.md#v0-registry-gongfa-candidate-html211-a006-d4698f839b-r1-fc1245dc) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a009-7ff10f65bd-r1-1c0b645e"></a>
-- [2.6 OCP](xuan.md#v0-registry-gongfa-candidate-html211-a009-7ff10f65bd-r1-1c0b645e) — 玄阶高级
+- [OCP](xuan.md#v0-registry-gongfa-candidate-html211-a009-7ff10f65bd-r1-1c0b645e) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a013-66bb26dda3-r1-801a0d8a"></a>
-- [3.3 简洁](xuan.md#v0-registry-gongfa-candidate-html211-a013-66bb26dda3-r1-801a0d8a) — 玄阶高级
+- [简洁](xuan.md#v0-registry-gongfa-candidate-html211-a013-66bb26dda3-r1-801a0d8a) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a017-faa478e78e-r1-50d27b9b"></a>
-- [3.7 逻辑与数据的一体化](xuan.md#v0-registry-gongfa-candidate-html211-a017-faa478e78e-r1-50d27b9b) — 玄阶高级
+- [逻辑与数据的一体化](xuan.md#v0-registry-gongfa-candidate-html211-a017-faa478e78e-r1-50d27b9b) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a022-cc74719a02-r1-6871b1f4"></a>
-- [3.12 抽象](xuan.md#v0-registry-gongfa-candidate-html211-a022-cc74719a02-r1-6871b1f4) — 玄阶高级
+- [抽象](xuan.md#v0-registry-gongfa-candidate-html211-a022-cc74719a02-r1-6871b1f4) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a023-2f0c851698-r1-9dce9c91"></a>
-- [3.13 封装](xuan.md#v0-registry-gongfa-candidate-html211-a023-2f0c851698-r1-9dce9c91) — 玄阶高级
+- [封装](xuan.md#v0-registry-gongfa-candidate-html211-a023-2f0c851698-r1-9dce9c91) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a027-99220276ad-r1-6580d977"></a>
-- [3.17 充足性、完整性、原始性](xuan.md#v0-registry-gongfa-candidate-html211-a027-99220276ad-r1-6580d977) — 玄阶高级
+- [充足性、完整性、原始性](xuan.md#v0-registry-gongfa-candidate-html211-a027-99220276ad-r1-6580d977) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a028-2eea842381-r1-4d22540d"></a>
-- [3.18 策略和实现的分离](xuan.md#v0-registry-gongfa-candidate-html211-a028-2eea842381-r1-4d22540d) — 玄阶高级
+- [策略和实现的分离](xuan.md#v0-registry-gongfa-candidate-html211-a028-2eea842381-r1-4d22540d) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a029-4dc3823b52-r1-bb6ba3a1"></a>
-- [3.19 接口与实现的分离](xuan.md#v0-registry-gongfa-candidate-html211-a029-4dc3823b52-r1-bb6ba3a1) — 玄阶高级
+- [接口与实现的分离](xuan.md#v0-registry-gongfa-candidate-html211-a029-4dc3823b52-r1-bb6ba3a1) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a030-b7e088a3fd-r1-8dcfc113"></a>
-- [3.20 单一引用点](xuan.md#v0-registry-gongfa-candidate-html211-a030-b7e088a3fd-r1-8dcfc113) — 玄阶高级
+- [单一引用点](xuan.md#v0-registry-gongfa-candidate-html211-a030-b7e088a3fd-r1-8dcfc113) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a033-840bc543dc-r1-c5e0f1fb"></a>
-- [3.23 易变性](xuan.md#v0-registry-gongfa-candidate-html211-a033-840bc543dc-r1-c5e0f1fb) — 玄阶高级
+- [易变性](xuan.md#v0-registry-gongfa-candidate-html211-a033-840bc543dc-r1-c5e0f1fb) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a034-2e966353b8-r1-cf62634e"></a>
-- [3.24 互操作性](xuan.md#v0-registry-gongfa-candidate-html211-a034-2e966353b8-r1-cf62634e) — 玄阶高级
+- [互操作性](xuan.md#v0-registry-gongfa-candidate-html211-a034-2e966353b8-r1-cf62634e) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a035-eb4747325f-r1-fb0c1353"></a>
-- [3.25 效率性](xuan.md#v0-registry-gongfa-candidate-html211-a035-eb4747325f-r1-fb0c1353) — 玄阶高级
+- [效率性](xuan.md#v0-registry-gongfa-candidate-html211-a035-eb4747325f-r1-fb0c1353) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a040-c86eb778b1-r1-15147eb3"></a>
-- [3.30 简单性原理](xuan.md#v0-registry-gongfa-candidate-html211-a040-c86eb778b1-r1-15147eb3) — 玄阶高级
+- [简单性原理](xuan.md#v0-registry-gongfa-candidate-html211-a040-c86eb778b1-r1-15147eb3) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a043-1c8e12cd51-r1-28dd2335"></a>
-- [3.33 层次原理](xuan.md#v0-registry-gongfa-candidate-html211-a043-1c8e12cd51-r1-28dd2335) — 玄阶高级
+- [层次原理](xuan.md#v0-registry-gongfa-candidate-html211-a043-1c8e12cd51-r1-28dd2335) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a048-12ff36d4f9-r1-380a96dc"></a>
-- [3.38 模块化原则](xuan.md#v0-registry-gongfa-candidate-html211-a048-12ff36d4f9-r1-380a96dc) — 玄阶高级
+- [模块化原则](xuan.md#v0-registry-gongfa-candidate-html211-a048-12ff36d4f9-r1-380a96dc) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a050-23590f6a16-r1-92170ca1"></a>
-- [3.40 组合原则](xuan.md#v0-registry-gongfa-candidate-html211-a050-23590f6a16-r1-92170ca1) — 玄阶高级
+- [组合原则](xuan.md#v0-registry-gongfa-candidate-html211-a050-23590f6a16-r1-92170ca1) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a051-852ed72fb4-r1-25652e5e"></a>
-- [3.41 分离原则](xuan.md#v0-registry-gongfa-candidate-html211-a051-852ed72fb4-r1-25652e5e) — 玄阶高级
+- [分离原则](xuan.md#v0-registry-gongfa-candidate-html211-a051-852ed72fb4-r1-25652e5e) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a052-f40ba40c20-r1-de723c05"></a>
-- [3.42 简单原则](xuan.md#v0-registry-gongfa-candidate-html211-a052-f40ba40c20-r1-de723c05) — 玄阶高级
+- [简单原则](xuan.md#v0-registry-gongfa-candidate-html211-a052-f40ba40c20-r1-de723c05) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a055-13806a5c5d-r1-9ceb6ca3"></a>
-- [3.45 健壮性原则](xuan.md#v0-registry-gongfa-candidate-html211-a055-13806a5c5d-r1-9ceb6ca3) — 玄阶高级
+- [健壮性原则](xuan.md#v0-registry-gongfa-candidate-html211-a055-13806a5c5d-r1-9ceb6ca3) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a060-0f1dec32e7-r1-2ea04cef"></a>
-- [3.50 经济原则](xuan.md#v0-registry-gongfa-candidate-html211-a060-0f1dec32e7-r1-2ea04cef) — 玄阶高级
+- [经济原则](xuan.md#v0-registry-gongfa-candidate-html211-a060-0f1dec32e7-r1-2ea04cef) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a061-2d46c5330b-r1-28703e00"></a>
-- [3.51 生成原则](xuan.md#v0-registry-gongfa-candidate-html211-a061-2d46c5330b-r1-28703e00) — 玄阶高级
+- [生成原则](xuan.md#v0-registry-gongfa-candidate-html211-a061-2d46c5330b-r1-28703e00) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a062-f0ca04224d-r1-d442de4b"></a>
-- [3.52 优化原则](xuan.md#v0-registry-gongfa-candidate-html211-a062-f0ca04224d-r1-d442de4b) — 玄阶高级
+- [优化原则](xuan.md#v0-registry-gongfa-candidate-html211-a062-f0ca04224d-r1-d442de4b) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a064-014988f65e-r1-405b469d"></a>
-- [3.54 可扩展性原则](xuan.md#v0-registry-gongfa-candidate-html211-a064-014988f65e-r1-405b469d) — 玄阶高级
+- [可扩展性原则](xuan.md#v0-registry-gongfa-candidate-html211-a064-014988f65e-r1-405b469d) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a068-40c195bfbf-r1-ca0a44ed"></a>
-- [3.58 尽早创建原型](xuan.md#v0-registry-gongfa-candidate-html211-a068-40c195bfbf-r1-ca0a44ed) — 玄阶高级
+- [尽早创建原型](xuan.md#v0-registry-gongfa-candidate-html211-a068-40c195bfbf-r1-ca0a44ed) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a073-0709284c11-r1-b398231b"></a>
-- [3.63 避开交互式用户接口](xuan.md#v0-registry-gongfa-candidate-html211-a073-0709284c11-r1-b398231b) — 玄阶高级
+- [避开交互式用户接口](xuan.md#v0-registry-gongfa-candidate-html211-a073-0709284c11-r1-b398231b) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a074-33a8bd6e88-r1-f81065fa"></a>
-- [3.64 过滤器化](xuan.md#v0-registry-gongfa-candidate-html211-a074-33a8bd6e88-r1-f81065fa) — 玄阶高级
+- [过滤器化](xuan.md#v0-registry-gongfa-candidate-html211-a074-33a8bd6e88-r1-f81065fa) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a075-88e612b40a-r1-6f7b6193"></a>
-- [4.1 内聚度](xuan.md#v0-registry-gongfa-candidate-html211-a075-88e612b40a-r1-6f7b6193) — 玄阶高级
+- [内聚度](xuan.md#v0-registry-gongfa-candidate-html211-a075-88e612b40a-r1-6f7b6193) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a077-aa945d4590-r1-14565a6c"></a>
-- [4.3 正交性](xuan.md#v0-registry-gongfa-candidate-html211-a077-aa945d4590-r1-14565a6c) — 玄阶高级
+- [正交性](xuan.md#v0-registry-gongfa-candidate-html211-a077-aa945d4590-r1-14565a6c) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a078-2e5615a3a6-r1-d6fc25d5"></a>
-- [4.4 可逆性](xuan.md#v0-registry-gongfa-candidate-html211-a078-2e5615a3a6-r1-d6fc25d5) — 玄阶高级
+- [可逆性](xuan.md#v0-registry-gongfa-candidate-html211-a078-2e5615a3a6-r1-d6fc25d5) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a080-6820c97f69-r1-7a597c0b"></a>
-- [4.6 技术负债](xuan.md#v0-registry-gongfa-candidate-html211-a080-6820c97f69-r1-7a597c0b) — 玄阶高级
+- [技术负债](xuan.md#v0-registry-gongfa-candidate-html211-a080-6820c97f69-r1-7a597c0b) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a092-98a1f6061e-r1-28ec9705"></a>
-- [6.6 语境](xuan.md#v0-registry-gongfa-candidate-html211-a092-98a1f6061e-r1-28ec9705) — 玄阶高级
+- [语境](xuan.md#v0-registry-gongfa-candidate-html211-a092-98a1f6061e-r1-28ec9705) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a093-66bc467a47-r1-3ae375cc"></a>
-- [7.1 布鲁克斯法则](xuan.md#v0-registry-gongfa-candidate-html211-a093-66bc467a47-r1-3ae375cc) — 玄阶高级
+- [布鲁克斯法则](xuan.md#v0-registry-gongfa-candidate-html211-a093-66bc467a47-r1-3ae375cc) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a097-5968760ebf-r1-b309f032"></a>
-- [7.5 80-10-10原则](xuan.md#v0-registry-gongfa-candidate-html211-a097-5968760ebf-r1-b309f032) — 玄阶高级
+- [80-10-10原则](xuan.md#v0-registry-gongfa-candidate-html211-a097-5968760ebf-r1-b309f032) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a099-933496d745-r1-1f8cff99"></a>
-- [7.7 第二系统综合征](xuan.md#v0-registry-gongfa-candidate-html211-a099-933496d745-r1-1f8cff99) — 玄阶高级
+- [第二系统综合征](xuan.md#v0-registry-gongfa-candidate-html211-a099-933496d745-r1-1f8cff99) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a101-dc862a40a6-r1-308526a1"></a>
-- [7.9 给牦牛剃毛](xuan.md#v0-registry-gongfa-candidate-html211-a101-dc862a40a6-r1-308526a1) — 玄阶高级
+- [给牦牛剃毛](xuan.md#v0-registry-gongfa-candidate-html211-a101-dc862a40a6-r1-308526a1) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-b003-1e1f431945-r1-2f0d14ec"></a>
 - [软件设计两原则](xuan.md#v0-registry-gongfa-candidate-html211-b003-1e1f431945-r1-2f0d14ec) — 玄阶高级
 <a id="v0-registry-gongfa-candidate-html211-b005-4f7b8525db-r1-8e5fba4d"></a>
@@ -2426,73 +2426,73 @@
 <a id="v0-registry-gongfa-dry-reuse-r1-5af5b36d"></a>
 - [DRY 逻辑复用准则](xuan.md#v0-registry-gongfa-dry-reuse-r1-5af5b36d) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a001-8e7d97a738-r1-e931f6bf"></a>
-- [1.1 编程没有银弹](xuan.md#v0-registry-gongfa-candidate-html211-a001-8e7d97a738-r1-e931f6bf) — 玄阶中级
+- [编程没有银弹](xuan.md#v0-registry-gongfa-candidate-html211-a001-8e7d97a738-r1-e931f6bf) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a002-4d2dd6d6ba-r1-303bb5ba"></a>
-- [1.2 代码即设计文档](xuan.md#v0-registry-gongfa-candidate-html211-a002-4d2dd6d6ba-r1-303bb5ba) — 玄阶中级
+- [代码即设计文档](xuan.md#v0-registry-gongfa-candidate-html211-a002-4d2dd6d6ba-r1-303bb5ba) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a003-a0e3ed09b3-r1-b73ea36e"></a>
-- [1.3 代码必然被修改](xuan.md#v0-registry-gongfa-candidate-html211-a003-a0e3ed09b3-r1-b73ea36e) — 玄阶中级
+- [代码必然被修改](xuan.md#v0-registry-gongfa-candidate-html211-a003-a0e3ed09b3-r1-b73ea36e) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a007-9f5d58c4c2-r1-2f7fcf04"></a>
-- [2.4 PIE](xuan.md#v0-registry-gongfa-candidate-html211-a007-9f5d58c4c2-r1-2f7fcf04) — 玄阶中级
+- [PIE](xuan.md#v0-registry-gongfa-candidate-html211-a007-9f5d58c4c2-r1-2f7fcf04) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a008-3859e64713-r1-b514e5e6"></a>
-- [2.5 SLAP](xuan.md#v0-registry-gongfa-candidate-html211-a008-3859e64713-r1-b514e5e6) — 玄阶中级
+- [SLAP](xuan.md#v0-registry-gongfa-candidate-html211-a008-3859e64713-r1-b514e5e6) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a010-1f064950c2-r1-a48f2be3"></a>
-- [2.7 名字很重要](xuan.md#v0-registry-gongfa-candidate-html211-a010-1f064950c2-r1-a48f2be3) — 玄阶中级
+- [名字很重要](xuan.md#v0-registry-gongfa-candidate-html211-a010-1f064950c2-r1-a48f2be3) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a011-524f16bc1d-r1-76b4b7a1"></a>
-- [3.1 编程理论](xuan.md#v0-registry-gongfa-candidate-html211-a011-524f16bc1d-r1-76b4b7a1) — 玄阶中级
+- [编程理论](xuan.md#v0-registry-gongfa-candidate-html211-a011-524f16bc1d-r1-76b4b7a1) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a012-b7f6799a7b-r1-2274c61c"></a>
-- [3.2 交流](xuan.md#v0-registry-gongfa-candidate-html211-a012-b7f6799a7b-r1-2274c61c) — 玄阶中级
+- [交流](xuan.md#v0-registry-gongfa-candidate-html211-a012-b7f6799a7b-r1-2274c61c) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a014-0404d27bb5-r1-509ca68d"></a>
-- [3.4 灵活性](xuan.md#v0-registry-gongfa-candidate-html211-a014-0404d27bb5-r1-509ca68d) — 玄阶中级
+- [灵活性](xuan.md#v0-registry-gongfa-candidate-html211-a014-0404d27bb5-r1-509ca68d) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a016-53aedb0dc6-r1-a93d0a6d"></a>
-- [3.6 重复最少化](xuan.md#v0-registry-gongfa-candidate-html211-a016-53aedb0dc6-r1-a93d0a6d) — 玄阶中级
+- [重复最少化](xuan.md#v0-registry-gongfa-candidate-html211-a016-53aedb0dc6-r1-a93d0a6d) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a018-b70e5bea74-r1-995f6075"></a>
-- [3.8 对称性](xuan.md#v0-registry-gongfa-candidate-html211-a018-b70e5bea74-r1-995f6075) — 玄阶中级
+- [对称性](xuan.md#v0-registry-gongfa-candidate-html211-a018-b70e5bea74-r1-995f6075) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a019-f38b5a87f1-r1-f4a31295"></a>
-- [3.9 声明式表](xuan.md#v0-registry-gongfa-candidate-html211-a019-f38b5a87f1-r1-f4a31295) — 玄阶中级
+- [声明式表](xuan.md#v0-registry-gongfa-candidate-html211-a019-f38b5a87f1-r1-f4a31295) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a025-64fbbb3b0b-r1-604cbedd"></a>
-- [3.15 打包](xuan.md#v0-registry-gongfa-candidate-html211-a025-64fbbb3b0b-r1-604cbedd) — 玄阶中级
+- [打包](xuan.md#v0-registry-gongfa-candidate-html211-a025-64fbbb3b0b-r1-604cbedd) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a038-8a3b636f85-r1-acc6334e"></a>
-- [3.28 可复用性](xuan.md#v0-registry-gongfa-candidate-html211-a038-8a3b636f85-r1-acc6334e) — 玄阶中级
+- [可复用性](xuan.md#v0-registry-gongfa-candidate-html211-a038-8a3b636f85-r1-acc6334e) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a039-8414fd26a8-r1-3006f046"></a>
-- [3.29 七个设计原理](xuan.md#v0-registry-gongfa-candidate-html211-a039-8414fd26a8-r1-3006f046) — 玄阶中级
+- [七个设计原理](xuan.md#v0-registry-gongfa-candidate-html211-a039-8414fd26a8-r1-3006f046) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a041-05fc61c242-r1-c46e09f5"></a>
-- [3.31 同构原理](xuan.md#v0-registry-gongfa-candidate-html211-a041-05fc61c242-r1-c46e09f5) — 玄阶中级
+- [同构原理](xuan.md#v0-registry-gongfa-candidate-html211-a041-05fc61c242-r1-c46e09f5) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a042-f9481e5604-r1-835c8532"></a>
-- [3.32 对称原理](xuan.md#v0-registry-gongfa-candidate-html211-a042-f9481e5604-r1-835c8532) — 玄阶中级
+- [对称原理](xuan.md#v0-registry-gongfa-candidate-html211-a042-f9481e5604-r1-835c8532) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a044-58945da4a1-r1-b031379f"></a>
-- [3.34 线性原理](xuan.md#v0-registry-gongfa-candidate-html211-a044-58945da4a1-r1-b031379f) — 玄阶中级
+- [线性原理](xuan.md#v0-registry-gongfa-candidate-html211-a044-58945da4a1-r1-b031379f) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a045-65a577c76d-r1-e3340d3e"></a>
-- [3.35 清晰原理](xuan.md#v0-registry-gongfa-candidate-html211-a045-65a577c76d-r1-e3340d3e) — 玄阶中级
+- [清晰原理](xuan.md#v0-registry-gongfa-candidate-html211-a045-65a577c76d-r1-e3340d3e) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a049-c44b012d08-r1-a6f47696"></a>
-- [3.39 清晰原则](xuan.md#v0-registry-gongfa-candidate-html211-a049-c44b012d08-r1-a6f47696) — 玄阶中级
+- [清晰原则](xuan.md#v0-registry-gongfa-candidate-html211-a049-c44b012d08-r1-a6f47696) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a053-a7b961dd5b-r1-524aa6ee"></a>
-- [3.43 简约原则](xuan.md#v0-registry-gongfa-candidate-html211-a053-a7b961dd5b-r1-524aa6ee) — 玄阶中级
+- [简约原则](xuan.md#v0-registry-gongfa-candidate-html211-a053-a7b961dd5b-r1-524aa6ee) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a056-6e8037bbf4-r1-b8b0ce68"></a>
-- [3.46 表达性原则](xuan.md#v0-registry-gongfa-candidate-html211-a056-6e8037bbf4-r1-b8b0ce68) — 玄阶中级
+- [表达性原则](xuan.md#v0-registry-gongfa-candidate-html211-a056-6e8037bbf4-r1-b8b0ce68) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a057-846064fae9-r1-8cfd673b"></a>
-- [3.47 最小意外原则](xuan.md#v0-registry-gongfa-candidate-html211-a057-846064fae9-r1-8cfd673b) — 玄阶中级
+- [最小意外原则](xuan.md#v0-registry-gongfa-candidate-html211-a057-846064fae9-r1-8cfd673b) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a063-9838ec2916-r1-3464551e"></a>
-- [3.53 多样性原则](xuan.md#v0-registry-gongfa-candidate-html211-a063-9838ec2916-r1-3464551e) — 玄阶中级
+- [多样性原则](xuan.md#v0-registry-gongfa-candidate-html211-a063-9838ec2916-r1-3464551e) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a067-0ab54271db-r1-70cea0ff"></a>
-- [3.57 工作唯一](xuan.md#v0-registry-gongfa-candidate-html211-a067-0ab54271db-r1-70cea0ff) — 玄阶中级
+- [工作唯一](xuan.md#v0-registry-gongfa-candidate-html211-a067-0ab54271db-r1-70cea0ff) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a069-ce67e069c9-r1-20cba35c"></a>
-- [3.59 可移植性优先于效率](xuan.md#v0-registry-gongfa-candidate-html211-a069-ce67e069c9-r1-20cba35c) — 玄阶中级
+- [可移植性优先于效率](xuan.md#v0-registry-gongfa-candidate-html211-a069-ce67e069c9-r1-20cba35c) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a070-7422ebcca4-r1-e70359c7"></a>
-- [3.60 文本数据](xuan.md#v0-registry-gongfa-candidate-html211-a070-7422ebcca4-r1-e70359c7) — 玄阶中级
+- [文本数据](xuan.md#v0-registry-gongfa-candidate-html211-a070-7422ebcca4-r1-e70359c7) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a072-548773e5aa-r1-67b30f49"></a>
-- [3.62 活用shell脚本](xuan.md#v0-registry-gongfa-candidate-html211-a072-548773e5aa-r1-67b30f49) — 玄阶中级
+- [活用shell脚本](xuan.md#v0-registry-gongfa-candidate-html211-a072-548773e5aa-r1-67b30f49) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a079-fcb2eec37f-r1-d98719fc"></a>
-- [4.5 代码中的“坏味”](xuan.md#v0-registry-gongfa-candidate-html211-a079-fcb2eec37f-r1-d98719fc) — 玄阶中级
+- [代码中的“坏味”](xuan.md#v0-registry-gongfa-candidate-html211-a079-fcb2eec37f-r1-d98719fc) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a084-9ed61bca4f-r1-ca85fd3d"></a>
-- [5.4 无我编程](xuan.md#v0-registry-gongfa-candidate-html211-a084-9ed61bca4f-r1-ca85fd3d) — 玄阶中级
+- [无我编程](xuan.md#v0-registry-gongfa-candidate-html211-a084-9ed61bca4f-r1-ca85fd3d) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a090-20e76f8c68-r1-c79527be"></a>
-- [6.4 内部测试](xuan.md#v0-registry-gongfa-candidate-html211-a090-20e76f8c68-r1-c79527be) — 玄阶中级
+- [内部测试](xuan.md#v0-registry-gongfa-candidate-html211-a090-20e76f8c68-r1-c79527be) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a091-a929ab63af-r1-fcbfccff"></a>
-- [6.5 橡皮鸭调试法](xuan.md#v0-registry-gongfa-candidate-html211-a091-a929ab63af-r1-fcbfccff) — 玄阶中级
+- [橡皮鸭调试法](xuan.md#v0-registry-gongfa-candidate-html211-a091-a929ab63af-r1-fcbfccff) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a094-349b5fcc49-r1-02e4db60"></a>
-- [7.2 康威定律](xuan.md#v0-registry-gongfa-candidate-html211-a094-349b5fcc49-r1-02e4db60) — 玄阶中级
+- [康威定律](xuan.md#v0-registry-gongfa-candidate-html211-a094-349b5fcc49-r1-02e4db60) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a098-45e07846f3-r1-b3435933"></a>
-- [7.6 约书亚树原则](xuan.md#v0-registry-gongfa-candidate-html211-a098-45e07846f3-r1-b3435933) — 玄阶中级
+- [约书亚树原则](xuan.md#v0-registry-gongfa-candidate-html211-a098-45e07846f3-r1-b3435933) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-b002-556ed9e790-r1-401df117"></a>
 - [理解驱动能力](xuan.md#v0-registry-gongfa-candidate-html211-b002-556ed9e790-r1-401df117) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-b004-605c2f5cf8-r1-28a7954e"></a>
@@ -2636,15 +2636,15 @@
 <a id="v0-registry-gongfa-representation-flattening-r1-bae81083"></a>
 - [拍扁](xuan.md#v0-registry-gongfa-representation-flattening-r1-bae81083) — 玄阶初级
 <a id="v0-registry-gongfa-candidate-html211-a081-3fef410bca-r1-b8c877cb"></a>
-- [5.1 程序员的三大美德](xuan.md#v0-registry-gongfa-candidate-html211-a081-3fef410bca-r1-b8c877cb) — 玄阶初级
+- [程序员的三大美德](xuan.md#v0-registry-gongfa-candidate-html211-a081-3fef410bca-r1-b8c877cb) — 玄阶初级
 <a id="v0-registry-gongfa-candidate-html211-a082-f9f4df5472-r1-ef5c5f3f"></a>
-- [5.2 童子军规则](xuan.md#v0-registry-gongfa-candidate-html211-a082-f9f4df5472-r1-ef5c5f3f) — 玄阶初级
+- [童子军规则](xuan.md#v0-registry-gongfa-candidate-html211-a082-f9f4df5472-r1-ef5c5f3f) — 玄阶初级
 <a id="v0-registry-gongfa-candidate-html211-a086-36f248c9f3-r1-7734175c"></a>
-- [5.6 TMTOWTDI](xuan.md#v0-registry-gongfa-candidate-html211-a086-36f248c9f3-r1-7734175c) — 玄阶初级
+- [TMTOWTDI](xuan.md#v0-registry-gongfa-candidate-html211-a086-36f248c9f3-r1-7734175c) — 玄阶初级
 <a id="v0-registry-gongfa-candidate-html211-a095-924f9a898f-r1-cde2f0c6"></a>
-- [7.3 破窗效应](xuan.md#v0-registry-gongfa-candidate-html211-a095-924f9a898f-r1-cde2f0c6) — 玄阶初级
+- [破窗效应](xuan.md#v0-registry-gongfa-candidate-html211-a095-924f9a898f-r1-cde2f0c6) — 玄阶初级
 <a id="v0-registry-gongfa-candidate-html211-a096-8147e5b67c-r1-04637a7b"></a>
-- [7.4 熵增原理](xuan.md#v0-registry-gongfa-candidate-html211-a096-8147e5b67c-r1-04637a7b) — 玄阶初级
+- [熵增原理](xuan.md#v0-registry-gongfa-candidate-html211-a096-8147e5b67c-r1-04637a7b) — 玄阶初级
 <a id="v0-registry-gongfa-candidate-html211-b006-6154b5279a-r1-ecf67321"></a>
 - [未来预测准确度模型](xuan.md#v0-registry-gongfa-candidate-html211-b006-6154b5279a-r1-ecf67321) — 玄阶初级
 <a id="v0-registry-gongfa-candidate-html211-b008-3a557875b1-r1-4a508faf"></a>
@@ -2715,9 +2715,9 @@
 <a id="v0-registry-gongfa-symbol-name-index-maintenance-r1-9ac1dd14"></a>
 - [变量名索引维护](huang.md#v0-registry-gongfa-symbol-name-index-maintenance-r1-9ac1dd14) — 黄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a058-2de6cbc222-r1-ae19afea"></a>
-- [3.48 沉默原则](huang.md#v0-registry-gongfa-candidate-html211-a058-2de6cbc222-r1-ae19afea) — 黄阶高级
+- [沉默原则](huang.md#v0-registry-gongfa-candidate-html211-a058-2de6cbc222-r1-ae19afea) — 黄阶高级
 <a id="v0-registry-gongfa-candidate-html211-a066-45cfd1a4a1-r1-8e34a5da"></a>
-- [3.56 小就是美](huang.md#v0-registry-gongfa-candidate-html211-a066-45cfd1a4a1-r1-8e34a5da) — 黄阶高级
+- [小就是美](huang.md#v0-registry-gongfa-candidate-html211-a066-45cfd1a4a1-r1-8e34a5da) — 黄阶高级
 <a id="v0-registry-gongfa-candidate-html211-b016-2769017384-r1-f68f1ef5"></a>
 - [开源社区三问题](huang.md#v0-registry-gongfa-candidate-html211-b016-2769017384-r1-f68f1ef5) — 黄阶高级
 <a id="v0-registry-gongfa-candidate-html211-c003-64604487c7-r1-a7b3ff1c"></a>
