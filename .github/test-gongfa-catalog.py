@@ -279,6 +279,43 @@ class CatalogMaintenanceTest(unittest.TestCase):
             for label in stale_labels:
                 self.assertNotIn(label, views[name], name)
 
+    def test_book_citation_is_scoped_to_the_101_exact_source_records(self):
+        html_sha = '38fae80333632ff3e077990fd953f8e7a97fe918497563901c125c4be799f326'
+        book_url = 'https://book.douban.com/subject/35088343/'
+        catalogue_url = 'https://jp.tfswufe.edu.cn/opac/book/d741c0e6dd191cb4fec62706743b745d'
+        expected_ids = {f'A{number:03}' for number in range(1, 102)}
+        candidates = {item['candidate_id']: item
+                      for item in self.documents['html211_candidates']['candidates']
+                      if item['source_selection'].get('file') == '编程的原则.html'
+                      and item['source_selection'].get('actual_html_sha256') == html_sha}
+        self.assertEqual(expected_ids, set(candidates))
+
+        cited = {}
+        for item in self.documents['explanations_v1']['items']:
+            fields = {field['name']: field['content'] for field in item['fields']}
+            provenance = fields['出处']
+            start = provenance.find('{')
+            if start < 0:
+                continue
+            metadata = json.loads(provenance[start:provenance.rfind('}') + 1])
+            selection = metadata.get('source_selection', {})
+            if selection.get('file') != '编程的原则.html' or selection.get('actual_html_sha256') != html_sha:
+                continue
+            candidate_id = metadata['candidate_record'].split(':', 1)[1]
+            self.assertNotIn(candidate_id, cited)
+            cited[candidate_id] = (metadata, fields['相关图书'])
+
+        self.assertEqual(expected_ids, set(cited))
+        for candidate_id, (metadata, related_book) in cited.items():
+            candidate = candidates[candidate_id]
+            self.assertEqual(candidate['source_selection'], metadata['source_selection'], candidate_id)
+            self.assertEqual(candidate['declared_upstream'], metadata['declared_upstream'], candidate_id)
+            for fact in ('上田勋著', '支鹏浩译', '编程的原则：改善代码质量的101个方法',
+                         '人民邮电出版社', '2020年6月', '978-7-115-53914-4',
+                         book_url, catalogue_url, metadata['declared_upstream'],
+                         '尚未逐项独立核对原书/EPUB或纸本页码', '许可证尚未核验'):
+                self.assertIn(fact, related_book, candidate_id)
+
     def test_stale_status_scan_covers_all_441_explanation_items_without_rewriting_them(self):
         expected_counts = {'gongfa': 411, 'faqi': 30}
         bundles = source_archive.bundles(ROOT)
