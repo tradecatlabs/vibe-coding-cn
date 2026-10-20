@@ -335,7 +335,11 @@ class CatalogMaintenanceTest(unittest.TestCase):
                 self.assertGreater(len(warrant), 200, item['object_key'])
                 self.assertIn('由于', warrant, item['object_key'])
                 self.assertIn('因此', warrant, item['object_key'])
-                self.assertIn('成立边界：第15项', warrant, item['object_key'])
+                self.assertIn('不据此外推未观察效果、许可或正式评级', warrant, item['object_key'])
+                condition = ' '.join(fields['明确这些规律成立的前提与适用条件。'].split()).strip(' ；;，,。\n')
+                boundary = warrant.split('成立边界：', 1)[1].split('不据此外推未观察效果、许可或正式评级。', 1)[0]
+                if condition not in boundary:
+                    self.assertIn('以第15项列出的适用条件、限制及其待核状态为准', boundary, item['object_key'])
                 self.assertNotIn('仅当第18项支持第11项机制适用于第9项问题', warrant, item['object_key'])
                 self.assertIn('第7项', fields['依据'], item['object_key'])
                 self.assertIn('第11项', fields['依据'], item['object_key'])
