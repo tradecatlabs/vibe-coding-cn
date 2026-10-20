@@ -300,17 +300,24 @@ class CatalogMaintenanceTest(unittest.TestCase):
                  if item['object_key'].startswith('registry:gongfa-candidate-')]
         self.assertEqual(len(items), 331)
         stale_labels = STALE_EXPLANATION_LABELS
+        semantically_updated_ids = {f'A{number:03}' for number in range(1, 102)}
         for item in items:
             fields = {field['name']: field['content'] for field in item['fields']}
             self.assertEqual(list(fields), v1_field_names())
-            self.assertIn('用户确认说明正式通过审阅', fields['关联信息'])
+            match = re.search(r':gongfa-candidate-html211-(a\d{3})-', item['object_key'])
+            candidate_id = match.group(1).upper() if match else None
+            if candidate_id in semantically_updated_ids:
+                self.assertIn('原始说明版本曾由用户确认正式通过审阅', fields['关联信息'])
+                self.assertIn('本次更新后的内容未另行确认', fields['关联信息'])
+            else:
+                self.assertIn('用户确认说明正式通过审阅', fields['关联信息'])
             self.assertNotIn('既有既有初评', fields['关联信息'])
             for label in stale_labels:
                 self.assertNotIn(label, '\n'.join(fields.values()), item['object_key'])
 
         rows = catalog.merge_rows(deepcopy(self.documents))
         views = catalog.render_views(ROOT, rows, self.binding)
-        self.assertIn('331条已登记说明已由用户确认正式通过审阅', views['README.md'])
+        self.assertIn('331条来源迁入说明曾由用户确认正式通过审阅；后续内容更新不自动继承该确认。', views['README.md'])
         for name in ('README.md', 'tian.md', 'di.md', 'xuan.md', 'huang.md'):
             for label in stale_labels:
                 self.assertNotIn(label, views[name], name)
@@ -354,10 +361,120 @@ class CatalogMaintenanceTest(unittest.TestCase):
                          '用户提供的EPUB逐条核对', f'spine第{location.group(1)}项', '101/101',
                          'a84baec52ce401f8af0bfe8924a51d0dcfa1cbcf0f7e27d86f0888b986747615',
                          'EPUB未提供稳定的印刷页码定位',
-                         '未逐句验证原摘录和说明的语义支持',
-                         '未独立认证文件外部来源、版权或本仓使用许可',
-                         '不证明效果或评级'):
+                         '未逐句校勘全部18项说明', '非独立审查',
+                         '未独立认证EPUB文件外部来源、版权或本仓使用许可',
+                         '不证明实际效果或正式评级'):
                 self.assertIn(fact, related_book, candidate_id)
+            self.assertRegex(related_book, r'语义自审结论：(支持但含推论|支持|部分支持)')
+
+        semantic_counts = Counter(
+            re.search(r'语义自审结论：(支持但含推论|支持|部分支持)', text).group(1)
+            for _metadata, text in cited.values()
+        )
+        self.assertEqual({'支持': 68, '支持但含推论': 23, '部分支持': 10}, dict(semantic_counts))
+        issue_notes = {
+            'A010': '“效果和目的”写成“副作用”',
+            'A019': '具体载体未在该章节给出',
+            'A023': '信息隐藏',
+            'A030': '不可变',
+            'A036': '异常/非法使用',
+            'A041': '同类事物采用一致规范',
+            'A060': '不是本节主张',
+            'A061': '并非本节明确内容',
+            'A076': '特征耦合',
+            'A089': '正当性/坚固性',
+        }
+        for candidate_id, phrase in issue_notes.items():
+            self.assertIn(phrase, cited[candidate_id][1], candidate_id)
+        for candidate_id in ('A088', 'A089', 'A093', 'A094'):
+            self.assertRegex(cited[candidate_id][1], r'图示[^。]*本轮未作视觉复核', candidate_id)
+
+    def test_epub_semantic_corrections_narrow_claims_without_changing_identity_or_grade(self):
+        expected = {
+            'A010': {'是什么': ('效果和目的',)},
+            'A019': {'是什么': ('想要什么',), '怎么做': ('规则、配置等载体属于本条编辑扩展',)},
+            'A023': {'是什么': ('相关数据与操作', '信息隐藏'), '怎么做': ('信息隐藏',),
+                     '它要解决什么问题？': ('编辑者暂拟的适用情境', '相关数据与操作分散'),
+                     '明确这些规律成立的前提与适用条件。': ('编辑者暂拟情境', '相关数据与操作分散')},
+            'A030': {'是什么': ('初始化后尽量不再改变', '副作用'), '怎么做': ('配置集中管理是编辑者应用',),
+                     '它要解决什么问题？': ('编辑者暂拟的适用情境', '变量初始化后容易被重复改写'),
+                     '明确这些规律成立的前提与适用条件。': ('编辑者暂拟情境', '变量初始化后容易被重复改写')},
+            'A036': {'是什么': ('异常或非法使用', '容错', '健壮性')},
+            'A041': {'是什么': ('同类事物采用一致规范',), '怎么做': ('同类事物',),
+                     '它要解决什么问题？': ('编辑者暂拟的适用情境', '同类事物采用不同表达'),
+                     '明确这些规律成立的前提与适用条件。': ('编辑者暂拟情境', '同类事物采用不同表达')},
+            'A060': {'是什么': ('珍惜程序员时间', '适当硬件/软件',), '怎么做': ('不是本节主张',),
+                     '它要解决什么问题？': ('编辑者暂拟的适用情境', '工具或工作规则不必要地耗费程序员时间'),
+                     '明确这些规律成立的前提与适用条件。': ('编辑者暂拟情境', '工具或工作规则不必要地耗费程序员时间')},
+            'A061': {'是什么': ('重复、固定形式的代码',), '怎么做': ('单一高层来源', '不是本节明确内容'),
+                     '它要解决什么问题？': ('编辑者暂拟的适用情境', '存在重复、固定形式的代码'),
+                     '明确这些规律成立的前提与适用条件。': ('编辑者暂拟情境', '存在重复、固定形式的代码')},
+            'A076': {'相关图书': ('特征耦合', '标记耦合')},
+            'A089': {'是什么': ('正当性', '坚固性')},
+        }
+        source_items = {item['candidate_id']: item for item in self.documents['html211_candidates']['candidates']}
+        grade_items = {item['candidate_id']: item for item in self.documents['html211_grades']['items']}
+        indexed = {}
+        for item in self.documents['explanations_v1']['items']:
+            match = re.search(r':gongfa-candidate-html211-(a\d{3})-', item['object_key'])
+            if match:
+                indexed[match.group(1).upper()] = item
+        for candidate_id, fields_expected in expected.items():
+            self.assertIn(candidate_id, indexed)
+            item = indexed[candidate_id]
+            fields = {field['name']: field['content'] for field in item['fields']}
+            self.assertEqual('r1', item['object_key'].rsplit('@', 1)[1])
+            for field_name, phrases in fields_expected.items():
+                for phrase in phrases:
+                    self.assertIn(phrase, fields[field_name], f'{candidate_id}:{field_name}')
+            self.assertIn(candidate_id, source_items)
+            self.assertEqual(source_items[candidate_id]['text_sha256'],
+                             sha256(source_items[candidate_id]['original_text'].encode()).hexdigest())
+            self.assertEqual(grade_items[candidate_id]['content_sha256'], source_items[candidate_id]['text_sha256'])
+            self.assertIn('本次更新后的内容未另行确认', fields['关联信息'])
+        stale_summaries = {
+            'A010': '名称要准确、可搜索并能表达目的和副作用',
+            'A019': '用表、规则、配置或声明性接口表达意图和约束',
+            'A023': '封装把数据与相关操作放在边界内，并限制外部直接干预内部状态',
+            'A030': '单一引用点要求同一事实从一个权威位置读取或修改',
+            'A036': '可靠性要求软件在预期条件下持续给出正确结果',
+            'A041': '同构原理要求问题结构与解决方案结构保持可对应关系',
+            'A060': '经济原则要求在可行时优先机器自动化',
+            'A061': '生成原则要求用程序生成可机械推导的代码或数据',
+            'A089': '防御性编程把不可信输入挡在边界外，并区分可预期错误与代码缺陷',
+        }
+        for candidate_id, stale in stale_summaries.items():
+            fields = {field['name']: field['content'] for field in indexed[candidate_id]['fields']}
+            active_text = '\\n'.join(value for name, value in fields.items()
+                                     if name not in {'关联信息', '出处', '相关图书'})
+            self.assertNotIn(stale, active_text, candidate_id)
+        stale_conditions = {
+            'A023': '模块内部细节频繁被外部依赖时',
+            'A030': '配置、常量或规则在多处定义并可能产生差异时',
+            'A041': '代码结构与业务概念或问题分解难以对应时',
+            'A060': '重复工作可以由程序可靠完成时',
+            'A061': '同类结构可从更高层描述自动得到时',
+        }
+        for candidate_id, stale in stale_conditions.items():
+            fields = {field['name']: field['content'] for field in indexed[candidate_id]['fields']}
+            active_text = '\\n'.join(value for name, value in fields.items()
+                                     if name not in {'关联信息', '出处', '相关图书'})
+            self.assertNotIn(stale, active_text, candidate_id)
+        for candidate_id, forbidden in {
+            'A010': {'是什么': ('副作用',)},
+            'A019': {'怎么做': ('用表、规则、配置或声明性接口',)},
+            'A023': {'是什么': ('限制外部直接干预内部状态',)},
+            'A030': {'是什么': ('一个权威位置读取或修改',)},
+            'A036': {'是什么': ('预期条件下持续给出正确结果',)},
+            'A041': {'是什么': ('问题结构与解决方案结构',)},
+            'A060': {'是什么': ('优先机器自动化',)},
+            'A061': {'是什么': ('代码或数据',)},
+            'A089': {'是什么': ('正确性/健壮性',)},
+        }.items():
+            fields = {field['name']: field['content'] for field in indexed[candidate_id]['fields']}
+            for field_name, phrases in forbidden.items():
+                for phrase in phrases:
+                    self.assertNotIn(phrase, fields[field_name], f'{candidate_id}:{field_name}')
 
     def test_stale_status_scan_covers_all_441_explanation_items_without_rewriting_them(self):
         expected_counts = {'gongfa': 411, 'faqi': 30}

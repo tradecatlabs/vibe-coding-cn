@@ -352,7 +352,7 @@ def render_markdown(rows, binding, root=None):
     lines = [MARKER, '# 功法总表', '', '## 字多不看', '',
              f"- 共**{len(rows)}条内容记录**；已登记{counts['已登记']}条，待登记{counts['登记库候选']}条，未登记来源条目{counts['未入登记库']}条。不是独立功法去重后的总数。",
              f'- 原前瞻初评{provisional}条，暂不可判{undetermined}条；不是正式效果评级，亦不把缺测默认补成黄阶。',
-             f"- {sum(binding['candidate_counts'].values())}条已登记说明已由用户确认正式通过审阅；历史来源快照保留原样，书目/许可核验、实际效果与正式评级仍分别维护。",
+             f"- {sum(binding['candidate_counts'].values())}条来源迁入说明曾由用户确认正式通过审阅；后续内容更新不自动继承该确认。历史来源快照保留原样，书目/许可核验、实际效果与正式评级仍分别维护。",
              '- [data.json](data.json)是唯一原始数据源，原始文档、历史来源选区、意见、来源和附件均保留其中。', '',
              '输入绑定：`' + digest(binding['registry_sha256'] + binding['candidate_sha256']) + '`。', '',
              '## 快速导航', '']
