@@ -77,6 +77,14 @@ class SourceArchiveTest(unittest.TestCase):
             self.path.write_text(raw); archive.clear_cache()
             with self.assertRaises(ValueError): archive.read_bytes(self.root / '.github/metadata/gongfa/registry.json')
 
+    def test_rejects_missing_current_location_target(self):
+        old = '.github/metadata/gongfa/source-original.txt'
+        self.data['documents'][old] = document(b'archived source')
+        self.data['locations'][old] = '.github/extensions/retired-entry.sh'
+        self.save()
+        with self.assertRaisesRegex(ValueError, '当前位置映射目标不存在'):
+            archive.read_bytes(self.root / old)
+
     def test_rejects_live_path_escape_and_changed_input(self):
         old = '.github/metadata/gongfa/registry.json'
         self.data['documents'][old] = document(b'{}')

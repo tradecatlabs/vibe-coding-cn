@@ -107,7 +107,8 @@ def bundles(root):
             require(total <= MAX_BYTES, '原始载荷总量超过64MiB')
             decoded[key] = value
         for key, target in data['locations'].items():
-            normal(key); checked_path(root, target)
+            normal(key)
+            require(checked_path(root, target).exists(), '当前位置映射目标不存在')
         for key, binding in data['live_sources'].items():
             normal(key)
             require(set(binding) == {'path', 'sha256'} and re.fullmatch('[a-f0-9]{64}', binding['sha256']), '当前来源绑定格式不符')
