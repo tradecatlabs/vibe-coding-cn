@@ -135,19 +135,19 @@ def candidate_archive_sections(raw):
     try:
         snapshot = source_archive.strict_json(raw)
     except (ValueError, UnicodeError):
-        raise ContractError('candidate_archive: 冻结候选快照不是无重复键的UTF-8 JSON') from None
+        raise ContractError('candidate_archive: 历史来源快照不是无重复键的UTF-8 JSON') from None
     require(isinstance(snapshot, dict) and snapshot.get('schema_version') == '1.0.0'
             and snapshot.get('kind') == 'frozen_classified_candidate_source_not_registry',
-            'candidate_archive', '候选来源快照身份不符')
+            'candidate_archive', '来源快照身份不符')
     require(snapshot.get('independent_semantic_approval') is False
             and snapshot.get('source_books_and_licenses_verified') is False
             and snapshot.get('formal_assessments_created') == 0,
-            'candidate_archive', '候选快照不得冒充独立批准、书目/许可核验或正式评级')
+            'candidate_archive', '历史来源快照的审批、书目/许可与正式评级状态不符')
     documents = snapshot.get('documents')
     expected_documents = {'html211_candidates', 'html211_grades', 'html96_candidates',
                           'html96_grades', 'solve24_analysis', 'solve_raw'}
     require(isinstance(documents, dict) and set(documents) == expected_documents,
-            'candidate_archive', '冻结候选文档集合不符')
+            'candidate_archive', '历史来源文档集合不符')
     sections = {}
     for namespace in ('html211', 'html96'):
         candidates = documents[namespace + '_candidates'].get('candidates')
@@ -183,7 +183,7 @@ def selected_text(source, sections, reference):
     text, selection = sections[anchor], reference['selection']
     if source['kind'] == 'classified_candidate_archive':
         require(selection == 'candidate-record' and reference['stop_before'] is None,
-                'source_ref', '冻结候选档案只接受完整candidate-record')
+                'source_ref', '来源档案只接受完整记录选区')
     elif source['kind'] == 'project_internal_publication':
         require(selection == 'html-paragraph' and reference['stop_before'] is None,
                 'source_ref', 'HTML来源只取已核对的方法段落')
@@ -335,9 +335,9 @@ def validate(root, registry_path, check_view=True):
                     and index['snapshot']['sha256'] == source['snapshot_sha256']
                     and source['path'] == source['snapshot_path'] == expected_path
                     and source['captured_at'] == snapshot['captured_at'],
-                    'sources/candidate_archive', '登记来源未绑定当前冻结候选快照索引')
+                    'sources/candidate_archive', '登记来源未绑定当前来源快照索引')
             require(set(sections) == set(source['included_anchors']),
-                    'sources/candidate_archive', '候选快照声明范围与冻结记录不相等')
+                    'sources/candidate_archive', '来源快照声明范围与历史记录不相等')
             linked_entries = [entry for entry in entries.values() if entry['source_ref']['source_id'] == identity]
             require(len(linked_entries) == len(sections)
                     and all(entry['entry_status'] == 'registered' for entry in linked_entries),

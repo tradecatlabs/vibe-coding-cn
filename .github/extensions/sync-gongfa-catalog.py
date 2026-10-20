@@ -68,24 +68,24 @@ def load_inputs(root):
     require(set(index) == {'schema_version', 'kind', 'snapshot', 'candidate_counts'} and index['schema_version'] == '1.0.0'
             and index['kind'] == 'catalog_candidate_source_index_not_registry', 'catalog-sources.json协议形态不符')
     reference = index['snapshot']
-    require(set(reference) == {'path', 'sha256'} and re.fullmatch(r'source-[a-z0-9-]+\.json', reference['path']), '候选快照须为本目录source-*.json')
-    require(not (root / '.github/metadata/gongfa' / reference['path']).is_symlink(), '候选快照不能是软链接')
+    require(set(reference) == {'path', 'sha256'} and re.fullmatch(r'source-[a-z0-9-]+\.json', reference['path']), '来源快照须为本目录source-*.json')
+    require(not (root / '.github/metadata/gongfa' / reference['path']).is_symlink(), '来源快照不能是软链接')
     snapshot_path = protocol.safe_path(root, '.github/metadata/gongfa/' + reference['path'])
     raw = protocol.bounded_read(snapshot_path, 32 * 1024 * 1024)
-    require(sha256(raw).hexdigest() == reference['sha256'], '候选来源快照SHA-256不符')
+    require(sha256(raw).hexdigest() == reference['sha256'], '来源快照SHA-256不符')
     snapshot = protocol.load_json(snapshot_path)
-    require(sha256(protocol.bounded_read(snapshot_path, 32 * 1024 * 1024)).hexdigest() == reference['sha256'], '候选快照读取期间变化')
+    require(sha256(protocol.bounded_read(snapshot_path, 32 * 1024 * 1024)).hexdigest() == reference['sha256'], '来源快照读取期间变化')
     require(set(snapshot) == {'schema_version', 'kind', 'captured_at', 'scope', 'source_input_bindings',
                             'independent_semantic_approval', 'source_books_and_licenses_verified', 'formal_assessments_created', 'documents'}
-            and snapshot['schema_version'] == '1.0.0' and snapshot['kind'] == 'frozen_classified_candidate_source_not_registry', '候选来源快照协议形态不符')
+            and snapshot['schema_version'] == '1.0.0' and snapshot['kind'] == 'frozen_classified_candidate_source_not_registry', '来源快照协议形态不符')
     require(snapshot['independent_semantic_approval'] is False and snapshot['source_books_and_licenses_verified'] is False
-            and snapshot['formal_assessments_created'] == 0, '历史来源快照不能冒充独立批准、原著核验或正式评级')
+            and snapshot['formal_assessments_created'] == 0, '历史来源快照的审批、来源核验或正式评级字段不符')
     protocol.timestamp(snapshot['captured_at'], 'candidate_snapshot/captured_at')
     documents = snapshot['documents']
-    require(set(documents) == {'html211_candidates', 'html211_grades', 'html96_candidates', 'html96_grades', 'solve24_analysis', 'solve_raw'}, '候选来源文档集合不符')
+    require(set(documents) == {'html211_candidates', 'html211_grades', 'html96_candidates', 'html96_grades', 'solve24_analysis', 'solve_raw'}, '来源快照文档集合不符')
     counts = {'html211': len(documents['html211_candidates']['candidates']), 'html96': len(documents['html96_candidates']['candidates']),
               'solve24': len(documents['solve24_analysis']['items'])}
-    require(counts == index['candidate_counts'], '候选批次范围与索引不一致')
+    require(counts == index['candidate_counts'], '来源批次范围与索引不一致')
     reviewed = {item['source_id'] for item in documents['solve24_analysis']['items']}
     require({item['source_id'] for item in documents['solve_raw']['items']} == reviewed, 'Solve原条目须仅含已审范围')
     archive = source_archive.bundles(root).get('gongfa')
@@ -131,7 +131,7 @@ def merge_rows(documents):
                                   classification_reason, reason, confidence, falsifier, assessed_at):
         anchor = namespace + ':' + candidate_id
         entry = promoted_by_anchor.get(anchor)
-        require(entry is not None, '冻结候选未逐条登记：' + anchor)
+        require(entry is not None, '来源记录未逐条登记：' + anchor)
         require(entry['id'] == protocol.candidate_registry_id(namespace, candidate_id)
                 and entry['name'] == name and entry['ontology_type'] == ontology_type
                 and entry['content_version'] == content_version and entry['entry_status'] == 'registered'
@@ -207,7 +207,7 @@ def merge_rows(documents):
                 grade_document['created_at'])
     analyzed = unique(documents['solve24_analysis']['items'], lambda item: item['source_id'])
     raw_items = unique(documents['solve_raw']['items'], lambda item: item['source_id'])
-    require(set(analyzed) == set(raw_items), 'Solve冻结候选与原文范围不符')
+    require(set(analyzed) == set(raw_items), 'Solve来源记录与原文范围不符')
     for item in analyzed.values():
         raw, grade = raw_items[item['source_id']], item['editorial_analysis']
         require(raw['source_version'] == item['source_version'] and raw['source_selection'] == item['source_selection']
@@ -217,7 +217,7 @@ def merge_rows(documents):
             'solve24', item['source_id'], raw['name'], grade['ontology_type'], text, item['source_version'],
             grade['grade_id'], 'provisional', grade['task_family'], grade['classification_reason'],
             grade['reason'], grade['confidence'], grade['falsifier'], documents['solve24_analysis']['assessed_at'])
-    require(checked_candidate_anchors == set(promoted_by_anchor), '冻结候选存在未核验登记或额外身份')
+    require(checked_candidate_anchors == set(promoted_by_anchor), '来源记录存在未核验登记或额外身份')
     names = defaultdict(list)
     for row in rows:
         row['key'] = row['namespace'] + ':' + row['original_id'] + ('@' + row['content_version'] if row['namespace'] == 'registry' else '')
@@ -285,7 +285,7 @@ def notes(rows, binding):
     return ['全部功法总表（保留原初评，不重评）',
             f"合计{len(rows)}条；" + '；'.join(f'{BATCH_LABELS[ns]} {counts[ns]}' for ns in BATCH_LABELS)
             + '；输入：' + digest(binding['registry_sha256'] + binding['candidate_sha256']),
-            f"品级是编者前瞻；历史候选快照保留原状态；当前正式评级记录数：{binding['registry_assessments']}。同名未合并。"]
+            f"品级是编者前瞻；历史来源快照保留原状态；当前正式评级记录数：{binding['registry_assessments']}。同名未合并。"]
 
 
 TIERS = (('tian', '天阶'), ('di', '地阶'), ('xuan', '玄阶'), ('huang', '黄阶'))
@@ -303,7 +303,7 @@ def source_navigation(root):
             anchors.append(match.group(1))
     document_anchors = {book_views.chapter_id(key) for key in keys}
     lines = ['## 原文文集', '',
-             '冻结原文、字节摘要和选择器保存在唯一资料源[data.json](data.json)的`documents`中；本页只保留历史入口，不重复展开原文。', '',
+             '原始文档、字节摘要和选择器保存在唯一资料源[data.json](data.json)的`documents`中；本页只保留历史入口，不重复展开原文。', '',
              '### 原始文档', '']
     for key in keys:
         anchor = book_views.chapter_id(key)
@@ -338,10 +338,10 @@ def render_markdown(rows, binding, root=None):
                for tier, _label in TIERS}
     pending = [row for row in rows if row['grade_id'] is None]
     lines = [MARKER, '# 功法总表', '', '## 字多不看', '',
-             f"- 共**{len(rows)}条内容记录**；已登记{counts['已登记']}条，登记库候选{counts['登记库候选']}条，未入登记库的来源候选{counts['未入登记库']}条。不是独立功法去重后的总数。",
+             f"- 共**{len(rows)}条内容记录**；已登记{counts['已登记']}条，待登记{counts['登记库候选']}条，未登记来源条目{counts['未入登记库']}条。不是独立功法去重后的总数。",
              f'- 原前瞻初评{provisional}条，暂不可判{undetermined}条；不是正式效果评级，亦不把缺测默认补成黄阶。',
-             f"- 冻结候选快照中的{sum(binding['candidate_counts'].values())}条来源候选已按用户指令逐条登记；快照仍保留当时状态，不代表独立语义审查、书目/许可核验或效果证明。",
-             '- [data.json](data.json)是唯一原始数据源，冻结原文、历史来源选区、意见、来源和附件均保留其中。', '',
+             f"- {sum(binding['candidate_counts'].values())}条已登记说明已由用户确认正式通过审阅；历史来源快照保留原样，书目/许可核验、实际效果与正式评级仍分别维护。",
+             '- [data.json](data.json)是唯一原始数据源，原始文档、历史来源选区、意见、来源和附件均保留其中。', '',
              '输入绑定：`' + digest(binding['registry_sha256'] + binding['candidate_sha256']) + '`。', '',
              '## 快速导航', '']
     for tier, label in TIERS:
@@ -371,10 +371,10 @@ def render_markdown(rows, binding, root=None):
     registry, _summary = protocol.validate(root, root / '.github/metadata/gongfa/registry.json') if root and source_archive.bundles(root) else (None, None)
     grades = protocol.render_grades(registry) if registry else ''
     lines += ['## 品级词表', '', grades, '', '## 数据与边界', '',
-              '本工具只维护data.json原始资料和分阶阅读视图。登记不改写原文、冻结候选快照或历史意见，也不等于独立语义审查、原著/许可核验或正式效果评级；历史附件保留为JSON原始载荷，不再维护第二个活动视图。', '',
+              '本工具只维护data.json原始资料和分阶阅读视图。用户已确认这批说明正式通过审阅；原始来源快照与历史意见保持原样。审阅通过不替代原著/许可核验、实际效果验证或正式评级；历史附件保留为JSON原始载荷，不再维护第二个活动视图。', '',
               '## 更新与核对', '', '```bash', 'make sync-gongfa-catalog', 'make check-gongfa-catalog', 'make test-gongfa-catalog', '```', '',
               '内容新版本不继承旧初评；同对象不同情境的活动意见并列保留，不按最高档或最新时间裁决。',
-              '本视图不执行方法，不证明原著、许可证、独立语义批准或真实效果；未知内容仍逐项标待核。', '']
+              '本视图不执行方法，也不证明原著、许可证或真实效果；未知内容仍逐项标待核。', '']
     text = '\n'.join(lines)
     source_toc = book_views.source_toc(root, 'gongfa') if root is not None else []
     return text.replace('<!-- source-toc -->', '\n'.join(source_toc))

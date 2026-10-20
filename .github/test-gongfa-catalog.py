@@ -170,7 +170,7 @@ class CatalogMaintenanceTest(unittest.TestCase):
                             for item in self.documents['explanations_v0']['items']))
         views = catalog.render_views(ROOT, rows, self.binding)
         markdown = views['README.md']
-        self.assertIn('- 共**411条内容记录**；已登记411条，登记库候选0条，未入登记库的来源候选0条。', markdown)
+        self.assertIn('- 共**411条内容记录**；已登记411条，待登记0条，未登记来源条目0条。', markdown)
         self.assertNotIn('[控制论与科学方法论](#控制论与科学方法论)', markdown)
         self.assertFalse('catalog.xlsx' in markdown, '活动阅读视图只有Markdown，历史Excel仅作原始载荷保存')
         self.assertLess(len(markdown.encode('utf-8')), 512 * 1024, 'README只作为轻量导航，不再展开全部功法表格与文集正文')
@@ -241,6 +241,27 @@ class CatalogMaintenanceTest(unittest.TestCase):
             decoded_readme_link = unescape(readme_link)
             self.assertIn(f'[{display_name}](', decoded_readme_link)
             self.assertNotIn(row['name'], decoded_readme_link)
+
+    def test_user_confirmed_candidate_review_replaces_stale_labels_in_active_views(self):
+        items = [item for item in self.documents['explanations_v0']['items']
+                 if item['object_key'].startswith('registry:gongfa-candidate-')]
+        self.assertEqual(len(items), 331)
+        stale_labels = ('冻结候选', '候选快照', '尚未独立语义复核', '未独立语义复核',
+                        '尚未独立语义核验', '不代表独立语义批准')
+        for item in items:
+            fields = {field['name']: field['content'] for field in item['fields']}
+            self.assertEqual(list(fields), v0_field_names())
+            self.assertIn('用户确认说明正式通过审阅', fields['关联信息'])
+            self.assertNotIn('既有既有初评', fields['关联信息'])
+            for label in stale_labels:
+                self.assertNotIn(label, '\n'.join(fields.values()), item['object_key'])
+
+        rows = catalog.merge_rows(deepcopy(self.documents))
+        views = catalog.render_views(ROOT, rows, self.binding)
+        self.assertIn('331条已登记说明已由用户确认正式通过审阅', views['README.md'])
+        for name in ('README.md', 'tian.md', 'di.md', 'xuan.md', 'huang.md'):
+            for label in stale_labels:
+                self.assertNotIn(label, views[name], name)
 
     def test_candidate_promotion_preserves_the_frozen_undetermined_set(self):
         entries = self.documents['registry']['gongfa']

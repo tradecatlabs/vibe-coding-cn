@@ -18,9 +18,9 @@
 - 修改来源、内容版本或规则时遵守`gongfa/AGENTS.md`；不凭原文宣传、篇幅或候选收录状态赋级。
 - 人工初评批次保存于`grade_proposals`，不能冒称实测评级或放松草案`rated`检查；表格由JSON只读输出。
 - README品级块由JSON生成，运行`make check-gongfa`和`make test-gongfa`，保留真实退出码及产物。
-- 功法总表`gongfa/catalog.md`与`catalog.xlsx`由同一脚本生成，输入为当前登记和仓内冻结候选历史材料。
-- `catalog-sources.json`只索引不可变候选来源的路径/SHA/范围，不持有活跃登记或新评级，不是第二可编辑登记。
-- 候选来源保留旧编者意见并明确未登记；不同限定内容和同名条目不自动合并或继承品级。
+- 功法总表`gongfa/catalog.md`与`catalog.xlsx`由同一脚本生成，输入为当前登记和历史来源材料。
+- `catalog-sources.json`只索引不可变来源快照的路径/SHA/范围，不持有活跃登记或新评级，不是第二可编辑登记。
+- 来源快照保留其历史编者意见；当前登记状态以登记源为准，不同限定内容和同名条目不自动合并或继承品级。
 - 更新后运行`make sync-gongfa-catalog`、`make check-gongfa-catalog`及`make test-gongfa-catalog`，不手改生成视图。
 
 ## 法器总分类登记
