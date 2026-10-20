@@ -352,11 +352,18 @@ class CatalogMaintenanceTest(unittest.TestCase):
             item['candidate_id']: item
             for item in archive['documents']['html211_candidates']['candidates']
         }
+        pareto_source = archived_candidates['D008']['original_text']
+        self.assertIn('80/20是近似经验，不是固定比例', pareto_source)
+        self.assertIn('热点需要通过测量确认', pareto_source)
         for object_key in (
             'registry:gongfa-candidate-html211-d008-6fd753377e@r1',
             'registry:gongfa-candidate-html211-d009-4d61eda424@r1',
             'registry:gongfa-candidate-html211-d010-5015859ffd@r1',
         ):
+            warrant = gongfa_items[object_key]['连接规则']
+            self.assertIn('热点需要通过测量确认', warrant, object_key)
+            self.assertIn('80/20是近似经验，不是固定比例', warrant, object_key)
+            self.assertNotIn('实测热点', warrant, object_key)
             basis = gongfa_items[object_key]['依据']
             self.assertIn(archive_document['sha256'], basis, object_key)
             for source_id in performance_sources:
