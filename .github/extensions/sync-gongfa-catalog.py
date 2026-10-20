@@ -89,13 +89,13 @@ def load_inputs(root):
     reviewed = {item['source_id'] for item in documents['solve24_analysis']['items']}
     require({item['source_id'] for item in documents['solve_raw']['items']} == reviewed, 'Solve原条目须仅含已审范围')
     archive = source_archive.bundles(root).get('gongfa')
-    require(archive is not None and 'explanations_v0' in archive['data'], '功法data.json缺少v0说明载荷')
+    require(archive is not None and 'explanations_v1' in archive['data'], '功法data.json缺少v1说明载荷')
     binding = {'registry_sha256': registry_sha, 'candidate_sha256': reference['sha256'], 'candidate_snapshot': reference['path'],
                'candidate_counts': counts, 'source_captured_at': snapshot['captured_at'],
                'registry_assessments': registry_summary['assessments'],
                'archive_sha256': {str(path.relative_to(root)): digest for path, digest in source_archive.bundle_bindings(root).items()
                                   if path.parent.name == 'gongfa'}}
-    return {**documents, 'registry': registry, 'explanations_v0': archive['data']['explanations_v0']}, binding
+    return {**documents, 'registry': registry, 'explanations_v1': archive['data']['explanations_v1']}, binding
 
 
 def merge_rows(documents):
@@ -230,7 +230,7 @@ def merge_rows(documents):
         if others:
             row['relations'] += '\n同名限定内容未自动合并：' + '；'.join(others)
     rank = {grade: i for i, grade in enumerate(GRADES)}
-    payload = documents.get('explanations_v0', {})
+    payload = documents.get('explanations_v1', {})
     presentation_order = {
         item['object_key']: position
         for position, item in enumerate(payload.get('items', []))
@@ -244,7 +244,7 @@ def merge_rows(documents):
     explanations = {item.get('object_key'): item.get('fields') for item in payload.get('items', [])
                     if isinstance(item, dict)} if isinstance(payload, dict) else {}
     for row in rows:
-        row['v0_fields'] = explanations.get(row['key'])
+        row['explanation_fields'] = explanations.get(row['key'])
     return rows
 
 
@@ -256,8 +256,8 @@ def display_name(name):
     return CHAPTER_NUMBER_PREFIX.sub('', name, count=1)
 
 
-def render_v0_object(row):
-    fields = [dict(field) for field in row['v0_fields']]
+def render_explanation_object(row):
+    fields = [dict(field) for field in row['explanation_fields']]
     fields[0]['content'] = display_name(fields[0]['content'])
     return tool_explanations.render_object(row['key'], display_name(row['name']), fields)
 
@@ -290,7 +290,8 @@ def notes(rows, binding):
 
 TIERS = (('tian', '天阶'), ('di', '地阶'), ('xuan', '玄阶'), ('huang', '黄阶'))
 VIEW_NAMES = ('README.md', *(tier + '.md' for tier, _label in TIERS))
-MAX_VIEW_BYTES = 4 * 1024 * 1024
+# v1全量说明视图约4.2MiB；保留增长余量，同时限制读取与生成预算。
+MAX_VIEW_BYTES = 5 * 1024 * 1024
 
 
 def source_navigation(root):
@@ -321,10 +322,10 @@ def validate_rows(rows):
     keys = [row['key'] for row in rows]
     require(len(set(keys)) == len(keys), '功法对象身份重复')
     for row in rows:
-        fields = row.get('v0_fields')
-        require(isinstance(fields, list) and len(fields) == 15, '对象缺少完整v0说明：' + row['key'])
-        require([field.get('name') for field in fields] == list(tool_explanations.FIELD_NAMES), '对象v0栏目不符：' + row['key'])
-        require(fields[0]['content'] == row['name'], '对象v0名称与登记身份不符：' + row['key'])
+        fields = row.get('explanation_fields')
+        require(isinstance(fields, list) and len(fields) == 18, '对象缺少完整v1说明：' + row['key'])
+        require([field.get('name') for field in fields] == list(tool_explanations.FIELD_NAMES), '对象v1栏目不符：' + row['key'])
+        require(fields[0]['content'] == row['name'], '对象v1名称与登记身份不符：' + row['key'])
         for value in row.values():
             if isinstance(value, str):
                 require(len(value.encode('utf-8')) <= MAX_VIEW_BYTES, '字段超过阅读视图预算')
@@ -393,7 +394,7 @@ def render_grade_markdown(rows, tier):
         lines.append(tool_explanations.render_index_link(row['key'], display_name(row['name'])))
     lines.append('')
     for row in tier_rows:
-        lines.append(render_v0_object(row))
+        lines.append(render_explanation_object(row))
     if pending:
         lines.extend(('## 未明确品级（不归属黄阶）', '',
                       f'以下{len(pending)}条没有可沿用的明确品级；仅为减少文件数暂置本页附录，不视为黄阶。', ''))
@@ -401,7 +402,7 @@ def render_grade_markdown(rows, tier):
             lines.append(tool_explanations.render_index_link(row['key'], display_name(row['name'])))
         lines.append('')
         for row in pending:
-            lines.append(render_v0_object(row))
+            lines.append(render_explanation_object(row))
     return '\n'.join(lines)
 
 
@@ -410,7 +411,7 @@ def render_views(root, rows, binding, explanations=None):
         names = {row['key']: row['name'] for row in rows}
         fields_by_key = tool_explanations.validate_payload(root, explanations, names)
         for row in rows:
-            row['v0_fields'] = fields_by_key[row['key']]
+            row['explanation_fields'] = fields_by_key[row['key']]
     validate_rows(rows)
     views = {'README.md': render_markdown(rows, binding, root)}
     views.update({tier + '.md': render_grade_markdown(rows, tier) for tier, _label in TIERS})
@@ -477,7 +478,7 @@ def main():
         root = args.root.resolve(strict=True)
         documents, binding = load_inputs(root)
         rows = merge_rows(documents)
-        explanations = documents['explanations_v0']
+        explanations = documents['explanations_v1']
         if args.write:
             write_views(root, rows, binding, explanations)
         check_views(root, rows, binding, explanations)

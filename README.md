@@ -111,7 +111,7 @@ pi --skill .github/skills
 ### 🗂️ 项目目录结构概览
 
 资源只有三个域；下面列出域边界与Context的全部9个集合，不展开各原生包内部源码。完整对象分别在三个域的README中导航。
-法器与功法的[工具解释模板v0](.github/context/assets/templates/tool-explanation-template-v0.md)已登记：保留15项原名原序；Markdown中每个对象使用一张严格表格，不合并对象或新增栏目。
+功法与法器441个对象的活动说明使用[工具解释模板v1](.github/context/assets/templates/tool-explanation-template-v1.md)：保留原15项并新增“结论、连接规则、依据”，共18项；每个对象独立使用一张严格表格。v0仅作历史模板；下方集合级首页说明仍保持既有15项结构。
 Extensions当前保留17个一级对象；用户点名的8项程序/配置/图文文件已移除，历史资料不代表当前可用入口。
 原Actions定义已移入Extensions保全，自动CI、打标签及欢迎流程已停用；本地`make test`保留。
 

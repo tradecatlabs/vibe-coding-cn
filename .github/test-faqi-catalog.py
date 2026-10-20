@@ -19,10 +19,10 @@ import source_archive
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACTS = None
-TEMPLATE = ROOT / ".github/context/assets/templates/tool-explanation-template-v0.md"
+TEMPLATE = ROOT / ".github/context/assets/templates/tool-explanation-template-v1.md"
 
 
-def v0_field_names():
+def v1_field_names():
     names = []
     for line in TEMPLATE.read_text(encoding="utf-8").splitlines():
         if line.startswith("| ") and line.split("|")[1].strip().isdigit():
@@ -30,8 +30,8 @@ def v0_field_names():
     return names
 
 
-def v0_payload(subject_names):
-    labels = v0_field_names()
+def v1_payload(subject_names):
+    labels = v1_field_names()
     return {
         "template_sha256": hashlib.sha256(TEMPLATE.read_bytes()).hexdigest(),
         "items": [
@@ -117,8 +117,8 @@ class FaqiCatalogTest(unittest.TestCase):
         self.assertIn("法器对象ID=faqi-prompt-converter", all_views)
         self.assertIn("依赖图对象ID=dep-pi-cli", all_views)
         self.assertNotIn("依赖图位置", all_views)
-        field_names = v0_field_names()
-        self.assertEqual(15, len(field_names))
+        field_names = v1_field_names()
+        self.assertEqual(18, len(field_names))
         import tool_explanations
         table_count = 0
         tier_counts = Counter(item["grade_id"].split("-")[1] for item in assignments)
@@ -130,11 +130,11 @@ class FaqiCatalogTest(unittest.TestCase):
             for table_index in table_indexes:
                 table_end = next(index for index in range(table_index + 1, len(tokens)) if tokens[index].type == "table_close")
                 table_tokens = tokens[table_index:table_end + 1]
-                self.assertEqual(16, sum(token.type == "tr_open" for token in table_tokens), "一行表头加15项说明")
+                self.assertEqual(19, sum(token.type == "tr_open" for token in table_tokens), "一行表头加18项说明")
                 inline = [token.content for token in table_tokens if token.type == "inline"]
                 self.assertEqual(["序号", "说明项", "内容"], inline[:3])
-                self.assertEqual(field_names, [inline[4 + index * 3] for index in range(15)])
-                self.assertEqual(48, sum(token.type in {"th_open", "td_open"} for token in table_tokens), "每张表严格三列")
+                self.assertEqual(field_names, [inline[4 + index * 3] for index in range(18)])
+                self.assertEqual(57, sum(token.type in {"th_open", "td_open"} for token in table_tokens), "每张表严格三列")
         self.assertEqual(len(assignments), table_count, "每个法器对象恰好出现在一个阶级文档中")
         for item in assignments:
             tier = item["grade_id"].split("-")[1]
@@ -358,13 +358,13 @@ class FaqiCatalogTest(unittest.TestCase):
                         current_count += 1
                     elif nested.type == "tr_close":
                         row_counts.append(current_count)
-                self.assertEqual(16, len(row_counts), "每个对象表格必须包含表头和15行说明")
+                self.assertEqual(19, len(row_counts), "每个对象表格必须包含表头和18行说明")
                 self.assertEqual({3}, set(row_counts), "表格必须严格为三列")
                 table_column_counts.append(row_counts[0])
         self.assertEqual(30, total_tables)
         self.assertEqual([3] * 30, table_column_counts)
         import tool_explanations
-        hostile_fields = [{"name": label, "content": label} for label in v0_field_names()]
+        hostile_fields = [{"name": label, "content": label} for label in v1_field_names()]
         hostile_fields[1]["content"] = '<script>unexpected</script> ``` [link](javascript:void(0)) |'
         safe_table = tool_explanations.render_table(hostile_fields)
         safe_markup = parser.render(safe_table)
@@ -439,13 +439,13 @@ class FaqiCatalogTest(unittest.TestCase):
             **{item["id"]: item["node"] for item in data["dependency_graph"]["dependency_categories"]},
         }
         (root / ".github/context/faqi").mkdir(parents=True, exist_ok=True)
-        template_copy = root / ".github/context/assets/templates/tool-explanation-template-v0.md"
+        template_copy = root / ".github/context/assets/templates/tool-explanation-template-v1.md"
         template_copy.parent.mkdir(parents=True, exist_ok=True)
         template_copy.write_bytes(TEMPLATE.read_bytes())
         archive_data = {
             "format": "vibe-coding-cn/source-archive@1", "kind": "faqi", "source_revision": "a" * 40,
             "documents": {}, "locations": {}, "live_sources": {}, "projections": [],
-            "explanations_v0": v0_payload(subject_names),
+            "explanations_v1": v1_payload(subject_names),
         }
         (root / ".github/context/faqi/data.json").write_text(json.dumps(archive_data, ensure_ascii=False, indent=2), encoding="utf-8")
         source_archive.clear_cache()
@@ -516,8 +516,8 @@ class FaqiCatalogTest(unittest.TestCase):
                         current_count += 1
                     elif nested.type == "tr_close":
                         row_counts.append(current_count)
-                self.assertEqual([3] * 16, row_counts, "每张表严格三列并含15项")
-        self.assertEqual(21, table_count, "隔离对象必须各自进入一张且仅一张阶级页v0表格")
+                self.assertEqual([3] * 19, row_counts, "每张表严格三列并含18项")
+        self.assertEqual(21, table_count, "隔离对象必须各自进入一张且仅一张阶级页v1表格")
         # 只允许已批准的同仓默认分支地址迁移，来源原 SHA 与指令仍固定。
         input_path = self.input_copy("branch-migration", data)
         main_body = b'RAW_BASE="https://raw.githubusercontent.com/tukuaiai/vibe-coding-cn/main/.github/tools/config/.codex"\nprintf "fixture only\\n"\n'

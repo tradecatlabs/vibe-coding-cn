@@ -51,12 +51,12 @@
 | 法器视图 | [sync-faqi-catalog.py](sync-faqi-catalog.py) |
 | 研究事实获取 | [fetch-research-raw.py](fetch-research-raw.py)；需要明确联网授权 |
 
-共享实现只有一份，5个Python模块直接平铺到`.github/`；职责与原库规则见[维护说明](../AGENTS.md#维护脚本与共享库)，不再保留lib目录。两个目录生成器从原始JSON中的`explanations_v0`读取已登记模板说明，输出轻量README导航页及天、地、玄、黄四阶正文；每个对象仍单独使用一张严格三列表格。未定级功法在黄阶文档中单列并标明“不归黄阶”。完整本地检查仍为`make test`，不执行被审第三方程序，也不证明运行、效果或许可。
+共享实现只有一份，5个Python模块直接平铺到`.github/`；职责与原库规则见[维护说明](../AGENTS.md#维护脚本与共享库)，不再保留lib目录。两个目录生成器从原始JSON中的`explanations_v1`读取唯一活动说明载荷，输出轻量README导航页及天、地、玄、黄四阶正文；每个对象仍单独使用一张18项严格三列表格。v0仅保留为历史模板，不接受旧载荷兼容。未定级功法在黄阶文档中单列并标明“不归黄阶”。完整本地检查仍为`make test`，不执行被审第三方程序，也不证明运行、效果或许可。
 
 ### 依赖与执行边界
 
 检查器使用Python3；功法、法器和资料档案维护使用Python3.10+，共享依赖在`.github/`，见[requirements-gongfa.txt](../requirements-gongfa.txt)、[requirements-faqi.txt](../requirements-faqi.txt)。
-复用jsonschema、PyYAML和markdown-it-py；v0表格由共享模块按固定三列表格契约安全渲染。转换程序另用其原有requirements。Markdown lint使用Node22+及固定的markdownlint-cli0.48.0。
+复用jsonschema、PyYAML和markdown-it-py；v1的18项表格由共享模块按固定三列表格契约安全渲染。转换程序另用其原有requirements。Markdown lint使用Node22+及固定的markdownlint-cli0.48.0。
 
 来源树保持原Git修订。安装、抓取、上传、发布、修改配置和终端注入均有独立副作用，不因移入本域得到授权。
 凭据仅从受信来源在运行时注入，不提交真实会话、数据库、API密钥、环境文件或私有模板。

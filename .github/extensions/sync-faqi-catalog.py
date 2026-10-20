@@ -414,7 +414,7 @@ def render(data, objects, root, explanations, index_name="README.md"):
 
     index = [
         MARKER, "# Vibe Coding法器重要性总表", "", "## 字多不看", "",
-        f"当前{len(assignments)}个对象分别使用v0的15项说明表；分级仅表示“Vibe Coding 重要性暂定”，不代表效能验证。",
+        f"当前{len(assignments)}个对象分别使用v1的18项说明表；新增论证项与Vibe Coding重要性暂定分开，不代表效能验证。",
         "原始登记、来源及历史见[data.json](data.json)；来源初审与当前迁移位置分开，视图不产生运行、许可或效果批准。", "",
         "## 快速导航", "",
     ]
@@ -493,9 +493,9 @@ def main():
                 not view.is_symlink() and view.parent.resolve() == view.parent, "输入/输出含软链接")
         data, _, objects, resources, _, bindings = validate(root, input_path)
         archive = source_archive.bundles(root).get("faqi")
-        require(archive is not None and "explanations_v0" in archive["data"], "法器data.json缺少v0说明载荷")
+        require(archive is not None and "explanations_v1" in archive["data"], "法器data.json缺少v1说明载荷")
         require(view.name not in {tier + ".md" for tier, _label in GRADE_TIERS}, "索引文件名不能与阶级文档冲突")
-        rendered = render(data, objects, root, archive["data"]["explanations_v0"], view.name)
+        rendered = render(data, objects, root, archive["data"]["explanations_v1"], view.name)
         outputs = {view: rendered[view.name]}
         outputs.update({view.parent / (tier + ".md"): rendered[tier + ".md"] for tier, _label in GRADE_TIERS})
         require(all(not path.is_symlink() for path in outputs), "生成目标不能是软链接")

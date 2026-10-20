@@ -4,8 +4,8 @@
 - 当前17个一级对象在域根平铺；保留程序内部包结构、相互调用关系及上游原生目录，不逐文件拆成工具。用户指定退役的8项不留目录、软链接或兼容壳；原lib中的4个模块已直接平铺到`.github/`，不再保留库目录。
 - 代码只存一份；两个自有Skills现为原生工具与规范指令，原33个专属封装脚本已退役，不重建别名或包装层。四个Gitlink及Skill Seekers嵌套configs保持锁定修订，不复制、格式化或自动升级上游。
 - 固定源码与原9项范围排除继续保留；搬位置不等于激活、许可证批准、身份合并、独立审查或效果证明。
-- `sync-gongfa-catalog.py`和`sync-faqi-catalog.py`当前从各自`data.json.explanations_v0`读取15项说明，生成轻量README导航页及天、地、玄、黄四阶正文；每个对象仍独立使用三列表格。v1模板已登记为下一版，但这些生成器与校验器尚未消费v1；启用前须迁移载荷与逐对象说明并补齐相应回归测试。功法未定级记录只作为黄阶文档中的独立附录，明确不归黄阶；不从候选、源码或外部资料自动补写字段。
-- 共享实现为`.github/`根层唯一的5个Python模块：source_archive读取资料，book_views生成导航，tool_explanations校验并渲染登记v0模板，taxonomy读取分类，source_boundaries定义检查边界。资料生成器保持本域入口，直接导入平铺模块；原库说明和规则归`.github/AGENTS.md`，不留lib兼容包。
+- `sync-gongfa-catalog.py`和`sync-faqi-catalog.py`从各自`data.json.explanations_v1`读取18项说明，生成轻量README导航页及天、地、玄、黄四阶正文；每个对象仍独立使用三列表格。v1是唯一活动载荷；v0仅保留为历史模板，不接受旧载荷兼容。功法未定级记录只作为黄阶文档中的独立附录，明确不归黄阶；新论证字段依据已登记说明和来源边界撰写，不从候选、源码或外部资料自动补写未核实事实。
+- 共享实现为`.github/`根层唯一的5个Python模块：source_archive读取资料，book_views生成导航，tool_explanations校验并渲染登记v1模板，taxonomy读取分类，source_boundaries定义检查边界。资料生成器保持本域入口，直接导入平铺模块；原库说明和规则归`.github/AGENTS.md`，不留lib兼容包。
 - 自有检查器只调整必要路径和资料接口，保持错误拒绝、归属、大小、控制字符、来源SHA、版本、并行修改及原子替换保护。
 - 原第三方源码、研究缓存与事实镜像维持各检查器原边界；不得忽略整个Extensions来掩盖自有工具错误。共享边界在`.github/source_boundaries.py`。
 - 先用现有测试取得失败；新增测试只填实际行为缺口，保存真实输入、退出码和工件；最后完整`make test`只运行一次。

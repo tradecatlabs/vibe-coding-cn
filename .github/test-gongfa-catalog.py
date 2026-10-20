@@ -42,6 +42,10 @@ def v0_field_names():
     return [name for _number, name in template_rows(TEMPLATE)]
 
 
+def v1_field_names():
+    return [name for _number, name in template_rows(V1_TEMPLATE)]
+
+
 def save(path, value):
     with path.open('x', encoding='utf-8') as stream:
         json.dump(value, stream, ensure_ascii=False, indent=2, allow_nan=False)
@@ -78,7 +82,7 @@ class CatalogMaintenanceTest(unittest.TestCase):
         shutil.copyfile(ROOT / '.github/context/gongfa/data.json', target / 'data.json')
         template_dir = root / '.github/context/assets/templates'
         template_dir.mkdir(parents=True)
-        shutil.copyfile(TEMPLATE, template_dir / TEMPLATE.name)
+        shutil.copyfile(V1_TEMPLATE, template_dir / V1_TEMPLATE.name)
         return root
 
     def command(self, root, *options):
@@ -172,15 +176,15 @@ class CatalogMaintenanceTest(unittest.TestCase):
             self.assertEqual(proposal['grading_status'], 'undetermined')
             row = by_id['registry', entry['id']]
             self.assertEqual(row['grading_status'], 'undetermined')
-            self.assertEqual(row['v0_fields'][5]['content'].split('登记状态：', 1)[1].split('；', 1)[0], '已登记')
+            self.assertEqual(row['explanation_fields'][5]['content'].split('登记状态：', 1)[1].split('；', 1)[0], '已登记')
             self.assertIn('.github/metadata/gongfa/source-classified-candidates-20261007.json',
-                          row['v0_fields'][6]['content'])
+                          row['explanation_fields'][6]['content'])
         self.assertEqual(self.documents['html211_candidates']['registry_updated'], False)
         self.assertEqual(self.documents['html96_candidates']['registry_updated'], False)
-        self.assertEqual(self.documents['explanations_v0']['template_sha256'], catalog.tool_explanations.template_sha256(ROOT))
-        self.assertEqual(len(self.documents['explanations_v0']['items']), 411)
+        self.assertEqual(self.documents['explanations_v1']['template_sha256'], catalog.tool_explanations.template_sha256(ROOT))
+        self.assertEqual(len(self.documents['explanations_v1']['items']), 411)
         self.assertTrue(all(item['object_key'].startswith('registry:')
-                            for item in self.documents['explanations_v0']['items']))
+                            for item in self.documents['explanations_v1']['items']))
         views = catalog.render_views(ROOT, rows, self.binding)
         markdown = views['README.md']
         self.assertIn('- 共**411条内容记录**；已登记411条，待登记0条，未登记来源条目0条。', markdown)
@@ -192,8 +196,8 @@ class CatalogMaintenanceTest(unittest.TestCase):
         self.assertIn('<a id="doc-glue-coding"></a>', markdown)
         self.assertIn('tian.md#', markdown)
         self.assertIn('huang.md#', markdown)
-        field_names = v0_field_names()
-        self.assertEqual(15, len(field_names))
+        field_names = v1_field_names()
+        self.assertEqual(18, len(field_names))
         total_tables = 0
         for tier in ('tian', 'di', 'xuan', 'huang'):
             page = views[tier + '.md']
@@ -206,8 +210,8 @@ class CatalogMaintenanceTest(unittest.TestCase):
             total_tables += len(starts)
             lines = page.splitlines()
             for row, start in zip(tier_rows, starts):
-                table_rows = lines[start:start + 17]
-                self.assertEqual(17, len(table_rows))
+                table_rows = lines[start:start + 20]
+                self.assertEqual(20, len(table_rows))
                 self.assertEqual('|:---:|:---|:---|', table_rows[1])
                 cells = [parse_pipe_row(line) for line in table_rows]
                 self.assertTrue(all(len(cell) == 3 for cell in cells), '每张表严格为三列')
@@ -256,13 +260,13 @@ class CatalogMaintenanceTest(unittest.TestCase):
             self.assertNotIn(row['name'], decoded_readme_link)
 
     def test_user_confirmed_candidate_review_replaces_stale_labels_in_active_views(self):
-        items = [item for item in self.documents['explanations_v0']['items']
+        items = [item for item in self.documents['explanations_v1']['items']
                  if item['object_key'].startswith('registry:gongfa-candidate-')]
         self.assertEqual(len(items), 331)
         stale_labels = STALE_EXPLANATION_LABELS
         for item in items:
             fields = {field['name']: field['content'] for field in item['fields']}
-            self.assertEqual(list(fields), v0_field_names())
+            self.assertEqual(list(fields), v1_field_names())
             self.assertIn('用户确认说明正式通过审阅', fields['关联信息'])
             self.assertNotIn('既有既有初评', fields['关联信息'])
             for label in stale_labels:
@@ -282,8 +286,8 @@ class CatalogMaintenanceTest(unittest.TestCase):
         hits = []
         total = 0
         for kind, expected_count in expected_counts.items():
-            payload = bundles[kind]['data'].get('explanations_v0')
-            self.assertIsNotNone(payload, f'{kind}缺少当前v0说明载荷')
+            payload = bundles[kind]['data'].get('explanations_v1')
+            self.assertIsNotNone(payload, f'{kind}缺少当前v1说明载荷')
             items = payload['items']
             self.assertEqual(expected_count, len(items), kind)
             total += len(items)
@@ -302,6 +306,29 @@ class CatalogMaintenanceTest(unittest.TestCase):
             v0_field_names() + ['结论', '连接规则', '依据'],
             [name for _number, name in rows],
         )
+
+    def test_active_v1_payload_migrates_all_441_records_and_connects_argument_fields(self):
+        expected_counts = {'gongfa': 411, 'faqi': 30}
+        expected_names = v0_field_names() + ['结论', '连接规则', '依据']
+        bundles = source_archive.bundles(ROOT)
+        total = 0
+        for kind, expected_count in expected_counts.items():
+            data = bundles[kind]['data']
+            self.assertNotIn('explanations_v0', data, f'{kind}不得保留双版本活跃载荷')
+            payload = data.get('explanations_v1')
+            self.assertIsNotNone(payload, f'{kind}缺少当前v1说明载荷')
+            self.assertEqual(expected_count, len(payload['items']), kind)
+            self.assertEqual(payload['template_sha256'], catalog.tool_explanations.template_sha256(ROOT))
+            total += len(payload['items'])
+            for item in payload['items']:
+                fields = {field['name']: field['content'] for field in item['fields']}
+                self.assertEqual(expected_names, list(fields), item['object_key'])
+                self.assertIn(fields['提炼共同规律。'], fields['结论'], item['object_key'])
+                for reference in ('第9项', '第11项', '第14项', '第15项', '第16项', '第18项'):
+                    self.assertIn(reference, fields['连接规则'], item['object_key'])
+                self.assertIn('第7项', fields['依据'], item['object_key'])
+                self.assertIn('第11项', fields['依据'], item['object_key'])
+        self.assertEqual(441, total)
 
     def test_historical_archive_status_words_are_identified_as_historical(self):
         rows = catalog.merge_rows(deepcopy(self.documents))
@@ -407,10 +434,10 @@ class CatalogMaintenanceTest(unittest.TestCase):
         item['name'] = grade['name'] = entry['name'] = '<script>bad</script>|=2+2'
         rows = catalog.merge_rows(documents)
         hostile_row = next(row for row in rows if row['namespace'] == 'registry' and row['original_id'] == entry['id'])
-        if 'v0_fields' not in hostile_row:
-            hostile_row['v0_fields'] = [{'name': label, 'content': item['name'] if index == 0 else '隔离安全测试'}
-                                        for index, label in enumerate(v0_field_names())]
-        hostile_row['v0_fields'][0]['content'] = item['name']
+        if 'explanation_fields' not in hostile_row:
+            hostile_row['explanation_fields'] = [{'name': label, 'content': item['name'] if index == 0 else '隔离安全测试'}
+                                                 for index, label in enumerate(v1_field_names())]
+        hostile_row['explanation_fields'][0]['content'] = item['name']
         root = Path(tempfile.mkdtemp(prefix='markdown-', dir=ARTIFACTS))
         target = root / '.github/context/gongfa'
         target.mkdir(parents=True)

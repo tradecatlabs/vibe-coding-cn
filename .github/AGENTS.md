@@ -34,12 +34,12 @@
 | [taxonomy.py](taxonomy.py) | 读取原轻量YAML子集中的分类与文档导航 |
 | [source_archive.py](source_archive.py) | 严格读取JSON载荷，核对字节、模式、SHA、当前位置、当前绑定与隔离复原 |
 | [book_views.py](book_views.py) | 复用既有链接规则及markdown-it-py，生成文集锚点、历史导航及目录，代码示例不改写 |
-| [tool_explanations.py](tool_explanations.py) | 绑定登记v0模板SHA，校验对象覆盖与15项顺序，安全渲染每对象独立三列表格 |
+| [tool_explanations.py](tool_explanations.py) | 绑定登记v1模板SHA，校验对象覆盖与18项顺序，安全渲染每对象独立三列表格 |
 
 - 5个模块只保存一份，直接导入；不保留`.github/lib/`目录、软链接、__init__兼容包或新的运行框架。
 - 公共函数小而稳定，历史来源/选区与当前实现绑定不能混同；不增加模型客户端或独立注册框架。
 - 导入阶段不写文件、不联网、不执行目标程序；book_views只加载本仓链接检查器的规则函数。
-- source_archive在显式调用时读取资料；`explanations_v0`与冻结的`documents`分层保存，模板版本和完整对象集合由tool_explanations校验；export_documents只向调用方指定的新隔离目录复原，拒绝越界、软链接及敏感路径，不恢复旧运行目录。
+- source_archive在显式调用时读取资料；`explanations_v1`与冻结的`documents`分层保存，模板版本和完整对象集合由tool_explanations校验；v0不作为活动或兼容载荷。export_documents只向调用方指定的新隔离目录复原，拒绝越界、软链接及敏感路径，不恢复旧运行目录。
 - 复用标准库、原YAML子集、既有slug规则及markdown-it-py，不自研解析器；原字节、控制字符、读取预算、归属和并行变化保护不变。
 - 修改后先运行相关协议及`make test-source-archive`；最终完整`make test`按根AGENTS执行，不因路径调整削弱断言。
 
