@@ -425,7 +425,6 @@
     }
   },
   "locations": {
-    ".github/tools/prompts-library": ".github/extensions/prompts-library",
     ".github/tools/external/.tmux": ".github/extensions/oh-my-tmux",
     ".github/tools/external/tmux": ".github/extensions/tmux",
     ".github/tools/external/claude-official-skills": ".github/extensions/claude-official-skills",
@@ -433,8 +432,6 @@
     ".github/skills/auto-skill": ".github/skills/auto-skill",
     ".github/skills/auto-tmux": ".github/skills/auto-tmux",
     ".github/assets/external-resources": ".github/context/external-resources",
-    ".github/tools/prompts-library/README.md": ".github/extensions/prompts-library/README.md",
-    ".github/tools/prompts-library/main.py": ".github/extensions/prompts-library/main.py",
     ".github/skills/auto-skill/README.md": ".github/skills/auto-skill/README.md",
     ".github/skills/auto-tmux/README.md": ".github/skills/auto-tmux/README.md"
   },
@@ -583,14 +580,6 @@
       "path": ".github/extensions/tmux/xmalloc.c",
       "sha256": "8ed468e9903b8abf18d5d5b76d99f030713fc479d02dc107ec3dbaa3a01c702b"
     },
-    ".github/tools/prompts-library/README.md": {
-      "path": ".github/extensions/prompts-library/README.md",
-      "sha256": "512c5f34fec0539aeeb399d7493beaf5e1088e5b3ddec8fadb23cc1c5a16b3b3"
-    },
-    ".github/tools/prompts-library/main.py": {
-      "path": ".github/extensions/prompts-library/main.py",
-      "sha256": "ed0113d3ecbe9c9d4ca48ee7dde2c76c9a6fd1f54a1ae890fd3689d617347691"
-    },
     ".gitmodules": {
       "path": ".gitmodules",
       "sha256": "13fc803e15db2df8b197db8a47af2f93c3933474d07c9abdc1524d632e99412e"
@@ -630,7 +619,7 @@
           },
           {
             "name": "怎么做",
-            "content": "历史README示例以`--select`指定.xlsx或文档目录，并用`--mode`选择转换；可交互选择，也支持`--non-interactive`但须同时给`--select`。具体命令、输入目录和依赖版本以固定README为准；未执行操作。"
+            "content": "历史README示例曾以`--select`指定.xlsx或文档目录，并用`--mode`选择转换；可交互选择，也支持`--non-interactive`但须同时给`--select`。该程序已退役，此处仅说明历史材料，不构成当前运行入口；未执行操作。"
           },
           {
             "name": "扩展",
@@ -638,7 +627,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-prompt-converter；本体类型=software-artifact；版本声明=未声明；本地入口=.github/extensions/prompts-library；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：黄阶初级（grade_id=faqi-huang-initial；状态=user_directed_provisional）；范围：Vibe Coding重要性：提示词资产格式迁移的辅助支路；分级依据：只负责格式转换，能维护和复用提示词资产但不参与模型推理或代码执行；替代方式多，属低重要性辅助。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S02, S01。\n输入/输出资产由Excel、Markdown、JSONL组成；main.py委托`start_convert.py`处理部分模式，README记录默认目录及辅助脚本。格式和生成文件不是额外法器对象。"
+            "content": "法器对象ID=faqi-prompt-converter；本体类型=software-artifact；版本声明=未声明；本地入口=无（提示词格式转换程序已退役；退役前最后一个已发布主线快照为`b0e3454bb865b95bdc70127a431214c384542dee`）；当前本机及仓外副本状态未知，未据此推断仍在使用或已卸载。\nVibe Coding 重要性暂定：黄阶初级（grade_id=faqi-huang-initial；状态=user_directed_provisional）；范围：Vibe Coding重要性：提示词资产格式迁移的辅助支路；分级依据：只负责格式转换，能维护和复用提示词资产但不参与模型推理或代码执行；替代方式多，属低重要性辅助。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S02, S01。\n历史输入/输出资产由Excel、Markdown、JSONL组成；历史main.py委托`start_convert.py`处理部分模式，README记录当时的默认目录及辅助脚本。原始快照仍保存在data.json；当前树不保留程序实现。"
           },
           {
             "name": "出处",
@@ -654,11 +643,11 @@
           },
           {
             "name": "为什么这样设计？",
-            "content": "源码显示main.py处理参数、候选选择和模式路由，并将部分转换委托给`start_convert.py`；可描述为当前实现分工，不能据此断言设计者的历史动机。"
+            "content": "历史源码显示main.py处理参数、候选选择和模式路由，并将部分转换委托给`start_convert.py`；可描述为历史实现分工，不能据此断言设计者的历史动机。"
           },
           {
             "name": "内部如何实现？",
-            "content": "静态路径包括解析`--select/--mode`、识别文件或目录、检测JSONL格式Excel、构建候选项，再分派到转换函数或子脚本；JSONL路径会读写记录并构造Excel工作表。没有执行这些代码，故不推断成功率或完整语义。"
+            "content": "以下仅描述data.json所存历史源码快照：静态路径包括解析`--select/--mode`、识别文件或目录、检测JSONL格式Excel、构建候选项，再分派到转换函数或子脚本；JSONL路径会读写记录并构造Excel工作表。程序已退役，不代表当前实现或可执行入口；没有执行这些代码，故不推断成功率或完整语义。"
           },
           {
             "name": "付出了什么代价？",

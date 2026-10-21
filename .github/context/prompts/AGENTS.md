@@ -27,6 +27,6 @@
 - 删除 README.md
  - 在本目录写入敏感信息（密钥/Token/个人路径等）
 
-## 相关工具
+## 工具状态
 
-- `.github/extensions/prompts-library/` - Excel ↔ Markdown 互转工具
+提示词格式转换程序已从当前仓库退役。此目录仍只提供云端表格入口；历史实现不构成当前执行入口。

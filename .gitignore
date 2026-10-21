@@ -60,8 +60,15 @@ logs/
 output/
 .github/extensions/.venv-skill-seekers/
 
-# prompts-library generated exports
+# 转换器退役后仍保留的本机导出、临时文件与凭据
 .github/extensions/prompts-library/prompt_jsonl/
+.github/extensions/prompts-library/**/credentials.json
+.github/extensions/prompts-library/**/token.json
+.github/extensions/prompts-library/**/*.key
+.github/extensions/prompts-library/**/temp/
+.github/extensions/prompts-library/**/ticket.md
+.github/extensions/prompts-library/**/~$*.xlsx
+.github/extensions/prompts-library/**/~$*.xls
 
 libs/external/tmux
 libs/external/.tmux

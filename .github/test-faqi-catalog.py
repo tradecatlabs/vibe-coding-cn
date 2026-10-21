@@ -117,7 +117,6 @@ class FaqiCatalogTest(unittest.TestCase):
         self.assertIn("本项目仍未批准该许可证", association)
         self.assertIn("本地入口=.github/extensions/Skill_Seekers-development", association)
         current_paths = {
-            "faqi:faqi-prompt-converter": ".github/extensions/prompts-library",
             "faqi:faqi-skill-seekers": ".github/extensions/Skill_Seekers-development",
             "faqi:faqi-oh-my-tmux": ".github/extensions/oh-my-tmux",
             "faqi:faqi-tmux": ".github/extensions/tmux",
@@ -129,7 +128,17 @@ class FaqiCatalogTest(unittest.TestCase):
         }
         for object_key, path in current_paths.items():
             self.assertIn(f"本地入口={path}", associations[object_key], object_key)
+        self.assertNotIn(".github/tools/prompts-library", active_archive["locations"])
+        self.assertFalse(any(path.startswith(".github/tools/prompts-library/")
+                             for path in active_archive["live_sources"]))
+        for archived_path in (
+            ".github/tools/prompts-library/README.md",
+            ".github/tools/prompts-library/main.py",
+        ):
+            self.assertIn(archived_path, active_archive["documents"])
+            self.assertNotIn(archived_path, active_archive["locations"])
         for object_key in (
+            "faqi:faqi-prompt-converter",
             "faqi:faqi-codex-config-installer",
             "faqi:faqi-auto-skill-create",
             "faqi:faqi-auto-skill-validate",
@@ -138,6 +147,8 @@ class FaqiCatalogTest(unittest.TestCase):
         ):
             self.assertIn("本地入口=无", associations[object_key], object_key)
             self.assertIn("已退役", associations[object_key], object_key)
+        converter_association = associations["faqi:faqi-prompt-converter"]
+        self.assertNotIn(".github/extensions/prompts-library", converter_association)
         for path in (
             ".github/skills/auto-skill/scripts/create-skill.sh",
             ".github/skills/auto-skill/scripts/validate-skill.sh",

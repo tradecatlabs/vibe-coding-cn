@@ -94,18 +94,23 @@ def relocated(path, fragment=''):
         if path == old or path.startswith(old + '/'):
             path = new + path[len(old):]
             break
-    retired = (
-        '.github/extensions/chat-vault', '.github/extensions/my-nvim',
-        '.github/extensions/codex-config', '.github/extensions/MCPlayerTransfer',
-        '.github/extensions/XHS-image-to-PDF-conversion',
-        '.github/extensions/xhs graphic production - 1.0.html',
-        '.github/extensions/xhs graphic production.html', '.github/extensions/html-tools-main.md',
-    )
-    if any(path == prefix or path.startswith(prefix + '/') for prefix in retired):
-        # 原正文保持冻结字节；退役实现只链接到最后仍存在的已发布修订，不能冒充当前入口。
-        route = 'tree' if path in retired[:5] else 'blob'
-        return ('https://github.com/tradecatlabs/vibe-coding-cn/' + route
-                + '/44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58/' + quote(path, safe='/')), fragment
+    retired = {
+        '.github/extensions/prompts-library': ('b0e3454bb865b95bdc70127a431214c384542dee', 'tree'),
+        '.github/extensions/chat-vault': ('44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58', 'tree'),
+        '.github/extensions/my-nvim': ('44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58', 'tree'),
+        '.github/extensions/codex-config': ('44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58', 'tree'),
+        '.github/extensions/MCPlayerTransfer': ('44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58', 'tree'),
+        '.github/extensions/XHS-image-to-PDF-conversion': ('44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58', 'tree'),
+        '.github/extensions/xhs graphic production - 1.0.html': ('44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58', 'blob'),
+        '.github/extensions/xhs graphic production.html': ('44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58', 'blob'),
+        '.github/extensions/html-tools-main.md': ('44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58', 'blob'),
+    }
+    for prefix, (revision, root_route) in sorted(retired.items(), key=lambda item: len(item[0]), reverse=True):
+        if path == prefix or path.startswith(prefix + '/'):
+            # 原正文保持冻结字节；退役实现只链接到最后仍存在的已发布修订，不能冒充当前入口。
+            route = root_route if path == prefix else 'blob'
+            return ('https://github.com/tradecatlabs/vibe-coding-cn/' + route
+                    + '/' + revision + '/' + quote(path, safe='/')), fragment
     return path, fragment
 
 

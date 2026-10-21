@@ -107,7 +107,6 @@ test: lint check-links check-details test-details check-doc-structure check-dire
 
 clean: clean-deps
 	@find . -type d -name '__pycache__' -prune -exec rm -rf {} +
-	@rm -rf .github/extensions/prompts-library/prompt_jsonl
 
 clean-deps:
 	@rm -rf node_modules

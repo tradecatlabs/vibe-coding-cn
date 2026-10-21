@@ -120,6 +120,7 @@ class SourceArchiveTest(unittest.TestCase):
             '../../tools/external/html-tools-main/xhs%20graphic%20production%20-%201.0.html': 'xhs%20graphic%20production%20-%201.0.html',
             '../../tools/external/html-tools-main/xhs%20graphic%20production.html': 'xhs%20graphic%20production.html',
             '../../tools/external/html-tools-main/README.md': 'html-tools-main.md',
+            '../../tools/prompts-library/README.md': 'prompts-library/README.md',
         }
         for index, link in enumerate(retired_links):
             text += f'\n[历史{index}]({link})\n'
@@ -145,8 +146,11 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertIn('[分类模块](../../taxonomy.py)', rendered)
         self.assertIn('[资源边界](../../source_boundaries.py)', rendered)
         for index, target in enumerate(retired_links.values()):
-            expected = ('https://github.com/tradecatlabs/vibe-coding-cn/blob/'
-                        '44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58/.github/extensions/' + target)
+            revision = ('b0e3454bb865b95bdc70127a431214c384542dee'
+                        if target == 'prompts-library/README.md'
+                        else '44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58')
+            expected = (f'https://github.com/tradecatlabs/vibe-coding-cn/blob/{revision}'
+                        '/.github/extensions/' + target)
             self.assertIn(f'[历史{index}]({expected})', rendered)
         self.assertIn('### 代码不是目录', rendered)
         self.assertNotIn('id="doc-example-代码不是目录"', rendered)

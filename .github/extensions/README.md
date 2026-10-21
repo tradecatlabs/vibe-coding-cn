@@ -2,7 +2,7 @@
 
 ## 字多不看
 
-这里保存现存程序、资料维护脚本与固定上游；当前10个一级对象在本域平铺，程序内部源码结构不拆散。
+这里保存现存程序、资料维护脚本与固定上游；当前9个一级对象在本域平铺，程序内部源码结构不拆散。
 这里的Extensions不是Pi原生扩展的同义词；不能把整个目录交给Pi的`-e`加载。
 
 ## 快速导航
@@ -13,7 +13,6 @@
 | [Claude官方Skills源](claude-official-skills/README.md) | 固定上游源码，不属于当前Skills发现集合 |
 | [Skill初始化入口](init_skill.py) | 引用上游初始化脚本；不是Pi Skill入口或自动安装器 |
 | [tmux](tmux/README)、[oh-my-tmux](oh-my-tmux/README.md) | 原固定源码与配置仓库；不是自动安装或启用 |
-| [提示词转换](prompts-library/README.md) | 原Excel、Markdown、JSONL转换程序 |
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
@@ -49,7 +48,7 @@
 ### 依赖与执行边界
 
 检查器使用Python3；功法、法器和资料档案维护使用Python3.10+，共享依赖在`.github/`，见[requirements-gongfa.txt](../requirements-gongfa.txt)、[requirements-faqi.txt](../requirements-faqi.txt)。
-复用jsonschema、PyYAML和markdown-it-py；v1的18项表格由共享模块按固定三列表格契约安全渲染。转换程序另用其原有requirements。Markdown lint使用Node22+及固定的markdownlint-cli0.48.0。
+复用jsonschema、PyYAML和markdown-it-py；v1的18项表格由共享模块按固定三列表格契约安全渲染。Markdown lint使用Node22+及固定的markdownlint-cli0.48.0。
 
 来源树保持原Git修订。安装、抓取、上传、发布、修改配置和终端注入均有独立副作用，不因移入本域得到授权。
 凭据仅从受信来源在运行时注入，不提交真实会话、数据库、API密钥、环境文件或私有模板。

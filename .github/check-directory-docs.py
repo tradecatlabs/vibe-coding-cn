@@ -18,12 +18,15 @@ REQUIRED_DIRS = list(map(Path, (
     '.github/extensions',
     '.github/skills', '.github/skills/auto-skill', '.github/skills/auto-skill/assets',
     '.github/skills/auto-skill/references', '.github/skills/auto-tmux',
-    '.github/extensions/prompts-library', '.github/extensions/prompts-library/docs',
-    '.github/extensions/prompts-library/scripts',
 )))
 COLLECTION_DIRS = {Path('.github/context/gongfa'), Path('.github/context/faqi')}
 COLLECTION_FILES = {'data.json', 'README.md', 'tian.md', 'di.md', 'xuan.md', 'huang.md'}
-RETIRED_DIRS = (Path('.github/workflows'), Path('.github/lib'))
+RETIRED_DIRS = (
+    Path('.github/workflows'), Path('.github/lib'),
+    Path('.github/extensions/prompts-library'),
+)
+LEGACY_PROMPT_TOOL = Path('.github/extensions/prompts-library')
+LEGACY_PROMPT_EXPORTS = LEGACY_PROMPT_TOOL / 'prompt_jsonl'
 README_OPTIONAL_DIRS = {
     # GitHub repository pages can surface `.github/README.md` as an overview file.
     # Keep the root project README authoritative and use `.github/AGENTS.md` only.
@@ -32,13 +35,26 @@ README_OPTIONAL_DIRS = {
 GENERATED_OR_VENDOR_DIRS = [
     Path("build"),
     Path("node_modules"),
+    LEGACY_PROMPT_EXPORTS,
 ]
 SKIP_PARTS = {".git", ".history", "build", "node_modules", "__pycache__"}
 SKIP_PREFIXES = SOURCE_PREFIXES
 
 
+def only_legacy_prompt_exports(directory: Path) -> bool:
+    if directory.is_symlink() or not directory.is_dir():
+        return False
+    entries = list(directory.iterdir())
+    return (len(entries) == 1 and entries[0].name == LEGACY_PROMPT_EXPORTS.name
+            and entries[0].is_dir() and not entries[0].is_symlink())
+
+
 def should_skip(directory: Path) -> bool:
     rel = directory.relative_to(ROOT)
+    if rel == LEGACY_PROMPT_TOOL and only_legacy_prompt_exports(directory):
+        return True
+    if rel == LEGACY_PROMPT_EXPORTS or LEGACY_PROMPT_EXPORTS in rel.parents:
+        return True
     if any(part in SKIP_PARTS for part in rel.parts):
         return True
     if is_research_repository_snapshot(rel):
@@ -67,6 +83,8 @@ def main() -> int:
     for rel_dir in RETIRED_DIRS:
         directory = ROOT / rel_dir
         if directory.exists() or directory.is_symlink():
+            if rel_dir == LEGACY_PROMPT_TOOL and only_legacy_prompt_exports(directory):
+                continue
             errors.append(f'{rel_dir}: 已退役目录不得重新创建')
 
     for rel_dir in repository_owned_dirs():
