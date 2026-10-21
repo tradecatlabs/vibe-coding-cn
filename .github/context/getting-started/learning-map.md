@@ -111,7 +111,7 @@ curl -fsSL https://pi.dev/install.sh | sh
 powershell -c "irm https://pi.dev/install.ps1 | iex"
 ```
 
-安装器要求 Node.js 22.19.0 或更高版本和 npm；若缺少，会询问是否安装独立 Node.js，并把它放在用户目录、加入当前用户 PATH。默认托管安装后可用 `pi update` 更新。若安装器显示更新、重装、卸载或迁移已有 Pi，先核对当前版本和目标路径，不要盲目接受。
+安装器要求 Node.js 22.19.0 或更高版本和 npm；若缺少，会询问是否安装独立 Node.js，并把它放在用户目录、加入当前用户 PATH。默认托管安装后可用 `pi update` 更新。若安装器显示更新、重装、卸载或迁移已有 Pi，先核对当前版本和目标路径，不要盲目接受；主动卸载时按[卸载 Pi](#uninstall-pi)说明操作。
 
 Pi 在 Windows 原生环境中默认用 Git Bash 执行内置 Bash 工具和 `!` 命令；这不是安装 CLI 的前提。若找不到 Bash，安装器可提供 Portable Git（安装在 Pi 用户目录并修改 `~/.pi/agent/settings.json` 的 `shellPath`）、通过 winget 全局安装 Git for Windows（仅当 winget 可用），或跳过。也可自行安装[官方 Git for Windows](https://git-scm.com/download/win)。跳过不妨碍 CLI 安装，但 Bash 工具不可用。若询问是否立即启动 Pi，可先暂不启动，之后按第 4 步验证。
 
@@ -187,9 +187,21 @@ pi --version
 | Windows 上 `pi --version` 成功，但 Pi 报 Bash 不可用 | CLI 与 Bash 工具是不同问题 | 按 Windows 官方说明安装/定位 Git Bash，或检查 `~/.pi/agent/settings.json` 的 `shellPath`；无需因此默认迁移到 WSL。 |
 | 网页 AI 让你粘贴密钥或运行来源不明的命令 | 凭据和下载来源风险 | 不提供密钥；回到 Pi 官方页面确认命令。错误信息先脱敏，再提供给 AI。 |
 
+<a id="uninstall-pi"></a>
+
+### 卸载 Pi（可选）
+
+在与安装时相同的系统环境中（Windows 原生与 WSL 分开），按原安装渠道选择官方卸载方式：
+
+- 官方安装器（macOS/Linux shell 或 Windows PowerShell）：重跑第 3 步对应的安装器；确认它检测到的是要移除的 Pi 后，再选择 `Uninstall Pi`。
+- npm：在安装时使用的全局 npm 环境中运行 `npm uninstall -g @earendil-works/pi-coding-agent`。
+- Nix：运行 `nix profile remove pi`。
+
+这些卸载方式不会删除 `~/.pi/agent/` 中的配置、凭据、会话或已安装的 Pi 包。若要保留它们，无需额外操作；若要清理，先备份并检查内容，不要把该目录整体删除当作卸载步骤。
+
 ## 官方资料
 
-- [Pi Quickstart：安装与启动](https://pi.dev/docs/latest/quickstart)
+- [Pi Quickstart：安装、卸载与启动](https://pi.dev/docs/latest/quickstart)
 - [Pi Windows：原生 Windows、Git Bash 与 WSL](https://pi.dev/docs/latest/windows)
 - [Pi Providers：认证与模型提供方](https://pi.dev/docs/latest/providers)
 - [Pi Security：工具权限与安全边界](https://pi.dev/docs/latest/security)
@@ -216,7 +228,7 @@ pi --version
 
 先询问我的操作系统、终端，以及 `pi --version` 是否成功；若我不清楚，只给一个不会修改系统的检查方法。若已安装就不要重复安装。不要预设我必须使用 WSL、Git、Python、编辑器、代理或项目依赖。只用官方安装方式；常规安装/更新和云端模型需要网络，安装源、包源、模型服务要分别核对，不猜白名单或代理。`curl | sh` 或 `irm | iex` 会下载并执行脚本，先让我核对官方域名。
 
-官方安装器与 npm 路线要求 Node.js 22.19.0 或更高版本和 npm。若安装器准备安装 Node、调用系统包管理器、改 PATH/shell 配置、更新/重装现有 Pi 或立即启动，先解释精确动作、范围和影响，等我决定。不要以管理员/root 运行，不用 `sudo npm`。Windows 原生 Git Bash 只用于 Pi 的 Bash 工具，WSL 可选；若选择 Portable Git，说明它会写入 Pi 用户目录并修改 `settings.json` 的 `shellPath`；若还有 winget 全局安装或跳过选项，解释差异后等我选择。只有我已在使用 Nix 时才推荐 Nix。
+官方安装器与 npm 路线要求 Node.js 22.19.0 或更高版本和 npm。若安装器准备安装 Node、调用系统包管理器、改 PATH/shell 配置、更新/重装/卸载/迁移已有 Pi 或立即启动，先解释精确动作、范围和影响，等我决定。不要以管理员/root 运行，不用 `sudo npm`。Windows 原生 Git Bash 只用于 Pi 的 Bash 工具，WSL 可选；若选择 Portable Git，说明它会写入 Pi 用户目录并修改 `settings.json` 的 `shellPath`；若还有 winget 全局安装或跳过选项，解释差异后等我选择。只有我已在使用 Nix 时才推荐 Nix。
 
 不要向我索取或复述密码、API Key、Token、cookie、订阅链接、私钥或授权码；我只在本地 Pi 的可信流程里自行处理凭据，并在分享结果前脱敏。CLI 安装、模型 `/login` 与 `/model`、项目任务是不同验收。ChatGPT 订阅不自动代表 OpenAI API 额度。Pi 使用启动账户权限，不是安全沙箱；项目中只配置当前任务必需的工具，涉及系统修改、外部服务或不可逆操作时先停下让我决定。
 
