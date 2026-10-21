@@ -50,12 +50,12 @@ first-todo/
 
 | 条件 | 成功判断 |
 |:---|:---|
-| 已完成 [Pi CLI 上手指南](learning-map.md)，或手边有可读写当前目录的 AI 工具 | 能在当前目录启动 Agent，或能把文件保存到当前目录 |
+| 已完成 [Pi CLI 上手提示词](learning-map.md)，或手边有可读写当前目录的 AI 工具 | 能在当前目录启动 Agent，或能把文件保存到当前目录 |
 | 已安装 Git | 执行 `git --version` 能看到版本号 |
 | 已安装 Python 3 | 执行对应系统的 Python 版本命令能看到版本号 |
 | 已有浏览器 | 能打开 `http://127.0.0.1:8000/` |
 
-本项目不要求 Node.js 或 npm。若使用 Pi CLI 且 `pi` 命令不存在，先回到 [Pi CLI 上手指南](learning-map.md#milestone-0) 检查现状；若 Git 或 Python 不可用，按[项目任务](learning-map.md#milestone-5)的原则，仅为本练习配置实际需要的工具。
+本项目不要求 Node.js 或 npm。若使用 Pi CLI 且 `pi` 命令不存在，先回到 [Pi CLI 上手提示词](learning-map.md#milestone-0) 检查现状；若 Git 或 Python 不可用，只为本练习配置实际需要的工具，并先说明影响；Pi CLI 安装不把它们作为通用前提。
 
 ### 创建独立工作目录
 
@@ -272,7 +272,7 @@ git rev-parse --short HEAD
 - commit 成功并返回短提交号。
 - 最后的 `git status --short` 没有未提交的四个项目文件。
 
-如果 commit 报“无法识别作者”，不要关闭检查；让 Agent 先检查当前仓库和全局 Git 用户名/邮箱设置，说明改动范围，再按本练习需要配置。可参考 [M5：在项目中使用](learning-map.md#milestone-5) 的授权原则。重新检查 `git status` 后再提交。不要把 Token、密码或临时配置文件加入 Git。
+如果 commit 报“无法识别作者”，不要关闭检查；让 Agent 先检查当前仓库和全局 Git 用户名/邮箱设置，说明改动范围，再按本练习需要配置。可参考[网页 AI 引导规则](learning-map.md#ai-guidance-rules)中的副作用边界。重新检查 `git status` 后再提交。不要把 Token、密码或临时配置文件加入 Git。
 
 ## 完成证据
 
@@ -292,8 +292,8 @@ git rev-parse --short HEAD
 
 | 现象 | 先检查 | 最小处理 |
 |:---|:---|:---|
-| `pi` 找不到 | 是否完成 Pi CLI 安装、当前终端是否重启 | 回到 [Pi CLI 上手指南](learning-map.md#milestone-0)检查现状，不要手动猜安装路径 |
-| `python3` 或 `py` 找不到 | 版本命令是否可用、PATH 是否更新 | 回到 [M5：在项目中使用](learning-map.md#milestone-5)，仅为本练习配置 Python 后重开终端 |
+| `pi` 找不到 | 是否完成 Pi CLI 安装、当前终端是否重启 | 回到 [Pi CLI 上手提示词](learning-map.md#milestone-0)检查现状，不要手动猜安装路径 |
+| `python3` 或 `py` 找不到 | 版本命令是否可用、PATH 是否更新 | 仅为本练习配置 Python 后重开终端；Pi CLI 安装不要求 Python。 |
 | 浏览器显示目录列表 | `index.html` 是否存在且文件名大小写正确 | 让 Agent 只检查文件名和当前目录，不要先重写全部代码 |
 | 页面空白 | 浏览器控制台第一条错误、脚本路径和 HTML 元素 ID | 把完整错误和相关文件交给 Agent，要求最小修复 |
 | 刷新后任务消失 | `localStorage` 的 key、序列化格式和浏览器站点地址是否变化 | 先检查实现和控制台，再补持久化测试 |

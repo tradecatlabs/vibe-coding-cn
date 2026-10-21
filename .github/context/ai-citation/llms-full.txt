@@ -48,9 +48,9 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 
 - README.md：项目主入口，说明定位、快速开始、工具资源和核心工作流。
 - .github/context/README.md：知识库总索引，提供新手、开发者、思维模型和 AI Agent 读取路径。
-- .github/context/getting-started/README.md：入门索引，链接唯一 Pi CLI 上手指南与可选项目练习；通用Vibe Coding经验正文见 .github/context/gongfa/README.md#doc-vibe-coding-experience。
+- .github/context/getting-started/README.md：入门索引，链接可全文复制给网页版 AI 的 Pi CLI 安装配置提示词与可选项目练习；通用Vibe Coding经验正文见 .github/context/gongfa/README.md#doc-vibe-coding-experience。
 - .github/context/gongfa/README.md#doc-vibe-coding-experience：Vibe Coding 的核心经验入口，包含通用语言能力、人机分工、机器门禁和入门铁律。
-- .github/context/getting-started/learning-map.md：Pi CLI 唯一完整上手指南，覆盖系统与网络准备、依赖、分平台安装、CLI 验证、模型连接和安装后使用，并附网页 AI 单步引导提示词。
+- .github/context/getting-started/learning-map.md：可全文复制给网页版 AI 的 Pi CLI 安装配置提示词，逐步引导现状检查、分平台安装、模型配置和本机工具验证；达到 Agent 能力验收后停止，不展开项目任务。
 - 原 Codex 全局配置基线及安装/恢复脚本已按用户要求移除；历史 Codex 资料保留在研究域，不作为 Pi 安装路线。
 - .github/context/getting-started/first-project.md：可选的本地待办清单练习，用于走通需求、实现、运行、验收和 Git 保存。
 - .github/context/gongfa/README.md：按理解、求解、设计、实现、验证、转化和内容身份导航的统一功法文集。
