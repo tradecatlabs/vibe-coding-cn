@@ -1,42 +1,28 @@
-# Getting Started 目录 Agent 指南
+# 入门目录 Agent 指南
 
 ## 目录职责
 
-`.github/context/getting-started/` 存放从零开始的线性入门教程。
-
-本目录面向：
-
-- 新电脑、新系统、零基础用户。
-- 第一次配置网络、Codex CLI、开发环境的人。
-- 想从想法走到可运行项目的学习者。
+`.github/context/getting-started/` 提供 Pi CLI 的完整入门主线，以及一个可选的项目练习。系统准备、网络与依赖、安装、模型授权和安装后使用统一维护在 `learning-map.md`，避免拆分文档重复说明。
 
 ## 文件地图
 
 ```text
 getting-started/
-├── README.md   # 从零开始索引入口
-├── vibe-coding-experience.md
-├── learning-map.md
-├── network-environment.md
-├── cli-setup.md
-├── development-environment.md
-├── first-project.md
-└── AGENTS.md   # 本目录操作规则
+├── README.md         # 入门索引
+├── learning-map.md   # Pi CLI 唯一完整上手指南及网页 AI 单步提示词
+├── first-project.md  # 可选的本地项目闭环练习
+└── AGENTS.md         # 本目录维护规则
 ```
 
 ## 修改规则
 
-- 继承 `.github/context/AGENTS.md` 的 README 结构契约：H1 后直接进入 `## 字多不看`，再按 `快速导航 -> 完整细粒度目录 -> 使用方式 -> 正文` 排列。
-- `README.md` 只做索引入口；正文写入同目录独立主题文档。
-- 新增步骤时，必须说明适用系统、前置条件、执行命令和成功判断。
-- 命令必须可复制执行；涉及平台差异时分别写明 Windows、WSL、Linux 或 macOS。
-- 默认路线优先是：网络环境和订阅准备 -> Codex CLI -> 让 Agent 配置后续环境 -> 完成第一个项目闭环。
-- 不在本目录独立维护通用方法论、哲学或思维模型；完整正文统一链接到 `.github/context/gongfa/README.md#原文文集`，本目录保留配置教程与实例练习。
-- 不在 README 正文中写 `和其他目录的边界` 或 `维护规则`；维护者规则只写本文件。
-
-## 质量要求
-
-- 假设读者没有前置依赖。
-- 每个关键步骤都要有失败时的处理方法。
-- 避免“自行安装”“配置一下”这类不可执行表述。
-- 修改后必须运行 `make sync-doc-toc` 和 `make test`。
+- 根 `README.md` 是唯一主页；本目录 README 只做导航，不复制完整教程。
+- 只在 `learning-map.md` 维护 Pi CLI 的准备、依赖、网络、平台安装、版本验证、模型授权和安装后使用步骤；不重建独立的 CLI、网络或开发环境教程。
+- 安装方式、Node.js 版本要求、系统支持和 provider 流程以 Pi 当前官方文档与安装入口为准；链接及命令须明确系统、终端、影响和成功判断。官方资料未说明的内容标为未知，不猜测。
+- 区分 `pi --version`、模型授权/可用和项目任务完成；不把 CLI 安装说成模型已接通或项目环境已就绪。
+- 不把 WSL、Git、Python、编辑器、代理或项目依赖设为 Pi CLI 安装的通用前置条件。Windows 原生 Git Bash 是内置 Bash 工具的命令环境，不是 CLI 安装本身的要求。
+- 网络配置只在官方来源或所选模型服务确实不可达时处理；不默认推荐购买代理、全局代理/TUN、关闭安全机制或使用非官方源。
+- 不要求用户把密码、API Key、Token、cookie、订阅链接或私钥贴给网页 AI。Pi 以启动账户权限运行，不是安全沙箱；提醒用户不要用管理员/root 启动并审阅实际命令与改动。
+- 第一个项目保持可选；只同步其真实前置条件和指向上手指南的链接，不在练习中复制 Pi 安装说明。
+- 入口变化时同步 `.github/context/README.md`、根 `README.md`、`llms.txt`、`.github/context/ai-citation/llms-full.txt` 和 `.github/context/metadata/taxonomy.yml`；删除或迁移入口时核对 `.github/context/metadata/redirects.yml` 与活动链接。
+- 修改后运行 `make sync-doc-toc` 和 `make test`；本地文档检查不证明用户机器安装成功、认证有效或模型效果。

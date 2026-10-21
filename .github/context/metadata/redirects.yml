@@ -55,17 +55,17 @@ redirects:
   - from: docs/playbooks/tradecat-sheets-api-usage.md
     to: .github/context/README.md
   - from: docs/getting-started/Codex-CLI配置.md
-    to: .github/context/getting-started/cli-setup.md
+    to: .github/context/research/openai-codex/README.md
   - from: docs/getting-started/学习地图.md
     to: .github/context/getting-started/learning-map.md
   - from: docs/getting-started/Vibe Coding 经验.md
     to: .github/context/gongfa/README.md#doc-vibe-coding-experience
   - from: docs/getting-started/网络环境配置.md
-    to: .github/context/getting-started/network-environment.md
+    to: .github/context/getting-started/learning-map.md#network-and-dependencies
   - from: docs/getting-started/CLI配置.md
-    to: .github/context/getting-started/cli-setup.md
+    to: .github/context/getting-started/learning-map.md#pi-cli-installation
   - from: docs/getting-started/开发环境搭建.md
-    to: .github/context/getting-started/development-environment.md
+    to: .github/context/getting-started/learning-map.md#post-install-use
   - from: docs/references/通用项目架构模板.md
     to: .github/context/gongfa/README.md#doc-project-architecture-template
   - from: docs/references/数据集导向数据服务模板.md
@@ -95,7 +95,7 @@ redirects:
   - from: assets/repos/
     to: .github/extensions/
   - from: assets/config/
-    to: .github/context/getting-started/cli-setup.md#使用仓库配置基线
+    to: .github/context/getting-started/learning-map.md#使用仓库配置基线
   - from: docs/concepts/问题求解.md
     to: .github/context/gongfa/README.md#doc-problem-solving
   - from: docs/concepts/拼好码.md
@@ -214,3 +214,11 @@ redirects:
     to: .github/context/gongfa/README.md
   - from: docs/workflow/
     to: .github/context/gongfa/README.md#原文文集
+
+  # Pi CLI 入门分篇已合并到一份完整指南。
+  - from: .github/context/getting-started/cli-setup.md
+    to: .github/context/getting-started/learning-map.md#pi-cli-installation
+  - from: .github/context/getting-started/network-environment.md
+    to: .github/context/getting-started/learning-map.md#network-and-dependencies
+  - from: .github/context/getting-started/development-environment.md
+    to: .github/context/getting-started/learning-map.md#post-install-use

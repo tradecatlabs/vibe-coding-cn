@@ -20,7 +20,7 @@
   <a href="https://t.me/glue_coding"><img src="https://img.shields.io/badge/交流-Telegram-blue?style=flat&logo=telegram" alt="交流群"></a>
   <a href=".github/context/gongfa/README.md#原文文集"><img src="https://img.shields.io/badge/功法-体系-slateblue?style=flat" alt="功法体系：思想、准则、方法与流程"></a>
   <a href=".github/context/research/README.md"><img src="https://img.shields.io/badge/研究-证据-teal?style=flat" alt="研究事实与证据"></a>
-  <a href=".github/context/getting-started/learning-map.md"><img src="https://img.shields.io/badge/入门-教程-red?style=flat" alt="从零开始完整入门"></a>
+  <a href=".github/context/getting-started/learning-map.md"><img src="https://img.shields.io/badge/入门-教程-red?style=flat" alt="Pi CLI 完整上手指南"></a>
   <a href=".github/skills/README.md#当前保留"><img src="https://img.shields.io/badge/Skills-技能-forestgreen?style=flat" alt="skills技能大全"></a>
   <a href=".github/context/prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/提示词-表格-blue?style=flat" alt="提示词在线表格"></a>
   <a href=".github/context/assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/资源-索引-teal?style=flat" alt="外部资源本地注册表"></a>
@@ -45,7 +45,7 @@
 ## 📌 字多不看
 
 - `vibe-coding-cn` 是Vibe Coding工具箱，主体底座为Pi Agent与OpenAI GPT；本次只整理已有资产，不增加业务Skill。
-- 新手先走 [从零开始完整入门](.github/context/getting-started/learning-map.md)：网络环境、CLI 配置、开发环境、第一个项目和 Git 闭环。
+- 新手从[Pi CLI 上手指南](.github/context/getting-started/learning-map.md)开始；分别核对 CLI 安装、模型授权和安装后任务，不把一个阶段的成功当作另一个阶段的证明。
 - 方法正文统一在 [功法体系](.github/context/gongfa/README.md)：按问题选择思想、准则、模型与工程方法，不按旧栏目分库。
 - 资源统一为Context、Skills、Extensions；用现有测试、CI、脚本、类型、Schema与Git核对具体结果，不把分类当作运行或效果证明。
 - 需要直接使用资源时，进入 [提示词](.github/context/prompts/README.md#在线提示词库)、[Skills](.github/skills/README.md#当前保留) 和 [外部资源](.github/context/assets/README.md#外部资源本地注册表)。
@@ -77,15 +77,15 @@ pi --skill .github/skills
 4. 用Pi原生`/model`选择已授权的OpenAI模型。先明确任务和验收，再让Agent按需读取资料、使用相应Skill并显式调用现有程序。
 
 加载不是执行许可，也不是运行或效果测试。不要把`.github/extensions/`整体传给`-e`。
-[从零开始](.github/context/getting-started/README.md)保留具体CLI的入门资料；原Codex配置基线及安装脚本已移除，不再提供一键安装入口。
+[从零开始](.github/context/getting-started/README.md)通过一份完整指南覆盖系统与网络准备、官方安装、版本验证、模型连接和安装后使用，并附逐步引导提示词；第一个项目为可选练习。
 
 ### 🚀 从零开始
 
-完全新手？按顺序完成以下步骤：
+完全新手先读 Pi CLI 上手指南；其余内容按需选择，不必预先通读：
 
-0. [从零开始完整入门](.github/context/getting-started/learning-map.md) - 按目标选择新手、开发者、团队、Prompt、Skill 或质量门禁路线
-1. [Vibe Coding 经验](.github/context/gongfa/README.md#doc-vibe-coding-experience) - 通用语言能力、人机分工、机器门禁和入门铁律
-2. [第一个项目](.github/context/getting-started/first-project.md) - 用本地待办清单走通需求、实现、验收和 Git 保存
+0. [Pi CLI 上手指南](.github/context/getting-started/learning-map.md) - 从新电脑检查开始，覆盖网络与依赖、分平台安装、`pi --version`、模型授权和安装后使用；附网页 AI 单步引导提示词
+1. [第一个项目（可选练习）](.github/context/getting-started/first-project.md) - 用本地待办清单练习需求、运行、验收和 Git 保存
+2. [Vibe Coding 经验](.github/context/gongfa/README.md#doc-vibe-coding-experience) - 按需学习人机分工、验证和质量边界
 3. [问题求解](.github/context/gongfa/README.md#doc-problem-solving) - “目标-现状-差距-标准”与“目标-约束-对象-路径”的极简框架
 4. [Vibe Coding 状态转移闭环](.github/context/gongfa/README.md#doc-vibe-coding-state-transition) - 用固定目标、可变策略和分层反馈统一理解 Vibe Coding
 5. [Lambda演算](.github/context/gongfa/README.md#doc-lambda-calculus) - 天级上品；理解函数抽象、作用域、归约与组合边界

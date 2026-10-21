@@ -11,7 +11,7 @@
 |---|---|
 | [功法](gongfa/README.md) | 分阶导航：[天](gongfa/tian.md)、[地](gongfa/di.md)、[玄](gongfa/xuan.md)、[黄](gongfa/huang.md)；原文归档见data.json |
 | [法器](faqi/README.md) | 分阶导航：[天](faqi/tian.md)、[地](faqi/di.md)、[玄](faqi/xuan.md)、[黄](faqi/huang.md)；来源与边界见data.json |
-| [从零开始](getting-started/README.md) | 学习地图、网络、CLI、环境和首个项目 |
+| [从零开始](getting-started/README.md) | 完整指南覆盖准备、网络、Pi CLI 安装与验证、模型连接和安装后使用；附网页 AI 单步提示词 |
 | [提示词](prompts/README.md) | 现有云端提示词索引 |
 | [研究](research/README.md) | 对象观察、来源事实、固定镜像与原始缓存 |
 | [外部资源](external-resources/README.md) | 原资源分类与登记 |
