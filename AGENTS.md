@@ -14,7 +14,7 @@
 |---|---|
 | `.github/context/` | 公开规则、知识、文档、数据和参考资料；研究档案仅保留在已有本机副本；详见本域AGENTS |
 | `.github/skills/` | 仅保留auto-skill、auto-tmux两个自有指令入口，使用原生工具；原专属封装已退役 |
-| `.github/extensions/` | 当前16个一级对象：现存程序、资料维护入口、固定源码与历史定义；不是全部可由Pi的`-e`加载 |
+| `.github/extensions/` | 当前13个一级对象：现存程序、资料维护入口与固定源码；不是全部可由Pi的`-e`加载 |
 | `.github/ISSUE_TEMPLATE/`及固定配置 | 现有GitHub协作入口；本次仅退役workflows，不扩改其他平台配置 |
 | `.github/CONTRIBUTORS.md` | 根README迁出的贡献者名单与鸣谢；只维护独立文档 |
 | `.github/check-*.py`、`test-*.py`、4个平铺共享模块及requirements | 仓库维护层：11个校验、6个测试及唯一配套实现；不保留lib目录，不是用户侧Extensions工具 |
@@ -52,7 +52,7 @@ Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-ad
 - 不修改`LICENSE`、`CODE_OF_CONDUCT.md`或`.env*`；不内联真实密钥、Token、cookie、私钥或账号配置。
 - 凭据仅从受信来源运行时注入，禁止从会话/日志/未知文件搜寻；所有输出先脱敏，不输出值、长度、摘要或前后缀。
 - 架构、命令与路径变化同步README、AGENTS、Makefile、活动调用方与索引；不把冻结来源中的旧路径误改成当前路径。
-- `.github/workflows/`已按用户要求退役，不得重建空目录、符号链接或兼容壳。原3份定义平铺为Extensions中的`github-actions-*.yml`，不是活动工作流。
+- `.github/workflows/`已按用户要求退役，不得重建空目录、符号链接或兼容壳。原3份定义已从当前文件树移除，原始提交仍在Git历史中。
 - 自动CI、Labeler和Welcome均停用；本地Makefile及检查范围不变。重新启用须显式授权，并同时核对原生目录和对应保护检查。
 - 注释、文档及新日志使用中文；代码标识英文。避免无价值封装、重复源码、猜测API和范围外重构。
 

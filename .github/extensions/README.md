@@ -2,7 +2,7 @@
 
 ## 字多不看
 
-这里保存现存程序、资料维护脚本与固定上游；当前16个一级对象在本域平铺，程序内部源码结构不拆散。
+这里保存现存程序、资料维护脚本与固定上游；当前13个一级对象在本域平铺，程序内部源码结构不拆散。
 这里的Extensions不是Pi原生扩展的同义词；不能把整个目录交给Pi的`-e`加载。
 
 ## 快速导航
@@ -16,11 +16,10 @@
 | [EPUB CSS清理](clean_epub_css.html) | 保留的HTML工具文件 |
 | [Markdown编辑](markdown-bianjiqi.html) | 保留的HTML工具文件 |
 | [任务卡生成](task%20card%20generator.html) | 保留的HTML工具文件 |
-| [已停用的GitHub Actions定义](#retired-github-actions) | 3份历史YAML；不在原生工作流目录，不会被GitHub发现或执行 |
 
 来自两个自有Skill的33个封装脚本已退役，不保留兼容壳；两个Skill改用原生工具与指令检查。
 引用原上游的`init_skill.py`独立入口继续保留。用户点名的chat-vault、my-nvim、codex-config、MCPlayerTransfer、XHS-image-to-PDF-conversion、两个xhs图文HTML及html-tools-main说明共8项已移除。
-当前引用与安装入口已清理；原文件在本地私有工件保全，固定来源初审仍保留历史意见。4个Gitlink、提示词转换器、3个其他HTML、4个资料维护入口和3份Actions历史定义均保留。
+当前引用与安装入口已清理；原文件在本地私有工件保全，固定来源初审仍保留历史意见。4个Gitlink、提示词转换器、3个HTML工具、4个资料维护入口及`init_skill.py`入口仍保留；已停用的Actions定义不再随当前文件树分发，原版本留在Git历史中。
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
@@ -28,7 +27,6 @@
 - [使用方式](#使用方式)
 - [正文](#正文)
 - [检查与维护入口](#检查与维护入口)
-- [已停用的GitHub Actions定义](#retired-github-actions)
 - [依赖与执行边界](#依赖与执行边界)
 
 </details>
@@ -53,18 +51,6 @@
 | 研究事实获取 | [fetch-research-raw.py](fetch-research-raw.py)；需要明确联网授权 |
 
 共享实现只有一份，5个Python模块直接平铺到`.github/`；职责与原库规则见[维护说明](../AGENTS.md#维护脚本与共享库)，不再保留lib目录。两个目录生成器从原始JSON中的`explanations_v1`读取唯一活动说明载荷，输出轻量README导航页及天、地、玄、黄四阶正文；每个对象仍单独使用一张18项严格三列表格。v0仅保留为历史模板，不接受旧载荷兼容。未定级功法在黄阶文档中单列并标明“不归黄阶”。完整本地检查仍为`make test`，不执行被审第三方程序，也不证明运行、效果或许可。
-
-<a id="retired-github-actions"></a>
-
-### 已停用的 GitHub Actions 定义
-
-| 历史职责 | 原定义 | 原工作范围 |
-|---|---|---|
-| CI | [github-actions-ci.yml](github-actions-ci.yml) | Markdown、本地导航/结构/索引与外链检查 |
-| PR自动标签 | [github-actions-labeler.yml](github-actions-labeler.yml) | 按PR变更自动添加标签 |
-| 首次贡献者欢迎 | [github-actions-welcome.yml](github-actions-welcome.yml) | 首次Issue/PR贡献者欢迎 |
-
-这3份YAML逐字节保留为历史记录，位于Extensions而非GitHub发现工作流的`.github/workflows/`目录；不会自动执行，其中的事件、权限、Action版本和secret表达式不构成当前授权。恢复自动化须先获明确授权，并同时恢复平台发现路径和对应检查生产者。外链规则仍记录在根目录`.lychee.toml`，但本地`make test`不运行旧的联网Lychee检查，也不等同远端CI。
 
 ### 依赖与执行边界
 
