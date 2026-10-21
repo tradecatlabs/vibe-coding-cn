@@ -52,7 +52,7 @@
 
 `ISSUE_TEMPLATE/`、`CODEOWNERS`、`FUNDING.yml`、`PULL_REQUEST_TEMPLATE.md`、`SECURITY.md`、`WIKI.md`、`labeler.yml`、`lint_config.json`保留现有位置；用户本次点名workflows，不扩改其他协作入口。
 
-- `workflows/`已退役，不再作为平台例外；禁止重建目录、符号链接或兼容壳。原3个定义以`github-actions-*.yml`在Extensions平铺，说明见`extensions/github-actions.md`。
+- `workflows/`已退役，不再作为平台例外；禁止重建目录、符号链接或兼容壳。原3个定义以`github-actions-*.yml`在Extensions平铺为历史原件，说明见[Extensions README](extensions/README.md#retired-github-actions)。
 - 自动CI、Labeler和Welcome不再触发；本地校验/测试由根Makefile调用同级维护脚本，资料维护仍调用Extensions入口，不把空远端检查当CI成功。
 - CODEOWNERS仍由`@tukuaiai`、`@tradecatlabs`覆盖，仅迁移路径，不改变审批或豁免资格。
 - 原自动化定义逐字节保全，不执行或读取其secret表达式；恢复自动化须显式授权，不能只搬回路径而忽略权限、输入及检查生产者。

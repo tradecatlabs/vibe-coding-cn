@@ -14,7 +14,7 @@
 |---|---|
 | `.github/context/` | 公开规则、知识、文档、数据和参考资料；研究档案仅保留在已有本机副本；详见本域AGENTS |
 | `.github/skills/` | 仅保留auto-skill、auto-tmux两个自有指令入口，使用原生工具；原专属封装已退役 |
-| `.github/extensions/` | 当前17个一级对象：现存程序、资料维护入口、固定源码与历史定义；不是全部可由Pi的`-e`加载 |
+| `.github/extensions/` | 当前16个一级对象：现存程序、资料维护入口、固定源码与历史定义；不是全部可由Pi的`-e`加载 |
 | `.github/ISSUE_TEMPLATE/`及固定配置 | 现有GitHub协作入口；本次仅退役workflows，不扩改其他平台配置 |
 | `.github/CONTRIBUTORS.md` | 根README迁出的贡献者名单与鸣谢；只维护独立文档 |
 | `.github/check-*.py`、`test-*.py`、4个平铺共享模块及requirements | 仓库维护层：11个校验、6个测试及唯一配套实现；不保留lib目录，不是用户侧Extensions工具 |
