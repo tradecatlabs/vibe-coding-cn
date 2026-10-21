@@ -22,7 +22,6 @@
   <a href=".github/context/getting-started/learning-map.md"><img src="https://img.shields.io/badge/入门-教程-red?style=flat" alt="Pi CLI 安装配置提示词：供网页版 AI 单步引导"></a>
   <a href=".github/skills/README.md#当前保留"><img src="https://img.shields.io/badge/Skills-技能-forestgreen?style=flat" alt="skills技能大全"></a>
   <a href=".github/context/prompts/README.md#在线提示词库"><img src="https://img.shields.io/badge/提示词-表格-blue?style=flat" alt="提示词在线表格"></a>
-  <a href=".github/context/assets/README.md#外部资源本地注册表"><img src="https://img.shields.io/badge/资源-索引-teal?style=flat" alt="外部资源本地注册表"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/Wiki-导航-slateblue?style=flat" alt="Wiki 导航入口"></a>
   <a href=".github/context/gongfa/README.md#全部记录"><img src="https://img.shields.io/badge/功法-总表-purple?style=flat" alt="功法总表"></a>
   <a href=".github/context/gongfa/data.json"><img src="https://img.shields.io/badge/JSON-原始资料-forestgreen?style=flat" alt="功法JSON原始资料；历史Excel保留为载荷，不是活动视图"></a>
@@ -75,7 +74,7 @@
 | 3 | 为什么 | 让读者按当前问题选用适用内容，避免从首页分散的旧栏目或独立分库中查找。 |
 | 4 | 怎么做 | 先明确当前任务的问题，再从[功法体系目录](.github/context/gongfa/README.md)选择文集或条目；具体用法以条目说明和来源为准。 |
 | 5 | 扩展 | 需要继续阅读时进入相应原始文集；文集归并本身不创建新的功法身份或登记条目。 |
-| 6 | 关联信息 | [工具解释模板 v0](.github/context/assets/templates/tool-explanation-template-v0.md)规定说明结构；具体类型和边界见[功法体系目录](.github/context/gongfa/README.md)。 |
+| 6 | 关联信息 | [活动工具解释模板 v1](.github/context/tool-explanation-template-v1.md)规定说明结构；具体类型和边界见[功法体系目录](.github/context/gongfa/README.md)。 |
 | 7 | 出处 | [功法原始资料](.github/context/gongfa/data.json)记录逐条身份、内容版本、冻结来源与已有意见；[生成总表](.github/context/gongfa/README.md#全部记录)用于浏览。 |
 | 8 | 相关图书 | 本区块未列集合级书目；具体书目须按对应条目的来源核实，未核实前不补列。 |
 | 9 | 它要解决什么问题？ | 帮助读者从统一入口按任务找到可参考的思想和方法；集合本身不是单一问题求解器，具体问题由各条目说明。 |
@@ -104,7 +103,7 @@
 | 3 | 为什么 | 帮助读者理解各对象在 Vibe Coding 工作流中的位置；重要性分级不代表实现质量、运行状态或任务效果。 |
 | 4 | 怎么做 | 先明确任务，再核实具体对象的来源、版本、可用性和权限；选用流程见[法器体系说明](.github/context/faqi/README.md#doc-faqi-system)。 |
 | 5 | 扩展 | 新增或延伸说明须先明确对象身份和来源；抽象依赖类别不自动代表具体产品、部署或已启用能力。 |
-| 6 | 关联信息 | [工具解释模板 v0](.github/context/assets/templates/tool-explanation-template-v0.md)、[法器体系说明](.github/context/faqi/README.md#doc-faqi-system)（分类、重要性、选用方式与固定 MCP 源码副作用边界）及[法器类型与正式效能规约](.github/context/gongfa/README.md#doc-cultivation-ontology-taxonomy-法器品级规约)。 |
+| 6 | 关联信息 | [活动工具解释模板 v1](.github/context/tool-explanation-template-v1.md)、[法器体系说明](.github/context/faqi/README.md#doc-faqi-system)（分类、重要性、选用方式与固定 MCP 源码副作用边界）及[法器类型与正式效能规约](.github/context/gongfa/README.md#doc-cultivation-ontology-taxonomy-法器品级规约)。 |
 | 7 | 出处 | [法器登记源](.github/context/faqi/data.json)是唯一可编辑数据源；[法器重要性总表](.github/context/faqi/README.md#法器总表)是生成视图。固定来源和选区按登记记录核对，不据此推断当前运行。 |
 | 8 | 相关图书 | 本区块未列集合级书目；具体书目须按对应对象的来源核实，未核实前不补列。 |
 | 9 | 它要解决什么问题？ | 帮助读者识别 Vibe Coding 工作流中的工具角色、可调用入口和依赖类别；它不是某个工具，也不保证对象当前可用。 |

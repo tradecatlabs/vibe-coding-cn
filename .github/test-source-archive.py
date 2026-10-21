@@ -124,6 +124,16 @@ class SourceArchiveTest(unittest.TestCase):
         }
         for index, link in enumerate(retired_links):
             text += f'\n[历史{index}]({link})\n'
+        retired_cloud_links = {
+            '../../skills/auto-tmux/SKILL.md': ('blob', '.github/skills/auto-tmux/SKILL.md'),
+            '../../context/assets/': ('tree', '.github/context/assets'),
+            '../../context/assets/templates/tool-explanation-template-v1.md': (
+                'blob', '.github/context/assets/templates/tool-explanation-template-v1.md'),
+            '../../context/external-resources/README.md': (
+                'blob', '.github/context/external-resources/README.md'),
+        }
+        for index, link in enumerate(retired_cloud_links):
+            text += f'\n[云端退役{index}]({link})\n'
         self.data['documents'] = {
             '.github/docs/gongfa/example.md': document(text.encode()),
             '.github/docs/gongfa/other.md': document('# 另一篇\n\n## 目标\n'.encode())}
@@ -152,6 +162,10 @@ class SourceArchiveTest(unittest.TestCase):
             expected = (f'https://github.com/tradecatlabs/vibe-coding-cn/blob/{revision}'
                         '/.github/extensions/' + target)
             self.assertIn(f'[历史{index}]({expected})', rendered)
+        for index, (route, path) in enumerate(retired_cloud_links.values()):
+            expected = (f'https://github.com/tradecatlabs/vibe-coding-cn/{route}/'
+                        f'71bf460cfa894ad45163a9591d2043422974a681/{path}')
+            self.assertIn(f'[云端退役{index}]({expected})', rendered)
         self.assertIn('### 代码不是目录', rendered)
         self.assertNotIn('id="doc-example-代码不是目录"', rendered)
         self.assertEqual(rendered.count('id="doc-example-目标"'), 1)

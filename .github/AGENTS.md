@@ -20,7 +20,7 @@
 |---|---|
 | Markdown校验 | `check-local-links.py`、`check-markdown-details.py`、`check-doc-structure.py` |
 | 目录与导航 | `check-directory-docs.py`、`check-metadata.py`、`check-ai-citation.py` |
-| 数据与来源 | `check-gongfa.py`、`check-external-resources.py`；本机研究副本另用`check-research-raw.py`、`check-source-facts.py` |
+| 数据与来源 | `check-gongfa.py`；本机研究副本另用`check-research-raw.py`、`check-source-facts.py` |
 | Wiki | `check-wiki.py`；仍只校验明确给定的本地checkout |
 | 测试 | `test-gongfa.py`、`test-gongfa-catalog.py`、`test-faqi-catalog.py`、`test-markdown-details.py`、`test-source-archive.py`、`test-research-distribution.py` |
 | 共享实现 | `source_boundaries.py`、`taxonomy.py`、`source_archive.py`、`book_views.py`、`tool_explanations.py`直接平铺；供同级入口与原资料生成器共用，不保留lib包 |

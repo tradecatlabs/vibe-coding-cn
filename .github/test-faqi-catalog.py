@@ -19,7 +19,7 @@ import source_archive
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACTS = None
-TEMPLATE = ROOT / ".github/context/assets/templates/tool-explanation-template-v1.md"
+TEMPLATE = ROOT / ".github/context/tool-explanation-template-v1.md"
 
 
 def v1_field_names():
@@ -64,6 +64,28 @@ class FaqiCatalogTest(unittest.TestCase):
         path = ARTIFACTS / (label + "-input.json")
         path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
         return path
+
+    def test_retired_cloud_paths_keep_only_fixed_archival_bindings(self):
+        archive = json.loads((ROOT / ".github/context/faqi/data.json").read_text(encoding="utf-8"))
+        self.assertNotIn(".github/skills/auto-tmux", archive["locations"])
+        self.assertFalse(any(path.startswith(".github/skills/auto-tmux/")
+                             for path in archive["live_sources"]))
+        self.assertFalse(any(item["path"].startswith(".github/skills/auto-tmux/")
+                             for item in archive["projections"]))
+        self.assertNotIn(".github/context/external-resources", archive["locations"].values())
+        metadata = json.loads(source_archive.read_text(ROOT / ".github/metadata/faqi.json"))
+        for source in metadata["external_sources"]:
+            document = archive["documents"][source["path"]]
+            self.assertEqual(source["sha256"], document["sha256"], source["path"])
+            self.assertNotIn(source["path"], archive["locations"])
+        explanations = {item["object_key"]: item["fields"]
+                        for item in archive["explanations_v1"]["items"]}
+        auto_tmux = next(field["content"] for field in explanations["faqi:faqi-auto-tmux"]
+                         if field["name"] == "关联信息")
+        self.assertIn("已从GitHub当前树移除", auto_tmux)
+        self.assertTrue(TEMPLATE.is_file())
+        self.assertEqual(archive["explanations_v1"]["template_sha256"],
+                         hashlib.sha256(TEMPLATE.read_bytes()).hexdigest())
 
     def test_current_source_review_is_consumable(self):
         result = self.invoke("current", "--check")
@@ -513,7 +535,7 @@ class FaqiCatalogTest(unittest.TestCase):
             **{item["id"]: item["node"] for item in data["dependency_graph"]["dependency_categories"]},
         }
         (root / ".github/context/faqi").mkdir(parents=True, exist_ok=True)
-        template_copy = root / ".github/context/assets/templates/tool-explanation-template-v1.md"
+        template_copy = root / ".github/context/tool-explanation-template-v1.md"
         template_copy.parent.mkdir(parents=True, exist_ok=True)
         template_copy.write_bytes(TEMPLATE.read_bytes())
         archive_data = {

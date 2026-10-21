@@ -79,7 +79,6 @@ def relocated(path, fragment=''):
         '.github/lib': '.github',
         '.github/scripts': '.github/extensions',
         '.github/skills/auto-skill/scripts': '.github/extensions',
-        '.github/skills/auto-tmux/scripts': '.github/extensions/auto-tmux',
         '.github/tools/config': '.github/extensions/codex-config',
         '.github/tools/prompts-library': '.github/extensions/prompts-library',
         '.github/tools/chat-vault': '.github/extensions/chat-vault',
@@ -104,6 +103,9 @@ def relocated(path, fragment=''):
         '.github/extensions/xhs graphic production - 1.0.html': ('44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58', 'blob'),
         '.github/extensions/xhs graphic production.html': ('44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58', 'blob'),
         '.github/extensions/html-tools-main.md': ('44e6fe37a6a871e9327d9f15b23cfef0b7dcbb58', 'blob'),
+        '.github/context/assets': ('71bf460cfa894ad45163a9591d2043422974a681', 'tree'),
+        '.github/context/external-resources': ('71bf460cfa894ad45163a9591d2043422974a681', 'tree'),
+        '.github/skills/auto-tmux': ('71bf460cfa894ad45163a9591d2043422974a681', 'tree'),
     }
     for prefix, (revision, root_route) in sorted(retired.items(), key=lambda item: len(item[0]), reverse=True):
         if path == prefix or path.startswith(prefix + '/'):

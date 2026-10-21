@@ -21,8 +21,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / '.github/extensions/sync-gongfa-catalog.py'
 ARTIFACTS = None
 catalog = None
-TEMPLATE = Path(__file__).resolve().parents[1] / '.github/context/assets/templates/tool-explanation-template-v0.md'
-V1_TEMPLATE = Path(__file__).resolve().parents[1] / '.github/context/assets/templates/tool-explanation-template-v1.md'
+TEMPLATE = Path(__file__).resolve().parents[1] / '.github/context/tool-explanation-template-v0.md'
+V1_TEMPLATE = Path(__file__).resolve().parents[1] / '.github/context/tool-explanation-template-v1.md'
 STALE_EXPLANATION_LABELS = (
     '冻结候选', '候选快照', '尚未独立语义复核', '未独立语义复核',
     '尚未独立语义核验', '不代表独立语义批准',
@@ -80,9 +80,8 @@ class CatalogMaintenanceTest(unittest.TestCase):
         target = root / '.github/context/gongfa'
         target.mkdir(parents=True)
         shutil.copyfile(ROOT / '.github/context/gongfa/data.json', target / 'data.json')
-        template_dir = root / '.github/context/assets/templates'
-        template_dir.mkdir(parents=True)
-        shutil.copyfile(V1_TEMPLATE, template_dir / V1_TEMPLATE.name)
+        context_dir = root / '.github/context'
+        shutil.copyfile(V1_TEMPLATE, context_dir / V1_TEMPLATE.name)
         return root
 
     def command(self, root, *options):

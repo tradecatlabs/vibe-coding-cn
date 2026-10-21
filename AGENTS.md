@@ -6,14 +6,14 @@
 - 只组织现有资产；三域为`.github/context/`、`.github/skills/`、`.github/extensions/`，域内对象平铺。包内部源码、资料集合与共享实现不另算新的一级资源分类。
 - 根`README.md`是唯一主页；`.github/README.md`禁止创建。`llms.txt`是AI短入口；大资料按需读取，不全部注入系统上下文。
 - 读者按问题、设计、实现、代价及比较/共性/适用条件理解工具；Lambda记号只辅助表达输入输出与组合，不证明纯函数、正确、确定或终止。
-- 功法与法器441个对象的活动说明使用`.github/context/assets/templates/tool-explanation-template-v1.md`：保留v0的15项并新增“结论、连接规则、依据”，共18项；v0仅作历史模板。第16项为主张、第18项为事实依据、第17项须按图尔敏模型写明从证据到主张的具体推理规则；不得用字段交叉引用冒充连接规则。不得用AI自拟版本替代已登记模板，不借模板迁移改写原15项、来源或评级。主页集合级说明也按活动v1模板18项名序组织；作为集合摘要，第16–18项仅陈述集合层级可核的结论、推理与依据，不合并或替代对象级说明。
+- 功法与法器441个对象的活动说明使用`.github/context/tool-explanation-template-v1.md`：保留v0的15项并新增“结论、连接规则、依据”，共18项；v0仅作历史模板，两个版本的原始模板均在Context根目录。第16项为主张、第18项为事实依据、第17项须按图尔敏模型写明从证据到主张的具体推理规则；不得用字段交叉引用冒充连接规则。不得用AI自拟版本替代已登记模板，不借模板迁移改写原15项、来源或评级。主页集合级说明也按活动v1模板18项名序组织；作为集合摘要，第16–18项仅陈述集合层级可核的结论、推理与依据，不合并或替代对象级说明。
 
 ## 目录职责
 
 | 路径 | 唯一职责 |
 |---|---|
 | `.github/context/` | 公开规则、知识、文档、数据和参考资料；研究档案仅保留在已有本机副本；详见本域AGENTS |
-| `.github/skills/` | 仅保留auto-skill、auto-tmux两个自有指令入口，使用原生工具；原专属封装已退役 |
+| `.github/skills/` | 仅保留auto-skill一个自有指令入口，使用原生工具；专属封装已退役 |
 | `.github/extensions/` | 现存程序、资料维护入口与固定源码；对象清单以本域README为准，不是全部可由Pi的`-e`加载 |
 | `.github/ISSUE_TEMPLATE/`及固定配置 | 现有GitHub协作入口；本次仅退役workflows，不扩改其他平台配置 |
 | `.github/CONTRIBUTORS.md` | 根README迁出的贡献者名单与鸣谢；只维护独立文档 |
@@ -22,8 +22,8 @@
 | `.github/context/metadata/` | 导航、术语及历史路径映射；不重复登记或定义另一套本体 |
 | `.github/context/ai-citation/` | 当前AI引用语料与llms-full |
 
-Context公开维护8个集合：`gongfa`、`faqi`、`getting-started`、`prompts`、`external-resources`、`ai-citation`、`metadata`、`assets`。研究档案只在已有本机副本保留，不进入GitHub当前文件树。
-当前2个自有Skill和现有Extensions清单分别在其README，不另建工具注册层；16个官方引用入口已按用户要求移除。
+Context公开维护6个集合：`gongfa`、`faqi`、`getting-started`、`prompts`、`ai-citation`、`metadata`。活动工具说明模板位于Context根目录；外部资源集合与通用附件集合已从当前树移除，FaQi使用的固定外部来源快照保存在`faqi/data.json`。研究档案只在已有本机副本保留，不进入GitHub当前文件树。
+当前1个自有Skill和现有Extensions清单分别在其README，不另建工具注册层；16个官方引用入口已按用户要求移除。
 用户点名的chat-vault、my-nvim、codex-config、MCPlayerTransfer、XHS-image-to-PDF-conversion、两个xhs图文HTML、html-tools-main说明及三份独立HTML工具均已从当前树移除；活动入口与位置绑定清理，原始快照/初审/排除保留，历史链接不是安装授权。
 Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-advanced`），总表及首页学习入口列在拼好码之前；冻结原文与既有评级不变，不新增解释器或执行器。
 
@@ -40,7 +40,7 @@ Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-ad
 ## Skills与Pi
 
 - 集合根不放`SKILL.md`；README/AGENTS不声明Skill frontmatter，避免误注册或停止子目录发现。
-- Skills只发现auto-skill、auto-tmux两个自有入口；官方16个入口已删除，原33个自有封装脚本也已退役。两个入口只指导原生工具与规范，不继续承诺已删除的蜂群、报告或自动安全检查功能。
+- Skills只发现auto-skill一个自有入口；auto-tmux及官方16个入口已从当前树移除，原33个自有封装脚本也已退役。当前Skill只指导原生工具与规范，不继续承诺已删除的蜂群、报告或自动安全检查功能。
 - Extensions的单一锁定官方源码和`init_skill.py`独立引用保留，不计为当前集合Skill；历史材料、原审意见与当前可用性分别表达。
 - Pi从仓库根显式加载`pi --skill .github/skills`；不自动加载本机研究副本里的嵌套Skill，不把整个Extensions作为原生扩展加载。
 - 加载不等于执行、安装、兼容或效果证明；上下文文本和模型输出不构成授权。Windows原生符号链接与发现须单独验证。
@@ -66,7 +66,7 @@ Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-ad
 | 结构与索引 | `make check-doc-structure`、`make check-directory-docs`、`make check-metadata` |
 | 功法协议与视图 | `make check-gongfa`、`make test-gongfa`、`make sync-gongfa-catalog`、`make check-gongfa-catalog`、`make test-gongfa-catalog` |
 | 法器与资料档案 | `make sync-faqi-catalog`、`make check-faqi-catalog`、`make test-faqi-catalog`、`make test-source-archive` |
-| 引用与来源 | `make check-ai-citation`、`make check-external-resources` |
+| 引用与来源 | `make check-ai-citation`；FaQi固定外部来源随`faqi/data.json`校验 |
 | 本机研究副本 | `make test-local-research`；仅在已有本机档案时运行，不属于默认测试 |
 | 显式维护 | `make sync-doc-toc`、`make check-wiki WIKI_DIR=<本地checkout>`、`make fetch-research-raw`（仅本机档案） |
 | 最终本地质量 | `make test`；不包含本机研究档案检查、联网刷新、第三方执行或效果评级 |
@@ -104,4 +104,5 @@ Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-ad
 ## 变更记录
 
 三域重构将原资料、指令与程序重新归位；合并原入口的重复治理，保留原始资料与来源；不新增业务Skill、模型调用或已验证效果声明。
+用户要求只从GitHub当前树移除`auto-tmux` Skill、通用附件集合和外部资源集合；v0/v1模板迁至Context根目录，FaQi固定来源快照仍由其`data.json`保存。
 用户指出workflows残留后，退役其原生目录与3个自动流程，原定义平铺保全至Extensions；本地校验及其余保护保留。

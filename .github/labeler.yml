@@ -11,8 +11,6 @@ documentation:
       - 'CODE_OF_CONDUCT.md'
       - 'LICENSE'
       - '.github/**/*.md'
-      - '.github/context/assets/README.md'
-      - '.github/context/assets/AGENTS.md'
       - '.github/context/**/*.md'
       - '.github/context/prompts/**/*.md'
       - '.github/skills/**/*.md'

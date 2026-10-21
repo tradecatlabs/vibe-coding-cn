@@ -11,19 +11,20 @@ from source_boundaries import SOURCE_PREFIXES, VENDOR_SUBTREES, is_research_repo
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_DIRS = list(map(Path, (
     '.github', '.github/ISSUE_TEMPLATE',
-    '.github/context', '.github/context/assets', '.github/context/ai-citation',
-    '.github/context/assets/datasets', '.github/context/assets/images', '.github/context/assets/templates',
+    '.github/context', '.github/context/ai-citation',
     '.github/context/getting-started', '.github/context/gongfa', '.github/context/faqi',
     '.github/context/metadata', '.github/context/prompts',
     '.github/extensions',
     '.github/skills', '.github/skills/auto-skill', '.github/skills/auto-skill/assets',
-    '.github/skills/auto-skill/references', '.github/skills/auto-tmux',
+    '.github/skills/auto-skill/references',
 )))
 COLLECTION_DIRS = {Path('.github/context/gongfa'), Path('.github/context/faqi')}
 COLLECTION_FILES = {'data.json', 'README.md', 'tian.md', 'di.md', 'xuan.md', 'huang.md'}
 RETIRED_DIRS = (
     Path('.github/workflows'), Path('.github/lib'),
     Path('.github/extensions/prompts-library'),
+    Path('.github/context/assets'), Path('.github/context/external-resources'),
+    Path('.github/skills/auto-tmux'),
 )
 LEGACY_PROMPT_TOOL = Path('.github/extensions/prompts-library')
 LEGACY_PROMPT_EXPORTS = LEGACY_PROMPT_TOOL / 'prompt_jsonl'

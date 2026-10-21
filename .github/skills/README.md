@@ -2,7 +2,7 @@
 
 ## 字多不看
 
-当前只保留2个自有Skill：`auto-skill`和`auto-tmux`。16个官方引用入口已按用户要求移除，没有新增业务Skill。
+当前只保留1个自有Skill：`auto-skill`。`auto-tmux`及16个官方引用入口已从当前树移除，没有新增业务Skill。
 指令属于Skills，程序实现属于[Extensions](../extensions/README.md)，规则和知识参考属于[Context](../context/README.md)。
 
 <a id="当前保留"></a>
@@ -12,7 +12,6 @@
 | 来源 | 既有Skill | 职责 |
 |---|---|---|
 | 自有 | [auto-skill](auto-skill/SKILL.md) | 将资料整理为可复用Skill，维护结构与质量 |
-| 自有 | [auto-tmux](auto-tmux/SKILL.md) | 原生tmux定位、读取及明确授权后的输入 |
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
@@ -40,10 +39,9 @@ pi --skill .github/skills
 ### 来源与单一实现
 
 本集合不再提供官方Skill引用入口。原锁定上游源码和独立初始化脚本保留在Extensions，不属于当前Skills发现集合。
-此前官方入口清理只删除16个软引用，没有删除、复制或改写上游源码；本次自有封装的退役范围见下文。
+此前官方入口清理只删除16个软引用，没有删除、复制或改写上游源码；auto-tmux及原33个自有封装脚本已从当前树退役。
 
-自有Skill保留assets与参考资料，当前入口只采用原生工具和规范指令；原33个专属生成、校验、适配及终端封装脚本已退役。
-历史封装参考不再是执行手册；没有把实现复制回Skills，也没有新增包装程序、资源加载器或管理框架。
+当前auto-skill只提供原生工具和规范指令。历史封装参考不再是执行手册，不把实现复制回Skills，也不新增包装程序、资源加载器或管理框架。
 
 ### 发现与信任边界
 
