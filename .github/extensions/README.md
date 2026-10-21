@@ -10,16 +10,13 @@
 | 既有对象 | 入口与用途 |
 |---|---|
 | [Skill Seekers](Skill_Seekers-development/README.md) | 固定上游源码；原本地适配脚本已退役，按上游说明与具体授权选择使用 |
-| [Claude官方Skills源](claude-official-skills/README.md) | 保留单一固定源码及独立初始化脚本；Skills域的16个官方入口已移除 |
+| [Claude官方Skills源](claude-official-skills/README.md) | 固定上游源码，不属于当前Skills发现集合 |
+| [Skill初始化入口](init_skill.py) | 引用上游初始化脚本；不是Pi Skill入口或自动安装器 |
 | [tmux](tmux/README)、[oh-my-tmux](oh-my-tmux/README.md) | 原固定源码与配置仓库；不是自动安装或启用 |
 | [提示词转换](prompts-library/README.md) | 原Excel、Markdown、JSONL转换程序 |
 | [EPUB CSS清理](clean_epub_css.html) | 保留的HTML工具文件 |
 | [Markdown编辑](markdown-bianjiqi.html) | 保留的HTML工具文件 |
 | [任务卡生成](task%20card%20generator.html) | 保留的HTML工具文件 |
-
-来自两个自有Skill的33个封装脚本已退役，不保留兼容壳；两个Skill改用原生工具与指令检查。
-引用原上游的`init_skill.py`独立入口继续保留。用户点名的chat-vault、my-nvim、codex-config、MCPlayerTransfer、XHS-image-to-PDF-conversion、两个xhs图文HTML及html-tools-main说明共8项已移除。
-当前引用与安装入口已清理；原文件在本地私有工件保全，固定来源初审仍保留历史意见。4个Gitlink、提示词转换器、3个HTML工具、4个资料维护入口及`init_skill.py`入口仍保留；已停用的Actions定义不再随当前文件树分发，原版本留在Git历史中。
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>
