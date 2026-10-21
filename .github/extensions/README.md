@@ -2,7 +2,7 @@
 
 ## 字多不看
 
-这里保存现存程序、资料维护脚本与固定上游；当前13个一级对象在本域平铺，程序内部源码结构不拆散。
+这里保存现存程序、资料维护脚本与固定上游；当前10个一级对象在本域平铺，程序内部源码结构不拆散。
 这里的Extensions不是Pi原生扩展的同义词；不能把整个目录交给Pi的`-e`加载。
 
 ## 快速导航
@@ -14,9 +14,6 @@
 | [Skill初始化入口](init_skill.py) | 引用上游初始化脚本；不是Pi Skill入口或自动安装器 |
 | [tmux](tmux/README)、[oh-my-tmux](oh-my-tmux/README.md) | 原固定源码与配置仓库；不是自动安装或启用 |
 | [提示词转换](prompts-library/README.md) | 原Excel、Markdown、JSONL转换程序 |
-| [EPUB CSS清理](clean_epub_css.html) | 保留的HTML工具文件 |
-| [Markdown编辑](markdown-bianjiqi.html) | 保留的HTML工具文件 |
-| [任务卡生成](task%20card%20generator.html) | 保留的HTML工具文件 |
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>

@@ -436,10 +436,7 @@
     ".github/tools/prompts-library/README.md": ".github/extensions/prompts-library/README.md",
     ".github/tools/prompts-library/main.py": ".github/extensions/prompts-library/main.py",
     ".github/skills/auto-skill/README.md": ".github/skills/auto-skill/README.md",
-    ".github/skills/auto-tmux/README.md": ".github/skills/auto-tmux/README.md",
-    ".github/tools/external/html-tools-main/clean_epub_css.html": ".github/extensions/clean_epub_css.html",
-    ".github/tools/external/html-tools-main/markdown-bianjiqi.html": ".github/extensions/markdown-bianjiqi.html",
-    ".github/tools/external/html-tools-main/task card generator.html": ".github/extensions/task card generator.html"
+    ".github/skills/auto-tmux/README.md": ".github/skills/auto-tmux/README.md"
   },
   "live_sources": {
     ".github/skills/auto-skill/README.md": {
@@ -525,18 +522,6 @@
     ".github/tools/external/claude-official-skills/skills/skill-creator/scripts/init_skill.py": {
       "path": ".github/extensions/claude-official-skills/skills/skill-creator/scripts/init_skill.py",
       "sha256": "cf12790f1d4958799281920d599f56aea38fb5c26e2812a61dd740bf3d4b6b99"
-    },
-    ".github/tools/external/html-tools-main/clean_epub_css.html": {
-      "path": ".github/extensions/clean_epub_css.html",
-      "sha256": "1716a7ea5f4bf4837bc044c9c164e58b3dbb04d492f677b7766b506edd1c0d2a"
-    },
-    ".github/tools/external/html-tools-main/markdown-bianjiqi.html": {
-      "path": ".github/extensions/markdown-bianjiqi.html",
-      "sha256": "e4c76015749bf42e898412ec7b8e1229c847575ef740bcf6900311d7212dc61e"
-    },
-    ".github/tools/external/html-tools-main/task card generator.html": {
-      "path": ".github/extensions/task card generator.html",
-      "sha256": "0eba89d2f674bb0bc26690c4e406f99b7a2bcd40ecd838c1c19e1f970f7b5670"
     },
     ".github/tools/external/tmux/COPYING": {
       "path": ".github/extensions/tmux/COPYING",

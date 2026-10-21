@@ -24,7 +24,7 @@
 
 Context公开维护8个集合：`gongfa`、`faqi`、`getting-started`、`prompts`、`external-resources`、`ai-citation`、`metadata`、`assets`。研究档案只在已有本机副本保留，不进入GitHub当前文件树。
 当前2个自有Skill和现有Extensions清单分别在其README，不另建工具注册层；16个官方引用入口已按用户要求移除。
-用户点名的chat-vault、my-nvim、codex-config、MCPlayerTransfer、XHS-image-to-PDF-conversion、两个xhs图文HTML及html-tools-main说明已移除；当前入口和绑定清理，旧来源/初审/排除保留，历史链接不是安装授权。
+用户点名的chat-vault、my-nvim、codex-config、MCPlayerTransfer、XHS-image-to-PDF-conversion、两个xhs图文HTML、html-tools-main说明及三份独立HTML工具均已从当前树移除；活动入口与位置绑定清理，原始快照/初审/排除保留，历史链接不是安装授权。
 Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-advanced`），总表及首页学习入口列在拼好码之前；冻结原文与既有评级不变，不新增解释器或执行器。
 
 ## 原始数据与来源
