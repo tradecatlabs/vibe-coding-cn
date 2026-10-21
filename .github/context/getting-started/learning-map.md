@@ -40,9 +40,10 @@ Pi 官方 Quickstart 支持 macOS、Linux，并为 Windows 提供独立说明；
 
 | 项目 | 要求或选择 | 说明 |
 |:---|:---|:---|
-| macOS / Linux 安装 | 可运行 `curl` 和 POSIX shell | 使用 Pi 官方 shell 安装器。 |
-| Windows 安装 | PowerShell | 使用 Pi 官方 PowerShell 安装器。原生 Windows 与 WSL 是两种独立环境。 |
-| Node.js 与 npm | 官方安装器及 npm 路线要求 Node.js 22.19.0 或更高版本和 npm | 官方安装器可能提供 Node 安装选项；不要猜测或安装低于要求的版本。 |
+| macOS | Terminal、`curl` 与 POSIX shell | 使用 Pi 官方 shell 安装器。 |
+| Linux | 终端、`curl` 与 POSIX shell | 使用 Pi 官方 shell 安装器。 |
+| Windows 原生 | PowerShell | 使用 Pi 官方 PowerShell 安装器；Windows 原生与 WSL 是两种独立环境。 |
+| Node.js 与 npm | 官方主安装器及 npm 路线要求 Node.js 22.19.0 或更高版本和 npm | 缺少时，交互式安装器可提供安装路线；各系统区别见第 3 步。 |
 | Windows 原生 Bash | 仅在需要 Pi 内置 Bash 工具或 `!` 命令时需要 Git Bash | 不是 `pi --version` 的前置条件；安装选项见第 3 步。 |
 | Nix | 已经使用 Nix 的 macOS/Linux 用户可选 | 不需要为 Pi 专门安装 Nix。 |
 | WSL、Git、Python、编辑器 | 按工作环境或具体项目选择 | 均不是安装 Pi CLI 的普遍前置条件。 |
@@ -82,15 +83,25 @@ Pi 官方资料没有覆盖所有平台、安装选项和模型提供方的通�
 
 先确认命令来自 [Pi 官方 Quickstart](https://pi.dev/docs/latest/quickstart)、[Windows 说明](https://pi.dev/docs/latest/windows)或[官方仓库 README](https://github.com/earendil-works/pi)。下面的 `curl | sh` 和 `irm | iex` 会把下载的脚本交给 shell 执行；核对域名和安装器提示。使用普通用户的交互式终端，不要用 `sudo` 或“以管理员身份运行”包装安装命令。
 
-### macOS / Linux
+### macOS
 
-在普通用户 shell 中运行：
+在普通用户的 Terminal 中运行：
 
 ```bash
 curl -fsSL https://pi.dev/install.sh | sh
 ```
 
-官方安装器会安装并管理 Pi 的依赖，后续可用 `pi update` 更新。若缺少 Node.js/npm，安装器会说明安装路线并询问是否继续。自动方案视系统而定：可能把 Node 放在用户目录、提示将 Pi/Node 目录加入 shell 配置，也可能通过 Homebrew、apt 或 apk 等系统包管理器安装/更新依赖，后者可能请求 sudo。读清提示；不接受系统级修改时取消安装器，再从 [Node.js 官方下载页](https://nodejs.org/en/download)安装满足要求的 Node.js 和 npm。若安装器询问是否立即启动 Pi，可先选暂不启动，完成版本验证后再手动打开。不要改用 `sudo curl ... | sh`。
+安装器要求 Node.js 22.19.0 或更高版本和 npm；缺少时会询问是否安装。macOS 上若已有 Homebrew，安装器可能用它安装或更新 Node；否则会提供用户目录中的独立 Node 安装路线。不要为了 Pi 专门安装 Homebrew。读清安装器将执行的动作；不接受时取消，再从 [Node.js 官方下载页](https://nodejs.org/en/download)安装合格的 Node.js 和 npm 后重试。安装器若询问是否立即启动 Pi，可先选择暂不启动。官方安装器管理的 Pi 后续用 `pi update` 更新。
+
+### Linux
+
+在普通用户的 Linux 终端中运行：
+
+```bash
+curl -fsSL https://pi.dev/install.sh | sh
+```
+
+安装器要求 Node.js 22.19.0 或更高版本和 npm；缺少时会说明并询问是否安装。安装路线可能使用满足版本要求的 apt/apk 包，或用户目录中的独立 Node；系统包安装可能调用 `sudo`，读清提示后再决定。若不接受系统级动作，取消安装器，从 [Node.js 官方下载页](https://nodejs.org/en/download)安装合格的 Node.js 和 npm，再重试。不要用 `sudo curl ... | sh` 包装 Pi 安装命令。官方安装器管理的 Pi 后续用 `pi update` 更新。
 
 ### Windows 原生 PowerShell
 
@@ -100,15 +111,15 @@ curl -fsSL https://pi.dev/install.sh | sh
 powershell -c "irm https://pi.dev/install.ps1 | iex"
 ```
 
-PowerShell 安装器同样要求 Node.js 22.19.0 或更高版本和 npm；缺少依赖时可能提出安装 Node 的选项，并把用户级安装位置加入 PATH。若安装器显示更新、重装、卸载或迁移已有安装，先确认现有版本和目标路径；不要盲目接受默认选项。若询问是否立即启动 Pi，可先选暂不启动，完成 `pi --version` 验证后再手动打开。
+安装器要求 Node.js 22.19.0 或更高版本和 npm；若缺少，会询问是否安装独立 Node.js，并把它放在用户目录、加入当前用户 PATH。默认托管安装后可用 `pi update` 更新。若安装器显示更新、重装、卸载或迁移已有 Pi，先核对当前版本和目标路径，不要盲目接受。
 
-若安装器询问 Git Bash：它只影响 Pi 在 Windows 原生环境中运行 Bash 工具，不影响 CLI 安装。可选择安装在 Pi 用户目录中的 Portable Git；该选项会写入 Git Bash，并调整 `~/.pi/agent/settings.json` 中的 `shellPath`。也可稍后按[官方 Windows 说明](https://pi.dev/docs/latest/windows)安装 Git for Windows；只有明确希望全局安装时才选 winget 等全局方案。拒绝 Git Bash 不会阻止 CLI 安装，但 Pi 的 Bash 工具之后可能不可用。WSL 不是必选替代方案。
+Pi 在 Windows 原生环境中默认用 Git Bash 执行内置 Bash 工具和 `!` 命令；这不是安装 CLI 的前提。若找不到 Bash，安装器可提供 Portable Git（安装在 Pi 用户目录并修改 `~/.pi/agent/settings.json` 的 `shellPath`）、通过 winget 全局安装 Git for Windows（仅当 winget 可用），或跳过。也可自行安装[官方 Git for Windows](https://git-scm.com/download/win)。跳过不妨碍 CLI 安装，但 Bash 工具不可用。若询问是否立即启动 Pi，可先暂不启动，之后按第 4 步验证。
 
 ### WSL（可选）
 
-如果你本来就在 WSL 中开发，在目标发行版的 Linux shell 内按 macOS/Linux 路线安装，并在该发行版内运行 Pi。Windows 原生与 WSL 的安装目录、PATH 和工具环境相互独立；不要在两个终端之间混用安装结果。
+如果你已经在 WSL 中开发，在目标发行版的 Linux 终端按上面的 Linux 路线安装。Windows 原生与 WSL 的安装目录和 PATH 相互独立；不要仅为安装 Pi 而配置 WSL，也不要在两个终端之间混用安装结果。
 
-### 其他官方路线
+### 其他官方安装路线（可选）
 
 - 已经使用 Nix 的 macOS/Linux 用户可按 [Pi Quickstart 的 Nix 说明](https://pi.dev/docs/latest/quickstart)安装。Nix 会按 Nix 路线更新，`pi update` 不负责更新 Nix 安装。
 - 已有合格 Node.js 和 npm 的用户可使用官方 npm 备选命令：
@@ -117,7 +128,7 @@ PowerShell 安装器同样要求 Node.js 22.19.0 或更高版本和 npm；缺少
 npm install -g --ignore-scripts @earendil-works/pi-coding-agent
 ```
 
-官方说明指出 npm 安装不会锁定传递依赖，新手通常优先使用平台安装器。全局 npm 权限报错时不要用 `sudo npm` 硬修；先停止，改选官方安装器或用户级 Node 环境。
+官方 Quickstart 指出 npm 安装不会锁定传递依赖，新手通常优先使用平台安装器。全局 npm 权限报错时不要用 `sudo npm` 硬修；先停止，改选平台安装器或用户级 Node 环境。
 
 <a id="verify-and-connect-a-model"></a>
 
