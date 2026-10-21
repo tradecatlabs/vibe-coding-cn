@@ -53,8 +53,8 @@ logs/
 # Local task workspaces
 .github/context/assets/tasks/
 
-# Research raw repository snapshots are local evidence caches.
-.github/context/research/**/raw/repository
+# 研究档案仅保留在既有本机副本，不纳入公开Git树。
+.github/context/research/
 
 # Skill Seekers (linked tool output)
 output/

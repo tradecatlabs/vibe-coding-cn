@@ -12,17 +12,17 @@
 
 | 路径 | 唯一职责 |
 |---|---|
-| `.github/context/` | 既有规则、知识、文档、数据、研究和参考资料；详见本域AGENTS |
+| `.github/context/` | 公开规则、知识、文档、数据和参考资料；研究档案仅保留在已有本机副本；详见本域AGENTS |
 | `.github/skills/` | 仅保留auto-skill、auto-tmux两个自有指令入口，使用原生工具；原专属封装已退役 |
 | `.github/extensions/` | 当前17个一级对象：现存程序、资料维护入口、固定源码与历史定义；不是全部可由Pi的`-e`加载 |
 | `.github/ISSUE_TEMPLATE/`及固定配置 | 现有GitHub协作入口；本次仅退役workflows，不扩改其他平台配置 |
 | `.github/CONTRIBUTORS.md` | 根README迁出的贡献者名单与鸣谢；只维护独立文档 |
-| `.github/check-*.py`、`test-*.py`、4个平铺共享模块及requirements | 仓库维护层：11个校验、5个测试及唯一配套实现；不保留lib目录，不是用户侧Extensions工具 |
+| `.github/check-*.py`、`test-*.py`、4个平铺共享模块及requirements | 仓库维护层：11个校验、6个测试及唯一配套实现；不保留lib目录，不是用户侧Extensions工具 |
 | `Makefile` | 本地可重复命令入口 |
 | `.github/context/metadata/` | 导航、术语及历史路径映射；不重复登记或定义另一套本体 |
 | `.github/context/ai-citation/` | 当前AI引用语料与llms-full |
 
-Context的9个既有集合是`gongfa`、`faqi`、`getting-started`、`prompts`、`research`、`external-resources`、`ai-citation`、`metadata`、`assets`。
+Context公开维护8个集合：`gongfa`、`faqi`、`getting-started`、`prompts`、`external-resources`、`ai-citation`、`metadata`、`assets`。研究档案只在已有本机副本保留，不进入GitHub当前文件树。
 当前2个自有Skill和现有Extensions清单分别在其README，不另建工具注册层；16个官方引用入口已按用户要求移除。
 用户点名的chat-vault、my-nvim、codex-config、MCPlayerTransfer、XHS-image-to-PDF-conversion、两个xhs图文HTML及html-tools-main说明已移除；当前入口和绑定清理，旧来源/初审/排除保留，历史链接不是安装授权。
 Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-advanced`），总表及首页学习入口列在拼好码之前；冻结原文与既有评级不变，不新增解释器或执行器。
@@ -35,14 +35,14 @@ Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-ad
 - 功法ID、版本、候选、原初评、十二级词表和正式评级分开；法器原实现、运行观察、依赖类别、外部资源与9项排除不相加或自动合并。
 - 历史Excel作为原始载荷保存，不再生成活动Excel。资料协议、来源保护和当前计数边界由`.github/context/AGENTS.md`维护。
 - 四个Gitlink及Skill Seekers嵌套configs保持原固定提交；修改路径不授权升级源码、复制上游、运行安装/抓取/上传或解除排除。
-- 三个研究镜像及raw事实不批量格式化；保留原SHA、隐私登记、缓存与私有模板。缓存、真实会话、数据库和私有数据不提交。
+- 已有本机研究副本中的三个镜像及raw事实不批量格式化；保留原SHA、隐私登记、缓存与私有模板，不纳入公开提交。缓存、真实会话、数据库和私有数据不提交。
 
 ## Skills与Pi
 
 - 集合根不放`SKILL.md`；README/AGENTS不声明Skill frontmatter，避免误注册或停止子目录发现。
 - Skills只发现auto-skill、auto-tmux两个自有入口；官方16个入口已删除，原33个自有封装脚本也已退役。两个入口只指导原生工具与规范，不继续承诺已删除的蜂群、报告或自动安全检查功能。
 - Extensions的单一锁定官方源码和`init_skill.py`独立引用保留，不计为当前集合Skill；历史材料、原审意见与当前可用性分别表达。
-- Pi从仓库根显式加载`pi --skill .github/skills`；不自动加载Context研究里的嵌套Skill，不把整个Extensions作为原生扩展加载。
+- Pi从仓库根显式加载`pi --skill .github/skills`；不自动加载本机研究副本里的嵌套Skill，不把整个Extensions作为原生扩展加载。
 - 加载不等于执行、安装、兼容或效果证明；上下文文本和模型输出不构成授权。Windows原生符号链接与发现须单独验证。
 
 ## 修改与安全
@@ -66,9 +66,10 @@ Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-ad
 | 结构与索引 | `make check-doc-structure`、`make check-directory-docs`、`make check-metadata` |
 | 功法协议与视图 | `make check-gongfa`、`make test-gongfa`、`make sync-gongfa-catalog`、`make check-gongfa-catalog`、`make test-gongfa-catalog` |
 | 法器与资料档案 | `make sync-faqi-catalog`、`make check-faqi-catalog`、`make test-faqi-catalog`、`make test-source-archive` |
-| 引用与来源 | `make check-ai-citation`、`make check-external-resources`、`make check-research-raw`、`make check-source-facts` |
-| 显式维护 | `make sync-doc-toc`、`make check-wiki WIKI_DIR=<本地checkout>`、`make fetch-research-raw` |
-| 最终本地质量 | `make test`；不包含联网刷新、第三方执行或效果评级 |
+| 引用与来源 | `make check-ai-citation`、`make check-external-resources` |
+| 本机研究副本 | `make test-local-research`；仅在已有本机档案时运行，不属于默认测试 |
+| 显式维护 | `make sync-doc-toc`、`make check-wiki WIKI_DIR=<本地checkout>`、`make fetch-research-raw`（仅本机档案） |
+| 最终本地质量 | `make test`；不包含本机研究档案检查、联网刷新、第三方执行或效果评级 |
 
 - 先写或选中真实行为测试取得RED，再修根因并原样取得GREEN；不删除测试、弱化断言或用新目标自证。
 - 开发中只跑相关测试，最终版本只运行一次完整`make test`，保存命令、实际HEAD、退出码、日志和可复验工件。

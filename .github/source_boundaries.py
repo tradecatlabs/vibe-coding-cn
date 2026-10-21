@@ -1,4 +1,4 @@
-"""自有检查器共享的资源边界；迁移不扩大原有第三方/来源镜像检查范围。"""
+"""自有检查器共享的排除边界；本机研究档案不参与公开仓库默认文档检查。"""
 from pathlib import Path
 
 VENDOR_SUBTREES = tuple(map(Path, (
@@ -9,10 +9,7 @@ VENDOR_SUBTREES = tuple(map(Path, (
 )))
 SOURCE_PREFIXES = VENDOR_SUBTREES + tuple(map(Path, (
     '.github/wiki',
-    '.github/context/research/vibe-cybersecurity-cn',
-    '.github/context/research/vibe-harness-cn',
-    '.github/context/research/vibe-mathing-cn-public',
-    '.github/context/research/facts',
+    '.github/context/research',
 )))
 
 

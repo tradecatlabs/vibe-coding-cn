@@ -2,8 +2,8 @@
 
 ## 职责与边界
 
-- 仅维护既有规则、文档、知识、数据、研究及参考资料；对象在本域平铺，不把每条记录拆成目录。
-- `getting-started/`保留实例学习；`research/`保留具体对象事实；`prompts/`保留原提示词入口。
+- 公开仓库维护既有规则、文档、知识、数据及参考资料；对象在本域平铺，不把每条记录拆成目录。研究档案仅留在已有本机副本，不进入公开Git树。
+- `getting-started/`保留实例学习；`prompts/`保留原提示词入口；本机`research/`副本保留具体对象事实。
 - `external-resources/`维护原资源事实；`ai-citation/`维护当前项目引用；`metadata/`只做导航和术语，不另建本体或登记。
 - 执行指令归`../skills/`，程序归`../extensions/`；不得把参考材料全部提升为系统指令。
 
@@ -22,12 +22,13 @@
 
 ## 来源保护
 
-- 三个`research/vibe-*`源事实镜像按`research/facts/sources.yml`核对文件数、内容摘要、隐私和非公开边界；不得批量格式化。
-- `research/*/raw/`的原始API、README、来源清单与Git缓存保持原事实；历史puller路径是来源身份，不冒充当前活动命令。
+- 已有本机副本中的三个`research/vibe-*`源事实镜像按`research/facts/sources.yml`核对文件数、内容摘要、隐私和非公开边界；不得批量格式化或纳入公开提交。
+- 已有本机副本中`research/*/raw/`的原始API、README、来源清单与Git缓存保持原事实；历史puller路径是来源身份，不冒充当前活动命令。
 - 固定外部Git仓库及研究缓存不执行、不抓取、不上传；私有模板、真实会话/数据库、凭据和个人资料不得纳入公开提交。
 
 ## 验证与维护
 
 - 运行对应`make sync-gongfa-catalog`或`make sync-faqi-catalog`生成阅读视图；只读检查用`make check-gongfa-catalog`、`make check-faqi-catalog`。
-- 资料变更运行相关协议、来源档案、内链、索引与结构检查；最终完整`make test`绑定实际代码和工件，不冒称生产或效果验证。
+- 公开资料变更运行相关协议、内链、索引与结构检查；已有本机研究副本可显式运行`make test-local-research`，该目标不属于默认`make test`，也不应要求新克隆具备研究档案。
+- 最终完整`make test`绑定实际代码和工件，不冒称生产或效果验证。
 - 根`README.md`仍是唯一主页；文集和Context入口只负责阅读导航，维护者规则写本文件或既有子域`AGENTS.md`。

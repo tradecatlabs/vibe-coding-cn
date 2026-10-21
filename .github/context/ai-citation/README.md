@@ -29,4 +29,4 @@
 | `.github/context/gongfa/README.md` / `.github/context/gongfa/data.json` | 分阶导航、原文索引及唯一功法JSON核心：限定内容、四阶十二级、未校准规则草案、冻结来源、人工分类/初评与正式评级历史；对象说明见四阶页，不证明方法有效 |
 | `.github/context/gongfa/README.md#doc-cultivation-ontology-taxonomy` | 固定 BFO 主干、身份、类型、内容版本与四阶十二级；已有初评、无正式效果评级 |
 | `.github/context/gongfa/README.md#doc-thinking-models` | 哲学方法论与思维模型文集 |
-| `.github/context/research/README.md` | 新技术、优秀 repo 与工程范式研究 |
+| `.github/context/README.md#本地研究资料` | 研究档案不随公开仓库分发；外部事实应查官方或一手来源 |

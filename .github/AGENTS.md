@@ -6,7 +6,7 @@
 
 | 目录 | 职责 | 入口 |
 |---|---|---|
-| `context/` | 既有资料、规则、文档、研究及数据 | `context/README.md`、`context/AGENTS.md` |
+| `context/` | 公开资料、规则、文档及数据；研究档案仅留已有本机副本 | `context/README.md`、`context/AGENTS.md` |
 | `skills/` | 所有既有Skill指令和流程，统一治理 | `skills/README.md`、`skills/AGENTS.md` |
 | `extensions/` | 既有小工具、程序、脚本和适配实现 | `extensions/README.md`、`extensions/AGENTS.md` |
 
@@ -20,9 +20,9 @@
 |---|---|
 | Markdown校验 | `check-local-links.py`、`check-markdown-details.py`、`check-doc-structure.py` |
 | 目录与导航 | `check-directory-docs.py`、`check-metadata.py`、`check-ai-citation.py` |
-| 数据与来源 | `check-gongfa.py`、`check-external-resources.py`、`check-research-raw.py`、`check-source-facts.py` |
+| 数据与来源 | `check-gongfa.py`、`check-external-resources.py`；本机研究副本另用`check-research-raw.py`、`check-source-facts.py` |
 | Wiki | `check-wiki.py`；仍只校验明确给定的本地checkout |
-| 测试 | `test-gongfa.py`、`test-gongfa-catalog.py`、`test-faqi-catalog.py`、`test-markdown-details.py`、`test-source-archive.py` |
+| 测试 | `test-gongfa.py`、`test-gongfa-catalog.py`、`test-faqi-catalog.py`、`test-markdown-details.py`、`test-source-archive.py`、`test-research-distribution.py` |
 | 共享实现 | `source_boundaries.py`、`taxonomy.py`、`source_archive.py`、`book_views.py`、`tool_explanations.py`直接平铺；供同级入口与原资料生成器共用，不保留lib包 |
 | 依赖 | `requirements-gongfa.txt`、`requirements-faqi.txt` |
 
@@ -42,6 +42,8 @@
 - source_archive在显式调用时读取资料；`explanations_v1`与冻结的`documents`分层保存，模板版本和完整对象集合由tool_explanations校验；v0不作为活动或兼容载荷。export_documents只向调用方指定的新隔离目录复原，拒绝越界、软链接及敏感路径，不恢复旧运行目录。
 - 复用标准库、原YAML子集、既有slug规则及markdown-it-py，不自研解析器；原字节、控制字符、读取预算、归属和并行变化保护不变。
 - 修改后先运行相关协议及`make test-source-archive`；最终完整`make test`按根AGENTS执行，不因路径调整削弱断言。
+
+研究档案不属于公开仓库；默认`make test`不运行本机研究事实检查，已有完整本机副本时可显式运行`make test-local-research`。`test-research-distribution.py`防止研究路径重新进入Git索引，并确认整目录被忽略。
 
 3个sync与1个fetch入口仍在Extensions，本次没有迁移它们。保持原校验范围和断言，同步Makefile、真实ROOT、导入与隔离夹具；从其他cwd调用不能误判仓库根。
 归档Actions定义保持历史字节，不能当作仍有效的新路径调用；迁移Python脚本不恢复自动CI。

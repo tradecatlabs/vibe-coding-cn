@@ -8,7 +8,7 @@ vibe-coding-cn是以Pi Agent与已授权OpenAI GPT为主体底座的Vibe Coding�
 - 想建立 AI 编程标准流程的团队
 
 核心内容：
-- Context：既有规则、知识、原始数据与研究；Skills：仅保留auto-skill、auto-tmux两个原生工具/规范指令入口，官方引用及原33个自有封装脚本已退役；Extensions：其余程序与4个资料维护入口，锁定上游和独立初始化器保留；项目校验、测试、4个共享Python模块及配套依赖直接平铺在.github根维护层，不保留lib目录。
+- Context：公开提供既有规则、知识、原始数据与参考资料；研究档案只保留在既有本机副本，不随公开仓库分发。Skills：仅保留auto-skill、auto-tmux两个原生工具/规范指令入口，官方引用及原33个自有封装脚本已退役；Extensions：其余程序与4个资料维护入口，锁定上游和独立初始化器保留；项目校验、测试、4个共享Python模块及配套依赖直接平铺在.github根维护层，不保留lib目录。
 - 功法、法器各以data.json为唯一维护源；README.md提供轻量导航，天、地、玄、黄四阶页展示对象说明；历史Excel只作载荷保留，不自动注册、评级或验证效果。
 - 选工具问问题、设计、实现、代价，再比较替代、共性与前提；Lambda记号只表达接口组合，不实现解释器或证明程序性质。
 - Quick Start：1 分钟开始 Vibe Coding
@@ -61,39 +61,9 @@ vibe-coding-cn是以Pi Agent与已授权OpenAI GPT为主体底座的Vibe Coding�
 - .github/context/gongfa/README.md#doc-low-level-program-logic
 - .github/context/gongfa/README.md#doc-technology-stack
 - .github/context/gongfa/README.md#doc-geo-seo-checklist
-- .github/context/research/README.md
-- .github/context/research/research-domain-contract.md
 - .github/context/gongfa/README.md#doc-research-value-application-map
 - .github/context/gongfa/README.md#doc-research-transfer-synthesis
 - .github/context/gongfa/README.md#doc-harness-engineering
-- .github/context/research/walkinglabs-learn-harness-engineering/README.md
-- .github/context/research/mindfold-ai-trellis/README.md
-- .github/context/research/facts/README.md
-- .github/context/research/facts/sources.yml
-- .github/context/research/facts/privacy-audit.yml
-- .github/context/research/vibe-cybersecurity-cn/
-- .github/context/research/vibe-harness-cn/
-- .github/context/research/vibe-mathing-cn-public/
-- .github/context/research/openai-codex/README.md
-- .github/context/research/openai-plugins/README.md
-- .github/context/research/openai-skills/README.md
-- .github/context/research/openai-agents-python/README.md
-- .github/context/research/openai-agents-js/README.md
-- .github/context/research/openai-cookbook/README.md
-- .github/context/research/github-spec-kit/README.md
-- .github/context/research/fission-ai-openspec/README.md
-- .github/context/research/google-gemini-gemini-cli/README.md
-- .github/context/research/openhands-openhands/README.md
-- .github/context/research/anomalyco-opencode/README.md
-- .github/context/research/obra-superpowers/README.md
-- .github/context/research/addyosmani-agent-skills/README.md
-- .github/context/research/aaif-goose-goose/README.md
-- .github/context/research/continuedev-continue/README.md
-- .github/context/research/swe-agent-mini-swe-agent/README.md
-- .github/context/research/affaan-m-ecc/README.md
-- .github/context/research/shanraisshan-claude-code-best-practice/README.md
-- .github/context/research/cline-cline/README.md
-- .github/context/research/aider-ai-aider/README.md
 - .github/context/gongfa/README.md#doc-tmux-ai-swarm
 - .github/context/gongfa/README.md#doc-development-process
 - .github/skills/auto-tmux/references/ai-swarm-collaboration.md

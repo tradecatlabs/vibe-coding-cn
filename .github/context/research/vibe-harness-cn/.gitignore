@@ -1,7 +1,0 @@
-__pycache__/
-*.py[cod]
-governance/tasks/*/runtime/
-governance/tasks/*/TASK_CLOSEOUT_PACKET.json
-governance/tasks/*/GIT_DELIVERY_EVIDENCE.json
-governance/runtime/verification-artifacts/
-research/upstreams/

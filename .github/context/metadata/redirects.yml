@@ -9,7 +9,7 @@ redirects:
   - from: docs/concepts/philosophy/
     to: .github/context/gongfa/README.md#原文文集
   - from: docs/research/
-    to: .github/context/research/
+    to: .github/context/README.md#本地研究资料
   - from: Workflow/
     to: .github/context/gongfa/README.md#原文文集
 
@@ -55,7 +55,7 @@ redirects:
   - from: docs/playbooks/tradecat-sheets-api-usage.md
     to: .github/context/README.md
   - from: docs/getting-started/Codex-CLI配置.md
-    to: .github/context/research/openai-codex/README.md
+    to: .github/context/README.md#本地研究资料
   - from: docs/getting-started/学习地图.md
     to: .github/context/getting-started/learning-map.md
   - from: docs/getting-started/Vibe Coding 经验.md

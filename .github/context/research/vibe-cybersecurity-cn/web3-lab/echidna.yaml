@@ -1,9 +1,0 @@
-testMode: property
-testLimit: 200000
-seqLen: 100
-shrinkLimit: 5000
-balanceAddr: 100000000000000000000
-sender:
-  - "0x10000"
-  - "0x20000"
-  - "0x30000"
