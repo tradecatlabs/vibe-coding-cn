@@ -312,6 +312,10 @@ class SourceArchiveTest(unittest.TestCase):
             '只说明 API 端点有响应，不证明账户认证或 GPT 模型可用',
             '不要在测试命令里加入 API Key',
             'ChatGPT 网页订阅不等于 OpenAI API 额度',
+            '所选 OpenAI GPT 模型按上述一种路线完成必要授权/配置',
+            '完成标准第 2 项仍记为“OpenAI GPT 未验证”',
+            '不得把本地模型回答算作本文范围内的 OpenAI GPT 配置完成',
+            '若用户只完成本地模型路线，按前述规则单独记录，不静默切回 OpenAI GPT',
         ):
             with self.subTest(prompt_contract=contract):
                 self.assertIn(contract, prompt)

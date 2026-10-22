@@ -124,11 +124,13 @@ irm https://pi.dev/install.ps1 | iex
 本提示词的云端主路线是 OpenAI GPT；Pi 的 `/login` 可使用两条不同的登录路线：ChatGPT 订阅 OAuth 与 OpenAI API Key。先询问用户希望使用且有权使用哪条路线；若不确定，说明订阅 OAuth 使用其账号可用的订阅额度，API Key 则使用单独的 API 账户与计费，再等用户选择。模型可用性、额度与费用按用户账号、Pi 当前提供方列表和 OpenAI 规则核对；两条路线彼此独立，不静默切换。[ChatGPT 网页订阅不等于 OpenAI API 额度](https://help.openai.com/en/articles/9039756-managing-billing-for-chatgpt-and-the-api-platform)。
 
 - **ChatGPT 订阅 OAuth：**若用户的 ChatGPT 账号可使用此路线，且当前 Pi 的 `/login` 列出 `OpenAI (ChatGPT subscription)`，选择它在本机完成授权（provider ID：`openai-codex`），再用 `/model` 查看此路线实际提供的模型。订阅额度和可用模型以当前账号与提供方显示为准；这不是 OpenAI API Key，也不提供 API 额度。若登录列表没有该项，先核对当前 Pi 版本与官方资料，不静默更新，也不把订阅当作 API 权限；可选 API Key 路线须由用户明确选择且确有 API 访问权限，否则说明阻塞并等待决定。
-- **OpenAI API Key：**仅在用户明确选择且有 API 访问权限时，在本机 `/login` 选择 OpenAI API Key 路线并按 Pi 当前界面授权；API 计费按 API 账户规则单独核对。不得要求用户把密钥贴给网页 AI。不得静默改用其他提供方；若用户另选本地模型，按 [Pi Models](https://pi.dev/docs/latest/models) 和所选运行时官方资料指导。
+- **OpenAI API Key：**仅在用户明确选择且有 API 访问权限时，在本机 `/login` 选择 OpenAI API Key 路线并按 Pi 当前界面授权；API 计费按 API 账户规则单独核对。不得要求用户把密钥贴给网页 AI，也不得静默改用其他提供方。
+
+用户明确改选本地模型时，可按 [Pi Models](https://pi.dev/docs/latest/models) 和所选运行时官方资料单独指导；该回答只作本地模型验证，不计为本文范围内的 OpenAI GPT 验证。
 
 网络检查按用户选定的登录路线及实际错误处理。API 端点检查只用于 API Key 路线；只有用户选 API Key 路线且确有 API 端点连通问题时，才可用 POSIX shell 的 `curl -i https://api.openai.com/v1/models` 或 PowerShell 的 `curl.exe -i https://api.openai.com/v1/models` 做无凭据端点检查；不要在测试命令里加入 API Key 或 Authorization。订阅 OAuth 路线不使用 `api.openai.com/v1/models` 探测，按 Pi 当前登录流程和该路线的脱敏错误核对。收到 HTTP 响应（包括认证错误）只说明 API 端点有响应，不证明账户认证或 GPT 模型可用；真实验证仍须由 Pi 完成所选路线的授权并取得模型回答。Pi 官方 Providers 文档说明 Pi 会将已存凭据保存在 `auth.json`；其中可能包含 API Key 或 OAuth Token，须保持私密，绝不贴给网页 AI、提交、上传、复制到项目文件、脚本、shell 配置或截图，也不要把 `auth.json` 发给任何人。额外安装、下载或开放服务前说明影响并等用户决定。
 
-完成所选路线的授权后，让用户用 `/model` 选择实际可用的 GPT 模型并提出一个无需修改文件的简单问题。真实模型回答才是 M4.1 的成功信号；CLI 已安装、浏览器可访问 OpenAI 或 FlClash 显示已连接，都不单独证明模型已接通。按所选路线的授权状态、账户可用性和脱敏网络错误排障，不重新安装 CLI。
+完成 OpenAI GPT 主路线（ChatGPT 订阅 OAuth 或 OpenAI API Key）的授权后，让用户用 `/model` 选择该路线实际可用的 GPT 模型，并提出一个无需修改文件的简单问题。真实模型回答才是 M4.1 的 OpenAI GPT 成功信号；CLI 已安装、浏览器可访问 OpenAI 或 FlClash 显示已连接，都不单独证明模型已接通。若用户只完成本地模型路线，按前述规则单独记录，不静默切回 OpenAI GPT。按所选路线的授权状态、账户可用性和脱敏网络错误排障，不重新安装 CLI。
 
 ### M4.2：凡事察验（完成一次实际工具使用验证）
 
@@ -150,10 +152,10 @@ irm https://pi.dev/install.ps1 | iex
 只有以下三项均有用户本机回报的真实证据，才报告“本文范围内的 Pi CLI、OpenAI GPT 与本机 Bash 配置及使用已完成（不代表其他工具、自动化或生产就绪）”：
 
 1. 目标终端的 `pi --version` 输出版本号。
-2. 所选模型完成必要授权/配置，并对简单问题返回实际回答。
+2. 所选 OpenAI GPT 模型按上述一种路线完成必要授权/配置，并对简单问题返回实际回答。
 3. 用户看到本机 Pi 发起限定的无文件读写命令调用及其结果。
 
-只装好 CLI 时报告“CLI 已安装，模型/Agent 能力尚未验证”；模型能回答但工具不可用时报告“CLI 与模型已可用，但本机命令工具未验证/不可用”。结束只汇报系统与终端（不含路径）、三项分别是否通过及未解决问题；提前停止时只报告已有证据。
+若用户另选本地模型，完成标准第 2 项仍记为“OpenAI GPT 未验证”；不得把本地模型回答算作本文范围内的 OpenAI GPT 配置完成或据此报告本文完整完成。只装好 CLI 时报告“CLI 已安装，模型/Agent 能力尚未验证”；OpenAI GPT 能回答但工具不可用时报告“CLI 与模型已可用，但本机命令工具未验证/不可用”；若仅本地模型能回答，明确说明 OpenAI GPT 未验证。结束只汇报系统与终端（不含路径）、三项分别是否通过及未解决问题；提前停止时只报告已有证据。
 
 本指南的完成范围仅是 Pi CLI、OpenAI GPT 与本机 Bash 通路；示例只验证一条只读命令，不证明文件读写、其他工具、业务自动化或权限隔离。本任务不包括创建项目、修改项目文件、安装项目依赖、部署或完成业务任务；第一个项目仍是独立可选练习。
 
