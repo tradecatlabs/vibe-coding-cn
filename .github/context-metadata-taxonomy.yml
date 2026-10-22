@@ -18,10 +18,10 @@ reading_paths:
   beginner:
     title: 新手路径
     documents:
-    - .github/context/getting-started/README.md
+    - .github/context-getting-started-README.md
     - .github/context/gongfa/README.md#doc-vibe-coding-experience
-    - .github/context/getting-started/learning-map.md
-    - .github/context/getting-started/first-project.md
+    - .github/context-getting-started-learning-map.md
+    - .github/context-getting-started-first-project.md
     - .github/context/gongfa/README.md#doc-problem-solving
     - .github/context/gongfa/README.md#doc-vibe-coding-state-transition
     - .github/context/gongfa/README.md#doc-glue-coding
@@ -52,12 +52,12 @@ reading_paths:
     - AGENTS.md
     - .github/context/AGENTS.md
     - .github/context/gongfa/README.md#doc-development-process
-    - .github/context/getting-started/README.md
+    - .github/context-getting-started-README.md
     - .github/context/gongfa/README.md#doc-vibe-coding-experience
-    - .github/context/getting-started/first-project.md
+    - .github/context-getting-started-first-project.md
     - .github/context/gongfa/README.md#doc-project-architecture-template
     - .github/context/gongfa/README.md#doc-quality-gates-and-pitfalls
-    - .github/context/ai-citation/README.md
+    - .github/context-ai-citation-README.md
   faqi:
     title: 法器体系阅读路径
     documents:
@@ -69,10 +69,10 @@ selection_rules:
   getting-started: 需要把 Pi CLI 安装配置提示词复制给网页版 AI，逐步引导本机检查、安装、模型配置及 Agent 能力验收时读取；项目练习独立可选，通用经验链接到功法。
 documents:
   getting-started:
-  - path: .github/context/getting-started/learning-map.md
+  - path: .github/context-getting-started-learning-map.md
     title: Pi CLI 安装配置提示词
     role: 可全文复制到网页版 AI，逐步引导本机现状检查、分平台安装、模型授权及本机工具验证，并在 Agent 能力验收后停止
-  - path: .github/context/getting-started/first-project.md
+  - path: .github/context-getting-started-first-project.md
     title: 第一个项目
     role: 可选的本地练习：走通需求、实现、运行、验收和 Git 保存
   gongfa:

@@ -19,7 +19,7 @@ import source_archive
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACTS = None
-TEMPLATE = ROOT / ".github/context/tool-explanation-template-v1.md"
+TEMPLATE = ROOT / ".github/tool-explanation-template-v1.md"
 
 
 def v1_field_names():
@@ -560,7 +560,7 @@ class FaqiCatalogTest(unittest.TestCase):
             **{item["id"]: item["node"] for item in data["dependency_graph"]["dependency_categories"]},
         }
         (root / ".github/context/faqi").mkdir(parents=True, exist_ok=True)
-        template_copy = root / ".github/context/tool-explanation-template-v1.md"
+        template_copy = root / ".github/tool-explanation-template-v1.md"
         template_copy.parent.mkdir(parents=True, exist_ok=True)
         template_copy.write_bytes(TEMPLATE.read_bytes())
         archive_data = {

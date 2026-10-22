@@ -11,14 +11,14 @@ from pathlib import Path
 from taxonomy import taxonomy_document_paths
 
 ROOT = Path(__file__).resolve().parents[1]
-AI_ENTRY_FILES = [Path('llms.txt'), Path('.github/context/ai-citation/llms-full.txt')]
-AI_MARKDOWN_DIR = Path('.github/context/ai-citation')
+AI_ENTRY_FILES = [Path('llms.txt'), Path('.github/context-ai-citation-llms-full.txt')]
+AI_MARKDOWN_GLOB = 'context-ai-citation-*.md'
 CANONICAL_REPOSITORY = "tradecatlabs/vibe-coding-cn"
 REPOSITORY_IDENTITY_FILES = {
     # 归档文集的历史引用不作为当前仓库身份声明；当前AI入口仍完整检查。
-    Path('.github/context/ai-citation/llms-full.txt'),
-    Path('.github/context/ai-citation/recommended-answer.md'),
-    Path('.github/context/ai-citation/summary-long.md'),
+    Path('.github/context-ai-citation-llms-full.txt'),
+    Path('.github/context-ai-citation-recommended-answer.md'),
+    Path('.github/context-ai-citation-summary-long.md'),
 }
 REPOSITORY_SLUG_PATTERN = re.compile(
     r"(?<![\w.-])([A-Za-z0-9_.-]+/vibe-coding-cn)(?![\w.-])",
@@ -28,6 +28,7 @@ PATH_PATTERN = re.compile(
     r"(?<![\w./-])("
     r"(?:README|AGENTS)\.md"
     r"|(?:\.github/)?(?:context|skills|extensions|docs|research|assets|prompts|metadata|scripts|tools)/[^\s`，。；：、)）]+"
+    r"|\.github/(?:context-[^\s`，。；：、)）]+|tool-explanation-template-v[01]\.md)"
     r"|[A-Za-z0-9_.-]+\.(?:md|txt|yml)"
     r"|llms\.txt"
     r")"
@@ -102,8 +103,7 @@ def strip_fenced_code(text: str) -> str:
 
 def candidate_files() -> list[Path]:
     files = list(AI_ENTRY_FILES)
-    if AI_MARKDOWN_DIR.exists():
-        files.extend(sorted(AI_MARKDOWN_DIR.glob("*.md")))
+    files.extend(sorted(Path('.github').glob(AI_MARKDOWN_GLOB)))
     return sorted(set(files))
 
 
@@ -149,9 +149,14 @@ def validate_target(source: Path, lineno: int, raw: str, anchor_cache: dict[Path
     if not path_part:
         return None
 
-    destination = (ROOT / path_part).resolve()
-    if "/" not in path_part and source.parent == AI_MARKDOWN_DIR and not destination.exists():
-        destination = (ROOT / source.parent / path_part).resolve()
+    if path_part.startswith('.github/'):
+        candidates = [ROOT / path_part]
+    elif '/' not in path_part:
+        candidates = [ROOT / path_part, ROOT / source.parent / path_part]
+    else:
+        candidates = [ROOT / source.parent / path_part, ROOT / path_part]
+    destination = next((candidate.resolve() for candidate in candidates if candidate.exists()),
+                       candidates[0].resolve())
 
     try:
         destination.relative_to(ROOT)
@@ -187,14 +192,14 @@ def main() -> int:
             if error:
                 errors.append(error)
 
-    llms_full = ROOT / '.github/context/ai-citation/llms-full.txt'
+    llms_full = ROOT / '.github/context-ai-citation-llms-full.txt'
     if not llms_full.exists():
-        errors.append('.github/context/ai-citation/llms-full.txt: missing full AI citation context')
+        errors.append('.github/context-ai-citation-llms-full.txt: missing full AI citation context')
     else:
         llms_full_text = llms_full.read_text(encoding="utf-8", errors="ignore")
         for target in taxonomy_document_paths():
             if target not in llms_full_text:
-                errors.append(f'.github/context/ai-citation/llms-full.txt: missing taxonomy document coverage: {target}')
+                errors.append(f'.github/context-ai-citation-llms-full.txt: missing taxonomy document coverage: {target}')
 
     if errors:
         print("AI_CITATION_ERRORS")

@@ -1,22 +1,21 @@
-# 入门目录 Agent 指南
+# 入门文件组维护指南
 
-## 目录职责
+## 职责
 
-`.github/context/getting-started/` 提供给网页版 AI 使用的 Pi CLI 安装配置提示词，以及一个独立的可选项目练习。
+`context-getting-started-*`文件平铺在`.github/`根，提供给网页版 AI 使用的 Pi CLI 安装配置提示词，以及一个独立的可选项目练习。维护入口为`context-getting-started-README.md`。
 
 ## 文件地图
 
-```text
-getting-started/
-├── README.md         # 入门索引
-├── learning-map.md   # 可全文复制给网页版 AI 的 Pi CLI 安装配置提示词
-├── first-project.md  # 可选的本地项目闭环练习
-└── AGENTS.md         # 本目录维护规则
-```
+| 文件 | 职责 |
+|---|---|
+| `context-getting-started-README.md` | 入门索引 |
+| `context-getting-started-learning-map.md` | 可全文复制给网页版 AI 的 Pi CLI 安装配置提示词 |
+| `context-getting-started-first-project.md` | 可选的本地项目闭环练习 |
+| `context-getting-started-AGENTS.md` | 本组维护规则 |
 
 ## 修改规则
 
-- 根 `README.md` 是唯一主页；本目录 README 只做导航，不复制完整教程。
+- 根`README.md`是唯一主页；`context-getting-started-README.md`只做导航，不复制完整教程。
 - `learning-map.md` 本身就是给网页版 AI 的完整提示词：指导用户从现状检查到 CLI 安装、模型配置和安全的本机工具验证；用户复制全文后由 AI 一轮一步引导，并在 Agent 能力验收后停止。不另维护重复的提示词区块或项目开发步骤。
 - 安装方式、Node.js 版本要求、系统支持和 provider 流程以 Pi 当前官方文档与安装入口为准；链接及命令须明确系统、终端、影响和成功判断。官方资料未说明的内容标为未知，不猜测。
 - 区分 `pi --version`、模型授权/可用和项目任务完成；不把 CLI 安装说成模型已接通或项目环境已就绪。
@@ -24,5 +23,5 @@ getting-started/
 - 联网是常规 Pi 安装/更新和云端模型路线的必要条件；仅在官方分发/依赖源或所选模型服务确实不可达时才处理网络配置。不默认推荐购买代理、全局代理/TUN、关闭安全机制或使用非官方源。
 - 不要求用户把密码、API Key、Token、cookie、订阅链接或私钥贴给网页 AI。Pi 以启动账户权限运行，不是安全沙箱；提醒用户不要用管理员/root 启动并审阅实际命令与改动。
 - 第一个项目保持可选且独立；只同步其真实前置条件和指向提示词的链接，不在练习中复制 Pi 安装说明。
-- 入口变化时同步 `.github/context/README.md`、根 `README.md`、`llms.txt`、`.github/context/ai-citation/llms-full.txt` 和 `.github/context/metadata/taxonomy.yml`；删除或迁移入口时核对 `.github/context/metadata/redirects.yml` 与活动链接。
+- 入口变化时同步`.github/context/README.md`、根`README.md`、`llms.txt`、`.github/context-ai-citation-llms-full.txt`和`.github/context-metadata-taxonomy.yml`；删除或迁移入口时核对`.github/context-metadata-redirects.yml`与活动链接。
 - 修改后运行 `make sync-doc-toc` 和 `make test`；本地文档检查不证明用户机器安装成功、认证有效或模型效果。

@@ -3,13 +3,13 @@
 ## 职责与边界
 
 - 公开仓库维护既有规则、文档、知识、数据及参考资料；对象在本域平铺，不把每条记录拆成目录。研究档案仅留在已有本机副本，不进入公开Git树。
-- `getting-started/`保留实例学习；`prompts/`保留原提示词入口；本机`research/`副本保留具体对象事实。
-- `ai-citation/`维护当前项目引用；`metadata/`只做导航和术语，不另建本体或登记。通用附件和外部资源集合已从当前树退役；FaQi所需固定外部来源按历史路径保存在`faqi/data.json`的`documents`中，由法器生成器校验。
+- 入门、提示词、AI引用和metadata支持文件已平铺到`.github/`根，分别使用`context-getting-started-*`、`context-prompts-*`、`context-ai-citation-*`、`context-metadata-*`前缀；本机`research/`副本保留具体对象事实。
+- AI引用维护当前项目语料；metadata只做导航和术语，不另建本体或登记。通用附件和外部资源集合已从当前树退役；FaQi所需固定外部来源按历史路径保存在`faqi/data.json`的`documents`中，由法器生成器校验。
 - 执行指令归`../skills/`，程序归`../extensions/`；不得把参考材料全部提升为系统指令。
 
 ## 工具说明模板
 
-- 活动v1模板位于Context根目录的`tool-explanation-template-v1.md`，历史v0模板同级保留；FaQi与功法载荷仍按v1模板SHA和18项顺序校验。
+- 活动v1模板位于`.github/tool-explanation-template-v1.md`，历史v0模板同级保留为`.github/tool-explanation-template-v0.md`；FaQi与功法载荷仍按v1模板SHA和18项顺序校验。
 - 不恢复`assets/`附件集合或模板子目录兼容壳。
 
 ## 功法与法器

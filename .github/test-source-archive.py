@@ -132,15 +132,24 @@ class SourceArchiveTest(unittest.TestCase):
             '../../context/external-resources/README.md': (
                 'blob', '.github/context/external-resources/README.md'),
         }
+        flattened_context_links = {
+            '../../context/ai-citation/README.md': 'context-ai-citation-README.md',
+            '../../context/metadata/taxonomy.yml': 'context-metadata-taxonomy.yml',
+            '../../context/prompts/README.md': 'context-prompts-README.md',
+            '../../context/getting-started/learning-map.md': 'context-getting-started-learning-map.md',
+            '../../context/tool-explanation-template-v1.md': 'tool-explanation-template-v1.md',
+        }
         for index, link in enumerate(retired_cloud_links):
             text += f'\n[云端退役{index}]({link})\n'
+        for index, link in enumerate(flattened_context_links):
+            text += f'\n[平铺{index}]({link})\n'
         self.data['documents'] = {
             '.github/docs/gongfa/example.md': document(text.encode()),
             '.github/docs/gongfa/other.md': document('# 另一篇\n\n## 目标\n'.encode())}
         self.save()
         rendered = book_views.render_sources(self.root, 'gongfa')
-        index = self.root / '.github/context/metadata/taxonomy.yml'
-        index.parent.mkdir(parents=True)
+        index = self.root / '.github/context-metadata-taxonomy.yml'
+        index.parent.mkdir(parents=True, exist_ok=True)
         index.write_text('documents:\n  gongfa:\n  - path: .github/context/gongfa/README.md#doc-other\n  - path: .github/context/gongfa/README.md#doc-example\n')
         self.assertEqual(rendered, book_views.render_sources(self.root, 'gongfa'), '阅读内容与顺序只由本集合JSON决定')
         self.assertIn('id="doc-example-目标"', rendered)
@@ -166,6 +175,8 @@ class SourceArchiveTest(unittest.TestCase):
             expected = (f'https://github.com/tradecatlabs/vibe-coding-cn/{route}/'
                         f'71bf460cfa894ad45163a9591d2043422974a681/{path}')
             self.assertIn(f'[云端退役{index}]({expected})', rendered)
+        for index, target in enumerate(flattened_context_links.values()):
+            self.assertIn(f'[平铺{index}](../../{target})', rendered)
         self.assertIn('### 代码不是目录', rendered)
         self.assertNotIn('id="doc-example-代码不是目录"', rendered)
         self.assertEqual(rendered.count('id="doc-example-目标"'), 1)

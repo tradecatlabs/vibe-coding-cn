@@ -200,7 +200,7 @@ def check_docs_index() -> list[str]:
         for field in ("path", "entry", "agent_guide"):
             value = fields.get(field)
             if not value:
-                errors.append(f".github/context/metadata/taxonomy.yml: section '{name}' missing '{field}'")
+                errors.append(f".github/context-metadata-taxonomy.yml: section '{name}' missing '{field}'")
                 continue
             docs_relative = value.removeprefix(".github/context/")
             relative = Path(os.path.relpath(value, docs_index.parent.relative_to(ROOT).as_posix())).as_posix()
@@ -229,7 +229,7 @@ def main() -> int:
             continue
         errors.extend(check_linear_readme(path, expected_anchors))
 
-    readme_paths = {Path('.github/context/README.md'), Path('.github/context/getting-started/README.md'),
+    readme_paths = {Path('.github/context/README.md'), Path('.github/context-getting-started-README.md'),
                     Path('.github/context/gongfa/README.md'), Path('.github/context/faqi/README.md')}
     for fields in taxonomy_sections().values():
         entry = fields.get("entry", "")

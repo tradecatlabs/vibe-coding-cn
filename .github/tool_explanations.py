@@ -5,7 +5,7 @@ from pathlib import Path
 import re
 import source_archive
 
-TEMPLATE_PATH = ".github/context/tool-explanation-template-v1.md"
+TEMPLATE_PATH = ".github/tool-explanation-template-v1.md"
 FIELD_NAMES = (
     "工具的名称",
     "是什么",

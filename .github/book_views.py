@@ -35,6 +35,8 @@ def relocated(path, fragment=''):
         if name == '__init__.py':
             return '.github/source_boundaries.py', fragment
     aliases = {
+        '.github/context/tool-explanation-template-v0.md': '.github/tool-explanation-template-v0.md',
+        '.github/context/tool-explanation-template-v1.md': '.github/tool-explanation-template-v1.md',
         '.github/metadata/faqi/README.md': '.github/context/faqi/README.md',
         '.github/metadata/faqi/AGENTS.md': '.github/context/AGENTS.md',
         '.github/metadata/gongfa/AGENTS.md': '.github/context/AGENTS.md',
@@ -43,6 +45,16 @@ def relocated(path, fragment=''):
     }
     if path in aliases:
         return aliases[path], fragment
+    flat_groups = {
+        '.github/context/ai-citation': '.github/context-ai-citation',
+        '.github/context/metadata': '.github/context-metadata',
+        '.github/context/prompts': '.github/context-prompts',
+        '.github/context/getting-started': '.github/context-getting-started',
+    }
+    for old, new in flat_groups.items():
+        if path == old or path.startswith(old + '/'):
+            suffix = path[len(old):].lstrip('/')
+            return new + '-' + (suffix.replace('/', '-') if suffix else 'README.md'), fragment
     if path.rstrip('/') == '.github/docs/gongfa':
         return '.github/context/gongfa/README.md', fragment or '原文文集'
     if path.startswith('.github/docs/gongfa/'):

@@ -11,9 +11,7 @@ from source_boundaries import SOURCE_PREFIXES, VENDOR_SUBTREES, is_research_repo
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_DIRS = list(map(Path, (
     '.github', '.github/ISSUE_TEMPLATE',
-    '.github/context', '.github/context/ai-citation',
-    '.github/context/getting-started', '.github/context/gongfa', '.github/context/faqi',
-    '.github/context/metadata', '.github/context/prompts',
+    '.github/context', '.github/context/gongfa', '.github/context/faqi',
     '.github/extensions',
     '.github/skills', '.github/skills/skill', '.github/skills/skill/assets',
     '.github/skills/skill/references',
@@ -23,8 +21,14 @@ COLLECTION_FILES = {'data.json', 'README.md', 'tian.md', 'di.md', 'xuan.md', 'hu
 RETIRED_DIRS = (
     Path('.github/workflows'), Path('.github/lib'),
     Path('.github/extensions/prompts-library'),
+    Path('.github/context/ai-citation'), Path('.github/context/getting-started'),
+    Path('.github/context/metadata'), Path('.github/context/prompts'),
     Path('.github/context/assets'), Path('.github/context/external-resources'),
     Path('.github/skills/auto-tmux'),
+)
+RETIRED_FILES = (
+    Path('.github/context/tool-explanation-template-v0.md'),
+    Path('.github/context/tool-explanation-template-v1.md'),
 )
 LEGACY_PROMPT_TOOL = Path('.github/extensions/prompts-library')
 LEGACY_PROMPT_EXPORTS = LEGACY_PROMPT_TOOL / 'prompt_jsonl'
@@ -87,6 +91,11 @@ def main() -> int:
             if rel_dir == LEGACY_PROMPT_TOOL and only_legacy_prompt_exports(directory):
                 continue
             errors.append(f'{rel_dir}: 已退役目录不得重新创建')
+
+    for rel_file in RETIRED_FILES:
+        path = ROOT / rel_file
+        if path.exists() or path.is_symlink():
+            errors.append(f'{rel_file}: 已迁移文件不得在旧路径重建')
 
     for rel_dir in repository_owned_dirs():
         directory = ROOT / rel_dir

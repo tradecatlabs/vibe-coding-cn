@@ -6,11 +6,24 @@
 
 | 目录 | 职责 | 入口 |
 |---|---|---|
-| `context/` | 公开资料、规则、文档及数据；研究档案仅留已有本机副本 | `context/README.md`、`context/AGENTS.md` |
+| `context/`及同级`context-<集合>-*`、`tool-explanation-template-v*.md` | 公开资料、规则、文档及数据；研究档案仅留已有本机副本 | `context/README.md`、`context/AGENTS.md` |
 | `skills/` | 所有既有Skill指令和流程，统一治理 | `skills/README.md`、`skills/AGENTS.md` |
 | `extensions/` | 既有小工具、程序、脚本和适配实现 | `extensions/README.md`、`extensions/AGENTS.md` |
 
 对象在各域平铺；资料集合和原生程序内部结构不拆散。旧docs/assets/metadata/prompts/research/scripts/tools不再作为并行活动根目录。
+
+### Context平铺文件
+
+原`ai-citation`、`metadata`、`prompts`、`getting-started`目录中的文件现以`.github/context-<集合>-<文件名>`平铺；两个说明模板为`.github/tool-explanation-template-v0.md`与`.github/tool-explanation-template-v1.md`。导航见`context/README.md`。
+
+| 文件前缀 | 用途 | 编辑前阅读 |
+|---|---|---|
+| `context-ai-citation-*` | AI引用语料 | `context-ai-citation-AGENTS.md` |
+| `context-metadata-*` | 分类、术语与历史路径映射 | `context-metadata-AGENTS.md` |
+| `context-prompts-*` | 提示词入口 | `context-prompts-AGENTS.md` |
+| `context-getting-started-*` | 新手入门与项目练习 | `context-getting-started-AGENTS.md` |
+
+这些带前缀的指南保留分组规则，但不再是按目录自动发现的`AGENTS.md`；本文件负责路由，改动对应文件前须显式阅读。
 
 ## 维护脚本与共享库
 
