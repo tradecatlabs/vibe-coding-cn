@@ -307,6 +307,11 @@ class SourceArchiveTest(unittest.TestCase):
             'OpenAI API Key',
             '`api.openai.com`',
             'https://api.openai.com/v1/models',
+            'curl --connect-timeout 5 --max-time 15 -I https://github.com',
+            'curl.exe --connect-timeout 5 --max-time 15 -I https://github.com',
+            'curl --connect-timeout 5 --max-time 15 -i https://api.openai.com/v1/models',
+            'curl.exe --connect-timeout 5 --max-time 15 -i https://api.openai.com/v1/models',
+            '超时只说明本次检查未在限时内完成，不证明目标服务不可达',
             'API 端点检查只用于 API Key 路线',
             '订阅 OAuth 路线不使用 `api.openai.com/v1/models` 探测',
             '只说明 API 端点有响应，不证明账户认证或 GPT 模型可用',
@@ -320,6 +325,10 @@ class SourceArchiveTest(unittest.TestCase):
             with self.subTest(prompt_contract=contract):
                 self.assertIn(contract, prompt)
         self.assertNotIn('先确认用户有权使用 OpenAI API', prompt)
+        self.assertNotIn('curl -I https://github.com', prompt)
+        self.assertNotIn('curl.exe -I https://github.com', prompt)
+        self.assertNotIn('curl -i https://api.openai.com/v1/models', prompt)
+        self.assertNotIn('curl.exe -i https://api.openai.com/v1/models', prompt)
         self.assertLess(prompt.index('## 字多不看'), prompt.index('## 给网页版 Chat AI 的任务'))
         self.assertLess(prompt.index('## M1：网络环境'), prompt.index('## M2：预备行各样的善事'))
         html = MarkdownIt('commonmark').render(text)

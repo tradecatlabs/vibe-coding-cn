@@ -64,7 +64,7 @@ pi --version
 - 用户须在自己选择的服务商账户中取得个人订阅 URL，再在本机 FlClash 按当前界面导入。个人订阅链接属于凭据，可能含有可访问账户的令牌：绝不索取、粘贴到网页 AI、写入公开提示词/项目文件或放进截图和日志。若用户误贴，按凭据暴露处理并建议在服务商处撤销/重置。
 - 先问用户已安装 FlClash 与否、已有何种订阅、当前系统和具体失败目标；每轮只做一个动作。安装、导入和 OS 权限都由用户在本机完成，先说明影响并等用户决定；不猜按钮名、端口或设置位置，按当前界面/官方资料指导。
 - 默认目标配置：启用 TUN、系统代理和全局模式，并选择配置中实际可用的代理组；仅在用户确实选择 FlClash 路线时适用。TUN 会改变更多应用的网络路由并可能请求系统级权限；全局模式会让更广泛的应用流量经当前代理组转发，可能影响 DNS、局域网访问、隐私和其他应用连接。启用前须说明流量路由范围、隐私影响和恢复方式，并说明可能的断网影响与权限要求；等待用户确认后再指导。用户拒绝或当前界面/系统不支持时，不强行配置、不改成未确认的替代配置，也不得报告网络路线已完成。记录原设置；恢复时关闭本次启用的全局模式、系统代理和 TUN，恢复先前模式，再由用户测试原网络。
-- 网络测试每轮只测一个当前目标，并只给当前系统/终端适用的命令。安装阶段只检查当前安装路线实际需要的目标，不提前测试 OpenAI API。`curl -I https://github.com`（PowerShell 使用 `curl.exe`）只验证 GitHub 连通性，仅在所选安装选项确实需要访问 GitHub 时检查；FlClash 显示已连接也不证明 OpenAI 可用。若终端必须显式走代理，使用 FlClash 当前界面显示的本地端口，只按用户选择的系统指导临时配置；不猜 `7890` 等端口，也不写入 shell 启动文件。
+- 网络测试每轮只测一个当前目标，并只给当前系统/终端适用的命令。短网络探测使用 `--connect-timeout 5 --max-time 15`（5 秒连接时限、15 秒总时限）；超时只说明本次检查未在限时内完成，不证明目标服务不可达，也不自动重复。安装阶段只检查当前安装路线实际需要的目标，不提前测试 OpenAI API。`curl --connect-timeout 5 --max-time 15 -I https://github.com`（PowerShell 使用 `curl.exe --connect-timeout 5 --max-time 15 -I https://github.com`）只验证 GitHub 连通性，仅在所选安装选项确实需要访问 GitHub 时检查；FlClash 显示已连接也不证明 OpenAI 可用。若终端必须显式走代理，使用 FlClash 当前界面显示的本地端口，只按用户选择的系统指导临时配置；不猜 `7890` 等端口，也不写入 shell 启动文件。
 - 故障时逐项检查所选配置、节点、订阅是否由用户确认仍有效，以及系统代理/TUN 状态；不要求用户提供订阅 URL。恢复时先关闭本次明确开启的路由设置、还原原有模式，再由用户检查网络是否恢复；不为排错盲目重装、删除配置或更改其他设备。
 
 ### Pi 安装依赖
@@ -128,7 +128,7 @@ irm https://pi.dev/install.ps1 | iex
 
 用户明确改选本地模型时，可按 [Pi Models](https://pi.dev/docs/latest/models) 和所选运行时官方资料单独指导；该回答只作本地模型验证，不计为本文范围内的 OpenAI GPT 验证。
 
-网络检查按用户选定的登录路线及实际错误处理。API 端点检查只用于 API Key 路线；只有用户选 API Key 路线且确有 API 端点连通问题时，才可用 POSIX shell 的 `curl -i https://api.openai.com/v1/models` 或 PowerShell 的 `curl.exe -i https://api.openai.com/v1/models` 做无凭据端点检查；不要在测试命令里加入 API Key 或 Authorization。订阅 OAuth 路线不使用 `api.openai.com/v1/models` 探测，按 Pi 当前登录流程和该路线的脱敏错误核对。收到 HTTP 响应（包括认证错误）只说明 API 端点有响应，不证明账户认证或 GPT 模型可用；真实验证仍须由 Pi 完成所选路线的授权并取得模型回答。Pi 官方 Providers 文档说明 Pi 会将已存凭据保存在 `auth.json`；其中可能包含 API Key 或 OAuth Token，须保持私密，绝不贴给网页 AI、提交、上传、复制到项目文件、脚本、shell 配置或截图，也不要把 `auth.json` 发给任何人。额外安装、下载或开放服务前说明影响并等用户决定。
+网络检查按用户选定的登录路线及实际错误处理。API 端点检查只用于 API Key 路线；只有用户选 API Key 路线且确有 API 端点连通问题时，才可用 POSIX shell 的 `curl --connect-timeout 5 --max-time 15 -i https://api.openai.com/v1/models` 或 PowerShell 的 `curl.exe --connect-timeout 5 --max-time 15 -i https://api.openai.com/v1/models` 做无凭据端点检查；不要在测试命令里加入 API Key 或 Authorization。订阅 OAuth 路线不使用 `api.openai.com/v1/models` 探测，按 Pi 当前登录流程和该路线的脱敏错误核对。收到 HTTP 响应（包括认证错误）只说明 API 端点有响应，不证明账户认证或 GPT 模型可用；真实验证仍须由 Pi 完成所选路线的授权并取得模型回答。Pi 官方 Providers 文档说明 Pi 会将已存凭据保存在 `auth.json`；其中可能包含 API Key 或 OAuth Token，须保持私密，绝不贴给网页 AI、提交、上传、复制到项目文件、脚本、shell 配置或截图，也不要把 `auth.json` 发给任何人。额外安装、下载或开放服务前说明影响并等用户决定。
 
 完成 OpenAI GPT 主路线（ChatGPT 订阅 OAuth 或 OpenAI API Key）的授权后，让用户用 `/model` 选择该路线实际可用的 GPT 模型，并提出一个无需修改文件的简单问题。真实模型回答才是 M4.1 的 OpenAI GPT 成功信号；CLI 已安装、浏览器可访问 OpenAI 或 FlClash 显示已连接，都不单独证明模型已接通。若用户只完成本地模型路线，按前述规则单独记录，不静默切回 OpenAI GPT。按所选路线的授权状态、账户可用性和脱敏网络错误排障，不重新安装 CLI。
 
