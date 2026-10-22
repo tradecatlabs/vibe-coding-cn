@@ -165,48 +165,64 @@ class FaqiCatalogTest(unittest.TestCase):
         self.assertIn("本项目仍未批准该许可证", association)
         self.assertIn("本地入口=无", association)
         self.assertIn("已从当前树移除", association)
-        retired_submodules = {".github/tools/external/Skill_Seekers-development"}
+        retired_submodules = {
+            ".github/tools/external/Skill_Seekers-development",
+            ".github/tools/external/claude-official-skills",
+        }
         self.assertEqual(retired_submodules, set(active_archive["retired_submodules"]))
-        former_path = ".github/extensions/Skill_Seekers-development"
+        former_paths = {
+            ".github/extensions/Skill_Seekers-development",
+            ".github/extensions/claude-official-skills",
+        }
         for path in retired_submodules:
             self.assertFalse(any(item == path or item.startswith(path + "/")
                                  for item in active_archive["locations"]))
             self.assertFalse(any(item == path or item.startswith(path + "/")
                                  for item in active_archive["live_sources"]))
-        self.assertFalse(any(binding["path"] == former_path or binding["path"].startswith(former_path + "/")
-                             for binding in active_archive["live_sources"].values()))
-        initializer_projection = next(item for item in active_archive["projections"]
-                                      if item["path"] == ".github/init_skill.py")
-        self.assertEqual(
-            "extensions/claude-official-skills/skills/skill-creator/scripts/init_skill.py",
-            initializer_projection["target"],
-        )
+        for path in former_paths:
+            self.assertFalse(any(item == path or item.startswith(path + "/")
+                                 for item in active_archive["locations"].values()))
+            self.assertFalse(any(binding["path"] == path or binding["path"].startswith(path + "/")
+                                 for binding in active_archive["live_sources"].values()))
+            self.assertFalse((ROOT / path).exists(), path)
+            self.assertFalse((ROOT / path).is_symlink(), path)
+        self.assertFalse(any(item["path"] == ".github/init_skill.py"
+                             for item in active_archive["projections"]))
         self.assertEqual(
             "8c02660dacd304f51fe8c4a9685d3f6d5324a7eef7779b6baa7325827bf01985",
             active_archive["documents"][".github/tools/external/Skill_Seekers-development/src/skill_seekers/cli/main.py"]["sha256"],
         )
-        self.assertEqual(
-            "cf12790f1d4958799281920d599f56aea38fb5c26e2812a61dd740bf3d4b6b99",
-            active_archive["documents"][".github/tools/external/claude-official-skills/skills/skill-creator/scripts/init_skill.py"]["sha256"],
-        )
+        claude_source_hashes = {
+            ".github/tools/external/claude-official-skills/README.md": "d7c5c2f9b248c7c0b31f093cf22b9a7407f5b093c8ca9ebe75a5b6845b02b76e",
+            ".github/tools/external/claude-official-skills/skills/skill-creator/LICENSE.txt": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+            ".github/tools/external/claude-official-skills/skills/skill-creator/SKILL.md": "d57b6e3a44535b9c0ef454dad5c86f5df78185fc80a65c7092885b4b5e10f81b",
+            ".github/tools/external/claude-official-skills/skills/skill-creator/scripts/init_skill.py": "cf12790f1d4958799281920d599f56aea38fb5c26e2812a61dd740bf3d4b6b99",
+        }
+        for path, digest in claude_source_hashes.items():
+            self.assertEqual(digest, active_archive["documents"][path]["sha256"], path)
+        claude_fields = next(item["fields"] for item in active_archive["explanations_v1"]["items"]
+                             if item["object_key"] == "faqi:faqi-claude-skill-init")
+        claude_sources = next(field["content"] for field in claude_fields if field["name"] == "出处")
+        self.assertIn("1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563", claude_sources)
+        self.assertTrue(all(path in claude_sources for path in claude_source_hashes))
         module_config = configparser.RawConfigParser()
         module_config.read_string((ROOT / ".gitmodules").read_text(encoding="utf-8"))
-        self.assertEqual({".github/extensions/oh-my-tmux", ".github/extensions/tmux",
-                          ".github/extensions/claude-official-skills"},
+        self.assertEqual({".github/extensions/oh-my-tmux", ".github/extensions/tmux"},
                          {module_config[section]["path"] for section in module_config.sections()})
-        self.assertFalse((ROOT / former_path).exists(), former_path)
-        self.assertTrue((ROOT / ".github/extensions/claude-official-skills").is_dir())
-        self.assertTrue((ROOT / ".github/init_skill.py").is_symlink())
-        self.assertEqual(initializer_projection["target"], os.readlink(ROOT / ".github/init_skill.py"))
+        self.assertFalse((ROOT / ".github/init_skill.py").exists())
+        self.assertFalse((ROOT / ".github/init_skill.py").is_symlink())
         current_paths = {
             "faqi:faqi-oh-my-tmux": ".github/extensions/oh-my-tmux",
             "faqi:faqi-tmux": ".github/extensions/tmux",
-            "faqi:faqi-claude-skill-init": ".github/extensions/claude-official-skills",
         }
         associations = {
             item["object_key"]: next(field["content"] for field in item["fields"] if field["name"] == "关联信息")
             for item in active_archive["explanations_v1"]["items"]
         }
+        claude_association = associations["faqi:faqi-claude-skill-init"]
+        self.assertIn("本地入口=无", claude_association)
+        self.assertIn("已从当前树移除", claude_association)
+        self.assertNotIn("本地入口=.github/extensions/claude-official-skills", claude_association)
         for object_key, path in current_paths.items():
             self.assertIn(f"本地入口={path}", associations[object_key], object_key)
         self.assertNotIn(".github/tools/prompts-library", active_archive["locations"])

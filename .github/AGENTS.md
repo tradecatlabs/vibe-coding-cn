@@ -27,7 +27,7 @@
 
 ## 维护脚本与共享库
 
-校验、测试和资料维护脚本是仓库维护基础设施，不属于用户侧Extensions资源；直接平铺到`.github/`，不另建scripts目录或旧路径兼容壳。资料生成入口和研究抓取脚本现为`sync-doc-toc.py`、`sync-faqi-catalog.py`、`sync-gongfa-catalog.py`、`fetch-research-raw.py`；`init_skill.py`是指向固定上游的独立软链接，不属于自动检查。
+校验、测试和资料维护脚本是仓库维护基础设施，不属于用户侧Extensions资源；直接平铺到`.github/`，不另建scripts目录或旧路径兼容壳。资料生成入口和研究抓取脚本现为`sync-doc-toc.py`、`sync-faqi-catalog.py`、`sync-gongfa-catalog.py`、`fetch-research-raw.py`；此前迁入根目录的Claude `init_skill.py`软链接现已退役，固定来源仍见FaQi历史档案。
 
 | 类别 | 当前入口 |
 |---|---|
@@ -59,7 +59,7 @@
 
 研究档案不属于公开仓库；默认`make test`不运行本机研究事实检查，已有完整本机副本时可显式运行`make test-local-research`。`test-research-distribution.py`防止研究路径重新进入Git索引，并确认整目录被忽略。
 
-3个sync与1个fetch入口仍在Extensions，本次没有迁移它们。保持原校验范围和断言，同步Makefile、真实ROOT、导入与隔离夹具；从其他cwd调用不能误判仓库根。
+3个sync与1个fetch入口现已平铺到`.github/`根维护层；保持原校验范围和断言，同步Makefile、真实ROOT、导入与隔离夹具；从其他cwd调用不能误判仓库根。
 原3份Actions定义已从当前文件树移除，原始字节仍保留在Git历史中；迁移Python脚本不恢复自动CI。
 
 ## 平台入口
@@ -72,7 +72,7 @@
 - Actions定义只在历史提交中保留，不复制或执行；恢复自动化须显式授权，不能只重建路径而忽略权限、输入及检查生产者。
 - 审批Ruleset25244224的`tradecatlabs`豁免只用于其自己的PR；其他PR仍须有效批准。仅退役两套保护中已停用的`markdown-lint`/`link-checker`；签名、PR、线性历史及其它保护不变，不伪造审核。
 - Issue/PR模板保持协作职责，长期规则写根AGENTS或资源域AGENTS，不塞入模板与CI。
-- 当前固定来源使用Extensions下三个Gitlink；Skill Seekers Gitlink已退役，历史快照与初审仍保留在FaQi资料中；不得提交缓存、私有模板、真实会话、数据库或凭据。
+- 当前固定来源使用Extensions下两个Gitlink；Skill Seekers与Claude官方Skills Gitlink及Claude初始化器均已退役，固定来源快照、SHA与初审仍保留在FaQi资料中；不得提交缓存、私有模板、真实会话、数据库或凭据。
 
 ## 验证
 

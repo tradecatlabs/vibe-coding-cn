@@ -115,7 +115,9 @@ class SourceArchiveTest(unittest.TestCase):
                  '\n[法器生成器](../../extensions/sync-faqi-catalog.py)\n'
                  '\n[功法生成器](../../extensions/sync-gongfa-catalog.py)\n'
                  '\n[研究抓取](../../extensions/fetch-research-raw.py)\n'
-                 '\n[Skill初始化器](../../extensions/init_skill.py)\n'
+                 '\n[Claude旧初始化器入口](../../extensions/init_skill.py)\n'
+                 '\n[Claude根级旧初始化器入口](../../init_skill.py)\n'
+                 '\n[Claude官方初始化脚本历史来源](../../tools/external/claude-official-skills/skills/skill-creator/scripts/init_skill.py)\n'
                  '\n[Skill Seekers历史源码](../../tools/external/Skill_Seekers-development/README.md)\n')
         retired_links = {
             '../../tools/chat-vault/README.md': 'chat-vault/README.md',
@@ -175,9 +177,15 @@ class SourceArchiveTest(unittest.TestCase):
             ('法器生成器', 'sync-faqi-catalog.py'),
             ('功法生成器', 'sync-gongfa-catalog.py'),
             ('研究抓取', 'fetch-research-raw.py'),
-            ('Skill初始化器', 'init_skill.py'),
         ):
             self.assertIn(f'[{label}](../../{target})', rendered)
+        claude_initializer = (
+            'https://github.com/anthropics/skills/blob/'
+            '1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563/'
+            'skills/skill-creator/scripts/init_skill.py')
+        self.assertIn(f'[Claude旧初始化器入口]({claude_initializer})', rendered)
+        self.assertIn(f'[Claude根级旧初始化器入口]({claude_initializer})', rendered)
+        self.assertIn(f'[Claude官方初始化脚本历史来源]({claude_initializer})', rendered)
         self.assertIn(
             '[Skill Seekers历史源码](https://github.com/yusufkaraaslan/Skill_Seekers/blob/'
             '26638b248279a3b001b651475e0f28975f5ff069/README.md)', rendered)

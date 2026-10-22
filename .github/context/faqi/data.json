@@ -445,17 +445,17 @@
   "locations": {
     ".github/tools/external/.tmux": ".github/extensions/oh-my-tmux",
     ".github/tools/external/tmux": ".github/extensions/tmux",
-    ".github/tools/external/claude-official-skills": ".github/extensions/claude-official-skills",
     ".github/skills/auto-skill": ".github/skills/skill",
     ".github/skills/auto-skill/README.md": ".github/skills/skill/README.md"
   },
   "retired_submodules": [
-    ".github/tools/external/Skill_Seekers-development"
+    ".github/tools/external/Skill_Seekers-development",
+    ".github/tools/external/claude-official-skills"
   ],
   "live_sources": {
     ".github/skills/auto-skill/README.md": {
       "path": ".github/skills/skill/README.md",
-      "sha256": "a0997ea73e101c1cb6d584c76aa12c36dc95bcfd74c170e0355d74ac167afa2c"
+      "sha256": "886c08b581e7022a6db08847e53ad360812927c60de7074daee79664a9f010bc"
     },
     ".github/tools/external/.tmux/.logo/LICENSE": {
       "path": ".github/extensions/oh-my-tmux/.logo/LICENSE",
@@ -476,22 +476,6 @@
     ".github/tools/external/.tmux/README.md": {
       "path": ".github/extensions/oh-my-tmux/README.md",
       "sha256": "10b0cca6bb2a4ab7af39d76d27f51b91ca1df4dead015315400041695c9471e7"
-    },
-    ".github/tools/external/claude-official-skills/README.md": {
-      "path": ".github/extensions/claude-official-skills/README.md",
-      "sha256": "d7c5c2f9b248c7c0b31f093cf22b9a7407f5b093c8ca9ebe75a5b6845b02b76e"
-    },
-    ".github/tools/external/claude-official-skills/skills/skill-creator/LICENSE.txt": {
-      "path": ".github/extensions/claude-official-skills/skills/skill-creator/LICENSE.txt",
-      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
-    },
-    ".github/tools/external/claude-official-skills/skills/skill-creator/SKILL.md": {
-      "path": ".github/extensions/claude-official-skills/skills/skill-creator/SKILL.md",
-      "sha256": "d57b6e3a44535b9c0ef454dad5c86f5df78185fc80a65c7092885b4b5e10f81b"
-    },
-    ".github/tools/external/claude-official-skills/skills/skill-creator/scripts/init_skill.py": {
-      "path": ".github/extensions/claude-official-skills/skills/skill-creator/scripts/init_skill.py",
-      "sha256": "cf12790f1d4958799281920d599f56aea38fb5c26e2812a61dd740bf3d4b6b99"
     },
     ".github/tools/external/tmux/COPYING": {
       "path": ".github/extensions/tmux/COPYING",
@@ -555,15 +539,10 @@
     },
     ".gitmodules": {
       "path": ".gitmodules",
-      "sha256": "9188c1a8c26b8f551be6997de5b42c84b65db41a94db043f7f4ac4456859fa47"
+      "sha256": "0bcc9fbc19e7dd15d1b354226a74beea5237ae2119bc7f13bca8964ddc9eaec0"
     }
   },
-  "projections": [
-    {
-      "path": ".github/init_skill.py",
-      "target": "extensions/claude-official-skills/skills/skill-creator/scripts/init_skill.py"
-    }
-  ],
+  "projections": [],
   "explanations_v1": {
     "template_sha256": "6b750444161e732ddba50e3067f45494f561e03711e9bea0475654aff4111973",
     "items": [
@@ -1285,7 +1264,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-claude-skill-init；本体类型=software-artifact；版本声明=未声明；本地入口=.github/extensions/claude-official-skills；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶初级（grade_id=faqi-xuan-initial；状态=user_directed_provisional）；范围：Vibe Coding重要性：特定Skill模板初始化；分级依据：降低Claude Skill结构初始化成本，作用范围绑定特定生态，可手工完成且不影响其他Agent的基础闭环。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S23, S22, S43, S51。"
+            "content": "法器对象ID=faqi-claude-skill-init；本体类型=software-artifact；版本声明=未声明；本地入口=无；Claude Skills固定Gitlink与独立初始化器已从当前树移除（2026-10-22）；冻结来源字节、修订、SHA和历史初审仍保留于档案。当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶初级（grade_id=faqi-xuan-initial；状态=user_directed_provisional）；范围：Vibe Coding重要性：特定Skill模板初始化；分级依据：降低Claude Skill结构初始化成本，作用范围绑定特定生态，可手工完成且不影响其他Agent的基础闭环。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S23, S22, S43, S51。"
           },
           {
             "name": "出处",

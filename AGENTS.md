@@ -19,7 +19,6 @@
 | `.github/CONTRIBUTORS.md` | 根README迁出的贡献者名单与鸣谢；只维护独立文档 |
 | `.github/check-*.py`、`test-*.py`、4个资料维护脚本、平铺共享模块及requirements | 仓库维护层；校验、测试和共享实现清单以`.github/AGENTS.md`为准，不保留lib目录，不属于用户侧Extensions工具 |
 | `Makefile` | 本地可重复命令入口 |
-| `.github/init_skill.py` | 固定上游Skill初始化脚本的软链接；不是Pi Skill入口或自动安装器 |
 | `.github/`根的集合说明文件与原名平铺文件、`.github/tool-explanation-template-v*.md` | Context入门、提示词、机器索引与AI引用文件；仅重名指南使用集合名，规则见`.github/AGENTS.md` |
 
 Context资料集合保留在`.github/context/`，其中`gongfa`与`faqi`各有唯一`data.json`维护源；原入门、提示词、机器索引、AI引用文件及两个工具说明模板已平铺到`.github/`根。仅冲突的`README.md`与`AGENTS.md`改用集合名区分，其他迁移文件保留原名。通用附件集合与外部资源集合已从当前树移除；FaQi使用的固定外部来源快照保存在`faqi/data.json`。研究档案只在已有本机副本保留，不进入GitHub当前文件树。
@@ -34,14 +33,14 @@ Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-ad
 - `locations`及`live_sources`分别记录当前位置和当前实现摘要，不替代原SHA、固定选区、历史意见或源码初审，不提升许可、运行、独立审查和效果状态。
 - 功法ID、版本、候选、原初评、十二级词表和正式评级分开；法器原实现、运行观察、依赖类别、外部资源与9项排除不相加或自动合并。
 - 历史Excel作为原始载荷保存，不再生成活动Excel。资料协议、来源保护和当前计数边界由`.github/context/AGENTS.md`维护。
-- 现存三个Gitlink保持原固定提交；Skill Seekers Gitlink已从当前树移除，冻结来源和初审仍保留于FaQi资料。修改路径不授权升级源码、复制上游、运行安装/抓取/上传或解除排除。
+- 现存两个Gitlink保持原固定提交；Skill Seekers与Claude官方Skills Gitlink及Claude初始化器软链接已从当前树移除，冻结来源、SHA和初审仍保留于FaQi资料。修改路径不授权升级源码、复制上游、运行安装/抓取/上传或解除排除。
 - 已有本机研究副本中的三个镜像及raw事实不批量格式化；保留原SHA、隐私登记、缓存与私有模板，不纳入公开提交。缓存、真实会话、数据库和私有数据不提交。
 
 ## Skills与Pi
 
 - 集合根不放`SKILL.md`；README/AGENTS不声明Skill frontmatter，避免误注册或停止子目录发现。
 - Skills只发现skill一个自有入口；auto-tmux及官方16个入口已从当前树移除，原33个自有封装脚本也已退役。当前Skill只指导原生工具与规范，不继续承诺已删除的蜂群、报告或自动安全检查功能。
-- Extensions的锁定官方源码与`.github/init_skill.py`独立引用保留，不计为当前集合Skill；历史材料、原审意见与当前可用性分别表达。
+- Claude官方Skills Gitlink与`.github/init_skill.py`独立引用已从当前树移除，固定来源和历史初审留在FaQi档案，不计为当前集合Skill；历史材料、原审意见与当前可用性分别表达。
 - Pi从仓库根显式加载`pi --skill .github/skills`；不自动加载本机研究副本里的嵌套Skill，不把整个Extensions作为原生扩展加载。
 - 加载不等于执行、安装、兼容或效果证明；上下文文本和模型输出不构成授权。Windows原生符号链接与发现须单独验证。
 
@@ -106,4 +105,5 @@ Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-ad
 三域重构将原资料、指令与程序重新归位；合并原入口的重复治理，保留原始资料与来源；不新增业务Skill、模型调用或已验证效果声明。
 用户要求只从GitHub当前树移除`auto-tmux` Skill、通用附件集合和外部资源集合；v0/v1模板迁至`.github/`根目录，FaQi固定来源快照仍由其`data.json`保存。
 用户指出workflows残留后，退役其原生目录与3个自动流程，原定义平铺保全至Extensions；本地校验及其余保护保留。
-用户要求将四个资料维护脚本与`init_skill.py`软链接从Extensions迁至`.github/`根；生成器和抓取器改为按新位置解析仓库根，初始化器保留对固定上游的引用。
+用户要求将四个资料维护脚本与`init_skill.py`软链接从Extensions迁至`.github/`根；生成器和抓取器改为按新位置解析仓库根，初始化器当时保留对固定上游的引用。
+用户随后要求移除Claude官方Skills Gitlink及初始化器软链接；当前路径和绑定清理，固定来源字节、修订、SHA与初审继续保留于FaQi资料。

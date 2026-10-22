@@ -5,6 +5,6 @@
 - Skill Seekers 固定 Gitlink 与仓内源码已从当前树移除；不要依赖旧目录、旧适配器或旧命令。
 - FaQi 唯一资料源仍保存其固定修订、原始来源字节、SHA、静态初审和暂定重要性记录；这些历史事实不表示当前可用、许可已批准、独立审查、运行或效果已验证。详见[法器数据](../../../context/faqi/data.json)及[法器说明](../../../context/faqi/README.md)。
 - 退役只清理当前树的实现和活动绑定，不删除冻结档案、Git历史或本机缓存。
-- 根级`.github/init_skill.py`指向另一独立上游（Claude Skills）；它与Skill Seekers没有依赖关系，也不构成Skill Seekers的替代实现。
+- Claude官方Skills独立初始化器及Gitlink也已从当前树移除；固定来源修订和历史资料仍保存在FaQi档案。它与Skill Seekers没有依赖关系，也不构成Skill Seekers的替代实现。
 
 需要批量抽取时，按具体任务另行选择已授权且当前可用的工具；本仓库不会自动安装、抓取或运行第三方程序。

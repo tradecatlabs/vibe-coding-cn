@@ -84,7 +84,6 @@ def relocated(path, fragment=''):
         '.github/skills/auto-skill/scripts/skill-seekers-configs': '.github/extensions/Skill_Seekers-development/api/configs_repo',
         '.github/skills/claude-official-skills': '.github/extensions/claude-official-skills',
         '.github/extensions/fetch-research-raw.py': '.github/fetch-research-raw.py',
-        '.github/extensions/init_skill.py': '.github/init_skill.py',
         '.github/extensions/sync-doc-toc.py': '.github/sync-doc-toc.py',
         '.github/extensions/sync-faqi-catalog.py': '.github/sync-faqi-catalog.py',
         '.github/extensions/sync-gongfa-catalog.py': '.github/sync-gongfa-catalog.py',
@@ -117,6 +116,17 @@ def relocated(path, fragment=''):
         if path == old or path.startswith(old + '/'):
             path = new + path[len(old):]
             break
+    claude_repository = 'https://github.com/anthropics/skills'
+    claude_revision = '1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563'
+    claude_initializer = 'skills/skill-creator/scripts/init_skill.py'
+    if path in {'.github/init_skill.py', '.github/extensions/init_skill.py'}:
+        return (f'{claude_repository}/blob/{claude_revision}/{claude_initializer}', fragment)
+    retired_claude = '.github/extensions/claude-official-skills'
+    if path == retired_claude or path.startswith(retired_claude + '/'):
+        suffix = path[len(retired_claude):].lstrip('/')
+        route = 'blob' if suffix and Path(suffix).suffix else 'tree'
+        return (f'{claude_repository}/{route}/{claude_revision}'
+                + ('/' + quote(suffix, safe='/') if suffix else ''), fragment)
     retired_upstream = '.github/extensions/Skill_Seekers-development'
     if path == retired_upstream or path.startswith(retired_upstream + '/'):
         suffix = path[len(retired_upstream):].lstrip('/')
