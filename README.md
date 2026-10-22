@@ -19,7 +19,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/github/license/tukuaiai/vibe-coding-cn?label=%E8%AE%B8%E5%8F%AF%E8%AF%81&style=flat" alt="许可证"></a>
   <a href="https://t.me/glue_coding"><img src="https://img.shields.io/badge/交流-Telegram-blue?style=flat&logo=telegram" alt="交流群"></a>
   <a href=".github/context/gongfa/README.md#原文文集"><img src="https://img.shields.io/badge/功法-体系-slateblue?style=flat" alt="功法体系：思想、准则、方法与流程"></a>
-  <a href=".github/learning-map.md"><img src="https://img.shields.io/badge/入门-教程-red?style=flat" alt="Pi CLI 安装配置提示词：供网页版 AI 单步引导"></a>
+  <a href=".github/learning-map.md"><img src="https://img.shields.io/badge/入门-教程-red?style=flat" alt="召唤神降临：Pi CLI 安装配置提示词，供网页版 AI 单步引导"></a>
   <a href=".github/skills/README.md#当前保留"><img src="https://img.shields.io/badge/Skills-技能-forestgreen?style=flat" alt="skills技能大全"></a>
   <a href=".github/prompts-README.md#在线提示词库"><img src="https://img.shields.io/badge/提示词-表格-blue?style=flat" alt="提示词在线表格"></a>
   <a href="https://github.com/tukuaiai/vibe-coding-cn/wiki"><img src="https://img.shields.io/badge/Wiki-导航-slateblue?style=flat" alt="Wiki 导航入口"></a>
@@ -48,7 +48,7 @@
 
 ### 🚀 从零开始
 
-1. **安装并验证 Pi：** 将[Pi CLI 上手提示词](.github/learning-map.md)全文复制给网页版 Chat AI，按步骤完成本机安装、模型配置和 Agent 能力验证。
+1. **安装并验证 Pi：** 将[召唤神降临：Pi CLI 安装配置提示词](.github/learning-map.md)全文复制给网页版 Chat AI，按步骤完成本机安装、模型配置和 Agent 能力验证。
 2. **第一次项目练习（可选）：** 跟着[第一个项目教程](.github/first-project.md)，完成一个本地待办清单。
 
 </details>
