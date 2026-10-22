@@ -233,6 +233,8 @@ class SourceArchiveTest(unittest.TestCase):
             '',
         )
         self.assertEqual(first_reply.count('？'), 1)
+        self.assertNotIn('command -v pi', prompt)
+        self.assertNotIn('Get-Command pi -ErrorAction SilentlyContinue', prompt)
         for token in ('`', '://', 'pi --version', 'curl', 'npm', 'irm'):
             self.assertNotIn(token, first_reply)
         for contract in (
@@ -241,12 +243,17 @@ class SourceArchiveTest(unittest.TestCase):
             '也不发链接或网络测试',
             '我会先确认你准备使用的系统和终端，再检查 Pi 是否已可用；已安装就不重装。你现在使用 Windows、macOS 还是 Linux？如果不知道终端怎么打开，告诉我即可。',
             '若用户不知道“终端”或如何打开',
-            '安装阶段仅核对当前安装路线所需的官方分发与依赖源',
+            '安装/修复阶段仅核对当前路线实际需要的官方分发与依赖源',
+            '只有 M0 确认目标终端没有可用 Pi 且用户明确决定安装，或用户明确决定修复/重装时，才进入 M1',
             '不要逐项探测未实际触发的安装源',
             'OpenAI API 的网络检查仅在 M4.1 阶段需要时执行',
             '若 `pi --version` 已成功，就跳过安装专用 M1/M2',
+            '若曾安装或不确定，先问安装渠道（不记得可直接说明），按能确认的渠道当前官方资料核对现有安装、目标终端和 PATH',
+            '若渠道或安装状态仍不明，先暂停，不直接重跑安装器',
+            '若确认没有可复用的既有安装，说明安装目标与影响后仍须等用户明确决定安装',
+            '仍找不到时回到 M0 核对既有安装渠道与目标终端，不再追加重复的 PATH 查询或盲目重装',
             '只有用户刚安装或更新 Pi、或刚修改 PATH 后，才先重开同一终端并重试一次',
-            '只需回报查找结果为“找到”或“未找到”；若命令运行失败，再补简短脱敏错误摘要。不贴完整路径、完整 PATH 或截图',
+            '用户只需回报版本号或“命令未找到”；启动失败时仅给简短脱敏错误摘要；不贴完整路径、完整 PATH、截图或完整日志',
             '默认优先使用对应系统的官方安装器',
             '不展示其他系统路线的命令',
             '请将本文全文复制给可用的网页版 Chat AI',
