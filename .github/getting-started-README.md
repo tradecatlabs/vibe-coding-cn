@@ -19,7 +19,7 @@
 
 ### 细粒度目录
 
-- [道成了肉身：Pi CLI 安装配置提示词](god.md) - 全文复制给网页版 Chat AI；从操作系统、原生终端和现有 Pi 检查开始，按本机路线逐步准备安装网络、安装并验证 CLI，再继续模型和 Bash 验收。
+- [道成了肉身：Pi CLI 安装配置提示词](god.md) - 全文复制给网页版 Chat AI；从操作系统、本机终端（Android 使用 Termux）和现有 Pi 检查开始，按本机路线逐步准备安装网络、安装并验证 CLI，再继续模型和 Bash 验收。
 - [第一个项目（可选练习）](first-project.md) - 用本地待办清单练习运行、验收和 Git 保存。
 - [Vibe Coding 经验](context/gongfa/README.md#doc-vibe-coding-experience) - 功法文集：理解人机分工、验证和质量边界。
 
@@ -27,7 +27,7 @@
 
 ## 使用方式
 
-- 完全新手将[道成了肉身：Pi CLI 安装配置提示词](god.md)全文复制到可用的网页版 AI；AI 首轮先问操作系统，不熟悉终端时先指导打开原生终端，再逐轮互动。已有 Pi 的用户先运行 `pi --version`，成功就复用证据、不重装。
+- 完全新手将[道成了肉身：Pi CLI 安装配置提示词](god.md)全文复制到可用的网页版 AI；AI 首轮先问操作系统，不熟悉终端时先指导打开本机终端（Android 使用 Termux），再逐轮互动。已有 Pi 的用户先运行 `pi --version`，成功就复用证据、不重装。
 - 网页 Chat AI 负责安装引导和核对回报，用户在本机 Pi 中发起工具验证；网页 AI 不冒充已操作用户设备，项目工具配置不属于本篇范围。
 - 需要固定练习时再做[第一个项目](first-project.md)；想了解通用协作原则时按需读[Vibe Coding 经验](context/gongfa/README.md#doc-vibe-coding-experience)。
 

@@ -12,7 +12,7 @@
 **本文目的：**帮助初学者借助网页版 Chat AI，按需检查或安装并验证 Pi CLI，再完成 OpenAI GPT 与本机 Bash 的配置和使用验证；实际操作由用户在本机完成。
 
 - 把本文全文交给网页版 Chat AI：首轮只问系统，之后每轮只引导一个本机动作并等你回报。
-- 若不熟悉终端，先按系统指导打开原生终端；在计划使用的终端运行 `pi --version`。有版本号就跳过 Pi 安装和安装网络检查。
+- 若不熟悉终端，先按系统指导打开本机终端（Android 使用 Termux）；在计划使用的终端运行 `pi --version`。有版本号就跳过 Pi 安装和安装网络检查。
 - 命令未找到时，仅在近期安装/更新 Pi 或修改 PATH 后重开终端重试一次；再核对既有安装。状态或渠道不明就暂停，不盲目重装。
 - 确认没有可复用安装后，先说明影响并等你明确决定；只检查本系统官方安装路线所需网络，目标不可达且你选择代理时才处理代理，再按该路线安装。
 - 安装后再用 `pi --version` 验证。版本号只证明 CLI 可用；OpenAI GPT 与本机 Bash 的配置及使用验证随后另行完成。
@@ -23,9 +23,9 @@
 
 用户将本代码块全文复制给网页版 Chat AI。用户首次粘贴后，先简短说明路线，然后只询问操作系统；第一轮不发命令、安装脚本或代理配置，也不发链接或网络测试。首轮可直接这样回复：
 
-> 我会先确认你准备使用的系统和终端，再检查 Pi 是否已可用；已安装就不重装。你现在使用 Windows、macOS 还是 Linux？如果不知道终端怎么打开，告诉我即可。
+> 我会先确认你准备使用的系统和终端，再检查 Pi 是否已可用；已安装就不重装。你现在使用 Windows、macOS、Linux 还是 Android/Termux？如果不知道终端怎么打开，告诉我即可。
 
-若用户不知道“终端”或如何打开，先用其系统适用的简短步骤引导打开原生终端，再等回报。不要一次性贴出全部路线；从 M0 开始每轮只推进一个动作，等待用户的环境信息、决定和执行结果，再推进 M1–M4。已有证据可复用，但不得在仅有 `pi --version`、模型回答或单次命令检查时提前宣告全流程完成；只有全部完成标准均有用户本机证据才报告完成。你只能引导和核对回报；网页 AI 不能读取或操作用户终端或设备、代用户授权或声称已代运行命令，实际操作由用户在本机完成。
+若用户不知道“终端”或如何打开，先用其系统适用的简短步骤引导打开本机终端（Android 使用 Termux），再等回报。不要一次性贴出全部路线；从 M0 开始每轮只推进一个动作，等待用户的环境信息、决定和执行结果，再推进 M1–M4。已有证据可复用，但不得在仅有 `pi --version`、模型回答或单次命令检查时提前宣告全流程完成；只有全部完成标准均有用户本机证据才报告完成。你只能引导和核对回报；网页 AI 不能读取或操作用户终端或设备、代用户授权或声称已代运行命令，实际操作由用户在本机完成。
 
 > “凡事都要规规矩矩的按着次序行。”——《哥林多前书》14:40，[和合本CUVS](https://www.biblegateway.com/passage/?search=1%20Corinthians%2014%3A40&version=CUVS)
 >
@@ -39,7 +39,7 @@
 
 ## M0：检查现状
 
-先询问用户使用 Windows、macOS 还是 Linux，并等待回答；告诉用户不知道终端或还没打开都没关系。若用户回答 Android/Termux 等未列平台，不套用 Linux/macOS/Windows 命令，先核对 Pi 官方对应平台文档；没有明确路线就说明暂不能按本文引导。若用户不知道“终端”是什么或如何打开，解释它是输入命令的系统应用，再按其系统引导打开原生终端：Windows 使用 PowerShell（可从 Windows Terminal 进入），不默认使用 WSL；macOS 打开 Terminal；Linux 使用当前桌面环境的终端，若找不到再询问发行版/桌面环境。若用户已有终端，先确认实际 shell；Windows 原生 PowerShell 与 WSL/Linux shell 是不同环境，命令须按实际终端选择。终端就绪后才检查现状。不要为安装 Pi 默认要求 WSL、Git、Python、编辑器、代理或项目依赖。
+先询问用户使用 Windows、macOS、Linux 还是 Android/Termux，并等待回答；告诉用户不知道终端或还没打开都没关系。若用户回答 Android/Termux，不套用下方 Linux/macOS/Windows 命令，改按[Pi 官方 Termux 指南](https://pi.dev/docs/latest/termux)逐轮引导。核对 Termux 来源：官方指南推荐 GitHub 或 F-Droid，不使用已弃用的 Google Play 版本；若来源不明或用户仍使用该版本，先暂停核对，不盲目重装或迁移。Termux 包升级、依赖安装或共享存储授权前，说明具体影响并等用户明确决定；共享存储仅在确需访问 Android 文件时配置。其他未列平台先核对对应官方文档；没有明确路线就说明暂不能按本文引导。若用户不知道“终端”是什么或如何打开，解释它是输入命令的系统应用，再按其系统引导打开本机终端：Windows 使用 PowerShell（可从 Windows Terminal 进入），不默认使用 WSL；macOS 打开 Terminal；Linux 使用当前桌面环境的终端，若找不到再询问发行版/桌面环境；Android 使用 Termux；若尚未安装，说明其官方来源与安装影响、等待用户明确决定，这一步只准备终端，不代表 Pi 已安装；若来源不明，先按上文官方路线核对并等待用户决定。若用户已有终端，先确认实际 shell；Windows 原生 PowerShell 与 WSL/Linux shell 是不同环境，命令须按实际终端选择。终端就绪后才检查现状。不要为安装 Pi 默认要求 WSL、Git、Python、编辑器、代理或项目依赖。
 
 确认环境后，让用户在计划使用 Pi 的终端单独运行：
 
@@ -73,10 +73,11 @@ pi --version
 
 - **macOS/Linux：**官方安装器用 `curl` 和 POSIX shell；需要 Node.js 22.19.0 或更高版本及 npm，缺少时安装器会询问处理方式。
 - **Windows 原生：**使用 PowerShell 安装器；同样需要 Node.js 22.19.0 或更高版本及 npm，并可能询问是否安装 Node、是否配置可选 Bash。
+- **Android/Termux：**按[官方 Termux 指南](https://pi.dev/docs/latest/termux)使用 Termux 包管理器安装 Node.js 和 Git，再通过 npm 安装 Pi。
 - **已在使用 Nix 的用户：**可选择 Nix 路线；不要为 Pi 专门安装 Nix。
 - **已有合格 Node.js/npm 的用户：**可明确选择 npm 备选路线。
 
-安装器可能访问 `pi.dev`、npm、Node.js 分发服务、系统包源；Windows 可选 Git Bash 路线还可能访问 GitHub。只在真实失败时核对对应目标；遵守单位网络规则，不关闭 TLS 或使用未知镜像。
+安装器可能访问 `pi.dev`、npm、Node.js 分发服务和系统包源；Termux 路线还需访问配置的软件包源与 npm Registry；Windows 可选 Git Bash 路线还可能访问 GitHub。只在真实失败时核对对应目标；遵守单位网络规则，不关闭 TLS 或使用未知镜像。
 
 ## M2：预备行各样的善事（安装 Pi CLI）
 
@@ -84,7 +85,9 @@ pi --version
 >
 > 经文以器皿比喻人的预备与品行；这里只借其题名，不把安装软件等同于信仰或圣洁。
 
-仅在 M0 确认没有可复用的 CLI 且用户明确决定安装，或用户明确决定修复/重装后，默认优先使用对应系统的官方安装器；只有用户已在使用 Nix 时才考虑 Nix 路线，npm 备选须由用户明确选择。每轮只提供当前系统的一条安装路线，不展示其他系统路线的命令或同时罗列全部选项。远程安装命令会下载并执行脚本；先核对官方域名，仅在可交互的普通用户终端运行，不要由 CI、脚本或非交互 shell 调用，也不要以管理员/root 运行。
+仅在 M0 确认没有可复用的 CLI 且用户明确决定安装，或用户明确决定修复/重装后，才进入本节。默认优先使用对应系统的官方安装器；Android/Termux 路线按 M0 链接的官方 Termux 指南处理，不套用桌面安装器，其包升级、依赖安装与 Pi 安装均须逐项说明影响并等待用户决定。只有用户已在使用 Nix 时才考虑 Nix 路线；其他系统的 npm 备选须由用户明确选择。每轮只提供当前系统的一条安装路线，不展示其他系统路线的命令或同时罗列全部选项。远程安装命令会下载并执行脚本；先核对官方域名，仅在可交互的普通用户终端运行，不要由 CI、脚本或非交互 shell 调用，也不要以管理员/root 运行。
+
+**Android/Termux 官方路线：**按 M0 链接的指南逐轮处理 Termux 包更新、安装 Node.js/Git、用 npm 安装 Pi 和 `pi --version` 验证；每轮只给当前一步，并先说明升级或安装的目标与影响、等待用户决定。共享存储不是安装前置，仅在用户确需访问 Android 文件时才单独指导并等待决定。
 
 **macOS/Linux 官方安装器：**
 
@@ -137,7 +140,7 @@ irm https://pi.dev/install.ps1 | iex
 不要运行其他命令、读取文件、创建或修改文件、访问网络。只返回结果；若工具不可用，请直接说明。
 ```
 
-用户应能看到实际工具调用，确认执行的只有该命令且返回 `local shell OK`；无需粘贴对话、输出或本机路径。若工具不可用：Windows 原生按[官方 Windows 说明](https://pi.dev/docs/latest/windows)说明 Git for Windows / `shellPath` 的影响，用户决定是否配置；macOS/Linux/WSL 按真实错误核对 Bash，只在用户确需且同意时指导配置，不猜路径。不默认安装 WSL、不重跑可能重装/迁移的安装器。用户拒绝配置或工具仍不可用时，如实报告边界，不称完整验证通过。
+用户应能看到实际工具调用，确认执行的只有该命令且返回 `local shell OK`；无需粘贴对话、输出或本机路径。若工具不可用：Windows 原生按[官方 Windows 说明](https://pi.dev/docs/latest/windows)说明 Git for Windows / `shellPath` 的影响，用户决定是否配置；Android/Termux、macOS/Linux/WSL 按真实错误核对 Bash，只在用户确需且同意时指导配置，不猜路径。不默认安装 WSL、不重跑可能重装/迁移的安装器。用户拒绝配置或工具仍不可用时，如实报告边界，不称完整验证通过。
 
 ## 完整配置与使用的完成标准
 
@@ -161,7 +164,7 @@ irm https://pi.dev/install.ps1 | iex
 
 ## 官方资料
 
-- [Pi Quickstart](https://pi.dev/docs/latest/quickstart) · [Windows](https://pi.dev/docs/latest/windows) · [Providers](https://pi.dev/docs/latest/providers) · [Models](https://pi.dev/docs/latest/models) · [Security](https://pi.dev/docs/latest/security)
+- [Pi Quickstart](https://pi.dev/docs/latest/quickstart) · [Windows](https://pi.dev/docs/latest/windows) · [Termux](https://pi.dev/docs/latest/termux) · [Providers](https://pi.dev/docs/latest/providers) · [Models](https://pi.dev/docs/latest/models) · [Security](https://pi.dev/docs/latest/security)
 - [FlClash 官方发布页](https://github.com/chen08209/FlClash/releases/latest) · [OpenAI API](https://platform.openai.com/docs/api-reference) · [OpenAI 模型列表端点](https://platform.openai.com/docs/api-reference/models/list) · [ChatGPT 与 API 计费说明](https://help.openai.com/en/articles/9039756-managing-billing-for-chatgpt-and-the-api-platform) · [macOS/Linux 官方安装脚本](https://pi.dev/install.sh) · [Windows 官方安装脚本](https://pi.dev/install.ps1) · [Node.js](https://nodejs.org/en/download) · [Git for Windows](https://git-scm.com/download/win)
 
 ````
