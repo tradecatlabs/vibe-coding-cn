@@ -66,12 +66,12 @@ reading_paths:
 selection_rules:
   faqi: 需要理解 Vibe Coding 工具/依赖分类、重要性分级或效能边界时，读法器体系说明，再核生成总表与登记事实。
   gongfa: 需要认知模型、问题求解、工程准则、架构模板、方法、流程、门禁或研究转化时统一读取；文集与独立功法记录分开。
-  getting-started: 需要把 Pi CLI 安装配置提示词复制给网页版 AI，逐步引导本机检查、安装、模型配置及 Agent 能力验收时读取；项目练习独立可选，通用经验链接到功法。
+  getting-started: 需要先由网页 Chat 引导准备 Pi、接通模型，再通过本机工具调用验证基础 Work 通路时读取；项目练习独立可选，通用经验链接到功法。
 documents:
   getting-started:
   - path: .github/god.md
     title: 道成了肉身：Pi CLI 安装配置提示词
-    role: 可全文复制到网页版 AI，逐步引导本机现状检查、分平台安装、模型授权及本机工具验证，并在 Agent 能力验收后停止
+    role: 可全文复制到网页版 Chat AI，逐步引导本机准备和模型授权，再由本机 Pi 的真实工具调用验证基础 Work 通路；区分对话能力、执行证据与业务任务完成，验收后停止
   - path: .github/first-project.md
     title: 第一个项目
     role: 可选的本地练习：走通需求、实现、运行、验收和 Git 保存
