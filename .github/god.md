@@ -7,8 +7,6 @@
 >
 > ——《约翰福音》1:14，[和合本CUVS](https://www.biblegateway.com/passage/?search=John%201%3A14&version=CUVS)
 
-Pi 入门提示词：将本文全文复制给网页版 Chat AI。先确认操作系统和终端，再按需准备网络、安装并验证 Pi CLI；随后继续 OpenAI GPT 与本机 Bash 配置/使用，全部证据达标后才报告完成。
-
 ## 字多不看
 
 **本文目的：**帮助初学者借助网页版 Chat AI，按需检查或安装并验证 Pi CLI，再完成 OpenAI GPT 与本机 Bash 的配置和使用验证；实际操作由用户在本机完成。
