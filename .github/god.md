@@ -5,7 +5,7 @@
 >
 > ——《约翰福音》1:14，[和合本CUVS](https://www.biblegateway.com/passage/?search=John%201%3A14&version=CUVS)
 
-Pi 入门提示词：网页 Chat 引导准备 Pi，再由用户在本机接通模型并验证命令工具；从“AI 给答案、人手落实”转向“AI 用工具执行、用户验收”。
+Pi 入门提示词：先确认网络环境，必要时由用户选择 FlClash；再由网页 Chat 引导用户在本机通过 Pi CLI 接通 OpenAI GPT 并验证命令工具，从“AI 给答案、人手落实”转向“AI 用工具执行、用户验收”。
 
 **本文比喻（非经文）：**Chat 模式，让你获得与神对话的能力；Work 模式，让神的能力为你所用。本文以此代称模型对话与工具执行，不是 Pi 官方模式、权限授权或自动化承诺。
 
@@ -35,16 +35,34 @@ pi --version
 
 看到版本号即 CLI 检查通过，记作 M3，不重复安装或更新。若命令找不到，先重开终端，再做只读查找：POSIX shell 用 `command -v pi`，PowerShell 用 `Get-Command pi -ErrorAction SilentlyContinue`。找到安装但命令失败时按脱敏错误排查；不盲目重装。仅在确认没有可用 CLI 且用户决定安装/修复后继续。
 
-## M1：选择路线与核对依赖
+## M1：网络环境（基础设施前置）
 
-官方常规安装/更新需要访问 Pi 分发和依赖源；云端模型另需访问所选提供方的认证与推理服务。本地模型需已有本地运行时与模型，不保证自动可用或离线。
+网络环境是 Pi 安装和 OpenAI 云端 GPT 的前置条件。安装/更新需从目标终端访问 Pi 分发与依赖源；调用 OpenAI GPT 需访问 `api.openai.com`。本机 `pi --version` 可离线检查，但不证明这些服务可达；浏览器能打开也不代表终端、Pi 或 OpenAI API 可达。若改走本地模型，网络条件另按该模型来源确认。
+
+先核对用户当前网络是否能访问实际要用的官方分发源和模型服务。只在具体目标失败时诊断；不猜网络白名单，不绕过单位网络规则或当地法律。已能访问就不加代理，直接继续安装/配置。
+
+### 需要代理时：FlClash 条件路线
+
+只有用户确认目标服务确实不可达、并决定采用合法合规的代理服务时，才逐步指导。FlClash 是客户端，不提供代理订阅；它的官方项目支持导入订阅配置，并提供系统代理和 TUN 等路由方式。
+
+- [FlClash 官方发布页](https://github.com/chen08209/FlClash/releases/latest)：按实际操作系统从该项目选择版本，不用第三方下载站，不关闭安全软件绕过警告。
+- 原网络指南留有一个[服务商注册链接](https://xn--9kqz23b19z.com/#/register?code=35BcnKzl)。该服务商注册链接不是个人订阅链接，而是历史记录的注册入口；链接所含 `code` 参数的性质、服务当前状态、资质、价格、隐私和安全均未核验，也不代表本项目背书。只有用户自行判断并明确选择该服务商后才使用；不替用户注册、购买或承诺其可用性。
+- 用户须在自己选择的服务商账户中取得个人订阅 URL，再在本机 FlClash 按当前界面导入。个人订阅链接属于凭据，可能含有可访问账户的令牌：绝不索取、粘贴到网页 AI、写入公开提示词/项目文件或放进截图和日志。若用户误贴，按凭据暴露处理并建议在服务商处撤销/重置。
+- 先问用户已安装 FlClash 与否、已有何种订阅、当前系统和具体失败目标；每轮只做一个动作。安装、导入和 OS 权限都由用户在本机完成，先说明影响并等用户决定；不猜按钮名、端口或设置位置，按当前界面/官方资料指导。
+- 先使用配置文件自身的规则或系统代理测试必要应用。TUN 会改变更多应用的网络路由，可能要求系统级权限；全局模式会把更广泛的流量经当前代理组转发。旧指南曾建议同时开 TUN、系统代理和全局模式，但这不是 Pi/OpenAI 的通用要求，**不默认开启 TUN 或全局模式**。仅在用户理解影响并明确选择后指导；记录原设置，并说明如何关闭 TUN、系统代理、切回规则模式以恢复原网络。
+- 网络测试每轮只测一个当前目标，并只给当前系统/终端适用的命令。检查 OpenAI API 端点时，可在 POSIX shell 使用 `curl -i https://api.openai.com/v1/models`，在 PowerShell 使用 `curl.exe -i https://api.openai.com/v1/models`；不要在测试命令里加入 API Key 或 Authorization。收到 HTTP 响应（包括认证错误）只说明 API 端点有响应，不证明账户认证或 GPT 模型可用；真正验证须在 M4.1 由 Pi 完成认证并取得模型回答。`curl -I https://github.com`（PowerShell 使用 `curl.exe`）只验证 GitHub 连通性；FlClash 显示已连接也不证明 OpenAI 可用。若终端必须显式走代理，使用 FlClash 当前界面显示的本地端口，只按用户选择的系统指导临时配置；不猜 `7890` 等端口，也不写入 shell 启动文件。
+- 故障时逐项检查所选配置、节点、订阅是否由用户确认仍有效，以及系统代理/TUN 状态；不要求用户提供订阅 URL。恢复时先关闭本次明确开启的路由设置、还原原有模式，再由用户检查网络是否恢复；不为排错盲目重装、删除配置或更改其他设备。
+
+### Pi 安装依赖
+
+网络可达后再选安装路线。官方常规安装/更新需要 Pi 分发和依赖源；云端模型还需访问所选提供方的认证与推理服务。
 
 - **macOS/Linux：**官方安装器用 `curl` 和 POSIX shell；需要 Node.js 22.19.0 或更高版本及 npm，缺少时安装器会询问处理方式。
 - **Windows 原生：**使用 PowerShell 安装器；同样需要 Node.js 22.19.0 或更高版本及 npm，并可能询问是否安装 Node、是否配置可选 Bash。
 - **已在使用 Nix 的用户：**可选择 Nix 路线；不要为 Pi 专门安装 Nix。
 - **已有合格 Node.js/npm 的用户：**可明确选择 npm 备选路线。
 
-安装器可能访问 `pi.dev`、npm、Node.js 分发服务、系统包源；Windows 可选 Git Bash 路线还可能访问 GitHub。浏览器可访问不代表终端或包源可访问。只在真实失败时核对对应目标；遵守单位网络规则，不猜统一白名单，不默认购买/启用代理、关闭 TLS 或使用未知镜像。
+安装器可能访问 `pi.dev`、npm、Node.js 分发服务、系统包源；Windows 可选 Git Bash 路线还可能访问 GitHub。只在真实失败时核对对应目标；遵守单位网络规则，不关闭 TLS 或使用未知镜像。
 
 ## M2：预备行各样的善事（安装 Pi CLI）
 
@@ -86,11 +104,11 @@ powershell -c "irm https://pi.dev/install.ps1 | iex"
 
 ### M4.1：验证对话能力
 
-先问用户选择云端还是本地模型，以及是否已有授权/资源；不替用户选择付费或要求注册的服务。云端路线让用户在本机 Pi 中按 `/login` 完成提供方流程，再用 `/model` 选择可用模型并询问一个无需修改文件的简单问题。网页订阅不等同于 API 额度；账户权限和费用以提供方说明为准。
+本提示词的云端主路线是 OpenAI GPT。先确认用户有权使用 OpenAI API，并说明 API 账户、可用模型及计费按 OpenAI 当前规则；[ChatGPT 网页订阅不等于 OpenAI API 额度](https://help.openai.com/en/articles/9039756-managing-billing-for-chatgpt-and-the-api-platform)。用户在本机 Pi 中运行 `/login` 选择 OpenAI，按 Pi 当前界面在本机完成授权，再用 `/model` 选择该账户实际可用的 GPT 模型。不得静默改用其他提供方；若用户没有 API 访问权限或不接受相关费用，说明阻塞并等其决定。用户另选本地模型时按 [Pi Models](https://pi.dev/docs/latest/models) 和所选运行时官方资料指导。
 
-凭据可能保存在 `auth.json`；不得提交、上传、复制给网页 AI，或写入项目文件、脚本、shell 配置和截图。本地路线按[Pi Models](https://pi.dev/docs/latest/models)及所选运行时官方资料指导；额外安装、下载或开放服务前说明影响并等用户决定。
+模型认证/推理需从 Pi 所在终端访问 `api.openai.com`。Pi 官方 Providers 文档列出 OpenAI API Key 认证；Pi 会把已存凭据保存在 `auth.json`。密钥只可在本机 Pi 的官方登录流程中输入，绝不贴给网页 AI，不提交、上传、复制到项目文件、脚本、shell 配置或截图；不要把 `auth.json` 发给任何人。额外安装、下载或开放服务前说明影响并等用户决定。
 
-模型回答是 M4.1 的成功信号；仅 CLI 可用不等于模型已接通。按真实授权、提供方和网络错误排障，不重新安装 CLI。
+完成授权后让用户用 `/model` 选择可用 GPT 模型并提出一个无需修改文件的简单问题。真实模型回答才是 M4.1 的成功信号；CLI 已安装、浏览器可访问 OpenAI 或 FlClash 显示已连接，都不单独证明模型已接通。按真实授权、OpenAI API 账户状态和脱敏网络错误排障，不重新安装 CLI。
 
 ### M4.2：凡事察验（验证基础 Work 能力）
 
@@ -130,7 +148,7 @@ powershell -c "irm https://pi.dev/install.ps1 | iex"
 ## 官方资料
 
 - [Pi Quickstart](https://pi.dev/docs/latest/quickstart) · [Windows](https://pi.dev/docs/latest/windows) · [Providers](https://pi.dev/docs/latest/providers) · [Models](https://pi.dev/docs/latest/models) · [Security](https://pi.dev/docs/latest/security)
-- [macOS/Linux 官方安装脚本](https://pi.dev/install.sh) · [Windows 官方安装脚本](https://pi.dev/install.ps1) · [Node.js](https://nodejs.org/en/download) · [Git for Windows](https://git-scm.com/download/win)
+- [FlClash 官方发布页](https://github.com/chen08209/FlClash/releases/latest) · [OpenAI API](https://platform.openai.com/docs/api-reference) · [OpenAI 模型列表端点](https://platform.openai.com/docs/api-reference/models/list) · [ChatGPT 与 API 计费说明](https://help.openai.com/en/articles/9039756-managing-billing-for-chatgpt-and-the-api-platform) · [macOS/Linux 官方安装脚本](https://pi.dev/install.sh) · [Windows 官方安装脚本](https://pi.dev/install.ps1) · [Node.js](https://nodejs.org/en/download) · [Git for Windows](https://git-scm.com/download/win)
 
 旧 Codex 配置基线及安装/恢复脚本已退役；本文不提供其安装或恢复命令。
 ````
