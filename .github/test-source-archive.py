@@ -238,6 +238,12 @@ class SourceArchiveTest(unittest.TestCase):
         for token in ('`', '://', 'pi --version', 'curl', 'npm', 'irm'):
             self.assertNotIn(token, first_reply)
         for contract in (
+            '## 字多不看',
+            '把本文全文交给网页版 Chat AI：首轮只问系统，之后每轮只引导一个本机动作并等你回报。',
+            '有版本号就跳过 Pi 安装和安装网络检查',
+            '状态或渠道不明就暂停，不盲目重装。',
+            '目标不可达且你选择代理时才处理代理',
+            '版本号只证明 CLI 可用；OpenAI GPT 与本机 Bash 的配置及使用验证随后另行完成。',
             '用户首次粘贴后，先简短说明路线，然后只询问操作系统',
             '第一轮不发命令、安装脚本或代理配置',
             '也不发链接或网络测试',
@@ -292,6 +298,7 @@ class SourceArchiveTest(unittest.TestCase):
         ):
             with self.subTest(prompt_contract=contract):
                 self.assertIn(contract, prompt)
+        self.assertLess(prompt.index('## 字多不看'), prompt.index('## 给网页版 Chat AI 的任务'))
         self.assertLess(prompt.index('## M1：网络环境'), prompt.index('## M2：预备行各样的善事'))
         html = MarkdownIt('commonmark').render(text)
         self.assertEqual(html.count('<pre>'), 1)
