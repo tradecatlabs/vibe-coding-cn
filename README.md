@@ -48,7 +48,7 @@
 
 ### 🚀 从零开始
 
-1. **从 Chat 走向 Work：** 将[道成了肉身：Pi CLI 安装配置提示词](.github/god.md)全文复制给网页版 Chat AI，先核对网络环境、按需配置 FlClash，再由 Pi CLI 接通 OpenAI GPT，并通过本机工具调用验证基础执行能力。
+1. **从 Chat 走向 Work：** 将[道成了肉身：Pi CLI 安装配置提示词](.github/god.md)全文复制给网页版 Chat AI；先确认系统/终端并复用已安装的 Pi，缺少 CLI 时再按所选安装路线核对网络、安装并验证，之后连接 OpenAI GPT 并通过本机工具调用验证基础执行能力。
 2. **第一次项目练习（可选）：** 跟着[第一个项目教程](.github/first-project.md)，完成一个本地待办清单。
 
 </details>

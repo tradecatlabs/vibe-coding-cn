@@ -229,6 +229,15 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertNotRegex(prompt, r'\]\(#[^)]+\)')
         self.assertIn("printf 'local shell OK\\n'", prompt)
         for contract in (
+            '用户首次粘贴后，先简短说明路线，然后只询问操作系统',
+            '第一轮不发命令、安装脚本或代理配置',
+            '若用户不知道“终端”或如何打开',
+            '安装阶段仅核对当前安装路线所需的官方分发与依赖源',
+            '不要逐项探测未实际触发的安装源',
+            'OpenAI API 的网络检查仅在 M4.1 阶段需要时执行',
+            '若 `pi --version` 已成功，就跳过安装专用 M1/M2',
+            '默认优先使用对应系统的官方安装器',
+            '不展示其他系统路线的命令',
             '请将本文全文复制给可用的网页版 Chat AI',
             '逐轮交互',
             '完成本文范围内的 Pi CLI 检查/安装、必要网络准备、OpenAI GPT 授权与模型选择、工具配置及一次安全的实际使用验证',

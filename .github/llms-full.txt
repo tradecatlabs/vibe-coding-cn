@@ -48,9 +48,9 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 
 - README.md：项目主入口，说明定位、快速开始、工具资源和核心工作流。
 - .github/context/README.md：知识库总索引，提供新手、开发者、思维模型和 AI Agent 读取路径。
-- .github/getting-started-README.md：入门索引，链接可全文复制给网页版 AI 的 Pi CLI 提示词（先核对网络、必要时配置 FlClash，再接通 OpenAI GPT）与可选项目练习；通用Vibe Coding经验正文见 .github/context/gongfa/README.md#doc-vibe-coding-experience。
+- .github/getting-started-README.md：入门索引，链接可全文复制给网页版 AI 的 Pi CLI 提示词（先确认系统/终端并检查现有 Pi；必要时按安装路线核对网络、安装并验证 CLI，再接通 OpenAI GPT）与可选项目练习；通用Vibe Coding经验正文见 .github/context/gongfa/README.md#doc-vibe-coding-experience。
 - .github/context/gongfa/README.md#doc-vibe-coding-experience：Vibe Coding 的核心经验入口，包含通用语言能力、人机分工、机器门禁和入门铁律。
-- .github/god.md：《道成了肉身》，以《圣经》和合本原句组织叙事、区分经文原义与技术说明的 Pi CLI 提示词；先核对网络环境（确有需要时才走 FlClash），再由网页 Chat 引导 Pi 连接 OpenAI GPT，并由本机 Pi 的实际工具调用验证基础 Work 通路。用户选择 FlClash 路线后，默认目标配置启用 TUN、系统代理和全局模式，启用前说明流量/隐私影响及恢复方式并等用户确认。订阅 URL 属于凭据。Chat/Work 是使用方式分类，不是 Pi 的正式模式；模型回答不等于工具执行，一次命令检查不证明所有工作自动化，验收后停止，不展开项目任务。
+- .github/god.md：《道成了肉身》，以《圣经》和合本原句组织叙事、区分经文原义与技术说明的 Pi CLI 提示词；先确认系统/终端并检查现有 Pi；缺少 CLI 时才核对当前安装路线网络、按本机系统安装并验证，然后由网页 Chat 引导 Pi 连接 OpenAI GPT，再由本机 Pi 的实际工具调用验证基础 Work 通路。OpenAI API 网络检查延至模型配置阶段；用户选择 FlClash 路线后，默认目标配置启用 TUN、系统代理和全局模式，启用前说明流量/隐私影响及恢复方式并等用户确认。订阅 URL 属于凭据。Chat/Work 是使用方式分类，不是 Pi 的正式模式；模型回答不等于工具执行，一次命令检查不证明所有工作自动化，验收后停止，不展开项目任务。
 - 原 Codex 全局配置基线及安装/恢复脚本已按用户要求移除；历史 Codex 研究资料仅保存在本机副本，不作为 Pi 安装路线。
 - .github/first-project.md：可选的本地待办清单练习，用于走通需求、实现、运行、验收和 Git 保存。
 - .github/context/gongfa/README.md：按理解、求解、设计、实现、验证、转化和内容身份导航的统一功法文集。
