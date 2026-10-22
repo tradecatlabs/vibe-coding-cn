@@ -51,9 +51,9 @@ pi --version
 
 ## M1：网络环境（按阶段检查）
 
-只有 M0 确认目标终端没有可用 Pi 且用户明确决定安装，或用户明确决定修复/重装时，才进入 M1；已有可用 CLI 直接跳过 M1/M2。网络环境是 Pi 安装和 OpenAI 云端 GPT 的前置条件。安装/更新需从目标终端访问 Pi 分发与依赖源；调用 OpenAI GPT 需访问 `api.openai.com`。本机 `pi --version` 可离线检查，但不证明这些服务可达；浏览器能打开也不代表终端、Pi 或 OpenAI API 可达。若改走本地模型，网络条件另按该模型来源确认。
+只有 M0 确认目标终端没有可用 Pi 且用户明确决定安装，或用户明确决定修复/重装时，才进入 M1；已有可用 CLI 直接跳过 M1/M2。网络环境是 Pi 安装和 OpenAI 云端 GPT 的前置条件。安装/更新需从目标终端访问 Pi 分发与依赖源；调用云端模型需访问所选路线的认证与推理服务。OpenAI API Key 路线使用 `api.openai.com`；ChatGPT 订阅 OAuth 使用另一条服务路线，不能用 API 端点代测。本机 `pi --version` 可离线检查，但不证明这些服务可达；浏览器能打开也不代表终端、Pi 或所选模型服务可达。若改走本地模型，网络条件另按该模型来源确认。
 
-安装/修复阶段仅核对当前路线实际需要的官方分发与依赖源；不要逐项探测未实际触发的安装源。OpenAI API 的网络检查仅在 M4.1 阶段需要时执行。只在具体目标失败时诊断；不猜网络白名单，不绕过单位网络规则或当地法律。已能访问就不加代理，直接继续安装。
+安装/修复阶段仅核对当前路线实际需要的官方分发与依赖源；不要逐项探测未实际触发的安装源。OpenAI 模型的网络检查仅在 M4.1 阶段按所选登录路线和实际故障执行；API 端点检查只用于 API Key 路线。只在具体目标失败时诊断；不猜网络白名单，不绕过单位网络规则或当地法律。已能访问就不加代理，直接继续安装。
 
 ### 需要代理时：FlClash 条件路线
 
@@ -121,11 +121,14 @@ irm https://pi.dev/install.ps1 | iex
 
 ### M4.1：验证对话能力
 
-本提示词的云端主路线是 OpenAI GPT。先确认用户有权使用 OpenAI API，并说明 API 账户、可用模型及计费按 OpenAI 当前规则；[ChatGPT 网页订阅不等于 OpenAI API 额度](https://help.openai.com/en/articles/9039756-managing-billing-for-chatgpt-and-the-api-platform)。用户在本机 Pi 中运行 `/login` 选择 OpenAI，按 Pi 当前界面在本机完成授权，再用 `/model` 选择该账户实际可用的 GPT 模型。不得静默改用其他提供方；若用户没有 API 访问权限或不接受相关费用，说明阻塞并等其决定。用户另选本地模型时按 [Pi Models](https://pi.dev/docs/latest/models) 和所选运行时官方资料指导。
+本提示词的云端主路线是 OpenAI GPT；Pi 的 `/login` 可使用两条不同的登录路线：ChatGPT 订阅 OAuth 与 OpenAI API Key。先询问用户希望使用且有权使用哪条路线；若不确定，说明订阅 OAuth 使用其账号可用的订阅额度，API Key 则使用单独的 API 账户与计费，再等用户选择。模型可用性、额度与费用按用户账号、Pi 当前提供方列表和 OpenAI 规则核对；两条路线彼此独立，不静默切换。[ChatGPT 网页订阅不等于 OpenAI API 额度](https://help.openai.com/en/articles/9039756-managing-billing-for-chatgpt-and-the-api-platform)。
 
-模型认证/推理需从 Pi 所在终端访问 `api.openai.com`。若本阶段确有网络连通问题，可用 POSIX shell 的 `curl -i https://api.openai.com/v1/models` 或 PowerShell 的 `curl.exe -i https://api.openai.com/v1/models` 做无凭据端点检查；不要在测试命令里加入 API Key 或 Authorization。收到 HTTP 响应（包括认证错误）只说明 API 端点有响应，不证明账户认证或 GPT 模型可用；真实验证仍须由 Pi 完成授权并取得模型回答。Pi 官方 Providers 文档列出 OpenAI API Key 认证；Pi 会把已存凭据保存在 `auth.json`。密钥只可在本机 Pi 的官方登录流程中输入，绝不贴给网页 AI，不提交、上传、复制到项目文件、脚本、shell 配置或截图；不要把 `auth.json` 发给任何人。额外安装、下载或开放服务前说明影响并等用户决定。
+- **ChatGPT 订阅 OAuth：**若用户的 ChatGPT 账号可使用此路线，且当前 Pi 的 `/login` 列出 `OpenAI (ChatGPT subscription)`，选择它在本机完成授权（provider ID：`openai-codex`），再用 `/model` 查看此路线实际提供的模型。订阅额度和可用模型以当前账号与提供方显示为准；这不是 OpenAI API Key，也不提供 API 额度。若登录列表没有该项，先核对当前 Pi 版本与官方资料，不静默更新，也不把订阅当作 API 权限；可选 API Key 路线须由用户明确选择且确有 API 访问权限，否则说明阻塞并等待决定。
+- **OpenAI API Key：**仅在用户明确选择且有 API 访问权限时，在本机 `/login` 选择 OpenAI API Key 路线并按 Pi 当前界面授权；API 计费按 API 账户规则单独核对。不得要求用户把密钥贴给网页 AI。不得静默改用其他提供方；若用户另选本地模型，按 [Pi Models](https://pi.dev/docs/latest/models) 和所选运行时官方资料指导。
 
-完成授权后让用户用 `/model` 选择可用 GPT 模型并提出一个无需修改文件的简单问题。真实模型回答才是 M4.1 的成功信号；CLI 已安装、浏览器可访问 OpenAI 或 FlClash 显示已连接，都不单独证明模型已接通。按真实授权、OpenAI API 账户状态和脱敏网络错误排障，不重新安装 CLI。
+网络检查按用户选定的登录路线及实际错误处理。API 端点检查只用于 API Key 路线；只有用户选 API Key 路线且确有 API 端点连通问题时，才可用 POSIX shell 的 `curl -i https://api.openai.com/v1/models` 或 PowerShell 的 `curl.exe -i https://api.openai.com/v1/models` 做无凭据端点检查；不要在测试命令里加入 API Key 或 Authorization。订阅 OAuth 路线不使用 `api.openai.com/v1/models` 探测，按 Pi 当前登录流程和该路线的脱敏错误核对。收到 HTTP 响应（包括认证错误）只说明 API 端点有响应，不证明账户认证或 GPT 模型可用；真实验证仍须由 Pi 完成所选路线的授权并取得模型回答。Pi 官方 Providers 文档说明 Pi 会将已存凭据保存在 `auth.json`；其中可能包含 API Key 或 OAuth Token，须保持私密，绝不贴给网页 AI、提交、上传、复制到项目文件、脚本、shell 配置或截图，也不要把 `auth.json` 发给任何人。额外安装、下载或开放服务前说明影响并等用户决定。
+
+完成所选路线的授权后，让用户用 `/model` 选择实际可用的 GPT 模型并提出一个无需修改文件的简单问题。真实模型回答才是 M4.1 的成功信号；CLI 已安装、浏览器可访问 OpenAI 或 FlClash 显示已连接，都不单独证明模型已接通。按所选路线的授权状态、账户可用性和脱敏网络错误排障，不重新安装 CLI。
 
 ### M4.2：凡事察验（完成一次实际工具使用验证）
 
@@ -164,7 +167,7 @@ irm https://pi.dev/install.ps1 | iex
 
 ## 官方资料
 
-- [Pi Quickstart](https://pi.dev/docs/latest/quickstart) · [Windows](https://pi.dev/docs/latest/windows) · [Termux](https://pi.dev/docs/latest/termux) · [Providers](https://pi.dev/docs/latest/providers) · [Models](https://pi.dev/docs/latest/models) · [Security](https://pi.dev/docs/latest/security)
+- [Pi Quickstart](https://pi.dev/docs/latest/quickstart) · [Windows](https://pi.dev/docs/latest/windows) · [Termux](https://pi.dev/docs/latest/termux) · [Providers](https://pi.dev/docs/latest/providers) · [Models](https://pi.dev/docs/latest/models) · [OpenAI Codex 模型目录](https://pi.dev/models?provider=openai-codex) · [Security](https://pi.dev/docs/latest/security)
 - [FlClash 官方发布页](https://github.com/chen08209/FlClash/releases/latest) · [OpenAI API](https://platform.openai.com/docs/api-reference) · [OpenAI 模型列表端点](https://platform.openai.com/docs/api-reference/models/list) · [ChatGPT 与 API 计费说明](https://help.openai.com/en/articles/9039756-managing-billing-for-chatgpt-and-the-api-platform) · [macOS/Linux 官方安装脚本](https://pi.dev/install.sh) · [Windows 官方安装脚本](https://pi.dev/install.ps1) · [Node.js](https://nodejs.org/en/download) · [Git for Windows](https://git-scm.com/download/win)
 
 ````

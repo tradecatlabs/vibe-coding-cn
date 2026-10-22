@@ -262,7 +262,7 @@ class SourceArchiveTest(unittest.TestCase):
             '安装/修复阶段仅核对当前路线实际需要的官方分发与依赖源',
             '只有 M0 确认目标终端没有可用 Pi 且用户明确决定安装，或用户明确决定修复/重装时，才进入 M1',
             '不要逐项探测未实际触发的安装源',
-            'OpenAI API 的网络检查仅在 M4.1 阶段需要时执行',
+            'OpenAI 模型的网络检查仅在 M4.1 阶段按所选登录路线和实际故障执行',
             '若 `pi --version` 已成功，就跳过安装专用 M1/M2',
             '若曾安装或不确定，先问安装渠道（不记得可直接说明），按能确认的渠道当前官方资料核对现有安装、目标终端和 PATH',
             '若渠道或安装状态仍不明，先暂停，不直接重跑安装器',
@@ -300,15 +300,22 @@ class SourceArchiveTest(unittest.TestCase):
             '启用前须说明流量路由范围、隐私影响和恢复方式',
             '用户拒绝或当前界面/系统不支持时',
             '也不得报告网络路线已完成',
-            '`/login` 选择 OpenAI',
+            'Pi 的 `/login` 可使用两条不同的登录路线',
+            '`OpenAI (ChatGPT subscription)`',
+            '`openai-codex`',
+            'ChatGPT 订阅 OAuth',
+            'OpenAI API Key',
             '`api.openai.com`',
             'https://api.openai.com/v1/models',
+            'API 端点检查只用于 API Key 路线',
+            '订阅 OAuth 路线不使用 `api.openai.com/v1/models` 探测',
             '只说明 API 端点有响应，不证明账户认证或 GPT 模型可用',
             '不要在测试命令里加入 API Key',
             'ChatGPT 网页订阅不等于 OpenAI API 额度',
         ):
             with self.subTest(prompt_contract=contract):
                 self.assertIn(contract, prompt)
+        self.assertNotIn('先确认用户有权使用 OpenAI API', prompt)
         self.assertLess(prompt.index('## 字多不看'), prompt.index('## 给网页版 Chat AI 的任务'))
         self.assertLess(prompt.index('## M1：网络环境'), prompt.index('## M2：预备行各样的善事'))
         html = MarkdownIt('commonmark').render(text)
