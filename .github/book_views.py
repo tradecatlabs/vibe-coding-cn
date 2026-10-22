@@ -35,6 +35,9 @@ def relocated(path, fragment=''):
         if name == '__init__.py':
             return '.github/source_boundaries.py', fragment
     aliases = {
+        '.github/learning-map.md': '.github/god.md',
+        '.github/context/getting-started/learning-map.md': '.github/god.md',
+        '.github/docs/getting-started/learning-map.md': '.github/god.md',
         '.github/context/tool-explanation-template-v0.md': '.github/tool-explanation-template-v0.md',
         '.github/context/tool-explanation-template-v1.md': '.github/tool-explanation-template-v1.md',
         '.github/metadata/faqi/README.md': '.github/context/faqi/README.md',

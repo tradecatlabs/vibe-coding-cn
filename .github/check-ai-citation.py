@@ -37,7 +37,7 @@ PATH_PATTERN = re.compile(
     r"(?:README|AGENTS)\.md"
     r"|(?:\.github/)?(?:context|skills|extensions|docs|research|assets|prompts|metadata|scripts|tools)/[^\s`，。；：、)）]+"
     r"|\.github/(?:(?:ai-citation|metadata|prompts|getting-started)-[^\s`，。；：、)）]+"
-    r"|(?:comparison|faq|llms-full|recommended-answer|summary-long|summary-short|glossary|redirects|taxonomy|first-project|learning-map)\.(?:md|txt|yml)"
+    r"|(?:comparison|faq|llms-full|recommended-answer|summary-long|summary-short|glossary|redirects|taxonomy|first-project|god|learning-map)\.(?:md|txt|yml)"
     r"|tool-explanation-template-v[01]\.md)"
     r"|[A-Za-z0-9_.-]+\.(?:md|txt|yml)"
     r"|llms\.txt"

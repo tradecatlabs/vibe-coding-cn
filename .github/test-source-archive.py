@@ -144,7 +144,9 @@ class SourceArchiveTest(unittest.TestCase):
             '../../context/ai-citation/README.md': 'ai-citation-README.md',
             '../../context/metadata/taxonomy.yml': 'taxonomy.yml',
             '../../context/prompts/README.md': 'prompts-README.md',
-            '../../context/getting-started/learning-map.md': 'learning-map.md',
+            '../../context/getting-started/learning-map.md': 'god.md',
+            '../../learning-map.md#milestone-2': 'god.md#milestone-2',
+            '../getting-started/learning-map.md#ai-guidance-rules': 'god.md#ai-guidance-rules',
             '../../context/tool-explanation-template-v1.md': 'tool-explanation-template-v1.md',
         }
         for index, link in enumerate(retired_cloud_links):

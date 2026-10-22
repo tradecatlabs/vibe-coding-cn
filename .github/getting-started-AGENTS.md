@@ -9,14 +9,14 @@
 | 文件 | 职责 |
 |---|---|
 | `getting-started-README.md` | 入门索引 |
-| `learning-map.md` | 可全文复制给网页版 AI 的 Pi CLI 安装配置提示词 |
+| `god.md` | 可全文复制给网页版 AI 的 Pi CLI 安装配置提示词 |
 | `first-project.md` | 可选的本地项目闭环练习 |
 | `getting-started-AGENTS.md` | 本组维护规则 |
 
 ## 修改规则
 
 - 根`README.md`是唯一主页；`getting-started-README.md`只做导航，不复制完整教程。
-- `learning-map.md` 本身就是给网页版 AI 的完整提示词：指导用户从现状检查到 CLI 安装、模型配置和安全的本机工具验证；用户复制全文后由 AI 一轮一步引导，并在 Agent 能力验收后停止。不另维护重复的提示词区块或项目开发步骤。
+- `god.md` 本身就是给网页版 AI 的完整提示词：指导用户从现状检查到 CLI 安装、模型配置和安全的本机工具验证；用户复制全文后由 AI 一轮一步引导，并在 Agent 能力验收后停止。不另维护重复的提示词区块或项目开发步骤。
 - 安装方式、Node.js 版本要求、系统支持和 provider 流程以 Pi 当前官方文档与安装入口为准；链接及命令须明确系统、终端、影响和成功判断。官方资料未说明的内容标为未知，不猜测。
 - 区分 `pi --version`、模型授权/可用和项目任务完成；不把 CLI 安装说成模型已接通或项目环境已就绪。
 - 不把 WSL、Git、Python、编辑器、代理或项目依赖设为 Pi CLI 安装的通用前置条件。Windows 原生 Git Bash 是内置 Bash 工具的命令环境，不是 CLI 安装本身的要求。

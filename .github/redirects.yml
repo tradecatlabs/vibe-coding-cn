@@ -45,7 +45,9 @@ redirects:
   - from: .github/context/getting-started/first-project.md
     to: .github/first-project.md
   - from: .github/context/getting-started/learning-map.md
-    to: .github/learning-map.md
+    to: .github/god.md
+  - from: .github/learning-map.md
+    to: .github/god.md
   - from: .github/context/tool-explanation-template-v0.md
     to: .github/tool-explanation-template-v0.md
   - from: .github/context/tool-explanation-template-v1.md
@@ -109,15 +111,15 @@ redirects:
   - from: docs/getting-started/Codex-CLI配置.md
     to: .github/context/README.md#本地研究资料
   - from: docs/getting-started/学习地图.md
-    to: .github/learning-map.md
+    to: .github/god.md
   - from: docs/getting-started/Vibe Coding 经验.md
     to: .github/context/gongfa/README.md#doc-vibe-coding-experience
   - from: docs/getting-started/网络环境配置.md
-    to: .github/learning-map.md#network-and-dependencies
+    to: .github/god.md#network-and-dependencies
   - from: docs/getting-started/CLI配置.md
-    to: .github/learning-map.md#pi-cli-installation
+    to: .github/god.md#pi-cli-installation
   - from: docs/getting-started/开发环境搭建.md
-    to: .github/learning-map.md#post-install-use
+    to: .github/god.md#post-install-use
   - from: docs/references/通用项目架构模板.md
     to: .github/context/gongfa/README.md#doc-project-architecture-template
   - from: docs/references/数据集导向数据服务模板.md
@@ -147,7 +149,7 @@ redirects:
   - from: assets/repos/
     to: .github/extensions/
   - from: assets/config/
-    to: .github/learning-map.md#使用仓库配置基线
+    to: .github/god.md#使用仓库配置基线
   - from: docs/concepts/问题求解.md
     to: .github/context/gongfa/README.md#doc-problem-solving
   - from: docs/concepts/拼好码.md
@@ -269,8 +271,8 @@ redirects:
 
   # Pi CLI 入门分篇已合并到一份完整指南。
   - from: .github/context/getting-started/cli-setup.md
-    to: .github/learning-map.md#pi-cli-installation
+    to: .github/god.md#pi-cli-installation
   - from: .github/context/getting-started/network-environment.md
-    to: .github/learning-map.md#network-and-dependencies
+    to: .github/god.md#network-and-dependencies
   - from: .github/context/getting-started/development-environment.md
-    to: .github/learning-map.md#post-install-use
+    to: .github/god.md#post-install-use
