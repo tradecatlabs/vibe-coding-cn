@@ -145,8 +145,11 @@ class SourceArchiveTest(unittest.TestCase):
             '../../context/metadata/taxonomy.yml': 'taxonomy.yml',
             '../../context/prompts/README.md': 'prompts-README.md',
             '../../context/getting-started/learning-map.md': 'god.md',
-            '../../learning-map.md#milestone-2': 'god.md#milestone-2',
-            '../getting-started/learning-map.md#ai-guidance-rules': 'god.md#ai-guidance-rules',
+            # 单一代码块不产生章节锚点；历史定位保留在输入，当前入口指向整份提示词。
+            '../../learning-map.md#milestone-2': 'god.md',
+            '../getting-started/learning-map.md#ai-guidance-rules': 'god.md',
+            '../getting-started/learning-map.md#milestone-0': 'god.md',
+            '../../god.md#milestone-2': 'god.md',
             '../../context/tool-explanation-template-v1.md': 'tool-explanation-template-v1.md',
         }
         for index, link in enumerate(retired_cloud_links):
@@ -213,6 +216,24 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertIn('](#doc-example-目标)', toc)
         self.assertIn('](#doc-other-目标)', toc)
         self.assertNotIn('代码不是目录', toc)
+
+    def test_god_prompt_is_one_expanded_copyable_code_block(self):
+        from markdown_it import MarkdownIt
+        import book_views
+        text = Path(__file__).with_name('god.md').read_text(encoding='utf-8')
+        tokens = MarkdownIt('commonmark').parse(text)
+        self.assertEqual([token.type for token in tokens], ['fence'])
+        prompt = tokens[0].content
+        self.assertTrue(prompt.startswith('# 道成了肉身\n'))
+        self.assertNotRegex(prompt, r'</?(?:details|summary|a)\b')
+        self.assertNotRegex(prompt, r'\]\(#[^)]+\)')
+        self.assertIn("printf 'local shell OK\\n'", prompt)
+        html = MarkdownIt('commonmark').render(text)
+        self.assertEqual(html.count('<pre>'), 1)
+        self.assertEqual(book_views._links.markdown_anchors(Path(__file__).with_name('god.md')), set())
+        self.assertEqual(book_views.relocated('.github/god.md', 'milestone-2'), ('.github/god.md', ''))
+        self.assertEqual(book_views.relocated('.github/first-project.md', 'example'),
+                         ('.github/first-project.md', 'example'))
 
     def test_v1_explanations_remain_separate_from_frozen_source_documents(self):
         explanation = {'template_sha256': 'a' * 64, 'items': []}

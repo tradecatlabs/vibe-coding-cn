@@ -115,11 +115,11 @@ redirects:
   - from: docs/getting-started/Vibe Coding 经验.md
     to: .github/context/gongfa/README.md#doc-vibe-coding-experience
   - from: docs/getting-started/网络环境配置.md
-    to: .github/god.md#network-and-dependencies
+    to: .github/god.md
   - from: docs/getting-started/CLI配置.md
-    to: .github/god.md#pi-cli-installation
+    to: .github/god.md
   - from: docs/getting-started/开发环境搭建.md
-    to: .github/god.md#post-install-use
+    to: .github/god.md
   - from: docs/references/通用项目架构模板.md
     to: .github/context/gongfa/README.md#doc-project-architecture-template
   - from: docs/references/数据集导向数据服务模板.md
@@ -149,7 +149,7 @@ redirects:
   - from: assets/repos/
     to: .github/extensions/
   - from: assets/config/
-    to: .github/god.md#使用仓库配置基线
+    to: .github/god.md
   - from: docs/concepts/问题求解.md
     to: .github/context/gongfa/README.md#doc-problem-solving
   - from: docs/concepts/拼好码.md
@@ -271,8 +271,8 @@ redirects:
 
   # Pi CLI 入门分篇已合并到一份完整指南。
   - from: .github/context/getting-started/cli-setup.md
-    to: .github/god.md#pi-cli-installation
+    to: .github/god.md
   - from: .github/context/getting-started/network-environment.md
-    to: .github/god.md#network-and-dependencies
+    to: .github/god.md
   - from: .github/context/getting-started/development-environment.md
-    to: .github/god.md#post-install-use
+    to: .github/god.md

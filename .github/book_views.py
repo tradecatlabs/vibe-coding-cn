@@ -47,7 +47,8 @@ def relocated(path, fragment=''):
         '.github/skills/claude-official-skills/AGENTS.md': '.github/skills/AGENTS.md',
     }
     if path in aliases:
-        return aliases[path], fragment
+        target = aliases[path]
+        return target, '' if target == '.github/god.md' else fragment
     flat_groups = {
         '.github/context/ai-citation': 'ai-citation',
         '.github/context/metadata': 'metadata',
@@ -157,7 +158,7 @@ def relocated(path, fragment=''):
             route = root_route if path == prefix else 'blob'
             return ('https://github.com/tradecatlabs/vibe-coding-cn/' + route
                     + '/' + revision + '/' + quote(path, safe='/')), fragment
-    return path, fragment
+    return path, '' if path == '.github/god.md' else fragment
 
 
 def reference(value, original_path, output_path):
