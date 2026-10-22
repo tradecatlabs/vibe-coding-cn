@@ -59,6 +59,7 @@ def relocated(path, fragment=''):
         return '.github/context/faqi/data.json', ''
     if path == '.github/tools/faqi-catalog.md':
         return '.github/context/faqi/README.md', fragment or '法器总表'
+    # auto-skill脚本路径是固定历史来源身份；入口已迁到Extensions，不是当前Skill目录。
     aliases = {
         '.github/skills/auto-skill/scripts/Skill_Seekers-development': '.github/extensions/Skill_Seekers-development',
         '.github/skills/auto-skill/scripts/skill-seekers-src': '.github/extensions/Skill_Seekers-development',

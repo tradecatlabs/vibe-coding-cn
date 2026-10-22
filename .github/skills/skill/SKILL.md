@@ -1,9 +1,9 @@
 ---
-name: auto-skill
+name: skill
 description: "需要从现有资料整理Skill、创建或重构SKILL.md、核对触发条件、边界、示例与引用时使用；直接采用文件操作、现有模板和平台原生发现，不依赖仓内旧生成/校验封装。"
 ---
 
-# auto-skill
+# skill
 
 把已获授权的资料整理成可读、可发现、边界明确的Skill。只写必要指令和参考，不为创建Skill再造生成器或管理框架。
 

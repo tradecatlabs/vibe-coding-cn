@@ -1,6 +1,6 @@
-# Auto Skill Reference Index
+# Skill Reference Index
 
-This directory contains long-form documentation that supports the `auto-skill` meta-skill.
+This directory contains long-form documentation that supports this Skill.
 
 ## Start Here
 

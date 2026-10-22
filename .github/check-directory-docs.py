@@ -15,8 +15,8 @@ REQUIRED_DIRS = list(map(Path, (
     '.github/context/getting-started', '.github/context/gongfa', '.github/context/faqi',
     '.github/context/metadata', '.github/context/prompts',
     '.github/extensions',
-    '.github/skills', '.github/skills/auto-skill', '.github/skills/auto-skill/assets',
-    '.github/skills/auto-skill/references',
+    '.github/skills', '.github/skills/skill', '.github/skills/skill/assets',
+    '.github/skills/skill/references',
 )))
 COLLECTION_DIRS = {Path('.github/context/gongfa'), Path('.github/context/faqi')}
 COLLECTION_FILES = {'data.json', 'README.md', 'tian.md', 'di.md', 'xuan.md', 'huang.md'}

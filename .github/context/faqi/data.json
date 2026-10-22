@@ -447,13 +447,13 @@
     ".github/tools/external/tmux": ".github/extensions/tmux",
     ".github/tools/external/claude-official-skills": ".github/extensions/claude-official-skills",
     ".github/tools/external/Skill_Seekers-development": ".github/extensions/Skill_Seekers-development",
-    ".github/skills/auto-skill": ".github/skills/auto-skill",
-    ".github/skills/auto-skill/README.md": ".github/skills/auto-skill/README.md"
+    ".github/skills/auto-skill": ".github/skills/skill",
+    ".github/skills/auto-skill/README.md": ".github/skills/skill/README.md"
   },
   "live_sources": {
     ".github/skills/auto-skill/README.md": {
-      "path": ".github/skills/auto-skill/README.md",
-      "sha256": "fb039f4e3dea0c745e85a5708ebbc3c1c7567772e5b568c30c4a98f8fb4361cf"
+      "path": ".github/skills/skill/README.md",
+      "sha256": "249a96596bc035d5869e7c817a585483923e95654e811e03c0b0fe5fe990d072"
     },
     ".github/tools/external/.tmux/.logo/LICENSE": {
       "path": ".github/extensions/oh-my-tmux/.logo/LICENSE",
@@ -784,7 +784,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-auto-skill-create；本体类型=software-artifact；版本声明=未声明；本地入口=无（模板生成脚本已退役；历史路径与来源见第7项）；相关Skill说明=.github/skills/auto-skill（不同对象，不是该脚本）；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶中级（grade_id=faqi-xuan-intermediate；状态=user_directed_provisional）；范围：Vibe Coding重要性：技能资产扩展与复用；分级依据：把操作知识封装为可复用Agent技能，能扩展后续任务能力；属于增益支路，不是最小编码闭环的必需组件。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S08, S07。"
+            "content": "法器对象ID=faqi-auto-skill-create；本体类型=software-artifact；版本声明=未声明；本地入口=无（模板生成脚本已退役；历史路径与来源见第7项）；相关Skill说明=.github/skills/skill（不同对象，不是该脚本）；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶中级（grade_id=faqi-xuan-intermediate；状态=user_directed_provisional）；范围：Vibe Coding重要性：技能资产扩展与复用；分级依据：把操作知识封装为可复用Agent技能，能扩展后续任务能力；属于增益支路，不是最小编码闭环的必需组件。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S08, S07。"
           },
           {
             "name": "出处",
@@ -861,7 +861,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-auto-skill-validate；本体类型=software-artifact；版本声明=未声明；本地入口=无（结构校验脚本已退役；历史路径与来源见第7项）；相关Skill说明=.github/skills/auto-skill（不同对象，不是该脚本）；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶中级（grade_id=faqi-xuan-intermediate；状态=user_directed_provisional）；范围：Vibe Coding重要性：技能资产质量与可载入性；分级依据：降低扩展技能结构错误造成的接入阻断；不判断语义正确性，属于能力扩展的质量辅助。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S09, S07。"
+            "content": "法器对象ID=faqi-auto-skill-validate；本体类型=software-artifact；版本声明=未声明；本地入口=无（结构校验脚本已退役；历史路径与来源见第7项）；相关Skill说明=.github/skills/skill（不同对象，不是该脚本）；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶中级（grade_id=faqi-xuan-intermediate；状态=user_directed_provisional）；范围：Vibe Coding重要性：技能资产质量与可载入性；分级依据：降低扩展技能结构错误造成的接入阻断；不判断语义正确性，属于能力扩展的质量辅助。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n来源ID：S09, S07。"
           },
           {
             "name": "出处",
@@ -938,7 +938,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-skill-seekers-adapter；本体类型=software-artifact；版本声明=未声明；本地入口=无（Skill Seekers本地适配脚本已退役；历史路径与来源见第7项）；相关Skill说明=.github/skills/auto-skill（不同对象，不是该适配脚本）；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶初级（grade_id=faqi-xuan-initial；状态=user_directed_provisional）；范围：Vibe Coding重要性：Skill Seekers本地适配入口；分级依据：便于调用特定知识转技能工具；范围受上游工具限制，可直接调用或人工替代。不代表效能评级、运行结果或质量结论。\n既有关系记录：{\n  \"subject\": \"faqi-skill-seekers-adapter\",\n  \"predicate\": \"requires\",\n  \"target_label\": \"链接源码中的skill_seekers.cli.main\",\n  \"related_object_id\": \"faqi-skill-seekers\",\n  \"evidence\": \"S10\",\n  \"boundary\": \"源码路径确由软链接指到选定submodule；这是静态加载意图，venv实际依赖、Python解析和运行结果未核。\"\n}\n来源ID：S10, S07。"
+            "content": "法器对象ID=faqi-skill-seekers-adapter；本体类型=software-artifact；版本声明=未声明；本地入口=无（Skill Seekers本地适配脚本已退役；历史路径与来源见第7项）；相关Skill说明=.github/skills/skill（不同对象，不是该适配脚本）；当前运行实例/部署状态未在对象记录中声明。\nVibe Coding 重要性暂定：玄阶初级（grade_id=faqi-xuan-initial；状态=user_directed_provisional）；范围：Vibe Coding重要性：Skill Seekers本地适配入口；分级依据：便于调用特定知识转技能工具；范围受上游工具限制，可直接调用或人工替代。不代表效能评级、运行结果或质量结论。\n既有关系记录：{\n  \"subject\": \"faqi-skill-seekers-adapter\",\n  \"predicate\": \"requires\",\n  \"target_label\": \"链接源码中的skill_seekers.cli.main\",\n  \"related_object_id\": \"faqi-skill-seekers\",\n  \"evidence\": \"S10\",\n  \"boundary\": \"源码路径确由软链接指到选定submodule；这是静态加载意图，venv实际依赖、Python解析和运行结果未核。\"\n}\n来源ID：S10, S07。"
           },
           {
             "name": "出处",

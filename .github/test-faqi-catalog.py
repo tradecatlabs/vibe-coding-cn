@@ -65,8 +65,33 @@ class FaqiCatalogTest(unittest.TestCase):
         path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
         return path
 
-    def test_retired_cloud_paths_keep_only_fixed_archival_bindings(self):
+    def test_skill_rename_and_cloud_retirement_keep_fixed_archival_bindings(self):
+        self.assertTrue((ROOT / ".github/skills/skill/SKILL.md").is_file())
+        self.assertFalse((ROOT / ".github/skills/auto-skill").exists())
         archive = json.loads((ROOT / ".github/context/faqi/data.json").read_text(encoding="utf-8"))
+        self.assertEqual(".github/skills/skill", archive["locations"][".github/skills/auto-skill"])
+        self.assertEqual(".github/skills/skill/README.md",
+                         archive["locations"][".github/skills/auto-skill/README.md"])
+        live_skill = archive["live_sources"][".github/skills/auto-skill/README.md"]
+        self.assertEqual(".github/skills/skill/README.md", live_skill["path"])
+        self.assertEqual(hashlib.sha256((ROOT / live_skill["path"]).read_bytes()).hexdigest(),
+                         live_skill["sha256"])
+        self.assertIn(".github/skills/auto-skill/README.md", archive["documents"])
+        current_skill_associations = {
+            item["object_key"]: next(field["content"] for field in item["fields"]
+                                     if field["name"] == "关联信息")
+            for item in archive["explanations_v1"]["items"]
+            if item["object_key"] in {
+                "faqi:faqi-auto-skill-create",
+                "faqi:faqi-auto-skill-validate",
+                "faqi:faqi-skill-seekers-adapter",
+            }
+        }
+        self.assertEqual(3, len(current_skill_associations))
+        # auto-skill路径在documents中保留为固定历史身份；当前位置由上面的映射断言约束。
+        for object_key, association in current_skill_associations.items():
+            self.assertIn("相关Skill说明=.github/skills/skill", association, object_key)
+            self.assertNotIn("相关Skill说明=.github/skills/auto-skill", association, object_key)
         self.assertNotIn(".github/skills/auto-tmux", archive["locations"])
         self.assertFalse(any(path.startswith(".github/skills/auto-tmux/")
                              for path in archive["live_sources"]))

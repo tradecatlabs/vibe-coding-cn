@@ -75,7 +75,7 @@ Trigger when any of these applies:
 
 ## Quality Gate
 
-Minimum checks before shipping (see meta-skill `auto-skill` for the full version):
+Minimum checks before shipping (see meta-skill `skill` for the full version):
 
 1. `description` is decidable ("what + when") and includes trigger keywords
 2. Has "When to Use This Skill" with decidable triggers

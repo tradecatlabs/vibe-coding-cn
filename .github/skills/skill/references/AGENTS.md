@@ -1,6 +1,6 @@
-# .github/skills/auto-skill/references/ Agent 指南
+# .github/skills/skill/references/ Agent 指南
 
-本目录保存 `auto-skill` 的参考资料和操作细则。
+本目录保存 `skill` 的参考资料和操作细则。
 
 ## 约束
 

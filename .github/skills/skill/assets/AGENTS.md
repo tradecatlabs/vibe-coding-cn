@@ -1,6 +1,6 @@
-# .github/skills/auto-skill/assets/ Agent 指南
+# .github/skills/skill/assets/ Agent 指南
 
-本目录保存 `auto-skill` 的可复用资产。
+本目录保存 `skill` 的可复用资产。
 
 ## 约束
 
