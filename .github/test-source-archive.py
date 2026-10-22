@@ -229,15 +229,20 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertNotRegex(prompt, r'\]\(#[^)]+\)')
         self.assertIn("printf 'local shell OK\\n'", prompt)
         for contract in (
+            '请将本文全文复制给可用的网页版 Chat AI',
+            '逐轮交互',
+            '完成本文范围内的 Pi CLI 检查/安装、必要网络准备、OpenAI GPT 授权与模型选择、工具配置及一次安全的实际使用验证',
+            '不得在 `pi --version`、单次模型回答或单个命令测试后提前宣告完成',
+            '本文所说“完成”仅指 Pi CLI + OpenAI GPT + 本机 Bash 通路',
             '网页 AI 不能读取或操作用户终端',
             '每轮只引导一个检查或动作',
             '不索取密码、API Key、Token、cookie、私钥、订阅链接、`auth.json`',
             'Pi 以启动账户权限运行，并非安全沙箱',
             '须先说明具体目标与影响，等待用户明确决定',
             'Node.js 22.19.0 或更高版本',
-            '本机 Agent 能力已验证（基础通路已建立；仅本机命令工具）',
+            '本文范围内的 Pi CLI、OpenAI GPT 与本机 Bash 配置及使用已完成',
             '不是 Pi 官方模式',
-            '本次只验证本机命令工具',
+            '本指南的完成范围仅是 Pi CLI、OpenAI GPT 与本机 Bash 通路',
             '任务不包括创建项目、修改项目文件',
             '网络环境是 Pi 安装和 OpenAI 云端 GPT 的前置条件',
             'FlClash',
