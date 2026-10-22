@@ -152,5 +152,4 @@ powershell -c "irm https://pi.dev/install.ps1 | iex"
 - [Pi Quickstart](https://pi.dev/docs/latest/quickstart) · [Windows](https://pi.dev/docs/latest/windows) · [Providers](https://pi.dev/docs/latest/providers) · [Models](https://pi.dev/docs/latest/models) · [Security](https://pi.dev/docs/latest/security)
 - [FlClash 官方发布页](https://github.com/chen08209/FlClash/releases/latest) · [OpenAI API](https://platform.openai.com/docs/api-reference) · [OpenAI 模型列表端点](https://platform.openai.com/docs/api-reference/models/list) · [ChatGPT 与 API 计费说明](https://help.openai.com/en/articles/9039756-managing-billing-for-chatgpt-and-the-api-platform) · [macOS/Linux 官方安装脚本](https://pi.dev/install.sh) · [Windows 官方安装脚本](https://pi.dev/install.ps1) · [Node.js](https://nodejs.org/en/download) · [Git for Windows](https://git-scm.com/download/win)
 
-旧 Codex 配置基线及安装/恢复脚本已退役；本文不提供其安装或恢复命令。
 ````
