@@ -11,7 +11,7 @@
 |---|---|
 | [功法](gongfa/README.md) | 分阶导航：[天](gongfa/tian.md)、[地](gongfa/di.md)、[玄](gongfa/xuan.md)、[黄](gongfa/huang.md)；原文归档见data.json |
 | [法器](faqi/README.md) | 分阶导航：[天](faqi/tian.md)、[地](faqi/di.md)、[玄](faqi/xuan.md)、[黄](faqi/huang.md)；来源与边界见data.json |
-| [从零开始](../getting-started-README.md) | 提供可全文复制给网页版 AI 的 Pi CLI 安装配置提示词；逐步验收本机 Agent 能力，项目练习独立且可选 |
+| [从零开始](../getting-started-README.md) | 提供可全文复制给网页版 AI 的 Pi CLI 提示词：先确认网络环境，再连接 OpenAI GPT 并逐步验收本机 Agent 能力；项目练习独立且可选 |
 | [提示词](../prompts-README.md) | 现有云端提示词索引 |
 | [说明模板v1](../tool-explanation-template-v1.md) | 功法、法器逐对象说明的活动模板；[历史v0](../tool-explanation-template-v0.md) |
 | [AI引用](../ai-citation-README.md) | 摘要、FAQ与完整AI引用入口 |
