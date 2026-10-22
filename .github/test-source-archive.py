@@ -228,6 +228,20 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertNotRegex(prompt, r'</?(?:details|summary|a)\b')
         self.assertNotRegex(prompt, r'\]\(#[^)]+\)')
         self.assertIn("printf 'local shell OK\\n'", prompt)
+        for contract in (
+            '网页 AI 不能读取或操作用户终端',
+            '每轮只引导一个检查或动作',
+            '不索取密码、API Key、Token、cookie、私钥、订阅链接、`auth.json`',
+            'Pi 以启动账户权限运行，并非安全沙箱',
+            '须先说明具体目标与影响，等待用户明确决定',
+            'Node.js 22.19.0 或更高版本',
+            '本机 Agent 能力已验证（基础通路已建立；仅本机命令工具）',
+            '不是 Pi 官方模式',
+            '本次只验证本机命令工具',
+            '任务不包括创建项目、修改项目文件',
+        ):
+            with self.subTest(prompt_contract=contract):
+                self.assertIn(contract, prompt)
         html = MarkdownIt('commonmark').render(text)
         self.assertEqual(html.count('<pre>'), 1)
         self.assertEqual(book_views._links.markdown_anchors(Path(__file__).with_name('god.md')), set())
