@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """以真实离线CLI消费首批法器清单；保留输入、输出和JUnit，不执行被审工具。"""
 import argparse
+import configparser
 import copy
 from collections import Counter
 import hashlib
@@ -49,7 +50,7 @@ def v1_payload(subject_names):
 
 class FaqiCatalogTest(unittest.TestCase):
     def invoke(self, label, *args, memory_limit=None):
-        command = [sys.executable, str(ROOT / ".github/extensions/sync-faqi-catalog.py"), *map(str, args)]
+        command = [sys.executable, str(ROOT / ".github/sync-faqi-catalog.py"), *map(str, args)]
         def bound_memory():
             resource.setrlimit(resource.RLIMIT_AS, (memory_limit, memory_limit))
         result = subprocess.run(command, cwd=ROOT, capture_output=True, timeout=45,
@@ -162,9 +163,42 @@ class FaqiCatalogTest(unittest.TestCase):
         self.assertIn("同修订pyproject.toml的authors字段列为Yusuf Karaaslan", association)
         self.assertIn("作者元数据不证明版权归属或授权", association)
         self.assertIn("本项目仍未批准该许可证", association)
-        self.assertIn("本地入口=.github/extensions/Skill_Seekers-development", association)
+        self.assertIn("本地入口=无", association)
+        self.assertIn("已从当前树移除", association)
+        retired_submodules = {".github/tools/external/Skill_Seekers-development"}
+        self.assertEqual(retired_submodules, set(active_archive["retired_submodules"]))
+        former_path = ".github/extensions/Skill_Seekers-development"
+        for path in retired_submodules:
+            self.assertFalse(any(item == path or item.startswith(path + "/")
+                                 for item in active_archive["locations"]))
+            self.assertFalse(any(item == path or item.startswith(path + "/")
+                                 for item in active_archive["live_sources"]))
+        self.assertFalse(any(binding["path"] == former_path or binding["path"].startswith(former_path + "/")
+                             for binding in active_archive["live_sources"].values()))
+        initializer_projection = next(item for item in active_archive["projections"]
+                                      if item["path"] == ".github/init_skill.py")
+        self.assertEqual(
+            "extensions/claude-official-skills/skills/skill-creator/scripts/init_skill.py",
+            initializer_projection["target"],
+        )
+        self.assertEqual(
+            "8c02660dacd304f51fe8c4a9685d3f6d5324a7eef7779b6baa7325827bf01985",
+            active_archive["documents"][".github/tools/external/Skill_Seekers-development/src/skill_seekers/cli/main.py"]["sha256"],
+        )
+        self.assertEqual(
+            "cf12790f1d4958799281920d599f56aea38fb5c26e2812a61dd740bf3d4b6b99",
+            active_archive["documents"][".github/tools/external/claude-official-skills/skills/skill-creator/scripts/init_skill.py"]["sha256"],
+        )
+        module_config = configparser.RawConfigParser()
+        module_config.read_string((ROOT / ".gitmodules").read_text(encoding="utf-8"))
+        self.assertEqual({".github/extensions/oh-my-tmux", ".github/extensions/tmux",
+                          ".github/extensions/claude-official-skills"},
+                         {module_config[section]["path"] for section in module_config.sections()})
+        self.assertFalse((ROOT / former_path).exists(), former_path)
+        self.assertTrue((ROOT / ".github/extensions/claude-official-skills").is_dir())
+        self.assertTrue((ROOT / ".github/init_skill.py").is_symlink())
+        self.assertEqual(initializer_projection["target"], os.readlink(ROOT / ".github/init_skill.py"))
         current_paths = {
-            "faqi:faqi-skill-seekers": ".github/extensions/Skill_Seekers-development",
             "faqi:faqi-oh-my-tmux": ".github/extensions/oh-my-tmux",
             "faqi:faqi-tmux": ".github/extensions/tmux",
             "faqi:faqi-claude-skill-init": ".github/extensions/claude-official-skills",

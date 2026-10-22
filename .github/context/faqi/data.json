@@ -446,14 +446,16 @@
     ".github/tools/external/.tmux": ".github/extensions/oh-my-tmux",
     ".github/tools/external/tmux": ".github/extensions/tmux",
     ".github/tools/external/claude-official-skills": ".github/extensions/claude-official-skills",
-    ".github/tools/external/Skill_Seekers-development": ".github/extensions/Skill_Seekers-development",
     ".github/skills/auto-skill": ".github/skills/skill",
     ".github/skills/auto-skill/README.md": ".github/skills/skill/README.md"
   },
+  "retired_submodules": [
+    ".github/tools/external/Skill_Seekers-development"
+  ],
   "live_sources": {
     ".github/skills/auto-skill/README.md": {
       "path": ".github/skills/skill/README.md",
-      "sha256": "249a96596bc035d5869e7c817a585483923e95654e811e03c0b0fe5fe990d072"
+      "sha256": "a0997ea73e101c1cb6d584c76aa12c36dc95bcfd74c170e0355d74ac167afa2c"
     },
     ".github/tools/external/.tmux/.logo/LICENSE": {
       "path": ".github/extensions/oh-my-tmux/.logo/LICENSE",
@@ -474,46 +476,6 @@
     ".github/tools/external/.tmux/README.md": {
       "path": ".github/extensions/oh-my-tmux/README.md",
       "sha256": "10b0cca6bb2a4ab7af39d76d27f51b91ca1df4dead015315400041695c9471e7"
-    },
-    ".github/tools/external/Skill_Seekers-development/LICENSE": {
-      "path": ".github/extensions/Skill_Seekers-development/LICENSE",
-      "sha256": "d131d0e96700cd78f8b3fa7ed79a47b019a0653066500faff376233246b6504d"
-    },
-    ".github/tools/external/Skill_Seekers-development/pyproject.toml": {
-      "path": ".github/extensions/Skill_Seekers-development/pyproject.toml",
-      "sha256": "40820d20d8f56c1dc24c8f432141fa438d54473acbfecfa716fc9d188cbc8294"
-    },
-    ".github/tools/external/Skill_Seekers-development/src/skill_seekers/cli/agent_client.py": {
-      "path": ".github/extensions/Skill_Seekers-development/src/skill_seekers/cli/agent_client.py",
-      "sha256": "2fff7e6de630b6c8871db3419661195125c6128ac71d4d76f04e7561f7bdac17"
-    },
-    ".github/tools/external/Skill_Seekers-development/src/skill_seekers/cli/install_skill.py": {
-      "path": ".github/extensions/Skill_Seekers-development/src/skill_seekers/cli/install_skill.py",
-      "sha256": "146be443d3b73b1e5c706b105fd0780831275baa6d0d61424b3c10d03dfa79aa"
-    },
-    ".github/tools/external/Skill_Seekers-development/src/skill_seekers/cli/main.py": {
-      "path": ".github/extensions/Skill_Seekers-development/src/skill_seekers/cli/main.py",
-      "sha256": "8c02660dacd304f51fe8c4a9685d3f6d5324a7eef7779b6baa7325827bf01985"
-    },
-    ".github/tools/external/Skill_Seekers-development/src/skill_seekers/cli/upload_skill.py": {
-      "path": ".github/extensions/Skill_Seekers-development/src/skill_seekers/cli/upload_skill.py",
-      "sha256": "2967da60c32c2495ea993f9122c6472d76ab86d3bcae878831fbeb07c55b0d1e"
-    },
-    ".github/tools/external/Skill_Seekers-development/src/skill_seekers/mcp/server.py": {
-      "path": ".github/extensions/Skill_Seekers-development/src/skill_seekers/mcp/server.py",
-      "sha256": "cc6c4f24e5b91ab158f2bfbc4ebb27a38ce84d2937473dd85a6c2d035fc3b851"
-    },
-    ".github/tools/external/Skill_Seekers-development/src/skill_seekers/mcp/server_fastmcp.py": {
-      "path": ".github/extensions/Skill_Seekers-development/src/skill_seekers/mcp/server_fastmcp.py",
-      "sha256": "19ba3010ea3bc5101953e44070932ec239d67908e1a0e992437665f98b827200"
-    },
-    ".github/tools/external/Skill_Seekers-development/src/skill_seekers/mcp/tools/packaging_tools.py": {
-      "path": ".github/extensions/Skill_Seekers-development/src/skill_seekers/mcp/tools/packaging_tools.py",
-      "sha256": "7654385b60889705d98a3cc8e92602d13cadaf920ead26561e7fbb3a349a1fab"
-    },
-    ".github/tools/external/Skill_Seekers-development/src/skill_seekers/mcp/tools/scraping_tools.py": {
-      "path": ".github/extensions/Skill_Seekers-development/src/skill_seekers/mcp/tools/scraping_tools.py",
-      "sha256": "0073daae89b191d907fb080daf78f044d55d6890a8c929e7dcdc10c9ff19a735"
     },
     ".github/tools/external/claude-official-skills/README.md": {
       "path": ".github/extensions/claude-official-skills/README.md",
@@ -593,13 +555,13 @@
     },
     ".gitmodules": {
       "path": ".gitmodules",
-      "sha256": "13fc803e15db2df8b197db8a47af2f93c3933474d07c9abdc1524d632e99412e"
+      "sha256": "9188c1a8c26b8f551be6997de5b42c84b65db41a94db043f7f4ac4456859fa47"
     }
   },
   "projections": [
     {
-      "path": ".github/extensions/init_skill.py",
-      "target": "claude-official-skills/skills/skill-creator/scripts/init_skill.py"
+      "path": ".github/init_skill.py",
+      "target": "extensions/claude-official-skills/skills/skill-creator/scripts/init_skill.py"
     }
   ],
   "explanations_v1": {
@@ -1092,7 +1054,7 @@
           },
           {
             "name": "关联信息",
-            "content": "法器对象ID=faqi-skill-seekers；本体类型=software-artifact；版本声明=3.5.1（仅源码声明）；本地入口=.github/extensions/Skill_Seekers-development；当前运行实例/部署状态未在对象记录中声明。；当前资源关联ID=repo-rules-scaffolds-skills-cd973130（关联不等于许可或运行证明）。固定修订许可观察：LICENSE文本标为MIT，但版权行仍为[Your Name/Username]占位符；同修订pyproject.toml的authors字段列为Yusuf Karaaslan。作者元数据不证明版权归属或授权；本项目仍未批准该许可证。\nVibe Coding 重要性暂定：玄阶中级（grade_id=faqi-xuan-intermediate；状态=user_directed_provisional）；范围：Vibe Coding重要性：外部知识转可复用技能；分级依据：增加Agent可复用的领域能力和上下文资产；需特定工作流，不能替代通用推理与工具执行。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n关联资源ID：repo-rules-scaffolds-skills-cd973130。资源链接/本地关联不证明许可、兼容性或功能等价。\n来源ID：S16, S14, S15, S42, S44, S45, S46, S47, S48, S49, S50, S66, S67, S68, S69, S70, S71, S72, S73。"
+            "content": "法器对象ID=faqi-skill-seekers；本体类型=software-artifact；版本声明=3.5.1（仅源码声明）；本地入口=无（固定Gitlink已从当前树移除；冻结来源、SHA、初审及重要性记录保留）；当前运行实例/部署状态未在对象记录中声明。；当前资源关联ID=repo-rules-scaffolds-skills-cd973130（关联不等于许可或运行证明）。固定修订许可观察：LICENSE文本标为MIT，但版权行仍为[Your Name/Username]占位符；同修订pyproject.toml的authors字段列为Yusuf Karaaslan。作者元数据不证明版权归属或授权；本项目仍未批准该许可证。\nVibe Coding 重要性暂定：玄阶中级（grade_id=faqi-xuan-intermediate；状态=user_directed_provisional）；范围：Vibe Coding重要性：外部知识转可复用技能；分级依据：增加Agent可复用的领域能力和上下文资产；需特定工作流，不能替代通用推理与工具执行。不代表效能评级、运行结果或质量结论。\n既有关系记录：未记录对象关系。\n关联资源ID：repo-rules-scaffolds-skills-cd973130。资源链接/本地关联不证明许可、兼容性或功能等价。\n来源ID：S16, S14, S15, S42, S44, S45, S46, S47, S48, S49, S50, S66, S67, S68, S69, S70, S71, S72, S73。"
           },
           {
             "name": "出处",

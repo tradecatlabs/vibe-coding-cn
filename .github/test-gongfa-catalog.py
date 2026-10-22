@@ -18,7 +18,7 @@ import unittest
 import source_archive
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPT = ROOT / '.github/extensions/sync-gongfa-catalog.py'
+SCRIPT = ROOT / '.github/sync-gongfa-catalog.py'
 ARTIFACTS = None
 catalog = None
 TEMPLATE = Path(__file__).resolve().parents[1] / '.github/tool-explanation-template-v0.md'

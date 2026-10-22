@@ -13,7 +13,7 @@ This directory contains long-form documentation that supports this Skill.
 - [`skill-spec.md`](skill-spec.md): normative spec (MUST/SHOULD/NEVER) for a production-grade Skill in this repo
 - [`quality-checklist.md`](quality-checklist.md): quality gate checklist + scoring rubric
 - [`anti-patterns.md`](anti-patterns.md): common failure modes and how to fix them
-- [`skill-seekers.md`](skill-seekers.md): 可选固定上游的使用边界；原本地适配封装已退役
+- [`skill-seekers.md`](skill-seekers.md): 已移除固定上游的历史边界与FaQi归档指引
 
 ## Upstream / Official Reference
 

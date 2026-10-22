@@ -38,7 +38,7 @@ pi --skill .github/skills
 
 ### 来源与单一实现
 
-本集合不再提供官方Skill引用入口。原锁定上游源码和独立初始化脚本保留在Extensions，不属于当前Skills发现集合。
+本集合不再提供官方Skill引用入口。Claude锁定上游源码仍在Extensions；独立初始化脚本软链接已移至`.github/init_skill.py`，不属于当前Skills发现集合。Skill Seekers源码已按用户要求从当前树退役，历史来源仍留在FaQi资料中。
 此前官方入口清理只删除16个软引用，没有删除、复制或改写上游源码；auto-tmux及原33个自有封装脚本已从当前树退役。
 
 当前skill只提供原生工具和规范指令。历史封装参考不再是执行手册，不把实现复制回Skills，也不新增包装程序、资源加载器或管理框架。

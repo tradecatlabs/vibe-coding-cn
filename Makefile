@@ -5,7 +5,7 @@ MARKDOWNLINT = npx --yes markdownlint-cli@0.48.0
 MAINT = .github
 EXT = $(MAINT)/extensions
 # 原tools/external各来源分别平铺；不能忽略整个Extensions，否则会漏掉自有工具。
-SOURCE_IGNORES = --ignore .history --ignore '$(EXT)/Skill_Seekers-development/**' --ignore '$(EXT)/claude-official-skills/**' --ignore '$(EXT)/tmux/**' --ignore '$(EXT)/oh-my-tmux/**' --ignore '.github/context/research/**'
+SOURCE_IGNORES = --ignore .history --ignore '$(EXT)/claude-official-skills/**' --ignore '$(EXT)/tmux/**' --ignore '$(EXT)/oh-my-tmux/**' --ignore '.github/context/research/**'
 
 help:
 	@echo "Vibe Coding工具箱"
@@ -52,19 +52,19 @@ test-gongfa:
 	@python3 $(MAINT)/test-gongfa.py
 
 sync-gongfa-catalog:
-	@python3 $(EXT)/sync-gongfa-catalog.py --write
+	@python3 $(MAINT)/sync-gongfa-catalog.py --write
 
 check-gongfa-catalog:
-	@python3 $(EXT)/sync-gongfa-catalog.py --check
+	@python3 $(MAINT)/sync-gongfa-catalog.py --check
 
 test-gongfa-catalog:
 	@python3 $(MAINT)/test-gongfa-catalog.py
 
 sync-faqi-catalog:
-	@python3 $(EXT)/sync-faqi-catalog.py --write
+	@python3 $(MAINT)/sync-faqi-catalog.py --write
 
 check-faqi-catalog:
-	@python3 $(EXT)/sync-faqi-catalog.py --check
+	@python3 $(MAINT)/sync-faqi-catalog.py --check
 
 test-faqi-catalog:
 	@python3 $(MAINT)/test-faqi-catalog.py
@@ -91,10 +91,10 @@ check-wiki:
 	@$(MARKDOWNLINT) --config .github/lint_config.json "$${WIKI_DIR:-/tmp/vibe-coding-cn.wiki}"/*.md
 
 fetch-research-raw:
-	@python3 $(EXT)/fetch-research-raw.py
+	@python3 $(MAINT)/fetch-research-raw.py
 
 sync-doc-toc:
-	@python3 $(EXT)/sync-doc-toc.py
+	@python3 $(MAINT)/sync-doc-toc.py
 
 build:
 	@echo "无需构建；本仓是文档、既有Skills和小工具的资源集合。"

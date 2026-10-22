@@ -23,7 +23,9 @@ REQUIRED_RAW_FILES = [
 ]
 REQUIRED_SOURCE_FIELDS = ['version: 1', 'pulled_at:', 'files:']
 # 拉取者字段是当时的来源身份，不批量改写旧事实清单。
-PULLER_IDENTITIES = ('puller: .github/scripts/fetch-research-raw.py',
+# 保留既有本机档案中的历史路径标记；当前抓取入口只写根级路径。
+PULLER_IDENTITIES = ('puller: .github/fetch-research-raw.py',
+                     'puller: .github/scripts/fetch-research-raw.py',
                      'puller: .github/extensions/fetch-research-raw.py')
 JSON_RAW_FILES = [
     "github-repo.raw.json",

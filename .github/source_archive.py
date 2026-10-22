@@ -83,9 +83,22 @@ def bundles(root):
         raw = raw_read(path)
         data = strict_json(raw)
         archive_fields = {'format', 'kind', 'source_revision', 'documents', 'locations', 'live_sources', 'projections'}
-        require(frozenset(data) in {frozenset(archive_fields), frozenset(archive_fields | {'explanations_v1'})}
-                and data['format'] == FORMAT and data['kind'] == kind
+        allowed_fields = {
+            frozenset(archive_fields),
+            frozenset(archive_fields | {'explanations_v1'}),
+            frozenset(archive_fields | {'retired_submodules'}),
+            frozenset(archive_fields | {'retired_submodules', 'explanations_v1'}),
+        }
+        require(frozenset(data) in allowed_fields and data['format'] == FORMAT and data['kind'] == kind
                 and re.fullmatch('[a-f0-9]{40}', data['source_revision']), '原始数据格式不符')
+        retired_submodules = data.get('retired_submodules', [])
+        require(isinstance(retired_submodules, list) and len(retired_submodules) <= 64
+                and all(isinstance(repository, str) for repository in retired_submodules)
+                and len(set(retired_submodules)) == len(retired_submodules)
+                and (kind == 'faqi' or not retired_submodules), '退役子模块登记格式不符')
+        for repository in retired_submodules:
+            normal(repository)
+            require(repository.startswith('.github/tools/external/'), '退役子模块必须保留原始仓库路径身份')
         if 'explanations_v1' in data:
             explanations = data['explanations_v1']
             require(isinstance(explanations, dict) and set(explanations) == {'template_sha256', 'items'}

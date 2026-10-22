@@ -14,8 +14,8 @@ from pathlib import Path
 import re
 import sys
 import tempfile
-ROOT = Path(__file__).resolve().parents[2]
-# 生成入口仍在Extensions；共用模块与校验器直接平铺于.github，不保留旧包副本。
+ROOT = Path(__file__).resolve().parents[1]
+# 共用模块与校验器直接平铺于.github，不保留旧包副本。
 sys.path.insert(0, str(ROOT / '.github'))
 import source_archive
 import book_views

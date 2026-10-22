@@ -2,16 +2,15 @@
 
 ## 字多不看
 
-这里保存现存程序、资料维护脚本与固定上游；当前9个一级对象在本域平铺，程序内部源码结构不拆散。
+这里保存固定上游源码、配置与仍保留的小工具；当前3个一级对象在本域平铺，程序内部源码结构不拆散。
+Skill Seekers固定源码已按用户要求从当前树移除；FaQi资料保留其冻结快照、SHA、初审和重要性记录，不再作为当前入口。
 这里的Extensions不是Pi原生扩展的同义词；不能把整个目录交给Pi的`-e`加载。
 
 ## 快速导航
 
 | 既有对象 | 入口与用途 |
 |---|---|
-| [Skill Seekers](Skill_Seekers-development/README.md) | 固定上游源码；原本地适配脚本已退役，按上游说明与具体授权选择使用 |
 | [Claude官方Skills源](claude-official-skills/README.md) | 固定上游源码，不属于当前Skills发现集合 |
-| [Skill初始化入口](init_skill.py) | 引用上游初始化脚本；不是Pi Skill入口或自动安装器 |
 | [tmux](tmux/README)、[oh-my-tmux](oh-my-tmux/README.md) | 原固定源码与配置仓库；不是自动安装或启用 |
 
 <details>
@@ -26,22 +25,14 @@
 
 ## 使用方式
 
-先读具体程序的README和来源，再按任务显式调用。Python脚本从仓库根运行；现有Shell脚本可用`bash .github/extensions/<脚本名>`调用。
+先读具体程序的README和来源，再按任务显式调用；本域不再保存资料维护入口，它们位于`.github/`根维护层。根级[Skill初始化入口](../init_skill.py)是固定上游脚本的软链接，不属于本域对象，也不是Pi Skill入口或自动安装器。
 程序只存一份；Skill中的指令引用这里，不复制执行实现。Pi Agent使用原生工具和模型选择，不新增运行器或模型HTTP客户端。
 
 ## 正文
 
 ### 检查与维护入口
 
-仓库级校验和测试入口由仓库根`.github/`维护，不属于本域工具；入口与职责见[维护规则](../AGENTS.md#维护脚本与共享库)。
-本域保留以下资料维护入口；本次没有扩大迁移范围：
-
-| 范围 | 本域保留入口 |
-|---|---|
-| 文档目录 | [sync-doc-toc.py](sync-doc-toc.py) |
-| 功法视图 | [sync-gongfa-catalog.py](sync-gongfa-catalog.py) |
-| 法器视图 | [sync-faqi-catalog.py](sync-faqi-catalog.py) |
-| 研究事实获取 | [fetch-research-raw.py](fetch-research-raw.py)；需要明确联网授权 |
+资料维护脚本、校验器与测试统一位于仓库根`.github/`维护层；入口、职责和调用边界见[维护规则](../AGENTS.md#维护脚本与共享库)。研究事实抓取会联网并写入本机资料，需显式调用，不属于默认测试。
 
 共享实现只有一份；职责与原库规则见[维护说明](../AGENTS.md#维护脚本与共享库)，资料生成器直接使用仓库根层平铺模块，不保留lib目录。两个目录生成器从原始JSON中的`explanations_v1`读取唯一活动说明载荷，输出轻量README导航页及天、地、玄、黄四阶正文；每个对象仍单独使用一张18项严格三列表格。v0仅保留为历史模板，不接受旧载荷兼容。未定级功法在黄阶文档中单列并标明“不归黄阶”。完整本地检查仍为`make test`，不执行被审第三方程序，也不证明运行、效果或许可。
 

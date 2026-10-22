@@ -8,7 +8,7 @@
 |---|---|---|
 | `context/`及同级平铺的Context资料、`tool-explanation-template-v*.md` | 公开资料、规则、文档及数据；研究档案仅留已有本机副本 | `context/README.md`、`context/AGENTS.md` |
 | `skills/` | 所有既有Skill指令和流程，统一治理 | `skills/README.md`、`skills/AGENTS.md` |
-| `extensions/` | 既有小工具、程序、脚本和适配实现 | `extensions/README.md`、`extensions/AGENTS.md` |
+| `extensions/` | 固定上游源码、配置与仍保留的小工具 | `extensions/README.md`、`extensions/AGENTS.md` |
 
 对象在各域平铺；资料集合和原生程序内部结构不拆散。旧docs/assets/metadata/prompts/research/scripts/tools不再作为并行活动根目录。
 
@@ -27,7 +27,7 @@
 
 ## 维护脚本与共享库
 
-校验和测试是仓库维护基础设施，不属于用户侧Extensions资源；本次直接平铺到`.github/`，不另建scripts目录或旧路径兼容壳。
+校验、测试和资料维护脚本是仓库维护基础设施，不属于用户侧Extensions资源；直接平铺到`.github/`，不另建scripts目录或旧路径兼容壳。资料生成入口和研究抓取脚本现为`sync-doc-toc.py`、`sync-faqi-catalog.py`、`sync-gongfa-catalog.py`、`fetch-research-raw.py`；`init_skill.py`是指向固定上游的独立软链接，不属于自动检查。
 
 | 类别 | 当前入口 |
 |---|---|
@@ -35,6 +35,7 @@
 | 目录与导航 | `check-directory-docs.py`、`check-metadata.py`、`check-ai-citation.py` |
 | 数据与来源 | `check-gongfa.py`；本机研究副本另用`check-research-raw.py`、`check-source-facts.py` |
 | Wiki | `check-wiki.py`；仍只校验明确给定的本地checkout |
+| 资料维护 | `sync-doc-toc.py`、`sync-faqi-catalog.py`、`sync-gongfa-catalog.py`；`fetch-research-raw.py`会联网并写入本机研究资料，不属于默认测试 |
 | 测试 | `test-gongfa.py`、`test-gongfa-catalog.py`、`test-faqi-catalog.py`、`test-markdown-details.py`、`test-source-archive.py`、`test-research-distribution.py` |
 | 共享实现 | `source_boundaries.py`、`taxonomy.py`、`source_archive.py`、`book_views.py`、`tool_explanations.py`直接平铺；供同级入口与原资料生成器共用，不保留lib包 |
 | 依赖 | `requirements-gongfa.txt`、`requirements-faqi.txt` |
@@ -66,12 +67,12 @@
 `ISSUE_TEMPLATE/`、`CODEOWNERS`、`FUNDING.yml`、`PULL_REQUEST_TEMPLATE.md`、`SECURITY.md`、`WIKI.md`、`labeler.yml`、`lint_config.json`保留现有位置；用户本次点名workflows，不扩改其他协作入口。
 
 - `workflows/`已退役，不再作为平台例外；禁止重建目录、符号链接或兼容壳。原3个定义已从当前文件树移除，原始提交仍在Git历史中。
-- 自动CI、Labeler和Welcome不再触发；本地校验/测试由根Makefile调用同级维护脚本，资料维护仍调用Extensions入口，不把空远端检查当CI成功。
+- 自动CI、Labeler和Welcome不再触发；本地校验、测试和资料维护由根Makefile调用`.github/`根入口，不把空远端检查当CI成功。
 - CODEOWNERS仍由`@tukuaiai`、`@tradecatlabs`覆盖，仅迁移路径，不改变审批或豁免资格。
 - Actions定义只在历史提交中保留，不复制或执行；恢复自动化须显式授权，不能只重建路径而忽略权限、输入及检查生产者。
 - 审批Ruleset25244224的`tradecatlabs`豁免只用于其自己的PR；其他PR仍须有效批准。仅退役两套保护中已停用的`markdown-lint`/`link-checker`；签名、PR、线性历史及其它保护不变，不伪造审核。
 - Issue/PR模板保持协作职责，长期规则写根AGENTS或资源域AGENTS，不塞入模板与CI。
-- 固定来源使用Extensions下四个Gitlink；不得提交缓存、私有模板、真实会话、数据库或凭据。
+- 当前固定来源使用Extensions下三个Gitlink；Skill Seekers Gitlink已退役，历史快照与初审仍保留在FaQi资料中；不得提交缓存、私有模板、真实会话、数据库或凭据。
 
 ## 验证
 

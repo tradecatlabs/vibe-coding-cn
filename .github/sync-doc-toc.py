@@ -7,7 +7,7 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 # 同一平铺维护模块由校验器和生成器共享，使用真实入口位置而非调用者cwd。
 sys.path.insert(0, str(ROOT / '.github'))
 from taxonomy import doc_readmes_from_taxonomy

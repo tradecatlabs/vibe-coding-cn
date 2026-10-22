@@ -15,8 +15,8 @@ import sys
 import tempfile
 from urllib.parse import urlsplit
 
-ROOT = Path(__file__).resolve().parents[2]
-# 生成入口仍在Extensions；从.github平铺模块导入，不复制实现或依赖当前cwd。
+ROOT = Path(__file__).resolve().parents[1]
+# 从.github平铺模块导入，不复制实现或依赖当前cwd。
 sys.path.insert(0, str(ROOT / '.github'))
 import source_archive
 import book_views
@@ -160,6 +160,8 @@ def validate(root, input_path):
     time = datetime.datetime.fromisoformat(data["reviewed_at"])
     require(time.tzinfo is not None, "初审时间须含时区")
     bindings = {input_path: digest(raw), schema_path: digest(schema_raw), **source_archive.bundle_bindings(root)}
+    archive_data = source_archive.bundles(root)["faqi"]["data"]
+    retired_submodules = set(archive_data.get("retired_submodules", []))
     ontology_path = safe_path(root, data["ontology"]["path"])
     ontology_raw = bounded_read(ontology_path)
     require(digest(ontology_raw) == data["ontology"]["sha256"], "本体来源SHA不符，不能静默沿用初审")
@@ -178,6 +180,16 @@ def validate(root, input_path):
     sources = indexed(data["sources"], "id", "来源ID")
     objects = indexed(data["objects"], "id", "法器实现ID")
     footprints = set()
+    source_repositories = {source["repository"] for source in sources.values() if source["repository"] != "."}
+    require(retired_submodules <= source_repositories, "退役子模块没有对应的冻结来源记录")
+    for repository in retired_submodules:
+        require(not any(path == repository or path.startswith(repository + "/")
+                        for path in archive_data["locations"]), "退役子模块仍有当前位置映射")
+        require(not any(path == repository or path.startswith(repository + "/")
+                        for path in archive_data["live_sources"]), "退役子模块仍有当前实现绑定")
+        archived_sources = [source for source in sources.values() if source["repository"] == repository]
+        require(archived_sources and all(source["path"] in archive_data["documents"] for source in archived_sources),
+                "退役子模块缺少冻结来源字节")
     for source in sources.values():
         path = safe_path(root, source["path"])
         require(source["path"].startswith((".github/tools/", ".github/skills/")), "实现/说明来源不属于批准工具范围")
@@ -220,16 +232,22 @@ def validate(root, input_path):
             historical_repository = path_at_revision(root, data["source_revision"], source["repository"])
             tree = git_output(root, "ls-tree", data["source_revision"], "--", historical_repository).decode().split()
             require(len(tree) >= 3 and tree[0] == "160000" and tree[2] == source["revision"], "submodule来源与父仓库指针错配")
-            require(git_output(repository, "rev-parse", "HEAD").decode().strip() == source["revision"], "submodule工作树修订漂移")
-            body = git_blob(repository, source["revision"], relative)
-            current = bounded_read(path)
-            require(body == current and digest(body) == source["sha256"], f"来源文件/SHA漂移：{source['id']}")
+            if source["repository"] in retired_submodules:
+                body = source_archive.read_bytes(path)
+                current = body
+                require(digest(body) == source["sha256"], f"冻结来源文件/SHA漂移：{source['id']}")
+            else:
+                require(git_output(repository, "rev-parse", "HEAD").decode().strip() == source["revision"], "submodule工作树修订漂移")
+                body = git_blob(repository, source["revision"], relative)
+                current = bounded_read(path)
+                require(body == current and digest(body) == source["sha256"], f"来源文件/SHA漂移：{source['id']}")
         lines = body.decode("utf-8").splitlines(keepends=True)
         start, end = source["lines"]
         require(1 <= start < end <= len(lines) + 1, f"来源半开选区越界：{source['id']}")
         selected = "".join(lines[start - 1:end - 1]).encode("utf-8")
         require(digest(selected) == source["selection_sha256"], f"选区SHA不符：{source['id']}")
-        bindings[path] = digest(current)
+        if source["repository"] not in retired_submodules:
+            bindings[path] = digest(current)
     for obj in objects.values():
         require(obj["type_id"] in type_ids, "引用了不存在的本体类")
         require(obj["implementation"] in sources and set(obj["support"]) <= sources.keys(), "法器引用了未知来源")
@@ -313,13 +331,36 @@ def validate(root, input_path):
     require(grade_assignments.keys() == expected_grade_subjects, "暂定品级记录必须完整覆盖本次纳入对象，不能遗漏或增加条目")
     require(all(item["grade_id"] in GRADE_LABELS for item in grade_assignments.values()), "暂定品级ID不在法器四阶十二级词表中")
     modules_path = safe_path(root, ".gitmodules")
-    module_bytes = bounded_read(modules_path)
+    module_bytes = source_archive.raw_read(modules_path)
+    archived_modules = source_archive.read_bytes(modules_path)
     historical_modules = git_blob(root, data["source_revision"], ".gitmodules")
-    comparable_modules = module_bytes if module_bytes == historical_modules else normalize_migrated_paths(module_bytes)
-    require(comparable_modules == historical_modules, "submodule注册内容超出批准路径迁移范围")
+    comparable_modules = (archived_modules if archived_modules == historical_modules
+                          else normalize_migrated_paths(archived_modules))
+    require(comparable_modules == historical_modules, "冻结submodule注册快照与来源修订不符")
+
+    def parse_modules(raw):
+        config = configparser.RawConfigParser()
+        config.read_string(raw.decode("utf-8"))
+        return {section: {"path": config[section]["path"], "url": config[section]["url"]}
+                for section in config.sections()}
+
+    historical_module_map = parse_modules(archived_modules)
+    current_module_map = parse_modules(module_bytes)
+    historical_paths = {module["path"] for module in historical_module_map.values()}
+    require(retired_submodules <= historical_paths, "退役子模块不在冻结Git模块清单中")
+    expected_current_modules = {}
+    for section, module in historical_module_map.items():
+        old_path = module["path"]
+        if old_path in retired_submodules:
+            continue
+        expected_current_modules[section] = {
+            "path": archive_data["locations"].get(old_path, old_path),
+            "url": module["url"],
+        }
+    require(current_module_map == expected_current_modules,
+            "当前Git模块须与冻结来源迁移映射及显式退役清单完全一致")
     bindings[modules_path] = digest(module_bytes)
-    config = configparser.RawConfigParser(); config.read_string(module_bytes.decode("utf-8"))
-    module_urls = {config[s]["path"]: config[s]["url"] for s in config.sections()}
+    module_urls = {module["path"]: module["url"] for module in historical_module_map.values()}
     for rid, oid in data["local_resource_links"].items():
         require(oid in objects, "来源关联引用未知法器")
         source = sources[objects[oid]["implementation"]]
@@ -461,14 +502,19 @@ def render(data, objects, root, explanations, index_name="README.md"):
 def unchanged(bindings, root, data):
     source_archive.check_live(root)
     archives = source_archive.bundle_bindings(root)
+    retired_submodules = set(source_archive.bundles(root)["faqi"]["data"].get("retired_submodules", []))
     for path, expected in bindings.items():
-        raw = source_archive.raw_read(path) if path in archives else bounded_read(path)
+        if path == root / ".gitmodules" or path in archives:
+            raw = source_archive.raw_read(path)
+        else:
+            raw = bounded_read(path)
         require(digest(raw) == expected, "输入被并行修改；不提交旧视图")
     for ref in data["references"]:
         path = safe_path(root, ref["path"], alias=True)
         if ref["state"] == "symlink":
             require(source_archive.source_is_symlink(path) and source_archive.source_readlink(path) == ref["target"], "来源链接被并行修改")
-    repositories = {s["repository"]: s["revision"] for s in data["sources"] if s["repository"] != "."}
+    repositories = {s["repository"]: s["revision"] for s in data["sources"]
+                    if s["repository"] != "." and s["repository"] not in retired_submodules}
     for repository, revision in repositories.items():
         current_repository = source_archive.physical_path(root / repository).relative_to(root).as_posix()
         index = git_output(root, "ls-files", "--stage", "--", current_repository).decode().split()

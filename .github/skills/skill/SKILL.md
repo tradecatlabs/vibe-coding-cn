@@ -67,8 +67,8 @@ pi --skill .github/skills
 
 ### 5. 可选工具不是硬前提
 
-少量材料直接用读取与编辑工具整理。批量网站、仓库或PDF抽取确有收益时，先阅读[固定Skill Seekers源](../../extensions/Skill_Seekers-development/README.md)和[工具边界](references/skill-seekers.md)。
-缺依赖时报告缺口，不自动bootstrap。保留的独立初始化器是单独工具，不是本Skill强制步骤，也不替代内容审阅。
+少量材料直接用读取与编辑工具整理。批量网站、仓库或PDF抽取确有收益时，选择当前可用且获授权的工具；本仓库已移除Skill Seekers固定源码和本地适配器，详见[历史边界记录](references/skill-seekers.md)。
+缺依赖时报告缺口，不自动bootstrap。根级保留的独立初始化器是单独工具，不是本Skill强制步骤，也不替代内容审阅。
 
 ## Examples
 

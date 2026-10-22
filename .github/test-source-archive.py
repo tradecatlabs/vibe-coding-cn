@@ -110,7 +110,13 @@ class SourceArchiveTest(unittest.TestCase):
                  '\n[资料读取](../../scripts/lib/source_archive.py)\n'
                  '\n[视图模块](../../extensions/lib/book_views.py)\n'
                  '\n[分类模块](../../lib/taxonomy.py)\n'
-                 '\n[资源边界](../../lib/__init__.py)\n')
+                 '\n[资源边界](../../lib/__init__.py)\n'
+                 '\n[文档目录同步](../../extensions/sync-doc-toc.py)\n'
+                 '\n[法器生成器](../../extensions/sync-faqi-catalog.py)\n'
+                 '\n[功法生成器](../../extensions/sync-gongfa-catalog.py)\n'
+                 '\n[研究抓取](../../extensions/fetch-research-raw.py)\n'
+                 '\n[Skill初始化器](../../extensions/init_skill.py)\n'
+                 '\n[Skill Seekers历史源码](../../tools/external/Skill_Seekers-development/README.md)\n')
         retired_links = {
             '../../tools/chat-vault/README.md': 'chat-vault/README.md',
             '../../tools/external/my-nvim/README.md': 'my-nvim/README.md',
@@ -164,6 +170,17 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertIn('[视图模块](../../book_views.py)', rendered)
         self.assertIn('[分类模块](../../taxonomy.py)', rendered)
         self.assertIn('[资源边界](../../source_boundaries.py)', rendered)
+        for label, target in (
+            ('文档目录同步', 'sync-doc-toc.py'),
+            ('法器生成器', 'sync-faqi-catalog.py'),
+            ('功法生成器', 'sync-gongfa-catalog.py'),
+            ('研究抓取', 'fetch-research-raw.py'),
+            ('Skill初始化器', 'init_skill.py'),
+        ):
+            self.assertIn(f'[{label}](../../{target})', rendered)
+        self.assertIn(
+            '[Skill Seekers历史源码](https://github.com/yusufkaraaslan/Skill_Seekers/blob/'
+            '26638b248279a3b001b651475e0f28975f5ff069/README.md)', rendered)
         for index, target in enumerate(retired_links.values()):
             revision = ('b0e3454bb865b95bdc70127a431214c384542dee'
                         if target == 'prompts-library/README.md'

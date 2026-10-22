@@ -1,5 +1,4 @@
 # 保留原外部源码的GitHub Linguist归属；不把整个Extensions视为第三方。
-.github/extensions/Skill_Seekers-development/** linguist-vendored
 .github/extensions/claude-official-skills/** linguist-vendored
 .github/extensions/tmux/** linguist-vendored
 .github/extensions/oh-my-tmux/** linguist-vendored

@@ -2,7 +2,6 @@
 from pathlib import Path
 
 VENDOR_SUBTREES = tuple(map(Path, (
-    '.github/extensions/Skill_Seekers-development',
     '.github/extensions/claude-official-skills',
     '.github/extensions/tmux',
     '.github/extensions/oh-my-tmux',
