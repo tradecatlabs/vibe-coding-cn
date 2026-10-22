@@ -70,7 +70,7 @@ selection_rules:
 documents:
   getting-started:
   - path: .github/god.md
-    title: Pi CLI 安装配置提示词
+    title: 道成了肉身：Pi CLI 安装配置提示词
     role: 可全文复制到网页版 AI，逐步引导本机现状检查、分平台安装、模型授权及本机工具验证，并在 Agent 能力验收后停止
   - path: .github/first-project.md
     title: 第一个项目
