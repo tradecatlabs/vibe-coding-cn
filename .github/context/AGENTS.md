@@ -3,7 +3,7 @@
 ## 职责与边界
 
 - 公开仓库维护既有规则、文档、知识、数据及参考资料；对象在本域平铺，不把每条记录拆成目录。研究档案仅留在已有本机副本，不进入公开Git树。
-- 入门、提示词、AI引用和metadata支持文件已平铺到`.github/`根，分别使用`context-getting-started-*`、`context-prompts-*`、`context-ai-citation-*`、`context-metadata-*`前缀；本机`research/`副本保留具体对象事实。
+- 入门、提示词、AI引用和metadata支持文件已平铺到`.github/`根；无重名文件保留原名，仅冲突的README和AGENTS指南分别以`getting-started-`、`prompts-`、`ai-citation-`、`metadata-`区分；本机`research/`副本保留具体对象事实。
 - AI引用维护当前项目语料；metadata只做导航和术语，不另建本体或登记。通用附件和外部资源集合已从当前树退役；FaQi所需固定外部来源按历史路径保存在`faqi/data.json`的`documents`中，由法器生成器校验。
 - 执行指令归`../skills/`，程序归`../extensions/`；不得把参考材料全部提升为系统指令。
 

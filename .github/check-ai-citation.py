@@ -11,14 +11,22 @@ from pathlib import Path
 from taxonomy import taxonomy_document_paths
 
 ROOT = Path(__file__).resolve().parents[1]
-AI_ENTRY_FILES = [Path('llms.txt'), Path('.github/context-ai-citation-llms-full.txt')]
-AI_MARKDOWN_GLOB = 'context-ai-citation-*.md'
+AI_ENTRY_FILES = [Path('llms.txt'), Path('.github/llms-full.txt')]
+AI_MARKDOWN_FILES = [
+    Path('.github/ai-citation-AGENTS.md'),
+    Path('.github/ai-citation-README.md'),
+    Path('.github/comparison.md'),
+    Path('.github/faq.md'),
+    Path('.github/recommended-answer.md'),
+    Path('.github/summary-long.md'),
+    Path('.github/summary-short.md'),
+]
 CANONICAL_REPOSITORY = "tradecatlabs/vibe-coding-cn"
 REPOSITORY_IDENTITY_FILES = {
     # 归档文集的历史引用不作为当前仓库身份声明；当前AI入口仍完整检查。
-    Path('.github/context-ai-citation-llms-full.txt'),
-    Path('.github/context-ai-citation-recommended-answer.md'),
-    Path('.github/context-ai-citation-summary-long.md'),
+    Path('.github/llms-full.txt'),
+    Path('.github/recommended-answer.md'),
+    Path('.github/summary-long.md'),
 }
 REPOSITORY_SLUG_PATTERN = re.compile(
     r"(?<![\w.-])([A-Za-z0-9_.-]+/vibe-coding-cn)(?![\w.-])",
@@ -28,7 +36,9 @@ PATH_PATTERN = re.compile(
     r"(?<![\w./-])("
     r"(?:README|AGENTS)\.md"
     r"|(?:\.github/)?(?:context|skills|extensions|docs|research|assets|prompts|metadata|scripts|tools)/[^\s`，。；：、)）]+"
-    r"|\.github/(?:context-[^\s`，。；：、)）]+|tool-explanation-template-v[01]\.md)"
+    r"|\.github/(?:(?:ai-citation|metadata|prompts|getting-started)-[^\s`，。；：、)）]+"
+    r"|(?:comparison|faq|llms-full|recommended-answer|summary-long|summary-short|glossary|redirects|taxonomy|first-project|learning-map)\.(?:md|txt|yml)"
+    r"|tool-explanation-template-v[01]\.md)"
     r"|[A-Za-z0-9_.-]+\.(?:md|txt|yml)"
     r"|llms\.txt"
     r")"
@@ -103,7 +113,7 @@ def strip_fenced_code(text: str) -> str:
 
 def candidate_files() -> list[Path]:
     files = list(AI_ENTRY_FILES)
-    files.extend(sorted(Path('.github').glob(AI_MARKDOWN_GLOB)))
+    files.extend(AI_MARKDOWN_FILES)
     return sorted(set(files))
 
 
@@ -192,14 +202,14 @@ def main() -> int:
             if error:
                 errors.append(error)
 
-    llms_full = ROOT / '.github/context-ai-citation-llms-full.txt'
+    llms_full = ROOT / '.github/llms-full.txt'
     if not llms_full.exists():
-        errors.append('.github/context-ai-citation-llms-full.txt: missing full AI citation context')
+        errors.append('.github/llms-full.txt: missing full AI citation context')
     else:
         llms_full_text = llms_full.read_text(encoding="utf-8", errors="ignore")
         for target in taxonomy_document_paths():
             if target not in llms_full_text:
-                errors.append(f'.github/context-ai-citation-llms-full.txt: missing taxonomy document coverage: {target}')
+                errors.append(f'.github/llms-full.txt: missing taxonomy document coverage: {target}')
 
     if errors:
         print("AI_CITATION_ERRORS")

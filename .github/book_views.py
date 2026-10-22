@@ -46,15 +46,21 @@ def relocated(path, fragment=''):
     if path in aliases:
         return aliases[path], fragment
     flat_groups = {
-        '.github/context/ai-citation': '.github/context-ai-citation',
-        '.github/context/metadata': '.github/context-metadata',
-        '.github/context/prompts': '.github/context-prompts',
-        '.github/context/getting-started': '.github/context-getting-started',
+        '.github/context/ai-citation': 'ai-citation',
+        '.github/context/metadata': 'metadata',
+        '.github/context/prompts': 'prompts',
+        '.github/context/getting-started': 'getting-started',
     }
-    for old, new in flat_groups.items():
+    for old, group in flat_groups.items():
         if path == old or path.startswith(old + '/'):
             suffix = path[len(old):].lstrip('/')
-            return new + '-' + (suffix.replace('/', '-') if suffix else 'README.md'), fragment
+            if not suffix or suffix == 'README.md':
+                filename = f'{group}-README.md'
+            elif suffix == 'AGENTS.md':
+                filename = f'{group}-AGENTS.md'
+            else:
+                filename = suffix.replace('/', '-')
+            return '.github/' + filename, fragment
     if path.rstrip('/') == '.github/docs/gongfa':
         return '.github/context/gongfa/README.md', fragment or '原文文集'
     if path.startswith('.github/docs/gongfa/'):

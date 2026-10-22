@@ -1,13 +1,13 @@
 # metadata
 
-本组文件以`context-metadata-`前缀平铺在`.github/`根，只存放三域资源导航、术语和历史路径映射；功法、法器的原始登记及协议已归各自单一JSON资料集合。
+metadata文件平铺在`.github/`根；原名不冲突的文件保持原名，指南和README因重名分别命名为`metadata-AGENTS.md`与`metadata-README.md`。本组只存放三域资源导航、术语和历史路径映射；功法、法器的原始登记及协议已归各自单一JSON资料集合。
 类型与语义仍以本体主文为准，不在此维护另一棵分类树。
 
 ## 文件
 
-- `context-metadata-taxonomy.yml`：知识库分类、阅读路径和关键文档入口。
-- `context-metadata-glossary.yml`：项目术语表。
-- `context-metadata-redirects.yml`：已经不存在的历史路径到当前入口的映射，供维护和 AI 上下文使用。
+- `taxonomy.yml`：知识库分类、阅读路径和关键文档入口。
+- `glossary.yml`：项目术语表。
+- `redirects.yml`：已经不存在的历史路径到当前入口的映射，供维护和 AI 上下文使用。
 - [法器原始资料](context/faqi/data.json)：原总分类JSON、Schema、来源及历史引用的单一资料源；重要性、正式效能、排除与未验证状态不因迁移改变。
 - [法器体系说明](context/faqi/README.md#doc-faqi-system)：解释工具/依赖边界、重要性分级及正式效能评价边界；不复制登记或生成总表。
 - [法器分阶索引](context/faqi/README.md#法器总表)：按重要性列出对象并链接到四阶说明页；原资源事实、依赖关系和边界见data.json。正式效能评级仍未赋值，不手改。

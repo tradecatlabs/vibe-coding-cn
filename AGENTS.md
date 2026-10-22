@@ -3,7 +3,7 @@
 ## 目标与边界
 
 - 以Pi Agent和已授权的OpenAI GPT作为主体底座，复用原生工具、资源加载与模型选择；不新造Agent、模型客户端、Lambda解释器或资源管理框架。
-- 只组织现有资产；三域主入口为`.github/context/`、`.github/skills/`、`.github/extensions/`，域内对象平铺。Context的入门、提示词、机器索引、AI引用和模板文件以集合前缀平铺在`.github/`根。包内部源码、资料集合与共享实现不另算新的一级资源分类。
+- 只组织现有资产；三域主入口为`.github/context/`、`.github/skills/`、`.github/extensions/`，域内对象平铺。Context入门、提示词、机器索引、AI引用和模板文件平铺在`.github/`根；仅重名的`README.md`、`AGENTS.md`用集合名区分，其他文件保留原名。包内部源码、资料集合与共享实现不另算新的一级资源分类。
 - 根`README.md`是唯一主页；`.github/README.md`禁止创建。`llms.txt`是AI短入口；大资料按需读取，不全部注入系统上下文。
 - 读者按问题、设计、实现、代价及比较/共性/适用条件理解工具；Lambda记号只辅助表达输入输出与组合，不证明纯函数、正确、确定或终止。
 - 功法与法器441个对象的活动说明使用`.github/tool-explanation-template-v1.md`：保留v0的15项并新增“结论、连接规则、依据”，共18项；v0仅作历史模板，两个版本的原始模板均在`.github/`根目录。第16项为主张、第18项为事实依据、第17项须按图尔敏模型写明从证据到主张的具体推理规则；不得用字段交叉引用冒充连接规则。不得用AI自拟版本替代已登记模板，不借模板迁移改写原15项、来源或评级。主页集合级说明也按活动v1模板18项名序组织；作为集合摘要，第16–18项仅陈述集合层级可核的结论、推理与依据，不合并或替代对象级说明。
@@ -19,9 +19,9 @@
 | `.github/CONTRIBUTORS.md` | 根README迁出的贡献者名单与鸣谢；只维护独立文档 |
 | `.github/check-*.py`、`test-*.py`、平铺共享模块及requirements | 仓库维护层；校验、测试和共享实现清单以`.github/AGENTS.md`为准，不保留lib目录，不属于用户侧Extensions工具 |
 | `Makefile` | 本地可重复命令入口 |
-| `.github/context-<集合>-*`与`.github/tool-explanation-template-v*.md` | 平铺的Context入门、提示词、机器索引、AI引用及模板文件；按前缀识别原维护集合，规则见`.github/AGENTS.md` |
+| `.github/`根的集合说明文件与原名平铺文件、`.github/tool-explanation-template-v*.md` | Context入门、提示词、机器索引与AI引用文件；仅重名指南使用集合名，规则见`.github/AGENTS.md` |
 
-Context资料集合保留在`.github/context/`，其中`gongfa`与`faqi`各有唯一`data.json`维护源；原入门、提示词、机器索引、AI引用文件及两个工具说明模板已平铺到`.github/`根，以`context-<集合>-<文件名>`或模板原名区分。通用附件集合与外部资源集合已从当前树移除；FaQi使用的固定外部来源快照保存在`faqi/data.json`。研究档案只在已有本机副本保留，不进入GitHub当前文件树。
+Context资料集合保留在`.github/context/`，其中`gongfa`与`faqi`各有唯一`data.json`维护源；原入门、提示词、机器索引、AI引用文件及两个工具说明模板已平铺到`.github/`根。仅冲突的`README.md`与`AGENTS.md`改用集合名区分，其他迁移文件保留原名。通用附件集合与外部资源集合已从当前树移除；FaQi使用的固定外部来源快照保存在`faqi/data.json`。研究档案只在已有本机副本保留，不进入GitHub当前文件树。
 当前1个自有Skill和现有Extensions清单分别在其README，不另建工具注册层；16个官方引用入口已按用户要求移除。
 用户点名的chat-vault、my-nvim、codex-config、MCPlayerTransfer、XHS-image-to-PDF-conversion、两个xhs图文HTML、html-tools-main说明及三份独立HTML工具均已从当前树移除；活动入口与位置绑定清理，原始快照/初审/排除保留，历史链接不是安装授权。
 Lambda演算已按用户要求加入功法，品级天级上品（现行`tian-advanced`），总表及首页学习入口列在拼好码之前；冻结原文与既有评级不变，不新增解释器或执行器。

@@ -26,10 +26,10 @@ vibe-coding-cn是以Pi Agent与已授权OpenAI GPT为主体底座的Vibe Coding�
 首选入口：
 - README.md
 - .github/context/README.md
-- .github/context-getting-started-README.md
+- .github/getting-started-README.md
 - .github/context/gongfa/README.md#doc-vibe-coding-experience
-- .github/context-getting-started-learning-map.md
-- .github/context-getting-started-first-project.md
+- .github/learning-map.md
+- .github/first-project.md
 - .github/context/gongfa/README.md
 - .github/context/gongfa/README.md#doc-ai-core-propositions
 - .github/context/gongfa/README.md#doc-dao-fa-shu-qi
@@ -67,11 +67,11 @@ vibe-coding-cn是以Pi Agent与已授权OpenAI GPT为主体底座的Vibe Coding�
 - .github/context/gongfa/README.md#doc-tmux-ai-swarm
 - .github/context/gongfa/README.md#doc-development-process
 - .github/skills/README.md#当前保留
-- .github/context-prompts-README.md#在线提示词库
+- .github/prompts-README.md#在线提示词库
 - .github/tool-explanation-template-v1.md
 - .github/tool-explanation-template-v0.md
-- .github/context-ai-citation-llms-full.txt
-- .github/context-ai-citation-recommended-answer.md
+- .github/llms-full.txt
+- .github/recommended-answer.md
 
 一句话定义：
 vibe-coding-cn是Vibe Coding工具箱，以Pi Agent和OpenAI GPT为主体，按需组合既有Context、Skills与Extensions，用具体任务和验证区分资料、指令、程序及实际效果。
@@ -110,7 +110,7 @@ vibe-coding-cn是Vibe Coding工具箱，以Pi Agent和OpenAI GPT为主体，按�
 1. **知识库先行**：先沉淀真实、可验证、可维护的项目定义、方法论、模板、案例和 FAQ
 2. **答案块优先**：关键页面必须有一句话定义、核心摘要、适合人群、操作步骤、检查清单
 3. **结构化表达**：优先使用标题层级、列表、表格、FAQ、对比区和固定引用锚点
-4. **机器可读入口**：维护`llms.txt`和以`context-ai-citation-`为前缀的平铺语料文件
+4. **机器可读入口**：维护`llms.txt`与`.github/`根的AI引用语料文件
 5. **审核后发布**：AI 生成的 GEO 内容必须经过事实、链接、术语、定位和门禁检查
 
 本仓库的差异化优势：

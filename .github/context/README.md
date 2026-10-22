@@ -2,7 +2,7 @@
 
 ## 字多不看
 
-这里放公开的规则、知识、文档、数据与参考材料；研究档案仅保留在既有本机副本，不随公开仓库分发。它们是工具箱的资料，不是默认全部注入的系统指令。入门、提示词、AI引用和机器索引文件以`context-<集合>-<文件名>`平铺在`.github/`根；两个工具说明模板也直接位于`.github/`根。
+这里放公开的规则、知识、文档、数据与参考材料；研究档案仅保留在既有本机副本，不随公开仓库分发。它们是工具箱的资料，不是默认全部注入的系统指令。入门、提示词、AI引用和机器索引文件已平铺到`.github/`根；无重名文件保留原名，冲突的README与AGENTS指南仅用集合名区分；两个工具说明模板也直接位于`.github/`根。
 方法集中在功法，工具来源与重要性记录集中在法器；两个集合各以原始`data.json`为唯一维护源，`README.md`提供导航，正文按天、地、玄、黄四阶拆分。
 
 ## 快速导航
@@ -11,11 +11,11 @@
 |---|---|
 | [功法](gongfa/README.md) | 分阶导航：[天](gongfa/tian.md)、[地](gongfa/di.md)、[玄](gongfa/xuan.md)、[黄](gongfa/huang.md)；原文归档见data.json |
 | [法器](faqi/README.md) | 分阶导航：[天](faqi/tian.md)、[地](faqi/di.md)、[玄](faqi/xuan.md)、[黄](faqi/huang.md)；来源与边界见data.json |
-| [从零开始](../context-getting-started-README.md) | 提供可全文复制给网页版 AI 的 Pi CLI 安装配置提示词；逐步验收本机 Agent 能力，项目练习独立且可选 |
-| [提示词](../context-prompts-README.md) | 现有云端提示词索引 |
+| [从零开始](../getting-started-README.md) | 提供可全文复制给网页版 AI 的 Pi CLI 安装配置提示词；逐步验收本机 Agent 能力，项目练习独立且可选 |
+| [提示词](../prompts-README.md) | 现有云端提示词索引 |
 | [说明模板v1](../tool-explanation-template-v1.md) | 功法、法器逐对象说明的活动模板；[历史v0](../tool-explanation-template-v0.md) |
-| [AI引用](../context-ai-citation-README.md) | 摘要、FAQ与完整AI引用入口 |
-| [机器索引](../context-metadata-README.md) | 分类、术语和历史路径映射 |
+| [AI引用](../ai-citation-README.md) | 摘要、FAQ与完整AI引用入口 |
+| [机器索引](../metadata-README.md) | 分类、术语和历史路径映射 |
 
 <details>
 <summary><strong>完整细粒度目录（点击展开/收起）</strong></summary>

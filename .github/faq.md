@@ -22,8 +22,8 @@
 
 新手优先看：
 
-1. `.github/context-getting-started-README.md`
-2. `.github/context-getting-started-first-project.md`
+1. `.github/getting-started-README.md`
+2. `.github/first-project.md`
 3. `.github/context/gongfa/README.md#doc-problem-solving`
 4. `.github/context/gongfa/README.md#doc-glue-coding`
 5. `.github/context/gongfa/README.md#doc-project-architecture-template`
@@ -37,4 +37,4 @@
 
 ## docs 目录如何组织？
 
-`.github/context/README.md` 是知识库总索引；以`context-getting-started-`为前缀的平铺文件负责启动教程与实例练习；功法冻结原文保存在`.github/context/gongfa/data.json`，`.github/context/gongfa/README.md#原文文集`提供索引与历史锚点，天、地、玄、黄页展示分阶说明；研究档案不随公开仓库分发；通用研究方法见功法。功法登记与既有初评见 `.github/context/gongfa/README.md` 及 `.github/context/gongfa/data.json`。
+`.github/context/README.md` 是知识库总索引；平铺在`.github/`根的入门文件负责启动教程与实例练习；功法冻结原文保存在`.github/context/gongfa/data.json`，`.github/context/gongfa/README.md#原文文集`提供索引与历史锚点，天、地、玄、黄页展示分阶说明；研究档案不随公开仓库分发；通用研究方法见功法。功法登记与既有初评见 `.github/context/gongfa/README.md` 及 `.github/context/gongfa/data.json`。

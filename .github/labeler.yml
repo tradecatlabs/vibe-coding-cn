@@ -23,7 +23,7 @@ cicd:
 # 提示词相关的标签
 prompt:
   - changed-files:
-    - any-glob-to-any-file: '.github/context-prompts-*.md'
+    - any-glob-to-any-file: '.github/prompts-*.md'
 
 # 外部工具/依赖相关的标签
 repos:

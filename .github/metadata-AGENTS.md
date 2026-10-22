@@ -1,15 +1,15 @@
 # 机器索引与目录数据维护指南
 
-本指南用于`.github/context-metadata-*`平铺文件及机器可读索引与限定子域数据协议，是README、docs和AI引用资产之间的结构桥。
+本指南对应平铺的metadata文件；仅因同名冲突，指南与README分别命名为`metadata-AGENTS.md`和`metadata-README.md`。本组维护机器可读索引与限定子域数据协议，是README、docs和AI引用资产之间的结构桥。
 
 ## 约束
 
-- 新增、删除、移动或重命名 docs 入口时，必须同步`.github/context-metadata-taxonomy.yml`。
-- 历史路径仍需被 AI 或外部说明理解时，维护`.github/context-metadata-redirects.yml`。
-- 术语口径变化时，同步`.github/context-metadata-glossary.yml`。
+- 新增、删除、移动或重命名 docs 入口时，必须同步`.github/taxonomy.yml`。
+- 历史路径仍需被 AI 或外部说明理解时，维护`.github/redirects.yml`。
+- 术语口径变化时，同步`.github/glossary.yml`。
 - 不确定的映射不要猜；先查当前文件和锚点，再修改。
-- `context-metadata-redirects.yml`只记录已经不存在的历史路径到当前入口的映射；禁止添加指向自身的自映射。
-- `context-metadata-redirects.yml`的`from`必须唯一，且不能仍然存在于仓库中。
+- `redirects.yml`只记录已经不存在的历史路径到当前入口的映射；禁止添加指向自身的自映射。
+- `redirects.yml`的`from`必须唯一，且不能仍然存在于仓库中。
 
 ## 功法子域
 

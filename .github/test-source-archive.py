@@ -133,10 +133,10 @@ class SourceArchiveTest(unittest.TestCase):
                 'blob', '.github/context/external-resources/README.md'),
         }
         flattened_context_links = {
-            '../../context/ai-citation/README.md': 'context-ai-citation-README.md',
-            '../../context/metadata/taxonomy.yml': 'context-metadata-taxonomy.yml',
-            '../../context/prompts/README.md': 'context-prompts-README.md',
-            '../../context/getting-started/learning-map.md': 'context-getting-started-learning-map.md',
+            '../../context/ai-citation/README.md': 'ai-citation-README.md',
+            '../../context/metadata/taxonomy.yml': 'taxonomy.yml',
+            '../../context/prompts/README.md': 'prompts-README.md',
+            '../../context/getting-started/learning-map.md': 'learning-map.md',
             '../../context/tool-explanation-template-v1.md': 'tool-explanation-template-v1.md',
         }
         for index, link in enumerate(retired_cloud_links):
@@ -148,7 +148,7 @@ class SourceArchiveTest(unittest.TestCase):
             '.github/docs/gongfa/other.md': document('# 另一篇\n\n## 目标\n'.encode())}
         self.save()
         rendered = book_views.render_sources(self.root, 'gongfa')
-        index = self.root / '.github/context-metadata-taxonomy.yml'
+        index = self.root / '.github/taxonomy.yml'
         index.parent.mkdir(parents=True, exist_ok=True)
         index.write_text('documents:\n  gongfa:\n  - path: .github/context/gongfa/README.md#doc-other\n  - path: .github/context/gongfa/README.md#doc-example\n')
         self.assertEqual(rendered, book_views.render_sources(self.root, 'gongfa'), '阅读内容与顺序只由本集合JSON决定')

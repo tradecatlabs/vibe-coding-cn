@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TAXONOMY = ROOT / ".github/context-metadata-taxonomy.yml"
+TAXONOMY = ROOT / ".github/taxonomy.yml"
 
 
 def strip_quotes(value: str) -> str:

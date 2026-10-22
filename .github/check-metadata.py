@@ -11,8 +11,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 METADATA_FILES = [
-    Path('.github/context-metadata-taxonomy.yml'),
-    Path('.github/context-metadata-redirects.yml'),
+    Path('.github/taxonomy.yml'),
+    Path('.github/redirects.yml'),
 ]
 
 
@@ -163,7 +163,7 @@ def main() -> int:
             error = validate_target(rel_path, lineno, target, anchor_cache)
             if error:
                 errors.append(error)
-        if rel_path == Path('.github/context-metadata-redirects.yml'):
+        if rel_path == Path('.github/redirects.yml'):
             errors.extend(validate_redirects(rel_path))
 
     if errors:

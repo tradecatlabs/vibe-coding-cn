@@ -6,7 +6,7 @@
 
 | 目录 | 职责 | 入口 |
 |---|---|---|
-| `context/`及同级`context-<集合>-*`、`tool-explanation-template-v*.md` | 公开资料、规则、文档及数据；研究档案仅留已有本机副本 | `context/README.md`、`context/AGENTS.md` |
+| `context/`及同级平铺的Context资料、`tool-explanation-template-v*.md` | 公开资料、规则、文档及数据；研究档案仅留已有本机副本 | `context/README.md`、`context/AGENTS.md` |
 | `skills/` | 所有既有Skill指令和流程，统一治理 | `skills/README.md`、`skills/AGENTS.md` |
 | `extensions/` | 既有小工具、程序、脚本和适配实现 | `extensions/README.md`、`extensions/AGENTS.md` |
 
@@ -14,16 +14,16 @@
 
 ### Context平铺文件
 
-原`ai-citation`、`metadata`、`prompts`、`getting-started`目录中的文件现以`.github/context-<集合>-<文件名>`平铺；两个说明模板为`.github/tool-explanation-template-v0.md`与`.github/tool-explanation-template-v1.md`。导航见`context/README.md`。
+原`ai-citation`、`metadata`、`prompts`、`getting-started`目录中的文件已平铺到`.github/`根；无重名的文件保留原名，冲突的`README.md`、`AGENTS.md`仅加集合名区分。两个说明模板为`.github/tool-explanation-template-v0.md`与`.github/tool-explanation-template-v1.md`。导航见`context/README.md`。
 
-| 文件前缀 | 用途 | 编辑前阅读 |
+| 文件组 | 用途 | 编辑前阅读 |
 |---|---|---|
-| `context-ai-citation-*` | AI引用语料 | `context-ai-citation-AGENTS.md` |
-| `context-metadata-*` | 分类、术语与历史路径映射 | `context-metadata-AGENTS.md` |
-| `context-prompts-*` | 提示词入口 | `context-prompts-AGENTS.md` |
-| `context-getting-started-*` | 新手入门与项目练习 | `context-getting-started-AGENTS.md` |
+| AI引用文件；指南为`ai-citation-AGENTS.md` | AI引用语料 | `ai-citation-AGENTS.md` |
+| metadata文件；指南为`metadata-AGENTS.md` | 分类、术语与历史路径映射 | `metadata-AGENTS.md` |
+| 提示词文件；指南为`prompts-AGENTS.md` | 提示词入口 | `prompts-AGENTS.md` |
+| 入门文件；指南为`getting-started-AGENTS.md` | 新手入门与项目练习 | `getting-started-AGENTS.md` |
 
-这些带前缀的指南保留分组规则，但不再是按目录自动发现的`AGENTS.md`；本文件负责路由，改动对应文件前须显式阅读。
+这些带集合名的指南保留分组规则，但不再是按目录自动发现的`AGENTS.md`；本文件负责路由，改动对应文件前须显式阅读。
 
 ## 维护脚本与共享库
 

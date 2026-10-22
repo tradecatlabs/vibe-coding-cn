@@ -1,51 +1,51 @@
 redirects:
   # Context文件平铺；保留路径映射，不保留旧目录或文件别名。
   - from: .github/context/ai-citation/
-    to: .github/context-ai-citation-README.md
+    to: .github/ai-citation-README.md
   - from: .github/context/ai-citation/AGENTS.md
-    to: .github/context-ai-citation-AGENTS.md
+    to: .github/ai-citation-AGENTS.md
   - from: .github/context/ai-citation/README.md
-    to: .github/context-ai-citation-README.md
+    to: .github/ai-citation-README.md
   - from: .github/context/ai-citation/comparison.md
-    to: .github/context-ai-citation-comparison.md
+    to: .github/comparison.md
   - from: .github/context/ai-citation/faq.md
-    to: .github/context-ai-citation-faq.md
+    to: .github/faq.md
   - from: .github/context/ai-citation/llms-full.txt
-    to: .github/context-ai-citation-llms-full.txt
+    to: .github/llms-full.txt
   - from: .github/context/ai-citation/recommended-answer.md
-    to: .github/context-ai-citation-recommended-answer.md
+    to: .github/recommended-answer.md
   - from: .github/context/ai-citation/summary-long.md
-    to: .github/context-ai-citation-summary-long.md
+    to: .github/summary-long.md
   - from: .github/context/ai-citation/summary-short.md
-    to: .github/context-ai-citation-summary-short.md
+    to: .github/summary-short.md
   - from: .github/context/metadata/
-    to: .github/context-metadata-README.md
+    to: .github/metadata-README.md
   - from: .github/context/metadata/AGENTS.md
-    to: .github/context-metadata-AGENTS.md
+    to: .github/metadata-AGENTS.md
   - from: .github/context/metadata/README.md
-    to: .github/context-metadata-README.md
+    to: .github/metadata-README.md
   - from: .github/context/metadata/glossary.yml
-    to: .github/context-metadata-glossary.yml
+    to: .github/glossary.yml
   - from: .github/context/metadata/redirects.yml
-    to: .github/context-metadata-redirects.yml
+    to: .github/redirects.yml
   - from: .github/context/metadata/taxonomy.yml
-    to: .github/context-metadata-taxonomy.yml
+    to: .github/taxonomy.yml
   - from: .github/context/prompts/
-    to: .github/context-prompts-README.md
+    to: .github/prompts-README.md
   - from: .github/context/prompts/AGENTS.md
-    to: .github/context-prompts-AGENTS.md
+    to: .github/prompts-AGENTS.md
   - from: .github/context/prompts/README.md
-    to: .github/context-prompts-README.md
+    to: .github/prompts-README.md
   - from: .github/context/getting-started/
-    to: .github/context-getting-started-README.md
+    to: .github/getting-started-README.md
   - from: .github/context/getting-started/AGENTS.md
-    to: .github/context-getting-started-AGENTS.md
+    to: .github/getting-started-AGENTS.md
   - from: .github/context/getting-started/README.md
-    to: .github/context-getting-started-README.md
+    to: .github/getting-started-README.md
   - from: .github/context/getting-started/first-project.md
-    to: .github/context-getting-started-first-project.md
+    to: .github/first-project.md
   - from: .github/context/getting-started/learning-map.md
-    to: .github/context-getting-started-learning-map.md
+    to: .github/learning-map.md
   - from: .github/context/tool-explanation-template-v0.md
     to: .github/tool-explanation-template-v0.md
   - from: .github/context/tool-explanation-template-v1.md
@@ -53,7 +53,7 @@ redirects:
 
   # 历史目录迁移；这里只记录路径映射，不提供旧正文副本。
   - from: docs/guides/getting-started/
-    to: .github/context-getting-started-README.md
+    to: .github/getting-started-README.md
   - from: docs/principles/fundamentals/
     to: .github/context/README.md
   - from: docs/principles/philosophy/
@@ -109,15 +109,15 @@ redirects:
   - from: docs/getting-started/Codex-CLI配置.md
     to: .github/context/README.md#本地研究资料
   - from: docs/getting-started/学习地图.md
-    to: .github/context-getting-started-learning-map.md
+    to: .github/learning-map.md
   - from: docs/getting-started/Vibe Coding 经验.md
     to: .github/context/gongfa/README.md#doc-vibe-coding-experience
   - from: docs/getting-started/网络环境配置.md
-    to: .github/context-getting-started-learning-map.md#network-and-dependencies
+    to: .github/learning-map.md#network-and-dependencies
   - from: docs/getting-started/CLI配置.md
-    to: .github/context-getting-started-learning-map.md#pi-cli-installation
+    to: .github/learning-map.md#pi-cli-installation
   - from: docs/getting-started/开发环境搭建.md
-    to: .github/context-getting-started-learning-map.md#post-install-use
+    to: .github/learning-map.md#post-install-use
   - from: docs/references/通用项目架构模板.md
     to: .github/context/gongfa/README.md#doc-project-architecture-template
   - from: docs/references/数据集导向数据服务模板.md
@@ -143,11 +143,11 @@ redirects:
   - from: assets/skills/
     to: .github/skills/
   - from: assets/prompt/
-    to: .github/context-prompts-README.md
+    to: .github/prompts-README.md
   - from: assets/repos/
     to: .github/extensions/
   - from: assets/config/
-    to: .github/context-getting-started-learning-map.md#使用仓库配置基线
+    to: .github/learning-map.md#使用仓库配置基线
   - from: docs/concepts/问题求解.md
     to: .github/context/gongfa/README.md#doc-problem-solving
   - from: docs/concepts/拼好码.md
@@ -269,8 +269,8 @@ redirects:
 
   # Pi CLI 入门分篇已合并到一份完整指南。
   - from: .github/context/getting-started/cli-setup.md
-    to: .github/context-getting-started-learning-map.md#pi-cli-installation
+    to: .github/learning-map.md#pi-cli-installation
   - from: .github/context/getting-started/network-environment.md
-    to: .github/context-getting-started-learning-map.md#network-and-dependencies
+    to: .github/learning-map.md#network-and-dependencies
   - from: .github/context/getting-started/development-environment.md
-    to: .github/context-getting-started-learning-map.md#post-install-use
+    to: .github/learning-map.md#post-install-use

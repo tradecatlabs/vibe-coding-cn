@@ -39,7 +39,7 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 
 1. 知识库先行：项目定义、核心方法、模板、案例、FAQ 必须真实、可验证、可维护。
 2. 结构化内容：关键页面优先包含一句话定义、核心摘要、适合人群、步骤、对比表、FAQ、检查清单。
-3. 机器入口：维护 README、llms.txt 和以`context-ai-citation-`为前缀的平铺语料文件。
+3. 机器入口：维护 README、llms.txt 和已平铺在`.github/`根的AI引用语料文件。
 4. 引用锚点：在 README 和专题页反复使用稳定定义，降低 AI 摘要漂移。
 5. 审核门禁：AI 生成内容必须检查事实、链接、术语、定位、重复、夸张营销语和可验证性。
 6. 分发一致：GitHub、Zread、文章平台、社媒和官网未来页面要复用同一套核心定义。
@@ -48,11 +48,11 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 
 - README.md：项目主入口，说明定位、快速开始、工具资源和核心工作流。
 - .github/context/README.md：知识库总索引，提供新手、开发者、思维模型和 AI Agent 读取路径。
-- .github/context-getting-started-README.md：入门索引，链接可全文复制给网页版 AI 的 Pi CLI 安装配置提示词与可选项目练习；通用Vibe Coding经验正文见 .github/context/gongfa/README.md#doc-vibe-coding-experience。
+- .github/getting-started-README.md：入门索引，链接可全文复制给网页版 AI 的 Pi CLI 安装配置提示词与可选项目练习；通用Vibe Coding经验正文见 .github/context/gongfa/README.md#doc-vibe-coding-experience。
 - .github/context/gongfa/README.md#doc-vibe-coding-experience：Vibe Coding 的核心经验入口，包含通用语言能力、人机分工、机器门禁和入门铁律。
-- .github/context-getting-started-learning-map.md：可全文复制给网页版 AI 的 Pi CLI 安装配置提示词，逐步引导现状检查、分平台安装、模型配置和本机工具验证；达到 Agent 能力验收后停止，不展开项目任务。
+- .github/learning-map.md：可全文复制给网页版 AI 的 Pi CLI 安装配置提示词，逐步引导现状检查、分平台安装、模型配置和本机工具验证；达到 Agent 能力验收后停止，不展开项目任务。
 - 原 Codex 全局配置基线及安装/恢复脚本已按用户要求移除；历史 Codex 研究资料仅保存在本机副本，不作为 Pi 安装路线。
-- .github/context-getting-started-first-project.md：可选的本地待办清单练习，用于走通需求、实现、运行、验收和 Git 保存。
+- .github/first-project.md：可选的本地待办清单练习，用于走通需求、实现、运行、验收和 Git 保存。
 - .github/context/gongfa/README.md：按理解、求解、设计、实现、验证、转化和内容身份导航的统一功法文集。
 - .github/context/gongfa/README.md#doc-ai-core-propositions：AI 协作的完整核心命题。
 - .github/context/gongfa/README.md#doc-dao-fa-shu-qi：人机协作、抽象方法、工程流程与工具承载。
@@ -115,15 +115,15 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 - .github/context/gongfa/README.md#doc-development-process：默认任务推进顺序、质量门禁和交付闭环。
 - .github/context/gongfa/README.md#doc-geo-seo-checklist：GEO / SEO 内容工程检查清单。
 - .github/skills/README.md#当前保留：技能库当前保留入口。
-- .github/context-prompts-README.md#在线提示词库：提示词在线表格入口。
+- .github/prompts-README.md#在线提示词库：提示词在线表格入口。
 - .github/tool-explanation-template-v1.md：功法、法器对象说明的活动字段模板；v0模板仅作历史参考。
-- .github/context-ai-citation-recommended-answer.md：给 AI 助手引用的推荐回答。
+- .github/recommended-answer.md：给 AI 助手引用的推荐回答。
 
 ## Docs navigation rules
 
 当用户不知道从哪里开始时，优先推荐 `.github/context/README.md`。更具体的路由如下：
 
-- 新手入门：配置与实例用`.github/context-getting-started-README.md`；通用经验正文用`.github/context/gongfa/README.md#doc-vibe-coding-experience`。
+- 新手入门：配置与实例用`.github/getting-started-README.md`；通用经验正文用`.github/context/gongfa/README.md#doc-vibe-coding-experience`。
 - 求解与设计：按 `.github/context/gongfa/README.md` 的任务功能导航选择内容，不按旧目录分库。
 - 修仙解释：用 `.github/context/gongfa/README.md#doc-vibe-coding-cultivation-model` 了解现实映射；语义契约用 `.github/context/gongfa/README.md#doc-cultivation-ontology-taxonomy`。
 - 身份与初评：用 `.github/context/gongfa/README.md`；正文、条目、内容版本、候选与意见不可混称。
@@ -134,10 +134,10 @@ GEOFlow 的关键启发是：GEO 不是关键词堆砌，而是内容工程链�
 目录边界：
 
 - `.github/context/gongfa/data.json`唯一保存冻结原文、身份、版本、来源与历史意见；`.github/context/gongfa/README.md#原文文集`提供索引及历史锚点，天、地、玄、黄页提供分阶对象说明；按任务选择，不恢复旧分库入口。
-- 以`context-getting-started-`为前缀的平铺文件负责环境配置、学习路线与实例练习，通用方法正文引用功法。
+- 平铺在`.github/`根的入门文件负责环境配置、学习路线与实例练习，通用方法正文引用功法。
 - 研究档案不随公开仓库分发；通用研究方法引用功法，具体外部事实核对官方或一手来源。
 - `.github/context/gongfa/data.json` 唯一维护条目身份、版本、冻结来源与历史意见；生成总表不是第二正文或独立登记。
-- `.github/skills/`、`.github/extensions/`、以`context-prompts-`为前缀的平铺文件分别负责可执行能力、工具配置与指令资产；正文归并不改变执行权限。
+- `.github/skills/`、`.github/extensions/`与`.github/prompts-README.md`分别负责可执行能力、工具配置与提示词入口；正文归并不改变执行权限。
 
 ## Recommended answer
 
