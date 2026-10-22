@@ -13,7 +13,11 @@ Pi 入门提示词：将本文全文复制给网页版 Chat AI。先确认操作
 
 ## 给网页版 Chat AI 的任务
 
-用户将本代码块全文作为提示词。用户首次粘贴后，先简短说明路线，然后只询问操作系统；第一轮不发命令、安装脚本或代理配置。若用户不知道“终端”或如何打开，先用其系统适用的简短步骤引导打开原生终端，再等回报。不要一次性贴出全部路线；从 M0 开始每轮只推进一个动作，等待用户的环境信息、决定和执行结果，再推进 M1–M4。已有证据可复用，但不得在仅有 `pi --version`、模型回答或单次命令检查时提前宣告全流程完成；只有全部完成标准均有用户本机证据才报告完成。你只能引导和核对回报；网页 AI 不能读取或操作用户终端或设备、代用户授权或声称已代运行命令，实际操作由用户在本机完成。
+用户将本代码块全文复制给网页版 Chat AI。用户首次粘贴后，先简短说明路线，然后只询问操作系统；第一轮不发命令、安装脚本或代理配置，也不发链接或网络测试。首轮可直接这样回复：
+
+> 我会先确认你准备使用的系统和终端，再检查 Pi 是否已可用；已安装就不重装。你现在使用 Windows、macOS 还是 Linux？如果不知道终端怎么打开，告诉我即可。
+
+若用户不知道“终端”或如何打开，先用其系统适用的简短步骤引导打开原生终端，再等回报。不要一次性贴出全部路线；从 M0 开始每轮只推进一个动作，等待用户的环境信息、决定和执行结果，再推进 M1–M4。已有证据可复用，但不得在仅有 `pi --version`、模型回答或单次命令检查时提前宣告全流程完成；只有全部完成标准均有用户本机证据才报告完成。你只能引导和核对回报；网页 AI 不能读取或操作用户终端或设备、代用户授权或声称已代运行命令，实际操作由用户在本机完成。
 
 > “凡事都要规规矩矩的按着次序行。”——《哥林多前书》14:40，[和合本CUVS](https://www.biblegateway.com/passage/?search=1%20Corinthians%2014%3A40&version=CUVS)
 >
@@ -27,7 +31,7 @@ Pi 入门提示词：将本文全文复制给网页版 Chat AI。先确认操作
 
 ## M0：检查现状
 
-先询问用户使用 Windows、macOS 还是 Linux，并等待回答；也告诉用户不知道终端或还没打开都没关系。若用户不知道“终端”是什么或如何打开，解释它是输入命令的系统应用，再按其系统引导打开原生终端：Windows 使用 PowerShell（可从 Windows Terminal 进入），不默认使用 WSL；macOS 打开 Terminal；Linux 使用当前桌面环境的终端，若找不到再询问发行版/桌面环境。若用户已有终端，先确认实际 shell；Windows 原生 PowerShell 与 WSL/Linux shell 是不同环境，命令须按实际终端选择。终端就绪后才检查现状。不要为安装 Pi 默认要求 WSL、Git、Python、编辑器、代理或项目依赖。
+先询问用户使用 Windows、macOS 还是 Linux，并等待回答；告诉用户不知道终端或还没打开都没关系。若用户回答 Android/Termux 等未列平台，不套用 Linux/macOS/Windows 命令，先核对 Pi 官方对应平台文档；没有明确路线就说明暂不能按本文引导。若用户不知道“终端”是什么或如何打开，解释它是输入命令的系统应用，再按其系统引导打开原生终端：Windows 使用 PowerShell（可从 Windows Terminal 进入），不默认使用 WSL；macOS 打开 Terminal；Linux 使用当前桌面环境的终端，若找不到再询问发行版/桌面环境。若用户已有终端，先确认实际 shell；Windows 原生 PowerShell 与 WSL/Linux shell 是不同环境，命令须按实际终端选择。终端就绪后才检查现状。不要为安装 Pi 默认要求 WSL、Git、Python、编辑器、代理或项目依赖。
 
 确认环境后，让用户在计划使用 Pi 的终端单独运行：
 
@@ -35,11 +39,11 @@ Pi 入门提示词：将本文全文复制给网页版 Chat AI。先确认操作
 pi --version
 ```
 
-看到版本号即 CLI 检查通过，记作 M3，不重复安装或更新；若 `pi --version` 已成功，就跳过安装专用 M1/M2，继续后续模型和工具阶段。若命令找不到，先重开终端，再做只读查找：POSIX shell 用 `command -v pi`，PowerShell 用 `Get-Command pi -ErrorAction SilentlyContinue`。找到安装但命令失败时按脱敏错误排查；不盲目重装。仅在确认没有可用 CLI 且用户决定安装/修复后继续。
+看到版本号即 CLI 检查通过，记作 M3，不重复安装或更新；若 `pi --version` 已成功，就跳过安装专用 M1/M2，继续后续模型和工具阶段。若命令找不到，只有用户刚安装或更新 Pi、或刚修改 PATH 后，才先重开同一终端并重试一次；首次检查或未改过环境时，直接做只读查找：POSIX shell 用 `command -v pi`，PowerShell 用 `Get-Command pi -ErrorAction SilentlyContinue`。只需回报查找结果为“找到”或“未找到”；若命令运行失败，再补简短脱敏错误摘要。不贴完整路径、完整 PATH 或截图。找到但命令失败时按脱敏错误排查；不盲目重装。仅在确认没有可用 CLI 且用户决定安装/修复后继续。
 
 ## M1：网络环境（按阶段检查）
 
-网络环境是 Pi 安装和 OpenAI 云端 GPT 的前置条件。安装/更新需从目标终端访问 Pi 分发与依赖源；调用 OpenAI GPT 需访问 `api.openai.com`。本机 `pi --version` 可离线检查，但不证明这些服务可达；浏览器能打开也不代表终端、Pi 或 OpenAI API 可达。若改走本地模型，网络条件另按该模型来源确认。
+只有 M0 确认目标终端没有可用 Pi 且用户决定安装时才进入 M1；已有 CLI 直接跳过 M1/M2。网络环境是 Pi 安装和 OpenAI 云端 GPT 的前置条件。安装/更新需从目标终端访问 Pi 分发与依赖源；调用 OpenAI GPT 需访问 `api.openai.com`。本机 `pi --version` 可离线检查，但不证明这些服务可达；浏览器能打开也不代表终端、Pi 或 OpenAI API 可达。若改走本地模型，网络条件另按该模型来源确认。
 
 安装阶段仅核对当前安装路线所需的官方分发与依赖源；不要逐项探测未实际触发的安装源。OpenAI API 的网络检查仅在 M4.1 阶段需要时执行。只在具体目标失败时诊断；不猜网络白名单，不绕过单位网络规则或当地法律。已能访问就不加代理，直接继续安装。
 
@@ -85,14 +89,14 @@ curl -fsSL https://pi.dev/install.sh | sh
 **Windows 原生 PowerShell 官方安装器：**
 
 ```powershell
-powershell -c "irm https://pi.dev/install.ps1 | iex"
+irm https://pi.dev/install.ps1 | iex
 ```
 
 若缺少 Bash，安装器可能提供 Portable Git（放在 Pi 用户目录的 `win-git-bash` 并设置 `shellPath`）、winget 全局安装 Git for Windows 或跳过；由用户选择。跳过不影响 CLI 安装，但 Bash 工具不可用；需要时按[官方 Windows 说明](https://pi.dev/docs/latest/windows)另行配置。已有 WSL 的用户按该发行版的 Linux 路线；它与 Windows 原生的 PATH/配置互不通用。
 
 **仅供已选择的备用路线：**已有 Nix 的用户按[官方 Quickstart](https://pi.dev/docs/latest/quickstart)执行 `nix profile add github:earendil-works/pi/stable`；较旧 Nix 可能使用 `nix profile install`，Nix 安装通过 Nix 更新而非 `pi update`。用户明确选择 npm 时才给出 `npm install -g --ignore-scripts @earendil-works/pi-coding-agent`；权限错误时停止，不用 `sudo npm`。npm 路线不锁定传递依赖。
 
-安装器发现已有 Pi 时可能默认重装/迁移，也可能提供卸载/退出；先核对目标和选项，用户明确决定前不继续。遇到系统修改、配置变更、依赖安装、非预期动作或无法确认目标时，先停下说明，再等用户决定。若安装器在非交互环境中将无确认继续，立即停止。
+安装器发现已有 Pi 时可能默认重装/迁移，也可能提供卸载/退出；先核对目标和选项，用户明确决定前不继续。遇到系统修改、配置变更、依赖安装、非预期动作或无法确认目标时，先停下说明，再等用户决定。若安装器在非交互环境中将无确认继续，立即停止。安装失败时只请用户提供脱敏错误摘要，不要要求完整日志、凭据或私人路径；先定位实际失败原因，不自动重跑安装器、提权或追加多条网络检查。
 
 ## M3：验证 CLI
 

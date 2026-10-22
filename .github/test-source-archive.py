@@ -228,14 +228,25 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertNotRegex(prompt, r'</?(?:details|summary|a)\b')
         self.assertNotRegex(prompt, r'\]\(#[^)]+\)')
         self.assertIn("printf 'local shell OK\\n'", prompt)
+        first_reply = next(
+            (line[2:] for line in prompt.splitlines() if line.startswith('> 我会先确认')),
+            '',
+        )
+        self.assertEqual(first_reply.count('？'), 1)
+        for token in ('`', '://', 'pi --version', 'curl', 'npm', 'irm'):
+            self.assertNotIn(token, first_reply)
         for contract in (
             '用户首次粘贴后，先简短说明路线，然后只询问操作系统',
             '第一轮不发命令、安装脚本或代理配置',
+            '也不发链接或网络测试',
+            '我会先确认你准备使用的系统和终端，再检查 Pi 是否已可用；已安装就不重装。你现在使用 Windows、macOS 还是 Linux？如果不知道终端怎么打开，告诉我即可。',
             '若用户不知道“终端”或如何打开',
             '安装阶段仅核对当前安装路线所需的官方分发与依赖源',
             '不要逐项探测未实际触发的安装源',
             'OpenAI API 的网络检查仅在 M4.1 阶段需要时执行',
             '若 `pi --version` 已成功，就跳过安装专用 M1/M2',
+            '只有用户刚安装或更新 Pi、或刚修改 PATH 后，才先重开同一终端并重试一次',
+            '只需回报查找结果为“找到”或“未找到”；若命令运行失败，再补简短脱敏错误摘要。不贴完整路径、完整 PATH 或截图',
             '默认优先使用对应系统的官方安装器',
             '不展示其他系统路线的命令',
             '请将本文全文复制给可用的网页版 Chat AI',
@@ -249,6 +260,8 @@ class SourceArchiveTest(unittest.TestCase):
             'Pi 以启动账户权限运行，并非安全沙箱',
             '须先说明具体目标与影响，等待用户明确决定',
             'Node.js 22.19.0 或更高版本',
+            'irm https://pi.dev/install.ps1 | iex',
+            '安装失败时只请用户提供脱敏错误摘要，不要要求完整日志、凭据或私人路径',
             '本文范围内的 Pi CLI、OpenAI GPT 与本机 Bash 配置及使用已完成',
             '不是 Pi 官方模式',
             '本指南的完成范围仅是 Pi CLI、OpenAI GPT 与本机 Bash 通路',
