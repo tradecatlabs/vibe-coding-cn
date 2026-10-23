@@ -41,7 +41,7 @@
 
 若用户尚未明确使用 Windows、macOS、Linux 还是 Android/Termux，才询问系统并等待回答；已明确的系统或终端信息直接复用，不重复追问。告诉用户不知道终端或还没打开都没关系。若用户回答 Android/Termux，不套用下方 Linux/macOS/Windows 命令，改按[Pi 官方 Termux 指南](https://pi.dev/docs/latest/termux)逐轮引导。核对 Termux 来源：官方指南推荐 GitHub 或 F-Droid，不使用已弃用的 Google Play 版本；若来源不明或用户仍使用该版本，先暂停核对，不盲目重装或迁移。Termux 包升级、依赖安装或共享存储授权前，说明具体影响并等用户明确决定；共享存储仅在确需访问 Android 文件时配置。其他未列平台先核对对应官方文档；没有明确路线就说明暂不能按本文引导。若用户不知道“终端”是什么或如何打开，解释它是输入命令的系统应用，再按其系统引导打开本机终端：Windows 使用 PowerShell（可从 Windows Terminal 进入），不默认使用 WSL；macOS 打开 Terminal；Linux 使用当前桌面环境的终端，若找不到再询问发行版/桌面环境；Android 使用 Termux；若尚未安装，说明其官方来源与安装影响、等待用户明确决定，这一步只准备终端，不代表 Pi 已安装；若来源不明，先按上文官方路线核对并等待用户决定。若用户已有终端，先确认实际 shell；Windows 原生 PowerShell 与 WSL/Linux shell 是不同环境，命令须按实际终端选择。终端就绪后才检查现状。不要为安装 Pi 默认要求 WSL、Git、Python、编辑器、代理或项目依赖。
 
-确认环境后，让用户在计划使用 Pi 的终端单独运行：
+若用户已在计划使用 Pi 的终端回报 `pi --version` 结果，直接复用：版本号记作 M3，跳过安装专用 M1/M2；错误结果按下文对应分支处理（只有下文条件满足时才重试）。只有该终端尚无检查结果时，确认环境后，让用户单独运行：
 
 ```text
 pi --version

@@ -249,6 +249,7 @@ class SourceArchiveTest(unittest.TestCase):
             '若系统不明，只问系统；此时首轮不发命令、安装脚本、代理配置、链接或网络测试。',
             '若系统已明但实际终端未确认或未就绪，只引导打开或确认对应终端并等待',
             '若用户尚无 `pi --version` 检查结果，且系统和实际终端均已明确、终端已打开，可直接安排 M0 的只读检查并等待结果；已回报版本号则复用证据并跳过。',
+            '若用户已在计划使用 Pi 的终端回报 `pi --version` 结果，直接复用：版本号记作 M3，跳过安装专用 M1/M2；错误结果按下文对应分支处理（只有下文条件满足时才重试）。只有该终端尚无检查结果时，确认环境后，让用户单独运行：',
             '我会先确认你准备使用的系统和终端，再检查 Pi 是否已可用；已安装就不重装。你现在使用 Windows、macOS、Linux 还是 Android/Termux？如果不知道终端怎么打开，告诉我即可。',
             'Android/Termux，不套用下方 Linux/macOS/Windows 命令',
             'https://pi.dev/docs/latest/termux',
@@ -325,6 +326,7 @@ class SourceArchiveTest(unittest.TestCase):
         ):
             with self.subTest(prompt_contract=contract):
                 self.assertIn(contract, prompt)
+        self.assertNotIn('确认环境后，让用户在计划使用 Pi 的终端单独运行：', prompt)
         self.assertNotIn('先确认用户有权使用 OpenAI API', prompt)
         self.assertNotIn('curl -I https://github.com', prompt)
         self.assertNotIn('curl.exe -I https://github.com', prompt)
