@@ -312,6 +312,15 @@ class SourceArchiveTest(unittest.TestCase):
             '`/login`、`/model` 和问题均在 Pi 输入框中输入，不是在系统终端或网页版 Chat AI 中运行。',
             '沿用 M4.1 已验证模型的 Pi 会话，不为工具验证重新启动',
             '不自动批准目录信任提示',
+            '进入本节不等于必须重新登录。',
+            '目标环境、用户选定路线和模型均未变化且没有新失败信号',
+            '直接进入 M4.2，不重复 `/login`、模型选择或同类提问',
+            '先在 `/model` 核对所选路线实际可用的 GPT，再做本节末尾的简单提问',
+            '列表有模型或界面显示已授权，都不等于真实调用成功',
+            '网络超时、限额或模型不可用先按对应错误排查，不直接当成凭据失效',
+            '不要为常规验证先 `/logout`、删除 `auth.json` 或覆盖既有凭据',
+            '以下登录步骤仅在确需授权时使用',
+            '已完成的动作不重复',
             'Pi 的 `/login` 可使用两条不同的登录路线',
             '`OpenAI (ChatGPT subscription)`',
             '`openai-codex`',
@@ -338,6 +347,7 @@ class SourceArchiveTest(unittest.TestCase):
                 self.assertIn(contract, prompt)
         self.assertNotIn('确认环境后，让用户在计划使用 Pi 的终端单独运行：', prompt)
         self.assertNotIn('先确认用户有权使用 OpenAI API', prompt)
+        self.assertNotIn('完成 OpenAI GPT 主路线（ChatGPT 订阅 OAuth 或 OpenAI API Key）的授权后，让用户用 `/model` 选择该路线实际可用的 GPT 模型，并提出一个无需修改文件的简单问题。', prompt)
         self.assertNotIn('curl -I https://github.com', prompt)
         self.assertNotIn('curl.exe -I https://github.com', prompt)
         self.assertNotIn('curl -i https://api.openai.com/v1/models', prompt)

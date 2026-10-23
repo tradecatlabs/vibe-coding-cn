@@ -132,7 +132,15 @@ pi
 
 ### M4.1：验证对话能力
 
-本提示词的云端主路线是 OpenAI GPT；Pi 的 `/login` 可使用两条不同的登录路线：ChatGPT 订阅 OAuth 与 OpenAI API Key。先询问用户希望使用且有权使用哪条路线；若不确定，说明订阅 OAuth 使用其账号可用的订阅额度，API Key 则使用单独的 API 账户与计费，再等用户选择。模型可用性、额度与费用按用户账号、Pi 当前提供方列表和 OpenAI 规则核对；两条路线彼此独立，不静默切换。[ChatGPT 网页订阅不等于 OpenAI API 额度](https://help.openai.com/en/articles/9039756-managing-billing-for-chatgpt-and-the-api-platform)。
+本提示词的云端主路线是 OpenAI GPT；Pi 的 `/login` 可使用两条不同的登录路线：ChatGPT 订阅 OAuth 与 OpenAI API Key。先询问用户希望使用且有权使用哪条路线；已明确的选择直接复用，不重复询问。若不确定，说明订阅 OAuth 使用其账号可用的订阅额度，API Key 则使用单独的 API 账户与计费，再等用户选择。模型可用性、额度与费用按用户账号、Pi 当前提供方列表和 OpenAI 规则核对；两条路线彼此独立，不静默切换。[ChatGPT 网页订阅不等于 OpenAI API 额度](https://help.openai.com/en/articles/9039756-managing-billing-for-chatgpt-and-the-api-platform)。
+
+进入本节不等于必须重新登录。先按用户回报的现状分支处理；只复用目标环境、用户选定路线和模型均未变化且没有新失败信号的证据：
+
+- **已有实际 OpenAI GPT 成功回答：**复用证据，直接进入 M4.2，不重复 `/login`、模型选择或同类提问。
+- **已配置但尚无成功回答：**先在 `/model` 核对所选路线实际可用的 GPT，再做本节末尾的简单提问；列表有模型或界面显示已授权，都不等于真实调用成功。
+- **尚未授权或出现实际鉴权失败：**按下文所选路线登录。网络超时、限额或模型不可用先按对应错误排查，不直接当成凭据失效。用户要更换账号或路线时，先说明影响并等待明确决定；不要为常规验证先 `/logout`、删除 `auth.json` 或覆盖既有凭据。
+
+以下登录步骤仅在确需授权时使用：
 
 - **ChatGPT 订阅 OAuth：**若用户的 ChatGPT 账号可使用此路线，且当前 Pi 的 `/login` 列出 `OpenAI (ChatGPT subscription)`，选择它在本机完成授权（provider ID：`openai-codex`），再用 `/model` 查看此路线实际提供的模型。订阅额度和可用模型以当前账号与提供方显示为准；这不是 OpenAI API Key，也不提供 API 额度。若登录列表没有该项，先核对当前 Pi 版本与官方资料，不静默更新，也不把订阅当作 API 权限；可选 API Key 路线须由用户明确选择且确有 API 访问权限，否则说明阻塞并等待决定。
 - **OpenAI API Key：**仅在用户明确选择且有 API 访问权限时，在本机 `/login` 选择 OpenAI API Key 路线并按 Pi 当前界面授权；API 计费按 API 账户规则单独核对。不得要求用户把密钥贴给网页 AI，也不得静默改用其他提供方。
@@ -141,7 +149,7 @@ pi
 
 网络检查按用户选定的登录路线及实际错误处理。API 端点检查只用于 API Key 路线；只有用户选 API Key 路线且确有 API 端点连通问题时，才可用 POSIX shell 的 `curl --connect-timeout 5 --max-time 15 -i https://api.openai.com/v1/models` 或 PowerShell 的 `curl.exe --connect-timeout 5 --max-time 15 -i https://api.openai.com/v1/models` 做无凭据端点检查；不要在测试命令里加入 API Key 或 Authorization。订阅 OAuth 路线不使用 `api.openai.com/v1/models` 探测，按 Pi 当前登录流程和该路线的脱敏错误核对。收到 HTTP 响应（包括认证错误）只说明 API 端点有响应，不证明账户认证或 GPT 模型可用；真实验证仍须由 Pi 完成所选路线的授权并取得模型回答。Pi 官方 Providers 文档说明 Pi 会将已存凭据保存在 `auth.json`；其中可能包含 API Key 或 OAuth Token，须保持私密，绝不贴给网页 AI、提交、上传、复制到项目文件、脚本、shell 配置或截图，也不要把 `auth.json` 发给任何人。额外安装、下载或开放服务前说明影响并等用户决定。
 
-完成 OpenAI GPT 主路线（ChatGPT 订阅 OAuth 或 OpenAI API Key）的授权后，让用户用 `/model` 选择该路线实际可用的 GPT 模型，并提出一个无需修改文件的简单问题。真实模型回答才是 M4.1 的 OpenAI GPT 成功信号；CLI 已安装、浏览器可访问 OpenAI 或 FlClash 显示已连接，都不单独证明模型已接通。若用户只完成本地模型路线，按前述规则单独记录，不静默切回 OpenAI GPT。按所选路线的授权状态、账户可用性和脱敏网络错误排障，不重新安装 CLI。
+尚无可复用成功回答时，先完成必要授权和所选路线的 GPT 模型确认，再让用户提出一个无需修改文件的简单问题；授权、`/model` 确认/选择和提问分轮处理，已完成的动作不重复。真实模型回答才是 M4.1 的 OpenAI GPT 成功信号；CLI 已安装、浏览器可访问 OpenAI 或 FlClash 显示已连接，都不单独证明模型已接通。若用户只完成本地模型路线，按前述规则单独记录，不静默切回 OpenAI GPT。按所选路线的授权状态、账户可用性和脱敏网络错误排障，不重新安装 CLI。
 
 ### M4.2：凡事察验（完成一次实际工具使用验证）
 
