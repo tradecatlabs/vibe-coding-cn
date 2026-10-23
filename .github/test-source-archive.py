@@ -223,6 +223,13 @@ class SourceArchiveTest(unittest.TestCase):
         prompt = Path(__file__).with_name('god.md').read_text(encoding='utf-8')
         markdown = MarkdownIt('commonmark')
         tokens = markdown.parse(prompt)
+        unrendered_emphasis = [
+            child.content
+            for token in tokens if token.type == 'inline'
+            for child in (token.children or [])
+            if child.type == 'text' and '**' in child.content
+        ]
+        self.assertEqual(unrendered_emphasis, [])
         self.assertEqual((tokens[0].type, tokens[0].tag), ('heading_open', 'h1'))
         self.assertTrue(prompt.startswith('# 道成了肉身\n'))
         self.assertNotRegex(prompt, r'</?(?:details|summary|a)\b')
@@ -240,7 +247,7 @@ class SourceArchiveTest(unittest.TestCase):
             self.assertNotIn(token, first_reply)
         for contract in (
             '## 字多不看',
-            '**本文目的：**帮助初学者借助网页版 Chat AI，按需检查或安装并验证 Pi CLI，再完成 OpenAI GPT 与本机 Bash 的配置和使用验证；实际操作由用户在本机完成。',
+            '**本文目的：** 帮助初学者借助网页版 Chat AI，按需检查或安装并验证 Pi CLI，再完成 OpenAI GPT 与本机 Bash 的配置和使用验证；实际操作由用户在本机完成。',
             '把本文全文交给网页版 Chat AI：系统不明时首轮只问系统；已知的系统/终端信息不重复问，之后每轮只引导一个本机动作并等你回报。',
             '有版本号就跳过 Pi 安装和安装网络检查',
             '状态或渠道不明就暂停，不盲目重装。',

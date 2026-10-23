@@ -1,6 +1,6 @@
 # 道成了肉身
 
-> **使用前：**请将本文全文复制给可用的网页版 Chat AI，并与它逐轮交互；可使用 GitHub 文件页右上角的全文复制按钮。AI 应依次引导你完成本文范围内的 Pi CLI 检查/安装、必要网络准备、OpenAI GPT 授权与模型选择、工具配置及一次安全的实际使用验证；每次只推进一个动作，并等待你的决定和执行结果。不得在 `pi --version`、单次模型回答或单个命令测试后提前宣告完成；只有下文全部完成标准均有真实证据，才报告本文流程完成。本文所说“完成”仅指 Pi CLI + OpenAI GPT + 本机 Bash 通路，不代表全部可选扩展、项目任务或自动化均已配置。网页版 AI 不能操作本机、代用户授权或索取凭据；若遇阻，说明已完成项、证据和待决问题。
+> **使用前：** 请将本文全文复制给可用的网页版 Chat AI，并与它逐轮交互；可使用 GitHub 文件页右上角的全文复制按钮。AI 应依次引导你完成本文范围内的 Pi CLI 检查/安装、必要网络准备、OpenAI GPT 授权与模型选择、工具配置及一次安全的实际使用验证；每次只推进一个动作，并等待你的决定和执行结果。不得在 `pi --version`、单次模型回答或单个命令测试后提前宣告完成；只有下文全部完成标准均有真实证据，才报告本文流程完成。本文所说“完成”仅指 Pi CLI + OpenAI GPT + 本机 Bash 通路，不代表全部可选扩展、项目任务或自动化均已配置。网页版 AI 不能操作本机、代用户授权或索取凭据；若遇阻，说明已完成项、证据和待决问题。
 >
 > “道成了肉身，住在我们中间，充充满满的有恩典有真理。我们也见过他的荣光，正是父独生子的荣光。”
 >
@@ -8,7 +8,7 @@
 
 ## 字多不看
 
-**本文目的：**帮助初学者借助网页版 Chat AI，按需检查或安装并验证 Pi CLI，再完成 OpenAI GPT 与本机 Bash 的配置和使用验证；实际操作由用户在本机完成。
+**本文目的：** 帮助初学者借助网页版 Chat AI，按需检查或安装并验证 Pi CLI，再完成 OpenAI GPT 与本机 Bash 的配置和使用验证；实际操作由用户在本机完成。
 
 - 把本文全文交给网页版 Chat AI：系统不明时首轮只问系统；已知的系统/终端信息不重复问，之后每轮只引导一个本机动作并等你回报。
 - 若不熟悉终端，先按系统指导打开本机终端（Android 使用 Termux）；在计划使用的终端运行 `pi --version`。有版本号就跳过 Pi 安装和安装网络检查。
@@ -16,7 +16,7 @@
 - 确认没有可复用安装后，先说明影响并等你明确决定；只检查本系统官方安装路线所需网络，目标不可达且你选择代理时才处理代理，再按该路线安装。
 - 安装后再用 `pi --version` 验证。版本号只证明 CLI 可用；OpenAI GPT 与本机 Bash 的配置及使用验证随后另行完成。
 
-**本文比喻（非经文）：**Chat 模式，让你获得与神对话的能力；Work 模式，让神的能力为你所用。本文以此代称模型对话与工具执行，不是 Pi 官方模式、权限授权或自动化承诺。
+**本文比喻（非经文）：** Chat 模式，让你获得与神对话的能力；Work 模式，让神的能力为你所用。本文以此代称模型对话与工具执行，不是 Pi 官方模式、权限授权或自动化承诺。
 
 ## 给网页版 Chat AI 的任务
 
@@ -87,11 +87,11 @@ pi --version
 
 网络可达后再选安装路线。官方常规安装/更新需要 Pi 分发和依赖源；云端模型还需访问所选提供方的认证与推理服务。
 
-- **macOS/Linux：**官方安装器用 `curl` 和 POSIX shell；需要 Node.js 22.19.0 或更高版本及 npm，缺少时安装器会询问处理方式。
-- **Windows 原生：**使用 PowerShell 安装器；同样需要 Node.js 22.19.0 或更高版本及 npm，并可能询问是否安装 Node、是否配置可选 Bash。
-- **Android/Termux：**按[官方 Termux 指南](https://pi.dev/docs/latest/termux)使用 Termux 包管理器安装 Node.js 和 Git，再通过 npm 安装 Pi。
-- **已在使用 Nix 的用户：**可选择 Nix 路线；不要为 Pi 专门安装 Nix。
-- **已有合格 Node.js/npm 的用户：**可明确选择 npm 备选路线。
+- **macOS/Linux：** 官方安装器用 `curl` 和 POSIX shell；需要 Node.js 22.19.0 或更高版本及 npm，缺少时安装器会询问处理方式。
+- **Windows 原生：** 使用 PowerShell 安装器；同样需要 Node.js 22.19.0 或更高版本及 npm，并可能询问是否安装 Node、是否配置可选 Bash。
+- **Android/Termux：** 按[官方 Termux 指南](https://pi.dev/docs/latest/termux)使用 Termux 包管理器安装 Node.js 和 Git，再通过 npm 安装 Pi。
+- **已在使用 Nix 的用户：** 可选择 Nix 路线；不要为 Pi 专门安装 Nix。
+- **已有合格 Node.js/npm 的用户：** 可明确选择 npm 备选路线。
 
 安装器可能访问 `pi.dev`、npm、Node.js 分发服务和系统包源；Termux 路线还需访问配置的软件包源与 npm Registry；Windows 可选 Git Bash 路线还可能访问 GitHub。只在真实失败时核对对应目标；遵守单位网络规则，不关闭 TLS 或使用未知镜像。
 
@@ -103,7 +103,7 @@ pi --version
 
 仅在 M0 确认没有可复用的 CLI 且用户明确决定安装，或用户明确决定修复/重装后，才进入本节。默认优先使用对应系统的官方安装器；Android/Termux 路线按 M0 链接的官方 Termux 指南处理，不套用桌面安装器，其包升级、依赖安装与 Pi 安装均须逐项说明影响并等待用户决定。只有用户已在使用 Nix 时才考虑 Nix 路线；其他系统的 npm 备选须由用户明确选择。每轮只提供当前系统的一条安装路线，不展示其他系统路线的命令或同时罗列全部选项。远程安装命令会下载并执行脚本；先核对官方域名，仅在可交互的普通用户终端运行，不要由 CI、脚本或非交互 shell 调用，也不要以管理员/root 运行。
 
-**Android/Termux 官方路线：**按 M0 链接的指南逐轮处理 Termux 包更新、安装 Node.js/Git、用 npm 安装 Pi 和 `pi --version` 验证；每轮只给当前一步，并先说明升级或安装的目标与影响、等待用户决定。共享存储不是安装前置，仅在用户确需访问 Android 文件时才单独指导并等待决定。
+**Android/Termux 官方路线：** 按 M0 链接的指南逐轮处理 Termux 包更新、安装 Node.js/Git、用 npm 安装 Pi 和 `pi --version` 验证；每轮只给当前一步，并先说明升级或安装的目标与影响、等待用户决定。共享存储不是安装前置，仅在用户确需访问 Android 文件时才单独指导并等待决定。
 
 **macOS/Linux 官方安装器：**
 
@@ -121,7 +121,7 @@ irm https://pi.dev/install.ps1 | iex
 
 若缺少 Bash，安装器可能提供 Portable Git（放在 Pi 用户目录的 `win-git-bash` 并设置 `shellPath`）、winget 全局安装 Git for Windows 或跳过；由用户选择。跳过不影响 CLI 安装，但 Bash 工具不可用；需要时按[官方 Windows 说明](https://pi.dev/docs/latest/windows)另行配置。已有 WSL 的用户按该发行版的 Linux 路线；它与 Windows 原生的 PATH/配置互不通用。
 
-**仅供已选择的备用路线：**已有 Nix 的用户按[官方 Quickstart](https://pi.dev/docs/latest/quickstart)执行 `nix profile add github:earendil-works/pi/stable`；较旧 Nix 可能使用 `nix profile install`，Nix 安装通过 Nix 更新而非 `pi update`。用户明确选择 npm 时才给出 `npm install -g --ignore-scripts @earendil-works/pi-coding-agent`；权限错误时停止，不用 `sudo npm`。npm 路线不锁定传递依赖。
+**仅供已选择的备用路线：** 已有 Nix 的用户按[官方 Quickstart](https://pi.dev/docs/latest/quickstart)执行 `nix profile add github:earendil-works/pi/stable`；较旧 Nix 可能使用 `nix profile install`，Nix 安装通过 Nix 更新而非 `pi update`。用户明确选择 npm 时才给出 `npm install -g --ignore-scripts @earendil-works/pi-coding-agent`；权限错误时停止，不用 `sudo npm`。npm 路线不锁定传递依赖。
 
 安装器发现已有 Pi 时可能默认重装/迁移，也可能提供卸载/退出；先核对目标和选项，用户明确决定前不继续。遇到系统修改、配置变更、依赖安装、非预期动作或无法确认目标时，先停下说明，再等用户决定。若安装器在非交互环境中将无确认继续，立即停止。安装失败时只请用户提供脱敏错误摘要，不要要求完整日志、凭据或私人路径；先定位实际失败原因，不自动重跑安装器、提权或追加多条网络检查。
 
@@ -153,16 +153,16 @@ pi
 
 进入本节不等于必须重新登录。先按用户回报的现状分支处理；只复用目标环境、用户选定路线和模型均未变化且没有新失败信号的证据：
 
-- **已有实际 OpenAI GPT 成功回答：**复用证据，直接进入 M4.2，不重复 `/login`、模型选择或同类提问。
-- **已配置但尚无成功回答：**先在 `/model` 核对所选路线实际可用的 GPT，再做本节末尾的简单提问；列表有模型或界面显示已授权，都不等于真实调用成功。
-- **尚未授权或出现实际鉴权失败：**按下文所选路线登录。网络超时、限额或模型不可用先按对应错误排查，不直接当成凭据失效。用户要更换账号或路线时，先说明影响并等待明确决定；不要为常规验证先 `/logout`、删除 `auth.json` 或覆盖既有凭据。
+- **已有实际 OpenAI GPT 成功回答：** 复用证据，直接进入 M4.2，不重复 `/login`、模型选择或同类提问。
+- **已配置但尚无成功回答：** 先在 `/model` 核对所选路线实际可用的 GPT，再做本节末尾的简单提问；列表有模型或界面显示已授权，都不等于真实调用成功。
+- **尚未授权或出现实际鉴权失败：** 按下文所选路线登录。网络超时、限额或模型不可用先按对应错误排查，不直接当成凭据失效。用户要更换账号或路线时，先说明影响并等待明确决定；不要为常规验证先 `/logout`、删除 `auth.json` 或覆盖既有凭据。
 
 以下登录步骤仅在确需授权时使用：
 
-- **ChatGPT 订阅 OAuth：**若用户的 ChatGPT 账号可使用此路线，且当前 Pi 的 `/login` 列出 `OpenAI (ChatGPT subscription)`，选择它在本机完成授权（provider ID：`openai-codex`），再用 `/model` 查看此路线实际提供的模型。订阅额度和可用模型以当前账号与提供方显示为准；这不是 OpenAI API Key，也不提供 API 额度。若登录列表没有该项，先核对当前 Pi 版本与官方资料，不静默更新，也不把订阅当作 API 权限；可选 API Key 路线须由用户明确选择且确有 API 访问权限，否则说明阻塞并等待决定。
-- **OpenAI API Key：**仅在用户明确选择且有 API 访问权限时，在本机 `/login` 选择 OpenAI API Key 路线并按 Pi 当前界面授权；API 计费按 API 账户规则单独核对。不得要求用户把密钥贴给网页 AI，也不得静默改用其他提供方。
+- **ChatGPT 订阅 OAuth：** 若用户的 ChatGPT 账号可使用此路线，且当前 Pi 的 `/login` 列出 `OpenAI (ChatGPT subscription)`，选择它在本机完成授权（provider ID：`openai-codex`），再用 `/model` 查看此路线实际提供的模型。订阅额度和可用模型以当前账号与提供方显示为准；这不是 OpenAI API Key，也不提供 API 额度。若登录列表没有该项，先核对当前 Pi 版本与官方资料，不静默更新，也不把订阅当作 API 权限；可选 API Key 路线须由用户明确选择且确有 API 访问权限，否则说明阻塞并等待决定。
+- **OpenAI API Key：** 仅在用户明确选择且有 API 访问权限时，在本机 `/login` 选择 OpenAI API Key 路线并按 Pi 当前界面授权；API 计费按 API 账户规则单独核对。不得要求用户把密钥贴给网页 AI，也不得静默改用其他提供方。
 
-**OAuth 回报边界：**浏览器授权由用户在本机完成。OAuth 授权链接只用于本机浏览器，不发给网页版 AI。只有 Pi 明确提示需要粘贴最终授权码或回调 URL 时，才贴回本机 Pi；不要发给网页版 AI。向网页 AI 只回报“授权成功/未完成”或简短脱敏错误，不提供 OAuth 授权链接、授权码、设备码、回调 URL 或截图。
+**OAuth 回报边界：** 浏览器授权由用户在本机完成。OAuth 授权链接只用于本机浏览器，不发给网页版 AI。只有 Pi 明确提示需要粘贴最终授权码或回调 URL 时，才贴回本机 Pi；不要发给网页版 AI。向网页 AI 只回报“授权成功/未完成”或简短脱敏错误，不提供 OAuth 授权链接、授权码、设备码、回调 URL 或截图。
 
 用户明确改选本地模型时，可按 [Pi Models](https://pi.dev/docs/latest/models) 和所选运行时官方资料单独指导；该回答只作本地模型验证，不计为本文范围内的 OpenAI GPT 验证。
 
