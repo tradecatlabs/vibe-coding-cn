@@ -1,7 +1,6 @@
-````markdown
 # 道成了肉身
 
-> **使用前：**请将本文全文复制给可用的网页版 Chat AI，并与它逐轮交互。AI 应依次引导你完成本文范围内的 Pi CLI 检查/安装、必要网络准备、OpenAI GPT 授权与模型选择、工具配置及一次安全的实际使用验证；每次只推进一个动作，并等待你的决定和执行结果。不得在 `pi --version`、单次模型回答或单个命令测试后提前宣告完成；只有下文全部完成标准均有真实证据，才报告本文流程完成。本文所说“完成”仅指 Pi CLI + OpenAI GPT + 本机 Bash 通路，不代表全部可选扩展、项目任务或自动化均已配置。网页版 AI 不能操作本机、代用户授权或索取凭据；若遇阻，说明已完成项、证据和待决问题。
+> **使用前：**请将本文全文复制给可用的网页版 Chat AI，并与它逐轮交互；可使用 GitHub 文件页右上角的全文复制按钮。AI 应依次引导你完成本文范围内的 Pi CLI 检查/安装、必要网络准备、OpenAI GPT 授权与模型选择、工具配置及一次安全的实际使用验证；每次只推进一个动作，并等待你的决定和执行结果。不得在 `pi --version`、单次模型回答或单个命令测试后提前宣告完成；只有下文全部完成标准均有真实证据，才报告本文流程完成。本文所说“完成”仅指 Pi CLI + OpenAI GPT + 本机 Bash 通路，不代表全部可选扩展、项目任务或自动化均已配置。网页版 AI 不能操作本机、代用户授权或索取凭据；若遇阻，说明已完成项、证据和待决问题。
 >
 > “道成了肉身，住在我们中间，充充满满的有恩典有真理。我们也见过他的荣光，正是父独生子的荣光。”
 >
@@ -21,7 +20,7 @@
 
 ## 给网页版 Chat AI 的任务
 
-用户将本代码块全文复制给网页版 Chat AI。用户首次粘贴后，先简短说明路线，并复用用户已提供的信息，不重复追问。若系统不明，只问系统；此时首轮不发命令、安装脚本、代理配置、链接或网络测试。若系统已明但实际终端未确认或未就绪，只引导打开或确认对应终端并等待；若用户尚无 `pi --version` 检查结果，且系统和实际终端均已明确、终端已打开，可直接安排 M0 的只读检查并等待结果；已回报版本号则复用证据并跳过。系统不明时可直接这样回复：
+用户将本文全文复制给网页版 Chat AI。用户首次粘贴后，先简短说明路线，并复用用户已提供的信息，不重复追问。若系统不明，只问系统；此时首轮不发命令、安装脚本、代理配置、链接或网络测试。若系统已明但实际终端未确认或未就绪，只引导打开或确认对应终端并等待；若用户尚无 `pi --version` 检查结果，且系统和实际终端均已明确、终端已打开，可直接安排 M0 的只读检查并等待结果；已回报版本号则复用证据并跳过。系统不明时可直接这样回复：
 
 > 我会先确认你准备使用的系统和终端，再检查 Pi 是否已可用；已安装就不重装。你现在使用 Windows、macOS、Linux 还是 Android/Termux？如果不知道终端怎么打开，告诉我即可。
 
@@ -171,5 +170,3 @@ irm https://pi.dev/install.ps1 | iex
 
 - [Pi Quickstart](https://pi.dev/docs/latest/quickstart) · [Windows](https://pi.dev/docs/latest/windows) · [Termux](https://pi.dev/docs/latest/termux) · [Providers](https://pi.dev/docs/latest/providers) · [Models](https://pi.dev/docs/latest/models) · [OpenAI Codex 模型目录](https://pi.dev/models?provider=openai-codex) · [Security](https://pi.dev/docs/latest/security)
 - [FlClash 官方发布页](https://github.com/chen08209/FlClash/releases/latest) · [OpenAI API](https://platform.openai.com/docs/api-reference) · [OpenAI 模型列表端点](https://platform.openai.com/docs/api-reference/models/list) · [ChatGPT 与 API 计费说明](https://help.openai.com/en/articles/9039756-managing-billing-for-chatgpt-and-the-api-platform) · [macOS/Linux 官方安装脚本](https://pi.dev/install.sh) · [Windows 官方安装脚本](https://pi.dev/install.ps1) · [Node.js](https://nodejs.org/en/download) · [Git for Windows](https://git-scm.com/download/win)
-
-````

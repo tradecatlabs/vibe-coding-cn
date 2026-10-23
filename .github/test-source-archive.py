@@ -217,16 +217,17 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertIn('](#doc-other-目标)', toc)
         self.assertNotIn('代码不是目录', toc)
 
-    def test_god_prompt_is_one_expanded_copyable_code_block(self):
+    def test_god_prompt_renders_markdown_with_only_example_code_blocks(self):
         from markdown_it import MarkdownIt
         import book_views
-        text = Path(__file__).with_name('god.md').read_text(encoding='utf-8')
-        tokens = MarkdownIt('commonmark').parse(text)
-        self.assertEqual([token.type for token in tokens], ['fence'])
-        prompt = tokens[0].content
+        prompt = Path(__file__).with_name('god.md').read_text(encoding='utf-8')
+        markdown = MarkdownIt('commonmark')
+        tokens = markdown.parse(prompt)
+        self.assertEqual((tokens[0].type, tokens[0].tag), ('heading_open', 'h1'))
         self.assertTrue(prompt.startswith('# 道成了肉身\n'))
         self.assertNotRegex(prompt, r'</?(?:details|summary|a)\b')
         self.assertNotRegex(prompt, r'\]\(#[^)]+\)')
+        self.assertNotIn('本代码块全文', prompt)
         self.assertIn("printf 'local shell OK\\n'", prompt)
         first_reply = next(
             (line[2:] for line in prompt.splitlines() if line.startswith('> 我会先确认')),
@@ -276,6 +277,8 @@ class SourceArchiveTest(unittest.TestCase):
             '不展示其他系统路线的命令',
             'Android/Termux、macOS/Linux/WSL 按真实错误核对 Bash',
             '请将本文全文复制给可用的网页版 Chat AI',
+            '可使用 GitHub 文件页右上角的全文复制按钮',
+            '用户将本文全文复制给网页版 Chat AI。',
             '逐轮交互',
             '完成本文范围内的 Pi CLI 检查/安装、必要网络准备、OpenAI GPT 授权与模型选择、工具配置及一次安全的实际使用验证',
             '不得在 `pi --version`、单次模型回答或单个命令测试后提前宣告完成',
@@ -334,9 +337,26 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertNotIn('curl.exe -i https://api.openai.com/v1/models', prompt)
         self.assertLess(prompt.index('## 字多不看'), prompt.index('## 给网页版 Chat AI 的任务'))
         self.assertLess(prompt.index('## M1：网络环境'), prompt.index('## M2：预备行各样的善事'))
-        html = MarkdownIt('commonmark').render(text)
-        self.assertEqual(html.count('<pre>'), 1)
-        self.assertEqual(book_views._links.markdown_anchors(Path(__file__).with_name('god.md')), set())
+        self.assertEqual(
+            [(token.info, token.content) for token in tokens if token.type == 'fence'],
+            [
+                ('text', 'pi --version\n'),
+                ('bash', 'curl -fsSL https://pi.dev/install.sh | sh\n'),
+                ('powershell', 'irm https://pi.dev/install.ps1 | iex\n'),
+                ('text', "请只通过当前可用的本机 Bash 工具运行这一条只读命令：printf 'local shell OK\\n'\n"
+                         '不要运行其他命令、读取文件、创建或修改文件、访问网络。只返回结果；若工具不可用，请直接说明。\n'),
+            ],
+        )
+        html = markdown.render(prompt)
+        for rendered in ('<h1>道成了肉身</h1>', '<h2>M0：检查现状</h2>',
+                         '<h2>完整配置与使用的完成标准</h2>',
+                         'href="https://pi.dev/docs/latest/termux"',
+                         'href="https://www.biblegateway.com/passage/?search=John%201%3A14&amp;version=CUVS"'):
+            with self.subTest(rendered_markdown=rendered):
+                self.assertIn(rendered, html)
+        self.assertEqual(html.count('<pre>'), 4)
+        self.assertTrue({'道成了肉身', 'm0检查现状', '官方资料'}.issubset(
+            book_views._links.markdown_anchors(Path(__file__).with_name('god.md'))))
         self.assertEqual(book_views.relocated('.github/god.md', 'milestone-2'), ('.github/god.md', ''))
         self.assertEqual(book_views.relocated('.github/first-project.md', 'example'),
                          ('.github/first-project.md', 'example'))
