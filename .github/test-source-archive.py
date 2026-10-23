@@ -258,6 +258,8 @@ class SourceArchiveTest(unittest.TestCase):
             '已弃用的 Google Play 版本',
             'Termux 包升级、依赖安装或共享存储授权前',
             '共享存储仅在确需访问 Android 文件时配置',
+            '若 Android 用户尚未安装 Termux，说明其官方来源与安装影响，并等待用户明确决定',
+            '若 Termux 来源不明，先按上文官方路线核对并等待用户决定。',
             '这一步只准备终端，不代表 Pi 已安装',
             'Android/Termux 路线按 M0 链接的官方 Termux 指南处理',
             'Termux 包管理器安装 Node.js 和 Git',
@@ -352,6 +354,7 @@ class SourceArchiveTest(unittest.TestCase):
             with self.subTest(prompt_contract=contract):
                 self.assertIn(contract, prompt)
         self.assertNotIn('确认环境后，让用户在计划使用 Pi 的终端单独运行：', prompt)
+        self.assertNotIn('若尚未安装，说明其官方来源与安装影响', prompt)
         self.assertNotIn('先确认用户有权使用 OpenAI API', prompt)
         self.assertNotIn('完成 OpenAI GPT 主路线（ChatGPT 订阅 OAuth 或 OpenAI API Key）的授权后，让用户用 `/model` 选择该路线实际可用的 GPT 模型，并提出一个无需修改文件的简单问题。', prompt)
         self.assertNotIn('curl -I https://github.com', prompt)
