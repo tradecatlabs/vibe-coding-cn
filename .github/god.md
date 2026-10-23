@@ -118,6 +118,18 @@ irm https://pi.dev/install.ps1 | iex
 >
 > 经文原在说明教会中恩赐、职事与功用的分别；这里分别核实模型回答与工具执行，不以一项代替另一项。
 
+### M4.0：进入 Pi 交互界面
+
+按[Pi Quickstart](https://pi.dev/docs/latest/quickstart)，先让用户选择并切换到空目录或非敏感目录；需要创建目录时先说明影响并等用户决定。目录准备、启动和模型授权分轮处理。先说明 Pi 可能加载目录指令、配置与扩展，并保存会话，等待用户决定后再启动。此举只降低当前目录/项目上下文风险，不是沙箱，也不限制 Pi 访问当前账户可访问的其他路径（见[Pi Security](https://pi.dev/docs/latest/security)）。不自动批准目录信任提示；先解释提示涉及的资源，再等用户自行决定。
+
+若用户尚未在该目录进入 Pi，让其在 M3 已验证可用的目标终端单独运行：
+
+```text
+pi
+```
+
+等用户看到 Pi 的对话界面和输入框后再进入 M4.1；若已在该目录的 Pi 会话中，直接复用，不重复启动。`pi` 用于打开交互界面，`pi --version` 只显示版本；下文的 `/login`、`/model` 和问题均在 Pi 输入框中输入，不是在系统终端或网页版 Chat AI 中运行。若启动失败，只请用户回报简短脱敏错误摘要，按真实错误排查，不盲目重装。
+
 ### M4.1：验证对话能力
 
 本提示词的云端主路线是 OpenAI GPT；Pi 的 `/login` 可使用两条不同的登录路线：ChatGPT 订阅 OAuth 与 OpenAI API Key。先询问用户希望使用且有权使用哪条路线；若不确定，说明订阅 OAuth 使用其账号可用的订阅额度，API Key 则使用单独的 API 账户与计费，再等用户选择。模型可用性、额度与费用按用户账号、Pi 当前提供方列表和 OpenAI 规则核对；两条路线彼此独立，不静默切换。[ChatGPT 网页订阅不等于 OpenAI API 额度](https://help.openai.com/en/articles/9039756-managing-billing-for-chatgpt-and-the-api-platform)。
@@ -137,7 +149,7 @@ irm https://pi.dev/install.ps1 | iex
 >
 > 原文处于关于圣灵感动与先知讲论的劝勉中；这里以真实工具调用为证，不把模型自称完成当作执行。
 
-模型能回答后，建议用户在空目录或非敏感目录启动 Pi。此举只降低当前目录/项目上下文风险，不是沙箱，也不限制 Pi 访问当前账户可访问的其他路径（见[Pi Security](https://pi.dev/docs/latest/security)）。再让用户在 Pi 对话中发送：
+沿用 M4.1 已验证模型的 Pi 会话，不为工具验证重新启动；让用户在 Pi 输入框中发送：
 
 ```text
 请只通过当前可用的本机 Bash 工具运行这一条只读命令：printf 'local shell OK\n'

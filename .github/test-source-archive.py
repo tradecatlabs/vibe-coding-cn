@@ -305,6 +305,13 @@ class SourceArchiveTest(unittest.TestCase):
             '启用前须说明流量路由范围、隐私影响和恢复方式',
             '用户拒绝或当前界面/系统不支持时',
             '也不得报告网络路线已完成',
+            '### M4.0：进入 Pi 交互界面',
+            '先说明 Pi 可能加载目录指令、配置与扩展，并保存会话，等待用户决定后再启动。',
+            '等用户看到 Pi 的对话界面和输入框后再进入 M4.1',
+            '若已在该目录的 Pi 会话中，直接复用，不重复启动。',
+            '`/login`、`/model` 和问题均在 Pi 输入框中输入，不是在系统终端或网页版 Chat AI 中运行。',
+            '沿用 M4.1 已验证模型的 Pi 会话，不为工具验证重新启动',
+            '不自动批准目录信任提示',
             'Pi 的 `/login` 可使用两条不同的登录路线',
             '`OpenAI (ChatGPT subscription)`',
             '`openai-codex`',
@@ -337,12 +344,16 @@ class SourceArchiveTest(unittest.TestCase):
         self.assertNotIn('curl.exe -i https://api.openai.com/v1/models', prompt)
         self.assertLess(prompt.index('## 字多不看'), prompt.index('## 给网页版 Chat AI 的任务'))
         self.assertLess(prompt.index('## M1：网络环境'), prompt.index('## M2：预备行各样的善事'))
+        self.assertLess(prompt.find('### M4.0：进入 Pi 交互界面'), prompt.find('\npi\n'))
+        self.assertLess(prompt.index('\npi\n'), prompt.index('### M4.1：验证对话能力'))
+        self.assertNotIn('模型能回答后，建议用户在空目录或非敏感目录启动 Pi。', prompt)
         self.assertEqual(
             [(token.info, token.content) for token in tokens if token.type == 'fence'],
             [
                 ('text', 'pi --version\n'),
                 ('bash', 'curl -fsSL https://pi.dev/install.sh | sh\n'),
                 ('powershell', 'irm https://pi.dev/install.ps1 | iex\n'),
+                ('text', 'pi\n'),
                 ('text', "请只通过当前可用的本机 Bash 工具运行这一条只读命令：printf 'local shell OK\\n'\n"
                          '不要运行其他命令、读取文件、创建或修改文件、访问网络。只返回结果；若工具不可用，请直接说明。\n'),
             ],
@@ -354,7 +365,7 @@ class SourceArchiveTest(unittest.TestCase):
                          'href="https://www.biblegateway.com/passage/?search=John%201%3A14&amp;version=CUVS"'):
             with self.subTest(rendered_markdown=rendered):
                 self.assertIn(rendered, html)
-        self.assertEqual(html.count('<pre>'), 4)
+        self.assertEqual(html.count('<pre>'), 5)
         self.assertTrue({'道成了肉身', 'm0检查现状', '官方资料'}.issubset(
             book_views._links.markdown_anchors(Path(__file__).with_name('god.md'))))
         self.assertEqual(book_views.relocated('.github/god.md', 'milestone-2'), ('.github/god.md', ''))
