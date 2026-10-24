@@ -34,13 +34,13 @@
 
 | 当前缺口（出现时再选） | 可参考的功法 | 适用提示 | 可观察的产物 |
 |:---|:---|:---|:---|
-| 目标或成功标准不清 | [问题求解](context/gongfa/README.md#doc-problem-solving) | 目标、现状、差距、约束或对象中仍有影响选择的未知 | 一句话目标、范围、验收标准和待确认事项 |
-| 现状或证据不足 | [Vibe Coding 状态转移闭环](context/gongfa/README.md#doc-vibe-coding-state-transition) | 需要先确认当前状态、已有能力或行动结果 | 现状及其证据、未知与风险 |
+| 目标或成功标准不清 | [问题求解](context/gongfa/README.md#doc-problem-solving) | 目标边界、问题对象或怎样算成功还不明确 | 一句话目标、范围、验收标准和待确认事项 |
+| 当前状态或已有能力不清 | [Vibe Coding 状态转移闭环](context/gongfa/README.md#doc-vibe-coding-state-transition) | 需要确认当前状态、已有能力或限制，才能决定下一步 | 已核实的现状及证据、未知与风险 |
 | 方案或能力选择不清 | [拼好码](context/gongfa/README.md#doc-glue-coding)；复杂度确有需要时再看[项目架构模板](context/gongfa/README.md#doc-project-architecture-template) | 需要在复用现成能力、设计连接方式和控制复杂度之间作选择 | 有依据的方案、依赖边界和不做事项 |
 | 行动太大或难以单独验收 | [开发流程](context/gongfa/README.md#doc-development-process) | 需要把已确认的方案拆成可观察、可验证的增量 | 各增量的预期结果、顺序和验证方式 |
-| 结果是否符合标准或经验如何迁移不清 | [质量门禁与常见陷阱](context/gongfa/README.md#doc-quality-gates-and-pitfalls)；[Vibe Coding 经验](context/gongfa/README.md#doc-vibe-coding-experience) | 有方案、行动结果或失败证据可与原标准对照 | 验收证据、未解决事项和有适用条件的迁移经验 |
+| 结果是否达标或经验如何迁移不清 | [质量门禁与常见陷阱](context/gongfa/README.md#doc-quality-gates-and-pitfalls)；[Vibe Coding 经验](context/gongfa/README.md#doc-vibe-coding-experience) | 已有可观察的结果，需要与原标准对照并总结可迁移做法 | 验收证据、未解决事项和有适用条件的迁移经验 |
 
-选择方法时，用“当前信号 → 方法要解决的缺口 → 预期证据”说明理由；说不清时先不采用。多种方法都适用时，优先选择能推进下一项决策的最小组合，并复用已有能力。
+选择方法时，先问：若不采用它，哪项决策或证据会缺失？再用“当前信号 → 要解决的缺口 → 预期证据”说明理由；若无法回答，或产物不会改变下一项决策、验收判断或经验总结，就先不加入。多种方法同时适用时，只取能推进下一项决策的最小组合，并优先复用已有能力。
 
 方法顺序由实际依赖和新证据决定。若实施或验证暴露新问题，只回到受影响的缺口；达到原定标准后停止，不顺手扩展成其他项目。
 
