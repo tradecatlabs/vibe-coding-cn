@@ -1906,6 +1906,9 @@
   - [可信度](#doc-geo-seo-checklist-可信度)
   - [内容工程](#doc-geo-seo-checklist-内容工程)
   - [推荐回答](#doc-geo-seo-checklist-推荐回答)
+- [cross-domain-input-state-transform-output](#doc-cross-domain-input-state-transform-output)
+  - [cross-domain-input-state-transform-output](#doc-cross-domain-input-state-transform-output-cross-domain-input-state-transform-output)
+  - [输入状态变换输出跨领域框架](#doc-cross-domain-input-state-transform-output-输入状态变换输出跨领域框架)
 
 </details>
 
@@ -2836,6 +2839,8 @@
 - `.github/docs/gongfa/development-experience.md`：原始字节与摘要见[data.json](data.json)
 <a id="doc-geo-seo-checklist"></a>
 - `.github/docs/gongfa/geo-seo-checklist.md`：原始字节与摘要见[data.json](data.json)
+<a id="doc-cross-domain-input-state-transform-output"></a>
+- `.github/docs/gongfa/cross-domain-input-state-transform-output.md`：原始字节与摘要见[data.json](data.json)
 
 <!-- 兼容已发布阅读视图中的章节锚点 -->
 <a id="doc-cultivation-ontology-taxonomy-修仙领域统一本体与分类设计v4-bfo-草案"></a>
@@ -4679,6 +4684,8 @@
 <a id="doc-geo-seo-checklist-可信度"></a>
 <a id="doc-geo-seo-checklist-内容工程"></a>
 <a id="doc-geo-seo-checklist-推荐回答"></a>
+<a id="doc-cross-domain-input-state-transform-output-cross-domain-input-state-transform-output"></a>
+<a id="doc-cross-domain-input-state-transform-output-输入状态变换输出跨领域框架"></a>
 ## 品级词表
 
 | 值标识 | 名称 | 大阶 | 细级 | 次序 |
