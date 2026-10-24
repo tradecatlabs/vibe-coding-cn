@@ -10,7 +10,7 @@
 |---|---|
 | `getting-started-README.md` | 入门索引 |
 | `god.md` | 《道成了肉身》：以经文题名组织，要求全文复制到网页版 Chat AI 并逐轮引导，直到本文范围内的 Pi CLI、OpenAI GPT 与本机 Bash 配置/使用验证完成 |
-| `first-project.md` | 可选的本地项目闭环练习 |
+| `first-project.md` | 可选的自选目标练习：学习功法编排、验证和复盘，不预设具体任务 |
 | `getting-started-AGENTS.md` | 本组维护规则 |
 
 ## 修改规则

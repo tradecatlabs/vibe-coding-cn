@@ -21,7 +21,7 @@ AI引用语料平铺在`.github/`根；原名不冲突的内容文件保持原�
 | `.github/context/gongfa/README.md#doc-ai-core-propositions` | 功法体系内的六条核心命题正文；固定目标、可变策略与分层反馈是协作模型，不保证自动收敛或已验证效果 |
 | `.github/context/README.md` | 知识库总索引 |
 | `.github/getting-started-README.md` | 从零开始完整入门 |
-| `.github/first-project.md` | 第一次可验证的项目闭环 |
+| `.github/first-project.md` | 自选目标的功法编排与可验证项目练习，不预设具体任务 |
 | `.github/context/gongfa/README.md` | 轻量分阶导航与原文索引；对象说明见天、地、玄、黄四阶页，冻结原文保存在`data.json` |
 | `.github/context/gongfa/README.md#doc-vibe-coding-cultivation-model` | BFO 下层展开的修仙通俗解释与任务战力评价 |
 | `.github/context/faqi/README.md#doc-faqi-system` | Vibe Coding工具与依赖分类、重要性分级和正式效能边界 |

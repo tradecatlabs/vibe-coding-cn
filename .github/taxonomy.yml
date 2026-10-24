@@ -73,8 +73,8 @@ documents:
     title: 道成了肉身：Pi CLI 安装配置提示词
     role: 可全文复制到网页版 Chat AI，逐步引导本机准备和模型授权，再由本机 Pi 的真实工具调用验证基础 Work 通路；区分对话能力、执行证据与业务任务完成，验收后停止
   - path: .github/first-project.md
-    title: 第一个项目
-    role: 可选的本地练习：走通需求、实现、运行、验收和 Git 保存
+    title: 第一次项目练习
+    role: 可选的自选目标练习：按问题编排方法，完成实施、验收与复盘；不预设具体任务
   gongfa:
   - path: .github/context/gongfa/README.md#doc-cultivation-ontology-taxonomy
     title: 修仙领域统一本体与分类设计（V4 BFO 草案）
