@@ -163,7 +163,13 @@ class GongfaProtocolTest(unittest.TestCase):
         targets = {(entry['id'], entry['content_version']) for entry in entries}
         self.assertEqual({(item['gongfa_id'], item['content_version'])
                           for batch in proposals for item in batch['items']}, targets)
-        self.assertEqual(summary['proposed_grades'], len(entries))
+        superseded_ids = {batch['supersedes'] for batch in proposals if batch['supersedes'] is not None}
+        active_targets = [(item['gongfa_id'], item['content_version'])
+                          for batch in proposals if batch['id'] not in superseded_ids
+                          for item in batch['items']]
+        self.assertEqual(set(active_targets), targets)
+        self.assertEqual(len(active_targets), len(targets))
+        self.assertEqual(summary['proposed_grades'], sum(len(batch['items']) for batch in proposals))
         for batch in proposals:
             if batch['policy_id'] is None:
                 self.assertIsNone(batch['policy_version'])

@@ -3,18 +3,18 @@
 
 ## 字多不看
 
-- 共**411条内容记录**；已登记411条，待登记0条，未登记来源条目0条。不是独立功法去重后的总数。
-- 原前瞻初评409条，暂不可判2条；不是正式效果评级，亦不把缺测默认补成黄阶。
+- 共**412条内容记录**；已登记412条，待登记0条，未登记来源条目0条。不是独立功法去重后的总数。
+- 原前瞻初评410条，暂不可判2条；不是正式效果评级，亦不把缺测默认补成黄阶。
 - 331条来源迁入说明曾由用户确认正式通过审阅；后续内容更新不自动继承该确认。历史来源快照保留原样，书目/许可核验、实际效果与正式评级仍分别维护。
 - [data.json](data.json)是唯一原始数据源，原始文档、历史来源选区、意见、来源和附件均保留其中。
 
-输入绑定：`6aab15530d4ceac9d1df29cbb235318eeb549726dab7c6c123c4dc3912c07bdd`。
+输入绑定：`fbdb41c7aeb69ea1e378ffa1e47c18695f901228b2cf2d4299b4bc7ad619540c`。
 
 ## 快速导航
 
-- [天阶（2条）](tian.md)
+- [天阶（4条）](tian.md)
 - [地阶（76条）](di.md)
-- [玄阶（310条）](xuan.md)
+- [玄阶（309条）](xuan.md)
 - [黄阶（21条）](huang.md)
 - [未明确品级（2条；不归属任何阶）](huang.md#未明确品级不归属黄阶)
 - [全部记录导航](#全部记录)
@@ -1926,6 +1926,10 @@
 - [Lambda 演算](tian.md#v0-registry-gongfa-lambda-calculus-r1-093b4490) — 天阶高级
 <a id="v0-registry-gongfa-glue-coding-r1-22977803"></a>
 - [拼好码](tian.md#v0-registry-gongfa-glue-coding-r1-22977803) — 天阶高级
+<a id="v0-registry-gongfa-input-state-transform-separation-r1-2443d5c8"></a>
+- [输入输出与状态变换分离](tian.md#v0-registry-gongfa-input-state-transform-separation-r1-2443d5c8) — 天阶中级
+<a id="v0-registry-gongfa-input-state-transform-output-cross-domain-r1-4b6a54ec"></a>
+- [输入—状态—变换—输出跨领域框架](tian.md#v0-registry-gongfa-input-state-transform-output-cross-domain-r1-4b6a54ec) — 天阶初级
 
 ### 地阶
 
@@ -2424,8 +2428,6 @@
 - [最小惊讶原则（registry:gongfa-least-surprise@r1）](xuan.md#v0-registry-gongfa-least-surprise-r1-fd734c68) — 玄阶中级
 <a id="v0-registry-gongfa-decision-rationale-documentation-r1-8188a83c"></a>
 - [文档记录设计理由](xuan.md#v0-registry-gongfa-decision-rationale-documentation-r1-8188a83c) — 玄阶中级
-<a id="v0-registry-gongfa-input-state-transform-separation-r1-2443d5c8"></a>
-- [输入输出与状态变换分离](xuan.md#v0-registry-gongfa-input-state-transform-separation-r1-2443d5c8) — 玄阶中级
 <a id="v0-registry-gongfa-dry-reuse-r1-5af5b36d"></a>
 - [DRY 逻辑复用准则](xuan.md#v0-registry-gongfa-dry-reuse-r1-5af5b36d) — 玄阶中级
 <a id="v0-registry-gongfa-candidate-html211-a001-8e7d97a738-r1-e931f6bf"></a>
